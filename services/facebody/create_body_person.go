@@ -71,16 +71,19 @@ func (client *Client) CreateBodyPersonWithCallback(request *CreateBodyPersonRequ
 // CreateBodyPersonRequest is the request struct for api CreateBodyPerson
 type CreateBodyPersonRequest struct {
 	*requests.RpcRequest
-	DbId requests.Integer `position:"Body" name:"DbId"`
-	Name string           `position:"Body" name:"Name"`
+	FormatResultToJson requests.Boolean `position:"Query" name:"FormatResultToJson"`
+	OssFile            string           `position:"Query" name:"OssFile"`
+	RequestProxyBy     string           `position:"Query" name:"RequestProxyBy"`
+	DbId               requests.Integer `position:"Body" name:"DbId"`
+	Name               string           `position:"Body" name:"Name"`
 }
 
 // CreateBodyPersonResponse is the response struct for api CreateBodyPerson
 type CreateBodyPersonResponse struct {
 	*responses.BaseResponse
-	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 

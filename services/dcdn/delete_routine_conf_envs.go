@@ -79,8 +79,8 @@ type DeleteRoutineConfEnvsRequest struct {
 // DeleteRoutineConfEnvsResponse is the response struct for api DeleteRoutineConfEnvs
 type DeleteRoutineConfEnvsResponse struct {
 	*responses.BaseResponse
-	RequestId string                 `json:"RequestId" xml:"RequestId"`
 	Content   map[string]interface{} `json:"Content" xml:"Content"`
+	RequestId string                 `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDeleteRoutineConfEnvsRequest creates a request to invoke DeleteRoutineConfEnvs API

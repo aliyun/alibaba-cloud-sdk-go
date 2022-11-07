@@ -17,12 +17,12 @@ package rds
 
 // ClassList is a nested struct in rds response
 type ClassList struct {
+	MaxIOPS        string `json:"MaxIOPS" xml:"MaxIOPS"`
+	Cpu            string `json:"Cpu" xml:"Cpu"`
+	ReferencePrice string `json:"ReferencePrice" xml:"ReferencePrice"`
+	MaxConnections string `json:"MaxConnections" xml:"MaxConnections"`
+	MemoryClass    string `json:"MemoryClass" xml:"MemoryClass"`
 	ClassCode      string `json:"ClassCode" xml:"ClassCode"`
 	ClassGroup     string `json:"ClassGroup" xml:"ClassGroup"`
-	Cpu            string `json:"Cpu" xml:"Cpu"`
-	MaxConnections string `json:"MaxConnections" xml:"MaxConnections"`
 	MaxIOMBPS      string `json:"MaxIOMBPS" xml:"MaxIOMBPS"`
-	MaxIOPS        string `json:"MaxIOPS" xml:"MaxIOPS"`
-	MemoryClass    string `json:"MemoryClass" xml:"MemoryClass"`
-	ReferencePrice string `json:"ReferencePrice" xml:"ReferencePrice"`
 }

@@ -17,11 +17,7 @@ package config
 
 // Data is a nested struct in config response
 type Data struct {
-	RiskLevel         int           `json:"RiskLevel" xml:"RiskLevel"`
-	TotalCount        int64         `json:"TotalCount" xml:"TotalCount"`
-	CompliantCount    int           `json:"CompliantCount" xml:"CompliantCount"`
-	NonCompliantCount int           `json:"NonCompliantCount" xml:"NonCompliantCount"`
-	PageNumber        int           `json:"PageNumber" xml:"PageNumber"`
-	PageSize          int           `json:"PageSize" xml:"PageSize"`
-	ManagedRuleList   []ManagedRule `json:"ManagedRuleList" xml:"ManagedRuleList"`
+	RiskLevel         int `json:"RiskLevel" xml:"RiskLevel"`
+	CompliantCount    int `json:"CompliantCount" xml:"CompliantCount"`
+	NonCompliantCount int `json:"NonCompliantCount" xml:"NonCompliantCount"`
 }

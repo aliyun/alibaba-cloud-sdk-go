@@ -18,14 +18,15 @@ package cdn
 // PageData is a nested struct in cdn response
 type PageData struct {
 	Cname           string                                `json:"Cname" xml:"Cname"`
-	CdnType         string                                `json:"CdnType" xml:"CdnType"`
-	Sandbox         string                                `json:"Sandbox" xml:"Sandbox"`
 	DomainStatus    string                                `json:"DomainStatus" xml:"DomainStatus"`
-	ResourceGroupId string                                `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	DomainId        int64                                 `json:"DomainId" xml:"DomainId"`
 	DomainName      string                                `json:"DomainName" xml:"DomainName"`
 	Coverage        string                                `json:"Coverage" xml:"Coverage"`
 	GmtModified     string                                `json:"GmtModified" xml:"GmtModified"`
 	GmtCreated      string                                `json:"GmtCreated" xml:"GmtCreated"`
+	CdnType         string                                `json:"CdnType" xml:"CdnType"`
+	Sandbox         string                                `json:"Sandbox" xml:"Sandbox"`
+	ResourceGroupId string                                `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	Description     string                                `json:"Description" xml:"Description"`
 	SslProtocol     string                                `json:"SslProtocol" xml:"SslProtocol"`
 	Sources         SourcesInDescribeCdnUserDomainsByFunc `json:"Sources" xml:"Sources"`

@@ -72,6 +72,7 @@ func (client *Client) DeleteK8sApplicationWithCallback(request *DeleteK8sApplica
 type DeleteK8sApplicationRequest struct {
 	*requests.RoaRequest
 	AppId string `position:"Query" name:"AppId"`
+	Force string `position:"Query" name:"Force"`
 }
 
 // DeleteK8sApplicationResponse is the response struct for api DeleteK8sApplication
@@ -88,7 +89,7 @@ func CreateDeleteK8sApplicationRequest() (request *DeleteK8sApplicationRequest) 
 	request = &DeleteK8sApplicationRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "DeleteK8sApplication", "/pop/v5/k8s/acs/k8s_apps", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "DeleteK8sApplication", "/pop/v5/k8s/acs/k8s_apps", "edas", "openAPI")
 	request.Method = requests.DELETE
 	return
 }

@@ -86,8 +86,8 @@ type InvokeShellCommandInstance struct {
 // InvokeShellCommandResponse is the response struct for api InvokeShellCommand
 type InvokeShellCommandResponse struct {
 	*responses.BaseResponse
-	RequestId   string                          `json:"RequestId" xml:"RequestId"`
 	CommandId   string                          `json:"CommandId" xml:"CommandId"`
+	RequestId   string                          `json:"RequestId" xml:"RequestId"`
 	InstanceIds InstanceIdsInInvokeShellCommand `json:"InstanceIds" xml:"InstanceIds"`
 }
 

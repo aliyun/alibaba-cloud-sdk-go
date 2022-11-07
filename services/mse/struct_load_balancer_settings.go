@@ -18,5 +18,6 @@ package mse
 // LoadBalancerSettings is a nested struct in mse response
 type LoadBalancerSettings struct {
 	LoadbalancerType       string                 `json:"LoadbalancerType" xml:"LoadbalancerType"`
+	WarmupDuration         int64                  `json:"WarmupDuration" xml:"WarmupDuration"`
 	ConsistentHashLBConfig ConsistentHashLBConfig `json:"ConsistentHashLBConfig" xml:"ConsistentHashLBConfig"`
 }

@@ -17,21 +17,29 @@ package sas
 
 // GroupedContainerInstance is a nested struct in sas response
 type GroupedContainerInstance struct {
-	InstanceCount     int    `json:"InstanceCount" xml:"InstanceCount"`
-	RiskInstanceCount int    `json:"RiskInstanceCount" xml:"RiskInstanceCount"`
-	ClusterId         string `json:"ClusterId" xml:"ClusterId"`
-	RiskStatus        string `json:"RiskStatus" xml:"RiskStatus"`
-	VulCount          int    `json:"VulCount" xml:"VulCount"`
-	AlarmCount        int    `json:"AlarmCount" xml:"AlarmCount"`
-	Pod               string `json:"Pod" xml:"Pod"`
-	PodIp             string `json:"PodIp" xml:"PodIp"`
-	InstanceId        string `json:"InstanceId" xml:"InstanceId"`
-	HostIp            string `json:"HostIp" xml:"HostIp"`
-	ClusterName       string `json:"ClusterName" xml:"ClusterName"`
-	CreateTime        int64  `json:"CreateTime" xml:"CreateTime"`
-	AppName           string `json:"AppName" xml:"AppName"`
-	ClusterType       string `json:"ClusterType" xml:"ClusterType"`
-	CusterState       string `json:"CusterState" xml:"CusterState"`
-	RegionId          string `json:"RegionId" xml:"RegionId"`
-	Namespace         string `json:"Namespace" xml:"Namespace"`
+	RiskLevel          string `json:"RiskLevel" xml:"RiskLevel"`
+	HostIp             string `json:"HostIp" xml:"HostIp"`
+	Pod                string `json:"Pod" xml:"Pod"`
+	RiskStatus         string `json:"RiskStatus" xml:"RiskStatus"`
+	CreateTime         int64  `json:"CreateTime" xml:"CreateTime"`
+	Namespace          string `json:"Namespace" xml:"Namespace"`
+	CusterState        string `json:"CusterState" xml:"CusterState"`
+	InstanceId         string `json:"InstanceId" xml:"InstanceId"`
+	RegionId           string `json:"RegionId" xml:"RegionId"`
+	AppName            string `json:"AppName" xml:"AppName"`
+	InstanceCount      int    `json:"InstanceCount" xml:"InstanceCount"`
+	ClusterType        string `json:"ClusterType" xml:"ClusterType"`
+	ClusterName        string `json:"ClusterName" xml:"ClusterName"`
+	PodIp              string `json:"PodIp" xml:"PodIp"`
+	VulCount           int    `json:"VulCount" xml:"VulCount"`
+	AlarmCount         int    `json:"AlarmCount" xml:"AlarmCount"`
+	RiskInstanceCount  int    `json:"RiskInstanceCount" xml:"RiskInstanceCount"`
+	ClusterId          string `json:"ClusterId" xml:"ClusterId"`
+	Image              string `json:"Image" xml:"Image"`
+	ImageRepoNamespace string `json:"ImageRepoNamespace" xml:"ImageRepoNamespace"`
+	ImageRepoName      string `json:"ImageRepoName" xml:"ImageRepoName"`
+	ImageRepoTag       string `json:"ImageRepoTag" xml:"ImageRepoTag"`
+	ImageDigest        string `json:"ImageDigest" xml:"ImageDigest"`
+	ImageUuid          string `json:"ImageUuid" xml:"ImageUuid"`
+	HcCount            int    `json:"HcCount" xml:"HcCount"`
 }

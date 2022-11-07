@@ -85,6 +85,7 @@ type ConfigureDtsJobRequest struct {
 	OwnerId                         string           `position:"Query" name:"OwnerId"`
 	JobType                         string           `position:"Query" name:"JobType"`
 	DelayRuleTime                   requests.Integer `position:"Query" name:"DelayRuleTime"`
+	DisasterRecoveryJob             requests.Boolean `position:"Query" name:"DisasterRecoveryJob"`
 	DestinationEndpointIP           string           `position:"Query" name:"DestinationEndpointIP"`
 	SourceEndpointInstanceType      string           `position:"Query" name:"SourceEndpointInstanceType"`
 	DtsJobName                      string           `position:"Query" name:"DtsJobName"`
@@ -100,6 +101,7 @@ type ConfigureDtsJobRequest struct {
 	DedicatedClusterId              string           `position:"Query" name:"DedicatedClusterId"`
 	SourceEndpointDatabaseName      string           `position:"Query" name:"SourceEndpointDatabaseName"`
 	DestinationEndpointRegion       string           `position:"Query" name:"DestinationEndpointRegion"`
+	DataCheckConfigure              string           `position:"Query" name:"DataCheckConfigure"`
 	Reserve                         string           `position:"Body" name:"Reserve"`
 	DataSynchronization             requests.Boolean `position:"Query" name:"DataSynchronization"`
 	FileOssUrl                      string           `position:"Query" name:"FileOssUrl"`

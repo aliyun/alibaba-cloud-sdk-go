@@ -73,6 +73,7 @@ type DescribeCrossBackupMetaListRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	Pattern              string           `position:"Query" name:"Pattern"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	PageSize             string           `position:"Query" name:"PageSize"`
 	PageIndex            string           `position:"Query" name:"PageIndex"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
@@ -85,12 +86,12 @@ type DescribeCrossBackupMetaListRequest struct {
 // DescribeCrossBackupMetaListResponse is the response struct for api DescribeCrossBackupMetaList
 type DescribeCrossBackupMetaListResponse struct {
 	*responses.BaseResponse
-	RequestId        string                             `json:"RequestId" xml:"RequestId"`
 	DBInstanceName   string                             `json:"DBInstanceName" xml:"DBInstanceName"`
-	PageNumber       int                                `json:"PageNumber" xml:"PageNumber"`
+	TotalPageCount   int                                `json:"TotalPageCount" xml:"TotalPageCount"`
+	RequestId        string                             `json:"RequestId" xml:"RequestId"`
 	PageRecordCount  int                                `json:"PageRecordCount" xml:"PageRecordCount"`
 	TotalRecordCount int                                `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	TotalPageCount   int                                `json:"TotalPageCount" xml:"TotalPageCount"`
+	PageNumber       int                                `json:"PageNumber" xml:"PageNumber"`
 	Items            ItemsInDescribeCrossBackupMetaList `json:"Items" xml:"Items"`
 }
 

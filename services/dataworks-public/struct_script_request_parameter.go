@@ -17,8 +17,8 @@ package dataworks_public
 
 // ScriptRequestParameter is a nested struct in dataworks_public response
 type ScriptRequestParameter struct {
-	ParameterDataType    int    `json:"ParameterDataType" xml:"ParameterDataType"`
 	ParameterName        string `json:"ParameterName" xml:"ParameterName"`
+	ParameterDataType    int    `json:"ParameterDataType" xml:"ParameterDataType"`
 	ColumnName           string `json:"ColumnName" xml:"ColumnName"`
 	IsRequiredParameter  bool   `json:"IsRequiredParameter" xml:"IsRequiredParameter"`
 	ParameterDescription string `json:"ParameterDescription" xml:"ParameterDescription"`

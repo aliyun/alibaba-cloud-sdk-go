@@ -94,7 +94,7 @@ func CreateModifyDBClusterPrimaryZoneRequest() (request *ModifyDBClusterPrimaryZ
 	request = &ModifyDBClusterPrimaryZoneRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "ModifyDBClusterPrimaryZone", "", "")
+	request.InitWithApiInfo("polardb", "2017-08-01", "ModifyDBClusterPrimaryZone", "polardb", "openAPI")
 	request.Method = requests.POST
 	return
 }

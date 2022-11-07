@@ -89,7 +89,7 @@ func CreateDescribeRegionsRequest() (request *DescribeRegionsRequest) {
 	request = &DescribeRegionsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeRegions", "", "")
+	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeRegions", "polardb", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -28,7 +28,9 @@ type JobConfigInfo struct {
 	Content         string         `json:"Content" xml:"Content"`
 	JarUrl          string         `json:"JarUrl" xml:"JarUrl"`
 	ClassName       string         `json:"ClassName" xml:"ClassName"`
+	JobType         string         `json:"JobType" xml:"JobType"`
 	AttemptInterval int            `json:"AttemptInterval" xml:"AttemptInterval"`
+	XAttrs          string         `json:"XAttrs" xml:"XAttrs"`
 	MapTaskXAttrs   MapTaskXAttrs  `json:"MapTaskXAttrs" xml:"MapTaskXAttrs"`
 	TimeConfig      TimeConfig     `json:"TimeConfig" xml:"TimeConfig"`
 	JobMonitorInfo  JobMonitorInfo `json:"JobMonitorInfo" xml:"JobMonitorInfo"`

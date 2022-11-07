@@ -74,6 +74,7 @@ type DescribeLocalAvailableRecoveryTimeRequest struct {
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	Region               string           `position:"Query" name:"Region"`
 }
@@ -81,10 +82,10 @@ type DescribeLocalAvailableRecoveryTimeRequest struct {
 // DescribeLocalAvailableRecoveryTimeResponse is the response struct for api DescribeLocalAvailableRecoveryTime
 type DescribeLocalAvailableRecoveryTimeResponse struct {
 	*responses.BaseResponse
-	RequestId         string `json:"RequestId" xml:"RequestId"`
-	DBInstanceId      string `json:"DBInstanceId" xml:"DBInstanceId"`
-	RecoveryBeginTime string `json:"RecoveryBeginTime" xml:"RecoveryBeginTime"`
 	RecoveryEndTime   string `json:"RecoveryEndTime" xml:"RecoveryEndTime"`
+	DBInstanceId      string `json:"DBInstanceId" xml:"DBInstanceId"`
+	RequestId         string `json:"RequestId" xml:"RequestId"`
+	RecoveryBeginTime string `json:"RecoveryBeginTime" xml:"RecoveryBeginTime"`
 }
 
 // CreateDescribeLocalAvailableRecoveryTimeRequest creates a request to invoke DescribeLocalAvailableRecoveryTime API

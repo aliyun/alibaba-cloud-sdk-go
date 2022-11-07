@@ -20,7 +20,7 @@ type MountTargets struct {
 	VswId             string `json:"VswId" xml:"VswId"`
 	MountTargetDomain string `json:"MountTargetDomain" xml:"MountTargetDomain"`
 	AccessGroup       string `json:"AccessGroup" xml:"AccessGroup"`
+	VpcId             string `json:"VpcId" xml:"VpcId"`
 	Status            string `json:"Status" xml:"Status"`
 	NetworkType       string `json:"NetworkType" xml:"NetworkType"`
-	VpcId             string `json:"VpcId" xml:"VpcId"`
 }

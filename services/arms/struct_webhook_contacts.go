@@ -17,7 +17,7 @@ package arms
 
 // WebhookContacts is a nested struct in arms response
 type WebhookContacts struct {
-	WebhookName string  `json:"WebhookName" xml:"WebhookName"`
-	WebhookId   float64 `json:"WebhookId" xml:"WebhookId"`
-	Webhook     Webhook `json:"Webhook" xml:"Webhook"`
+	WebhookName string                           `json:"WebhookName" xml:"WebhookName"`
+	WebhookId   float64                          `json:"WebhookId" xml:"WebhookId"`
+	Webhook     WebhookInDescribeWebhookContacts `json:"Webhook" xml:"Webhook"`
 }

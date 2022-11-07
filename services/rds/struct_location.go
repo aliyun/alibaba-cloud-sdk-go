@@ -17,6 +17,6 @@ package rds
 
 // Location is a nested struct in rds response
 type Location struct {
-	Endpoint string `json:"Endpoint" xml:"Endpoint"`
 	Bucket   string `json:"Bucket" xml:"Bucket"`
+	Endpoint string `json:"Endpoint" xml:"Endpoint"`
 }

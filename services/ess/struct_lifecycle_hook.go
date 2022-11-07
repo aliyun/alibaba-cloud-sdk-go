@@ -25,4 +25,5 @@ type LifecycleHook struct {
 	NotificationArn      string `json:"NotificationArn" xml:"NotificationArn"`
 	HeartbeatTimeout     int    `json:"HeartbeatTimeout" xml:"HeartbeatTimeout"`
 	ScalingGroupId       string `json:"ScalingGroupId" xml:"ScalingGroupId"`
+	LifecycleHookStatus  string `json:"LifecycleHookStatus" xml:"LifecycleHookStatus"`
 }

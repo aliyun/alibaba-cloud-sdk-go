@@ -17,7 +17,7 @@ package ocr
 
 // PortraitBox is a nested struct in ocr response
 type PortraitBox struct {
+	Score     string      `json:"Score" xml:"Score"`
 	Text      string      `json:"Text" xml:"Text"`
-	Score     float64     `json:"Score" xml:"Score"`
 	KeyPoints []KeyPoints `json:"KeyPoints" xml:"KeyPoints"`
 }

@@ -83,10 +83,10 @@ type UpgradeDBInstanceKernelVersionRequest struct {
 // UpgradeDBInstanceKernelVersionResponse is the response struct for api UpgradeDBInstanceKernelVersion
 type UpgradeDBInstanceKernelVersionResponse struct {
 	*responses.BaseResponse
-	RequestId          string `json:"RequestId" xml:"RequestId"`
 	DBInstanceName     string `json:"DBInstanceName" xml:"DBInstanceName"`
-	TaskId             string `json:"TaskId" xml:"TaskId"`
 	TargetMinorVersion string `json:"TargetMinorVersion" xml:"TargetMinorVersion"`
+	RequestId          string `json:"RequestId" xml:"RequestId"`
+	TaskId             string `json:"TaskId" xml:"TaskId"`
 }
 
 // CreateUpgradeDBInstanceKernelVersionRequest creates a request to invoke UpgradeDBInstanceKernelVersion API

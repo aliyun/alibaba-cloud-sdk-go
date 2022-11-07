@@ -71,7 +71,10 @@ func (client *Client) BodyPostureWithCallback(request *BodyPostureRequest, callb
 // BodyPostureRequest is the request struct for api BodyPosture
 type BodyPostureRequest struct {
 	*requests.RpcRequest
-	ImageURL string `position:"Body" name:"ImageURL"`
+	FormatResultToJson requests.Boolean `position:"Query" name:"FormatResultToJson"`
+	OssFile            string           `position:"Query" name:"OssFile"`
+	RequestProxyBy     string           `position:"Query" name:"RequestProxyBy"`
+	ImageURL           string           `position:"Body" name:"ImageURL"`
 }
 
 // BodyPostureResponse is the response struct for api BodyPosture

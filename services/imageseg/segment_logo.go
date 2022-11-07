@@ -71,7 +71,9 @@ func (client *Client) SegmentLogoWithCallback(request *SegmentLogoRequest, callb
 // SegmentLogoRequest is the request struct for api SegmentLogo
 type SegmentLogoRequest struct {
 	*requests.RpcRequest
-	ImageURL string `position:"Query" name:"ImageURL"`
+	OssFile        string `position:"Query" name:"OssFile"`
+	RequestProxyBy string `position:"Query" name:"RequestProxyBy"`
+	ImageURL       string `position:"Query" name:"ImageURL"`
 }
 
 // SegmentLogoResponse is the response struct for api SegmentLogo
@@ -86,7 +88,7 @@ func CreateSegmentLogoRequest() (request *SegmentLogoRequest) {
 	request = &SegmentLogoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imageseg", "2019-12-30", "SegmentLogo", "imageseg", "openAPI")
+	request.InitWithApiInfo("imageseg", "2019-12-30", "SegmentLogo", "", "")
 	request.Method = requests.POST
 	return
 }

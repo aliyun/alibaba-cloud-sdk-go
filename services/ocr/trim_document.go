@@ -81,6 +81,8 @@ type TrimDocumentRequest struct {
 type TrimDocumentResponse struct {
 	*responses.BaseResponse
 	RequestId string             `json:"RequestId" xml:"RequestId"`
+	Code      string             `json:"Code" xml:"Code"`
+	Message   string             `json:"Message" xml:"Message"`
 	Data      DataInTrimDocument `json:"Data" xml:"Data"`
 }
 

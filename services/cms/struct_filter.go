@@ -17,7 +17,9 @@ package cms
 
 // Filter is a nested struct in cms response
 type Filter struct {
-	Value    string `json:"Value" xml:"Value"`
-	Function string `json:"Function" xml:"Function"`
-	Name     string `json:"Name" xml:"Name"`
+	Name     string        `json:"Name" xml:"Name"`
+	Value    string        `json:"Value" xml:"Value"`
+	Function string        `json:"Function" xml:"Function"`
+	Relation string        `json:"Relation" xml:"Relation"`
+	Filters  []FiltersItem `json:"Filters" xml:"Filters"`
 }

@@ -77,8 +77,8 @@ type GetExecutionTemplateRequest struct {
 // GetExecutionTemplateResponse is the response struct for api GetExecutionTemplate
 type GetExecutionTemplateResponse struct {
 	*responses.BaseResponse
-	RequestId string   `json:"RequestId" xml:"RequestId"`
 	Content   string   `json:"Content" xml:"Content"`
+	RequestId string   `json:"RequestId" xml:"RequestId"`
 	Template  Template `json:"Template" xml:"Template"`
 }
 
@@ -87,7 +87,7 @@ func CreateGetExecutionTemplateRequest() (request *GetExecutionTemplateRequest) 
 	request = &GetExecutionTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("oos", "2019-06-01", "GetExecutionTemplate", "", "")
+	request.InitWithApiInfo("oos", "2019-06-01", "GetExecutionTemplate", "oos", "openAPI")
 	request.Method = requests.POST
 	return
 }

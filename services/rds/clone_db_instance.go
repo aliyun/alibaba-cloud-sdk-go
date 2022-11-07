@@ -71,45 +71,55 @@ func (client *Client) CloneDBInstanceWithCallback(request *CloneDBInstanceReques
 // CloneDBInstanceRequest is the request struct for api CloneDBInstance
 type CloneDBInstanceRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	DBInstanceStorage     requests.Integer `position:"Query" name:"DBInstanceStorage"`
-	ClientToken           string           `position:"Query" name:"ClientToken"`
-	ZoneIdSlave1          string           `position:"Query" name:"ZoneIdSlave1"`
-	ZoneIdSlave2          string           `position:"Query" name:"ZoneIdSlave2"`
-	ResourceGroupId       string           `position:"Query" name:"ResourceGroupId"`
-	TableMeta             string           `position:"Query" name:"TableMeta"`
-	DBInstanceDescription string           `position:"Query" name:"DBInstanceDescription"`
-	DBInstanceId          string           `position:"Query" name:"DBInstanceId"`
-	DBInstanceStorageType string           `position:"Query" name:"DBInstanceStorageType"`
-	DedicatedHostGroupId  string           `position:"Query" name:"DedicatedHostGroupId"`
-	BackupType            string           `position:"Query" name:"BackupType"`
-	RestoreTime           string           `position:"Query" name:"RestoreTime"`
-	Period                string           `position:"Query" name:"Period"`
-	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
-	BackupId              string           `position:"Query" name:"BackupId"`
-	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
-	RestoreTable          string           `position:"Query" name:"RestoreTable"`
-	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
-	UsedTime              requests.Integer `position:"Query" name:"UsedTime"`
-	DBInstanceClass       string           `position:"Query" name:"DBInstanceClass"`
-	DbNames               string           `position:"Query" name:"DbNames"`
-	VSwitchId             string           `position:"Query" name:"VSwitchId"`
-	PrivateIpAddress      string           `position:"Query" name:"PrivateIpAddress"`
-	VPCId                 string           `position:"Query" name:"VPCId"`
-	ZoneId                string           `position:"Query" name:"ZoneId"`
-	Category              string           `position:"Query" name:"Category"`
-	PayType               string           `position:"Query" name:"PayType"`
-	InstanceNetworkType   string           `position:"Query" name:"InstanceNetworkType"`
+	ResourceOwnerId       requests.Integer                `position:"Query" name:"ResourceOwnerId"`
+	DBInstanceStorage     requests.Integer                `position:"Query" name:"DBInstanceStorage"`
+	DeletionProtection    requests.Boolean                `position:"Query" name:"DeletionProtection"`
+	ResourceGroupId       string                          `position:"Query" name:"ResourceGroupId"`
+	DBInstanceDescription string                          `position:"Query" name:"DBInstanceDescription"`
+	BackupType            string                          `position:"Query" name:"BackupType"`
+	Period                string                          `position:"Query" name:"Period"`
+	BackupId              string                          `position:"Query" name:"BackupId"`
+	OwnerId               requests.Integer                `position:"Query" name:"OwnerId"`
+	DBInstanceClass       string                          `position:"Query" name:"DBInstanceClass"`
+	VSwitchId             string                          `position:"Query" name:"VSwitchId"`
+	PrivateIpAddress      string                          `position:"Query" name:"PrivateIpAddress"`
+	ZoneId                string                          `position:"Query" name:"ZoneId"`
+	InstanceNetworkType   string                          `position:"Query" name:"InstanceNetworkType"`
+	ClientToken           string                          `position:"Query" name:"ClientToken"`
+	ZoneIdSlave1          string                          `position:"Query" name:"ZoneIdSlave1"`
+	ZoneIdSlave2          string                          `position:"Query" name:"ZoneIdSlave2"`
+	TableMeta             string                          `position:"Query" name:"TableMeta"`
+	DBInstanceId          string                          `position:"Query" name:"DBInstanceId"`
+	DBInstanceStorageType string                          `position:"Query" name:"DBInstanceStorageType"`
+	DedicatedHostGroupId  string                          `position:"Query" name:"DedicatedHostGroupId"`
+	RestoreTime           string                          `position:"Query" name:"RestoreTime"`
+	ServerlessConfig      CloneDBInstanceServerlessConfig `position:"Query" name:"ServerlessConfig"  type:"Struct"`
+	ResourceOwnerAccount  string                          `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount          string                          `position:"Query" name:"OwnerAccount"`
+	RestoreTable          string                          `position:"Query" name:"RestoreTable"`
+	UsedTime              requests.Integer                `position:"Query" name:"UsedTime"`
+	DbNames               string                          `position:"Query" name:"DbNames"`
+	VPCId                 string                          `position:"Query" name:"VPCId"`
+	Category              string                          `position:"Query" name:"Category"`
+	PayType               string                          `position:"Query" name:"PayType"`
+}
+
+// CloneDBInstanceServerlessConfig is a repeated param struct in CloneDBInstanceRequest
+type CloneDBInstanceServerlessConfig struct {
+	MinCapacity string `name:"MinCapacity"`
+	MaxCapacity string `name:"MaxCapacity"`
+	AutoPause   string `name:"AutoPause"`
+	SwitchForce string `name:"SwitchForce"`
 }
 
 // CloneDBInstanceResponse is the response struct for api CloneDBInstance
 type CloneDBInstanceResponse struct {
 	*responses.BaseResponse
-	RequestId        string `json:"RequestId" xml:"RequestId"`
 	DBInstanceId     string `json:"DBInstanceId" xml:"DBInstanceId"`
-	OrderId          string `json:"OrderId" xml:"OrderId"`
-	ConnectionString string `json:"ConnectionString" xml:"ConnectionString"`
+	RequestId        string `json:"RequestId" xml:"RequestId"`
 	Port             string `json:"Port" xml:"Port"`
+	ConnectionString string `json:"ConnectionString" xml:"ConnectionString"`
+	OrderId          string `json:"OrderId" xml:"OrderId"`
 }
 
 // CreateCloneDBInstanceRequest creates a request to invoke CloneDBInstance API

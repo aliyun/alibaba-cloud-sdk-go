@@ -80,28 +80,28 @@ type DescribeInstanceCrossBackupPolicyRequest struct {
 // DescribeInstanceCrossBackupPolicyResponse is the response struct for api DescribeInstanceCrossBackupPolicy
 type DescribeInstanceCrossBackupPolicyResponse struct {
 	*responses.BaseResponse
-	RequestId             string `json:"RequestId" xml:"RequestId"`
-	DBInstanceId          string `json:"DBInstanceId" xml:"DBInstanceId"`
-	DBInstanceDescription string `json:"DBInstanceDescription" xml:"DBInstanceDescription"`
-	DBInstanceStatus      string `json:"DBInstanceStatus" xml:"DBInstanceStatus"`
+	RelServiceId          string `json:"RelServiceId" xml:"RelServiceId"`
+	LogBackupEnabledTime  string `json:"LogBackupEnabledTime" xml:"LogBackupEnabledTime"`
 	DBInstanceStatusDesc  string `json:"DBInstanceStatusDesc" xml:"DBInstanceStatusDesc"`
-	Engine                string `json:"Engine" xml:"Engine"`
+	StorageOwner          string `json:"StorageOwner" xml:"StorageOwner"`
+	RelService            string `json:"RelService" xml:"RelService"`
+	BackupEnabled         string `json:"BackupEnabled" xml:"BackupEnabled"`
+	StorageType           string `json:"StorageType" xml:"StorageType"`
+	DBInstanceStatus      string `json:"DBInstanceStatus" xml:"DBInstanceStatus"`
+	LockMode              string `json:"LockMode" xml:"LockMode"`
 	EngineVersion         string `json:"EngineVersion" xml:"EngineVersion"`
 	RegionId              string `json:"RegionId" xml:"RegionId"`
-	CrossBackupRegion     string `json:"CrossBackupRegion" xml:"CrossBackupRegion"`
-	CrossBackupType       string `json:"CrossBackupType" xml:"CrossBackupType"`
-	BackupEnabledTime     string `json:"BackupEnabledTime" xml:"BackupEnabledTime"`
-	BackupEnabled         string `json:"BackupEnabled" xml:"BackupEnabled"`
 	LogBackupEnabled      string `json:"LogBackupEnabled" xml:"LogBackupEnabled"`
-	LogBackupEnabledTime  string `json:"LogBackupEnabledTime" xml:"LogBackupEnabledTime"`
-	StorageOwner          string `json:"StorageOwner" xml:"StorageOwner"`
-	StorageType           string `json:"StorageType" xml:"StorageType"`
-	Endpoint              string `json:"Endpoint" xml:"Endpoint"`
+	RequestId             string `json:"RequestId" xml:"RequestId"`
 	RetentType            int    `json:"RetentType" xml:"RetentType"`
+	Endpoint              string `json:"Endpoint" xml:"Endpoint"`
 	Retention             int    `json:"Retention" xml:"Retention"`
-	LockMode              string `json:"LockMode" xml:"LockMode"`
-	RelService            string `json:"RelService" xml:"RelService"`
-	RelServiceId          string `json:"RelServiceId" xml:"RelServiceId"`
+	CrossBackupType       string `json:"CrossBackupType" xml:"CrossBackupType"`
+	CrossBackupRegion     string `json:"CrossBackupRegion" xml:"CrossBackupRegion"`
+	DBInstanceId          string `json:"DBInstanceId" xml:"DBInstanceId"`
+	Engine                string `json:"Engine" xml:"Engine"`
+	BackupEnabledTime     string `json:"BackupEnabledTime" xml:"BackupEnabledTime"`
+	DBInstanceDescription string `json:"DBInstanceDescription" xml:"DBInstanceDescription"`
 }
 
 // CreateDescribeInstanceCrossBackupPolicyRequest creates a request to invoke DescribeInstanceCrossBackupPolicy API

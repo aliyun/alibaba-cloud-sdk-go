@@ -73,6 +73,7 @@ type DescribeVSwitchesRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	DedicatedHostGroupId string           `position:"Query" name:"DedicatedHostGroupId"`
@@ -87,9 +88,9 @@ type DescribeVSwitchesRequest struct {
 type DescribeVSwitchesResponse struct {
 	*responses.BaseResponse
 	RequestId  string    `json:"RequestId" xml:"RequestId"`
-	TotalCount int64     `json:"TotalCount" xml:"TotalCount"`
-	PageNumber int64     `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int64     `json:"PageSize" xml:"PageSize"`
+	TotalCount int       `json:"TotalCount" xml:"TotalCount"`
+	PageNumber int       `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int       `json:"PageSize" xml:"PageSize"`
 	VSwitchs   []VSwitch `json:"VSwitchs" xml:"VSwitchs"`
 }
 

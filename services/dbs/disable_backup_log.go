@@ -79,11 +79,11 @@ type DisableBackupLogRequest struct {
 // DisableBackupLogResponse is the response struct for api DisableBackupLog
 type DisableBackupLogResponse struct {
 	*responses.BaseResponse
-	Success        bool   `json:"Success" xml:"Success"`
-	ErrCode        string `json:"ErrCode" xml:"ErrCode"`
-	ErrMessage     string `json:"ErrMessage" xml:"ErrMessage"`
 	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
+	ErrCode        string `json:"ErrCode" xml:"ErrCode"`
+	Success        bool   `json:"Success" xml:"Success"`
+	ErrMessage     string `json:"ErrMessage" xml:"ErrMessage"`
 	BackupPlanId   string `json:"BackupPlanId" xml:"BackupPlanId"`
 	NeedPrecheck   bool   `json:"NeedPrecheck" xml:"NeedPrecheck"`
 }
@@ -93,7 +93,7 @@ func CreateDisableBackupLogRequest() (request *DisableBackupLogRequest) {
 	request = &DisableBackupLogRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dbs", "2019-03-06", "DisableBackupLog", "cbs", "openAPI")
+	request.InitWithApiInfo("Dbs", "2019-03-06", "DisableBackupLog", "", "")
 	request.Method = requests.POST
 	return
 }

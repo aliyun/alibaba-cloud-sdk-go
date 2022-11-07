@@ -17,14 +17,14 @@ package dcdn
 
 // Projects is a nested struct in dcdn response
 type Projects struct {
-	ProjectName  string  `json:"ProjectName" xml:"ProjectName"`
 	Type         string  `json:"Type" xml:"Type"`
-	DomainName   string  `json:"DomainName" xml:"DomainName"`
-	FieldName    string  `json:"FieldName" xml:"FieldName"`
-	SamplingRate float64 `json:"SamplingRate" xml:"SamplingRate"`
-	DataCenter   string  `json:"DataCenter" xml:"DataCenter"`
-	SLSRegion    string  `json:"SLSRegion" xml:"SLSRegion"`
-	SLSProject   string  `json:"SLSProject" xml:"SLSProject"`
 	SLSLogStore  string  `json:"SLSLogStore" xml:"SLSLogStore"`
+	DataCenter   string  `json:"DataCenter" xml:"DataCenter"`
+	FieldName    string  `json:"FieldName" xml:"FieldName"`
+	ProjectName  string  `json:"ProjectName" xml:"ProjectName"`
+	SamplingRate float64 `json:"SamplingRate" xml:"SamplingRate"`
+	SLSProject   string  `json:"SLSProject" xml:"SLSProject"`
+	DomainName   string  `json:"DomainName" xml:"DomainName"`
 	BusinessType string  `json:"BusinessType" xml:"BusinessType"`
+	SLSRegion    string  `json:"SLSRegion" xml:"SLSRegion"`
 }

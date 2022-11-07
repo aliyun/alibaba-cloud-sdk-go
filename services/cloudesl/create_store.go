@@ -99,7 +99,7 @@ func CreateCreateStoreRequest() (request *CreateStoreRequest) {
 	request = &CreateStoreRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cloudesl", "2020-02-01", "CreateStore", "cloudesl", "openAPI")
+	request.InitWithApiInfo("cloudesl", "2020-02-01", "CreateStore", "", "")
 	request.Method = requests.POST
 	return
 }

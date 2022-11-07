@@ -72,6 +72,7 @@ func (client *Client) CheckCloudResourceAuthorizedWithCallback(request *CheckClo
 type CheckCloudResourceAuthorizedRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
@@ -84,8 +85,8 @@ type CheckCloudResourceAuthorizedRequest struct {
 type CheckCloudResourceAuthorizedResponse struct {
 	*responses.BaseResponse
 	RequestId          string `json:"RequestId" xml:"RequestId"`
-	AuthorizationState int    `json:"AuthorizationState" xml:"AuthorizationState"`
 	RoleArn            string `json:"RoleArn" xml:"RoleArn"`
+	AuthorizationState int    `json:"AuthorizationState" xml:"AuthorizationState"`
 }
 
 // CreateCheckCloudResourceAuthorizedRequest creates a request to invoke CheckCloudResourceAuthorized API

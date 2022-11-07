@@ -71,8 +71,8 @@ func (client *Client) ContinuePipelineWithCallback(request *ContinuePipelineRequ
 // ContinuePipelineRequest is the request struct for api ContinuePipeline
 type ContinuePipelineRequest struct {
 	*requests.RoaRequest
-	Confirm    requests.Boolean `position:"Query" name:"Confirm"`
-	PipelineId string           `position:"Query" name:"PipelineId"`
+	Confirm    string `position:"Query" name:"Confirm"`
+	PipelineId string `position:"Query" name:"PipelineId"`
 }
 
 // ContinuePipelineResponse is the response struct for api ContinuePipeline
@@ -88,7 +88,7 @@ func CreateContinuePipelineRequest() (request *ContinuePipelineRequest) {
 	request = &ContinuePipelineRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ContinuePipeline", "/pop/v5/changeorder/pipeline_batch_confirm", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ContinuePipeline", "/pop/v5/changeorder/pipeline_batch_confirm", "edas", "openAPI")
 	request.Method = requests.GET
 	return
 }

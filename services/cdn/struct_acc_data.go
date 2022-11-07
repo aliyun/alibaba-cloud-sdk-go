@@ -18,6 +18,6 @@ package cdn
 // AccData is a nested struct in cdn response
 type AccData struct {
 	TimeStamp  string `json:"TimeStamp" xml:"TimeStamp"`
-	SuccessNum int    `json:"SuccessNum" xml:"SuccessNum"`
 	FailedNum  int    `json:"FailedNum" xml:"FailedNum"`
+	SuccessNum int    `json:"SuccessNum" xml:"SuccessNum"`
 }

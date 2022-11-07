@@ -17,9 +17,9 @@ package dataworks_public
 
 // Orders is a nested struct in dataworks_public response
 type Orders struct {
-	FlowId         string         `json:"FlowId" xml:"FlowId"`
 	ApplyBaseId    string         `json:"ApplyBaseId" xml:"ApplyBaseId"`
 	ApplyTimestamp int64          `json:"ApplyTimestamp" xml:"ApplyTimestamp"`
+	FlowId         string         `json:"FlowId" xml:"FlowId"`
 	FlowStatus     int            `json:"FlowStatus" xml:"FlowStatus"`
 	ApproveContent ApproveContent `json:"ApproveContent" xml:"ApproveContent"`
 }

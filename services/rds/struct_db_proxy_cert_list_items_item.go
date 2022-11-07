@@ -20,6 +20,6 @@ type DbProxyCertListItemsItem struct {
 	DbInstanceName string `json:"DbInstanceName" xml:"DbInstanceName"`
 	EndpointName   string `json:"EndpointName" xml:"EndpointName"`
 	EndpointType   string `json:"EndpointType" xml:"EndpointType"`
-	CertCommonName string `json:"CertCommonName" xml:"CertCommonName"`
 	SslExpiredTime string `json:"SslExpiredTime" xml:"SslExpiredTime"`
+	CertCommonName string `json:"CertCommonName" xml:"CertCommonName"`
 }

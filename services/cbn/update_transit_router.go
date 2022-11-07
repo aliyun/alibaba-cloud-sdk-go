@@ -80,6 +80,7 @@ type UpdateTransitRouterRequest struct {
 	OwnerId                  requests.Integer `position:"Query" name:"OwnerId"`
 	TransitRouterId          string           `position:"Query" name:"TransitRouterId"`
 	TransitRouterDescription string           `position:"Query" name:"TransitRouterDescription"`
+	SupportMulticast         requests.Boolean `position:"Query" name:"SupportMulticast"`
 }
 
 // UpdateTransitRouterResponse is the response struct for api UpdateTransitRouter
@@ -93,7 +94,7 @@ func CreateUpdateTransitRouterRequest() (request *UpdateTransitRouterRequest) {
 	request = &UpdateTransitRouterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "UpdateTransitRouter", "", "")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "UpdateTransitRouter", "cbn", "openAPI")
 	request.Method = requests.POST
 	return
 }

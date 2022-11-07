@@ -17,7 +17,7 @@ package oos
 
 // Region is a nested struct in oos response
 type Region struct {
-	RegionId       string `json:"RegionId" xml:"RegionId"`
 	RegionEndpoint string `json:"RegionEndpoint" xml:"RegionEndpoint"`
 	LocalName      string `json:"LocalName" xml:"LocalName"`
+	RegionId       string `json:"RegionId" xml:"RegionId"`
 }

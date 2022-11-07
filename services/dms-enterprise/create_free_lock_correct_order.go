@@ -86,6 +86,7 @@ type CreateFreeLockCorrectOrderParam struct {
 	RollbackSqlType        string                                           `name:"RollbackSqlType"`
 	DbItemList             *[]CreateFreeLockCorrectOrderParamDbItemListItem `name:"DbItemList" type:"Repeated"`
 	ExecSQL                string                                           `name:"ExecSQL"`
+	ExecMode               string                                           `name:"ExecMode"`
 	RollbackAttachmentName string                                           `name:"RollbackAttachmentName"`
 	AttachmentName         string                                           `name:"AttachmentName"`
 }

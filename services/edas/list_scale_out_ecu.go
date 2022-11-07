@@ -71,13 +71,13 @@ func (client *Client) ListScaleOutEcuWithCallback(request *ListScaleOutEcuReques
 // ListScaleOutEcuRequest is the request struct for api ListScaleOutEcu
 type ListScaleOutEcuRequest struct {
 	*requests.RoaRequest
-	Mem             requests.Integer `position:"Query" name:"Mem"`
-	LogicalRegionId string           `position:"Query" name:"LogicalRegionId"`
-	AppId           string           `position:"Query" name:"AppId"`
-	GroupId         string           `position:"Query" name:"GroupId"`
-	InstanceNum     requests.Integer `position:"Query" name:"InstanceNum"`
-	Cpu             requests.Integer `position:"Query" name:"Cpu"`
-	ClusterId       string           `position:"Query" name:"ClusterId"`
+	Mem             string `position:"Query" name:"Mem"`
+	LogicalRegionId string `position:"Query" name:"LogicalRegionId"`
+	AppId           string `position:"Query" name:"AppId"`
+	GroupId         string `position:"Query" name:"GroupId"`
+	InstanceNum     string `position:"Query" name:"InstanceNum"`
+	Cpu             string `position:"Query" name:"Cpu"`
+	ClusterId       string `position:"Query" name:"ClusterId"`
 }
 
 // ListScaleOutEcuResponse is the response struct for api ListScaleOutEcu
@@ -94,7 +94,7 @@ func CreateListScaleOutEcuRequest() (request *ListScaleOutEcuRequest) {
 	request = &ListScaleOutEcuRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ListScaleOutEcu", "/pop/v5/resource/scale_out_ecu_list", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ListScaleOutEcu", "/pop/v5/resource/scale_out_ecu_list", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

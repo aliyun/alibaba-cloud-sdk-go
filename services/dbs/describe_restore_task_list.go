@@ -84,15 +84,15 @@ type DescribeRestoreTaskListRequest struct {
 // DescribeRestoreTaskListResponse is the response struct for api DescribeRestoreTaskList
 type DescribeRestoreTaskListResponse struct {
 	*responses.BaseResponse
-	Success        bool                           `json:"Success" xml:"Success"`
-	ErrCode        string                         `json:"ErrCode" xml:"ErrCode"`
-	ErrMessage     string                         `json:"ErrMessage" xml:"ErrMessage"`
 	HttpStatusCode int                            `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	RequestId      string                         `json:"RequestId" xml:"RequestId"`
-	TotalPages     int                            `json:"TotalPages" xml:"TotalPages"`
-	PageSize       int                            `json:"PageSize" xml:"PageSize"`
 	PageNum        int                            `json:"PageNum" xml:"PageNum"`
+	RequestId      string                         `json:"RequestId" xml:"RequestId"`
+	ErrCode        string                         `json:"ErrCode" xml:"ErrCode"`
+	Success        bool                           `json:"Success" xml:"Success"`
+	ErrMessage     string                         `json:"ErrMessage" xml:"ErrMessage"`
+	TotalPages     int                            `json:"TotalPages" xml:"TotalPages"`
 	TotalElements  int                            `json:"TotalElements" xml:"TotalElements"`
+	PageSize       int                            `json:"PageSize" xml:"PageSize"`
 	Items          ItemsInDescribeRestoreTaskList `json:"Items" xml:"Items"`
 }
 
@@ -101,7 +101,7 @@ func CreateDescribeRestoreTaskListRequest() (request *DescribeRestoreTaskListReq
 	request = &DescribeRestoreTaskListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dbs", "2019-03-06", "DescribeRestoreTaskList", "cbs", "openAPI")
+	request.InitWithApiInfo("Dbs", "2019-03-06", "DescribeRestoreTaskList", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -17,9 +17,9 @@ package dcdn
 
 // BillingDataItem is a nested struct in dcdn response
 type BillingDataItem struct {
-	ChargeType string  `json:"ChargeType" xml:"ChargeType"`
-	CdnRegion  string  `json:"CdnRegion" xml:"CdnRegion"`
-	Bandwidth  float64 `json:"Bandwidth" xml:"Bandwidth"`
 	Flow       float64 `json:"Flow" xml:"Flow"`
+	Bandwidth  float64 `json:"Bandwidth" xml:"Bandwidth"`
 	Count      float64 `json:"Count" xml:"Count"`
+	CdnRegion  string  `json:"CdnRegion" xml:"CdnRegion"`
+	ChargeType string  `json:"ChargeType" xml:"ChargeType"`
 }

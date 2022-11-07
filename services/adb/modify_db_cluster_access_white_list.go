@@ -85,9 +85,9 @@ type ModifyDBClusterAccessWhiteListRequest struct {
 // ModifyDBClusterAccessWhiteListResponse is the response struct for api ModifyDBClusterAccessWhiteList
 type ModifyDBClusterAccessWhiteListResponse struct {
 	*responses.BaseResponse
+	TaskId      int    `json:"TaskId" xml:"TaskId"`
 	RequestId   string `json:"RequestId" xml:"RequestId"`
 	DBClusterId string `json:"DBClusterId" xml:"DBClusterId"`
-	TaskId      int    `json:"TaskId" xml:"TaskId"`
 }
 
 // CreateModifyDBClusterAccessWhiteListRequest creates a request to invoke ModifyDBClusterAccessWhiteList API

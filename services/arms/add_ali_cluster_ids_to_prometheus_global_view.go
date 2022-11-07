@@ -88,7 +88,7 @@ func CreateAddAliClusterIdsToPrometheusGlobalViewRequest() (request *AddAliClust
 	request = &AddAliClusterIdsToPrometheusGlobalViewRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "AddAliClusterIdsToPrometheusGlobalView", "", "")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "AddAliClusterIdsToPrometheusGlobalView", "arms", "openAPI")
 	request.Method = requests.POST
 	return
 }

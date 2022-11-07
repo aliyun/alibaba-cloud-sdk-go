@@ -71,26 +71,30 @@ func (client *Client) DescribeCheckWarningSummaryWithCallback(request *DescribeC
 // DescribeCheckWarningSummaryRequest is the request struct for api DescribeCheckWarningSummary
 type DescribeCheckWarningSummaryRequest struct {
 	*requests.RpcRequest
-	RiskName    string           `position:"Query" name:"RiskName"`
-	SourceIp    string           `position:"Query" name:"SourceIp"`
-	PageSize    requests.Integer `position:"Query" name:"PageSize"`
-	Lang        string           `position:"Query" name:"Lang"`
-	CurrentPage requests.Integer `position:"Query" name:"CurrentPage"`
-	RiskStatus  requests.Integer `position:"Query" name:"RiskStatus"`
-	StrategyId  requests.Integer `position:"Query" name:"StrategyId"`
-	TypeName    string           `position:"Query" name:"TypeName"`
-	Status      string           `position:"Query" name:"Status"`
-	Uuids       string           `position:"Query" name:"Uuids"`
+	TargetType          string           `position:"Query" name:"TargetType"`
+	ContainerFieldName  string           `position:"Query" name:"ContainerFieldName"`
+	RiskName            string           `position:"Query" name:"RiskName"`
+	SourceIp            string           `position:"Query" name:"SourceIp"`
+	ContainerFieldValue string           `position:"Query" name:"ContainerFieldValue"`
+	PageSize            requests.Integer `position:"Query" name:"PageSize"`
+	Lang                string           `position:"Query" name:"Lang"`
+	CurrentPage         requests.Integer `position:"Query" name:"CurrentPage"`
+	ClusterId           string           `position:"Query" name:"ClusterId"`
+	RiskStatus          requests.Integer `position:"Query" name:"RiskStatus"`
+	StrategyId          requests.Integer `position:"Query" name:"StrategyId"`
+	TypeName            string           `position:"Query" name:"TypeName"`
+	Status              string           `position:"Query" name:"Status"`
+	Uuids               string           `position:"Query" name:"Uuids"`
 }
 
 // DescribeCheckWarningSummaryResponse is the response struct for api DescribeCheckWarningSummary
 type DescribeCheckWarningSummaryResponse struct {
 	*responses.BaseResponse
-	RequestId       string           `json:"RequestId" xml:"RequestId"`
-	Count           int              `json:"Count" xml:"Count"`
-	PageSize        int              `json:"PageSize" xml:"PageSize"`
-	TotalCount      int              `json:"TotalCount" xml:"TotalCount"`
 	CurrentPage     int              `json:"CurrentPage" xml:"CurrentPage"`
+	PageSize        int              `json:"PageSize" xml:"PageSize"`
+	RequestId       string           `json:"RequestId" xml:"RequestId"`
+	TotalCount      int              `json:"TotalCount" xml:"TotalCount"`
+	Count           int              `json:"Count" xml:"Count"`
 	WarningSummarys []WarningSummary `json:"WarningSummarys" xml:"WarningSummarys"`
 }
 

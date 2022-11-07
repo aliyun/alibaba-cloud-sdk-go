@@ -17,7 +17,7 @@ package oos
 
 // Schema is a nested struct in oos response
 type Schema struct {
-	TypeName   string      `json:"TypeName" xml:"TypeName"`
 	Version    string      `json:"Version" xml:"Version"`
+	TypeName   string      `json:"TypeName" xml:"TypeName"`
 	Attributes []Attribute `json:"Attributes" xml:"Attributes"`
 }

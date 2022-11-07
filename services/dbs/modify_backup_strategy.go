@@ -83,11 +83,11 @@ type ModifyBackupStrategyRequest struct {
 // ModifyBackupStrategyResponse is the response struct for api ModifyBackupStrategy
 type ModifyBackupStrategyResponse struct {
 	*responses.BaseResponse
-	Success        bool   `json:"Success" xml:"Success"`
-	ErrCode        string `json:"ErrCode" xml:"ErrCode"`
-	ErrMessage     string `json:"ErrMessage" xml:"ErrMessage"`
 	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
+	ErrCode        string `json:"ErrCode" xml:"ErrCode"`
+	Success        bool   `json:"Success" xml:"Success"`
+	ErrMessage     string `json:"ErrMessage" xml:"ErrMessage"`
 	BackupPlanId   string `json:"BackupPlanId" xml:"BackupPlanId"`
 	NeedPrecheck   bool   `json:"NeedPrecheck" xml:"NeedPrecheck"`
 }
@@ -97,7 +97,7 @@ func CreateModifyBackupStrategyRequest() (request *ModifyBackupStrategyRequest) 
 	request = &ModifyBackupStrategyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dbs", "2019-03-06", "ModifyBackupStrategy", "cbs", "openAPI")
+	request.InitWithApiInfo("Dbs", "2019-03-06", "ModifyBackupStrategy", "", "")
 	request.Method = requests.POST
 	return
 }

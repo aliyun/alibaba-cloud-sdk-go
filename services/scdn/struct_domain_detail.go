@@ -18,15 +18,15 @@ package scdn
 // DomainDetail is a nested struct in scdn response
 type DomainDetail struct {
 	GmtCreated      string                            `json:"GmtCreated" xml:"GmtCreated"`
-	GmtModified     string                            `json:"GmtModified" xml:"GmtModified"`
-	DomainStatus    string                            `json:"DomainStatus" xml:"DomainStatus"`
-	Cname           string                            `json:"Cname" xml:"Cname"`
-	DomainName      string                            `json:"DomainName" xml:"DomainName"`
+	SSLPub          string                            `json:"SSLPub" xml:"SSLPub"`
 	Description     string                            `json:"Description" xml:"Description"`
 	SSLProtocol     string                            `json:"SSLProtocol" xml:"SSLProtocol"`
-	SSLPub          string                            `json:"SSLPub" xml:"SSLPub"`
-	Scope           string                            `json:"Scope" xml:"Scope"`
-	CertName        string                            `json:"CertName" xml:"CertName"`
 	ResourceGroupId string                            `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	CertName        string                            `json:"CertName" xml:"CertName"`
+	Scope           string                            `json:"Scope" xml:"Scope"`
+	Cname           string                            `json:"Cname" xml:"Cname"`
+	DomainStatus    string                            `json:"DomainStatus" xml:"DomainStatus"`
+	GmtModified     string                            `json:"GmtModified" xml:"GmtModified"`
+	DomainName      string                            `json:"DomainName" xml:"DomainName"`
 	Sources         SourcesInDescribeScdnDomainDetail `json:"Sources" xml:"Sources"`
 }

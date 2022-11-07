@@ -71,17 +71,21 @@ func (client *Client) AddGatewayWithCallback(request *AddGatewayRequest, callbac
 // AddGatewayRequest is the request struct for api AddGateway
 type AddGatewayRequest struct {
 	*requests.RpcRequest
-	InternetSlbSpec         string           `position:"Query" name:"InternetSlbSpec"`
-	Replica                 requests.Integer `position:"Query" name:"Replica"`
-	VSwitchId2              string           `position:"Query" name:"VSwitchId2"`
-	Spec                    string           `position:"Query" name:"Spec"`
-	EnterpriseSecurityGroup requests.Boolean `position:"Query" name:"EnterpriseSecurityGroup"`
-	Vpc                     string           `position:"Query" name:"Vpc"`
-	VSwitchId               string           `position:"Query" name:"VSwitchId"`
-	SlbSpec                 string           `position:"Query" name:"SlbSpec"`
-	Name                    string           `position:"Query" name:"Name"`
-	AcceptLanguage          string           `position:"Query" name:"AcceptLanguage"`
-	Region                  string           `position:"Query" name:"Region"`
+	InternetSlbSpec            string           `position:"Query" name:"InternetSlbSpec"`
+	EnableXtrace               requests.Boolean `position:"Query" name:"EnableXtrace"`
+	XtraceRatio                string           `position:"Query" name:"XtraceRatio"`
+	Replica                    requests.Integer `position:"Query" name:"Replica"`
+	VSwitchId2                 string           `position:"Query" name:"VSwitchId2"`
+	EnableHardwareAcceleration requests.Boolean `position:"Query" name:"EnableHardwareAcceleration"`
+	EnableSls                  requests.Boolean `position:"Query" name:"EnableSls"`
+	Spec                       string           `position:"Query" name:"Spec"`
+	EnterpriseSecurityGroup    requests.Boolean `position:"Query" name:"EnterpriseSecurityGroup"`
+	Vpc                        string           `position:"Query" name:"Vpc"`
+	VSwitchId                  string           `position:"Query" name:"VSwitchId"`
+	SlbSpec                    string           `position:"Query" name:"SlbSpec"`
+	Name                       string           `position:"Query" name:"Name"`
+	AcceptLanguage             string           `position:"Query" name:"AcceptLanguage"`
+	Region                     string           `position:"Query" name:"Region"`
 }
 
 // AddGatewayResponse is the response struct for api AddGateway

@@ -79,8 +79,8 @@ type GetSensitiveDataRequest struct {
 // GetSensitiveDataResponse is the response struct for api GetSensitiveData
 type GetSensitiveDataResponse struct {
 	*responses.BaseResponse
-	RequestId     string                 `json:"RequestId" xml:"RequestId"`
 	SensitiveData map[string]interface{} `json:"SensitiveData" xml:"SensitiveData"`
+	RequestId     string                 `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateGetSensitiveDataRequest creates a request to invoke GetSensitiveData API

@@ -81,8 +81,8 @@ type DescribeDBClusterNetInfoRequest struct {
 // DescribeDBClusterNetInfoResponse is the response struct for api DescribeDBClusterNetInfo
 type DescribeDBClusterNetInfoResponse struct {
 	*responses.BaseResponse
-	RequestId          string                          `json:"RequestId" xml:"RequestId"`
 	ClusterNetworkType string                          `json:"ClusterNetworkType" xml:"ClusterNetworkType"`
+	RequestId          string                          `json:"RequestId" xml:"RequestId"`
 	Items              ItemsInDescribeDBClusterNetInfo `json:"Items" xml:"Items"`
 }
 

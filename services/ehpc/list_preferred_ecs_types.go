@@ -79,8 +79,8 @@ type ListPreferredEcsTypesRequest struct {
 // ListPreferredEcsTypesResponse is the response struct for api ListPreferredEcsTypes
 type ListPreferredEcsTypesResponse struct {
 	*responses.BaseResponse
-	RequestId           string `json:"RequestId" xml:"RequestId"`
 	SupportSpotInstance bool   `json:"SupportSpotInstance" xml:"SupportSpotInstance"`
+	RequestId           string `json:"RequestId" xml:"RequestId"`
 	Series              Series `json:"Series" xml:"Series"`
 }
 

@@ -71,10 +71,9 @@ func (client *Client) SetScdnBotInfoWithCallback(request *SetScdnBotInfoRequest,
 // SetScdnBotInfoRequest is the request struct for api SetScdnBotInfo
 type SetScdnBotInfoRequest struct {
 	*requests.RpcRequest
-	Enable     string           `position:"Query" name:"Enable"`
-	DomainName string           `position:"Query" name:"DomainName"`
-	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
-	Status     string           `position:"Query" name:"Status"`
+	Enable     string `position:"Query" name:"Enable"`
+	DomainName string `position:"Query" name:"DomainName"`
+	Status     string `position:"Query" name:"Status"`
 }
 
 // SetScdnBotInfoResponse is the response struct for api SetScdnBotInfo

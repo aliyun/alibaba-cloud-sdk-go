@@ -88,10 +88,10 @@ type DescribeProcessListRequest struct {
 // DescribeProcessListResponse is the response struct for api DescribeProcessList
 type DescribeProcessListResponse struct {
 	*responses.BaseResponse
-	RequestId  string                     `json:"RequestId" xml:"RequestId"`
 	TotalCount string                     `json:"TotalCount" xml:"TotalCount"`
-	PageNumber string                     `json:"PageNumber" xml:"PageNumber"`
 	PageSize   string                     `json:"PageSize" xml:"PageSize"`
+	RequestId  string                     `json:"RequestId" xml:"RequestId"`
+	PageNumber string                     `json:"PageNumber" xml:"PageNumber"`
 	Items      ItemsInDescribeProcessList `json:"Items" xml:"Items"`
 }
 

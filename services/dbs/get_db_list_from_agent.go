@@ -81,11 +81,11 @@ type GetDBListFromAgentRequest struct {
 // GetDBListFromAgentResponse is the response struct for api GetDBListFromAgent
 type GetDBListFromAgentResponse struct {
 	*responses.BaseResponse
-	Success        bool   `json:"Success" xml:"Success"`
-	ErrCode        string `json:"ErrCode" xml:"ErrCode"`
-	ErrMessage     string `json:"ErrMessage" xml:"ErrMessage"`
 	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
+	ErrCode        string `json:"ErrCode" xml:"ErrCode"`
+	Success        bool   `json:"Success" xml:"Success"`
+	ErrMessage     string `json:"ErrMessage" xml:"ErrMessage"`
 	DbList         DbList `json:"DbList" xml:"DbList"`
 }
 
@@ -94,7 +94,7 @@ func CreateGetDBListFromAgentRequest() (request *GetDBListFromAgentRequest) {
 	request = &GetDBListFromAgentRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dbs", "2019-03-06", "GetDBListFromAgent", "cbs", "openAPI")
+	request.InitWithApiInfo("Dbs", "2019-03-06", "GetDBListFromAgent", "", "")
 	request.Method = requests.POST
 	return
 }

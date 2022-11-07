@@ -19,6 +19,7 @@ package ens
 type Network struct {
 	NetworkName   string                       `json:"NetworkName" xml:"NetworkName"`
 	CreatedTime   string                       `json:"CreatedTime" xml:"CreatedTime"`
+	NetworkAclId  string                       `json:"NetworkAclId" xml:"NetworkAclId"`
 	EnsRegionId   string                       `json:"EnsRegionId" xml:"EnsRegionId"`
 	NetworkId     string                       `json:"NetworkId" xml:"NetworkId"`
 	Status        string                       `json:"Status" xml:"Status"`

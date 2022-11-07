@@ -58,6 +58,11 @@ type ScalingGroup struct {
 	SystemSuspended                     bool                    `json:"SystemSuspended" xml:"SystemSuspended"`
 	IsElasticStrengthInAlarm            bool                    `json:"IsElasticStrengthInAlarm" xml:"IsElasticStrengthInAlarm"`
 	MonitorGroupId                      string                  `json:"MonitorGroupId" xml:"MonitorGroupId"`
+	AzBalance                           bool                    `json:"AzBalance" xml:"AzBalance"`
+	AllocationStrategy                  string                  `json:"AllocationStrategy" xml:"AllocationStrategy"`
+	SpotAllocationStrategy              string                  `json:"SpotAllocationStrategy" xml:"SpotAllocationStrategy"`
+	MaxInstanceLifetime                 int                     `json:"MaxInstanceLifetime" xml:"MaxInstanceLifetime"`
+	CustomPolicyARN                     string                  `json:"CustomPolicyARN" xml:"CustomPolicyARN"`
 	RemovalPolicies                     RemovalPolicies         `json:"RemovalPolicies" xml:"RemovalPolicies"`
 	DBInstanceIds                       DBInstanceIds           `json:"DBInstanceIds" xml:"DBInstanceIds"`
 	LoadBalancerIds                     LoadBalancerIds         `json:"LoadBalancerIds" xml:"LoadBalancerIds"`

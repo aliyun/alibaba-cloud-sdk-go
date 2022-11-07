@@ -80,8 +80,8 @@ type CreateGWSClusterRequest struct {
 // CreateGWSClusterResponse is the response struct for api CreateGWSCluster
 type CreateGWSClusterResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	ClusterId string `json:"ClusterId" xml:"ClusterId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCreateGWSClusterRequest creates a request to invoke CreateGWSCluster API

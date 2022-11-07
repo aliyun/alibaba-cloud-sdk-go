@@ -17,14 +17,14 @@ package cdn
 
 // UsageByDay is a nested struct in cdn response
 type UsageByDay struct {
-	TimeStamp      string `json:"TimeStamp" xml:"TimeStamp"`
+	MaxSrcBpsTime  string `json:"MaxSrcBpsTime" xml:"MaxSrcBpsTime"`
 	Qps            string `json:"Qps" xml:"Qps"`
-	BytesHitRate   string `json:"BytesHitRate" xml:"BytesHitRate"`
 	RequestHitRate string `json:"RequestHitRate" xml:"RequestHitRate"`
 	MaxBps         string `json:"MaxBps" xml:"MaxBps"`
-	MaxBpsTime     string `json:"MaxBpsTime" xml:"MaxBpsTime"`
-	MaxSrcBps      string `json:"MaxSrcBps" xml:"MaxSrcBps"`
-	MaxSrcBpsTime  string `json:"MaxSrcBpsTime" xml:"MaxSrcBpsTime"`
 	TotalAccess    string `json:"TotalAccess" xml:"TotalAccess"`
+	TimeStamp      string `json:"TimeStamp" xml:"TimeStamp"`
+	BytesHitRate   string `json:"BytesHitRate" xml:"BytesHitRate"`
 	TotalTraffic   string `json:"TotalTraffic" xml:"TotalTraffic"`
+	MaxSrcBps      string `json:"MaxSrcBps" xml:"MaxSrcBps"`
+	MaxBpsTime     string `json:"MaxBpsTime" xml:"MaxBpsTime"`
 }

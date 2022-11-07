@@ -75,6 +75,7 @@ type DescribeBackupsRequest struct {
 	StartTime            string           `position:"Query" name:"StartTime"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	BackupRegion         string           `position:"Query" name:"BackupRegion"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	DBClusterId          string           `position:"Query" name:"DBClusterId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
@@ -100,7 +101,7 @@ func CreateDescribeBackupsRequest() (request *DescribeBackupsRequest) {
 	request = &DescribeBackupsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeBackups", "", "")
+	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeBackups", "polardb", "openAPI")
 	request.Method = requests.POST
 	return
 }

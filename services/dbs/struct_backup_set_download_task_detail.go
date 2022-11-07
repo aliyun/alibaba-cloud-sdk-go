@@ -17,23 +17,23 @@ package dbs
 
 // BackupSetDownloadTaskDetail is a nested struct in dbs response
 type BackupSetDownloadTaskDetail struct {
+	BackupSetDownloadStatus      string `json:"BackupSetDownloadStatus" xml:"BackupSetDownloadStatus"`
+	BackupSetDataSize            int64  `json:"BackupSetDataSize" xml:"BackupSetDataSize"`
+	BackupSetDownloadTargetType  string `json:"BackupSetDownloadTargetType" xml:"BackupSetDownloadTargetType"`
+	BackupSetDownloadDir         string `json:"BackupSetDownloadDir" xml:"BackupSetDownloadDir"`
+	ErrMessage                   string `json:"ErrMessage" xml:"ErrMessage"`
+	BackupSetDownloadCreateTime  int64  `json:"BackupSetDownloadCreateTime" xml:"BackupSetDownloadCreateTime"`
 	BackupPlanId                 string `json:"BackupPlanId" xml:"BackupPlanId"`
+	BackupSetDbType              string `json:"BackupSetDbType" xml:"BackupSetDbType"`
+	BackupSetDownloadInternetUrl string `json:"BackupSetDownloadInternetUrl" xml:"BackupSetDownloadInternetUrl"`
+	BackupSetId                  string `json:"BackupSetId" xml:"BackupSetId"`
+	BackupSetDownloadIntranetUrl string `json:"BackupSetDownloadIntranetUrl" xml:"BackupSetDownloadIntranetUrl"`
+	BackupGatewayId              int64  `json:"BackupGatewayId" xml:"BackupGatewayId"`
+	BackupSetDownloadWay         string `json:"BackupSetDownloadWay" xml:"BackupSetDownloadWay"`
+	BackupSetDownloadFinishTime  int64  `json:"BackupSetDownloadFinishTime" xml:"BackupSetDownloadFinishTime"`
+	BackupSetJobType             string `json:"BackupSetJobType" xml:"BackupSetJobType"`
 	BackupSetDownloadTaskId      string `json:"BackupSetDownloadTaskId" xml:"BackupSetDownloadTaskId"`
 	BackupSetDownloadTaskName    string `json:"BackupSetDownloadTaskName" xml:"BackupSetDownloadTaskName"`
-	BackupSetDownloadStatus      string `json:"BackupSetDownloadStatus" xml:"BackupSetDownloadStatus"`
-	BackupSetDownloadCreateTime  int64  `json:"BackupSetDownloadCreateTime" xml:"BackupSetDownloadCreateTime"`
-	BackupSetDownloadFinishTime  int64  `json:"BackupSetDownloadFinishTime" xml:"BackupSetDownloadFinishTime"`
-	BackupSetId                  string `json:"BackupSetId" xml:"BackupSetId"`
-	BackupSetCode                string `json:"BackupSetCode" xml:"BackupSetCode"`
-	BackupSetJobType             string `json:"BackupSetJobType" xml:"BackupSetJobType"`
-	BackupSetDataSize            int64  `json:"BackupSetDataSize" xml:"BackupSetDataSize"`
 	BackupSetDataFormat          string `json:"BackupSetDataFormat" xml:"BackupSetDataFormat"`
-	BackupSetDbType              string `json:"BackupSetDbType" xml:"BackupSetDbType"`
-	BackupSetDownloadWay         string `json:"BackupSetDownloadWay" xml:"BackupSetDownloadWay"`
-	BackupSetDownloadDir         string `json:"BackupSetDownloadDir" xml:"BackupSetDownloadDir"`
-	BackupSetDownloadTargetType  string `json:"BackupSetDownloadTargetType" xml:"BackupSetDownloadTargetType"`
-	BackupGatewayId              int64  `json:"BackupGatewayId" xml:"BackupGatewayId"`
-	BackupSetDownloadIntranetUrl string `json:"BackupSetDownloadIntranetUrl" xml:"BackupSetDownloadIntranetUrl"`
-	BackupSetDownloadInternetUrl string `json:"BackupSetDownloadInternetUrl" xml:"BackupSetDownloadInternetUrl"`
-	ErrMessage                   string `json:"ErrMessage" xml:"ErrMessage"`
+	BackupSetCode                string `json:"BackupSetCode" xml:"BackupSetCode"`
 }

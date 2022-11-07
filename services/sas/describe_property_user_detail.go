@@ -71,13 +71,16 @@ func (client *Client) DescribePropertyUserDetailWithCallback(request *DescribePr
 // DescribePropertyUserDetailRequest is the request struct for api DescribePropertyUserDetail
 type DescribePropertyUserDetailRequest struct {
 	*requests.RpcRequest
-	Remark      string           `position:"Query" name:"Remark"`
-	Uuid        string           `position:"Query" name:"Uuid"`
-	SourceIp    string           `position:"Query" name:"SourceIp"`
-	PageSize    requests.Integer `position:"Query" name:"PageSize"`
-	CurrentPage requests.Integer `position:"Query" name:"CurrentPage"`
-	IsRoot      string           `position:"Query" name:"IsRoot"`
-	User        string           `position:"Query" name:"User"`
+	Remark             string           `position:"Query" name:"Remark"`
+	Uuid               string           `position:"Query" name:"Uuid"`
+	SourceIp           string           `position:"Query" name:"SourceIp"`
+	PageSize           requests.Integer `position:"Query" name:"PageSize"`
+	LastLoginTimeStart requests.Integer `position:"Query" name:"LastLoginTimeStart"`
+	CurrentPage        requests.Integer `position:"Query" name:"CurrentPage"`
+	LastLoginTimeEnd   requests.Integer `position:"Query" name:"LastLoginTimeEnd"`
+	Extend             string           `position:"Query" name:"Extend"`
+	IsRoot             string           `position:"Query" name:"IsRoot"`
+	User               string           `position:"Query" name:"User"`
 }
 
 // DescribePropertyUserDetailResponse is the response struct for api DescribePropertyUserDetail

@@ -83,10 +83,10 @@ type ReEncryptRequest struct {
 // ReEncryptResponse is the response struct for api ReEncrypt
 type ReEncryptResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
 	KeyId          string `json:"KeyId" xml:"KeyId"`
 	KeyVersionId   string `json:"KeyVersionId" xml:"KeyVersionId"`
 	CiphertextBlob string `json:"CiphertextBlob" xml:"CiphertextBlob"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateReEncryptRequest creates a request to invoke ReEncrypt API

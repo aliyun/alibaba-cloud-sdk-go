@@ -17,17 +17,17 @@ package ocr
 
 // DataInRecognizeUkraineIdentityCard is a nested struct in ocr response
 type DataInRecognizeUkraineIdentityCard struct {
-	BirthDate      BirthDate      `json:"BirthDate" xml:"BirthDate"`
-	CardBox        CardBox        `json:"CardBox" xml:"CardBox"`
-	DocumentNumber DocumentNumber `json:"DocumentNumber" xml:"DocumentNumber"`
-	ExpiryDate     ExpiryDate     `json:"ExpiryDate" xml:"ExpiryDate"`
-	NameEnglish    NameEnglish    `json:"NameEnglish" xml:"NameEnglish"`
-	NameUkraine    NameUkraine    `json:"NameUkraine" xml:"NameUkraine"`
-	Nationality    Nationality    `json:"Nationality" xml:"Nationality"`
-	Patronymic     Patronymic     `json:"Patronymic" xml:"Patronymic"`
-	PortraitBox    PortraitBox    `json:"PortraitBox" xml:"PortraitBox"`
-	RecordNumber   RecordNumber   `json:"RecordNumber" xml:"RecordNumber"`
-	Sex            Sex            `json:"Sex" xml:"Sex"`
-	SurnameEnglish SurnameEnglish `json:"SurnameEnglish" xml:"SurnameEnglish"`
-	SurnameUkraine SurnameUkraine `json:"SurnameUkraine" xml:"SurnameUkraine"`
+	BirthDate      BirthDateInRecognizeUkraineIdentityCard   `json:"BirthDate" xml:"BirthDate"`
+	CardBox        CardBoxInRecognizeUkraineIdentityCard     `json:"CardBox" xml:"CardBox"`
+	DocumentNumber DocumentNumber                            `json:"DocumentNumber" xml:"DocumentNumber"`
+	ExpiryDate     ExpiryDateInRecognizeUkraineIdentityCard  `json:"ExpiryDate" xml:"ExpiryDate"`
+	NameEnglish    NameEnglish                               `json:"NameEnglish" xml:"NameEnglish"`
+	NameUkraine    NameUkraine                               `json:"NameUkraine" xml:"NameUkraine"`
+	Nationality    NationalityInRecognizeUkraineIdentityCard `json:"Nationality" xml:"Nationality"`
+	Patronymic     Patronymic                                `json:"Patronymic" xml:"Patronymic"`
+	PortraitBox    PortraitBoxInRecognizeUkraineIdentityCard `json:"PortraitBox" xml:"PortraitBox"`
+	RecordNumber   RecordNumber                              `json:"RecordNumber" xml:"RecordNumber"`
+	Sex            SexInRecognizeUkraineIdentityCard         `json:"Sex" xml:"Sex"`
+	SurnameEnglish SurnameEnglish                            `json:"SurnameEnglish" xml:"SurnameEnglish"`
+	SurnameUkraine SurnameUkraine                            `json:"SurnameUkraine" xml:"SurnameUkraine"`
 }

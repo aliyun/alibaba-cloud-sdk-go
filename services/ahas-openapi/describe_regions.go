@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeRegions invokes the ahas_openapi.DescribeRegions API synchronously
-// api document: https://help.aliyun.com/api/ahas-openapi/describeregions.html
 func (client *Client) DescribeRegions(request *DescribeRegionsRequest) (response *DescribeRegionsResponse, err error) {
 	response = CreateDescribeRegionsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeRegions(request *DescribeRegionsRequest) (response
 }
 
 // DescribeRegionsWithChan invokes the ahas_openapi.DescribeRegions API asynchronously
-// api document: https://help.aliyun.com/api/ahas-openapi/describeregions.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRegionsWithChan(request *DescribeRegionsRequest) (<-chan *DescribeRegionsResponse, <-chan error) {
 	responseChan := make(chan *DescribeRegionsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeRegionsWithChan(request *DescribeRegionsRequest) (
 }
 
 // DescribeRegionsWithCallback invokes the ahas_openapi.DescribeRegions API asynchronously
-// api document: https://help.aliyun.com/api/ahas-openapi/describeregions.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRegionsWithCallback(request *DescribeRegionsRequest, callback func(response *DescribeRegionsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,10 +77,10 @@ type DescribeRegionsRequest struct {
 // DescribeRegionsResponse is the response struct for api DescribeRegions
 type DescribeRegionsResponse struct {
 	*responses.BaseResponse
+	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      string `json:"Code" xml:"Code"`
 	Success   bool   `json:"Success" xml:"Success"`
-	Message   string `json:"Message" xml:"Message"`
 	Regions   []Data `json:"Regions" xml:"Regions"`
 }
 
@@ -95,6 +90,7 @@ func CreateDescribeRegionsRequest() (request *DescribeRegionsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("ahas-openapi", "2019-09-01", "DescribeRegions", "ahas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -72,10 +72,10 @@ func (client *Client) SetDcdnUserConfigWithCallback(request *SetDcdnUserConfigRe
 type SetDcdnUserConfigRequest struct {
 	*requests.RpcRequest
 	Configs       string           `position:"Query" name:"Configs"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	OwnerAccount  string           `position:"Query" name:"OwnerAccount"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	FunctionId    requests.Integer `position:"Query" name:"FunctionId"`
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 // SetDcdnUserConfigResponse is the response struct for api SetDcdnUserConfig

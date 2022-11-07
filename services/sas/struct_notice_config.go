@@ -18,8 +18,8 @@ package sas
 // NoticeConfig is a nested struct in sas response
 type NoticeConfig struct {
 	TimeLimit   int    `json:"TimeLimit" xml:"TimeLimit"`
-	Route       int    `json:"Route" xml:"Route"`
-	Project     string `json:"Project" xml:"Project"`
 	AliUid      int64  `json:"AliUid" xml:"AliUid"`
 	CurrentPage int    `json:"CurrentPage" xml:"CurrentPage"`
+	Project     string `json:"Project" xml:"Project"`
+	Route       int    `json:"Route" xml:"Route"`
 }

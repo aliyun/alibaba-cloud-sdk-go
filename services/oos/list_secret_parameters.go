@@ -71,22 +71,23 @@ func (client *Client) ListSecretParametersWithCallback(request *ListSecretParame
 // ListSecretParametersRequest is the request struct for api ListSecretParameters
 type ListSecretParametersRequest struct {
 	*requests.RpcRequest
-	Recursive  requests.Boolean `position:"Query" name:"Recursive"`
-	Tags       string           `position:"Query" name:"Tags"`
-	Path       string           `position:"Query" name:"Path"`
-	NextToken  string           `position:"Query" name:"NextToken"`
-	Name       string           `position:"Query" name:"Name"`
-	MaxResults requests.Integer `position:"Query" name:"MaxResults"`
-	SortOrder  string           `position:"Query" name:"SortOrder"`
-	SortField  string           `position:"Query" name:"SortField"`
+	Recursive       requests.Boolean `position:"Query" name:"Recursive"`
+	Path            string           `position:"Query" name:"Path"`
+	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
+	NextToken       string           `position:"Query" name:"NextToken"`
+	SortOrder       string           `position:"Query" name:"SortOrder"`
+	Tags            string           `position:"Query" name:"Tags"`
+	Name            string           `position:"Query" name:"Name"`
+	MaxResults      requests.Integer `position:"Query" name:"MaxResults"`
+	SortField       string           `position:"Query" name:"SortField"`
 }
 
 // ListSecretParametersResponse is the response struct for api ListSecretParameters
 type ListSecretParametersResponse struct {
 	*responses.BaseResponse
+	NextToken  string                            `json:"NextToken" xml:"NextToken"`
 	RequestId  string                            `json:"RequestId" xml:"RequestId"`
 	MaxResults int                               `json:"MaxResults" xml:"MaxResults"`
-	NextToken  string                            `json:"NextToken" xml:"NextToken"`
 	Parameters []ParameterInListSecretParameters `json:"Parameters" xml:"Parameters"`
 }
 
@@ -95,7 +96,7 @@ func CreateListSecretParametersRequest() (request *ListSecretParametersRequest) 
 	request = &ListSecretParametersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("oos", "2019-06-01", "ListSecretParameters", "", "")
+	request.InitWithApiInfo("oos", "2019-06-01", "ListSecretParameters", "oos", "openAPI")
 	request.Method = requests.POST
 	return
 }

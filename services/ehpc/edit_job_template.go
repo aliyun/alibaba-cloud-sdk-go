@@ -75,6 +75,7 @@ type EditJobTemplateRequest struct {
 	ClockTime          string           `position:"Query" name:"ClockTime"`
 	CommandLine        string           `position:"Query" name:"CommandLine"`
 	ArrayRequest       string           `position:"Query" name:"ArrayRequest"`
+	UnzipCmd           string           `position:"Query" name:"UnzipCmd"`
 	PackagePath        string           `position:"Query" name:"PackagePath"`
 	Mem                string           `position:"Query" name:"Mem"`
 	StdoutRedirectPath string           `position:"Query" name:"StdoutRedirectPath"`
@@ -85,8 +86,10 @@ type EditJobTemplateRequest struct {
 	TemplateId         string           `position:"Query" name:"TemplateId"`
 	Priority           requests.Integer `position:"Query" name:"Priority"`
 	Gpu                requests.Integer `position:"Query" name:"Gpu"`
+	WithUnzipCmd       requests.Boolean `position:"Query" name:"WithUnzipCmd"`
 	Node               requests.Integer `position:"Query" name:"Node"`
 	Task               requests.Integer `position:"Query" name:"Task"`
+	InputFileUrl       string           `position:"Query" name:"InputFileUrl"`
 	Name               string           `position:"Query" name:"Name"`
 	Queue              string           `position:"Query" name:"Queue"`
 }
@@ -94,8 +97,8 @@ type EditJobTemplateRequest struct {
 // EditJobTemplateResponse is the response struct for api EditJobTemplate
 type EditJobTemplateResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
 	TemplateId string `json:"TemplateId" xml:"TemplateId"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateEditJobTemplateRequest creates a request to invoke EditJobTemplate API

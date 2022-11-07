@@ -17,9 +17,9 @@ package alikafka
 
 // OffsetTableItem is a nested struct in alikafka response
 type OffsetTableItem struct {
-	MinOffset           int64  `json:"MinOffset" xml:"MinOffset"`
-	MaxOffset           int64  `json:"MaxOffset" xml:"MaxOffset"`
-	LastUpdateTimestamp int64  `json:"LastUpdateTimestamp" xml:"LastUpdateTimestamp"`
-	Topic               string `json:"Topic" xml:"Topic"`
 	Partition           int    `json:"Partition" xml:"Partition"`
+	MinOffset           int64  `json:"MinOffset" xml:"MinOffset"`
+	LastUpdateTimestamp int64  `json:"LastUpdateTimestamp" xml:"LastUpdateTimestamp"`
+	MaxOffset           int64  `json:"MaxOffset" xml:"MaxOffset"`
+	Topic               string `json:"Topic" xml:"Topic"`
 }

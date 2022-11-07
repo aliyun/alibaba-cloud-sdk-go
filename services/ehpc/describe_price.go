@@ -79,23 +79,33 @@ type DescribePriceRequest struct {
 
 // DescribePriceCommodities is a repeated param struct in DescribePriceRequest
 type DescribePriceCommodities struct {
-	Amount                     string `name:"Amount"`
-	Period                     string `name:"Period"`
-	NodeType                   string `name:"NodeType"`
-	SystemDiskCategory         string `name:"SystemDiskCategory"`
-	InternetChargeType         string `name:"InternetChargeType"`
-	SystemDiskPerformanceLevel string `name:"SystemDiskPerformanceLevel"`
-	SystemDiskSize             string `name:"SystemDiskSize"`
-	InternetMaxBandWidthOut    string `name:"InternetMaxBandWidthOut"`
-	InstanceType               string `name:"InstanceType"`
-	NetworkType                string `name:"NetworkType"`
+	Amount                     string                               `name:"Amount"`
+	Period                     string                               `name:"Period"`
+	NodeType                   string                               `name:"NodeType"`
+	DataDisks                  *[]DescribePriceCommoditiesDataDisks `name:"DataDisks" type:"Repeated"`
+	SystemDiskCategory         string                               `name:"SystemDiskCategory"`
+	InternetChargeType         string                               `name:"InternetChargeType"`
+	SystemDiskPerformanceLevel string                               `name:"SystemDiskPerformanceLevel"`
+	SystemDiskSize             string                               `name:"SystemDiskSize"`
+	InternetMaxBandWidthOut    string                               `name:"InternetMaxBandWidthOut"`
+	InstanceType               string                               `name:"InstanceType"`
+	NetworkType                string                               `name:"NetworkType"`
+}
+
+// DescribePriceCommoditiesDataDisks is a repeated param struct in DescribePriceRequest
+type DescribePriceCommoditiesDataDisks struct {
+	Size               string `name:"size"`
+	Encrypted          string `name:"encrypted"`
+	PerformanceLevel   string `name:"performanceLevel"`
+	Category           string `name:"category"`
+	DeleteWithInstance string `name:"deleteWithInstance"`
 }
 
 // DescribePriceResponse is the response struct for api DescribePrice
 type DescribePriceResponse struct {
 	*responses.BaseResponse
-	RequestId       string  `json:"RequestId" xml:"RequestId"`
 	TotalTradePrice float64 `json:"TotalTradePrice" xml:"TotalTradePrice"`
+	RequestId       string  `json:"RequestId" xml:"RequestId"`
 	Prices          Prices  `json:"Prices" xml:"Prices"`
 }
 

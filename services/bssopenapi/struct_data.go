@@ -21,6 +21,7 @@ type Data struct {
 	MaxResults                  int                                                     `json:"MaxResults" xml:"MaxResults"`
 	CreditLimitStatus           string                                                  `json:"CreditLimitStatus" xml:"CreditLimitStatus"`
 	Type                        string                                                  `json:"Type" xml:"Type"`
+	ReleaseResult               bool                                                    `json:"ReleaseResult" xml:"ReleaseResult"`
 	Id                          int64                                                   `json:"Id" xml:"Id"`
 	Quantity                    int                                                     `json:"Quantity" xml:"Quantity"`
 	MemberNickName              string                                                  `json:"MemberNickName" xml:"MemberNickName"`

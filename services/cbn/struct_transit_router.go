@@ -17,14 +17,16 @@ package cbn
 
 // TransitRouter is a nested struct in cbn response
 type TransitRouter struct {
-	CreationTime             string `json:"CreationTime" xml:"CreationTime"`
-	Type                     string `json:"Type" xml:"Type"`
-	Status                   string `json:"Status" xml:"Status"`
-	TransitRouterId          string `json:"TransitRouterId" xml:"TransitRouterId"`
-	TransitRouterDescription string `json:"TransitRouterDescription" xml:"TransitRouterDescription"`
-	TransitRouterName        string `json:"TransitRouterName" xml:"TransitRouterName"`
-	CenId                    string `json:"CenId" xml:"CenId"`
-	AliUid                   int64  `json:"AliUid" xml:"AliUid"`
-	RegionId                 string `json:"RegionId" xml:"RegionId"`
-	ServiceMode              string `json:"ServiceMode" xml:"ServiceMode"`
+	CreationTime             string                      `json:"CreationTime" xml:"CreationTime"`
+	Type                     string                      `json:"Type" xml:"Type"`
+	Status                   string                      `json:"Status" xml:"Status"`
+	TransitRouterId          string                      `json:"TransitRouterId" xml:"TransitRouterId"`
+	TransitRouterDescription string                      `json:"TransitRouterDescription" xml:"TransitRouterDescription"`
+	TransitRouterName        string                      `json:"TransitRouterName" xml:"TransitRouterName"`
+	CenId                    string                      `json:"CenId" xml:"CenId"`
+	AliUid                   int64                       `json:"AliUid" xml:"AliUid"`
+	RegionId                 string                      `json:"RegionId" xml:"RegionId"`
+	ServiceMode              string                      `json:"ServiceMode" xml:"ServiceMode"`
+	SupportMulticast         bool                        `json:"SupportMulticast" xml:"SupportMulticast"`
+	TransitRouterCidrList    []TransitRouterCidrListItem `json:"TransitRouterCidrList" xml:"TransitRouterCidrList"`
 }

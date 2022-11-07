@@ -72,6 +72,7 @@ func (client *Client) CreateGlobalDatabaseNetworkWithCallback(request *CreateGlo
 type CreateGlobalDatabaseNetworkRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	GDNDescription       string           `position:"Query" name:"GDNDescription"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
@@ -92,7 +93,7 @@ func CreateCreateGlobalDatabaseNetworkRequest() (request *CreateGlobalDatabaseNe
 	request = &CreateGlobalDatabaseNetworkRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "CreateGlobalDatabaseNetwork", "", "")
+	request.InitWithApiInfo("polardb", "2017-08-01", "CreateGlobalDatabaseNetwork", "polardb", "openAPI")
 	request.Method = requests.POST
 	return
 }

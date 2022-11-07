@@ -78,11 +78,11 @@ type DescribeDomainRealtimeLogDeliveryRequest struct {
 // DescribeDomainRealtimeLogDeliveryResponse is the response struct for api DescribeDomainRealtimeLogDelivery
 type DescribeDomainRealtimeLogDeliveryResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Project   string `json:"Project" xml:"Project"`
-	Region    string `json:"Region" xml:"Region"`
-	Logstore  string `json:"Logstore" xml:"Logstore"`
 	Status    string `json:"Status" xml:"Status"`
+	Logstore  string `json:"Logstore" xml:"Logstore"`
+	Project   string `json:"Project" xml:"Project"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Region    string `json:"Region" xml:"Region"`
 }
 
 // CreateDescribeDomainRealtimeLogDeliveryRequest creates a request to invoke DescribeDomainRealtimeLogDelivery API

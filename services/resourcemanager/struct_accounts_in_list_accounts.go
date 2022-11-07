@@ -17,5 +17,5 @@ package resourcemanager
 
 // AccountsInListAccounts is a nested struct in resourcemanager response
 type AccountsInListAccounts struct {
-	Account []Account `json:"Account" xml:"Account"`
+	Account []AccountInListAccounts `json:"Account" xml:"Account"`
 }

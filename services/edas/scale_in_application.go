@@ -71,9 +71,9 @@ func (client *Client) ScaleInApplicationWithCallback(request *ScaleInApplication
 // ScaleInApplicationRequest is the request struct for api ScaleInApplication
 type ScaleInApplicationRequest struct {
 	*requests.RoaRequest
-	ForceStatus requests.Boolean `position:"Query" name:"ForceStatus"`
-	AppId       string           `position:"Query" name:"AppId"`
-	EccInfo     string           `position:"Query" name:"EccInfo"`
+	ForceStatus string `position:"Query" name:"ForceStatus"`
+	AppId       string `position:"Query" name:"AppId"`
+	EccInfo     string `position:"Query" name:"EccInfo"`
 }
 
 // ScaleInApplicationResponse is the response struct for api ScaleInApplication
@@ -89,7 +89,7 @@ func CreateScaleInApplicationRequest() (request *ScaleInApplicationRequest) {
 	request = &ScaleInApplicationRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ScaleInApplication", "/pop/v5/changeorder/co_scale_in", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ScaleInApplication", "/pop/v5/changeorder/co_scale_in", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

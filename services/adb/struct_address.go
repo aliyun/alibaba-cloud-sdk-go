@@ -17,10 +17,11 @@ package adb
 
 // Address is a nested struct in adb response
 type Address struct {
-	ConnectionString string `json:"ConnectionString" xml:"ConnectionString"`
-	IPAddress        string `json:"IPAddress" xml:"IPAddress"`
-	NetType          string `json:"NetType" xml:"NetType"`
-	Port             string `json:"Port" xml:"Port"`
-	VPCId            string `json:"VPCId" xml:"VPCId"`
-	VSwitchId        string `json:"VSwitchId" xml:"VSwitchId"`
+	VSwitchId              string `json:"VSwitchId" xml:"VSwitchId"`
+	ConnectionString       string `json:"ConnectionString" xml:"ConnectionString"`
+	NetType                string `json:"NetType" xml:"NetType"`
+	Port                   string `json:"Port" xml:"Port"`
+	VPCId                  string `json:"VPCId" xml:"VPCId"`
+	IPAddress              string `json:"IPAddress" xml:"IPAddress"`
+	ConnectionStringPrefix string `json:"ConnectionStringPrefix" xml:"ConnectionStringPrefix"`
 }

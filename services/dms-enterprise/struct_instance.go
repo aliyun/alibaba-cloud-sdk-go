@@ -18,6 +18,7 @@ package dms_enterprise
 // Instance is a nested struct in dms_enterprise response
 type Instance struct {
 	DatabasePassword string                     `json:"DatabasePassword" xml:"DatabasePassword"`
+	SellSitd         string                     `json:"SellSitd" xml:"SellSitd"`
 	DbaNickName      string                     `json:"DbaNickName" xml:"DbaNickName"`
 	InstanceType     string                     `json:"InstanceType" xml:"InstanceType"`
 	DbaId            string                     `json:"DbaId" xml:"DbaId"`

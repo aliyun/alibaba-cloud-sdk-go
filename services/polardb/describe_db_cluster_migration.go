@@ -91,6 +91,8 @@ type DescribeDBClusterMigrationResponse struct {
 	DBClusterReadWriteMode string              `json:"DBClusterReadWriteMode" xml:"DBClusterReadWriteMode"`
 	DelayedSeconds         int                 `json:"DelayedSeconds" xml:"DelayedSeconds"`
 	MigrationStatus        string              `json:"MigrationStatus" xml:"MigrationStatus"`
+	DtsInstanceId          string              `json:"DtsInstanceId" xml:"DtsInstanceId"`
+	SrcDbType              string              `json:"SrcDbType" xml:"SrcDbType"`
 	DBClusterEndpointList  []DBClusterEndpoint `json:"DBClusterEndpointList" xml:"DBClusterEndpointList"`
 	RdsEndpointList        []RdsEndpoint       `json:"RdsEndpointList" xml:"RdsEndpointList"`
 }
@@ -100,7 +102,7 @@ func CreateDescribeDBClusterMigrationRequest() (request *DescribeDBClusterMigrat
 	request = &DescribeDBClusterMigrationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeDBClusterMigration", "", "")
+	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeDBClusterMigration", "polardb", "openAPI")
 	request.Method = requests.POST
 	return
 }

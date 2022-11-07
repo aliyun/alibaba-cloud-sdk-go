@@ -17,16 +17,16 @@ package rds
 
 // EventItemsItem is a nested struct in rds response
 type EventItemsItem struct {
-	EventId         int    `json:"EventId" xml:"EventId"`
-	EventType       string `json:"EventType" xml:"EventType"`
 	EventName       string `json:"EventName" xml:"EventName"`
 	EventTime       string `json:"EventTime" xml:"EventTime"`
-	ResourceType    string `json:"ResourceType" xml:"ResourceType"`
-	ResourceName    string `json:"ResourceName" xml:"ResourceName"`
-	RegionId        string `json:"RegionId" xml:"RegionId"`
 	EventUserType   string `json:"EventUserType" xml:"EventUserType"`
-	EventReason     string `json:"EventReason" xml:"EventReason"`
-	EventPayload    string `json:"EventPayload" xml:"EventPayload"`
 	EventRecordTime string `json:"EventRecordTime" xml:"EventRecordTime"`
 	CallerUid       int64  `json:"CallerUid" xml:"CallerUid"`
+	RegionId        string `json:"RegionId" xml:"RegionId"`
+	EventId         int    `json:"EventId" xml:"EventId"`
+	EventType       string `json:"EventType" xml:"EventType"`
+	ResourceType    string `json:"ResourceType" xml:"ResourceType"`
+	EventPayload    string `json:"EventPayload" xml:"EventPayload"`
+	EventReason     string `json:"EventReason" xml:"EventReason"`
+	ResourceName    string `json:"ResourceName" xml:"ResourceName"`
 }

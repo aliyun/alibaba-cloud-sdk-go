@@ -84,8 +84,8 @@ type StopNodesInstance struct {
 // StopNodesResponse is the response struct for api StopNodes
 type StopNodesResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	TaskId    string `json:"TaskId" xml:"TaskId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateStopNodesRequest creates a request to invoke StopNodes API

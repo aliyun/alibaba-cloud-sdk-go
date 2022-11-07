@@ -20,15 +20,16 @@ type Script struct {
 	IsDrafted                 bool   `json:"IsDrafted" xml:"IsDrafted"`
 	ScriptName                string `json:"ScriptName" xml:"ScriptName"`
 	Name                      string `json:"Name" xml:"Name"`
+	MiniPlaybackEnable        bool   `json:"MiniPlaybackEnable" xml:"MiniPlaybackEnable"`
 	UpdateTime                int64  `json:"UpdateTime" xml:"UpdateTime"`
 	MiniPlaybackConfigEnabled bool   `json:"MiniPlaybackConfigEnabled" xml:"MiniPlaybackConfigEnabled"`
 	Industry                  string `json:"Industry" xml:"Industry"`
 	RejectReason              string `json:"RejectReason" xml:"RejectReason"`
 	FailReason                string `json:"FailReason" xml:"FailReason"`
-	MiniPlaybackEnabled       bool   `json:"MiniPlaybackEnabled" xml:"MiniPlaybackEnabled"`
 	DebugStatus               string `json:"DebugStatus" xml:"DebugStatus"`
 	ScriptId                  string `json:"ScriptId" xml:"ScriptId"`
 	Scene                     string `json:"Scene" xml:"Scene"`
+	LongWaitEnable            bool   `json:"LongWaitEnable" xml:"LongWaitEnable"`
 	ChatbotId                 string `json:"ChatbotId" xml:"ChatbotId"`
 	TtsConfig                 string `json:"TtsConfig" xml:"TtsConfig"`
 	Status                    string `json:"Status" xml:"Status"`

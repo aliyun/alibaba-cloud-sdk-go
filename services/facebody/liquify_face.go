@@ -71,8 +71,11 @@ func (client *Client) LiquifyFaceWithCallback(request *LiquifyFaceRequest, callb
 // LiquifyFaceRequest is the request struct for api LiquifyFace
 type LiquifyFaceRequest struct {
 	*requests.RpcRequest
-	SlimDegree requests.Float `position:"Body" name:"SlimDegree"`
-	ImageURL   string         `position:"Body" name:"ImageURL"`
+	FormatResultToJson requests.Boolean `position:"Query" name:"FormatResultToJson"`
+	OssFile            string           `position:"Query" name:"OssFile"`
+	SlimDegree         requests.Float   `position:"Body" name:"SlimDegree"`
+	RequestProxyBy     string           `position:"Query" name:"RequestProxyBy"`
+	ImageURL           string           `position:"Body" name:"ImageURL"`
 }
 
 // LiquifyFaceResponse is the response struct for api LiquifyFace

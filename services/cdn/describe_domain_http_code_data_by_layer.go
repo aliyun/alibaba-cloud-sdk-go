@@ -84,8 +84,8 @@ type DescribeDomainHttpCodeDataByLayerRequest struct {
 // DescribeDomainHttpCodeDataByLayerResponse is the response struct for api DescribeDomainHttpCodeDataByLayer
 type DescribeDomainHttpCodeDataByLayerResponse struct {
 	*responses.BaseResponse
-	RequestId            string               `json:"RequestId" xml:"RequestId"`
 	DataInterval         string               `json:"DataInterval" xml:"DataInterval"`
+	RequestId            string               `json:"RequestId" xml:"RequestId"`
 	HttpCodeDataInterval HttpCodeDataInterval `json:"HttpCodeDataInterval" xml:"HttpCodeDataInterval"`
 }
 

@@ -71,13 +71,16 @@ func (client *Client) ListFaceEntitiesWithCallback(request *ListFaceEntitiesRequ
 // ListFaceEntitiesRequest is the request struct for api ListFaceEntities
 type ListFaceEntitiesRequest struct {
 	*requests.RpcRequest
-	EntityIdPrefix string           `position:"Body" name:"EntityIdPrefix"`
-	Limit          requests.Integer `position:"Body" name:"Limit"`
-	Order          string           `position:"Body" name:"Order"`
-	Offset         requests.Integer `position:"Body" name:"Offset"`
-	Token          string           `position:"Body" name:"Token"`
-	Labels         string           `position:"Body" name:"Labels"`
-	DbName         string           `position:"Body" name:"DbName"`
+	EntityIdPrefix     string           `position:"Body" name:"EntityIdPrefix"`
+	FormatResultToJson requests.Boolean `position:"Query" name:"FormatResultToJson"`
+	Limit              requests.Integer `position:"Body" name:"Limit"`
+	OssFile            string           `position:"Query" name:"OssFile"`
+	Order              string           `position:"Body" name:"Order"`
+	Offset             requests.Integer `position:"Body" name:"Offset"`
+	RequestProxyBy     string           `position:"Query" name:"RequestProxyBy"`
+	Token              string           `position:"Body" name:"Token"`
+	Labels             string           `position:"Body" name:"Labels"`
+	DbName             string           `position:"Body" name:"DbName"`
 }
 
 // ListFaceEntitiesResponse is the response struct for api ListFaceEntities

@@ -75,6 +75,7 @@ type UpdateStateConfigurationRequest struct {
 	ClientToken          string `position:"Query" name:"ClientToken"`
 	Description          string `position:"Query" name:"Description"`
 	Targets              string `position:"Query" name:"Targets"`
+	ResourceGroupId      string `position:"Query" name:"ResourceGroupId"`
 	ScheduleExpression   string `position:"Query" name:"ScheduleExpression"`
 	ConfigureMode        string `position:"Query" name:"ConfigureMode"`
 	Tags                 string `position:"Query" name:"Tags"`
@@ -94,7 +95,7 @@ func CreateUpdateStateConfigurationRequest() (request *UpdateStateConfigurationR
 	request = &UpdateStateConfigurationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("oos", "2019-06-01", "UpdateStateConfiguration", "", "")
+	request.InitWithApiInfo("oos", "2019-06-01", "UpdateStateConfiguration", "oos", "openAPI")
 	request.Method = requests.POST
 	return
 }

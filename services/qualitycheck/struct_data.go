@@ -71,8 +71,8 @@ type Data struct {
 	ManualScoreInfoList    ManualScoreInfoList              `json:"ManualScoreInfoList" xml:"ManualScoreInfoList"`
 	HandScoreInfoList      HandScoreInfoList                `json:"HandScoreInfoList" xml:"HandScoreInfoList"`
 	AllRuleList            AllRuleListInGetSkillGroupConfig `json:"AllRuleList" xml:"AllRuleList"`
-	HitRuleReviewInfoList  HitRuleReviewInfoList            `json:"HitRuleReviewInfoList" xml:"HitRuleReviewInfoList"`
 	Words                  Words                            `json:"Words" xml:"Words"`
+	HitRuleReviewInfoList  HitRuleReviewInfoList            `json:"HitRuleReviewInfoList" xml:"HitRuleReviewInfoList"`
 	ReviewHistoryList      ReviewHistoryList                `json:"ReviewHistoryList" xml:"ReviewHistoryList"`
 	RuleList               RuleListInGetSkillGroupConfig    `json:"RuleList" xml:"RuleList"`
 }

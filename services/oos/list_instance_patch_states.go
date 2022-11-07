@@ -79,9 +79,9 @@ type ListInstancePatchStatesRequest struct {
 // ListInstancePatchStatesResponse is the response struct for api ListInstancePatchStates
 type ListInstancePatchStatesResponse struct {
 	*responses.BaseResponse
-	MaxResults          int                  `json:"MaxResults" xml:"MaxResults"`
 	NextToken           string               `json:"NextToken" xml:"NextToken"`
 	RequestId           string               `json:"RequestId" xml:"RequestId"`
+	MaxResults          int                  `json:"MaxResults" xml:"MaxResults"`
 	InstancePatchStates []InstancePatchState `json:"InstancePatchStates" xml:"InstancePatchStates"`
 }
 
@@ -90,7 +90,7 @@ func CreateListInstancePatchStatesRequest() (request *ListInstancePatchStatesReq
 	request = &ListInstancePatchStatesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("oos", "2019-06-01", "ListInstancePatchStates", "", "")
+	request.InitWithApiInfo("oos", "2019-06-01", "ListInstancePatchStates", "oos", "openAPI")
 	request.Method = requests.POST
 	return
 }

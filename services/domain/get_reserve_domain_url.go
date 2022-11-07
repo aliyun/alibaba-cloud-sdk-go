@@ -76,8 +76,8 @@ type GetReserveDomainUrlRequest struct {
 // GetReserveDomainUrlResponse is the response struct for api GetReserveDomainUrl
 type GetReserveDomainUrlResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Url       string `json:"Url" xml:"Url"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateGetReserveDomainUrlRequest creates a request to invoke GetReserveDomainUrl API

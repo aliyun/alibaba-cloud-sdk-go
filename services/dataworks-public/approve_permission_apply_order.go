@@ -79,8 +79,8 @@ type ApprovePermissionApplyOrderRequest struct {
 // ApprovePermissionApplyOrderResponse is the response struct for api ApprovePermissionApplyOrder
 type ApprovePermissionApplyOrderResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
 	ApproveSuccess bool   `json:"ApproveSuccess" xml:"ApproveSuccess"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateApprovePermissionApplyOrderRequest creates a request to invoke ApprovePermissionApplyOrder API

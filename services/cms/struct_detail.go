@@ -17,6 +17,7 @@ package cms
 
 // Detail is a nested struct in cms response
 type Detail struct {
-	Index        int64  `json:"Index" xml:"Index"`
 	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
+	Index        int64  `json:"Index" xml:"Index"`
+	Spec         string `json:"Spec" xml:"Spec"`
 }

@@ -71,9 +71,12 @@ func (client *Client) RetouchSkinWithCallback(request *RetouchSkinRequest, callb
 // RetouchSkinRequest is the request struct for api RetouchSkin
 type RetouchSkinRequest struct {
 	*requests.RpcRequest
-	RetouchDegree   requests.Float `position:"Body" name:"RetouchDegree"`
-	WhiteningDegree requests.Float `position:"Body" name:"WhiteningDegree"`
-	ImageURL        string         `position:"Body" name:"ImageURL"`
+	FormatResultToJson requests.Boolean `position:"Query" name:"FormatResultToJson"`
+	RetouchDegree      requests.Float   `position:"Body" name:"RetouchDegree"`
+	WhiteningDegree    requests.Float   `position:"Body" name:"WhiteningDegree"`
+	OssFile            string           `position:"Query" name:"OssFile"`
+	RequestProxyBy     string           `position:"Query" name:"RequestProxyBy"`
+	ImageURL           string           `position:"Body" name:"ImageURL"`
 }
 
 // RetouchSkinResponse is the response struct for api RetouchSkin

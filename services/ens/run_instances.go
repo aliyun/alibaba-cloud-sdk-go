@@ -81,6 +81,7 @@ type RunInstancesRequest struct {
 	NetDistrictCode         string                  `position:"Query" name:"NetDistrictCode"`
 	EnsRegionId             string                  `position:"Query" name:"EnsRegionId"`
 	Period                  requests.Integer        `position:"Query" name:"Period"`
+	PublicIpIdentification  requests.Boolean        `position:"Query" name:"PublicIpIdentification"`
 	VSwitchId               string                  `position:"Query" name:"VSwitchId"`
 	PrivateIpAddress        string                  `position:"Query" name:"PrivateIpAddress"`
 	PeriodUnit              string                  `position:"Query" name:"PeriodUnit"`

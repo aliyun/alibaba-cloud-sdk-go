@@ -71,12 +71,12 @@ func (client *Client) RecolorHDImageWithCallback(request *RecolorHDImageRequest,
 // RecolorHDImageRequest is the request struct for api RecolorHDImage
 type RecolorHDImageRequest struct {
 	*requests.RpcRequest
+	Mode          string                         `position:"Body" name:"Mode"`
+	ColorCount    requests.Integer               `position:"Body" name:"ColorCount"`
 	ColorTemplate *[]RecolorHDImageColorTemplate `position:"Body" name:"ColorTemplate"  type:"Repeated"`
 	Degree        string                         `position:"Body" name:"Degree"`
 	Url           string                         `position:"Body" name:"Url"`
-	Mode          string                         `position:"Body" name:"Mode"`
 	Async         requests.Boolean               `position:"Body" name:"Async"`
-	ColorCount    requests.Integer               `position:"Body" name:"ColorCount"`
 	RefUrl        string                         `position:"Body" name:"RefUrl"`
 }
 
@@ -89,6 +89,8 @@ type RecolorHDImageColorTemplate struct {
 type RecolorHDImageResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 

@@ -72,8 +72,8 @@ func (client *Client) TestNetworkConnectionWithCallback(request *TestNetworkConn
 type TestNetworkConnectionRequest struct {
 	*requests.RpcRequest
 	ResourceGroup  string           `position:"Query" name:"ResourceGroup"`
-	EnvType        string           `position:"Query" name:"EnvType"`
 	DatasourceName string           `position:"Query" name:"DatasourceName"`
+	EnvType        string           `position:"Query" name:"EnvType"`
 	ProjectId      requests.Integer `position:"Query" name:"ProjectId"`
 }
 

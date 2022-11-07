@@ -92,7 +92,7 @@ func CreateWithdrawPublishedRouteEntriesRequest() (request *WithdrawPublishedRou
 	request = &WithdrawPublishedRouteEntriesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "WithdrawPublishedRouteEntries", "", "")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "WithdrawPublishedRouteEntries", "cbn", "openAPI")
 	request.Method = requests.POST
 	return
 }

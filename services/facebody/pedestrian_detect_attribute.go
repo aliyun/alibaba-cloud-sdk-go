@@ -71,7 +71,10 @@ func (client *Client) PedestrianDetectAttributeWithCallback(request *PedestrianD
 // PedestrianDetectAttributeRequest is the request struct for api PedestrianDetectAttribute
 type PedestrianDetectAttributeRequest struct {
 	*requests.RpcRequest
-	ImageURL string `position:"Body" name:"ImageURL"`
+	FormatResultToJson requests.Boolean `position:"Query" name:"FormatResultToJson"`
+	OssFile            string           `position:"Query" name:"OssFile"`
+	RequestProxyBy     string           `position:"Query" name:"RequestProxyBy"`
+	ImageURL           string           `position:"Body" name:"ImageURL"`
 }
 
 // PedestrianDetectAttributeResponse is the response struct for api PedestrianDetectAttribute

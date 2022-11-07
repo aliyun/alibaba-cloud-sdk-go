@@ -17,11 +17,11 @@ package ehpc
 
 // ImagesItem is a nested struct in ehpc response
 type ImagesItem struct {
-	System         string `json:"System" xml:"System"`
 	Type           string `json:"Type" xml:"Type"`
 	Status         string `json:"Status" xml:"Status"`
-	ImageId        string `json:"ImageId" xml:"ImageId"`
 	UpdateDateTime string `json:"UpdateDateTime" xml:"UpdateDateTime"`
 	Repository     string `json:"Repository" xml:"Repository"`
 	Tag            string `json:"Tag" xml:"Tag"`
+	System         string `json:"System" xml:"System"`
+	ImageId        string `json:"ImageId" xml:"ImageId"`
 }

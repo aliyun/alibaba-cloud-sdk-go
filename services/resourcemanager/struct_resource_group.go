@@ -24,4 +24,5 @@ type ResourceGroup struct {
 	Status         string                              `json:"Status" xml:"Status"`
 	DisplayName    string                              `json:"DisplayName" xml:"DisplayName"`
 	RegionStatuses RegionStatusesInCreateResourceGroup `json:"RegionStatuses" xml:"RegionStatuses"`
+	Tags           TagsInGetResourceGroup              `json:"Tags" xml:"Tags"`
 }

@@ -17,7 +17,7 @@ package sas
 
 // RiskCheckJobConfig is a nested struct in sas response
 type RiskCheckJobConfig struct {
-	StartTime  int    `json:"StartTime" xml:"StartTime"`
 	EndTime    int    `json:"EndTime" xml:"EndTime"`
+	StartTime  int    `json:"StartTime" xml:"StartTime"`
 	DaysOfWeek string `json:"DaysOfWeek" xml:"DaysOfWeek"`
 }

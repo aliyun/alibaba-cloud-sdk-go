@@ -80,9 +80,9 @@ type DescribeDcdnDomainTopReferVisitRequest struct {
 // DescribeDcdnDomainTopReferVisitResponse is the response struct for api DescribeDcdnDomainTopReferVisit
 type DescribeDcdnDomainTopReferVisitResponse struct {
 	*responses.BaseResponse
+	StartTime    string       `json:"StartTime" xml:"StartTime"`
 	RequestId    string       `json:"RequestId" xml:"RequestId"`
 	DomainName   string       `json:"DomainName" xml:"DomainName"`
-	StartTime    string       `json:"StartTime" xml:"StartTime"`
 	TopReferList TopReferList `json:"TopReferList" xml:"TopReferList"`
 }
 

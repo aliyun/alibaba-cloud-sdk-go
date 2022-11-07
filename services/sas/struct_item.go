@@ -17,10 +17,10 @@ package sas
 
 // Item is a nested struct in sas response
 type Item struct {
-	InstanceId   string `json:"InstanceId" xml:"InstanceId"`
-	InstanceName string `json:"InstanceName" xml:"InstanceName"`
-	GroupId      int    `json:"GroupId" xml:"GroupId"`
-	Ip           string `json:"Ip" xml:"Ip"`
-	Region       string `json:"Region" xml:"Region"`
 	Uuid         string `json:"Uuid" xml:"Uuid"`
+	GroupId      int    `json:"GroupId" xml:"GroupId"`
+	InstanceName string `json:"InstanceName" xml:"InstanceName"`
+	Region       string `json:"Region" xml:"Region"`
+	Ip           string `json:"Ip" xml:"Ip"`
+	InstanceId   string `json:"InstanceId" xml:"InstanceId"`
 }

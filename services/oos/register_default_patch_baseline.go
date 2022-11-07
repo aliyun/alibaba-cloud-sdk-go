@@ -86,7 +86,7 @@ func CreateRegisterDefaultPatchBaselineRequest() (request *RegisterDefaultPatchB
 	request = &RegisterDefaultPatchBaselineRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("oos", "2019-06-01", "RegisterDefaultPatchBaseline", "", "")
+	request.InitWithApiInfo("oos", "2019-06-01", "RegisterDefaultPatchBaseline", "oos", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -79,8 +79,8 @@ type VerifyDcdnDomainOwnerRequest struct {
 // VerifyDcdnDomainOwnerResponse is the response struct for api VerifyDcdnDomainOwner
 type VerifyDcdnDomainOwnerResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Content   string `json:"Content" xml:"Content"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateVerifyDcdnDomainOwnerRequest creates a request to invoke VerifyDcdnDomainOwner API

@@ -78,8 +78,8 @@ type DescribeRoutineRequest struct {
 // DescribeRoutineResponse is the response struct for api DescribeRoutine
 type DescribeRoutineResponse struct {
 	*responses.BaseResponse
-	RequestId string                 `json:"RequestId" xml:"RequestId"`
 	Content   map[string]interface{} `json:"Content" xml:"Content"`
+	RequestId string                 `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDescribeRoutineRequest creates a request to invoke DescribeRoutine API

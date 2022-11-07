@@ -17,5 +17,5 @@ package dms_enterprise
 
 // InstanceList is a nested struct in dms_enterprise response
 type InstanceList struct {
-	Instance []Instance `json:"Instance" xml:"Instance"`
+	Instance []InstanceInListInstances `json:"Instance" xml:"Instance"`
 }

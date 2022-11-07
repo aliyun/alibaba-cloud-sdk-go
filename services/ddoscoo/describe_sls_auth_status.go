@@ -79,8 +79,8 @@ type DescribeSlsAuthStatusRequest struct {
 // DescribeSlsAuthStatusResponse is the response struct for api DescribeSlsAuthStatus
 type DescribeSlsAuthStatusResponse struct {
 	*responses.BaseResponse
-	RequestId     string `json:"RequestId" xml:"RequestId"`
 	SlsAuthStatus bool   `json:"SlsAuthStatus" xml:"SlsAuthStatus"`
+	RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDescribeSlsAuthStatusRequest creates a request to invoke DescribeSlsAuthStatus API
@@ -88,7 +88,7 @@ func CreateDescribeSlsAuthStatusRequest() (request *DescribeSlsAuthStatusRequest
 	request = &DescribeSlsAuthStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2017-12-28", "DescribeSlsAuthStatus", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeSlsAuthStatus", "", "")
 	request.Method = requests.POST
 	return
 }

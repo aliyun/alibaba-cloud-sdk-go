@@ -75,7 +75,9 @@ type CreateSoundCodeRequest struct {
 	IotInstanceId    string           `position:"Body" name:"IotInstanceId"`
 	SoundCodeContent string           `position:"Body" name:"SoundCodeContent"`
 	ApiProduct       string           `position:"Body" name:"ApiProduct"`
+	Name             string           `position:"Body" name:"Name"`
 	ApiRevision      string           `position:"Body" name:"ApiRevision"`
+	OpenType         string           `position:"Body" name:"OpenType"`
 }
 
 // CreateSoundCodeResponse is the response struct for api CreateSoundCode

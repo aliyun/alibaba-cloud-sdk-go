@@ -74,6 +74,7 @@ type DescribeMigrateTasksRequest struct {
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	StartTime            string           `position:"Query" name:"StartTime"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
@@ -84,11 +85,11 @@ type DescribeMigrateTasksRequest struct {
 // DescribeMigrateTasksResponse is the response struct for api DescribeMigrateTasks
 type DescribeMigrateTasksResponse struct {
 	*responses.BaseResponse
-	RequestId        string                      `json:"RequestId" xml:"RequestId"`
 	DBInstanceId     string                      `json:"DBInstanceId" xml:"DBInstanceId"`
-	TotalRecordCount int                         `json:"TotalRecordCount" xml:"TotalRecordCount"`
 	PageNumber       int                         `json:"PageNumber" xml:"PageNumber"`
+	RequestId        string                      `json:"RequestId" xml:"RequestId"`
 	PageRecordCount  int                         `json:"PageRecordCount" xml:"PageRecordCount"`
+	TotalRecordCount int                         `json:"TotalRecordCount" xml:"TotalRecordCount"`
 	Items            ItemsInDescribeMigrateTasks `json:"Items" xml:"Items"`
 }
 

@@ -18,9 +18,9 @@ package rds
 // LogFile is a nested struct in rds response
 type LogFile struct {
 	FileID         string `json:"FileID" xml:"FileID"`
-	LogStatus      string `json:"LogStatus" xml:"LogStatus"`
-	LogDownloadURL string `json:"LogDownloadURL" xml:"LogDownloadURL"`
-	LogSize        string `json:"LogSize" xml:"LogSize"`
 	LogStartTime   string `json:"LogStartTime" xml:"LogStartTime"`
+	LogSize        string `json:"LogSize" xml:"LogSize"`
+	LogDownloadURL string `json:"LogDownloadURL" xml:"LogDownloadURL"`
 	LogEndTime     string `json:"LogEndTime" xml:"LogEndTime"`
+	LogStatus      string `json:"LogStatus" xml:"LogStatus"`
 }

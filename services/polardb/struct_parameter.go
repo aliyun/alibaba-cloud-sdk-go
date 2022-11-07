@@ -21,6 +21,7 @@ type Parameter struct {
 	ParameterName         string `json:"ParameterName" xml:"ParameterName"`
 	DataType              string `json:"DataType" xml:"DataType"`
 	ParameterDescription  string `json:"ParameterDescription" xml:"ParameterDescription"`
+	Factor                string `json:"Factor" xml:"Factor"`
 	ParameterStatus       string `json:"ParameterStatus" xml:"ParameterStatus"`
 	DefaultParameterValue string `json:"DefaultParameterValue" xml:"DefaultParameterValue"`
 	CheckingCode          string `json:"CheckingCode" xml:"CheckingCode"`

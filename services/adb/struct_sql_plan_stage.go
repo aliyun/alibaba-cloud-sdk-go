@@ -17,20 +17,20 @@ package adb
 
 // SqlPlanStage is a nested struct in adb response
 type SqlPlanStage struct {
-	StageId      int    `json:"StageId" xml:"StageId"`
 	State        string `json:"State" xml:"State"`
-	OperatorCost int64  `json:"OperatorCost" xml:"OperatorCost"`
-	PeakMemory   int64  `json:"PeakMemory" xml:"PeakMemory"`
-	CPUTimeMin   int64  `json:"CPUTimeMin" xml:"CPUTimeMin"`
-	CPUTimeMax   int64  `json:"CPUTimeMax" xml:"CPUTimeMax"`
 	CPUTimeAvg   int64  `json:"CPUTimeAvg" xml:"CPUTimeAvg"`
-	InputSizeMin int64  `json:"InputSizeMin" xml:"InputSizeMin"`
-	InputSizeMax int64  `json:"InputSizeMax" xml:"InputSizeMax"`
-	InputSizeAvg int64  `json:"InputSizeAvg" xml:"InputSizeAvg"`
-	ScanSizeMin  int64  `json:"ScanSizeMin" xml:"ScanSizeMin"`
-	ScanSizeMax  int64  `json:"ScanSizeMax" xml:"ScanSizeMax"`
-	ScanSizeAvg  int64  `json:"ScanSizeAvg" xml:"ScanSizeAvg"`
-	ScanTimeMin  int64  `json:"ScanTimeMin" xml:"ScanTimeMin"`
+	CPUTimeMax   int64  `json:"CPUTimeMax" xml:"CPUTimeMax"`
+	OperatorCost int64  `json:"OperatorCost" xml:"OperatorCost"`
 	ScanTimeMax  int64  `json:"ScanTimeMax" xml:"ScanTimeMax"`
+	InputSizeMax int64  `json:"InputSizeMax" xml:"InputSizeMax"`
+	StageId      int    `json:"StageId" xml:"StageId"`
+	ScanSizeMax  int64  `json:"ScanSizeMax" xml:"ScanSizeMax"`
+	CPUTimeMin   int64  `json:"CPUTimeMin" xml:"CPUTimeMin"`
+	ScanTimeMin  int64  `json:"ScanTimeMin" xml:"ScanTimeMin"`
+	ScanSizeMin  int64  `json:"ScanSizeMin" xml:"ScanSizeMin"`
+	InputSizeMin int64  `json:"InputSizeMin" xml:"InputSizeMin"`
+	PeakMemory   int64  `json:"PeakMemory" xml:"PeakMemory"`
 	ScanTimeAvg  int64  `json:"ScanTimeAvg" xml:"ScanTimeAvg"`
+	ScanSizeAvg  int64  `json:"ScanSizeAvg" xml:"ScanSizeAvg"`
+	InputSizeAvg int64  `json:"InputSizeAvg" xml:"InputSizeAvg"`
 }

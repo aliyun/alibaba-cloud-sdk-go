@@ -79,8 +79,8 @@ type StartVisualServiceRequest struct {
 // StartVisualServiceResponse is the response struct for api StartVisualService
 type StartVisualServiceResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateStartVisualServiceRequest creates a request to invoke StartVisualService API

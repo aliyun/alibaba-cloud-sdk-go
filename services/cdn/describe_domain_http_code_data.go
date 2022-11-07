@@ -81,10 +81,10 @@ type DescribeDomainHttpCodeDataRequest struct {
 // DescribeDomainHttpCodeDataResponse is the response struct for api DescribeDomainHttpCodeData
 type DescribeDomainHttpCodeDataResponse struct {
 	*responses.BaseResponse
+	EndTime      string                                   `json:"EndTime" xml:"EndTime"`
+	StartTime    string                                   `json:"StartTime" xml:"StartTime"`
 	RequestId    string                                   `json:"RequestId" xml:"RequestId"`
 	DomainName   string                                   `json:"DomainName" xml:"DomainName"`
-	StartTime    string                                   `json:"StartTime" xml:"StartTime"`
-	EndTime      string                                   `json:"EndTime" xml:"EndTime"`
 	DataInterval string                                   `json:"DataInterval" xml:"DataInterval"`
 	HttpCodeData HttpCodeDataInDescribeDomainHttpCodeData `json:"HttpCodeData" xml:"HttpCodeData"`
 }

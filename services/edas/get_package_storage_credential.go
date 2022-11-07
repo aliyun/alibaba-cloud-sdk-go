@@ -87,7 +87,7 @@ func CreateGetPackageStorageCredentialRequest() (request *GetPackageStorageCrede
 	request = &GetPackageStorageCredentialRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "GetPackageStorageCredential", "/pop/v5/package_storage_credential", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "GetPackageStorageCredential", "/pop/v5/package_storage_credential", "edas", "openAPI")
 	request.Method = requests.GET
 	return
 }

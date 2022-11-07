@@ -17,6 +17,6 @@ package dataworks_public
 
 // ColumnMetaListItem is a nested struct in dataworks_public response
 type ColumnMetaListItem struct {
-	ColumnComment string `json:"ColumnComment" xml:"ColumnComment"`
 	ColumnName    string `json:"ColumnName" xml:"ColumnName"`
+	ColumnComment string `json:"ColumnComment" xml:"ColumnComment"`
 }

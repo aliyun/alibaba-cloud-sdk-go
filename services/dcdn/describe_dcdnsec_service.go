@@ -78,17 +78,17 @@ type DescribeDcdnsecServiceRequest struct {
 // DescribeDcdnsecServiceResponse is the response struct for api DescribeDcdnsecService
 type DescribeDcdnsecServiceResponse struct {
 	*responses.BaseResponse
-	RequestId          string                                 `json:"RequestId" xml:"RequestId"`
-	InstanceId         string                                 `json:"InstanceId" xml:"InstanceId"`
-	InternetChargeType string                                 `json:"InternetChargeType" xml:"InternetChargeType"`
-	StartTime          string                                 `json:"StartTime" xml:"StartTime"`
 	EndTime            string                                 `json:"EndTime" xml:"EndTime"`
-	ChangingChargeType string                                 `json:"ChangingChargeType" xml:"ChangingChargeType"`
+	StartTime          string                                 `json:"StartTime" xml:"StartTime"`
 	ChangingAffectTime string                                 `json:"ChangingAffectTime" xml:"ChangingAffectTime"`
-	Version            string                                 `json:"Version" xml:"Version"`
-	FlowType           string                                 `json:"FlowType" xml:"FlowType"`
-	RequestType        string                                 `json:"RequestType" xml:"RequestType"`
 	DomainNum          string                                 `json:"DomainNum" xml:"DomainNum"`
+	ChangingChargeType string                                 `json:"ChangingChargeType" xml:"ChangingChargeType"`
+	RequestId          string                                 `json:"RequestId" xml:"RequestId"`
+	Version            string                                 `json:"Version" xml:"Version"`
+	RequestType        string                                 `json:"RequestType" xml:"RequestType"`
+	FlowType           string                                 `json:"FlowType" xml:"FlowType"`
+	InternetChargeType string                                 `json:"InternetChargeType" xml:"InternetChargeType"`
+	InstanceId         string                                 `json:"InstanceId" xml:"InstanceId"`
 	OperationLocks     OperationLocksInDescribeDcdnsecService `json:"OperationLocks" xml:"OperationLocks"`
 }
 

@@ -22,6 +22,7 @@ type EvaluationResultQualifier struct {
 	CompliancePackId string `json:"CompliancePackId" xml:"CompliancePackId"`
 	ConfigRuleArn    string `json:"ConfigRuleArn" xml:"ConfigRuleArn"`
 	RegionId         string `json:"RegionId" xml:"RegionId"`
+	IgnoreDate       string `json:"IgnoreDate" xml:"IgnoreDate"`
 	ResourceName     string `json:"ResourceName" xml:"ResourceName"`
 	ResourceOwnerId  int64  `json:"ResourceOwnerId" xml:"ResourceOwnerId"`
 	ConfigRuleName   string `json:"ConfigRuleName" xml:"ConfigRuleName"`

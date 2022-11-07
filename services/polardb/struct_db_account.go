@@ -24,5 +24,6 @@ type DBAccount struct {
 	AccountType              string              `json:"AccountType" xml:"AccountType"`
 	AccountLockState         string              `json:"AccountLockState" xml:"AccountLockState"`
 	AccountName              string              `json:"AccountName" xml:"AccountName"`
+	AccountPassword          string              `json:"AccountPassword" xml:"AccountPassword"`
 	DatabasePrivileges       []DatabasePrivilege `json:"DatabasePrivileges" xml:"DatabasePrivileges"`
 }

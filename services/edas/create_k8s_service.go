@@ -71,10 +71,11 @@ func (client *Client) CreateK8sServiceWithCallback(request *CreateK8sServiceRequ
 // CreateK8sServiceRequest is the request struct for api CreateK8sService
 type CreateK8sServiceRequest struct {
 	*requests.RoaRequest
-	AppId        string `position:"Query" name:"AppId"`
-	Name         string `position:"Query" name:"Name"`
-	Type         string `position:"Query" name:"Type"`
-	ServicePorts string `position:"Query" name:"ServicePorts"`
+	AppId                 string `position:"Query" name:"AppId"`
+	Name                  string `position:"Query" name:"Name"`
+	Type                  string `position:"Query" name:"Type"`
+	ExternalTrafficPolicy string `position:"Query" name:"ExternalTrafficPolicy"`
+	ServicePorts          string `position:"Query" name:"ServicePorts"`
 }
 
 // CreateK8sServiceResponse is the response struct for api CreateK8sService
@@ -91,7 +92,7 @@ func CreateCreateK8sServiceRequest() (request *CreateK8sServiceRequest) {
 	request = &CreateK8sServiceRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "CreateK8sService", "/pop/v5/k8s/acs/k8s_service", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "CreateK8sService", "/pop/v5/k8s/acs/k8s_service", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

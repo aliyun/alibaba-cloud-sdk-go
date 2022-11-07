@@ -17,6 +17,6 @@ package config
 
 // Compliance is a nested struct in config response
 type Compliance struct {
-	ComplianceType string `json:"ComplianceType" xml:"ComplianceType"`
 	Count          int    `json:"Count" xml:"Count"`
+	ComplianceType string `json:"ComplianceType" xml:"ComplianceType"`
 }

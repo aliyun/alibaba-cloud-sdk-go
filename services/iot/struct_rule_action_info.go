@@ -21,5 +21,6 @@ type RuleActionInfo struct {
 	RuleId          int64  `json:"RuleId" xml:"RuleId"`
 	Id              int64  `json:"Id" xml:"Id"`
 	ErrorActionFlag bool   `json:"ErrorActionFlag" xml:"ErrorActionFlag"`
+	Status          string `json:"Status" xml:"Status"`
 	Type            string `json:"Type" xml:"Type"`
 }

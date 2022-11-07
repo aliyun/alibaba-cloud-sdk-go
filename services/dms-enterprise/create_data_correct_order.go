@@ -86,6 +86,7 @@ type CreateDataCorrectOrderParam struct {
 	RollbackSqlType        string                                       `name:"RollbackSqlType"`
 	DbItemList             *[]CreateDataCorrectOrderParamDbItemListItem `name:"DbItemList" type:"Repeated"`
 	ExecSQL                string                                       `name:"ExecSQL"`
+	ExecMode               string                                       `name:"ExecMode"`
 	EstimateAffectRows     string                                       `name:"EstimateAffectRows"`
 	RollbackAttachmentName string                                       `name:"RollbackAttachmentName"`
 	AttachmentName         string                                       `name:"AttachmentName"`

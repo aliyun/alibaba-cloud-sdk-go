@@ -17,13 +17,13 @@ package adb
 
 // Process is a nested struct in adb response
 type Process struct {
-	Id        int    `json:"Id" xml:"Id"`
+	StartTime string `json:"StartTime" xml:"StartTime"`
+	Time      int    `json:"Time" xml:"Time"`
 	ProcessId string `json:"ProcessId" xml:"ProcessId"`
-	User      string `json:"User" xml:"User"`
 	Host      string `json:"Host" xml:"Host"`
 	DB        string `json:"DB" xml:"DB"`
 	Command   string `json:"Command" xml:"Command"`
-	Time      int    `json:"Time" xml:"Time"`
-	StartTime string `json:"StartTime" xml:"StartTime"`
+	User      string `json:"User" xml:"User"`
+	Id        int    `json:"Id" xml:"Id"`
 	Info      string `json:"Info" xml:"Info"`
 }

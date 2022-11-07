@@ -71,37 +71,39 @@ func (client *Client) CreateJobWithCallback(request *CreateJobRequest, callback 
 // CreateJobRequest is the request struct for api CreateJob
 type CreateJobRequest struct {
 	*requests.RpcRequest
-	NamespaceSource     string                  `position:"Body" name:"NamespaceSource"`
-	Description         string                  `position:"Body" name:"Description"`
 	AttemptInterval     requests.Integer        `position:"Body" name:"AttemptInterval"`
-	Content             string                  `position:"Body" name:"Content"`
-	Timeout             requests.Integer        `position:"Body" name:"Timeout"`
-	TimeoutKillEnable   requests.Boolean        `position:"Body" name:"TimeoutKillEnable"`
-	PageSize            requests.Integer        `position:"Body" name:"PageSize"`
 	ConsumerSize        requests.Integer        `position:"Body" name:"ConsumerSize"`
 	JarUrl              string                  `position:"Body" name:"JarUrl"`
-	Calendar            string                  `position:"Body" name:"Calendar"`
-	FailEnable          requests.Boolean        `position:"Body" name:"FailEnable"`
-	SendChannel         string                  `position:"Body" name:"SendChannel"`
 	DataOffset          requests.Integer        `position:"Body" name:"DataOffset"`
 	GroupId             string                  `position:"Body" name:"GroupId"`
 	TaskMaxAttempt      requests.Integer        `position:"Body" name:"TaskMaxAttempt"`
-	MaxAttempt          requests.Integer        `position:"Body" name:"MaxAttempt"`
-	MissWorkerEnable    requests.Boolean        `position:"Body" name:"MissWorkerEnable"`
 	DispatcherSize      requests.Integer        `position:"Body" name:"DispatcherSize"`
 	JobType             string                  `position:"Body" name:"JobType"`
 	TaskAttemptInterval requests.Integer        `position:"Body" name:"TaskAttemptInterval"`
 	ExecuteMode         string                  `position:"Body" name:"ExecuteMode"`
-	QueueSize           requests.Integer        `position:"Body" name:"QueueSize"`
 	TimeExpression      string                  `position:"Body" name:"TimeExpression"`
-	ClassName           string                  `position:"Body" name:"ClassName"`
 	TimeoutEnable       requests.Boolean        `position:"Body" name:"TimeoutEnable"`
 	ContactInfo         *[]CreateJobContactInfo `position:"Body" name:"ContactInfo"  type:"Repeated"`
 	Name                string                  `position:"Body" name:"Name"`
-	Namespace           string                  `position:"Body" name:"Namespace"`
-	MaxConcurrency      requests.Integer        `position:"Body" name:"MaxConcurrency"`
 	TimeType            requests.Integer        `position:"Body" name:"TimeType"`
 	Parameters          string                  `position:"Body" name:"Parameters"`
+	Status              requests.Integer        `position:"Body" name:"Status"`
+	NamespaceSource     string                  `position:"Body" name:"NamespaceSource"`
+	Description         string                  `position:"Body" name:"Description"`
+	Content             string                  `position:"Body" name:"Content"`
+	Timeout             requests.Integer        `position:"Body" name:"Timeout"`
+	TimeoutKillEnable   requests.Boolean        `position:"Body" name:"TimeoutKillEnable"`
+	PageSize            requests.Integer        `position:"Body" name:"PageSize"`
+	Calendar            string                  `position:"Body" name:"Calendar"`
+	FailEnable          requests.Boolean        `position:"Body" name:"FailEnable"`
+	SendChannel         string                  `position:"Body" name:"SendChannel"`
+	MaxAttempt          requests.Integer        `position:"Body" name:"MaxAttempt"`
+	MissWorkerEnable    requests.Boolean        `position:"Body" name:"MissWorkerEnable"`
+	QueueSize           requests.Integer        `position:"Body" name:"QueueSize"`
+	ClassName           string                  `position:"Body" name:"ClassName"`
+	Namespace           string                  `position:"Body" name:"Namespace"`
+	XAttrs              string                  `position:"Body" name:"XAttrs"`
+	MaxConcurrency      requests.Integer        `position:"Body" name:"MaxConcurrency"`
 }
 
 // CreateJobContactInfo is a repeated param struct in CreateJobRequest

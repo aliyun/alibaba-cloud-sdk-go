@@ -71,10 +71,10 @@ func (client *Client) ListConfigTemplatesWithCallback(request *ListConfigTemplat
 // ListConfigTemplatesRequest is the request struct for api ListConfigTemplates
 type ListConfigTemplatesRequest struct {
 	*requests.RoaRequest
-	PageSize    requests.Integer `position:"Query" name:"PageSize"`
-	Name        string           `position:"Query" name:"Name"`
-	CurrentPage requests.Integer `position:"Query" name:"CurrentPage"`
-	Id          requests.Integer `position:"Query" name:"Id"`
+	PageSize    string `position:"Query" name:"PageSize"`
+	Name        string `position:"Query" name:"Name"`
+	CurrentPage string `position:"Query" name:"CurrentPage"`
+	Id          string `position:"Query" name:"Id"`
 }
 
 // ListConfigTemplatesResponse is the response struct for api ListConfigTemplates
@@ -91,7 +91,7 @@ func CreateListConfigTemplatesRequest() (request *ListConfigTemplatesRequest) {
 	request = &ListConfigTemplatesRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ListConfigTemplates", "/pop/v5/config_template", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ListConfigTemplates", "/pop/v5/config_template", "edas", "openAPI")
 	request.Method = requests.GET
 	return
 }

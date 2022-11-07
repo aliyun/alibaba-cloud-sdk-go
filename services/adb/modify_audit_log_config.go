@@ -82,7 +82,8 @@ type ModifyAuditLogConfigRequest struct {
 // ModifyAuditLogConfigResponse is the response struct for api ModifyAuditLogConfig
 type ModifyAuditLogConfigResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	RequestId     string `json:"RequestId" xml:"RequestId"`
+	UpdateSucceed bool   `json:"UpdateSucceed" xml:"UpdateSucceed"`
 }
 
 // CreateModifyAuditLogConfigRequest creates a request to invoke ModifyAuditLogConfig API

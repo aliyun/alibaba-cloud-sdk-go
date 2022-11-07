@@ -71,8 +71,8 @@ func (client *Client) UpdateRoleWithCallback(request *UpdateRoleRequest, callbac
 // UpdateRoleRequest is the request struct for api UpdateRole
 type UpdateRoleRequest struct {
 	*requests.RoaRequest
-	RoleId     requests.Integer `position:"Query" name:"RoleId"`
-	ActionData string           `position:"Query" name:"ActionData"`
+	RoleId     string `position:"Query" name:"RoleId"`
+	ActionData string `position:"Query" name:"ActionData"`
 }
 
 // UpdateRoleResponse is the response struct for api UpdateRole
@@ -88,7 +88,7 @@ func CreateUpdateRoleRequest() (request *UpdateRoleRequest) {
 	request = &UpdateRoleRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "UpdateRole", "/pop/v5/account/edit_role", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "UpdateRole", "/pop/v5/account/edit_role", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -73,6 +73,7 @@ type TagResourcesRequest struct {
 	*requests.RpcRequest
 	ResourceId   *[]string          `position:"Query" name:"ResourceId"  type:"Repeated"`
 	ResourceType string             `position:"Query" name:"ResourceType"`
+	InstanceId   string             `position:"Query" name:"InstanceId"`
 	Tag          *[]TagResourcesTag `position:"Query" name:"Tag"  type:"Repeated"`
 }
 

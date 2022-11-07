@@ -71,8 +71,7 @@ func (client *Client) SetScdnCcInfoWithCallback(request *SetScdnCcInfoRequest, c
 // SetScdnCcInfoRequest is the request struct for api SetScdnCcInfo
 type SetScdnCcInfoRequest struct {
 	*requests.RpcRequest
-	OwnerId requests.Integer `position:"Query" name:"OwnerId"`
-	Status  string           `position:"Query" name:"Status"`
+	Status string `position:"Query" name:"Status"`
 }
 
 // SetScdnCcInfoResponse is the response struct for api SetScdnCcInfo

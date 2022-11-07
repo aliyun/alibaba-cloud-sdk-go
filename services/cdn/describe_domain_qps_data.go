@@ -83,10 +83,10 @@ type DescribeDomainQpsDataRequest struct {
 // DescribeDomainQpsDataResponse is the response struct for api DescribeDomainQpsData
 type DescribeDomainQpsDataResponse struct {
 	*responses.BaseResponse
+	EndTime         string                                 `json:"EndTime" xml:"EndTime"`
+	StartTime       string                                 `json:"StartTime" xml:"StartTime"`
 	RequestId       string                                 `json:"RequestId" xml:"RequestId"`
 	DomainName      string                                 `json:"DomainName" xml:"DomainName"`
-	StartTime       string                                 `json:"StartTime" xml:"StartTime"`
-	EndTime         string                                 `json:"EndTime" xml:"EndTime"`
 	DataInterval    string                                 `json:"DataInterval" xml:"DataInterval"`
 	QpsDataInterval QpsDataIntervalInDescribeDomainQpsData `json:"QpsDataInterval" xml:"QpsDataInterval"`
 }

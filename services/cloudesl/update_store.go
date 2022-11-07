@@ -98,7 +98,7 @@ func CreateUpdateStoreRequest() (request *UpdateStoreRequest) {
 	request = &UpdateStoreRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cloudesl", "2020-02-01", "UpdateStore", "cloudesl", "openAPI")
+	request.InitWithApiInfo("cloudesl", "2020-02-01", "UpdateStore", "", "")
 	request.Method = requests.POST
 	return
 }

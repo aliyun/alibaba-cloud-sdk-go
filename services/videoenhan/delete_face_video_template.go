@@ -78,9 +78,9 @@ type DeleteFaceVideoTemplateRequest struct {
 // DeleteFaceVideoTemplateResponse is the response struct for api DeleteFaceVideoTemplate
 type DeleteFaceVideoTemplateResponse struct {
 	*responses.BaseResponse
-	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
 }
 
 // CreateDeleteFaceVideoTemplateRequest creates a request to invoke DeleteFaceVideoTemplate API

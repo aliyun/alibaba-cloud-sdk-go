@@ -80,8 +80,8 @@ type ListManagedRulesRequest struct {
 // ListManagedRulesResponse is the response struct for api ListManagedRules
 type ListManagedRulesResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
-	ManagedRules []Data `json:"ManagedRules" xml:"ManagedRules"`
+	RequestId    string       `json:"RequestId" xml:"RequestId"`
+	ManagedRules ManagedRules `json:"ManagedRules" xml:"ManagedRules"`
 }
 
 // CreateListManagedRulesRequest creates a request to invoke ListManagedRules API

@@ -77,6 +77,7 @@ type DescribeTTSDemoRequest struct {
 	InstanceId string           `position:"Query" name:"InstanceId"`
 	Text       string           `position:"Query" name:"Text"`
 	SpeechRate requests.Integer `position:"Query" name:"SpeechRate"`
+	PitchRate  requests.Integer `position:"Query" name:"PitchRate"`
 }
 
 // DescribeTTSDemoResponse is the response struct for api DescribeTTSDemo

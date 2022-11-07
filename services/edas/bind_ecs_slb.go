@@ -71,15 +71,15 @@ func (client *Client) BindEcsSlbWithCallback(request *BindEcsSlbRequest, callbac
 // BindEcsSlbRequest is the request struct for api BindEcsSlb
 type BindEcsSlbRequest struct {
 	*requests.RoaRequest
-	VServerGroupId         string           `position:"Query" name:"VServerGroupId"`
-	ListenerPort           requests.Integer `position:"Query" name:"ListenerPort"`
-	VForwardingUrlRule     string           `position:"Query" name:"VForwardingUrlRule"`
-	SlbId                  string           `position:"Query" name:"SlbId"`
-	DeployGroupId          string           `position:"Query" name:"DeployGroupId"`
-	ListenerHealthCheckUrl string           `position:"Query" name:"ListenerHealthCheckUrl"`
-	AppId                  string           `position:"Query" name:"AppId"`
-	ListenerProtocol       string           `position:"Query" name:"ListenerProtocol"`
-	VServerGroupName       string           `position:"Query" name:"VServerGroupName"`
+	VServerGroupId         string `position:"Query" name:"VServerGroupId"`
+	ListenerPort           string `position:"Query" name:"ListenerPort"`
+	VForwardingUrlRule     string `position:"Query" name:"VForwardingUrlRule"`
+	SlbId                  string `position:"Query" name:"SlbId"`
+	DeployGroupId          string `position:"Query" name:"DeployGroupId"`
+	ListenerHealthCheckUrl string `position:"Query" name:"ListenerHealthCheckUrl"`
+	AppId                  string `position:"Query" name:"AppId"`
+	ListenerProtocol       string `position:"Query" name:"ListenerProtocol"`
+	VServerGroupName       string `position:"Query" name:"VServerGroupName"`
 }
 
 // BindEcsSlbResponse is the response struct for api BindEcsSlb
@@ -96,7 +96,7 @@ func CreateBindEcsSlbRequest() (request *BindEcsSlbRequest) {
 	request = &BindEcsSlbRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "BindEcsSlb", "/pop/v5/app/slb/bind_slb", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "BindEcsSlb", "/pop/v5/app/slb/bind_slb", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

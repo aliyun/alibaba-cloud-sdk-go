@@ -90,7 +90,7 @@ func CreateDescribeContactsRequest() (request *DescribeContactsRequest) {
 	request = &DescribeContactsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "DescribeContacts", "", "")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "DescribeContacts", "arms", "openAPI")
 	request.Method = requests.POST
 	return
 }

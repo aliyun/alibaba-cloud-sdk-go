@@ -82,6 +82,7 @@ type CreateCdnDeliverTaskRequest struct {
 // CreateCdnDeliverTaskResponse is the response struct for api CreateCdnDeliverTask
 type CreateCdnDeliverTaskResponse struct {
 	*responses.BaseResponse
+	DeliverId string `json:"DeliverId" xml:"DeliverId"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 

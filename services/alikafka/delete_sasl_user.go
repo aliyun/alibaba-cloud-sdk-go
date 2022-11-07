@@ -79,10 +79,10 @@ type DeleteSaslUserRequest struct {
 // DeleteSaslUserResponse is the response struct for api DeleteSaslUser
 type DeleteSaslUserResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
 	Code      int    `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateDeleteSaslUserRequest creates a request to invoke DeleteSaslUser API

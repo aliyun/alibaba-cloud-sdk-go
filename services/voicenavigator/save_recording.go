@@ -71,14 +71,15 @@ func (client *Client) SaveRecordingWithCallback(request *SaveRecordingRequest, c
 // SaveRecordingRequest is the request struct for api SaveRecording
 type SaveRecordingRequest struct {
 	*requests.RpcRequest
-	ConversationId  string           `position:"Query" name:"ConversationId"`
-	StartTime       requests.Integer `position:"Query" name:"StartTime"`
-	Type            string           `position:"Query" name:"Type"`
-	Duration        string           `position:"Query" name:"Duration"`
-	InstanceId      string           `position:"Query" name:"InstanceId"`
-	FileName        string           `position:"Query" name:"FileName"`
-	FilePath        string           `position:"Query" name:"FilePath"`
-	InstanceOwnerId requests.Integer `position:"Query" name:"InstanceOwnerId"`
+	VoiceSliceRecordingList string           `position:"Query" name:"VoiceSliceRecordingList"`
+	ConversationId          string           `position:"Query" name:"ConversationId"`
+	StartTime               requests.Integer `position:"Query" name:"StartTime"`
+	Type                    string           `position:"Query" name:"Type"`
+	Duration                string           `position:"Query" name:"Duration"`
+	InstanceId              string           `position:"Query" name:"InstanceId"`
+	FileName                string           `position:"Query" name:"FileName"`
+	FilePath                string           `position:"Query" name:"FilePath"`
+	InstanceOwnerId         requests.Integer `position:"Query" name:"InstanceOwnerId"`
 }
 
 // SaveRecordingResponse is the response struct for api SaveRecording

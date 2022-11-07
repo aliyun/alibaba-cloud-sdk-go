@@ -79,16 +79,16 @@ type DescribeActiveVersionOfConfigGroupRequest struct {
 // DescribeActiveVersionOfConfigGroupResponse is the response struct for api DescribeActiveVersionOfConfigGroup
 type DescribeActiveVersionOfConfigGroupResponse struct {
 	*responses.BaseResponse
+	Status        string `json:"Status" xml:"Status"`
+	UpdateTime    string `json:"UpdateTime" xml:"UpdateTime"`
 	RequestId     string `json:"RequestId" xml:"RequestId"`
+	SeqId         int64  `json:"SeqId" xml:"SeqId"`
+	Description   string `json:"Description" xml:"Description"`
+	CreateTime    string `json:"CreateTime" xml:"CreateTime"`
 	VersionId     string `json:"VersionId" xml:"VersionId"`
 	ConfigGroupId string `json:"ConfigGroupId" xml:"ConfigGroupId"`
-	BaseVersionId string `json:"BaseVersionId" xml:"BaseVersionId"`
-	Description   string `json:"Description" xml:"Description"`
-	SeqId         int64  `json:"SeqId" xml:"SeqId"`
-	Status        string `json:"Status" xml:"Status"`
 	Operator      string `json:"Operator" xml:"Operator"`
-	CreateTime    string `json:"CreateTime" xml:"CreateTime"`
-	UpdateTime    string `json:"UpdateTime" xml:"UpdateTime"`
+	BaseVersionId string `json:"BaseVersionId" xml:"BaseVersionId"`
 }
 
 // CreateDescribeActiveVersionOfConfigGroupRequest creates a request to invoke DescribeActiveVersionOfConfigGroup API

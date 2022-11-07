@@ -79,9 +79,9 @@ type ListActionsRequest struct {
 // ListActionsResponse is the response struct for api ListActions
 type ListActionsResponse struct {
 	*responses.BaseResponse
+	NextToken  string   `json:"NextToken" xml:"NextToken"`
 	RequestId  string   `json:"RequestId" xml:"RequestId"`
 	MaxResults int      `json:"MaxResults" xml:"MaxResults"`
-	NextToken  string   `json:"NextToken" xml:"NextToken"`
 	Actions    []Action `json:"Actions" xml:"Actions"`
 }
 
@@ -90,7 +90,7 @@ func CreateListActionsRequest() (request *ListActionsRequest) {
 	request = &ListActionsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("oos", "2019-06-01", "ListActions", "", "")
+	request.InitWithApiInfo("oos", "2019-06-01", "ListActions", "oos", "openAPI")
 	request.Method = requests.POST
 	return
 }

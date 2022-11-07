@@ -36,6 +36,8 @@ type Info struct {
 	LastUmountTime   string              `json:"LastUmountTime" xml:"LastUmountTime"`
 	EnableRaid       bool                `json:"EnableRaid" xml:"EnableRaid"`
 	RaidStrip        int                 `json:"RaidStrip" xml:"RaidStrip"`
+	InstanceType     string              `json:"InstanceType" xml:"InstanceType"`
+	LastFailed       string              `json:"LastFailed" xml:"LastFailed"`
 	Tags             []TagListInListDbfs `json:"Tags" xml:"Tags"`
 	EcsList          []EcsListItem       `json:"EcsList" xml:"EcsList"`
 	EbsList          []EbsListItem       `json:"EbsList" xml:"EbsList"`

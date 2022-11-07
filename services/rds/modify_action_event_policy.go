@@ -80,9 +80,9 @@ type ModifyActionEventPolicyRequest struct {
 // ModifyActionEventPolicyResponse is the response struct for api ModifyActionEventPolicy
 type ModifyActionEventPolicyResponse struct {
 	*responses.BaseResponse
+	EnableEventLog string `json:"EnableEventLog" xml:"EnableEventLog"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
 	RegionId       string `json:"RegionId" xml:"RegionId"`
-	EnableEventLog string `json:"EnableEventLog" xml:"EnableEventLog"`
 }
 
 // CreateModifyActionEventPolicyRequest creates a request to invoke ModifyActionEventPolicy API

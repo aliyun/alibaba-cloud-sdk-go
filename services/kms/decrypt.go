@@ -78,10 +78,10 @@ type DecryptRequest struct {
 // DecryptResponse is the response struct for api Decrypt
 type DecryptResponse struct {
 	*responses.BaseResponse
-	Plaintext    string `json:"Plaintext" xml:"Plaintext"`
+	KeyVersionId string `json:"KeyVersionId" xml:"KeyVersionId"`
 	KeyId        string `json:"KeyId" xml:"KeyId"`
 	RequestId    string `json:"RequestId" xml:"RequestId"`
-	KeyVersionId string `json:"KeyVersionId" xml:"KeyVersionId"`
+	Plaintext    string `json:"Plaintext" xml:"Plaintext"`
 }
 
 // CreateDecryptRequest creates a request to invoke Decrypt API

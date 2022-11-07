@@ -17,7 +17,7 @@ package sas
 
 // ProcessInfo is a nested struct in sas response
 type ProcessInfo struct {
-	GmtLastTs   int64     `json:"GmtLastTs" xml:"GmtLastTs"`
 	TotalCount  int       `json:"TotalCount" xml:"TotalCount"`
+	GmtLastTs   int64     `json:"GmtLastTs" xml:"GmtLastTs"`
 	ProcessList []Process `json:"ProcessList" xml:"ProcessList"`
 }

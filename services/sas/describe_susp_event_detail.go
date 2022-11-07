@@ -71,34 +71,34 @@ func (client *Client) DescribeSuspEventDetailWithCallback(request *DescribeSuspE
 // DescribeSuspEventDetailRequest is the request struct for api DescribeSuspEventDetail
 type DescribeSuspEventDetailRequest struct {
 	*requests.RpcRequest
-	SuspiciousEventId requests.Integer `position:"Query" name:"SuspiciousEventId"`
 	SourceIp          string           `position:"Query" name:"SourceIp"`
 	From              string           `position:"Query" name:"From"`
 	Lang              string           `position:"Query" name:"Lang"`
+	SuspiciousEventId requests.Integer `position:"Query" name:"SuspiciousEventId"`
 }
 
 // DescribeSuspEventDetailResponse is the response struct for api DescribeSuspEventDetail
 type DescribeSuspEventDetailResponse struct {
 	*responses.BaseResponse
-	RequestId        string      `json:"RequestId" xml:"RequestId"`
-	LastTime         string      `json:"LastTime" xml:"LastTime"`
-	Id               int         `json:"Id" xml:"Id"`
-	InstanceName     string      `json:"InstanceName" xml:"InstanceName"`
+	Type             string      `json:"Type" xml:"Type"`
+	DataSource       string      `json:"DataSource" xml:"DataSource"`
+	EventName        string      `json:"EventName" xml:"EventName"`
 	InternetIp       string      `json:"InternetIp" xml:"InternetIp"`
 	IntranetIp       string      `json:"IntranetIp" xml:"IntranetIp"`
+	LastTime         string      `json:"LastTime" xml:"LastTime"`
+	OperateMsg       string      `json:"OperateMsg" xml:"OperateMsg"`
 	Uuid             string      `json:"Uuid" xml:"Uuid"`
-	EventDesc        string      `json:"EventDesc" xml:"EventDesc"`
+	CanBeDealOnLine  bool        `json:"CanBeDealOnLine" xml:"CanBeDealOnLine"`
+	RequestId        string      `json:"RequestId" xml:"RequestId"`
 	EventTypeDesc    string      `json:"EventTypeDesc" xml:"EventTypeDesc"`
-	Level            string      `json:"Level" xml:"Level"`
+	EventDesc        string      `json:"EventDesc" xml:"EventDesc"`
+	InstanceName     string      `json:"InstanceName" xml:"InstanceName"`
 	EventStatus      string      `json:"EventStatus" xml:"EventStatus"`
 	SaleVersion      string      `json:"SaleVersion" xml:"SaleVersion"`
-	DataSource       string      `json:"DataSource" xml:"DataSource"`
-	Type             string      `json:"Type" xml:"Type"`
-	OperateMsg       string      `json:"OperateMsg" xml:"OperateMsg"`
-	SasId            string      `json:"SasId" xml:"SasId"`
-	EventName        string      `json:"EventName" xml:"EventName"`
-	CanBeDealOnLine  bool        `json:"CanBeDealOnLine" xml:"CanBeDealOnLine"`
 	OperateErrorCode string      `json:"OperateErrorCode" xml:"OperateErrorCode"`
+	SasId            string      `json:"SasId" xml:"SasId"`
+	Level            string      `json:"Level" xml:"Level"`
+	Id               int         `json:"Id" xml:"Id"`
 	Details          []QuaraFile `json:"Details" xml:"Details"`
 }
 

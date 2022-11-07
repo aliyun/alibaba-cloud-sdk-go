@@ -17,8 +17,8 @@ package cdn
 
 // RequestDataModule is a nested struct in cdn response
 type RequestDataModule struct {
+	Type      string `json:"Type" xml:"Type"`
 	TimeStamp string `json:"TimeStamp" xml:"TimeStamp"`
 	Domain    string `json:"Domain" xml:"Domain"`
 	Request   int64  `json:"Request" xml:"Request"`
-	Type      string `json:"Type" xml:"Type"`
 }

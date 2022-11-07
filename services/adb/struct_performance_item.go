@@ -17,8 +17,8 @@ package adb
 
 // PerformanceItem is a nested struct in adb response
 type PerformanceItem struct {
-	Key                      string                         `json:"Key" xml:"Key"`
-	Unit                     string                         `json:"Unit" xml:"Unit"`
-	ResourcePoolPerformances []ResourcePoolPerformancesItem `json:"ResourcePoolPerformances" xml:"ResourcePoolPerformances"`
-	Series                   []SeriesItem                   `json:"Series" xml:"Series"`
+	Key                      string                                   `json:"Key" xml:"Key"`
+	Unit                     string                                   `json:"Unit" xml:"Unit"`
+	ResourcePoolPerformances []ResourcePoolPerformancesItem           `json:"ResourcePoolPerformances" xml:"ResourcePoolPerformances"`
+	Series                   []SeriesItemInDescribePatternPerformance `json:"Series" xml:"Series"`
 }

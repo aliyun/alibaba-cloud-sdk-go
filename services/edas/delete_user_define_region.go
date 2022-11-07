@@ -71,8 +71,8 @@ func (client *Client) DeleteUserDefineRegionWithCallback(request *DeleteUserDefi
 // DeleteUserDefineRegionRequest is the request struct for api DeleteUserDefineRegion
 type DeleteUserDefineRegionRequest struct {
 	*requests.RoaRequest
-	RegionTag string           `position:"Query" name:"RegionTag"`
-	Id        requests.Integer `position:"Query" name:"Id"`
+	RegionTag string `position:"Query" name:"RegionTag"`
+	Id        string `position:"Query" name:"Id"`
 }
 
 // DeleteUserDefineRegionResponse is the response struct for api DeleteUserDefineRegion
@@ -89,7 +89,7 @@ func CreateDeleteUserDefineRegionRequest() (request *DeleteUserDefineRegionReque
 	request = &DeleteUserDefineRegionRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "DeleteUserDefineRegion", "/pop/v5/user_region_def", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "DeleteUserDefineRegion", "/pop/v5/user_region_def", "edas", "openAPI")
 	request.Method = requests.DELETE
 	return
 }

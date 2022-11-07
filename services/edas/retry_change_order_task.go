@@ -71,8 +71,8 @@ func (client *Client) RetryChangeOrderTaskWithCallback(request *RetryChangeOrder
 // RetryChangeOrderTaskRequest is the request struct for api RetryChangeOrderTask
 type RetryChangeOrderTaskRequest struct {
 	*requests.RoaRequest
-	RetryStatus requests.Boolean `position:"Query" name:"RetryStatus"`
-	TaskId      string           `position:"Query" name:"TaskId"`
+	RetryStatus string `position:"Query" name:"RetryStatus"`
+	TaskId      string `position:"Query" name:"TaskId"`
 }
 
 // RetryChangeOrderTaskResponse is the response struct for api RetryChangeOrderTask
@@ -89,7 +89,7 @@ func CreateRetryChangeOrderTaskRequest() (request *RetryChangeOrderTaskRequest) 
 	request = &RetryChangeOrderTaskRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "RetryChangeOrderTask", "/pop/v5/changeorder/task_retry", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "RetryChangeOrderTask", "/pop/v5/changeorder/task_retry", "edas", "openAPI")
 	request.Method = requests.GET
 	return
 }

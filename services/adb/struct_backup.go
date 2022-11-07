@@ -17,11 +17,11 @@ package adb
 
 // Backup is a nested struct in adb response
 type Backup struct {
-	BackupId        string `json:"BackupId" xml:"BackupId"`
 	DBClusterId     string `json:"DBClusterId" xml:"DBClusterId"`
-	BackupStartTime string `json:"BackupStartTime" xml:"BackupStartTime"`
-	BackupEndTime   string `json:"BackupEndTime" xml:"BackupEndTime"`
-	BackupSize      int    `json:"BackupSize" xml:"BackupSize"`
-	BackupMethod    string `json:"BackupMethod" xml:"BackupMethod"`
 	BackupType      string `json:"BackupType" xml:"BackupType"`
+	BackupStartTime string `json:"BackupStartTime" xml:"BackupStartTime"`
+	BackupSize      int    `json:"BackupSize" xml:"BackupSize"`
+	BackupEndTime   string `json:"BackupEndTime" xml:"BackupEndTime"`
+	BackupId        string `json:"BackupId" xml:"BackupId"`
+	BackupMethod    string `json:"BackupMethod" xml:"BackupMethod"`
 }

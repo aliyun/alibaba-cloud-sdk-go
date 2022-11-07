@@ -87,8 +87,10 @@ type DetectRibFractureURLList struct {
 // DetectRibFractureResponse is the response struct for api DetectRibFracture
 type DetectRibFractureResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Data      Data   `json:"Data" xml:"Data"`
+	RequestId string                  `json:"RequestId" xml:"RequestId"`
+	Code      string                  `json:"Code" xml:"Code"`
+	Message   string                  `json:"Message" xml:"Message"`
+	Data      DataInDetectRibFracture `json:"Data" xml:"Data"`
 }
 
 // CreateDetectRibFractureRequest creates a request to invoke DetectRibFracture API

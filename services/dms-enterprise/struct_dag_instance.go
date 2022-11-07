@@ -27,4 +27,5 @@ type DAGInstance struct {
 	HistoryDagId int64  `json:"HistoryDagId" xml:"HistoryDagId"`
 	DagName      string `json:"DagName" xml:"DagName"`
 	OwnerName    string `json:"OwnerName" xml:"OwnerName"`
+	DagVersion   string `json:"DagVersion" xml:"DagVersion"`
 }

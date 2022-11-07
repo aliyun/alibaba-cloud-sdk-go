@@ -17,13 +17,13 @@ package dataworks_public
 
 // Group is a nested struct in dataworks_public response
 type Group struct {
-	ApiGatewayGroupId string `json:"ApiGatewayGroupId" xml:"ApiGatewayGroupId"`
 	ModifiedTime      string `json:"ModifiedTime" xml:"ModifiedTime"`
+	ApiGatewayGroupId string `json:"ApiGatewayGroupId" xml:"ApiGatewayGroupId"`
 	CreatedTime       string `json:"CreatedTime" xml:"CreatedTime"`
 	CreatorId         string `json:"CreatorId" xml:"CreatorId"`
 	TenantId          int64  `json:"TenantId" xml:"TenantId"`
 	GroupName         string `json:"GroupName" xml:"GroupName"`
-	ProjectId         int64  `json:"ProjectId" xml:"ProjectId"`
 	GroupId           string `json:"GroupId" xml:"GroupId"`
+	ProjectId         int64  `json:"ProjectId" xml:"ProjectId"`
 	Description       string `json:"Description" xml:"Description"`
 }

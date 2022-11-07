@@ -94,7 +94,7 @@ func CreateAddUserRequest() (request *AddUserRequest) {
 	request = &AddUserRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cloudesl", "2020-02-01", "AddUser", "cloudesl", "openAPI")
+	request.InitWithApiInfo("cloudesl", "2020-02-01", "AddUser", "", "")
 	request.Method = requests.POST
 	return
 }

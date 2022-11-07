@@ -17,5 +17,6 @@ package cms
 
 // Value is a nested struct in cms response
 type Value struct {
-	Value []string `json:"Value" xml:"Value"`
+	V  string `json:"V" xml:"V"`
+	Ts string `json:"Ts" xml:"Ts"`
 }

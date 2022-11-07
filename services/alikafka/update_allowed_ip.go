@@ -81,10 +81,10 @@ type UpdateAllowedIpRequest struct {
 // UpdateAllowedIpResponse is the response struct for api UpdateAllowedIp
 type UpdateAllowedIpResponse struct {
 	*responses.BaseResponse
-	Success   bool   `json:"Success" xml:"Success"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      int    `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateUpdateAllowedIpRequest creates a request to invoke UpdateAllowedIp API

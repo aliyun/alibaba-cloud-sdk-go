@@ -71,7 +71,6 @@ func (client *Client) SetScdnDDoSInfoWithCallback(request *SetScdnDDoSInfoReques
 // SetScdnDDoSInfoRequest is the request struct for api SetScdnDDoSInfo
 type SetScdnDDoSInfoRequest struct {
 	*requests.RpcRequest
-	OwnerId          requests.Integer `position:"Query" name:"OwnerId"`
 	ElasticBandwidth requests.Integer `position:"Query" name:"ElasticBandwidth"`
 }
 

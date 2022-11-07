@@ -20,12 +20,13 @@ type KeyMetadata struct {
 	NextRotationDate              string `json:"NextRotationDate" xml:"NextRotationDate"`
 	ProtectionLevel               string `json:"ProtectionLevel" xml:"ProtectionLevel"`
 	KeySpec                       string `json:"KeySpec" xml:"KeySpec"`
-	KeyUsage                      string `json:"KeyUsage" xml:"KeyUsage"`
 	DeleteDate                    string `json:"DeleteDate" xml:"DeleteDate"`
+	KeyUsage                      string `json:"KeyUsage" xml:"KeyUsage"`
 	AutomaticRotation             string `json:"AutomaticRotation" xml:"AutomaticRotation"`
+	DKMSInstanceId                string `json:"DKMSInstanceId" xml:"DKMSInstanceId"`
 	LastRotationDate              string `json:"LastRotationDate" xml:"LastRotationDate"`
-	MaterialExpireTime            string `json:"MaterialExpireTime" xml:"MaterialExpireTime"`
 	RotationInterval              string `json:"RotationInterval" xml:"RotationInterval"`
+	MaterialExpireTime            string `json:"MaterialExpireTime" xml:"MaterialExpireTime"`
 	PrimaryKeyVersion             string `json:"PrimaryKeyVersion" xml:"PrimaryKeyVersion"`
 	DeletionProtection            string `json:"DeletionProtection" xml:"DeletionProtection"`
 	Arn                           string `json:"Arn" xml:"Arn"`
@@ -33,7 +34,7 @@ type KeyMetadata struct {
 	CreationDate                  string `json:"CreationDate" xml:"CreationDate"`
 	Creator                       string `json:"Creator" xml:"Creator"`
 	Origin                        string `json:"Origin" xml:"Origin"`
-	Description                   string `json:"Description" xml:"Description"`
 	KeyId                         string `json:"KeyId" xml:"KeyId"`
+	Description                   string `json:"Description" xml:"Description"`
 	DeletionProtectionDescription string `json:"DeletionProtectionDescription" xml:"DeletionProtectionDescription"`
 }

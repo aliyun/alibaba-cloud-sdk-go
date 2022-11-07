@@ -71,7 +71,7 @@ func (client *Client) DeleteConfigTemplateWithCallback(request *DeleteConfigTemp
 // DeleteConfigTemplateRequest is the request struct for api DeleteConfigTemplate
 type DeleteConfigTemplateRequest struct {
 	*requests.RoaRequest
-	Id requests.Integer `position:"Query" name:"Id"`
+	Id string `position:"Query" name:"Id"`
 }
 
 // DeleteConfigTemplateResponse is the response struct for api DeleteConfigTemplate
@@ -87,7 +87,7 @@ func CreateDeleteConfigTemplateRequest() (request *DeleteConfigTemplateRequest) 
 	request = &DeleteConfigTemplateRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "DeleteConfigTemplate", "/pop/v5/config_template", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "DeleteConfigTemplate", "/pop/v5/config_template", "edas", "openAPI")
 	request.Method = requests.DELETE
 	return
 }

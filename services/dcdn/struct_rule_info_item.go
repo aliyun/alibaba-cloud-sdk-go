@@ -17,6 +17,8 @@ package dcdn
 
 // RuleInfoItem is a nested struct in dcdn response
 type RuleInfoItem struct {
-	RuleCode    string       `json:"RuleCode" xml:"RuleCode"`
-	RuleConfigs []ConfigItem `json:"RuleConfigs" xml:"RuleConfigs"`
+	RuleCode     string       `json:"RuleCode" xml:"RuleCode"`
+	DefenseScene string       `json:"DefenseScene" xml:"DefenseScene"`
+	RuleConfigs  []ConfigItem `json:"RuleConfigs" xml:"RuleConfigs"`
+	Configs      []ConfigItem `json:"Configs" xml:"Configs"`
 }

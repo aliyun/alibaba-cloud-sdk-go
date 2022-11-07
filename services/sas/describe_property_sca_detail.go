@@ -71,18 +71,27 @@ func (client *Client) DescribePropertyScaDetailWithCallback(request *DescribePro
 // DescribePropertyScaDetailRequest is the request struct for api DescribePropertyScaDetail
 type DescribePropertyScaDetailRequest struct {
 	*requests.RpcRequest
-	SearchItemSub string           `position:"Query" name:"SearchItemSub"`
-	Remark        string           `position:"Query" name:"Remark"`
-	SearchItem    string           `position:"Query" name:"SearchItem"`
-	Uuid          string           `position:"Query" name:"Uuid"`
-	SourceIp      string           `position:"Query" name:"SourceIp"`
-	PageSize      requests.Integer `position:"Query" name:"PageSize"`
-	SearchInfoSub string           `position:"Query" name:"SearchInfoSub"`
-	SearchInfo    string           `position:"Query" name:"SearchInfo"`
-	CurrentPage   requests.Integer `position:"Query" name:"CurrentPage"`
-	BizType       string           `position:"Query" name:"BizType"`
-	Name          requests.Integer `position:"Query" name:"Name"`
-	ScaName       string           `position:"Query" name:"ScaName"`
+	SearchItemSub       string           `position:"Query" name:"SearchItemSub"`
+	Remark              string           `position:"Query" name:"Remark"`
+	Pid                 string           `position:"Query" name:"Pid"`
+	SearchItem          string           `position:"Query" name:"SearchItem"`
+	Uuid                string           `position:"Query" name:"Uuid"`
+	Biz                 string           `position:"Query" name:"Biz"`
+	SourceIp            string           `position:"Query" name:"SourceIp"`
+	PageSize            requests.Integer `position:"Query" name:"PageSize"`
+	ProcessStartedStart requests.Integer `position:"Query" name:"ProcessStartedStart"`
+	ProcessStartedEnd   requests.Integer `position:"Query" name:"ProcessStartedEnd"`
+	Lang                string           `position:"Query" name:"Lang"`
+	ScaVersion          string           `position:"Query" name:"ScaVersion"`
+	SearchInfoSub       string           `position:"Query" name:"SearchInfoSub"`
+	SearchInfo          string           `position:"Query" name:"SearchInfo"`
+	CurrentPage         requests.Integer `position:"Query" name:"CurrentPage"`
+	BizType             string           `position:"Query" name:"BizType"`
+	Port                string           `position:"Query" name:"Port"`
+	Name                requests.Integer `position:"Query" name:"Name"`
+	ScaName             string           `position:"Query" name:"ScaName"`
+	ScaNamePattern      string           `position:"Query" name:"ScaNamePattern"`
+	User                string           `position:"Query" name:"User"`
 }
 
 // DescribePropertyScaDetailResponse is the response struct for api DescribePropertyScaDetail

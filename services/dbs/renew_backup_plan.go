@@ -81,11 +81,11 @@ type RenewBackupPlanRequest struct {
 // RenewBackupPlanResponse is the response struct for api RenewBackupPlan
 type RenewBackupPlanResponse struct {
 	*responses.BaseResponse
-	Success        bool   `json:"Success" xml:"Success"`
-	ErrCode        string `json:"ErrCode" xml:"ErrCode"`
-	ErrMessage     string `json:"ErrMessage" xml:"ErrMessage"`
 	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
+	ErrCode        string `json:"ErrCode" xml:"ErrCode"`
+	Success        bool   `json:"Success" xml:"Success"`
+	ErrMessage     string `json:"ErrMessage" xml:"ErrMessage"`
 	BackupPlanId   string `json:"BackupPlanId" xml:"BackupPlanId"`
 	OrderId        string `json:"OrderId" xml:"OrderId"`
 }
@@ -95,7 +95,7 @@ func CreateRenewBackupPlanRequest() (request *RenewBackupPlanRequest) {
 	request = &RenewBackupPlanRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dbs", "2019-03-06", "RenewBackupPlan", "cbs", "openAPI")
+	request.InitWithApiInfo("Dbs", "2019-03-06", "RenewBackupPlan", "", "")
 	request.Method = requests.POST
 	return
 }

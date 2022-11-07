@@ -79,9 +79,9 @@ type DescribeActionEventPolicyRequest struct {
 // DescribeActionEventPolicyResponse is the response struct for api DescribeActionEventPolicy
 type DescribeActionEventPolicyResponse struct {
 	*responses.BaseResponse
+	EnableEventLog string `json:"EnableEventLog" xml:"EnableEventLog"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
 	RegionId       string `json:"RegionId" xml:"RegionId"`
-	EnableEventLog string `json:"EnableEventLog" xml:"EnableEventLog"`
 }
 
 // CreateDescribeActionEventPolicyRequest creates a request to invoke DescribeActionEventPolicy API

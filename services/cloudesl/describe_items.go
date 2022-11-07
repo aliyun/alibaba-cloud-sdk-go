@@ -85,18 +85,18 @@ type DescribeItemsRequest struct {
 // DescribeItemsResponse is the response struct for api DescribeItems
 type DescribeItemsResponse struct {
 	*responses.BaseResponse
+	TemplateSceneId string     `json:"TemplateSceneId" xml:"TemplateSceneId"`
 	ErrorMessage    string     `json:"ErrorMessage" xml:"ErrorMessage"`
-	ErrorCode       string     `json:"ErrorCode" xml:"ErrorCode"`
-	PageNumber      int        `json:"PageNumber" xml:"PageNumber"`
+	Success         bool       `json:"Success" xml:"Success"`
 	Message         string     `json:"Message" xml:"Message"`
-	PageSize        int        `json:"PageSize" xml:"PageSize"`
-	DynamicCode     string     `json:"DynamicCode" xml:"DynamicCode"`
-	Code            string     `json:"Code" xml:"Code"`
 	DynamicMessage  string     `json:"DynamicMessage" xml:"DynamicMessage"`
 	TotalCount      int        `json:"TotalCount" xml:"TotalCount"`
+	DynamicCode     string     `json:"DynamicCode" xml:"DynamicCode"`
 	RequestId       string     `json:"RequestId" xml:"RequestId"`
-	Success         bool       `json:"Success" xml:"Success"`
-	TemplateSceneId string     `json:"TemplateSceneId" xml:"TemplateSceneId"`
+	ErrorCode       string     `json:"ErrorCode" xml:"ErrorCode"`
+	Code            string     `json:"Code" xml:"Code"`
+	PageNumber      int        `json:"PageNumber" xml:"PageNumber"`
+	PageSize        int        `json:"PageSize" xml:"PageSize"`
 	Items           []ItemInfo `json:"Items" xml:"Items"`
 }
 
@@ -105,7 +105,7 @@ func CreateDescribeItemsRequest() (request *DescribeItemsRequest) {
 	request = &DescribeItemsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cloudesl", "2020-02-01", "DescribeItems", "cloudesl", "openAPI")
+	request.InitWithApiInfo("cloudesl", "2020-02-01", "DescribeItems", "", "")
 	request.Method = requests.POST
 	return
 }

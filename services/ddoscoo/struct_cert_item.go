@@ -17,11 +17,11 @@ package ddoscoo
 
 // CertItem is a nested struct in ddoscoo response
 type CertItem struct {
-	Id            int    `json:"Id" xml:"Id"`
-	Name          string `json:"Name" xml:"Name"`
-	Common        string `json:"Common" xml:"Common"`
-	Issuer        string `json:"Issuer" xml:"Issuer"`
-	StartDate     string `json:"StartDate" xml:"StartDate"`
 	EndDate       string `json:"EndDate" xml:"EndDate"`
 	DomainRelated bool   `json:"DomainRelated" xml:"DomainRelated"`
+	StartDate     string `json:"StartDate" xml:"StartDate"`
+	Issuer        string `json:"Issuer" xml:"Issuer"`
+	Name          string `json:"Name" xml:"Name"`
+	Common        string `json:"Common" xml:"Common"`
+	Id            int    `json:"Id" xml:"Id"`
 }

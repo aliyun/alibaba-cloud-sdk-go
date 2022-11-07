@@ -76,6 +76,7 @@ type DescribeImagesRequest struct {
 	DesktopInstanceType string           `position:"Query" name:"DesktopInstanceType"`
 	LanguageType        string           `position:"Query" name:"LanguageType"`
 	NextToken           string           `position:"Query" name:"NextToken"`
+	FotaChannel         string           `position:"Query" name:"FotaChannel"`
 	ImageType           string           `position:"Query" name:"ImageType"`
 	OsType              string           `position:"Query" name:"OsType"`
 	ImageStatus         string           `position:"Query" name:"ImageStatus"`

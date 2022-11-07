@@ -80,11 +80,11 @@ type ModifyBackupObjectsRequest struct {
 // ModifyBackupObjectsResponse is the response struct for api ModifyBackupObjects
 type ModifyBackupObjectsResponse struct {
 	*responses.BaseResponse
-	Success        bool   `json:"Success" xml:"Success"`
-	ErrCode        string `json:"ErrCode" xml:"ErrCode"`
-	ErrMessage     string `json:"ErrMessage" xml:"ErrMessage"`
 	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
+	ErrCode        string `json:"ErrCode" xml:"ErrCode"`
+	Success        bool   `json:"Success" xml:"Success"`
+	ErrMessage     string `json:"ErrMessage" xml:"ErrMessage"`
 	BackupPlanId   string `json:"BackupPlanId" xml:"BackupPlanId"`
 	NeedPrecheck   bool   `json:"NeedPrecheck" xml:"NeedPrecheck"`
 }
@@ -94,7 +94,7 @@ func CreateModifyBackupObjectsRequest() (request *ModifyBackupObjectsRequest) {
 	request = &ModifyBackupObjectsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dbs", "2019-03-06", "ModifyBackupObjects", "cbs", "openAPI")
+	request.InitWithApiInfo("Dbs", "2019-03-06", "ModifyBackupObjects", "", "")
 	request.Method = requests.POST
 	return
 }

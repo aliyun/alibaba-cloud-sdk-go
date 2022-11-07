@@ -23,6 +23,7 @@ type Conversation struct {
 	TransferredToAgent       bool   `json:"TransferredToAgent" xml:"TransferredToAgent"`
 	EndReason                int    `json:"EndReason" xml:"EndReason"`
 	EndTime                  int64  `json:"EndTime" xml:"EndTime"`
+	CalledNumber             string `json:"CalledNumber" xml:"CalledNumber"`
 	StartTime                int64  `json:"StartTime" xml:"StartTime"`
 	CallingNumber            string `json:"CallingNumber" xml:"CallingNumber"`
 	BeginTime                int64  `json:"BeginTime" xml:"BeginTime"`

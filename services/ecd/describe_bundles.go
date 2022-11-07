@@ -71,17 +71,20 @@ func (client *Client) DescribeBundlesWithCallback(request *DescribeBundlesReques
 // DescribeBundlesRequest is the request struct for api DescribeBundles
 type DescribeBundlesRequest struct {
 	*requests.RpcRequest
-	GpuCount          requests.Float   `position:"Query" name:"GpuCount"`
-	BundleId          *[]string        `position:"Query" name:"BundleId"  type:"Repeated"`
-	DesktopTypeFamily string           `position:"Query" name:"DesktopTypeFamily"`
-	NextToken         string           `position:"Query" name:"NextToken"`
-	FromDesktopGroup  requests.Boolean `position:"Query" name:"FromDesktopGroup"`
-	BundleType        string           `position:"Query" name:"BundleType"`
-	MemorySize        requests.Integer `position:"Query" name:"MemorySize"`
-	MaxResults        requests.Integer `position:"Query" name:"MaxResults"`
-	CheckStock        requests.Boolean `position:"Query" name:"CheckStock"`
-	ProtocolType      string           `position:"Query" name:"ProtocolType"`
-	CpuCount          requests.Integer `position:"Query" name:"CpuCount"`
+	GpuCount                requests.Float   `position:"Query" name:"GpuCount"`
+	BundleId                *[]string        `position:"Query" name:"BundleId"  type:"Repeated"`
+	DesktopTypeFamily       string           `position:"Query" name:"DesktopTypeFamily"`
+	NextToken               string           `position:"Query" name:"NextToken"`
+	FromDesktopGroup        requests.Boolean `position:"Query" name:"FromDesktopGroup"`
+	BundleType              string           `position:"Query" name:"BundleType"`
+	FotaChannel             string           `position:"Query" name:"FotaChannel"`
+	VolumeEncryptionEnabled requests.Boolean `position:"Query" name:"VolumeEncryptionEnabled"`
+	MemorySize              requests.Integer `position:"Query" name:"MemorySize"`
+	MaxResults              requests.Integer `position:"Query" name:"MaxResults"`
+	CheckStock              requests.Boolean `position:"Query" name:"CheckStock"`
+	ProtocolType            string           `position:"Query" name:"ProtocolType"`
+	CpuCount                requests.Integer `position:"Query" name:"CpuCount"`
+	SupportMultiSession     requests.Boolean `position:"Query" name:"SupportMultiSession"`
 }
 
 // DescribeBundlesResponse is the response struct for api DescribeBundles

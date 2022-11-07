@@ -73,6 +73,7 @@ type UpgradePostPayOrderRequest struct {
 	*requests.RpcRequest
 	DiskSize   requests.Integer `position:"Query" name:"DiskSize"`
 	IoMax      requests.Integer `position:"Query" name:"IoMax"`
+	EipModel   requests.Boolean `position:"Query" name:"EipModel"`
 	IoMaxSpec  string           `position:"Query" name:"IoMaxSpec"`
 	TopicQuota requests.Integer `position:"Query" name:"TopicQuota"`
 	EipMax     requests.Integer `position:"Query" name:"EipMax"`
@@ -83,10 +84,10 @@ type UpgradePostPayOrderRequest struct {
 // UpgradePostPayOrderResponse is the response struct for api UpgradePostPayOrder
 type UpgradePostPayOrderResponse struct {
 	*responses.BaseResponse
-	Success   bool   `json:"Success" xml:"Success"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      int    `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateUpgradePostPayOrderRequest creates a request to invoke UpgradePostPayOrder API

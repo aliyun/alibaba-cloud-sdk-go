@@ -22,6 +22,7 @@ type Parameter struct {
 	ParameterVersion int                    `json:"ParameterVersion" xml:"ParameterVersion"`
 	Value            string                 `json:"Value" xml:"Value"`
 	UpdatedBy        string                 `json:"UpdatedBy" xml:"UpdatedBy"`
+	ResourceGroupId  string                 `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	Constraints      string                 `json:"Constraints" xml:"Constraints"`
 	CreatedDate      string                 `json:"CreatedDate" xml:"CreatedDate"`
 	Id               string                 `json:"Id" xml:"Id"`
@@ -29,6 +30,6 @@ type Parameter struct {
 	KeyId            string                 `json:"KeyId" xml:"KeyId"`
 	UpdatedDate      string                 `json:"UpdatedDate" xml:"UpdatedDate"`
 	Tags             map[string]interface{} `json:"Tags" xml:"Tags"`
-	ShareType        string                 `json:"ShareType" xml:"ShareType"`
 	Type             string                 `json:"Type" xml:"Type"`
+	ShareType        string                 `json:"ShareType" xml:"ShareType"`
 }

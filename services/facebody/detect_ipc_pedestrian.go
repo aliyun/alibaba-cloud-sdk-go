@@ -71,12 +71,15 @@ func (client *Client) DetectIPCPedestrianWithCallback(request *DetectIPCPedestri
 // DetectIPCPedestrianRequest is the request struct for api DetectIPCPedestrian
 type DetectIPCPedestrianRequest struct {
 	*requests.RpcRequest
-	ContinueOnError requests.Boolean `position:"Body" name:"ContinueOnError"`
-	Height          requests.Integer `position:"Body" name:"Height"`
-	ImageData       string           `position:"Body" name:"ImageData"`
-	DataId          string           `position:"Body" name:"DataId"`
-	ImageURL        string           `position:"Body" name:"ImageURL"`
-	Width           requests.Integer `position:"Body" name:"Width"`
+	FormatResultToJson requests.Boolean `position:"Query" name:"FormatResultToJson"`
+	ContinueOnError    requests.Boolean `position:"Body" name:"ContinueOnError"`
+	OssFile            string           `position:"Query" name:"OssFile"`
+	Height             requests.Integer `position:"Body" name:"Height"`
+	ImageData          string           `position:"Body" name:"ImageData"`
+	RequestProxyBy     string           `position:"Query" name:"RequestProxyBy"`
+	DataId             string           `position:"Body" name:"DataId"`
+	ImageURL           string           `position:"Body" name:"ImageURL"`
+	Width              requests.Integer `position:"Body" name:"Width"`
 }
 
 // DetectIPCPedestrianResponse is the response struct for api DetectIPCPedestrian

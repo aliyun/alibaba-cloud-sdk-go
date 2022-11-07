@@ -17,8 +17,8 @@ package ehpc
 
 // LocationInfo is a nested struct in ehpc response
 type LocationInfo struct {
-	Location       string `json:"Location" xml:"Location"`
-	RemoteType     string `json:"RemoteType" xml:"RemoteType"`
-	Authentication string `json:"Authentication" xml:"Authentication"`
 	URL            string `json:"URL" xml:"URL"`
+	RemoteType     string `json:"RemoteType" xml:"RemoteType"`
+	Location       string `json:"Location" xml:"Location"`
+	Authentication string `json:"Authentication" xml:"Authentication"`
 }

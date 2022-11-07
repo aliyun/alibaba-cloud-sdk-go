@@ -73,6 +73,7 @@ type UpdateStoreConfigRequest struct {
 	*requests.RpcRequest
 	ExtraParams             string           `position:"Body" name:"ExtraParams"`
 	StoreId                 string           `position:"Body" name:"StoreId"`
+	SubscribeContents       string           `position:"Body" name:"SubscribeContents"`
 	EnableNotification      requests.Boolean `position:"Body" name:"EnableNotification"`
 	NotificationWebHook     string           `position:"Body" name:"NotificationWebHook"`
 	NotificationSilentTimes string           `position:"Body" name:"NotificationSilentTimes"`
@@ -81,14 +82,14 @@ type UpdateStoreConfigRequest struct {
 // UpdateStoreConfigResponse is the response struct for api UpdateStoreConfig
 type UpdateStoreConfigResponse struct {
 	*responses.BaseResponse
-	ErrorMessage   string `json:"ErrorMessage" xml:"ErrorMessage"`
-	ErrorCode      string `json:"ErrorCode" xml:"ErrorCode"`
-	Message        string `json:"Message" xml:"Message"`
-	DynamicCode    string `json:"DynamicCode" xml:"DynamicCode"`
-	Code           string `json:"Code" xml:"Code"`
-	DynamicMessage string `json:"DynamicMessage" xml:"DynamicMessage"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
+	ErrorMessage   string `json:"ErrorMessage" xml:"ErrorMessage"`
 	Success        bool   `json:"Success" xml:"Success"`
+	ErrorCode      string `json:"ErrorCode" xml:"ErrorCode"`
+	Code           string `json:"Code" xml:"Code"`
+	Message        string `json:"Message" xml:"Message"`
+	DynamicMessage string `json:"DynamicMessage" xml:"DynamicMessage"`
+	DynamicCode    string `json:"DynamicCode" xml:"DynamicCode"`
 }
 
 // CreateUpdateStoreConfigRequest creates a request to invoke UpdateStoreConfig API
@@ -96,7 +97,7 @@ func CreateUpdateStoreConfigRequest() (request *UpdateStoreConfigRequest) {
 	request = &UpdateStoreConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cloudesl", "2020-02-01", "UpdateStoreConfig", "cloudesl", "openAPI")
+	request.InitWithApiInfo("cloudesl", "2020-02-01", "UpdateStoreConfig", "", "")
 	request.Method = requests.POST
 	return
 }

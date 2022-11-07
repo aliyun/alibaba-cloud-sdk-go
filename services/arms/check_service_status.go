@@ -86,7 +86,7 @@ func CreateCheckServiceStatusRequest() (request *CheckServiceStatusRequest) {
 	request = &CheckServiceStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "CheckServiceStatus", "", "")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "CheckServiceStatus", "arms", "openAPI")
 	request.Method = requests.POST
 	return
 }

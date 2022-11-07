@@ -71,12 +71,12 @@ func (client *Client) DescribeTagValuesWithCallback(request *DescribeTagValuesRe
 // DescribeTagValuesRequest is the request struct for api DescribeTagValues
 type DescribeTagValuesRequest struct {
 	*requests.RpcRequest
-	ResourceId   string           `position:"Query" name:"ResourceId"`
-	ResourceType string           `position:"Query" name:"ResourceType"`
 	PageNumber   requests.Integer `position:"Query" name:"PageNumber"`
 	PageSize     requests.Integer `position:"Query" name:"PageSize"`
-	Category     string           `position:"Query" name:"Category"`
 	Key          string           `position:"Query" name:"Key"`
+	ResourceId   string           `position:"Query" name:"ResourceId"`
+	ResourceType string           `position:"Query" name:"ResourceType"`
+	Category     string           `position:"Query" name:"Category"`
 }
 
 // DescribeTagValuesResponse is the response struct for api DescribeTagValues

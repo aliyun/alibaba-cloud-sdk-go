@@ -90,7 +90,7 @@ func CreateDescribeDBClusterAuditLogCollectorRequest() (request *DescribeDBClust
 	request = &DescribeDBClusterAuditLogCollectorRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeDBClusterAuditLogCollector", "", "")
+	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeDBClusterAuditLogCollector", "polardb", "openAPI")
 	request.Method = requests.POST
 	return
 }

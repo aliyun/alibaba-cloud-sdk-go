@@ -84,8 +84,8 @@ type DescribeConnectionCountRecordsResponse struct {
 	TotalCount      string      `json:"TotalCount" xml:"TotalCount"`
 	RequestId       string      `json:"RequestId" xml:"RequestId"`
 	DBClusterId     string      `json:"DBClusterId" xml:"DBClusterId"`
-	UserRecords     []Users     `json:"UserRecords" xml:"UserRecords"`
 	AccessIpRecords []AccessIps `json:"AccessIpRecords" xml:"AccessIpRecords"`
+	UserRecords     []Users     `json:"UserRecords" xml:"UserRecords"`
 }
 
 // CreateDescribeConnectionCountRecordsRequest creates a request to invoke DescribeConnectionCountRecords API

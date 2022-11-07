@@ -77,8 +77,8 @@ type ScanSensitiveDataRequest struct {
 // ScanSensitiveDataResponse is the response struct for api ScanSensitiveData
 type ScanSensitiveDataResponse struct {
 	*responses.BaseResponse
-	RequestId  string                 `json:"RequestId" xml:"RequestId"`
 	Sensitives map[string]interface{} `json:"Sensitives" xml:"Sensitives"`
+	RequestId  string                 `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateScanSensitiveDataRequest creates a request to invoke ScanSensitiveData API

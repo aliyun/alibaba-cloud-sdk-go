@@ -83,8 +83,8 @@ type DescribeAvailableResourceRequest struct {
 // DescribeAvailableResourceResponse is the response struct for api DescribeAvailableResource
 type DescribeAvailableResourceResponse struct {
 	*responses.BaseResponse
-	RequestId         string          `json:"RequestId" xml:"RequestId"`
 	RegionId          string          `json:"RegionId" xml:"RegionId"`
+	RequestId         string          `json:"RequestId" xml:"RequestId"`
 	AvailableZoneList []AvailableZone `json:"AvailableZoneList" xml:"AvailableZoneList"`
 }
 

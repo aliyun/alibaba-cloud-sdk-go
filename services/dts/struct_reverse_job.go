@@ -65,4 +65,5 @@ type ReverseJob struct {
 	Performance                   Performance                     `json:"Performance" xml:"Performance"`
 	SubscriptionDataType          SubscriptionDataType            `json:"SubscriptionDataType" xml:"SubscriptionDataType"`
 	TagList                       []TagListItem                   `json:"TagList" xml:"TagList"`
+	ErrorDetails                  []ErrorDetail                   `json:"ErrorDetails" xml:"ErrorDetails"`
 }

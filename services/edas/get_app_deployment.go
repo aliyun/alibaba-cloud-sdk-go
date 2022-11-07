@@ -88,7 +88,7 @@ func CreateGetAppDeploymentRequest() (request *GetAppDeploymentRequest) {
 	request = &GetAppDeploymentRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "GetAppDeployment", "/pop/v5/oam/app_deployment", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "GetAppDeployment", "/pop/v5/oam/app_deployment", "edas", "openAPI")
 	request.Method = requests.GET
 	return
 }

@@ -92,6 +92,7 @@ type DescribeMetaListResponse struct {
 	PageSize         string     `json:"PageSize" xml:"PageSize"`
 	RequestId        string     `json:"RequestId" xml:"RequestId"`
 	PageNumber       string     `json:"PageNumber" xml:"PageNumber"`
+	DBClusterId      string     `json:"DBClusterId" xml:"DBClusterId"`
 	Items            []MetaItem `json:"Items" xml:"Items"`
 }
 
@@ -100,7 +101,7 @@ func CreateDescribeMetaListRequest() (request *DescribeMetaListRequest) {
 	request = &DescribeMetaListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeMetaList", "", "")
+	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeMetaList", "polardb", "openAPI")
 	request.Method = requests.POST
 	return
 }

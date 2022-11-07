@@ -75,18 +75,18 @@ type CreateDataSourceRequest struct {
 	Description    string           `position:"Query" name:"Description"`
 	Content        string           `position:"Query" name:"Content"`
 	SubType        string           `position:"Query" name:"SubType"`
-	Name           string           `position:"Query" name:"Name"`
 	EnvType        requests.Integer `position:"Query" name:"EnvType"`
 	ProjectId      requests.Integer `position:"Query" name:"ProjectId"`
+	Name           string           `position:"Query" name:"Name"`
 }
 
 // CreateDataSourceResponse is the response struct for api CreateDataSource
 type CreateDataSourceResponse struct {
 	*responses.BaseResponse
-	Success        bool   `json:"Success" xml:"Success"`
 	HttpStatusCode string `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	Data           int64  `json:"Data" xml:"Data"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
+	Success        bool   `json:"Success" xml:"Success"`
 }
 
 // CreateCreateDataSourceRequest creates a request to invoke CreateDataSource API

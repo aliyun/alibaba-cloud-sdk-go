@@ -71,18 +71,20 @@ func (client *Client) CreateScriptWithCallback(request *CreateScriptRequest, cal
 // CreateScriptRequest is the request struct for api CreateScript
 type CreateScriptRequest struct {
 	*requests.RpcRequest
-	TtsConfig          string           `position:"Query" name:"TtsConfig"`
-	Industry           string           `position:"Query" name:"Industry"`
-	ScriptName         string           `position:"Query" name:"ScriptName"`
-	Scene              string           `position:"Query" name:"Scene"`
-	ScriptWaveform     *[]string        `position:"Query" name:"ScriptWaveform"  type:"Repeated"`
-	AsrConfig          string           `position:"Query" name:"AsrConfig"`
-	NewBargeInEnable   requests.Boolean `position:"Query" name:"NewBargeInEnable"`
-	MiniPlaybackEnable requests.Boolean `position:"Query" name:"MiniPlaybackEnable"`
-	ChatbotId          string           `position:"Query" name:"ChatbotId"`
-	InstanceId         string           `position:"Query" name:"InstanceId"`
-	ScriptDescription  string           `position:"Query" name:"ScriptDescription"`
-	ScriptContent      *[]string        `position:"Query" name:"ScriptContent"  type:"Repeated"`
+	TtsConfig                        string           `position:"Query" name:"TtsConfig"`
+	Industry                         string           `position:"Query" name:"Industry"`
+	ScriptName                       string           `position:"Query" name:"ScriptName"`
+	Scene                            string           `position:"Query" name:"Scene"`
+	ScriptWaveform                   *[]string        `position:"Query" name:"ScriptWaveform"  type:"Repeated"`
+	AsrConfig                        string           `position:"Query" name:"AsrConfig"`
+	MiniPlaybackConfigListJsonString string           `position:"Query" name:"MiniPlaybackConfigListJsonString"`
+	NewBargeInEnable                 requests.Boolean `position:"Query" name:"NewBargeInEnable"`
+	MiniPlaybackEnable               requests.Boolean `position:"Query" name:"MiniPlaybackEnable"`
+	ChatbotId                        string           `position:"Query" name:"ChatbotId"`
+	InstanceId                       string           `position:"Query" name:"InstanceId"`
+	ScriptDescription                string           `position:"Query" name:"ScriptDescription"`
+	LongWaitEnable                   requests.Boolean `position:"Query" name:"LongWaitEnable"`
+	ScriptContent                    *[]string        `position:"Query" name:"ScriptContent"  type:"Repeated"`
 }
 
 // CreateScriptResponse is the response struct for api CreateScript

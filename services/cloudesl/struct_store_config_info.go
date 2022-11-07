@@ -17,8 +17,9 @@ package cloudesl
 
 // StoreConfigInfo is a nested struct in cloudesl response
 type StoreConfigInfo struct {
-	EnableNotification      bool   `json:"EnableNotification" xml:"EnableNotification"`
-	NotificationWebHook     string `json:"NotificationWebHook" xml:"NotificationWebHook"`
-	NotificationSilentTimes string `json:"NotificationSilentTimes" xml:"NotificationSilentTimes"`
-	StoreId                 string `json:"StoreId" xml:"StoreId"`
+	StoreId                 string             `json:"StoreId" xml:"StoreId"`
+	EnableNotification      bool               `json:"EnableNotification" xml:"EnableNotification"`
+	NotificationWebHook     string             `json:"NotificationWebHook" xml:"NotificationWebHook"`
+	NotificationSilentTimes string             `json:"NotificationSilentTimes" xml:"NotificationSilentTimes"`
+	SubscribeContents       []SubscribeContent `json:"SubscribeContents" xml:"SubscribeContents"`
 }

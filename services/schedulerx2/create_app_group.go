@@ -71,19 +71,20 @@ func (client *Client) CreateAppGroupWithCallback(request *CreateAppGroupRequest,
 // CreateAppGroupRequest is the request struct for api CreateAppGroup
 type CreateAppGroupRequest struct {
 	*requests.RpcRequest
-	MaxJobs              requests.Integer `position:"Query" name:"MaxJobs"`
 	NamespaceName        string           `position:"Query" name:"NamespaceName"`
 	NamespaceSource      string           `position:"Query" name:"NamespaceSource"`
 	ScheduleBusyWorkers  requests.Boolean `position:"Query" name:"ScheduleBusyWorkers"`
+	Description          string           `position:"Query" name:"Description"`
+	AppName              string           `position:"Query" name:"AppName"`
+	AlarmJson            string           `position:"Query" name:"AlarmJson"`
+	MonitorContactsJson  string           `position:"Query" name:"MonitorContactsJson"`
+	MaxJobs              requests.Integer `position:"Query" name:"MaxJobs"`
 	MetricsThresholdJson string           `position:"Query" name:"MetricsThresholdJson"`
 	GroupId              string           `position:"Query" name:"GroupId"`
-	Description          string           `position:"Query" name:"Description"`
+	AppType              requests.Integer `position:"Query" name:"AppType"`
 	MonitorConfigJson    string           `position:"Query" name:"MonitorConfigJson"`
-	AppName              string           `position:"Query" name:"AppName"`
 	Namespace            string           `position:"Query" name:"Namespace"`
-	AlarmJson            string           `position:"Query" name:"AlarmJson"`
 	AppKey               string           `position:"Query" name:"AppKey"`
-	MonitorContactsJson  string           `position:"Query" name:"MonitorContactsJson"`
 }
 
 // CreateAppGroupResponse is the response struct for api CreateAppGroup

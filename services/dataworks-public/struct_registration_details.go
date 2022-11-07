@@ -23,6 +23,6 @@ type RegistrationDetails struct {
 	ServiceRequestBodyDescription string                         `json:"ServiceRequestBodyDescription" xml:"ServiceRequestBodyDescription"`
 	ServiceContentType            int                            `json:"ServiceContentType" xml:"ServiceContentType"`
 	SuccessfulResultSample        string                         `json:"SuccessfulResultSample" xml:"SuccessfulResultSample"`
-	RegistrationErrorCodes        []RegistrationErrorCode        `json:"RegistrationErrorCodes" xml:"RegistrationErrorCodes"`
 	RegistrationRequestParameters []RegistrationRequestParameter `json:"RegistrationRequestParameters" xml:"RegistrationRequestParameters"`
+	RegistrationErrorCodes        []RegistrationErrorCode        `json:"RegistrationErrorCodes" xml:"RegistrationErrorCodes"`
 }

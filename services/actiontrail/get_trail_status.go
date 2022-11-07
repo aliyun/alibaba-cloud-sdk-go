@@ -78,16 +78,16 @@ type GetTrailStatusRequest struct {
 // GetTrailStatusResponse is the response struct for api GetTrailStatus
 type GetTrailStatusResponse struct {
 	*responses.BaseResponse
-	LatestDeliveryLogServiceTime  string `json:"LatestDeliveryLogServiceTime" xml:"LatestDeliveryLogServiceTime"`
 	RequestId                     string `json:"RequestId" xml:"RequestId"`
-	LatestDeliveryLogServiceError string `json:"LatestDeliveryLogServiceError" xml:"LatestDeliveryLogServiceError"`
 	StartLoggingTime              string `json:"StartLoggingTime" xml:"StartLoggingTime"`
-	OssBucketStatus               bool   `json:"OssBucketStatus" xml:"OssBucketStatus"`
 	LatestDeliveryError           string `json:"LatestDeliveryError" xml:"LatestDeliveryError"`
 	StopLoggingTime               string `json:"StopLoggingTime" xml:"StopLoggingTime"`
-	SlsLogStoreStatus             bool   `json:"SlsLogStoreStatus" xml:"SlsLogStoreStatus"`
-	LatestDeliveryTime            string `json:"LatestDeliveryTime" xml:"LatestDeliveryTime"`
 	IsLogging                     bool   `json:"IsLogging" xml:"IsLogging"`
+	LatestDeliveryTime            string `json:"LatestDeliveryTime" xml:"LatestDeliveryTime"`
+	LatestDeliveryLogServiceError string `json:"LatestDeliveryLogServiceError" xml:"LatestDeliveryLogServiceError"`
+	LatestDeliveryLogServiceTime  string `json:"LatestDeliveryLogServiceTime" xml:"LatestDeliveryLogServiceTime"`
+	OssBucketStatus               bool   `json:"OssBucketStatus" xml:"OssBucketStatus"`
+	SlsLogStoreStatus             bool   `json:"SlsLogStoreStatus" xml:"SlsLogStoreStatus"`
 }
 
 // CreateGetTrailStatusRequest creates a request to invoke GetTrailStatus API
@@ -95,7 +95,7 @@ func CreateGetTrailStatusRequest() (request *GetTrailStatusRequest) {
 	request = &GetTrailStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Actiontrail", "2020-07-06", "GetTrailStatus", "actiontrail", "openAPI")
+	request.InitWithApiInfo("Actiontrail", "2020-07-06", "GetTrailStatus", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -72,8 +72,8 @@ func (client *Client) RemoveProjectMemberFromRoleWithCallback(request *RemovePro
 type RemoveProjectMemberFromRoleRequest struct {
 	*requests.RpcRequest
 	RoleCode  string           `position:"Query" name:"RoleCode"`
-	ProjectId requests.Integer `position:"Query" name:"ProjectId"`
 	UserId    string           `position:"Query" name:"UserId"`
+	ProjectId requests.Integer `position:"Query" name:"ProjectId"`
 }
 
 // RemoveProjectMemberFromRoleResponse is the response struct for api RemoveProjectMemberFromRole

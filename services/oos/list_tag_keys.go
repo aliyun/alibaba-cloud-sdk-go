@@ -79,9 +79,9 @@ type ListTagKeysRequest struct {
 // ListTagKeysResponse is the response struct for api ListTagKeys
 type ListTagKeysResponse struct {
 	*responses.BaseResponse
+	NextToken  string   `json:"NextToken" xml:"NextToken"`
 	RequestId  string   `json:"RequestId" xml:"RequestId"`
 	MaxResults int      `json:"MaxResults" xml:"MaxResults"`
-	NextToken  string   `json:"NextToken" xml:"NextToken"`
 	Keys       []string `json:"Keys" xml:"Keys"`
 }
 
@@ -90,7 +90,7 @@ func CreateListTagKeysRequest() (request *ListTagKeysRequest) {
 	request = &ListTagKeysRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("oos", "2019-06-01", "ListTagKeys", "", "")
+	request.InitWithApiInfo("oos", "2019-06-01", "ListTagKeys", "oos", "openAPI")
 	request.Method = requests.POST
 	return
 }

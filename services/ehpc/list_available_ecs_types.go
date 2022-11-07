@@ -80,8 +80,8 @@ type ListAvailableEcsTypesRequest struct {
 // ListAvailableEcsTypesResponse is the response struct for api ListAvailableEcsTypes
 type ListAvailableEcsTypesResponse struct {
 	*responses.BaseResponse
-	RequestId            string               `json:"RequestId" xml:"RequestId"`
 	SupportSpotInstance  bool                 `json:"SupportSpotInstance" xml:"SupportSpotInstance"`
+	RequestId            string               `json:"RequestId" xml:"RequestId"`
 	InstanceTypeFamilies InstanceTypeFamilies `json:"InstanceTypeFamilies" xml:"InstanceTypeFamilies"`
 }
 

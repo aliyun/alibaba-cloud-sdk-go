@@ -74,6 +74,7 @@ type ListDashboardsRequest struct {
 	DashboardName  string           `position:"Query" name:"DashboardName"`
 	Product        string           `position:"Query" name:"Product"`
 	RecreateSwitch requests.Boolean `position:"Query" name:"RecreateSwitch"`
+	Language       string           `position:"Query" name:"Language"`
 	ClusterId      string           `position:"Query" name:"ClusterId"`
 	ProxyUserId    string           `position:"Query" name:"ProxyUserId"`
 	Title          string           `position:"Query" name:"Title"`
@@ -92,7 +93,7 @@ func CreateListDashboardsRequest() (request *ListDashboardsRequest) {
 	request = &ListDashboardsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "ListDashboards", "", "")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "ListDashboards", "arms", "openAPI")
 	request.Method = requests.POST
 	return
 }

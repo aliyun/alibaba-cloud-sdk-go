@@ -84,9 +84,9 @@ type ResetAccountPasswordRequest struct {
 // ResetAccountPasswordResponse is the response struct for api ResetAccountPassword
 type ResetAccountPasswordResponse struct {
 	*responses.BaseResponse
+	TaskId      int    `json:"TaskId" xml:"TaskId"`
 	RequestId   string `json:"RequestId" xml:"RequestId"`
 	DBClusterId string `json:"DBClusterId" xml:"DBClusterId"`
-	TaskId      int    `json:"TaskId" xml:"TaskId"`
 }
 
 // CreateResetAccountPasswordRequest creates a request to invoke ResetAccountPassword API

@@ -98,11 +98,11 @@ type CreateRestoreTaskRequest struct {
 // CreateRestoreTaskResponse is the response struct for api CreateRestoreTask
 type CreateRestoreTaskResponse struct {
 	*responses.BaseResponse
-	Success        bool   `json:"Success" xml:"Success"`
-	ErrCode        string `json:"ErrCode" xml:"ErrCode"`
-	ErrMessage     string `json:"ErrMessage" xml:"ErrMessage"`
 	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
+	ErrCode        string `json:"ErrCode" xml:"ErrCode"`
+	Success        bool   `json:"Success" xml:"Success"`
+	ErrMessage     string `json:"ErrMessage" xml:"ErrMessage"`
 	RestoreTaskId  string `json:"RestoreTaskId" xml:"RestoreTaskId"`
 }
 
@@ -111,7 +111,7 @@ func CreateCreateRestoreTaskRequest() (request *CreateRestoreTaskRequest) {
 	request = &CreateRestoreTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dbs", "2019-03-06", "CreateRestoreTask", "cbs", "openAPI")
+	request.InitWithApiInfo("Dbs", "2019-03-06", "CreateRestoreTask", "", "")
 	request.Method = requests.POST
 	return
 }

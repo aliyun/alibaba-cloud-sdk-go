@@ -77,8 +77,8 @@ type DescribeVpcListRequest struct {
 // DescribeVpcListResponse is the response struct for api DescribeVpcList
 type DescribeVpcListResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Count     int    `json:"Count" xml:"Count"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	VpcList   []Vpc  `json:"VpcList" xml:"VpcList"`
 }
 

@@ -71,8 +71,8 @@ func (client *Client) DisableUserWithCallback(request *DisableUserRequest, callb
 // DisableUserRequest is the request struct for api DisableUser
 type DisableUserRequest struct {
 	*requests.RpcRequest
-	Uid string           `position:"Query" name:"Uid"`
 	Tid requests.Integer `position:"Query" name:"Tid"`
+	Uid string           `position:"Query" name:"Uid"`
 }
 
 // DisableUserResponse is the response struct for api DisableUser

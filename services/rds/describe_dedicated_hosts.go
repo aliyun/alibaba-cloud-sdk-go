@@ -86,8 +86,8 @@ type DescribeDedicatedHostsRequest struct {
 // DescribeDedicatedHostsResponse is the response struct for api DescribeDedicatedHosts
 type DescribeDedicatedHostsResponse struct {
 	*responses.BaseResponse
-	RequestId            string         `json:"RequestId" xml:"RequestId"`
 	DedicatedHostGroupId string         `json:"DedicatedHostGroupId" xml:"DedicatedHostGroupId"`
+	RequestId            string         `json:"RequestId" xml:"RequestId"`
 	DedicatedHosts       DedicatedHosts `json:"DedicatedHosts" xml:"DedicatedHosts"`
 }
 

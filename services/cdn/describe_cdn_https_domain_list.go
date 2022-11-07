@@ -80,8 +80,8 @@ type DescribeCdnHttpsDomainListRequest struct {
 // DescribeCdnHttpsDomainListResponse is the response struct for api DescribeCdnHttpsDomainList
 type DescribeCdnHttpsDomainListResponse struct {
 	*responses.BaseResponse
-	RequestId  string                                `json:"RequestId" xml:"RequestId"`
 	TotalCount int                                   `json:"TotalCount" xml:"TotalCount"`
+	RequestId  string                                `json:"RequestId" xml:"RequestId"`
 	CertInfos  CertInfosInDescribeCdnHttpsDomainList `json:"CertInfos" xml:"CertInfos"`
 }
 

@@ -17,6 +17,8 @@ package rds
 
 // Result is a nested struct in rds response
 type Result struct {
-	GadInstanceName string `json:"GadInstanceName" xml:"GadInstanceName"`
-	CreateCount     string `json:"CreateCount" xml:"CreateCount"`
+	CreateMemberCount string `json:"CreateMemberCount" xml:"CreateMemberCount"`
+	TaskID            string `json:"TaskID" xml:"TaskID"`
+	GadInstanceName   string `json:"GadInstanceName" xml:"GadInstanceName"`
+	CreateCount       string `json:"CreateCount" xml:"CreateCount"`
 }

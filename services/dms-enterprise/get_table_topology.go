@@ -71,8 +71,8 @@ func (client *Client) GetTableTopologyWithCallback(request *GetTableTopologyRequ
 // GetTableTopologyRequest is the request struct for api GetTableTopology
 type GetTableTopologyRequest struct {
 	*requests.RpcRequest
-	TableGuid string           `position:"Query" name:"TableGuid"`
 	Tid       requests.Integer `position:"Query" name:"Tid"`
+	TableGuid string           `position:"Query" name:"TableGuid"`
 }
 
 // GetTableTopologyResponse is the response struct for api GetTableTopology

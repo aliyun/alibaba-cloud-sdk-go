@@ -78,12 +78,12 @@ type GetNodeCodeRequest struct {
 // GetNodeCodeResponse is the response struct for api GetNodeCode
 type GetNodeCodeResponse struct {
 	*responses.BaseResponse
+	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Data           string `json:"Data" xml:"Data"`
+	ErrorMessage   string `json:"ErrorMessage" xml:"ErrorMessage"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
 	Success        bool   `json:"Success" xml:"Success"`
 	ErrorCode      string `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMessage   string `json:"ErrorMessage" xml:"ErrorMessage"`
-	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	Data           string `json:"Data" xml:"Data"`
 }
 
 // CreateGetNodeCodeRequest creates a request to invoke GetNodeCode API

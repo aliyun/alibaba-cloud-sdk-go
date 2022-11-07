@@ -81,8 +81,8 @@ type DescribeBackupDatabaseRequest struct {
 // DescribeBackupDatabaseResponse is the response struct for api DescribeBackupDatabase
 type DescribeBackupDatabaseResponse struct {
 	*responses.BaseResponse
-	RequestId     string `json:"RequestId" xml:"RequestId"`
 	DatabaseNames string `json:"DatabaseNames" xml:"DatabaseNames"`
+	RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDescribeBackupDatabaseRequest creates a request to invoke DescribeBackupDatabase API

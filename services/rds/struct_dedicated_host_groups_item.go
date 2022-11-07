@@ -17,31 +17,31 @@ package rds
 
 // DedicatedHostGroupsItem is a nested struct in rds response
 type DedicatedHostGroupsItem struct {
+	DiskAllocateRation                float64                `json:"DiskAllocateRation" xml:"DiskAllocateRation"`
+	CreateTime                        string                 `json:"CreateTime" xml:"CreateTime"`
+	DedicatedHostCountGroupByHostType map[string]interface{} `json:"DedicatedHostCountGroupByHostType" xml:"DedicatedHostCountGroupByHostType"`
+	Text                              string                 `json:"Text" xml:"Text"`
 	DedicatedHostGroupId              string                 `json:"DedicatedHostGroupId" xml:"DedicatedHostGroupId"`
-	DedicatedHostGroupDesc            string                 `json:"DedicatedHostGroupDesc" xml:"DedicatedHostGroupDesc"`
+	DiskUtility                       float64                `json:"DiskUtility" xml:"DiskUtility"`
+	MemUsedAmount                     float64                `json:"MemUsedAmount" xml:"MemUsedAmount"`
+	MemAllocatedAmount                float64                `json:"MemAllocatedAmount" xml:"MemAllocatedAmount"`
 	CpuAllocationRatio                int                    `json:"CpuAllocationRatio" xml:"CpuAllocationRatio"`
 	MemAllocationRatio                int                    `json:"MemAllocationRatio" xml:"MemAllocationRatio"`
-	DiskAllocationRatio               int                    `json:"DiskAllocationRatio" xml:"DiskAllocationRatio"`
-	AllocationPolicy                  string                 `json:"AllocationPolicy" xml:"AllocationPolicy"`
-	HostReplacePolicy                 string                 `json:"HostReplacePolicy" xml:"HostReplacePolicy"`
-	CreateTime                        string                 `json:"CreateTime" xml:"CreateTime"`
-	VPCId                             string                 `json:"VPCId" xml:"VPCId"`
-	HostNumber                        int                    `json:"HostNumber" xml:"HostNumber"`
-	InstanceNumber                    int                    `json:"InstanceNumber" xml:"InstanceNumber"`
-	Engine                            string                 `json:"Engine" xml:"Engine"`
-	Text                              string                 `json:"Text" xml:"Text"`
-	DedicatedHostCountGroupByHostType map[string]interface{} `json:"DedicatedHostCountGroupByHostType" xml:"DedicatedHostCountGroupByHostType"`
-	BastionInstanceId                 string                 `json:"BastionInstanceId" xml:"BastionInstanceId"`
-	OpenPermission                    string                 `json:"OpenPermission" xml:"OpenPermission"`
 	MemUtility                        float64                `json:"MemUtility" xml:"MemUtility"`
-	MemUsedAmount                     float64                `json:"MemUsedAmount" xml:"MemUsedAmount"`
-	DiskUtility                       float64                `json:"DiskUtility" xml:"DiskUtility"`
-	DiskUsedAmount                    float64                `json:"DiskUsedAmount" xml:"DiskUsedAmount"`
-	CpuAllocateRation                 float64                `json:"CpuAllocateRation" xml:"CpuAllocateRation"`
-	CpuAllocatedAmount                float64                `json:"CpuAllocatedAmount" xml:"CpuAllocatedAmount"`
 	MemAllocateRation                 float64                `json:"MemAllocateRation" xml:"MemAllocateRation"`
-	MemAllocatedAmount                float64                `json:"MemAllocatedAmount" xml:"MemAllocatedAmount"`
-	DiskAllocateRation                float64                `json:"DiskAllocateRation" xml:"DiskAllocateRation"`
+	CpuAllocatedAmount                float64                `json:"CpuAllocatedAmount" xml:"CpuAllocatedAmount"`
+	DedicatedHostGroupDesc            string                 `json:"DedicatedHostGroupDesc" xml:"DedicatedHostGroupDesc"`
+	CpuAllocateRation                 float64                `json:"CpuAllocateRation" xml:"CpuAllocateRation"`
+	InstanceNumber                    int                    `json:"InstanceNumber" xml:"InstanceNumber"`
+	OpenPermission                    string                 `json:"OpenPermission" xml:"OpenPermission"`
+	VPCId                             string                 `json:"VPCId" xml:"VPCId"`
 	DiskAllocatedAmount               float64                `json:"DiskAllocatedAmount" xml:"DiskAllocatedAmount"`
+	HostNumber                        int                    `json:"HostNumber" xml:"HostNumber"`
+	DiskUsedAmount                    float64                `json:"DiskUsedAmount" xml:"DiskUsedAmount"`
+	AllocationPolicy                  string                 `json:"AllocationPolicy" xml:"AllocationPolicy"`
+	Engine                            string                 `json:"Engine" xml:"Engine"`
+	DiskAllocationRatio               int                    `json:"DiskAllocationRatio" xml:"DiskAllocationRatio"`
+	BastionInstanceId                 string                 `json:"BastionInstanceId" xml:"BastionInstanceId"`
+	HostReplacePolicy                 string                 `json:"HostReplacePolicy" xml:"HostReplacePolicy"`
 	ZoneIDList                        ZoneIDList             `json:"ZoneIDList" xml:"ZoneIDList"`
 }

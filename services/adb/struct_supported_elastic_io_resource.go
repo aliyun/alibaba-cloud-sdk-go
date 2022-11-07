@@ -17,7 +17,7 @@ package adb
 
 // SupportedElasticIOResource is a nested struct in adb response
 type SupportedElasticIOResource struct {
+	Step     string `json:"Step" xml:"Step"`
 	MinCount string `json:"MinCount" xml:"MinCount"`
 	MaxCount string `json:"MaxCount" xml:"MaxCount"`
-	Step     string `json:"Step" xml:"Step"`
 }

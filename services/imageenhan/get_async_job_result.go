@@ -71,8 +71,8 @@ func (client *Client) GetAsyncJobResultWithCallback(request *GetAsyncJobResultRe
 // GetAsyncJobResultRequest is the request struct for api GetAsyncJobResult
 type GetAsyncJobResultRequest struct {
 	*requests.RpcRequest
-	Async requests.Boolean `position:"Body" name:"Async"`
 	JobId string           `position:"Body" name:"JobId"`
+	Async requests.Boolean `position:"Body" name:"Async"`
 }
 
 // GetAsyncJobResultResponse is the response struct for api GetAsyncJobResult

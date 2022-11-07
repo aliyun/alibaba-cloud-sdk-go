@@ -17,32 +17,32 @@ package rds
 
 // DedicatedHostsItem is a nested struct in rds response
 type DedicatedHostsItem struct {
-	HostName             string `json:"HostName" xml:"HostName"`
-	HostStatus           string `json:"HostStatus" xml:"HostStatus"`
-	InstanceNumber       string `json:"InstanceNumber" xml:"InstanceNumber"`
-	CPUAllocationRatio   string `json:"CPUAllocationRatio" xml:"CPUAllocationRatio"`
-	MemAllocationRatio   string `json:"MemAllocationRatio" xml:"MemAllocationRatio"`
-	DiskAllocationRatio  string `json:"DiskAllocationRatio" xml:"DiskAllocationRatio"`
-	VPCId                string `json:"VPCId" xml:"VPCId"`
-	VSwitchId            string `json:"VSwitchId" xml:"VSwitchId"`
-	ZoneId               string `json:"ZoneId" xml:"ZoneId"`
-	IPAddress            string `json:"IPAddress" xml:"IPAddress"`
-	HostClass            string `json:"HostClass" xml:"HostClass"`
-	CreatedTime          string `json:"CreatedTime" xml:"CreatedTime"`
-	DedicatedHostId      string `json:"DedicatedHostId" xml:"DedicatedHostId"`
-	AllocationStatus     string `json:"AllocationStatus" xml:"AllocationStatus"`
-	EndTime              string `json:"EndTime" xml:"EndTime"`
 	HostType             string `json:"HostType" xml:"HostType"`
-	BastionInstanceId    string `json:"BastionInstanceId" xml:"BastionInstanceId"`
-	OpenPermission       string `json:"OpenPermission" xml:"OpenPermission"`
-	AccountName          string `json:"AccountName" xml:"AccountName"`
-	HostCPU              string `json:"HostCPU" xml:"HostCPU"`
-	HostMem              string `json:"HostMem" xml:"HostMem"`
 	HostStorage          string `json:"HostStorage" xml:"HostStorage"`
-	CpuUsed              string `json:"CpuUsed" xml:"CpuUsed"`
 	MemoryUsed           string `json:"MemoryUsed" xml:"MemoryUsed"`
-	StorageUsed          string `json:"StorageUsed" xml:"StorageUsed"`
-	ImageCategory        string `json:"ImageCategory" xml:"ImageCategory"`
 	DedicatedHostGroupId string `json:"DedicatedHostGroupId" xml:"DedicatedHostGroupId"`
+	AllocationStatus     string `json:"AllocationStatus" xml:"AllocationStatus"`
+	StorageUsed          string `json:"StorageUsed" xml:"StorageUsed"`
+	DedicatedHostId      string `json:"DedicatedHostId" xml:"DedicatedHostId"`
+	MemAllocationRatio   string `json:"MemAllocationRatio" xml:"MemAllocationRatio"`
+	CreatedTime          string `json:"CreatedTime" xml:"CreatedTime"`
+	IPAddress            string `json:"IPAddress" xml:"IPAddress"`
+	HostStatus           string `json:"HostStatus" xml:"HostStatus"`
+	HostName             string `json:"HostName" xml:"HostName"`
+	HostCPU              string `json:"HostCPU" xml:"HostCPU"`
+	InstanceNumber       string `json:"InstanceNumber" xml:"InstanceNumber"`
+	OpenPermission       string `json:"OpenPermission" xml:"OpenPermission"`
+	CpuUsed              string `json:"CpuUsed" xml:"CpuUsed"`
+	VPCId                string `json:"VPCId" xml:"VPCId"`
+	HostClass            string `json:"HostClass" xml:"HostClass"`
+	EndTime              string `json:"EndTime" xml:"EndTime"`
+	VSwitchId            string `json:"VSwitchId" xml:"VSwitchId"`
+	CPUAllocationRatio   string `json:"CPUAllocationRatio" xml:"CPUAllocationRatio"`
+	ZoneId               string `json:"ZoneId" xml:"ZoneId"`
+	ImageCategory        string `json:"ImageCategory" xml:"ImageCategory"`
 	Engine               string `json:"Engine" xml:"Engine"`
+	DiskAllocationRatio  string `json:"DiskAllocationRatio" xml:"DiskAllocationRatio"`
+	HostMem              string `json:"HostMem" xml:"HostMem"`
+	BastionInstanceId    string `json:"BastionInstanceId" xml:"BastionInstanceId"`
+	AccountName          string `json:"AccountName" xml:"AccountName"`
 }

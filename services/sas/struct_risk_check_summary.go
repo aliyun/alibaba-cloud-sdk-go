@@ -17,14 +17,14 @@ package sas
 
 // RiskCheckSummary is a nested struct in sas response
 type RiskCheckSummary struct {
-	RiskCount          int          `json:"RiskCount" xml:"RiskCount"`
-	PreviousCount      int          `json:"PreviousCount" xml:"PreviousCount"`
 	ItemCount          int          `json:"ItemCount" xml:"ItemCount"`
-	RiskRate           float64      `json:"RiskRate" xml:"RiskRate"`
 	AffectedAssetCount int          `json:"AffectedAssetCount" xml:"AffectedAssetCount"`
+	DisabledRiskCount  int          `json:"DisabledRiskCount" xml:"DisabledRiskCount"`
+	RiskCount          int          `json:"RiskCount" xml:"RiskCount"`
+	RiskRate           float64      `json:"RiskRate" xml:"RiskRate"`
+	PreviousCount      int          `json:"PreviousCount" xml:"PreviousCount"`
 	PreviousTime       int64        `json:"PreviousTime" xml:"PreviousTime"`
 	EnabledRiskCount   int          `json:"EnabledRiskCount" xml:"EnabledRiskCount"`
-	DisabledRiskCount  int          `json:"DisabledRiskCount" xml:"DisabledRiskCount"`
 	RiskLevelCount     []LevelCount `json:"RiskLevelCount" xml:"RiskLevelCount"`
 	Groups             []Group      `json:"Groups" xml:"Groups"`
 }

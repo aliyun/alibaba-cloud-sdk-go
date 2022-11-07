@@ -71,10 +71,10 @@ func (client *Client) ChangeDeployGroupWithCallback(request *ChangeDeployGroupRe
 // ChangeDeployGroupRequest is the request struct for api ChangeDeployGroup
 type ChangeDeployGroupRequest struct {
 	*requests.RoaRequest
-	ForceStatus requests.Boolean `position:"Query" name:"ForceStatus"`
-	AppId       string           `position:"Query" name:"AppId"`
-	EccInfo     string           `position:"Query" name:"EccInfo"`
-	GroupName   string           `position:"Query" name:"GroupName"`
+	ForceStatus string `position:"Query" name:"ForceStatus"`
+	AppId       string `position:"Query" name:"AppId"`
+	EccInfo     string `position:"Query" name:"EccInfo"`
+	GroupName   string `position:"Query" name:"GroupName"`
 }
 
 // ChangeDeployGroupResponse is the response struct for api ChangeDeployGroup
@@ -91,7 +91,7 @@ func CreateChangeDeployGroupRequest() (request *ChangeDeployGroupRequest) {
 	request = &ChangeDeployGroupRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ChangeDeployGroup", "/pop/v5/changeorder/co_change_group", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ChangeDeployGroup", "/pop/v5/changeorder/co_change_group", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

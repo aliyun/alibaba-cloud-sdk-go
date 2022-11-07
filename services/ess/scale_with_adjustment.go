@@ -77,7 +77,10 @@ type ScaleWithAdjustmentRequest struct {
 	ScalingGroupId         string           `position:"Query" name:"ScalingGroupId"`
 	AdjustmentType         string           `position:"Query" name:"AdjustmentType"`
 	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
+	SpotStrategy           string           `position:"Query" name:"SpotStrategy"`
 	MinAdjustmentMagnitude requests.Integer `position:"Query" name:"MinAdjustmentMagnitude"`
+	InstanceType           *[]string        `position:"Query" name:"InstanceType"  type:"Repeated"`
+	SyncActivity           requests.Boolean `position:"Query" name:"SyncActivity"`
 }
 
 // ScaleWithAdjustmentResponse is the response struct for api ScaleWithAdjustment
@@ -85,6 +88,7 @@ type ScaleWithAdjustmentResponse struct {
 	*responses.BaseResponse
 	ScalingActivityId string `json:"ScalingActivityId" xml:"ScalingActivityId"`
 	RequestId         string `json:"RequestId" xml:"RequestId"`
+	ActivityType      string `json:"ActivityType" xml:"ActivityType"`
 }
 
 // CreateScaleWithAdjustmentRequest creates a request to invoke ScaleWithAdjustment API

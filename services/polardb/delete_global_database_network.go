@@ -72,6 +72,7 @@ func (client *Client) DeleteGlobalDatabaseNetworkWithCallback(request *DeleteGlo
 type DeleteGlobalDatabaseNetworkRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	GDNId                string           `position:"Query" name:"GDNId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
@@ -90,7 +91,7 @@ func CreateDeleteGlobalDatabaseNetworkRequest() (request *DeleteGlobalDatabaseNe
 	request = &DeleteGlobalDatabaseNetworkRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "DeleteGlobalDatabaseNetwork", "", "")
+	request.InitWithApiInfo("polardb", "2017-08-01", "DeleteGlobalDatabaseNetwork", "polardb", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -81,8 +81,8 @@ type MountNFSRequest struct {
 // MountNFSResponse is the response struct for api MountNFS
 type MountNFSResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	InvokeId  string `json:"InvokeId" xml:"InvokeId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateMountNFSRequest creates a request to invoke MountNFS API

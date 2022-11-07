@@ -17,7 +17,7 @@ package ocr
 
 // Nationality is a nested struct in ocr response
 type Nationality struct {
+	Score     string      `json:"Score" xml:"Score"`
 	Text      string      `json:"Text" xml:"Text"`
-	Score     float64     `json:"Score" xml:"Score"`
 	KeyPoints []KeyPoints `json:"KeyPoints" xml:"KeyPoints"`
 }

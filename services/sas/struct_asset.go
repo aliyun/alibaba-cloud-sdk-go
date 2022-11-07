@@ -18,16 +18,18 @@ package sas
 // Asset is a nested struct in sas response
 type Asset struct {
 	InternetIp    string `json:"InternetIp" xml:"InternetIp"`
-	IntranetIp    string `json:"IntranetIp" xml:"IntranetIp"`
-	InstanceName  int    `json:"InstanceName" xml:"InstanceName"`
-	InstanceId    int    `json:"InstanceId" xml:"InstanceId"`
-	Ip            string `json:"Ip" xml:"Ip"`
-	Uuid          string `json:"Uuid" xml:"Uuid"`
-	AssetType     string `json:"AssetType" xml:"AssetType"`
-	Os            string `json:"Os" xml:"Os"`
-	ClientStatus  string `json:"ClientStatus" xml:"ClientStatus"`
-	Region        string `json:"Region" xml:"Region"`
-	RegionName    string `json:"RegionName" xml:"RegionName"`
-	VpcInstanceId string `json:"VpcInstanceId" xml:"VpcInstanceId"`
 	OsName        string `json:"OsName" xml:"OsName"`
+	Ip            string `json:"Ip" xml:"Ip"`
+	Os            string `json:"Os" xml:"Os"`
+	InstanceId    string `json:"InstanceId" xml:"InstanceId"`
+	ClientStatus  string `json:"ClientStatus" xml:"ClientStatus"`
+	VpcInstanceId string `json:"VpcInstanceId" xml:"VpcInstanceId"`
+	IntranetIp    string `json:"IntranetIp" xml:"IntranetIp"`
+	AssetType     string `json:"AssetType" xml:"AssetType"`
+	RegionId      string `json:"RegionId" xml:"RegionId"`
+	Uuid          string `json:"Uuid" xml:"Uuid"`
+	Flag          int    `json:"Flag" xml:"Flag"`
+	RegionName    string `json:"RegionName" xml:"RegionName"`
+	InstanceName  string `json:"InstanceName" xml:"InstanceName"`
+	Region        string `json:"Region" xml:"Region"`
 }

@@ -124,7 +124,9 @@ type CreateListenerQuicConfig struct {
 
 // CreateListenerXForwardedForConfig is a repeated param struct in CreateListenerRequest
 type CreateListenerXForwardedForConfig struct {
+	XForwardedForClientSourceIpsTrusted        string `name:"XForwardedForClientSourceIpsTrusted"`
 	XForwardedForClientCertSubjectDNAlias      string `name:"XForwardedForClientCertSubjectDNAlias"`
+	XForwardedForClientSourceIpsEnabled        string `name:"XForwardedForClientSourceIpsEnabled"`
 	XForwardedForClientCertIssuerDNEnabled     string `name:"XForwardedForClientCertIssuerDNEnabled"`
 	XForwardedForClientCertFingerprintEnabled  string `name:"XForwardedForClientCertFingerprintEnabled"`
 	XForwardedForClientCertIssuerDNAlias       string `name:"XForwardedForClientCertIssuerDNAlias"`

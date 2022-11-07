@@ -71,8 +71,8 @@ func (client *Client) SwitchAdvancedMonitoringWithCallback(request *SwitchAdvanc
 // SwitchAdvancedMonitoringRequest is the request struct for api SwitchAdvancedMonitoring
 type SwitchAdvancedMonitoringRequest struct {
 	*requests.RoaRequest
-	EnableAdvancedMonitoring requests.Boolean `position:"Query" name:"EnableAdvancedMonitoring"`
-	AppId                    string           `position:"Query" name:"AppId"`
+	EnableAdvancedMonitoring string `position:"Query" name:"EnableAdvancedMonitoring"`
+	AppId                    string `position:"Query" name:"AppId"`
 }
 
 // SwitchAdvancedMonitoringResponse is the response struct for api SwitchAdvancedMonitoring
@@ -89,7 +89,7 @@ func CreateSwitchAdvancedMonitoringRequest() (request *SwitchAdvancedMonitoringR
 	request = &SwitchAdvancedMonitoringRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "SwitchAdvancedMonitoring", "/pop/v5/monitor/advancedMonitorInfo", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "SwitchAdvancedMonitoring", "/pop/v5/monitor/advancedMonitorInfo", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

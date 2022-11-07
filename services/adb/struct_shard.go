@@ -17,6 +17,6 @@ package adb
 
 // Shard is a nested struct in adb response
 type Shard struct {
-	Id   int   `json:"Id" xml:"Id"`
 	Size int64 `json:"Size" xml:"Size"`
+	Id   int   `json:"Id" xml:"Id"`
 }

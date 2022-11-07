@@ -76,6 +76,7 @@ type ListAlertMessagesRequest struct {
 	BeginTime      string           `position:"Body" name:"BeginTime"`
 	AlertMethods   string           `position:"Body" name:"AlertMethods"`
 	PageNumber     requests.Integer `position:"Body" name:"PageNumber"`
+	BaselineId     requests.Integer `position:"Body" name:"BaselineId"`
 	RemindId       requests.Integer `position:"Body" name:"RemindId"`
 	PageSize       requests.Integer `position:"Body" name:"PageSize"`
 	AlertRuleTypes string           `position:"Body" name:"AlertRuleTypes"`

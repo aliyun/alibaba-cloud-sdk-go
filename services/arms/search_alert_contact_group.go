@@ -91,7 +91,7 @@ func CreateSearchAlertContactGroupRequest() (request *SearchAlertContactGroupReq
 	request = &SearchAlertContactGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "SearchAlertContactGroup", "", "")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "SearchAlertContactGroup", "arms", "openAPI")
 	request.Method = requests.POST
 	return
 }

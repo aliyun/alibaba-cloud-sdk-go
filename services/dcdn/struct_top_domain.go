@@ -17,11 +17,11 @@ package dcdn
 
 // TopDomain is a nested struct in dcdn response
 type TopDomain struct {
-	DomainName     string `json:"DomainName" xml:"DomainName"`
-	Rank           int64  `json:"Rank" xml:"Rank"`
-	TotalTraffic   string `json:"TotalTraffic" xml:"TotalTraffic"`
-	TrafficPercent string `json:"TrafficPercent" xml:"TrafficPercent"`
 	MaxBps         int64  `json:"MaxBps" xml:"MaxBps"`
-	MaxBpsTime     string `json:"MaxBpsTime" xml:"MaxBpsTime"`
+	Rank           int64  `json:"Rank" xml:"Rank"`
 	TotalAccess    int64  `json:"TotalAccess" xml:"TotalAccess"`
+	TrafficPercent string `json:"TrafficPercent" xml:"TrafficPercent"`
+	DomainName     string `json:"DomainName" xml:"DomainName"`
+	TotalTraffic   string `json:"TotalTraffic" xml:"TotalTraffic"`
+	MaxBpsTime     string `json:"MaxBpsTime" xml:"MaxBpsTime"`
 }

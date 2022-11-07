@@ -71,16 +71,20 @@ func (client *Client) RemoveShowFromShowListWithCallback(request *RemoveShowFrom
 // RemoveShowFromShowListRequest is the request struct for api RemoveShowFromShowList
 type RemoveShowFromShowListRequest struct {
 	*requests.RpcRequest
-	CasterId string           `position:"Query" name:"CasterId"`
-	OwnerId  requests.Integer `position:"Query" name:"OwnerId"`
-	ShowId   string           `position:"Query" name:"ShowId"`
+	IsBatchMode requests.Boolean `position:"Query" name:"isBatchMode"`
+	ShowIdList  *[]string        `position:"Query" name:"showIdList"  type:"Repeated"`
+	CasterId    string           `position:"Query" name:"CasterId"`
+	OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
+	ShowId      string           `position:"Query" name:"ShowId"`
 }
 
 // RemoveShowFromShowListResponse is the response struct for api RemoveShowFromShowList
 type RemoveShowFromShowListResponse struct {
 	*responses.BaseResponse
-	ShowId    string `json:"ShowId" xml:"ShowId"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	RequestId         string `json:"RequestId" xml:"RequestId"`
+	ShowId            string `json:"ShowId" xml:"ShowId"`
+	SuccessfulShowIds string `json:"successfulShowIds" xml:"successfulShowIds"`
+	FailedList        string `json:"failedList" xml:"failedList"`
 }
 
 // CreateRemoveShowFromShowListRequest creates a request to invoke RemoveShowFromShowList API

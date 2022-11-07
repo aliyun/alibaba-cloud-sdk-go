@@ -81,8 +81,8 @@ type BatchSetCdnDomainConfigRequest struct {
 // BatchSetCdnDomainConfigResponse is the response struct for api BatchSetCdnDomainConfig
 type BatchSetCdnDomainConfigResponse struct {
 	*responses.BaseResponse
-	RequestId        string           `json:"RequestId" xml:"RequestId"`
-	DomainConfigList DomainConfigList `json:"DomainConfigList" xml:"DomainConfigList"`
+	RequestId        string                                    `json:"RequestId" xml:"RequestId"`
+	DomainConfigList DomainConfigListInBatchSetCdnDomainConfig `json:"DomainConfigList" xml:"DomainConfigList"`
 }
 
 // CreateBatchSetCdnDomainConfigRequest creates a request to invoke BatchSetCdnDomainConfig API

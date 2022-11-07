@@ -79,6 +79,7 @@ type ConfigureBackupPlanRequest struct {
 	BackupPlanId                      string           `position:"Query" name:"BackupPlanId"`
 	SourceEndpointDatabaseName        string           `position:"Query" name:"SourceEndpointDatabaseName"`
 	DuplicationInfrequentAccessPeriod requests.Integer `position:"Query" name:"DuplicationInfrequentAccessPeriod"`
+	ResourceGroupId                   string           `position:"Query" name:"ResourceGroupId"`
 	BackupStartTime                   string           `position:"Query" name:"BackupStartTime"`
 	SourceEndpointIP                  string           `position:"Query" name:"SourceEndpointIP"`
 	CrossRoleName                     string           `position:"Query" name:"CrossRoleName"`
@@ -106,11 +107,11 @@ type ConfigureBackupPlanRequest struct {
 // ConfigureBackupPlanResponse is the response struct for api ConfigureBackupPlan
 type ConfigureBackupPlanResponse struct {
 	*responses.BaseResponse
-	Success        bool   `json:"Success" xml:"Success"`
-	ErrCode        string `json:"ErrCode" xml:"ErrCode"`
-	ErrMessage     string `json:"ErrMessage" xml:"ErrMessage"`
 	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
+	ErrCode        string `json:"ErrCode" xml:"ErrCode"`
+	Success        bool   `json:"Success" xml:"Success"`
+	ErrMessage     string `json:"ErrMessage" xml:"ErrMessage"`
 	BackupPlanId   string `json:"BackupPlanId" xml:"BackupPlanId"`
 }
 
@@ -119,7 +120,7 @@ func CreateConfigureBackupPlanRequest() (request *ConfigureBackupPlanRequest) {
 	request = &ConfigureBackupPlanRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dbs", "2019-03-06", "ConfigureBackupPlan", "cbs", "openAPI")
+	request.InitWithApiInfo("Dbs", "2019-03-06", "ConfigureBackupPlan", "", "")
 	request.Method = requests.POST
 	return
 }

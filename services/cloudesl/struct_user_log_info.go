@@ -17,23 +17,24 @@ package cloudesl
 
 // UserLogInfo is a nested struct in cloudesl response
 type UserLogInfo struct {
-	ResultCode            string `json:"ResultCode" xml:"ResultCode"`
+	EslBarCode            string `json:"EslBarCode" xml:"EslBarCode"`
 	OperationSendTime     string `json:"OperationSendTime" xml:"OperationSendTime"`
-	GmtCreate             string `json:"GmtCreate" xml:"GmtCreate"`
-	StoreId               string `json:"StoreId" xml:"StoreId"`
-	GmtModified           string `json:"GmtModified" xml:"GmtModified"`
 	ActionPrice           string `json:"ActionPrice" xml:"ActionPrice"`
-	OperationStatus       string `json:"OperationStatus" xml:"OperationStatus"`
+	UserId                string `json:"UserId" xml:"UserId"`
 	PriceUnit             string `json:"PriceUnit" xml:"PriceUnit"`
-	LogId                 string `json:"LogId" xml:"LogId"`
-	ItemShortTitle        string `json:"ItemShortTitle" xml:"ItemShortTitle"`
+	ResultCode            string `json:"ResultCode" xml:"ResultCode"`
+	ItemId                string `json:"ItemId" xml:"ItemId"`
+	GmtModified           string `json:"GmtModified" xml:"GmtModified"`
 	OperationType         string `json:"OperationType" xml:"OperationType"`
 	OperationResponseTime string `json:"OperationResponseTime" xml:"OperationResponseTime"`
-	SpendTime             string `json:"SpendTime" xml:"SpendTime"`
-	EslBarCode            string `json:"EslBarCode" xml:"EslBarCode"`
-	ItemId                string `json:"ItemId" xml:"ItemId"`
-	ItemBarCode           string `json:"ItemBarCode" xml:"ItemBarCode"`
+	OperationStatus       string `json:"OperationStatus" xml:"OperationStatus"`
+	StoreId               string `json:"StoreId" xml:"StoreId"`
+	ItemShortTitle        string `json:"ItemShortTitle" xml:"ItemShortTitle"`
+	LogId                 string `json:"LogId" xml:"LogId"`
 	BePromotion           bool   `json:"BePromotion" xml:"BePromotion"`
-	UserId                string `json:"UserId" xml:"UserId"`
+	GmtCreate             string `json:"GmtCreate" xml:"GmtCreate"`
 	EslSignal             int    `json:"EslSignal" xml:"EslSignal"`
+	SpendTime             string `json:"SpendTime" xml:"SpendTime"`
+	ItemBarCode           string `json:"ItemBarCode" xml:"ItemBarCode"`
+	I18nResultKey         string `json:"I18nResultKey" xml:"I18nResultKey"`
 }

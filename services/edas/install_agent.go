@@ -71,9 +71,9 @@ func (client *Client) InstallAgentWithCallback(request *InstallAgentRequest, cal
 // InstallAgentRequest is the request struct for api InstallAgent
 type InstallAgentRequest struct {
 	*requests.RoaRequest
-	InstanceIds string           `position:"Query" name:"InstanceIds"`
-	DoAsync     requests.Boolean `position:"Query" name:"DoAsync"`
-	ClusterId   string           `position:"Query" name:"ClusterId"`
+	InstanceIds string `position:"Query" name:"InstanceIds"`
+	DoAsync     string `position:"Query" name:"DoAsync"`
+	ClusterId   string `position:"Query" name:"ClusterId"`
 }
 
 // InstallAgentResponse is the response struct for api InstallAgent
@@ -90,7 +90,7 @@ func CreateInstallAgentRequest() (request *InstallAgentRequest) {
 	request = &InstallAgentRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "InstallAgent", "/pop/v5/ecss/install_agent", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "InstallAgent", "/pop/v5/ecss/install_agent", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

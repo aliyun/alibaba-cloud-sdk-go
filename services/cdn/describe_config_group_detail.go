@@ -79,13 +79,13 @@ type DescribeConfigGroupDetailRequest struct {
 // DescribeConfigGroupDetailResponse is the response struct for api DescribeConfigGroupDetail
 type DescribeConfigGroupDetailResponse struct {
 	*responses.BaseResponse
-	RequestId       string `json:"RequestId" xml:"RequestId"`
-	ConfigGroupId   string `json:"ConfigGroupId" xml:"ConfigGroupId"`
-	ConfigGroupName string `json:"ConfigGroupName" xml:"ConfigGroupName"`
-	Description     string `json:"Description" xml:"Description"`
-	BizName         string `json:"BizName" xml:"BizName"`
-	CreateTime      string `json:"CreateTime" xml:"CreateTime"`
 	UpdateTime      string `json:"UpdateTime" xml:"UpdateTime"`
+	RequestId       string `json:"RequestId" xml:"RequestId"`
+	Description     string `json:"Description" xml:"Description"`
+	ConfigGroupName string `json:"ConfigGroupName" xml:"ConfigGroupName"`
+	CreateTime      string `json:"CreateTime" xml:"CreateTime"`
+	BizName         string `json:"BizName" xml:"BizName"`
+	ConfigGroupId   string `json:"ConfigGroupId" xml:"ConfigGroupId"`
 }
 
 // CreateDescribeConfigGroupDetailRequest creates a request to invoke DescribeConfigGroupDetail API

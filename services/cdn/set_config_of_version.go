@@ -71,15 +71,14 @@ func (client *Client) SetConfigOfVersionWithCallback(request *SetConfigOfVersion
 // SetConfigOfVersionRequest is the request struct for api SetConfigOfVersion
 type SetConfigOfVersionRequest struct {
 	*requests.RpcRequest
-	FunctionMatches string           `position:"Query" name:"FunctionMatches"`
-	VersionId       string           `position:"Query" name:"VersionId"`
-	SecurityToken   string           `position:"Query" name:"SecurityToken"`
-	FunctionName    string           `position:"Query" name:"FunctionName"`
-	FunctionArgs    string           `position:"Query" name:"FunctionArgs"`
-	OwnerAccount    string           `position:"Query" name:"OwnerAccount"`
-	OwnerId         requests.Integer `position:"Query" name:"OwnerId"`
-	FunctionId      requests.Integer `position:"Query" name:"FunctionId"`
-	ConfigId        string           `position:"Query" name:"ConfigId"`
+	VersionId     string           `position:"Query" name:"VersionId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	FunctionName  string           `position:"Query" name:"FunctionName"`
+	FunctionArgs  string           `position:"Query" name:"FunctionArgs"`
+	OwnerAccount  string           `position:"Query" name:"OwnerAccount"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	FunctionId    requests.Integer `position:"Query" name:"FunctionId"`
+	ConfigId      string           `position:"Query" name:"ConfigId"`
 }
 
 // SetConfigOfVersionResponse is the response struct for api SetConfigOfVersion

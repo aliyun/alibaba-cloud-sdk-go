@@ -18,6 +18,10 @@ package edas
 // SlbEntity is a nested struct in edas response
 type SlbEntity struct {
 	Expired     bool   `json:"Expired" xml:"Expired"`
+	Tags        string `json:"Tags" xml:"Tags"`
+	Reusable    bool   `json:"Reusable" xml:"Reusable"`
+	Address     string `json:"Address" xml:"Address"`
+	SlbName     string `json:"SlbName" xml:"SlbName"`
 	RegionId    string `json:"RegionId" xml:"RegionId"`
 	GroupId     int    `json:"GroupId" xml:"GroupId"`
 	UserId      string `json:"UserId" xml:"UserId"`
@@ -27,6 +31,4 @@ type SlbEntity struct {
 	VpcId       string `json:"VpcId" xml:"VpcId"`
 	AddressType string `json:"AddressType" xml:"AddressType"`
 	NetworkType string `json:"NetworkType" xml:"NetworkType"`
-	Address     string `json:"Address" xml:"Address"`
-	SlbName     string `json:"SlbName" xml:"SlbName"`
 }

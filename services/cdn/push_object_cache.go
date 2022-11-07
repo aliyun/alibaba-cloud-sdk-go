@@ -73,6 +73,7 @@ type PushObjectCacheRequest struct {
 	*requests.RpcRequest
 	ObjectPath    string           `position:"Query" name:"ObjectPath"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	L2Preload     requests.Boolean `position:"Query" name:"L2Preload"`
 	Area          string           `position:"Query" name:"Area"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 }
@@ -80,8 +81,8 @@ type PushObjectCacheRequest struct {
 // PushObjectCacheResponse is the response struct for api PushObjectCache
 type PushObjectCacheResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
 	PushTaskId string `json:"PushTaskId" xml:"PushTaskId"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreatePushObjectCacheRequest creates a request to invoke PushObjectCache API

@@ -87,7 +87,7 @@ func CreateGetParametersRequest() (request *GetParametersRequest) {
 	request = &GetParametersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("oos", "2019-06-01", "GetParameters", "", "")
+	request.InitWithApiInfo("oos", "2019-06-01", "GetParameters", "oos", "openAPI")
 	request.Method = requests.POST
 	return
 }

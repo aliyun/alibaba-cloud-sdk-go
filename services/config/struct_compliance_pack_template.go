@@ -22,5 +22,9 @@ type CompliancePackTemplate struct {
 	AutomationHelpUrl          string            `json:"AutomationHelpUrl" xml:"AutomationHelpUrl"`
 	CompliancePackTemplateName string            `json:"CompliancePackTemplateName" xml:"CompliancePackTemplateName"`
 	CompliancePackTemplateId   string            `json:"CompliancePackTemplateId" xml:"CompliancePackTemplateId"`
+	Domain                     string            `json:"Domain" xml:"Domain"`
+	Labels                     string            `json:"Labels" xml:"Labels"`
+	DeveloperType              string            `json:"DeveloperType" xml:"DeveloperType"`
+	LastUpdate                 int               `json:"LastUpdate" xml:"LastUpdate"`
 	ConfigRules                []ConfigRulesItem `json:"ConfigRules" xml:"ConfigRules"`
 }

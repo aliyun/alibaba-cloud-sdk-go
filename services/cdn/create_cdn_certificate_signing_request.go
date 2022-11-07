@@ -86,9 +86,9 @@ type CreateCdnCertificateSigningRequestRequest struct {
 type CreateCdnCertificateSigningRequestResponse struct {
 	*responses.BaseResponse
 	RequestId  string `json:"RequestId" xml:"RequestId"`
-	CommonName string `json:"CommonName" xml:"CommonName"`
-	Csr        string `json:"Csr" xml:"Csr"`
 	PubMd5     string `json:"PubMd5" xml:"PubMd5"`
+	Csr        string `json:"Csr" xml:"Csr"`
+	CommonName string `json:"CommonName" xml:"CommonName"`
 }
 
 // CreateCreateCdnCertificateSigningRequestRequest creates a request to invoke CreateCdnCertificateSigningRequest API

@@ -81,17 +81,18 @@ type TransformDBInstancePayTypeRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	UsedTime             requests.Integer `position:"Query" name:"UsedTime"`
+	AutoRenew            string           `position:"Query" name:"AutoRenew"`
 	PayType              string           `position:"Query" name:"PayType"`
 }
 
 // TransformDBInstancePayTypeResponse is the response struct for api TransformDBInstancePayType
 type TransformDBInstancePayTypeResponse struct {
 	*responses.BaseResponse
+	DBInstanceId string `json:"DBInstanceId" xml:"DBInstanceId"`
 	RequestId    string `json:"RequestId" xml:"RequestId"`
+	ExpiredTime  string `json:"ExpiredTime" xml:"ExpiredTime"`
 	OrderId      int64  `json:"OrderId" xml:"OrderId"`
 	ChargeType   string `json:"ChargeType" xml:"ChargeType"`
-	ExpiredTime  string `json:"ExpiredTime" xml:"ExpiredTime"`
-	DBInstanceId string `json:"DBInstanceId" xml:"DBInstanceId"`
 }
 
 // CreateTransformDBInstancePayTypeRequest creates a request to invoke TransformDBInstancePayType API

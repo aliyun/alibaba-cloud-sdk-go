@@ -17,17 +17,17 @@ package ecd
 
 // InvokeDesktop is a nested struct in ecd response
 type InvokeDesktop struct {
-	CreationTime     string `json:"CreationTime" xml:"CreationTime"`
 	InvocationStatus string `json:"InvocationStatus" xml:"InvocationStatus"`
-	FinishTime       string `json:"FinishTime" xml:"FinishTime"`
+	Output           string `json:"Output" xml:"Output"`
+	CreationTime     string `json:"CreationTime" xml:"CreationTime"`
 	UpdateTime       string `json:"UpdateTime" xml:"UpdateTime"`
 	Repeats          int    `json:"Repeats" xml:"Repeats"`
 	DesktopId        string `json:"DesktopId" xml:"DesktopId"`
-	Output           string `json:"Output" xml:"Output"`
 	Dropped          int    `json:"Dropped" xml:"Dropped"`
-	StopTime         string `json:"StopTime" xml:"StopTime"`
-	ExitCode         int64  `json:"ExitCode" xml:"ExitCode"`
 	StartTime        string `json:"StartTime" xml:"StartTime"`
-	ErrorInfo        string `json:"ErrorInfo" xml:"ErrorInfo"`
+	StopTime         string `json:"StopTime" xml:"StopTime"`
+	FinishTime       string `json:"FinishTime" xml:"FinishTime"`
+	ExitCode         int64  `json:"ExitCode" xml:"ExitCode"`
 	ErrorCode        string `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorInfo        string `json:"ErrorInfo" xml:"ErrorInfo"`
 }

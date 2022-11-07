@@ -78,16 +78,16 @@ type DescribeCdnUserQuotaRequest struct {
 // DescribeCdnUserQuotaResponse is the response struct for api DescribeCdnUserQuota
 type DescribeCdnUserQuotaResponse struct {
 	*responses.BaseResponse
-	RequestId        string `json:"RequestId" xml:"RequestId"`
-	DomainQuota      int    `json:"DomainQuota" xml:"DomainQuota"`
-	RefreshUrlQuota  int    `json:"RefreshUrlQuota" xml:"RefreshUrlQuota"`
-	RefreshDirQuota  int    `json:"RefreshDirQuota" xml:"RefreshDirQuota"`
-	RefreshUrlRemain int    `json:"RefreshUrlRemain" xml:"RefreshUrlRemain"`
-	RefreshDirRemain int    `json:"RefreshDirRemain" xml:"RefreshDirRemain"`
-	PreloadQuota     int    `json:"PreloadQuota" xml:"PreloadQuota"`
-	PreloadRemain    int    `json:"PreloadRemain" xml:"PreloadRemain"`
 	BlockQuota       int    `json:"BlockQuota" xml:"BlockQuota"`
+	RefreshUrlRemain int    `json:"RefreshUrlRemain" xml:"RefreshUrlRemain"`
+	DomainQuota      int    `json:"DomainQuota" xml:"DomainQuota"`
 	BlockRemain      int    `json:"BlockRemain" xml:"BlockRemain"`
+	PreloadRemain    int    `json:"PreloadRemain" xml:"PreloadRemain"`
+	RequestId        string `json:"RequestId" xml:"RequestId"`
+	RefreshUrlQuota  int    `json:"RefreshUrlQuota" xml:"RefreshUrlQuota"`
+	PreloadQuota     int    `json:"PreloadQuota" xml:"PreloadQuota"`
+	RefreshDirQuota  int    `json:"RefreshDirQuota" xml:"RefreshDirQuota"`
+	RefreshDirRemain int    `json:"RefreshDirRemain" xml:"RefreshDirRemain"`
 }
 
 // CreateDescribeCdnUserQuotaRequest creates a request to invoke DescribeCdnUserQuota API

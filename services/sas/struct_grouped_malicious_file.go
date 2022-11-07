@@ -17,11 +17,11 @@ package sas
 
 // GroupedMaliciousFile is a nested struct in sas response
 type GroupedMaliciousFile struct {
+	Status              int    `json:"Status" xml:"Status"`
+	ImageCount          int64  `json:"ImageCount" xml:"ImageCount"`
+	LatestScanTimestamp int64  `json:"LatestScanTimestamp" xml:"LatestScanTimestamp"`
 	MaliciousName       string `json:"MaliciousName" xml:"MaliciousName"`
 	MaliciousMd5        string `json:"MaliciousMd5" xml:"MaliciousMd5"`
 	FirstScanTimestamp  int64  `json:"FirstScanTimestamp" xml:"FirstScanTimestamp"`
-	LatestScanTimestamp int64  `json:"LatestScanTimestamp" xml:"LatestScanTimestamp"`
-	Status              int    `json:"Status" xml:"Status"`
 	Level               string `json:"Level" xml:"Level"`
-	ImageCount          int64  `json:"ImageCount" xml:"ImageCount"`
 }

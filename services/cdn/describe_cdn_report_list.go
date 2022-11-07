@@ -78,8 +78,8 @@ type DescribeCdnReportListRequest struct {
 // DescribeCdnReportListResponse is the response struct for api DescribeCdnReportList
 type DescribeCdnReportListResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Content   string `json:"Content" xml:"Content"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDescribeCdnReportListRequest creates a request to invoke DescribeCdnReportList API

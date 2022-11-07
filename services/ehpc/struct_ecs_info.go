@@ -17,7 +17,8 @@ package ehpc
 
 // EcsInfo is a nested struct in ehpc response
 type EcsInfo struct {
-	Manager Manager `json:"Manager" xml:"Manager"`
-	Compute Compute `json:"Compute" xml:"Compute"`
-	Login   Login   `json:"Login" xml:"Login"`
+	Manager  Manager  `json:"Manager" xml:"Manager"`
+	Compute  Compute  `json:"Compute" xml:"Compute"`
+	Login    Login    `json:"Login" xml:"Login"`
+	ProxyMgr ProxyMgr `json:"ProxyMgr" xml:"ProxyMgr"`
 }

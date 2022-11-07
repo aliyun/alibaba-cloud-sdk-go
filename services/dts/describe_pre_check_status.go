@@ -72,11 +72,11 @@ func (client *Client) DescribePreCheckStatusWithCallback(request *DescribePreChe
 type DescribePreCheckStatusRequest struct {
 	*requests.RpcRequest
 	StructType  string `position:"Query" name:"StructType"`
-	PageNo      string `position:"Query" name:"PageNo"`
 	PageSize    string `position:"Query" name:"PageSize"`
+	DtsJobId    string `position:"Query" name:"DtsJobId"`
+	PageNo      string `position:"Query" name:"PageNo"`
 	JobCode     string `position:"Query" name:"JobCode"`
 	Name        string `position:"Query" name:"Name"`
-	DtsJobId    string `position:"Query" name:"DtsJobId"`
 	StructPhase string `position:"Query" name:"StructPhase"`
 }
 

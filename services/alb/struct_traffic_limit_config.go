@@ -17,5 +17,6 @@ package alb
 
 // TrafficLimitConfig is a nested struct in alb response
 type TrafficLimitConfig struct {
-	QPS int `json:"QPS" xml:"QPS"`
+	QPS      int `json:"QPS" xml:"QPS"`
+	PerIpQps int `json:"PerIpQps" xml:"PerIpQps"`
 }

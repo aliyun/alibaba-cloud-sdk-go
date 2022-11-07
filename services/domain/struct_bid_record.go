@@ -17,9 +17,9 @@ package domain
 
 // BidRecord is a nested struct in domain response
 type BidRecord struct {
-	DomainName string  `json:"DomainName" xml:"DomainName"`
-	Currency   string  `json:"Currency" xml:"Currency"`
-	Bid        float64 `json:"Bid" xml:"Bid"`
-	BidTime    int64   `json:"BidTime" xml:"BidTime"`
 	Bidder     string  `json:"Bidder" xml:"Bidder"`
+	BidTime    int64   `json:"BidTime" xml:"BidTime"`
+	Bid        float64 `json:"Bid" xml:"Bid"`
+	Currency   string  `json:"Currency" xml:"Currency"`
+	DomainName string  `json:"DomainName" xml:"DomainName"`
 }

@@ -89,6 +89,7 @@ type ServiceInvokeResponse struct {
 	Message   string `json:"Message" xml:"Message"`
 	Code      string `json:"Code" xml:"Code"`
 	Success   bool   `json:"Success" xml:"Success"`
+	IdToken   string `json:"IdToken" xml:"IdToken"`
 }
 
 // CreateServiceInvokeRequest creates a request to invoke ServiceInvoke API

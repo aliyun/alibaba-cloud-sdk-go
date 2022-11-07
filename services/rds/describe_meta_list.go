@@ -74,6 +74,7 @@ type DescribeMetaListRequest struct {
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
 	Pattern              string           `position:"Query" name:"Pattern"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	PageIndex            requests.Integer `position:"Query" name:"PageIndex"`
@@ -88,12 +89,12 @@ type DescribeMetaListRequest struct {
 // DescribeMetaListResponse is the response struct for api DescribeMetaList
 type DescribeMetaListResponse struct {
 	*responses.BaseResponse
-	RequestId        string                  `json:"RequestId" xml:"RequestId"`
 	DBInstanceName   string                  `json:"DBInstanceName" xml:"DBInstanceName"`
-	PageNumber       int                     `json:"PageNumber" xml:"PageNumber"`
+	TotalPageCount   int                     `json:"TotalPageCount" xml:"TotalPageCount"`
+	RequestId        string                  `json:"RequestId" xml:"RequestId"`
 	PageRecordCount  int                     `json:"PageRecordCount" xml:"PageRecordCount"`
 	TotalRecordCount int                     `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	TotalPageCount   int                     `json:"TotalPageCount" xml:"TotalPageCount"`
+	PageNumber       int                     `json:"PageNumber" xml:"PageNumber"`
 	Items            ItemsInDescribeMetaList `json:"Items" xml:"Items"`
 }
 

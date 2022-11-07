@@ -76,6 +76,7 @@ type CreateReadOnlyDBInstanceRequest struct {
 	ClientToken                    string           `position:"Query" name:"ClientToken"`
 	InstructionSetArch             string           `position:"Query" name:"InstructionSetArch"`
 	EngineVersion                  string           `position:"Query" name:"EngineVersion"`
+	DeletionProtection             requests.Boolean `position:"Query" name:"DeletionProtection"`
 	ResourceGroupId                string           `position:"Query" name:"ResourceGroupId"`
 	TddlRegionConfig               string           `position:"Query" name:"TddlRegionConfig"`
 	TargetDedicatedHostIdForMaster string           `position:"Query" name:"TargetDedicatedHostIdForMaster"`

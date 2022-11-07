@@ -17,6 +17,6 @@ package sas
 
 // CreateSimilarSecurityEventsQueryTaskResponse is a nested struct in sas response
 type CreateSimilarSecurityEventsQueryTaskResponseItem struct {
-	TaskId int64  `json:"TaskId" xml:"TaskId"`
 	Status string `json:"Status" xml:"Status"`
+	TaskId int64  `json:"TaskId" xml:"TaskId"`
 }

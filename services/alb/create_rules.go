@@ -196,7 +196,8 @@ type CreateRulesRulesRuleActionsItemInsertHeaderConfig struct {
 
 // CreateRulesRulesRuleActionsItemTrafficLimitConfig is a repeated param struct in CreateRulesRequest
 type CreateRulesRulesRuleActionsItemTrafficLimitConfig struct {
-	QPS string `name:"QPS"`
+	QPS      string `name:"QPS"`
+	PerIpQps string `name:"PerIpQps"`
 }
 
 // CreateRulesRulesRuleActionsItemCorsConfig is a repeated param struct in CreateRulesRequest

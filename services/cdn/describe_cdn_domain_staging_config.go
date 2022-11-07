@@ -79,6 +79,7 @@ type DescribeCdnDomainStagingConfigRequest struct {
 // DescribeCdnDomainStagingConfigResponse is the response struct for api DescribeCdnDomainStagingConfig
 type DescribeCdnDomainStagingConfigResponse struct {
 	*responses.BaseResponse
+	DomainName    string         `json:"DomainName" xml:"DomainName"`
 	RequestId     string         `json:"RequestId" xml:"RequestId"`
 	DomainConfigs []DomainConfig `json:"DomainConfigs" xml:"DomainConfigs"`
 }

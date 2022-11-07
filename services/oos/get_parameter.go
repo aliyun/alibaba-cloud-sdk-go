@@ -71,6 +71,7 @@ func (client *Client) GetParameterWithCallback(request *GetParameterRequest, cal
 // GetParameterRequest is the request struct for api GetParameter
 type GetParameterRequest struct {
 	*requests.RpcRequest
+	ResourceGroupId  string           `position:"Query" name:"ResourceGroupId"`
 	ParameterVersion requests.Integer `position:"Query" name:"ParameterVersion"`
 	Name             string           `position:"Query" name:"Name"`
 }
@@ -87,7 +88,7 @@ func CreateGetParameterRequest() (request *GetParameterRequest) {
 	request = &GetParameterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("oos", "2019-06-01", "GetParameter", "", "")
+	request.InitWithApiInfo("oos", "2019-06-01", "GetParameter", "oos", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -17,8 +17,8 @@ package dataworks_public
 
 // GranteeObjectListItem is a nested struct in dataworks_public response
 type GranteeObjectListItem struct {
-	GranteeId      string `json:"GranteeId" xml:"GranteeId"`
-	GranteeName    string `json:"GranteeName" xml:"GranteeName"`
 	GranteeType    int    `json:"GranteeType" xml:"GranteeType"`
 	GranteeTypeSub int    `json:"GranteeTypeSub" xml:"GranteeTypeSub"`
+	GranteeName    string `json:"GranteeName" xml:"GranteeName"`
+	GranteeId      string `json:"GranteeId" xml:"GranteeId"`
 }

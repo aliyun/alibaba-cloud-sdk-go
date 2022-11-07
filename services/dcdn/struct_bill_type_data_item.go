@@ -17,10 +17,10 @@ package dcdn
 
 // BillTypeDataItem is a nested struct in dcdn response
 type BillTypeDataItem struct {
-	StartTime    string `json:"StartTime" xml:"StartTime"`
 	EndTime      string `json:"EndTime" xml:"EndTime"`
-	Product      string `json:"Product" xml:"Product"`
-	Dimension    string `json:"Dimension" xml:"Dimension"`
-	BillType     string `json:"BillType" xml:"BillType"`
+	StartTime    string `json:"StartTime" xml:"StartTime"`
 	BillingCycle string `json:"BillingCycle" xml:"BillingCycle"`
+	Product      string `json:"Product" xml:"Product"`
+	BillType     string `json:"BillType" xml:"BillType"`
+	Dimension    string `json:"Dimension" xml:"Dimension"`
 }

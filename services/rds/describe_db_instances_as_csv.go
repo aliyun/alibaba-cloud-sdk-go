@@ -74,6 +74,7 @@ type DescribeDBInstancesAsCsvRequest struct {
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 }
 

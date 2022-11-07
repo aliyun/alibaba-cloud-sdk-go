@@ -82,12 +82,12 @@ type DescribeHostAvailabilityListRequest struct {
 // DescribeHostAvailabilityListResponse is the response struct for api DescribeHostAvailabilityList
 type DescribeHostAvailabilityListResponse struct {
 	*responses.BaseResponse
-	Code      string   `json:"Code" xml:"Code"`
-	Message   string   `json:"Message" xml:"Message"`
-	RequestId string   `json:"RequestId" xml:"RequestId"`
-	Total     int      `json:"Total" xml:"Total"`
-	Success   bool     `json:"Success" xml:"Success"`
-	TaskList  TaskList `json:"TaskList" xml:"TaskList"`
+	Code      string                                 `json:"Code" xml:"Code"`
+	Message   string                                 `json:"Message" xml:"Message"`
+	RequestId string                                 `json:"RequestId" xml:"RequestId"`
+	Total     int                                    `json:"Total" xml:"Total"`
+	Success   bool                                   `json:"Success" xml:"Success"`
+	TaskList  TaskListInDescribeHostAvailabilityList `json:"TaskList" xml:"TaskList"`
 }
 
 // CreateDescribeHostAvailabilityListRequest creates a request to invoke DescribeHostAvailabilityList API

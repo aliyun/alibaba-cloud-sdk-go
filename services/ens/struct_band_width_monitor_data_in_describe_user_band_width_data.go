@@ -17,5 +17,5 @@ package ens
 
 // BandWidthMonitorDataInDescribeUserBandWidthData is a nested struct in ens response
 type BandWidthMonitorDataInDescribeUserBandWidthData struct {
-	BandWidthMonitorDataItem []BandWidthMonitorDataItemInDescribeUserBandWidthData `json:"BandWidthMonitorData" xml:"BandWidthMonitorData"`
+	BandWidthMonitorDataItem []BandWidthMonitorDataItem `json:"BandWidthMonitorData" xml:"BandWidthMonitorData"`
 }

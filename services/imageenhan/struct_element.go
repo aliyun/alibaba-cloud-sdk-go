@@ -18,8 +18,8 @@ package imageenhan
 // Element is a nested struct in imageenhan response
 type Element struct {
 	MinX  int     `json:"MinX" xml:"MinX"`
-	MinY  int     `json:"MinY" xml:"MinY"`
-	MaxX  int     `json:"MaxX" xml:"MaxX"`
-	MaxY  int     `json:"MaxY" xml:"MaxY"`
 	Score float64 `json:"Score" xml:"Score"`
+	MaxY  int     `json:"MaxY" xml:"MaxY"`
+	MaxX  int     `json:"MaxX" xml:"MaxX"`
+	MinY  int     `json:"MinY" xml:"MinY"`
 }

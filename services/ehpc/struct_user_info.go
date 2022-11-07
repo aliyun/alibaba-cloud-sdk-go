@@ -19,5 +19,7 @@ package ehpc
 type UserInfo struct {
 	Name    string `json:"Name" xml:"Name"`
 	Group   string `json:"Group" xml:"Group"`
+	UserId  string `json:"UserId" xml:"UserId"`
+	GroupId string `json:"GroupId" xml:"GroupId"`
 	AddTime string `json:"AddTime" xml:"AddTime"`
 }

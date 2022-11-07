@@ -122,10 +122,12 @@ type MassPushPushTask struct {
 	Title                            string `name:"Title"`
 	AndroidRenderStyle               string `name:"AndroidRenderStyle"`
 	IOSExtParameters                 string `name:"iOSExtParameters"`
+	AndroidNotificationHonorChannel  string `name:"AndroidNotificationHonorChannel"`
 	AndroidXiaomiImageUrl            string `name:"AndroidXiaomiImageUrl"`
 	AndroidPopupBody                 string `name:"AndroidPopupBody"`
 	AndroidBigPictureUrl             string `name:"AndroidBigPictureUrl"`
 	IOSSilentNotification            string `name:"iOSSilentNotification"`
+	AndroidNotificationGroup         string `name:"AndroidNotificationGroup"`
 	SendChannels                     string `name:"SendChannels"`
 	Target                           string `name:"Target"`
 	AndroidBigTitle                  string `name:"AndroidBigTitle"`

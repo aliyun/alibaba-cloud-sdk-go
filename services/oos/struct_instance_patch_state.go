@@ -17,17 +17,17 @@ package oos
 
 // InstancePatchState is a nested struct in oos response
 type InstancePatchState struct {
-	InstanceId                  string `json:"InstanceId" xml:"InstanceId"`
-	PatchGroup                  string `json:"PatchGroup" xml:"PatchGroup"`
-	BaselineId                  string `json:"BaselineId" xml:"BaselineId"`
-	OwnerInformation            string `json:"OwnerInformation" xml:"OwnerInformation"`
-	InstalledCount              string `json:"InstalledCount" xml:"InstalledCount"`
-	InstalledOtherCount         string `json:"InstalledOtherCount" xml:"InstalledOtherCount"`
-	InstalledPendingRebootCount string `json:"InstalledPendingRebootCount" xml:"InstalledPendingRebootCount"`
-	InstalledRejectedCount      string `json:"InstalledRejectedCount" xml:"InstalledRejectedCount"`
 	MissingCount                string `json:"MissingCount" xml:"MissingCount"`
-	FailedCount                 string `json:"FailedCount" xml:"FailedCount"`
+	OperationEndTime            string `json:"OperationEndTime" xml:"OperationEndTime"`
+	OwnerInformation            string `json:"OwnerInformation" xml:"OwnerInformation"`
+	InstalledOtherCount         string `json:"InstalledOtherCount" xml:"InstalledOtherCount"`
+	InstanceId                  string `json:"InstanceId" xml:"InstanceId"`
 	OperationType               string `json:"OperationType" xml:"OperationType"`
 	OperationStartTime          string `json:"OperationStartTime" xml:"OperationStartTime"`
-	OperationEndTime            string `json:"OperationEndTime" xml:"OperationEndTime"`
+	FailedCount                 string `json:"FailedCount" xml:"FailedCount"`
+	BaselineId                  string `json:"BaselineId" xml:"BaselineId"`
+	InstalledPendingRebootCount string `json:"InstalledPendingRebootCount" xml:"InstalledPendingRebootCount"`
+	InstalledRejectedCount      string `json:"InstalledRejectedCount" xml:"InstalledRejectedCount"`
+	PatchGroup                  string `json:"PatchGroup" xml:"PatchGroup"`
+	InstalledCount              string `json:"InstalledCount" xml:"InstalledCount"`
 }

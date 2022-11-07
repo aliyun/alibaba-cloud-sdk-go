@@ -83,9 +83,9 @@ type CreateCertificateRequest struct {
 type CreateCertificateResponse struct {
 	*responses.BaseResponse
 	RequestId     string `json:"RequestId" xml:"RequestId"`
+	Csr           string `json:"Csr" xml:"Csr"`
 	CertificateId string `json:"CertificateId" xml:"CertificateId"`
 	Arn           string `json:"Arn" xml:"Arn"`
-	Csr           string `json:"Csr" xml:"Csr"`
 }
 
 // CreateCreateCertificateRequest creates a request to invoke CreateCertificate API

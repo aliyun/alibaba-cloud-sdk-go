@@ -94,7 +94,7 @@ func CreateDescribeDBNodesParametersRequest() (request *DescribeDBNodesParameter
 	request = &DescribeDBNodesParametersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeDBNodesParameters", "", "")
+	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeDBNodesParameters", "polardb", "openAPI")
 	request.Method = requests.POST
 	return
 }

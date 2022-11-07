@@ -17,9 +17,9 @@ package ehpc
 
 // OsTag is a nested struct in ehpc response
 type OsTag struct {
-	OsTag        string `json:"OsTag" xml:"OsTag"`
-	BaseOsTag    string `json:"BaseOsTag" xml:"BaseOsTag"`
-	Platform     string `json:"Platform" xml:"Platform"`
-	Version      string `json:"Version" xml:"Version"`
 	Architecture string `json:"Architecture" xml:"Architecture"`
+	Platform     string `json:"Platform" xml:"Platform"`
+	OsTag        string `json:"OsTag" xml:"OsTag"`
+	Version      string `json:"Version" xml:"Version"`
+	BaseOsTag    string `json:"BaseOsTag" xml:"BaseOsTag"`
 }

@@ -77,8 +77,8 @@ type GetClusterVolumesRequest struct {
 // GetClusterVolumesResponse is the response struct for api GetClusterVolumes
 type GetClusterVolumesResponse struct {
 	*responses.BaseResponse
-	RequestId string                     `json:"RequestId" xml:"RequestId"`
 	RegionId  string                     `json:"RegionId" xml:"RegionId"`
+	RequestId string                     `json:"RequestId" xml:"RequestId"`
 	Volumes   VolumesInGetClusterVolumes `json:"Volumes" xml:"Volumes"`
 }
 

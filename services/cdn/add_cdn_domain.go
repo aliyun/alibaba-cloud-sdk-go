@@ -71,16 +71,23 @@ func (client *Client) AddCdnDomainWithCallback(request *AddCdnDomainRequest, cal
 // AddCdnDomainRequest is the request struct for api AddCdnDomain
 type AddCdnDomainRequest struct {
 	*requests.RpcRequest
-	Sources         string           `position:"Query" name:"Sources"`
-	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
-	SecurityToken   string           `position:"Query" name:"SecurityToken"`
-	CdnType         string           `position:"Query" name:"CdnType"`
-	Scope           string           `position:"Query" name:"Scope"`
-	TopLevelDomain  string           `position:"Query" name:"TopLevelDomain"`
-	OwnerAccount    string           `position:"Query" name:"OwnerAccount"`
-	DomainName      string           `position:"Query" name:"DomainName"`
-	OwnerId         requests.Integer `position:"Query" name:"OwnerId"`
-	CheckUrl        string           `position:"Query" name:"CheckUrl"`
+	Sources         string             `position:"Query" name:"Sources"`
+	ResourceGroupId string             `position:"Query" name:"ResourceGroupId"`
+	SecurityToken   string             `position:"Query" name:"SecurityToken"`
+	CdnType         string             `position:"Query" name:"CdnType"`
+	Scope           string             `position:"Query" name:"Scope"`
+	Tag             *[]AddCdnDomainTag `position:"Query" name:"Tag"  type:"Repeated"`
+	TopLevelDomain  string             `position:"Query" name:"TopLevelDomain"`
+	OwnerAccount    string             `position:"Query" name:"OwnerAccount"`
+	DomainName      string             `position:"Query" name:"DomainName"`
+	OwnerId         requests.Integer   `position:"Query" name:"OwnerId"`
+	CheckUrl        string             `position:"Query" name:"CheckUrl"`
+}
+
+// AddCdnDomainTag is a repeated param struct in AddCdnDomainRequest
+type AddCdnDomainTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // AddCdnDomainResponse is the response struct for api AddCdnDomain

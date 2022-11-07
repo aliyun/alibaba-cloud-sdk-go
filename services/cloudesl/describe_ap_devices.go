@@ -103,7 +103,7 @@ func CreateDescribeApDevicesRequest() (request *DescribeApDevicesRequest) {
 	request = &DescribeApDevicesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cloudesl", "2020-02-01", "DescribeApDevices", "cloudesl", "openAPI")
+	request.InitWithApiInfo("cloudesl", "2020-02-01", "DescribeApDevices", "", "")
 	request.Method = requests.POST
 	return
 }

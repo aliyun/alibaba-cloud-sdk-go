@@ -80,9 +80,9 @@ type MergeVideoModelFaceRequest struct {
 // MergeVideoModelFaceResponse is the response struct for api MergeVideoModelFace
 type MergeVideoModelFaceResponse struct {
 	*responses.BaseResponse
-	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 

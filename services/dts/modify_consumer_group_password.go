@@ -71,14 +71,14 @@ func (client *Client) ModifyConsumerGroupPasswordWithCallback(request *ModifyCon
 // ModifyConsumerGroupPasswordRequest is the request struct for api ModifyConsumerGroupPassword
 type ModifyConsumerGroupPasswordRequest struct {
 	*requests.RpcRequest
-	ConsumerGroupName        string `position:"Query" name:"ConsumerGroupName"`
 	ConsumerGroupID          string `position:"Query" name:"ConsumerGroupID"`
-	SubscriptionInstanceId   string `position:"Query" name:"SubscriptionInstanceId"`
-	OwnerId                  string `position:"Query" name:"OwnerId"`
-	ConsumerGroupNewPassword string `position:"Query" name:"consumerGroupNewPassword"`
 	ConsumerGroupPassword    string `position:"Query" name:"ConsumerGroupPassword"`
 	AccountId                string `position:"Query" name:"AccountId"`
 	ConsumerGroupUserName    string `position:"Query" name:"ConsumerGroupUserName"`
+	ConsumerGroupName        string `position:"Query" name:"ConsumerGroupName"`
+	SubscriptionInstanceId   string `position:"Query" name:"SubscriptionInstanceId"`
+	OwnerId                  string `position:"Query" name:"OwnerId"`
+	ConsumerGroupNewPassword string `position:"Query" name:"consumerGroupNewPassword"`
 }
 
 // ModifyConsumerGroupPasswordResponse is the response struct for api ModifyConsumerGroupPassword

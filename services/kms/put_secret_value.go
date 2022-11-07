@@ -81,9 +81,9 @@ type PutSecretValueRequest struct {
 // PutSecretValueResponse is the response struct for api PutSecretValue
 type PutSecretValueResponse struct {
 	*responses.BaseResponse
-	RequestId     string                        `json:"RequestId" xml:"RequestId"`
 	SecretName    string                        `json:"SecretName" xml:"SecretName"`
 	VersionId     string                        `json:"VersionId" xml:"VersionId"`
+	RequestId     string                        `json:"RequestId" xml:"RequestId"`
 	VersionStages VersionStagesInPutSecretValue `json:"VersionStages" xml:"VersionStages"`
 }
 

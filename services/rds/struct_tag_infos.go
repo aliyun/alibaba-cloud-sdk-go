@@ -17,7 +17,7 @@ package rds
 
 // TagInfos is a nested struct in rds response
 type TagInfos struct {
-	TagKey        string                      `json:"TagKey" xml:"TagKey"`
 	TagValue      string                      `json:"TagValue" xml:"TagValue"`
+	TagKey        string                      `json:"TagKey" xml:"TagKey"`
 	DBInstanceIds DBInstanceIdsInDescribeTags `json:"DBInstanceIds" xml:"DBInstanceIds"`
 }

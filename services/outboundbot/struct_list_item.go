@@ -18,6 +18,7 @@ package outboundbot
 // ListItem is a nested struct in outboundbot response
 type ListItem struct {
 	SerializedParams string   `json:"SerializedParams" xml:"SerializedParams"`
+	BillingType      string   `json:"BillingType" xml:"BillingType"`
 	Success          bool     `json:"Success" xml:"Success"`
 	InstanceId       string   `json:"InstanceId" xml:"InstanceId"`
 	InstanceName     string   `json:"InstanceName" xml:"InstanceName"`

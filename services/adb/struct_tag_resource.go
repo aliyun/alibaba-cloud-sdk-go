@@ -17,8 +17,8 @@ package adb
 
 // TagResource is a nested struct in adb response
 type TagResource struct {
-	TagKey       string `json:"TagKey" xml:"TagKey"`
-	TagValue     string `json:"TagValue" xml:"TagValue"`
 	ResourceType string `json:"ResourceType" xml:"ResourceType"`
+	TagValue     string `json:"TagValue" xml:"TagValue"`
 	ResourceId   string `json:"ResourceId" xml:"ResourceId"`
+	TagKey       string `json:"TagKey" xml:"TagKey"`
 }

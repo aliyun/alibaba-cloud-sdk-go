@@ -71,21 +71,20 @@ func (client *Client) DescribeScdnTopDomainsByFlowWithCallback(request *Describe
 // DescribeScdnTopDomainsByFlowRequest is the request struct for api DescribeScdnTopDomainsByFlow
 type DescribeScdnTopDomainsByFlowRequest struct {
 	*requests.RpcRequest
-	StartTime string           `position:"Query" name:"StartTime"`
-	Limit     requests.Integer `position:"Query" name:"Limit"`
 	Product   string           `position:"Query" name:"Product"`
+	Limit     requests.Integer `position:"Query" name:"Limit"`
 	EndTime   string           `position:"Query" name:"EndTime"`
-	OwnerId   requests.Integer `position:"Query" name:"OwnerId"`
+	StartTime string           `position:"Query" name:"StartTime"`
 }
 
 // DescribeScdnTopDomainsByFlowResponse is the response struct for api DescribeScdnTopDomainsByFlow
 type DescribeScdnTopDomainsByFlowResponse struct {
 	*responses.BaseResponse
-	RequestId         string     `json:"RequestId" xml:"RequestId"`
-	StartTime         string     `json:"StartTime" xml:"StartTime"`
-	EndTime           string     `json:"EndTime" xml:"EndTime"`
-	DomainCount       int64      `json:"DomainCount" xml:"DomainCount"`
 	DomainOnlineCount int64      `json:"DomainOnlineCount" xml:"DomainOnlineCount"`
+	EndTime           string     `json:"EndTime" xml:"EndTime"`
+	StartTime         string     `json:"StartTime" xml:"StartTime"`
+	RequestId         string     `json:"RequestId" xml:"RequestId"`
+	DomainCount       int64      `json:"DomainCount" xml:"DomainCount"`
 	TopDomains        TopDomains `json:"TopDomains" xml:"TopDomains"`
 }
 

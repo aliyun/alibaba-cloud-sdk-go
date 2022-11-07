@@ -17,7 +17,7 @@ package facebody
 
 // DataInDetectPedestrian is a nested struct in facebody response
 type DataInDetectPedestrian struct {
-	Height   int       `json:"Height" xml:"Height"`
 	Width    int       `json:"Width" xml:"Width"`
+	Height   int       `json:"Height" xml:"Height"`
 	Elements []Element `json:"Elements" xml:"Elements"`
 }

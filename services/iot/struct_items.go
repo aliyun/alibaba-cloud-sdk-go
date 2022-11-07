@@ -17,6 +17,7 @@ package iot
 
 // Items is a nested struct in iot response
 type Items struct {
+	Name                  string                                         `json:"Name" xml:"Name"`
 	ResultCode            string                                         `json:"ResultCode" xml:"ResultCode"`
 	Text                  string                                         `json:"Text" xml:"Text"`
 	AudioFormat           string                                         `json:"AudioFormat" xml:"AudioFormat"`
@@ -25,6 +26,7 @@ type Items struct {
 	ErrorMessage          string                                         `json:"ErrorMessage" xml:"ErrorMessage"`
 	Strategy              int                                            `json:"Strategy" xml:"Strategy"`
 	SourceInstanceName    string                                         `json:"SourceInstanceName" xml:"SourceInstanceName"`
+	OpenType              string                                         `json:"OpenType" xml:"OpenType"`
 	PeriodCode            string                                         `json:"PeriodCode" xml:"PeriodCode"`
 	SourceRegion          string                                         `json:"SourceRegion" xml:"SourceRegion"`
 	TargetAliyunId        string                                         `json:"TargetAliyunId" xml:"TargetAliyunId"`
@@ -41,6 +43,7 @@ type Items struct {
 	Label                 string                                         `json:"Label" xml:"Label"`
 	ProductKey            string                                         `json:"ProductKey" xml:"ProductKey"`
 	SoundCode             string                                         `json:"SoundCode" xml:"SoundCode"`
+	Sharable              int64                                          `json:"Sharable" xml:"Sharable"`
 	TargetInstanceId      string                                         `json:"TargetInstanceId" xml:"TargetInstanceId"`
 	GmtCreate             int64                                          `json:"GmtCreate" xml:"GmtCreate"`
 	SourceUid             string                                         `json:"SourceUid" xml:"SourceUid"`
@@ -48,9 +51,10 @@ type Items struct {
 	DeviceName            string                                         `json:"DeviceName" xml:"DeviceName"`
 	TargetInstanceName    string                                         `json:"TargetInstanceName" xml:"TargetInstanceName"`
 	StartTime             string                                         `json:"StartTime" xml:"StartTime"`
+	GmtAdded              int64                                          `json:"GmtAdded" xml:"GmtAdded"`
 	Total                 int                                            `json:"Total" xml:"Total"`
-	EndTime               string                                         `json:"EndTime" xml:"EndTime"`
 	IotId                 string                                         `json:"IotId" xml:"IotId"`
+	EndTime               string                                         `json:"EndTime" xml:"EndTime"`
 	SourceInstanceId      string                                         `json:"SourceInstanceId" xml:"SourceInstanceId"`
 	GmtModified           int64                                          `json:"GmtModified" xml:"GmtModified"`
 	AvailableSpace        float64                                        `json:"AvailableSpace" xml:"AvailableSpace"`

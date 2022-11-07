@@ -71,22 +71,24 @@ func (client *Client) DescribeSuspEventQuaraFilesWithCallback(request *DescribeS
 // DescribeSuspEventQuaraFilesRequest is the request struct for api DescribeSuspEventQuaraFiles
 type DescribeSuspEventQuaraFilesRequest struct {
 	*requests.RpcRequest
-	CurrentPage string `position:"Query" name:"CurrentPage"`
-	SourceIp    string `position:"Query" name:"SourceIp"`
-	QuaraTag    string `position:"Query" name:"QuaraTag"`
-	PageSize    string `position:"Query" name:"PageSize"`
-	From        string `position:"Query" name:"From"`
-	Status      string `position:"Query" name:"Status"`
+	SourceIp    string           `position:"Query" name:"SourceIp"`
+	PageSize    string           `position:"Query" name:"PageSize"`
+	From        string           `position:"Query" name:"From"`
+	GroupingId  requests.Integer `position:"Query" name:"GroupingId"`
+	GroupId     string           `position:"Query" name:"GroupId"`
+	CurrentPage string           `position:"Query" name:"CurrentPage"`
+	QuaraTag    string           `position:"Query" name:"QuaraTag"`
+	Status      string           `position:"Query" name:"Status"`
 }
 
 // DescribeSuspEventQuaraFilesResponse is the response struct for api DescribeSuspEventQuaraFiles
 type DescribeSuspEventQuaraFilesResponse struct {
 	*responses.BaseResponse
-	RequestId   string      `json:"RequestId" xml:"RequestId"`
-	Count       int         `json:"Count" xml:"Count"`
-	PageSize    int         `json:"PageSize" xml:"PageSize"`
-	TotalCount  int         `json:"TotalCount" xml:"TotalCount"`
 	CurrentPage int         `json:"CurrentPage" xml:"CurrentPage"`
+	PageSize    int         `json:"PageSize" xml:"PageSize"`
+	RequestId   string      `json:"RequestId" xml:"RequestId"`
+	TotalCount  int         `json:"TotalCount" xml:"TotalCount"`
+	Count       int         `json:"Count" xml:"Count"`
 	QuaraFiles  []QuaraFile `json:"QuaraFiles" xml:"QuaraFiles"`
 }
 

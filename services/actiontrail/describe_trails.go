@@ -88,7 +88,7 @@ func CreateDescribeTrailsRequest() (request *DescribeTrailsRequest) {
 	request = &DescribeTrailsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Actiontrail", "2020-07-06", "DescribeTrails", "actiontrail", "openAPI")
+	request.InitWithApiInfo("Actiontrail", "2020-07-06", "DescribeTrails", "", "")
 	request.Method = requests.POST
 	return
 }

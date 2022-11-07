@@ -71,8 +71,10 @@ func (client *Client) SegmentAnimalWithCallback(request *SegmentAnimalRequest, c
 // SegmentAnimalRequest is the request struct for api SegmentAnimal
 type SegmentAnimalRequest struct {
 	*requests.RpcRequest
-	ReturnForm string `position:"Query" name:"ReturnForm"`
-	ImageURL   string `position:"Query" name:"ImageURL"`
+	ReturnForm     string `position:"Query" name:"ReturnForm"`
+	OssFile        string `position:"Query" name:"OssFile"`
+	RequestProxyBy string `position:"Query" name:"RequestProxyBy"`
+	ImageURL       string `position:"Query" name:"ImageURL"`
 }
 
 // SegmentAnimalResponse is the response struct for api SegmentAnimal
@@ -87,7 +89,7 @@ func CreateSegmentAnimalRequest() (request *SegmentAnimalRequest) {
 	request = &SegmentAnimalRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imageseg", "2019-12-30", "SegmentAnimal", "imageseg", "openAPI")
+	request.InitWithApiInfo("imageseg", "2019-12-30", "SegmentAnimal", "", "")
 	request.Method = requests.POST
 	return
 }

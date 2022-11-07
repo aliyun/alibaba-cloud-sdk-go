@@ -17,15 +17,17 @@ package sas
 
 // Bind is a nested struct in sas response
 type Bind struct {
-	Uuid          string `json:"Uuid" xml:"Uuid"`
-	InstanceName  string `json:"InstanceName" xml:"InstanceName"`
-	InternetIp    string `json:"InternetIp" xml:"InternetIp"`
-	IntranetIp    string `json:"IntranetIp" xml:"IntranetIp"`
-	Os            string `json:"Os" xml:"Os"`
-	DirCount      string `json:"DirCount" xml:"DirCount"`
-	ServiceStatus string `json:"ServiceStatus" xml:"ServiceStatus"`
-	ServiceCode   string `json:"ServiceCode" xml:"ServiceCode"`
-	ServiceDetail string `json:"ServiceDetail" xml:"ServiceDetail"`
 	Status        string `json:"Status" xml:"Status"`
 	Percent       int    `json:"Percent" xml:"Percent"`
+	InternetIp    string `json:"InternetIp" xml:"InternetIp"`
+	ServiceDetail string `json:"ServiceDetail" xml:"ServiceDetail"`
+	Os            string `json:"Os" xml:"Os"`
+	ServiceStatus string `json:"ServiceStatus" xml:"ServiceStatus"`
+	IntranetIp    string `json:"IntranetIp" xml:"IntranetIp"`
+	AuditCount    string `json:"AuditCount" xml:"AuditCount"`
+	Uuid          string `json:"Uuid" xml:"Uuid"`
+	ServiceCode   string `json:"ServiceCode" xml:"ServiceCode"`
+	InstanceName  string `json:"InstanceName" xml:"InstanceName"`
+	DirCount      string `json:"DirCount" xml:"DirCount"`
+	BlockCount    string `json:"BlockCount" xml:"BlockCount"`
 }

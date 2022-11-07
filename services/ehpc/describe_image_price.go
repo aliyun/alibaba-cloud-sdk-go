@@ -82,12 +82,12 @@ type DescribeImagePriceRequest struct {
 // DescribeImagePriceResponse is the response struct for api DescribeImagePrice
 type DescribeImagePriceResponse struct {
 	*responses.BaseResponse
-	RequestId     string  `json:"RequestId" xml:"RequestId"`
-	ImageId       string  `json:"ImageId" xml:"ImageId"`
-	DiscountPrice float64 `json:"DiscountPrice" xml:"DiscountPrice"`
-	OriginalPrice float64 `json:"OriginalPrice" xml:"OriginalPrice"`
-	TradePrice    float64 `json:"TradePrice" xml:"TradePrice"`
 	Amount        int     `json:"Amount" xml:"Amount"`
+	RequestId     string  `json:"RequestId" xml:"RequestId"`
+	DiscountPrice float64 `json:"DiscountPrice" xml:"DiscountPrice"`
+	TradePrice    float64 `json:"TradePrice" xml:"TradePrice"`
+	OriginalPrice float64 `json:"OriginalPrice" xml:"OriginalPrice"`
+	ImageId       string  `json:"ImageId" xml:"ImageId"`
 }
 
 // CreateDescribeImagePriceRequest creates a request to invoke DescribeImagePrice API

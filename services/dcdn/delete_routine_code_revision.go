@@ -79,8 +79,8 @@ type DeleteRoutineCodeRevisionRequest struct {
 // DeleteRoutineCodeRevisionResponse is the response struct for api DeleteRoutineCodeRevision
 type DeleteRoutineCodeRevisionResponse struct {
 	*responses.BaseResponse
-	RequestId string                 `json:"RequestId" xml:"RequestId"`
 	Content   map[string]interface{} `json:"Content" xml:"Content"`
+	RequestId string                 `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDeleteRoutineCodeRevisionRequest creates a request to invoke DeleteRoutineCodeRevision API

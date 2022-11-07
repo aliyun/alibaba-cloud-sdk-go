@@ -72,10 +72,10 @@ func (client *Client) ImageBlindPicWatermarkWithCallback(request *ImageBlindPicW
 type ImageBlindPicWatermarkRequest struct {
 	*requests.RpcRequest
 	WatermarkImageURL string           `position:"Body" name:"WatermarkImageURL"`
-	QualityFactor     requests.Integer `position:"Body" name:"QualityFactor"`
-	FunctionType      string           `position:"Body" name:"FunctionType"`
 	LogoURL           string           `position:"Body" name:"LogoURL"`
 	OutputFileType    string           `position:"Body" name:"OutputFileType"`
+	QualityFactor     requests.Integer `position:"Body" name:"QualityFactor"`
+	FunctionType      string           `position:"Body" name:"FunctionType"`
 	OriginImageURL    string           `position:"Body" name:"OriginImageURL"`
 }
 

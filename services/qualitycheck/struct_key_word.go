@@ -17,10 +17,11 @@ package qualitycheck
 
 // KeyWord is a nested struct in qualitycheck response
 type KeyWord struct {
-	Cid  string `json:"Cid" xml:"Cid"`
-	To   int    `json:"To" xml:"To"`
-	Val  string `json:"Val" xml:"Val"`
-	Pid  int    `json:"Pid" xml:"Pid"`
-	From int    `json:"From" xml:"From"`
-	Tid  string `json:"Tid" xml:"Tid"`
+	Cid           string `json:"Cid" xml:"Cid"`
+	To            int    `json:"To" xml:"To"`
+	Val           string `json:"Val" xml:"Val"`
+	Pid           int    `json:"Pid" xml:"Pid"`
+	CustomizeCode string `json:"CustomizeCode" xml:"CustomizeCode"`
+	From          int    `json:"From" xml:"From"`
+	Tid           string `json:"Tid" xml:"Tid"`
 }

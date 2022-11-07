@@ -75,6 +75,7 @@ type CreateDBNodesRequest struct {
 	ClientToken          string                 `position:"Query" name:"ClientToken"`
 	EndpointBindList     string                 `position:"Query" name:"EndpointBindList"`
 	PlannedEndTime       string                 `position:"Query" name:"PlannedEndTime"`
+	ResourceGroupId      string                 `position:"Query" name:"ResourceGroupId"`
 	ResourceOwnerAccount string                 `position:"Query" name:"ResourceOwnerAccount"`
 	DBClusterId          string                 `position:"Query" name:"DBClusterId"`
 	OwnerAccount         string                 `position:"Query" name:"OwnerAccount"`
@@ -104,7 +105,7 @@ func CreateCreateDBNodesRequest() (request *CreateDBNodesRequest) {
 	request = &CreateDBNodesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "CreateDBNodes", "", "")
+	request.InitWithApiInfo("polardb", "2017-08-01", "CreateDBNodes", "polardb", "openAPI")
 	request.Method = requests.POST
 	return
 }

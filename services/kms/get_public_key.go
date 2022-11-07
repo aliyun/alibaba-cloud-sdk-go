@@ -78,10 +78,10 @@ type GetPublicKeyRequest struct {
 // GetPublicKeyResponse is the response struct for api GetPublicKey
 type GetPublicKeyResponse struct {
 	*responses.BaseResponse
-	PublicKey    string `json:"PublicKey" xml:"PublicKey"`
+	KeyVersionId string `json:"KeyVersionId" xml:"KeyVersionId"`
 	KeyId        string `json:"KeyId" xml:"KeyId"`
 	RequestId    string `json:"RequestId" xml:"RequestId"`
-	KeyVersionId string `json:"KeyVersionId" xml:"KeyVersionId"`
+	PublicKey    string `json:"PublicKey" xml:"PublicKey"`
 }
 
 // CreateGetPublicKeyRequest creates a request to invoke GetPublicKey API

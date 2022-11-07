@@ -17,7 +17,7 @@ package cms
 
 // Escalations is a nested struct in cms response
 type Escalations struct {
-	Warn     WarnInDescribeMetricRuleTemplateAttribute `json:"Warn" xml:"Warn"`
 	Critical Critical                                  `json:"Critical" xml:"Critical"`
 	Info     InfoInDescribeMetricRuleList              `json:"Info" xml:"Info"`
+	Warn     WarnInDescribeMetricRuleTemplateAttribute `json:"Warn" xml:"Warn"`
 }

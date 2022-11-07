@@ -71,8 +71,10 @@ func (client *Client) GetAsyncJobResultWithCallback(request *GetAsyncJobResultRe
 // GetAsyncJobResultRequest is the request struct for api GetAsyncJobResult
 type GetAsyncJobResultRequest struct {
 	*requests.RpcRequest
-	Async requests.Boolean `position:"Body" name:"Async"`
-	JobId string           `position:"Body" name:"JobId"`
+	JobId          string           `position:"Body" name:"JobId"`
+	OssFile        string           `position:"Query" name:"OssFile"`
+	RequestProxyBy string           `position:"Query" name:"RequestProxyBy"`
+	Async          requests.Boolean `position:"Body" name:"Async"`
 }
 
 // GetAsyncJobResultResponse is the response struct for api GetAsyncJobResult
@@ -87,7 +89,7 @@ func CreateGetAsyncJobResultRequest() (request *GetAsyncJobResultRequest) {
 	request = &GetAsyncJobResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imageseg", "2019-12-30", "GetAsyncJobResult", "imageseg", "openAPI")
+	request.InitWithApiInfo("imageseg", "2019-12-30", "GetAsyncJobResult", "", "")
 	request.Method = requests.POST
 	return
 }

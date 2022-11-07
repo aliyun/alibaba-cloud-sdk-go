@@ -87,7 +87,7 @@ func CreateAddPrometheusGlobalViewRequest() (request *AddPrometheusGlobalViewReq
 	request = &AddPrometheusGlobalViewRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "AddPrometheusGlobalView", "", "")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "AddPrometheusGlobalView", "arms", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -71,8 +71,7 @@ func (client *Client) DescribeScdnDomainCnameWithCallback(request *DescribeScdnD
 // DescribeScdnDomainCnameRequest is the request struct for api DescribeScdnDomainCname
 type DescribeScdnDomainCnameRequest struct {
 	*requests.RpcRequest
-	DomainName string           `position:"Query" name:"DomainName"`
-	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
+	DomainName string `position:"Query" name:"DomainName"`
 }
 
 // DescribeScdnDomainCnameResponse is the response struct for api DescribeScdnDomainCname

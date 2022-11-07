@@ -71,20 +71,20 @@ func (client *Client) UpdateDataSourceWithCallback(request *UpdateDataSourceRequ
 // UpdateDataSourceRequest is the request struct for api UpdateDataSource
 type UpdateDataSourceRequest struct {
 	*requests.RpcRequest
-	EnvType      requests.Integer `position:"Query" name:"EnvType"`
-	DataSourceId requests.Integer `position:"Query" name:"DataSourceId"`
 	Description  string           `position:"Query" name:"Description"`
 	Content      string           `position:"Query" name:"Content"`
+	EnvType      requests.Integer `position:"Query" name:"EnvType"`
+	DataSourceId requests.Integer `position:"Query" name:"DataSourceId"`
 	Status       string           `position:"Query" name:"Status"`
 }
 
 // UpdateDataSourceResponse is the response struct for api UpdateDataSource
 type UpdateDataSourceResponse struct {
 	*responses.BaseResponse
-	Success        bool   `json:"Success" xml:"Success"`
 	HttpStatusCode string `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	Data           bool   `json:"Data" xml:"Data"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
+	Success        bool   `json:"Success" xml:"Success"`
 }
 
 // CreateUpdateDataSourceRequest creates a request to invoke UpdateDataSource API

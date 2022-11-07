@@ -71,7 +71,9 @@ func (client *Client) CreateDesktopGroupWithCallback(request *CreateDesktopGroup
 // CreateDesktopGroupRequest is the request struct for api CreateDesktopGroup
 type CreateDesktopGroupRequest struct {
 	*requests.RpcRequest
+	VolumeEncryptionKey     string           `position:"Query" name:"VolumeEncryptionKey"`
 	OfficeSiteId            string           `position:"Query" name:"OfficeSiteId"`
+	Classify                string           `position:"Query" name:"Classify"`
 	EndUserIds              *[]string        `position:"Query" name:"EndUserIds"  type:"Repeated"`
 	ScaleStrategyId         string           `position:"Query" name:"ScaleStrategyId"`
 	ClientToken             string           `position:"Query" name:"ClientToken"`
@@ -83,7 +85,9 @@ type CreateDesktopGroupRequest struct {
 	DefaultInitDesktopCount requests.Integer `position:"Query" name:"DefaultInitDesktopCount"`
 	DirectoryId             string           `position:"Query" name:"DirectoryId"`
 	MinDesktopsCount        requests.Integer `position:"Query" name:"MinDesktopsCount"`
+	AllClassifyUsers        requests.Boolean `position:"Query" name:"AllClassifyUsers"`
 	MaxDesktopsCount        requests.Integer `position:"Query" name:"MaxDesktopsCount"`
+	VolumeEncryptionEnabled requests.Boolean `position:"Query" name:"VolumeEncryptionEnabled"`
 	Period                  requests.Integer `position:"Query" name:"Period"`
 	AllowAutoSetup          requests.Integer `position:"Query" name:"AllowAutoSetup"`
 	AutoPay                 requests.Boolean `position:"Query" name:"AutoPay"`

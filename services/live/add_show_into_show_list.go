@@ -71,23 +71,38 @@ func (client *Client) AddShowIntoShowListWithCallback(request *AddShowIntoShowLi
 // AddShowIntoShowListRequest is the request struct for api AddShowIntoShowList
 type AddShowIntoShowListRequest struct {
 	*requests.RpcRequest
-	LiveInputType requests.Integer `position:"Query" name:"LiveInputType"`
-	Duration      requests.Integer `position:"Query" name:"Duration"`
-	RepeatTimes   requests.Integer `position:"Query" name:"RepeatTimes"`
-	ShowName      string           `position:"Query" name:"ShowName"`
-	ResourceId    string           `position:"Query" name:"ResourceId"`
-	CasterId      string           `position:"Query" name:"CasterId"`
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceType  string           `position:"Query" name:"ResourceType"`
-	ResourceUrl   string           `position:"Query" name:"ResourceUrl"`
-	Spot          requests.Integer `position:"Query" name:"Spot"`
+	ShowList      *[]AddShowIntoShowListShowList `position:"Query" name:"showList"  type:"Repeated"`
+	LiveInputType requests.Integer               `position:"Query" name:"LiveInputType"`
+	IsBatchMode   requests.Boolean               `position:"Query" name:"isBatchMode"`
+	Duration      requests.Integer               `position:"Query" name:"Duration"`
+	RepeatTimes   requests.Integer               `position:"Query" name:"RepeatTimes"`
+	ShowName      string                         `position:"Query" name:"ShowName"`
+	ResourceId    string                         `position:"Query" name:"ResourceId"`
+	CasterId      string                         `position:"Query" name:"CasterId"`
+	OwnerId       requests.Integer               `position:"Query" name:"OwnerId"`
+	ResourceType  string                         `position:"Query" name:"ResourceType"`
+	ResourceUrl   string                         `position:"Query" name:"ResourceUrl"`
+	Spot          requests.Integer               `position:"Query" name:"Spot"`
+}
+
+// AddShowIntoShowListShowList is a repeated param struct in AddShowIntoShowListRequest
+type AddShowIntoShowListShowList struct {
+	ShowName      string `name:"showName"`
+	RepeatTimes   string `name:"repeatTimes"`
+	ResourceType  string `name:"resourceType"`
+	ResourceUrl   string `name:"resourceUrl"`
+	LiveInputType string `name:"liveInputType"`
+	Duration      string `name:"duration"`
+	ResourceId    string `name:"resourceId"`
 }
 
 // AddShowIntoShowListResponse is the response struct for api AddShowIntoShowList
 type AddShowIntoShowListResponse struct {
 	*responses.BaseResponse
-	ShowId    string `json:"ShowId" xml:"ShowId"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	RequestId         string `json:"RequestId" xml:"RequestId"`
+	ShowId            string `json:"ShowId" xml:"ShowId"`
+	SuccessfulShowIds string `json:"successfulShowIds" xml:"successfulShowIds"`
+	FailedList        string `json:"failedList" xml:"failedList"`
 }
 
 // CreateAddShowIntoShowListRequest creates a request to invoke AddShowIntoShowList API

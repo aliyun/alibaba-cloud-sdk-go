@@ -17,13 +17,22 @@ package edas
 
 // ApplicationInListApplication is a nested struct in edas response
 type ApplicationInListApplication struct {
-	ClusterType          int    `json:"ClusterType" xml:"ClusterType"`
 	AppId                string `json:"AppId" xml:"AppId"`
-	ResourceGroupId      string `json:"ResourceGroupId" xml:"ResourceGroupId"`
-	ApplicationType      string `json:"ApplicationType" xml:"ApplicationType"`
-	Name                 string `json:"Name" xml:"Name"`
-	RunningInstanceCount int    `json:"RunningInstanceCount" xml:"RunningInstanceCount"`
-	BuildPackageId       int64  `json:"BuildPackageId" xml:"BuildPackageId"`
-	ClusterId            string `json:"ClusterId" xml:"ClusterId"`
 	RegionId             string `json:"RegionId" xml:"RegionId"`
+	Name                 string `json:"Name" xml:"Name"`
+	Instances            int    `json:"Instances" xml:"Instances"`
+	Port                 int    `json:"Port" xml:"Port"`
+	State                string `json:"State" xml:"State"`
+	CreateTime           int64  `json:"CreateTime" xml:"CreateTime"`
+	SlbIp                string `json:"SlbIp" xml:"SlbIp"`
+	SlbPort              int    `json:"SlbPort" xml:"SlbPort"`
+	SlbListenerPort      int    `json:"SlbListenerPort" xml:"SlbListenerPort"`
+	ExtSlbListenerPort   int    `json:"ExtSlbListenerPort" xml:"ExtSlbListenerPort"`
+	BuildPackageId       int64  `json:"BuildPackageId" xml:"BuildPackageId"`
+	ExtSlbIp             string `json:"ExtSlbIp" xml:"ExtSlbIp"`
+	ApplicationType      string `json:"ApplicationType" xml:"ApplicationType"`
+	ClusterType          int    `json:"ClusterType" xml:"ClusterType"`
+	RunningInstanceCount int    `json:"RunningInstanceCount" xml:"RunningInstanceCount"`
+	ClusterId            string `json:"ClusterId" xml:"ClusterId"`
+	ResourceGroupId      string `json:"ResourceGroupId" xml:"ResourceGroupId"`
 }

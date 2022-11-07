@@ -17,10 +17,10 @@ package alikafka
 
 // KafkaAclVO is a nested struct in alikafka response
 type KafkaAclVO struct {
-	Username               string `json:"Username" xml:"Username"`
 	AclResourceType        string `json:"AclResourceType" xml:"AclResourceType"`
-	AclResourceName        string `json:"AclResourceName" xml:"AclResourceName"`
-	AclResourcePatternType string `json:"AclResourcePatternType" xml:"AclResourcePatternType"`
 	Host                   string `json:"Host" xml:"Host"`
 	AclOperationType       string `json:"AclOperationType" xml:"AclOperationType"`
+	AclResourceName        string `json:"AclResourceName" xml:"AclResourceName"`
+	AclResourcePatternType string `json:"AclResourcePatternType" xml:"AclResourcePatternType"`
+	Username               string `json:"Username" xml:"Username"`
 }

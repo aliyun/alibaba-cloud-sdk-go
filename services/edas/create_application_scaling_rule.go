@@ -71,13 +71,13 @@ func (client *Client) CreateApplicationScalingRuleWithCallback(request *CreateAp
 // CreateApplicationScalingRuleRequest is the request struct for api CreateApplicationScalingRule
 type CreateApplicationScalingRuleRequest struct {
 	*requests.RoaRequest
-	ScalingRuleName    string           `position:"Query" name:"ScalingRuleName"`
-	ScalingRuleEnable  requests.Boolean `position:"Query" name:"ScalingRuleEnable"`
-	ScalingRuleTimer   string           `position:"Query" name:"ScalingRuleTimer"`
-	ScalingRuleMetric  string           `position:"Query" name:"ScalingRuleMetric"`
-	AppId              string           `position:"Query" name:"AppId"`
-	ScalingRuleTrigger string           `position:"Query" name:"ScalingRuleTrigger"`
-	ScalingRuleType    string           `position:"Query" name:"ScalingRuleType"`
+	ScalingRuleName    string `position:"Query" name:"ScalingRuleName"`
+	ScalingRuleEnable  string `position:"Query" name:"ScalingRuleEnable"`
+	ScalingRuleTimer   string `position:"Query" name:"ScalingRuleTimer"`
+	ScalingRuleMetric  string `position:"Query" name:"ScalingRuleMetric"`
+	AppId              string `position:"Query" name:"AppId"`
+	ScalingRuleTrigger string `position:"Query" name:"ScalingRuleTrigger"`
+	ScalingRuleType    string `position:"Query" name:"ScalingRuleType"`
 }
 
 // CreateApplicationScalingRuleResponse is the response struct for api CreateApplicationScalingRule
@@ -94,7 +94,7 @@ func CreateCreateApplicationScalingRuleRequest() (request *CreateApplicationScal
 	request = &CreateApplicationScalingRuleRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "CreateApplicationScalingRule", "/pop/v1/eam/scale/application_scaling_rule", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "CreateApplicationScalingRule", "/pop/v1/eam/scale/application_scaling_rule", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

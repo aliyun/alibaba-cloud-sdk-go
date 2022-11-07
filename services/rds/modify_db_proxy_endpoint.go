@@ -78,6 +78,7 @@ type ModifyDBProxyEndpointRequest struct {
 	ReadOnlyInstanceMaxDelayTime     string           `position:"Query" name:"ReadOnlyInstanceMaxDelayTime"`
 	ResourceOwnerAccount             string           `position:"Query" name:"ResourceOwnerAccount"`
 	DbEndpointAliases                string           `position:"Query" name:"DbEndpointAliases"`
+	DBProxyEngineType                string           `position:"Query" name:"DBProxyEngineType"`
 	DbEndpointOperator               string           `position:"Query" name:"DbEndpointOperator"`
 	DbEndpointType                   string           `position:"Query" name:"DbEndpointType"`
 	OwnerId                          requests.Integer `position:"Query" name:"OwnerId"`

@@ -71,65 +71,80 @@ func (client *Client) InsertK8sApplicationWithCallback(request *InsertK8sApplica
 // InsertK8sApplicationRequest is the request struct for api InsertK8sApplication
 type InsertK8sApplicationRequest struct {
 	*requests.RoaRequest
-	NasId                  string           `position:"Query" name:"NasId"`
-	IntranetSlbId          string           `position:"Query" name:"IntranetSlbId"`
-	Envs                   string           `position:"Query" name:"Envs"`
-	RequestsMem            requests.Integer `position:"Query" name:"RequestsMem"`
-	StorageType            string           `position:"Query" name:"StorageType"`
-	ConfigMountDescs       string           `position:"Query" name:"ConfigMountDescs"`
-	AppName                string           `position:"Query" name:"AppName"`
-	RequestsmCpu           requests.Integer `position:"Query" name:"RequestsmCpu"`
-	DeployAcrossZones      string           `position:"Query" name:"DeployAcrossZones"`
-	IntranetSlbPort        requests.Integer `position:"Query" name:"IntranetSlbPort"`
-	DeployAcrossNodes      string           `position:"Query" name:"DeployAcrossNodes"`
-	PreStop                string           `position:"Query" name:"PreStop"`
-	BuildPackId            string           `position:"Query" name:"BuildPackId"`
-	LocalVolume            string           `position:"Query" name:"LocalVolume"`
-	UseBodyEncoding        requests.Boolean `position:"Query" name:"UseBodyEncoding"`
-	EmptyDirs              string           `position:"Query" name:"EmptyDirs"`
-	PackageType            string           `position:"Query" name:"PackageType"`
-	RuntimeClassName       string           `position:"Query" name:"RuntimeClassName"`
-	PostStart              string           `position:"Query" name:"PostStart"`
-	CustomAffinity         string           `position:"Query" name:"CustomAffinity"`
-	RepoId                 string           `position:"Query" name:"RepoId"`
-	InternetTargetPort     requests.Integer `position:"Query" name:"InternetTargetPort"`
-	WebContainer           string           `position:"Query" name:"WebContainer"`
-	EnableAsm              requests.Boolean `position:"Query" name:"EnableAsm"`
-	EnableAhas             requests.Boolean `position:"Query" name:"EnableAhas"`
-	SlsConfigs             string           `position:"Query" name:"SlsConfigs"`
-	CommandArgs            string           `position:"Query" name:"CommandArgs"`
-	Readiness              string           `position:"Query" name:"Readiness"`
-	Liveness               string           `position:"Query" name:"Liveness"`
-	CsClusterId            string           `position:"Query" name:"CsClusterId"`
-	InternetSlbPort        requests.Integer `position:"Query" name:"InternetSlbPort"`
-	PackageVersion         string           `position:"Query" name:"PackageVersion"`
-	Timeout                requests.Integer `position:"Query" name:"Timeout"`
-	EnvFroms               string           `position:"Query" name:"EnvFroms"`
-	LimitMem               requests.Integer `position:"Query" name:"LimitMem"`
-	LimitmCpu              requests.Integer `position:"Query" name:"LimitmCpu"`
-	EdasContainerVersion   string           `position:"Query" name:"EdasContainerVersion"`
-	InternetSlbId          string           `position:"Query" name:"InternetSlbId"`
-	LogicalRegionId        string           `position:"Query" name:"LogicalRegionId"`
-	PackageUrl             string           `position:"Query" name:"PackageUrl"`
-	InternetSlbProtocol    string           `position:"Query" name:"InternetSlbProtocol"`
-	MountDescs             string           `position:"Query" name:"MountDescs"`
-	Replicas               requests.Integer `position:"Query" name:"Replicas"`
-	LimitCpu               requests.Integer `position:"Query" name:"LimitCpu"`
-	CustomTolerations      string           `position:"Query" name:"CustomTolerations"`
-	WebContainerConfig     string           `position:"Query" name:"WebContainerConfig"`
-	IsMultilingualApp      requests.Boolean `position:"Query" name:"IsMultilingualApp"`
-	ClusterId              string           `position:"Query" name:"ClusterId"`
-	IntranetTargetPort     requests.Integer `position:"Query" name:"IntranetTargetPort"`
-	Command                string           `position:"Query" name:"Command"`
-	JDK                    string           `position:"Query" name:"JDK"`
-	UriEncoding            string           `position:"Query" name:"UriEncoding"`
-	IntranetSlbProtocol    string           `position:"Query" name:"IntranetSlbProtocol"`
-	ImageUrl               string           `position:"Query" name:"ImageUrl"`
-	PvcMountDescs          string           `position:"Query" name:"PvcMountDescs"`
-	Namespace              string           `position:"Query" name:"Namespace"`
-	ApplicationDescription string           `position:"Query" name:"ApplicationDescription"`
-	RequestsCpu            requests.Integer `position:"Query" name:"RequestsCpu"`
-	JavaStartUpConfig      string           `position:"Query" name:"JavaStartUpConfig"`
+	NasId                    string `position:"Query" name:"NasId"`
+	IntranetSlbId            string `position:"Query" name:"IntranetSlbId"`
+	RequestsEphemeralStorage string `position:"Query" name:"RequestsEphemeralStorage"`
+	Envs                     string `position:"Query" name:"Envs"`
+	Annotations              string `position:"Query" name:"Annotations"`
+	RequestsMem              string `position:"Query" name:"RequestsMem"`
+	StorageType              string `position:"Query" name:"StorageType"`
+	ResourceGroupId          string `position:"Query" name:"ResourceGroupId"`
+	ConfigMountDescs         string `position:"Query" name:"ConfigMountDescs"`
+	AppName                  string `position:"Query" name:"AppName"`
+	RequestsmCpu             string `position:"Query" name:"RequestsmCpu"`
+	DeployAcrossZones        string `position:"Query" name:"DeployAcrossZones"`
+	IntranetSlbPort          string `position:"Query" name:"IntranetSlbPort"`
+	DeployAcrossNodes        string `position:"Query" name:"DeployAcrossNodes"`
+	PreStop                  string `position:"Query" name:"PreStop"`
+	BuildPackId              string `position:"Query" name:"BuildPackId"`
+	EnableEmptyPushReject    string `position:"Query" name:"EnableEmptyPushReject"`
+	LocalVolume              string `position:"Query" name:"LocalVolume"`
+	Labels                   string `position:"Query" name:"Labels"`
+	UseBodyEncoding          string `position:"Query" name:"UseBodyEncoding"`
+	LimitEphemeralStorage    string `position:"Query" name:"LimitEphemeralStorage"`
+	LosslessRuleFuncType     string `position:"Query" name:"LosslessRuleFuncType"`
+	EmptyDirs                string `position:"Query" name:"EmptyDirs"`
+	PackageType              string `position:"Query" name:"PackageType"`
+	LosslessRuleRelated      string `position:"Query" name:"LosslessRuleRelated"`
+	RuntimeClassName         string `position:"Query" name:"RuntimeClassName"`
+	PostStart                string `position:"Query" name:"PostStart"`
+	CustomAffinity           string `position:"Query" name:"CustomAffinity"`
+	EnableLosslessRule       string `position:"Query" name:"EnableLosslessRule"`
+	LosslessRuleWarmupTime   string `position:"Query" name:"LosslessRuleWarmupTime"`
+	RepoId                   string `position:"Query" name:"RepoId"`
+	InternetTargetPort       string `position:"Query" name:"InternetTargetPort"`
+	WebContainer             string `position:"Query" name:"WebContainer"`
+	EnableAsm                string `position:"Query" name:"EnableAsm"`
+	EnableAhas               string `position:"Query" name:"EnableAhas"`
+	SlsConfigs               string `position:"Query" name:"SlsConfigs"`
+	CommandArgs              string `position:"Query" name:"CommandArgs"`
+	Readiness                string `position:"Query" name:"Readiness"`
+	Liveness                 string `position:"Query" name:"Liveness"`
+	CsClusterId              string `position:"Query" name:"CsClusterId"`
+	AppConfig                string `position:"Query" name:"AppConfig"`
+	InternetSlbPort          string `position:"Query" name:"InternetSlbPort"`
+	PackageVersion           string `position:"Query" name:"PackageVersion"`
+	Timeout                  string `position:"Query" name:"Timeout"`
+	EnvFroms                 string `position:"Query" name:"EnvFroms"`
+	LimitMem                 string `position:"Query" name:"LimitMem"`
+	LimitmCpu                string `position:"Query" name:"LimitmCpu"`
+	EdasContainerVersion     string `position:"Query" name:"EdasContainerVersion"`
+	InternetSlbId            string `position:"Query" name:"InternetSlbId"`
+	LogicalRegionId          string `position:"Query" name:"LogicalRegionId"`
+	PackageUrl               string `position:"Query" name:"PackageUrl"`
+	InternetSlbProtocol      string `position:"Query" name:"InternetSlbProtocol"`
+	LosslessRuleDelayTime    string `position:"Query" name:"LosslessRuleDelayTime"`
+	MountDescs               string `position:"Query" name:"MountDescs"`
+	Replicas                 string `position:"Query" name:"Replicas"`
+	LimitCpu                 string `position:"Query" name:"LimitCpu"`
+	CustomTolerations        string `position:"Query" name:"CustomTolerations"`
+	WebContainerConfig       string `position:"Query" name:"WebContainerConfig"`
+	IsMultilingualApp        string `position:"Query" name:"IsMultilingualApp"`
+	ClusterId                string `position:"Query" name:"ClusterId"`
+	ServiceConfigs           string `position:"Query" name:"ServiceConfigs"`
+	IntranetTargetPort       string `position:"Query" name:"IntranetTargetPort"`
+	Command                  string `position:"Query" name:"Command"`
+	JDK                      string `position:"Query" name:"JDK"`
+	UriEncoding              string `position:"Query" name:"UriEncoding"`
+	IntranetSlbProtocol      string `position:"Query" name:"IntranetSlbProtocol"`
+	ImageUrl                 string `position:"Query" name:"ImageUrl"`
+	PvcMountDescs            string `position:"Query" name:"PvcMountDescs"`
+	Namespace                string `position:"Query" name:"Namespace"`
+	AppTemplateName          string `position:"Query" name:"AppTemplateName"`
+	ApplicationDescription   string `position:"Query" name:"ApplicationDescription"`
+	LosslessRuleAligned      string `position:"Query" name:"LosslessRuleAligned"`
+	RequestsCpu              string `position:"Query" name:"RequestsCpu"`
+	JavaStartUpConfig        string `position:"Query" name:"JavaStartUpConfig"`
 }
 
 // InsertK8sApplicationResponse is the response struct for api InsertK8sApplication
@@ -146,7 +161,7 @@ func CreateInsertK8sApplicationRequest() (request *InsertK8sApplicationRequest) 
 	request = &InsertK8sApplicationRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "InsertK8sApplication", "/pop/v5/k8s/acs/create_k8s_app", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "InsertK8sApplication", "/pop/v5/k8s/acs/create_k8s_app", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

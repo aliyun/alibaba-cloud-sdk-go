@@ -77,29 +77,30 @@ type QueryAuctionDetailRequest struct {
 // QueryAuctionDetailResponse is the response struct for api QueryAuctionDetail
 type QueryAuctionDetailResponse struct {
 	*responses.BaseResponse
-	RequestId       string  `json:"RequestId" xml:"RequestId"`
-	DomainName      string  `json:"DomainName" xml:"DomainName"`
-	AuctionId       string  `json:"AuctionId" xml:"AuctionId"`
-	DomainType      string  `json:"DomainType" xml:"DomainType"`
-	BookedPartner   string  `json:"BookedPartner" xml:"BookedPartner"`
-	PartnerType     string  `json:"PartnerType" xml:"PartnerType"`
-	Currency        string  `json:"Currency" xml:"Currency"`
-	YourCurrentBid  float64 `json:"YourCurrentBid" xml:"YourCurrentBid"`
-	YourMaxBid      float64 `json:"YourMaxBid" xml:"YourMaxBid"`
-	HighBid         float64 `json:"HighBid" xml:"HighBid"`
-	NextValidBid    float64 `json:"NextValidBid" xml:"NextValidBid"`
-	ReserveMet      bool    `json:"ReserveMet" xml:"ReserveMet"`
-	TransferInPrice float64 `json:"TransferInPrice" xml:"TransferInPrice"`
-	PayPrice        float64 `json:"PayPrice" xml:"PayPrice"`
-	HighBidder      string  `json:"HighBidder" xml:"HighBidder"`
 	Status          string  `json:"Status" xml:"Status"`
-	PayStatus       string  `json:"PayStatus" xml:"PayStatus"`
+	ReserveMet      bool    `json:"ReserveMet" xml:"ReserveMet"`
+	HighBid         float64 `json:"HighBid" xml:"HighBid"`
+	DeliveryTime    int64   `json:"DeliveryTime" xml:"DeliveryTime"`
+	TransferInPrice float64 `json:"TransferInPrice" xml:"TransferInPrice"`
+	NextValidBid    float64 `json:"NextValidBid" xml:"NextValidBid"`
 	ProduceStatus   string  `json:"ProduceStatus" xml:"ProduceStatus"`
+	HighBidder      string  `json:"HighBidder" xml:"HighBidder"`
+	BookedPartner   string  `json:"BookedPartner" xml:"BookedPartner"`
+	Currency        string  `json:"Currency" xml:"Currency"`
+	DomainName      string  `json:"DomainName" xml:"DomainName"`
+	YourCurrentBid  float64 `json:"YourCurrentBid" xml:"YourCurrentBid"`
+	FailCode        string  `json:"FailCode" xml:"FailCode"`
 	AuctionEndTime  int64   `json:"AuctionEndTime" xml:"AuctionEndTime"`
 	BookEndTime     int64   `json:"BookEndTime" xml:"BookEndTime"`
 	PayEndTime      int64   `json:"PayEndTime" xml:"PayEndTime"`
-	DeliveryTime    int64   `json:"DeliveryTime" xml:"DeliveryTime"`
-	FailCode        string  `json:"FailCode" xml:"FailCode"`
+	PayStatus       string  `json:"PayStatus" xml:"PayStatus"`
+	RequestId       string  `json:"RequestId" xml:"RequestId"`
+	YourMaxBid      float64 `json:"YourMaxBid" xml:"YourMaxBid"`
+	PayPrice        float64 `json:"PayPrice" xml:"PayPrice"`
+	AuctionId       string  `json:"AuctionId" xml:"AuctionId"`
+	PartnerType     string  `json:"PartnerType" xml:"PartnerType"`
+	DomainType      string  `json:"DomainType" xml:"DomainType"`
+	ReservePrice    float64 `json:"ReservePrice" xml:"ReservePrice"`
 }
 
 // CreateQueryAuctionDetailRequest creates a request to invoke QueryAuctionDetail API

@@ -80,11 +80,11 @@ type GenerateDataKeyRequest struct {
 // GenerateDataKeyResponse is the response struct for api GenerateDataKey
 type GenerateDataKeyResponse struct {
 	*responses.BaseResponse
-	CiphertextBlob string `json:"CiphertextBlob" xml:"CiphertextBlob"`
-	KeyId          string `json:"KeyId" xml:"KeyId"`
-	Plaintext      string `json:"Plaintext" xml:"Plaintext"`
-	RequestId      string `json:"RequestId" xml:"RequestId"`
 	KeyVersionId   string `json:"KeyVersionId" xml:"KeyVersionId"`
+	KeyId          string `json:"KeyId" xml:"KeyId"`
+	CiphertextBlob string `json:"CiphertextBlob" xml:"CiphertextBlob"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	Plaintext      string `json:"Plaintext" xml:"Plaintext"`
 }
 
 // CreateGenerateDataKeyRequest creates a request to invoke GenerateDataKey API

@@ -17,7 +17,7 @@ package facebody
 
 // FaceInfo is a nested struct in facebody response
 type FaceInfo struct {
-	Completeness int64 `json:"Completeness" xml:"Completeness"`
-	FaceNumber   int64 `json:"FaceNumber" xml:"FaceNumber"`
-	Pose         Pose  `json:"Pose" xml:"Pose"`
+	Completeness float64 `json:"Completeness" xml:"Completeness"`
+	FaceNumber   int64   `json:"FaceNumber" xml:"FaceNumber"`
+	Pose         Pose    `json:"Pose" xml:"Pose"`
 }

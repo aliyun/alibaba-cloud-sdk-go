@@ -79,8 +79,8 @@ type StopVisualServiceRequest struct {
 // StopVisualServiceResponse is the response struct for api StopVisualService
 type StopVisualServiceResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateStopVisualServiceRequest creates a request to invoke StopVisualService API

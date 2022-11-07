@@ -17,24 +17,26 @@ package ecd
 
 // Event is a nested struct in ecd response
 type Event struct {
-	Status         string `json:"Status" xml:"Status"`
-	BytesReceived  string `json:"BytesReceived" xml:"BytesReceived"`
-	DesktopIp      string `json:"DesktopIp" xml:"DesktopIp"`
-	EventTime      string `json:"EventTime" xml:"EventTime"`
-	BytesSend      string `json:"BytesSend" xml:"BytesSend"`
-	OfficeSiteId   string `json:"OfficeSiteId" xml:"OfficeSiteId"`
-	AliUid         string `json:"AliUid" xml:"AliUid"`
-	DesktopId      string `json:"DesktopId" xml:"DesktopId"`
-	RegionId       string `json:"RegionId" xml:"RegionId"`
-	EventId        string `json:"EventId" xml:"EventId"`
-	DirectoryType  string `json:"DirectoryType" xml:"DirectoryType"`
-	EventType      string `json:"EventType" xml:"EventType"`
-	EndUserId      string `json:"EndUserId" xml:"EndUserId"`
-	ClientIp       string `json:"ClientIp" xml:"ClientIp"`
-	ClientOS       string `json:"ClientOS" xml:"ClientOS"`
-	OfficeSiteType string `json:"OfficeSiteType" xml:"OfficeSiteType"`
-	DirectoryId    string `json:"DirectoryId" xml:"DirectoryId"`
-	ClientVersion  string `json:"ClientVersion" xml:"ClientVersion"`
-	OfficeSiteName string `json:"OfficeSiteName" xml:"OfficeSiteName"`
-	DesktopName    string `json:"DesktopName" xml:"DesktopName"`
+	Status           string `json:"Status" xml:"Status"`
+	BytesReceived    string `json:"BytesReceived" xml:"BytesReceived"`
+	DesktopIp        string `json:"DesktopIp" xml:"DesktopIp"`
+	EventTime        string `json:"EventTime" xml:"EventTime"`
+	BytesSend        string `json:"BytesSend" xml:"BytesSend"`
+	OfficeSiteId     string `json:"OfficeSiteId" xml:"OfficeSiteId"`
+	AliUid           string `json:"AliUid" xml:"AliUid"`
+	DesktopId        string `json:"DesktopId" xml:"DesktopId"`
+	RegionId         string `json:"RegionId" xml:"RegionId"`
+	EventId          string `json:"EventId" xml:"EventId"`
+	DirectoryType    string `json:"DirectoryType" xml:"DirectoryType"`
+	EventType        string `json:"EventType" xml:"EventType"`
+	EndUserId        string `json:"EndUserId" xml:"EndUserId"`
+	ClientIp         string `json:"ClientIp" xml:"ClientIp"`
+	ClientOS         string `json:"ClientOS" xml:"ClientOS"`
+	OfficeSiteType   string `json:"OfficeSiteType" xml:"OfficeSiteType"`
+	DirectoryId      string `json:"DirectoryId" xml:"DirectoryId"`
+	ClientVersion    string `json:"ClientVersion" xml:"ClientVersion"`
+	OfficeSiteName   string `json:"OfficeSiteName" xml:"OfficeSiteName"`
+	DesktopName      string `json:"DesktopName" xml:"DesktopName"`
+	DesktopGroupId   string `json:"DesktopGroupId" xml:"DesktopGroupId"`
+	DesktopGroupName string `json:"DesktopGroupName" xml:"DesktopGroupName"`
 }

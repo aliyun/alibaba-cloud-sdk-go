@@ -77,6 +77,7 @@ type HandleSecurityEventsRequest struct {
 	SourceIp         string           `position:"Query" name:"SourceIp"`
 	OperationCode    string           `position:"Query" name:"OperationCode"`
 	OperationParams  string           `position:"Query" name:"OperationParams"`
+	MarkBatch        string           `position:"Query" name:"MarkBatch"`
 }
 
 // HandleSecurityEventsResponse is the response struct for api HandleSecurityEvents

@@ -17,6 +17,6 @@ package rds
 
 // SecurityIPGroup is a nested struct in rds response
 type SecurityIPGroup struct {
-	SecurityIPGroupName string `json:"SecurityIPGroupName" xml:"SecurityIPGroupName"`
 	SecurityIPs         string `json:"SecurityIPs" xml:"SecurityIPs"`
+	SecurityIPGroupName string `json:"SecurityIPGroupName" xml:"SecurityIPGroupName"`
 }

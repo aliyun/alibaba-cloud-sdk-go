@@ -71,9 +71,12 @@ func (client *Client) TaggingAdImageWithCallback(request *TaggingAdImageRequest,
 // TaggingAdImageRequest is the request struct for api TaggingAdImage
 type TaggingAdImageRequest struct {
 	*requests.RpcRequest
-	ImageType requests.Integer `position:"Body" name:"ImageType"`
-	Async     requests.Boolean `position:"Body" name:"Async"`
-	ImageURL  string           `position:"Body" name:"ImageURL"`
+	FormatResultToJson requests.Boolean `position:"Query" name:"FormatResultToJson"`
+	OssFile            string           `position:"Query" name:"OssFile"`
+	ImageType          requests.Integer `position:"Body" name:"ImageType"`
+	RequestProxyBy     string           `position:"Query" name:"RequestProxyBy"`
+	Async              requests.Boolean `position:"Body" name:"Async"`
+	ImageURL           string           `position:"Body" name:"ImageURL"`
 }
 
 // TaggingAdImageResponse is the response struct for api TaggingAdImage
@@ -90,7 +93,7 @@ func CreateTaggingAdImageRequest() (request *TaggingAdImageRequest) {
 	request = &TaggingAdImageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imagerecog", "2019-09-30", "TaggingAdImage", "imagerecog", "openAPI")
+	request.InitWithApiInfo("imagerecog", "2019-09-30", "TaggingAdImage", "", "")
 	request.Method = requests.POST
 	return
 }

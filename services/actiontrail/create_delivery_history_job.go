@@ -87,7 +87,7 @@ func CreateCreateDeliveryHistoryJobRequest() (request *CreateDeliveryHistoryJobR
 	request = &CreateDeliveryHistoryJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Actiontrail", "2020-07-06", "CreateDeliveryHistoryJob", "actiontrail", "openAPI")
+	request.InitWithApiInfo("Actiontrail", "2020-07-06", "CreateDeliveryHistoryJob", "", "")
 	request.Method = requests.POST
 	return
 }

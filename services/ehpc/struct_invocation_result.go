@@ -18,10 +18,10 @@ package ehpc
 // InvocationResult is a nested struct in ehpc response
 type InvocationResult struct {
 	Success            bool   `json:"Success" xml:"Success"`
+	Message            string `json:"Message" xml:"Message"`
+	FinishedTime       string `json:"FinishedTime" xml:"FinishedTime"`
 	CommandId          string `json:"CommandId" xml:"CommandId"`
 	InstanceId         string `json:"InstanceId" xml:"InstanceId"`
 	InvokeRecordStatus string `json:"InvokeRecordStatus" xml:"InvokeRecordStatus"`
-	FinishedTime       string `json:"FinishedTime" xml:"FinishedTime"`
 	ExitCode           int    `json:"ExitCode" xml:"ExitCode"`
-	Message            string `json:"Message" xml:"Message"`
 }

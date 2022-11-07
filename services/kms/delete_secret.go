@@ -79,8 +79,8 @@ type DeleteSecretRequest struct {
 // DeleteSecretResponse is the response struct for api DeleteSecret
 type DeleteSecretResponse struct {
 	*responses.BaseResponse
-	RequestId         string `json:"RequestId" xml:"RequestId"`
 	SecretName        string `json:"SecretName" xml:"SecretName"`
+	RequestId         string `json:"RequestId" xml:"RequestId"`
 	PlannedDeleteTime string `json:"PlannedDeleteTime" xml:"PlannedDeleteTime"`
 }
 

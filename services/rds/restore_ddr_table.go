@@ -75,6 +75,7 @@ type RestoreDdrTableRequest struct {
 	SourceDBInstanceName string           `position:"Query" name:"SourceDBInstanceName"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
 	UserBakSetURL        string           `position:"Query" name:"UserBakSetURL"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	TableMeta            string           `position:"Query" name:"TableMeta"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	BackupSetRegion      string           `position:"Query" name:"BackupSetRegion"`
@@ -91,7 +92,8 @@ type RestoreDdrTableRequest struct {
 // RestoreDdrTableResponse is the response struct for api RestoreDdrTable
 type RestoreDdrTableResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	RequestId    string `json:"RequestId" xml:"RequestId"`
+	DBInstanceId string `json:"DBInstanceId" xml:"DBInstanceId"`
 }
 
 // CreateRestoreDdrTableRequest creates a request to invoke RestoreDdrTable API

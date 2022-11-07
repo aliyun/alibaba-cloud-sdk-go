@@ -71,20 +71,25 @@ func (client *Client) DescribeDBClustersWithCallback(request *DescribeDBClusters
 // DescribeDBClustersRequest is the request struct for api DescribeDBClusters
 type DescribeDBClustersRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer         `position:"Query" name:"ResourceOwnerId"`
-	DBClusterDescription string                   `position:"Query" name:"DBClusterDescription"`
-	DBClusterStatus      string                   `position:"Query" name:"DBClusterStatus"`
-	PageNumber           requests.Integer         `position:"Query" name:"PageNumber"`
-	DBNodeIds            string                   `position:"Query" name:"DBNodeIds"`
-	ResourceGroupId      string                   `position:"Query" name:"ResourceGroupId"`
-	PageSize             requests.Integer         `position:"Query" name:"PageSize"`
-	Tag                  *[]DescribeDBClustersTag `position:"Query" name:"Tag"  type:"Repeated"`
-	ResourceOwnerAccount string                   `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string                   `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer         `position:"Query" name:"OwnerId"`
-	DBType               string                   `position:"Query" name:"DBType"`
-	PayType              string                   `position:"Query" name:"PayType"`
-	DBClusterIds         string                   `position:"Query" name:"DBClusterIds"`
+	ResourceOwnerId          requests.Integer         `position:"Query" name:"ResourceOwnerId"`
+	DBClusterDescription     string                   `position:"Query" name:"DBClusterDescription"`
+	DBClusterStatus          string                   `position:"Query" name:"DBClusterStatus"`
+	ConnectionString         string                   `position:"Query" name:"ConnectionString"`
+	RecentExpirationInterval requests.Integer         `position:"Query" name:"RecentExpirationInterval"`
+	PageNumber               requests.Integer         `position:"Query" name:"PageNumber"`
+	DBNodeIds                string                   `position:"Query" name:"DBNodeIds"`
+	ResourceGroupId          string                   `position:"Query" name:"ResourceGroupId"`
+	RecentCreationInterval   requests.Integer         `position:"Query" name:"RecentCreationInterval"`
+	Expired                  requests.Boolean         `position:"Query" name:"Expired"`
+	PageSize                 requests.Integer         `position:"Query" name:"PageSize"`
+	Tag                      *[]DescribeDBClustersTag `position:"Query" name:"Tag"  type:"Repeated"`
+	ResourceOwnerAccount     string                   `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount             string                   `position:"Query" name:"OwnerAccount"`
+	OwnerId                  requests.Integer         `position:"Query" name:"OwnerId"`
+	DBType                   string                   `position:"Query" name:"DBType"`
+	DBVersion                string                   `position:"Query" name:"DBVersion"`
+	PayType                  string                   `position:"Query" name:"PayType"`
+	DBClusterIds             string                   `position:"Query" name:"DBClusterIds"`
 }
 
 // DescribeDBClustersTag is a repeated param struct in DescribeDBClustersRequest
@@ -108,7 +113,7 @@ func CreateDescribeDBClustersRequest() (request *DescribeDBClustersRequest) {
 	request = &DescribeDBClustersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeDBClusters", "", "")
+	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeDBClusters", "polardb", "openAPI")
 	request.Method = requests.POST
 	return
 }

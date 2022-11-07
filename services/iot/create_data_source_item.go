@@ -71,11 +71,14 @@ func (client *Client) CreateDataSourceItemWithCallback(request *CreateDataSource
 // CreateDataSourceItemRequest is the request struct for api CreateDataSourceItem
 type CreateDataSourceItemRequest struct {
 	*requests.RpcRequest
+	ScopeType     string           `position:"Query" name:"ScopeType"`
 	IotInstanceId string           `position:"Query" name:"IotInstanceId"`
+	ProductKey    string           `position:"Query" name:"ProductKey"`
 	ApiProduct    string           `position:"Body" name:"ApiProduct"`
 	DataSourceId  requests.Integer `position:"Query" name:"DataSourceId"`
 	Topic         string           `position:"Query" name:"Topic"`
 	ApiRevision   string           `position:"Body" name:"ApiRevision"`
+	DeviceName    string           `position:"Query" name:"DeviceName"`
 }
 
 // CreateDataSourceItemResponse is the response struct for api CreateDataSourceItem

@@ -17,6 +17,6 @@ package ddoscoo
 
 // DomainMode is a nested struct in ddoscoo response
 type DomainMode struct {
-	Domain     string `json:"Domain" xml:"Domain"`
 	AccessMode int    `json:"AccessMode" xml:"AccessMode"`
+	Domain     string `json:"Domain" xml:"Domain"`
 }

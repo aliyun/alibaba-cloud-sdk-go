@@ -91,17 +91,20 @@ type BatchInsertItemsItemInfo struct {
 	CustomizeFeatureK string `name:"CustomizeFeatureK"`
 	CustomizeFeatureL string `name:"CustomizeFeatureL"`
 	CustomizeFeatureM string `name:"CustomizeFeatureM"`
-	BePromotion       string `name:"BePromotion"`
 	CustomizeFeatureN string `name:"CustomizeFeatureN"`
+	BePromotion       string `name:"BePromotion"`
 	CustomizeFeatureO string `name:"CustomizeFeatureO"`
+	CustomizeFeatureP string `name:"CustomizeFeatureP"`
 	PromotionEnd      string `name:"PromotionEnd"`
 	ItemTitle         string `name:"ItemTitle"`
+	CustomizeFeatureQ string `name:"CustomizeFeatureQ"`
+	CustomizeFeatureR string `name:"CustomizeFeatureR"`
 	CustomizeFeatureC string `name:"CustomizeFeatureC"`
 	CustomizeFeatureD string `name:"CustomizeFeatureD"`
 	ItemQrCode        string `name:"ItemQrCode"`
 	CustomizeFeatureE string `name:"CustomizeFeatureE"`
-	InventoryStatus   string `name:"InventoryStatus"`
 	PromotionReason   string `name:"PromotionReason"`
+	InventoryStatus   string `name:"InventoryStatus"`
 	CustomizeFeatureF string `name:"CustomizeFeatureF"`
 	CustomizeFeatureG string `name:"CustomizeFeatureG"`
 	CustomizeFeatureH string `name:"CustomizeFeatureH"`
@@ -112,17 +115,26 @@ type BatchInsertItemsItemInfo struct {
 	SuggestPrice      string `name:"SuggestPrice"`
 	ForestFirstId     string `name:"ForestFirstId"`
 	ProductionPlace   string `name:"ProductionPlace"`
-	Manufacturer      string `name:"Manufacturer"`
 	SourceCode        string `name:"SourceCode"`
+	Manufacturer      string `name:"Manufacturer"`
 	ItemId            string `name:"ItemId"`
 	BeMember          string `name:"BeMember"`
+	CustomizeFeatureS string `name:"CustomizeFeatureS"`
+	CustomizeFeatureT string `name:"CustomizeFeatureT"`
+	CustomizeFeatureU string `name:"CustomizeFeatureU"`
 	TemplateSceneId   string `name:"TemplateSceneId"`
+	CustomizeFeatureV string `name:"CustomizeFeatureV"`
+	CustomizeFeatureW string `name:"CustomizeFeatureW"`
+	CustomizeFeatureX string `name:"CustomizeFeatureX"`
+	CustomizeFeatureY string `name:"CustomizeFeatureY"`
+	CustomizeFeatureZ string `name:"CustomizeFeatureZ"`
 	SalesPrice        string `name:"SalesPrice"`
 	OriginalPrice     string `name:"OriginalPrice"`
 	ItemShortTitle    string `name:"ItemShortTitle"`
-	ForestSecondId    string `name:"ForestSecondId"`
 	ItemPicUrl        string `name:"ItemPicUrl"`
+	ForestSecondId    string `name:"ForestSecondId"`
 	SupplierName      string `name:"SupplierName"`
+	BeClearance       string `name:"BeClearance"`
 	Material          string `name:"Material"`
 	ModelNumber       string `name:"ModelNumber"`
 	SaleSpec          string `name:"SaleSpec"`
@@ -136,14 +148,14 @@ type BatchInsertItemsItemInfo struct {
 // BatchInsertItemsResponse is the response struct for api BatchInsertItems
 type BatchInsertItemsResponse struct {
 	*responses.BaseResponse
-	ErrorMessage   string        `json:"ErrorMessage" xml:"ErrorMessage"`
-	ErrorCode      string        `json:"ErrorCode" xml:"ErrorCode"`
-	Message        string        `json:"Message" xml:"Message"`
-	DynamicCode    string        `json:"DynamicCode" xml:"DynamicCode"`
-	Code           string        `json:"Code" xml:"Code"`
-	DynamicMessage string        `json:"DynamicMessage" xml:"DynamicMessage"`
 	RequestId      string        `json:"RequestId" xml:"RequestId"`
+	ErrorMessage   string        `json:"ErrorMessage" xml:"ErrorMessage"`
 	Success        bool          `json:"Success" xml:"Success"`
+	ErrorCode      string        `json:"ErrorCode" xml:"ErrorCode"`
+	Code           string        `json:"Code" xml:"Code"`
+	Message        string        `json:"Message" xml:"Message"`
+	DynamicMessage string        `json:"DynamicMessage" xml:"DynamicMessage"`
+	DynamicCode    string        `json:"DynamicCode" xml:"DynamicCode"`
 	BatchResults   []BatchResult `json:"BatchResults" xml:"BatchResults"`
 }
 
@@ -152,7 +164,7 @@ func CreateBatchInsertItemsRequest() (request *BatchInsertItemsRequest) {
 	request = &BatchInsertItemsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cloudesl", "2020-02-01", "BatchInsertItems", "cloudesl", "openAPI")
+	request.InitWithApiInfo("cloudesl", "2020-02-01", "BatchInsertItems", "", "")
 	request.Method = requests.POST
 	return
 }

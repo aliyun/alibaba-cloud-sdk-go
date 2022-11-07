@@ -17,9 +17,9 @@ package adb
 
 // TaskInfo is a nested struct in adb response
 type TaskInfo struct {
-	TaskId     int    `json:"TaskId" xml:"TaskId"`
-	BeginTime  string `json:"BeginTime" xml:"BeginTime"`
+	Status     string `json:"Status" xml:"Status"`
 	FinishTime string `json:"FinishTime" xml:"FinishTime"`
 	Progress   string `json:"Progress" xml:"Progress"`
-	Status     string `json:"Status" xml:"Status"`
+	BeginTime  string `json:"BeginTime" xml:"BeginTime"`
+	TaskId     int    `json:"TaskId" xml:"TaskId"`
 }

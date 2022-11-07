@@ -18,6 +18,6 @@ package imagerecog
 // ColorTemplate is a nested struct in imagerecog response
 type ColorTemplate struct {
 	Color      string  `json:"Color" xml:"Color"`
-	Label      string  `json:"Label" xml:"Label"`
 	Percentage float64 `json:"Percentage" xml:"Percentage"`
+	Label      string  `json:"Label" xml:"Label"`
 }

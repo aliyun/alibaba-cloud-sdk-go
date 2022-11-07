@@ -92,12 +92,12 @@ type CreateDataServiceApiRequest struct {
 // CreateDataServiceApiResponse is the response struct for api CreateDataServiceApi
 type CreateDataServiceApiResponse struct {
 	*responses.BaseResponse
-	Data           int64  `json:"Data" xml:"Data"`
-	ErrorCode      string `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMessage   string `json:"ErrorMessage" xml:"ErrorMessage"`
 	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	Success        bool   `json:"Success" xml:"Success"`
+	Data           int64  `json:"Data" xml:"Data"`
+	ErrorMessage   string `json:"ErrorMessage" xml:"ErrorMessage"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
+	ErrorCode      string `json:"ErrorCode" xml:"ErrorCode"`
+	Success        bool   `json:"Success" xml:"Success"`
 }
 
 // CreateCreateDataServiceApiRequest creates a request to invoke CreateDataServiceApi API

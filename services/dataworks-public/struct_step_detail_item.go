@@ -20,4 +20,5 @@ type StepDetailItem struct {
 	Status   string `json:"Status" xml:"Status"`
 	StepId   int64  `json:"StepId" xml:"StepId"`
 	StepName string `json:"StepName" xml:"StepName"`
+	Info     string `json:"Info" xml:"Info"`
 }

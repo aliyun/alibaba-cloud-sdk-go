@@ -71,12 +71,14 @@ func (client *Client) ResetThingWithCallback(request *ResetThingRequest, callbac
 // ResetThingRequest is the request struct for api ResetThing
 type ResetThingRequest struct {
 	*requests.RpcRequest
-	IotId         string `position:"Query" name:"IotId"`
-	IotInstanceId string `position:"Query" name:"IotInstanceId"`
-	ProductKey    string `position:"Query" name:"ProductKey"`
-	ApiProduct    string `position:"Body" name:"ApiProduct"`
-	ApiRevision   string `position:"Body" name:"ApiRevision"`
-	DeviceName    string `position:"Query" name:"DeviceName"`
+	RealTenantId      string `position:"Query" name:"RealTenantId"`
+	RealTripartiteKey string `position:"Query" name:"RealTripartiteKey"`
+	IotId             string `position:"Query" name:"IotId"`
+	IotInstanceId     string `position:"Query" name:"IotInstanceId"`
+	ProductKey        string `position:"Query" name:"ProductKey"`
+	ApiProduct        string `position:"Body" name:"ApiProduct"`
+	ApiRevision       string `position:"Body" name:"ApiRevision"`
+	DeviceName        string `position:"Query" name:"DeviceName"`
 }
 
 // ResetThingResponse is the response struct for api ResetThing
@@ -86,6 +88,7 @@ type ResetThingResponse struct {
 	Success      bool   `json:"Success" xml:"Success"`
 	Code         string `json:"Code" xml:"Code"`
 	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
+	JobId        string `json:"JobId" xml:"JobId"`
 }
 
 // CreateResetThingRequest creates a request to invoke ResetThing API

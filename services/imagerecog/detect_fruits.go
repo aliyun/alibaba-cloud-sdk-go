@@ -71,7 +71,10 @@ func (client *Client) DetectFruitsWithCallback(request *DetectFruitsRequest, cal
 // DetectFruitsRequest is the request struct for api DetectFruits
 type DetectFruitsRequest struct {
 	*requests.RpcRequest
-	ImageURL string `position:"Body" name:"ImageURL"`
+	FormatResultToJson requests.Boolean `position:"Query" name:"FormatResultToJson"`
+	OssFile            string           `position:"Query" name:"OssFile"`
+	RequestProxyBy     string           `position:"Query" name:"RequestProxyBy"`
+	ImageURL           string           `position:"Body" name:"ImageURL"`
 }
 
 // DetectFruitsResponse is the response struct for api DetectFruits
@@ -86,7 +89,7 @@ func CreateDetectFruitsRequest() (request *DetectFruitsRequest) {
 	request = &DetectFruitsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imagerecog", "2019-09-30", "DetectFruits", "imagerecog", "openAPI")
+	request.InitWithApiInfo("imagerecog", "2019-09-30", "DetectFruits", "", "")
 	request.Method = requests.POST
 	return
 }

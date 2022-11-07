@@ -17,10 +17,10 @@ package dataworks_public
 
 // ProjectMember is a nested struct in dataworks_public response
 type ProjectMember struct {
-	Nick              string `json:"Nick" xml:"Nick"`
+	Status            string `json:"Status" xml:"Status"`
 	ProjectMemberId   string `json:"ProjectMemberId" xml:"ProjectMemberId"`
+	Nick              string `json:"Nick" xml:"Nick"`
 	ProjectMemberName string `json:"ProjectMemberName" xml:"ProjectMemberName"`
 	ProjectMemberType string `json:"ProjectMemberType" xml:"ProjectMemberType"`
-	Status            string `json:"Status" xml:"Status"`
 	ProjectRoleList   []Role `json:"ProjectRoleList" xml:"ProjectRoleList"`
 }

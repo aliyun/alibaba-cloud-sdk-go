@@ -17,13 +17,17 @@ package edas
 
 // IngressConfsItem is a nested struct in edas response
 type IngressConfsItem struct {
-	CreationTime string      `json:"CreationTime" xml:"CreationTime"`
-	SslRedirect  bool        `json:"SslRedirect" xml:"SslRedirect"`
-	Endpoint     string      `json:"Endpoint" xml:"Endpoint"`
-	Namespace    string      `json:"Namespace" xml:"Namespace"`
-	Name         string      `json:"Name" xml:"Name"`
-	DashboardUrl string      `json:"DashboardUrl" xml:"DashboardUrl"`
-	AlbId        string      `json:"AlbId" xml:"AlbId"`
-	IngressType  string      `json:"IngressType" xml:"IngressType"`
-	Rules        []RulesItem `json:"Rules" xml:"Rules"`
+	CreationTime      string      `json:"CreationTime" xml:"CreationTime"`
+	SslRedirect       bool        `json:"SslRedirect" xml:"SslRedirect"`
+	Endpoint          string      `json:"Endpoint" xml:"Endpoint"`
+	Namespace         string      `json:"Namespace" xml:"Namespace"`
+	Name              string      `json:"Name" xml:"Name"`
+	DashboardUrl      string      `json:"DashboardUrl" xml:"DashboardUrl"`
+	AlbId             string      `json:"AlbId" xml:"AlbId"`
+	IngressType       string      `json:"IngressType" xml:"IngressType"`
+	OfficalBasicUrl   string      `json:"OfficalBasicUrl" xml:"OfficalBasicUrl"`
+	OfficalRequestUrl string      `json:"OfficalRequestUrl" xml:"OfficalRequestUrl"`
+	MseGatewayId      string      `json:"MseGatewayId" xml:"MseGatewayId"`
+	MseGatewayName    string      `json:"MseGatewayName" xml:"MseGatewayName"`
+	Rules             []RulesItem `json:"Rules" xml:"Rules"`
 }

@@ -90,30 +90,43 @@ type SetAutoScaleConfigRequest struct {
 
 // SetAutoScaleConfigQueues is a repeated param struct in SetAutoScaleConfigRequest
 type SetAutoScaleConfigQueues struct {
-	QueueName          string                             `name:"QueueName"`
-	SystemDiskLevel    string                             `name:"SystemDiskLevel"`
-	InstanceTypes      *[]SetAutoScaleConfigInstanceTypes `name:"InstanceTypes" type:"Repeated"`
-	EnableAutoGrow     string                             `name:"EnableAutoGrow"`
-	SpotPriceLimit     string                             `name:"SpotPriceLimit"`
-	HostNameSuffix     string                             `name:"HostNameSuffix"`
-	EnableAutoShrink   string                             `name:"EnableAutoShrink"`
-	SpotStrategy       string                             `name:"SpotStrategy"`
-	MinNodesInQueue    string                             `name:"MinNodesInQueue"`
-	SystemDiskCategory string                             `name:"SystemDiskCategory"`
-	MaxNodesInQueue    string                             `name:"MaxNodesInQueue"`
-	SystemDiskSize     string                             `name:"SystemDiskSize"`
-	InstanceType       string                             `name:"InstanceType"`
-	QueueImageId       string                             `name:"QueueImageId"`
-	HostNamePrefix     string                             `name:"HostNamePrefix"`
+	QueueName          string                                   `name:"QueueName"`
+	SystemDiskLevel    string                                   `name:"SystemDiskLevel"`
+	InstanceTypes      *[]SetAutoScaleConfigQueuesInstanceTypes `name:"InstanceTypes" type:"Repeated"`
+	EnableAutoGrow     string                                   `name:"EnableAutoGrow"`
+	HostNameSuffix     string                                   `name:"HostNameSuffix"`
+	SpotPriceLimit     string                                   `name:"SpotPriceLimit"`
+	EnableAutoShrink   string                                   `name:"EnableAutoShrink"`
+	SpotStrategy       string                                   `name:"SpotStrategy"`
+	DataDisks          *[]SetAutoScaleConfigQueuesDataDisks     `name:"DataDisks" type:"Repeated"`
+	MinNodesInQueue    string                                   `name:"MinNodesInQueue"`
+	MaxNodesPerCycle   string                                   `name:"MaxNodesPerCycle"`
+	SystemDiskCategory string                                   `name:"SystemDiskCategory"`
+	MaxNodesInQueue    string                                   `name:"MaxNodesInQueue"`
+	SystemDiskSize     string                                   `name:"SystemDiskSize"`
+	QueueImageId       string                                   `name:"QueueImageId"`
+	InstanceType       string                                   `name:"InstanceType"`
+	HostNamePrefix     string                                   `name:"HostNamePrefix"`
+	MinNodesPerCycle   string                                   `name:"MinNodesPerCycle"`
 }
 
-// SetAutoScaleConfigInstanceTypes is a repeated param struct in SetAutoScaleConfigRequest
-type SetAutoScaleConfigInstanceTypes struct {
-	SpotStrategy   string `name:"SpotStrategy"`
+// SetAutoScaleConfigQueuesInstanceTypes is a repeated param struct in SetAutoScaleConfigRequest
+type SetAutoScaleConfigQueuesInstanceTypes struct {
 	VSwitchId      string `name:"VSwitchId"`
-	InstanceType   string `name:"InstanceType"`
+	SpotStrategy   string `name:"SpotStrategy"`
 	ZoneId         string `name:"ZoneId"`
+	InstanceType   string `name:"InstanceType"`
 	SpotPriceLimit string `name:"SpotPriceLimit"`
+}
+
+// SetAutoScaleConfigQueuesDataDisks is a repeated param struct in SetAutoScaleConfigRequest
+type SetAutoScaleConfigQueuesDataDisks struct {
+	DataDiskDeleteWithInstance string `name:"DataDiskDeleteWithInstance"`
+	DataDiskEncrypted          string `name:"DataDiskEncrypted"`
+	DataDiskKMSKeyId           string `name:"DataDiskKMSKeyId"`
+	DataDiskSize               string `name:"DataDiskSize"`
+	DataDiskCategory           string `name:"DataDiskCategory"`
+	DataDiskPerformanceLevel   string `name:"DataDiskPerformanceLevel"`
 }
 
 // SetAutoScaleConfigResponse is the response struct for api SetAutoScaleConfig

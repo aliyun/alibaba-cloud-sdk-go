@@ -17,8 +17,8 @@ package oos
 
 // Execution is a nested struct in oos response
 type Execution struct {
-	TemplateId                string                 `json:"TemplateId" xml:"TemplateId"`
 	Category                  string                 `json:"Category" xml:"Category"`
+	TemplateId                string                 `json:"TemplateId" xml:"TemplateId"`
 	ExecutedBy                string                 `json:"ExecutedBy" xml:"ExecutedBy"`
 	TemplateName              string                 `json:"TemplateName" xml:"TemplateName"`
 	WaitingStatus             string                 `json:"WaitingStatus" xml:"WaitingStatus"`
@@ -28,6 +28,7 @@ type Execution struct {
 	SafetyCheck               string                 `json:"SafetyCheck" xml:"SafetyCheck"`
 	TemplateVersion           string                 `json:"TemplateVersion" xml:"TemplateVersion"`
 	Parameters                map[string]interface{} `json:"Parameters" xml:"Parameters"`
+	ResourceGroupId           string                 `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	UpdateDate                string                 `json:"UpdateDate" xml:"UpdateDate"`
 	ParentExecutionId         string                 `json:"ParentExecutionId" xml:"ParentExecutionId"`
 	Outputs                   string                 `json:"Outputs" xml:"Outputs"`

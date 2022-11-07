@@ -80,6 +80,7 @@ type ModifyWebLockStartRequest struct {
 	SourceIp          string `position:"Query" name:"SourceIp"`
 	ExclusiveDir      string `position:"Query" name:"ExclusiveDir"`
 	InclusiveFileType string `position:"Query" name:"InclusiveFileType"`
+	DefenceMode       string `position:"Query" name:"DefenceMode"`
 }
 
 // ModifyWebLockStartResponse is the response struct for api ModifyWebLockStart

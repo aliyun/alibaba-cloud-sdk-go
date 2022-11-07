@@ -81,9 +81,9 @@ type DescribeDomainTopUrlVisitRequest struct {
 // DescribeDomainTopUrlVisitResponse is the response struct for api DescribeDomainTopUrlVisit
 type DescribeDomainTopUrlVisitResponse struct {
 	*responses.BaseResponse
+	StartTime  string                                `json:"StartTime" xml:"StartTime"`
 	RequestId  string                                `json:"RequestId" xml:"RequestId"`
 	DomainName string                                `json:"DomainName" xml:"DomainName"`
-	StartTime  string                                `json:"StartTime" xml:"StartTime"`
 	AllUrlList AllUrlListInDescribeDomainTopUrlVisit `json:"AllUrlList" xml:"AllUrlList"`
 	Url200List Url200ListInDescribeDomainTopUrlVisit `json:"Url200List" xml:"Url200List"`
 	Url300List Url300ListInDescribeDomainTopUrlVisit `json:"Url300List" xml:"Url300List"`

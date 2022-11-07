@@ -74,16 +74,17 @@ type ListNodesByQueueRequest struct {
 	QueueName  string           `position:"Query" name:"QueueName"`
 	ClusterId  string           `position:"Query" name:"ClusterId"`
 	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
+	Async      requests.Boolean `position:"Query" name:"Async"`
 	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 }
 
 // ListNodesByQueueResponse is the response struct for api ListNodesByQueue
 type ListNodesByQueueResponse struct {
 	*responses.BaseResponse
-	RequestId  string                  `json:"RequestId" xml:"RequestId"`
-	TotalCount int                     `json:"TotalCount" xml:"TotalCount"`
-	PageNumber int                     `json:"PageNumber" xml:"PageNumber"`
 	PageSize   int                     `json:"PageSize" xml:"PageSize"`
+	RequestId  string                  `json:"RequestId" xml:"RequestId"`
+	PageNumber int                     `json:"PageNumber" xml:"PageNumber"`
+	TotalCount int                     `json:"TotalCount" xml:"TotalCount"`
 	Nodes      NodesInListNodesByQueue `json:"Nodes" xml:"Nodes"`
 }
 

@@ -20,9 +20,13 @@ type Database struct {
 	CharacterSetName string                      `json:"CharacterSetName" xml:"CharacterSetName"`
 	Engine           string                      `json:"Engine" xml:"Engine"`
 	DBStatus         string                      `json:"DBStatus" xml:"DBStatus"`
+	ResourceGroupId  string                      `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	TotalCount       int                         `json:"TotalCount" xml:"TotalCount"`
 	TDEStatus        string                      `json:"TDEStatus" xml:"TDEStatus"`
 	DBName           string                      `json:"DBName" xml:"DBName"`
+	PageNumber       int                         `json:"PageNumber" xml:"PageNumber"`
 	DBInstanceId     string                      `json:"DBInstanceId" xml:"DBInstanceId"`
 	DBDescription    string                      `json:"DBDescription" xml:"DBDescription"`
+	PageSize         int                         `json:"PageSize" xml:"PageSize"`
 	Accounts         AccountsInDescribeDatabases `json:"Accounts" xml:"Accounts"`
 }

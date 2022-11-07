@@ -71,8 +71,8 @@ func (client *Client) DeleteProjectMemberWithCallback(request *DeleteProjectMemb
 // DeleteProjectMemberRequest is the request struct for api DeleteProjectMember
 type DeleteProjectMemberRequest struct {
 	*requests.RpcRequest
-	ProjectId requests.Integer `position:"Query" name:"ProjectId"`
 	UserId    string           `position:"Query" name:"UserId"`
+	ProjectId requests.Integer `position:"Query" name:"ProjectId"`
 }
 
 // DeleteProjectMemberResponse is the response struct for api DeleteProjectMember

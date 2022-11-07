@@ -91,12 +91,12 @@ type ListGatewayFilterParams struct {
 // ListGatewayResponse is the response struct for api ListGateway
 type ListGatewayResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	Message        string `json:"Message" xml:"Message"`
-	Code           int    `json:"Code" xml:"Code"`
-	Success        bool   `json:"Success" xml:"Success"`
-	Data           Data   `json:"Data" xml:"Data"`
+	RequestId      string            `json:"RequestId" xml:"RequestId"`
+	HttpStatusCode int               `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Message        string            `json:"Message" xml:"Message"`
+	Code           int               `json:"Code" xml:"Code"`
+	Success        bool              `json:"Success" xml:"Success"`
+	Data           DataInListGateway `json:"Data" xml:"Data"`
 }
 
 // CreateListGatewayRequest creates a request to invoke ListGateway API

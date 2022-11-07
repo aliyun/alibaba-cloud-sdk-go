@@ -71,34 +71,34 @@ func (client *Client) GetServiceMethodPageWithCallback(request *GetServiceMethod
 // GetServiceMethodPageRequest is the request struct for api GetServiceMethodPage
 type GetServiceMethodPageRequest struct {
 	*requests.RoaRequest
-	RegistryType     string           `position:"Query" name:"registryType"`
-	Origin           string           `position:"Query" name:"origin"`
-	Ip               string           `position:"Query" name:"ip"`
-	Source           string           `position:"Query" name:"source"`
-	PageNumber       requests.Integer `position:"Query" name:"pageNumber"`
-	Path             string           `position:"Query" name:"path"`
-	ServiceType      string           `position:"Query" name:"serviceType"`
-	AppId            string           `position:"Query" name:"appId"`
-	Namespace        string           `position:"Query" name:"namespace"`
-	ServiceVersion   string           `position:"Query" name:"serviceVersion"`
-	PageSize         requests.Integer `position:"Query" name:"pageSize"`
-	Name             string           `position:"Query" name:"name"`
-	ServiceName      string           `position:"Query" name:"serviceName"`
-	Region           string           `position:"Query" name:"region"`
-	ServiceId        string           `position:"Query" name:"serviceId"`
-	MethodController string           `position:"Query" name:"methodController"`
-	Group            string           `position:"Query" name:"group"`
+	RegistryType     string `position:"Query" name:"registryType"`
+	Origin           string `position:"Query" name:"origin"`
+	Ip               string `position:"Query" name:"ip"`
+	Source           string `position:"Query" name:"source"`
+	PageNumber       string `position:"Query" name:"pageNumber"`
+	Path             string `position:"Query" name:"path"`
+	ServiceType      string `position:"Query" name:"serviceType"`
+	AppId            string `position:"Query" name:"appId"`
+	Namespace        string `position:"Query" name:"namespace"`
+	ServiceVersion   string `position:"Query" name:"serviceVersion"`
+	PageSize         string `position:"Query" name:"pageSize"`
+	Name             string `position:"Query" name:"name"`
+	ServiceName      string `position:"Query" name:"serviceName"`
+	Region           string `position:"Query" name:"region"`
+	ServiceId        string `position:"Query" name:"serviceId"`
+	MethodController string `position:"Query" name:"methodController"`
+	Group            string `position:"Query" name:"group"`
 }
 
 // GetServiceMethodPageResponse is the response struct for api GetServiceMethodPage
 type GetServiceMethodPageResponse struct {
 	*responses.BaseResponse
-	Code      string                     `json:"Code" xml:"Code"`
-	Message   string                     `json:"Message" xml:"Message"`
-	HttpCode  string                     `json:"HttpCode" xml:"HttpCode"`
-	RequestId string                     `json:"RequestId" xml:"RequestId"`
-	Success   bool                       `json:"Success" xml:"Success"`
-	Data      DataInGetServiceMethodPage `json:"Data" xml:"Data"`
+	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
+	HttpCode  string `json:"HttpCode" xml:"HttpCode"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
+	Data      Data   `json:"Data" xml:"Data"`
 }
 
 // CreateGetServiceMethodPageRequest creates a request to invoke GetServiceMethodPage API
@@ -106,7 +106,7 @@ func CreateGetServiceMethodPageRequest() (request *GetServiceMethodPageRequest) 
 	request = &GetServiceMethodPageRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "GetServiceMethodPage", "/pop/sp/api/mseForOam/getServiceMethodPage", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "GetServiceMethodPage", "/pop/sp/api/mseForOam/getServiceMethodPage", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

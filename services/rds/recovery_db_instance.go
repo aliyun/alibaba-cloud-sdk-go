@@ -98,8 +98,8 @@ type RecoveryDBInstanceRequest struct {
 // RecoveryDBInstanceResponse is the response struct for api RecoveryDBInstance
 type RecoveryDBInstanceResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
 	DBInstanceId string `json:"DBInstanceId" xml:"DBInstanceId"`
+	RequestId    string `json:"RequestId" xml:"RequestId"`
 	OrderId      string `json:"OrderId" xml:"OrderId"`
 }
 

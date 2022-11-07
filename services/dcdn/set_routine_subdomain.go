@@ -78,8 +78,8 @@ type SetRoutineSubdomainRequest struct {
 // SetRoutineSubdomainResponse is the response struct for api SetRoutineSubdomain
 type SetRoutineSubdomainResponse struct {
 	*responses.BaseResponse
-	RequestId string                 `json:"RequestId" xml:"RequestId"`
 	Content   map[string]interface{} `json:"Content" xml:"Content"`
+	RequestId string                 `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateSetRoutineSubdomainRequest creates a request to invoke SetRoutineSubdomain API

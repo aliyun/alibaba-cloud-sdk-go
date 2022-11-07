@@ -83,17 +83,17 @@ type DescribeBindersRequest struct {
 // DescribeBindersResponse is the response struct for api DescribeBinders
 type DescribeBindersResponse struct {
 	*responses.BaseResponse
+	RequestId        string            `json:"RequestId" xml:"RequestId"`
 	ErrorMessage     string            `json:"ErrorMessage" xml:"ErrorMessage"`
+	Success          bool              `json:"Success" xml:"Success"`
 	ErrorCode        string            `json:"ErrorCode" xml:"ErrorCode"`
-	TotalCount       int               `json:"TotalCount" xml:"TotalCount"`
-	Message          string            `json:"Message" xml:"Message"`
-	PageSize         int               `json:"PageSize" xml:"PageSize"`
-	DynamicCode      string            `json:"DynamicCode" xml:"DynamicCode"`
 	Code             string            `json:"Code" xml:"Code"`
+	Message          string            `json:"Message" xml:"Message"`
 	DynamicMessage   string            `json:"DynamicMessage" xml:"DynamicMessage"`
 	PageNumber       int               `json:"PageNumber" xml:"PageNumber"`
-	RequestId        string            `json:"RequestId" xml:"RequestId"`
-	Success          bool              `json:"Success" xml:"Success"`
+	PageSize         int               `json:"PageSize" xml:"PageSize"`
+	TotalCount       int               `json:"TotalCount" xml:"TotalCount"`
+	DynamicCode      string            `json:"DynamicCode" xml:"DynamicCode"`
 	EslItemBindInfos []EslItemBindInfo `json:"EslItemBindInfos" xml:"EslItemBindInfos"`
 }
 
@@ -102,7 +102,7 @@ func CreateDescribeBindersRequest() (request *DescribeBindersRequest) {
 	request = &DescribeBindersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cloudesl", "2020-02-01", "DescribeBinders", "cloudesl", "openAPI")
+	request.InitWithApiInfo("cloudesl", "2020-02-01", "DescribeBinders", "", "")
 	request.Method = requests.POST
 	return
 }

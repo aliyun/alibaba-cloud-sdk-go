@@ -17,23 +17,23 @@ package dataworks_public
 
 // DataInGetDataServicePublishedApi is a nested struct in dataworks_public response
 type DataInGetDataServicePublishedApi struct {
+	Timeout             int                 `json:"Timeout" xml:"Timeout"`
+	Status              int                 `json:"Status" xml:"Status"`
 	ApiId               int64               `json:"ApiId" xml:"ApiId"`
 	ApiMode             int                 `json:"ApiMode" xml:"ApiMode"`
-	ApiName             string              `json:"ApiName" xml:"ApiName"`
-	ApiPath             string              `json:"ApiPath" xml:"ApiPath"`
-	CreatedTime         string              `json:"CreatedTime" xml:"CreatedTime"`
+	ProjectId           int64               `json:"ProjectId" xml:"ProjectId"`
+	ResponseContentType int                 `json:"ResponseContentType" xml:"ResponseContentType"`
 	CreatorId           string              `json:"CreatorId" xml:"CreatorId"`
-	Description         string              `json:"Description" xml:"Description"`
-	GroupId             string              `json:"GroupId" xml:"GroupId"`
+	VisibleRange        int                 `json:"VisibleRange" xml:"VisibleRange"`
 	ModifiedTime        string              `json:"ModifiedTime" xml:"ModifiedTime"`
 	OperatorId          string              `json:"OperatorId" xml:"OperatorId"`
-	ProjectId           int64               `json:"ProjectId" xml:"ProjectId"`
+	GroupId             string              `json:"GroupId" xml:"GroupId"`
+	Description         string              `json:"Description" xml:"Description"`
 	RequestMethod       int                 `json:"RequestMethod" xml:"RequestMethod"`
-	ResponseContentType int                 `json:"ResponseContentType" xml:"ResponseContentType"`
-	Status              int                 `json:"Status" xml:"Status"`
+	CreatedTime         string              `json:"CreatedTime" xml:"CreatedTime"`
+	ApiName             string              `json:"ApiName" xml:"ApiName"`
 	TenantId            int64               `json:"TenantId" xml:"TenantId"`
-	Timeout             int                 `json:"Timeout" xml:"Timeout"`
-	VisibleRange        int                 `json:"VisibleRange" xml:"VisibleRange"`
+	ApiPath             string              `json:"ApiPath" xml:"ApiPath"`
 	Protocols           []int               `json:"Protocols" xml:"Protocols"`
 	RegistrationDetails RegistrationDetails `json:"RegistrationDetails" xml:"RegistrationDetails"`
 	ScriptDetails       ScriptDetails       `json:"ScriptDetails" xml:"ScriptDetails"`

@@ -28,4 +28,5 @@ type SavingsPlansDeductDetailResponse struct {
 	DeductCommodity  string `json:"DeductCommodity" xml:"DeductCommodity"`
 	DeductRate       string `json:"DeductRate" xml:"DeductRate"`
 	DeductFee        string `json:"DeductFee" xml:"DeductFee"`
+	OwnerId          int64  `json:"OwnerId" xml:"OwnerId"`
 }

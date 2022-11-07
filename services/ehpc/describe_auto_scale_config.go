@@ -77,22 +77,22 @@ type DescribeAutoScaleConfigRequest struct {
 // DescribeAutoScaleConfigResponse is the response struct for api DescribeAutoScaleConfig
 type DescribeAutoScaleConfigResponse struct {
 	*responses.BaseResponse
+	MaxNodesInCluster       int    `json:"MaxNodesInCluster" xml:"MaxNodesInCluster"`
+	GrowTimeoutInMinutes    int    `json:"GrowTimeoutInMinutes" xml:"GrowTimeoutInMinutes"`
+	SpotStrategy            string `json:"SpotStrategy" xml:"SpotStrategy"`
 	RequestId               string `json:"RequestId" xml:"RequestId"`
-	Uid                     string `json:"Uid" xml:"Uid"`
-	ClusterId               string `json:"ClusterId" xml:"ClusterId"`
+	EnableAutoShrink        bool   `json:"EnableAutoShrink" xml:"EnableAutoShrink"`
 	ClusterType             string `json:"ClusterType" xml:"ClusterType"`
 	EnableAutoGrow          bool   `json:"EnableAutoGrow" xml:"EnableAutoGrow"`
-	EnableAutoShrink        bool   `json:"EnableAutoShrink" xml:"EnableAutoShrink"`
+	ExcludeNodes            string `json:"ExcludeNodes" xml:"ExcludeNodes"`
 	GrowIntervalInMinutes   int    `json:"GrowIntervalInMinutes" xml:"GrowIntervalInMinutes"`
 	ShrinkIntervalInMinutes int    `json:"ShrinkIntervalInMinutes" xml:"ShrinkIntervalInMinutes"`
+	SpotPriceLimit          string `json:"SpotPriceLimit" xml:"SpotPriceLimit"`
 	ShrinkIdleTimes         int    `json:"ShrinkIdleTimes" xml:"ShrinkIdleTimes"`
-	GrowTimeoutInMinutes    int    `json:"GrowTimeoutInMinutes" xml:"GrowTimeoutInMinutes"`
 	ExtraNodesGrowRatio     int    `json:"ExtraNodesGrowRatio" xml:"ExtraNodesGrowRatio"`
 	GrowRatio               int    `json:"GrowRatio" xml:"GrowRatio"`
-	MaxNodesInCluster       int    `json:"MaxNodesInCluster" xml:"MaxNodesInCluster"`
-	ExcludeNodes            string `json:"ExcludeNodes" xml:"ExcludeNodes"`
-	SpotStrategy            string `json:"SpotStrategy" xml:"SpotStrategy"`
-	SpotPriceLimit          string `json:"SpotPriceLimit" xml:"SpotPriceLimit"`
+	Uid                     string `json:"Uid" xml:"Uid"`
+	ClusterId               string `json:"ClusterId" xml:"ClusterId"`
 }
 
 // CreateDescribeAutoScaleConfigRequest creates a request to invoke DescribeAutoScaleConfig API

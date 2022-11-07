@@ -80,11 +80,11 @@ type DescribeDomainsUsageByDayRequest struct {
 // DescribeDomainsUsageByDayResponse is the response struct for api DescribeDomainsUsageByDay
 type DescribeDomainsUsageByDayResponse struct {
 	*responses.BaseResponse
+	EndTime      string      `json:"EndTime" xml:"EndTime"`
+	StartTime    string      `json:"StartTime" xml:"StartTime"`
 	RequestId    string      `json:"RequestId" xml:"RequestId"`
 	DomainName   string      `json:"DomainName" xml:"DomainName"`
 	DataInterval string      `json:"DataInterval" xml:"DataInterval"`
-	StartTime    string      `json:"StartTime" xml:"StartTime"`
-	EndTime      string      `json:"EndTime" xml:"EndTime"`
 	UsageTotal   UsageTotal  `json:"UsageTotal" xml:"UsageTotal"`
 	UsageByDays  UsageByDays `json:"UsageByDays" xml:"UsageByDays"`
 }

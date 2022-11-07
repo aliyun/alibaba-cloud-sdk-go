@@ -71,10 +71,11 @@ func (client *Client) UpdateSecretParameterWithCallback(request *UpdateSecretPar
 // UpdateSecretParameterRequest is the request struct for api UpdateSecretParameter
 type UpdateSecretParameterRequest struct {
 	*requests.RpcRequest
-	Description string `position:"Query" name:"Description"`
-	Tags        string `position:"Query" name:"Tags"`
-	Name        string `position:"Query" name:"Name"`
-	Value       string `position:"Query" name:"Value"`
+	Description     string `position:"Query" name:"Description"`
+	Tags            string `position:"Query" name:"Tags"`
+	ResourceGroupId string `position:"Query" name:"ResourceGroupId"`
+	Name            string `position:"Query" name:"Name"`
+	Value           string `position:"Query" name:"Value"`
 }
 
 // UpdateSecretParameterResponse is the response struct for api UpdateSecretParameter
@@ -89,7 +90,7 @@ func CreateUpdateSecretParameterRequest() (request *UpdateSecretParameterRequest
 	request = &UpdateSecretParameterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("oos", "2019-06-01", "UpdateSecretParameter", "", "")
+	request.InitWithApiInfo("oos", "2019-06-01", "UpdateSecretParameter", "oos", "openAPI")
 	request.Method = requests.POST
 	return
 }

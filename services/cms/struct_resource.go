@@ -60,9 +60,9 @@ type Resource struct {
 	TemplateIds               TemplateIds                                         `json:"TemplateIds" xml:"TemplateIds"`
 	Region                    Region                                              `json:"Region" xml:"Region"`
 	Vpc                       Vpc                                                 `json:"Vpc" xml:"Vpc"`
+	AlertTemplates            AlertTemplates                                      `json:"AlertTemplates" xml:"AlertTemplates"`
 	AlertResults              []Result                                            `json:"AlertResults" xml:"AlertResults"`
 	Tags                      TagsInDescribeMonitorGroupInstanceAttribute         `json:"Tags" xml:"Tags"`
 	ContactGroups             ContactGroupsInDescribeMonitorGroups                `json:"ContactGroups" xml:"ContactGroups"`
-	AlertTemplates            AlertTemplates                                      `json:"AlertTemplates" xml:"AlertTemplates"`
 	ExpressionList            ExpressionListInDescribeAlertingMetricRuleResources `json:"ExpressionList" xml:"ExpressionList"`
 }

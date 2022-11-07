@@ -17,13 +17,14 @@ package adb
 
 // DBCluster is a nested struct in adb response
 type DBCluster struct {
-	Category             string                           `json:"Category" xml:"Category"`
-	LockReason           string                           `json:"LockReason" xml:"LockReason"`
 	DBNodeClass          string                           `json:"DBNodeClass" xml:"DBNodeClass"`
+	LockReason           string                           `json:"LockReason" xml:"LockReason"`
 	VPCCloudInstanceId   string                           `json:"VPCCloudInstanceId" xml:"VPCCloudInstanceId"`
+	Category             string                           `json:"Category" xml:"Category"`
 	Engine               string                           `json:"Engine" xml:"Engine"`
 	DBClusterNetworkType string                           `json:"DBClusterNetworkType" xml:"DBClusterNetworkType"`
 	Mode                 string                           `json:"Mode" xml:"Mode"`
+	KmsId                string                           `json:"KmsId" xml:"KmsId"`
 	RegionId             string                           `json:"RegionId" xml:"RegionId"`
 	StorageResource      string                           `json:"StorageResource" xml:"StorageResource"`
 	ResourceGroupId      string                           `json:"ResourceGroupId" xml:"ResourceGroupId"`
@@ -32,19 +33,19 @@ type DBCluster struct {
 	EnableSpark          bool                             `json:"EnableSpark" xml:"EnableSpark"`
 	CommodityCode        string                           `json:"CommodityCode" xml:"CommodityCode"`
 	Expired              string                           `json:"Expired" xml:"Expired"`
-	DBVersion            string                           `json:"DBVersion" xml:"DBVersion"`
 	Port                 int                              `json:"Port" xml:"Port"`
+	DBVersion            string                           `json:"DBVersion" xml:"DBVersion"`
+	MaintainTime         string                           `json:"MaintainTime" xml:"MaintainTime"`
+	EngineVersion        string                           `json:"EngineVersion" xml:"EngineVersion"`
+	ExecutorCount        string                           `json:"ExecutorCount" xml:"ExecutorCount"`
 	DBClusterType        string                           `json:"DBClusterType" xml:"DBClusterType"`
 	DBNodeStorage        int64                            `json:"DBNodeStorage" xml:"DBNodeStorage"`
-	MaintainTime         string                           `json:"MaintainTime" xml:"MaintainTime"`
 	VPCId                string                           `json:"VPCId" xml:"VPCId"`
-	ExecutorCount        string                           `json:"ExecutorCount" xml:"ExecutorCount"`
-	EngineVersion        string                           `json:"EngineVersion" xml:"EngineVersion"`
 	PayType              string                           `json:"PayType" xml:"PayType"`
-	VSwitchId            string                           `json:"VSwitchId" xml:"VSwitchId"`
 	DiskType             string                           `json:"DiskType" xml:"DiskType"`
-	DBNodeCount          int64                            `json:"DBNodeCount" xml:"DBNodeCount"`
+	VSwitchId            string                           `json:"VSwitchId" xml:"VSwitchId"`
 	CreationTime         string                           `json:"CreationTime" xml:"CreationTime"`
+	DBNodeCount          int64                            `json:"DBNodeCount" xml:"DBNodeCount"`
 	UserENIStatus        bool                             `json:"UserENIStatus" xml:"UserENIStatus"`
 	DBClusterId          string                           `json:"DBClusterId" xml:"DBClusterId"`
 	DBClusterStatus      string                           `json:"DBClusterStatus" xml:"DBClusterStatus"`

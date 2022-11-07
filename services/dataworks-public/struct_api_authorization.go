@@ -17,15 +17,15 @@ package dataworks_public
 
 // ApiAuthorization is a nested struct in dataworks_public response
 type ApiAuthorization struct {
-	ApiId                int64                 `json:"ApiId" xml:"ApiId"`
-	ApiName              string                `json:"ApiName" xml:"ApiName"`
-	ApiPath              string                `json:"ApiPath" xml:"ApiPath"`
 	ApiStatus            int                   `json:"ApiStatus" xml:"ApiStatus"`
-	CreatedTime          string                `json:"CreatedTime" xml:"CreatedTime"`
-	CreatorId            string                `json:"CreatorId" xml:"CreatorId"`
-	GroupId              string                `json:"GroupId" xml:"GroupId"`
+	ApiId                int64                 `json:"ApiId" xml:"ApiId"`
 	ModifiedTime         string                `json:"ModifiedTime" xml:"ModifiedTime"`
+	GroupId              string                `json:"GroupId" xml:"GroupId"`
 	ProjectId            int64                 `json:"ProjectId" xml:"ProjectId"`
+	CreatorId            string                `json:"CreatorId" xml:"CreatorId"`
+	CreatedTime          string                `json:"CreatedTime" xml:"CreatedTime"`
+	ApiName              string                `json:"ApiName" xml:"ApiName"`
 	TenantId             int64                 `json:"TenantId" xml:"TenantId"`
+	ApiPath              string                `json:"ApiPath" xml:"ApiPath"`
 	AuthorizationRecords []AuthorizationRecord `json:"AuthorizationRecords" xml:"AuthorizationRecords"`
 }

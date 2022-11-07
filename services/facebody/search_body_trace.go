@@ -71,18 +71,27 @@ func (client *Client) SearchBodyTraceWithCallback(request *SearchBodyTraceReques
 // SearchBodyTraceRequest is the request struct for api SearchBodyTrace
 type SearchBodyTraceRequest struct {
 	*requests.RpcRequest
-	MinScore requests.Float   `position:"Body" name:"MinScore"`
-	Limit    requests.Integer `position:"Body" name:"Limit"`
-	Images   string           `position:"Body" name:"Images"`
-	DbId     requests.Integer `position:"Body" name:"DbId"`
+	MinScore           requests.Float           `position:"Body" name:"MinScore"`
+	FormatResultToJson requests.Boolean         `position:"Query" name:"FormatResultToJson"`
+	Limit              requests.Integer         `position:"Body" name:"Limit"`
+	OssFile            string                   `position:"Query" name:"OssFile"`
+	Images             *[]SearchBodyTraceImages `position:"Body" name:"Images"  type:"Json"`
+	RequestProxyBy     string                   `position:"Query" name:"RequestProxyBy"`
+	DbId               requests.Integer         `position:"Body" name:"DbId"`
+}
+
+// SearchBodyTraceImages is a repeated param struct in SearchBodyTraceRequest
+type SearchBodyTraceImages struct {
+	ImageURL  string `name:"ImageURL"`
+	ImageData string `name:"ImageData"`
 }
 
 // SearchBodyTraceResponse is the response struct for api SearchBodyTrace
 type SearchBodyTraceResponse struct {
 	*responses.BaseResponse
-	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 

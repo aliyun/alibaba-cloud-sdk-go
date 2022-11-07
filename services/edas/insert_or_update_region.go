@@ -71,11 +71,13 @@ func (client *Client) InsertOrUpdateRegionWithCallback(request *InsertOrUpdateRe
 // InsertOrUpdateRegionRequest is the request struct for api InsertOrUpdateRegion
 type InsertOrUpdateRegionRequest struct {
 	*requests.RoaRequest
-	DebugEnable requests.Boolean `position:"Query" name:"DebugEnable"`
-	RegionTag   string           `position:"Query" name:"RegionTag"`
-	RegionName  string           `position:"Query" name:"RegionName"`
-	Description string           `position:"Query" name:"Description"`
-	Id          requests.Integer `position:"Query" name:"Id"`
+	RegistryType  string `position:"Query" name:"RegistryType"`
+	DebugEnable   string `position:"Query" name:"DebugEnable"`
+	RegionTag     string `position:"Query" name:"RegionTag"`
+	RegionName    string `position:"Query" name:"RegionName"`
+	Description   string `position:"Query" name:"Description"`
+	MseInstanceId string `position:"Query" name:"MseInstanceId"`
+	Id            string `position:"Query" name:"Id"`
 }
 
 // InsertOrUpdateRegionResponse is the response struct for api InsertOrUpdateRegion
@@ -92,7 +94,7 @@ func CreateInsertOrUpdateRegionRequest() (request *InsertOrUpdateRegionRequest) 
 	request = &InsertOrUpdateRegionRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "InsertOrUpdateRegion", "/pop/v5/user_region_def", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "InsertOrUpdateRegion", "/pop/v5/user_region_def", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

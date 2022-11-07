@@ -71,11 +71,13 @@ func (client *Client) DescribeUsersInGroupWithCallback(request *DescribeUsersInG
 // DescribeUsersInGroupRequest is the request struct for api DescribeUsersInGroup
 type DescribeUsersInGroupRequest struct {
 	*requests.RpcRequest
-	ConnectState   requests.Integer `position:"Query" name:"ConnectState"`
-	DesktopGroupId string           `position:"Query" name:"DesktopGroupId"`
-	NextToken      string           `position:"Query" name:"NextToken"`
-	MaxResults     requests.Integer `position:"Query" name:"MaxResults"`
-	EndUserId      string           `position:"Query" name:"EndUserId"`
+	ConnectState    requests.Integer `position:"Query" name:"ConnectState"`
+	Filter          string           `position:"Query" name:"Filter"`
+	DesktopGroupId  string           `position:"Query" name:"DesktopGroupId"`
+	NextToken       string           `position:"Query" name:"NextToken"`
+	QueryUserDetail requests.Boolean `position:"Query" name:"QueryUserDetail"`
+	MaxResults      requests.Integer `position:"Query" name:"MaxResults"`
+	EndUserId       string           `position:"Query" name:"EndUserId"`
 }
 
 // DescribeUsersInGroupResponse is the response struct for api DescribeUsersInGroup

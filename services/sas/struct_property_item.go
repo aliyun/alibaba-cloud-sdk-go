@@ -18,6 +18,6 @@ package sas
 // PropertyItem is a nested struct in sas response
 type PropertyItem struct {
 	Port  string `json:"Port" xml:"Port"`
-	Proto string `json:"Proto" xml:"Proto"`
 	Count int    `json:"Count" xml:"Count"`
+	Proto string `json:"Proto" xml:"Proto"`
 }

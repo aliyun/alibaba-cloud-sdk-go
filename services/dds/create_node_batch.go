@@ -75,6 +75,8 @@ type CreateNodeBatchRequest struct {
 	ClientToken          string           `position:"Query" name:"ClientToken"`
 	NodesInfo            string           `position:"Query" name:"NodesInfo"`
 	CouponNo             string           `position:"Query" name:"CouponNo"`
+	ShardDirect          requests.Boolean `position:"Query" name:"ShardDirect"`
+	AccountName          string           `position:"Query" name:"AccountName"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	BusinessInfo         string           `position:"Query" name:"BusinessInfo"`
@@ -83,6 +85,7 @@ type CreateNodeBatchRequest struct {
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	AccountPassword      string           `position:"Query" name:"AccountPassword"`
 }
 
 // CreateNodeBatchResponse is the response struct for api CreateNodeBatch

@@ -96,8 +96,8 @@ type CheckCreateDdrDBInstanceRequest struct {
 // CheckCreateDdrDBInstanceResponse is the response struct for api CheckCreateDdrDBInstance
 type CheckCreateDdrDBInstanceResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	IsValid   string `json:"IsValid" xml:"IsValid"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCheckCreateDdrDBInstanceRequest creates a request to invoke CheckCreateDdrDBInstance API

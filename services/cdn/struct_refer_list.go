@@ -17,9 +17,9 @@ package cdn
 
 // ReferList is a nested struct in cdn response
 type ReferList struct {
-	ReferDetail     string  `json:"ReferDetail" xml:"ReferDetail"`
-	VisitData       string  `json:"VisitData" xml:"VisitData"`
-	VisitProportion float64 `json:"VisitProportion" xml:"VisitProportion"`
 	Flow            string  `json:"Flow" xml:"Flow"`
 	FlowProportion  float64 `json:"FlowProportion" xml:"FlowProportion"`
+	VisitData       string  `json:"VisitData" xml:"VisitData"`
+	ReferDetail     string  `json:"ReferDetail" xml:"ReferDetail"`
+	VisitProportion float64 `json:"VisitProportion" xml:"VisitProportion"`
 }

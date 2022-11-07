@@ -17,7 +17,7 @@ package cms
 
 // ResourceItem is a nested struct in cms response
 type ResourceItem struct {
-	Category       string  `json:"Category" xml:"Category"`
-	FilterRelation string  `json:"FilterRelation" xml:"FilterRelation"`
-	Filters        Filters `json:"Filters" xml:"Filters"`
+	Category       string                                    `json:"Category" xml:"Category"`
+	FilterRelation string                                    `json:"FilterRelation" xml:"FilterRelation"`
+	Filters        FiltersInDescribeMonitorGroupDynamicRules `json:"Filters" xml:"Filters"`
 }

@@ -17,8 +17,8 @@ package ddoscoo
 
 // SblackItem is a nested struct in ddoscoo response
 type SblackItem struct {
+	Type    int `json:"Type" xml:"Type"`
 	During  int `json:"During" xml:"During"`
 	Expires int `json:"Expires" xml:"Expires"`
 	Cnt     int `json:"Cnt" xml:"Cnt"`
-	Type    int `json:"Type" xml:"Type"`
 }

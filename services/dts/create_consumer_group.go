@@ -71,12 +71,12 @@ func (client *Client) CreateConsumerGroupWithCallback(request *CreateConsumerGro
 // CreateConsumerGroupRequest is the request struct for api CreateConsumerGroup
 type CreateConsumerGroupRequest struct {
 	*requests.RpcRequest
-	ConsumerGroupName      string `position:"Query" name:"ConsumerGroupName"`
-	SubscriptionInstanceId string `position:"Query" name:"SubscriptionInstanceId"`
-	OwnerId                string `position:"Query" name:"OwnerId"`
 	ConsumerGroupPassword  string `position:"Query" name:"ConsumerGroupPassword"`
 	AccountId              string `position:"Query" name:"AccountId"`
 	ConsumerGroupUserName  string `position:"Query" name:"ConsumerGroupUserName"`
+	ConsumerGroupName      string `position:"Query" name:"ConsumerGroupName"`
+	SubscriptionInstanceId string `position:"Query" name:"SubscriptionInstanceId"`
+	OwnerId                string `position:"Query" name:"OwnerId"`
 }
 
 // CreateConsumerGroupResponse is the response struct for api CreateConsumerGroup

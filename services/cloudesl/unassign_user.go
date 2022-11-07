@@ -93,7 +93,7 @@ func CreateUnassignUserRequest() (request *UnassignUserRequest) {
 	request = &UnassignUserRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cloudesl", "2020-02-01", "UnassignUser", "cloudesl", "openAPI")
+	request.InitWithApiInfo("cloudesl", "2020-02-01", "UnassignUser", "", "")
 	request.Method = requests.POST
 	return
 }

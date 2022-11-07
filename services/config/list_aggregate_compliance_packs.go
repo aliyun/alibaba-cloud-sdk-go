@@ -90,7 +90,7 @@ func CreateListAggregateCompliancePacksRequest() (request *ListAggregateComplian
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Config", "2020-09-07", "ListAggregateCompliancePacks", "", "")
-	request.Method = requests.GET
+	request.Method = requests.POST
 	return
 }
 

@@ -77,6 +77,7 @@ type ListListenersRequest struct {
 	ListenerProtocol                        string           `position:"Query" name:"ListenerProtocol"`
 	ListenerIds                             *[]string        `position:"Query" name:"ListenerIds"  type:"Repeated"`
 	MaxResults                              requests.Integer `position:"Query" name:"MaxResults"`
+	Status                                  string           `position:"Query" name:"Status"`
 }
 
 // ListListenersResponse is the response struct for api ListListeners

@@ -17,7 +17,7 @@ package sas
 
 // ValueItem is a nested struct in sas response
 type ValueItem struct {
-	Name  string `json:"Name" xml:"Name"`
 	Type  string `json:"Type" xml:"Type"`
 	Value string `json:"Value" xml:"Value"`
+	Name  string `json:"Name" xml:"Name"`
 }

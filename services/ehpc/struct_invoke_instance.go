@@ -17,6 +17,6 @@ package ehpc
 
 // InvokeInstance is a nested struct in ehpc response
 type InvokeInstance struct {
-	InstanceId           string `json:"InstanceId" xml:"InstanceId"`
 	InstanceInvokeStatus string `json:"InstanceInvokeStatus" xml:"InstanceInvokeStatus"`
+	InstanceId           string `json:"InstanceId" xml:"InstanceId"`
 }

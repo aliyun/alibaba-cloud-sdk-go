@@ -74,8 +74,8 @@ type ModifyOperateVulRequest struct {
 	Reason      string `position:"Query" name:"Reason"`
 	Type        string `position:"Query" name:"Type"`
 	SourceIp    string `position:"Query" name:"SourceIp"`
-	OperateType string `position:"Query" name:"OperateType"`
 	Info        string `position:"Query" name:"Info"`
+	OperateType string `position:"Query" name:"OperateType"`
 }
 
 // ModifyOperateVulResponse is the response struct for api ModifyOperateVul

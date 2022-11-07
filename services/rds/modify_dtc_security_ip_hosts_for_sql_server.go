@@ -84,10 +84,10 @@ type ModifyDTCSecurityIpHostsForSQLServerRequest struct {
 // ModifyDTCSecurityIpHostsForSQLServerResponse is the response struct for api ModifyDTCSecurityIpHostsForSQLServer
 type ModifyDTCSecurityIpHostsForSQLServerResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
 	DBInstanceId string `json:"DBInstanceId" xml:"DBInstanceId"`
-	DTCSetResult string `json:"DTCSetResult" xml:"DTCSetResult"`
+	RequestId    string `json:"RequestId" xml:"RequestId"`
 	TaskId       string `json:"TaskId" xml:"TaskId"`
+	DTCSetResult string `json:"DTCSetResult" xml:"DTCSetResult"`
 }
 
 // CreateModifyDTCSecurityIpHostsForSQLServerRequest creates a request to invoke ModifyDTCSecurityIpHostsForSQLServer API

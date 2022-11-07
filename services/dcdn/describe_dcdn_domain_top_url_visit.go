@@ -80,9 +80,9 @@ type DescribeDcdnDomainTopUrlVisitRequest struct {
 // DescribeDcdnDomainTopUrlVisitResponse is the response struct for api DescribeDcdnDomainTopUrlVisit
 type DescribeDcdnDomainTopUrlVisitResponse struct {
 	*responses.BaseResponse
+	StartTime  string     `json:"StartTime" xml:"StartTime"`
 	RequestId  string     `json:"RequestId" xml:"RequestId"`
 	DomainName string     `json:"DomainName" xml:"DomainName"`
-	StartTime  string     `json:"StartTime" xml:"StartTime"`
 	AllUrlList AllUrlList `json:"AllUrlList" xml:"AllUrlList"`
 	Url200List Url200List `json:"Url200List" xml:"Url200List"`
 	Url300List Url300List `json:"Url300List" xml:"Url300List"`

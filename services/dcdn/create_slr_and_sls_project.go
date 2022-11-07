@@ -71,8 +71,9 @@ func (client *Client) CreateSlrAndSlsProjectWithCallback(request *CreateSlrAndSl
 // CreateSlrAndSlsProjectRequest is the request struct for api CreateSlrAndSlsProject
 type CreateSlrAndSlsProjectRequest struct {
 	*requests.RpcRequest
-	OwnerId requests.Integer `position:"Query" name:"OwnerId"`
-	Region  string           `position:"Body" name:"Region"`
+	BusinessType string           `position:"Body" name:"BusinessType"`
+	OwnerId      requests.Integer `position:"Query" name:"OwnerId"`
+	Region       string           `position:"Body" name:"Region"`
 }
 
 // CreateSlrAndSlsProjectResponse is the response struct for api CreateSlrAndSlsProject

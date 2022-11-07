@@ -71,11 +71,11 @@ func (client *Client) UpdateConfigTemplateWithCallback(request *UpdateConfigTemp
 // UpdateConfigTemplateRequest is the request struct for api UpdateConfigTemplate
 type UpdateConfigTemplateRequest struct {
 	*requests.RoaRequest
-	Name        string           `position:"Body" name:"Name"`
-	Format      string           `position:"Body" name:"Format"`
-	Description string           `position:"Body" name:"Description"`
-	Id          requests.Integer `position:"Body" name:"Id"`
-	Content     string           `position:"Body" name:"Content"`
+	Name        string `position:"Body" name:"Name"`
+	Format      string `position:"Body" name:"Format"`
+	Description string `position:"Body" name:"Description"`
+	Id          string `position:"Body" name:"Id"`
+	Content     string `position:"Body" name:"Content"`
 }
 
 // UpdateConfigTemplateResponse is the response struct for api UpdateConfigTemplate
@@ -91,7 +91,7 @@ func CreateUpdateConfigTemplateRequest() (request *UpdateConfigTemplateRequest) 
 	request = &UpdateConfigTemplateRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "UpdateConfigTemplate", "/pop/v5/config_template", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "UpdateConfigTemplate", "/pop/v5/config_template", "edas", "openAPI")
 	request.Method = requests.PUT
 	return
 }

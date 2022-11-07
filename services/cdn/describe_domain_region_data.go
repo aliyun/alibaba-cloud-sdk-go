@@ -80,11 +80,11 @@ type DescribeDomainRegionDataRequest struct {
 // DescribeDomainRegionDataResponse is the response struct for api DescribeDomainRegionData
 type DescribeDomainRegionDataResponse struct {
 	*responses.BaseResponse
+	EndTime      string                          `json:"EndTime" xml:"EndTime"`
+	StartTime    string                          `json:"StartTime" xml:"StartTime"`
 	RequestId    string                          `json:"RequestId" xml:"RequestId"`
 	DomainName   string                          `json:"DomainName" xml:"DomainName"`
 	DataInterval string                          `json:"DataInterval" xml:"DataInterval"`
-	StartTime    string                          `json:"StartTime" xml:"StartTime"`
-	EndTime      string                          `json:"EndTime" xml:"EndTime"`
 	Value        ValueInDescribeDomainRegionData `json:"Value" xml:"Value"`
 }
 

@@ -73,13 +73,13 @@ type ExecuteJobRequest struct {
 	*requests.RpcRequest
 	NamespaceSource    string           `position:"Query" name:"NamespaceSource"`
 	CheckJobStatus     requests.Boolean `position:"Query" name:"CheckJobStatus"`
-	GroupId            string           `position:"Query" name:"GroupId"`
-	Label              string           `position:"Query" name:"Label"`
 	DesignateType      requests.Integer `position:"Query" name:"DesignateType"`
 	JobId              requests.Integer `position:"Query" name:"JobId"`
-	Namespace          string           `position:"Query" name:"Namespace"`
 	Worker             string           `position:"Query" name:"Worker"`
 	InstanceParameters string           `position:"Query" name:"InstanceParameters"`
+	GroupId            string           `position:"Query" name:"GroupId"`
+	Label              string           `position:"Query" name:"Label"`
+	Namespace          string           `position:"Query" name:"Namespace"`
 }
 
 // ExecuteJobResponse is the response struct for api ExecuteJob

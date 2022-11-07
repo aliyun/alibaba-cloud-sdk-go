@@ -71,18 +71,17 @@ func (client *Client) DescribeScdnDomainTopReferVisitWithCallback(request *Descr
 // DescribeScdnDomainTopReferVisitRequest is the request struct for api DescribeScdnDomainTopReferVisit
 type DescribeScdnDomainTopReferVisitRequest struct {
 	*requests.RpcRequest
-	StartTime  string           `position:"Query" name:"StartTime"`
-	DomainName string           `position:"Query" name:"DomainName"`
-	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
-	SortBy     string           `position:"Query" name:"SortBy"`
+	DomainName string `position:"Query" name:"DomainName"`
+	SortBy     string `position:"Query" name:"SortBy"`
+	StartTime  string `position:"Query" name:"StartTime"`
 }
 
 // DescribeScdnDomainTopReferVisitResponse is the response struct for api DescribeScdnDomainTopReferVisit
 type DescribeScdnDomainTopReferVisitResponse struct {
 	*responses.BaseResponse
+	StartTime    string       `json:"StartTime" xml:"StartTime"`
 	RequestId    string       `json:"RequestId" xml:"RequestId"`
 	DomainName   string       `json:"DomainName" xml:"DomainName"`
-	StartTime    string       `json:"StartTime" xml:"StartTime"`
 	TopReferList TopReferList `json:"TopReferList" xml:"TopReferList"`
 }
 

@@ -17,8 +17,8 @@ package alikafka
 
 // TopicListItem is a nested struct in alikafka response
 type TopicListItem struct {
-	Topic         string     `json:"Topic" xml:"Topic"`
 	TotalDiff     int64      `json:"TotalDiff" xml:"TotalDiff"`
 	LastTimestamp int64      `json:"LastTimestamp" xml:"LastTimestamp"`
+	Topic         string     `json:"Topic" xml:"Topic"`
 	OffsetList    OffsetList `json:"OffsetList" xml:"OffsetList"`
 }

@@ -81,9 +81,9 @@ type DescribeCdnUserBillPredictionRequest struct {
 // DescribeCdnUserBillPredictionResponse is the response struct for api DescribeCdnUserBillPrediction
 type DescribeCdnUserBillPredictionResponse struct {
 	*responses.BaseResponse
-	RequestId          string             `json:"RequestId" xml:"RequestId"`
-	StartTime          string             `json:"StartTime" xml:"StartTime"`
 	EndTime            string             `json:"EndTime" xml:"EndTime"`
+	StartTime          string             `json:"StartTime" xml:"StartTime"`
+	RequestId          string             `json:"RequestId" xml:"RequestId"`
 	BillType           string             `json:"BillType" xml:"BillType"`
 	BillPredictionData BillPredictionData `json:"BillPredictionData" xml:"BillPredictionData"`
 }

@@ -103,7 +103,7 @@ func CreateModifyDBNodesClassRequest() (request *ModifyDBNodesClassRequest) {
 	request = &ModifyDBNodesClassRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "ModifyDBNodesClass", "", "")
+	request.InitWithApiInfo("polardb", "2017-08-01", "ModifyDBNodesClass", "polardb", "openAPI")
 	request.Method = requests.POST
 	return
 }

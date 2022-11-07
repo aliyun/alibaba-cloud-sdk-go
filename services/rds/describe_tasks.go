@@ -88,9 +88,9 @@ type DescribeTasksRequest struct {
 type DescribeTasksResponse struct {
 	*responses.BaseResponse
 	RequestId        string               `json:"RequestId" xml:"RequestId"`
-	TotalRecordCount int                  `json:"TotalRecordCount" xml:"TotalRecordCount"`
 	PageNumber       int                  `json:"PageNumber" xml:"PageNumber"`
 	PageRecordCount  int                  `json:"PageRecordCount" xml:"PageRecordCount"`
+	TotalRecordCount int                  `json:"TotalRecordCount" xml:"TotalRecordCount"`
 	Items            ItemsInDescribeTasks `json:"Items" xml:"Items"`
 }
 

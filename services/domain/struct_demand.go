@@ -33,4 +33,5 @@ type Demand struct {
 	OrderType           int     `json:"OrderType" xml:"OrderType"`
 	PayDomain           string  `json:"PayDomain" xml:"PayDomain"`
 	AuditStatus         int     `json:"AuditStatus" xml:"AuditStatus"`
+	PartnerDomain       string  `json:"PartnerDomain" xml:"PartnerDomain"`
 }

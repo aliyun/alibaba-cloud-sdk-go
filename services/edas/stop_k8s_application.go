@@ -71,8 +71,8 @@ func (client *Client) StopK8sApplicationWithCallback(request *StopK8sApplication
 // StopK8sApplicationRequest is the request struct for api StopK8sApplication
 type StopK8sApplicationRequest struct {
 	*requests.RoaRequest
-	AppId   string           `position:"Query" name:"AppId"`
-	Timeout requests.Integer `position:"Query" name:"Timeout"`
+	AppId   string `position:"Query" name:"AppId"`
+	Timeout string `position:"Query" name:"Timeout"`
 }
 
 // StopK8sApplicationResponse is the response struct for api StopK8sApplication
@@ -89,7 +89,7 @@ func CreateStopK8sApplicationRequest() (request *StopK8sApplicationRequest) {
 	request = &StopK8sApplicationRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "StopK8sApplication", "/pop/v5/k8s/acs/stop_k8s_app", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "StopK8sApplication", "/pop/v5/k8s/acs/stop_k8s_app", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

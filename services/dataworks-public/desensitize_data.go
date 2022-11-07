@@ -78,8 +78,8 @@ type DesensitizeDataRequest struct {
 // DesensitizeDataResponse is the response struct for api DesensitizeData
 type DesensitizeDataResponse struct {
 	*responses.BaseResponse
-	RequestId       string `json:"RequestId" xml:"RequestId"`
 	DesensitizeData string `json:"DesensitizeData" xml:"DesensitizeData"`
+	RequestId       string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDesensitizeDataRequest creates a request to invoke DesensitizeData API

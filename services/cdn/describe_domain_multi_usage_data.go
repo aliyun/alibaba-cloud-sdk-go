@@ -80,9 +80,9 @@ type DescribeDomainMultiUsageDataRequest struct {
 // DescribeDomainMultiUsageDataResponse is the response struct for api DescribeDomainMultiUsageData
 type DescribeDomainMultiUsageDataResponse struct {
 	*responses.BaseResponse
-	RequestId          string             `json:"RequestId" xml:"RequestId"`
-	StartTime          string             `json:"StartTime" xml:"StartTime"`
 	EndTime            string             `json:"EndTime" xml:"EndTime"`
+	StartTime          string             `json:"StartTime" xml:"StartTime"`
+	RequestId          string             `json:"RequestId" xml:"RequestId"`
 	RequestPerInterval RequestPerInterval `json:"RequestPerInterval" xml:"RequestPerInterval"`
 	TrafficPerInterval TrafficPerInterval `json:"TrafficPerInterval" xml:"TrafficPerInterval"`
 }

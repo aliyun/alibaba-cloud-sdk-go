@@ -17,11 +17,11 @@ package sas
 
 // Entity is a nested struct in sas response
 type Entity struct {
+	Uuid         string `json:"Uuid" xml:"Uuid"`
 	GroupId      int    `json:"GroupId" xml:"GroupId"`
+	InternetIp   string `json:"InternetIp" xml:"InternetIp"`
 	InstanceName string `json:"InstanceName" xml:"InstanceName"`
 	Ip           string `json:"Ip" xml:"Ip"`
-	Uuid         string `json:"Uuid" xml:"Uuid"`
 	Os           string `json:"Os" xml:"Os"`
-	InternetIp   string `json:"InternetIp" xml:"InternetIp"`
 	IntranetIp   string `json:"IntranetIp" xml:"IntranetIp"`
 }

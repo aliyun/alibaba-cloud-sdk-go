@@ -71,6 +71,7 @@ func (client *Client) OnsTopicListWithCallback(request *OnsTopicListRequest, cal
 // OnsTopicListRequest is the request struct for api OnsTopicList
 type OnsTopicListRequest struct {
 	*requests.RpcRequest
+	UserId     string             `position:"Query" name:"UserId"`
 	InstanceId string             `position:"Query" name:"InstanceId"`
 	Topic      string             `position:"Query" name:"Topic"`
 	Tag        *[]OnsTopicListTag `position:"Query" name:"Tag"  type:"Repeated"`

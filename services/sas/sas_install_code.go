@@ -77,8 +77,8 @@ type SasInstallCodeRequest struct {
 // SasInstallCodeResponse is the response struct for api SasInstallCode
 type SasInstallCodeResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Data      string `json:"data" xml:"data"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateSasInstallCodeRequest creates a request to invoke SasInstallCode API

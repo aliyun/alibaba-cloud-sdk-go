@@ -71,18 +71,27 @@ func (client *Client) AddBodyTraceWithCallback(request *AddBodyTraceRequest, cal
 // AddBodyTraceRequest is the request struct for api AddBodyTrace
 type AddBodyTraceRequest struct {
 	*requests.RpcRequest
-	ExtraData string           `position:"Body" name:"ExtraData"`
-	PersonId  requests.Integer `position:"Body" name:"PersonId"`
-	Images    string           `position:"Body" name:"Images"`
-	DbId      requests.Integer `position:"Body" name:"DbId"`
+	FormatResultToJson requests.Boolean      `position:"Query" name:"FormatResultToJson"`
+	ExtraData          string                `position:"Body" name:"ExtraData"`
+	PersonId           requests.Integer      `position:"Body" name:"PersonId"`
+	OssFile            string                `position:"Query" name:"OssFile"`
+	Images             *[]AddBodyTraceImages `position:"Body" name:"Images"  type:"Json"`
+	RequestProxyBy     string                `position:"Query" name:"RequestProxyBy"`
+	DbId               requests.Integer      `position:"Body" name:"DbId"`
+}
+
+// AddBodyTraceImages is a repeated param struct in AddBodyTraceRequest
+type AddBodyTraceImages struct {
+	ImageURL  string `name:"ImageURL"`
+	ImageData string `name:"ImageData"`
 }
 
 // AddBodyTraceResponse is the response struct for api AddBodyTrace
 type AddBodyTraceResponse struct {
 	*responses.BaseResponse
-	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 

@@ -90,7 +90,7 @@ func CreateConvertK8sResourceRequest() (request *ConvertK8sResourceRequest) {
 	request = &ConvertK8sResourceRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ConvertK8sResource", "/pop/v5/oam/k8s_resource_convert", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ConvertK8sResource", "/pop/v5/oam/k8s_resource_convert", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

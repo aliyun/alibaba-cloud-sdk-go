@@ -71,8 +71,8 @@ func (client *Client) DescribeAppInstanceListWithCallback(request *DescribeAppIn
 // DescribeAppInstanceListRequest is the request struct for api DescribeAppInstanceList
 type DescribeAppInstanceListRequest struct {
 	*requests.RoaRequest
-	AppId        string           `position:"Query" name:"AppId"`
-	WithNodeInfo requests.Boolean `position:"Query" name:"WithNodeInfo"`
+	AppId        string `position:"Query" name:"AppId"`
+	WithNodeInfo string `position:"Query" name:"WithNodeInfo"`
 }
 
 // DescribeAppInstanceListResponse is the response struct for api DescribeAppInstanceList
@@ -89,7 +89,7 @@ func CreateDescribeAppInstanceListRequest() (request *DescribeAppInstanceListReq
 	request = &DescribeAppInstanceListRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "DescribeAppInstanceList", "/pop/v5/oam/app_instance_list", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "DescribeAppInstanceList", "/pop/v5/oam/app_instance_list", "edas", "openAPI")
 	request.Method = requests.GET
 	return
 }

@@ -17,7 +17,7 @@ package rds
 
 // LatencyTopNItem is a nested struct in rds response
 type LatencyTopNItem struct {
+	SQLText         string `json:"SQLText" xml:"SQLText"`
 	SQLExecuteTimes int64  `json:"SQLExecuteTimes" xml:"SQLExecuteTimes"`
 	AvgLatency      int64  `json:"AvgLatency" xml:"AvgLatency"`
-	SQLText         string `json:"SQLText" xml:"SQLText"`
 }

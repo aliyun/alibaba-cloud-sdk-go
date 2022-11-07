@@ -71,14 +71,15 @@ func (client *Client) DescribeAutoDelConfigWithCallback(request *DescribeAutoDel
 // DescribeAutoDelConfigRequest is the request struct for api DescribeAutoDelConfig
 type DescribeAutoDelConfigRequest struct {
 	*requests.RpcRequest
-	SourceIp string `position:"Query" name:"SourceIp"`
+	SourceIp                   string `position:"Query" name:"SourceIp"`
+	ResourceDirectoryAccountId string `position:"Query" name:"ResourceDirectoryAccountId"`
 }
 
 // DescribeAutoDelConfigResponse is the response struct for api DescribeAutoDelConfig
 type DescribeAutoDelConfigResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Days      int    `json:"Days" xml:"Days"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDescribeAutoDelConfigRequest creates a request to invoke DescribeAutoDelConfig API

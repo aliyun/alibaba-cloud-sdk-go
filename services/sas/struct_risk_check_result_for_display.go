@@ -17,18 +17,18 @@ package sas
 
 // RiskCheckResultForDisplay is a nested struct in sas response
 type RiskCheckResultForDisplay struct {
-	ItemId            int64              `json:"ItemId" xml:"ItemId"`
-	TaskId            int64              `json:"TaskId" xml:"TaskId"`
-	Title             string             `json:"Title" xml:"Title"`
 	RiskLevel         string             `json:"RiskLevel" xml:"RiskLevel"`
 	Status            string             `json:"Status" xml:"Status"`
-	AffectedCount     int                `json:"AffectedCount" xml:"AffectedCount"`
-	CheckTime         int64              `json:"CheckTime" xml:"CheckTime"`
-	RemainingTime     int                `json:"RemainingTime" xml:"RemainingTime"`
-	Sort              int                `json:"Sort" xml:"Sort"`
 	Type              string             `json:"Type" xml:"Type"`
-	StartStatus       string             `json:"StartStatus" xml:"StartStatus"`
+	Sort              int                `json:"Sort" xml:"Sort"`
 	RepairStatus      string             `json:"RepairStatus" xml:"RepairStatus"`
+	RemainingTime     int                `json:"RemainingTime" xml:"RemainingTime"`
+	ItemId            int64              `json:"ItemId" xml:"ItemId"`
+	StartStatus       string             `json:"StartStatus" xml:"StartStatus"`
+	AffectedCount     int                `json:"AffectedCount" xml:"AffectedCount"`
 	RiskAssertType    string             `json:"RiskAssertType" xml:"RiskAssertType"`
+	Title             string             `json:"Title" xml:"Title"`
+	TaskId            int64              `json:"TaskId" xml:"TaskId"`
+	CheckTime         int64              `json:"CheckTime" xml:"CheckTime"`
 	RiskItemResources []RiskItemResource `json:"RiskItemResources" xml:"RiskItemResources"`
 }

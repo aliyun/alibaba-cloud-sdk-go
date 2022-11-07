@@ -86,12 +86,12 @@ type GetApplicationListRequest struct {
 // GetApplicationListResponse is the response struct for api GetApplicationList
 type GetApplicationListResponse struct {
 	*responses.BaseResponse
-	HttpStatusCode int                      `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	Message        string                   `json:"Message" xml:"Message"`
-	RequestId      string                   `json:"RequestId" xml:"RequestId"`
-	Code           int                      `json:"Code" xml:"Code"`
-	Success        bool                     `json:"Success" xml:"Success"`
-	Data           DataInGetApplicationList `json:"Data" xml:"Data"`
+	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Message        string `json:"Message" xml:"Message"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	Code           int    `json:"Code" xml:"Code"`
+	Success        bool   `json:"Success" xml:"Success"`
+	Data           Data   `json:"Data" xml:"Data"`
 }
 
 // CreateGetApplicationListRequest creates a request to invoke GetApplicationList API

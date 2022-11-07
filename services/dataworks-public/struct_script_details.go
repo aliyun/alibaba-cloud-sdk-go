@@ -22,7 +22,7 @@ type ScriptDetails struct {
 	Script                   string                    `json:"Script" xml:"Script"`
 	SuccessfulResultSample   string                    `json:"SuccessfulResultSample" xml:"SuccessfulResultSample"`
 	ScriptConnection         ScriptConnection          `json:"ScriptConnection" xml:"ScriptConnection"`
+	ScriptRequestParameters  []ScriptRequestParameter  `json:"ScriptRequestParameters" xml:"ScriptRequestParameters"`
 	ScriptResponseParameters []ScriptResponseParameter `json:"ScriptResponseParameters" xml:"ScriptResponseParameters"`
 	ScriptErrorCodes         []ScriptErrorCode         `json:"ScriptErrorCodes" xml:"ScriptErrorCodes"`
-	ScriptRequestParameters  []ScriptRequestParameter  `json:"ScriptRequestParameters" xml:"ScriptRequestParameters"`
 }

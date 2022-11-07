@@ -71,10 +71,17 @@ func (client *Client) CreateResourceAccountWithCallback(request *CreateResourceA
 // CreateResourceAccountRequest is the request struct for api CreateResourceAccount
 type CreateResourceAccountRequest struct {
 	*requests.RpcRequest
-	AccountNamePrefix string `position:"Query" name:"AccountNamePrefix"`
-	ParentFolderId    string `position:"Query" name:"ParentFolderId"`
-	DisplayName       string `position:"Query" name:"DisplayName"`
-	PayerAccountId    string `position:"Query" name:"PayerAccountId"`
+	AccountNamePrefix string                      `position:"Query" name:"AccountNamePrefix"`
+	ParentFolderId    string                      `position:"Query" name:"ParentFolderId"`
+	DisplayName       string                      `position:"Query" name:"DisplayName"`
+	Tag               *[]CreateResourceAccountTag `position:"Query" name:"Tag"  type:"Repeated"`
+	PayerAccountId    string                      `position:"Query" name:"PayerAccountId"`
+}
+
+// CreateResourceAccountTag is a repeated param struct in CreateResourceAccountRequest
+type CreateResourceAccountTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // CreateResourceAccountResponse is the response struct for api CreateResourceAccount

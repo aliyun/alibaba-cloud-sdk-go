@@ -78,12 +78,12 @@ type ResumeInstanceRequest struct {
 // ResumeInstanceResponse is the response struct for api ResumeInstance
 type ResumeInstanceResponse struct {
 	*responses.BaseResponse
-	ErrorCode      string `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMessage   string `json:"ErrorMessage" xml:"ErrorMessage"`
 	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	Success        bool   `json:"Success" xml:"Success"`
 	Data           bool   `json:"Data" xml:"Data"`
+	ErrorMessage   string `json:"ErrorMessage" xml:"ErrorMessage"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	ErrorCode      string `json:"ErrorCode" xml:"ErrorCode"`
+	Success        bool   `json:"Success" xml:"Success"`
 }
 
 // CreateResumeInstanceRequest creates a request to invoke ResumeInstance API

@@ -17,7 +17,7 @@ package adb
 
 // IPArray is a nested struct in adb response
 type IPArray struct {
-	DBClusterIPArrayName      string `json:"DBClusterIPArrayName" xml:"DBClusterIPArrayName"`
-	SecurityIPList            string `json:"SecurityIPList" xml:"SecurityIPList"`
 	DBClusterIPArrayAttribute string `json:"DBClusterIPArrayAttribute" xml:"DBClusterIPArrayAttribute"`
+	SecurityIPList            string `json:"SecurityIPList" xml:"SecurityIPList"`
+	DBClusterIPArrayName      string `json:"DBClusterIPArrayName" xml:"DBClusterIPArrayName"`
 }

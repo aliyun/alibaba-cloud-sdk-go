@@ -1,3 +1,1038 @@
+2022-11-04 Version: v1.61.1843
+- Generated 2020-03-20 for `imageprocess`.
+- Release ScreenEC.
+
+2022-11-03 Version: v1.61.1842
+- Generated 2020-04-07 for `cas`.
+- Support encrypt and decrypt.
+
+2022-11-03 Version: v1.61.1841
+- Generated 2014-08-28 for `Ess`.
+- ScaleWithAdjustment API support desiredCapacity scalinggroup concurrent scaling.
+
+2022-11-02 Version: v1.61.1840
+- Generated 2020-09-07 for `Config`.
+- Fix ListManagedRules bugs.
+
+2022-11-02 Version: v1.61.1839
+- Generated 2017-09-12 for `Cbn`.
+- Update ListTransitRouterPrefixListAssociation support NextHop and NextHopType filter.
+- Update ListTransitRouterPrefixListAssociation support TransitRouterRouteTableId  filter.
+- Update ListTrafficMarkingPolicies no TrafficMatchRules field in response if no TrafficMarkingPolicyId in request.
+- Update ListCenInterRegionTrafficQosPolicies no TrafficQosQueues field in response if no TrafficQosPolicyId in request.
+
+2022-11-02 Version: v1.61.1838
+- Generated 2019-04-30 for `schedulerx2`.
+- ListJobs return JobType and XAttrs.
+- GetJobInfo return JobType and XAttrs.
+
+2022-11-01 Version: v1.61.1837
+- Generated 2019-12-30 for `imageseg`.
+- Update RefineMask.
+
+2022-10-31 Version: v1.61.1836
+- Generated 2016-11-01 for `live`.
+- Live pre sdk test.
+
+2022-10-28 Version: v1.61.1835
+- Generated 2018-11-01 for `dms-enterprise`.
+- Support BuyPayAsYouGoOrder, RefundPayAsYouGoOrder, ListEffectiveOrders, ListClassificationTemplates.
+- Modify RegisterInstance, UpdateInstance, ListInstances, GetInstance, GetApprovalDetail.
+
+2022-10-28 Version: v1.61.1834
+- Generated 2020-06-16 for `Alb`.
+- Support Latest APIs.
+
+2022-10-27 Version: v1.61.1833
+- Generated 2018-05-10 for `Cdn`.
+- Add BatchDescribeCdnIpInfo.
+
+2022-10-27 Version: v1.61.1832
+- Generated 2018-01-15 for `dcdn`.
+- Update BatchAddDcdnDomain,add error code.
+
+2022-10-27 Version: v1.61.1831
+- Generated 2018-01-20 for `Iot`.
+- Iot_20180120 Old sdk.
+
+2022-10-27 Version: v1.61.1830
+- Generated 2018-05-10 for `Cdn`.
+- Add DescribeWildcardDomainDetailData.
+
+2022-10-27 Version: v1.61.1829
+- Generated 2018-04-12 for `EHPC`.
+- ListNodesByQueue and ListJobsWithFilters add Async.
+
+2022-10-27 Version: v1.61.1828
+- Generated 2017-03-21 for `vod`.
+- Modify DescribeVodUserDomains api.
+- Modify CreateUploadImage api.
+
+2022-10-27 Version: v1.61.1827
+- Generated 2017-08-01 for `Edas`.
+- Update GetK8sApplication.
+
+2022-10-26 Version: v1.61.1826
+- Generated 2017-08-01 for `polardb`.
+- Support serverless feature.
+
+2022-10-25 Version: v1.61.1825
+- Generated 2018-01-31 for `Edas`.
+- Update GetK8sApplication.
+
+2022-10-25 Version: v1.61.1824
+- Generated 2019-06-24 for `eais`.
+- OpenAPI CreateEaiJupyter add optional parameter `EnvironmentVar`.
+
+2022-10-21 Version: v1.61.1823
+- Generated 2017-09-12 for `Cbn`.
+- Update ListTransitRouterVpnAttachments fix ResourceType .
+- Update CreateCenBandwidthPackage support service type .
+- Update DescribeCenBandwidthPackages support service type .
+- Update ModifyCenBandwidthpackageSpec support service type .
+- Update CreateTransitRouterVpcAttachment support  at most 10 avaliable zones.
+
+2022-10-20 Version: v1.61.1822
+- Generated 2020-02-17 for `Dytnsapi`.
+- Support Service of number analysis.
+
+2022-10-19 Version: v1.61.1821
+- Generated 2015-12-01 for `Dds`.
+- Update by SDK platform.
+
+2022-10-19 Version: v1.61.1820
+- Generated 2020-03-31 for `ResourceManager`.
+- Supported more language for resourcemanager.
+
+2022-10-19 Version: v1.61.1819
+- Generated 2020-06-15 for `hitsdb`.
+- Update Lindorm OpenAPI.
+
+2022-10-18 Version: v1.61.1818
+- Generated 2019-09-30 for `imageenhan`.
+- Update MakeSuperResolutionImage.
+
+2022-10-17 Version: v1.61.1817
+- Generated 2019-12-30 for `imageseg`.
+
+
+2022-10-17 Version: v1.61.1816
+- Generated 2019-09-30 for `imagerecog`.
+- Update TaggingAdImage.
+
+2022-10-17 Version: v1.61.1815
+- Generated 2020-03-20 for `videoenhan`.
+- Release MergeVideoModelFace.
+
+2022-10-17 Version: v1.61.1814
+- Generated 2021-01-31 for `threedvision`.
+- Release EstimateMonocularVideoDepth.
+
+2022-10-17 Version: v1.61.1813
+- Generated 2020-03-20 for `videorecog`.
+- Update RecognizeVideoCastCrewList.
+
+2022-10-17 Version: v1.61.1812
+- Generated 2020-03-20 for `videoseg`.
+- Update videoseg.
+
+2022-10-17 Version: v1.61.1811
+- Generated 2019-12-30 for `ocr`.
+- Release RecognizeVATInvoice.
+
+2022-10-17 Version: v1.61.1810
+- Generated 2020-03-20 for `imageprocess`.
+- Release ScreenEC.
+
+2022-10-17 Version: v1.61.1809
+- Generated 2019-09-01 for `ahas-openapi`.
+- Support thresholdMode in flow rule api.
+
+2022-10-14 Version: v1.61.1808
+- Generated 2014-05-26 for `Ecs`.
+- Add GPUMemorySize to DescribeInstanceTypes api.
+
+2022-10-14 Version: v1.61.1807
+- Generated 2019-12-30 for `ocr`.
+- Release RecognizeVATInvoice.
+
+2022-10-13 Version: v1.61.1806
+- Generated 2017-11-10 for `Ens`.
+- Support DescribeAICImages.
+
+2022-10-13 Version: v1.61.1805
+- Generated 2016-08-01 for `Push`.
+- Supported AndroidNotificationGroup for Push and MassPush.
+- Add Honor channel support.
+
+2022-10-13 Version: v1.61.1804
+- Generated 2020-05-18 for `dataworks-public`.
+
+
+2022-10-11 Version: v1.61.1803
+- Generated 2021-02-04 for `AIWorkSpace`.
+- Fix CodeSourceItem spec.
+
+2022-10-10 Version: v1.61.1802
+- Generated 2017-08-01 for `polardb`.
+- Support serverless feature.
+
+2022-10-10 Version: v1.61.1801
+- Generated 2019-06-24 for `eais`.
+- Add OpenAPI CreateEaiJupyter.
+- Fixd bugs for OpenAPI  DeleteEaiAll.
+
+2022-10-08 Version: v1.61.1800
+- Generated 2015-12-01 for `Dds`.
+- Update by SDK platform.
+
+2022-09-29 Version: v1.61.1799
+- Generated 2019-09-30 for `imageenhan`.
+- Update MakeSuperResolutionImage.
+
+2022-09-29 Version: v1.61.1798
+- Generated 2020-03-20 for `videoenhan`.
+- Release MergeVideoModelFace.
+
+2022-09-29 Version: v1.61.1797
+- Generated 2019-12-30 for `imageseg`.
+- Update RefineMask.
+
+2022-09-29 Version: v1.61.1796
+- Generated 2019-12-30 for `facebody`.
+- Update CompareFace.
+
+2022-09-29 Version: v1.61.1795
+- Generated 2020-03-20 for `videorecog`.
+- Update RecognizeVideoCastCrewList.
+
+2022-09-29 Version: v1.61.1794
+- Generated 2019-04-30 for `schedulerx2`.
+- Update Job Support Incremental Updating.
+
+2022-09-27 Version: v1.61.1793
+- Generated 2019-04-30 for `schedulerx2`.
+- Create Job Support XAttrs.
+
+2022-09-27 Version: v1.61.1792
+- Generated 2015-12-01 for `Dds`.
+- Update by SDK platform.
+
+2022-09-26 Version: v1.61.1791
+- Generated 2021-11-19 for `viapi-regen`.
+- Release CustomizeClassifyImage.
+
+2022-09-23 Version: v1.61.1790
+- Generated 2017-09-12 for `Cbn`.
+- Add new API DescribeGrantRulesToResource .
+- Update DescribeGrantRulesToCen support MaxResult and nextToken .
+- Update ListTransitRouterPrefixlistAssociation return TransitRouterId and TransitRouterTableId .
+
+2022-09-23 Version: v1.61.1789
+- Generated 2017-11-10 for `Ens`.
+- Support ipv4-network.
+
+2022-09-22 Version: v1.61.1788
+- Generated 2021-01-31 for `threedvision`.
+- Release EstimateMonocularVideoDepth.
+
+2022-09-21 Version: v1.61.1787
+- Generated 2016-11-01 for `live`.
+
+
+2022-09-21 Version: v1.61.1786
+- Generated 2020-02-17 for `Dytnsapi`.
+- Automatically generate sdk tasks.
+
+2022-09-21 Version: v1.61.1785
+- Generated 2020-03-20 for `imageprocess`.
+- Release ScreenEC.
+
+2022-09-20 Version: v1.61.1784
+- Generated 2022-01-19 for `Mns-open`.
+- Remove useless Agent parameters.
+
+2022-09-19 Version: v1.61.1783
+- Generated 2021-01-31 for `threedvision`.
+- Release EstimateMonocularVideoDepth.
+
+2022-09-19 Version: v1.61.1782
+- Generated 2019-06-01 for `oos`.
+- Add ops item APIs.
+
+2022-09-16 Version: v1.61.1781
+- Generated 2017-05-18 for `antiddos-public`.
+- Add location endpoint.
+
+2022-09-16 Version: v1.61.1780
+- Generated 2017-05-18 for `antiddos-public`.
+- Init amp.
+
+2022-09-16 Version: v1.61.1779
+- Generated 2017-05-18 for `antiddos-public`.
+- Init amp.
+
+2022-09-16 Version: v1.61.1778
+- Generated 2017-05-18 for `antiddos-public`.
+- Init amp.
+
+2022-09-16 Version: v1.61.1777
+- Generated 2018-01-15 for `dcdn`.
+- Update DescribeDcdnReport.
+
+2022-09-16 Version: v1.61.1776
+- Generated 2018-05-10 for `Cdn`.
+- Update DescribeCdnReport.
+
+2022-09-16 Version: v1.61.1775
+- Generated 2018-01-20 for `Iot`.
+- Iot_20180120 old version sdk.
+
+2022-09-15 Version: v1.61.1774
+- Generated 2020-01-01 for `Dts`.
+- DTS SDK.
+
+2022-09-15 Version: v1.61.1773
+- Generated 2016-11-01 for `live`.
+
+
+2022-09-15 Version: v1.61.1772
+- Generated 2016-11-01 for `live`.
+
+
+2022-09-14 Version: v1.61.1771
+- Generated 2019-02-14 for `Ons`.
+- Add spInstanceId and spInstanceType for api OnsInstanceBaseInfo.
+
+2022-09-14 Version: v1.61.1770
+- Generated 2017-07-14 for `EHPC`.
+undefined
+
+2022-09-14 Version: v1.61.1769
+- Generated 2018-02-08 for `Domain`.
+- QueryBrokerDemand add PartnerDomain.
+
+2022-09-13 Version: v1.61.1768
+- Generated 2018-01-15 for `dcdn`.
+- Update DescribeDcdnL2Vips.
+
+2022-09-09 Version: v1.61.1767
+- Generated 2017-08-01 for `polardb`.
+- Support new feature.
+
+2022-09-08 Version: v1.61.1766
+- Generated 2022-01-01 for `quickbi-public`.
+- Add API BatchAddFeishuUsers.
+
+2022-09-08 Version: v1.61.1765
+- Generated 2022-01-01 for `quickbi-public`.
+- Update API Error Code And Some Parameters Checks.
+- Update API CreateTicket QPS.
+
+2022-09-07 Version: v1.61.1764
+- Generated 2022-08-18 for `SmartSales`.
+- SmartSales-OpenAPI.
+
+2022-09-07 Version: v1.61.1763
+- Generated 2014-05-26 for `Ecs`.
+- Support attribute filtering for DescribeInstanceTypes.
+- Provide cpuArchitecture and insatnceCategory attribute in DescribeInstanceTypes.
+
+2022-09-06 Version: v1.61.1762
+- Generated 2018-01-20 for `Iot`.
+- Iot_20180120 old version sdk.
+
+2022-09-06 Version: v1.61.1761
+- Generated 2020-01-01 for `Dts`.
+- DTS SDK.
+
+2022-09-05 Version: v1.61.1760
+- Generated 2019-08-08 for `ARMS`.
+- Update sdk.
+
+2022-09-05 Version: v1.61.1759
+- Generated 2019-08-08 for `ARMS`.
+- Update sdk.
+
+2022-09-05 Version: v1.61.1758
+- Generated 2018-05-10, 2014-11-11 for `Cdn`.
+- Support STS.
+
+2022-09-05 Version: v1.61.1757
+- Generated 2018-05-10 for `Cdn`.
+- Support STS.
+
+2022-09-05 Version: v1.61.1756
+- Generated 2014-11-11 for `Cdn`.
+- Init.
+
+2022-09-02 Version: v1.61.1755
+- Generated 2019-08-08 for `ARMS`.
+- Add SyncRecordingRules api.
+
+2022-09-01 Version: v1.61.1754
+- Generated 2019-08-08 for `ARMS`.
+- Add ListAlertEvents api.
+
+2022-09-01 Version: v1.61.1753
+- Generated 2019-08-08 for `ARMS`.
+- Add ListAlertEvents api.
+
+2022-09-01 Version: v1.61.1752
+- Generated 2018-01-15 for `dcdn`.
+- Add DescribeDcdnL2Vips.
+
+2022-08-31 Version: v1.61.1751
+- Generated 2017-11-15 for `scdn`.
+- Support STS.
+
+2022-08-31 Version: v1.61.1750
+- Generated 2020-05-18 for `dataworks-public`.
+
+
+2022-08-31 Version: v1.61.1749
+- Generated 2018-05-10 for `Cdn`.
+- Support STS.
+
+2022-08-31 Version: v1.61.1748
+- Generated 2014-08-15 for `Rds`.
+- Support More Open Api.
+
+2022-08-31 Version: v1.61.1747
+- Generated 2014-11-11 for `Cdn`.
+- Init.
+
+2022-08-31 Version: v1.61.1746
+- Generated 2014-05-26 for `Ecs`.
+- Support create image with boot mode.
+- Provide image boot mode info in DescribeImages.
+
+2022-08-31 Version: v1.61.1745
+- Generated 2018-01-15 for `dcdn`.
+- Add API.
+
+2022-08-31 Version: v1.61.1744
+- Generated 2018-06-12 for `VoiceNavigator`.
+- Supported new features etc.
+
+2022-08-29 Version: v1.61.1743
+- Generated 2020-01-16 for `DAS`.
+- ADD GetFullRequestSampleByInstanceId.
+
+2022-08-26 Version: v1.61.1742
+- Generated 2017-09-12 for `Cbn`.
+- Update param NextHopType visibility for DeleteTransitRouterPrefixListAssociation .
+
+2022-08-25 Version: v1.61.1741
+- Generated 2017-09-12 for `Cbn`.
+- Add AvailableZones for ListTransitRouterAvailableResource.
+
+2022-08-25 Version: v1.61.1740
+- Generated 2018-01-20 for `Iot`.
+- Iot_20180120 Old sdk.
+
+2022-08-25 Version: v1.61.1739
+- Generated 2017-03-21 for `vod`.
+- Add kms apis.
+
+2022-08-25 Version: v1.61.1738
+- Generated 2020-01-01 for `Dts`.
+- DTS SDK.
+
+2022-08-24 Version: v1.61.1737
+- Generated 2017-09-12 for `Cbn`.
+- Add ErrorCode for CreateTransitRouterPrefixListAssociation .
+- Add ErrorCode for DeleteTransitRouterPrefixListAssociation .
+- Update Requried params for CreateTransitRouterPrefixListAssociation .
+- Update Requried params for DeleteTransitRouterPrefixListAssociation .
+
+2022-08-24 Version: v1.61.1736
+- Generated 2020-03-20 for `imageprocess`.
+- Update ScreenChestCT.
+
+2022-08-23 Version: v1.61.1735
+- Generated 2017-09-12 for `Cbn`.
+- The action parameter is required for some APIs.
+- RegisterTransitRouterMulticastGroupSources and RegisterTransitRouterMulticastGroupMembers add parameter VpcId.
+
+2022-08-22 Version: v1.61.1734
+- Generated 2020-04-18 for `DBFS`.
+- Automatically generate sdk tasks.
+
+2022-08-22 Version: v1.61.1733
+- Generated 2020-04-18 for `DBFS`.
+- Automatically generate sdk tasks.
+
+2022-08-18 Version: v1.61.1732
+- Generated 2018-06-12 for `VoiceNavigator`.
+- Supported new features etc.
+
+2022-08-18 Version: v1.61.1731
+- Generated 2019-12-26 for `OutboundBot`.
+- Supported new features for outbound.
+
+2022-08-18 Version: v1.61.1730
+- Generated 2015-01-09 for `Alidns`.
+- Bump version.
+
+2022-08-18 Version: v1.61.1729
+- Generated 2020-01-01 for `Dts`.
+- DTS SDK.
+
+2022-08-17 Version: v1.61.1728
+- Generated 2020-01-16 for `DAS`.
+- ADD GetFullRequestSampleByInstanceId.
+
+2022-08-16 Version: v1.61.1727
+- Generated 2020-05-18 for `dataworks-public`.
+
+
+2022-08-16 Version: v1.61.1726
+- Generated 2020-06-15 for `hitsdb`.
+- Update Lindorm OpenAPI.
+
+2022-08-16 Version: v1.61.1725
+- Generated 2020-04-18 for `DBFS`.
+- The new parameter AdvancedFeatures is added to the CreateDbfs interface.
+
+2022-08-15 Version: v1.61.1724
+- Generated 2020-06-15 for `hitsdb`.
+- update Lindorm OpenAPI.
+
+2022-08-12 Version: v1.61.1723
+- Generated 2020-09-07 for `Config`.
+- Fix ListManagedRules bugs.
+
+2022-08-12 Version: v1.61.1722
+- Generated 2020-09-07 for `Config`.
+- Fix ListManagedRules bugs.
+
+2022-08-12 Version: v1.61.1721
+- Generated 2020-09-07 for `Config`.
+- Fix ListManagedRules bugs.
+
+2022-08-12 Version: v1.61.1720
+- Generated 2020-09-07 for `Config`.
+- Fix ListManagedRules bugs.
+
+2022-08-11 Version: v1.61.1719
+- Generated 2018-07-13 for `Ft`.
+- AMP version.
+
+2022-08-11 Version: v1.61.1718
+- Generated 2019-01-08 for `Config`.
+- Fix ListManagedRules bugs.
+
+2022-08-11 Version: v1.61.1717
+- Generated 2020-05-18 for `dataworks-public`.
+
+
+2022-08-10 Version: v1.61.1716
+- Generated 2022-04-30 for `Nlb`.
+- Nlb endpoint config.
+
+2022-08-09 Version: v1.61.1715
+- Generated 2017-11-10 for `Ens`.
+- Support API ARMInstance.
+- Support Control ARM API.
+
+2022-08-08 Version: v1.61.1714
+- Generated 2021-05-20 for `idaas-doraemon`.
+- ListOrderConsumeStatisticRecords add AliOrderCode.
+
+2022-08-08 Version: v1.61.1713
+- Generated 2022-04-30 for `Nlb`.
+- Nlb init.
+
+2022-08-05 Version: v1.61.1712
+- Generated 2010-10-11 for `LmzTest`.
+- Automatically generate sdk tasks.
+
+2022-08-05 Version: v1.61.1711
+- Generated 2016-04-28 for `Vpc`.
+
+
+2022-08-04 Version: v1.61.1710
+- Generated 2017-08-01 for `polardb`.
+- Support new feature.
+
+2022-08-03 Version: v1.61.1709
+- Generated 2014-05-15 for `Slb`.
+- Support Latest APIs.
+
+2022-08-03 Version: v1.61.1708
+- Generated 2020-03-31 for `ResourceManager`.
+- Supported more query conditions when searching resource group.
+
+2022-08-02 Version: v1.61.1707
+- Generated 2014-05-26 for `Ecs`.
+- Support ecs instance diagnostic features.
+
+2022-08-01 Version: v1.61.1706
+- Generated 2016-01-20 for `Kms`.
+- Update CreateKey and CreateSecret.
+
+2022-08-01 Version: v1.61.1705
+- Generated 2017-08-01 for `polardb`.
+- Support new feature.
+
+2022-07-29 Version: v1.61.1704
+- Generated 2018-07-13 for `Ft`.
+- AMP version.
+
+2022-07-29 Version: v1.61.1703
+- Generated 2018-07-13 for `Ft`.
+- AMP version.
+
+2022-07-29 Version: v1.61.1702
+- Generated 2018-07-13 for `Ft`.
+- AMP version.
+
+2022-07-29 Version: v1.61.1701
+- Generated 2019-08-08 for `ARMS`.
+- Add AddPrometheusInstance api.
+
+2022-07-29 Version: v1.61.1700
+- Generated 2020-01-16 for `DAS`.
+- Del GetGeneralAbnormalEventsCount.
+
+2022-07-28 Version: v1.61.1699
+- Generated 2018-07-13 for `Ft`.
+- AMP version.
+
+2022-07-28 Version: v1.61.1698
+- Generated 2019-03-06 for `Dbs`.
+- Automatically generate sdk tasks.
+
+2022-07-28 Version: v1.61.1697
+- Generated 2020-01-16 for `DAS`.
+- Add GetGeneralAbnormalEventsCount.
+
+2022-07-28 Version: v1.61.1696
+- Generated 2017-03-21 for `vod`.
+- Add GetImageInfos api.
+
+2022-07-27 Version: v1.61.1695
+- Generated 2018-11-01 for `dms-enterprise`.
+- Support ListProxies API to return protocolType, protocolPort and remove mysqlPort.
+- Support GetProxy API to return protocolType, protocolPort and remove mysqlPort.
+
+2022-07-27 Version: v1.61.1694
+- Generated 2019-09-16 for `alikafka`.
+
+
+2022-07-27 Version: v1.61.1693
+- Generated 2019-06-01 for `oos`.
+ - Update.
+
+2022-07-26 Version: v1.61.1692
+- Generated 2020-02-17 for `Dytnsapi`.
+- Support Service of number analysis.
+
+2022-07-26 Version: v1.61.1691
+- Generated 2017-11-10 for `Ens`.
+- Support API ARMInstance.
+- Support Control ARM API.
+
+2022-07-26 Version: v1.61.1690
+- Generated 2019-06-01 for `oos`.
+- Add cmsGroupId parameter to CreateApplicationGroupRequest.
+
+2022-07-25 Version: v1.61.1689
+- Generated 2019-12-30 for `facebody`.
+- Update MonitorExamination.
+
+2022-07-25 Version: v1.61.1688
+- Generated 2020-03-20 for `imageprocess`.
+- Update SegmentOAR.
+
+2022-07-22 Version: v1.61.1687
+- Generated 2020-03-20 for `imageprocess`.
+- Update ScreenChestCT  Release SegmentOAR.
+
+2022-07-22 Version: v1.61.1686
+- Generated 2020-03-20 for `imageprocess`.
+- Update ScreenChestCT - Release SegmentOAR.
+
+2022-07-21 Version: v1.61.1685
+- Generated 2020-09-07 for `Config`.
+- Support PreConfigRule.
+
+2022-07-21 Version: v1.61.1684
+- Generated 2017-03-21 for `vod`.
+- Add kms apis.
+
+2022-07-21 Version: v1.61.1683
+- Generated 2018-01-29 for `Domain`.
+- Ram action config.
+
+2022-07-21 Version: v1.61.1682
+- Generated 2021-04-07 for `MscCommonQuery`.
+- Support Msc Common Query.
+
+2022-07-20 Version: v1.61.1681
+- Generated 2020-07-06 for `Actiontrail`.
+- Support AK Audit API.
+
+2022-07-20 Version: v1.61.1680
+- Generated 2020-05-18 for `dataworks-public`.
+
+
+2022-07-19 Version: v1.61.1679
+- Generated 2020-05-18 for `dataworks-public`.
+
+
+2022-07-19 Version: v1.61.1678
+- Generated 2017-09-12 for `Cbn`.
+- Support MatchAddressType in RouteMap API.
+
+2022-07-18 Version: v1.61.1677
+- Generated 2020-02-01 for `cloudesl`.
+- Add Mutimedia Screen API Support.
+
+2022-07-18 Version: v1.61.1676
+- Generated 2022-05-20 for `btripOpen`.
+- Test.
+
+2022-07-15 Version: v1.61.1675
+- Generated 2014-05-26 for `Ecs`.
+- Support Security Group Batch Manager Rules.
+
+2022-07-13 Version: v1.61.1674
+- Generated 2020-01-16 for `DAS`.
+- Add UpdateAutoSqlOptimizeStatus API.
+
+2022-07-12 Version: v1.61.1673
+- Generated 2017-05-18 for `antiddos-public`.
+- Automatically generate sdk tasks.
+
+2022-07-11 Version: v1.61.1672
+- Generated 2014-05-26 for `Ecs`.
+- Support Storage And Network Features For LaunchTemplate.
+
+2022-07-11 Version: v1.61.1671
+- Generated 2018-01-20 for `Iot`.
+- Add new api for rule.
+
+2022-07-08 Version: v1.61.1670
+- Generated 2022-02-12 for `Wfts`.
+- Automatically generate sdk tasks.
+
+2022-07-08 Version: v1.61.1669
+- Generated 2022-02-12 for `Wfts`.
+- Automatically generate sdk tasks.
+
+2022-07-08 Version: v1.61.1668
+- Generated 2020-07-06 for `Actiontrail`.
+- Support AK Audit API.
+
+2022-07-07 Version: v1.61.1667
+- Generated 2022-02-12 for `Wfts`.
+- Automatically generate sdk tasks.
+
+2022-07-07 Version: v1.61.1666
+- Generated 2020-09-30 for `ecd`.
+- Support asp remote coordinate
+
+2022-07-04 Version: v1.61.1665
+- Generated 2022-01-01 for `quickbi-public`.
+- Add API QueryEmbeddedStaus.
+
+2022-07-04 Version: v1.61.1664
+- Generated 2022-01-01 for `quickbi-public`.
+- Update API error codes.
+- Adjust parameters verification rules for some APIs.
+
+2022-07-04 Version: v1.61.1663
+- Generated 2017-09-12 for `Cbn`.
+- Support autoPulibshRoute for UpdateTransitRouterVpnAttachment.
+- Support Vpn-Attachment.
+- Support Sys-Flowlog.
+
+2022-07-01 Version: v1.61.1662
+- Generated 2020-01-01 for `ddoscoo`.
+- Update sdk.
+
+2022-06-30 Version: v1.61.1661
+- Generated 2018-08-28 for `Tag`.
+- Add Policy APIs.
+
+2022-06-30 Version: v1.61.1660
+- Generated 2022-03-31 for `apds`.
+- CreateMigrationJob SDK.
+
+2022-06-30 Version: v1.61.1659
+- Generated 2019-12-30 for `facebody`.
+- Update ListFaceDbs.
+
+2022-06-28 Version: v1.61.1658
+- Generated 2017-12-14 for `BssOpenApi`.
+- Update QuerySavingsPlansDeductLog add field OwnerId.
+
+2022-06-28 Version: v1.61.1657
+- Generated 2020-03-20 for `videorecog`.
+- Update RecognizeVideoCastCrewList.
+
+2022-06-28 Version: v1.61.1656
+- Generated 2020-02-17 for `Dytnsapi`.
+- Support Service of number analysis.
+
+2022-06-24 Version: v1.61.1655
+- Generated 2020-03-20 for `imageprocess`.
+- Update ScreenChestCT.
+
+2022-06-24 Version: v1.61.1654
+- Generated 2018-06-12 for `VoiceNavigator`.
+- Supported new features etc.
+
+2022-06-24 Version: v1.61.1653
+- Generated 2019-12-26 for `OutboundBot`.
+- Supported new features for outbound.
+
+2022-06-23 Version: v1.61.1652
+- Generated 2017-09-12 for `Cbn`.
+- Support Vpn-Attachment.
+- Support Sys-Flowlog.
+
+2022-06-22 Version: v1.61.1651
+- Generated 2019-01-01 for `Cms`.
+- Release Go api.
+
+2022-06-22 Version: v1.61.1650
+- Generated 2020-09-07 for `Config`.
+- Fix bugs.
+
+2022-06-21 Version: v1.61.1649
+- Generated 2020-12-30 for `AmpTest`.
+- Automatically generate sdk tasks.
+
+2022-06-21 Version: v1.61.1648
+- Generated 2016-11-01 for `live`.
+
+
+2022-06-21 Version: v1.61.1647
+- Generated 2020-06-16 for `Alb`.
+- Support Latest APIs.
+
+2022-06-21 Version: v1.61.1646
+- Generated 2019-12-30 for `ocr`.
+- Release RecognizeTurkeyIdentityCard RecognizeMalaysiaIdentityCard RecognizeRussiaIdentityCard RecognizeIndonesiaIdentityCard RecognizeUkraineIdentityCard RecognizeVietnamIdentityCard.
+
+2022-06-20 Version: v1.61.1645
+- Generated 2020-03-20 for `imageprocess`.
+- Update ScreenChestCT CalcCACS.
+
+2022-06-20 Version: v1.61.1644
+- Generated 2019-09-30 for `imageenhan`.
+- Update MakeSuperResolutionImage.
+
+2022-06-20 Version: v1.61.1643
+- Generated 2018-01-20 for `Iot`.
+- Support Easy Connect New API.
+
+2022-06-17 Version: v1.61.1642
+- Generated 2021-05-20 for `idaas-doraemon`.
+- ListOrderConsumeStatisticRecords add AliOrderCode.
+
+2022-06-16 Version: v1.61.1641
+- Generated 2021-05-20 for `idaas-doraemon`.
+- Add ListOrderConsumeStatisticRecords Open API.
+
+2022-06-16 Version: v1.61.1640
+- Generated 2017-08-01 for `Edas`.
+- Supported ExternalTrafficPolicy for CreateK8sService.
+- Supported ExternalTrafficPolicy for UpdateK8sService.
+
+2022-06-14 Version: v1.61.1639
+- Generated 2019-08-08 for `ARMS`.
+
+
+2022-06-13 Version: v1.61.1638
+- Generated 2020-03-20 for `imageprocess`.
+- Update ScreenChestCT.
+
+2022-06-13 Version: v1.61.1637
+- Generated 2019-04-30 for `schedulerx2`.
+- Create Job Support Setting Status.
+
+2022-06-12 Version: v1.61.1636
+- Generated 2020-12-30 for `AmpTest`.
+- Automatically generate sdk tasks.
+
+2022-06-12 Version: v1.61.1635
+- Generated 2020-12-30 for `AmpTest`.
+- Automatically generate sdk tasks.
+
+2022-06-12 Version: v1.61.1634
+- Generated 2020-12-30 for `AmpTest`.
+- Automatically generate sdk tasks.
+
+2022-06-10 Version: v1.61.1633
+- Generated 2014-05-26 for `Ecs`.
+- Support removing a instance from a deployment set
+
+2022-06-09 Version: v1.61.1632
+- Generated 2021-05-20 for `idaas-doraemon`.
+- Add ListCostUnitOrders Open API.
+
+2022-06-09 Version: v1.61.1631
+- Generated 2020-03-20 for `imageprocess`.
+- Update ScreenChestCT.
+
+2022-06-08 Version: v1.61.1630
+- Generated 2018-11-01 for `dms-enterprise`.
+- Support GetDataCorrectOrderDetail API to return execMode type.
+- Support CreateDataCorrectOrder, CreateFreeLockCorrectOrder API submit with execMode type.
+
+
+2022-06-08 Version: v1.61.1629
+- Generated 2020-12-30 for `AmpTest`.
+- Automatically generate sdk tasks.
+
+2022-06-07 Version: v1.61.1628
+- Generated 2019-03-15 for `adb`.
+- Support ModifyDBClusterPayType.
+
+2022-06-07 Version: v1.61.1627
+- Generated 2020-12-30 for `AmpTest`.
+- Automatically generate sdk tasks.
+
+2022-06-07 Version: v1.61.1626
+- Generated 2020-12-30 for `AmpTest`.
+- Automatically generate sdk tasks.
+
+2022-06-07 Version: v1.61.1625
+- Generated 2014-08-28 for `Ess`.
+- ScaleWithAdjustment API support desired scalingGroup .
+
+2022-06-06 Version: v1.61.1624
+- Generated 2019-05-31 for `mse`.
+- Expose global settings for api AddGateway.
+
+2022-06-02 Version: v1.61.1623
+- Generated 2020-12-30 for `AmpTest`.
+- Fix.
+
+2022-06-02 Version: v1.61.1622
+- Generated 2020-12-30 for `AmpTest`.
+- Automatically generate sdk tasks.
+
+2022-06-01 Version: v1.61.1621
+- Generated 2020-12-30 for `AmpTest`.
+- Automatically generate sdk tasks.
+
+2022-05-31 Version: v1.61.1620
+- Generated 2020-09-07 for `Config`.
+- Support aggregator delivery.
+
+2022-05-31 Version: v1.61.1619
+- Generated 2020-02-01 for `cloudesl`.
+- Add Template API Support.
+
+2022-05-30 Version: v1.61.1618
+- Generated 2019-01-15 for `Qualitycheck`.
+- Add Api.
+
+2022-05-30 Version: v1.61.1617
+- Generated 2019-08-08 for `ARMS`.
+- Update DeleteGrafanaResource.
+
+2022-05-30 Version: v1.61.1616
+- Generated 2017-08-01 for `Edas`.
+- Add output field deployGroup env in GetK8sApplication.
+
+2022-05-30 Version: v1.61.1615
+- Generated 2020-05-18 for `dataworks-public`.
+
+
+2022-05-30 Version: v1.61.1614
+- Generated 2019-08-08 for `ARMS`.
+- Arms AlertManager DescrieWebhookContacts.
+- Param Adapt SDK.
+
+2022-05-27 Version: v1.61.1613
+- Generated 2020-03-20 for `imageprocess`.
+- Release DetectLymph DetectPanc.
+
+2022-05-26 Version: v1.61.1612
+- Generated 2018-12-12 for `vs`.
+- Add PodIp for DescribeRenderingDevices and DescribeClusterDevices.
+
+2022-05-25 Version: v1.61.1611
+- Generated 2020-01-16 for `DAS`.
+- Kill Redis instance all sessions api.
+
+2022-05-25 Version: v1.61.1610
+- Generated 2019-12-30 for `ocr`.
+- Release RecognizeTurkeyIdentityCard RecognizeMalaysiaIdentityCard RecognizeRussiaIdentityCard RecognizeIndonesiaIdentityCard RecognizeIndonesiaIdentityCard.
+
+2022-05-25 Version: v1.61.1609
+- Generated 2019-01-01 for `Cms`.
+- Add Hybrid Monitor API.
+
+2022-05-24 Version: v1.61.1608
+- Generated 2014-08-15 for `Rds`.
+- StartDBInstance parameter change.
+
+2022-05-24 Version: v1.61.1607
+- Generated 2015-12-01 for `Dds`.
+- Fix endpoint for new regionId.
+
+2022-05-24 Version: v1.61.1606
+- Generated 2017-09-12 for `Cbn`.
+- update DescribeCenChildInstanceRouteEntries param ChildInstanceRegionId not required.
+
+2022-05-23 Version: v1.61.1605
+- Generated 2022-05-17 for `btripOpen`.
+- Api init.
+
+2022-05-23 Version: v1.61.1604
+- Generated 2014-05-26 for `Ecs`.
+- Support systemdisk encrypt and arns.
+- Update tag parameters.
+
+2022-05-23 Version: v1.61.1603
+- Generated 2019-08-08 for `ARMS`.
+- Update DeleteGrafanaResource API.
+
+2022-05-20 Version: v1.61.1602
+- Generated 2020-07-08 for `amp`.
+- Test.
+
+2022-05-20 Version: v1.61.1601
+- Generated 2020-01-16 for `DAS`.
+- Dbgateway support delete api.
+
+
+2022-05-20 Version: v1.61.1600
+- Generated 2019-08-08 for `ARMS`.
+- Update ListDashBoards and AddPrometheusGlobalViewByAliClusterIds api.
+
+2022-05-19 Version: v1.61.1599
+- Generated 2017-12-14 for `BssOpenApi`.
+- Update SubscribeBillToOSS and QueryBillToOSSSubscription to support BucketPath.
+
+2022-05-19 Version: v1.61.1598
+- Generated 2021-05-20 for `idaas-doraemon`.
+- Support all language.
+
+2022-05-18 Version: v1.61.1597
+- Generated 2017-08-01 for `Edas`.
+- Supported EnableEmptyPushReject for InsertK8sApplication.
+- Supported EnableLosslessRule for InsertK8sApplication.
+- Supported LosslessRuleWarmupTime for InsertK8sApplication.
+- Supported LosslessRuleDelayTime for InsertK8sApplication.
+- Supported LosslessRuleFuncType for InsertK8sApplication.
+- Supported LosslessRuleAligned for InsertK8sApplication.
+- Supported LosslessRuleRelated for InsertK8sApplication.
+- Supported EnableEmptyPushReject for DeployK8sApplication.
+- Supported EnableLosslessRule for DeployK8sApplication.
+- Supported LosslessRuleWarmupTime for DeployK8sApplication.
+- Supported LosslessRuleDelayTime for DeployK8sApplication.
+- Supported LosslessRuleFuncType for DeployK8sApplication.
+- Supported LosslessRuleAligned for DeployK8sApplication.
+- Supported LosslessRuleRelated for DeployK8sApplication.
+
 2022-05-17 Version: v1.61.1596
 - Generated 2014-05-15 for `Slb`.
 - Support Latest APIs.

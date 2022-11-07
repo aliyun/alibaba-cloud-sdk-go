@@ -82,8 +82,8 @@ type DescribeDBInstanceMonitorRequest struct {
 // DescribeDBInstanceMonitorResponse is the response struct for api DescribeDBInstanceMonitor
 type DescribeDBInstanceMonitorResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Period    string `json:"Period" xml:"Period"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDescribeDBInstanceMonitorRequest creates a request to invoke DescribeDBInstanceMonitor API

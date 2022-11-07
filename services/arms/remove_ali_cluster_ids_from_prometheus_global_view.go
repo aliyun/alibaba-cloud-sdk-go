@@ -88,7 +88,7 @@ func CreateRemoveAliClusterIdsFromPrometheusGlobalViewRequest() (request *Remove
 	request = &RemoveAliClusterIdsFromPrometheusGlobalViewRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "RemoveAliClusterIdsFromPrometheusGlobalView", "", "")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "RemoveAliClusterIdsFromPrometheusGlobalView", "arms", "openAPI")
 	request.Method = requests.POST
 	return
 }

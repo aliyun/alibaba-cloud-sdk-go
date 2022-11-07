@@ -80,8 +80,8 @@ type DescribeHADiagnoseConfigRequest struct {
 // DescribeHADiagnoseConfigResponse is the response struct for api DescribeHADiagnoseConfig
 type DescribeHADiagnoseConfigResponse struct {
 	*responses.BaseResponse
-	RequestId         string `json:"RequestId" xml:"RequestId"`
 	TcpConnectionType string `json:"TcpConnectionType" xml:"TcpConnectionType"`
+	RequestId         string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDescribeHADiagnoseConfigRequest creates a request to invoke DescribeHADiagnoseConfig API

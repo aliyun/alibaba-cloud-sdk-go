@@ -17,20 +17,22 @@ package ecd
 
 // Bundle is a nested struct in ecd response
 type Bundle struct {
-	Description          string               `json:"Description" xml:"Description"`
-	BundleType           string               `json:"BundleType" xml:"BundleType"`
-	OsType               string               `json:"OsType" xml:"OsType"`
-	StockState           string               `json:"StockState" xml:"StockState"`
-	DesktopType          string               `json:"DesktopType" xml:"DesktopType"`
-	ProtocolType         string               `json:"ProtocolType" xml:"ProtocolType"`
-	BundleId             string               `json:"BundleId" xml:"BundleId"`
-	ImageId              string               `json:"ImageId" xml:"ImageId"`
-	ImageName            string               `json:"ImageName" xml:"ImageName"`
-	Language             string               `json:"Language" xml:"Language"`
-	BundleName           string               `json:"BundleName" xml:"BundleName"`
-	DesktopTypeFamily    string               `json:"DesktopTypeFamily" xml:"DesktopTypeFamily"`
-	CreationTime         string               `json:"CreationTime" xml:"CreationTime"`
-	SessionType          string               `json:"SessionType" xml:"SessionType"`
-	DesktopTypeAttribute DesktopTypeAttribute `json:"DesktopTypeAttribute" xml:"DesktopTypeAttribute"`
-	Disks                []Disk               `json:"Disks" xml:"Disks"`
+	Description             string               `json:"Description" xml:"Description"`
+	BundleType              string               `json:"BundleType" xml:"BundleType"`
+	OsType                  string               `json:"OsType" xml:"OsType"`
+	StockState              string               `json:"StockState" xml:"StockState"`
+	DesktopType             string               `json:"DesktopType" xml:"DesktopType"`
+	ProtocolType            string               `json:"ProtocolType" xml:"ProtocolType"`
+	BundleId                string               `json:"BundleId" xml:"BundleId"`
+	ImageId                 string               `json:"ImageId" xml:"ImageId"`
+	ImageName               string               `json:"ImageName" xml:"ImageName"`
+	Language                string               `json:"Language" xml:"Language"`
+	BundleName              string               `json:"BundleName" xml:"BundleName"`
+	DesktopTypeFamily       string               `json:"DesktopTypeFamily" xml:"DesktopTypeFamily"`
+	CreationTime            string               `json:"CreationTime" xml:"CreationTime"`
+	SessionType             string               `json:"SessionType" xml:"SessionType"`
+	VolumeEncryptionEnabled bool                 `json:"VolumeEncryptionEnabled" xml:"VolumeEncryptionEnabled"`
+	VolumeEncryptionKey     string               `json:"VolumeEncryptionKey" xml:"VolumeEncryptionKey"`
+	DesktopTypeAttribute    DesktopTypeAttribute `json:"DesktopTypeAttribute" xml:"DesktopTypeAttribute"`
+	Disks                   []Disk               `json:"Disks" xml:"Disks"`
 }

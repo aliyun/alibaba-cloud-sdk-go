@@ -86,7 +86,7 @@ func CreateQueryPromInstallStatusRequest() (request *QueryPromInstallStatusReque
 	request = &QueryPromInstallStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "QueryPromInstallStatus", "", "")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "QueryPromInstallStatus", "arms", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -21,7 +21,7 @@ type WizardDetails struct {
 	FailedResultSample       string                    `json:"FailedResultSample" xml:"FailedResultSample"`
 	SuccessfulResultSample   string                    `json:"SuccessfulResultSample" xml:"SuccessfulResultSample"`
 	WizardConnection         WizardConnection          `json:"WizardConnection" xml:"WizardConnection"`
-	WizardErrorCodes         []WizardErrorCode         `json:"WizardErrorCodes" xml:"WizardErrorCodes"`
-	WizardResponseParameters []WizardResponseParameter `json:"WizardResponseParameters" xml:"WizardResponseParameters"`
 	WizardRequestParameters  []WizardRequestParameter  `json:"WizardRequestParameters" xml:"WizardRequestParameters"`
+	WizardResponseParameters []WizardResponseParameter `json:"WizardResponseParameters" xml:"WizardResponseParameters"`
+	WizardErrorCodes         []WizardErrorCode         `json:"WizardErrorCodes" xml:"WizardErrorCodes"`
 }

@@ -17,8 +17,8 @@ package dataworks_public
 
 // AuthorizationRecord is a nested struct in dataworks_public response
 type AuthorizationRecord struct {
-	CreatedTime string `json:"CreatedTime" xml:"CreatedTime"`
-	CreatorId   string `json:"CreatorId" xml:"CreatorId"`
 	EndTime     string `json:"EndTime" xml:"EndTime"`
+	CreatorId   string `json:"CreatorId" xml:"CreatorId"`
+	CreatedTime string `json:"CreatedTime" xml:"CreatedTime"`
 	ProjectId   int64  `json:"ProjectId" xml:"ProjectId"`
 }

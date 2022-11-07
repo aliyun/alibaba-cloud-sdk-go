@@ -86,11 +86,11 @@ type DescribeBinlogFilesRequest struct {
 // DescribeBinlogFilesResponse is the response struct for api DescribeBinlogFiles
 type DescribeBinlogFilesResponse struct {
 	*responses.BaseResponse
-	RequestId        string                     `json:"RequestId" xml:"RequestId"`
-	TotalRecordCount int                        `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	PageNumber       int                        `json:"PageNumber" xml:"PageNumber"`
-	PageRecordCount  int                        `json:"PageRecordCount" xml:"PageRecordCount"`
 	TotalFileSize    int64                      `json:"TotalFileSize" xml:"TotalFileSize"`
+	PageNumber       int                        `json:"PageNumber" xml:"PageNumber"`
+	RequestId        string                     `json:"RequestId" xml:"RequestId"`
+	PageRecordCount  int                        `json:"PageRecordCount" xml:"PageRecordCount"`
+	TotalRecordCount int                        `json:"TotalRecordCount" xml:"TotalRecordCount"`
 	Items            ItemsInDescribeBinlogFiles `json:"Items" xml:"Items"`
 }
 

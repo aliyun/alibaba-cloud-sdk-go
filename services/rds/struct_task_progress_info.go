@@ -17,19 +17,19 @@ package rds
 
 // TaskProgressInfo is a nested struct in rds response
 type TaskProgressInfo struct {
-	DBName             string `json:"DBName" xml:"DBName"`
-	BeginTime          string `json:"BeginTime" xml:"BeginTime"`
-	ProgressInfo       string `json:"ProgressInfo" xml:"ProgressInfo"`
-	FinishTime         string `json:"FinishTime" xml:"FinishTime"`
-	TaskAction         string `json:"TaskAction" xml:"TaskAction"`
-	TaskId             string `json:"TaskId" xml:"TaskId"`
-	Progress           string `json:"Progress" xml:"Progress"`
-	ExpectedFinishTime string `json:"ExpectedFinishTime" xml:"ExpectedFinishTime"`
 	Status             string `json:"Status" xml:"Status"`
-	TaskErrorCode      string `json:"TaskErrorCode" xml:"TaskErrorCode"`
-	TaskErrorMessage   string `json:"TaskErrorMessage" xml:"TaskErrorMessage"`
+	FinishTime         string `json:"FinishTime" xml:"FinishTime"`
+	Progress           string `json:"Progress" xml:"Progress"`
 	StepsInfo          string `json:"StepsInfo" xml:"StepsInfo"`
-	Remain             int    `json:"Remain" xml:"Remain"`
-	StepProgressInfo   string `json:"StepProgressInfo" xml:"StepProgressInfo"`
+	BeginTime          string `json:"BeginTime" xml:"BeginTime"`
+	ExpectedFinishTime string `json:"ExpectedFinishTime" xml:"ExpectedFinishTime"`
+	TaskErrorCode      string `json:"TaskErrorCode" xml:"TaskErrorCode"`
 	CurrentStepName    string `json:"CurrentStepName" xml:"CurrentStepName"`
+	ProgressInfo       string `json:"ProgressInfo" xml:"ProgressInfo"`
+	StepProgressInfo   string `json:"StepProgressInfo" xml:"StepProgressInfo"`
+	TaskErrorMessage   string `json:"TaskErrorMessage" xml:"TaskErrorMessage"`
+	TaskAction         string `json:"TaskAction" xml:"TaskAction"`
+	Remain             int    `json:"Remain" xml:"Remain"`
+	DBName             string `json:"DBName" xml:"DBName"`
+	TaskId             string `json:"TaskId" xml:"TaskId"`
 }

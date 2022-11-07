@@ -17,6 +17,6 @@ package cdn
 
 // Isp is a nested struct in cdn response
 type Isp struct {
-	NameZh string `json:"NameZh" xml:"NameZh"`
 	NameEn string `json:"NameEn" xml:"NameEn"`
+	NameZh string `json:"NameZh" xml:"NameZh"`
 }

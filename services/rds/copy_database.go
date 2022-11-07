@@ -80,8 +80,8 @@ type CopyDatabaseRequest struct {
 type CopyDatabaseResponse struct {
 	*responses.BaseResponse
 	DBName   string `json:"DBName" xml:"DBName"`
-	DBStatus string `json:"DBStatus" xml:"DBStatus"`
 	TaskId   string `json:"TaskId" xml:"TaskId"`
+	DBStatus string `json:"DBStatus" xml:"DBStatus"`
 }
 
 // CreateCopyDatabaseRequest creates a request to invoke CopyDatabase API

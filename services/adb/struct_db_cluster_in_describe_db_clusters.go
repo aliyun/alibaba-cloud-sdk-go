@@ -17,39 +17,39 @@ package adb
 
 // DBClusterInDescribeDBClusters is a nested struct in adb response
 type DBClusterInDescribeDBClusters struct {
-	DBClusterId          string                   `json:"DBClusterId" xml:"DBClusterId"`
-	DBClusterType        string                   `json:"DBClusterType" xml:"DBClusterType"`
-	DBClusterDescription string                   `json:"DBClusterDescription" xml:"DBClusterDescription"`
-	PayType              string                   `json:"PayType" xml:"PayType"`
-	RegionId             string                   `json:"RegionId" xml:"RegionId"`
-	ExpireTime           string                   `json:"ExpireTime" xml:"ExpireTime"`
+	DtsJobId             string                   `json:"DtsJobId" xml:"DtsJobId"`
+	DBNodeCount          int64                    `json:"DBNodeCount" xml:"DBNodeCount"`
 	Expired              string                   `json:"Expired" xml:"Expired"`
-	DBClusterStatus      string                   `json:"DBClusterStatus" xml:"DBClusterStatus"`
-	DBVersion            string                   `json:"DBVersion" xml:"DBVersion"`
-	LockMode             string                   `json:"LockMode" xml:"LockMode"`
-	LockReason           string                   `json:"LockReason" xml:"LockReason"`
 	CreateTime           string                   `json:"CreateTime" xml:"CreateTime"`
+	PayType              string                   `json:"PayType" xml:"PayType"`
+	DiskType             string                   `json:"DiskType" xml:"DiskType"`
+	Mode                 string                   `json:"Mode" xml:"Mode"`
+	Port                 string                   `json:"Port" xml:"Port"`
+	LockMode             string                   `json:"LockMode" xml:"LockMode"`
+	StorageResource      string                   `json:"StorageResource" xml:"StorageResource"`
+	ExecutorCount        string                   `json:"ExecutorCount" xml:"ExecutorCount"`
+	DBClusterId          string                   `json:"DBClusterId" xml:"DBClusterId"`
+	ConnectionString     string                   `json:"ConnectionString" xml:"ConnectionString"`
+	RdsInstanceId        string                   `json:"RdsInstanceId" xml:"RdsInstanceId"`
+	DBClusterType        string                   `json:"DBClusterType" xml:"DBClusterType"`
+	CommodityCode        string                   `json:"CommodityCode" xml:"CommodityCode"`
+	ExpireTime           string                   `json:"ExpireTime" xml:"ExpireTime"`
 	DBNodeStorage        int64                    `json:"DBNodeStorage" xml:"DBNodeStorage"`
 	DBNodeClass          string                   `json:"DBNodeClass" xml:"DBNodeClass"`
-	DBNodeCount          int64                    `json:"DBNodeCount" xml:"DBNodeCount"`
-	CommodityCode        string                   `json:"CommodityCode" xml:"CommodityCode"`
-	Category             string                   `json:"Category" xml:"Category"`
-	RdsInstanceId        string                   `json:"RdsInstanceId" xml:"RdsInstanceId"`
-	DtsJobId             string                   `json:"DtsJobId" xml:"DtsJobId"`
-	ExecutorCount        string                   `json:"ExecutorCount" xml:"ExecutorCount"`
-	DiskType             string                   `json:"DiskType" xml:"DiskType"`
-	VPCCloudInstanceId   string                   `json:"VPCCloudInstanceId" xml:"VPCCloudInstanceId"`
-	Engine               string                   `json:"Engine" xml:"Engine"`
-	DBClusterNetworkType string                   `json:"DBClusterNetworkType" xml:"DBClusterNetworkType"`
+	LockReason           string                   `json:"LockReason" xml:"LockReason"`
 	VPCId                string                   `json:"VPCId" xml:"VPCId"`
-	VSwitchId            string                   `json:"VSwitchId" xml:"VSwitchId"`
-	ZoneId               string                   `json:"ZoneId" xml:"ZoneId"`
-	ConnectionString     string                   `json:"ConnectionString" xml:"ConnectionString"`
-	Port                 string                   `json:"Port" xml:"Port"`
+	RegionId             string                   `json:"RegionId" xml:"RegionId"`
 	ComputeResource      string                   `json:"ComputeResource" xml:"ComputeResource"`
-	StorageResource      string                   `json:"StorageResource" xml:"StorageResource"`
-	Mode                 string                   `json:"Mode" xml:"Mode"`
-	ResourceGroupId      string                   `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	ElasticIOResource    int                      `json:"ElasticIOResource" xml:"ElasticIOResource"`
+	VSwitchId            string                   `json:"VSwitchId" xml:"VSwitchId"`
+	DBVersion            string                   `json:"DBVersion" xml:"DBVersion"`
+	VPCCloudInstanceId   string                   `json:"VPCCloudInstanceId" xml:"VPCCloudInstanceId"`
+	DBClusterStatus      string                   `json:"DBClusterStatus" xml:"DBClusterStatus"`
+	ResourceGroupId      string                   `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	DBClusterNetworkType string                   `json:"DBClusterNetworkType" xml:"DBClusterNetworkType"`
+	DBClusterDescription string                   `json:"DBClusterDescription" xml:"DBClusterDescription"`
+	ZoneId               string                   `json:"ZoneId" xml:"ZoneId"`
+	Category             string                   `json:"Category" xml:"Category"`
+	Engine               string                   `json:"Engine" xml:"Engine"`
 	Tags                 TagsInDescribeDBClusters `json:"Tags" xml:"Tags"`
 }

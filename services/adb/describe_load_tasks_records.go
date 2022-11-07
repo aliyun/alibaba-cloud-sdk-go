@@ -90,8 +90,8 @@ type DescribeLoadTasksRecordsRequest struct {
 type DescribeLoadTasksRecordsResponse struct {
 	*responses.BaseResponse
 	TotalCount       string           `json:"TotalCount" xml:"TotalCount"`
-	RequestId        string           `json:"RequestId" xml:"RequestId"`
 	PageSize         string           `json:"PageSize" xml:"PageSize"`
+	RequestId        string           `json:"RequestId" xml:"RequestId"`
 	PageNumber       string           `json:"PageNumber" xml:"PageNumber"`
 	DBClusterId      string           `json:"DBClusterId" xml:"DBClusterId"`
 	LoadTasksRecords []LoadTaskRecord `json:"LoadTasksRecords" xml:"LoadTasksRecords"`

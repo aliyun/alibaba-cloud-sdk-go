@@ -85,8 +85,8 @@ type DescribeDcdnDomainCcActivityLogRequest struct {
 // DescribeDcdnDomainCcActivityLogResponse is the response struct for api DescribeDcdnDomainCcActivityLog
 type DescribeDcdnDomainCcActivityLogResponse struct {
 	*responses.BaseResponse
-	RequestId   string    `json:"RequestId" xml:"RequestId"`
 	PageIndex   int64     `json:"PageIndex" xml:"PageIndex"`
+	RequestId   string    `json:"RequestId" xml:"RequestId"`
 	PageSize    int64     `json:"PageSize" xml:"PageSize"`
 	Total       int64     `json:"Total" xml:"Total"`
 	ActivityLog []LogInfo `json:"ActivityLog" xml:"ActivityLog"`

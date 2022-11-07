@@ -17,7 +17,8 @@ package sas
 
 // Criteria is a nested struct in sas response
 type Criteria struct {
-	Values string `json:"Values" xml:"Values"`
-	Name   string `json:"Name" xml:"Name"`
-	Type   string `json:"Type" xml:"Type"`
+	Name        string `json:"Name" xml:"Name"`
+	Values      string `json:"Values" xml:"Values"`
+	MultiValues string `json:"MultiValues" xml:"MultiValues"`
+	Type        string `json:"Type" xml:"Type"`
 }

@@ -17,15 +17,18 @@ package cloudesl
 
 // EslDeviceInfo is a nested struct in cloudesl response
 type EslDeviceInfo struct {
-	LastCommunicateTime string `json:"LastCommunicateTime" xml:"LastCommunicateTime"`
-	Model               string `json:"Model" xml:"Model"`
-	EslStatus           string `json:"EslStatus" xml:"EslStatus"`
+	Type                string `json:"Type" xml:"Type"`
 	StoreId             string `json:"StoreId" xml:"StoreId"`
 	EslBarCode          string `json:"EslBarCode" xml:"EslBarCode"`
-	Type                string `json:"Type" xml:"Type"`
-	Mac                 string `json:"Mac" xml:"Mac"`
-	BatteryLevel        int    `json:"BatteryLevel" xml:"BatteryLevel"`
-	ScreenWidth         int    `json:"ScreenWidth" xml:"ScreenWidth"`
+	Model               string `json:"Model" xml:"Model"`
+	LastCommunicateTime string `json:"LastCommunicateTime" xml:"LastCommunicateTime"`
 	ScreenHeight        int    `json:"ScreenHeight" xml:"ScreenHeight"`
+	ScreenWidth         int    `json:"ScreenWidth" xml:"ScreenWidth"`
 	EslSignal           int    `json:"EslSignal" xml:"EslSignal"`
+	BatteryLevel        int    `json:"BatteryLevel" xml:"BatteryLevel"`
+	EslStatus           string `json:"EslStatus" xml:"EslStatus"`
+	Mac                 string `json:"Mac" xml:"Mac"`
+	TypeEncode          string `json:"TypeEncode" xml:"TypeEncode"`
+	LayoutId            string `json:"LayoutId" xml:"LayoutId"`
+	LayoutName          string `json:"LayoutName" xml:"LayoutName"`
 }

@@ -17,9 +17,9 @@ package ddoscoo
 
 // OpEntity is a nested struct in ddoscoo response
 type OpEntity struct {
-	GmtCreate    int64  `json:"GmtCreate" xml:"GmtCreate"`
 	EntityType   int    `json:"EntityType" xml:"EntityType"`
 	EntityObject string `json:"EntityObject" xml:"EntityObject"`
+	GmtCreate    int64  `json:"GmtCreate" xml:"GmtCreate"`
 	OpAction     int    `json:"OpAction" xml:"OpAction"`
 	OpAccount    string `json:"OpAccount" xml:"OpAccount"`
 	OpDesc       string `json:"OpDesc" xml:"OpDesc"`

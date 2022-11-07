@@ -80,10 +80,10 @@ type GetParametersByPathRequest struct {
 // GetParametersByPathResponse is the response struct for api GetParametersByPath
 type GetParametersByPathResponse struct {
 	*responses.BaseResponse
-	RequestId  string      `json:"RequestId" xml:"RequestId"`
 	NextToken  string      `json:"NextToken" xml:"NextToken"`
-	MaxResults int         `json:"MaxResults" xml:"MaxResults"`
+	RequestId  string      `json:"RequestId" xml:"RequestId"`
 	TotalCount int         `json:"TotalCount" xml:"TotalCount"`
+	MaxResults int         `json:"MaxResults" xml:"MaxResults"`
 	Parameters []Parameter `json:"Parameters" xml:"Parameters"`
 }
 
@@ -92,7 +92,7 @@ func CreateGetParametersByPathRequest() (request *GetParametersByPathRequest) {
 	request = &GetParametersByPathRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("oos", "2019-06-01", "GetParametersByPath", "", "")
+	request.InitWithApiInfo("oos", "2019-06-01", "GetParametersByPath", "oos", "openAPI")
 	request.Method = requests.POST
 	return
 }

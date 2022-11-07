@@ -76,8 +76,8 @@ type ListCurrentClientVersionRequest struct {
 // ListCurrentClientVersionResponse is the response struct for api ListCurrentClientVersion
 type ListCurrentClientVersionResponse struct {
 	*responses.BaseResponse
-	RequestId     string `json:"RequestId" xml:"RequestId"`
 	ClientVersion string `json:"ClientVersion" xml:"ClientVersion"`
+	RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateListCurrentClientVersionRequest creates a request to invoke ListCurrentClientVersion API

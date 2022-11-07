@@ -18,6 +18,7 @@ package adb
 // SlowLogRecord is a nested struct in adb response
 type SlowLogRecord struct {
 	ScanRows           int64  `json:"ScanRows" xml:"ScanRows"`
+	User               string `json:"User" xml:"User"`
 	QueueTime          int64  `json:"QueueTime" xml:"QueueTime"`
 	QueryTime          int64  `json:"QueryTime" xml:"QueryTime"`
 	HostAddress        string `json:"HostAddress" xml:"HostAddress"`

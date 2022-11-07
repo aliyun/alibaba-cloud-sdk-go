@@ -73,6 +73,7 @@ type DescribeStoragePlanRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
@@ -94,7 +95,7 @@ func CreateDescribeStoragePlanRequest() (request *DescribeStoragePlanRequest) {
 	request = &DescribeStoragePlanRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeStoragePlan", "", "")
+	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeStoragePlan", "polardb", "openAPI")
 	request.Method = requests.POST
 	return
 }

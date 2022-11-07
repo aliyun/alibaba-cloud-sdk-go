@@ -17,7 +17,7 @@ package cdn
 
 // OssLogConfig is a nested struct in cdn response
 type OssLogConfig struct {
+	Prefix string `json:"Prefix" xml:"Prefix"`
 	Enable string `json:"Enable" xml:"Enable"`
 	Bucket string `json:"Bucket" xml:"Bucket"`
-	Prefix string `json:"Prefix" xml:"Prefix"`
 }

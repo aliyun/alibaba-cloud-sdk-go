@@ -71,27 +71,28 @@ func (client *Client) InsertApplicationWithCallback(request *InsertApplicationRe
 // InsertApplicationRequest is the request struct for api InsertApplication
 type InsertApplicationRequest struct {
 	*requests.RoaRequest
-	WebContainer    string           `position:"Query" name:"WebContainer"`
-	EcuInfo         string           `position:"Query" name:"EcuInfo"`
-	MinHeapSize     requests.Integer `position:"Query" name:"MinHeapSize"`
-	BuildPackId     requests.Integer `position:"Query" name:"BuildPackId"`
-	ComponentIds    string           `position:"Query" name:"ComponentIds"`
-	HealthCheckUrl  string           `position:"Query" name:"HealthCheckUrl"`
-	ReservedPortStr string           `position:"Query" name:"ReservedPortStr"`
-	JvmOptions      string           `position:"Query" name:"JvmOptions"`
-	Description     string           `position:"Query" name:"Description"`
-	Cpu             requests.Integer `position:"Query" name:"Cpu"`
-	MaxPermSize     requests.Integer `position:"Query" name:"MaxPermSize"`
-	ClusterId       string           `position:"Query" name:"ClusterId"`
-	MaxHeapSize     requests.Integer `position:"Query" name:"MaxHeapSize"`
-	EnablePortCheck requests.Boolean `position:"Query" name:"EnablePortCheck"`
-	ApplicationName string           `position:"Query" name:"ApplicationName"`
-	Jdk             string           `position:"Query" name:"Jdk"`
-	Mem             requests.Integer `position:"Query" name:"Mem"`
-	LogicalRegionId string           `position:"Query" name:"LogicalRegionId"`
-	EnableUrlCheck  requests.Boolean `position:"Query" name:"EnableUrlCheck"`
-	PackageType     string           `position:"Query" name:"PackageType"`
-	Hooks           string           `position:"Query" name:"Hooks"`
+	WebContainer    string `position:"Query" name:"WebContainer"`
+	EcuInfo         string `position:"Query" name:"EcuInfo"`
+	MinHeapSize     string `position:"Query" name:"MinHeapSize"`
+	BuildPackId     string `position:"Query" name:"BuildPackId"`
+	ComponentIds    string `position:"Query" name:"ComponentIds"`
+	HealthCheckUrl  string `position:"Query" name:"HealthCheckUrl"`
+	ReservedPortStr string `position:"Query" name:"ReservedPortStr"`
+	JvmOptions      string `position:"Query" name:"JvmOptions"`
+	Description     string `position:"Query" name:"Description"`
+	Cpu             string `position:"Query" name:"Cpu"`
+	MaxPermSize     string `position:"Query" name:"MaxPermSize"`
+	ClusterId       string `position:"Query" name:"ClusterId"`
+	MaxHeapSize     string `position:"Query" name:"MaxHeapSize"`
+	EnablePortCheck string `position:"Query" name:"EnablePortCheck"`
+	ApplicationName string `position:"Query" name:"ApplicationName"`
+	Jdk             string `position:"Query" name:"Jdk"`
+	ResourceGroupId string `position:"Query" name:"ResourceGroupId"`
+	Mem             string `position:"Query" name:"Mem"`
+	LogicalRegionId string `position:"Query" name:"LogicalRegionId"`
+	EnableUrlCheck  string `position:"Query" name:"EnableUrlCheck"`
+	PackageType     string `position:"Query" name:"PackageType"`
+	Hooks           string `position:"Query" name:"Hooks"`
 }
 
 // InsertApplicationResponse is the response struct for api InsertApplication
@@ -108,7 +109,7 @@ func CreateInsertApplicationRequest() (request *InsertApplicationRequest) {
 	request = &InsertApplicationRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "InsertApplication", "/pop/v5/changeorder/co_create_app", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "InsertApplication", "/pop/v5/changeorder/co_create_app", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

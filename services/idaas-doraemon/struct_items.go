@@ -17,6 +17,6 @@ package idaas_doraemon
 
 // Items is a nested struct in idaas_doraemon response
 type Items struct {
-	HexPasswordSha1Hash string `json:"HexPasswordSha1Hash" xml:"HexPasswordSha1Hash"`
 	PwnedCount          int64  `json:"PwnedCount" xml:"PwnedCount"`
+	HexPasswordSha1Hash string `json:"HexPasswordSha1Hash" xml:"HexPasswordSha1Hash"`
 }

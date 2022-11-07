@@ -17,9 +17,9 @@ package rds
 
 // ImportResultFromDB is a nested struct in rds response
 type ImportResultFromDB struct {
-	ImportId                    int    `json:"ImportId" xml:"ImportId"`
-	ImportDataType              string `json:"ImportDataType" xml:"ImportDataType"`
-	ImportDataStatus            string `json:"ImportDataStatus" xml:"ImportDataStatus"`
-	ImportDataStatusDescription string `json:"ImportDataStatusDescription" xml:"ImportDataStatusDescription"`
 	IncrementalImportingTime    string `json:"IncrementalImportingTime" xml:"IncrementalImportingTime"`
+	ImportId                    int    `json:"ImportId" xml:"ImportId"`
+	ImportDataStatus            string `json:"ImportDataStatus" xml:"ImportDataStatus"`
+	ImportDataType              string `json:"ImportDataType" xml:"ImportDataType"`
+	ImportDataStatusDescription string `json:"ImportDataStatusDescription" xml:"ImportDataStatusDescription"`
 }

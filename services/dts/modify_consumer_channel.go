@@ -71,11 +71,11 @@ func (client *Client) ModifyConsumerChannelWithCallback(request *ModifyConsumerC
 // ModifyConsumerChannelRequest is the request struct for api ModifyConsumerChannel
 type ModifyConsumerChannelRequest struct {
 	*requests.RpcRequest
-	ConsumerGroupName     string `position:"Query" name:"ConsumerGroupName"`
 	ConsumerGroupId       string `position:"Query" name:"ConsumerGroupId"`
 	ConsumerGroupPassword string `position:"Query" name:"ConsumerGroupPassword"`
 	ConsumerGroupUserName string `position:"Query" name:"ConsumerGroupUserName"`
 	DtsJobId              string `position:"Query" name:"DtsJobId"`
+	ConsumerGroupName     string `position:"Query" name:"ConsumerGroupName"`
 	DtsInstanceId         string `position:"Query" name:"DtsInstanceId"`
 }
 

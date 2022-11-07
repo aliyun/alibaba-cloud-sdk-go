@@ -71,10 +71,10 @@ func (client *Client) RecolorImageWithCallback(request *RecolorImageRequest, cal
 // RecolorImageRequest is the request struct for api RecolorImage
 type RecolorImageRequest struct {
 	*requests.RpcRequest
-	ColorTemplate *[]RecolorImageColorTemplate `position:"Body" name:"ColorTemplate"  type:"Repeated"`
-	Url           string                       `position:"Body" name:"Url"`
 	Mode          string                       `position:"Body" name:"Mode"`
 	ColorCount    requests.Integer             `position:"Body" name:"ColorCount"`
+	ColorTemplate *[]RecolorImageColorTemplate `position:"Body" name:"ColorTemplate"  type:"Repeated"`
+	Url           string                       `position:"Body" name:"Url"`
 	RefUrl        string                       `position:"Body" name:"RefUrl"`
 }
 

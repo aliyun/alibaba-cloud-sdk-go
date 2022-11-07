@@ -82,6 +82,7 @@ type CreateDcdnDeliverTaskRequest struct {
 // CreateDcdnDeliverTaskResponse is the response struct for api CreateDcdnDeliverTask
 type CreateDcdnDeliverTaskResponse struct {
 	*responses.BaseResponse
+	DeliverId string `json:"DeliverId" xml:"DeliverId"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 

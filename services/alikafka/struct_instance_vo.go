@@ -17,28 +17,32 @@ package alikafka
 
 // InstanceVO is a nested struct in alikafka response
 type InstanceVO struct {
-	InstanceId               string                   `json:"InstanceId" xml:"InstanceId"`
-	RegionId                 string                   `json:"RegionId" xml:"RegionId"`
-	ServiceStatus            int                      `json:"ServiceStatus" xml:"ServiceStatus"`
 	VpcId                    string                   `json:"VpcId" xml:"VpcId"`
-	VSwitchId                string                   `json:"VSwitchId" xml:"VSwitchId"`
-	EndPoint                 string                   `json:"EndPoint" xml:"EndPoint"`
-	CreateTime               int64                    `json:"CreateTime" xml:"CreateTime"`
-	ExpiredTime              int64                    `json:"ExpiredTime" xml:"ExpiredTime"`
+	SpecType                 string                   `json:"SpecType" xml:"SpecType"`
 	DeployType               int                      `json:"DeployType" xml:"DeployType"`
-	SslEndPoint              string                   `json:"SslEndPoint" xml:"SslEndPoint"`
-	Name                     string                   `json:"Name" xml:"Name"`
-	IoMax                    int                      `json:"IoMax" xml:"IoMax"`
-	EipMax                   int                      `json:"EipMax" xml:"EipMax"`
-	DiskType                 int                      `json:"DiskType" xml:"DiskType"`
+	CreateTime               int64                    `json:"CreateTime" xml:"CreateTime"`
 	DiskSize                 int                      `json:"DiskSize" xml:"DiskSize"`
+	DiskType                 int                      `json:"DiskType" xml:"DiskType"`
+	SecurityGroup            string                   `json:"SecurityGroup" xml:"SecurityGroup"`
+	SslEndPoint              string                   `json:"SslEndPoint" xml:"SslEndPoint"`
+	InstanceId               string                   `json:"InstanceId" xml:"InstanceId"`
+	AllConfig                string                   `json:"AllConfig" xml:"AllConfig"`
+	ServiceStatus            int                      `json:"ServiceStatus" xml:"ServiceStatus"`
+	EipMax                   int                      `json:"EipMax" xml:"EipMax"`
+	RegionId                 string                   `json:"RegionId" xml:"RegionId"`
 	MsgRetain                int                      `json:"MsgRetain" xml:"MsgRetain"`
+	VSwitchId                string                   `json:"VSwitchId" xml:"VSwitchId"`
+	ExpiredTime              int64                    `json:"ExpiredTime" xml:"ExpiredTime"`
 	TopicNumLimit            int                      `json:"TopicNumLimit" xml:"TopicNumLimit"`
 	ZoneId                   string                   `json:"ZoneId" xml:"ZoneId"`
+	IoMax                    int                      `json:"IoMax" xml:"IoMax"`
 	PaidType                 int                      `json:"PaidType" xml:"PaidType"`
-	SpecType                 string                   `json:"SpecType" xml:"SpecType"`
-	SecurityGroup            string                   `json:"SecurityGroup" xml:"SecurityGroup"`
-	AllConfig                string                   `json:"AllConfig" xml:"AllConfig"`
+	Name                     string                   `json:"Name" xml:"Name"`
+	EndPoint                 string                   `json:"EndPoint" xml:"EndPoint"`
+	DomainEndpoint           string                   `json:"DomainEndpoint" xml:"DomainEndpoint"`
+	SslDomainEndpoint        string                   `json:"SslDomainEndpoint" xml:"SslDomainEndpoint"`
+	SaslDomainEndpoint       string                   `json:"SaslDomainEndpoint" xml:"SaslDomainEndpoint"`
+	ResourceGroupId          string                   `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	UpgradeServiceDetailInfo UpgradeServiceDetailInfo `json:"UpgradeServiceDetailInfo" xml:"UpgradeServiceDetailInfo"`
 	Tags                     TagsInGetInstanceList    `json:"Tags" xml:"Tags"`
 }

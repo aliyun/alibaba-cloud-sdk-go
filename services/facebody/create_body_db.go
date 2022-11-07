@@ -71,15 +71,18 @@ func (client *Client) CreateBodyDbWithCallback(request *CreateBodyDbRequest, cal
 // CreateBodyDbRequest is the request struct for api CreateBodyDb
 type CreateBodyDbRequest struct {
 	*requests.RpcRequest
-	Name string `position:"Body" name:"Name"`
+	FormatResultToJson requests.Boolean `position:"Query" name:"FormatResultToJson"`
+	OssFile            string           `position:"Query" name:"OssFile"`
+	RequestProxyBy     string           `position:"Query" name:"RequestProxyBy"`
+	Name               string           `position:"Body" name:"Name"`
 }
 
 // CreateBodyDbResponse is the response struct for api CreateBodyDb
 type CreateBodyDbResponse struct {
 	*responses.BaseResponse
-	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 

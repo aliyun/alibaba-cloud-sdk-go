@@ -17,13 +17,12 @@ package dms_enterprise
 
 // Node is a nested struct in dms_enterprise response
 type Node struct {
-	Id           int64  `json:"Id" xml:"Id"`
-	NodeId       int64  `json:"NodeId" xml:"NodeId"`
-	NodeName     string `json:"NodeName" xml:"NodeName"`
-	NodeType     int    `json:"NodeType" xml:"NodeType"`
-	BusinessTime string `json:"BusinessTime" xml:"BusinessTime"`
-	Status       int    `json:"Status" xml:"Status"`
-	Message      string `json:"Message" xml:"Message"`
-	ExecuteTime  int64  `json:"ExecuteTime" xml:"ExecuteTime"`
-	EndTime      string `json:"EndTime" xml:"EndTime"`
+	DagId         int64  `json:"DagId" xml:"DagId"`
+	NodeName      string `json:"NodeName" xml:"NodeName"`
+	NodeType      int64  `json:"NodeType" xml:"NodeType"`
+	NodeId        int64  `json:"NodeId" xml:"NodeId"`
+	NodeConfig    string `json:"NodeConfig" xml:"NodeConfig"`
+	NodeContent   string `json:"NodeContent" xml:"NodeContent"`
+	TimeVariables string `json:"TimeVariables" xml:"TimeVariables"`
+	GraphParam    string `json:"GraphParam" xml:"GraphParam"`
 }

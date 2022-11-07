@@ -17,9 +17,9 @@ package ehpc
 
 // Computes is a nested struct in ehpc response
 type Computes struct {
+	OperatingCount int `json:"OperatingCount" xml:"OperatingCount"`
+	ExceptionCount int `json:"ExceptionCount" xml:"ExceptionCount"`
+	StoppedCount   int `json:"StoppedCount" xml:"StoppedCount"`
 	Total          int `json:"Total" xml:"Total"`
 	NormalCount    int `json:"NormalCount" xml:"NormalCount"`
-	OperatingCount int `json:"OperatingCount" xml:"OperatingCount"`
-	StoppedCount   int `json:"StoppedCount" xml:"StoppedCount"`
-	ExceptionCount int `json:"ExceptionCount" xml:"ExceptionCount"`
 }

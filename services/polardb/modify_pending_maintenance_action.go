@@ -72,6 +72,7 @@ func (client *Client) ModifyPendingMaintenanceActionWithCallback(request *Modify
 type ModifyPendingMaintenanceActionRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	SwitchTime           string           `position:"Query" name:"SwitchTime"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
@@ -92,7 +93,7 @@ func CreateModifyPendingMaintenanceActionRequest() (request *ModifyPendingMainte
 	request = &ModifyPendingMaintenanceActionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "ModifyPendingMaintenanceAction", "", "")
+	request.InitWithApiInfo("polardb", "2017-08-01", "ModifyPendingMaintenanceAction", "polardb", "openAPI")
 	request.Method = requests.POST
 	return
 }

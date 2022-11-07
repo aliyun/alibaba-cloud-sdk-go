@@ -79,8 +79,8 @@ type UploadRoutineCodeRequest struct {
 // UploadRoutineCodeResponse is the response struct for api UploadRoutineCode
 type UploadRoutineCodeResponse struct {
 	*responses.BaseResponse
-	RequestId string                 `json:"RequestId" xml:"RequestId"`
 	Content   map[string]interface{} `json:"Content" xml:"Content"`
+	RequestId string                 `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateUploadRoutineCodeRequest creates a request to invoke UploadRoutineCode API

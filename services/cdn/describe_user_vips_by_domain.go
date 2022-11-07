@@ -79,8 +79,8 @@ type DescribeUserVipsByDomainRequest struct {
 // DescribeUserVipsByDomainResponse is the response struct for api DescribeUserVipsByDomain
 type DescribeUserVipsByDomainResponse struct {
 	*responses.BaseResponse
-	RequestId  string                         `json:"RequestId" xml:"RequestId"`
 	DomainName string                         `json:"DomainName" xml:"DomainName"`
+	RequestId  string                         `json:"RequestId" xml:"RequestId"`
 	Vips       VipsInDescribeUserVipsByDomain `json:"Vips" xml:"Vips"`
 }
 

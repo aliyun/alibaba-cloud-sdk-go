@@ -72,6 +72,8 @@ func (client *Client) DescribeAvailableRecoveryTimeWithCallback(request *Describ
 type DescribeAvailableRecoveryTimeRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	CrossBackupId        requests.Integer `position:"Query" name:"CrossBackupId"`
@@ -80,12 +82,12 @@ type DescribeAvailableRecoveryTimeRequest struct {
 // DescribeAvailableRecoveryTimeResponse is the response struct for api DescribeAvailableRecoveryTime
 type DescribeAvailableRecoveryTimeResponse struct {
 	*responses.BaseResponse
-	RequestId         string `json:"RequestId" xml:"RequestId"`
-	RecoveryBeginTime string `json:"RecoveryBeginTime" xml:"RecoveryBeginTime"`
 	RecoveryEndTime   string `json:"RecoveryEndTime" xml:"RecoveryEndTime"`
-	DBInstanceId      string `json:"DBInstanceId" xml:"DBInstanceId"`
-	RegionId          string `json:"RegionId" xml:"RegionId"`
+	RequestId         string `json:"RequestId" xml:"RequestId"`
 	CrossBackupId     int    `json:"CrossBackupId" xml:"CrossBackupId"`
+	DBInstanceId      string `json:"DBInstanceId" xml:"DBInstanceId"`
+	RecoveryBeginTime string `json:"RecoveryBeginTime" xml:"RecoveryBeginTime"`
+	RegionId          string `json:"RegionId" xml:"RegionId"`
 }
 
 // CreateDescribeAvailableRecoveryTimeRequest creates a request to invoke DescribeAvailableRecoveryTime API

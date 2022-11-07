@@ -72,10 +72,13 @@ func (client *Client) CreateJobMonitorRuleWithCallback(request *CreateJobMonitor
 type CreateJobMonitorRuleRequest struct {
 	*requests.RpcRequest
 	Type          string           `position:"Query" name:"Type"`
-	DelayRuleTime requests.Integer `position:"Query" name:"DelayRuleTime"`
-	Phone         string           `position:"Query" name:"Phone"`
+	NoticeValue   requests.Integer `position:"Query" name:"NoticeValue"`
+	Times         requests.Integer `position:"Query" name:"Times"`
 	DtsJobId      string           `position:"Query" name:"DtsJobId"`
 	State         string           `position:"Query" name:"State"`
+	Period        requests.Integer `position:"Query" name:"Period"`
+	DelayRuleTime requests.Integer `position:"Query" name:"DelayRuleTime"`
+	Phone         string           `position:"Query" name:"Phone"`
 }
 
 // CreateJobMonitorRuleResponse is the response struct for api CreateJobMonitorRule

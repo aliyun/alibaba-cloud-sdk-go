@@ -71,8 +71,8 @@ func (client *Client) UpdateContainerWithCallback(request *UpdateContainerReques
 // UpdateContainerRequest is the request struct for api UpdateContainer
 type UpdateContainerRequest struct {
 	*requests.RoaRequest
-	BuildPackId requests.Integer `position:"Query" name:"BuildPackId"`
-	AppId       string           `position:"Query" name:"AppId"`
+	BuildPackId string `position:"Query" name:"BuildPackId"`
+	AppId       string `position:"Query" name:"AppId"`
 }
 
 // UpdateContainerResponse is the response struct for api UpdateContainer
@@ -89,7 +89,7 @@ func CreateUpdateContainerRequest() (request *UpdateContainerRequest) {
 	request = &UpdateContainerRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "UpdateContainer", "/pop/v5/changeorder/co_update_container", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "UpdateContainer", "/pop/v5/changeorder/co_update_container", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

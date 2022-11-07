@@ -77,11 +77,11 @@ type ListTaskFlowRequest struct {
 // ListTaskFlowResponse is the response struct for api ListTaskFlow
 type ListTaskFlowResponse struct {
 	*responses.BaseResponse
-	RequestId    string       `json:"RequestId" xml:"RequestId"`
-	ErrorCode    string       `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMessage string       `json:"ErrorMessage" xml:"ErrorMessage"`
-	Success      bool         `json:"Success" xml:"Success"`
-	TaskFlowList TaskFlowList `json:"TaskFlowList" xml:"TaskFlowList"`
+	RequestId    string                     `json:"RequestId" xml:"RequestId"`
+	ErrorCode    string                     `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage string                     `json:"ErrorMessage" xml:"ErrorMessage"`
+	Success      bool                       `json:"Success" xml:"Success"`
+	TaskFlowList TaskFlowListInListTaskFlow `json:"TaskFlowList" xml:"TaskFlowList"`
 }
 
 // CreateListTaskFlowRequest creates a request to invoke ListTaskFlow API

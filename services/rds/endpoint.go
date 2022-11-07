@@ -45,7 +45,7 @@ func GetEndpointMap() map[string]string {
 			"cn-hangzhou-internal-test-2": "rds.aliyuncs.com",
 			"cn-hangzhou-test-306":        "rds.aliyuncs.com",
 			"cn-shanghai-et2-b01":         "rds.aliyuncs.com",
-			"cn-hangzhou-finance":         "rds.aliyuncs.com",
+			"cn-hangzhou-finance":         "rds-vpc.cn-hangzhou-finance.aliyuncs.com",
 			"ap-southeast-1":              "rds.aliyuncs.com",
 			"cn-beijing-nu16-b01":         "rds.aliyuncs.com",
 			"cn-edge-1":                   "rds.aliyuncs.com",

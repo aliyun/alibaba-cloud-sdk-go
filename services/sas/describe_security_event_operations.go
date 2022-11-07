@@ -73,6 +73,7 @@ type DescribeSecurityEventOperationsRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	SourceIp        string           `position:"Query" name:"SourceIp"`
+	Lang            string           `position:"Query" name:"Lang"`
 	SecurityEventId requests.Integer `position:"Query" name:"SecurityEventId"`
 }
 

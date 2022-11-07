@@ -71,12 +71,12 @@ func (client *Client) ListK8sSecretsWithCallback(request *ListK8sSecretsRequest,
 // ListK8sSecretsRequest is the request struct for api ListK8sSecrets
 type ListK8sSecretsRequest struct {
 	*requests.RoaRequest
-	Condition       string           `position:"Query" name:"Condition"`
-	PageNo          requests.Integer `position:"Query" name:"PageNo"`
-	Namespace       string           `position:"Query" name:"Namespace"`
-	PageSize        requests.Integer `position:"Query" name:"PageSize"`
-	ClusterId       string           `position:"Query" name:"ClusterId"`
-	ShowRelatedApps requests.Boolean `position:"Query" name:"ShowRelatedApps"`
+	Condition       string `position:"Query" name:"Condition"`
+	PageNo          string `position:"Query" name:"PageNo"`
+	Namespace       string `position:"Query" name:"Namespace"`
+	PageSize        string `position:"Query" name:"PageSize"`
+	ClusterId       string `position:"Query" name:"ClusterId"`
+	ShowRelatedApps string `position:"Query" name:"ShowRelatedApps"`
 }
 
 // ListK8sSecretsResponse is the response struct for api ListK8sSecrets
@@ -93,7 +93,7 @@ func CreateListK8sSecretsRequest() (request *ListK8sSecretsRequest) {
 	request = &ListK8sSecretsRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ListK8sSecrets", "/pop/v5/k8s/acs/k8s_secret", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ListK8sSecrets", "/pop/v5/k8s/acs/k8s_secret", "edas", "openAPI")
 	request.Method = requests.GET
 	return
 }

@@ -80,9 +80,9 @@ type MigrateSecurityIPModeRequest struct {
 // MigrateSecurityIPModeResponse is the response struct for api MigrateSecurityIPMode
 type MigrateSecurityIPModeResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	DBInstanceId   string `json:"DBInstanceId" xml:"DBInstanceId"`
 	SecurityIPMode string `json:"SecurityIPMode" xml:"SecurityIPMode"`
+	DBInstanceId   string `json:"DBInstanceId" xml:"DBInstanceId"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateMigrateSecurityIPModeRequest creates a request to invoke MigrateSecurityIPMode API

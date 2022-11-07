@@ -18,14 +18,14 @@ package rds
 // ParameterGroup is a nested struct in rds response
 type ParameterGroup struct {
 	Engine             string      `json:"Engine" xml:"Engine"`
-	EngineVersion      string      `json:"EngineVersion" xml:"EngineVersion"`
 	UpdateTime         string      `json:"UpdateTime" xml:"UpdateTime"`
+	EngineVersion      string      `json:"EngineVersion" xml:"EngineVersion"`
 	ParameterGroupName string      `json:"ParameterGroupName" xml:"ParameterGroupName"`
 	ParameterGroupType int         `json:"ParameterGroupType" xml:"ParameterGroupType"`
 	ParameterGroupDesc string      `json:"ParameterGroupDesc" xml:"ParameterGroupDesc"`
 	CreateTime         string      `json:"CreateTime" xml:"CreateTime"`
-	ParamCounts        int         `json:"ParamCounts" xml:"ParamCounts"`
 	ForceRestart       int         `json:"ForceRestart" xml:"ForceRestart"`
+	ParamCounts        int         `json:"ParamCounts" xml:"ParamCounts"`
 	ParameterGroupId   string      `json:"ParameterGroupId" xml:"ParameterGroupId"`
 	ParamDetail        ParamDetail `json:"ParamDetail" xml:"ParamDetail"`
 }

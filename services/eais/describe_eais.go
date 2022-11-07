@@ -71,19 +71,21 @@ func (client *Client) DescribeEaisWithCallback(request *DescribeEaisRequest, cal
 // DescribeEaisRequest is the request struct for api DescribeEais
 type DescribeEaisRequest struct {
 	*requests.RpcRequest
-	ElasticAcceleratedInstanceIds string `position:"Query" name:"ElasticAcceleratedInstanceIds"`
-	InstanceName                  string `position:"Query" name:"InstanceName"`
-	InstanceType                  string `position:"Query" name:"InstanceType"`
-	Status                        string `position:"Query" name:"Status"`
+	ElasticAcceleratedInstanceIds string           `position:"Query" name:"ElasticAcceleratedInstanceIds"`
+	PageNumber                    requests.Integer `position:"Query" name:"PageNumber"`
+	InstanceName                  string           `position:"Query" name:"InstanceName"`
+	PageSize                      requests.Integer `position:"Query" name:"PageSize"`
+	InstanceType                  string           `position:"Query" name:"InstanceType"`
+	Status                        string           `position:"Query" name:"Status"`
 }
 
 // DescribeEaisResponse is the response struct for api DescribeEais
 type DescribeEaisResponse struct {
 	*responses.BaseResponse
-	PageNumber int       `json:"PageNumber" xml:"PageNumber"`
-	TotalCount int       `json:"TotalCount" xml:"TotalCount"`
-	PageSize   int       `json:"PageSize" xml:"PageSize"`
 	RequestId  string    `json:"RequestId" xml:"RequestId"`
+	PageNumber int       `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int       `json:"PageSize" xml:"PageSize"`
+	TotalCount int       `json:"TotalCount" xml:"TotalCount"`
 	Instances  Instances `json:"Instances" xml:"Instances"`
 }
 

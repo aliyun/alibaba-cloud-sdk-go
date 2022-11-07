@@ -17,11 +17,11 @@ package ddoscoo
 
 // Slimit is a nested struct in ddoscoo response
 type Slimit struct {
-	Cps           int   `json:"Cps" xml:"Cps"`
-	Maxconn       int   `json:"Maxconn" xml:"Maxconn"`
-	CpsEnable     int   `json:"CpsEnable" xml:"CpsEnable"`
-	CpsMode       int   `json:"CpsMode" xml:"CpsMode"`
 	MaxconnEnable int   `json:"MaxconnEnable" xml:"MaxconnEnable"`
-	Bps           int64 `json:"Bps" xml:"Bps"`
+	CpsEnable     int   `json:"CpsEnable" xml:"CpsEnable"`
+	Cps           int   `json:"Cps" xml:"Cps"`
 	Pps           int64 `json:"Pps" xml:"Pps"`
+	Bps           int64 `json:"Bps" xml:"Bps"`
+	Maxconn       int   `json:"Maxconn" xml:"Maxconn"`
+	CpsMode       int   `json:"CpsMode" xml:"CpsMode"`
 }

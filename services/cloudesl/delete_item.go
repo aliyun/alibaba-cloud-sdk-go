@@ -94,7 +94,7 @@ func CreateDeleteItemRequest() (request *DeleteItemRequest) {
 	request = &DeleteItemRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cloudesl", "2020-02-01", "DeleteItem", "cloudesl", "openAPI")
+	request.InitWithApiInfo("cloudesl", "2020-02-01", "DeleteItem", "", "")
 	request.Method = requests.POST
 	return
 }

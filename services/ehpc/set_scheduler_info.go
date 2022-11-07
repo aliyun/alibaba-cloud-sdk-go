@@ -90,32 +90,35 @@ type SetSchedulerInfoScheduler struct {
 
 // SetSchedulerInfoPbsInfo is a repeated param struct in SetSchedulerInfoRequest
 type SetSchedulerInfoPbsInfo struct {
-	SchedInterval      string                           `name:"SchedInterval"`
-	ResourceLimit      *[]SetSchedulerInfoResourceLimit `name:"ResourceLimit" type:"Repeated"`
-	AclLimit           *[]SetSchedulerInfoAclLimit      `name:"AclLimit" type:"Repeated"`
-	JobHistoryDuration string                           `name:"JobHistoryDuration"`
+	SchedInterval      string                                  `name:"SchedInterval"`
+	SchedMaxJobs       string                                  `name:"SchedMaxJobs"`
+	AclLimit           *[]SetSchedulerInfoPbsInfoAclLimit      `name:"AclLimit" type:"Repeated"`
+	ResourceLimit      *[]SetSchedulerInfoPbsInfoResourceLimit `name:"ResourceLimit" type:"Repeated"`
+	SchedMaxQueuedJobs string                                  `name:"SchedMaxQueuedJobs"`
+	JobHistoryDuration string                                  `name:"JobHistoryDuration"`
 }
 
-// SetSchedulerInfoResourceLimit is a repeated param struct in SetSchedulerInfoRequest
-type SetSchedulerInfoResourceLimit struct {
-	Nodes string `name:"Nodes"`
-	Mem   string `name:"Mem"`
-	Cpus  string `name:"Cpus"`
-	User  string `name:"User"`
-	Queue string `name:"Queue"`
-}
-
-// SetSchedulerInfoAclLimit is a repeated param struct in SetSchedulerInfoRequest
-type SetSchedulerInfoAclLimit struct {
+// SetSchedulerInfoPbsInfoAclLimit is a repeated param struct in SetSchedulerInfoRequest
+type SetSchedulerInfoPbsInfoAclLimit struct {
 	AclUsers string `name:"AclUsers"`
 	Queue    string `name:"Queue"`
+}
+
+// SetSchedulerInfoPbsInfoResourceLimit is a repeated param struct in SetSchedulerInfoRequest
+type SetSchedulerInfoPbsInfoResourceLimit struct {
+	MaxJobs string `name:"MaxJobs"`
+	Nodes   string `name:"Nodes"`
+	Mem     string `name:"Mem"`
+	Cpus    string `name:"Cpus"`
+	User    string `name:"User"`
+	Queue   string `name:"Queue"`
 }
 
 // SetSchedulerInfoResponse is the response struct for api SetSchedulerInfo
 type SetSchedulerInfoResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateSetSchedulerInfoRequest creates a request to invoke SetSchedulerInfo API

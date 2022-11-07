@@ -84,10 +84,10 @@ type DescribeSlowLogTrendRequest struct {
 // DescribeSlowLogTrendResponse is the response struct for api DescribeSlowLogTrend
 type DescribeSlowLogTrendResponse struct {
 	*responses.BaseResponse
-	RequestId   string                      `json:"RequestId" xml:"RequestId"`
-	DBClusterId string                      `json:"DBClusterId" xml:"DBClusterId"`
-	StartTime   string                      `json:"StartTime" xml:"StartTime"`
 	EndTime     string                      `json:"EndTime" xml:"EndTime"`
+	RequestId   string                      `json:"RequestId" xml:"RequestId"`
+	StartTime   string                      `json:"StartTime" xml:"StartTime"`
+	DBClusterId string                      `json:"DBClusterId" xml:"DBClusterId"`
 	Items       ItemsInDescribeSlowLogTrend `json:"Items" xml:"Items"`
 }
 

@@ -85,10 +85,10 @@ type DescribeDBClusterResourcePoolPerformanceRequest struct {
 // DescribeDBClusterResourcePoolPerformanceResponse is the response struct for api DescribeDBClusterResourcePoolPerformance
 type DescribeDBClusterResourcePoolPerformanceResponse struct {
 	*responses.BaseResponse
-	RequestId    string            `json:"RequestId" xml:"RequestId"`
-	DBClusterId  string            `json:"DBClusterId" xml:"DBClusterId"`
-	StartTime    string            `json:"StartTime" xml:"StartTime"`
 	EndTime      string            `json:"EndTime" xml:"EndTime"`
+	RequestId    string            `json:"RequestId" xml:"RequestId"`
+	StartTime    string            `json:"StartTime" xml:"StartTime"`
+	DBClusterId  string            `json:"DBClusterId" xml:"DBClusterId"`
 	Performances []PerformanceItem `json:"Performances" xml:"Performances"`
 }
 

@@ -88,13 +88,13 @@ type ListInventoryEntriesFilter struct {
 // ListInventoryEntriesResponse is the response struct for api ListInventoryEntries
 type ListInventoryEntriesResponse struct {
 	*responses.BaseResponse
-	RequestId     string                   `json:"RequestId" xml:"RequestId"`
 	NextToken     string                   `json:"NextToken" xml:"NextToken"`
-	InstanceId    string                   `json:"InstanceId" xml:"InstanceId"`
-	CaptureTime   string                   `json:"CaptureTime" xml:"CaptureTime"`
-	TypeName      string                   `json:"TypeName" xml:"TypeName"`
+	RequestId     string                   `json:"RequestId" xml:"RequestId"`
 	SchemaVersion string                   `json:"SchemaVersion" xml:"SchemaVersion"`
 	MaxResults    int                      `json:"MaxResults" xml:"MaxResults"`
+	CaptureTime   string                   `json:"CaptureTime" xml:"CaptureTime"`
+	TypeName      string                   `json:"TypeName" xml:"TypeName"`
+	InstanceId    string                   `json:"InstanceId" xml:"InstanceId"`
 	Entries       []map[string]interface{} `json:"Entries" xml:"Entries"`
 }
 
@@ -103,7 +103,7 @@ func CreateListInventoryEntriesRequest() (request *ListInventoryEntriesRequest) 
 	request = &ListInventoryEntriesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("oos", "2019-06-01", "ListInventoryEntries", "", "")
+	request.InitWithApiInfo("oos", "2019-06-01", "ListInventoryEntries", "oos", "openAPI")
 	request.Method = requests.POST
 	return
 }

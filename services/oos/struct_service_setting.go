@@ -18,6 +18,7 @@ package oos
 // ServiceSetting is a nested struct in oos response
 type ServiceSetting struct {
 	DeliverySlsProjectName string `json:"DeliverySlsProjectName" xml:"DeliverySlsProjectName"`
+	RdcEnterpriseId        string `json:"RdcEnterpriseId" xml:"RdcEnterpriseId"`
 	DeliveryOssEnabled     bool   `json:"DeliveryOssEnabled" xml:"DeliveryOssEnabled"`
 	DeliveryOssKeyPrefix   string `json:"DeliveryOssKeyPrefix" xml:"DeliveryOssKeyPrefix"`
 	DeliveryOssBucketName  string `json:"DeliveryOssBucketName" xml:"DeliveryOssBucketName"`

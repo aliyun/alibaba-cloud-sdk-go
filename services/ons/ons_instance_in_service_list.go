@@ -71,7 +71,8 @@ func (client *Client) OnsInstanceInServiceListWithCallback(request *OnsInstanceI
 // OnsInstanceInServiceListRequest is the request struct for api OnsInstanceInServiceList
 type OnsInstanceInServiceListRequest struct {
 	*requests.RpcRequest
-	Tag *[]OnsInstanceInServiceListTag `position:"Query" name:"Tag"  type:"Repeated"`
+	UserId string                         `position:"Query" name:"UserId"`
+	Tag    *[]OnsInstanceInServiceListTag `position:"Query" name:"Tag"  type:"Repeated"`
 }
 
 // OnsInstanceInServiceListTag is a repeated param struct in OnsInstanceInServiceListRequest

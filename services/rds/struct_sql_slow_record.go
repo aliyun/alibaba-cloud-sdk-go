@@ -18,21 +18,22 @@ package rds
 // SQLSlowRecord is a nested struct in rds response
 type SQLSlowRecord struct {
 	HostAddress           string `json:"HostAddress" xml:"HostAddress"`
-	DBName                string `json:"DBName" xml:"DBName"`
-	SQLText               string `json:"SQLText" xml:"SQLText"`
-	QueryTimes            int64  `json:"QueryTimes" xml:"QueryTimes"`
-	LockTimes             int64  `json:"LockTimes" xml:"LockTimes"`
-	ParseRowCounts        int64  `json:"ParseRowCounts" xml:"ParseRowCounts"`
-	ReturnRowCounts       int64  `json:"ReturnRowCounts" xml:"ReturnRowCounts"`
-	ExecutionStartTime    string `json:"ExecutionStartTime" xml:"ExecutionStartTime"`
-	QueryTimeMS           int64  `json:"QueryTimeMS" xml:"QueryTimeMS"`
-	CpuTime               int64  `json:"CpuTime" xml:"CpuTime"`
-	LogicalIORead         int64  `json:"LogicalIORead" xml:"LogicalIORead"`
-	PhysicalIORead        int64  `json:"PhysicalIORead" xml:"PhysicalIORead"`
-	WriteIOCount          int64  `json:"WriteIOCount" xml:"WriteIOCount"`
 	RowsAffectedCount     int64  `json:"RowsAffectedCount" xml:"RowsAffectedCount"`
-	LastRowsAffectedCount int64  `json:"LastRowsAffectedCount" xml:"LastRowsAffectedCount"`
-	UserName              string `json:"UserName" xml:"UserName"`
+	QueryTimes            int64  `json:"QueryTimes" xml:"QueryTimes"`
+	SQLText               string `json:"SQLText" xml:"SQLText"`
+	CpuTime               int64  `json:"CpuTime" xml:"CpuTime"`
+	QueryTimeMS           int64  `json:"QueryTimeMS" xml:"QueryTimeMS"`
 	ApplicationName       string `json:"ApplicationName" xml:"ApplicationName"`
+	LockTimes             int64  `json:"LockTimes" xml:"LockTimes"`
+	ExecutionStartTime    string `json:"ExecutionStartTime" xml:"ExecutionStartTime"`
+	LogicalIORead         int64  `json:"LogicalIORead" xml:"LogicalIORead"`
+	WriteIOCount          int64  `json:"WriteIOCount" xml:"WriteIOCount"`
+	PhysicalIORead        int64  `json:"PhysicalIORead" xml:"PhysicalIORead"`
+	ReturnRowCounts       int64  `json:"ReturnRowCounts" xml:"ReturnRowCounts"`
+	ParseRowCounts        int64  `json:"ParseRowCounts" xml:"ParseRowCounts"`
+	DBName                string `json:"DBName" xml:"DBName"`
 	ClientHostName        string `json:"ClientHostName" xml:"ClientHostName"`
+	UserName              string `json:"UserName" xml:"UserName"`
+	LastRowsAffectedCount int64  `json:"LastRowsAffectedCount" xml:"LastRowsAffectedCount"`
+	SQLHash               string `json:"SQLHash" xml:"SQLHash"`
 }

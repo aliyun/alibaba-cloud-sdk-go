@@ -77,19 +77,19 @@ type UpdateClusterVolumesRequest struct {
 
 // UpdateClusterVolumesAdditionalVolumes is a repeated param struct in UpdateClusterVolumesRequest
 type UpdateClusterVolumesAdditionalVolumes struct {
-	VolumeType       string                       `name:"VolumeType"`
-	VolumeProtocol   string                       `name:"VolumeProtocol"`
-	LocalDirectory   string                       `name:"LocalDirectory"`
-	RemoteDirectory  string                       `name:"RemoteDirectory"`
-	Roles            *[]UpdateClusterVolumesRoles `name:"Roles" type:"Repeated"`
-	VolumeId         string                       `name:"VolumeId"`
-	VolumeMountpoint string                       `name:"VolumeMountpoint"`
-	Location         string                       `name:"Location"`
-	JobQueue         string                       `name:"JobQueue"`
+	VolumeType       string                                        `name:"VolumeType"`
+	VolumeProtocol   string                                        `name:"VolumeProtocol"`
+	LocalDirectory   string                                        `name:"LocalDirectory"`
+	RemoteDirectory  string                                        `name:"RemoteDirectory"`
+	Roles            *[]UpdateClusterVolumesAdditionalVolumesRoles `name:"Roles" type:"Repeated"`
+	VolumeId         string                                        `name:"VolumeId"`
+	VolumeMountpoint string                                        `name:"VolumeMountpoint"`
+	Location         string                                        `name:"Location"`
+	JobQueue         string                                        `name:"JobQueue"`
 }
 
-// UpdateClusterVolumesRoles is a repeated param struct in UpdateClusterVolumesRequest
-type UpdateClusterVolumesRoles struct {
+// UpdateClusterVolumesAdditionalVolumesRoles is a repeated param struct in UpdateClusterVolumesRequest
+type UpdateClusterVolumesAdditionalVolumesRoles struct {
 	Name string `name:"Name"`
 }
 

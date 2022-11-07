@@ -17,15 +17,18 @@ package sas
 
 // Strategy is a nested struct in sas response
 type Strategy struct {
-	CycleDays      int            `json:"CycleDays" xml:"CycleDays"`
-	Id             int            `json:"Id" xml:"Id"`
-	CycleStartTime int            `json:"CycleStartTime" xml:"CycleStartTime"`
-	Type           int            `json:"Type" xml:"Type"`
-	Name           string         `json:"Name" xml:"Name"`
-	RiskCount      int            `json:"RiskCount" xml:"RiskCount"`
-	EcsCount       int            `json:"EcsCount" xml:"EcsCount"`
-	ExecStatus     int            `json:"ExecStatus" xml:"ExecStatus"`
-	ProcessRate    int            `json:"ProcessRate" xml:"ProcessRate"`
-	PassRate       int            `json:"PassRate" xml:"PassRate"`
-	ConfigTargets  []ConfigTarget `json:"ConfigTargets" xml:"ConfigTargets"`
+	Name                             string                         `json:"Name" xml:"Name"`
+	RiskCount                        int                            `json:"RiskCount" xml:"RiskCount"`
+	Id                               int                            `json:"Id" xml:"Id"`
+	CycleDays                        int                            `json:"CycleDays" xml:"CycleDays"`
+	EcsCount                         int                            `json:"EcsCount" xml:"EcsCount"`
+	AuthVersionList                  string                         `json:"AuthVersionList" xml:"AuthVersionList"`
+	PassRate                         int                            `json:"PassRate" xml:"PassRate"`
+	CustomType                       string                         `json:"CustomType" xml:"CustomType"`
+	ExecStatus                       int                            `json:"ExecStatus" xml:"ExecStatus"`
+	CycleStartTime                   int                            `json:"CycleStartTime" xml:"CycleStartTime"`
+	ProcessRate                      int                            `json:"ProcessRate" xml:"ProcessRate"`
+	Type                             int                            `json:"Type" xml:"Type"`
+	ConfigTargets                    []ConfigTarget                 `json:"ConfigTargets" xml:"ConfigTargets"`
+	RiskTypeWhiteListQueryResultList []RiskTypeWhiteListQueryResult `json:"RiskTypeWhiteListQueryResultList" xml:"RiskTypeWhiteListQueryResultList"`
 }

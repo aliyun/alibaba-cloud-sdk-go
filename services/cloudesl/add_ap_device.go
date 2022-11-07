@@ -97,7 +97,7 @@ func CreateAddApDeviceRequest() (request *AddApDeviceRequest) {
 	request = &AddApDeviceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cloudesl", "2020-02-01", "AddApDevice", "cloudesl", "openAPI")
+	request.InitWithApiInfo("cloudesl", "2020-02-01", "AddApDevice", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -71,17 +71,20 @@ func (client *Client) ExtractPedestrianFeatureAttrWithCallback(request *ExtractP
 // ExtractPedestrianFeatureAttrRequest is the request struct for api ExtractPedestrianFeatureAttr
 type ExtractPedestrianFeatureAttrRequest struct {
 	*requests.RpcRequest
-	Mode           string `position:"Body" name:"Mode"`
-	ImageURL       string `position:"Body" name:"ImageURL"`
-	ServiceVersion string `position:"Body" name:"ServiceVersion"`
+	FormatResultToJson requests.Boolean `position:"Query" name:"FormatResultToJson"`
+	Mode               string           `position:"Body" name:"Mode"`
+	OssFile            string           `position:"Query" name:"OssFile"`
+	RequestProxyBy     string           `position:"Query" name:"RequestProxyBy"`
+	ImageURL           string           `position:"Body" name:"ImageURL"`
+	ServiceVersion     string           `position:"Body" name:"ServiceVersion"`
 }
 
 // ExtractPedestrianFeatureAttrResponse is the response struct for api ExtractPedestrianFeatureAttr
 type ExtractPedestrianFeatureAttrResponse struct {
 	*responses.BaseResponse
-	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 

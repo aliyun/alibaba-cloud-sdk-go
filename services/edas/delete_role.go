@@ -71,7 +71,7 @@ func (client *Client) DeleteRoleWithCallback(request *DeleteRoleRequest, callbac
 // DeleteRoleRequest is the request struct for api DeleteRole
 type DeleteRoleRequest struct {
 	*requests.RoaRequest
-	RoleId requests.Integer `position:"Query" name:"RoleId"`
+	RoleId string `position:"Query" name:"RoleId"`
 }
 
 // DeleteRoleResponse is the response struct for api DeleteRole
@@ -87,7 +87,7 @@ func CreateDeleteRoleRequest() (request *DeleteRoleRequest) {
 	request = &DeleteRoleRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "DeleteRole", "/pop/v5/account/delete_role", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "DeleteRole", "/pop/v5/account/delete_role", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

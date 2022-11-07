@@ -75,6 +75,7 @@ type DescribeDBProxyEndpointRequest struct {
 	DBProxyConnectString string           `position:"Query" name:"DBProxyConnectString"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	DBProxyEngineType    string           `position:"Query" name:"DBProxyEngineType"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	DBProxyEndpointId    string           `position:"Query" name:"DBProxyEndpointId"`
 }
@@ -82,17 +83,18 @@ type DescribeDBProxyEndpointRequest struct {
 // DescribeDBProxyEndpointResponse is the response struct for api DescribeDBProxyEndpoint
 type DescribeDBProxyEndpointResponse struct {
 	*responses.BaseResponse
-	RequestId                        string               `json:"RequestId" xml:"RequestId"`
-	DBProxyEndpointId                string               `json:"DBProxyEndpointId" xml:"DBProxyEndpointId"`
-	DBProxyConnectString             string               `json:"DBProxyConnectString" xml:"DBProxyConnectString"`
-	DBProxyConnectStringPort         string               `json:"DBProxyConnectStringPort" xml:"DBProxyConnectStringPort"`
 	DBProxyConnectStringNetType      string               `json:"DBProxyConnectStringNetType" xml:"DBProxyConnectStringNetType"`
 	DBProxyFeatures                  string               `json:"DBProxyFeatures" xml:"DBProxyFeatures"`
-	ReadOnlyInstanceMaxDelayTime     string               `json:"ReadOnlyInstanceMaxDelayTime" xml:"ReadOnlyInstanceMaxDelayTime"`
-	ReadOnlyInstanceDistributionType string               `json:"ReadOnlyInstanceDistributionType" xml:"ReadOnlyInstanceDistributionType"`
+	RequestId                        string               `json:"RequestId" xml:"RequestId"`
 	ReadOnlyInstanceWeight           string               `json:"ReadOnlyInstanceWeight" xml:"ReadOnlyInstanceWeight"`
-	DbProxyEndpointAliases           string               `json:"DbProxyEndpointAliases" xml:"DbProxyEndpointAliases"`
+	ReadOnlyInstanceDistributionType string               `json:"ReadOnlyInstanceDistributionType" xml:"ReadOnlyInstanceDistributionType"`
+	ReadOnlyInstanceMaxDelayTime     string               `json:"ReadOnlyInstanceMaxDelayTime" xml:"ReadOnlyInstanceMaxDelayTime"`
 	DbProxyEndpointReadWriteMode     string               `json:"DbProxyEndpointReadWriteMode" xml:"DbProxyEndpointReadWriteMode"`
+	DbProxyEndpointAliases           string               `json:"DbProxyEndpointAliases" xml:"DbProxyEndpointAliases"`
+	DBProxyEndpointId                string               `json:"DBProxyEndpointId" xml:"DBProxyEndpointId"`
+	DBProxyConnectStringPort         string               `json:"DBProxyConnectStringPort" xml:"DBProxyConnectStringPort"`
+	DBProxyConnectString             string               `json:"DBProxyConnectString" xml:"DBProxyConnectString"`
+	DBProxyEngineType                string               `json:"DBProxyEngineType" xml:"DBProxyEngineType"`
 	EndpointConnectItems             EndpointConnectItems `json:"EndpointConnectItems" xml:"EndpointConnectItems"`
 }
 

@@ -72,7 +72,6 @@ func (client *Client) DescribeDomainTopReferVisitWithCallback(request *DescribeD
 type DescribeDomainTopReferVisitRequest struct {
 	*requests.RpcRequest
 	StartTime  string           `position:"Query" name:"StartTime"`
-	Percent    string           `position:"Query" name:"Percent"`
 	DomainName string           `position:"Query" name:"DomainName"`
 	EndTime    string           `position:"Query" name:"EndTime"`
 	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,9 +81,9 @@ type DescribeDomainTopReferVisitRequest struct {
 // DescribeDomainTopReferVisitResponse is the response struct for api DescribeDomainTopReferVisit
 type DescribeDomainTopReferVisitResponse struct {
 	*responses.BaseResponse
+	StartTime    string       `json:"StartTime" xml:"StartTime"`
 	RequestId    string       `json:"RequestId" xml:"RequestId"`
 	DomainName   string       `json:"DomainName" xml:"DomainName"`
-	StartTime    string       `json:"StartTime" xml:"StartTime"`
 	TopReferList TopReferList `json:"TopReferList" xml:"TopReferList"`
 }
 

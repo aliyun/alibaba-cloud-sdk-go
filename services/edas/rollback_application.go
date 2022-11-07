@@ -71,11 +71,11 @@ func (client *Client) RollbackApplicationWithCallback(request *RollbackApplicati
 // RollbackApplicationRequest is the request struct for api RollbackApplication
 type RollbackApplicationRequest struct {
 	*requests.RoaRequest
-	AppId          string           `position:"Query" name:"AppId"`
-	GroupId        string           `position:"Query" name:"GroupId"`
-	BatchWaitTime  requests.Integer `position:"Query" name:"BatchWaitTime"`
-	Batch          requests.Integer `position:"Query" name:"Batch"`
-	HistoryVersion string           `position:"Query" name:"HistoryVersion"`
+	AppId          string `position:"Query" name:"AppId"`
+	GroupId        string `position:"Query" name:"GroupId"`
+	BatchWaitTime  string `position:"Query" name:"BatchWaitTime"`
+	Batch          string `position:"Query" name:"Batch"`
+	HistoryVersion string `position:"Query" name:"HistoryVersion"`
 }
 
 // RollbackApplicationResponse is the response struct for api RollbackApplication
@@ -92,7 +92,7 @@ func CreateRollbackApplicationRequest() (request *RollbackApplicationRequest) {
 	request = &RollbackApplicationRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "RollbackApplication", "/pop/v5/changeorder/co_rollback", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "RollbackApplication", "/pop/v5/changeorder/co_rollback", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

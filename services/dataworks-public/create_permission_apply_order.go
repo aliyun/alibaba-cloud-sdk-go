@@ -83,13 +83,13 @@ type CreatePermissionApplyOrderRequest struct {
 
 // CreatePermissionApplyOrderApplyObject is a repeated param struct in CreatePermissionApplyOrderRequest
 type CreatePermissionApplyOrderApplyObject struct {
-	ColumnMetaList *[]CreatePermissionApplyOrderColumnMetaList `name:"ColumnMetaList" type:"Repeated"`
-	Name           string                                      `name:"Name"`
-	Actions        string                                      `name:"Actions"`
+	ColumnMetaList *[]CreatePermissionApplyOrderApplyObjectColumnMetaList `name:"ColumnMetaList" type:"Repeated"`
+	Name           string                                                 `name:"Name"`
+	Actions        string                                                 `name:"Actions"`
 }
 
-// CreatePermissionApplyOrderColumnMetaList is a repeated param struct in CreatePermissionApplyOrderRequest
-type CreatePermissionApplyOrderColumnMetaList struct {
+// CreatePermissionApplyOrderApplyObjectColumnMetaList is a repeated param struct in CreatePermissionApplyOrderRequest
+type CreatePermissionApplyOrderApplyObjectColumnMetaList struct {
 	Name string `name:"Name"`
 }
 

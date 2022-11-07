@@ -71,7 +71,10 @@ func (client *Client) BlurFaceWithCallback(request *BlurFaceRequest, callback fu
 // BlurFaceRequest is the request struct for api BlurFace
 type BlurFaceRequest struct {
 	*requests.RpcRequest
-	ImageURL string `position:"Body" name:"ImageURL"`
+	FormatResultToJson requests.Boolean `position:"Query" name:"FormatResultToJson"`
+	OssFile            string           `position:"Query" name:"OssFile"`
+	RequestProxyBy     string           `position:"Query" name:"RequestProxyBy"`
+	ImageURL           string           `position:"Body" name:"ImageURL"`
 }
 
 // BlurFaceResponse is the response struct for api BlurFace

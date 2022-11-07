@@ -71,9 +71,12 @@ func (client *Client) RetouchBodyWithCallback(request *RetouchBodyRequest, callb
 // RetouchBodyRequest is the request struct for api RetouchBody
 type RetouchBodyRequest struct {
 	*requests.RpcRequest
-	LengthenDegree requests.Float `position:"Body" name:"LengthenDegree"`
-	SlimDegree     requests.Float `position:"Body" name:"SlimDegree"`
-	ImageURL       string         `position:"Body" name:"ImageURL"`
+	LengthenDegree     requests.Float   `position:"Body" name:"LengthenDegree"`
+	FormatResultToJson requests.Boolean `position:"Query" name:"FormatResultToJson"`
+	OssFile            string           `position:"Query" name:"OssFile"`
+	SlimDegree         requests.Float   `position:"Body" name:"SlimDegree"`
+	RequestProxyBy     string           `position:"Query" name:"RequestProxyBy"`
+	ImageURL           string           `position:"Body" name:"ImageURL"`
 }
 
 // RetouchBodyResponse is the response struct for api RetouchBody

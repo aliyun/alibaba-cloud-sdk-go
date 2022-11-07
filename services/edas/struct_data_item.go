@@ -21,6 +21,7 @@ type DataItem struct {
 	Value        string             `json:"Value" xml:"Value"`
 	ClusterId    string             `json:"ClusterId" xml:"ClusterId"`
 	RegionId     string             `json:"RegionId" xml:"RegionId"`
+	Namespace    string             `json:"Namespace" xml:"Namespace"`
 	ClusterName  string             `json:"ClusterName" xml:"ClusterName"`
 	IngressConfs []IngressConfsItem `json:"IngressConfs" xml:"IngressConfs"`
 }

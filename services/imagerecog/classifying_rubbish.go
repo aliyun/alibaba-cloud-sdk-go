@@ -71,7 +71,10 @@ func (client *Client) ClassifyingRubbishWithCallback(request *ClassifyingRubbish
 // ClassifyingRubbishRequest is the request struct for api ClassifyingRubbish
 type ClassifyingRubbishRequest struct {
 	*requests.RpcRequest
-	ImageURL string `position:"Body" name:"ImageURL"`
+	FormatResultToJson requests.Boolean `position:"Query" name:"FormatResultToJson"`
+	OssFile            string           `position:"Query" name:"OssFile"`
+	RequestProxyBy     string           `position:"Query" name:"RequestProxyBy"`
+	ImageURL           string           `position:"Body" name:"ImageURL"`
 }
 
 // ClassifyingRubbishResponse is the response struct for api ClassifyingRubbish
@@ -86,7 +89,7 @@ func CreateClassifyingRubbishRequest() (request *ClassifyingRubbishRequest) {
 	request = &ClassifyingRubbishRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imagerecog", "2019-09-30", "ClassifyingRubbish", "imagerecog", "openAPI")
+	request.InitWithApiInfo("imagerecog", "2019-09-30", "ClassifyingRubbish", "", "")
 	request.Method = requests.POST
 	return
 }

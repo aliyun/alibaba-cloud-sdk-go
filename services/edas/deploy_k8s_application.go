@@ -71,55 +71,66 @@ func (client *Client) DeployK8sApplicationWithCallback(request *DeployK8sApplica
 // DeployK8sApplicationRequest is the request struct for api DeployK8sApplication
 type DeployK8sApplicationRequest struct {
 	*requests.RoaRequest
-	NasId                  string           `position:"Query" name:"NasId"`
-	PackageVersionId       string           `position:"Query" name:"PackageVersionId"`
-	BatchWaitTime          requests.Integer `position:"Query" name:"BatchWaitTime"`
-	Envs                   string           `position:"Query" name:"Envs"`
-	CpuLimit               requests.Integer `position:"Query" name:"CpuLimit"`
-	StorageType            string           `position:"Query" name:"StorageType"`
-	ConfigMountDescs       string           `position:"Query" name:"ConfigMountDescs"`
-	MemoryLimit            requests.Integer `position:"Query" name:"MemoryLimit"`
-	ImageTag               string           `position:"Query" name:"ImageTag"`
-	DeployAcrossZones      string           `position:"Query" name:"DeployAcrossZones"`
-	DeployAcrossNodes      string           `position:"Query" name:"DeployAcrossNodes"`
-	MemoryRequest          requests.Integer `position:"Query" name:"MemoryRequest"`
-	Image                  string           `position:"Query" name:"Image"`
-	PreStop                string           `position:"Query" name:"PreStop"`
-	BuildPackId            string           `position:"Query" name:"BuildPackId"`
-	LocalVolume            string           `position:"Query" name:"LocalVolume"`
-	UpdateStrategy         string           `position:"Query" name:"UpdateStrategy"`
-	UseBodyEncoding        requests.Boolean `position:"Query" name:"UseBodyEncoding"`
-	ChangeOrderDesc        string           `position:"Query" name:"ChangeOrderDesc"`
-	EmptyDirs              string           `position:"Query" name:"EmptyDirs"`
-	McpuLimit              requests.Integer `position:"Query" name:"McpuLimit"`
-	RuntimeClassName       string           `position:"Query" name:"RuntimeClassName"`
-	TrafficControlStrategy string           `position:"Query" name:"TrafficControlStrategy"`
-	PostStart              string           `position:"Query" name:"PostStart"`
-	CustomAffinity         string           `position:"Query" name:"CustomAffinity"`
-	WebContainer           string           `position:"Query" name:"WebContainer"`
-	EnableAhas             requests.Boolean `position:"Query" name:"EnableAhas"`
-	SlsConfigs             string           `position:"Query" name:"SlsConfigs"`
-	Readiness              string           `position:"Query" name:"Readiness"`
-	Liveness               string           `position:"Query" name:"Liveness"`
-	PackageVersion         string           `position:"Query" name:"PackageVersion"`
-	EnvFroms               string           `position:"Query" name:"EnvFroms"`
-	EdasContainerVersion   string           `position:"Query" name:"EdasContainerVersion"`
-	PackageUrl             string           `position:"Query" name:"PackageUrl"`
-	MountDescs             string           `position:"Query" name:"MountDescs"`
-	Replicas               requests.Integer `position:"Query" name:"Replicas"`
-	CustomTolerations      string           `position:"Query" name:"CustomTolerations"`
-	CpuRequest             requests.Integer `position:"Query" name:"CpuRequest"`
-	WebContainerConfig     string           `position:"Query" name:"WebContainerConfig"`
-	Command                string           `position:"Query" name:"Command"`
-	Args                   string           `position:"Query" name:"Args"`
-	JDK                    string           `position:"Query" name:"JDK"`
-	UriEncoding            string           `position:"Query" name:"UriEncoding"`
-	AppId                  string           `position:"Query" name:"AppId"`
-	BatchTimeout           requests.Integer `position:"Query" name:"BatchTimeout"`
-	PvcMountDescs          string           `position:"Query" name:"PvcMountDescs"`
-	McpuRequest            requests.Integer `position:"Query" name:"McpuRequest"`
-	VolumesStr             string           `position:"Query" name:"VolumesStr"`
-	JavaStartUpConfig      string           `position:"Query" name:"JavaStartUpConfig"`
+	NasId                    string `position:"Query" name:"NasId"`
+	PackageVersionId         string `position:"Query" name:"PackageVersionId"`
+	BatchWaitTime            string `position:"Query" name:"BatchWaitTime"`
+	RequestsEphemeralStorage string `position:"Query" name:"RequestsEphemeralStorage"`
+	Envs                     string `position:"Query" name:"Envs"`
+	Annotations              string `position:"Query" name:"Annotations"`
+	CpuLimit                 string `position:"Query" name:"CpuLimit"`
+	StorageType              string `position:"Query" name:"StorageType"`
+	ConfigMountDescs         string `position:"Query" name:"ConfigMountDescs"`
+	MemoryLimit              string `position:"Query" name:"MemoryLimit"`
+	ImageTag                 string `position:"Query" name:"ImageTag"`
+	DeployAcrossZones        string `position:"Query" name:"DeployAcrossZones"`
+	DeployAcrossNodes        string `position:"Query" name:"DeployAcrossNodes"`
+	MemoryRequest            string `position:"Query" name:"MemoryRequest"`
+	Image                    string `position:"Query" name:"Image"`
+	PreStop                  string `position:"Query" name:"PreStop"`
+	BuildPackId              string `position:"Query" name:"BuildPackId"`
+	EnableEmptyPushReject    string `position:"Query" name:"EnableEmptyPushReject"`
+	LocalVolume              string `position:"Query" name:"LocalVolume"`
+	UpdateStrategy           string `position:"Query" name:"UpdateStrategy"`
+	Labels                   string `position:"Query" name:"Labels"`
+	UseBodyEncoding          string `position:"Query" name:"UseBodyEncoding"`
+	LimitEphemeralStorage    string `position:"Query" name:"LimitEphemeralStorage"`
+	ChangeOrderDesc          string `position:"Query" name:"ChangeOrderDesc"`
+	LosslessRuleFuncType     string `position:"Query" name:"LosslessRuleFuncType"`
+	EmptyDirs                string `position:"Query" name:"EmptyDirs"`
+	McpuLimit                string `position:"Query" name:"McpuLimit"`
+	LosslessRuleRelated      string `position:"Query" name:"LosslessRuleRelated"`
+	RuntimeClassName         string `position:"Query" name:"RuntimeClassName"`
+	TrafficControlStrategy   string `position:"Query" name:"TrafficControlStrategy"`
+	PostStart                string `position:"Query" name:"PostStart"`
+	CustomAffinity           string `position:"Query" name:"CustomAffinity"`
+	EnableLosslessRule       string `position:"Query" name:"EnableLosslessRule"`
+	LosslessRuleWarmupTime   string `position:"Query" name:"LosslessRuleWarmupTime"`
+	WebContainer             string `position:"Query" name:"WebContainer"`
+	EnableAhas               string `position:"Query" name:"EnableAhas"`
+	SlsConfigs               string `position:"Query" name:"SlsConfigs"`
+	Readiness                string `position:"Query" name:"Readiness"`
+	Liveness                 string `position:"Query" name:"Liveness"`
+	PackageVersion           string `position:"Query" name:"PackageVersion"`
+	EnvFroms                 string `position:"Query" name:"EnvFroms"`
+	EdasContainerVersion     string `position:"Query" name:"EdasContainerVersion"`
+	PackageUrl               string `position:"Query" name:"PackageUrl"`
+	LosslessRuleDelayTime    string `position:"Query" name:"LosslessRuleDelayTime"`
+	MountDescs               string `position:"Query" name:"MountDescs"`
+	Replicas                 string `position:"Query" name:"Replicas"`
+	CustomTolerations        string `position:"Query" name:"CustomTolerations"`
+	CpuRequest               string `position:"Query" name:"CpuRequest"`
+	WebContainerConfig       string `position:"Query" name:"WebContainerConfig"`
+	Command                  string `position:"Query" name:"Command"`
+	Args                     string `position:"Query" name:"Args"`
+	JDK                      string `position:"Query" name:"JDK"`
+	UriEncoding              string `position:"Query" name:"UriEncoding"`
+	AppId                    string `position:"Query" name:"AppId"`
+	BatchTimeout             string `position:"Query" name:"BatchTimeout"`
+	PvcMountDescs            string `position:"Query" name:"PvcMountDescs"`
+	McpuRequest              string `position:"Query" name:"McpuRequest"`
+	VolumesStr               string `position:"Query" name:"VolumesStr"`
+	LosslessRuleAligned      string `position:"Query" name:"LosslessRuleAligned"`
+	JavaStartUpConfig        string `position:"Query" name:"JavaStartUpConfig"`
 }
 
 // DeployK8sApplicationResponse is the response struct for api DeployK8sApplication
@@ -136,7 +147,7 @@ func CreateDeployK8sApplicationRequest() (request *DeployK8sApplicationRequest) 
 	request = &DeployK8sApplicationRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "DeployK8sApplication", "/pop/v5/k8s/acs/k8s_apps", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "DeployK8sApplication", "/pop/v5/k8s/acs/k8s_apps", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

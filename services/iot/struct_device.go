@@ -17,8 +17,10 @@ package iot
 
 // Device is a nested struct in iot response
 type Device struct {
-	DeviceName string `json:"DeviceName" xml:"DeviceName"`
-	IotId      string `json:"IotId" xml:"IotId"`
-	ProductKey string `json:"ProductKey" xml:"ProductKey"`
-	DriverId   string `json:"DriverId" xml:"DriverId"`
+	DeviceName   string `json:"DeviceName" xml:"DeviceName"`
+	IotId        string `json:"IotId" xml:"IotId"`
+	DeviceSecret string `json:"DeviceSecret" xml:"DeviceSecret"`
+	ProductKey   string `json:"ProductKey" xml:"ProductKey"`
+	Sn           string `json:"Sn" xml:"Sn"`
+	DriverId     string `json:"DriverId" xml:"DriverId"`
 }

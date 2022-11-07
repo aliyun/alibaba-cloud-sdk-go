@@ -17,16 +17,16 @@ package adb
 
 // SqlPlanTask is a nested struct in adb response
 type SqlPlanTask struct {
-	TaskId       int    `json:"TaskId" xml:"TaskId"`
-	State        string `json:"State" xml:"State"`
-	ElapsedTime  int64  `json:"ElapsedTime" xml:"ElapsedTime"`
-	PeakMemory   int64  `json:"PeakMemory" xml:"PeakMemory"`
-	OperatorCost int64  `json:"OperatorCost" xml:"OperatorCost"`
-	InputRows    int64  `json:"InputRows" xml:"InputRows"`
-	InputSize    int64  `json:"InputSize" xml:"InputSize"`
-	OutputRows   int64  `json:"OutputRows" xml:"OutputRows"`
-	OutputSize   int64  `json:"OutputSize" xml:"OutputSize"`
-	ScanRows     int64  `json:"ScanRows" xml:"ScanRows"`
-	ScanSize     int64  `json:"ScanSize" xml:"ScanSize"`
 	ScanCost     int64  `json:"ScanCost" xml:"ScanCost"`
+	OutputSize   int64  `json:"OutputSize" xml:"OutputSize"`
+	InputSize    int64  `json:"InputSize" xml:"InputSize"`
+	State        string `json:"State" xml:"State"`
+	OperatorCost int64  `json:"OperatorCost" xml:"OperatorCost"`
+	OutputRows   int64  `json:"OutputRows" xml:"OutputRows"`
+	ScanSize     int64  `json:"ScanSize" xml:"ScanSize"`
+	ElapsedTime  int64  `json:"ElapsedTime" xml:"ElapsedTime"`
+	ScanRows     int64  `json:"ScanRows" xml:"ScanRows"`
+	PeakMemory   int64  `json:"PeakMemory" xml:"PeakMemory"`
+	TaskId       int    `json:"TaskId" xml:"TaskId"`
+	InputRows    int64  `json:"InputRows" xml:"InputRows"`
 }

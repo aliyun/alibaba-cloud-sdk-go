@@ -78,6 +78,7 @@ type DescribeDBInstancesForCloneRequest struct {
 	SearchKey            string           `position:"Query" name:"SearchKey"`
 	EngineVersion        string           `position:"Query" name:"EngineVersion"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	Expired              string           `position:"Query" name:"Expired"`
 	Engine               string           `position:"Query" name:"Engine"`
 	CurrentInstanceId    string           `position:"Query" name:"CurrentInstanceId"`
@@ -102,8 +103,8 @@ type DescribeDBInstancesForCloneResponse struct {
 	*responses.BaseResponse
 	RequestId        string                             `json:"RequestId" xml:"RequestId"`
 	PageNumber       int                                `json:"PageNumber" xml:"PageNumber"`
-	TotalRecordCount int                                `json:"TotalRecordCount" xml:"TotalRecordCount"`
 	PageRecordCount  int                                `json:"PageRecordCount" xml:"PageRecordCount"`
+	TotalRecordCount int                                `json:"TotalRecordCount" xml:"TotalRecordCount"`
 	Items            ItemsInDescribeDBInstancesForClone `json:"Items" xml:"Items"`
 }
 

@@ -17,22 +17,25 @@ package ehpc
 
 // JobTemplates is a nested struct in ehpc response
 type JobTemplates struct {
-	Id                 string `json:"Id" xml:"Id"`
-	Name               string `json:"Name" xml:"Name"`
-	CommandLine        string `json:"CommandLine" xml:"CommandLine"`
-	RunasUser          string `json:"RunasUser" xml:"RunasUser"`
-	Priority           int    `json:"Priority" xml:"Priority"`
-	PackagePath        string `json:"PackagePath" xml:"PackagePath"`
-	StdoutRedirectPath string `json:"StdoutRedirectPath" xml:"StdoutRedirectPath"`
-	StderrRedirectPath string `json:"StderrRedirectPath" xml:"StderrRedirectPath"`
-	ReRunable          bool   `json:"ReRunable" xml:"ReRunable"`
-	ArrayRequest       string `json:"ArrayRequest" xml:"ArrayRequest"`
-	Variables          string `json:"Variables" xml:"Variables"`
-	Queue              string `json:"Queue" xml:"Queue"`
-	ClockTime          string `json:"ClockTime" xml:"ClockTime"`
-	Node               int    `json:"Node" xml:"Node"`
 	Task               int    `json:"Task" xml:"Task"`
-	Thread             int    `json:"Thread" xml:"Thread"`
+	Variables          string `json:"Variables" xml:"Variables"`
+	CommandLine        string `json:"CommandLine" xml:"CommandLine"`
+	Queue              string `json:"Queue" xml:"Queue"`
+	Priority           int    `json:"Priority" xml:"Priority"`
 	Mem                string `json:"Mem" xml:"Mem"`
+	Thread             int    `json:"Thread" xml:"Thread"`
+	ArrayRequest       string `json:"ArrayRequest" xml:"ArrayRequest"`
+	StderrRedirectPath string `json:"StderrRedirectPath" xml:"StderrRedirectPath"`
+	Node               int    `json:"Node" xml:"Node"`
+	StdoutRedirectPath string `json:"StdoutRedirectPath" xml:"StdoutRedirectPath"`
 	Gpu                int    `json:"Gpu" xml:"Gpu"`
+	PackagePath        string `json:"PackagePath" xml:"PackagePath"`
+	ClockTime          string `json:"ClockTime" xml:"ClockTime"`
+	ReRunable          bool   `json:"ReRunable" xml:"ReRunable"`
+	Name               string `json:"Name" xml:"Name"`
+	Id                 string `json:"Id" xml:"Id"`
+	RunasUser          string `json:"RunasUser" xml:"RunasUser"`
+	InputFileUrl       string `json:"InputFileUrl" xml:"InputFileUrl"`
+	WithUnzipCmd       bool   `json:"WithUnzipCmd" xml:"WithUnzipCmd"`
+	UnzipCmd           string `json:"UnzipCmd" xml:"UnzipCmd"`
 }

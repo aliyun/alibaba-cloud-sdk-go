@@ -17,9 +17,5 @@ package ddoscoo
 
 // HealthCheckStatus is a nested struct in ddoscoo response
 type HealthCheckStatus struct {
-	InstanceId           string             `json:"InstanceId" xml:"InstanceId"`
-	Protocol             string             `json:"Protocol" xml:"Protocol"`
-	FrontendPort         int                `json:"FrontendPort" xml:"FrontendPort"`
-	Status               string             `json:"Status" xml:"Status"`
-	RealServerStatusList []RealServerStatus `json:"RealServerStatusList" xml:"RealServerStatusList"`
+	Status []Status `json:"Status" xml:"Status"`
 }

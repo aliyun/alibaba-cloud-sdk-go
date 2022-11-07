@@ -72,6 +72,7 @@ func (client *Client) SetServiceSettingsWithCallback(request *SetServiceSettings
 type SetServiceSettingsRequest struct {
 	*requests.RpcRequest
 	DeliverySlsEnabled     requests.Boolean `position:"Query" name:"DeliverySlsEnabled"`
+	RdcEnterpriseId        string           `position:"Query" name:"RdcEnterpriseId"`
 	DeliveryOssKeyPrefix   string           `position:"Query" name:"DeliveryOssKeyPrefix"`
 	DeliveryOssEnabled     requests.Boolean `position:"Query" name:"DeliveryOssEnabled"`
 	DeliverySlsProjectName string           `position:"Query" name:"DeliverySlsProjectName"`
@@ -90,7 +91,7 @@ func CreateSetServiceSettingsRequest() (request *SetServiceSettingsRequest) {
 	request = &SetServiceSettingsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("oos", "2019-06-01", "SetServiceSettings", "", "")
+	request.InitWithApiInfo("oos", "2019-06-01", "SetServiceSettings", "oos", "openAPI")
 	request.Method = requests.POST
 	return
 }

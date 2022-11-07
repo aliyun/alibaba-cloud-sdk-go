@@ -17,8 +17,8 @@ package ehpc
 
 // ServicePackInfo is a nested struct in ehpc response
 type ServicePackInfo struct {
-	InstanceName string `json:"InstanceName" xml:"InstanceName"`
+	EndTime      int    `json:"EndTime" xml:"EndTime"`
 	Capacity     int    `json:"Capacity" xml:"Capacity"`
 	StartTime    int    `json:"StartTime" xml:"StartTime"`
-	EndTime      int    `json:"EndTime" xml:"EndTime"`
+	InstanceName string `json:"InstanceName" xml:"InstanceName"`
 }

@@ -72,14 +72,14 @@ func (client *Client) DescribeClusterOperateLogsWithCallback(request *DescribeCl
 type DescribeClusterOperateLogsRequest struct {
 	*requests.RpcRequest
 	ClientToken        string           `position:"Body" name:"ClientToken"`
-	EndTime            requests.Integer `position:"Body" name:"EndTime"`
 	DedicatedClusterId string           `position:"Body" name:"DedicatedClusterId"`
 	StartTime          requests.Integer `position:"Body" name:"StartTime"`
-	OwnerID            string           `position:"Body" name:"OwnerID"`
 	PageNumber         requests.Integer `position:"Body" name:"PageNumber"`
 	AccountId          string           `position:"Body" name:"AccountId"`
 	PageSize           requests.Integer `position:"Body" name:"PageSize"`
 	DtsJobId           string           `position:"Body" name:"DtsJobId"`
+	EndTime            requests.Integer `position:"Body" name:"EndTime"`
+	OwnerID            string           `position:"Body" name:"OwnerID"`
 }
 
 // DescribeClusterOperateLogsResponse is the response struct for api DescribeClusterOperateLogs

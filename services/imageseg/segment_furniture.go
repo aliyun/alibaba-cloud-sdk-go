@@ -71,7 +71,9 @@ func (client *Client) SegmentFurnitureWithCallback(request *SegmentFurnitureRequ
 // SegmentFurnitureRequest is the request struct for api SegmentFurniture
 type SegmentFurnitureRequest struct {
 	*requests.RpcRequest
-	ImageURL string `position:"Body" name:"ImageURL"`
+	OssFile        string `position:"Query" name:"OssFile"`
+	RequestProxyBy string `position:"Query" name:"RequestProxyBy"`
+	ImageURL       string `position:"Body" name:"ImageURL"`
 }
 
 // SegmentFurnitureResponse is the response struct for api SegmentFurniture
@@ -86,7 +88,7 @@ func CreateSegmentFurnitureRequest() (request *SegmentFurnitureRequest) {
 	request = &SegmentFurnitureRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imageseg", "2019-12-30", "SegmentFurniture", "imageseg", "openAPI")
+	request.InitWithApiInfo("imageseg", "2019-12-30", "SegmentFurniture", "", "")
 	request.Method = requests.POST
 	return
 }

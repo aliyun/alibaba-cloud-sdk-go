@@ -71,15 +71,16 @@ func (client *Client) UploadImageWithCallback(request *UploadImageRequest, callb
 // UploadImageRequest is the request struct for api UploadImage
 type UploadImageRequest struct {
 	*requests.RpcRequest
-	GpuCategory   requests.Boolean `position:"Query" name:"GpuCategory"`
-	Description   string           `position:"Query" name:"Description"`
-	OssObjectPath string           `position:"Query" name:"OssObjectPath"`
-	ImageName     string           `position:"Query" name:"ImageName"`
-	LicenseType   string           `position:"Query" name:"LicenseType"`
-	OsType        string           `position:"Query" name:"OsType"`
-	DataDiskSize  requests.Integer `position:"Query" name:"DataDiskSize"`
-	ProtocolType  string           `position:"Query" name:"ProtocolType"`
-	GpuDriverType string           `position:"Query" name:"GpuDriverType"`
+	EnableSecurityCheck requests.Boolean `position:"Query" name:"EnableSecurityCheck"`
+	GpuCategory         requests.Boolean `position:"Query" name:"GpuCategory"`
+	Description         string           `position:"Query" name:"Description"`
+	OssObjectPath       string           `position:"Query" name:"OssObjectPath"`
+	ImageName           string           `position:"Query" name:"ImageName"`
+	LicenseType         string           `position:"Query" name:"LicenseType"`
+	OsType              string           `position:"Query" name:"OsType"`
+	DataDiskSize        requests.Integer `position:"Query" name:"DataDiskSize"`
+	ProtocolType        string           `position:"Query" name:"ProtocolType"`
+	GpuDriverType       string           `position:"Query" name:"GpuDriverType"`
 }
 
 // UploadImageResponse is the response struct for api UploadImage

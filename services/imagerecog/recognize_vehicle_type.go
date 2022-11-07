@@ -71,7 +71,10 @@ func (client *Client) RecognizeVehicleTypeWithCallback(request *RecognizeVehicle
 // RecognizeVehicleTypeRequest is the request struct for api RecognizeVehicleType
 type RecognizeVehicleTypeRequest struct {
 	*requests.RpcRequest
-	ImageURL string `position:"Body" name:"ImageURL"`
+	FormatResultToJson requests.Boolean `position:"Query" name:"FormatResultToJson"`
+	OssFile            string           `position:"Query" name:"OssFile"`
+	RequestProxyBy     string           `position:"Query" name:"RequestProxyBy"`
+	ImageURL           string           `position:"Body" name:"ImageURL"`
 }
 
 // RecognizeVehicleTypeResponse is the response struct for api RecognizeVehicleType
@@ -86,7 +89,7 @@ func CreateRecognizeVehicleTypeRequest() (request *RecognizeVehicleTypeRequest) 
 	request = &RecognizeVehicleTypeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imagerecog", "2019-09-30", "RecognizeVehicleType", "imagerecog", "openAPI")
+	request.InitWithApiInfo("imagerecog", "2019-09-30", "RecognizeVehicleType", "", "")
 	request.Method = requests.POST
 	return
 }

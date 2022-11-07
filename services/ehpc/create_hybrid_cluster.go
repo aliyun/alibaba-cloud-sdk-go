@@ -71,6 +71,7 @@ func (client *Client) CreateHybridClusterWithCallback(request *CreateHybridClust
 // CreateHybridClusterRequest is the request struct for api CreateHybridCluster
 type CreateHybridClusterRequest struct {
 	*requests.RpcRequest
+	EcsOrderManagerInstanceType string                                  `position:"Query" name:"EcsOrder.Manager.InstanceType"`
 	KeyPairName                 string                                  `position:"Query" name:"KeyPairName"`
 	MultiOs                     requests.Boolean                        `position:"Query" name:"MultiOs"`
 	SecurityGroupName           string                                  `position:"Query" name:"SecurityGroupName"`
@@ -120,8 +121,9 @@ type CreateHybridClusterNodes struct {
 	IpAddress     string `name:"IpAddress"`
 	HostName      string `name:"HostName"`
 	Role          string `name:"Role"`
-	AccountType   string `name:"AccountType"`
 	SchedulerType string `name:"SchedulerType"`
+	AccountType   string `name:"AccountType"`
+	Dir           string `name:"Dir"`
 }
 
 // CreateHybridClusterApplication is a repeated param struct in CreateHybridClusterRequest
@@ -133,8 +135,8 @@ type CreateHybridClusterApplication struct {
 type CreateHybridClusterResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	ClusterId string `json:"ClusterId" xml:"ClusterId"`
 	TaskId    string `json:"TaskId" xml:"TaskId"`
+	ClusterId string `json:"ClusterId" xml:"ClusterId"`
 }
 
 // CreateCreateHybridClusterRequest creates a request to invoke CreateHybridCluster API

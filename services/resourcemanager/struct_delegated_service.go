@@ -19,4 +19,5 @@ package resourcemanager
 type DelegatedService struct {
 	DelegationEnabledTime string `json:"DelegationEnabledTime" xml:"DelegationEnabledTime"`
 	ServicePrincipal      string `json:"ServicePrincipal" xml:"ServicePrincipal"`
+	Status                string `json:"Status" xml:"Status"`
 }

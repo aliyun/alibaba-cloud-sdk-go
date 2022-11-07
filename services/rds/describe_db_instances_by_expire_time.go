@@ -88,8 +88,8 @@ type DescribeDBInstancesByExpireTimeResponse struct {
 	*responses.BaseResponse
 	RequestId        string                                 `json:"RequestId" xml:"RequestId"`
 	PageNumber       int                                    `json:"PageNumber" xml:"PageNumber"`
-	TotalRecordCount int                                    `json:"TotalRecordCount" xml:"TotalRecordCount"`
 	PageRecordCount  int                                    `json:"PageRecordCount" xml:"PageRecordCount"`
+	TotalRecordCount int                                    `json:"TotalRecordCount" xml:"TotalRecordCount"`
 	Items            ItemsInDescribeDBInstancesByExpireTime `json:"Items" xml:"Items"`
 }
 

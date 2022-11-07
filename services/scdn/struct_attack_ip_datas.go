@@ -17,6 +17,6 @@ package scdn
 
 // AttackIpDatas is a nested struct in scdn response
 type AttackIpDatas struct {
-	Ip          string `json:"Ip" xml:"Ip"`
 	AttackCount string `json:"AttackCount" xml:"AttackCount"`
+	Ip          string `json:"Ip" xml:"Ip"`
 }

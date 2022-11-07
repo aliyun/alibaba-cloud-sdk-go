@@ -26,4 +26,5 @@ type ForwardTableEntry struct {
 	ForwardEntryName string `json:"ForwardEntryName" xml:"ForwardEntryName"`
 	Status           string `json:"Status" xml:"Status"`
 	IpProtocol       string `json:"IpProtocol" xml:"IpProtocol"`
+	HealthCheckPort  string `json:"HealthCheckPort" xml:"HealthCheckPort"`
 }

@@ -87,7 +87,7 @@ func CreateRecognizeSceneRequest() (request *RecognizeSceneRequest) {
 	request = &RecognizeSceneRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imagerecog", "2019-09-30", "RecognizeScene", "imagerecog", "openAPI")
+	request.InitWithApiInfo("imagerecog", "2019-09-30", "RecognizeScene", "", "")
 	request.Method = requests.POST
 	return
 }

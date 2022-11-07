@@ -17,7 +17,7 @@ package qualitycheck
 
 // DataInListQualityCheckScheme is a nested struct in qualitycheck response
 type DataInListQualityCheckScheme struct {
-	SchemeId            int                   `json:"SchemeId" xml:"SchemeId"`
+	SchemeId            int64                 `json:"SchemeId" xml:"SchemeId"`
 	Name                string                `json:"Name" xml:"Name"`
 	Description         string                `json:"Description" xml:"Description"`
 	DataType            int                   `json:"DataType" xml:"DataType"`
@@ -28,6 +28,7 @@ type DataInListQualityCheckScheme struct {
 	CreateTime          string                `json:"CreateTime" xml:"CreateTime"`
 	UpdateUserName      string                `json:"UpdateUserName" xml:"UpdateUserName"`
 	UpdateTime          string                `json:"UpdateTime" xml:"UpdateTime"`
+	Version             int64                 `json:"Version" xml:"Version"`
 	SchemeCheckTypeList []SchemeCheckTypeList `json:"SchemeCheckTypeList" xml:"SchemeCheckTypeList"`
 	RuleList            []RuleList            `json:"RuleList" xml:"RuleList"`
 }

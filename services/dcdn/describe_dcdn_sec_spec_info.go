@@ -77,8 +77,8 @@ type DescribeDcdnSecSpecInfoRequest struct {
 // DescribeDcdnSecSpecInfoResponse is the response struct for api DescribeDcdnSecSpecInfo
 type DescribeDcdnSecSpecInfoResponse struct {
 	*responses.BaseResponse
-	RequestId string         `json:"RequestId" xml:"RequestId"`
 	Version   string         `json:"Version" xml:"Version"`
+	RequestId string         `json:"RequestId" xml:"RequestId"`
 	SpecInfos []RuleInfoItem `json:"SpecInfos" xml:"SpecInfos"`
 }
 

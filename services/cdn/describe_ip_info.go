@@ -79,12 +79,12 @@ type DescribeIpInfoRequest struct {
 // DescribeIpInfoResponse is the response struct for api DescribeIpInfo
 type DescribeIpInfoResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
 	CdnIp       string `json:"CdnIp" xml:"CdnIp"`
-	ISP         string `json:"ISP" xml:"ISP"`
-	IspEname    string `json:"IspEname" xml:"IspEname"`
-	Region      string `json:"Region" xml:"Region"`
+	RequestId   string `json:"RequestId" xml:"RequestId"`
 	RegionEname string `json:"RegionEname" xml:"RegionEname"`
+	Region      string `json:"Region" xml:"Region"`
+	IspEname    string `json:"IspEname" xml:"IspEname"`
+	ISP         string `json:"ISP" xml:"ISP"`
 }
 
 // CreateDescribeIpInfoRequest creates a request to invoke DescribeIpInfo API

@@ -17,11 +17,11 @@ package cdn
 
 // LogInfo is a nested struct in cdn response
 type LogInfo struct {
-	TimeStamp     string `json:"TimeStamp" xml:"TimeStamp"`
 	Value         string `json:"Value" xml:"Value"`
-	TriggerObject string `json:"TriggerObject" xml:"TriggerObject"`
-	DomainName    string `json:"DomainName" xml:"DomainName"`
 	Ttl           int64  `json:"Ttl" xml:"Ttl"`
 	Action        string `json:"Action" xml:"Action"`
+	TriggerObject string `json:"TriggerObject" xml:"TriggerObject"`
+	TimeStamp     string `json:"TimeStamp" xml:"TimeStamp"`
+	DomainName    string `json:"DomainName" xml:"DomainName"`
 	RuleName      string `json:"RuleName" xml:"RuleName"`
 }

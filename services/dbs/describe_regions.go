@@ -78,11 +78,11 @@ type DescribeRegionsRequest struct {
 // DescribeRegionsResponse is the response struct for api DescribeRegions
 type DescribeRegionsResponse struct {
 	*responses.BaseResponse
-	Success        bool    `json:"Success" xml:"Success"`
-	ErrCode        string  `json:"ErrCode" xml:"ErrCode"`
-	ErrMessage     string  `json:"ErrMessage" xml:"ErrMessage"`
 	HttpStatusCode int     `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	RequestId      string  `json:"RequestId" xml:"RequestId"`
+	ErrCode        string  `json:"ErrCode" xml:"ErrCode"`
+	Success        bool    `json:"Success" xml:"Success"`
+	ErrMessage     string  `json:"ErrMessage" xml:"ErrMessage"`
 	Regions        Regions `json:"Regions" xml:"Regions"`
 }
 
@@ -91,7 +91,7 @@ func CreateDescribeRegionsRequest() (request *DescribeRegionsRequest) {
 	request = &DescribeRegionsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dbs", "2019-03-06", "DescribeRegions", "cbs", "openAPI")
+	request.InitWithApiInfo("Dbs", "2019-03-06", "DescribeRegions", "", "")
 	request.Method = requests.POST
 	return
 }

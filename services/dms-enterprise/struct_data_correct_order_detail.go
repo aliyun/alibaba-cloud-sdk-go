@@ -18,6 +18,7 @@ package dms_enterprise
 // DataCorrectOrderDetail is a nested struct in dms_enterprise response
 type DataCorrectOrderDetail struct {
 	Status         string                                  `json:"Status" xml:"Status"`
+	ExecMode       string                                  `json:"ExecMode" xml:"ExecMode"`
 	OrderDetail    OrderDetail                             `json:"OrderDetail" xml:"OrderDetail"`
 	PreCheckDetail PreCheckDetail                          `json:"PreCheckDetail" xml:"PreCheckDetail"`
 	DatabaseList   DatabaseListInGetDataCorrectOrderDetail `json:"DatabaseList" xml:"DatabaseList"`

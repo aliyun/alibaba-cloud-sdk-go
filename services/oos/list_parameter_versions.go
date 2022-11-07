@@ -80,16 +80,16 @@ type ListParameterVersionsRequest struct {
 // ListParameterVersionsResponse is the response struct for api ListParameterVersions
 type ListParameterVersionsResponse struct {
 	*responses.BaseResponse
-	RequestId         string             `json:"RequestId" xml:"RequestId"`
-	MaxResults        int                `json:"MaxResults" xml:"MaxResults"`
-	NextToken         string             `json:"NextToken" xml:"NextToken"`
-	TotalCount        int                `json:"TotalCount" xml:"TotalCount"`
-	Name              string             `json:"Name" xml:"Name"`
-	Id                string             `json:"Id" xml:"Id"`
 	Type              string             `json:"Type" xml:"Type"`
+	NextToken         string             `json:"NextToken" xml:"NextToken"`
+	RequestId         string             `json:"RequestId" xml:"RequestId"`
 	Description       string             `json:"Description" xml:"Description"`
-	CreatedDate       string             `json:"CreatedDate" xml:"CreatedDate"`
+	MaxResults        int                `json:"MaxResults" xml:"MaxResults"`
 	CreatedBy         string             `json:"CreatedBy" xml:"CreatedBy"`
+	CreatedDate       string             `json:"CreatedDate" xml:"CreatedDate"`
+	Name              string             `json:"Name" xml:"Name"`
+	TotalCount        int                `json:"TotalCount" xml:"TotalCount"`
+	Id                string             `json:"Id" xml:"Id"`
 	ParameterVersions []ParameterVersion `json:"ParameterVersions" xml:"ParameterVersions"`
 }
 
@@ -98,7 +98,7 @@ func CreateListParameterVersionsRequest() (request *ListParameterVersionsRequest
 	request = &ListParameterVersionsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("oos", "2019-06-01", "ListParameterVersions", "", "")
+	request.InitWithApiInfo("oos", "2019-06-01", "ListParameterVersions", "oos", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -19,6 +19,8 @@ package alb
 type XForwardedForConfig struct {
 	XForwardedForClientCertSubjectDNAlias      string `json:"XForwardedForClientCertSubjectDNAlias" xml:"XForwardedForClientCertSubjectDNAlias"`
 	XForwardedForClientCertSubjectDNEnabled    bool   `json:"XForwardedForClientCertSubjectDNEnabled" xml:"XForwardedForClientCertSubjectDNEnabled"`
+	XForwardedForClientSourceIpsTrusted        string `json:"XForwardedForClientSourceIpsTrusted" xml:"XForwardedForClientSourceIpsTrusted"`
+	XForwardedForClientSourceIpsEnabled        bool   `json:"XForwardedForClientSourceIpsEnabled" xml:"XForwardedForClientSourceIpsEnabled"`
 	XForwardedForProtoEnabled                  bool   `json:"XForwardedForProtoEnabled" xml:"XForwardedForProtoEnabled"`
 	XForwardedForClientCertIssuerDNEnabled     bool   `json:"XForwardedForClientCertIssuerDNEnabled" xml:"XForwardedForClientCertIssuerDNEnabled"`
 	XForwardedForSLBIdEnabled                  bool   `json:"XForwardedForSLBIdEnabled" xml:"XForwardedForSLBIdEnabled"`

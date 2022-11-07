@@ -17,24 +17,27 @@ package arms
 
 // Data is a nested struct in arms response
 type Data struct {
-	ArmsDBNotExist          bool                     `json:"ArmsDBNotExist" xml:"ArmsDBNotExist"`
-	IsControllerInstalled   bool                     `json:"isControllerInstalled" xml:"isControllerInstalled"`
-	Info                    string                   `json:"Info" xml:"Info"`
-	PodIsNotRestart         bool                     `json:"PodIsNotRestart" xml:"PodIsNotRestart"`
-	NeedIntervention        bool                     `json:"NeedIntervention" xml:"NeedIntervention"`
-	IsFlink                 bool                     `json:"IsFlink" xml:"IsFlink"`
-	PageSize                int                      `json:"PageSize" xml:"PageSize"`
-	CheckType               string                   `json:"CheckType" xml:"CheckType"`
-	AgentServiceNotExist    bool                     `json:"AgentServiceNotExist" xml:"AgentServiceNotExist"`
-	NodeSizeIsZero          bool                     `json:"NodeSizeIsZero" xml:"NodeSizeIsZero"`
-	AckNotRunning           bool                     `json:"AckNotRunning" xml:"AckNotRunning"`
-	Success                 bool                     `json:"Success" xml:"Success"`
-	Page                    int                      `json:"Page" xml:"Page"`
-	NeedRetry               bool                     `json:"NeedRetry" xml:"NeedRetry"`
-	Total                   string                   `json:"Total" xml:"Total"`
-	HaveAgentNodeIsNotReady bool                     `json:"HaveAgentNodeIsNotReady" xml:"HaveAgentNodeIsNotReady"`
-	Msg                     string                   `json:"Msg" xml:"Msg"`
-	AgentHelmNotExist       bool                     `json:"AgentHelmNotExist" xml:"AgentHelmNotExist"`
-	GetClusterInfo          string                   `json:"GetClusterInfo" xml:"GetClusterInfo"`
-	Items                   []map[string]interface{} `json:"Items" xml:"Items"`
+	EnableTag             bool                     `json:"EnableTag" xml:"EnableTag"`
+	IsControllerInstalled bool                     `json:"isControllerInstalled" xml:"isControllerInstalled"`
+	Info                  string                   `json:"Info" xml:"Info"`
+	Version               string                   `json:"Version" xml:"Version"`
+	PageSize              int                      `json:"PageSize" xml:"PageSize"`
+	City                  string                   `json:"City" xml:"City"`
+	District              string                   `json:"District" xml:"District"`
+	CityCode              int64                    `json:"CityCode" xml:"CityCode"`
+	NetServiceName        string                   `json:"NetServiceName" xml:"NetServiceName"`
+	Success               bool                     `json:"Success" xml:"Success"`
+	Page                  int                      `json:"Page" xml:"Page"`
+	Total                 string                   `json:"Total" xml:"Total"`
+	ClientType            int64                    `json:"ClientType" xml:"ClientType"`
+	TaskId                int64                    `json:"TaskId" xml:"TaskId"`
+	Size                  string                   `json:"Size" xml:"Size"`
+	NetServiceId          int64                    `json:"NetServiceId" xml:"NetServiceId"`
+	Msg                   string                   `json:"Msg" xml:"Msg"`
+	UploadTime            string                   `json:"UploadTime" xml:"UploadTime"`
+	Fid                   string                   `json:"Fid" xml:"Fid"`
+	FileName              string                   `json:"FileName" xml:"FileName"`
+	Busy                  int64                    `json:"Busy" xml:"Busy"`
+	Items                 []map[string]interface{} `json:"Items" xml:"Items"`
+	Products              []ProductsItem           `json:"Products" xml:"Products"`
 }

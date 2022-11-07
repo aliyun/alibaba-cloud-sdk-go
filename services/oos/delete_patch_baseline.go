@@ -85,7 +85,7 @@ func CreateDeletePatchBaselineRequest() (request *DeletePatchBaselineRequest) {
 	request = &DeletePatchBaselineRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("oos", "2019-06-01", "DeletePatchBaseline", "", "")
+	request.InitWithApiInfo("oos", "2019-06-01", "DeletePatchBaseline", "oos", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -91,9 +91,9 @@ type ListTaskExecutionsRequest struct {
 // ListTaskExecutionsResponse is the response struct for api ListTaskExecutions
 type ListTaskExecutionsResponse struct {
 	*responses.BaseResponse
+	NextToken      string          `json:"NextToken" xml:"NextToken"`
 	RequestId      string          `json:"RequestId" xml:"RequestId"`
 	MaxResults     int             `json:"MaxResults" xml:"MaxResults"`
-	NextToken      string          `json:"NextToken" xml:"NextToken"`
 	TaskExecutions []TaskExecution `json:"TaskExecutions" xml:"TaskExecutions"`
 }
 
@@ -102,7 +102,7 @@ func CreateListTaskExecutionsRequest() (request *ListTaskExecutionsRequest) {
 	request = &ListTaskExecutionsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("oos", "2019-06-01", "ListTaskExecutions", "", "")
+	request.InitWithApiInfo("oos", "2019-06-01", "ListTaskExecutions", "oos", "openAPI")
 	request.Method = requests.POST
 	return
 }

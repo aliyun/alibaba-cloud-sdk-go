@@ -74,6 +74,7 @@ type DescribeCrossRegionBackupsRequest struct {
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	StartTime            string           `position:"Query" name:"StartTime"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
@@ -87,13 +88,13 @@ type DescribeCrossRegionBackupsRequest struct {
 // DescribeCrossRegionBackupsResponse is the response struct for api DescribeCrossRegionBackups
 type DescribeCrossRegionBackupsResponse struct {
 	*responses.BaseResponse
-	RequestId        string                            `json:"RequestId" xml:"RequestId"`
-	RegionId         string                            `json:"RegionId" xml:"RegionId"`
-	StartTime        string                            `json:"StartTime" xml:"StartTime"`
 	EndTime          string                            `json:"EndTime" xml:"EndTime"`
-	TotalRecordCount int                               `json:"TotalRecordCount" xml:"TotalRecordCount"`
+	StartTime        string                            `json:"StartTime" xml:"StartTime"`
+	RequestId        string                            `json:"RequestId" xml:"RequestId"`
 	PageRecordCount  int                               `json:"PageRecordCount" xml:"PageRecordCount"`
+	TotalRecordCount int                               `json:"TotalRecordCount" xml:"TotalRecordCount"`
 	PageNumber       int                               `json:"PageNumber" xml:"PageNumber"`
+	RegionId         string                            `json:"RegionId" xml:"RegionId"`
 	Items            ItemsInDescribeCrossRegionBackups `json:"Items" xml:"Items"`
 }
 

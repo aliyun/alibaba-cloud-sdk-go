@@ -17,8 +17,8 @@ package ehpc
 
 // Command is a nested struct in ehpc response
 type Command struct {
-	CommandId      string `json:"CommandId" xml:"CommandId"`
-	CommandContent string `json:"CommandContent" xml:"CommandContent"`
-	WorkingDir     string `json:"WorkingDir" xml:"WorkingDir"`
 	Timeout        string `json:"Timeout" xml:"Timeout"`
+	CommandId      string `json:"CommandId" xml:"CommandId"`
+	WorkingDir     string `json:"WorkingDir" xml:"WorkingDir"`
+	CommandContent string `json:"CommandContent" xml:"CommandContent"`
 }

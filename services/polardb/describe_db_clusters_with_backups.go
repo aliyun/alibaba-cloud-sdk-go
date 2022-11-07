@@ -75,6 +75,7 @@ type DescribeDBClustersWithBackupsRequest struct {
 	DBClusterDescription string           `position:"Query" name:"DBClusterDescription"`
 	IsDeleted            requests.Integer `position:"Query" name:"IsDeleted"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
@@ -99,7 +100,7 @@ func CreateDescribeDBClustersWithBackupsRequest() (request *DescribeDBClustersWi
 	request = &DescribeDBClustersWithBackupsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeDBClustersWithBackups", "", "")
+	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeDBClustersWithBackups", "polardb", "openAPI")
 	request.Method = requests.POST
 	return
 }

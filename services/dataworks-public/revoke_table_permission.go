@@ -82,8 +82,8 @@ type RevokeTablePermissionRequest struct {
 // RevokeTablePermissionResponse is the response struct for api RevokeTablePermission
 type RevokeTablePermissionResponse struct {
 	*responses.BaseResponse
-	RequestId     string `json:"RequestId" xml:"RequestId"`
 	RevokeSuccess bool   `json:"RevokeSuccess" xml:"RevokeSuccess"`
+	RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateRevokeTablePermissionRequest creates a request to invoke RevokeTablePermission API

@@ -71,14 +71,14 @@ func (client *Client) UpdateK8sSecretWithCallback(request *UpdateK8sSecretReques
 // UpdateK8sSecretRequest is the request struct for api UpdateK8sSecret
 type UpdateK8sSecretRequest struct {
 	*requests.RoaRequest
-	Base64Encoded requests.Boolean `position:"Body" name:"Base64Encoded"`
-	Data          string           `position:"Body" name:"Data"`
-	Name          string           `position:"Body" name:"Name"`
-	Namespace     string           `position:"Body" name:"Namespace"`
-	ClusterId     string           `position:"Body" name:"ClusterId"`
-	CertId        string           `position:"Body" name:"CertId"`
-	Type          string           `position:"Body" name:"Type"`
-	CertRegionId  string           `position:"Body" name:"CertRegionId"`
+	Base64Encoded string `position:"Body" name:"Base64Encoded"`
+	Data          string `position:"Body" name:"Data"`
+	Name          string `position:"Body" name:"Name"`
+	Namespace     string `position:"Body" name:"Namespace"`
+	ClusterId     string `position:"Body" name:"ClusterId"`
+	CertId        string `position:"Body" name:"CertId"`
+	Type          string `position:"Body" name:"Type"`
+	CertRegionId  string `position:"Body" name:"CertRegionId"`
 }
 
 // UpdateK8sSecretResponse is the response struct for api UpdateK8sSecret
@@ -94,7 +94,7 @@ func CreateUpdateK8sSecretRequest() (request *UpdateK8sSecretRequest) {
 	request = &UpdateK8sSecretRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "UpdateK8sSecret", "/pop/v5/k8s/acs/k8s_secret", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "UpdateK8sSecret", "/pop/v5/k8s/acs/k8s_secret", "edas", "openAPI")
 	request.Method = requests.PUT
 	return
 }

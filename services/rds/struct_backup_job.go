@@ -17,11 +17,11 @@ package rds
 
 // BackupJob is a nested struct in rds response
 type BackupJob struct {
-	BackupProgressStatus string `json:"BackupProgressStatus" xml:"BackupProgressStatus"`
+	Process              string `json:"Process" xml:"Process"`
+	BackupJobId          string `json:"BackupJobId" xml:"BackupJobId"`
 	BackupStatus         string `json:"BackupStatus" xml:"BackupStatus"`
 	JobMode              string `json:"JobMode" xml:"JobMode"`
-	Process              string `json:"Process" xml:"Process"`
-	TaskAction           string `json:"TaskAction" xml:"TaskAction"`
-	BackupJobId          string `json:"BackupJobId" xml:"BackupJobId"`
+	BackupProgressStatus string `json:"BackupProgressStatus" xml:"BackupProgressStatus"`
 	BackupId             string `json:"BackupId" xml:"BackupId"`
+	TaskAction           string `json:"TaskAction" xml:"TaskAction"`
 }

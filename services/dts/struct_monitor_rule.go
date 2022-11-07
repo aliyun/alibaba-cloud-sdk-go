@@ -21,4 +21,9 @@ type MonitorRule struct {
 	DelayRuleTime int64  `json:"DelayRuleTime" xml:"DelayRuleTime"`
 	State         string `json:"State" xml:"State"`
 	Phone         string `json:"Phone" xml:"Phone"`
+	JobType       string `json:"JobType" xml:"JobType"`
+	Period        int    `json:"Period" xml:"Period"`
+	Times         int    `json:"Times" xml:"Times"`
+	NoticeValue   int    `json:"NoticeValue" xml:"NoticeValue"`
+	JobId         string `json:"JobId" xml:"JobId"`
 }

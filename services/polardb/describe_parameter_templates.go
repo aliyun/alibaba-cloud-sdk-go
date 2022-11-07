@@ -72,6 +72,7 @@ func (client *Client) DescribeParameterTemplatesWithCallback(request *DescribePa
 type DescribeParameterTemplatesRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -95,7 +96,7 @@ func CreateDescribeParameterTemplatesRequest() (request *DescribeParameterTempla
 	request = &DescribeParameterTemplatesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeParameterTemplates", "", "")
+	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeParameterTemplates", "polardb", "openAPI")
 	request.Method = requests.POST
 	return
 }

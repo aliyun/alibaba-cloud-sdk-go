@@ -89,7 +89,7 @@ func CreateUpdatePatchBaselineRequest() (request *UpdatePatchBaselineRequest) {
 	request = &UpdatePatchBaselineRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("oos", "2019-06-01", "UpdatePatchBaseline", "", "")
+	request.InitWithApiInfo("oos", "2019-06-01", "UpdatePatchBaseline", "oos", "openAPI")
 	request.Method = requests.POST
 	return
 }

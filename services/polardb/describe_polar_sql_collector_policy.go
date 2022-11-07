@@ -83,6 +83,7 @@ type DescribePolarSQLCollectorPolicyResponse struct {
 	*responses.BaseResponse
 	RequestId          string `json:"RequestId" xml:"RequestId"`
 	SQLCollectorStatus string `json:"SQLCollectorStatus" xml:"SQLCollectorStatus"`
+	DBClusterId        string `json:"DBClusterId" xml:"DBClusterId"`
 }
 
 // CreateDescribePolarSQLCollectorPolicyRequest creates a request to invoke DescribePolarSQLCollectorPolicy API
@@ -90,7 +91,7 @@ func CreateDescribePolarSQLCollectorPolicyRequest() (request *DescribePolarSQLCo
 	request = &DescribePolarSQLCollectorPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "DescribePolarSQLCollectorPolicy", "", "")
+	request.InitWithApiInfo("polardb", "2017-08-01", "DescribePolarSQLCollectorPolicy", "polardb", "openAPI")
 	request.Method = requests.GET
 	return
 }

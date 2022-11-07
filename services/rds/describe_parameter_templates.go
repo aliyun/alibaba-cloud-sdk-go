@@ -87,8 +87,8 @@ type DescribeParameterTemplatesResponse struct {
 	*responses.BaseResponse
 	RequestId      string     `json:"RequestId" xml:"RequestId"`
 	Engine         string     `json:"Engine" xml:"Engine"`
-	EngineVersion  string     `json:"EngineVersion" xml:"EngineVersion"`
 	ParameterCount string     `json:"ParameterCount" xml:"ParameterCount"`
+	EngineVersion  string     `json:"EngineVersion" xml:"EngineVersion"`
 	Parameters     Parameters `json:"Parameters" xml:"Parameters"`
 }
 

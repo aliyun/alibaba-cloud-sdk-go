@@ -17,15 +17,12 @@ package rds
 
 // MigrateTask is a nested struct in rds response
 type MigrateTask struct {
-	BackupMode    string `json:"BackupMode" xml:"BackupMode"`
 	EndTime       string `json:"EndTime" xml:"EndTime"`
-	Desc          string `json:"Desc" xml:"Desc"`
-	MigrateTaskId string `json:"MigrateTaskId" xml:"MigrateTaskId"`
+	Status        string `json:"Status" xml:"Status"`
+	Description   string `json:"Description" xml:"Description"`
 	CreateTime    string `json:"CreateTime" xml:"CreateTime"`
 	DBName        string `json:"DBName" xml:"DBName"`
+	BackupMode    string `json:"BackupMode" xml:"BackupMode"`
+	MigrateTaskId string `json:"MigrateTaskId" xml:"MigrateTaskId"`
 	IsDBReplaced  string `json:"IsDBReplaced" xml:"IsDBReplaced"`
-	MigrateIaskId string `json:"MigrateIaskId" xml:"MigrateIaskId"`
-	Status        string `json:"Status" xml:"Status"`
-	TaskType      string `json:"TaskType" xml:"TaskType"`
-	Description   string `json:"Description" xml:"Description"`
 }

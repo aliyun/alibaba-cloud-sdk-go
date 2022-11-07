@@ -84,10 +84,10 @@ type DescribeDBClusterPerformanceRequest struct {
 // DescribeDBClusterPerformanceResponse is the response struct for api DescribeDBClusterPerformance
 type DescribeDBClusterPerformanceResponse struct {
 	*responses.BaseResponse
-	RequestId    string            `json:"RequestId" xml:"RequestId"`
-	DBClusterId  string            `json:"DBClusterId" xml:"DBClusterId"`
-	StartTime    string            `json:"StartTime" xml:"StartTime"`
 	EndTime      string            `json:"EndTime" xml:"EndTime"`
+	RequestId    string            `json:"RequestId" xml:"RequestId"`
+	StartTime    string            `json:"StartTime" xml:"StartTime"`
+	DBClusterId  string            `json:"DBClusterId" xml:"DBClusterId"`
 	Performances []PerformanceItem `json:"Performances" xml:"Performances"`
 }
 

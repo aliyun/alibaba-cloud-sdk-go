@@ -71,12 +71,12 @@ func (client *Client) BindSlbWithCallback(request *BindSlbRequest, callback func
 // BindSlbRequest is the request struct for api BindSlb
 type BindSlbRequest struct {
 	*requests.RoaRequest
-	VServerGroupId string           `position:"Query" name:"VServerGroupId"`
-	ListenerPort   requests.Integer `position:"Query" name:"ListenerPort"`
-	SlbId          string           `position:"Query" name:"SlbId"`
-	AppId          string           `position:"Query" name:"AppId"`
-	SlbIp          string           `position:"Query" name:"SlbIp"`
-	Type           string           `position:"Query" name:"Type"`
+	VServerGroupId string `position:"Query" name:"VServerGroupId"`
+	ListenerPort   string `position:"Query" name:"ListenerPort"`
+	SlbId          string `position:"Query" name:"SlbId"`
+	AppId          string `position:"Query" name:"AppId"`
+	SlbIp          string `position:"Query" name:"SlbIp"`
+	Type           string `position:"Query" name:"Type"`
 }
 
 // BindSlbResponse is the response struct for api BindSlb
@@ -93,7 +93,7 @@ func CreateBindSlbRequest() (request *BindSlbRequest) {
 	request = &BindSlbRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "BindSlb", "/pop/app/bind_slb_json", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "BindSlb", "/pop/app/bind_slb_json", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

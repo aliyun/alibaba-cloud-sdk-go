@@ -87,14 +87,14 @@ type DescribeSlowLogsRequest struct {
 // DescribeSlowLogsResponse is the response struct for api DescribeSlowLogs
 type DescribeSlowLogsResponse struct {
 	*responses.BaseResponse
-	RequestId        string                  `json:"RequestId" xml:"RequestId"`
-	DBInstanceId     string                  `json:"DBInstanceId" xml:"DBInstanceId"`
-	Engine           string                  `json:"Engine" xml:"Engine"`
-	StartTime        string                  `json:"StartTime" xml:"StartTime"`
 	EndTime          string                  `json:"EndTime" xml:"EndTime"`
-	TotalRecordCount int                     `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	PageNumber       int                     `json:"PageNumber" xml:"PageNumber"`
+	StartTime        string                  `json:"StartTime" xml:"StartTime"`
+	RequestId        string                  `json:"RequestId" xml:"RequestId"`
 	PageRecordCount  int                     `json:"PageRecordCount" xml:"PageRecordCount"`
+	TotalRecordCount int                     `json:"TotalRecordCount" xml:"TotalRecordCount"`
+	DBInstanceId     string                  `json:"DBInstanceId" xml:"DBInstanceId"`
+	PageNumber       int                     `json:"PageNumber" xml:"PageNumber"`
+	Engine           string                  `json:"Engine" xml:"Engine"`
 	Items            ItemsInDescribeSlowLogs `json:"Items" xml:"Items"`
 }
 

@@ -71,26 +71,27 @@ func (client *Client) UnbindEslDeviceWithCallback(request *UnbindEslDeviceReques
 // UnbindEslDeviceRequest is the request struct for api UnbindEslDevice
 type UnbindEslDeviceRequest struct {
 	*requests.RpcRequest
-	ExtraParams string           `position:"Body" name:"ExtraParams"`
-	StoreId     string           `position:"Body" name:"StoreId"`
-	Layer       requests.Integer `position:"Body" name:"Layer"`
-	EslBarCode  string           `position:"Body" name:"EslBarCode"`
-	ItemBarCode string           `position:"Body" name:"ItemBarCode"`
-	Column      string           `position:"Body" name:"Column"`
-	Shelf       string           `position:"Body" name:"Shelf"`
+	ExtraParams   string           `position:"Body" name:"ExtraParams"`
+	ContainerName string           `position:"Body" name:"ContainerName"`
+	StoreId       string           `position:"Body" name:"StoreId"`
+	Layer         requests.Integer `position:"Body" name:"Layer"`
+	EslBarCode    string           `position:"Body" name:"EslBarCode"`
+	ItemBarCode   string           `position:"Body" name:"ItemBarCode"`
+	Column        string           `position:"Body" name:"Column"`
+	Shelf         string           `position:"Body" name:"Shelf"`
 }
 
 // UnbindEslDeviceResponse is the response struct for api UnbindEslDevice
 type UnbindEslDeviceResponse struct {
 	*responses.BaseResponse
-	ErrorMessage   string `json:"ErrorMessage" xml:"ErrorMessage"`
-	ErrorCode      string `json:"ErrorCode" xml:"ErrorCode"`
-	Message        string `json:"Message" xml:"Message"`
-	DynamicCode    string `json:"DynamicCode" xml:"DynamicCode"`
-	Code           string `json:"Code" xml:"Code"`
-	DynamicMessage string `json:"DynamicMessage" xml:"DynamicMessage"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
+	ErrorMessage   string `json:"ErrorMessage" xml:"ErrorMessage"`
 	Success        bool   `json:"Success" xml:"Success"`
+	ErrorCode      string `json:"ErrorCode" xml:"ErrorCode"`
+	Code           string `json:"Code" xml:"Code"`
+	Message        string `json:"Message" xml:"Message"`
+	DynamicMessage string `json:"DynamicMessage" xml:"DynamicMessage"`
+	DynamicCode    string `json:"DynamicCode" xml:"DynamicCode"`
 }
 
 // CreateUnbindEslDeviceRequest creates a request to invoke UnbindEslDevice API
@@ -98,7 +99,7 @@ func CreateUnbindEslDeviceRequest() (request *UnbindEslDeviceRequest) {
 	request = &UnbindEslDeviceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cloudesl", "2020-02-01", "UnbindEslDevice", "cloudesl", "openAPI")
+	request.InitWithApiInfo("cloudesl", "2020-02-01", "UnbindEslDevice", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -97,19 +97,19 @@ type Data struct {
 	RectAList            []int                 `json:"RectAList" xml:"RectAList"`
 	FaceProbabilityList  []float64             `json:"FaceProbabilityList" xml:"FaceProbabilityList"`
 	Qualities            Qualities             `json:"Qualities" xml:"Qualities"`
-	MetaObject           MetaObject            `json:"MetaObject" xml:"MetaObject"`
 	FaceInfo             FaceInfo              `json:"FaceInfo" xml:"FaceInfo"`
+	MetaObject           MetaObject            `json:"MetaObject" xml:"MetaObject"`
 	PersonInfo           PersonInfo            `json:"PersonInfo" xml:"PersonInfo"`
 	Elements             []ElementsItem        `json:"Elements" xml:"Elements"`
-	Outputs              []Output              `json:"Outputs" xml:"Outputs"`
 	InsertedFaces        []InsertedFaces       `json:"InsertedFaces" xml:"InsertedFaces"`
 	Faces                []Face                `json:"Faces" xml:"Faces"`
 	ImageInfoList        []ImageInfoListItem   `json:"ImageInfoList" xml:"ImageInfoList"`
 	DbList               []DbListItem          `json:"DbList" xml:"DbList"`
+	Outputs              []Output              `json:"Outputs" xml:"Outputs"`
 	Entities             []Entity              `json:"Entities" xml:"Entities"`
 	FailedFaces          []FailedFaces         `json:"FailedFaces" xml:"FailedFaces"`
+	TraceList            []Trace               `json:"TraceList" xml:"TraceList"`
 	PersonList           []Person              `json:"PersonList" xml:"PersonList"`
 	MatchList            []Trace               `json:"MatchList" xml:"MatchList"`
-	TraceList            []Trace               `json:"TraceList" xml:"TraceList"`
 	FaceRecognizeResults []FaceRecognizeResult `json:"FaceRecognizeResults" xml:"FaceRecognizeResults"`
 }

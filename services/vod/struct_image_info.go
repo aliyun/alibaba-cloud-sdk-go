@@ -17,19 +17,19 @@ package vod
 
 // ImageInfo is a nested struct in vod response
 type ImageInfo struct {
-	CreationTime    string    `json:"CreationTime" xml:"CreationTime"`
-	StorageLocation string    `json:"StorageLocation" xml:"StorageLocation"`
-	Status          string    `json:"Status" xml:"Status"`
-	CateId          int64     `json:"CateId" xml:"CateId"`
 	Tags            string    `json:"Tags" xml:"Tags"`
+	Title           string    `json:"Title" xml:"Title"`
+	ImageId         string    `json:"ImageId" xml:"ImageId"`
+	StorageLocation string    `json:"StorageLocation" xml:"StorageLocation"`
+	CreationTime    string    `json:"CreationTime" xml:"CreationTime"`
+	URL             string    `json:"URL" xml:"URL"`
+	AppId           string    `json:"AppId" xml:"AppId"`
 	RegionId        string    `json:"RegionId" xml:"RegionId"`
 	ImageType       string    `json:"ImageType" xml:"ImageType"`
 	CateName        string    `json:"CateName" xml:"CateName"`
-	Description     string    `json:"Description" xml:"Description"`
-	AppId           string    `json:"AppId" xml:"AppId"`
-	URL             string    `json:"URL" xml:"URL"`
-	Title           string    `json:"Title" xml:"Title"`
-	ImageId         string    `json:"ImageId" xml:"ImageId"`
+	Status          string    `json:"Status" xml:"Status"`
 	AuditStatus     string    `json:"AuditStatus" xml:"AuditStatus"`
+	Description     string    `json:"Description" xml:"Description"`
+	CateId          int64     `json:"CateId" xml:"CateId"`
 	Mezzanine       Mezzanine `json:"Mezzanine" xml:"Mezzanine"`
 }

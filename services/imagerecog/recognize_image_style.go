@@ -86,7 +86,7 @@ func CreateRecognizeImageStyleRequest() (request *RecognizeImageStyleRequest) {
 	request = &RecognizeImageStyleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imagerecog", "2019-09-30", "RecognizeImageStyle", "imagerecog", "openAPI")
+	request.InitWithApiInfo("imagerecog", "2019-09-30", "RecognizeImageStyle", "", "")
 	request.Method = requests.POST
 	return
 }

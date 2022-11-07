@@ -71,7 +71,8 @@ func (client *Client) GetAccountWithCallback(request *GetAccountRequest, callbac
 // GetAccountRequest is the request struct for api GetAccount
 type GetAccountRequest struct {
 	*requests.RpcRequest
-	AccountId string `position:"Query" name:"AccountId"`
+	AccountId   string           `position:"Query" name:"AccountId"`
+	IncludeTags requests.Boolean `position:"Query" name:"IncludeTags"`
 }
 
 // GetAccountResponse is the response struct for api GetAccount

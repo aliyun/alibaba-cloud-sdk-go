@@ -88,7 +88,7 @@ func CreateListConsumedServicesRequest() (request *ListConsumedServicesRequest) 
 	request = &ListConsumedServicesRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ListConsumedServices", "/pop/v5/service/listConsumedServices", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ListConsumedServices", "/pop/v5/service/listConsumedServices", "edas", "openAPI")
 	request.Method = requests.GET
 	return
 }

@@ -20,8 +20,8 @@ type VolumeInfo struct {
 	ClusterId         string                   `json:"ClusterId" xml:"ClusterId"`
 	VolumeId          string                   `json:"VolumeId" xml:"VolumeId"`
 	VolumeProtocol    string                   `json:"VolumeProtocol" xml:"VolumeProtocol"`
-	VolumeType        string                   `json:"VolumeType" xml:"VolumeType"`
 	RemoteDirectory   string                   `json:"RemoteDirectory" xml:"RemoteDirectory"`
+	VolumeType        string                   `json:"VolumeType" xml:"VolumeType"`
 	Location          string                   `json:"Location" xml:"Location"`
 	LocalDirectory    string                   `json:"LocalDirectory" xml:"LocalDirectory"`
 	VolumeMountpoint  string                   `json:"VolumeMountpoint" xml:"VolumeMountpoint"`

@@ -79,13 +79,18 @@ type ModifyPolicyGroupRequest struct {
 	PrinterRedirection          string                                          `position:"Query" name:"PrinterRedirection"`
 	PreemptLoginUser            *[]string                                       `position:"Query" name:"PreemptLoginUser"  type:"Repeated"`
 	DomainList                  string                                          `position:"Query" name:"DomainList"`
+	NetRedirect                 string                                          `position:"Query" name:"NetRedirect"`
 	LocalDrive                  string                                          `position:"Query" name:"LocalDrive"`
 	AuthorizeSecurityPolicyRule *[]ModifyPolicyGroupAuthorizeSecurityPolicyRule `position:"Query" name:"AuthorizeSecurityPolicyRule"  type:"Repeated"`
+	Recording                   string                                          `position:"Query" name:"Recording"`
 	Clipboard                   string                                          `position:"Query" name:"Clipboard"`
+	RecordingFps                requests.Integer                                `position:"Query" name:"RecordingFps"`
 	UsbRedirect                 string                                          `position:"Query" name:"UsbRedirect"`
 	WatermarkType               string                                          `position:"Query" name:"WatermarkType"`
+	RecordingStartTime          string                                          `position:"Query" name:"RecordingStartTime"`
 	RevokeAccessPolicyRule      *[]ModifyPolicyGroupRevokeAccessPolicyRule      `position:"Query" name:"RevokeAccessPolicyRule"  type:"Repeated"`
 	Watermark                   string                                          `position:"Query" name:"Watermark"`
+	CameraRedirect              string                                          `position:"Query" name:"CameraRedirect"`
 	Html5Access                 string                                          `position:"Query" name:"Html5Access"`
 	GpuAcceleration             string                                          `position:"Query" name:"GpuAcceleration"`
 	Html5FileTransfer           string                                          `position:"Query" name:"Html5FileTransfer"`
@@ -93,6 +98,7 @@ type ModifyPolicyGroupRequest struct {
 	VisualQuality               string                                          `position:"Query" name:"VisualQuality"`
 	WatermarkTransparency       string                                          `position:"Query" name:"WatermarkTransparency"`
 	Name                        string                                          `position:"Query" name:"Name"`
+	RecordingEndTime            string                                          `position:"Query" name:"RecordingEndTime"`
 	PolicyGroupId               string                                          `position:"Query" name:"PolicyGroupId"`
 }
 
