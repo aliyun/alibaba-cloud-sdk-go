@@ -74,12 +74,14 @@ type UpdateTrainTaskRequest struct {
 	Description        string           `position:"Body" name:"Description"`
 	TrainMode          string           `position:"Body" name:"TrainMode"`
 	Id                 requests.Integer `position:"Body" name:"Id"`
+	DatasetIds         string           `position:"Body" name:"DatasetIds"`
 	PreTrainTaskId     requests.Integer `position:"Body" name:"PreTrainTaskId"`
 	PreTrainTaskFlag   requests.Boolean `position:"Body" name:"PreTrainTaskFlag"`
 	AdvancedParameters string           `position:"Body" name:"AdvancedParameters"`
 	LabelId            requests.Integer `position:"Body" name:"LabelId"`
 	Name               string           `position:"Body" name:"Name"`
 	DatasetId          requests.Integer `position:"Body" name:"DatasetId"`
+	LabelIds           string           `position:"Body" name:"LabelIds"`
 }
 
 // UpdateTrainTaskResponse is the response struct for api UpdateTrainTask

@@ -73,11 +73,13 @@ type CreateTrainTaskRequest struct {
 	*requests.RpcRequest
 	Description        string           `position:"Body" name:"Description"`
 	TrainMode          string           `position:"Body" name:"TrainMode"`
+	DatasetIds         string           `position:"Body" name:"DatasetIds"`
 	PreTrainTaskId     requests.Integer `position:"Body" name:"PreTrainTaskId"`
 	AdvancedParameters string           `position:"Body" name:"AdvancedParameters"`
 	LabelId            requests.Integer `position:"Body" name:"LabelId"`
 	Name               string           `position:"Body" name:"Name"`
 	DatasetId          requests.Integer `position:"Body" name:"DatasetId"`
+	LabelIds           string           `position:"Body" name:"LabelIds"`
 	WorkspaceId        requests.Integer `position:"Body" name:"WorkspaceId"`
 }
 

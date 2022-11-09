@@ -74,6 +74,7 @@ type ListLabelsetDatasRequest struct {
 	PageSize    requests.Integer `position:"Body" name:"PageSize"`
 	Value       string           `position:"Body" name:"Value"`
 	CurrentPage requests.Integer `position:"Body" name:"CurrentPage"`
+	IsAbandon   requests.Boolean `position:"Body" name:"IsAbandon"`
 	LabelId     requests.Integer `position:"Body" name:"LabelId"`
 	Name        string           `position:"Body" name:"Name"`
 	Operation   string           `position:"Body" name:"Operation"`

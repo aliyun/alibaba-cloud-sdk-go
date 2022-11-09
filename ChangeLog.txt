@@ -1,3 +1,7 @@
+2022-11-09 Version: v1.62.4
+- Generated 2021-11-19 for `viapi-regen`.
+- Release CustomizeClassifyImage.
+
 2022-11-07 Version: v1.62.3
 - Generated 2020-04-07 for `cas`.
 - Support encrypt and decrypt.
