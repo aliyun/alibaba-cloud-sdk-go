@@ -71,10 +71,13 @@ func (client *Client) TaggingImageWithCallback(request *TaggingImageRequest, cal
 // TaggingImageRequest is the request struct for api TaggingImage
 type TaggingImageRequest struct {
 	*requests.RpcRequest
-	Mode      string           `position:"Body" name:"Mode"`
-	ImageType requests.Integer `position:"Body" name:"ImageType"`
-	Async     requests.Boolean `position:"Body" name:"Async"`
-	ImageURL  string           `position:"Body" name:"ImageURL"`
+	FormatResultToJson requests.Boolean `position:"Query" name:"FormatResultToJson"`
+	Mode               string           `position:"Body" name:"Mode"`
+	OssFile            string           `position:"Query" name:"OssFile"`
+	ImageType          requests.Integer `position:"Body" name:"ImageType"`
+	RequestProxyBy     string           `position:"Query" name:"RequestProxyBy"`
+	Async              requests.Boolean `position:"Body" name:"Async"`
+	ImageURL           string           `position:"Body" name:"ImageURL"`
 }
 
 // TaggingImageResponse is the response struct for api TaggingImage

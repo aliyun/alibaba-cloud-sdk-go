@@ -71,7 +71,10 @@ func (client *Client) RecognizeImageStyleWithCallback(request *RecognizeImageSty
 // RecognizeImageStyleRequest is the request struct for api RecognizeImageStyle
 type RecognizeImageStyleRequest struct {
 	*requests.RpcRequest
-	Url string `position:"Body" name:"Url"`
+	FormatResultToJson requests.Boolean `position:"Query" name:"FormatResultToJson"`
+	OssFile            string           `position:"Query" name:"OssFile"`
+	RequestProxyBy     string           `position:"Query" name:"RequestProxyBy"`
+	Url                string           `position:"Body" name:"Url"`
 }
 
 // RecognizeImageStyleResponse is the response struct for api RecognizeImageStyle

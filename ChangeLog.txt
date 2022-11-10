@@ -1,3 +1,7 @@
+2022-11-10 Version: v1.62.8
+- Generated 2019-09-30 for `imagerecog`.
+- Update TaggingAdImage.
+
 2022-11-10 Version: v1.62.7
 - Generated 2020-03-20 for `videoenhan`.
 - Release MergeVideoModelFace.
