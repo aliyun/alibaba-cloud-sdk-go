@@ -1,3 +1,7 @@
+2022-11-10 Version: v1.62.7
+- Generated 2020-03-20 for `videoenhan`.
+- Release MergeVideoModelFace.
+
 2022-11-10 Version: v1.62.6
 - Generated 2019-12-30 for `facebody`.
 - Publish Swift.
