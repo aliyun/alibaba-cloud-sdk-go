@@ -1,3 +1,7 @@
+2022-11-11 Version: v1.62.9
+- Generated 2021-11-19 for `viapi-regen`.
+- Release CustomizeClassifyImage.
+
 2022-11-10 Version: v1.62.8
 - Generated 2019-09-30 for `imagerecog`.
 - Update TaggingAdImage.

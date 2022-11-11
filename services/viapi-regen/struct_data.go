@@ -28,6 +28,7 @@ type Data struct {
 	SimpleEvaluate       int64                  `json:"SimpleEvaluate" xml:"SimpleEvaluate"`
 	ServiceName          string                 `json:"ServiceName" xml:"ServiceName"`
 	FileName             string                 `json:"FileName" xml:"FileName"`
+	UserQps              map[string]interface{} `json:"UserQps" xml:"UserQps"`
 	Type                 string                 `json:"Type" xml:"Type"`
 	TrainStatus          string                 `json:"TrainStatus" xml:"TrainStatus"`
 	Tags                 string                 `json:"Tags" xml:"Tags"`
@@ -64,6 +65,7 @@ type Data struct {
 	AuthorizedAccount    string                 `json:"AuthorizedAccount" xml:"AuthorizedAccount"`
 	DatasetName          string                 `json:"DatasetName" xml:"DatasetName"`
 	TrainMode            string                 `json:"TrainMode" xml:"TrainMode"`
+	UserInvoke           map[string]interface{} `json:"UserInvoke" xml:"UserInvoke"`
 	Signature            string                 `json:"Signature" xml:"Signature"`
 	LabelName            string                 `json:"LabelName" xml:"LabelName"`
 	OwnerType            string                 `json:"OwnerType" xml:"OwnerType"`
