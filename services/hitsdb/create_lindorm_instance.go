@@ -77,6 +77,7 @@ type CreateLindormInstanceRequest struct {
 	LogSpec              string           `position:"Query" name:"LogSpec"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	TsdbNum              requests.Integer `position:"Query" name:"TsdbNum"`
+	PrimaryVSwitchId     string           `position:"Query" name:"PrimaryVSwitchId"`
 	SolrNum              requests.Integer `position:"Query" name:"SolrNum"`
 	InstanceStorage      string           `position:"Query" name:"InstanceStorage"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -89,6 +90,7 @@ type CreateLindormInstanceRequest struct {
 	ClientToken          string           `position:"Query" name:"ClientToken"`
 	MultiZoneCombination string           `position:"Query" name:"MultiZoneCombination"`
 	TsdbSpec             string           `position:"Query" name:"TsdbSpec"`
+	PrimaryZoneId        string           `position:"Query" name:"PrimaryZoneId"`
 	FilestoreSpec        string           `position:"Query" name:"FilestoreSpec"`
 	Duration             string           `position:"Query" name:"Duration"`
 	DiskCategory         string           `position:"Query" name:"DiskCategory"`

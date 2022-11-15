@@ -1,3 +1,7 @@
+2022-11-15 Version: v1.62.11
+- Generated 2020-06-15 for `hitsdb`.
+- Add renew and modify instance pay type api.
+
 2022-11-11 Version: v1.62.10
 - Generated 2021-01-31 for `threedvision`.
 - Release EstimateMonocularVideoDepth.
