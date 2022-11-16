@@ -71,11 +71,11 @@ func (client *Client) CreateDataServiceGroupWithCallback(request *CreateDataServ
 // CreateDataServiceGroupRequest is the request struct for api CreateDataServiceGroup
 type CreateDataServiceGroupRequest struct {
 	*requests.RpcRequest
+	Description       string           `position:"Body" name:"Description"`
+	GroupName         string           `position:"Body" name:"GroupName"`
 	ApiGatewayGroupId string           `position:"Body" name:"ApiGatewayGroupId"`
 	TenantId          requests.Integer `position:"Body" name:"TenantId"`
-	Description       string           `position:"Body" name:"Description"`
 	ProjectId         requests.Integer `position:"Body" name:"ProjectId"`
-	GroupName         string           `position:"Body" name:"GroupName"`
 }
 
 // CreateDataServiceGroupResponse is the response struct for api CreateDataServiceGroup

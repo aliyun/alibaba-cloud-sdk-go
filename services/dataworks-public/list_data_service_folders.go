@@ -73,10 +73,10 @@ type ListDataServiceFoldersRequest struct {
 	*requests.RpcRequest
 	FolderNameKeyword string           `position:"Body" name:"FolderNameKeyword"`
 	GroupId           string           `position:"Body" name:"GroupId"`
+	PageNumber        requests.Integer `position:"Body" name:"PageNumber"`
 	PageSize          requests.Integer `position:"Body" name:"PageSize"`
 	TenantId          requests.Integer `position:"Body" name:"TenantId"`
 	ProjectId         requests.Integer `position:"Body" name:"ProjectId"`
-	PageNumber        requests.Integer `position:"Body" name:"PageNumber"`
 }
 
 // ListDataServiceFoldersResponse is the response struct for api ListDataServiceFolders

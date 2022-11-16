@@ -72,11 +72,11 @@ func (client *Client) ListQualityResultsByEntityWithCallback(request *ListQualit
 type ListQualityResultsByEntityRequest struct {
 	*requests.RpcRequest
 	ProjectName string           `position:"Body" name:"ProjectName"`
-	EndDate     string           `position:"Body" name:"EndDate"`
-	PageSize    requests.Integer `position:"Body" name:"PageSize"`
 	EntityId    requests.Integer `position:"Body" name:"EntityId"`
 	StartDate   string           `position:"Body" name:"StartDate"`
 	PageNumber  requests.Integer `position:"Body" name:"PageNumber"`
+	EndDate     string           `position:"Body" name:"EndDate"`
+	PageSize    requests.Integer `position:"Body" name:"PageSize"`
 }
 
 // ListQualityResultsByEntityResponse is the response struct for api ListQualityResultsByEntity

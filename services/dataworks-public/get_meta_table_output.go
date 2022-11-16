@@ -71,11 +71,11 @@ func (client *Client) GetMetaTableOutputWithCallback(request *GetMetaTableOutput
 // GetMetaTableOutputRequest is the request struct for api GetMetaTableOutput
 type GetMetaTableOutputRequest struct {
 	*requests.RpcRequest
+	StartDate  string           `position:"Query" name:"StartDate"`
+	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
 	EndDate    string           `position:"Query" name:"EndDate"`
 	TableGuid  string           `position:"Query" name:"TableGuid"`
 	PageSize   requests.Integer `position:"Query" name:"PageSize"`
-	StartDate  string           `position:"Query" name:"StartDate"`
-	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 // GetMetaTableOutputResponse is the response struct for api GetMetaTableOutput

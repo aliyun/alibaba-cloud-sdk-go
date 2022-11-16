@@ -73,20 +73,20 @@ type CreateDataServiceApiRequest struct {
 	*requests.RpcRequest
 	ScriptDetails       string           `position:"Body" name:"ScriptDetails"`
 	RequestMethod       requests.Integer `position:"Body" name:"RequestMethod"`
+	ApiDescription      string           `position:"Body" name:"ApiDescription"`
+	Timeout             requests.Integer `position:"Body" name:"Timeout"`
+	FolderId            requests.Integer `position:"Body" name:"FolderId"`
+	TenantId            requests.Integer `position:"Body" name:"TenantId"`
+	Protocols           string           `position:"Body" name:"Protocols"`
+	ProjectId           requests.Integer `position:"Body" name:"ProjectId"`
+	ResponseContentType requests.Integer `position:"Body" name:"ResponseContentType"`
 	GroupId             string           `position:"Body" name:"GroupId"`
 	ApiPath             string           `position:"Body" name:"ApiPath"`
 	WizardDetails       string           `position:"Body" name:"WizardDetails"`
 	ApiMode             requests.Integer `position:"Body" name:"ApiMode"`
 	VisibleRange        requests.Integer `position:"Body" name:"VisibleRange"`
-	ApiDescription      string           `position:"Body" name:"ApiDescription"`
-	Timeout             requests.Integer `position:"Body" name:"Timeout"`
-	FolderId            requests.Integer `position:"Body" name:"FolderId"`
 	RegistrationDetails string           `position:"Body" name:"RegistrationDetails"`
 	ApiName             string           `position:"Body" name:"ApiName"`
-	TenantId            requests.Integer `position:"Body" name:"TenantId"`
-	Protocols           string           `position:"Body" name:"Protocols"`
-	ProjectId           requests.Integer `position:"Body" name:"ProjectId"`
-	ResponseContentType requests.Integer `position:"Body" name:"ResponseContentType"`
 }
 
 // CreateDataServiceApiResponse is the response struct for api CreateDataServiceApi

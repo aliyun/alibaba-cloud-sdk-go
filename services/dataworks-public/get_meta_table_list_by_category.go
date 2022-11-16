@@ -71,8 +71,8 @@ func (client *Client) GetMetaTableListByCategoryWithCallback(request *GetMetaTab
 // GetMetaTableListByCategoryRequest is the request struct for api GetMetaTableListByCategory
 type GetMetaTableListByCategoryRequest struct {
 	*requests.RpcRequest
-	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 	CategoryId requests.Integer `position:"Query" name:"CategoryId"`
 }
 

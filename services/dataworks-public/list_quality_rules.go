@@ -72,9 +72,9 @@ func (client *Client) ListQualityRulesWithCallback(request *ListQualityRulesRequ
 type ListQualityRulesRequest struct {
 	*requests.RpcRequest
 	ProjectName string           `position:"Body" name:"ProjectName"`
-	PageSize    requests.Integer `position:"Body" name:"PageSize"`
 	EntityId    requests.Integer `position:"Body" name:"EntityId"`
 	PageNumber  requests.Integer `position:"Body" name:"PageNumber"`
+	PageSize    requests.Integer `position:"Body" name:"PageSize"`
 }
 
 // ListQualityRulesResponse is the response struct for api ListQualityRules

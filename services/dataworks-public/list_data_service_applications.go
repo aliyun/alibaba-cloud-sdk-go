@@ -71,10 +71,10 @@ func (client *Client) ListDataServiceApplicationsWithCallback(request *ListDataS
 // ListDataServiceApplicationsRequest is the request struct for api ListDataServiceApplications
 type ListDataServiceApplicationsRequest struct {
 	*requests.RpcRequest
+	PageNumber    requests.Integer `position:"Body" name:"PageNumber"`
 	PageSize      requests.Integer `position:"Body" name:"PageSize"`
 	TenantId      requests.Integer `position:"Body" name:"TenantId"`
 	ProjectIdList string           `position:"Body" name:"ProjectIdList"`
-	PageNumber    requests.Integer `position:"Body" name:"PageNumber"`
 }
 
 // ListDataServiceApplicationsResponse is the response struct for api ListDataServiceApplications

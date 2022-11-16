@@ -17,11 +17,17 @@ package dataworks_public
 
 // Project is a nested struct in dataworks_public response
 type Project struct {
-	ProjectStatusCode  string `json:"ProjectStatusCode" xml:"ProjectStatusCode"`
-	ProjectStatus      int    `json:"ProjectStatus" xml:"ProjectStatus"`
-	ProjectName        string `json:"ProjectName" xml:"ProjectName"`
-	ProjectIdentifier  string `json:"ProjectIdentifier" xml:"ProjectIdentifier"`
-	ProjectId          int64  `json:"ProjectId" xml:"ProjectId"`
-	ProjectDescription string `json:"ProjectDescription" xml:"ProjectDescription"`
-	ProjectOwnerBaseId string `json:"ProjectOwnerBaseId" xml:"ProjectOwnerBaseId"`
+	ProjectStatusCode              string `json:"ProjectStatusCode" xml:"ProjectStatusCode"`
+	ProjectStatus                  int    `json:"ProjectStatus" xml:"ProjectStatus"`
+	ProjectName                    string `json:"ProjectName" xml:"ProjectName"`
+	ProjectIdentifier              string `json:"ProjectIdentifier" xml:"ProjectIdentifier"`
+	ProjectId                      int64  `json:"ProjectId" xml:"ProjectId"`
+	ProjectDescription             string `json:"ProjectDescription" xml:"ProjectDescription"`
+	ProjectOwnerBaseId             string `json:"ProjectOwnerBaseId" xml:"ProjectOwnerBaseId"`
+	ResourceManagerResourceGroupId string `json:"ResourceManagerResourceGroupId" xml:"ResourceManagerResourceGroupId"`
+	DisableDevelopment             bool   `json:"DisableDevelopment" xml:"DisableDevelopment"`
+	UseProxyOdpsAccount            bool   `json:"UseProxyOdpsAccount" xml:"UseProxyOdpsAccount"`
+	TablePrivacyMode               int    `json:"TablePrivacyMode" xml:"TablePrivacyMode"`
+	IsDefault                      int    `json:"IsDefault" xml:"IsDefault"`
+	Tags                           []Tag  `json:"Tags" xml:"Tags"`
 }

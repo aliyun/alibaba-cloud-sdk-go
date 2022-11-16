@@ -71,9 +71,9 @@ func (client *Client) UpdateWorkbenchEventResultWithCallback(request *UpdateWork
 // UpdateWorkbenchEventResultRequest is the request struct for api UpdateWorkbenchEventResult
 type UpdateWorkbenchEventResultRequest struct {
 	*requests.RpcRequest
-	CheckResultTip string `position:"Query" name:"CheckResultTip"`
 	CheckResult    string `position:"Query" name:"CheckResult"`
 	MessageId      string `position:"Query" name:"MessageId"`
+	CheckResultTip string `position:"Query" name:"CheckResultTip"`
 	ExtensionCode  string `position:"Query" name:"ExtensionCode"`
 }
 

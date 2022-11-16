@@ -71,10 +71,10 @@ func (client *Client) CreateQualityFollowerWithCallback(request *CreateQualityFo
 // CreateQualityFollowerRequest is the request struct for api CreateQualityFollower
 type CreateQualityFollowerRequest struct {
 	*requests.RpcRequest
-	AlarmMode   requests.Integer `position:"Body" name:"AlarmMode"`
 	ProjectName string           `position:"Body" name:"ProjectName"`
 	Follower    string           `position:"Body" name:"Follower"`
 	EntityId    requests.Integer `position:"Body" name:"EntityId"`
+	AlarmMode   requests.Integer `position:"Body" name:"AlarmMode"`
 }
 
 // CreateQualityFollowerResponse is the response struct for api CreateQualityFollower

@@ -72,8 +72,8 @@ func (client *Client) CreateTableLevelWithCallback(request *CreateTableLevelRequ
 type CreateTableLevelRequest struct {
 	*requests.RpcRequest
 	LevelType   requests.Integer `position:"Query" name:"LevelType"`
-	Name        string           `position:"Query" name:"Name"`
 	Description string           `position:"Query" name:"Description"`
+	Name        string           `position:"Query" name:"Name"`
 	ProjectId   requests.Integer `position:"Query" name:"ProjectId"`
 }
 

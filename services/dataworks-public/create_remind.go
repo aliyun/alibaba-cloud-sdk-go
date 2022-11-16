@@ -71,20 +71,21 @@ func (client *Client) CreateRemindWithCallback(request *CreateRemindRequest, cal
 // CreateRemindRequest is the request struct for api CreateRemind
 type CreateRemindRequest struct {
 	*requests.RpcRequest
-	DndEnd        string           `position:"Body" name:"DndEnd"`
 	AlertUnit     string           `position:"Body" name:"AlertUnit"`
+	RobotUrls     string           `position:"Body" name:"RobotUrls"`
+	BizProcessIds string           `position:"Body" name:"BizProcessIds"`
+	RemindType    string           `position:"Body" name:"RemindType"`
+	BaselineIds   string           `position:"Body" name:"BaselineIds"`
+	ProjectId     requests.Integer `position:"Body" name:"ProjectId"`
+	DndEnd        string           `position:"Body" name:"DndEnd"`
 	RemindUnit    string           `position:"Body" name:"RemindUnit"`
 	AlertInterval requests.Integer `position:"Body" name:"AlertInterval"`
 	AlertMethods  string           `position:"Body" name:"AlertMethods"`
-	RobotUrls     string           `position:"Body" name:"RobotUrls"`
 	MaxAlertTimes requests.Integer `position:"Body" name:"MaxAlertTimes"`
-	BizProcessIds string           `position:"Body" name:"BizProcessIds"`
-	RemindType    string           `position:"Body" name:"RemindType"`
 	AlertTargets  string           `position:"Body" name:"AlertTargets"`
-	BaselineIds   string           `position:"Body" name:"BaselineIds"`
+	Webhooks      string           `position:"Body" name:"Webhooks"`
 	Detail        string           `position:"Body" name:"Detail"`
 	RemindName    string           `position:"Body" name:"RemindName"`
-	ProjectId     requests.Integer `position:"Body" name:"ProjectId"`
 	NodeIds       string           `position:"Body" name:"NodeIds"`
 }
 

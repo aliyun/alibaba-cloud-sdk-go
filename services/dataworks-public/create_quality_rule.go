@@ -71,24 +71,24 @@ func (client *Client) CreateQualityRuleWithCallback(request *CreateQualityRuleRe
 // CreateQualityRuleRequest is the request struct for api CreateQualityRule
 type CreateQualityRuleRequest struct {
 	*requests.RpcRequest
-	ProjectName       string           `position:"Body" name:"ProjectName"`
 	Trend             string           `position:"Body" name:"Trend"`
-	RuleType          requests.Integer `position:"Body" name:"RuleType"`
 	BlockType         requests.Integer `position:"Body" name:"BlockType"`
 	PropertyType      string           `position:"Body" name:"PropertyType"`
 	EntityId          requests.Integer `position:"Body" name:"EntityId"`
 	RuleName          string           `position:"Body" name:"RuleName"`
 	Checker           requests.Integer `position:"Body" name:"Checker"`
-	TemplateId        requests.Integer `position:"Body" name:"TemplateId"`
-	ExpectValue       string           `position:"Body" name:"ExpectValue"`
 	Operator          string           `position:"Body" name:"Operator"`
-	WhereCondition    string           `position:"Body" name:"WhereCondition"`
-	CriticalThreshold string           `position:"Body" name:"CriticalThreshold"`
 	Property          string           `position:"Body" name:"Property"`
-	Comment           string           `position:"Body" name:"Comment"`
-	PredictType       requests.Integer `position:"Body" name:"PredictType"`
 	WarningThreshold  string           `position:"Body" name:"WarningThreshold"`
 	MethodName        string           `position:"Body" name:"MethodName"`
+	ProjectName       string           `position:"Body" name:"ProjectName"`
+	RuleType          requests.Integer `position:"Body" name:"RuleType"`
+	TemplateId        requests.Integer `position:"Body" name:"TemplateId"`
+	ExpectValue       string           `position:"Body" name:"ExpectValue"`
+	WhereCondition    string           `position:"Body" name:"WhereCondition"`
+	CriticalThreshold string           `position:"Body" name:"CriticalThreshold"`
+	Comment           string           `position:"Body" name:"Comment"`
+	PredictType       requests.Integer `position:"Body" name:"PredictType"`
 }
 
 // CreateQualityRuleResponse is the response struct for api CreateQualityRule

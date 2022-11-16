@@ -72,9 +72,9 @@ func (client *Client) ListMetaDBWithCallback(request *ListMetaDBRequest, callbac
 type ListMetaDBRequest struct {
 	*requests.RpcRequest
 	DataSourceType string           `position:"Query" name:"DataSourceType"`
-	PageSize       requests.Integer `position:"Query" name:"PageSize"`
 	ClusterId      string           `position:"Query" name:"ClusterId"`
 	PageNum        requests.Integer `position:"Query" name:"PageNum"`
+	PageSize       requests.Integer `position:"Query" name:"PageSize"`
 	ProjectId      requests.Integer `position:"Query" name:"ProjectId"`
 }
 

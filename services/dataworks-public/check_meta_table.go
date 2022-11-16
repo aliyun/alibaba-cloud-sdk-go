@@ -72,9 +72,9 @@ func (client *Client) CheckMetaTableWithCallback(request *CheckMetaTableRequest,
 type CheckMetaTableRequest struct {
 	*requests.RpcRequest
 	DataSourceType string `position:"Query" name:"DataSourceType"`
+	ClusterId      string `position:"Query" name:"ClusterId"`
 	TableGuid      string `position:"Query" name:"TableGuid"`
 	DatabaseName   string `position:"Query" name:"DatabaseName"`
-	ClusterId      string `position:"Query" name:"ClusterId"`
 	TableName      string `position:"Query" name:"TableName"`
 }
 

@@ -71,10 +71,10 @@ func (client *Client) UpdateConnectionWithCallback(request *UpdateConnectionRequ
 // UpdateConnectionRequest is the request struct for api UpdateConnection
 type UpdateConnectionRequest struct {
 	*requests.RpcRequest
-	EnvType      requests.Integer `position:"Query" name:"EnvType"`
 	Description  string           `position:"Query" name:"Description"`
-	ConnectionId requests.Integer `position:"Query" name:"ConnectionId"`
 	Content      string           `position:"Query" name:"Content"`
+	EnvType      requests.Integer `position:"Query" name:"EnvType"`
+	ConnectionId requests.Integer `position:"Query" name:"ConnectionId"`
 	Status       string           `position:"Query" name:"Status"`
 }
 

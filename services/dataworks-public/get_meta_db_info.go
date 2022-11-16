@@ -72,8 +72,8 @@ func (client *Client) GetMetaDBInfoWithCallback(request *GetMetaDBInfoRequest, c
 type GetMetaDBInfoRequest struct {
 	*requests.RpcRequest
 	DataSourceType string `position:"Query" name:"DataSourceType"`
-	DatabaseName   string `position:"Query" name:"DatabaseName"`
 	ClusterId      string `position:"Query" name:"ClusterId"`
+	DatabaseName   string `position:"Query" name:"DatabaseName"`
 	AppGuid        string `position:"Query" name:"AppGuid"`
 }
 

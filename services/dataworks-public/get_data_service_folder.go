@@ -71,9 +71,9 @@ func (client *Client) GetDataServiceFolderWithCallback(request *GetDataServiceFo
 // GetDataServiceFolderRequest is the request struct for api GetDataServiceFolder
 type GetDataServiceFolderRequest struct {
 	*requests.RpcRequest
+	FolderId  requests.Integer `position:"Body" name:"FolderId"`
 	TenantId  requests.Integer `position:"Body" name:"TenantId"`
 	ProjectId requests.Integer `position:"Body" name:"ProjectId"`
-	FolderId  requests.Integer `position:"Body" name:"FolderId"`
 }
 
 // GetDataServiceFolderResponse is the response struct for api GetDataServiceFolder

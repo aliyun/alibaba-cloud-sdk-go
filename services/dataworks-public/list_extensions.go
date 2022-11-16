@@ -88,7 +88,7 @@ func CreateListExtensionsRequest() (request *ListExtensionsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("dataworks-public", "2020-05-18", "ListExtensions", "", "")
-	request.Method = requests.GET
+	request.Method = requests.POST
 	return
 }
 

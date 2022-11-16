@@ -72,8 +72,8 @@ func (client *Client) CreateDataServiceApiAuthorityWithCallback(request *CreateD
 type CreateDataServiceApiAuthorityRequest struct {
 	*requests.RpcRequest
 	AuthorizedProjectId requests.Integer `position:"Body" name:"AuthorizedProjectId"`
-	TenantId            requests.Integer `position:"Body" name:"TenantId"`
 	EndTime             requests.Integer `position:"Body" name:"EndTime"`
+	TenantId            requests.Integer `position:"Body" name:"TenantId"`
 	ProjectId           requests.Integer `position:"Body" name:"ProjectId"`
 	ApiId               requests.Integer `position:"Body" name:"ApiId"`
 }

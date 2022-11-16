@@ -72,8 +72,8 @@ func (client *Client) ListTableLevelWithCallback(request *ListTableLevelRequest,
 type ListTableLevelRequest struct {
 	*requests.RpcRequest
 	LevelType requests.Integer `position:"Query" name:"LevelType"`
-	PageSize  requests.Integer `position:"Query" name:"PageSize"`
 	PageNum   requests.Integer `position:"Query" name:"PageNum"`
+	PageSize  requests.Integer `position:"Query" name:"PageSize"`
 	ProjectId requests.Integer `position:"Query" name:"ProjectId"`
 }
 

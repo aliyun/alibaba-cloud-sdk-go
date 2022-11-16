@@ -72,9 +72,9 @@ func (client *Client) CreateTableThemeWithCallback(request *CreateTableThemeRequ
 type CreateTableThemeRequest struct {
 	*requests.RpcRequest
 	Level     requests.Integer `position:"Query" name:"Level"`
+	ParentId  requests.Integer `position:"Query" name:"ParentId"`
 	Name      string           `position:"Query" name:"Name"`
 	ProjectId requests.Integer `position:"Query" name:"ProjectId"`
-	ParentId  requests.Integer `position:"Query" name:"ParentId"`
 }
 
 // CreateTableThemeResponse is the response struct for api CreateTableTheme

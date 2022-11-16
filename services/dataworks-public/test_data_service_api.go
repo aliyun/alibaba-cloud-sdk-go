@@ -72,21 +72,15 @@ func (client *Client) TestDataServiceApiWithCallback(request *TestDataServiceApi
 type TestDataServiceApiRequest struct {
 	*requests.RpcRequest
 	PathParams  *[]TestDataServiceApiPathParams `position:"Body" name:"PathParams"  type:"Repeated"`
-	BodyContent string                          `position:"Body" name:"BodyContent"`
-	BodyParams  *[]TestDataServiceApiBodyParams `position:"Body" name:"BodyParams"  type:"Repeated"`
 	QueryParam  *[]TestDataServiceApiQueryParam `position:"Body" name:"QueryParam"  type:"Repeated"`
 	HeadParams  *[]TestDataServiceApiHeadParams `position:"Body" name:"HeadParams"  type:"Repeated"`
+	BodyContent string                          `position:"Body" name:"BodyContent"`
+	BodyParams  *[]TestDataServiceApiBodyParams `position:"Body" name:"BodyParams"  type:"Repeated"`
 	ApiId       requests.Integer                `position:"Query" name:"ApiId"`
 }
 
 // TestDataServiceApiPathParams is a repeated param struct in TestDataServiceApiRequest
 type TestDataServiceApiPathParams struct {
-	ParamKey   string `name:"ParamKey"`
-	ParamValue string `name:"ParamValue"`
-}
-
-// TestDataServiceApiBodyParams is a repeated param struct in TestDataServiceApiRequest
-type TestDataServiceApiBodyParams struct {
 	ParamKey   string `name:"ParamKey"`
 	ParamValue string `name:"ParamValue"`
 }
@@ -99,6 +93,12 @@ type TestDataServiceApiQueryParam struct {
 
 // TestDataServiceApiHeadParams is a repeated param struct in TestDataServiceApiRequest
 type TestDataServiceApiHeadParams struct {
+	ParamKey   string `name:"ParamKey"`
+	ParamValue string `name:"ParamValue"`
+}
+
+// TestDataServiceApiBodyParams is a repeated param struct in TestDataServiceApiRequest
+type TestDataServiceApiBodyParams struct {
 	ParamKey   string `name:"ParamKey"`
 	ParamValue string `name:"ParamValue"`
 }

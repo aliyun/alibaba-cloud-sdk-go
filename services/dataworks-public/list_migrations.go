@@ -72,10 +72,10 @@ func (client *Client) ListMigrationsWithCallback(request *ListMigrationsRequest,
 type ListMigrationsRequest struct {
 	*requests.RpcRequest
 	Owner         string           `position:"Body" name:"Owner"`
+	PageNumber    requests.Integer `position:"Body" name:"PageNumber"`
 	PageSize      requests.Integer `position:"Body" name:"PageSize"`
 	MigrationType string           `position:"Body" name:"MigrationType"`
 	ProjectId     requests.Integer `position:"Body" name:"ProjectId"`
-	PageNumber    requests.Integer `position:"Body" name:"PageNumber"`
 }
 
 // ListMigrationsResponse is the response struct for api ListMigrations

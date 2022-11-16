@@ -34,5 +34,11 @@ type DataInGetProjectDetail struct {
 	ProtectedMode                    int      `json:"ProtectedMode" xml:"ProtectedMode"`
 	TenantId                         int64    `json:"TenantId" xml:"TenantId"`
 	SchedulerRetryInterval           int      `json:"SchedulerRetryInterval" xml:"SchedulerRetryInterval"`
+	ResourceManagerResourceGroupId   string   `json:"ResourceManagerResourceGroupId" xml:"ResourceManagerResourceGroupId"`
+	DisableDevelopment               bool     `json:"DisableDevelopment" xml:"DisableDevelopment"`
+	UseProxyOdpsAccount              bool     `json:"UseProxyOdpsAccount" xml:"UseProxyOdpsAccount"`
+	TablePrivacyMode                 int      `json:"TablePrivacyMode" xml:"TablePrivacyMode"`
+	IsDefault                        int      `json:"IsDefault" xml:"IsDefault"`
 	EnvTypes                         []string `json:"EnvTypes" xml:"EnvTypes"`
+	Tags                             []Tag    `json:"Tags" xml:"Tags"`
 }

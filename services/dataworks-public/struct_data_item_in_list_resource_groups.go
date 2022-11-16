@@ -17,19 +17,21 @@ package dataworks_public
 
 // DataItemInListResourceGroups is a nested struct in dataworks_public response
 type DataItemInListResourceGroups struct {
-	Status            int                    `json:"Status" xml:"Status"`
-	UpdateTime        string                 `json:"UpdateTime" xml:"UpdateTime"`
-	IsDefault         bool                   `json:"IsDefault" xml:"IsDefault"`
-	Cluster           string                 `json:"Cluster" xml:"Cluster"`
-	EnableKp          bool                   `json:"EnableKp" xml:"EnableKp"`
-	ResourceGroupType string                 `json:"ResourceGroupType" xml:"ResourceGroupType"`
-	CreateTime        string                 `json:"CreateTime" xml:"CreateTime"`
-	Identifier        string                 `json:"Identifier" xml:"Identifier"`
-	Mode              string                 `json:"Mode" xml:"Mode"`
-	BizExtKey         string                 `json:"BizExtKey" xml:"BizExtKey"`
-	Sequence          int                    `json:"Sequence" xml:"Sequence"`
-	Specs             map[string]interface{} `json:"Specs" xml:"Specs"`
-	Name              string                 `json:"Name" xml:"Name"`
-	Id                int64                  `json:"Id" xml:"Id"`
-	TenantId          int64                  `json:"TenantId" xml:"TenantId"`
+	Status                         int                    `json:"Status" xml:"Status"`
+	UpdateTime                     string                 `json:"UpdateTime" xml:"UpdateTime"`
+	IsDefault                      bool                   `json:"IsDefault" xml:"IsDefault"`
+	Cluster                        string                 `json:"Cluster" xml:"Cluster"`
+	EnableKp                       bool                   `json:"EnableKp" xml:"EnableKp"`
+	ResourceGroupType              string                 `json:"ResourceGroupType" xml:"ResourceGroupType"`
+	CreateTime                     string                 `json:"CreateTime" xml:"CreateTime"`
+	Identifier                     string                 `json:"Identifier" xml:"Identifier"`
+	Mode                           string                 `json:"Mode" xml:"Mode"`
+	BizExtKey                      string                 `json:"BizExtKey" xml:"BizExtKey"`
+	Sequence                       int                    `json:"Sequence" xml:"Sequence"`
+	Specs                          map[string]interface{} `json:"Specs" xml:"Specs"`
+	Name                           string                 `json:"Name" xml:"Name"`
+	Id                             int64                  `json:"Id" xml:"Id"`
+	TenantId                       int64                  `json:"TenantId" xml:"TenantId"`
+	ResourceManagerResourceGroupId string                 `json:"ResourceManagerResourceGroupId" xml:"ResourceManagerResourceGroupId"`
+	Tags                           []Tag                  `json:"Tags" xml:"Tags"`
 }

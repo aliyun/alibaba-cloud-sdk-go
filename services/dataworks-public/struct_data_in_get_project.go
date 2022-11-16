@@ -44,5 +44,7 @@ type DataInGetProject struct {
 	UseProxyOdpsAccount              bool     `json:"UseProxyOdpsAccount" xml:"UseProxyOdpsAccount"`
 	GmtCreate                        string   `json:"GmtCreate" xml:"GmtCreate"`
 	TenantId                         int64    `json:"TenantId" xml:"TenantId"`
+	ResourceManagerResourceGroupId   string   `json:"ResourceManagerResourceGroupId" xml:"ResourceManagerResourceGroupId"`
 	EnvTypes                         []string `json:"EnvTypes" xml:"EnvTypes"`
+	Tags                             []Tag    `json:"Tags" xml:"Tags"`
 }

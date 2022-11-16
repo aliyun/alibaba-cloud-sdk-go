@@ -72,8 +72,8 @@ func (client *Client) GetMetaCategoryWithCallback(request *GetMetaCategoryReques
 type GetMetaCategoryRequest struct {
 	*requests.RpcRequest
 	ParentCategoryId requests.Integer `position:"Query" name:"ParentCategoryId"`
-	PageSize         requests.Integer `position:"Query" name:"PageSize"`
 	PageNum          requests.Integer `position:"Query" name:"PageNum"`
+	PageSize         requests.Integer `position:"Query" name:"PageSize"`
 }
 
 // GetMetaCategoryResponse is the response struct for api GetMetaCategory

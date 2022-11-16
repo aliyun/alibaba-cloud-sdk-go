@@ -71,11 +71,11 @@ func (client *Client) CreateExportMigrationWithCallback(request *CreateExportMig
 // CreateExportMigrationRequest is the request struct for api CreateExportMigration
 type CreateExportMigrationRequest struct {
 	*requests.RpcRequest
+	IncrementalSince   requests.Integer `position:"Body" name:"IncrementalSince"`
+	Description        string           `position:"Body" name:"Description"`
 	ExportObjectStatus string           `position:"Body" name:"ExportObjectStatus"`
 	ExportMode         string           `position:"Body" name:"ExportMode"`
-	IncrementalSince   requests.Integer `position:"Body" name:"IncrementalSince"`
 	Name               string           `position:"Body" name:"Name"`
-	Description        string           `position:"Body" name:"Description"`
 	ProjectId          requests.Integer `position:"Body" name:"ProjectId"`
 }
 

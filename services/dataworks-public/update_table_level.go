@@ -71,10 +71,10 @@ func (client *Client) UpdateTableLevelWithCallback(request *UpdateTableLevelRequ
 // UpdateTableLevelRequest is the request struct for api UpdateTableLevel
 type UpdateTableLevelRequest struct {
 	*requests.RpcRequest
-	LevelId     requests.Integer `position:"Query" name:"LevelId"`
 	LevelType   requests.Integer `position:"Query" name:"LevelType"`
-	Name        string           `position:"Query" name:"Name"`
 	Description string           `position:"Query" name:"Description"`
+	LevelId     requests.Integer `position:"Query" name:"LevelId"`
+	Name        string           `position:"Query" name:"Name"`
 	ProjectId   requests.Integer `position:"Query" name:"ProjectId"`
 }
 

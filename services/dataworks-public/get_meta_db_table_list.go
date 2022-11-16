@@ -72,11 +72,11 @@ func (client *Client) GetMetaDBTableListWithCallback(request *GetMetaDBTableList
 type GetMetaDBTableListRequest struct {
 	*requests.RpcRequest
 	DataSourceType string           `position:"Query" name:"DataSourceType"`
+	ClusterId      string           `position:"Query" name:"ClusterId"`
+	PageNumber     requests.Integer `position:"Query" name:"PageNumber"`
 	DatabaseName   string           `position:"Query" name:"DatabaseName"`
 	PageSize       requests.Integer `position:"Query" name:"PageSize"`
-	ClusterId      string           `position:"Query" name:"ClusterId"`
 	AppGuid        string           `position:"Query" name:"AppGuid"`
-	PageNumber     requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 // GetMetaDBTableListResponse is the response struct for api GetMetaDBTableList

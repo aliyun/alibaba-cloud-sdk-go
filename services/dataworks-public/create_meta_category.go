@@ -71,9 +71,9 @@ func (client *Client) CreateMetaCategoryWithCallback(request *CreateMetaCategory
 // CreateMetaCategoryRequest is the request struct for api CreateMetaCategory
 type CreateMetaCategoryRequest struct {
 	*requests.RpcRequest
+	ParentId requests.Integer `position:"Body" name:"ParentId"`
 	Name     string           `position:"Body" name:"Name"`
 	Comment  string           `position:"Body" name:"Comment"`
-	ParentId requests.Integer `position:"Body" name:"ParentId"`
 }
 
 // CreateMetaCategoryResponse is the response struct for api CreateMetaCategory

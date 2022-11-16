@@ -71,10 +71,10 @@ func (client *Client) UpdateTableModelInfoWithCallback(request *UpdateTableModel
 // UpdateTableModelInfoRequest is the request struct for api UpdateTableModelInfo
 type UpdateTableModelInfoRequest struct {
 	*requests.RpcRequest
+	LevelType          requests.Integer `position:"Query" name:"LevelType"`
 	SecondLevelThemeId requests.Integer `position:"Query" name:"SecondLevelThemeId"`
 	TableGuid          string           `position:"Query" name:"TableGuid"`
 	LevelId            requests.Integer `position:"Query" name:"LevelId"`
-	LevelType          requests.Integer `position:"Query" name:"LevelType"`
 	FirstLevelThemeId  requests.Integer `position:"Query" name:"FirstLevelThemeId"`
 }
 

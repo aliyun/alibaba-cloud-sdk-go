@@ -72,11 +72,11 @@ func (client *Client) ListQualityResultsByRuleWithCallback(request *ListQualityR
 type ListQualityResultsByRuleRequest struct {
 	*requests.RpcRequest
 	ProjectName string           `position:"Body" name:"ProjectName"`
+	StartDate   string           `position:"Body" name:"StartDate"`
+	PageNumber  requests.Integer `position:"Body" name:"PageNumber"`
 	EndDate     string           `position:"Body" name:"EndDate"`
 	PageSize    requests.Integer `position:"Body" name:"PageSize"`
 	RuleId      requests.Integer `position:"Body" name:"RuleId"`
-	StartDate   string           `position:"Body" name:"StartDate"`
-	PageNumber  requests.Integer `position:"Body" name:"PageNumber"`
 }
 
 // ListQualityResultsByRuleResponse is the response struct for api ListQualityResultsByRule

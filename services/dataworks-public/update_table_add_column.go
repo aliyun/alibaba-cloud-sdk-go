@@ -71,8 +71,8 @@ func (client *Client) UpdateTableAddColumnWithCallback(request *UpdateTableAddCo
 // UpdateTableAddColumnRequest is the request struct for api UpdateTableAddColumn
 type UpdateTableAddColumnRequest struct {
 	*requests.RpcRequest
-	TableGuid string                        `position:"Query" name:"TableGuid"`
 	Column    *[]UpdateTableAddColumnColumn `position:"Body" name:"Column"  type:"Repeated"`
+	TableGuid string                        `position:"Query" name:"TableGuid"`
 }
 
 // UpdateTableAddColumnColumn is a repeated param struct in UpdateTableAddColumnRequest

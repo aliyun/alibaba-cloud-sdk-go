@@ -71,11 +71,11 @@ func (client *Client) ListDataServiceGroupsWithCallback(request *ListDataService
 // ListDataServiceGroupsRequest is the request struct for api ListDataServiceGroups
 type ListDataServiceGroupsRequest struct {
 	*requests.RpcRequest
+	GroupNameKeyword string           `position:"Body" name:"GroupNameKeyword"`
+	PageNumber       requests.Integer `position:"Body" name:"PageNumber"`
 	PageSize         requests.Integer `position:"Body" name:"PageSize"`
 	TenantId         requests.Integer `position:"Body" name:"TenantId"`
 	ProjectId        requests.Integer `position:"Body" name:"ProjectId"`
-	GroupNameKeyword string           `position:"Body" name:"GroupNameKeyword"`
-	PageNumber       requests.Integer `position:"Body" name:"PageNumber"`
 }
 
 // ListDataServiceGroupsResponse is the response struct for api ListDataServiceGroups

@@ -71,8 +71,8 @@ func (client *Client) UpdateTableThemeWithCallback(request *UpdateTableThemeRequ
 // UpdateTableThemeRequest is the request struct for api UpdateTableTheme
 type UpdateTableThemeRequest struct {
 	*requests.RpcRequest
-	Name      string           `position:"Query" name:"Name"`
 	ThemeId   requests.Integer `position:"Query" name:"ThemeId"`
+	Name      string           `position:"Query" name:"Name"`
 	ProjectId requests.Integer `position:"Query" name:"ProjectId"`
 }
 

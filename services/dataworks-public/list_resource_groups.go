@@ -71,9 +71,17 @@ func (client *Client) ListResourceGroupsWithCallback(request *ListResourceGroups
 // ListResourceGroupsRequest is the request struct for api ListResourceGroups
 type ListResourceGroupsRequest struct {
 	*requests.RpcRequest
-	BizExtKey         string           `position:"Query" name:"BizExtKey"`
-	ResourceGroupType requests.Integer `position:"Query" name:"ResourceGroupType"`
-	Keyword           string           `position:"Query" name:"Keyword"`
+	BizExtKey                      string                    `position:"Query" name:"BizExtKey"`
+	Tags                           *[]ListResourceGroupsTags `position:"Query" name:"Tags"  type:"Json"`
+	ResourceManagerResourceGroupId string                    `position:"Query" name:"ResourceManagerResourceGroupId"`
+	ResourceGroupType              requests.Integer          `position:"Query" name:"ResourceGroupType"`
+	Keyword                        string                    `position:"Query" name:"Keyword"`
+}
+
+// ListResourceGroupsTags is a repeated param struct in ListResourceGroupsRequest
+type ListResourceGroupsTags struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // ListResourceGroupsResponse is the response struct for api ListResourceGroups

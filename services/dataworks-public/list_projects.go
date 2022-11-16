@@ -71,8 +71,16 @@ func (client *Client) ListProjectsWithCallback(request *ListProjectsRequest, cal
 // ListProjectsRequest is the request struct for api ListProjects
 type ListProjectsRequest struct {
 	*requests.RpcRequest
-	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
-	PageSize   requests.Integer `position:"Query" name:"PageSize"`
+	PageNumber                     requests.Integer    `position:"Query" name:"PageNumber"`
+	Tags                           *[]ListProjectsTags `position:"Query" name:"Tags"  type:"Json"`
+	ResourceManagerResourceGroupId string              `position:"Query" name:"ResourceManagerResourceGroupId"`
+	PageSize                       requests.Integer    `position:"Query" name:"PageSize"`
+}
+
+// ListProjectsTags is a repeated param struct in ListProjectsRequest
+type ListProjectsTags struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // ListProjectsResponse is the response struct for api ListProjects

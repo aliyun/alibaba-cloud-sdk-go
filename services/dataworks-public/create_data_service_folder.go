@@ -72,10 +72,10 @@ func (client *Client) CreateDataServiceFolderWithCallback(request *CreateDataSer
 type CreateDataServiceFolderRequest struct {
 	*requests.RpcRequest
 	GroupId    string           `position:"Body" name:"GroupId"`
-	TenantId   requests.Integer `position:"Body" name:"TenantId"`
 	FolderName string           `position:"Body" name:"FolderName"`
-	ProjectId  requests.Integer `position:"Body" name:"ProjectId"`
 	ParentId   requests.Integer `position:"Body" name:"ParentId"`
+	TenantId   requests.Integer `position:"Body" name:"TenantId"`
+	ProjectId  requests.Integer `position:"Body" name:"ProjectId"`
 }
 
 // CreateDataServiceFolderResponse is the response struct for api CreateDataServiceFolder
