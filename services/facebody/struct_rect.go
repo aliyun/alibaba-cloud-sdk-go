@@ -17,5 +17,8 @@ package facebody
 
 // Rect is a nested struct in facebody response
 type Rect struct {
-	Result []int `json:"Result" xml:"Result"`
+	Left   int64 `json:"Left" xml:"Left"`
+	Width  int64 `json:"Width" xml:"Width"`
+	Top    int64 `json:"Top" xml:"Top"`
+	Height int64 `json:"Height" xml:"Height"`
 }

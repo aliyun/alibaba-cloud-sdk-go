@@ -17,12 +17,14 @@ package facebody
 
 // Result is a nested struct in facebody response
 type Result struct {
-	Rate       float64     `json:"Rate" xml:"Rate"`
-	Suggestion string      `json:"Suggestion" xml:"Suggestion"`
-	Label      string      `json:"Label" xml:"Label"`
-	Hands      Hands       `json:"Hands" xml:"Hands"`
-	Box        Box         `json:"Box" xml:"Box"`
-	Bodies     []Body      `json:"Bodies" xml:"Bodies"`
-	Frames     []Frame     `json:"Frames" xml:"Frames"`
-	SubResults []SubResult `json:"SubResults" xml:"SubResults"`
+	Rate        float64     `json:"Rate" xml:"Rate"`
+	Suggestion  string      `json:"Suggestion" xml:"Suggestion"`
+	Label       string      `json:"Label" xml:"Label"`
+	MessageTips string      `json:"MessageTips" xml:"MessageTips"`
+	Rect        Rect        `json:"Rect" xml:"Rect"`
+	Hands       Hands       `json:"Hands" xml:"Hands"`
+	Box         Box         `json:"Box" xml:"Box"`
+	Bodies      []Body      `json:"Bodies" xml:"Bodies"`
+	Frames      []Frame     `json:"Frames" xml:"Frames"`
+	SubResults  []SubResult `json:"SubResults" xml:"SubResults"`
 }
