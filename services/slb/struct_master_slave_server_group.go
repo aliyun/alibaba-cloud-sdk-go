@@ -20,5 +20,6 @@ type MasterSlaveServerGroup struct {
 	ServiceManagedMode         string            `json:"ServiceManagedMode" xml:"ServiceManagedMode"`
 	MasterSlaveServerGroupId   string            `json:"MasterSlaveServerGroupId" xml:"MasterSlaveServerGroupId"`
 	MasterSlaveServerGroupName string            `json:"MasterSlaveServerGroupName" xml:"MasterSlaveServerGroupName"`
+	CreateTime                 string            `json:"CreateTime" xml:"CreateTime"`
 	AssociatedObjects          AssociatedObjects `json:"AssociatedObjects" xml:"AssociatedObjects"`
 }

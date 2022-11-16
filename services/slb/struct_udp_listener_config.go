@@ -35,5 +35,6 @@ type UDPListenerConfig struct {
 	HealthCheckReq            string      `json:"HealthCheckReq" xml:"HealthCheckReq"`
 	HealthCheckMethod         string      `json:"HealthCheckMethod" xml:"HealthCheckMethod"`
 	HealthCheck               string      `json:"HealthCheck" xml:"HealthCheck"`
+	ProxyProtocolV2Enabled    string      `json:"ProxyProtocolV2Enabled" xml:"ProxyProtocolV2Enabled"`
 	PortRanges                []PortRange `json:"PortRanges" xml:"PortRanges"`
 }

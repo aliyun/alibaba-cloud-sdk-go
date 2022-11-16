@@ -34,8 +34,8 @@ type Listener struct {
 	Description         string                                `json:"Description" xml:"Description"`
 	AclIds              AclIdsInDescribeLoadBalancerListeners `json:"AclIds" xml:"AclIds"`
 	HTTPListenerConfig  HTTPListenerConfig                    `json:"HTTPListenerConfig" xml:"HTTPListenerConfig"`
-	UDPListenerConfig   UDPListenerConfig                     `json:"UDPListenerConfig" xml:"UDPListenerConfig"`
+	TCPListenerConfig   TCPListenerConfig                     `json:"TCPListenerConfig" xml:"TCPListenerConfig"`
 	HTTPSListenerConfig HTTPSListenerConfig                   `json:"HTTPSListenerConfig" xml:"HTTPSListenerConfig"`
 	TCPSListenerConfig  TCPSListenerConfig                    `json:"TCPSListenerConfig" xml:"TCPSListenerConfig"`
-	TCPListenerConfig   TCPListenerConfig                     `json:"TCPListenerConfig" xml:"TCPListenerConfig"`
+	UDPListenerConfig   UDPListenerConfig                     `json:"UDPListenerConfig" xml:"UDPListenerConfig"`
 }

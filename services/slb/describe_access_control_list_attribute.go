@@ -90,6 +90,7 @@ type DescribeAccessControlListAttributeResponse struct {
 	RequestId          string           `json:"RequestId" xml:"RequestId"`
 	ResourceGroupId    string           `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	AclName            string           `json:"AclName" xml:"AclName"`
+	CreateTime         string           `json:"CreateTime" xml:"CreateTime"`
 	AclEntrys          AclEntrys        `json:"AclEntrys" xml:"AclEntrys"`
 	RelatedListeners   RelatedListeners `json:"RelatedListeners" xml:"RelatedListeners"`
 }

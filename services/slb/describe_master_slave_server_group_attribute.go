@@ -88,6 +88,7 @@ type DescribeMasterSlaveServerGroupAttributeResponse struct {
 	LoadBalancerId             string                                                             `json:"LoadBalancerId" xml:"LoadBalancerId"`
 	MasterSlaveServerGroupName string                                                             `json:"MasterSlaveServerGroupName" xml:"MasterSlaveServerGroupName"`
 	MasterSlaveServerGroupId   string                                                             `json:"MasterSlaveServerGroupId" xml:"MasterSlaveServerGroupId"`
+	CreateTime                 string                                                             `json:"CreateTime" xml:"CreateTime"`
 	MasterSlaveBackendServers  MasterSlaveBackendServersInDescribeMasterSlaveServerGroupAttribute `json:"MasterSlaveBackendServers" xml:"MasterSlaveBackendServers"`
 }
 

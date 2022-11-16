@@ -22,5 +22,6 @@ type Acl struct {
 	AddressIPVersion   string                           `json:"AddressIPVersion" xml:"AddressIPVersion"`
 	AclName            string                           `json:"AclName" xml:"AclName"`
 	ResourceGroupId    string                           `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	CreateTime         string                           `json:"CreateTime" xml:"CreateTime"`
 	Tags               TagsInDescribeAccessControlLists `json:"Tags" xml:"Tags"`
 }
