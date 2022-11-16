@@ -79,6 +79,7 @@ type CreateHybridClusterRequest struct {
 	ImageOwnerAlias             string                                  `position:"Query" name:"ImageOwnerAlias"`
 	ResourceGroupId             string                                  `position:"Query" name:"ResourceGroupId"`
 	Password                    string                                  `position:"Query" name:"Password"`
+	WinAdPar                    CreateHybridClusterWinAdPar             `position:"Query" name:"WinAdPar"  type:"Struct"`
 	ComputeSpotPriceLimit       requests.Float                          `position:"Query" name:"ComputeSpotPriceLimit"`
 	OnPremiseVolumeLocalPath    string                                  `position:"Query" name:"OnPremiseVolumeLocalPath"`
 	RemoteDirectory             string                                  `position:"Query" name:"RemoteDirectory"`
@@ -95,6 +96,7 @@ type CreateHybridClusterRequest struct {
 	SecurityGroupId             string                                  `position:"Query" name:"SecurityGroupId"`
 	Description                 string                                  `position:"Query" name:"Description"`
 	EcsOrderComputeInstanceType string                                  `position:"Query" name:"EcsOrder.Compute.InstanceType"`
+	OpenldapPar                 CreateHybridClusterOpenldapPar          `position:"Query" name:"OpenldapPar"  type:"Struct"`
 	JobQueue                    string                                  `position:"Query" name:"JobQueue"`
 	VolumeType                  string                                  `position:"Query" name:"VolumeType"`
 	OnPremiseVolumeMountPoint   string                                  `position:"Query" name:"OnPremiseVolumeMountPoint"`
@@ -103,6 +105,7 @@ type CreateHybridClusterRequest struct {
 	ClientVersion               string                                  `position:"Query" name:"ClientVersion"`
 	OsTag                       string                                  `position:"Query" name:"OsTag"`
 	Nodes                       *[]CreateHybridClusterNodes             `position:"Query" name:"Nodes"  type:"Repeated"`
+	Plugin                      string                                  `position:"Query" name:"Plugin"`
 	Application                 *[]CreateHybridClusterApplication       `position:"Query" name:"Application"  type:"Repeated"`
 	VpcId                       string                                  `position:"Query" name:"VpcId"`
 	VolumeMountpoint            string                                  `position:"Query" name:"VolumeMountpoint"`
@@ -110,10 +113,24 @@ type CreateHybridClusterRequest struct {
 	Location                    string                                  `position:"Query" name:"Location"`
 }
 
+// CreateHybridClusterWinAdPar is a repeated param struct in CreateHybridClusterRequest
+type CreateHybridClusterWinAdPar struct {
+	AdUser       string `name:"AdUser"`
+	AdUserPasswd string `name:"AdUserPasswd"`
+	AdIp         string `name:"AdIp"`
+	AdDc         string `name:"AdDc"`
+}
+
 // CreateHybridClusterPostInstallScript is a repeated param struct in CreateHybridClusterRequest
 type CreateHybridClusterPostInstallScript struct {
 	Args string `name:"Args"`
 	Url  string `name:"Url"`
+}
+
+// CreateHybridClusterOpenldapPar is a repeated param struct in CreateHybridClusterRequest
+type CreateHybridClusterOpenldapPar struct {
+	BaseDn       string `name:"BaseDn"`
+	LdapServerIp string `name:"LdapServerIp"`
 }
 
 // CreateHybridClusterNodes is a repeated param struct in CreateHybridClusterRequest

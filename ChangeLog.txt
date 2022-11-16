@@ -1,3 +1,9 @@
+2022-11-16 Version: v1.62.12
+- Generated 2018-04-12 for `EHPC`.
+- RunasUserPassword is not required in CreateJobFile.
+- RunasUserPassword not required in SubmitJob.
+- Add new api GetJobLog.
+
 2022-11-15 Version: v1.62.11
 - Generated 2020-06-15 for `hitsdb`.
 - Add renew and modify instance pay type api.
