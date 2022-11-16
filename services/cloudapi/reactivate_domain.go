@@ -21,7 +21,6 @@ import (
 )
 
 // ReactivateDomain invokes the cloudapi.ReactivateDomain API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/reactivatedomain.html
 func (client *Client) ReactivateDomain(request *ReactivateDomainRequest) (response *ReactivateDomainResponse, err error) {
 	response = CreateReactivateDomainResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ReactivateDomain(request *ReactivateDomainRequest) (respon
 }
 
 // ReactivateDomainWithChan invokes the cloudapi.ReactivateDomain API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/reactivatedomain.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReactivateDomainWithChan(request *ReactivateDomainRequest) (<-chan *ReactivateDomainResponse, <-chan error) {
 	responseChan := make(chan *ReactivateDomainResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ReactivateDomainWithChan(request *ReactivateDomainRequest)
 }
 
 // ReactivateDomainWithCallback invokes the cloudapi.ReactivateDomain API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/reactivatedomain.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReactivateDomainWithCallback(request *ReactivateDomainRequest, callback func(response *ReactivateDomainResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

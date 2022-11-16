@@ -21,8 +21,8 @@ type ApiHisItem struct {
 	HistoryVersion string `json:"HistoryVersion" xml:"HistoryVersion"`
 	RegionId       string `json:"RegionId" xml:"RegionId"`
 	GroupName      string `json:"GroupName" xml:"GroupName"`
-	ApiName        string `json:"ApiName" xml:"ApiName"`
 	GroupId        string `json:"GroupId" xml:"GroupId"`
+	ApiName        string `json:"ApiName" xml:"ApiName"`
 	Status         string `json:"Status" xml:"Status"`
 	StageName      string `json:"StageName" xml:"StageName"`
 	Description    string `json:"Description" xml:"Description"`

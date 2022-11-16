@@ -21,7 +21,6 @@ import (
 )
 
 // ResetAppCode invokes the cloudapi.ResetAppCode API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/resetappcode.html
 func (client *Client) ResetAppCode(request *ResetAppCodeRequest) (response *ResetAppCodeResponse, err error) {
 	response = CreateResetAppCodeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ResetAppCode(request *ResetAppCodeRequest) (response *Rese
 }
 
 // ResetAppCodeWithChan invokes the cloudapi.ResetAppCode API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/resetappcode.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResetAppCodeWithChan(request *ResetAppCodeRequest) (<-chan *ResetAppCodeResponse, <-chan error) {
 	responseChan := make(chan *ResetAppCodeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ResetAppCodeWithChan(request *ResetAppCodeRequest) (<-chan
 }
 
 // ResetAppCodeWithCallback invokes the cloudapi.ResetAppCode API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/resetappcode.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResetAppCodeWithCallback(request *ResetAppCodeRequest, callback func(response *ResetAppCodeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,6 +71,7 @@ func (client *Client) ResetAppCodeWithCallback(request *ResetAppCodeRequest, cal
 // ResetAppCodeRequest is the request struct for api ResetAppCode
 type ResetAppCodeRequest struct {
 	*requests.RpcRequest
+	NewAppCode    string `position:"Query" name:"NewAppCode"`
 	SecurityToken string `position:"Query" name:"SecurityToken"`
 	AppCode       string `position:"Query" name:"AppCode"`
 }

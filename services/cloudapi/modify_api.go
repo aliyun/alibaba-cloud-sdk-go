@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyApi invokes the cloudapi.ModifyApi API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/modifyapi.html
 func (client *Client) ModifyApi(request *ModifyApiRequest) (response *ModifyApiResponse, err error) {
 	response = CreateModifyApiResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyApi(request *ModifyApiRequest) (response *ModifyApiR
 }
 
 // ModifyApiWithChan invokes the cloudapi.ModifyApi API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/modifyapi.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyApiWithChan(request *ModifyApiRequest) (<-chan *ModifyApiResponse, <-chan error) {
 	responseChan := make(chan *ModifyApiResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyApiWithChan(request *ModifyApiRequest) (<-chan *Modi
 }
 
 // ModifyApiWithCallback invokes the cloudapi.ModifyApi API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/modifyapi.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyApiWithCallback(request *ModifyApiRequest, callback func(response *ModifyApiResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +76,7 @@ type ModifyApiRequest struct {
 	AppCodeAuthType      string           `position:"Query" name:"AppCodeAuthType"`
 	Description          string           `position:"Query" name:"Description"`
 	DisableInternet      requests.Boolean `position:"Query" name:"DisableInternet"`
+	BackendId            string           `position:"Query" name:"BackendId"`
 	ConstantParameters   string           `position:"Query" name:"ConstantParameters"`
 	AuthType             string           `position:"Query" name:"AuthType"`
 	AllowSignatureMethod string           `position:"Query" name:"AllowSignatureMethod"`
@@ -99,6 +95,7 @@ type ModifyApiRequest struct {
 	ResultType           string           `position:"Query" name:"ResultType"`
 	ApiName              string           `position:"Query" name:"ApiName"`
 	ResultSample         string           `position:"Query" name:"ResultSample"`
+	BackendEnable        requests.Boolean `position:"Query" name:"BackendEnable"`
 	ForceNonceCheck      requests.Boolean `position:"Query" name:"ForceNonceCheck"`
 	RequestConfig        string           `position:"Query" name:"RequestConfig"`
 	ResultBodyModel      string           `position:"Query" name:"ResultBodyModel"`

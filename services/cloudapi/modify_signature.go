@@ -21,7 +21,6 @@ import (
 )
 
 // ModifySignature invokes the cloudapi.ModifySignature API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/modifysignature.html
 func (client *Client) ModifySignature(request *ModifySignatureRequest) (response *ModifySignatureResponse, err error) {
 	response = CreateModifySignatureResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifySignature(request *ModifySignatureRequest) (response
 }
 
 // ModifySignatureWithChan invokes the cloudapi.ModifySignature API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/modifysignature.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySignatureWithChan(request *ModifySignatureRequest) (<-chan *ModifySignatureResponse, <-chan error) {
 	responseChan := make(chan *ModifySignatureResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifySignatureWithChan(request *ModifySignatureRequest) (
 }
 
 // ModifySignatureWithCallback invokes the cloudapi.ModifySignature API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/modifysignature.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySignatureWithCallback(request *ModifySignatureRequest, callback func(response *ModifySignatureResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

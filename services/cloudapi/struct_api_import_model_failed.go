@@ -17,7 +17,7 @@ package cloudapi
 
 // ApiImportModelFailed is a nested struct in cloudapi response
 type ApiImportModelFailed struct {
-	GroupId   string `json:"GroupId" xml:"GroupId"`
-	ModelName string `json:"ModelName" xml:"ModelName"`
 	ErrorMsg  string `json:"ErrorMsg" xml:"ErrorMsg"`
+	ModelName string `json:"ModelName" xml:"ModelName"`
+	GroupId   string `json:"GroupId" xml:"GroupId"`
 }

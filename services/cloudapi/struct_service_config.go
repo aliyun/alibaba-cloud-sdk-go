@@ -25,12 +25,14 @@ type ServiceConfig struct {
 	MockResult            string                   `json:"MockResult" xml:"MockResult"`
 	ServiceTimeout        int                      `json:"ServiceTimeout" xml:"ServiceTimeout"`
 	AoneAppName           string                   `json:"AoneAppName" xml:"AoneAppName"`
-	ServiceProtocol       string                   `json:"ServiceProtocol" xml:"ServiceProtocol"`
 	ContentTypeValue      string                   `json:"ContentTypeValue" xml:"ContentTypeValue"`
+	ServiceProtocol       string                   `json:"ServiceProtocol" xml:"ServiceProtocol"`
 	ServicePath           string                   `json:"ServicePath" xml:"ServicePath"`
 	VpcId                 string                   `json:"VpcId" xml:"VpcId"`
 	MockStatusCode        int                      `json:"MockStatusCode" xml:"MockStatusCode"`
-	VpcConfig             VpcConfig                `json:"VpcConfig" xml:"VpcConfig"`
+	EventBridgeConfig     EventBridgeConfig        `json:"EventBridgeConfig" xml:"EventBridgeConfig"`
 	FunctionComputeConfig FunctionComputeConfig    `json:"FunctionComputeConfig" xml:"FunctionComputeConfig"`
+	VpcConfig             VpcConfig                `json:"VpcConfig" xml:"VpcConfig"`
+	OssConfig             OssConfig                `json:"OssConfig" xml:"OssConfig"`
 	MockHeaders           MockHeadersInDescribeApi `json:"MockHeaders" xml:"MockHeaders"`
 }

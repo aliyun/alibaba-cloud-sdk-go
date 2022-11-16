@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteApiStageVariable invokes the cloudapi.DeleteApiStageVariable API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/deleteapistagevariable.html
 func (client *Client) DeleteApiStageVariable(request *DeleteApiStageVariableRequest) (response *DeleteApiStageVariableResponse, err error) {
 	response = CreateDeleteApiStageVariableResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteApiStageVariable(request *DeleteApiStageVariableRequ
 }
 
 // DeleteApiStageVariableWithChan invokes the cloudapi.DeleteApiStageVariable API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/deleteapistagevariable.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteApiStageVariableWithChan(request *DeleteApiStageVariableRequest) (<-chan *DeleteApiStageVariableResponse, <-chan error) {
 	responseChan := make(chan *DeleteApiStageVariableResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteApiStageVariableWithChan(request *DeleteApiStageVari
 }
 
 // DeleteApiStageVariableWithCallback invokes the cloudapi.DeleteApiStageVariable API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/deleteapistagevariable.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteApiStageVariableWithCallback(request *DeleteApiStageVariableRequest, callback func(response *DeleteApiStageVariableResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

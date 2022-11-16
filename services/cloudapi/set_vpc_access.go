@@ -21,7 +21,6 @@ import (
 )
 
 // SetVpcAccess invokes the cloudapi.SetVpcAccess API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/setvpcaccess.html
 func (client *Client) SetVpcAccess(request *SetVpcAccessRequest) (response *SetVpcAccessResponse, err error) {
 	response = CreateSetVpcAccessResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SetVpcAccess(request *SetVpcAccessRequest) (response *SetV
 }
 
 // SetVpcAccessWithChan invokes the cloudapi.SetVpcAccess API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/setvpcaccess.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetVpcAccessWithChan(request *SetVpcAccessRequest) (<-chan *SetVpcAccessResponse, <-chan error) {
 	responseChan := make(chan *SetVpcAccessResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SetVpcAccessWithChan(request *SetVpcAccessRequest) (<-chan
 }
 
 // SetVpcAccessWithCallback invokes the cloudapi.SetVpcAccess API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/setvpcaccess.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetVpcAccessWithCallback(request *SetVpcAccessRequest, callback func(response *SetVpcAccessResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,11 +71,13 @@ func (client *Client) SetVpcAccessWithCallback(request *SetVpcAccessRequest, cal
 // SetVpcAccessRequest is the request struct for api SetVpcAccess
 type SetVpcAccessRequest struct {
 	*requests.RpcRequest
-	InstanceId    string           `position:"Query" name:"InstanceId"`
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
-	Port          requests.Integer `position:"Query" name:"Port"`
-	VpcId         string           `position:"Query" name:"VpcId"`
-	Name          string           `position:"Query" name:"Name"`
+	Description       string           `position:"Query" name:"Description"`
+	InstanceId        string           `position:"Query" name:"InstanceId"`
+	VpcTargetHostName string           `position:"Query" name:"VpcTargetHostName"`
+	SecurityToken     string           `position:"Query" name:"SecurityToken"`
+	Port              requests.Integer `position:"Query" name:"Port"`
+	VpcId             string           `position:"Query" name:"VpcId"`
+	Name              string           `position:"Query" name:"Name"`
 }
 
 // SetVpcAccessResponse is the response struct for api SetVpcAccess

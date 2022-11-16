@@ -17,6 +17,6 @@ package cloudapi
 
 // Special is a nested struct in cloudapi response
 type Special struct {
-	SpecialKey   string `json:"SpecialKey" xml:"SpecialKey"`
 	TrafficValue int    `json:"TrafficValue" xml:"TrafficValue"`
+	SpecialKey   string `json:"SpecialKey" xml:"SpecialKey"`
 }

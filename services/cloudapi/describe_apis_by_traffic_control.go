@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeApisByTrafficControl invokes the cloudapi.DescribeApisByTrafficControl API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/describeapisbytrafficcontrol.html
 func (client *Client) DescribeApisByTrafficControl(request *DescribeApisByTrafficControlRequest) (response *DescribeApisByTrafficControlResponse, err error) {
 	response = CreateDescribeApisByTrafficControlResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeApisByTrafficControl(request *DescribeApisByTraffi
 }
 
 // DescribeApisByTrafficControlWithChan invokes the cloudapi.DescribeApisByTrafficControl API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/describeapisbytrafficcontrol.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeApisByTrafficControlWithChan(request *DescribeApisByTrafficControlRequest) (<-chan *DescribeApisByTrafficControlResponse, <-chan error) {
 	responseChan := make(chan *DescribeApisByTrafficControlResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeApisByTrafficControlWithChan(request *DescribeApis
 }
 
 // DescribeApisByTrafficControlWithCallback invokes the cloudapi.DescribeApisByTrafficControl API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/describeapisbytrafficcontrol.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeApisByTrafficControlWithCallback(request *DescribeApisByTrafficControlRequest, callback func(response *DescribeApisByTrafficControlResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -85,10 +80,10 @@ type DescribeApisByTrafficControlRequest struct {
 // DescribeApisByTrafficControlResponse is the response struct for api DescribeApisByTrafficControl
 type DescribeApisByTrafficControlResponse struct {
 	*responses.BaseResponse
-	RequestId  string                                 `json:"RequestId" xml:"RequestId"`
-	TotalCount int                                    `json:"TotalCount" xml:"TotalCount"`
-	PageSize   int                                    `json:"PageSize" xml:"PageSize"`
 	PageNumber int                                    `json:"PageNumber" xml:"PageNumber"`
+	RequestId  string                                 `json:"RequestId" xml:"RequestId"`
+	PageSize   int                                    `json:"PageSize" xml:"PageSize"`
+	TotalCount int                                    `json:"TotalCount" xml:"TotalCount"`
 	ApiInfos   ApiInfosInDescribeApisByTrafficControl `json:"ApiInfos" xml:"ApiInfos"`
 }
 

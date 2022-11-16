@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeApp invokes the cloudapi.DescribeApp API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/describeapp.html
 func (client *Client) DescribeApp(request *DescribeAppRequest) (response *DescribeAppResponse, err error) {
 	response = CreateDescribeAppResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeApp(request *DescribeAppRequest) (response *Descri
 }
 
 // DescribeAppWithChan invokes the cloudapi.DescribeApp API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/describeapp.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAppWithChan(request *DescribeAppRequest) (<-chan *DescribeAppResponse, <-chan error) {
 	responseChan := make(chan *DescribeAppResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeAppWithChan(request *DescribeAppRequest) (<-chan *
 }
 
 // DescribeAppWithCallback invokes the cloudapi.DescribeApp API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/describeapp.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAppWithCallback(request *DescribeAppRequest, callback func(response *DescribeAppResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,12 +78,12 @@ type DescribeAppRequest struct {
 // DescribeAppResponse is the response struct for api DescribeApp
 type DescribeAppResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
-	AppId        int64  `json:"AppId" xml:"AppId"`
 	AppName      string `json:"AppName" xml:"AppName"`
-	Description  string `json:"Description" xml:"Description"`
-	CreatedTime  string `json:"CreatedTime" xml:"CreatedTime"`
+	RequestId    string `json:"RequestId" xml:"RequestId"`
 	ModifiedTime string `json:"ModifiedTime" xml:"ModifiedTime"`
+	Description  string `json:"Description" xml:"Description"`
+	AppId        int64  `json:"AppId" xml:"AppId"`
+	CreatedTime  string `json:"CreatedTime" xml:"CreatedTime"`
 }
 
 // CreateDescribeAppRequest creates a request to invoke DescribeApp API

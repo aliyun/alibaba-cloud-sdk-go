@@ -17,7 +17,7 @@ package cloudapi
 
 // AppItem is a nested struct in cloudapi response
 type AppItem struct {
-	AppId       int64  `json:"AppId" xml:"AppId"`
 	AppName     string `json:"AppName" xml:"AppName"`
 	Description string `json:"Description" xml:"Description"`
+	AppId       int64  `json:"AppId" xml:"AppId"`
 }

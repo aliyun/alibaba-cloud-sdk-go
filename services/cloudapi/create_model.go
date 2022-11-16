@@ -21,7 +21,6 @@ import (
 )
 
 // CreateModel invokes the cloudapi.CreateModel API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/createmodel.html
 func (client *Client) CreateModel(request *CreateModelRequest) (response *CreateModelResponse, err error) {
 	response = CreateCreateModelResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateModel(request *CreateModelRequest) (response *Create
 }
 
 // CreateModelWithChan invokes the cloudapi.CreateModel API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/createmodel.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateModelWithChan(request *CreateModelRequest) (<-chan *CreateModelResponse, <-chan error) {
 	responseChan := make(chan *CreateModelResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateModelWithChan(request *CreateModelRequest) (<-chan *
 }
 
 // CreateModelWithCallback invokes the cloudapi.CreateModel API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/createmodel.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateModelWithCallback(request *CreateModelRequest, callback func(response *CreateModelResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -86,16 +81,16 @@ type CreateModelRequest struct {
 // CreateModelResponse is the response struct for api CreateModel
 type CreateModelResponse struct {
 	*responses.BaseResponse
+	ModifiedTime string `json:"ModifiedTime" xml:"ModifiedTime"`
 	RequestId    string `json:"RequestId" xml:"RequestId"`
-	ModelId      string `json:"ModelId" xml:"ModelId"`
-	ModelRef     string `json:"ModelRef" xml:"ModelRef"`
-	ModelName    string `json:"ModelName" xml:"ModelName"`
+	Description  string `json:"Description" xml:"Description"`
 	GroupId      string `json:"GroupId" xml:"GroupId"`
 	Schema       string `json:"Schema" xml:"Schema"`
-	RegionId     string `json:"RegionId" xml:"RegionId"`
-	Description  string `json:"Description" xml:"Description"`
+	ModelName    string `json:"ModelName" xml:"ModelName"`
 	CreatedTime  string `json:"CreatedTime" xml:"CreatedTime"`
-	ModifiedTime string `json:"ModifiedTime" xml:"ModifiedTime"`
+	ModelId      string `json:"ModelId" xml:"ModelId"`
+	RegionId     string `json:"RegionId" xml:"RegionId"`
+	ModelRef     string `json:"ModelRef" xml:"ModelRef"`
 }
 
 // CreateCreateModelRequest creates a request to invoke CreateModel API

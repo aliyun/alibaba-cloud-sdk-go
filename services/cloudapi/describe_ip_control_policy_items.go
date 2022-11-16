@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeIpControlPolicyItems invokes the cloudapi.DescribeIpControlPolicyItems API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/describeipcontrolpolicyitems.html
 func (client *Client) DescribeIpControlPolicyItems(request *DescribeIpControlPolicyItemsRequest) (response *DescribeIpControlPolicyItemsResponse, err error) {
 	response = CreateDescribeIpControlPolicyItemsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeIpControlPolicyItems(request *DescribeIpControlPol
 }
 
 // DescribeIpControlPolicyItemsWithChan invokes the cloudapi.DescribeIpControlPolicyItems API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/describeipcontrolpolicyitems.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeIpControlPolicyItemsWithChan(request *DescribeIpControlPolicyItemsRequest) (<-chan *DescribeIpControlPolicyItemsResponse, <-chan error) {
 	responseChan := make(chan *DescribeIpControlPolicyItemsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeIpControlPolicyItemsWithChan(request *DescribeIpCo
 }
 
 // DescribeIpControlPolicyItemsWithCallback invokes the cloudapi.DescribeIpControlPolicyItems API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/describeipcontrolpolicyitems.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeIpControlPolicyItemsWithCallback(request *DescribeIpControlPolicyItemsRequest, callback func(response *DescribeIpControlPolicyItemsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -86,10 +81,10 @@ type DescribeIpControlPolicyItemsRequest struct {
 // DescribeIpControlPolicyItemsResponse is the response struct for api DescribeIpControlPolicyItems
 type DescribeIpControlPolicyItemsResponse struct {
 	*responses.BaseResponse
-	RequestId            string               `json:"RequestId" xml:"RequestId"`
-	TotalCount           int                  `json:"TotalCount" xml:"TotalCount"`
-	PageSize             int                  `json:"PageSize" xml:"PageSize"`
 	PageNumber           int                  `json:"PageNumber" xml:"PageNumber"`
+	RequestId            string               `json:"RequestId" xml:"RequestId"`
+	PageSize             int                  `json:"PageSize" xml:"PageSize"`
+	TotalCount           int                  `json:"TotalCount" xml:"TotalCount"`
 	IpControlPolicyItems IpControlPolicyItems `json:"IpControlPolicyItems" xml:"IpControlPolicyItems"`
 }
 

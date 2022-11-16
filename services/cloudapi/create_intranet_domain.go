@@ -21,7 +21,6 @@ import (
 )
 
 // CreateIntranetDomain invokes the cloudapi.CreateIntranetDomain API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/createintranetdomain.html
 func (client *Client) CreateIntranetDomain(request *CreateIntranetDomainRequest) (response *CreateIntranetDomainResponse, err error) {
 	response = CreateCreateIntranetDomainResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateIntranetDomain(request *CreateIntranetDomainRequest)
 }
 
 // CreateIntranetDomainWithChan invokes the cloudapi.CreateIntranetDomain API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/createintranetdomain.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateIntranetDomainWithChan(request *CreateIntranetDomainRequest) (<-chan *CreateIntranetDomainResponse, <-chan error) {
 	responseChan := make(chan *CreateIntranetDomainResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateIntranetDomainWithChan(request *CreateIntranetDomain
 }
 
 // CreateIntranetDomainWithCallback invokes the cloudapi.CreateIntranetDomain API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/createintranetdomain.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateIntranetDomainWithCallback(request *CreateIntranetDomainRequest, callback func(response *CreateIntranetDomainResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,8 +79,8 @@ type CreateIntranetDomainRequest struct {
 // CreateIntranetDomainResponse is the response struct for api CreateIntranetDomain
 type CreateIntranetDomainResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
 	DomainName string `json:"DomainName" xml:"DomainName"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCreateIntranetDomainRequest creates a request to invoke CreateIntranetDomain API

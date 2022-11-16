@@ -21,7 +21,6 @@ import (
 )
 
 // CreateApiGroup invokes the cloudapi.CreateApiGroup API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/createapigroup.html
 func (client *Client) CreateApiGroup(request *CreateApiGroupRequest) (response *CreateApiGroupResponse, err error) {
 	response = CreateCreateApiGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateApiGroup(request *CreateApiGroupRequest) (response *
 }
 
 // CreateApiGroupWithChan invokes the cloudapi.CreateApiGroup API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/createapigroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateApiGroupWithChan(request *CreateApiGroupRequest) (<-chan *CreateApiGroupResponse, <-chan error) {
 	responseChan := make(chan *CreateApiGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateApiGroupWithChan(request *CreateApiGroupRequest) (<-
 }
 
 // CreateApiGroupWithCallback invokes the cloudapi.CreateApiGroup API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/createapigroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateApiGroupWithCallback(request *CreateApiGroupRequest, callback func(response *CreateApiGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,6 +71,7 @@ func (client *Client) CreateApiGroupWithCallback(request *CreateApiGroupRequest,
 // CreateApiGroupRequest is the request struct for api CreateApiGroup
 type CreateApiGroupRequest struct {
 	*requests.RpcRequest
+	BasePath           string               `position:"Query" name:"BasePath"`
 	Description        string               `position:"Query" name:"Description"`
 	Source             string               `position:"Query" name:"Source"`
 	GroupName          string               `position:"Query" name:"GroupName"`
@@ -94,14 +90,15 @@ type CreateApiGroupTag struct {
 // CreateApiGroupResponse is the response struct for api CreateApiGroup
 type CreateApiGroupResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
-	GroupId      string `json:"GroupId" xml:"GroupId"`
-	GroupName    string `json:"GroupName" xml:"GroupName"`
-	SubDomain    string `json:"SubDomain" xml:"SubDomain"`
-	Description  string `json:"Description" xml:"Description"`
-	InstanceId   string `json:"InstanceId" xml:"InstanceId"`
-	InstanceType string `json:"InstanceType" xml:"InstanceType"`
 	TagStatus    bool   `json:"TagStatus" xml:"TagStatus"`
+	BasePath     string `json:"BasePath" xml:"BasePath"`
+	RequestId    string `json:"RequestId" xml:"RequestId"`
+	Description  string `json:"Description" xml:"Description"`
+	GroupName    string `json:"GroupName" xml:"GroupName"`
+	GroupId      string `json:"GroupId" xml:"GroupId"`
+	InstanceId   string `json:"InstanceId" xml:"InstanceId"`
+	SubDomain    string `json:"SubDomain" xml:"SubDomain"`
+	InstanceType string `json:"InstanceType" xml:"InstanceType"`
 }
 
 // CreateCreateApiGroupRequest creates a request to invoke CreateApiGroup API

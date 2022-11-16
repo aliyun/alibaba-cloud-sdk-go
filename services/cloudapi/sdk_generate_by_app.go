@@ -21,7 +21,6 @@ import (
 )
 
 // SdkGenerateByApp invokes the cloudapi.SdkGenerateByApp API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/sdkgeneratebyapp.html
 func (client *Client) SdkGenerateByApp(request *SdkGenerateByAppRequest) (response *SdkGenerateByAppResponse, err error) {
 	response = CreateSdkGenerateByAppResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SdkGenerateByApp(request *SdkGenerateByAppRequest) (respon
 }
 
 // SdkGenerateByAppWithChan invokes the cloudapi.SdkGenerateByApp API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/sdkgeneratebyapp.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SdkGenerateByAppWithChan(request *SdkGenerateByAppRequest) (<-chan *SdkGenerateByAppResponse, <-chan error) {
 	responseChan := make(chan *SdkGenerateByAppResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SdkGenerateByAppWithChan(request *SdkGenerateByAppRequest)
 }
 
 // SdkGenerateByAppWithCallback invokes the cloudapi.SdkGenerateByApp API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/sdkgeneratebyapp.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SdkGenerateByAppWithCallback(request *SdkGenerateByAppRequest, callback func(response *SdkGenerateByAppResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,13 +74,14 @@ type SdkGenerateByAppRequest struct {
 	Language      string           `position:"Query" name:"Language"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	AppId         requests.Integer `position:"Query" name:"AppId"`
+	AliUid        requests.Integer `position:"Query" name:"AliUid"`
 }
 
 // SdkGenerateByAppResponse is the response struct for api SdkGenerateByApp
 type SdkGenerateByAppResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
 	DownloadLink string `json:"DownloadLink" xml:"DownloadLink"`
+	RequestId    string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateSdkGenerateByAppRequest creates a request to invoke SdkGenerateByApp API

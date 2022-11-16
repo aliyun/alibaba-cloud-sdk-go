@@ -17,15 +17,17 @@ package cloudapi
 
 // AppApiRelationInfo is a nested struct in cloudapi response
 type AppApiRelationInfo struct {
-	RegionId            string `json:"RegionId" xml:"RegionId"`
-	GroupId             string `json:"GroupId" xml:"GroupId"`
-	GroupName           string `json:"GroupName" xml:"GroupName"`
-	StageName           string `json:"StageName" xml:"StageName"`
-	Operator            string `json:"Operator" xml:"Operator"`
 	ApiId               string `json:"ApiId" xml:"ApiId"`
-	ApiName             string `json:"ApiName" xml:"ApiName"`
 	AuthorizationSource string `json:"AuthorizationSource" xml:"AuthorizationSource"`
-	Description         string `json:"Description" xml:"Description"`
-	CreatedTime         string `json:"CreatedTime" xml:"CreatedTime"`
 	AuthVaildTime       string `json:"AuthVaildTime" xml:"AuthVaildTime"`
+	Description         string `json:"Description" xml:"Description"`
+	GroupName           string `json:"GroupName" xml:"GroupName"`
+	GroupId             string `json:"GroupId" xml:"GroupId"`
+	Operator            string `json:"Operator" xml:"Operator"`
+	StageName           string `json:"StageName" xml:"StageName"`
+	CreatedTime         string `json:"CreatedTime" xml:"CreatedTime"`
+	ApiName             string `json:"ApiName" xml:"ApiName"`
+	RegionId            string `json:"RegionId" xml:"RegionId"`
+	Path                string `json:"Path" xml:"Path"`
+	Method              string `json:"Method" xml:"Method"`
 }

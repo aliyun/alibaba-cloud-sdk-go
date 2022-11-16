@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeApis invokes the cloudapi.DescribeApis API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/describeapis.html
 func (client *Client) DescribeApis(request *DescribeApisRequest) (response *DescribeApisResponse, err error) {
 	response = CreateDescribeApisResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeApis(request *DescribeApisRequest) (response *Desc
 }
 
 // DescribeApisWithChan invokes the cloudapi.DescribeApis API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/describeapis.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeApisWithChan(request *DescribeApisRequest) (<-chan *DescribeApisResponse, <-chan error) {
 	responseChan := make(chan *DescribeApisResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeApisWithChan(request *DescribeApisRequest) (<-chan
 }
 
 // DescribeApisWithCallback invokes the cloudapi.DescribeApis API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/describeapis.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeApisWithCallback(request *DescribeApisRequest, callback func(response *DescribeApisResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,15 +71,18 @@ func (client *Client) DescribeApisWithCallback(request *DescribeApisRequest, cal
 // DescribeApisRequest is the request struct for api DescribeApis
 type DescribeApisRequest struct {
 	*requests.RpcRequest
-	Visibility    string             `position:"Query" name:"Visibility"`
-	GroupId       string             `position:"Query" name:"GroupId"`
-	EnableTagAuth requests.Boolean   `position:"Query" name:"EnableTagAuth"`
 	PageNumber    requests.Integer   `position:"Query" name:"PageNumber"`
-	ApiName       string             `position:"Query" name:"ApiName"`
-	CatalogId     string             `position:"Query" name:"CatalogId"`
 	SecurityToken string             `position:"Query" name:"SecurityToken"`
+	UnDeployed    requests.Boolean   `position:"Query" name:"UnDeployed"`
 	PageSize      requests.Integer   `position:"Query" name:"PageSize"`
 	Tag           *[]DescribeApisTag `position:"Query" name:"Tag"  type:"Repeated"`
+	ApiMethod     string             `position:"Query" name:"ApiMethod"`
+	Visibility    string             `position:"Query" name:"Visibility"`
+	GroupId       string             `position:"Query" name:"GroupId"`
+	ApiPath       string             `position:"Query" name:"ApiPath"`
+	EnableTagAuth requests.Boolean   `position:"Query" name:"EnableTagAuth"`
+	ApiName       string             `position:"Query" name:"ApiName"`
+	CatalogId     string             `position:"Query" name:"CatalogId"`
 	ApiId         string             `position:"Query" name:"ApiId"`
 }
 
@@ -97,10 +95,10 @@ type DescribeApisTag struct {
 // DescribeApisResponse is the response struct for api DescribeApis
 type DescribeApisResponse struct {
 	*responses.BaseResponse
-	RequestId   string      `json:"RequestId" xml:"RequestId"`
-	TotalCount  int         `json:"TotalCount" xml:"TotalCount"`
-	PageSize    int         `json:"PageSize" xml:"PageSize"`
 	PageNumber  int         `json:"PageNumber" xml:"PageNumber"`
+	RequestId   string      `json:"RequestId" xml:"RequestId"`
+	PageSize    int         `json:"PageSize" xml:"PageSize"`
+	TotalCount  int         `json:"TotalCount" xml:"TotalCount"`
 	ApiSummarys ApiSummarys `json:"ApiSummarys" xml:"ApiSummarys"`
 }
 

@@ -17,9 +17,9 @@ package cloudapi
 
 // ApiTrafficControlItem is a nested struct in cloudapi response
 type ApiTrafficControlItem struct {
+	BoundTime          string `json:"BoundTime" xml:"BoundTime"`
 	ApiId              string `json:"ApiId" xml:"ApiId"`
-	ApiName            string `json:"ApiName" xml:"ApiName"`
 	TrafficControlId   string `json:"TrafficControlId" xml:"TrafficControlId"`
 	TrafficControlName string `json:"TrafficControlName" xml:"TrafficControlName"`
-	BoundTime          string `json:"BoundTime" xml:"BoundTime"`
+	ApiName            string `json:"ApiName" xml:"ApiName"`
 }

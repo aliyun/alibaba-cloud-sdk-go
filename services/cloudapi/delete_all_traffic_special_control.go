@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteAllTrafficSpecialControl invokes the cloudapi.DeleteAllTrafficSpecialControl API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/deletealltrafficspecialcontrol.html
 func (client *Client) DeleteAllTrafficSpecialControl(request *DeleteAllTrafficSpecialControlRequest) (response *DeleteAllTrafficSpecialControlResponse, err error) {
 	response = CreateDeleteAllTrafficSpecialControlResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteAllTrafficSpecialControl(request *DeleteAllTrafficSp
 }
 
 // DeleteAllTrafficSpecialControlWithChan invokes the cloudapi.DeleteAllTrafficSpecialControl API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/deletealltrafficspecialcontrol.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteAllTrafficSpecialControlWithChan(request *DeleteAllTrafficSpecialControlRequest) (<-chan *DeleteAllTrafficSpecialControlResponse, <-chan error) {
 	responseChan := make(chan *DeleteAllTrafficSpecialControlResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteAllTrafficSpecialControlWithChan(request *DeleteAllT
 }
 
 // DeleteAllTrafficSpecialControlWithCallback invokes the cloudapi.DeleteAllTrafficSpecialControl API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/deletealltrafficspecialcontrol.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteAllTrafficSpecialControlWithCallback(request *DeleteAllTrafficSpecialControlRequest, callback func(response *DeleteAllTrafficSpecialControlResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

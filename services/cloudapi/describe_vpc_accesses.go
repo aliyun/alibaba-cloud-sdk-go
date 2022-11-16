@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeVpcAccesses invokes the cloudapi.DescribeVpcAccesses API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/describevpcaccesses.html
 func (client *Client) DescribeVpcAccesses(request *DescribeVpcAccessesRequest) (response *DescribeVpcAccessesResponse, err error) {
 	response = CreateDescribeVpcAccessesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeVpcAccesses(request *DescribeVpcAccessesRequest) (
 }
 
 // DescribeVpcAccessesWithChan invokes the cloudapi.DescribeVpcAccesses API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/describevpcaccesses.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeVpcAccessesWithChan(request *DescribeVpcAccessesRequest) (<-chan *DescribeVpcAccessesResponse, <-chan error) {
 	responseChan := make(chan *DescribeVpcAccessesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeVpcAccessesWithChan(request *DescribeVpcAccessesRe
 }
 
 // DescribeVpcAccessesWithCallback invokes the cloudapi.DescribeVpcAccesses API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/describevpcaccesses.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeVpcAccessesWithCallback(request *DescribeVpcAccessesRequest, callback func(response *DescribeVpcAccessesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,18 +72,23 @@ func (client *Client) DescribeVpcAccessesWithCallback(request *DescribeVpcAccess
 type DescribeVpcAccessesRequest struct {
 	*requests.RpcRequest
 	PageNumber    requests.Integer `position:"Query" name:"PageNumber"`
+	InstanceId    string           `position:"Query" name:"InstanceId"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	AccurateQuery requests.Boolean `position:"Query" name:"AccurateQuery"`
+	Port          string           `position:"Query" name:"Port"`
+	VpcId         string           `position:"Query" name:"VpcId"`
 	PageSize      requests.Integer `position:"Query" name:"PageSize"`
 	Name          string           `position:"Query" name:"Name"`
+	VpcAccessId   string           `position:"Query" name:"VpcAccessId"`
 }
 
 // DescribeVpcAccessesResponse is the response struct for api DescribeVpcAccesses
 type DescribeVpcAccessesResponse struct {
 	*responses.BaseResponse
-	RequestId           string              `json:"RequestId" xml:"RequestId"`
-	TotalCount          int                 `json:"TotalCount" xml:"TotalCount"`
-	PageSize            int                 `json:"PageSize" xml:"PageSize"`
 	PageNumber          int                 `json:"PageNumber" xml:"PageNumber"`
+	RequestId           string              `json:"RequestId" xml:"RequestId"`
+	PageSize            int                 `json:"PageSize" xml:"PageSize"`
+	TotalCount          int                 `json:"TotalCount" xml:"TotalCount"`
 	VpcAccessAttributes VpcAccessAttributes `json:"VpcAccessAttributes" xml:"VpcAccessAttributes"`
 }
 

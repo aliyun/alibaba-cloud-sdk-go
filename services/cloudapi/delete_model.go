@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteModel invokes the cloudapi.DeleteModel API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/deletemodel.html
 func (client *Client) DeleteModel(request *DeleteModelRequest) (response *DeleteModelResponse, err error) {
 	response = CreateDeleteModelResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteModel(request *DeleteModelRequest) (response *Delete
 }
 
 // DeleteModelWithChan invokes the cloudapi.DeleteModel API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/deletemodel.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteModelWithChan(request *DeleteModelRequest) (<-chan *DeleteModelResponse, <-chan error) {
 	responseChan := make(chan *DeleteModelResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteModelWithChan(request *DeleteModelRequest) (<-chan *
 }
 
 // DeleteModelWithCallback invokes the cloudapi.DeleteModel API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/deletemodel.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteModelWithCallback(request *DeleteModelRequest, callback func(response *DeleteModelResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

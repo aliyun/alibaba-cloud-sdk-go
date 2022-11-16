@@ -17,12 +17,12 @@ package cloudapi
 
 // ModelDetail is a nested struct in cloudapi response
 type ModelDetail struct {
-	GroupId      string `json:"GroupId" xml:"GroupId"`
-	ModelId      string `json:"ModelId" xml:"ModelId"`
-	ModelName    string `json:"ModelName" xml:"ModelName"`
-	Schema       string `json:"Schema" xml:"Schema"`
-	Description  string `json:"Description" xml:"Description"`
-	CreatedTime  string `json:"CreatedTime" xml:"CreatedTime"`
 	ModifiedTime string `json:"ModifiedTime" xml:"ModifiedTime"`
+	GroupId      string `json:"GroupId" xml:"GroupId"`
+	Description  string `json:"Description" xml:"Description"`
+	Schema       string `json:"Schema" xml:"Schema"`
+	ModelName    string `json:"ModelName" xml:"ModelName"`
+	CreatedTime  string `json:"CreatedTime" xml:"CreatedTime"`
+	ModelId      string `json:"ModelId" xml:"ModelId"`
 	ModelRef     string `json:"ModelRef" xml:"ModelRef"`
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // SetDomainWebSocketStatus invokes the cloudapi.SetDomainWebSocketStatus API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/setdomainwebsocketstatus.html
 func (client *Client) SetDomainWebSocketStatus(request *SetDomainWebSocketStatusRequest) (response *SetDomainWebSocketStatusResponse, err error) {
 	response = CreateSetDomainWebSocketStatusResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SetDomainWebSocketStatus(request *SetDomainWebSocketStatus
 }
 
 // SetDomainWebSocketStatusWithChan invokes the cloudapi.SetDomainWebSocketStatus API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/setdomainwebsocketstatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetDomainWebSocketStatusWithChan(request *SetDomainWebSocketStatusRequest) (<-chan *SetDomainWebSocketStatusResponse, <-chan error) {
 	responseChan := make(chan *SetDomainWebSocketStatusResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SetDomainWebSocketStatusWithChan(request *SetDomainWebSock
 }
 
 // SetDomainWebSocketStatusWithCallback invokes the cloudapi.SetDomainWebSocketStatus API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/setdomainwebsocketstatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetDomainWebSocketStatusWithCallback(request *SetDomainWebSocketStatusRequest, callback func(response *SetDomainWebSocketStatusResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,6 +71,7 @@ func (client *Client) SetDomainWebSocketStatusWithCallback(request *SetDomainWeb
 // SetDomainWebSocketStatusRequest is the request struct for api SetDomainWebSocketStatus
 type SetDomainWebSocketStatusRequest struct {
 	*requests.RpcRequest
+	WSSEnable     string `position:"Query" name:"WSSEnable"`
 	GroupId       string `position:"Query" name:"GroupId"`
 	DomainName    string `position:"Query" name:"DomainName"`
 	SecurityToken string `position:"Query" name:"SecurityToken"`

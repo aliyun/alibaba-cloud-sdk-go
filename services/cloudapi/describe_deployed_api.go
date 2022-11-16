@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDeployedApi invokes the cloudapi.DescribeDeployedApi API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/describedeployedapi.html
 func (client *Client) DescribeDeployedApi(request *DescribeDeployedApiRequest) (response *DescribeDeployedApiResponse, err error) {
 	response = CreateDescribeDeployedApiResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDeployedApi(request *DescribeDeployedApiRequest) (
 }
 
 // DescribeDeployedApiWithChan invokes the cloudapi.DescribeDeployedApi API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/describedeployedapi.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDeployedApiWithChan(request *DescribeDeployedApiRequest) (<-chan *DescribeDeployedApiResponse, <-chan error) {
 	responseChan := make(chan *DescribeDeployedApiResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDeployedApiWithChan(request *DescribeDeployedApiRe
 }
 
 // DescribeDeployedApiWithCallback invokes the cloudapi.DescribeDeployedApi API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/describedeployedapi.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDeployedApiWithCallback(request *DescribeDeployedApiRequest, callback func(response *DescribeDeployedApiResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -86,24 +81,24 @@ type DescribeDeployedApiRequest struct {
 // DescribeDeployedApiResponse is the response struct for api DescribeDeployedApi
 type DescribeDeployedApiResponse struct {
 	*responses.BaseResponse
-	RequestId              string                                      `json:"RequestId" xml:"RequestId"`
-	RegionId               string                                      `json:"RegionId" xml:"RegionId"`
-	GroupId                string                                      `json:"GroupId" xml:"GroupId"`
-	GroupName              string                                      `json:"GroupName" xml:"GroupName"`
-	StageName              string                                      `json:"StageName" xml:"StageName"`
 	ApiId                  string                                      `json:"ApiId" xml:"ApiId"`
-	ApiName                string                                      `json:"ApiName" xml:"ApiName"`
-	Description            string                                      `json:"Description" xml:"Description"`
-	Visibility             string                                      `json:"Visibility" xml:"Visibility"`
-	AuthType               string                                      `json:"AuthType" xml:"AuthType"`
 	ResultType             string                                      `json:"ResultType" xml:"ResultType"`
-	ResultSample           string                                      `json:"ResultSample" xml:"ResultSample"`
-	FailResultSample       string                                      `json:"FailResultSample" xml:"FailResultSample"`
-	DeployedTime           string                                      `json:"DeployedTime" xml:"DeployedTime"`
-	AllowSignatureMethod   string                                      `json:"AllowSignatureMethod" xml:"AllowSignatureMethod"`
-	ResultBodyModel        string                                      `json:"ResultBodyModel" xml:"ResultBodyModel"`
-	ForceNonceCheck        bool                                        `json:"ForceNonceCheck" xml:"ForceNonceCheck"`
 	DisableInternet        bool                                        `json:"DisableInternet" xml:"DisableInternet"`
+	ResultBodyModel        string                                      `json:"ResultBodyModel" xml:"ResultBodyModel"`
+	ResultSample           string                                      `json:"ResultSample" xml:"ResultSample"`
+	AllowSignatureMethod   string                                      `json:"AllowSignatureMethod" xml:"AllowSignatureMethod"`
+	RegionId               string                                      `json:"RegionId" xml:"RegionId"`
+	ForceNonceCheck        bool                                        `json:"ForceNonceCheck" xml:"ForceNonceCheck"`
+	Visibility             string                                      `json:"Visibility" xml:"Visibility"`
+	FailResultSample       string                                      `json:"FailResultSample" xml:"FailResultSample"`
+	AuthType               string                                      `json:"AuthType" xml:"AuthType"`
+	RequestId              string                                      `json:"RequestId" xml:"RequestId"`
+	Description            string                                      `json:"Description" xml:"Description"`
+	GroupName              string                                      `json:"GroupName" xml:"GroupName"`
+	GroupId                string                                      `json:"GroupId" xml:"GroupId"`
+	DeployedTime           string                                      `json:"DeployedTime" xml:"DeployedTime"`
+	StageName              string                                      `json:"StageName" xml:"StageName"`
+	ApiName                string                                      `json:"ApiName" xml:"ApiName"`
 	RequestConfig          RequestConfig                               `json:"RequestConfig" xml:"RequestConfig"`
 	ServiceConfig          ServiceConfig                               `json:"ServiceConfig" xml:"ServiceConfig"`
 	OpenIdConnectConfig    OpenIdConnectConfig                         `json:"OpenIdConnectConfig" xml:"OpenIdConnectConfig"`

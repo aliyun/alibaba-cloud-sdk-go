@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeApiGroups invokes the cloudapi.DescribeApiGroups API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/describeapigroups.html
 func (client *Client) DescribeApiGroups(request *DescribeApiGroupsRequest) (response *DescribeApiGroupsResponse, err error) {
 	response = CreateDescribeApiGroupsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeApiGroups(request *DescribeApiGroupsRequest) (resp
 }
 
 // DescribeApiGroupsWithChan invokes the cloudapi.DescribeApiGroups API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/describeapigroups.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeApiGroupsWithChan(request *DescribeApiGroupsRequest) (<-chan *DescribeApiGroupsResponse, <-chan error) {
 	responseChan := make(chan *DescribeApiGroupsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeApiGroupsWithChan(request *DescribeApiGroupsReques
 }
 
 // DescribeApiGroupsWithCallback invokes the cloudapi.DescribeApiGroups API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/describeapigroups.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeApiGroupsWithCallback(request *DescribeApiGroupsRequest, callback func(response *DescribeApiGroupsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -85,8 +80,8 @@ type DescribeApiGroupsRequest struct {
 	InstanceId            string                  `position:"Query" name:"InstanceId"`
 	SecurityToken         string                  `position:"Query" name:"SecurityToken"`
 	PageSize              requests.Integer        `position:"Query" name:"PageSize"`
-	Tag                   *[]DescribeApiGroupsTag `position:"Query" name:"Tag"  type:"Repeated"`
 	NotClassic            requests.Boolean        `position:"Query" name:"NotClassic"`
+	Tag                   *[]DescribeApiGroupsTag `position:"Query" name:"Tag"  type:"Repeated"`
 }
 
 // DescribeApiGroupsTag is a repeated param struct in DescribeApiGroupsRequest
@@ -98,10 +93,10 @@ type DescribeApiGroupsTag struct {
 // DescribeApiGroupsResponse is the response struct for api DescribeApiGroups
 type DescribeApiGroupsResponse struct {
 	*responses.BaseResponse
-	RequestId          string             `json:"RequestId" xml:"RequestId"`
-	TotalCount         int                `json:"TotalCount" xml:"TotalCount"`
-	PageSize           int                `json:"PageSize" xml:"PageSize"`
 	PageNumber         int                `json:"PageNumber" xml:"PageNumber"`
+	RequestId          string             `json:"RequestId" xml:"RequestId"`
+	PageSize           int                `json:"PageSize" xml:"PageSize"`
+	TotalCount         int                `json:"TotalCount" xml:"TotalCount"`
 	ApiGroupAttributes ApiGroupAttributes `json:"ApiGroupAttributes" xml:"ApiGroupAttributes"`
 }
 

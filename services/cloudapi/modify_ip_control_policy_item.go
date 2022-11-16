@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyIpControlPolicyItem invokes the cloudapi.ModifyIpControlPolicyItem API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/modifyipcontrolpolicyitem.html
 func (client *Client) ModifyIpControlPolicyItem(request *ModifyIpControlPolicyItemRequest) (response *ModifyIpControlPolicyItemResponse, err error) {
 	response = CreateModifyIpControlPolicyItemResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyIpControlPolicyItem(request *ModifyIpControlPolicyIt
 }
 
 // ModifyIpControlPolicyItemWithChan invokes the cloudapi.ModifyIpControlPolicyItem API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/modifyipcontrolpolicyitem.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyIpControlPolicyItemWithChan(request *ModifyIpControlPolicyItemRequest) (<-chan *ModifyIpControlPolicyItemResponse, <-chan error) {
 	responseChan := make(chan *ModifyIpControlPolicyItemResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyIpControlPolicyItemWithChan(request *ModifyIpControl
 }
 
 // ModifyIpControlPolicyItemWithCallback invokes the cloudapi.ModifyIpControlPolicyItem API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/modifyipcontrolpolicyitem.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyIpControlPolicyItemWithCallback(request *ModifyIpControlPolicyItemRequest, callback func(response *ModifyIpControlPolicyItemResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // ResetAppSecret invokes the cloudapi.ResetAppSecret API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/resetappsecret.html
 func (client *Client) ResetAppSecret(request *ResetAppSecretRequest) (response *ResetAppSecretResponse, err error) {
 	response = CreateResetAppSecretResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ResetAppSecret(request *ResetAppSecretRequest) (response *
 }
 
 // ResetAppSecretWithChan invokes the cloudapi.ResetAppSecret API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/resetappsecret.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResetAppSecretWithChan(request *ResetAppSecretRequest) (<-chan *ResetAppSecretResponse, <-chan error) {
 	responseChan := make(chan *ResetAppSecretResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ResetAppSecretWithChan(request *ResetAppSecretRequest) (<-
 }
 
 // ResetAppSecretWithCallback invokes the cloudapi.ResetAppSecret API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/resetappsecret.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResetAppSecretWithCallback(request *ResetAppSecretRequest, callback func(response *ResetAppSecretResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,6 +71,7 @@ func (client *Client) ResetAppSecretWithCallback(request *ResetAppSecretRequest,
 // ResetAppSecretRequest is the request struct for api ResetAppSecret
 type ResetAppSecretRequest struct {
 	*requests.RpcRequest
+	NewAppSecret  string `position:"Query" name:"NewAppSecret"`
 	SecurityToken string `position:"Query" name:"SecurityToken"`
 	AppKey        string `position:"Query" name:"AppKey"`
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // RemoveTrafficControlApis invokes the cloudapi.RemoveTrafficControlApis API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/removetrafficcontrolapis.html
 func (client *Client) RemoveTrafficControlApis(request *RemoveTrafficControlApisRequest) (response *RemoveTrafficControlApisResponse, err error) {
 	response = CreateRemoveTrafficControlApisResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RemoveTrafficControlApis(request *RemoveTrafficControlApis
 }
 
 // RemoveTrafficControlApisWithChan invokes the cloudapi.RemoveTrafficControlApis API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/removetrafficcontrolapis.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveTrafficControlApisWithChan(request *RemoveTrafficControlApisRequest) (<-chan *RemoveTrafficControlApisResponse, <-chan error) {
 	responseChan := make(chan *RemoveTrafficControlApisResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RemoveTrafficControlApisWithChan(request *RemoveTrafficCon
 }
 
 // RemoveTrafficControlApisWithCallback invokes the cloudapi.RemoveTrafficControlApis API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/removetrafficcontrolapis.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveTrafficControlApisWithCallback(request *RemoveTrafficControlApisRequest, callback func(response *RemoveTrafficControlApisResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

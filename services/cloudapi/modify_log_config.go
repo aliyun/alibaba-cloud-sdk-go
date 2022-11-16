@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyLogConfig invokes the cloudapi.ModifyLogConfig API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/modifylogconfig.html
 func (client *Client) ModifyLogConfig(request *ModifyLogConfigRequest) (response *ModifyLogConfigResponse, err error) {
 	response = CreateModifyLogConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyLogConfig(request *ModifyLogConfigRequest) (response
 }
 
 // ModifyLogConfigWithChan invokes the cloudapi.ModifyLogConfig API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/modifylogconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyLogConfigWithChan(request *ModifyLogConfigRequest) (<-chan *ModifyLogConfigResponse, <-chan error) {
 	responseChan := make(chan *ModifyLogConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyLogConfigWithChan(request *ModifyLogConfigRequest) (
 }
 
 // ModifyLogConfigWithCallback invokes the cloudapi.ModifyLogConfig API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/modifylogconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyLogConfigWithCallback(request *ModifyLogConfigRequest, callback func(response *ModifyLogConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

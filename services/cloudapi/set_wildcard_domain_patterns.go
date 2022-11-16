@@ -21,7 +21,6 @@ import (
 )
 
 // SetWildcardDomainPatterns invokes the cloudapi.SetWildcardDomainPatterns API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/setwildcarddomainpatterns.html
 func (client *Client) SetWildcardDomainPatterns(request *SetWildcardDomainPatternsRequest) (response *SetWildcardDomainPatternsResponse, err error) {
 	response = CreateSetWildcardDomainPatternsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SetWildcardDomainPatterns(request *SetWildcardDomainPatter
 }
 
 // SetWildcardDomainPatternsWithChan invokes the cloudapi.SetWildcardDomainPatterns API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/setwildcarddomainpatterns.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetWildcardDomainPatternsWithChan(request *SetWildcardDomainPatternsRequest) (<-chan *SetWildcardDomainPatternsResponse, <-chan error) {
 	responseChan := make(chan *SetWildcardDomainPatternsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SetWildcardDomainPatternsWithChan(request *SetWildcardDoma
 }
 
 // SetWildcardDomainPatternsWithCallback invokes the cloudapi.SetWildcardDomainPatterns API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/setwildcarddomainpatterns.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetWildcardDomainPatternsWithCallback(request *SetWildcardDomainPatternsRequest, callback func(response *SetWildcardDomainPatternsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

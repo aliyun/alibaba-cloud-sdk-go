@@ -18,8 +18,8 @@ package cloudapi
 // RequestConfig is a nested struct in cloudapi response
 type RequestConfig struct {
 	RequestHttpMethod   string `json:"RequestHttpMethod" xml:"RequestHttpMethod"`
-	RequestProtocol     string `json:"RequestProtocol" xml:"RequestProtocol"`
 	BodyModel           string `json:"BodyModel" xml:"BodyModel"`
+	RequestProtocol     string `json:"RequestProtocol" xml:"RequestProtocol"`
 	RequestMode         string `json:"RequestMode" xml:"RequestMode"`
 	RequestPath         string `json:"RequestPath" xml:"RequestPath"`
 	PostBodyDescription string `json:"PostBodyDescription" xml:"PostBodyDescription"`

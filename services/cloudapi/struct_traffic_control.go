@@ -17,14 +17,14 @@ package cloudapi
 
 // TrafficControl is a nested struct in cloudapi response
 type TrafficControl struct {
-	TrafficControlId   string          `json:"TrafficControlId" xml:"TrafficControlId"`
-	TrafficControlName string          `json:"TrafficControlName" xml:"TrafficControlName"`
+	UserDefault        int             `json:"UserDefault" xml:"UserDefault"`
+	ApiDefault         int             `json:"ApiDefault" xml:"ApiDefault"`
+	ModifiedTime       string          `json:"ModifiedTime" xml:"ModifiedTime"`
 	Description        string          `json:"Description" xml:"Description"`
 	TrafficControlUnit string          `json:"TrafficControlUnit" xml:"TrafficControlUnit"`
-	ApiDefault         int             `json:"ApiDefault" xml:"ApiDefault"`
-	UserDefault        int             `json:"UserDefault" xml:"UserDefault"`
+	TrafficControlName string          `json:"TrafficControlName" xml:"TrafficControlName"`
 	AppDefault         int             `json:"AppDefault" xml:"AppDefault"`
+	TrafficControlId   string          `json:"TrafficControlId" xml:"TrafficControlId"`
 	CreatedTime        string          `json:"CreatedTime" xml:"CreatedTime"`
-	ModifiedTime       string          `json:"ModifiedTime" xml:"ModifiedTime"`
 	SpecialPolicies    SpecialPolicies `json:"SpecialPolicies" xml:"SpecialPolicies"`
 }

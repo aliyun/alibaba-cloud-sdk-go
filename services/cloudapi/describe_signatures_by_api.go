@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeSignaturesByApi invokes the cloudapi.DescribeSignaturesByApi API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/describesignaturesbyapi.html
 func (client *Client) DescribeSignaturesByApi(request *DescribeSignaturesByApiRequest) (response *DescribeSignaturesByApiResponse, err error) {
 	response = CreateDescribeSignaturesByApiResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeSignaturesByApi(request *DescribeSignaturesByApiRe
 }
 
 // DescribeSignaturesByApiWithChan invokes the cloudapi.DescribeSignaturesByApi API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/describesignaturesbyapi.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSignaturesByApiWithChan(request *DescribeSignaturesByApiRequest) (<-chan *DescribeSignaturesByApiResponse, <-chan error) {
 	responseChan := make(chan *DescribeSignaturesByApiResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeSignaturesByApiWithChan(request *DescribeSignature
 }
 
 // DescribeSignaturesByApiWithCallback invokes the cloudapi.DescribeSignaturesByApi API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/describesignaturesbyapi.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSignaturesByApiWithCallback(request *DescribeSignaturesByApiRequest, callback func(response *DescribeSignaturesByApiResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

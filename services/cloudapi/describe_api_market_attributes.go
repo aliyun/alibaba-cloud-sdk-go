@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeApiMarketAttributes invokes the cloudapi.DescribeApiMarketAttributes API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/describeapimarketattributes.html
 func (client *Client) DescribeApiMarketAttributes(request *DescribeApiMarketAttributesRequest) (response *DescribeApiMarketAttributesResponse, err error) {
 	response = CreateDescribeApiMarketAttributesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeApiMarketAttributes(request *DescribeApiMarketAttr
 }
 
 // DescribeApiMarketAttributesWithChan invokes the cloudapi.DescribeApiMarketAttributes API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/describeapimarketattributes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeApiMarketAttributesWithChan(request *DescribeApiMarketAttributesRequest) (<-chan *DescribeApiMarketAttributesResponse, <-chan error) {
 	responseChan := make(chan *DescribeApiMarketAttributesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeApiMarketAttributesWithChan(request *DescribeApiMa
 }
 
 // DescribeApiMarketAttributesWithCallback invokes the cloudapi.DescribeApiMarketAttributes API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/describeapimarketattributes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeApiMarketAttributesWithCallback(request *DescribeApiMarketAttributesRequest, callback func(response *DescribeApiMarketAttributesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,10 +79,10 @@ type DescribeApiMarketAttributesRequest struct {
 // DescribeApiMarketAttributesResponse is the response struct for api DescribeApiMarketAttributes
 type DescribeApiMarketAttributesResponse struct {
 	*responses.BaseResponse
-	RequestId          string `json:"RequestId" xml:"RequestId"`
 	ApiId              string `json:"ApiId" xml:"ApiId"`
-	NeedCharging       string `json:"NeedCharging" xml:"NeedCharging"`
+	RequestId          string `json:"RequestId" xml:"RequestId"`
 	MarketChargingMode string `json:"MarketChargingMode" xml:"MarketChargingMode"`
+	NeedCharging       string `json:"NeedCharging" xml:"NeedCharging"`
 }
 
 // CreateDescribeApiMarketAttributesRequest creates a request to invoke DescribeApiMarketAttributes API

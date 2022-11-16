@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeAppSecurity invokes the cloudapi.DescribeAppSecurity API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/describeappsecurity.html
 func (client *Client) DescribeAppSecurity(request *DescribeAppSecurityRequest) (response *DescribeAppSecurityResponse, err error) {
 	response = CreateDescribeAppSecurityResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeAppSecurity(request *DescribeAppSecurityRequest) (
 }
 
 // DescribeAppSecurityWithChan invokes the cloudapi.DescribeAppSecurity API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/describeappsecurity.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAppSecurityWithChan(request *DescribeAppSecurityRequest) (<-chan *DescribeAppSecurityResponse, <-chan error) {
 	responseChan := make(chan *DescribeAppSecurityResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeAppSecurityWithChan(request *DescribeAppSecurityRe
 }
 
 // DescribeAppSecurityWithCallback invokes the cloudapi.DescribeAppSecurity API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/describeappsecurity.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAppSecurityWithCallback(request *DescribeAppSecurityRequest, callback func(response *DescribeAppSecurityResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -90,12 +85,12 @@ type DescribeAppSecurityTag struct {
 // DescribeAppSecurityResponse is the response struct for api DescribeAppSecurity
 type DescribeAppSecurityResponse struct {
 	*responses.BaseResponse
+	AppSecret    string `json:"AppSecret" xml:"AppSecret"`
 	RequestId    string `json:"RequestId" xml:"RequestId"`
 	AppKey       string `json:"AppKey" xml:"AppKey"`
-	AppSecret    string `json:"AppSecret" xml:"AppSecret"`
-	CreatedTime  string `json:"CreatedTime" xml:"CreatedTime"`
 	ModifiedTime string `json:"ModifiedTime" xml:"ModifiedTime"`
 	AppCode      string `json:"AppCode" xml:"AppCode"`
+	CreatedTime  string `json:"CreatedTime" xml:"CreatedTime"`
 }
 
 // CreateDescribeAppSecurityRequest creates a request to invoke DescribeAppSecurity API

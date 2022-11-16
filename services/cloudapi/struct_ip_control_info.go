@@ -18,10 +18,10 @@ package cloudapi
 // IpControlInfo is a nested struct in cloudapi response
 type IpControlInfo struct {
 	IpControlId   string `json:"IpControlId" xml:"IpControlId"`
-	IpControlName string `json:"IpControlName" xml:"IpControlName"`
 	IpControlType string `json:"IpControlType" xml:"IpControlType"`
+	ModifiedTime  string `json:"ModifiedTime" xml:"ModifiedTime"`
+	IpControlName string `json:"IpControlName" xml:"IpControlName"`
 	Description   string `json:"Description" xml:"Description"`
 	CreateTime    string `json:"CreateTime" xml:"CreateTime"`
-	ModifiedTime  string `json:"ModifiedTime" xml:"ModifiedTime"`
 	RegionId      string `json:"RegionId" xml:"RegionId"`
 }

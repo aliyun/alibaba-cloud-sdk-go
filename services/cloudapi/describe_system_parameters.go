@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeSystemParameters invokes the cloudapi.DescribeSystemParameters API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/describesystemparameters.html
 func (client *Client) DescribeSystemParameters(request *DescribeSystemParametersRequest) (response *DescribeSystemParametersResponse, err error) {
 	response = CreateDescribeSystemParametersResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeSystemParameters(request *DescribeSystemParameters
 }
 
 // DescribeSystemParametersWithChan invokes the cloudapi.DescribeSystemParameters API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/describesystemparameters.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSystemParametersWithChan(request *DescribeSystemParametersRequest) (<-chan *DescribeSystemParametersResponse, <-chan error) {
 	responseChan := make(chan *DescribeSystemParametersResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeSystemParametersWithChan(request *DescribeSystemPa
 }
 
 // DescribeSystemParametersWithCallback invokes the cloudapi.DescribeSystemParameters API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/describesystemparameters.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSystemParametersWithCallback(request *DescribeSystemParametersRequest, callback func(response *DescribeSystemParametersResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

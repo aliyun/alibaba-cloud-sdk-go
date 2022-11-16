@@ -21,7 +21,6 @@ import (
 )
 
 // SetIpControlApis invokes the cloudapi.SetIpControlApis API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/setipcontrolapis.html
 func (client *Client) SetIpControlApis(request *SetIpControlApisRequest) (response *SetIpControlApisResponse, err error) {
 	response = CreateSetIpControlApisResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SetIpControlApis(request *SetIpControlApisRequest) (respon
 }
 
 // SetIpControlApisWithChan invokes the cloudapi.SetIpControlApis API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/setipcontrolapis.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetIpControlApisWithChan(request *SetIpControlApisRequest) (<-chan *SetIpControlApisResponse, <-chan error) {
 	responseChan := make(chan *SetIpControlApisResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SetIpControlApisWithChan(request *SetIpControlApisRequest)
 }
 
 // SetIpControlApisWithCallback invokes the cloudapi.SetIpControlApis API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/setipcontrolapis.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetIpControlApisWithCallback(request *SetIpControlApisRequest, callback func(response *SetIpControlApisResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

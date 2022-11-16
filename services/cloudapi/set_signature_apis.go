@@ -21,7 +21,6 @@ import (
 )
 
 // SetSignatureApis invokes the cloudapi.SetSignatureApis API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/setsignatureapis.html
 func (client *Client) SetSignatureApis(request *SetSignatureApisRequest) (response *SetSignatureApisResponse, err error) {
 	response = CreateSetSignatureApisResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SetSignatureApis(request *SetSignatureApisRequest) (respon
 }
 
 // SetSignatureApisWithChan invokes the cloudapi.SetSignatureApis API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/setsignatureapis.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetSignatureApisWithChan(request *SetSignatureApisRequest) (<-chan *SetSignatureApisResponse, <-chan error) {
 	responseChan := make(chan *SetSignatureApisResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SetSignatureApisWithChan(request *SetSignatureApisRequest)
 }
 
 // SetSignatureApisWithCallback invokes the cloudapi.SetSignatureApis API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/setsignatureapis.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetSignatureApisWithCallback(request *SetSignatureApisRequest, callback func(response *SetSignatureApisResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

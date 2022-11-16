@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyIpControl invokes the cloudapi.ModifyIpControl API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/modifyipcontrol.html
 func (client *Client) ModifyIpControl(request *ModifyIpControlRequest) (response *ModifyIpControlResponse, err error) {
 	response = CreateModifyIpControlResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyIpControl(request *ModifyIpControlRequest) (response
 }
 
 // ModifyIpControlWithChan invokes the cloudapi.ModifyIpControl API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/modifyipcontrol.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyIpControlWithChan(request *ModifyIpControlRequest) (<-chan *ModifyIpControlResponse, <-chan error) {
 	responseChan := make(chan *ModifyIpControlResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyIpControlWithChan(request *ModifyIpControlRequest) (
 }
 
 // ModifyIpControlWithCallback invokes the cloudapi.ModifyIpControl API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/modifyipcontrol.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyIpControlWithCallback(request *ModifyIpControlRequest, callback func(response *ModifyIpControlResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

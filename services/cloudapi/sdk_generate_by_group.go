@@ -21,7 +21,6 @@ import (
 )
 
 // SdkGenerateByGroup invokes the cloudapi.SdkGenerateByGroup API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/sdkgeneratebygroup.html
 func (client *Client) SdkGenerateByGroup(request *SdkGenerateByGroupRequest) (response *SdkGenerateByGroupResponse, err error) {
 	response = CreateSdkGenerateByGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SdkGenerateByGroup(request *SdkGenerateByGroupRequest) (re
 }
 
 // SdkGenerateByGroupWithChan invokes the cloudapi.SdkGenerateByGroup API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/sdkgeneratebygroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SdkGenerateByGroupWithChan(request *SdkGenerateByGroupRequest) (<-chan *SdkGenerateByGroupResponse, <-chan error) {
 	responseChan := make(chan *SdkGenerateByGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SdkGenerateByGroupWithChan(request *SdkGenerateByGroupRequ
 }
 
 // SdkGenerateByGroupWithCallback invokes the cloudapi.SdkGenerateByGroup API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/sdkgeneratebygroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SdkGenerateByGroupWithCallback(request *SdkGenerateByGroupRequest, callback func(response *SdkGenerateByGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,8 +79,8 @@ type SdkGenerateByGroupRequest struct {
 // SdkGenerateByGroupResponse is the response struct for api SdkGenerateByGroup
 type SdkGenerateByGroupResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
 	DownloadLink string `json:"DownloadLink" xml:"DownloadLink"`
+	RequestId    string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateSdkGenerateByGroupRequest creates a request to invoke SdkGenerateByGroup API

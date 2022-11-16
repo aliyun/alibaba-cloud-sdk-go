@@ -19,6 +19,6 @@ package cloudapi
 type ConstantParameter struct {
 	ServiceParameterName string `json:"ServiceParameterName" xml:"ServiceParameterName"`
 	Description          string `json:"Description" xml:"Description"`
-	ConstantValue        string `json:"ConstantValue" xml:"ConstantValue"`
 	Location             string `json:"Location" xml:"Location"`
+	ConstantValue        string `json:"ConstantValue" xml:"ConstantValue"`
 }

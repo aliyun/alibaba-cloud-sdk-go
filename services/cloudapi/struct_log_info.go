@@ -17,8 +17,8 @@ package cloudapi
 
 // LogInfo is a nested struct in cloudapi response
 type LogInfo struct {
-	RegionId    string `json:"RegionId" xml:"RegionId"`
-	SlsProject  string `json:"SlsProject" xml:"SlsProject"`
 	SlsLogStore string `json:"SlsLogStore" xml:"SlsLogStore"`
 	LogType     string `json:"LogType" xml:"LogType"`
+	SlsProject  string `json:"SlsProject" xml:"SlsProject"`
+	RegionId    string `json:"RegionId" xml:"RegionId"`
 }

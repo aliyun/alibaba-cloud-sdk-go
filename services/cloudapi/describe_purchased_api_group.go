@@ -21,7 +21,6 @@ import (
 )
 
 // DescribePurchasedApiGroup invokes the cloudapi.DescribePurchasedApiGroup API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/describepurchasedapigroup.html
 func (client *Client) DescribePurchasedApiGroup(request *DescribePurchasedApiGroupRequest) (response *DescribePurchasedApiGroupResponse, err error) {
 	response = CreateDescribePurchasedApiGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribePurchasedApiGroup(request *DescribePurchasedApiGro
 }
 
 // DescribePurchasedApiGroupWithChan invokes the cloudapi.DescribePurchasedApiGroup API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/describepurchasedapigroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribePurchasedApiGroupWithChan(request *DescribePurchasedApiGroupRequest) (<-chan *DescribePurchasedApiGroupResponse, <-chan error) {
 	responseChan := make(chan *DescribePurchasedApiGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribePurchasedApiGroupWithChan(request *DescribePurchas
 }
 
 // DescribePurchasedApiGroupWithCallback invokes the cloudapi.DescribePurchasedApiGroup API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/describepurchasedapigroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribePurchasedApiGroupWithCallback(request *DescribePurchasedApiGroupRequest, callback func(response *DescribePurchasedApiGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,13 +78,13 @@ type DescribePurchasedApiGroupRequest struct {
 // DescribePurchasedApiGroupResponse is the response struct for api DescribePurchasedApiGroup
 type DescribePurchasedApiGroupResponse struct {
 	*responses.BaseResponse
+	Status        string  `json:"Status" xml:"Status"`
+	PurchasedTime string  `json:"PurchasedTime" xml:"PurchasedTime"`
 	RequestId     string  `json:"RequestId" xml:"RequestId"`
 	GroupId       string  `json:"GroupId" xml:"GroupId"`
 	GroupName     string  `json:"GroupName" xml:"GroupName"`
 	Description   string  `json:"Description" xml:"Description"`
-	PurchasedTime string  `json:"PurchasedTime" xml:"PurchasedTime"`
 	RegionId      string  `json:"RegionId" xml:"RegionId"`
-	Status        string  `json:"Status" xml:"Status"`
 	Domains       Domains `json:"Domains" xml:"Domains"`
 }
 

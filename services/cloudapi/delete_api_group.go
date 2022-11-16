@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteApiGroup invokes the cloudapi.DeleteApiGroup API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/deleteapigroup.html
 func (client *Client) DeleteApiGroup(request *DeleteApiGroupRequest) (response *DeleteApiGroupResponse, err error) {
 	response = CreateDeleteApiGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteApiGroup(request *DeleteApiGroupRequest) (response *
 }
 
 // DeleteApiGroupWithChan invokes the cloudapi.DeleteApiGroup API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/deleteapigroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteApiGroupWithChan(request *DeleteApiGroupRequest) (<-chan *DeleteApiGroupResponse, <-chan error) {
 	responseChan := make(chan *DeleteApiGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteApiGroupWithChan(request *DeleteApiGroupRequest) (<-
 }
 
 // DeleteApiGroupWithCallback invokes the cloudapi.DeleteApiGroup API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/deleteapigroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteApiGroupWithCallback(request *DeleteApiGroupRequest, callback func(response *DeleteApiGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

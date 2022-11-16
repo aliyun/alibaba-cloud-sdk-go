@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyTrafficControl invokes the cloudapi.ModifyTrafficControl API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/modifytrafficcontrol.html
 func (client *Client) ModifyTrafficControl(request *ModifyTrafficControlRequest) (response *ModifyTrafficControlResponse, err error) {
 	response = CreateModifyTrafficControlResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyTrafficControl(request *ModifyTrafficControlRequest)
 }
 
 // ModifyTrafficControlWithChan invokes the cloudapi.ModifyTrafficControl API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/modifytrafficcontrol.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyTrafficControlWithChan(request *ModifyTrafficControlRequest) (<-chan *ModifyTrafficControlResponse, <-chan error) {
 	responseChan := make(chan *ModifyTrafficControlResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyTrafficControlWithChan(request *ModifyTrafficControl
 }
 
 // ModifyTrafficControlWithCallback invokes the cloudapi.ModifyTrafficControl API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/modifytrafficcontrol.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyTrafficControlWithCallback(request *ModifyTrafficControlRequest, callback func(response *ModifyTrafficControlResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

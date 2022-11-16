@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyApp invokes the cloudapi.ModifyApp API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/modifyapp.html
 func (client *Client) ModifyApp(request *ModifyAppRequest) (response *ModifyAppResponse, err error) {
 	response = CreateModifyAppResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyApp(request *ModifyAppRequest) (response *ModifyAppR
 }
 
 // ModifyAppWithChan invokes the cloudapi.ModifyApp API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/modifyapp.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyAppWithChan(request *ModifyAppRequest) (<-chan *ModifyAppResponse, <-chan error) {
 	responseChan := make(chan *ModifyAppResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyAppWithChan(request *ModifyAppRequest) (<-chan *Modi
 }
 
 // ModifyAppWithCallback invokes the cloudapi.ModifyApp API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/modifyapp.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyAppWithCallback(request *ModifyAppRequest, callback func(response *ModifyAppResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

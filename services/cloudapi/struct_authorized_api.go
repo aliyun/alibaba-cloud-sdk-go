@@ -17,15 +17,15 @@ package cloudapi
 
 // AuthorizedApi is a nested struct in cloudapi response
 type AuthorizedApi struct {
-	RegionId            string `json:"RegionId" xml:"RegionId"`
-	GroupId             string `json:"GroupId" xml:"GroupId"`
-	GroupName           string `json:"GroupName" xml:"GroupName"`
-	StageName           string `json:"StageName" xml:"StageName"`
-	Operator            string `json:"Operator" xml:"Operator"`
 	ApiId               string `json:"ApiId" xml:"ApiId"`
-	ApiName             string `json:"ApiName" xml:"ApiName"`
 	AuthorizationSource string `json:"AuthorizationSource" xml:"AuthorizationSource"`
-	Description         string `json:"Description" xml:"Description"`
-	AuthorizedTime      string `json:"AuthorizedTime" xml:"AuthorizedTime"`
 	AuthVaildTime       string `json:"AuthVaildTime" xml:"AuthVaildTime"`
+	Description         string `json:"Description" xml:"Description"`
+	GroupName           string `json:"GroupName" xml:"GroupName"`
+	GroupId             string `json:"GroupId" xml:"GroupId"`
+	AuthorizedTime      string `json:"AuthorizedTime" xml:"AuthorizedTime"`
+	Operator            string `json:"Operator" xml:"Operator"`
+	StageName           string `json:"StageName" xml:"StageName"`
+	ApiName             string `json:"ApiName" xml:"ApiName"`
+	RegionId            string `json:"RegionId" xml:"RegionId"`
 }

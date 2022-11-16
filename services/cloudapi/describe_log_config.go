@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeLogConfig invokes the cloudapi.DescribeLogConfig API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/describelogconfig.html
 func (client *Client) DescribeLogConfig(request *DescribeLogConfigRequest) (response *DescribeLogConfigResponse, err error) {
 	response = CreateDescribeLogConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeLogConfig(request *DescribeLogConfigRequest) (resp
 }
 
 // DescribeLogConfigWithChan invokes the cloudapi.DescribeLogConfig API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/describelogconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLogConfigWithChan(request *DescribeLogConfigRequest) (<-chan *DescribeLogConfigResponse, <-chan error) {
 	responseChan := make(chan *DescribeLogConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeLogConfigWithChan(request *DescribeLogConfigReques
 }
 
 // DescribeLogConfigWithCallback invokes the cloudapi.DescribeLogConfig API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/describelogconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLogConfigWithCallback(request *DescribeLogConfigRequest, callback func(response *DescribeLogConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -17,9 +17,9 @@ package cloudapi
 
 // IpControlPolicyItem is a nested struct in cloudapi response
 type IpControlPolicyItem struct {
-	AppId        string `json:"AppId" xml:"AppId"`
-	CidrIp       string `json:"CidrIp" xml:"CidrIp"`
-	PolicyItemId string `json:"PolicyItemId" xml:"PolicyItemId"`
-	CreateTime   string `json:"CreateTime" xml:"CreateTime"`
 	ModifiedTime string `json:"ModifiedTime" xml:"ModifiedTime"`
+	PolicyItemId string `json:"PolicyItemId" xml:"PolicyItemId"`
+	CidrIp       string `json:"CidrIp" xml:"CidrIp"`
+	CreateTime   string `json:"CreateTime" xml:"CreateTime"`
+	AppId        string `json:"AppId" xml:"AppId"`
 }

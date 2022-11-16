@@ -18,6 +18,6 @@ package cloudapi
 // ApiImportSwaggerFailed is a nested struct in cloudapi response
 type ApiImportSwaggerFailed struct {
 	Path       string `json:"Path" xml:"Path"`
-	HttpMethod string `json:"HttpMethod" xml:"HttpMethod"`
 	ErrorMsg   string `json:"ErrorMsg" xml:"ErrorMsg"`
+	HttpMethod string `json:"HttpMethod" xml:"HttpMethod"`
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeModels invokes the cloudapi.DescribeModels API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/describemodels.html
 func (client *Client) DescribeModels(request *DescribeModelsRequest) (response *DescribeModelsResponse, err error) {
 	response = CreateDescribeModelsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeModels(request *DescribeModelsRequest) (response *
 }
 
 // DescribeModelsWithChan invokes the cloudapi.DescribeModels API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/describemodels.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeModelsWithChan(request *DescribeModelsRequest) (<-chan *DescribeModelsResponse, <-chan error) {
 	responseChan := make(chan *DescribeModelsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeModelsWithChan(request *DescribeModelsRequest) (<-
 }
 
 // DescribeModelsWithCallback invokes the cloudapi.DescribeModels API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/describemodels.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeModelsWithCallback(request *DescribeModelsRequest, callback func(response *DescribeModelsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -87,10 +82,10 @@ type DescribeModelsRequest struct {
 // DescribeModelsResponse is the response struct for api DescribeModels
 type DescribeModelsResponse struct {
 	*responses.BaseResponse
-	RequestId    string       `json:"RequestId" xml:"RequestId"`
-	TotalCount   int          `json:"TotalCount" xml:"TotalCount"`
-	PageSize     int          `json:"PageSize" xml:"PageSize"`
 	PageNumber   int          `json:"PageNumber" xml:"PageNumber"`
+	RequestId    string       `json:"RequestId" xml:"RequestId"`
+	PageSize     int          `json:"PageSize" xml:"PageSize"`
+	TotalCount   int          `json:"TotalCount" xml:"TotalCount"`
 	ModelDetails ModelDetails `json:"ModelDetails" xml:"ModelDetails"`
 }
 

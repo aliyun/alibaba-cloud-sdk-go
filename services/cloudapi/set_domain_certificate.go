@@ -21,7 +21,6 @@ import (
 )
 
 // SetDomainCertificate invokes the cloudapi.SetDomainCertificate API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/setdomaincertificate.html
 func (client *Client) SetDomainCertificate(request *SetDomainCertificateRequest) (response *SetDomainCertificateResponse, err error) {
 	response = CreateSetDomainCertificateResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SetDomainCertificate(request *SetDomainCertificateRequest)
 }
 
 // SetDomainCertificateWithChan invokes the cloudapi.SetDomainCertificate API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/setdomaincertificate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetDomainCertificateWithChan(request *SetDomainCertificateRequest) (<-chan *SetDomainCertificateResponse, <-chan error) {
 	responseChan := make(chan *SetDomainCertificateResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SetDomainCertificateWithChan(request *SetDomainCertificate
 }
 
 // SetDomainCertificateWithCallback invokes the cloudapi.SetDomainCertificate API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/setdomaincertificate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetDomainCertificateWithCallback(request *SetDomainCertificateRequest, callback func(response *SetDomainCertificateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +75,7 @@ type SetDomainCertificateRequest struct {
 	GroupId               string `position:"Query" name:"GroupId"`
 	DomainName            string `position:"Query" name:"DomainName"`
 	CertificateBody       string `position:"Query" name:"CertificateBody"`
+	SslVerifyDepth        string `position:"Query" name:"SslVerifyDepth"`
 	CaCertificateBody     string `position:"Query" name:"CaCertificateBody"`
 	SecurityToken         string `position:"Query" name:"SecurityToken"`
 	CertificateName       string `position:"Query" name:"CertificateName"`

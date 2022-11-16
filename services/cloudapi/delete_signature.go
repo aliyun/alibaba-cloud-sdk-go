@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteSignature invokes the cloudapi.DeleteSignature API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/deletesignature.html
 func (client *Client) DeleteSignature(request *DeleteSignatureRequest) (response *DeleteSignatureResponse, err error) {
 	response = CreateDeleteSignatureResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteSignature(request *DeleteSignatureRequest) (response
 }
 
 // DeleteSignatureWithChan invokes the cloudapi.DeleteSignature API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/deletesignature.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteSignatureWithChan(request *DeleteSignatureRequest) (<-chan *DeleteSignatureResponse, <-chan error) {
 	responseChan := make(chan *DeleteSignatureResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteSignatureWithChan(request *DeleteSignatureRequest) (
 }
 
 // DeleteSignatureWithCallback invokes the cloudapi.DeleteSignature API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/deletesignature.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteSignatureWithCallback(request *DeleteSignatureRequest, callback func(response *DeleteSignatureResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

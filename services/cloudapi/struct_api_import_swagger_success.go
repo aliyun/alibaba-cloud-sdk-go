@@ -19,6 +19,6 @@ package cloudapi
 type ApiImportSwaggerSuccess struct {
 	Path         string `json:"Path" xml:"Path"`
 	HttpMethod   string `json:"HttpMethod" xml:"HttpMethod"`
-	ApiUid       string `json:"ApiUid" xml:"ApiUid"`
 	ApiOperation string `json:"ApiOperation" xml:"ApiOperation"`
+	ApiUid       string `json:"ApiUid" xml:"ApiUid"`
 }

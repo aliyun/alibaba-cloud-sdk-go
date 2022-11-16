@@ -21,7 +21,6 @@ import (
 )
 
 // CreateApp invokes the cloudapi.CreateApp API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/createapp.html
 func (client *Client) CreateApp(request *CreateAppRequest) (response *CreateAppResponse, err error) {
 	response = CreateCreateAppResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateApp(request *CreateAppRequest) (response *CreateAppR
 }
 
 // CreateAppWithChan invokes the cloudapi.CreateApp API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/createapp.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateAppWithChan(request *CreateAppRequest) (<-chan *CreateAppResponse, <-chan error) {
 	responseChan := make(chan *CreateAppResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateAppWithChan(request *CreateAppRequest) (<-chan *Crea
 }
 
 // CreateAppWithCallback invokes the cloudapi.CreateApp API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/createapp.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateAppWithCallback(request *CreateAppRequest, callback func(response *CreateAppResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +75,9 @@ type CreateAppRequest struct {
 	Source        string          `position:"Query" name:"Source"`
 	AppName       string          `position:"Query" name:"AppName"`
 	SecurityToken string          `position:"Query" name:"SecurityToken"`
+	AppSecret     string          `position:"Query" name:"AppSecret"`
+	AppKey        string          `position:"Query" name:"AppKey"`
+	AppCode       string          `position:"Query" name:"AppCode"`
 	Tag           *[]CreateAppTag `position:"Query" name:"Tag"  type:"Repeated"`
 }
 
@@ -92,9 +90,9 @@ type CreateAppTag struct {
 // CreateAppResponse is the response struct for api CreateApp
 type CreateAppResponse struct {
 	*responses.BaseResponse
+	TagStatus bool   `json:"TagStatus" xml:"TagStatus"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	AppId     int64  `json:"AppId" xml:"AppId"`
-	TagStatus bool   `json:"TagStatus" xml:"TagStatus"`
 }
 
 // CreateCreateAppRequest creates a request to invoke CreateApp API

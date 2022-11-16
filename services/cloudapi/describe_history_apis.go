@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeHistoryApis invokes the cloudapi.DescribeHistoryApis API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/describehistoryapis.html
 func (client *Client) DescribeHistoryApis(request *DescribeHistoryApisRequest) (response *DescribeHistoryApisResponse, err error) {
 	response = CreateDescribeHistoryApisResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeHistoryApis(request *DescribeHistoryApisRequest) (
 }
 
 // DescribeHistoryApisWithChan invokes the cloudapi.DescribeHistoryApis API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/describehistoryapis.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeHistoryApisWithChan(request *DescribeHistoryApisRequest) (<-chan *DescribeHistoryApisResponse, <-chan error) {
 	responseChan := make(chan *DescribeHistoryApisResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeHistoryApisWithChan(request *DescribeHistoryApisRe
 }
 
 // DescribeHistoryApisWithCallback invokes the cloudapi.DescribeHistoryApis API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/describehistoryapis.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeHistoryApisWithCallback(request *DescribeHistoryApisRequest, callback func(response *DescribeHistoryApisResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -88,10 +83,10 @@ type DescribeHistoryApisRequest struct {
 // DescribeHistoryApisResponse is the response struct for api DescribeHistoryApis
 type DescribeHistoryApisResponse struct {
 	*responses.BaseResponse
-	RequestId   string                           `json:"RequestId" xml:"RequestId"`
-	TotalCount  int                              `json:"TotalCount" xml:"TotalCount"`
-	PageSize    int                              `json:"PageSize" xml:"PageSize"`
 	PageNumber  int                              `json:"PageNumber" xml:"PageNumber"`
+	RequestId   string                           `json:"RequestId" xml:"RequestId"`
+	PageSize    int                              `json:"PageSize" xml:"PageSize"`
+	TotalCount  int                              `json:"TotalCount" xml:"TotalCount"`
 	ApiHisItems ApiHisItemsInDescribeHistoryApis `json:"ApiHisItems" xml:"ApiHisItems"`
 }
 

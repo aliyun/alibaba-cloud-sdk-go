@@ -17,8 +17,8 @@ package cloudapi
 
 // ApiImportModelSuccess is a nested struct in cloudapi response
 type ApiImportModelSuccess struct {
-	ModelUid       string `json:"ModelUid" xml:"ModelUid"`
 	ModelOperation string `json:"ModelOperation" xml:"ModelOperation"`
-	GroupId        string `json:"GroupId" xml:"GroupId"`
 	ModelName      string `json:"ModelName" xml:"ModelName"`
+	GroupId        string `json:"GroupId" xml:"GroupId"`
+	ModelUid       string `json:"ModelUid" xml:"ModelUid"`
 }

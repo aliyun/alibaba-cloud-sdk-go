@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteIpControl invokes the cloudapi.DeleteIpControl API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/deleteipcontrol.html
 func (client *Client) DeleteIpControl(request *DeleteIpControlRequest) (response *DeleteIpControlResponse, err error) {
 	response = CreateDeleteIpControlResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteIpControl(request *DeleteIpControlRequest) (response
 }
 
 // DeleteIpControlWithChan invokes the cloudapi.DeleteIpControl API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/deleteipcontrol.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteIpControlWithChan(request *DeleteIpControlRequest) (<-chan *DeleteIpControlResponse, <-chan error) {
 	responseChan := make(chan *DeleteIpControlResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteIpControlWithChan(request *DeleteIpControlRequest) (
 }
 
 // DeleteIpControlWithCallback invokes the cloudapi.DeleteIpControl API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/deleteipcontrol.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteIpControlWithCallback(request *DeleteIpControlRequest, callback func(response *DeleteIpControlResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

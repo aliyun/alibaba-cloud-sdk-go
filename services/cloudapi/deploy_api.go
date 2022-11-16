@@ -21,7 +21,6 @@ import (
 )
 
 // DeployApi invokes the cloudapi.DeployApi API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/deployapi.html
 func (client *Client) DeployApi(request *DeployApiRequest) (response *DeployApiResponse, err error) {
 	response = CreateDeployApiResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeployApi(request *DeployApiRequest) (response *DeployApiR
 }
 
 // DeployApiWithChan invokes the cloudapi.DeployApi API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/deployapi.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeployApiWithChan(request *DeployApiRequest) (<-chan *DeployApiResponse, <-chan error) {
 	responseChan := make(chan *DeployApiResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeployApiWithChan(request *DeployApiRequest) (<-chan *Depl
 }
 
 // DeployApiWithCallback invokes the cloudapi.DeployApi API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/deployapi.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeployApiWithCallback(request *DeployApiRequest, callback func(response *DeployApiResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

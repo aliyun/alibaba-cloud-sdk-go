@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeApps invokes the cloudapi.DescribeApps API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/describeapps.html
 func (client *Client) DescribeApps(request *DescribeAppsRequest) (response *DescribeAppsResponse, err error) {
 	response = CreateDescribeAppsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeApps(request *DescribeAppsRequest) (response *Desc
 }
 
 // DescribeAppsWithChan invokes the cloudapi.DescribeApps API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/describeapps.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAppsWithChan(request *DescribeAppsRequest) (<-chan *DescribeAppsResponse, <-chan error) {
 	responseChan := make(chan *DescribeAppsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeAppsWithChan(request *DescribeAppsRequest) (<-chan
 }
 
 // DescribeAppsWithCallback invokes the cloudapi.DescribeApps API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/describeapps.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAppsWithCallback(request *DescribeAppsRequest, callback func(response *DescribeAppsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -86,10 +81,10 @@ type DescribeAppsRequest struct {
 // DescribeAppsResponse is the response struct for api DescribeApps
 type DescribeAppsResponse struct {
 	*responses.BaseResponse
-	RequestId  string             `json:"RequestId" xml:"RequestId"`
-	TotalCount int                `json:"TotalCount" xml:"TotalCount"`
-	PageSize   int                `json:"PageSize" xml:"PageSize"`
 	PageNumber int                `json:"PageNumber" xml:"PageNumber"`
+	RequestId  string             `json:"RequestId" xml:"RequestId"`
+	PageSize   int                `json:"PageSize" xml:"PageSize"`
+	TotalCount int                `json:"TotalCount" xml:"TotalCount"`
 	Apps       AppsInDescribeApps `json:"Apps" xml:"Apps"`
 }
 

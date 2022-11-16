@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeApiDoc invokes the cloudapi.DescribeApiDoc API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/describeapidoc.html
 func (client *Client) DescribeApiDoc(request *DescribeApiDocRequest) (response *DescribeApiDocResponse, err error) {
 	response = CreateDescribeApiDocResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeApiDoc(request *DescribeApiDocRequest) (response *
 }
 
 // DescribeApiDocWithChan invokes the cloudapi.DescribeApiDoc API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/describeapidoc.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeApiDocWithChan(request *DescribeApiDocRequest) (<-chan *DescribeApiDocResponse, <-chan error) {
 	responseChan := make(chan *DescribeApiDocResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeApiDocWithChan(request *DescribeApiDocRequest) (<-
 }
 
 // DescribeApiDocWithCallback invokes the cloudapi.DescribeApiDoc API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/describeapidoc.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeApiDocWithCallback(request *DescribeApiDocRequest, callback func(response *DescribeApiDocResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -85,22 +80,22 @@ type DescribeApiDocRequest struct {
 // DescribeApiDocResponse is the response struct for api DescribeApiDoc
 type DescribeApiDocResponse struct {
 	*responses.BaseResponse
-	RequestId          string                             `json:"RequestId" xml:"RequestId"`
+	ApiId              string                             `json:"ApiId" xml:"ApiId"`
+	ResultType         string                             `json:"ResultType" xml:"ResultType"`
+	DisableInternet    bool                               `json:"DisableInternet" xml:"DisableInternet"`
+	ResultSample       string                             `json:"ResultSample" xml:"ResultSample"`
 	RegionId           string                             `json:"RegionId" xml:"RegionId"`
+	ForceNonceCheck    bool                               `json:"ForceNonceCheck" xml:"ForceNonceCheck"`
+	Visibility         string                             `json:"Visibility" xml:"Visibility"`
+	FailResultSample   string                             `json:"FailResultSample" xml:"FailResultSample"`
+	AuthType           string                             `json:"AuthType" xml:"AuthType"`
+	RequestId          string                             `json:"RequestId" xml:"RequestId"`
 	GroupId            string                             `json:"GroupId" xml:"GroupId"`
 	GroupName          string                             `json:"GroupName" xml:"GroupName"`
-	StageName          string                             `json:"StageName" xml:"StageName"`
-	ApiId              string                             `json:"ApiId" xml:"ApiId"`
-	ApiName            string                             `json:"ApiName" xml:"ApiName"`
 	Description        string                             `json:"Description" xml:"Description"`
-	Visibility         string                             `json:"Visibility" xml:"Visibility"`
-	AuthType           string                             `json:"AuthType" xml:"AuthType"`
-	ResultType         string                             `json:"ResultType" xml:"ResultType"`
-	ResultSample       string                             `json:"ResultSample" xml:"ResultSample"`
-	FailResultSample   string                             `json:"FailResultSample" xml:"FailResultSample"`
 	DeployedTime       string                             `json:"DeployedTime" xml:"DeployedTime"`
-	ForceNonceCheck    bool                               `json:"ForceNonceCheck" xml:"ForceNonceCheck"`
-	DisableInternet    bool                               `json:"DisableInternet" xml:"DisableInternet"`
+	StageName          string                             `json:"StageName" xml:"StageName"`
+	ApiName            string                             `json:"ApiName" xml:"ApiName"`
 	RequestConfig      RequestConfig                      `json:"RequestConfig" xml:"RequestConfig"`
 	ErrorCodeSamples   ErrorCodeSamplesInDescribeApiDoc   `json:"ErrorCodeSamples" xml:"ErrorCodeSamples"`
 	ResultDescriptions ResultDescriptionsInDescribeApiDoc `json:"ResultDescriptions" xml:"ResultDescriptions"`

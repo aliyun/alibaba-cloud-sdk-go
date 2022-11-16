@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeApiSignatures invokes the cloudapi.DescribeApiSignatures API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/describeapisignatures.html
 func (client *Client) DescribeApiSignatures(request *DescribeApiSignaturesRequest) (response *DescribeApiSignaturesResponse, err error) {
 	response = CreateDescribeApiSignaturesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeApiSignatures(request *DescribeApiSignaturesReques
 }
 
 // DescribeApiSignaturesWithChan invokes the cloudapi.DescribeApiSignatures API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/describeapisignatures.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeApiSignaturesWithChan(request *DescribeApiSignaturesRequest) (<-chan *DescribeApiSignaturesResponse, <-chan error) {
 	responseChan := make(chan *DescribeApiSignaturesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeApiSignaturesWithChan(request *DescribeApiSignatur
 }
 
 // DescribeApiSignaturesWithCallback invokes the cloudapi.DescribeApiSignatures API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/describeapisignatures.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeApiSignaturesWithCallback(request *DescribeApiSignaturesRequest, callback func(response *DescribeApiSignaturesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -87,10 +82,10 @@ type DescribeApiSignaturesRequest struct {
 // DescribeApiSignaturesResponse is the response struct for api DescribeApiSignatures
 type DescribeApiSignaturesResponse struct {
 	*responses.BaseResponse
-	RequestId     string        `json:"RequestId" xml:"RequestId"`
-	TotalCount    int           `json:"TotalCount" xml:"TotalCount"`
-	PageSize      int           `json:"PageSize" xml:"PageSize"`
 	PageNumber    int           `json:"PageNumber" xml:"PageNumber"`
+	RequestId     string        `json:"RequestId" xml:"RequestId"`
+	PageSize      int           `json:"PageSize" xml:"PageSize"`
+	TotalCount    int           `json:"TotalCount" xml:"TotalCount"`
 	ApiSignatures ApiSignatures `json:"ApiSignatures" xml:"ApiSignatures"`
 }
 

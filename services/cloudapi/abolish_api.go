@@ -21,7 +21,6 @@ import (
 )
 
 // AbolishApi invokes the cloudapi.AbolishApi API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/abolishapi.html
 func (client *Client) AbolishApi(request *AbolishApiRequest) (response *AbolishApiResponse, err error) {
 	response = CreateAbolishApiResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AbolishApi(request *AbolishApiRequest) (response *AbolishA
 }
 
 // AbolishApiWithChan invokes the cloudapi.AbolishApi API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/abolishapi.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AbolishApiWithChan(request *AbolishApiRequest) (<-chan *AbolishApiResponse, <-chan error) {
 	responseChan := make(chan *AbolishApiResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AbolishApiWithChan(request *AbolishApiRequest) (<-chan *Ab
 }
 
 // AbolishApiWithCallback invokes the cloudapi.AbolishApi API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/abolishapi.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AbolishApiWithCallback(request *AbolishApiRequest, callback func(response *AbolishApiResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

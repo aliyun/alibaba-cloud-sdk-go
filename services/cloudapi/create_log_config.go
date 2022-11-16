@@ -21,7 +21,6 @@ import (
 )
 
 // CreateLogConfig invokes the cloudapi.CreateLogConfig API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/createlogconfig.html
 func (client *Client) CreateLogConfig(request *CreateLogConfigRequest) (response *CreateLogConfigResponse, err error) {
 	response = CreateCreateLogConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateLogConfig(request *CreateLogConfigRequest) (response
 }
 
 // CreateLogConfigWithChan invokes the cloudapi.CreateLogConfig API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/createlogconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateLogConfigWithChan(request *CreateLogConfigRequest) (<-chan *CreateLogConfigResponse, <-chan error) {
 	responseChan := make(chan *CreateLogConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateLogConfigWithChan(request *CreateLogConfigRequest) (
 }
 
 // CreateLogConfigWithCallback invokes the cloudapi.CreateLogConfig API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/createlogconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateLogConfigWithCallback(request *CreateLogConfigRequest, callback func(response *CreateLogConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

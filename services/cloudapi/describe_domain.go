@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDomain invokes the cloudapi.DescribeDomain API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/describedomain.html
 func (client *Client) DescribeDomain(request *DescribeDomainRequest) (response *DescribeDomainResponse, err error) {
 	response = CreateDescribeDomainResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDomain(request *DescribeDomainRequest) (response *
 }
 
 // DescribeDomainWithChan invokes the cloudapi.DescribeDomain API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/describedomain.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainWithChan(request *DescribeDomainRequest) (<-chan *DescribeDomainResponse, <-chan error) {
 	responseChan := make(chan *DescribeDomainResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDomainWithChan(request *DescribeDomainRequest) (<-
 }
 
 // DescribeDomainWithCallback invokes the cloudapi.DescribeDomain API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/describedomain.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainWithCallback(request *DescribeDomainRequest, callback func(response *DescribeDomainResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,19 +79,19 @@ type DescribeDomainRequest struct {
 // DescribeDomainResponse is the response struct for api DescribeDomain
 type DescribeDomainResponse struct {
 	*responses.BaseResponse
-	RequestId             string `json:"RequestId" xml:"RequestId"`
-	GroupId               string `json:"GroupId" xml:"GroupId"`
-	DomainName            string `json:"DomainName" xml:"DomainName"`
-	SubDomain             string `json:"SubDomain" xml:"SubDomain"`
-	CertificateId         string `json:"CertificateId" xml:"CertificateId"`
-	CertificateName       string `json:"CertificateName" xml:"CertificateName"`
-	CertificateBody       string `json:"CertificateBody" xml:"CertificateBody"`
 	CertificatePrivateKey string `json:"CertificatePrivateKey" xml:"CertificatePrivateKey"`
+	DomainName            string `json:"DomainName" xml:"DomainName"`
 	DomainBindingStatus   string `json:"DomainBindingStatus" xml:"DomainBindingStatus"`
-	DomainCNAMEStatus     string `json:"DomainCNAMEStatus" xml:"DomainCNAMEStatus"`
-	DomainLegalStatus     string `json:"DomainLegalStatus" xml:"DomainLegalStatus"`
-	DomainWebSocketStatus string `json:"DomainWebSocketStatus" xml:"DomainWebSocketStatus"`
 	DomainRemark          string `json:"DomainRemark" xml:"DomainRemark"`
+	CertificateId         string `json:"CertificateId" xml:"CertificateId"`
+	DomainWebSocketStatus string `json:"DomainWebSocketStatus" xml:"DomainWebSocketStatus"`
+	RequestId             string `json:"RequestId" xml:"RequestId"`
+	CertificateName       string `json:"CertificateName" xml:"CertificateName"`
+	DomainLegalStatus     string `json:"DomainLegalStatus" xml:"DomainLegalStatus"`
+	GroupId               string `json:"GroupId" xml:"GroupId"`
+	CertificateBody       string `json:"CertificateBody" xml:"CertificateBody"`
+	SubDomain             string `json:"SubDomain" xml:"SubDomain"`
+	DomainCNAMEStatus     string `json:"DomainCNAMEStatus" xml:"DomainCNAMEStatus"`
 }
 
 // CreateDescribeDomainRequest creates a request to invoke DescribeDomain API

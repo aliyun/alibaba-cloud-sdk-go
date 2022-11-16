@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeApiGroup invokes the cloudapi.DescribeApiGroup API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/describeapigroup.html
 func (client *Client) DescribeApiGroup(request *DescribeApiGroupRequest) (response *DescribeApiGroupResponse, err error) {
 	response = CreateDescribeApiGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeApiGroup(request *DescribeApiGroupRequest) (respon
 }
 
 // DescribeApiGroupWithChan invokes the cloudapi.DescribeApiGroup API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/describeapigroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeApiGroupWithChan(request *DescribeApiGroupRequest) (<-chan *DescribeApiGroupResponse, <-chan error) {
 	responseChan := make(chan *DescribeApiGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeApiGroupWithChan(request *DescribeApiGroupRequest)
 }
 
 // DescribeApiGroupWithCallback invokes the cloudapi.DescribeApiGroup API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/describeapigroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeApiGroupWithCallback(request *DescribeApiGroupRequest, callback func(response *DescribeApiGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -90,32 +85,36 @@ type DescribeApiGroupTag struct {
 // DescribeApiGroupResponse is the response struct for api DescribeApiGroup
 type DescribeApiGroupResponse struct {
 	*responses.BaseResponse
-	RequestId            string        `json:"RequestId" xml:"RequestId"`
-	GroupId              string        `json:"GroupId" xml:"GroupId"`
-	GroupName            string        `json:"GroupName" xml:"GroupName"`
-	SubDomain            string        `json:"SubDomain" xml:"SubDomain"`
-	Description          string        `json:"Description" xml:"Description"`
-	CreatedTime          string        `json:"CreatedTime" xml:"CreatedTime"`
-	ModifiedTime         string        `json:"ModifiedTime" xml:"ModifiedTime"`
-	RegionId             string        `json:"RegionId" xml:"RegionId"`
 	Status               string        `json:"Status" xml:"Status"`
-	BillingStatus        string        `json:"BillingStatus" xml:"BillingStatus"`
-	IllegalStatus        string        `json:"IllegalStatus" xml:"IllegalStatus"`
+	CompatibleFlags      string        `json:"CompatibleFlags" xml:"CompatibleFlags"`
+	BasePath             string        `json:"BasePath" xml:"BasePath"`
 	Ipv6Status           string        `json:"Ipv6Status" xml:"Ipv6Status"`
+	UserLogConfig        string        `json:"UserLogConfig" xml:"UserLogConfig"`
+	CustomerConfigs      string        `json:"CustomerConfigs" xml:"CustomerConfigs"`
+	RequestId            string        `json:"RequestId" xml:"RequestId"`
+	Description          string        `json:"Description" xml:"Description"`
+	HttpsPolicy          string        `json:"HttpsPolicy" xml:"HttpsPolicy"`
+	SubDomain            string        `json:"SubDomain" xml:"SubDomain"`
+	CreatedTime          string        `json:"CreatedTime" xml:"CreatedTime"`
+	RpcPattern           string        `json:"RpcPattern" xml:"RpcPattern"`
+	DefaultDomain        string        `json:"DefaultDomain" xml:"DefaultDomain"`
+	CmsMonitorGroup      string        `json:"CmsMonitorGroup" xml:"CmsMonitorGroup"`
+	BillingStatus        string        `json:"BillingStatus" xml:"BillingStatus"`
 	TrafficLimit         int           `json:"TrafficLimit" xml:"TrafficLimit"`
+	PassthroughHeaders   string        `json:"PassthroughHeaders" xml:"PassthroughHeaders"`
+	InstanceId           string        `json:"InstanceId" xml:"InstanceId"`
 	VpcDomain            string        `json:"VpcDomain" xml:"VpcDomain"`
 	InstanceType         string        `json:"InstanceType" xml:"InstanceType"`
-	InstanceId           string        `json:"InstanceId" xml:"InstanceId"`
-	InstanceVipList      string        `json:"InstanceVipList" xml:"InstanceVipList"`
-	HttpsPolicy          string        `json:"HttpsPolicy" xml:"HttpsPolicy"`
-	UserLogConfig        string        `json:"UserLogConfig" xml:"UserLogConfig"`
 	CustomTraceConfig    string        `json:"CustomTraceConfig" xml:"CustomTraceConfig"`
-	PassthroughHeaders   string        `json:"PassthroughHeaders" xml:"PassthroughHeaders"`
-	DefaultDomain        string        `json:"DefaultDomain" xml:"DefaultDomain"`
-	RpcPattern           string        `json:"RpcPattern" xml:"RpcPattern"`
-	CompatibleFlags      string        `json:"CompatibleFlags" xml:"CompatibleFlags"`
+	RegionId             string        `json:"RegionId" xml:"RegionId"`
+	ModifiedTime         string        `json:"ModifiedTime" xml:"ModifiedTime"`
+	GroupId              string        `json:"GroupId" xml:"GroupId"`
+	GroupName            string        `json:"GroupName" xml:"GroupName"`
 	ClassicVpcSubDomain  string        `json:"ClassicVpcSubDomain" xml:"ClassicVpcSubDomain"`
+	IllegalStatus        string        `json:"IllegalStatus" xml:"IllegalStatus"`
+	InstanceVipList      string        `json:"InstanceVipList" xml:"InstanceVipList"`
 	VpcSlbIntranetDomain string        `json:"VpcSlbIntranetDomain" xml:"VpcSlbIntranetDomain"`
+	CloudMarketCommodity bool          `json:"CloudMarketCommodity" xml:"CloudMarketCommodity"`
 	CustomDomains        CustomDomains `json:"CustomDomains" xml:"CustomDomains"`
 	StageItems           StageItems    `json:"StageItems" xml:"StageItems"`
 }

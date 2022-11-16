@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeApisByApp invokes the cloudapi.DescribeApisByApp API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/describeapisbyapp.html
 func (client *Client) DescribeApisByApp(request *DescribeApisByAppRequest) (response *DescribeApisByAppResponse, err error) {
 	response = CreateDescribeApisByAppResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeApisByApp(request *DescribeApisByAppRequest) (resp
 }
 
 // DescribeApisByAppWithChan invokes the cloudapi.DescribeApisByApp API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/describeapisbyapp.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeApisByAppWithChan(request *DescribeApisByAppRequest) (<-chan *DescribeApisByAppResponse, <-chan error) {
 	responseChan := make(chan *DescribeApisByAppResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeApisByAppWithChan(request *DescribeApisByAppReques
 }
 
 // DescribeApisByAppWithCallback invokes the cloudapi.DescribeApisByApp API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/describeapisbyapp.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeApisByAppWithCallback(request *DescribeApisByAppRequest, callback func(response *DescribeApisByAppResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,7 +71,11 @@ func (client *Client) DescribeApisByAppWithCallback(request *DescribeApisByAppRe
 // DescribeApisByAppRequest is the request struct for api DescribeApisByApp
 type DescribeApisByAppRequest struct {
 	*requests.RpcRequest
+	Method        string           `position:"Query" name:"Method"`
+	Description   string           `position:"Query" name:"Description"`
 	PageNumber    requests.Integer `position:"Query" name:"PageNumber"`
+	Path          string           `position:"Query" name:"Path"`
+	ApiName       string           `position:"Query" name:"ApiName"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	AppId         requests.Integer `position:"Query" name:"AppId"`
 	ApiUid        string           `position:"Query" name:"ApiUid"`
@@ -86,10 +85,10 @@ type DescribeApisByAppRequest struct {
 // DescribeApisByAppResponse is the response struct for api DescribeApisByApp
 type DescribeApisByAppResponse struct {
 	*responses.BaseResponse
-	RequestId           string              `json:"RequestId" xml:"RequestId"`
-	TotalCount          int                 `json:"TotalCount" xml:"TotalCount"`
-	PageSize            int                 `json:"PageSize" xml:"PageSize"`
 	PageNumber          int                 `json:"PageNumber" xml:"PageNumber"`
+	RequestId           string              `json:"RequestId" xml:"RequestId"`
+	PageSize            int                 `json:"PageSize" xml:"PageSize"`
+	TotalCount          int                 `json:"TotalCount" xml:"TotalCount"`
 	AppApiRelationInfos AppApiRelationInfos `json:"AppApiRelationInfos" xml:"AppApiRelationInfos"`
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeApiHistories invokes the cloudapi.DescribeApiHistories API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/describeapihistories.html
 func (client *Client) DescribeApiHistories(request *DescribeApiHistoriesRequest) (response *DescribeApiHistoriesResponse, err error) {
 	response = CreateDescribeApiHistoriesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeApiHistories(request *DescribeApiHistoriesRequest)
 }
 
 // DescribeApiHistoriesWithChan invokes the cloudapi.DescribeApiHistories API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/describeapihistories.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeApiHistoriesWithChan(request *DescribeApiHistoriesRequest) (<-chan *DescribeApiHistoriesResponse, <-chan error) {
 	responseChan := make(chan *DescribeApiHistoriesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeApiHistoriesWithChan(request *DescribeApiHistories
 }
 
 // DescribeApiHistoriesWithCallback invokes the cloudapi.DescribeApiHistories API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/describeapihistories.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeApiHistoriesWithCallback(request *DescribeApiHistoriesRequest, callback func(response *DescribeApiHistoriesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,22 +71,22 @@ func (client *Client) DescribeApiHistoriesWithCallback(request *DescribeApiHisto
 // DescribeApiHistoriesRequest is the request struct for api DescribeApiHistories
 type DescribeApiHistoriesRequest struct {
 	*requests.RpcRequest
-	StageName     string `position:"Query" name:"StageName"`
-	GroupId       string `position:"Query" name:"GroupId"`
-	PageNumber    string `position:"Query" name:"PageNumber"`
-	ApiName       string `position:"Query" name:"ApiName"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
-	PageSize      string `position:"Query" name:"PageSize"`
-	ApiId         string `position:"Query" name:"ApiId"`
+	StageName     string           `position:"Query" name:"StageName"`
+	GroupId       string           `position:"Query" name:"GroupId"`
+	PageNumber    requests.Integer `position:"Query" name:"PageNumber"`
+	ApiName       string           `position:"Query" name:"ApiName"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	PageSize      requests.Integer `position:"Query" name:"PageSize"`
+	ApiId         string           `position:"Query" name:"ApiId"`
 }
 
 // DescribeApiHistoriesResponse is the response struct for api DescribeApiHistories
 type DescribeApiHistoriesResponse struct {
 	*responses.BaseResponse
-	RequestId   string                            `json:"RequestId" xml:"RequestId"`
-	TotalCount  int                               `json:"TotalCount" xml:"TotalCount"`
-	PageSize    int                               `json:"PageSize" xml:"PageSize"`
 	PageNumber  int                               `json:"PageNumber" xml:"PageNumber"`
+	RequestId   string                            `json:"RequestId" xml:"RequestId"`
+	PageSize    int                               `json:"PageSize" xml:"PageSize"`
+	TotalCount  int                               `json:"TotalCount" xml:"TotalCount"`
 	ApiHisItems ApiHisItemsInDescribeApiHistories `json:"ApiHisItems" xml:"ApiHisItems"`
 }
 

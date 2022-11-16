@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteDomainCertificate invokes the cloudapi.DeleteDomainCertificate API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/deletedomaincertificate.html
 func (client *Client) DeleteDomainCertificate(request *DeleteDomainCertificateRequest) (response *DeleteDomainCertificateResponse, err error) {
 	response = CreateDeleteDomainCertificateResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteDomainCertificate(request *DeleteDomainCertificateRe
 }
 
 // DeleteDomainCertificateWithChan invokes the cloudapi.DeleteDomainCertificate API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/deletedomaincertificate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDomainCertificateWithChan(request *DeleteDomainCertificateRequest) (<-chan *DeleteDomainCertificateResponse, <-chan error) {
 	responseChan := make(chan *DeleteDomainCertificateResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteDomainCertificateWithChan(request *DeleteDomainCerti
 }
 
 // DeleteDomainCertificateWithCallback invokes the cloudapi.DeleteDomainCertificate API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/deletedomaincertificate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDomainCertificateWithCallback(request *DeleteDomainCertificateRequest, callback func(response *DeleteDomainCertificateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

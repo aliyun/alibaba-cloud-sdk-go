@@ -17,13 +17,15 @@ package cloudapi
 
 // ApiSummary is a nested struct in cloudapi response
 type ApiSummary struct {
-	RegionId     string `json:"RegionId" xml:"RegionId"`
-	GroupId      string `json:"GroupId" xml:"GroupId"`
-	GroupName    string `json:"GroupName" xml:"GroupName"`
-	ApiId        string `json:"ApiId" xml:"ApiId"`
-	ApiName      string `json:"ApiName" xml:"ApiName"`
 	Visibility   string `json:"Visibility" xml:"Visibility"`
-	Description  string `json:"Description" xml:"Description"`
-	CreatedTime  string `json:"CreatedTime" xml:"CreatedTime"`
+	ApiId        string `json:"ApiId" xml:"ApiId"`
 	ModifiedTime string `json:"ModifiedTime" xml:"ModifiedTime"`
+	Description  string `json:"Description" xml:"Description"`
+	GroupName    string `json:"GroupName" xml:"GroupName"`
+	GroupId      string `json:"GroupId" xml:"GroupId"`
+	CreatedTime  string `json:"CreatedTime" xml:"CreatedTime"`
+	ApiName      string `json:"ApiName" xml:"ApiName"`
+	RegionId     string `json:"RegionId" xml:"RegionId"`
+	ApiPath      string `json:"ApiPath" xml:"ApiPath"`
+	ApiMethod    string `json:"ApiMethod" xml:"ApiMethod"`
 }

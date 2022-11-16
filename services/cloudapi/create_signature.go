@@ -21,7 +21,6 @@ import (
 )
 
 // CreateSignature invokes the cloudapi.CreateSignature API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/createsignature.html
 func (client *Client) CreateSignature(request *CreateSignatureRequest) (response *CreateSignatureResponse, err error) {
 	response = CreateCreateSignatureResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateSignature(request *CreateSignatureRequest) (response
 }
 
 // CreateSignatureWithChan invokes the cloudapi.CreateSignature API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/createsignature.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateSignatureWithChan(request *CreateSignatureRequest) (<-chan *CreateSignatureResponse, <-chan error) {
 	responseChan := make(chan *CreateSignatureResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateSignatureWithChan(request *CreateSignatureRequest) (
 }
 
 // CreateSignatureWithCallback invokes the cloudapi.CreateSignature API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/createsignature.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateSignatureWithCallback(request *CreateSignatureRequest, callback func(response *CreateSignatureResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

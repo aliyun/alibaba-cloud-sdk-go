@@ -17,14 +17,14 @@ package cloudapi
 
 // PurchasedApiGroupAttribute is a nested struct in cloudapi response
 type PurchasedApiGroupAttribute struct {
-	GroupId        string `json:"GroupId" xml:"GroupId"`
-	GroupName      string `json:"GroupName" xml:"GroupName"`
-	Description    string `json:"Description" xml:"Description"`
+	Status         string `json:"Status" xml:"Status"`
 	PurchasedTime  string `json:"PurchasedTime" xml:"PurchasedTime"`
 	ExpireTime     string `json:"ExpireTime" xml:"ExpireTime"`
-	RegionId       string `json:"RegionId" xml:"RegionId"`
-	BillingType    string `json:"BillingType" xml:"BillingType"`
+	Description    string `json:"Description" xml:"Description"`
+	GroupName      string `json:"GroupName" xml:"GroupName"`
+	GroupId        string `json:"GroupId" xml:"GroupId"`
 	InvokeTimesMax int64  `json:"InvokeTimesMax" xml:"InvokeTimesMax"`
 	InvokeTimesNow int64  `json:"InvokeTimesNow" xml:"InvokeTimesNow"`
-	Status         string `json:"Status" xml:"Status"`
+	BillingType    string `json:"BillingType" xml:"BillingType"`
+	RegionId       string `json:"RegionId" xml:"RegionId"`
 }

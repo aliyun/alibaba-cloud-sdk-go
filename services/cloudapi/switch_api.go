@@ -21,7 +21,6 @@ import (
 )
 
 // SwitchApi invokes the cloudapi.SwitchApi API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/switchapi.html
 func (client *Client) SwitchApi(request *SwitchApiRequest) (response *SwitchApiResponse, err error) {
 	response = CreateSwitchApiResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SwitchApi(request *SwitchApiRequest) (response *SwitchApiR
 }
 
 // SwitchApiWithChan invokes the cloudapi.SwitchApi API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/switchapi.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SwitchApiWithChan(request *SwitchApiRequest) (<-chan *SwitchApiResponse, <-chan error) {
 	responseChan := make(chan *SwitchApiResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SwitchApiWithChan(request *SwitchApiRequest) (<-chan *Swit
 }
 
 // SwitchApiWithCallback invokes the cloudapi.SwitchApi API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/switchapi.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SwitchApiWithCallback(request *SwitchApiRequest, callback func(response *SwitchApiResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

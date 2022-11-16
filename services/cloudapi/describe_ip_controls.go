@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeIpControls invokes the cloudapi.DescribeIpControls API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/describeipcontrols.html
 func (client *Client) DescribeIpControls(request *DescribeIpControlsRequest) (response *DescribeIpControlsResponse, err error) {
 	response = CreateDescribeIpControlsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeIpControls(request *DescribeIpControlsRequest) (re
 }
 
 // DescribeIpControlsWithChan invokes the cloudapi.DescribeIpControls API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/describeipcontrols.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeIpControlsWithChan(request *DescribeIpControlsRequest) (<-chan *DescribeIpControlsResponse, <-chan error) {
 	responseChan := make(chan *DescribeIpControlsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeIpControlsWithChan(request *DescribeIpControlsRequ
 }
 
 // DescribeIpControlsWithCallback invokes the cloudapi.DescribeIpControls API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/describeipcontrols.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeIpControlsWithCallback(request *DescribeIpControlsRequest, callback func(response *DescribeIpControlsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -87,10 +82,10 @@ type DescribeIpControlsRequest struct {
 // DescribeIpControlsResponse is the response struct for api DescribeIpControls
 type DescribeIpControlsResponse struct {
 	*responses.BaseResponse
-	RequestId      string         `json:"RequestId" xml:"RequestId"`
-	TotalCount     int            `json:"TotalCount" xml:"TotalCount"`
-	PageSize       int            `json:"PageSize" xml:"PageSize"`
 	PageNumber     int            `json:"PageNumber" xml:"PageNumber"`
+	RequestId      string         `json:"RequestId" xml:"RequestId"`
+	PageSize       int            `json:"PageSize" xml:"PageSize"`
+	TotalCount     int            `json:"TotalCount" xml:"TotalCount"`
 	IpControlInfos IpControlInfos `json:"IpControlInfos" xml:"IpControlInfos"`
 }
 

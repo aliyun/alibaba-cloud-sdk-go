@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeMarketRemainsQuota invokes the cloudapi.DescribeMarketRemainsQuota API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/describemarketremainsquota.html
 func (client *Client) DescribeMarketRemainsQuota(request *DescribeMarketRemainsQuotaRequest) (response *DescribeMarketRemainsQuotaResponse, err error) {
 	response = CreateDescribeMarketRemainsQuotaResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeMarketRemainsQuota(request *DescribeMarketRemainsQ
 }
 
 // DescribeMarketRemainsQuotaWithChan invokes the cloudapi.DescribeMarketRemainsQuota API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/describemarketremainsquota.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeMarketRemainsQuotaWithChan(request *DescribeMarketRemainsQuotaRequest) (<-chan *DescribeMarketRemainsQuotaResponse, <-chan error) {
 	responseChan := make(chan *DescribeMarketRemainsQuotaResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeMarketRemainsQuotaWithChan(request *DescribeMarket
 }
 
 // DescribeMarketRemainsQuotaWithCallback invokes the cloudapi.DescribeMarketRemainsQuota API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/describemarketremainsquota.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeMarketRemainsQuotaWithCallback(request *DescribeMarketRemainsQuotaRequest, callback func(response *DescribeMarketRemainsQuotaResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,8 +78,8 @@ type DescribeMarketRemainsQuotaRequest struct {
 // DescribeMarketRemainsQuotaResponse is the response struct for api DescribeMarketRemainsQuota
 type DescribeMarketRemainsQuotaResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
 	RemainsQuota int64  `json:"RemainsQuota" xml:"RemainsQuota"`
+	RequestId    string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDescribeMarketRemainsQuotaRequest creates a request to invoke DescribeMarketRemainsQuota API

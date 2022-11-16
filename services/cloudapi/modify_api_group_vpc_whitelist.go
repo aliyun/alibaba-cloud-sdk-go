@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyApiGroupVpcWhitelist invokes the cloudapi.ModifyApiGroupVpcWhitelist API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/modifyapigroupvpcwhitelist.html
 func (client *Client) ModifyApiGroupVpcWhitelist(request *ModifyApiGroupVpcWhitelistRequest) (response *ModifyApiGroupVpcWhitelistResponse, err error) {
 	response = CreateModifyApiGroupVpcWhitelistResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyApiGroupVpcWhitelist(request *ModifyApiGroupVpcWhite
 }
 
 // ModifyApiGroupVpcWhitelistWithChan invokes the cloudapi.ModifyApiGroupVpcWhitelist API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/modifyapigroupvpcwhitelist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyApiGroupVpcWhitelistWithChan(request *ModifyApiGroupVpcWhitelistRequest) (<-chan *ModifyApiGroupVpcWhitelistResponse, <-chan error) {
 	responseChan := make(chan *ModifyApiGroupVpcWhitelistResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyApiGroupVpcWhitelistWithChan(request *ModifyApiGroup
 }
 
 // ModifyApiGroupVpcWhitelistWithCallback invokes the cloudapi.ModifyApiGroupVpcWhitelist API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/modifyapigroupvpcwhitelist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyApiGroupVpcWhitelistWithCallback(request *ModifyApiGroupVpcWhitelistRequest, callback func(response *ModifyApiGroupVpcWhitelistResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

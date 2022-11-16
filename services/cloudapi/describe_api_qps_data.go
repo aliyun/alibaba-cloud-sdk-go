@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeApiQpsData invokes the cloudapi.DescribeApiQpsData API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/describeapiqpsdata.html
 func (client *Client) DescribeApiQpsData(request *DescribeApiQpsDataRequest) (response *DescribeApiQpsDataResponse, err error) {
 	response = CreateDescribeApiQpsDataResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeApiQpsData(request *DescribeApiQpsDataRequest) (re
 }
 
 // DescribeApiQpsDataWithChan invokes the cloudapi.DescribeApiQpsData API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/describeapiqpsdata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeApiQpsDataWithChan(request *DescribeApiQpsDataRequest) (<-chan *DescribeApiQpsDataResponse, <-chan error) {
 	responseChan := make(chan *DescribeApiQpsDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeApiQpsDataWithChan(request *DescribeApiQpsDataRequ
 }
 
 // DescribeApiQpsDataWithCallback invokes the cloudapi.DescribeApiQpsData API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/describeapiqpsdata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeApiQpsDataWithCallback(request *DescribeApiQpsDataRequest, callback func(response *DescribeApiQpsDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,6 +71,7 @@ func (client *Client) DescribeApiQpsDataWithCallback(request *DescribeApiQpsData
 // DescribeApiQpsDataRequest is the request struct for api DescribeApiQpsData
 type DescribeApiQpsDataRequest struct {
 	*requests.RpcRequest
+	StageName     string `position:"Query" name:"StageName"`
 	GroupId       string `position:"Query" name:"GroupId"`
 	EndTime       string `position:"Query" name:"EndTime"`
 	StartTime     string `position:"Query" name:"StartTime"`

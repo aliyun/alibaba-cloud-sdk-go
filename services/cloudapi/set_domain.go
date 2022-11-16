@@ -21,7 +21,6 @@ import (
 )
 
 // SetDomain invokes the cloudapi.SetDomain API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/setdomain.html
 func (client *Client) SetDomain(request *SetDomainRequest) (response *SetDomainResponse, err error) {
 	response = CreateSetDomainResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SetDomain(request *SetDomainRequest) (response *SetDomainR
 }
 
 // SetDomainWithChan invokes the cloudapi.SetDomain API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/setdomain.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetDomainWithChan(request *SetDomainRequest) (<-chan *SetDomainResponse, <-chan error) {
 	responseChan := make(chan *SetDomainResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SetDomainWithChan(request *SetDomainRequest) (<-chan *SetD
 }
 
 // SetDomainWithCallback invokes the cloudapi.SetDomain API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/setdomain.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetDomainWithCallback(request *SetDomainRequest, callback func(response *SetDomainResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,24 +71,26 @@ func (client *Client) SetDomainWithCallback(request *SetDomainRequest, callback 
 // SetDomainRequest is the request struct for api SetDomain
 type SetDomainRequest struct {
 	*requests.RpcRequest
-	GroupId       string           `position:"Query" name:"GroupId"`
-	DomainName    string           `position:"Query" name:"DomainName"`
-	BindStageName string           `position:"Query" name:"BindStageName"`
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
-	IsForce       requests.Boolean `position:"Query" name:"IsForce"`
+	GroupId               string           `position:"Query" name:"GroupId"`
+	DomainName            string           `position:"Query" name:"DomainName"`
+	IsHttpRedirectToHttps requests.Boolean `position:"Query" name:"IsHttpRedirectToHttps"`
+	CustomDomainType      string           `position:"Query" name:"CustomDomainType"`
+	BindStageName         string           `position:"Query" name:"BindStageName"`
+	SecurityToken         string           `position:"Query" name:"SecurityToken"`
+	IsForce               requests.Boolean `position:"Query" name:"IsForce"`
 }
 
 // SetDomainResponse is the response struct for api SetDomain
 type SetDomainResponse struct {
 	*responses.BaseResponse
 	RequestId             string `json:"RequestId" xml:"RequestId"`
-	GroupId               string `json:"GroupId" xml:"GroupId"`
-	DomainName            string `json:"DomainName" xml:"DomainName"`
-	SubDomain             string `json:"SubDomain" xml:"SubDomain"`
-	DomainBindingStatus   string `json:"DomainBindingStatus" xml:"DomainBindingStatus"`
 	DomainLegalStatus     string `json:"DomainLegalStatus" xml:"DomainLegalStatus"`
-	DomainWebSocketStatus string `json:"DomainWebSocketStatus" xml:"DomainWebSocketStatus"`
+	GroupId               string `json:"GroupId" xml:"GroupId"`
+	SubDomain             string `json:"SubDomain" xml:"SubDomain"`
+	DomainName            string `json:"DomainName" xml:"DomainName"`
+	DomainBindingStatus   string `json:"DomainBindingStatus" xml:"DomainBindingStatus"`
 	DomainRemark          string `json:"DomainRemark" xml:"DomainRemark"`
+	DomainWebSocketStatus string `json:"DomainWebSocketStatus" xml:"DomainWebSocketStatus"`
 }
 
 // CreateSetDomainRequest creates a request to invoke SetDomain API

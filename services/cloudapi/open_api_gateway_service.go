@@ -21,7 +21,6 @@ import (
 )
 
 // OpenApiGatewayService invokes the cloudapi.OpenApiGatewayService API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/openapigatewayservice.html
 func (client *Client) OpenApiGatewayService(request *OpenApiGatewayServiceRequest) (response *OpenApiGatewayServiceResponse, err error) {
 	response = CreateOpenApiGatewayServiceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) OpenApiGatewayService(request *OpenApiGatewayServiceReques
 }
 
 // OpenApiGatewayServiceWithChan invokes the cloudapi.OpenApiGatewayService API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/openapigatewayservice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OpenApiGatewayServiceWithChan(request *OpenApiGatewayServiceRequest) (<-chan *OpenApiGatewayServiceResponse, <-chan error) {
 	responseChan := make(chan *OpenApiGatewayServiceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) OpenApiGatewayServiceWithChan(request *OpenApiGatewayServi
 }
 
 // OpenApiGatewayServiceWithCallback invokes the cloudapi.OpenApiGatewayService API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/openapigatewayservice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OpenApiGatewayServiceWithCallback(request *OpenApiGatewayServiceRequest, callback func(response *OpenApiGatewayServiceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,8 +76,8 @@ type OpenApiGatewayServiceRequest struct {
 // OpenApiGatewayServiceResponse is the response struct for api OpenApiGatewayService
 type OpenApiGatewayServiceResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	OrderId   string `json:"OrderId" xml:"OrderId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateOpenApiGatewayServiceRequest creates a request to invoke OpenApiGatewayService API

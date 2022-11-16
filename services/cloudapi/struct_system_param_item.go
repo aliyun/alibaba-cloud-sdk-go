@@ -17,8 +17,8 @@ package cloudapi
 
 // SystemParamItem is a nested struct in cloudapi response
 type SystemParamItem struct {
-	ParamName   string `json:"ParamName" xml:"ParamName"`
-	ParamType   string `json:"ParamType" xml:"ParamType"`
 	DemoValue   string `json:"DemoValue" xml:"DemoValue"`
 	Description string `json:"Description" xml:"Description"`
+	ParamName   string `json:"ParamName" xml:"ParamName"`
+	ParamType   string `json:"ParamType" xml:"ParamType"`
 }

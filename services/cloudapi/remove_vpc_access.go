@@ -21,7 +21,6 @@ import (
 )
 
 // RemoveVpcAccess invokes the cloudapi.RemoveVpcAccess API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/removevpcaccess.html
 func (client *Client) RemoveVpcAccess(request *RemoveVpcAccessRequest) (response *RemoveVpcAccessResponse, err error) {
 	response = CreateRemoveVpcAccessResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RemoveVpcAccess(request *RemoveVpcAccessRequest) (response
 }
 
 // RemoveVpcAccessWithChan invokes the cloudapi.RemoveVpcAccess API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/removevpcaccess.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveVpcAccessWithChan(request *RemoveVpcAccessRequest) (<-chan *RemoveVpcAccessResponse, <-chan error) {
 	responseChan := make(chan *RemoveVpcAccessResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RemoveVpcAccessWithChan(request *RemoveVpcAccessRequest) (
 }
 
 // RemoveVpcAccessWithCallback invokes the cloudapi.RemoveVpcAccess API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/removevpcaccess.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveVpcAccessWithCallback(request *RemoveVpcAccessRequest, callback func(response *RemoveVpcAccessResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +72,7 @@ func (client *Client) RemoveVpcAccessWithCallback(request *RemoveVpcAccessReques
 type RemoveVpcAccessRequest struct {
 	*requests.RpcRequest
 	InstanceId    string           `position:"Query" name:"InstanceId"`
+	NeedBatchWork requests.Boolean `position:"Query" name:"NeedBatchWork"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	Port          requests.Integer `position:"Query" name:"Port"`
 	VpcId         string           `position:"Query" name:"VpcId"`
@@ -86,6 +82,7 @@ type RemoveVpcAccessRequest struct {
 type RemoveVpcAccessResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Apis      Apis   `json:"Apis" xml:"Apis"`
 }
 
 // CreateRemoveVpcAccessRequest creates a request to invoke RemoveVpcAccess API

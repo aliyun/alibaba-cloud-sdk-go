@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeTrafficControlsByApi invokes the cloudapi.DescribeTrafficControlsByApi API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/describetrafficcontrolsbyapi.html
 func (client *Client) DescribeTrafficControlsByApi(request *DescribeTrafficControlsByApiRequest) (response *DescribeTrafficControlsByApiResponse, err error) {
 	response = CreateDescribeTrafficControlsByApiResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeTrafficControlsByApi(request *DescribeTrafficContr
 }
 
 // DescribeTrafficControlsByApiWithChan invokes the cloudapi.DescribeTrafficControlsByApi API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/describetrafficcontrolsbyapi.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeTrafficControlsByApiWithChan(request *DescribeTrafficControlsByApiRequest) (<-chan *DescribeTrafficControlsByApiResponse, <-chan error) {
 	responseChan := make(chan *DescribeTrafficControlsByApiResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeTrafficControlsByApiWithChan(request *DescribeTraf
 }
 
 // DescribeTrafficControlsByApiWithCallback invokes the cloudapi.DescribeTrafficControlsByApi API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/describetrafficcontrolsbyapi.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeTrafficControlsByApiWithCallback(request *DescribeTrafficControlsByApiRequest, callback func(response *DescribeTrafficControlsByApiResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -20,5 +20,6 @@ type VpcConfig struct {
 	Name       string `json:"Name" xml:"Name"`
 	Port       int    `json:"Port" xml:"Port"`
 	InstanceId string `json:"InstanceId" xml:"InstanceId"`
+	VpcScheme  string `json:"VpcScheme" xml:"VpcScheme"`
 	VpcId      string `json:"VpcId" xml:"VpcId"`
 }

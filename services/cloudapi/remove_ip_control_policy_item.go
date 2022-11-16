@@ -21,7 +21,6 @@ import (
 )
 
 // RemoveIpControlPolicyItem invokes the cloudapi.RemoveIpControlPolicyItem API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/removeipcontrolpolicyitem.html
 func (client *Client) RemoveIpControlPolicyItem(request *RemoveIpControlPolicyItemRequest) (response *RemoveIpControlPolicyItemResponse, err error) {
 	response = CreateRemoveIpControlPolicyItemResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RemoveIpControlPolicyItem(request *RemoveIpControlPolicyIt
 }
 
 // RemoveIpControlPolicyItemWithChan invokes the cloudapi.RemoveIpControlPolicyItem API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/removeipcontrolpolicyitem.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveIpControlPolicyItemWithChan(request *RemoveIpControlPolicyItemRequest) (<-chan *RemoveIpControlPolicyItemResponse, <-chan error) {
 	responseChan := make(chan *RemoveIpControlPolicyItemResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RemoveIpControlPolicyItemWithChan(request *RemoveIpControl
 }
 
 // RemoveIpControlPolicyItemWithCallback invokes the cloudapi.RemoveIpControlPolicyItem API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/removeipcontrolpolicyitem.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveIpControlPolicyItemWithCallback(request *RemoveIpControlPolicyItemRequest, callback func(response *RemoveIpControlPolicyItemResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

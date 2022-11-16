@@ -21,7 +21,6 @@ import (
 )
 
 // DescribePurchasedApis invokes the cloudapi.DescribePurchasedApis API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/describepurchasedapis.html
 func (client *Client) DescribePurchasedApis(request *DescribePurchasedApisRequest) (response *DescribePurchasedApisResponse, err error) {
 	response = CreateDescribePurchasedApisResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribePurchasedApis(request *DescribePurchasedApisReques
 }
 
 // DescribePurchasedApisWithChan invokes the cloudapi.DescribePurchasedApis API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/describepurchasedapis.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribePurchasedApisWithChan(request *DescribePurchasedApisRequest) (<-chan *DescribePurchasedApisResponse, <-chan error) {
 	responseChan := make(chan *DescribePurchasedApisResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribePurchasedApisWithChan(request *DescribePurchasedAp
 }
 
 // DescribePurchasedApisWithCallback invokes the cloudapi.DescribePurchasedApis API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/describepurchasedapis.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribePurchasedApisWithCallback(request *DescribePurchasedApisRequest, callback func(response *DescribePurchasedApisResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -89,10 +84,10 @@ type DescribePurchasedApisRequest struct {
 // DescribePurchasedApisResponse is the response struct for api DescribePurchasedApis
 type DescribePurchasedApisResponse struct {
 	*responses.BaseResponse
-	RequestId     string        `json:"RequestId" xml:"RequestId"`
-	TotalCount    int           `json:"TotalCount" xml:"TotalCount"`
-	PageSize      int           `json:"PageSize" xml:"PageSize"`
 	PageNumber    int           `json:"PageNumber" xml:"PageNumber"`
+	RequestId     string        `json:"RequestId" xml:"RequestId"`
+	PageSize      int           `json:"PageSize" xml:"PageSize"`
+	TotalCount    int           `json:"TotalCount" xml:"TotalCount"`
 	PurchasedApis PurchasedApis `json:"PurchasedApis" xml:"PurchasedApis"`
 }
 

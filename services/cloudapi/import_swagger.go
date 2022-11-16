@@ -21,7 +21,6 @@ import (
 )
 
 // ImportSwagger invokes the cloudapi.ImportSwagger API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/importswagger.html
 func (client *Client) ImportSwagger(request *ImportSwaggerRequest) (response *ImportSwaggerResponse, err error) {
 	response = CreateImportSwaggerResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ImportSwagger(request *ImportSwaggerRequest) (response *Im
 }
 
 // ImportSwaggerWithChan invokes the cloudapi.ImportSwagger API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/importswagger.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ImportSwaggerWithChan(request *ImportSwaggerRequest) (<-chan *ImportSwaggerResponse, <-chan error) {
 	responseChan := make(chan *ImportSwaggerResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ImportSwaggerWithChan(request *ImportSwaggerRequest) (<-ch
 }
 
 // ImportSwaggerWithCallback invokes the cloudapi.ImportSwagger API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/importswagger.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ImportSwaggerWithCallback(request *ImportSwaggerRequest, callback func(response *ImportSwaggerResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,20 +72,22 @@ func (client *Client) ImportSwaggerWithCallback(request *ImportSwaggerRequest, c
 type ImportSwaggerRequest struct {
 	*requests.RpcRequest
 	DataFormat      string           `position:"Query" name:"DataFormat"`
+	DryRun          requests.Boolean `position:"Query" name:"DryRun"`
 	Data            string           `position:"Body" name:"Data"`
 	GroupId         string           `position:"Query" name:"GroupId"`
 	GlobalCondition string           `position:"Query" name:"GlobalCondition"`
+	SecurityToken   string           `position:"Query" name:"SecurityToken"`
 	Overwrite       requests.Boolean `position:"Query" name:"Overwrite"`
 }
 
 // ImportSwaggerResponse is the response struct for api ImportSwagger
 type ImportSwaggerResponse struct {
 	*responses.BaseResponse
-	RequestId    string       `json:"RequestId" xml:"RequestId"`
-	Success      Success      `json:"Success" xml:"Success"`
-	Failed       Failed       `json:"Failed" xml:"Failed"`
-	ModelFailed  ModelFailed  `json:"ModelFailed" xml:"ModelFailed"`
-	ModelSuccess ModelSuccess `json:"ModelSuccess" xml:"ModelSuccess"`
+	RequestId    string                      `json:"RequestId" xml:"RequestId"`
+	Success      SuccessInImportSwagger      `json:"Success" xml:"Success"`
+	Failed       FailedInImportSwagger       `json:"Failed" xml:"Failed"`
+	ModelFailed  ModelFailedInImportSwagger  `json:"ModelFailed" xml:"ModelFailed"`
+	ModelSuccess ModelSuccessInImportSwagger `json:"ModelSuccess" xml:"ModelSuccess"`
 }
 
 // CreateImportSwaggerRequest creates a request to invoke ImportSwagger API

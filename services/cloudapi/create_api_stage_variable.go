@@ -21,7 +21,6 @@ import (
 )
 
 // CreateApiStageVariable invokes the cloudapi.CreateApiStageVariable API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/createapistagevariable.html
 func (client *Client) CreateApiStageVariable(request *CreateApiStageVariableRequest) (response *CreateApiStageVariableResponse, err error) {
 	response = CreateCreateApiStageVariableResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateApiStageVariable(request *CreateApiStageVariableRequ
 }
 
 // CreateApiStageVariableWithChan invokes the cloudapi.CreateApiStageVariable API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/createapistagevariable.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateApiStageVariableWithChan(request *CreateApiStageVariableRequest) (<-chan *CreateApiStageVariableResponse, <-chan error) {
 	responseChan := make(chan *CreateApiStageVariableResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateApiStageVariableWithChan(request *CreateApiStageVari
 }
 
 // CreateApiStageVariableWithCallback invokes the cloudapi.CreateApiStageVariable API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/createapistagevariable.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateApiStageVariableWithCallback(request *CreateApiStageVariableRequest, callback func(response *CreateApiStageVariableResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

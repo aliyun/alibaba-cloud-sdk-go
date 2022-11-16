@@ -21,7 +21,6 @@ import (
 )
 
 // RemoveSignatureApis invokes the cloudapi.RemoveSignatureApis API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/removesignatureapis.html
 func (client *Client) RemoveSignatureApis(request *RemoveSignatureApisRequest) (response *RemoveSignatureApisResponse, err error) {
 	response = CreateRemoveSignatureApisResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RemoveSignatureApis(request *RemoveSignatureApisRequest) (
 }
 
 // RemoveSignatureApisWithChan invokes the cloudapi.RemoveSignatureApis API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/removesignatureapis.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveSignatureApisWithChan(request *RemoveSignatureApisRequest) (<-chan *RemoveSignatureApisResponse, <-chan error) {
 	responseChan := make(chan *RemoveSignatureApisResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RemoveSignatureApisWithChan(request *RemoveSignatureApisRe
 }
 
 // RemoveSignatureApisWithCallback invokes the cloudapi.RemoveSignatureApis API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/removesignatureapis.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveSignatureApisWithCallback(request *RemoveSignatureApisRequest, callback func(response *RemoveSignatureApisResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

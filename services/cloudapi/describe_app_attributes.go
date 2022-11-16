@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeAppAttributes invokes the cloudapi.DescribeAppAttributes API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/describeappattributes.html
 func (client *Client) DescribeAppAttributes(request *DescribeAppAttributesRequest) (response *DescribeAppAttributesResponse, err error) {
 	response = CreateDescribeAppAttributesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeAppAttributes(request *DescribeAppAttributesReques
 }
 
 // DescribeAppAttributesWithChan invokes the cloudapi.DescribeAppAttributes API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/describeappattributes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAppAttributesWithChan(request *DescribeAppAttributesRequest) (<-chan *DescribeAppAttributesResponse, <-chan error) {
 	responseChan := make(chan *DescribeAppAttributesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeAppAttributesWithChan(request *DescribeAppAttribut
 }
 
 // DescribeAppAttributesWithCallback invokes the cloudapi.DescribeAppAttributes API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/describeappattributes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAppAttributesWithCallback(request *DescribeAppAttributesRequest, callback func(response *DescribeAppAttributesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,14 +71,18 @@ func (client *Client) DescribeAppAttributesWithCallback(request *DescribeAppAttr
 // DescribeAppAttributesRequest is the request struct for api DescribeAppAttributes
 type DescribeAppAttributesRequest struct {
 	*requests.RpcRequest
-	Sort          string                      `position:"Query" name:"Sort"`
-	EnableTagAuth requests.Boolean            `position:"Query" name:"EnableTagAuth"`
+	StageName     string                      `position:"Query" name:"StageName"`
 	PageNumber    requests.Integer            `position:"Query" name:"PageNumber"`
 	AppName       string                      `position:"Query" name:"AppName"`
 	SecurityToken string                      `position:"Query" name:"SecurityToken"`
-	AppId         requests.Integer            `position:"Query" name:"AppId"`
+	ExcludeApiId  string                      `position:"Query" name:"ExcludeApiId"`
 	PageSize      requests.Integer            `position:"Query" name:"PageSize"`
 	Tag           *[]DescribeAppAttributesTag `position:"Query" name:"Tag"  type:"Repeated"`
+	Sort          string                      `position:"Query" name:"Sort"`
+	EnableTagAuth requests.Boolean            `position:"Query" name:"EnableTagAuth"`
+	AppId         requests.Integer            `position:"Query" name:"AppId"`
+	AppCode       string                      `position:"Query" name:"AppCode"`
+	AppKey        string                      `position:"Query" name:"AppKey"`
 }
 
 // DescribeAppAttributesTag is a repeated param struct in DescribeAppAttributesRequest
@@ -95,10 +94,10 @@ type DescribeAppAttributesTag struct {
 // DescribeAppAttributesResponse is the response struct for api DescribeAppAttributes
 type DescribeAppAttributesResponse struct {
 	*responses.BaseResponse
-	RequestId  string                      `json:"RequestId" xml:"RequestId"`
-	TotalCount int                         `json:"TotalCount" xml:"TotalCount"`
-	PageSize   int                         `json:"PageSize" xml:"PageSize"`
 	PageNumber int                         `json:"PageNumber" xml:"PageNumber"`
+	RequestId  string                      `json:"RequestId" xml:"RequestId"`
+	PageSize   int                         `json:"PageSize" xml:"PageSize"`
+	TotalCount int                         `json:"TotalCount" xml:"TotalCount"`
 	Apps       AppsInDescribeAppAttributes `json:"Apps" xml:"Apps"`
 }
 

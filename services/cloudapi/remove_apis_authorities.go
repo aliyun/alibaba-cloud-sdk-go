@@ -21,7 +21,6 @@ import (
 )
 
 // RemoveApisAuthorities invokes the cloudapi.RemoveApisAuthorities API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/removeapisauthorities.html
 func (client *Client) RemoveApisAuthorities(request *RemoveApisAuthoritiesRequest) (response *RemoveApisAuthoritiesResponse, err error) {
 	response = CreateRemoveApisAuthoritiesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RemoveApisAuthorities(request *RemoveApisAuthoritiesReques
 }
 
 // RemoveApisAuthoritiesWithChan invokes the cloudapi.RemoveApisAuthorities API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/removeapisauthorities.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveApisAuthoritiesWithChan(request *RemoveApisAuthoritiesRequest) (<-chan *RemoveApisAuthoritiesResponse, <-chan error) {
 	responseChan := make(chan *RemoveApisAuthoritiesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RemoveApisAuthoritiesWithChan(request *RemoveApisAuthoriti
 }
 
 // RemoveApisAuthoritiesWithCallback invokes the cloudapi.RemoveApisAuthorities API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/removeapisauthorities.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveApisAuthoritiesWithCallback(request *RemoveApisAuthoritiesRequest, callback func(response *RemoveApisAuthoritiesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteApi invokes the cloudapi.DeleteApi API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/deleteapi.html
 func (client *Client) DeleteApi(request *DeleteApiRequest) (response *DeleteApiResponse, err error) {
 	response = CreateDeleteApiResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteApi(request *DeleteApiRequest) (response *DeleteApiR
 }
 
 // DeleteApiWithChan invokes the cloudapi.DeleteApi API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/deleteapi.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteApiWithChan(request *DeleteApiRequest) (<-chan *DeleteApiResponse, <-chan error) {
 	responseChan := make(chan *DeleteApiResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteApiWithChan(request *DeleteApiRequest) (<-chan *Dele
 }
 
 // DeleteApiWithCallback invokes the cloudapi.DeleteApi API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/deleteapi.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteApiWithCallback(request *DeleteApiRequest, callback func(response *DeleteApiResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

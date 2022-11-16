@@ -21,7 +21,6 @@ import (
 )
 
 // CreateApi invokes the cloudapi.CreateApi API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/createapi.html
 func (client *Client) CreateApi(request *CreateApiRequest) (response *CreateApiResponse, err error) {
 	response = CreateCreateApiResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateApi(request *CreateApiRequest) (response *CreateApiR
 }
 
 // CreateApiWithChan invokes the cloudapi.CreateApi API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/createapi.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateApiWithChan(request *CreateApiRequest) (<-chan *CreateApiResponse, <-chan error) {
 	responseChan := make(chan *CreateApiResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateApiWithChan(request *CreateApiRequest) (<-chan *Crea
 }
 
 // CreateApiWithCallback invokes the cloudapi.CreateApi API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/createapi.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateApiWithCallback(request *CreateApiRequest, callback func(response *CreateApiResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +76,7 @@ type CreateApiRequest struct {
 	AppCodeAuthType      string           `position:"Query" name:"AppCodeAuthType"`
 	Description          string           `position:"Query" name:"Description"`
 	DisableInternet      requests.Boolean `position:"Query" name:"DisableInternet"`
+	BackendId            string           `position:"Query" name:"BackendId"`
 	ConstantParameters   string           `position:"Query" name:"ConstantParameters"`
 	AuthType             string           `position:"Query" name:"AuthType"`
 	AllowSignatureMethod string           `position:"Query" name:"AllowSignatureMethod"`
@@ -99,6 +95,7 @@ type CreateApiRequest struct {
 	ResultType           string           `position:"Query" name:"ResultType"`
 	ApiName              string           `position:"Query" name:"ApiName"`
 	ResultSample         string           `position:"Query" name:"ResultSample"`
+	BackendEnable        requests.Boolean `position:"Query" name:"BackendEnable"`
 	ForceNonceCheck      requests.Boolean `position:"Query" name:"ForceNonceCheck"`
 	RequestConfig        string           `position:"Query" name:"RequestConfig"`
 	ResultBodyModel      string           `position:"Query" name:"ResultBodyModel"`
@@ -107,8 +104,8 @@ type CreateApiRequest struct {
 // CreateApiResponse is the response struct for api CreateApi
 type CreateApiResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	ApiId     string `json:"ApiId" xml:"ApiId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCreateApiRequest creates a request to invoke CreateApi API

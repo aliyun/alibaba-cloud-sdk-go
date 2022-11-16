@@ -17,15 +17,15 @@ package cloudapi
 
 // PurchasedApi is a nested struct in cloudapi response
 type PurchasedApi struct {
-	RegionId      string `json:"RegionId" xml:"RegionId"`
-	GroupId       string `json:"GroupId" xml:"GroupId"`
-	GroupName     string `json:"GroupName" xml:"GroupName"`
-	ApiId         string `json:"ApiId" xml:"ApiId"`
-	ApiName       string `json:"ApiName" xml:"ApiName"`
-	StageName     string `json:"StageName" xml:"StageName"`
-	Description   string `json:"Description" xml:"Description"`
-	PurchasedTime string `json:"PurchasedTime" xml:"PurchasedTime"`
-	DeployedTime  string `json:"DeployedTime" xml:"DeployedTime"`
-	ModifiedTime  string `json:"ModifiedTime" xml:"ModifiedTime"`
 	Visibility    string `json:"Visibility" xml:"Visibility"`
+	PurchasedTime string `json:"PurchasedTime" xml:"PurchasedTime"`
+	ApiId         string `json:"ApiId" xml:"ApiId"`
+	ModifiedTime  string `json:"ModifiedTime" xml:"ModifiedTime"`
+	Description   string `json:"Description" xml:"Description"`
+	GroupName     string `json:"GroupName" xml:"GroupName"`
+	GroupId       string `json:"GroupId" xml:"GroupId"`
+	DeployedTime  string `json:"DeployedTime" xml:"DeployedTime"`
+	StageName     string `json:"StageName" xml:"StageName"`
+	ApiName       string `json:"ApiName" xml:"ApiName"`
+	RegionId      string `json:"RegionId" xml:"RegionId"`
 }

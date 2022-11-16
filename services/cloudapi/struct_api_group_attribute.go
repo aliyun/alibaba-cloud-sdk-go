@@ -17,18 +17,19 @@ package cloudapi
 
 // ApiGroupAttribute is a nested struct in cloudapi response
 type ApiGroupAttribute struct {
-	GroupId       string                  `json:"GroupId" xml:"GroupId"`
-	GroupName     string                  `json:"GroupName" xml:"GroupName"`
-	SubDomain     string                  `json:"SubDomain" xml:"SubDomain"`
-	Description   string                  `json:"Description" xml:"Description"`
-	CreatedTime   string                  `json:"CreatedTime" xml:"CreatedTime"`
-	ModifiedTime  string                  `json:"ModifiedTime" xml:"ModifiedTime"`
-	RegionId      string                  `json:"RegionId" xml:"RegionId"`
-	TrafficLimit  int                     `json:"TrafficLimit" xml:"TrafficLimit"`
+	BasePath      string                  `json:"BasePath" xml:"BasePath"`
 	BillingStatus string                  `json:"BillingStatus" xml:"BillingStatus"`
-	IllegalStatus string                  `json:"IllegalStatus" xml:"IllegalStatus"`
+	TrafficLimit  int                     `json:"TrafficLimit" xml:"TrafficLimit"`
 	InstanceId    string                  `json:"InstanceId" xml:"InstanceId"`
 	InstanceType  string                  `json:"InstanceType" xml:"InstanceType"`
+	RegionId      string                  `json:"RegionId" xml:"RegionId"`
+	ModifiedTime  string                  `json:"ModifiedTime" xml:"ModifiedTime"`
+	GroupId       string                  `json:"GroupId" xml:"GroupId"`
+	GroupName     string                  `json:"GroupName" xml:"GroupName"`
+	Description   string                  `json:"Description" xml:"Description"`
+	IllegalStatus string                  `json:"IllegalStatus" xml:"IllegalStatus"`
 	HttpsPolicy   string                  `json:"HttpsPolicy" xml:"HttpsPolicy"`
+	SubDomain     string                  `json:"SubDomain" xml:"SubDomain"`
+	CreatedTime   string                  `json:"CreatedTime" xml:"CreatedTime"`
 	Tags          TagsInDescribeApiGroups `json:"Tags" xml:"Tags"`
 }

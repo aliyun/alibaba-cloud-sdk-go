@@ -17,9 +17,9 @@ package cloudapi
 
 // ApiSignatureItem is a nested struct in cloudapi response
 type ApiSignatureItem struct {
+	BoundTime     string `json:"BoundTime" xml:"BoundTime"`
 	ApiId         string `json:"ApiId" xml:"ApiId"`
-	ApiName       string `json:"ApiName" xml:"ApiName"`
 	SignatureId   string `json:"SignatureId" xml:"SignatureId"`
 	SignatureName string `json:"SignatureName" xml:"SignatureName"`
-	BoundTime     string `json:"BoundTime" xml:"BoundTime"`
+	ApiName       string `json:"ApiName" xml:"ApiName"`
 }

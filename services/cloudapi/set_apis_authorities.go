@@ -21,7 +21,6 @@ import (
 )
 
 // SetApisAuthorities invokes the cloudapi.SetApisAuthorities API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/setapisauthorities.html
 func (client *Client) SetApisAuthorities(request *SetApisAuthoritiesRequest) (response *SetApisAuthoritiesResponse, err error) {
 	response = CreateSetApisAuthoritiesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SetApisAuthorities(request *SetApisAuthoritiesRequest) (re
 }
 
 // SetApisAuthoritiesWithChan invokes the cloudapi.SetApisAuthorities API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/setapisauthorities.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetApisAuthoritiesWithChan(request *SetApisAuthoritiesRequest) (<-chan *SetApisAuthoritiesResponse, <-chan error) {
 	responseChan := make(chan *SetApisAuthoritiesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SetApisAuthoritiesWithChan(request *SetApisAuthoritiesRequ
 }
 
 // SetApisAuthoritiesWithCallback invokes the cloudapi.SetApisAuthorities API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/setapisauthorities.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetApisAuthoritiesWithCallback(request *SetApisAuthoritiesRequest, callback func(response *SetApisAuthoritiesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

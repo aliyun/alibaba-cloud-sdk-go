@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeApiLatencyData invokes the cloudapi.DescribeApiLatencyData API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/describeapilatencydata.html
 func (client *Client) DescribeApiLatencyData(request *DescribeApiLatencyDataRequest) (response *DescribeApiLatencyDataResponse, err error) {
 	response = CreateDescribeApiLatencyDataResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeApiLatencyData(request *DescribeApiLatencyDataRequ
 }
 
 // DescribeApiLatencyDataWithChan invokes the cloudapi.DescribeApiLatencyData API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/describeapilatencydata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeApiLatencyDataWithChan(request *DescribeApiLatencyDataRequest) (<-chan *DescribeApiLatencyDataResponse, <-chan error) {
 	responseChan := make(chan *DescribeApiLatencyDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeApiLatencyDataWithChan(request *DescribeApiLatency
 }
 
 // DescribeApiLatencyDataWithCallback invokes the cloudapi.DescribeApiLatencyData API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/describeapilatencydata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeApiLatencyDataWithCallback(request *DescribeApiLatencyDataRequest, callback func(response *DescribeApiLatencyDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,6 +71,7 @@ func (client *Client) DescribeApiLatencyDataWithCallback(request *DescribeApiLat
 // DescribeApiLatencyDataRequest is the request struct for api DescribeApiLatencyData
 type DescribeApiLatencyDataRequest struct {
 	*requests.RpcRequest
+	StageName     string `position:"Query" name:"StageName"`
 	GroupId       string `position:"Query" name:"GroupId"`
 	EndTime       string `position:"Query" name:"EndTime"`
 	StartTime     string `position:"Query" name:"StartTime"`

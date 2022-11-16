@@ -21,7 +21,6 @@ import (
 )
 
 // CreateTrafficControl invokes the cloudapi.CreateTrafficControl API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/createtrafficcontrol.html
 func (client *Client) CreateTrafficControl(request *CreateTrafficControlRequest) (response *CreateTrafficControlResponse, err error) {
 	response = CreateCreateTrafficControlResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateTrafficControl(request *CreateTrafficControlRequest)
 }
 
 // CreateTrafficControlWithChan invokes the cloudapi.CreateTrafficControl API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/createtrafficcontrol.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateTrafficControlWithChan(request *CreateTrafficControlRequest) (<-chan *CreateTrafficControlResponse, <-chan error) {
 	responseChan := make(chan *CreateTrafficControlResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateTrafficControlWithChan(request *CreateTrafficControl
 }
 
 // CreateTrafficControlWithCallback invokes the cloudapi.CreateTrafficControl API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/createtrafficcontrol.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateTrafficControlWithCallback(request *CreateTrafficControlRequest, callback func(response *CreateTrafficControlResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -88,8 +83,8 @@ type CreateTrafficControlRequest struct {
 // CreateTrafficControlResponse is the response struct for api CreateTrafficControl
 type CreateTrafficControlResponse struct {
 	*responses.BaseResponse
-	RequestId        string `json:"RequestId" xml:"RequestId"`
 	TrafficControlId string `json:"TrafficControlId" xml:"TrafficControlId"`
+	RequestId        string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCreateTrafficControlRequest creates a request to invoke CreateTrafficControl API

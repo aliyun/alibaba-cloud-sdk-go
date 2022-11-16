@@ -17,11 +17,11 @@ package cloudapi
 
 // SignatureInfo is a nested struct in cloudapi response
 type SignatureInfo struct {
-	RegionId        string `json:"RegionId" xml:"RegionId"`
+	ModifiedTime    string `json:"ModifiedTime" xml:"ModifiedTime"`
 	SignatureId     string `json:"SignatureId" xml:"SignatureId"`
+	SignatureSecret string `json:"SignatureSecret" xml:"SignatureSecret"`
 	SignatureName   string `json:"SignatureName" xml:"SignatureName"`
 	SignatureKey    string `json:"SignatureKey" xml:"SignatureKey"`
-	SignatureSecret string `json:"SignatureSecret" xml:"SignatureSecret"`
 	CreatedTime     string `json:"CreatedTime" xml:"CreatedTime"`
-	ModifiedTime    string `json:"ModifiedTime" xml:"ModifiedTime"`
+	RegionId        string `json:"RegionId" xml:"RegionId"`
 }

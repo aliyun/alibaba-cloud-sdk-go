@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeApisByIpControl invokes the cloudapi.DescribeApisByIpControl API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/describeapisbyipcontrol.html
 func (client *Client) DescribeApisByIpControl(request *DescribeApisByIpControlRequest) (response *DescribeApisByIpControlResponse, err error) {
 	response = CreateDescribeApisByIpControlResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeApisByIpControl(request *DescribeApisByIpControlRe
 }
 
 // DescribeApisByIpControlWithChan invokes the cloudapi.DescribeApisByIpControl API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/describeapisbyipcontrol.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeApisByIpControlWithChan(request *DescribeApisByIpControlRequest) (<-chan *DescribeApisByIpControlResponse, <-chan error) {
 	responseChan := make(chan *DescribeApisByIpControlResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeApisByIpControlWithChan(request *DescribeApisByIpC
 }
 
 // DescribeApisByIpControlWithCallback invokes the cloudapi.DescribeApisByIpControl API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/describeapisbyipcontrol.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeApisByIpControlWithCallback(request *DescribeApisByIpControlRequest, callback func(response *DescribeApisByIpControlResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -85,10 +80,10 @@ type DescribeApisByIpControlRequest struct {
 // DescribeApisByIpControlResponse is the response struct for api DescribeApisByIpControl
 type DescribeApisByIpControlResponse struct {
 	*responses.BaseResponse
-	RequestId  string                            `json:"RequestId" xml:"RequestId"`
-	TotalCount int                               `json:"TotalCount" xml:"TotalCount"`
-	PageSize   int                               `json:"PageSize" xml:"PageSize"`
 	PageNumber int                               `json:"PageNumber" xml:"PageNumber"`
+	RequestId  string                            `json:"RequestId" xml:"RequestId"`
+	PageSize   int                               `json:"PageSize" xml:"PageSize"`
+	TotalCount int                               `json:"TotalCount" xml:"TotalCount"`
 	ApiInfos   ApiInfosInDescribeApisByIpControl `json:"ApiInfos" xml:"ApiInfos"`
 }
 

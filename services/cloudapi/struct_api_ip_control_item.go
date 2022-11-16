@@ -17,9 +17,9 @@ package cloudapi
 
 // ApiIpControlItem is a nested struct in cloudapi response
 type ApiIpControlItem struct {
+	BoundTime     string `json:"BoundTime" xml:"BoundTime"`
 	ApiId         string `json:"ApiId" xml:"ApiId"`
-	ApiName       string `json:"ApiName" xml:"ApiName"`
 	IpControlId   string `json:"IpControlId" xml:"IpControlId"`
 	IpControlName string `json:"IpControlName" xml:"IpControlName"`
-	BoundTime     string `json:"BoundTime" xml:"BoundTime"`
+	ApiName       string `json:"ApiName" xml:"ApiName"`
 }

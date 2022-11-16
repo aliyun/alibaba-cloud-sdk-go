@@ -17,13 +17,17 @@ package cloudapi
 
 // DomainItem is a nested struct in cloudapi response
 type DomainItem struct {
-	DomainRemark          string `json:"DomainRemark" xml:"DomainRemark"`
-	DomainName            string `json:"DomainName" xml:"DomainName"`
-	DomainCNAMEStatus     string `json:"DomainCNAMEStatus" xml:"DomainCNAMEStatus"`
-	CertificateId         string `json:"CertificateId" xml:"CertificateId"`
-	DomainWebSocketStatus string `json:"DomainWebSocketStatus" xml:"DomainWebSocketStatus"`
-	BindStageName         string `json:"BindStageName" xml:"BindStageName"`
-	DomainLegalStatus     string `json:"DomainLegalStatus" xml:"DomainLegalStatus"`
-	CertificateName       string `json:"CertificateName" xml:"CertificateName"`
-	DomainBindingStatus   string `json:"DomainBindingStatus" xml:"DomainBindingStatus"`
+	WildcardDomainPatterns string `json:"WildcardDomainPatterns" xml:"WildcardDomainPatterns"`
+	CustomDomainType       string `json:"CustomDomainType" xml:"CustomDomainType"`
+	DomainName             string `json:"DomainName" xml:"DomainName"`
+	WssEnable              string `json:"WssEnable" xml:"WssEnable"`
+	DomainWebSocketStatus  string `json:"DomainWebSocketStatus" xml:"DomainWebSocketStatus"`
+	DomainLegalStatus      string `json:"DomainLegalStatus" xml:"DomainLegalStatus"`
+	IsHttpRedirectToHttps  bool   `json:"IsHttpRedirectToHttps" xml:"IsHttpRedirectToHttps"`
+	DomainBindingStatus    string `json:"DomainBindingStatus" xml:"DomainBindingStatus"`
+	DomainRemark           string `json:"DomainRemark" xml:"DomainRemark"`
+	DomainCNAMEStatus      string `json:"DomainCNAMEStatus" xml:"DomainCNAMEStatus"`
+	CertificateId          string `json:"CertificateId" xml:"CertificateId"`
+	BindStageName          string `json:"BindStageName" xml:"BindStageName"`
+	CertificateName        string `json:"CertificateName" xml:"CertificateName"`
 }

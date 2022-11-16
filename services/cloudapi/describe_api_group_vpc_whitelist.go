@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeApiGroupVpcWhitelist invokes the cloudapi.DescribeApiGroupVpcWhitelist API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/describeapigroupvpcwhitelist.html
 func (client *Client) DescribeApiGroupVpcWhitelist(request *DescribeApiGroupVpcWhitelistRequest) (response *DescribeApiGroupVpcWhitelistResponse, err error) {
 	response = CreateDescribeApiGroupVpcWhitelistResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeApiGroupVpcWhitelist(request *DescribeApiGroupVpcW
 }
 
 // DescribeApiGroupVpcWhitelistWithChan invokes the cloudapi.DescribeApiGroupVpcWhitelist API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/describeapigroupvpcwhitelist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeApiGroupVpcWhitelistWithChan(request *DescribeApiGroupVpcWhitelistRequest) (<-chan *DescribeApiGroupVpcWhitelistResponse, <-chan error) {
 	responseChan := make(chan *DescribeApiGroupVpcWhitelistResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeApiGroupVpcWhitelistWithChan(request *DescribeApiG
 }
 
 // DescribeApiGroupVpcWhitelistWithCallback invokes the cloudapi.DescribeApiGroupVpcWhitelist API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/describeapigroupvpcwhitelist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeApiGroupVpcWhitelistWithCallback(request *DescribeApiGroupVpcWhitelistRequest, callback func(response *DescribeApiGroupVpcWhitelistResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,8 +78,8 @@ type DescribeApiGroupVpcWhitelistRequest struct {
 // DescribeApiGroupVpcWhitelistResponse is the response struct for api DescribeApiGroupVpcWhitelist
 type DescribeApiGroupVpcWhitelistResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	VpcIds    string `json:"VpcIds" xml:"VpcIds"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDescribeApiGroupVpcWhitelistRequest creates a request to invoke DescribeApiGroupVpcWhitelist API

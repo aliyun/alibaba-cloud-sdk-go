@@ -18,8 +18,10 @@ package cloudapi
 // ApiInfo is a nested struct in cloudapi response
 type ApiInfo struct {
 	ApiId       string `json:"ApiId" xml:"ApiId"`
+	Path        string `json:"Path" xml:"Path"`
 	RegionId    string `json:"RegionId" xml:"RegionId"`
 	BoundTime   string `json:"BoundTime" xml:"BoundTime"`
+	Method      string `json:"Method" xml:"Method"`
 	GroupName   string `json:"GroupName" xml:"GroupName"`
 	GroupId     string `json:"GroupId" xml:"GroupId"`
 	ApiName     string `json:"ApiName" xml:"ApiName"`

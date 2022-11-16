@@ -21,7 +21,6 @@ import (
 )
 
 // CreateIpControl invokes the cloudapi.CreateIpControl API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/createipcontrol.html
 func (client *Client) CreateIpControl(request *CreateIpControlRequest) (response *CreateIpControlResponse, err error) {
 	response = CreateCreateIpControlResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateIpControl(request *CreateIpControlRequest) (response
 }
 
 // CreateIpControlWithChan invokes the cloudapi.CreateIpControl API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/createipcontrol.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateIpControlWithChan(request *CreateIpControlRequest) (<-chan *CreateIpControlResponse, <-chan error) {
 	responseChan := make(chan *CreateIpControlResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateIpControlWithChan(request *CreateIpControlRequest) (
 }
 
 // CreateIpControlWithCallback invokes the cloudapi.CreateIpControl API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/createipcontrol.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateIpControlWithCallback(request *CreateIpControlRequest, callback func(response *CreateIpControlResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,8 +87,8 @@ type CreateIpControlIpControlPolicys struct {
 // CreateIpControlResponse is the response struct for api CreateIpControl
 type CreateIpControlResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
 	IpControlId string `json:"IpControlId" xml:"IpControlId"`
+	RequestId   string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCreateIpControlRequest creates a request to invoke CreateIpControl API

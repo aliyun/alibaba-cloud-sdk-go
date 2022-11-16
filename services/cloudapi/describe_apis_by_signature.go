@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeApisBySignature invokes the cloudapi.DescribeApisBySignature API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/describeapisbysignature.html
 func (client *Client) DescribeApisBySignature(request *DescribeApisBySignatureRequest) (response *DescribeApisBySignatureResponse, err error) {
 	response = CreateDescribeApisBySignatureResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeApisBySignature(request *DescribeApisBySignatureRe
 }
 
 // DescribeApisBySignatureWithChan invokes the cloudapi.DescribeApisBySignature API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/describeapisbysignature.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeApisBySignatureWithChan(request *DescribeApisBySignatureRequest) (<-chan *DescribeApisBySignatureResponse, <-chan error) {
 	responseChan := make(chan *DescribeApisBySignatureResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeApisBySignatureWithChan(request *DescribeApisBySig
 }
 
 // DescribeApisBySignatureWithCallback invokes the cloudapi.DescribeApisBySignature API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/describeapisbysignature.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeApisBySignatureWithCallback(request *DescribeApisBySignatureRequest, callback func(response *DescribeApisBySignatureResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -85,10 +80,10 @@ type DescribeApisBySignatureRequest struct {
 // DescribeApisBySignatureResponse is the response struct for api DescribeApisBySignature
 type DescribeApisBySignatureResponse struct {
 	*responses.BaseResponse
-	RequestId  string                            `json:"RequestId" xml:"RequestId"`
-	TotalCount int                               `json:"TotalCount" xml:"TotalCount"`
-	PageSize   int                               `json:"PageSize" xml:"PageSize"`
 	PageNumber int                               `json:"PageNumber" xml:"PageNumber"`
+	RequestId  string                            `json:"RequestId" xml:"RequestId"`
+	PageSize   int                               `json:"PageSize" xml:"PageSize"`
+	TotalCount int                               `json:"TotalCount" xml:"TotalCount"`
 	ApiInfos   ApiInfosInDescribeApisBySignature `json:"ApiInfos" xml:"ApiInfos"`
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribePurchasedApiGroups invokes the cloudapi.DescribePurchasedApiGroups API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/describepurchasedapigroups.html
 func (client *Client) DescribePurchasedApiGroups(request *DescribePurchasedApiGroupsRequest) (response *DescribePurchasedApiGroupsResponse, err error) {
 	response = CreateDescribePurchasedApiGroupsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribePurchasedApiGroups(request *DescribePurchasedApiGr
 }
 
 // DescribePurchasedApiGroupsWithChan invokes the cloudapi.DescribePurchasedApiGroups API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/describepurchasedapigroups.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribePurchasedApiGroupsWithChan(request *DescribePurchasedApiGroupsRequest) (<-chan *DescribePurchasedApiGroupsResponse, <-chan error) {
 	responseChan := make(chan *DescribePurchasedApiGroupsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribePurchasedApiGroupsWithChan(request *DescribePurcha
 }
 
 // DescribePurchasedApiGroupsWithCallback invokes the cloudapi.DescribePurchasedApiGroups API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/describepurchasedapigroups.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribePurchasedApiGroupsWithCallback(request *DescribePurchasedApiGroupsRequest, callback func(response *DescribePurchasedApiGroupsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,10 +79,10 @@ type DescribePurchasedApiGroupsRequest struct {
 // DescribePurchasedApiGroupsResponse is the response struct for api DescribePurchasedApiGroups
 type DescribePurchasedApiGroupsResponse struct {
 	*responses.BaseResponse
-	RequestId                   string                      `json:"RequestId" xml:"RequestId"`
-	TotalCount                  int                         `json:"TotalCount" xml:"TotalCount"`
-	PageSize                    int                         `json:"PageSize" xml:"PageSize"`
 	PageNumber                  int                         `json:"PageNumber" xml:"PageNumber"`
+	RequestId                   string                      `json:"RequestId" xml:"RequestId"`
+	PageSize                    int                         `json:"PageSize" xml:"PageSize"`
+	TotalCount                  int                         `json:"TotalCount" xml:"TotalCount"`
 	PurchasedApiGroupAttributes PurchasedApiGroupAttributes `json:"PurchasedApiGroupAttributes" xml:"PurchasedApiGroupAttributes"`
 }
 

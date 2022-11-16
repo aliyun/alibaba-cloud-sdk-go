@@ -21,7 +21,6 @@ import (
 )
 
 // SetTrafficControlApis invokes the cloudapi.SetTrafficControlApis API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/settrafficcontrolapis.html
 func (client *Client) SetTrafficControlApis(request *SetTrafficControlApisRequest) (response *SetTrafficControlApisResponse, err error) {
 	response = CreateSetTrafficControlApisResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SetTrafficControlApis(request *SetTrafficControlApisReques
 }
 
 // SetTrafficControlApisWithChan invokes the cloudapi.SetTrafficControlApis API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/settrafficcontrolapis.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetTrafficControlApisWithChan(request *SetTrafficControlApisRequest) (<-chan *SetTrafficControlApisResponse, <-chan error) {
 	responseChan := make(chan *SetTrafficControlApisResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SetTrafficControlApisWithChan(request *SetTrafficControlAp
 }
 
 // SetTrafficControlApisWithCallback invokes the cloudapi.SetTrafficControlApis API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/settrafficcontrolapis.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetTrafficControlApisWithCallback(request *SetTrafficControlApisRequest, callback func(response *SetTrafficControlApisResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -17,13 +17,15 @@ package cloudapi
 
 // DeployedApiItem is a nested struct in cloudapi response
 type DeployedApiItem struct {
-	RegionId     string `json:"RegionId" xml:"RegionId"`
-	ApiId        string `json:"ApiId" xml:"ApiId"`
-	ApiName      string `json:"ApiName" xml:"ApiName"`
-	GroupId      string `json:"GroupId" xml:"GroupId"`
-	GroupName    string `json:"GroupName" xml:"GroupName"`
-	StageName    string `json:"StageName" xml:"StageName"`
 	Visibility   string `json:"Visibility" xml:"Visibility"`
+	ApiId        string `json:"ApiId" xml:"ApiId"`
 	Description  string `json:"Description" xml:"Description"`
+	GroupName    string `json:"GroupName" xml:"GroupName"`
+	GroupId      string `json:"GroupId" xml:"GroupId"`
 	DeployedTime string `json:"DeployedTime" xml:"DeployedTime"`
+	StageName    string `json:"StageName" xml:"StageName"`
+	ApiName      string `json:"ApiName" xml:"ApiName"`
+	RegionId     string `json:"RegionId" xml:"RegionId"`
+	ApiPath      string `json:"ApiPath" xml:"ApiPath"`
+	ApiMethod    string `json:"ApiMethod" xml:"ApiMethod"`
 }

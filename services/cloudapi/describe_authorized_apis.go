@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeAuthorizedApis invokes the cloudapi.DescribeAuthorizedApis API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/describeauthorizedapis.html
 func (client *Client) DescribeAuthorizedApis(request *DescribeAuthorizedApisRequest) (response *DescribeAuthorizedApisResponse, err error) {
 	response = CreateDescribeAuthorizedApisResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeAuthorizedApis(request *DescribeAuthorizedApisRequ
 }
 
 // DescribeAuthorizedApisWithChan invokes the cloudapi.DescribeAuthorizedApis API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/describeauthorizedapis.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAuthorizedApisWithChan(request *DescribeAuthorizedApisRequest) (<-chan *DescribeAuthorizedApisResponse, <-chan error) {
 	responseChan := make(chan *DescribeAuthorizedApisResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeAuthorizedApisWithChan(request *DescribeAuthorized
 }
 
 // DescribeAuthorizedApisWithCallback invokes the cloudapi.DescribeAuthorizedApis API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/describeauthorizedapis.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAuthorizedApisWithCallback(request *DescribeAuthorizedApisRequest, callback func(response *DescribeAuthorizedApisResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -85,10 +80,10 @@ type DescribeAuthorizedApisRequest struct {
 // DescribeAuthorizedApisResponse is the response struct for api DescribeAuthorizedApis
 type DescribeAuthorizedApisResponse struct {
 	*responses.BaseResponse
-	RequestId      string         `json:"RequestId" xml:"RequestId"`
-	TotalCount     int            `json:"TotalCount" xml:"TotalCount"`
-	PageSize       int            `json:"PageSize" xml:"PageSize"`
 	PageNumber     int            `json:"PageNumber" xml:"PageNumber"`
+	RequestId      string         `json:"RequestId" xml:"RequestId"`
+	PageSize       int            `json:"PageSize" xml:"PageSize"`
+	TotalCount     int            `json:"TotalCount" xml:"TotalCount"`
 	AuthorizedApis AuthorizedApis `json:"AuthorizedApis" xml:"AuthorizedApis"`
 }
 

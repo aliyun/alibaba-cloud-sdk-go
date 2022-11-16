@@ -21,7 +21,6 @@ import (
 )
 
 // AddIpControlPolicyItem invokes the cloudapi.AddIpControlPolicyItem API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/addipcontrolpolicyitem.html
 func (client *Client) AddIpControlPolicyItem(request *AddIpControlPolicyItemRequest) (response *AddIpControlPolicyItemResponse, err error) {
 	response = CreateAddIpControlPolicyItemResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AddIpControlPolicyItem(request *AddIpControlPolicyItemRequ
 }
 
 // AddIpControlPolicyItemWithChan invokes the cloudapi.AddIpControlPolicyItem API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/addipcontrolpolicyitem.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddIpControlPolicyItemWithChan(request *AddIpControlPolicyItemRequest) (<-chan *AddIpControlPolicyItemResponse, <-chan error) {
 	responseChan := make(chan *AddIpControlPolicyItemResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AddIpControlPolicyItemWithChan(request *AddIpControlPolicy
 }
 
 // AddIpControlPolicyItemWithCallback invokes the cloudapi.AddIpControlPolicyItem API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/addipcontrolpolicyitem.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddIpControlPolicyItemWithCallback(request *AddIpControlPolicyItemRequest, callback func(response *AddIpControlPolicyItemResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -85,8 +80,8 @@ type AddIpControlPolicyItemRequest struct {
 // AddIpControlPolicyItemResponse is the response struct for api AddIpControlPolicyItem
 type AddIpControlPolicyItemResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
 	PolicyItemId string `json:"PolicyItemId" xml:"PolicyItemId"`
+	RequestId    string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateAddIpControlPolicyItemRequest creates a request to invoke AddIpControlPolicyItem API

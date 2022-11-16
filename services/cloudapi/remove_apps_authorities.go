@@ -21,7 +21,6 @@ import (
 )
 
 // RemoveAppsAuthorities invokes the cloudapi.RemoveAppsAuthorities API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/removeappsauthorities.html
 func (client *Client) RemoveAppsAuthorities(request *RemoveAppsAuthoritiesRequest) (response *RemoveAppsAuthoritiesResponse, err error) {
 	response = CreateRemoveAppsAuthoritiesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RemoveAppsAuthorities(request *RemoveAppsAuthoritiesReques
 }
 
 // RemoveAppsAuthoritiesWithChan invokes the cloudapi.RemoveAppsAuthorities API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/removeappsauthorities.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveAppsAuthoritiesWithChan(request *RemoveAppsAuthoritiesRequest) (<-chan *RemoveAppsAuthoritiesResponse, <-chan error) {
 	responseChan := make(chan *RemoveAppsAuthoritiesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RemoveAppsAuthoritiesWithChan(request *RemoveAppsAuthoriti
 }
 
 // RemoveAppsAuthoritiesWithCallback invokes the cloudapi.RemoveAppsAuthorities API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/removeappsauthorities.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveAppsAuthoritiesWithCallback(request *RemoveAppsAuthoritiesRequest, callback func(response *RemoveAppsAuthoritiesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
