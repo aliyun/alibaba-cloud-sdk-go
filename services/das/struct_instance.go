@@ -28,4 +28,9 @@ type Instance struct {
 	InstanceId    string `json:"InstanceId" xml:"InstanceId"`
 	NodeId        string `json:"NodeId" xml:"NodeId"`
 	EngineVersion string `json:"EngineVersion" xml:"EngineVersion"`
+	InstanceAlias string `json:"InstanceAlias" xml:"InstanceAlias"`
+	Cpu           string `json:"Cpu" xml:"Cpu"`
+	Memory        int    `json:"Memory" xml:"Memory"`
+	Storage       int    `json:"Storage" xml:"Storage"`
+	Category      string `json:"Category" xml:"Category"`
 }

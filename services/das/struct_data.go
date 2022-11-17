@@ -131,9 +131,11 @@ type Data struct {
 	List                                                    ListInDescribeCacheAnalysisJobs                         `json:"List" xml:"List"`
 	ConfigFailInstanceList                                  []ConfigFailInstanceList                                `json:"ConfigFailInstanceList" xml:"ConfigFailInstanceList"`
 	ConfigSuccessInstanceList                               []ConfigSuccessInstanceList                             `json:"ConfigSuccessInstanceList" xml:"ConfigSuccessInstanceList"`
+	SourceStats                                             []SourceStats                                           `json:"SourceStats" xml:"SourceStats"`
 	EnableAutoResourceOptimizeList                          []EnableAutoResourceOptimizeList                        `json:"EnableAutoResourceOptimizeList" xml:"EnableAutoResourceOptimizeList"`
 	HasEnableRuleButNotDasProList                           []HasEnableRuleButNotDasProList                         `json:"HasEnableRuleButNotDasProList" xml:"HasEnableRuleButNotDasProList"`
 	BigKeys                                                 BigKeysInCreateCacheAnalysisJob                         `json:"BigKeys" xml:"BigKeys"`
+	Sessions                                                []Sessions                                              `json:"Sessions" xml:"Sessions"`
 	EnableAutoThrottleList                                  []EnableAutoThrottleList                                `json:"EnableAutoThrottleList" xml:"EnableAutoThrottleList"`
 	Result                                                  []List                                                  `json:"result" xml:"result"`
 }
