@@ -1,3 +1,7 @@
+2022-11-17 Version: v1.62.20
+- Generated 2020-04-07 for `cas`.
+- Support GetCertWarehouseQuota.
+
 2022-11-17 Version: v1.62.19
 - Generated 2017-08-01 for `Edas`.
 - Modify InsertK8sApplication API.

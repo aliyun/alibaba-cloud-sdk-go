@@ -36,4 +36,20 @@ type CertificateOrderListItem struct {
 	Status          string `json:"Status" xml:"Status"`
 	TrusteeStatus   string `json:"TrusteeStatus" xml:"TrusteeStatus"`
 	WildDomainCount int64  `json:"WildDomainCount" xml:"WildDomainCount"`
+	CertificateId   int64  `json:"CertificateId" xml:"CertificateId"`
+	Name            string `json:"Name" xml:"Name"`
+	CommonName      string `json:"CommonName" xml:"CommonName"`
+	Fingerprint     string `json:"Fingerprint" xml:"Fingerprint"`
+	Sha2            string `json:"Sha2" xml:"Sha2"`
+	SerialNo        string `json:"SerialNo" xml:"SerialNo"`
+	Issuer          string `json:"Issuer" xml:"Issuer"`
+	OrgName         string `json:"OrgName" xml:"OrgName"`
+	Province        string `json:"Province" xml:"Province"`
+	City            string `json:"City" xml:"City"`
+	Country         string `json:"Country" xml:"Country"`
+	Sans            string `json:"Sans" xml:"Sans"`
+	Expired         bool   `json:"Expired" xml:"Expired"`
+	Upload          bool   `json:"Upload" xml:"Upload"`
+	StartDate       string `json:"StartDate" xml:"StartDate"`
+	EndDate         string `json:"EndDate" xml:"EndDate"`
 }

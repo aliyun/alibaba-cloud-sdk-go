@@ -81,7 +81,8 @@ type UploadPCACertRequest struct {
 // UploadPCACertResponse is the response struct for api UploadPCACert
 type UploadPCACertResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
+	Identifier string `json:"Identifier" xml:"Identifier"`
 }
 
 // CreateUploadPCACertRequest creates a request to invoke UploadPCACert API

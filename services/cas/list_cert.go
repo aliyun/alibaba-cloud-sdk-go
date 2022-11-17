@@ -71,11 +71,12 @@ func (client *Client) ListCertWithCallback(request *ListCertRequest, callback fu
 // ListCertRequest is the request struct for api ListCert
 type ListCertRequest struct {
 	*requests.RpcRequest
-	ShowSize    requests.Integer `position:"Query" name:"ShowSize"`
-	CurrentPage requests.Integer `position:"Query" name:"CurrentPage"`
 	SourceIp    string           `position:"Query" name:"SourceIp"`
 	WarehouseId requests.Integer `position:"Query" name:"WarehouseId"`
+	SourceType  string           `position:"Query" name:"SourceType"`
 	KeyWord     string           `position:"Query" name:"KeyWord"`
+	ShowSize    requests.Integer `position:"Query" name:"ShowSize"`
+	CurrentPage requests.Integer `position:"Query" name:"CurrentPage"`
 	Status      string           `position:"Query" name:"Status"`
 }
 

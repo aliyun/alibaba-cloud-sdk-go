@@ -71,10 +71,10 @@ func (client *Client) ListUserCertificateOrderWithCallback(request *ListUserCert
 // ListUserCertificateOrderRequest is the request struct for api ListUserCertificateOrder
 type ListUserCertificateOrderRequest struct {
 	*requests.RpcRequest
-	SourceIp    string           `position:"Query" name:"SourceIp"`
-	Keyword     string           `position:"Query" name:"Keyword"`
 	ShowSize    requests.Integer `position:"Query" name:"ShowSize"`
 	CurrentPage requests.Integer `position:"Query" name:"CurrentPage"`
+	SourceIp    string           `position:"Query" name:"SourceIp"`
+	Keyword     string           `position:"Query" name:"Keyword"`
 	Status      string           `position:"Query" name:"Status"`
 	OrderType   string           `position:"Query" name:"OrderType"`
 }
