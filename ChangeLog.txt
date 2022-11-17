@@ -1,3 +1,7 @@
+2022-11-17 Version: v1.62.21
+- Generated 2018-01-15 for `dcdn`.
+- Add DescribeRDDomainConfig.
+
 2022-11-17 Version: v1.62.20
 - Generated 2020-04-07 for `cas`.
 - Support GetCertWarehouseQuota.
