@@ -1,3 +1,7 @@
+2022-11-17 Version: v1.62.19
+- Generated 2017-08-01 for `Edas`.
+- Modify InsertK8sApplication API.
+
 2022-11-17 Version: v1.62.18
 - Generated 2020-01-16 for `DAS`.
 - Add Parameter change.

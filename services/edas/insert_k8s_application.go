@@ -96,6 +96,7 @@ type InsertK8sApplicationRequest struct {
 	EmptyDirs                string `position:"Query" name:"EmptyDirs"`
 	PackageType              string `position:"Query" name:"PackageType"`
 	LosslessRuleRelated      string `position:"Query" name:"LosslessRuleRelated"`
+	SecretName               string `position:"Query" name:"SecretName"`
 	RuntimeClassName         string `position:"Query" name:"RuntimeClassName"`
 	PostStart                string `position:"Query" name:"PostStart"`
 	CustomAffinity           string `position:"Query" name:"CustomAffinity"`
@@ -140,6 +141,7 @@ type InsertK8sApplicationRequest struct {
 	ImageUrl                 string `position:"Query" name:"ImageUrl"`
 	PvcMountDescs            string `position:"Query" name:"PvcMountDescs"`
 	Namespace                string `position:"Query" name:"Namespace"`
+	ContainerRegistryId      string `position:"Query" name:"ContainerRegistryId"`
 	AppTemplateName          string `position:"Query" name:"AppTemplateName"`
 	ApplicationDescription   string `position:"Query" name:"ApplicationDescription"`
 	LosslessRuleAligned      string `position:"Query" name:"LosslessRuleAligned"`
@@ -161,7 +163,7 @@ func CreateInsertK8sApplicationRequest() (request *InsertK8sApplicationRequest) 
 	request = &InsertK8sApplicationRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "InsertK8sApplication", "/pop/v5/k8s/acs/create_k8s_app", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "InsertK8sApplication", "/pop/v5/k8s/acs/create_k8s_app", "Edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -24,4 +24,5 @@ type ClusterMember struct {
 	CreateTime      int64  `json:"CreateTime" xml:"CreateTime"`
 	ClusterMemberId string `json:"ClusterMemberId" xml:"ClusterMemberId"`
 	ClusterId       string `json:"ClusterId" xml:"ClusterId"`
+	PrivateIp       string `json:"PrivateIp" xml:"PrivateIp"`
 }

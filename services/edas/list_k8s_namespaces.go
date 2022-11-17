@@ -88,7 +88,7 @@ func CreateListK8sNamespacesRequest() (request *ListK8sNamespacesRequest) {
 	request = &ListK8sNamespacesRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ListK8sNamespaces", "/pop/v5/k8s/acs/k8s_namespace", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ListK8sNamespaces", "/pop/v5/k8s/acs/k8s_namespace", "Edas", "openAPI")
 	request.Method = requests.GET
 	return
 }

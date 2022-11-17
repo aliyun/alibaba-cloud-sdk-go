@@ -21,6 +21,7 @@ type Applcation struct {
 	CreateTime           int64         `json:"CreateTime" xml:"CreateTime"`
 	Dockerize            bool          `json:"Dockerize" xml:"Dockerize"`
 	SlbInfo              string        `json:"SlbInfo" xml:"SlbInfo"`
+	AppPhase             string        `json:"AppPhase" xml:"AppPhase"`
 	RegionId             string        `json:"RegionId" xml:"RegionId"`
 	SlbPort              int           `json:"SlbPort" xml:"SlbPort"`
 	UserId               string        `json:"UserId" xml:"UserId"`

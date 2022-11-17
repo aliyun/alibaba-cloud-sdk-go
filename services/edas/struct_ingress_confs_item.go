@@ -29,5 +29,7 @@ type IngressConfsItem struct {
 	OfficalRequestUrl string      `json:"OfficalRequestUrl" xml:"OfficalRequestUrl"`
 	MseGatewayId      string      `json:"MseGatewayId" xml:"MseGatewayId"`
 	MseGatewayName    string      `json:"MseGatewayName" xml:"MseGatewayName"`
+	Annotations       string      `json:"Annotations" xml:"Annotations"`
+	Labels            string      `json:"Labels" xml:"Labels"`
 	Rules             []RulesItem `json:"Rules" xml:"Rules"`
 }

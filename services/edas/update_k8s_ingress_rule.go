@@ -74,7 +74,9 @@ type UpdateK8sIngressRuleRequest struct {
 	Namespace   string `position:"Query" name:"Namespace"`
 	Name        string `position:"Query" name:"Name"`
 	IngressConf string `position:"Query" name:"IngressConf"`
+	Annotations string `position:"Query" name:"Annotations"`
 	ClusterId   string `position:"Query" name:"ClusterId"`
+	Labels      string `position:"Query" name:"Labels"`
 }
 
 // UpdateK8sIngressRuleResponse is the response struct for api UpdateK8sIngressRule
@@ -89,7 +91,7 @@ func CreateUpdateK8sIngressRuleRequest() (request *UpdateK8sIngressRuleRequest) 
 	request = &UpdateK8sIngressRuleRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "UpdateK8sIngressRule", "/pop/v5/k8s/acs/k8s_ingress", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "UpdateK8sIngressRule", "/pop/v5/k8s/acs/k8s_ingress", "Edas", "openAPI")
 	request.Method = requests.PUT
 	return
 }

@@ -90,7 +90,7 @@ func CreateSynchronizeResourceRequest() (request *SynchronizeResourceRequest) {
 	request = &SynchronizeResourceRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "SynchronizeResource", "/pop/v5/resource/pop_sync_resource", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "SynchronizeResource", "/pop/v5/resource/pop_sync_resource", "Edas", "openAPI")
 	request.Method = requests.GET
 	return
 }

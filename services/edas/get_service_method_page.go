@@ -106,7 +106,7 @@ func CreateGetServiceMethodPageRequest() (request *GetServiceMethodPageRequest) 
 	request = &GetServiceMethodPageRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "GetServiceMethodPage", "/pop/sp/api/mseForOam/getServiceMethodPage", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "GetServiceMethodPage", "/pop/sp/api/mseForOam/getServiceMethodPage", "Edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

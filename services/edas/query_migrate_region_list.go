@@ -88,7 +88,7 @@ func CreateQueryMigrateRegionListRequest() (request *QueryMigrateRegionListReque
 	request = &QueryMigrateRegionListRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "QueryMigrateRegionList", "/pop/v5/resource/migrate_region_select", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "QueryMigrateRegionList", "/pop/v5/resource/migrate_region_select", "Edas", "openAPI")
 	request.Method = requests.GET
 	return
 }

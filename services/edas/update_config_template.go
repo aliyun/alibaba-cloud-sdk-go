@@ -91,7 +91,7 @@ func CreateUpdateConfigTemplateRequest() (request *UpdateConfigTemplateRequest) 
 	request = &UpdateConfigTemplateRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "UpdateConfigTemplate", "/pop/v5/config_template", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "UpdateConfigTemplate", "/pop/v5/config_template", "Edas", "openAPI")
 	request.Method = requests.PUT
 	return
 }

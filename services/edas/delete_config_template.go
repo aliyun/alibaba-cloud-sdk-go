@@ -87,7 +87,7 @@ func CreateDeleteConfigTemplateRequest() (request *DeleteConfigTemplateRequest) 
 	request = &DeleteConfigTemplateRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "DeleteConfigTemplate", "/pop/v5/config_template", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "DeleteConfigTemplate", "/pop/v5/config_template", "Edas", "openAPI")
 	request.Method = requests.DELETE
 	return
 }

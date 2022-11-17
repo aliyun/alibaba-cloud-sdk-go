@@ -88,7 +88,7 @@ func CreateUpdateRoleRequest() (request *UpdateRoleRequest) {
 	request = &UpdateRoleRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "UpdateRole", "/pop/v5/account/edit_role", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "UpdateRole", "/pop/v5/account/edit_role", "Edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

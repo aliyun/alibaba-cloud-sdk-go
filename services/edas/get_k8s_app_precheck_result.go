@@ -90,7 +90,7 @@ func CreateGetK8sAppPrecheckResultRequest() (request *GetK8sAppPrecheckResultReq
 	request = &GetK8sAppPrecheckResultRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "GetK8sAppPrecheckResult", "/pop/v5/k8s/app_precheck", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "GetK8sAppPrecheckResult", "/pop/v5/k8s/app_precheck", "Edas", "openAPI")
 	request.Method = requests.GET
 	return
 }

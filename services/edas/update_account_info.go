@@ -89,7 +89,7 @@ func CreateUpdateAccountInfoRequest() (request *UpdateAccountInfoRequest) {
 	request = &UpdateAccountInfoRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "UpdateAccountInfo", "/pop/v5/account/edit_account_info", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "UpdateAccountInfo", "/pop/v5/account/edit_account_info", "Edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

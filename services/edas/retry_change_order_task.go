@@ -89,7 +89,7 @@ func CreateRetryChangeOrderTaskRequest() (request *RetryChangeOrderTaskRequest) 
 	request = &RetryChangeOrderTaskRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "RetryChangeOrderTask", "/pop/v5/changeorder/task_retry", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "RetryChangeOrderTask", "/pop/v5/changeorder/task_retry", "Edas", "openAPI")
 	request.Method = requests.GET
 	return
 }
