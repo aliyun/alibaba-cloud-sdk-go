@@ -53,6 +53,8 @@ type EipAddress struct {
 	HasReservationData            string                                        `json:"HasReservationData" xml:"HasReservationData"`
 	ISP                           string                                        `json:"ISP" xml:"ISP"`
 	PublicIpAddressPoolId         string                                        `json:"PublicIpAddressPoolId" xml:"PublicIpAddressPoolId"`
+	VpcId                         string                                        `json:"VpcId" xml:"VpcId"`
+	Zone                          string                                        `json:"Zone" xml:"Zone"`
 	AvailableRegions              AvailableRegions                              `json:"AvailableRegions" xml:"AvailableRegions"`
 	SecurityProtectionTypes       SecurityProtectionTypesInDescribeEipAddresses `json:"SecurityProtectionTypes" xml:"SecurityProtectionTypes"`
 	OperationLocks                OperationLocksInDescribeEipAddresses          `json:"OperationLocks" xml:"OperationLocks"`

@@ -23,4 +23,5 @@ type PrefixListAssociations struct {
 	OwnerId      string `json:"OwnerId" xml:"OwnerId"`
 	Status       string `json:"Status" xml:"Status"`
 	Reason       string `json:"Reason" xml:"Reason"`
+	RegionId     string `json:"RegionId" xml:"RegionId"`
 }

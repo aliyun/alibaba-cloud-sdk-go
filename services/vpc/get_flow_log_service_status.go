@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DetachVpnAttachment invokes the vpc.DetachVpnAttachment API synchronously
-func (client *Client) DetachVpnAttachment(request *DetachVpnAttachmentRequest) (response *DetachVpnAttachmentResponse, err error) {
-	response = CreateDetachVpnAttachmentResponse()
+// GetFlowLogServiceStatus invokes the vpc.GetFlowLogServiceStatus API synchronously
+func (client *Client) GetFlowLogServiceStatus(request *GetFlowLogServiceStatusRequest) (response *GetFlowLogServiceStatusResponse, err error) {
+	response = CreateGetFlowLogServiceStatusResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DetachVpnAttachmentWithChan invokes the vpc.DetachVpnAttachment API asynchronously
-func (client *Client) DetachVpnAttachmentWithChan(request *DetachVpnAttachmentRequest) (<-chan *DetachVpnAttachmentResponse, <-chan error) {
-	responseChan := make(chan *DetachVpnAttachmentResponse, 1)
+// GetFlowLogServiceStatusWithChan invokes the vpc.GetFlowLogServiceStatus API asynchronously
+func (client *Client) GetFlowLogServiceStatusWithChan(request *GetFlowLogServiceStatusRequest) (<-chan *GetFlowLogServiceStatusResponse, <-chan error) {
+	responseChan := make(chan *GetFlowLogServiceStatusResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DetachVpnAttachment(request)
+		response, err := client.GetFlowLogServiceStatus(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) DetachVpnAttachmentWithChan(request *DetachVpnAttachmentRe
 	return responseChan, errChan
 }
 
-// DetachVpnAttachmentWithCallback invokes the vpc.DetachVpnAttachment API asynchronously
-func (client *Client) DetachVpnAttachmentWithCallback(request *DetachVpnAttachmentRequest, callback func(response *DetachVpnAttachmentResponse, err error)) <-chan int {
+// GetFlowLogServiceStatusWithCallback invokes the vpc.GetFlowLogServiceStatus API asynchronously
+func (client *Client) GetFlowLogServiceStatusWithCallback(request *GetFlowLogServiceStatusRequest, callback func(response *GetFlowLogServiceStatusResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DetachVpnAttachmentResponse
+		var response *GetFlowLogServiceStatusResponse
 		var err error
 		defer close(result)
-		response, err = client.DetachVpnAttachment(request)
+		response, err = client.GetFlowLogServiceStatus(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,35 +68,36 @@ func (client *Client) DetachVpnAttachmentWithCallback(request *DetachVpnAttachme
 	return result
 }
 
-// DetachVpnAttachmentRequest is the request struct for api DetachVpnAttachment
-type DetachVpnAttachmentRequest struct {
+// GetFlowLogServiceStatusRequest is the request struct for api GetFlowLogServiceStatus
+type GetFlowLogServiceStatusRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	VpnConnectionId      string           `position:"Query" name:"VpnConnectionId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
-// DetachVpnAttachmentResponse is the response struct for api DetachVpnAttachment
-type DetachVpnAttachmentResponse struct {
+// GetFlowLogServiceStatusResponse is the response struct for api GetFlowLogServiceStatus
+type GetFlowLogServiceStatusResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Enabled   bool   `json:"Enabled" xml:"Enabled"`
 }
 
-// CreateDetachVpnAttachmentRequest creates a request to invoke DetachVpnAttachment API
-func CreateDetachVpnAttachmentRequest() (request *DetachVpnAttachmentRequest) {
-	request = &DetachVpnAttachmentRequest{
+// CreateGetFlowLogServiceStatusRequest creates a request to invoke GetFlowLogServiceStatus API
+func CreateGetFlowLogServiceStatusRequest() (request *GetFlowLogServiceStatusRequest) {
+	request = &GetFlowLogServiceStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DetachVpnAttachment", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "GetFlowLogServiceStatus", "vpc", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateDetachVpnAttachmentResponse creates a response to parse from DetachVpnAttachment response
-func CreateDetachVpnAttachmentResponse() (response *DetachVpnAttachmentResponse) {
-	response = &DetachVpnAttachmentResponse{
+// CreateGetFlowLogServiceStatusResponse creates a response to parse from GetFlowLogServiceStatus response
+func CreateGetFlowLogServiceStatusResponse() (response *GetFlowLogServiceStatusResponse) {
+	response = &GetFlowLogServiceStatusResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

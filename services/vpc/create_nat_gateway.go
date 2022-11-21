@@ -92,6 +92,7 @@ type CreateNatGatewayRequest struct {
 	VpcId                     string                              `position:"Query" name:"VpcId"`
 	Name                      string                              `position:"Query" name:"Name"`
 	PrivateLinkEnabled        requests.Boolean                    `position:"Query" name:"PrivateLinkEnabled"`
+	EipBindMode               string                              `position:"Query" name:"EipBindMode"`
 	PricingCycle              string                              `position:"Query" name:"PricingCycle"`
 }
 

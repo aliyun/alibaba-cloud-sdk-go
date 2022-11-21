@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// ModifyVcoSpec invokes the vpc.ModifyVcoSpec API synchronously
-func (client *Client) ModifyVcoSpec(request *ModifyVcoSpecRequest) (response *ModifyVcoSpecResponse, err error) {
-	response = CreateModifyVcoSpecResponse()
+// OpenFlowLogService invokes the vpc.OpenFlowLogService API synchronously
+func (client *Client) OpenFlowLogService(request *OpenFlowLogServiceRequest) (response *OpenFlowLogServiceResponse, err error) {
+	response = CreateOpenFlowLogServiceResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// ModifyVcoSpecWithChan invokes the vpc.ModifyVcoSpec API asynchronously
-func (client *Client) ModifyVcoSpecWithChan(request *ModifyVcoSpecRequest) (<-chan *ModifyVcoSpecResponse, <-chan error) {
-	responseChan := make(chan *ModifyVcoSpecResponse, 1)
+// OpenFlowLogServiceWithChan invokes the vpc.OpenFlowLogService API asynchronously
+func (client *Client) OpenFlowLogServiceWithChan(request *OpenFlowLogServiceRequest) (<-chan *OpenFlowLogServiceResponse, <-chan error) {
+	responseChan := make(chan *OpenFlowLogServiceResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.ModifyVcoSpec(request)
+		response, err := client.OpenFlowLogService(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) ModifyVcoSpecWithChan(request *ModifyVcoSpecRequest) (<-ch
 	return responseChan, errChan
 }
 
-// ModifyVcoSpecWithCallback invokes the vpc.ModifyVcoSpec API asynchronously
-func (client *Client) ModifyVcoSpecWithCallback(request *ModifyVcoSpecRequest, callback func(response *ModifyVcoSpecResponse, err error)) <-chan int {
+// OpenFlowLogServiceWithCallback invokes the vpc.OpenFlowLogService API asynchronously
+func (client *Client) OpenFlowLogServiceWithCallback(request *OpenFlowLogServiceRequest, callback func(response *OpenFlowLogServiceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *ModifyVcoSpecResponse
+		var response *OpenFlowLogServiceResponse
 		var err error
 		defer close(result)
-		response, err = client.ModifyVcoSpec(request)
+		response, err = client.OpenFlowLogService(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,36 +68,37 @@ func (client *Client) ModifyVcoSpecWithCallback(request *ModifyVcoSpecRequest, c
 	return result
 }
 
-// ModifyVcoSpecRequest is the request struct for api ModifyVcoSpec
-type ModifyVcoSpecRequest struct {
+// OpenFlowLogServiceRequest is the request struct for api OpenFlowLogService
+type OpenFlowLogServiceRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
-	Spec                 string           `position:"Query" name:"Spec"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	VpnConnectionId      string           `position:"Query" name:"VpnConnectionId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
-// ModifyVcoSpecResponse is the response struct for api ModifyVcoSpec
-type ModifyVcoSpecResponse struct {
+// OpenFlowLogServiceResponse is the response struct for api OpenFlowLogService
+type OpenFlowLogServiceResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
 }
 
-// CreateModifyVcoSpecRequest creates a request to invoke ModifyVcoSpec API
-func CreateModifyVcoSpecRequest() (request *ModifyVcoSpecRequest) {
-	request = &ModifyVcoSpecRequest{
+// CreateOpenFlowLogServiceRequest creates a request to invoke OpenFlowLogService API
+func CreateOpenFlowLogServiceRequest() (request *OpenFlowLogServiceRequest) {
+	request = &OpenFlowLogServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifyVcoSpec", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "OpenFlowLogService", "vpc", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateModifyVcoSpecResponse creates a response to parse from ModifyVcoSpec response
-func CreateModifyVcoSpecResponse() (response *ModifyVcoSpecResponse) {
-	response = &ModifyVcoSpecResponse{
+// CreateOpenFlowLogServiceResponse creates a response to parse from OpenFlowLogService response
+func CreateOpenFlowLogServiceResponse() (response *OpenFlowLogServiceResponse) {
+	response = &OpenFlowLogServiceResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

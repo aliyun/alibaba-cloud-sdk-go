@@ -79,6 +79,7 @@ type ModifyVpnAttachmentAttributeRequest struct {
 	BgpConfig            string           `position:"Query" name:"BgpConfig"`
 	NetworkType          string           `position:"Query" name:"NetworkType"`
 	HealthCheckConfig    string           `position:"Query" name:"HealthCheckConfig"`
+	CustomerGatewayId    string           `position:"Query" name:"CustomerGatewayId"`
 	LocalSubnet          string           `position:"Query" name:"LocalSubnet"`
 	RemoteCaCert         string           `position:"Query" name:"RemoteCaCert"`
 	RemoteSubnet         string           `position:"Query" name:"RemoteSubnet"`

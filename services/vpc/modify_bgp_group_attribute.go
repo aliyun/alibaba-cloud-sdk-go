@@ -78,6 +78,7 @@ type ModifyBgpGroupAttributeRequest struct {
 	Description              string           `position:"Query" name:"Description"`
 	PeerAsn                  requests.Integer `position:"Query" name:"PeerAsn"`
 	IsFakeAsn                requests.Boolean `position:"Query" name:"IsFakeAsn"`
+	ClearAuthKey             requests.Boolean `position:"Query" name:"ClearAuthKey"`
 	ResourceOwnerAccount     string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount             string           `position:"Query" name:"OwnerAccount"`
 	RouteQuota               requests.Integer `position:"Query" name:"RouteQuota"`

@@ -20,4 +20,5 @@ type PrefixListCidrs struct {
 	PrefixListId string `json:"PrefixListId" xml:"PrefixListId"`
 	Cidr         string `json:"Cidr" xml:"Cidr"`
 	Description  string `json:"Description" xml:"Description"`
+	RegionId     string `json:"RegionId" xml:"RegionId"`
 }

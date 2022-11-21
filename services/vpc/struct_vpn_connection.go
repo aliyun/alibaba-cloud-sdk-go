@@ -37,6 +37,7 @@ type VpnConnection struct {
 	TransitRouterId        string         `json:"TransitRouterId" xml:"TransitRouterId"`
 	TransitRouterName      string         `json:"TransitRouterName" xml:"TransitRouterName"`
 	CrossAccountAuthorized bool           `json:"CrossAccountAuthorized" xml:"CrossAccountAuthorized"`
+	InternetIp             string         `json:"InternetIp" xml:"InternetIp"`
 	IkeConfig              IkeConfig      `json:"IkeConfig" xml:"IkeConfig"`
 	IpsecConfig            IpsecConfig    `json:"IpsecConfig" xml:"IpsecConfig"`
 	VcoHealthCheck         VcoHealthCheck `json:"VcoHealthCheck" xml:"VcoHealthCheck"`

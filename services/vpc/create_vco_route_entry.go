@@ -74,7 +74,6 @@ type CreateVcoRouteEntryRequest struct {
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
 	Description          string           `position:"Query" name:"Description"`
-	PublishVpc           requests.Boolean `position:"Query" name:"PublishVpc"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	Weight               requests.Integer `position:"Query" name:"Weight"`
