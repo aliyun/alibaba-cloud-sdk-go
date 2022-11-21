@@ -1,3 +1,9 @@
+2022-11-21 Version: v1.62.28
+- Generated 2018-04-12 for `EHPC`.
+- RunasUserPassword is not required in CreateJobFile.
+- RunasUserPassword not required in SubmitJob.
+- Add new api GetJobLog.
+
 2022-11-21 Version: v1.62.27
 - Generated 2016-04-28 for `Vpc`.
 - ResponseLog true.
