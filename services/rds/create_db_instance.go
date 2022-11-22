@@ -76,6 +76,7 @@ type CreateDBInstanceRequest struct {
 	ResourceOwnerId                requests.Integer                 `position:"Query" name:"ResourceOwnerId"`
 	DBInstanceStorage              requests.Integer                 `position:"Query" name:"DBInstanceStorage"`
 	SystemDBCharset                string                           `position:"Query" name:"SystemDBCharset"`
+	ConnectionString               string                           `position:"Query" name:"ConnectionString"`
 	EngineVersion                  string                           `position:"Query" name:"EngineVersion"`
 	DeletionProtection             requests.Boolean                 `position:"Query" name:"DeletionProtection"`
 	ResourceGroupId                string                           `position:"Query" name:"ResourceGroupId"`

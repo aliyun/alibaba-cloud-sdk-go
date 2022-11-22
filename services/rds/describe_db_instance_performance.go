@@ -75,6 +75,7 @@ type DescribeDBInstancePerformanceRequest struct {
 	RoleId                  string           `position:"Query" name:"RoleId"`
 	StartTime               string           `position:"Query" name:"StartTime"`
 	DBInstanceId            string           `position:"Query" name:"DBInstanceId"`
+	NodeId                  string           `position:"Query" name:"NodeId"`
 	Key                     string           `position:"Query" name:"Key"`
 	ResourceOwnerAccount    string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount            string           `position:"Query" name:"OwnerAccount"`

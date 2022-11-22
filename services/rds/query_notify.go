@@ -81,8 +81,8 @@ type QueryNotifyRequest struct {
 // QueryNotifyResponse is the response struct for api QueryNotify
 type QueryNotifyResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Data      Data   `json:"Data" xml:"Data"`
+	RequestId string            `json:"RequestId" xml:"RequestId"`
+	Data      DataInQueryNotify `json:"Data" xml:"Data"`
 }
 
 // CreateQueryNotifyRequest creates a request to invoke QueryNotify API

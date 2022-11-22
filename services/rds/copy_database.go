@@ -79,9 +79,10 @@ type CopyDatabaseRequest struct {
 // CopyDatabaseResponse is the response struct for api CopyDatabase
 type CopyDatabaseResponse struct {
 	*responses.BaseResponse
-	DBName   string `json:"DBName" xml:"DBName"`
-	TaskId   string `json:"TaskId" xml:"TaskId"`
-	DBStatus string `json:"DBStatus" xml:"DBStatus"`
+	DBName    string `json:"DBName" xml:"DBName"`
+	TaskId    string `json:"TaskId" xml:"TaskId"`
+	DBStatus  string `json:"DBStatus" xml:"DBStatus"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCopyDatabaseRequest creates a request to invoke CopyDatabase API

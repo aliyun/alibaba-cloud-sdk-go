@@ -89,6 +89,7 @@ type DescribePriceRequest struct {
 	ZoneId                string           `position:"Query" name:"ZoneId"`
 	TimeType              string           `position:"Query" name:"TimeType"`
 	PayType               string           `position:"Query" name:"PayType"`
+	DBNode                string           `position:"Query" name:"DBNode"`
 	OrderType             string           `position:"Query" name:"OrderType"`
 }
 

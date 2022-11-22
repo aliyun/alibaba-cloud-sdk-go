@@ -84,6 +84,7 @@ type ModifyBackupPolicyRequest struct {
 	EnableBackupLog               string           `position:"Query" name:"EnableBackupLog"`
 	BackupPolicyMode              string           `position:"Query" name:"BackupPolicyMode"`
 	PreferredBackupPeriod         string           `position:"Query" name:"PreferredBackupPeriod"`
+	EnableIncrementDataBackup     requests.Boolean `position:"Query" name:"EnableIncrementDataBackup"`
 	ReleasedKeepPolicy            string           `position:"Query" name:"ReleasedKeepPolicy"`
 	ResourceOwnerAccount          string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount                  string           `position:"Query" name:"OwnerAccount"`

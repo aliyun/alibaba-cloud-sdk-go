@@ -17,12 +17,14 @@ package rds
 
 // MinorVersionItemsItem is a nested struct in rds response
 type MinorVersionItemsItem struct {
-	ReleaseNote     string `json:"ReleaseNote" xml:"ReleaseNote"`
-	NodeType        string `json:"NodeType" xml:"NodeType"`
-	IsHotfixVersion bool   `json:"IsHotfixVersion" xml:"IsHotfixVersion"`
-	Engine          string `json:"Engine" xml:"Engine"`
-	ReleaseType     string `json:"ReleaseType" xml:"ReleaseType"`
-	StatusDesc      string `json:"StatusDesc" xml:"StatusDesc"`
-	EngineVersion   string `json:"EngineVersion" xml:"EngineVersion"`
-	MinorVersion    string `json:"MinorVersion" xml:"MinorVersion"`
+	ReleaseNote           string `json:"ReleaseNote" xml:"ReleaseNote"`
+	NodeType              string `json:"NodeType" xml:"NodeType"`
+	IsHotfixVersion       bool   `json:"IsHotfixVersion" xml:"IsHotfixVersion"`
+	Engine                string `json:"Engine" xml:"Engine"`
+	ReleaseType           string `json:"ReleaseType" xml:"ReleaseType"`
+	StatusDesc            string `json:"StatusDesc" xml:"StatusDesc"`
+	EngineVersion         string `json:"EngineVersion" xml:"EngineVersion"`
+	MinorVersion          string `json:"MinorVersion" xml:"MinorVersion"`
+	CommunityMinorVersion string `json:"CommunityMinorVersion" xml:"CommunityMinorVersion"`
+	Tag                   string `json:"Tag" xml:"Tag"`
 }

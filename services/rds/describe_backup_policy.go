@@ -109,6 +109,7 @@ type DescribeBackupPolicyResponse struct {
 	Category                      string              `json:"Category" xml:"Category"`
 	EnableBackupLog               string              `json:"EnableBackupLog" xml:"EnableBackupLog"`
 	BackupLog                     string              `json:"BackupLog" xml:"BackupLog"`
+	EnableIncrementDataBackup     bool                `json:"EnableIncrementDataBackup" xml:"EnableIncrementDataBackup"`
 	DuplicationLocation           DuplicationLocation `json:"DuplicationLocation" xml:"DuplicationLocation"`
 }
 

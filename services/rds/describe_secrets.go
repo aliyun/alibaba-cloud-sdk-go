@@ -76,6 +76,7 @@ type DescribeSecretsRequest struct {
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	Engine               string           `position:"Query" name:"Engine"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	DbInstanceId         string           `position:"Query" name:"DbInstanceId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`

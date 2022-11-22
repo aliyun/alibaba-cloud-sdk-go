@@ -23,5 +23,10 @@ type DBInstanceAccount struct {
 	PrivExceeded       string             `json:"PrivExceeded" xml:"PrivExceeded"`
 	AccountType        string             `json:"AccountType" xml:"AccountType"`
 	AccountName        string             `json:"AccountName" xml:"AccountName"`
+	ValidUntil         string             `json:"ValidUntil" xml:"ValidUntil"`
+	CreateDB           string             `json:"CreateDB" xml:"CreateDB"`
+	Replication        string             `json:"Replication" xml:"Replication"`
+	CreateRole         string             `json:"CreateRole" xml:"CreateRole"`
+	BypassRLS          string             `json:"BypassRLS" xml:"BypassRLS"`
 	DatabasePrivileges DatabasePrivileges `json:"DatabasePrivileges" xml:"DatabasePrivileges"`
 }

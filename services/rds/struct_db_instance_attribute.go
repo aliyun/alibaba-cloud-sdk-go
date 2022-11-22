@@ -48,6 +48,7 @@ type DBInstanceAttribute struct {
 	Tags                              string                                             `json:"Tags" xml:"Tags"`
 	MaintainTime                      string                                             `json:"MaintainTime" xml:"MaintainTime"`
 	EngineVersion                     string                                             `json:"EngineVersion" xml:"EngineVersion"`
+	InstructionSetArch                string                                             `json:"InstructionSetArch" xml:"InstructionSetArch"`
 	PayType                           string                                             `json:"PayType" xml:"PayType"`
 	Tips                              string                                             `json:"Tips" xml:"Tips"`
 	DBInstanceStorage                 int                                                `json:"DBInstanceStorage" xml:"DBInstanceStorage"`
@@ -101,6 +102,7 @@ type DBInstanceAttribute struct {
 	Extra                             Extra                                              `json:"Extra" xml:"Extra"`
 	ServerlessConfig                  ServerlessConfig                                   `json:"ServerlessConfig" xml:"ServerlessConfig"`
 	BabelfishConfig                   BabelfishConfig                                    `json:"BabelfishConfig" xml:"BabelfishConfig"`
+	DBClusterNodes                    DBClusterNodes                                     `json:"DBClusterNodes" xml:"DBClusterNodes"`
 	ReadOnlyDBInstanceIds             ReadOnlyDBInstanceIdsInDescribeDBInstanceAttribute `json:"ReadOnlyDBInstanceIds" xml:"ReadOnlyDBInstanceIds"`
 	SlaveZones                        SlaveZones                                         `json:"SlaveZones" xml:"SlaveZones"`
 }

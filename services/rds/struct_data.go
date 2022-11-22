@@ -17,11 +17,15 @@ package rds
 
 // Data is a nested struct in rds response
 type Data struct {
-	PageNumber       int                  `json:"PageNumber" xml:"PageNumber"`
-	DBInstanceName   string               `json:"DBInstanceName" xml:"DBInstanceName"`
-	PageSize         int                  `json:"PageSize" xml:"PageSize"`
-	TotalRecordCount int                  `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	Nodes            []Node               `json:"Nodes" xml:"Nodes"`
-	Connections      []Connection         `json:"Connections" xml:"Connections"`
-	NotifyItemList   []NotifyItemListItem `json:"NotifyItemList" xml:"NotifyItemList"`
+	ConnectionString     string               `json:"ConnectionString" xml:"ConnectionString"`
+	PageNumber           int                  `json:"PageNumber" xml:"PageNumber"`
+	DBInstanceName       string               `json:"DBInstanceName" xml:"DBInstanceName"`
+	IpVersion            string               `json:"IpVersion" xml:"IpVersion"`
+	PageSize             int                  `json:"PageSize" xml:"PageSize"`
+	TotalRecordCount     int                  `json:"TotalRecordCount" xml:"TotalRecordCount"`
+	DBInstanceEndpointId string               `json:"DBInstanceEndpointId" xml:"DBInstanceEndpointId"`
+	Nodes                []Node               `json:"Nodes" xml:"Nodes"`
+	Connections          []Connection         `json:"Connections" xml:"Connections"`
+	NotifyItemList       []NotifyItemListItem `json:"NotifyItemList" xml:"NotifyItemList"`
+	DBInstanceEndpoints  DBInstanceEndpoints  `json:"DBInstanceEndpoints" xml:"DBInstanceEndpoints"`
 }

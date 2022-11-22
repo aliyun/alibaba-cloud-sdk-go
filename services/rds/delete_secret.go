@@ -75,6 +75,7 @@ type DeleteSecretRequest struct {
 	ClientToken          string           `position:"Query" name:"ClientToken"`
 	SecretArn            string           `position:"Query" name:"SecretArn"`
 	Engine               string           `position:"Query" name:"Engine"`
+	DbInstanceId         string           `position:"Query" name:"DbInstanceId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	SecretName           string           `position:"Query" name:"SecretName"`
