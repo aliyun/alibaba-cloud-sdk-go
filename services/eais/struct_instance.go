@@ -32,5 +32,6 @@ type Instance struct {
 	JupyterUrl                   string `json:"JupyterUrl" xml:"JupyterUrl"`
 	VSwitchId                    string `json:"VSwitchId" xml:"VSwitchId"`
 	SecurityGroupId              string `json:"SecurityGroupId" xml:"SecurityGroupId"`
+	StartTime                    string `json:"StartTime" xml:"StartTime"`
 	Tags                         Tags   `json:"Tags" xml:"Tags"`
 }

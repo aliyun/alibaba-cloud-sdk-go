@@ -1,3 +1,8 @@
+2022-11-22 Version: v1.62.31
+- Generated 2019-06-24 for `eais`.
+- Add OpenAPI GetInstanceMetrics.
+- OpenAPI DescribeEais Add return parameter StartTime.
+
 2022-11-22 Version: v1.62.30
 - Generated 2014-08-15 for `Rds`.
 - Support More Open Api.
