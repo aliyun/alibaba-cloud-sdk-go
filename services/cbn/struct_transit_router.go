@@ -29,4 +29,5 @@ type TransitRouter struct {
 	ServiceMode              string                      `json:"ServiceMode" xml:"ServiceMode"`
 	SupportMulticast         bool                        `json:"SupportMulticast" xml:"SupportMulticast"`
 	TransitRouterCidrList    []TransitRouterCidrListItem `json:"TransitRouterCidrList" xml:"TransitRouterCidrList"`
+	Tags                     []Tag                       `json:"Tags" xml:"Tags"`
 }

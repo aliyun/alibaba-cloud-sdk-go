@@ -78,6 +78,7 @@ type CreateTransitRouterRequest struct {
 	CenId                    string                                      `position:"Query" name:"CenId"`
 	TransitRouterCidrList    *[]CreateTransitRouterTransitRouterCidrList `position:"Query" name:"TransitRouterCidrList"  type:"Json"`
 	Type                     string                                      `position:"Query" name:"Type"`
+	Tag                      *[]CreateTransitRouterTag                   `position:"Query" name:"Tag"  type:"Repeated"`
 	DryRun                   requests.Boolean                            `position:"Query" name:"DryRun"`
 	ResourceOwnerAccount     string                                      `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount             string                                      `position:"Query" name:"OwnerAccount"`
@@ -92,6 +93,12 @@ type CreateTransitRouterTransitRouterCidrList struct {
 	Description      string `name:"Description"`
 	Cidr             string `name:"Cidr"`
 	PublishCidrRoute string `name:"PublishCidrRoute"`
+}
+
+// CreateTransitRouterTag is a repeated param struct in CreateTransitRouterRequest
+type CreateTransitRouterTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // CreateTransitRouterResponse is the response struct for api CreateTransitRouter

@@ -76,11 +76,18 @@ type CreateCenRequest struct {
 	Ipv6Level            string           `position:"Query" name:"Ipv6Level"`
 	Description          string           `position:"Query" name:"Description"`
 	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
+	Tag                  *[]CreateCenTag  `position:"Query" name:"Tag"  type:"Repeated"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ProtectionLevel      string           `position:"Query" name:"ProtectionLevel"`
 	Name                 string           `position:"Query" name:"Name"`
+}
+
+// CreateCenTag is a repeated param struct in CreateCenRequest
+type CreateCenTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // CreateCenResponse is the response struct for api CreateCen

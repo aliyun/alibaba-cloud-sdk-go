@@ -77,6 +77,7 @@ type CreateTransitRouterVpnAttachmentRequest struct {
 	RouteTableAssociationEnabled       requests.Boolean                        `position:"Query" name:"RouteTableAssociationEnabled"`
 	TransitRouterAttachmentName        string                                  `position:"Query" name:"TransitRouterAttachmentName"`
 	Zone                               *[]CreateTransitRouterVpnAttachmentZone `position:"Query" name:"Zone"  type:"Repeated"`
+	Tag                                *[]CreateTransitRouterVpnAttachmentTag  `position:"Query" name:"Tag"  type:"Repeated"`
 	AutoPublishRouteEnabled            requests.Boolean                        `position:"Query" name:"AutoPublishRouteEnabled"`
 	RouteTablePropagationEnabled       requests.Boolean                        `position:"Query" name:"RouteTablePropagationEnabled"`
 	DryRun                             requests.Boolean                        `position:"Query" name:"DryRun"`
@@ -94,6 +95,12 @@ type CreateTransitRouterVpnAttachmentRequest struct {
 // CreateTransitRouterVpnAttachmentZone is a repeated param struct in CreateTransitRouterVpnAttachmentRequest
 type CreateTransitRouterVpnAttachmentZone struct {
 	ZoneId string `name:"ZoneId"`
+}
+
+// CreateTransitRouterVpnAttachmentTag is a repeated param struct in CreateTransitRouterVpnAttachmentRequest
+type CreateTransitRouterVpnAttachmentTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // CreateTransitRouterVpnAttachmentResponse is the response struct for api CreateTransitRouterVpnAttachment

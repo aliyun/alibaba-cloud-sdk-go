@@ -46,5 +46,6 @@ type TransitRouterAttachment struct {
 	PeerTransitRouterId                string        `json:"PeerTransitRouterId" xml:"PeerTransitRouterId"`
 	VpnId                              string        `json:"VpnId" xml:"VpnId"`
 	ZoneMappings                       []ZoneMapping `json:"ZoneMappings" xml:"ZoneMappings"`
+	Tags                               []Tag         `json:"Tags" xml:"Tags"`
 	Zones                              []ZoneMapping `json:"Zones" xml:"Zones"`
 }

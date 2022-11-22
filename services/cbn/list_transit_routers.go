@@ -71,15 +71,22 @@ func (client *Client) ListTransitRoutersWithCallback(request *ListTransitRouters
 // ListTransitRoutersRequest is the request struct for api ListTransitRouters
 type ListTransitRoutersRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	CenId                string           `position:"Query" name:"CenId"`
-	TransitRouterIds     *[]string        `position:"Query" name:"TransitRouterIds"  type:"Repeated"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	TransitRouterId      string           `position:"Query" name:"TransitRouterId"`
+	ResourceOwnerId      requests.Integer         `position:"Query" name:"ResourceOwnerId"`
+	CenId                string                   `position:"Query" name:"CenId"`
+	TransitRouterIds     *[]string                `position:"Query" name:"TransitRouterIds"  type:"Repeated"`
+	PageNumber           requests.Integer         `position:"Query" name:"PageNumber"`
+	PageSize             requests.Integer         `position:"Query" name:"PageSize"`
+	Tag                  *[]ListTransitRoutersTag `position:"Query" name:"Tag"  type:"Repeated"`
+	ResourceOwnerAccount string                   `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string                   `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer         `position:"Query" name:"OwnerId"`
+	TransitRouterId      string                   `position:"Query" name:"TransitRouterId"`
+}
+
+// ListTransitRoutersTag is a repeated param struct in ListTransitRoutersRequest
+type ListTransitRoutersTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // ListTransitRoutersResponse is the response struct for api ListTransitRouters

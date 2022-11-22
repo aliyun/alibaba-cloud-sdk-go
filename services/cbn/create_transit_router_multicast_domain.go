@@ -71,17 +71,24 @@ func (client *Client) CreateTransitRouterMulticastDomainWithCallback(request *Cr
 // CreateTransitRouterMulticastDomainRequest is the request struct for api CreateTransitRouterMulticastDomain
 type CreateTransitRouterMulticastDomainRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId                         requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ClientToken                             string           `position:"Query" name:"ClientToken"`
-	CenId                                   string           `position:"Query" name:"CenId"`
-	MulticastType                           string           `position:"Query" name:"MulticastType"`
-	TransitRouterMulticastDomainDescription string           `position:"Query" name:"TransitRouterMulticastDomainDescription"`
-	TransitRouterMulticastDomainName        string           `position:"Query" name:"TransitRouterMulticastDomainName"`
-	DryRun                                  requests.Boolean `position:"Query" name:"DryRun"`
-	ResourceOwnerAccount                    string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount                            string           `position:"Query" name:"OwnerAccount"`
-	OwnerId                                 requests.Integer `position:"Query" name:"OwnerId"`
-	TransitRouterId                         string           `position:"Query" name:"TransitRouterId"`
+	ResourceOwnerId                         requests.Integer                         `position:"Query" name:"ResourceOwnerId"`
+	ClientToken                             string                                   `position:"Query" name:"ClientToken"`
+	CenId                                   string                                   `position:"Query" name:"CenId"`
+	MulticastType                           string                                   `position:"Query" name:"MulticastType"`
+	TransitRouterMulticastDomainDescription string                                   `position:"Query" name:"TransitRouterMulticastDomainDescription"`
+	TransitRouterMulticastDomainName        string                                   `position:"Query" name:"TransitRouterMulticastDomainName"`
+	Tag                                     *[]CreateTransitRouterMulticastDomainTag `position:"Query" name:"Tag"  type:"Repeated"`
+	DryRun                                  requests.Boolean                         `position:"Query" name:"DryRun"`
+	ResourceOwnerAccount                    string                                   `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount                            string                                   `position:"Query" name:"OwnerAccount"`
+	OwnerId                                 requests.Integer                         `position:"Query" name:"OwnerId"`
+	TransitRouterId                         string                                   `position:"Query" name:"TransitRouterId"`
+}
+
+// CreateTransitRouterMulticastDomainTag is a repeated param struct in CreateTransitRouterMulticastDomainRequest
+type CreateTransitRouterMulticastDomainTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // CreateTransitRouterMulticastDomainResponse is the response struct for api CreateTransitRouterMulticastDomain

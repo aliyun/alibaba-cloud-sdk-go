@@ -1,3 +1,10 @@
+2022-11-22 Version: v1.62.29
+- Generated 2017-09-12 for `Cbn`.
+- Update ListTransitRouterMulticastGroups offline parameter ConnectPeerId.
+- Update CreateCenBandwidthPackage offline parameter ServiceType.
+- Update ModifyCenBandwidthPackageSpec offline parameter ServiceType.
+- Update DescribeCenBandwidthPackages offline parameter ServiceType.
+
 2022-11-21 Version: v1.62.28
 - Generated 2018-04-12 for `EHPC`.
 - RunasUserPassword is not required in CreateJobFile.

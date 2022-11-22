@@ -17,16 +17,17 @@ package cbn
 
 // FlowLog is a nested struct in cbn response
 type FlowLog struct {
-	Status                    string `json:"Status" xml:"Status"`
-	CreationTime              string `json:"CreationTime" xml:"CreationTime"`
-	FlowLogName               string `json:"FlowLogName" xml:"FlowLogName"`
-	Description               string `json:"Description" xml:"Description"`
-	ProjectName               string `json:"ProjectName" xml:"ProjectName"`
-	CenId                     string `json:"CenId" xml:"CenId"`
-	LogStoreName              string `json:"LogStoreName" xml:"LogStoreName"`
-	RegionId                  string `json:"RegionId" xml:"RegionId"`
-	FlowLogId                 string `json:"FlowLogId" xml:"FlowLogId"`
-	PeerRegionId              string `json:"PeerRegionId" xml:"PeerRegionId"`
-	TransitRouterAttachmentId string `json:"TransitRouterAttachmentId" xml:"TransitRouterAttachmentId"`
-	Interval                  int64  `json:"Interval" xml:"Interval"`
+	Status                    string                 `json:"Status" xml:"Status"`
+	CreationTime              string                 `json:"CreationTime" xml:"CreationTime"`
+	FlowLogName               string                 `json:"FlowLogName" xml:"FlowLogName"`
+	Description               string                 `json:"Description" xml:"Description"`
+	ProjectName               string                 `json:"ProjectName" xml:"ProjectName"`
+	CenId                     string                 `json:"CenId" xml:"CenId"`
+	LogStoreName              string                 `json:"LogStoreName" xml:"LogStoreName"`
+	RegionId                  string                 `json:"RegionId" xml:"RegionId"`
+	FlowLogId                 string                 `json:"FlowLogId" xml:"FlowLogId"`
+	PeerRegionId              string                 `json:"PeerRegionId" xml:"PeerRegionId"`
+	TransitRouterAttachmentId string                 `json:"TransitRouterAttachmentId" xml:"TransitRouterAttachmentId"`
+	Interval                  int64                  `json:"Interval" xml:"Interval"`
+	Tags                      TagsInDescribeFlowlogs `json:"Tags" xml:"Tags"`
 }

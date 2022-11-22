@@ -78,6 +78,7 @@ type CreateTransitRouterVpcAttachmentRequest struct {
 	CenId                              string                                          `position:"Query" name:"CenId"`
 	RouteTableAssociationEnabled       requests.Boolean                                `position:"Query" name:"RouteTableAssociationEnabled"`
 	TransitRouterAttachmentName        string                                          `position:"Query" name:"TransitRouterAttachmentName"`
+	Tag                                *[]CreateTransitRouterVpcAttachmentTag          `position:"Query" name:"Tag"  type:"Repeated"`
 	AutoCreateVpcRoute                 requests.Boolean                                `position:"Query" name:"AutoCreateVpcRoute"`
 	AutoPublishRouteEnabled            requests.Boolean                                `position:"Query" name:"AutoPublishRouteEnabled"`
 	RouteTablePropagationEnabled       requests.Boolean                                `position:"Query" name:"RouteTablePropagationEnabled"`
@@ -92,6 +93,12 @@ type CreateTransitRouterVpcAttachmentRequest struct {
 	AssociateRouteTableId              string                                          `position:"Query" name:"AssociateRouteTableId"`
 	VpcId                              string                                          `position:"Query" name:"VpcId"`
 	ChargeType                         string                                          `position:"Query" name:"ChargeType"`
+}
+
+// CreateTransitRouterVpcAttachmentTag is a repeated param struct in CreateTransitRouterVpcAttachmentRequest
+type CreateTransitRouterVpcAttachmentTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // CreateTransitRouterVpcAttachmentZoneMappings is a repeated param struct in CreateTransitRouterVpcAttachmentRequest

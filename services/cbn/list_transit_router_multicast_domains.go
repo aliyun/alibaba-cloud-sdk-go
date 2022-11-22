@@ -71,16 +71,23 @@ func (client *Client) ListTransitRouterMulticastDomainsWithCallback(request *Lis
 // ListTransitRouterMulticastDomainsRequest is the request struct for api ListTransitRouterMulticastDomains
 type ListTransitRouterMulticastDomainsRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId                requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ClientToken                    string           `position:"Query" name:"ClientToken"`
-	CenId                          string           `position:"Query" name:"CenId"`
-	TransitRouterMulticastDomainId string           `position:"Query" name:"TransitRouterMulticastDomainId"`
-	NextToken                      string           `position:"Query" name:"NextToken"`
-	ResourceOwnerAccount           string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount                   string           `position:"Query" name:"OwnerAccount"`
-	OwnerId                        requests.Integer `position:"Query" name:"OwnerId"`
-	TransitRouterId                string           `position:"Query" name:"TransitRouterId"`
-	MaxResults                     requests.Integer `position:"Query" name:"MaxResults"`
+	ResourceOwnerId                requests.Integer                        `position:"Query" name:"ResourceOwnerId"`
+	ClientToken                    string                                  `position:"Query" name:"ClientToken"`
+	CenId                          string                                  `position:"Query" name:"CenId"`
+	TransitRouterMulticastDomainId string                                  `position:"Query" name:"TransitRouterMulticastDomainId"`
+	NextToken                      string                                  `position:"Query" name:"NextToken"`
+	Tag                            *[]ListTransitRouterMulticastDomainsTag `position:"Query" name:"Tag"  type:"Repeated"`
+	ResourceOwnerAccount           string                                  `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount                   string                                  `position:"Query" name:"OwnerAccount"`
+	OwnerId                        requests.Integer                        `position:"Query" name:"OwnerId"`
+	TransitRouterId                string                                  `position:"Query" name:"TransitRouterId"`
+	MaxResults                     requests.Integer                        `position:"Query" name:"MaxResults"`
+}
+
+// ListTransitRouterMulticastDomainsTag is a repeated param struct in ListTransitRouterMulticastDomainsRequest
+type ListTransitRouterMulticastDomainsTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // ListTransitRouterMulticastDomainsResponse is the response struct for api ListTransitRouterMulticastDomains

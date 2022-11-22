@@ -71,16 +71,23 @@ func (client *Client) ListTransitRouterVbrAttachmentsWithCallback(request *ListT
 // ListTransitRouterVbrAttachmentsRequest is the request struct for api ListTransitRouterVbrAttachments
 type ListTransitRouterVbrAttachmentsRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId           requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	CenId                     string           `position:"Query" name:"CenId"`
-	NextToken                 string           `position:"Query" name:"NextToken"`
-	ResourceOwnerAccount      string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount              string           `position:"Query" name:"OwnerAccount"`
-	OwnerId                   requests.Integer `position:"Query" name:"OwnerId"`
-	TransitRouterId           string           `position:"Query" name:"TransitRouterId"`
-	ResourceType              string           `position:"Query" name:"ResourceType"`
-	TransitRouterAttachmentId string           `position:"Query" name:"TransitRouterAttachmentId"`
-	MaxResults                requests.Integer `position:"Query" name:"MaxResults"`
+	ResourceOwnerId           requests.Integer                      `position:"Query" name:"ResourceOwnerId"`
+	CenId                     string                                `position:"Query" name:"CenId"`
+	NextToken                 string                                `position:"Query" name:"NextToken"`
+	Tag                       *[]ListTransitRouterVbrAttachmentsTag `position:"Query" name:"Tag"  type:"Repeated"`
+	ResourceOwnerAccount      string                                `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount              string                                `position:"Query" name:"OwnerAccount"`
+	OwnerId                   requests.Integer                      `position:"Query" name:"OwnerId"`
+	TransitRouterId           string                                `position:"Query" name:"TransitRouterId"`
+	ResourceType              string                                `position:"Query" name:"ResourceType"`
+	TransitRouterAttachmentId string                                `position:"Query" name:"TransitRouterAttachmentId"`
+	MaxResults                requests.Integer                      `position:"Query" name:"MaxResults"`
+}
+
+// ListTransitRouterVbrAttachmentsTag is a repeated param struct in ListTransitRouterVbrAttachmentsRequest
+type ListTransitRouterVbrAttachmentsTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // ListTransitRouterVbrAttachmentsResponse is the response struct for api ListTransitRouterVbrAttachments

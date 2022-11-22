@@ -71,24 +71,31 @@ func (client *Client) CreateCenBandwidthPackageWithCallback(request *CreateCenBa
 // CreateCenBandwidthPackageRequest is the request struct for api CreateCenBandwidthPackage
 type CreateCenBandwidthPackageRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId            requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ClientToken                string           `position:"Query" name:"ClientToken"`
-	Description                string           `position:"Query" name:"Description"`
-	AutoRenewDuration          requests.Integer `position:"Query" name:"AutoRenewDuration"`
-	BandwidthPackageChargeType string           `position:"Query" name:"BandwidthPackageChargeType"`
-	ResourceGroupId            string           `position:"Query" name:"ResourceGroupId"`
-	GeographicRegionBId        string           `position:"Query" name:"GeographicRegionBId"`
-	Period                     requests.Integer `position:"Query" name:"Period"`
-	GeographicRegionAId        string           `position:"Query" name:"GeographicRegionAId"`
-	AutoPay                    requests.Boolean `position:"Query" name:"AutoPay"`
-	ResourceOwnerAccount       string           `position:"Query" name:"ResourceOwnerAccount"`
-	Bandwidth                  requests.Integer `position:"Query" name:"Bandwidth"`
-	OwnerAccount               string           `position:"Query" name:"OwnerAccount"`
-	OwnerId                    requests.Integer `position:"Query" name:"OwnerId"`
-	ServiceType                string           `position:"Query" name:"ServiceType"`
-	AutoRenew                  requests.Boolean `position:"Query" name:"AutoRenew"`
-	Name                       string           `position:"Query" name:"Name"`
-	PricingCycle               string           `position:"Query" name:"PricingCycle"`
+	ResourceOwnerId            requests.Integer                `position:"Query" name:"ResourceOwnerId"`
+	ClientToken                string                          `position:"Query" name:"ClientToken"`
+	Description                string                          `position:"Query" name:"Description"`
+	AutoRenewDuration          requests.Integer                `position:"Query" name:"AutoRenewDuration"`
+	BandwidthPackageChargeType string                          `position:"Query" name:"BandwidthPackageChargeType"`
+	ResourceGroupId            string                          `position:"Query" name:"ResourceGroupId"`
+	Tag                        *[]CreateCenBandwidthPackageTag `position:"Query" name:"Tag"  type:"Repeated"`
+	GeographicRegionBId        string                          `position:"Query" name:"GeographicRegionBId"`
+	Period                     requests.Integer                `position:"Query" name:"Period"`
+	GeographicRegionAId        string                          `position:"Query" name:"GeographicRegionAId"`
+	AutoPay                    requests.Boolean                `position:"Query" name:"AutoPay"`
+	ResourceOwnerAccount       string                          `position:"Query" name:"ResourceOwnerAccount"`
+	Bandwidth                  requests.Integer                `position:"Query" name:"Bandwidth"`
+	OwnerAccount               string                          `position:"Query" name:"OwnerAccount"`
+	OwnerId                    requests.Integer                `position:"Query" name:"OwnerId"`
+	ServiceType                string                          `position:"Query" name:"ServiceType"`
+	AutoRenew                  requests.Boolean                `position:"Query" name:"AutoRenew"`
+	Name                       string                          `position:"Query" name:"Name"`
+	PricingCycle               string                          `position:"Query" name:"PricingCycle"`
+}
+
+// CreateCenBandwidthPackageTag is a repeated param struct in CreateCenBandwidthPackageRequest
+type CreateCenBandwidthPackageTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // CreateCenBandwidthPackageResponse is the response struct for api CreateCenBandwidthPackage

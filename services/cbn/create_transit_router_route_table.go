@@ -71,15 +71,22 @@ func (client *Client) CreateTransitRouterRouteTableWithCallback(request *CreateT
 // CreateTransitRouterRouteTableRequest is the request struct for api CreateTransitRouterRouteTable
 type CreateTransitRouterRouteTableRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId                    requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ClientToken                        string           `position:"Query" name:"ClientToken"`
-	TransitRouterRouteTableDescription string           `position:"Query" name:"TransitRouterRouteTableDescription"`
-	DryRun                             requests.Boolean `position:"Query" name:"DryRun"`
-	TransitRouterRouteTableName        string           `position:"Query" name:"TransitRouterRouteTableName"`
-	ResourceOwnerAccount               string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount                       string           `position:"Query" name:"OwnerAccount"`
-	OwnerId                            requests.Integer `position:"Query" name:"OwnerId"`
-	TransitRouterId                    string           `position:"Query" name:"TransitRouterId"`
+	ResourceOwnerId                    requests.Integer                    `position:"Query" name:"ResourceOwnerId"`
+	ClientToken                        string                              `position:"Query" name:"ClientToken"`
+	TransitRouterRouteTableDescription string                              `position:"Query" name:"TransitRouterRouteTableDescription"`
+	Tag                                *[]CreateTransitRouterRouteTableTag `position:"Query" name:"Tag"  type:"Repeated"`
+	DryRun                             requests.Boolean                    `position:"Query" name:"DryRun"`
+	TransitRouterRouteTableName        string                              `position:"Query" name:"TransitRouterRouteTableName"`
+	ResourceOwnerAccount               string                              `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount                       string                              `position:"Query" name:"OwnerAccount"`
+	OwnerId                            requests.Integer                    `position:"Query" name:"OwnerId"`
+	TransitRouterId                    string                              `position:"Query" name:"TransitRouterId"`
+}
+
+// CreateTransitRouterRouteTableTag is a repeated param struct in CreateTransitRouterRouteTableRequest
+type CreateTransitRouterRouteTableTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // CreateTransitRouterRouteTableResponse is the response struct for api CreateTransitRouterRouteTable
