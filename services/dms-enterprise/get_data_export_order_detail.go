@@ -71,8 +71,8 @@ func (client *Client) GetDataExportOrderDetailWithCallback(request *GetDataExpor
 // GetDataExportOrderDetailRequest is the request struct for api GetDataExportOrderDetail
 type GetDataExportOrderDetailRequest struct {
 	*requests.RpcRequest
-	OrderId requests.Integer `position:"Body" name:"OrderId"`
 	Tid     requests.Integer `position:"Query" name:"Tid"`
+	OrderId requests.Integer `position:"Body" name:"OrderId"`
 }
 
 // GetDataExportOrderDetailResponse is the response struct for api GetDataExportOrderDetail

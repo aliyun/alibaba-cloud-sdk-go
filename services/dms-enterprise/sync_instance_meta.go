@@ -71,8 +71,8 @@ func (client *Client) SyncInstanceMetaWithCallback(request *SyncInstanceMetaRequ
 // SyncInstanceMetaRequest is the request struct for api SyncInstanceMeta
 type SyncInstanceMetaRequest struct {
 	*requests.RpcRequest
-	IgnoreTable requests.Boolean `position:"Query" name:"IgnoreTable"`
 	Tid         requests.Integer `position:"Query" name:"Tid"`
+	IgnoreTable requests.Boolean `position:"Query" name:"IgnoreTable"`
 	InstanceId  string           `position:"Query" name:"InstanceId"`
 }
 

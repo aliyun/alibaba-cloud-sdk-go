@@ -71,10 +71,10 @@ func (client *Client) BuyPayAsYouGoOrderWithCallback(request *BuyPayAsYouGoOrder
 // BuyPayAsYouGoOrderRequest is the request struct for api BuyPayAsYouGoOrder
 type BuyPayAsYouGoOrderRequest struct {
 	*requests.RpcRequest
-	InsNum        requests.Integer `position:"Query" name:"InsNum"`
 	Tid           requests.Integer `position:"Query" name:"Tid"`
-	VersionType   string           `position:"Query" name:"VersionType"`
 	CommodityType string           `position:"Query" name:"CommodityType"`
+	InsNum        requests.Integer `position:"Query" name:"InsNum"`
+	VersionType   string           `position:"Query" name:"VersionType"`
 }
 
 // BuyPayAsYouGoOrderResponse is the response struct for api BuyPayAsYouGoOrder

@@ -71,10 +71,10 @@ func (client *Client) GetDataCorrectBackupFilesWithCallback(request *GetDataCorr
 // GetDataCorrectBackupFilesRequest is the request struct for api GetDataCorrectBackupFiles
 type GetDataCorrectBackupFilesRequest struct {
 	*requests.RpcRequest
-	OrderId      requests.Integer       `position:"Query" name:"OrderId"`
-	ActionName   string                 `position:"Query" name:"ActionName"`
 	Tid          requests.Integer       `position:"Query" name:"Tid"`
 	ActionDetail map[string]interface{} `position:"Query" name:"ActionDetail"`
+	OrderId      requests.Integer       `position:"Query" name:"OrderId"`
+	ActionName   string                 `position:"Query" name:"ActionName"`
 }
 
 // GetDataCorrectBackupFilesResponse is the response struct for api GetDataCorrectBackupFiles

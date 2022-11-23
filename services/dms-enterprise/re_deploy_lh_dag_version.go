@@ -71,9 +71,9 @@ func (client *Client) ReDeployLhDagVersionWithCallback(request *ReDeployLhDagVer
 // ReDeployLhDagVersionRequest is the request struct for api ReDeployLhDagVersion
 type ReDeployLhDagVersionRequest struct {
 	*requests.RpcRequest
-	DagVersion requests.Integer `position:"Query" name:"DagVersion"`
 	DagId      requests.Integer `position:"Query" name:"DagId"`
 	Tid        requests.Integer `position:"Query" name:"Tid"`
+	DagVersion requests.Integer `position:"Query" name:"DagVersion"`
 }
 
 // ReDeployLhDagVersionResponse is the response struct for api ReDeployLhDagVersion

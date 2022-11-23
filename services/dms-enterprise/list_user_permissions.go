@@ -75,11 +75,11 @@ type ListUserPermissionsRequest struct {
 	UserId       string           `position:"Query" name:"UserId"`
 	Tid          requests.Integer `position:"Query" name:"Tid"`
 	PageNumber   requests.Integer `position:"Query" name:"PageNumber"`
+	EnvType      string           `position:"Query" name:"EnvType"`
+	PageSize     requests.Integer `position:"Query" name:"PageSize"`
 	PermType     string           `position:"Query" name:"PermType"`
 	DatabaseName string           `position:"Query" name:"DatabaseName"`
-	EnvType      string           `position:"Query" name:"EnvType"`
 	DbType       string           `position:"Query" name:"DbType"`
-	PageSize     requests.Integer `position:"Query" name:"PageSize"`
 	Logic        requests.Boolean `position:"Query" name:"Logic"`
 }
 

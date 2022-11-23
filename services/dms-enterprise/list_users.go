@@ -75,8 +75,8 @@ type ListUsersRequest struct {
 	SearchKey  string           `position:"Query" name:"SearchKey"`
 	Tid        requests.Integer `position:"Query" name:"Tid"`
 	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
-	UserState  string           `position:"Query" name:"UserState"`
 	PageSize   requests.Integer `position:"Query" name:"PageSize"`
+	UserState  string           `position:"Query" name:"UserState"`
 }
 
 // ListUsersResponse is the response struct for api ListUsers

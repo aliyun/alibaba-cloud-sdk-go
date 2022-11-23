@@ -71,14 +71,14 @@ func (client *Client) ListProxySQLExecAuditLogWithCallback(request *ListProxySQL
 // ListProxySQLExecAuditLogRequest is the request struct for api ListProxySQLExecAuditLog
 type ListProxySQLExecAuditLogRequest struct {
 	*requests.RpcRequest
-	SQLType    string           `position:"Query" name:"SQLType"`
 	SearchName string           `position:"Query" name:"SearchName"`
 	OpUserName string           `position:"Query" name:"OpUserName"`
-	EndTime    requests.Integer `position:"Query" name:"EndTime"`
 	StartTime  requests.Integer `position:"Query" name:"StartTime"`
 	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
 	Tid        requests.Integer `position:"Query" name:"Tid"`
 	PageSize   requests.Integer `position:"Query" name:"PageSize"`
+	SQLType    string           `position:"Query" name:"SQLType"`
+	EndTime    requests.Integer `position:"Query" name:"EndTime"`
 	ExecState  string           `position:"Query" name:"ExecState"`
 }
 

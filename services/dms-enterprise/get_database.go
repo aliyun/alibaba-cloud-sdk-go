@@ -71,11 +71,11 @@ func (client *Client) GetDatabaseWithCallback(request *GetDatabaseRequest, callb
 // GetDatabaseRequest is the request struct for api GetDatabase
 type GetDatabaseRequest struct {
 	*requests.RpcRequest
-	SchemaName string           `position:"Query" name:"SchemaName"`
 	Tid        requests.Integer `position:"Query" name:"Tid"`
 	Sid        string           `position:"Query" name:"Sid"`
-	Port       requests.Integer `position:"Query" name:"Port"`
 	Host       string           `position:"Query" name:"Host"`
+	SchemaName string           `position:"Query" name:"SchemaName"`
+	Port       requests.Integer `position:"Query" name:"Port"`
 }
 
 // GetDatabaseResponse is the response struct for api GetDatabase

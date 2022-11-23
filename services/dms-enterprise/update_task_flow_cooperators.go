@@ -72,8 +72,8 @@ func (client *Client) UpdateTaskFlowCooperatorsWithCallback(request *UpdateTaskF
 type UpdateTaskFlowCooperatorsRequest struct {
 	*requests.RpcRequest
 	DagId         requests.Integer `position:"Query" name:"DagId"`
-	CooperatorIds *[]string        `position:"Query" name:"CooperatorIds"  type:"Json"`
 	Tid           requests.Integer `position:"Query" name:"Tid"`
+	CooperatorIds *[]string        `position:"Query" name:"CooperatorIds"  type:"Json"`
 }
 
 // UpdateTaskFlowCooperatorsResponse is the response struct for api UpdateTaskFlowCooperators

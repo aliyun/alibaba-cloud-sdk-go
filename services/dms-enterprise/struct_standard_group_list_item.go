@@ -22,4 +22,5 @@ type StandardGroupListItem struct {
 	DbType       string `json:"DbType" xml:"DbType"`
 	LastMenderId int64  `json:"LastMenderId" xml:"LastMenderId"`
 	GroupMode    string `json:"GroupMode" xml:"GroupMode"`
+	GroupId      int64  `json:"GroupId" xml:"GroupId"`
 }

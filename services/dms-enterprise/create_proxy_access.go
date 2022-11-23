@@ -74,8 +74,8 @@ type CreateProxyAccessRequest struct {
 	IndepAccount  string           `position:"Query" name:"IndepAccount"`
 	UserId        requests.Integer `position:"Query" name:"UserId"`
 	Tid           requests.Integer `position:"Query" name:"Tid"`
-	IndepPassword string           `position:"Query" name:"IndepPassword"`
 	ProxyId       requests.Integer `position:"Query" name:"ProxyId"`
+	IndepPassword string           `position:"Query" name:"IndepPassword"`
 }
 
 // CreateProxyAccessResponse is the response struct for api CreateProxyAccess

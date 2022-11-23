@@ -73,11 +73,11 @@ type ListInstanceLoginAuditLogRequest struct {
 	*requests.RpcRequest
 	SearchName string           `position:"Query" name:"SearchName"`
 	OpUserName string           `position:"Query" name:"OpUserName"`
-	EndTime    string           `position:"Query" name:"EndTime"`
 	StartTime  string           `position:"Query" name:"StartTime"`
 	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
 	Tid        requests.Integer `position:"Query" name:"Tid"`
 	PageSize   requests.Integer `position:"Query" name:"PageSize"`
+	EndTime    string           `position:"Query" name:"EndTime"`
 }
 
 // ListInstanceLoginAuditLogResponse is the response struct for api ListInstanceLoginAuditLog

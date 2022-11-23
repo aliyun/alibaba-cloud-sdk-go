@@ -71,8 +71,8 @@ func (client *Client) GetUserUploadFileJobWithCallback(request *GetUserUploadFil
 // GetUserUploadFileJobRequest is the request struct for api GetUserUploadFileJob
 type GetUserUploadFileJobRequest struct {
 	*requests.RpcRequest
-	JobKey string           `position:"Query" name:"JobKey"`
 	Tid    requests.Integer `position:"Query" name:"Tid"`
+	JobKey string           `position:"Query" name:"JobKey"`
 }
 
 // GetUserUploadFileJobResponse is the response struct for api GetUserUploadFileJob

@@ -72,8 +72,8 @@ func (client *Client) CreateLogicDatabaseWithCallback(request *CreateLogicDataba
 type CreateLogicDatabaseRequest struct {
 	*requests.RpcRequest
 	Tid         requests.Integer `position:"Query" name:"Tid"`
-	DatabaseIds *[]string        `position:"Query" name:"DatabaseIds"  type:"Json"`
 	Alias       string           `position:"Query" name:"Alias"`
+	DatabaseIds *[]string        `position:"Query" name:"DatabaseIds"  type:"Json"`
 }
 
 // CreateLogicDatabaseResponse is the response struct for api CreateLogicDatabase

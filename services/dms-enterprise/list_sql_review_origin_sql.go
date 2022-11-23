@@ -71,9 +71,9 @@ func (client *Client) ListSQLReviewOriginSQLWithCallback(request *ListSQLReviewO
 // ListSQLReviewOriginSQLRequest is the request struct for api ListSQLReviewOriginSQL
 type ListSQLReviewOriginSQLRequest struct {
 	*requests.RpcRequest
+	Tid               requests.Integer                        `position:"Query" name:"Tid"`
 	OrderId           requests.Integer                        `position:"Query" name:"OrderId"`
 	OrderActionDetail ListSQLReviewOriginSQLOrderActionDetail `position:"Query" name:"OrderActionDetail"  type:"Struct"`
-	Tid               requests.Integer                        `position:"Query" name:"Tid"`
 	OrderActionName   string                                  `position:"Query" name:"OrderActionName"`
 }
 

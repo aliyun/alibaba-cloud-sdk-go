@@ -71,9 +71,9 @@ func (client *Client) ResumeTaskFlowInstanceWithCallback(request *ResumeTaskFlow
 // ResumeTaskFlowInstanceRequest is the request struct for api ResumeTaskFlowInstance
 type ResumeTaskFlowInstanceRequest struct {
 	*requests.RpcRequest
-	DagVersion    string           `position:"Query" name:"DagVersion"`
 	DagId         requests.Integer `position:"Query" name:"DagId"`
 	Tid           requests.Integer `position:"Query" name:"Tid"`
+	DagVersion    string           `position:"Query" name:"DagVersion"`
 	DagInstanceId requests.Integer `position:"Query" name:"DagInstanceId"`
 }
 

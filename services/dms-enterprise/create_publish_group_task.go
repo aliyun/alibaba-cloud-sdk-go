@@ -71,12 +71,12 @@ func (client *Client) CreatePublishGroupTaskWithCallback(request *CreatePublishG
 // CreatePublishGroupTaskRequest is the request struct for api CreatePublishGroupTask
 type CreatePublishGroupTaskRequest struct {
 	*requests.RpcRequest
-	OrderId         requests.Integer `position:"Query" name:"OrderId"`
 	Tid             requests.Integer `position:"Query" name:"Tid"`
-	DbId            requests.Integer `position:"Query" name:"DbId"`
 	PlanTime        string           `position:"Query" name:"PlanTime"`
-	Logic           requests.Boolean `position:"Query" name:"Logic"`
 	PublishStrategy string           `position:"Query" name:"PublishStrategy"`
+	OrderId         requests.Integer `position:"Query" name:"OrderId"`
+	DbId            requests.Integer `position:"Query" name:"DbId"`
+	Logic           requests.Boolean `position:"Query" name:"Logic"`
 }
 
 // CreatePublishGroupTaskResponse is the response struct for api CreatePublishGroupTask

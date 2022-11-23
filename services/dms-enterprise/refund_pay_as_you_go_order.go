@@ -71,8 +71,8 @@ func (client *Client) RefundPayAsYouGoOrderWithCallback(request *RefundPayAsYouG
 // RefundPayAsYouGoOrderRequest is the request struct for api RefundPayAsYouGoOrder
 type RefundPayAsYouGoOrderRequest struct {
 	*requests.RpcRequest
-	OrderId string           `position:"Query" name:"OrderId"`
 	Tid     requests.Integer `position:"Query" name:"Tid"`
+	OrderId string           `position:"Query" name:"OrderId"`
 }
 
 // RefundPayAsYouGoOrderResponse is the response struct for api RefundPayAsYouGoOrder

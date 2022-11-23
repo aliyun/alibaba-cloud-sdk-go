@@ -71,9 +71,9 @@ func (client *Client) UpdateTaskFlowRelationsWithCallback(request *UpdateTaskFlo
 // UpdateTaskFlowRelationsRequest is the request struct for api UpdateTaskFlowRelations
 type UpdateTaskFlowRelationsRequest struct {
 	*requests.RpcRequest
-	Edges *[]UpdateTaskFlowRelationsEdges `position:"Query" name:"Edges"  type:"Json"`
 	DagId requests.Integer                `position:"Query" name:"DagId"`
 	Tid   requests.Integer                `position:"Query" name:"Tid"`
+	Edges *[]UpdateTaskFlowRelationsEdges `position:"Query" name:"Edges"  type:"Json"`
 }
 
 // UpdateTaskFlowRelationsEdges is a repeated param struct in UpdateTaskFlowRelationsRequest

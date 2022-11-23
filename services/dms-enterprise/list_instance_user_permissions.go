@@ -73,8 +73,8 @@ type ListInstanceUserPermissionsRequest struct {
 	*requests.RpcRequest
 	Tid        requests.Integer `position:"Query" name:"Tid"`
 	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
-	InstanceId string           `position:"Query" name:"InstanceId"`
 	PageSize   requests.Integer `position:"Query" name:"PageSize"`
+	InstanceId string           `position:"Query" name:"InstanceId"`
 	UserName   string           `position:"Query" name:"UserName"`
 }
 

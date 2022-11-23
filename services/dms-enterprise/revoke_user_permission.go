@@ -71,16 +71,16 @@ func (client *Client) RevokeUserPermissionWithCallback(request *RevokeUserPermis
 // RevokeUserPermissionRequest is the request struct for api RevokeUserPermission
 type RevokeUserPermissionRequest struct {
 	*requests.RpcRequest
+	UserId       string           `position:"Query" name:"UserId"`
+	Tid          requests.Integer `position:"Query" name:"Tid"`
+	TableId      string           `position:"Query" name:"TableId"`
+	TableName    string           `position:"Query" name:"TableName"`
 	PermTypes    string           `position:"Query" name:"PermTypes"`
 	UserAccessId string           `position:"Query" name:"UserAccessId"`
 	DsType       string           `position:"Query" name:"DsType"`
-	UserId       string           `position:"Query" name:"UserId"`
-	Tid          requests.Integer `position:"Query" name:"Tid"`
 	InstanceId   requests.Integer `position:"Query" name:"InstanceId"`
 	DbId         string           `position:"Query" name:"DbId"`
-	TableId      string           `position:"Query" name:"TableId"`
 	Logic        requests.Boolean `position:"Query" name:"Logic"`
-	TableName    string           `position:"Query" name:"TableName"`
 }
 
 // RevokeUserPermissionResponse is the response struct for api RevokeUserPermission

@@ -71,9 +71,9 @@ func (client *Client) ReRunTaskFlowInstanceWithCallback(request *ReRunTaskFlowIn
 // ReRunTaskFlowInstanceRequest is the request struct for api ReRunTaskFlowInstance
 type ReRunTaskFlowInstanceRequest struct {
 	*requests.RpcRequest
-	DagVersion    string           `position:"Query" name:"DagVersion"`
 	DagId         requests.Integer `position:"Query" name:"DagId"`
 	Tid           requests.Integer `position:"Query" name:"Tid"`
+	DagVersion    string           `position:"Query" name:"DagVersion"`
 	DagInstanceId requests.Integer `position:"Query" name:"DagInstanceId"`
 }
 

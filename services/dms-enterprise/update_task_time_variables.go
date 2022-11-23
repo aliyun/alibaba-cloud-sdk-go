@@ -71,9 +71,9 @@ func (client *Client) UpdateTaskTimeVariablesWithCallback(request *UpdateTaskTim
 // UpdateTaskTimeVariablesRequest is the request struct for api UpdateTaskTimeVariables
 type UpdateTaskTimeVariablesRequest struct {
 	*requests.RpcRequest
-	TimeVariables string           `position:"Query" name:"TimeVariables"`
 	Tid           requests.Integer `position:"Query" name:"Tid"`
 	NodeId        string           `position:"Query" name:"NodeId"`
+	TimeVariables string           `position:"Query" name:"TimeVariables"`
 }
 
 // UpdateTaskTimeVariablesResponse is the response struct for api UpdateTaskTimeVariables

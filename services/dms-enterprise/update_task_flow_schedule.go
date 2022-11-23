@@ -76,10 +76,10 @@ type UpdateTaskFlowScheduleRequest struct {
 	TriggerType    string           `position:"Query" name:"TriggerType"`
 	DagId          requests.Integer `position:"Query" name:"DagId"`
 	Tid            requests.Integer `position:"Query" name:"Tid"`
-	ScheduleSwitch requests.Boolean `position:"Query" name:"ScheduleSwitch"`
-	CronEndDate    string           `position:"Query" name:"CronEndDate"`
 	TimeZoneId     string           `position:"Query" name:"TimeZoneId"`
 	CronBeginDate  string           `position:"Query" name:"CronBeginDate"`
+	ScheduleSwitch requests.Boolean `position:"Query" name:"ScheduleSwitch"`
+	CronEndDate    string           `position:"Query" name:"CronEndDate"`
 	ScheduleParam  string           `position:"Query" name:"ScheduleParam"`
 }
 

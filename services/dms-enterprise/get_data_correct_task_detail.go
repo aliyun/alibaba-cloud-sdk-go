@@ -71,8 +71,8 @@ func (client *Client) GetDataCorrectTaskDetailWithCallback(request *GetDataCorre
 // GetDataCorrectTaskDetailRequest is the request struct for api GetDataCorrectTaskDetail
 type GetDataCorrectTaskDetailRequest struct {
 	*requests.RpcRequest
-	OrderId requests.Integer `position:"Query" name:"OrderId"`
 	Tid     requests.Integer `position:"Query" name:"Tid"`
+	OrderId requests.Integer `position:"Query" name:"OrderId"`
 }
 
 // GetDataCorrectTaskDetailResponse is the response struct for api GetDataCorrectTaskDetail

@@ -71,12 +71,12 @@ func (client *Client) ListDesensitizationRuleWithCallback(request *ListDesensiti
 // ListDesensitizationRuleRequest is the request struct for api ListDesensitizationRule
 type ListDesensitizationRuleRequest struct {
 	*requests.RpcRequest
-	RuleType   string           `position:"Query" name:"RuleType"`
 	RuleName   string           `position:"Query" name:"RuleName"`
 	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
 	Tid        requests.Integer `position:"Query" name:"Tid"`
-	FuncType   string           `position:"Query" name:"FuncType"`
 	PageSize   requests.Integer `position:"Query" name:"PageSize"`
+	RuleType   string           `position:"Query" name:"RuleType"`
+	FuncType   string           `position:"Query" name:"FuncType"`
 	RuleId     requests.Integer `position:"Query" name:"RuleId"`
 }
 

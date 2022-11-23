@@ -71,14 +71,14 @@ func (client *Client) CreateTaskWithCallback(request *CreateTaskRequest, callbac
 // CreateTaskRequest is the request struct for api CreateTask
 type CreateTaskRequest struct {
 	*requests.RpcRequest
-	TimeVariables string           `position:"Query" name:"TimeVariables"`
 	NodeType      string           `position:"Query" name:"NodeType"`
 	DagId         requests.Integer `position:"Query" name:"DagId"`
 	Tid           requests.Integer `position:"Query" name:"Tid"`
-	NodeName      string           `position:"Query" name:"NodeName"`
 	NodeContent   string           `position:"Query" name:"NodeContent"`
 	NodeOutput    string           `position:"Query" name:"NodeOutput"`
 	GraphParam    string           `position:"Query" name:"GraphParam"`
+	TimeVariables string           `position:"Query" name:"TimeVariables"`
+	NodeName      string           `position:"Query" name:"NodeName"`
 }
 
 // CreateTaskResponse is the response struct for api CreateTask

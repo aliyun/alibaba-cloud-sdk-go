@@ -71,14 +71,14 @@ func (client *Client) ListSQLExecAuditLogWithCallback(request *ListSQLExecAuditL
 // ListSQLExecAuditLogRequest is the request struct for api ListSQLExecAuditLog
 type ListSQLExecAuditLogRequest struct {
 	*requests.RpcRequest
-	SqlType    string           `position:"Query" name:"SqlType"`
 	SearchName string           `position:"Query" name:"SearchName"`
 	OpUserName string           `position:"Query" name:"OpUserName"`
-	EndTime    string           `position:"Query" name:"EndTime"`
 	StartTime  string           `position:"Query" name:"StartTime"`
 	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
 	Tid        requests.Integer `position:"Query" name:"Tid"`
 	PageSize   requests.Integer `position:"Query" name:"PageSize"`
+	SqlType    string           `position:"Query" name:"SqlType"`
+	EndTime    string           `position:"Query" name:"EndTime"`
 	ExecState  string           `position:"Query" name:"ExecState"`
 }
 

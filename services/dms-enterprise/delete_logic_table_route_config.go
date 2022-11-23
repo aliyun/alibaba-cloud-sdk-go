@@ -71,9 +71,9 @@ func (client *Client) DeleteLogicTableRouteConfigWithCallback(request *DeleteLog
 // DeleteLogicTableRouteConfigRequest is the request struct for api DeleteLogicTableRouteConfig
 type DeleteLogicTableRouteConfigRequest struct {
 	*requests.RpcRequest
-	RouteKey string           `position:"Query" name:"RouteKey"`
 	Tid      requests.Integer `position:"Query" name:"Tid"`
 	TableId  requests.Integer `position:"Query" name:"TableId"`
+	RouteKey string           `position:"Query" name:"RouteKey"`
 }
 
 // DeleteLogicTableRouteConfigResponse is the response struct for api DeleteLogicTableRouteConfig

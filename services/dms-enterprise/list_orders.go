@@ -72,15 +72,15 @@ func (client *Client) ListOrdersWithCallback(request *ListOrdersRequest, callbac
 type ListOrdersRequest struct {
 	*requests.RpcRequest
 	OrderStatus     string           `position:"Query" name:"OrderStatus"`
-	SearchContent   string           `position:"Query" name:"SearchContent"`
 	SearchDateType  string           `position:"Query" name:"SearchDateType"`
-	EndTime         string           `position:"Query" name:"EndTime"`
 	StartTime       string           `position:"Query" name:"StartTime"`
 	Tid             requests.Integer `position:"Query" name:"Tid"`
 	PageNumber      requests.Integer `position:"Query" name:"PageNumber"`
 	PluginType      string           `position:"Query" name:"PluginType"`
 	PageSize        requests.Integer `position:"Query" name:"PageSize"`
 	OrderResultType string           `position:"Query" name:"OrderResultType"`
+	SearchContent   string           `position:"Query" name:"SearchContent"`
+	EndTime         string           `position:"Query" name:"EndTime"`
 }
 
 // ListOrdersResponse is the response struct for api ListOrders

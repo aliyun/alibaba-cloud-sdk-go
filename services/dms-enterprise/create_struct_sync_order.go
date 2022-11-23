@@ -72,10 +72,10 @@ func (client *Client) CreateStructSyncOrderWithCallback(request *CreateStructSyn
 type CreateStructSyncOrderRequest struct {
 	*requests.RpcRequest
 	Tid             requests.Integer           `position:"Query" name:"Tid"`
-	AttachmentKey   string                     `position:"Query" name:"AttachmentKey"`
 	Param           CreateStructSyncOrderParam `position:"Query" name:"Param"  type:"Struct"`
-	Comment         string                     `position:"Query" name:"Comment"`
 	RelatedUserList *[]string                  `position:"Query" name:"RelatedUserList"  type:"Json"`
+	AttachmentKey   string                     `position:"Query" name:"AttachmentKey"`
+	Comment         string                     `position:"Query" name:"Comment"`
 }
 
 // CreateStructSyncOrderParam is a repeated param struct in CreateStructSyncOrderRequest

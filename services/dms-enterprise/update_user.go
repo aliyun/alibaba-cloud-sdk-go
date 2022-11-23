@@ -72,12 +72,12 @@ func (client *Client) UpdateUserWithCallback(request *UpdateUserRequest, callbac
 type UpdateUserRequest struct {
 	*requests.RpcRequest
 	RoleNames       string           `position:"Query" name:"RoleNames"`
-	MaxResultCount  requests.Integer `position:"Query" name:"MaxResultCount"`
 	MaxExecuteCount requests.Integer `position:"Query" name:"MaxExecuteCount"`
 	UserNick        string           `position:"Query" name:"UserNick"`
-	Mobile          string           `position:"Query" name:"Mobile"`
 	Tid             requests.Integer `position:"Query" name:"Tid"`
 	Uid             requests.Integer `position:"Query" name:"Uid"`
+	MaxResultCount  requests.Integer `position:"Query" name:"MaxResultCount"`
+	Mobile          string           `position:"Query" name:"Mobile"`
 }
 
 // UpdateUserResponse is the response struct for api UpdateUser

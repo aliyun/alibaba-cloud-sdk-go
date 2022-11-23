@@ -71,8 +71,8 @@ func (client *Client) GetSQLReviewCheckResultStatusWithCallback(request *GetSQLR
 // GetSQLReviewCheckResultStatusRequest is the request struct for api GetSQLReviewCheckResultStatus
 type GetSQLReviewCheckResultStatusRequest struct {
 	*requests.RpcRequest
-	OrderId         requests.Integer `position:"Query" name:"OrderId"`
 	Tid             requests.Integer `position:"Query" name:"Tid"`
+	OrderId         requests.Integer `position:"Query" name:"OrderId"`
 	OrderActionName string           `position:"Query" name:"OrderActionName"`
 }
 

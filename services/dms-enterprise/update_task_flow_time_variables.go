@@ -71,9 +71,9 @@ func (client *Client) UpdateTaskFlowTimeVariablesWithCallback(request *UpdateTas
 // UpdateTaskFlowTimeVariablesRequest is the request struct for api UpdateTaskFlowTimeVariables
 type UpdateTaskFlowTimeVariablesRequest struct {
 	*requests.RpcRequest
-	TimeVariables string           `position:"Query" name:"TimeVariables"`
 	DagId         requests.Integer `position:"Query" name:"DagId"`
 	Tid           requests.Integer `position:"Query" name:"Tid"`
+	TimeVariables string           `position:"Query" name:"TimeVariables"`
 }
 
 // UpdateTaskFlowTimeVariablesResponse is the response struct for api UpdateTaskFlowTimeVariables

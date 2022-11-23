@@ -71,12 +71,12 @@ func (client *Client) AddDesensitizationRuleWithCallback(request *AddDesensitiza
 // AddDesensitizationRuleRequest is the request struct for api AddDesensitizationRule
 type AddDesensitizationRuleRequest struct {
 	*requests.RpcRequest
-	RuleDescription string               `position:"Query" name:"RuleDescription"`
 	FunctionParams  *[]map[string]string `position:"Body" name:"FunctionParams"  type:"Repeated"`
-	RuleType        string               `position:"Query" name:"RuleType"`
 	RuleName        string               `position:"Query" name:"RuleName"`
-	FunctionType    string               `position:"Query" name:"FunctionType"`
 	Tid             requests.Integer     `position:"Query" name:"Tid"`
+	RuleDescription string               `position:"Query" name:"RuleDescription"`
+	RuleType        string               `position:"Query" name:"RuleType"`
+	FunctionType    string               `position:"Query" name:"FunctionType"`
 }
 
 // AddDesensitizationRuleResponse is the response struct for api AddDesensitizationRule

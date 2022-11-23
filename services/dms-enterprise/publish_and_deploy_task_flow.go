@@ -71,9 +71,9 @@ func (client *Client) PublishAndDeployTaskFlowWithCallback(request *PublishAndDe
 // PublishAndDeployTaskFlowRequest is the request struct for api PublishAndDeployTaskFlow
 type PublishAndDeployTaskFlowRequest struct {
 	*requests.RpcRequest
-	VersionComments string           `position:"Query" name:"VersionComments"`
 	DagId           requests.Integer `position:"Query" name:"DagId"`
 	Tid             requests.Integer `position:"Query" name:"Tid"`
+	VersionComments string           `position:"Query" name:"VersionComments"`
 }
 
 // PublishAndDeployTaskFlowResponse is the response struct for api PublishAndDeployTaskFlow

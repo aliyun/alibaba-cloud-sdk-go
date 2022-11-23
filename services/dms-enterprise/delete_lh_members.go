@@ -73,8 +73,8 @@ type DeleteLhMembersRequest struct {
 	*requests.RpcRequest
 	Tid        requests.Integer `position:"Query" name:"Tid"`
 	ObjectType requests.Integer `position:"Query" name:"ObjectType"`
-	ObjectId   requests.Integer `position:"Query" name:"ObjectId"`
 	MemberIds  *[]string        `position:"Query" name:"MemberIds"  type:"Json"`
+	ObjectId   requests.Integer `position:"Query" name:"ObjectId"`
 }
 
 // DeleteLhMembersResponse is the response struct for api DeleteLhMembers

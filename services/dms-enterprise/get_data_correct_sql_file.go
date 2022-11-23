@@ -71,8 +71,8 @@ func (client *Client) GetDataCorrectSQLFileWithCallback(request *GetDataCorrectS
 // GetDataCorrectSQLFileRequest is the request struct for api GetDataCorrectSQLFile
 type GetDataCorrectSQLFileRequest struct {
 	*requests.RpcRequest
-	OrderId         requests.Integer `position:"Query" name:"OrderId"`
 	Tid             requests.Integer `position:"Query" name:"Tid"`
+	OrderId         requests.Integer `position:"Query" name:"OrderId"`
 	OrderActionName string           `position:"Query" name:"OrderActionName"`
 }
 

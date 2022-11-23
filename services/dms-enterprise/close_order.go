@@ -71,9 +71,9 @@ func (client *Client) CloseOrderWithCallback(request *CloseOrderRequest, callbac
 // CloseOrderRequest is the request struct for api CloseOrder
 type CloseOrderRequest struct {
 	*requests.RpcRequest
+	Tid         requests.Integer `position:"Query" name:"Tid"`
 	OrderId     requests.Integer `position:"Query" name:"OrderId"`
 	CloseReason string           `position:"Query" name:"CloseReason"`
-	Tid         requests.Integer `position:"Query" name:"Tid"`
 }
 
 // CloseOrderResponse is the response struct for api CloseOrder

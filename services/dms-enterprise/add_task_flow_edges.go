@@ -71,9 +71,9 @@ func (client *Client) AddTaskFlowEdgesWithCallback(request *AddTaskFlowEdgesRequ
 // AddTaskFlowEdgesRequest is the request struct for api AddTaskFlowEdges
 type AddTaskFlowEdgesRequest struct {
 	*requests.RpcRequest
-	Edges *[]AddTaskFlowEdgesEdges `position:"Query" name:"Edges"  type:"Json"`
 	DagId requests.Integer         `position:"Query" name:"DagId"`
 	Tid   requests.Integer         `position:"Query" name:"Tid"`
+	Edges *[]AddTaskFlowEdgesEdges `position:"Query" name:"Edges"  type:"Json"`
 }
 
 // AddTaskFlowEdgesEdges is a repeated param struct in AddTaskFlowEdgesRequest

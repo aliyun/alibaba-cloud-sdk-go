@@ -71,8 +71,8 @@ func (client *Client) GetDataCorrectOrderDetailWithCallback(request *GetDataCorr
 // GetDataCorrectOrderDetailRequest is the request struct for api GetDataCorrectOrderDetail
 type GetDataCorrectOrderDetailRequest struct {
 	*requests.RpcRequest
-	OrderId requests.Integer `position:"Query" name:"OrderId"`
 	Tid     requests.Integer `position:"Query" name:"Tid"`
+	OrderId requests.Integer `position:"Query" name:"OrderId"`
 }
 
 // GetDataCorrectOrderDetailResponse is the response struct for api GetDataCorrectOrderDetail

@@ -72,8 +72,8 @@ func (client *Client) GetProxyWithCallback(request *GetProxyRequest, callback fu
 type GetProxyRequest struct {
 	*requests.RpcRequest
 	Tid        requests.Integer `position:"Query" name:"Tid"`
-	InstanceId requests.Integer `position:"Query" name:"InstanceId"`
 	ProxyId    requests.Integer `position:"Query" name:"ProxyId"`
+	InstanceId requests.Integer `position:"Query" name:"InstanceId"`
 }
 
 // GetProxyResponse is the response struct for api GetProxy

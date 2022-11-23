@@ -72,15 +72,15 @@ func (client *Client) ListSensitiveDataAuditLogWithCallback(request *ListSensiti
 type ListSensitiveDataAuditLogRequest struct {
 	*requests.RpcRequest
 	OpUserName string           `position:"Query" name:"OpUserName"`
-	EndTime    string           `position:"Query" name:"EndTime"`
 	StartTime  string           `position:"Query" name:"StartTime"`
-	ColumnName string           `position:"Query" name:"ColumnName"`
 	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
 	Tid        requests.Integer `position:"Query" name:"Tid"`
-	DbName     string           `position:"Query" name:"DbName"`
 	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 	ModuleName string           `position:"Query" name:"ModuleName"`
 	TableName  string           `position:"Query" name:"TableName"`
+	EndTime    string           `position:"Query" name:"EndTime"`
+	ColumnName string           `position:"Query" name:"ColumnName"`
+	DbName     string           `position:"Query" name:"DbName"`
 }
 
 // ListSensitiveDataAuditLogResponse is the response struct for api ListSensitiveDataAuditLog

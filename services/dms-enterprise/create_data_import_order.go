@@ -72,10 +72,10 @@ func (client *Client) CreateDataImportOrderWithCallback(request *CreateDataImpor
 type CreateDataImportOrderRequest struct {
 	*requests.RpcRequest
 	Tid             requests.Integer           `position:"Query" name:"Tid"`
-	AttachmentKey   string                     `position:"Query" name:"AttachmentKey"`
 	Param           CreateDataImportOrderParam `position:"Query" name:"Param"  type:"Struct"`
-	Comment         string                     `position:"Query" name:"Comment"`
 	RelatedUserList *[]string                  `position:"Query" name:"RelatedUserList"  type:"Json"`
+	AttachmentKey   string                     `position:"Query" name:"AttachmentKey"`
+	Comment         string                     `position:"Query" name:"Comment"`
 }
 
 // CreateDataImportOrderParam is a repeated param struct in CreateDataImportOrderRequest

@@ -71,16 +71,16 @@ func (client *Client) GrantUserPermissionWithCallback(request *GrantUserPermissi
 // GrantUserPermissionRequest is the request struct for api GrantUserPermission
 type GrantUserPermissionRequest struct {
 	*requests.RpcRequest
-	PermTypes  string           `position:"Query" name:"PermTypes"`
-	DsType     string           `position:"Query" name:"DsType"`
 	ExpireDate string           `position:"Query" name:"ExpireDate"`
 	UserId     string           `position:"Query" name:"UserId"`
 	Tid        requests.Integer `position:"Query" name:"Tid"`
+	TableId    string           `position:"Query" name:"TableId"`
+	TableName  string           `position:"Query" name:"TableName"`
+	PermTypes  string           `position:"Query" name:"PermTypes"`
+	DsType     string           `position:"Query" name:"DsType"`
 	InstanceId requests.Integer `position:"Query" name:"InstanceId"`
 	DbId       string           `position:"Query" name:"DbId"`
-	TableId    string           `position:"Query" name:"TableId"`
 	Logic      requests.Boolean `position:"Query" name:"Logic"`
-	TableName  string           `position:"Query" name:"TableName"`
 }
 
 // GrantUserPermissionResponse is the response struct for api GrantUserPermission

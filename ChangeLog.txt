@@ -1,3 +1,7 @@
+2022-11-23 Version: v1.62.34
+- Generated 2018-11-01 for `dms-enterprise`.
+- Supported GetDataCronClearConfig,GetDataCorrectRollbackFile,GetOrderAttachmentFile API.
+
 2022-11-23 Version: v1.62.33
 - Generated 2018-02-08 for `Domain`.
 - QueryBrokerDemand add PartnerDomain.

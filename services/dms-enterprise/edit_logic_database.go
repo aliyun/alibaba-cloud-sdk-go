@@ -73,8 +73,8 @@ type EditLogicDatabaseRequest struct {
 	*requests.RpcRequest
 	LogicDbId   requests.Integer `position:"Query" name:"LogicDbId"`
 	Tid         requests.Integer `position:"Query" name:"Tid"`
-	DatabaseIds *[]string        `position:"Query" name:"DatabaseIds"  type:"Json"`
 	Alias       string           `position:"Query" name:"Alias"`
+	DatabaseIds *[]string        `position:"Query" name:"DatabaseIds"  type:"Json"`
 }
 
 // EditLogicDatabaseResponse is the response struct for api EditLogicDatabase

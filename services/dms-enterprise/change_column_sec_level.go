@@ -71,13 +71,13 @@ func (client *Client) ChangeColumnSecLevelWithCallback(request *ChangeColumnSecL
 // ChangeColumnSecLevelRequest is the request struct for api ChangeColumnSecLevel
 type ChangeColumnSecLevelRequest struct {
 	*requests.RpcRequest
+	Tid        requests.Integer `position:"Query" name:"Tid"`
+	TableName  string           `position:"Query" name:"TableName"`
 	SchemaName string           `position:"Query" name:"SchemaName"`
 	IsLogic    requests.Boolean `position:"Query" name:"IsLogic"`
 	NewLevel   string           `position:"Query" name:"NewLevel"`
 	ColumnName string           `position:"Query" name:"ColumnName"`
-	Tid        requests.Integer `position:"Query" name:"Tid"`
 	DbId       requests.Integer `position:"Query" name:"DbId"`
-	TableName  string           `position:"Query" name:"TableName"`
 }
 
 // ChangeColumnSecLevelResponse is the response struct for api ChangeColumnSecLevel

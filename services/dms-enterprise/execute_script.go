@@ -71,8 +71,8 @@ func (client *Client) ExecuteScriptWithCallback(request *ExecuteScriptRequest, c
 // ExecuteScriptRequest is the request struct for api ExecuteScript
 type ExecuteScriptRequest struct {
 	*requests.RpcRequest
-	Script string           `position:"Query" name:"Script"`
 	Tid    requests.Integer `position:"Query" name:"Tid"`
+	Script string           `position:"Query" name:"Script"`
 	DbId   requests.Integer `position:"Query" name:"DbId"`
 	Logic  requests.Boolean `position:"Query" name:"Logic"`
 }

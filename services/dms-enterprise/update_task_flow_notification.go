@@ -74,8 +74,8 @@ type UpdateTaskFlowNotificationRequest struct {
 	DagId                  requests.Integer `position:"Query" name:"DagId"`
 	Tid                    requests.Integer `position:"Query" name:"Tid"`
 	DagNotificationFail    requests.Boolean `position:"Query" name:"DagNotificationFail"`
-	DagNotificationSuccess requests.Boolean `position:"Query" name:"DagNotificationSuccess"`
 	DagNotificationSla     requests.Boolean `position:"Query" name:"DagNotificationSla"`
+	DagNotificationSuccess requests.Boolean `position:"Query" name:"DagNotificationSuccess"`
 }
 
 // UpdateTaskFlowNotificationResponse is the response struct for api UpdateTaskFlowNotification

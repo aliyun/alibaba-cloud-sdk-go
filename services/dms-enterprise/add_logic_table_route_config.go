@@ -71,10 +71,10 @@ func (client *Client) AddLogicTableRouteConfigWithCallback(request *AddLogicTabl
 // AddLogicTableRouteConfigRequest is the request struct for api AddLogicTableRouteConfig
 type AddLogicTableRouteConfigRequest struct {
 	*requests.RpcRequest
-	RouteKey  string           `position:"Query" name:"RouteKey"`
 	Tid       requests.Integer `position:"Query" name:"Tid"`
-	RouteExpr string           `position:"Query" name:"RouteExpr"`
 	TableId   requests.Integer `position:"Query" name:"TableId"`
+	RouteKey  string           `position:"Query" name:"RouteKey"`
+	RouteExpr string           `position:"Query" name:"RouteExpr"`
 }
 
 // AddLogicTableRouteConfigResponse is the response struct for api AddLogicTableRouteConfig

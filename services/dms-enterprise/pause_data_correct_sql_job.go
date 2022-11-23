@@ -71,10 +71,10 @@ func (client *Client) PauseDataCorrectSQLJobWithCallback(request *PauseDataCorre
 // PauseDataCorrectSQLJobRequest is the request struct for api PauseDataCorrectSQLJob
 type PauseDataCorrectSQLJobRequest struct {
 	*requests.RpcRequest
-	OrderId requests.Integer `position:"Query" name:"OrderId"`
 	Type    string           `position:"Query" name:"Type"`
 	Tid     requests.Integer `position:"Query" name:"Tid"`
 	JobId   requests.Integer `position:"Query" name:"JobId"`
+	OrderId requests.Integer `position:"Query" name:"OrderId"`
 }
 
 // PauseDataCorrectSQLJobResponse is the response struct for api PauseDataCorrectSQLJob

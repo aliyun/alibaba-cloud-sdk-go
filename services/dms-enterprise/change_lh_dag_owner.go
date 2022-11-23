@@ -71,9 +71,9 @@ func (client *Client) ChangeLhDagOwnerWithCallback(request *ChangeLhDagOwnerRequ
 // ChangeLhDagOwnerRequest is the request struct for api ChangeLhDagOwner
 type ChangeLhDagOwnerRequest struct {
 	*requests.RpcRequest
-	OwnerUserId requests.Integer `position:"Query" name:"OwnerUserId"`
 	DagId       requests.Integer `position:"Query" name:"DagId"`
 	Tid         requests.Integer `position:"Query" name:"Tid"`
+	OwnerUserId requests.Integer `position:"Query" name:"OwnerUserId"`
 }
 
 // ChangeLhDagOwnerResponse is the response struct for api ChangeLhDagOwner

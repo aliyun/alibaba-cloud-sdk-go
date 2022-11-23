@@ -71,12 +71,12 @@ func (client *Client) GetOpLogWithCallback(request *GetOpLogRequest, callback fu
 // GetOpLogRequest is the request struct for api GetOpLog
 type GetOpLogRequest struct {
 	*requests.RpcRequest
-	Module     string           `position:"Query" name:"Module"`
-	EndTime    string           `position:"Query" name:"EndTime"`
 	StartTime  string           `position:"Query" name:"StartTime"`
 	Tid        requests.Integer `position:"Query" name:"Tid"`
 	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
 	PageSize   requests.Integer `position:"Query" name:"PageSize"`
+	Module     string           `position:"Query" name:"Module"`
+	EndTime    string           `position:"Query" name:"EndTime"`
 }
 
 // GetOpLogResponse is the response struct for api GetOpLog

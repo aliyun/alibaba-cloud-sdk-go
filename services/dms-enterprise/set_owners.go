@@ -71,9 +71,9 @@ func (client *Client) SetOwnersWithCallback(request *SetOwnersRequest, callback 
 // SetOwnersRequest is the request struct for api SetOwners
 type SetOwnersRequest struct {
 	*requests.RpcRequest
-	ResourceId string           `position:"Query" name:"ResourceId"`
 	OwnerIds   string           `position:"Query" name:"OwnerIds"`
 	Tid        requests.Integer `position:"Query" name:"Tid"`
+	ResourceId string           `position:"Query" name:"ResourceId"`
 	OwnerType  string           `position:"Query" name:"OwnerType"`
 }
 

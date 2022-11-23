@@ -71,13 +71,13 @@ func (client *Client) ModifyDesensitizationStrategyWithCallback(request *ModifyD
 // ModifyDesensitizationStrategyRequest is the request struct for api ModifyDesensitizationStrategy
 type ModifyDesensitizationStrategyRequest struct {
 	*requests.RpcRequest
-	SchemaName string           `position:"Query" name:"SchemaName"`
 	IsReset    requests.Boolean `position:"Query" name:"IsReset"`
+	Tid        requests.Integer `position:"Query" name:"Tid"`
+	TableName  string           `position:"Query" name:"TableName"`
+	SchemaName string           `position:"Query" name:"SchemaName"`
 	IsLogic    requests.Boolean `position:"Query" name:"IsLogic"`
 	ColumnName string           `position:"Query" name:"ColumnName"`
-	Tid        requests.Integer `position:"Query" name:"Tid"`
 	DbId       requests.Integer `position:"Query" name:"DbId"`
-	TableName  string           `position:"Query" name:"TableName"`
 	RuleId     requests.Integer `position:"Query" name:"RuleId"`
 }
 

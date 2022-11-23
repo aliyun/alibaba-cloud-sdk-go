@@ -71,8 +71,8 @@ func (client *Client) ExecuteStructSyncWithCallback(request *ExecuteStructSyncRe
 // ExecuteStructSyncRequest is the request struct for api ExecuteStructSync
 type ExecuteStructSyncRequest struct {
 	*requests.RpcRequest
-	OrderId requests.Integer `position:"Query" name:"OrderId"`
 	Tid     requests.Integer `position:"Query" name:"Tid"`
+	OrderId requests.Integer `position:"Query" name:"OrderId"`
 }
 
 // ExecuteStructSyncResponse is the response struct for api ExecuteStructSync

@@ -71,9 +71,9 @@ func (client *Client) ModifyDataCorrectExecSQLWithCallback(request *ModifyDataCo
 // ModifyDataCorrectExecSQLRequest is the request struct for api ModifyDataCorrectExecSQL
 type ModifyDataCorrectExecSQLRequest struct {
 	*requests.RpcRequest
-	OrderId requests.Integer `position:"Query" name:"OrderId"`
 	ExecSQL string           `position:"Query" name:"ExecSQL"`
 	Tid     requests.Integer `position:"Query" name:"Tid"`
+	OrderId requests.Integer `position:"Query" name:"OrderId"`
 }
 
 // ModifyDataCorrectExecSQLResponse is the response struct for api ModifyDataCorrectExecSQL

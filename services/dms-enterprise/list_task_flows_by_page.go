@@ -73,9 +73,9 @@ type ListTaskFlowsByPageRequest struct {
 	*requests.RpcRequest
 	SearchKey           string           `position:"Query" name:"SearchKey"`
 	Tid                 requests.Integer `position:"Query" name:"Tid"`
-	NeedLastDagInstance requests.Boolean `position:"Query" name:"NeedLastDagInstance"`
 	PageSize            requests.Integer `position:"Query" name:"PageSize"`
 	PageIndex           requests.Integer `position:"Query" name:"PageIndex"`
+	NeedLastDagInstance requests.Boolean `position:"Query" name:"NeedLastDagInstance"`
 }
 
 // ListTaskFlowsByPageResponse is the response struct for api ListTaskFlowsByPage

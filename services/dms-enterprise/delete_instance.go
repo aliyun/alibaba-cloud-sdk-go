@@ -73,8 +73,8 @@ type DeleteInstanceRequest struct {
 	*requests.RpcRequest
 	Tid  requests.Integer `position:"Query" name:"Tid"`
 	Sid  string           `position:"Query" name:"Sid"`
-	Port requests.Integer `position:"Query" name:"Port"`
 	Host string           `position:"Query" name:"Host"`
+	Port requests.Integer `position:"Query" name:"Port"`
 }
 
 // DeleteInstanceResponse is the response struct for api DeleteInstance

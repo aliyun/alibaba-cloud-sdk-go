@@ -71,8 +71,8 @@ func (client *Client) ListDDLPublishRecordsWithCallback(request *ListDDLPublishR
 // ListDDLPublishRecordsRequest is the request struct for api ListDDLPublishRecords
 type ListDDLPublishRecordsRequest struct {
 	*requests.RpcRequest
-	OrderId requests.Integer `position:"Query" name:"OrderId"`
 	Tid     requests.Integer `position:"Query" name:"Tid"`
+	OrderId requests.Integer `position:"Query" name:"OrderId"`
 }
 
 // ListDDLPublishRecordsResponse is the response struct for api ListDDLPublishRecords

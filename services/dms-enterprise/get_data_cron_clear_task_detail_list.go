@@ -71,10 +71,10 @@ func (client *Client) GetDataCronClearTaskDetailListWithCallback(request *GetDat
 // GetDataCronClearTaskDetailListRequest is the request struct for api GetDataCronClearTaskDetailList
 type GetDataCronClearTaskDetailListRequest struct {
 	*requests.RpcRequest
-	OrderId    requests.Integer `position:"Query" name:"OrderId"`
 	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
 	Tid        requests.Integer `position:"Query" name:"Tid"`
 	PageSize   requests.Integer `position:"Query" name:"PageSize"`
+	OrderId    requests.Integer `position:"Query" name:"OrderId"`
 }
 
 // GetDataCronClearTaskDetailListResponse is the response struct for api GetDataCronClearTaskDetailList

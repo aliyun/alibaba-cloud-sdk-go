@@ -71,10 +71,10 @@ func (client *Client) RestartDataCorrectSQLJobWithCallback(request *RestartDataC
 // RestartDataCorrectSQLJobRequest is the request struct for api RestartDataCorrectSQLJob
 type RestartDataCorrectSQLJobRequest struct {
 	*requests.RpcRequest
-	OrderId requests.Integer `position:"Query" name:"OrderId"`
 	Type    string           `position:"Query" name:"Type"`
 	Tid     requests.Integer `position:"Query" name:"Tid"`
 	JobId   requests.Integer `position:"Query" name:"JobId"`
+	OrderId requests.Integer `position:"Query" name:"OrderId"`
 }
 
 // RestartDataCorrectSQLJobResponse is the response struct for api RestartDataCorrectSQLJob

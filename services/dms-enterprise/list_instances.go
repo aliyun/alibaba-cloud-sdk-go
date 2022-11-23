@@ -73,13 +73,13 @@ type ListInstancesRequest struct {
 	*requests.RpcRequest
 	SearchKey      string           `position:"Query" name:"SearchKey"`
 	Tid            requests.Integer `position:"Query" name:"Tid"`
-	InstanceState  string           `position:"Query" name:"InstanceState"`
 	PageNumber     requests.Integer `position:"Query" name:"PageNumber"`
-	NetType        string           `position:"Query" name:"NetType"`
-	DbType         string           `position:"Query" name:"DbType"`
 	EnvType        string           `position:"Query" name:"EnvType"`
 	InstanceSource string           `position:"Query" name:"InstanceSource"`
 	PageSize       requests.Integer `position:"Query" name:"PageSize"`
+	InstanceState  string           `position:"Query" name:"InstanceState"`
+	NetType        string           `position:"Query" name:"NetType"`
+	DbType         string           `position:"Query" name:"DbType"`
 }
 
 // ListInstancesResponse is the response struct for api ListInstances

@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// GetStructSyncJobDetail invokes the dms_enterprise.GetStructSyncJobDetail API synchronously
-func (client *Client) GetStructSyncJobDetail(request *GetStructSyncJobDetailRequest) (response *GetStructSyncJobDetailResponse, err error) {
-	response = CreateGetStructSyncJobDetailResponse()
+// GetDataCronClearConfig invokes the dms_enterprise.GetDataCronClearConfig API synchronously
+func (client *Client) GetDataCronClearConfig(request *GetDataCronClearConfigRequest) (response *GetDataCronClearConfigResponse, err error) {
+	response = CreateGetDataCronClearConfigResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// GetStructSyncJobDetailWithChan invokes the dms_enterprise.GetStructSyncJobDetail API asynchronously
-func (client *Client) GetStructSyncJobDetailWithChan(request *GetStructSyncJobDetailRequest) (<-chan *GetStructSyncJobDetailResponse, <-chan error) {
-	responseChan := make(chan *GetStructSyncJobDetailResponse, 1)
+// GetDataCronClearConfigWithChan invokes the dms_enterprise.GetDataCronClearConfig API asynchronously
+func (client *Client) GetDataCronClearConfigWithChan(request *GetDataCronClearConfigRequest) (<-chan *GetDataCronClearConfigResponse, <-chan error) {
+	responseChan := make(chan *GetDataCronClearConfigResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.GetStructSyncJobDetail(request)
+		response, err := client.GetDataCronClearConfig(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) GetStructSyncJobDetailWithChan(request *GetStructSyncJobDe
 	return responseChan, errChan
 }
 
-// GetStructSyncJobDetailWithCallback invokes the dms_enterprise.GetStructSyncJobDetail API asynchronously
-func (client *Client) GetStructSyncJobDetailWithCallback(request *GetStructSyncJobDetailRequest, callback func(response *GetStructSyncJobDetailResponse, err error)) <-chan int {
+// GetDataCronClearConfigWithCallback invokes the dms_enterprise.GetDataCronClearConfig API asynchronously
+func (client *Client) GetDataCronClearConfigWithCallback(request *GetDataCronClearConfigRequest, callback func(response *GetDataCronClearConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *GetStructSyncJobDetailResponse
+		var response *GetDataCronClearConfigResponse
 		var err error
 		defer close(result)
-		response, err = client.GetStructSyncJobDetail(request)
+		response, err = client.GetDataCronClearConfig(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,36 +68,36 @@ func (client *Client) GetStructSyncJobDetailWithCallback(request *GetStructSyncJ
 	return result
 }
 
-// GetStructSyncJobDetailRequest is the request struct for api GetStructSyncJobDetail
-type GetStructSyncJobDetailRequest struct {
+// GetDataCronClearConfigRequest is the request struct for api GetDataCronClearConfig
+type GetDataCronClearConfigRequest struct {
 	*requests.RpcRequest
 	Tid     requests.Integer `position:"Query" name:"Tid"`
 	OrderId requests.Integer `position:"Query" name:"OrderId"`
 }
 
-// GetStructSyncJobDetailResponse is the response struct for api GetStructSyncJobDetail
-type GetStructSyncJobDetailResponse struct {
+// GetDataCronClearConfigResponse is the response struct for api GetDataCronClearConfig
+type GetDataCronClearConfigResponse struct {
 	*responses.BaseResponse
 	RequestId           string              `json:"RequestId" xml:"RequestId"`
 	Success             bool                `json:"Success" xml:"Success"`
 	ErrorMessage        string              `json:"ErrorMessage" xml:"ErrorMessage"`
 	ErrorCode           string              `json:"ErrorCode" xml:"ErrorCode"`
-	StructSyncJobDetail StructSyncJobDetail `json:"StructSyncJobDetail" xml:"StructSyncJobDetail"`
+	DataCronClearConfig DataCronClearConfig `json:"DataCronClearConfig" xml:"DataCronClearConfig"`
 }
 
-// CreateGetStructSyncJobDetailRequest creates a request to invoke GetStructSyncJobDetail API
-func CreateGetStructSyncJobDetailRequest() (request *GetStructSyncJobDetailRequest) {
-	request = &GetStructSyncJobDetailRequest{
+// CreateGetDataCronClearConfigRequest creates a request to invoke GetDataCronClearConfig API
+func CreateGetDataCronClearConfigRequest() (request *GetDataCronClearConfigRequest) {
+	request = &GetDataCronClearConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "GetStructSyncJobDetail", "dms-enterprise", "openAPI")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "GetDataCronClearConfig", "dms-enterprise", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateGetStructSyncJobDetailResponse creates a response to parse from GetStructSyncJobDetail response
-func CreateGetStructSyncJobDetailResponse() (response *GetStructSyncJobDetailResponse) {
-	response = &GetStructSyncJobDetailResponse{
+// CreateGetDataCronClearConfigResponse creates a response to parse from GetDataCronClearConfig response
+func CreateGetDataCronClearConfigResponse() (response *GetDataCronClearConfigResponse) {
+	response = &GetDataCronClearConfigResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

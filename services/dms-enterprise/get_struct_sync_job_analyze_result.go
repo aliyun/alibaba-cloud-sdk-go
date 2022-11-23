@@ -71,11 +71,11 @@ func (client *Client) GetStructSyncJobAnalyzeResultWithCallback(request *GetStru
 // GetStructSyncJobAnalyzeResultRequest is the request struct for api GetStructSyncJobAnalyzeResult
 type GetStructSyncJobAnalyzeResultRequest struct {
 	*requests.RpcRequest
-	OrderId     requests.Integer `position:"Query" name:"OrderId"`
-	CompareType string           `position:"Query" name:"CompareType"`
 	PageNumber  requests.Integer `position:"Query" name:"PageNumber"`
 	Tid         requests.Integer `position:"Query" name:"Tid"`
 	PageSize    requests.Integer `position:"Query" name:"PageSize"`
+	OrderId     requests.Integer `position:"Query" name:"OrderId"`
+	CompareType string           `position:"Query" name:"CompareType"`
 }
 
 // GetStructSyncJobAnalyzeResultResponse is the response struct for api GetStructSyncJobAnalyzeResult

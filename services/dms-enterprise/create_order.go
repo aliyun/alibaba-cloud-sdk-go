@@ -73,10 +73,10 @@ type CreateOrderRequest struct {
 	*requests.RpcRequest
 	Tid             requests.Integer       `position:"Query" name:"Tid"`
 	PluginType      string                 `position:"Query" name:"PluginType"`
-	AttachmentKey   string                 `position:"Query" name:"AttachmentKey"`
-	Comment         string                 `position:"Query" name:"Comment"`
 	PluginParam     map[string]interface{} `position:"Body" name:"PluginParam"`
 	RelatedUserList string                 `position:"Query" name:"RelatedUserList"`
+	AttachmentKey   string                 `position:"Query" name:"AttachmentKey"`
+	Comment         string                 `position:"Query" name:"Comment"`
 }
 
 // CreateOrderResponse is the response struct for api CreateOrder

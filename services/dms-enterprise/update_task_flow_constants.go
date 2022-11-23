@@ -71,9 +71,9 @@ func (client *Client) UpdateTaskFlowConstantsWithCallback(request *UpdateTaskFlo
 // UpdateTaskFlowConstantsRequest is the request struct for api UpdateTaskFlowConstants
 type UpdateTaskFlowConstantsRequest struct {
 	*requests.RpcRequest
-	DagConstants *[]UpdateTaskFlowConstantsDagConstants `position:"Query" name:"DagConstants"  type:"Json"`
 	DagId        requests.Integer                       `position:"Query" name:"DagId"`
 	Tid          requests.Integer                       `position:"Query" name:"Tid"`
+	DagConstants *[]UpdateTaskFlowConstantsDagConstants `position:"Query" name:"DagConstants"  type:"Json"`
 }
 
 // UpdateTaskFlowConstantsDagConstants is a repeated param struct in UpdateTaskFlowConstantsRequest

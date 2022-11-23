@@ -71,11 +71,11 @@ func (client *Client) CreateUploadFileJobWithCallback(request *CreateUploadFileJ
 // CreateUploadFileJobRequest is the request struct for api CreateUploadFileJob
 type CreateUploadFileJobRequest struct {
 	*requests.RpcRequest
+	Tid        requests.Integer `position:"Query" name:"Tid"`
+	UploadURL  string           `position:"Query" name:"UploadURL"`
 	UploadType string           `position:"Query" name:"UploadType"`
 	FileSource string           `position:"Query" name:"FileSource"`
-	Tid        requests.Integer `position:"Query" name:"Tid"`
 	FileName   string           `position:"Query" name:"FileName"`
-	UploadURL  string           `position:"Query" name:"UploadURL"`
 }
 
 // CreateUploadFileJobResponse is the response struct for api CreateUploadFileJob

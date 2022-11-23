@@ -71,8 +71,8 @@ func (client *Client) GetOwnerApplyOrderDetailWithCallback(request *GetOwnerAppl
 // GetOwnerApplyOrderDetailRequest is the request struct for api GetOwnerApplyOrderDetail
 type GetOwnerApplyOrderDetailRequest struct {
 	*requests.RpcRequest
-	OrderId requests.Integer `position:"Query" name:"OrderId"`
 	Tid     requests.Integer `position:"Query" name:"Tid"`
+	OrderId requests.Integer `position:"Query" name:"OrderId"`
 }
 
 // GetOwnerApplyOrderDetailResponse is the response struct for api GetOwnerApplyOrderDetail

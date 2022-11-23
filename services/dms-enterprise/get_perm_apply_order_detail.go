@@ -71,8 +71,8 @@ func (client *Client) GetPermApplyOrderDetailWithCallback(request *GetPermApplyO
 // GetPermApplyOrderDetailRequest is the request struct for api GetPermApplyOrderDetail
 type GetPermApplyOrderDetailRequest struct {
 	*requests.RpcRequest
-	OrderId requests.Integer `position:"Query" name:"OrderId"`
 	Tid     requests.Integer `position:"Query" name:"Tid"`
+	OrderId requests.Integer `position:"Query" name:"OrderId"`
 }
 
 // GetPermApplyOrderDetailResponse is the response struct for api GetPermApplyOrderDetail

@@ -72,8 +72,8 @@ func (client *Client) UpdateTaskNameWithCallback(request *UpdateTaskNameRequest,
 type UpdateTaskNameRequest struct {
 	*requests.RpcRequest
 	Tid      requests.Integer `position:"Query" name:"Tid"`
-	NodeName string           `position:"Query" name:"NodeName"`
 	NodeId   string           `position:"Query" name:"NodeId"`
+	NodeName string           `position:"Query" name:"NodeName"`
 }
 
 // UpdateTaskNameResponse is the response struct for api UpdateTaskName

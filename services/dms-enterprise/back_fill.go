@@ -71,16 +71,16 @@ func (client *Client) BackFillWithCallback(request *BackFillRequest, callback fu
 // BackFillRequest is the request struct for api BackFill
 type BackFillRequest struct {
 	*requests.RpcRequest
-	BackFillDateBegin string           `position:"Query" name:"BackFillDateBegin"`
-	BackFillDate      string           `position:"Query" name:"BackFillDate"`
 	DagId             requests.Integer `position:"Query" name:"DagId"`
 	Tid               requests.Integer `position:"Query" name:"Tid"`
 	IsTriggerSubTree  requests.Boolean `position:"Query" name:"IsTriggerSubTree"`
-	Asc               requests.Boolean `position:"Query" name:"Asc"`
 	BackFillDateEnd   string           `position:"Query" name:"BackFillDateEnd"`
-	Interval          requests.Integer `position:"Query" name:"Interval"`
 	HistoryDagId      requests.Integer `position:"Query" name:"HistoryDagId"`
 	StartNodeIds      *[]string        `position:"Query" name:"StartNodeIds"  type:"Json"`
+	BackFillDateBegin string           `position:"Query" name:"BackFillDateBegin"`
+	BackFillDate      string           `position:"Query" name:"BackFillDate"`
+	Asc               requests.Boolean `position:"Query" name:"Asc"`
+	Interval          requests.Integer `position:"Query" name:"Interval"`
 }
 
 // BackFillResponse is the response struct for api BackFill

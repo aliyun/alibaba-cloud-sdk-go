@@ -71,11 +71,11 @@ func (client *Client) ListDataCorrectPreCheckSQLWithCallback(request *ListDataCo
 // ListDataCorrectPreCheckSQLRequest is the request struct for api ListDataCorrectPreCheckSQL
 type ListDataCorrectPreCheckSQLRequest struct {
 	*requests.RpcRequest
-	OrderId    requests.Integer `position:"Query" name:"OrderId"`
 	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
 	Tid        requests.Integer `position:"Query" name:"Tid"`
-	DbId       requests.Integer `position:"Query" name:"DbId"`
 	PageSize   requests.Integer `position:"Query" name:"PageSize"`
+	OrderId    requests.Integer `position:"Query" name:"OrderId"`
+	DbId       requests.Integer `position:"Query" name:"DbId"`
 }
 
 // ListDataCorrectPreCheckSQLResponse is the response struct for api ListDataCorrectPreCheckSQL

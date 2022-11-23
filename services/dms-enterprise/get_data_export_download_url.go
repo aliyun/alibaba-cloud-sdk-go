@@ -71,9 +71,9 @@ func (client *Client) GetDataExportDownloadURLWithCallback(request *GetDataExpor
 // GetDataExportDownloadURLRequest is the request struct for api GetDataExportDownloadURL
 type GetDataExportDownloadURLRequest struct {
 	*requests.RpcRequest
+	Tid        requests.Integer `position:"Query" name:"Tid"`
 	OrderId    requests.Integer `position:"Query" name:"OrderId"`
 	ActionName string           `position:"Query" name:"ActionName"`
-	Tid        requests.Integer `position:"Query" name:"Tid"`
 }
 
 // GetDataExportDownloadURLResponse is the response struct for api GetDataExportDownloadURL

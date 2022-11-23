@@ -71,9 +71,9 @@ func (client *Client) CreateUploadOSSFileJobWithCallback(request *CreateUploadOS
 // CreateUploadOSSFileJobRequest is the request struct for api CreateUploadOSSFileJob
 type CreateUploadOSSFileJobRequest struct {
 	*requests.RpcRequest
+	Tid          requests.Integer                   `position:"Query" name:"Tid"`
 	UploadType   string                             `position:"Query" name:"UploadType"`
 	FileSource   string                             `position:"Query" name:"FileSource"`
-	Tid          requests.Integer                   `position:"Query" name:"Tid"`
 	FileName     string                             `position:"Query" name:"FileName"`
 	UploadTarget CreateUploadOSSFileJobUploadTarget `position:"Query" name:"UploadTarget"  type:"Struct"`
 }

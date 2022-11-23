@@ -71,13 +71,13 @@ func (client *Client) CreateLakeHouseSpaceWithCallback(request *CreateLakeHouseS
 // CreateLakeHouseSpaceRequest is the request struct for api CreateLakeHouseSpace
 type CreateLakeHouseSpaceRequest struct {
 	*requests.RpcRequest
-	SpaceName   string           `position:"Query" name:"SpaceName"`
 	Description string           `position:"Query" name:"Description"`
 	Tid         requests.Integer `position:"Query" name:"Tid"`
 	Mode        string           `position:"Query" name:"Mode"`
-	DwDbType    string           `position:"Query" name:"DwDbType"`
 	ProdDbId    string           `position:"Query" name:"ProdDbId"`
 	DevDbId     string           `position:"Query" name:"DevDbId"`
+	SpaceName   string           `position:"Query" name:"SpaceName"`
+	DwDbType    string           `position:"Query" name:"DwDbType"`
 	SpaceConfig string           `position:"Query" name:"SpaceConfig"`
 }
 

@@ -73,8 +73,8 @@ type GetInstanceRequest struct {
 	*requests.RpcRequest
 	Tid  requests.Integer `position:"Query" name:"Tid"`
 	Sid  string           `position:"Query" name:"Sid"`
-	Port requests.Integer `position:"Query" name:"Port"`
 	Host string           `position:"Query" name:"Host"`
+	Port requests.Integer `position:"Query" name:"Port"`
 }
 
 // GetInstanceResponse is the response struct for api GetInstance

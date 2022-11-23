@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// RetryDataCorrectPreCheck invokes the dms_enterprise.RetryDataCorrectPreCheck API synchronously
-func (client *Client) RetryDataCorrectPreCheck(request *RetryDataCorrectPreCheckRequest) (response *RetryDataCorrectPreCheckResponse, err error) {
-	response = CreateRetryDataCorrectPreCheckResponse()
+// GetOrderAttachmentFile invokes the dms_enterprise.GetOrderAttachmentFile API synchronously
+func (client *Client) GetOrderAttachmentFile(request *GetOrderAttachmentFileRequest) (response *GetOrderAttachmentFileResponse, err error) {
+	response = CreateGetOrderAttachmentFileResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// RetryDataCorrectPreCheckWithChan invokes the dms_enterprise.RetryDataCorrectPreCheck API asynchronously
-func (client *Client) RetryDataCorrectPreCheckWithChan(request *RetryDataCorrectPreCheckRequest) (<-chan *RetryDataCorrectPreCheckResponse, <-chan error) {
-	responseChan := make(chan *RetryDataCorrectPreCheckResponse, 1)
+// GetOrderAttachmentFileWithChan invokes the dms_enterprise.GetOrderAttachmentFile API asynchronously
+func (client *Client) GetOrderAttachmentFileWithChan(request *GetOrderAttachmentFileRequest) (<-chan *GetOrderAttachmentFileResponse, <-chan error) {
+	responseChan := make(chan *GetOrderAttachmentFileResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.RetryDataCorrectPreCheck(request)
+		response, err := client.GetOrderAttachmentFile(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) RetryDataCorrectPreCheckWithChan(request *RetryDataCorrect
 	return responseChan, errChan
 }
 
-// RetryDataCorrectPreCheckWithCallback invokes the dms_enterprise.RetryDataCorrectPreCheck API asynchronously
-func (client *Client) RetryDataCorrectPreCheckWithCallback(request *RetryDataCorrectPreCheckRequest, callback func(response *RetryDataCorrectPreCheckResponse, err error)) <-chan int {
+// GetOrderAttachmentFileWithCallback invokes the dms_enterprise.GetOrderAttachmentFile API asynchronously
+func (client *Client) GetOrderAttachmentFileWithCallback(request *GetOrderAttachmentFileRequest, callback func(response *GetOrderAttachmentFileResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *RetryDataCorrectPreCheckResponse
+		var response *GetOrderAttachmentFileResponse
 		var err error
 		defer close(result)
-		response, err = client.RetryDataCorrectPreCheck(request)
+		response, err = client.GetOrderAttachmentFile(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,35 +68,36 @@ func (client *Client) RetryDataCorrectPreCheckWithCallback(request *RetryDataCor
 	return result
 }
 
-// RetryDataCorrectPreCheckRequest is the request struct for api RetryDataCorrectPreCheck
-type RetryDataCorrectPreCheckRequest struct {
+// GetOrderAttachmentFileRequest is the request struct for api GetOrderAttachmentFile
+type GetOrderAttachmentFileRequest struct {
 	*requests.RpcRequest
 	Tid     requests.Integer `position:"Query" name:"Tid"`
 	OrderId requests.Integer `position:"Query" name:"OrderId"`
 }
 
-// RetryDataCorrectPreCheckResponse is the response struct for api RetryDataCorrectPreCheck
-type RetryDataCorrectPreCheckResponse struct {
+// GetOrderAttachmentFileResponse is the response struct for api GetOrderAttachmentFile
+type GetOrderAttachmentFileResponse struct {
 	*responses.BaseResponse
 	RequestId    string `json:"RequestId" xml:"RequestId"`
 	Success      bool   `json:"Success" xml:"Success"`
 	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
 	ErrorCode    string `json:"ErrorCode" xml:"ErrorCode"`
+	FileUrl      string `json:"FileUrl" xml:"FileUrl"`
 }
 
-// CreateRetryDataCorrectPreCheckRequest creates a request to invoke RetryDataCorrectPreCheck API
-func CreateRetryDataCorrectPreCheckRequest() (request *RetryDataCorrectPreCheckRequest) {
-	request = &RetryDataCorrectPreCheckRequest{
+// CreateGetOrderAttachmentFileRequest creates a request to invoke GetOrderAttachmentFile API
+func CreateGetOrderAttachmentFileRequest() (request *GetOrderAttachmentFileRequest) {
+	request = &GetOrderAttachmentFileRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "RetryDataCorrectPreCheck", "dms-enterprise", "openAPI")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "GetOrderAttachmentFile", "dms-enterprise", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateRetryDataCorrectPreCheckResponse creates a response to parse from RetryDataCorrectPreCheck response
-func CreateRetryDataCorrectPreCheckResponse() (response *RetryDataCorrectPreCheckResponse) {
-	response = &RetryDataCorrectPreCheckResponse{
+// CreateGetOrderAttachmentFileResponse creates a response to parse from GetOrderAttachmentFile response
+func CreateGetOrderAttachmentFileResponse() (response *GetOrderAttachmentFileResponse) {
+	response = &GetOrderAttachmentFileResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

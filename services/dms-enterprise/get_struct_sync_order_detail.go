@@ -71,8 +71,8 @@ func (client *Client) GetStructSyncOrderDetailWithCallback(request *GetStructSyn
 // GetStructSyncOrderDetailRequest is the request struct for api GetStructSyncOrderDetail
 type GetStructSyncOrderDetailRequest struct {
 	*requests.RpcRequest
-	OrderId requests.Integer `position:"Query" name:"OrderId"`
 	Tid     requests.Integer `position:"Query" name:"Tid"`
+	OrderId requests.Integer `position:"Query" name:"OrderId"`
 }
 
 // GetStructSyncOrderDetailResponse is the response struct for api GetStructSyncOrderDetail

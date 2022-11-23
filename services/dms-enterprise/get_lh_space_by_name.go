@@ -71,8 +71,8 @@ func (client *Client) GetLhSpaceByNameWithCallback(request *GetLhSpaceByNameRequ
 // GetLhSpaceByNameRequest is the request struct for api GetLhSpaceByName
 type GetLhSpaceByNameRequest struct {
 	*requests.RpcRequest
-	SpaceName string           `position:"Query" name:"SpaceName"`
 	Tid       requests.Integer `position:"Query" name:"Tid"`
+	SpaceName string           `position:"Query" name:"SpaceName"`
 }
 
 // GetLhSpaceByNameResponse is the response struct for api GetLhSpaceByName

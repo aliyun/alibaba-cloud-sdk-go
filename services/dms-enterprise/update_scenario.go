@@ -73,8 +73,8 @@ type UpdateScenarioRequest struct {
 	*requests.RpcRequest
 	Description  string           `position:"Query" name:"Description"`
 	Tid          requests.Integer `position:"Query" name:"Tid"`
-	ScenarioName string           `position:"Query" name:"ScenarioName"`
 	ScenarioId   string           `position:"Query" name:"ScenarioId"`
+	ScenarioName string           `position:"Query" name:"ScenarioName"`
 }
 
 // UpdateScenarioResponse is the response struct for api UpdateScenario

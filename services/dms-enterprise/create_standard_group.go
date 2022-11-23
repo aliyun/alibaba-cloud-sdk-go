@@ -72,8 +72,8 @@ func (client *Client) CreateStandardGroupWithCallback(request *CreateStandardGro
 type CreateStandardGroupRequest struct {
 	*requests.RpcRequest
 	Description string           `position:"Query" name:"Description"`
-	GroupName   string           `position:"Query" name:"GroupName"`
 	Tid         requests.Integer `position:"Query" name:"Tid"`
+	GroupName   string           `position:"Query" name:"GroupName"`
 	DbType      string           `position:"Query" name:"DbType"`
 }
 
