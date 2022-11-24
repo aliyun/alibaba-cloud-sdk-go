@@ -1,3 +1,8 @@
+2022-11-24 Version: v1.62.37
+- Generated 2016-04-28 for `Vpc`.
+- Supported OwnerId for ListPublicIpAddressPools.
+- Supported ShareType for ListPublicIpAddressPools.
+
 2022-11-24 Version: v1.62.36
 - Generated 2020-04-07 for `cas`.
 - Support deleteCertificate.
