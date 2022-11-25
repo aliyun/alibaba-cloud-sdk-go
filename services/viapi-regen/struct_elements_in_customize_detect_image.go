@@ -17,5 +17,5 @@ package viapi_regen
 
 // ElementsInCustomizeDetectImage is a nested struct in viapi_regen response
 type ElementsInCustomizeDetectImage struct {
-	Elements []Elements `json:"elements" xml:"elements"`
+	ElementsItem []ElementsItem `json:"elements" xml:"elements"`
 }

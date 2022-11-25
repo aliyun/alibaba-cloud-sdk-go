@@ -1,3 +1,7 @@
+2022-11-25 Version: v1.62.38
+- Generated 2021-11-19 for `viapi-regen`.
+- Release CustomizeClassifyImage.
+
 2022-11-24 Version: v1.62.37
 - Generated 2016-04-28 for `Vpc`.
 - Supported OwnerId for ListPublicIpAddressPools.

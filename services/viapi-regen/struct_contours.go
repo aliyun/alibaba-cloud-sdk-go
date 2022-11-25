@@ -17,6 +17,5 @@ package viapi_regen
 
 // Contours is a nested struct in viapi_regen response
 type Contours struct {
-	X int `json:"X" xml:"X"`
-	Y int `json:"Y" xml:"Y"`
+	ContoursItem []ContoursItem `json:"contours" xml:"contours"`
 }

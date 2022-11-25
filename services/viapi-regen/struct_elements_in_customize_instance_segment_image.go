@@ -17,5 +17,5 @@ package viapi_regen
 
 // ElementsInCustomizeInstanceSegmentImage is a nested struct in viapi_regen response
 type ElementsInCustomizeInstanceSegmentImage struct {
-	Elements []Elements `json:"elements" xml:"elements"`
+	ElementsItem []ElementsItem `json:"elements" xml:"elements"`
 }
