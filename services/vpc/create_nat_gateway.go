@@ -74,6 +74,7 @@ type CreateNatGatewayRequest struct {
 	ResourceOwnerId           requests.Integer                    `position:"Query" name:"ResourceOwnerId"`
 	ClientToken               string                              `position:"Query" name:"ClientToken"`
 	SecurityProtectionEnabled requests.Boolean                    `position:"Query" name:"SecurityProtectionEnabled"`
+	SecurityGroupId           string                              `position:"Query" name:"SecurityGroupId"`
 	Description               string                              `position:"Query" name:"Description"`
 	NetworkType               string                              `position:"Query" name:"NetworkType"`
 	Spec                      string                              `position:"Query" name:"Spec"`
