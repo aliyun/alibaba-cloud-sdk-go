@@ -1,3 +1,8 @@
+2022-11-28 Version: v1.62.42
+- Generated 2016-04-28 for `Vpc`.
+- Supported ShareType for ListPublicIpAddressPools.
+- Supported OwnerId for ListPublicIpAddressPools.
+
 2022-11-28 Version: v1.62.41
 - Generated 2016-04-28 for `Vpc`.
 - Supported ShareType for ListPublicIpAddressPools.
