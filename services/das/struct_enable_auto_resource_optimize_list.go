@@ -17,10 +17,5 @@ package das
 
 // EnableAutoResourceOptimizeList is a nested struct in das response
 type EnableAutoResourceOptimizeList struct {
-	TableSpaceSize          string `json:"TableSpaceSize" xml:"TableSpaceSize"`
-	InstanceId              string `json:"InstanceId" xml:"InstanceId"`
-	UserId                  string `json:"UserId" xml:"UserId"`
-	AutoDefragment          bool   `json:"AutoDefragment" xml:"AutoDefragment"`
-	DasProOn                bool   `json:"DasProOn" xml:"DasProOn"`
-	TableFragmentationRatio string `json:"TableFragmentationRatio" xml:"TableFragmentationRatio"`
+	EnableAutoResourceOptimizeListItem []EnableAutoResourceOptimizeListItem `json:"enableAutoResourceOptimizeList" xml:"enableAutoResourceOptimizeList"`
 }

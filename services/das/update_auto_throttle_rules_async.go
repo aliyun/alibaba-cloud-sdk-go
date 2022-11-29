@@ -87,11 +87,11 @@ type UpdateAutoThrottleRulesAsyncRequest struct {
 // UpdateAutoThrottleRulesAsyncResponse is the response struct for api UpdateAutoThrottleRulesAsync
 type UpdateAutoThrottleRulesAsyncResponse struct {
 	*responses.BaseResponse
-	Code      int64                              `json:"Code" xml:"Code"`
-	Message   string                             `json:"Message" xml:"Message"`
-	RequestId string                             `json:"RequestId" xml:"RequestId"`
-	Success   bool                               `json:"Success" xml:"Success"`
-	Data      DataInUpdateAutoThrottleRulesAsync `json:"Data" xml:"Data"`
+	Code      int64  `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
+	Data      Data   `json:"Data" xml:"Data"`
 }
 
 // CreateUpdateAutoThrottleRulesAsyncRequest creates a request to invoke UpdateAutoThrottleRulesAsync API

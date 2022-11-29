@@ -78,11 +78,11 @@ type DisableAutoResourceOptimizeRulesRequest struct {
 // DisableAutoResourceOptimizeRulesResponse is the response struct for api DisableAutoResourceOptimizeRules
 type DisableAutoResourceOptimizeRulesResponse struct {
 	*responses.BaseResponse
-	Code      int64                                  `json:"Code" xml:"Code"`
-	Message   string                                 `json:"Message" xml:"Message"`
-	RequestId string                                 `json:"RequestId" xml:"RequestId"`
-	Success   bool                                   `json:"Success" xml:"Success"`
-	Data      DataInDisableAutoResourceOptimizeRules `json:"Data" xml:"Data"`
+	Code      int64  `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
+	Data      Data   `json:"Data" xml:"Data"`
 }
 
 // CreateDisableAutoResourceOptimizeRulesRequest creates a request to invoke DisableAutoResourceOptimizeRules API

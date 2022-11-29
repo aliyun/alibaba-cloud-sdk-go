@@ -17,5 +17,5 @@ package das
 
 // ConfigFailInstanceListInDisableAutoResourceOptimizeRules is a nested struct in das response
 type ConfigFailInstanceListInDisableAutoResourceOptimizeRules struct {
-	ConfigFailInstanceList []ConfigFailInstanceList `json:"configFailInstanceList" xml:"configFailInstanceList"`
+	ConfigFailInstanceListItem []ConfigFailInstanceListItem `json:"configFailInstanceList" xml:"configFailInstanceList"`
 }

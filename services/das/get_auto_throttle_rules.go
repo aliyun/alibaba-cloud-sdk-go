@@ -78,11 +78,11 @@ type GetAutoThrottleRulesRequest struct {
 // GetAutoThrottleRulesResponse is the response struct for api GetAutoThrottleRules
 type GetAutoThrottleRulesResponse struct {
 	*responses.BaseResponse
-	Code      int64                      `json:"Code" xml:"Code"`
-	Message   string                     `json:"Message" xml:"Message"`
-	RequestId string                     `json:"RequestId" xml:"RequestId"`
-	Success   bool                       `json:"Success" xml:"Success"`
-	Data      DataInGetAutoThrottleRules `json:"Data" xml:"Data"`
+	Code      int64  `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
+	Data      Data   `json:"Data" xml:"Data"`
 }
 
 // CreateGetAutoThrottleRulesRequest creates a request to invoke GetAutoThrottleRules API

@@ -78,11 +78,11 @@ type DescribeCacheAnalysisJobRequest struct {
 // DescribeCacheAnalysisJobResponse is the response struct for api DescribeCacheAnalysisJob
 type DescribeCacheAnalysisJobResponse struct {
 	*responses.BaseResponse
-	Message   string `json:"Message" xml:"Message"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Code      string `json:"Code" xml:"Code"`
-	Success   string `json:"Success" xml:"Success"`
-	Data      Data   `json:"Data" xml:"Data"`
+	Message   string                         `json:"Message" xml:"Message"`
+	RequestId string                         `json:"RequestId" xml:"RequestId"`
+	Code      string                         `json:"Code" xml:"Code"`
+	Success   string                         `json:"Success" xml:"Success"`
+	Data      DataInDescribeCacheAnalysisJob `json:"Data" xml:"Data"`
 }
 
 // CreateDescribeCacheAnalysisJobRequest creates a request to invoke DescribeCacheAnalysisJob API

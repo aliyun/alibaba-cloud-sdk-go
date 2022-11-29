@@ -79,11 +79,11 @@ type CreateCacheAnalysisJobRequest struct {
 // CreateCacheAnalysisJobResponse is the response struct for api CreateCacheAnalysisJob
 type CreateCacheAnalysisJobResponse struct {
 	*responses.BaseResponse
-	Message   string `json:"Message" xml:"Message"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Code      string `json:"Code" xml:"Code"`
-	Success   string `json:"Success" xml:"Success"`
-	Data      Data   `json:"Data" xml:"Data"`
+	Message   string                       `json:"Message" xml:"Message"`
+	RequestId string                       `json:"RequestId" xml:"RequestId"`
+	Code      string                       `json:"Code" xml:"Code"`
+	Success   string                       `json:"Success" xml:"Success"`
+	Data      DataInCreateCacheAnalysisJob `json:"Data" xml:"Data"`
 }
 
 // CreateCreateCacheAnalysisJobRequest creates a request to invoke CreateCacheAnalysisJob API

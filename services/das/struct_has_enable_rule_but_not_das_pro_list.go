@@ -17,10 +17,5 @@ package das
 
 // HasEnableRuleButNotDasProList is a nested struct in das response
 type HasEnableRuleButNotDasProList struct {
-	TableSpaceSize          string `json:"TableSpaceSize" xml:"TableSpaceSize"`
-	InstanceId              string `json:"InstanceId" xml:"InstanceId"`
-	UserId                  string `json:"UserId" xml:"UserId"`
-	AutoDefragment          bool   `json:"AutoDefragment" xml:"AutoDefragment"`
-	DasProOn                bool   `json:"DasProOn" xml:"DasProOn"`
-	TableFragmentationRatio string `json:"TableFragmentationRatio" xml:"TableFragmentationRatio"`
+	HasEnableRuleButNotDasProListItem []HasEnableRuleButNotDasProListItem `json:"hasEnableRuleButNotDasProList" xml:"hasEnableRuleButNotDasProList"`
 }

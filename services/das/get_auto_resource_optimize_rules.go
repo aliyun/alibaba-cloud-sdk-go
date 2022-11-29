@@ -78,11 +78,11 @@ type GetAutoResourceOptimizeRulesRequest struct {
 // GetAutoResourceOptimizeRulesResponse is the response struct for api GetAutoResourceOptimizeRules
 type GetAutoResourceOptimizeRulesResponse struct {
 	*responses.BaseResponse
-	Code      int64                              `json:"Code" xml:"Code"`
-	Message   string                             `json:"Message" xml:"Message"`
-	RequestId string                             `json:"RequestId" xml:"RequestId"`
-	Success   bool                               `json:"Success" xml:"Success"`
-	Data      DataInGetAutoResourceOptimizeRules `json:"Data" xml:"Data"`
+	Code      int64  `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
+	Data      Data   `json:"Data" xml:"Data"`
 }
 
 // CreateGetAutoResourceOptimizeRulesRequest creates a request to invoke GetAutoResourceOptimizeRules API

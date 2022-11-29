@@ -17,5 +17,5 @@ package das
 
 // ConfigFailInstanceListInDisableAutoThrottleRules is a nested struct in das response
 type ConfigFailInstanceListInDisableAutoThrottleRules struct {
-	ConfigFailInstanceList []ConfigFailInstanceList `json:"configFailInstanceList" xml:"configFailInstanceList"`
+	ConfigFailInstanceListItem []ConfigFailInstanceListItem `json:"configFailInstanceList" xml:"configFailInstanceList"`
 }

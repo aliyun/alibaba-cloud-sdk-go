@@ -17,5 +17,5 @@ package das
 
 // ConfigFailInstanceListInUpdateAutoResourceOptimizeRulesAsync is a nested struct in das response
 type ConfigFailInstanceListInUpdateAutoResourceOptimizeRulesAsync struct {
-	ConfigFailInstanceList []ConfigFailInstanceList `json:"configFailInstanceList" xml:"configFailInstanceList"`
+	ConfigFailInstanceListItem []ConfigFailInstanceListItem `json:"configFailInstanceList" xml:"configFailInstanceList"`
 }

@@ -81,11 +81,11 @@ type UpdateAutoResourceOptimizeRulesAsyncRequest struct {
 // UpdateAutoResourceOptimizeRulesAsyncResponse is the response struct for api UpdateAutoResourceOptimizeRulesAsync
 type UpdateAutoResourceOptimizeRulesAsyncResponse struct {
 	*responses.BaseResponse
-	Code      int64                                      `json:"Code" xml:"Code"`
-	Message   string                                     `json:"Message" xml:"Message"`
-	RequestId string                                     `json:"RequestId" xml:"RequestId"`
-	Success   bool                                       `json:"Success" xml:"Success"`
-	Data      DataInUpdateAutoResourceOptimizeRulesAsync `json:"Data" xml:"Data"`
+	Code      int64  `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
+	Data      Data   `json:"Data" xml:"Data"`
 }
 
 // CreateUpdateAutoResourceOptimizeRulesAsyncRequest creates a request to invoke UpdateAutoResourceOptimizeRulesAsync API

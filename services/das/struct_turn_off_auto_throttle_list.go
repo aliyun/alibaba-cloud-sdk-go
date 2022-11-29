@@ -17,15 +17,5 @@ package das
 
 // TurnOffAutoThrottleList is a nested struct in das response
 type TurnOffAutoThrottleList struct {
-	AutoKillSession        bool   `json:"AutoKillSession" xml:"AutoKillSession"`
-	ActiveSessions         int64  `json:"ActiveSessions" xml:"ActiveSessions"`
-	Visible                bool   `json:"Visible" xml:"Visible"`
-	CpuUsage               string `json:"CpuUsage" xml:"CpuUsage"`
-	InstanceId             string `json:"InstanceId" xml:"InstanceId"`
-	UserId                 string `json:"UserId" xml:"UserId"`
-	AllowThrottleEndTime   string `json:"AllowThrottleEndTime" xml:"AllowThrottleEndTime"`
-	AllowThrottleStartTime string `json:"AllowThrottleStartTime" xml:"AllowThrottleStartTime"`
-	CpuSessionRelation     string `json:"CpuSessionRelation" xml:"CpuSessionRelation"`
-	AbnormalDuration       string `json:"AbnormalDuration" xml:"AbnormalDuration"`
-	MaxThrottleTime        string `json:"MaxThrottleTime" xml:"MaxThrottleTime"`
+	TurnOffAutoThrottleListItem []TurnOffAutoThrottleListItem `json:"turnOffAutoThrottleList" xml:"turnOffAutoThrottleList"`
 }

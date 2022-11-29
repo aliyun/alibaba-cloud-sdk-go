@@ -17,7 +17,5 @@ package das
 
 // SourceStats is a nested struct in das response
 type SourceStats struct {
-	Key   string  `json:"Key" xml:"Key"`
-	Count string  `json:"Count" xml:"Count"`
-	Ids   []int64 `json:"Ids" xml:"Ids"`
+	SourceStatsItem []SourceStatsItem `json:"sourceStats" xml:"sourceStats"`
 }

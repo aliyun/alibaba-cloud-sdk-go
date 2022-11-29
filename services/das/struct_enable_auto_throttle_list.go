@@ -17,15 +17,5 @@ package das
 
 // EnableAutoThrottleList is a nested struct in das response
 type EnableAutoThrottleList struct {
-	ActiveSessions         int64  `json:"ActiveSessions" xml:"ActiveSessions"`
-	AutoKillSession        bool   `json:"AutoKillSession" xml:"AutoKillSession"`
-	Visible                bool   `json:"Visible" xml:"Visible"`
-	CpuUsage               string `json:"CpuUsage" xml:"CpuUsage"`
-	InstanceId             string `json:"InstanceId" xml:"InstanceId"`
-	UserId                 string `json:"UserId" xml:"UserId"`
-	AllowThrottleStartTime string `json:"AllowThrottleStartTime" xml:"AllowThrottleStartTime"`
-	AllowThrottleEndTime   string `json:"AllowThrottleEndTime" xml:"AllowThrottleEndTime"`
-	CpuSessionRelation     string `json:"CpuSessionRelation" xml:"CpuSessionRelation"`
-	AbnormalDuration       string `json:"AbnormalDuration" xml:"AbnormalDuration"`
-	MaxThrottleTime        string `json:"MaxThrottleTime" xml:"MaxThrottleTime"`
+	EnableAutoThrottleListItem []EnableAutoThrottleListItem `json:"enableAutoThrottleList" xml:"enableAutoThrottleList"`
 }

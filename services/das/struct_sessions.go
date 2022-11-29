@@ -17,25 +17,5 @@ package das
 
 // Sessions is a nested struct in das response
 type Sessions struct {
-	Name       string `json:"Name" xml:"Name"`
-	Idle       int64  `json:"Idle" xml:"Idle"`
-	Oll        int64  `json:"Oll" xml:"Oll"`
-	Qbuf       int64  `json:"Qbuf" xml:"Qbuf"`
-	Events     string `json:"Events" xml:"Events"`
-	Flags      string `json:"Flags" xml:"Flags"`
-	Multi      int64  `json:"Multi" xml:"Multi"`
-	Id         int64  `json:"Id" xml:"Id"`
-	Age        string `json:"Age" xml:"Age"`
-	QbufFree   int64  `json:"QbufFree" xml:"QbufFree"`
-	ClientDesc string `json:"ClientDesc" xml:"ClientDesc"`
-	Omem       int64  `json:"Omem" xml:"Omem"`
-	NodeId     string `json:"NodeId" xml:"NodeId"`
-	Psub       int64  `json:"Psub" xml:"Psub"`
-	Obl        int64  `json:"Obl" xml:"Obl"`
-	Sub        int64  `json:"Sub" xml:"Sub"`
-	Addr       string `json:"Addr" xml:"Addr"`
-	Cmd        string `json:"Cmd" xml:"Cmd"`
-	Db         int64  `json:"Db" xml:"Db"`
-	Fd         int64  `json:"Fd" xml:"Fd"`
-	Client     string `json:"Client" xml:"Client"`
+	SessionsItem []SessionsItem `json:"sessions" xml:"sessions"`
 }

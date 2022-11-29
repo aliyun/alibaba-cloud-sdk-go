@@ -17,9 +17,9 @@ package das
 
 // ConfigResponse is a nested struct in das response
 type ConfigResponse struct {
-	TotalInstanceCount         int64                       `json:"TotalInstanceCount" xml:"TotalInstanceCount"`
-	ConfigSuccessInstanceCount int64                       `json:"ConfigSuccessInstanceCount" xml:"ConfigSuccessInstanceCount"`
-	ConfigFailInstanceCount    int64                       `json:"ConfigFailInstanceCount" xml:"ConfigFailInstanceCount"`
-	ConfigFailInstanceList     []ConfigFailInstanceList    `json:"ConfigFailInstanceList" xml:"ConfigFailInstanceList"`
-	ConfigSuccessInstanceList  []ConfigSuccessInstanceList `json:"ConfigSuccessInstanceList" xml:"ConfigSuccessInstanceList"`
+	TotalInstanceCount         int64                           `json:"TotalInstanceCount" xml:"TotalInstanceCount"`
+	ConfigSuccessInstanceCount int64                           `json:"ConfigSuccessInstanceCount" xml:"ConfigSuccessInstanceCount"`
+	ConfigFailInstanceCount    int64                           `json:"ConfigFailInstanceCount" xml:"ConfigFailInstanceCount"`
+	ConfigFailInstanceList     []ConfigFailInstanceListItem    `json:"ConfigFailInstanceList" xml:"ConfigFailInstanceList"`
+	ConfigSuccessInstanceList  []ConfigSuccessInstanceListItem `json:"ConfigSuccessInstanceList" xml:"ConfigSuccessInstanceList"`
 }
