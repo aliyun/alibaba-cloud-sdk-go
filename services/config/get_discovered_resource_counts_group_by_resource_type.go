@@ -87,7 +87,7 @@ func CreateGetDiscoveredResourceCountsGroupByResourceTypeRequest() (request *Get
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Config", "2020-09-07", "GetDiscoveredResourceCountsGroupByResourceType", "", "")
-	request.Method = requests.GET
+	request.Method = requests.POST
 	return
 }
 

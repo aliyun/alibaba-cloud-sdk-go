@@ -23,6 +23,7 @@ type ConfigRulesItem struct {
 	ManagedRuleIdentifier string                     `json:"ManagedRuleIdentifier" xml:"ManagedRuleIdentifier"`
 	Description           string                     `json:"Description" xml:"Description"`
 	ManagedRuleName       string                     `json:"ManagedRuleName" xml:"ManagedRuleName"`
+	DefaultEnable         bool                       `json:"DefaultEnable" xml:"DefaultEnable"`
 	ConfigRuleId          string                     `json:"ConfigRuleId" xml:"ConfigRuleId"`
 	ControlId             string                     `json:"ControlId" xml:"ControlId"`
 	ControlDescription    string                     `json:"ControlDescription" xml:"ControlDescription"`

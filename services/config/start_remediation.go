@@ -71,7 +71,10 @@ func (client *Client) StartRemediationWithCallback(request *StartRemediationRequ
 // StartRemediationRequest is the request struct for api StartRemediation
 type StartRemediationRequest struct {
 	*requests.RpcRequest
-	ConfigRuleId string `position:"Query" name:"ConfigRuleId"`
+	ConfigRuleId     string `position:"Query" name:"ConfigRuleId"`
+	ResourceId       string `position:"Query" name:"ResourceId"`
+	ResourceType     string `position:"Query" name:"ResourceType"`
+	ResourceRegionId string `position:"Query" name:"ResourceRegionId"`
 }
 
 // StartRemediationResponse is the response struct for api StartRemediation

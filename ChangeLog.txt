@@ -1,3 +1,7 @@
+2022-11-29 Version: v1.62.49
+- Generated 2020-09-07 for `Config`.
+- Support ListRemediationExecutions.
+
 2022-11-29 Version: v1.62.48
 - Generated 2018-05-09 for `Green`.
 

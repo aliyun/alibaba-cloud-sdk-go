@@ -76,6 +76,7 @@ type CreateAggregateCompliancePackRequest struct {
 	CompliancePackTemplateId string                                      `position:"Body" name:"CompliancePackTemplateId"`
 	Description              string                                      `position:"Body" name:"Description"`
 	AggregatorId             string                                      `position:"Body" name:"AggregatorId"`
+	DefaultEnable            requests.Boolean                            `position:"Body" name:"DefaultEnable"`
 	ConfigRules              *[]CreateAggregateCompliancePackConfigRules `position:"Body" name:"ConfigRules"  type:"Json"`
 	RiskLevel                requests.Integer                            `position:"Body" name:"RiskLevel"`
 }

@@ -75,6 +75,7 @@ type CreateCompliancePackRequest struct {
 	ClientToken              string                             `position:"Body" name:"ClientToken"`
 	CompliancePackTemplateId string                             `position:"Body" name:"CompliancePackTemplateId"`
 	Description              string                             `position:"Body" name:"Description"`
+	DefaultEnable            requests.Boolean                   `position:"Body" name:"DefaultEnable"`
 	ConfigRules              *[]CreateCompliancePackConfigRules `position:"Body" name:"ConfigRules"  type:"Json"`
 	RiskLevel                requests.Integer                   `position:"Body" name:"RiskLevel"`
 }
