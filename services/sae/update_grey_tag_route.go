@@ -74,6 +74,7 @@ type UpdateGreyTagRouteRequest struct {
 	GreyTagRouteId requests.Integer `position:"Query" name:"GreyTagRouteId"`
 	Description    string           `position:"Query" name:"Description"`
 	DubboRules     string           `position:"Query" name:"DubboRules"`
+	AlbRules       string           `position:"Query" name:"AlbRules"`
 	ScRules        string           `position:"Query" name:"ScRules"`
 }
 

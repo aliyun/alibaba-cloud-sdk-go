@@ -17,15 +17,24 @@ package sae
 
 // Application is a nested struct in sae response
 type Application struct {
-	AppName           string     `json:"AppName" xml:"AppName"`
-	NamespaceId       string     `json:"NamespaceId" xml:"NamespaceId"`
-	AppDeletingStatus bool       `json:"AppDeletingStatus" xml:"AppDeletingStatus"`
-	AppId             string     `json:"AppId" xml:"AppId"`
-	ScaleRuleEnabled  bool       `json:"ScaleRuleEnabled" xml:"ScaleRuleEnabled"`
-	ScaleRuleType     string     `json:"ScaleRuleType" xml:"ScaleRuleType"`
-	RunningInstances  int        `json:"RunningInstances" xml:"RunningInstances"`
-	Instances         int        `json:"Instances" xml:"Instances"`
-	RegionId          string     `json:"RegionId" xml:"RegionId"`
-	AppDescription    string     `json:"AppDescription" xml:"AppDescription"`
-	Tags              []TagsItem `json:"Tags" xml:"Tags"`
+	LastStartTime        int64      `json:"LastStartTime" xml:"LastStartTime"`
+	ScaleRuleEnabled     bool       `json:"ScaleRuleEnabled" xml:"ScaleRuleEnabled"`
+	Instances            int        `json:"Instances" xml:"Instances"`
+	Failed               int64      `json:"Failed" xml:"Failed"`
+	RunningInstances     int        `json:"RunningInstances" xml:"RunningInstances"`
+	LastChangeorderState string     `json:"LastChangeorderState" xml:"LastChangeorderState"`
+	LastJobState         string     `json:"LastJobState" xml:"LastJobState"`
+	AppDeletingStatus    bool       `json:"AppDeletingStatus" xml:"AppDeletingStatus"`
+	AppDescription       string     `json:"AppDescription" xml:"AppDescription"`
+	AppId                string     `json:"AppId" xml:"AppId"`
+	ScaleRuleType        string     `json:"ScaleRuleType" xml:"ScaleRuleType"`
+	RegionId             string     `json:"RegionId" xml:"RegionId"`
+	TriggerConfig        string     `json:"TriggerConfig" xml:"TriggerConfig"`
+	NamespaceId          string     `json:"NamespaceId" xml:"NamespaceId"`
+	CompletionTime       int64      `json:"CompletionTime" xml:"CompletionTime"`
+	Suspend              bool       `json:"Suspend" xml:"Suspend"`
+	Active               int64      `json:"Active" xml:"Active"`
+	AppName              string     `json:"AppName" xml:"AppName"`
+	Succeeded            int64      `json:"Succeeded" xml:"Succeeded"`
+	Tags                 []TagsItem `json:"Tags" xml:"Tags"`
 }

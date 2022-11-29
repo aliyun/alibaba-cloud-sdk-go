@@ -17,11 +17,12 @@ package sae
 
 // Rule is a nested struct in sae response
 type Rule struct {
-	Name          string `json:"Name" xml:"Name"`
-	Domain        string `json:"Domain" xml:"Domain"`
-	AppId         string `json:"AppId" xml:"AppId"`
-	Path          string `json:"Path" xml:"Path"`
-	RuleDescId    int64  `json:"RuleDescId" xml:"RuleDescId"`
-	AppName       string `json:"AppName" xml:"AppName"`
-	ContainerPort int    `json:"ContainerPort" xml:"ContainerPort"`
+	Name            string `json:"Name" xml:"Name"`
+	Domain          string `json:"Domain" xml:"Domain"`
+	AppId           string `json:"AppId" xml:"AppId"`
+	Path            string `json:"Path" xml:"Path"`
+	RuleDescId      int64  `json:"RuleDescId" xml:"RuleDescId"`
+	BackendProtocol string `json:"BackendProtocol" xml:"BackendProtocol"`
+	AppName         string `json:"AppName" xml:"AppName"`
+	ContainerPort   int    `json:"ContainerPort" xml:"ContainerPort"`
 }

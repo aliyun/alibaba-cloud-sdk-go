@@ -29,4 +29,5 @@ type Instance struct {
 	PackageVersion            string `json:"PackageVersion" xml:"PackageVersion"`
 	Eip                       string `json:"Eip" xml:"Eip"`
 	FinishTimeStamp           int64  `json:"FinishTimeStamp" xml:"FinishTimeStamp"`
+	DebugStatus               bool   `json:"DebugStatus" xml:"DebugStatus"`
 }

@@ -71,8 +71,9 @@ func (client *Client) DescribeConfigurationPriceWithCallback(request *DescribeCo
 // DescribeConfigurationPriceRequest is the request struct for api DescribeConfigurationPrice
 type DescribeConfigurationPriceRequest struct {
 	*requests.RoaRequest
-	Memory requests.Integer `position:"Query" name:"Memory"`
-	Cpu    requests.Integer `position:"Query" name:"Cpu"`
+	Memory   requests.Integer `position:"Query" name:"Memory"`
+	Cpu      requests.Integer `position:"Query" name:"Cpu"`
+	Workload string           `position:"Query" name:"Workload"`
 }
 
 // DescribeConfigurationPriceResponse is the response struct for api DescribeConfigurationPrice

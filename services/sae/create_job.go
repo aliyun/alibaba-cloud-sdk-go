@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// CreateApplication invokes the sae.CreateApplication API synchronously
-func (client *Client) CreateApplication(request *CreateApplicationRequest) (response *CreateApplicationResponse, err error) {
-	response = CreateCreateApplicationResponse()
+// CreateJob invokes the sae.CreateJob API synchronously
+func (client *Client) CreateJob(request *CreateJobRequest) (response *CreateJobResponse, err error) {
+	response = CreateCreateJobResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// CreateApplicationWithChan invokes the sae.CreateApplication API asynchronously
-func (client *Client) CreateApplicationWithChan(request *CreateApplicationRequest) (<-chan *CreateApplicationResponse, <-chan error) {
-	responseChan := make(chan *CreateApplicationResponse, 1)
+// CreateJobWithChan invokes the sae.CreateJob API asynchronously
+func (client *Client) CreateJobWithChan(request *CreateJobRequest) (<-chan *CreateJobResponse, <-chan error) {
+	responseChan := make(chan *CreateJobResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.CreateApplication(request)
+		response, err := client.CreateJob(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) CreateApplicationWithChan(request *CreateApplicationReques
 	return responseChan, errChan
 }
 
-// CreateApplicationWithCallback invokes the sae.CreateApplication API asynchronously
-func (client *Client) CreateApplicationWithCallback(request *CreateApplicationRequest, callback func(response *CreateApplicationResponse, err error)) <-chan int {
+// CreateJobWithCallback invokes the sae.CreateJob API asynchronously
+func (client *Client) CreateJobWithCallback(request *CreateJobRequest, callback func(response *CreateJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *CreateApplicationResponse
+		var response *CreateJobResponse
 		var err error
 		defer close(result)
-		response, err = client.CreateApplication(request)
+		response, err = client.CreateJob(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,13 +68,14 @@ func (client *Client) CreateApplicationWithCallback(request *CreateApplicationRe
 	return result
 }
 
-// CreateApplicationRequest is the request struct for api CreateApplication
-type CreateApplicationRequest struct {
+// CreateJobRequest is the request struct for api CreateJob
+type CreateJobRequest struct {
 	*requests.RoaRequest
 	NasId                         string           `position:"Query" name:"NasId"`
 	JarStartArgs                  string           `position:"Query" name:"JarStartArgs"`
+	ConcurrencyPolicy             string           `position:"Query" name:"ConcurrencyPolicy"`
+	TriggerConfig                 string           `position:"Query" name:"TriggerConfig"`
 	OssAkSecret                   string           `position:"Body" name:"OssAkSecret"`
-	NasConfigs                    string           `position:"Query" name:"NasConfigs"`
 	MountHost                     string           `position:"Query" name:"MountHost"`
 	AutoConfig                    requests.Boolean `position:"Query" name:"AutoConfig"`
 	Envs                          string           `position:"Query" name:"Envs"`
@@ -86,14 +87,14 @@ type CreateApplicationRequest struct {
 	JarStartOptions               string           `position:"Query" name:"JarStartOptions"`
 	AppName                       string           `position:"Query" name:"AppName"`
 	NamespaceId                   string           `position:"Query" name:"NamespaceId"`
-	PurchaseEip                   requests.Boolean `position:"Query" name:"PurchaseEip"`
-	PvtzDiscoverySvc              string           `position:"Query" name:"PvtzDiscoverySvc"`
+	Slice                         requests.Boolean `position:"Query" name:"Slice"`
 	ConfigMapMountDesc            string           `position:"Body" name:"ConfigMapMountDesc"`
 	OssMountDescs                 string           `position:"Body" name:"OssMountDescs"`
 	ImagePullSecrets              string           `position:"Query" name:"ImagePullSecrets"`
 	PreStop                       string           `position:"Query" name:"PreStop"`
 	Python                        string           `position:"Query" name:"Python"`
 	Cpu                           requests.Integer `position:"Query" name:"Cpu"`
+	BackoffLimit                  requests.Integer `position:"Query" name:"BackoffLimit"`
 	VSwitchId                     string           `position:"Query" name:"VSwitchId"`
 	PackageType                   string           `position:"Query" name:"PackageType"`
 	PostStart                     string           `position:"Query" name:"PostStart"`
@@ -102,7 +103,6 @@ type CreateApplicationRequest struct {
 	WebContainer                  string           `position:"Query" name:"WebContainer"`
 	Memory                        requests.Integer `position:"Query" name:"Memory"`
 	SlsConfigs                    string           `position:"Query" name:"SlsConfigs"`
-	KafkaConfigs                  string           `position:"Query" name:"KafkaConfigs"`
 	CommandArgs                   string           `position:"Query" name:"CommandArgs"`
 	AcrAssumeRoleArn              string           `position:"Query" name:"AcrAssumeRoleArn"`
 	Readiness                     string           `position:"Query" name:"Readiness"`
@@ -112,15 +112,17 @@ type CreateApplicationRequest struct {
 	SecurityGroupId               string           `position:"Query" name:"SecurityGroupId"`
 	PackageVersion                string           `position:"Query" name:"PackageVersion"`
 	TomcatConfig                  string           `position:"Query" name:"TomcatConfig"`
+	Timeout                       requests.Integer `position:"Query" name:"Timeout"`
 	WarStartOptions               string           `position:"Query" name:"WarStartOptions"`
 	PackageRuntimeCustomBuild     string           `position:"Body" name:"PackageRuntimeCustomBuild"`
 	EdasContainerVersion          string           `position:"Query" name:"EdasContainerVersion"`
 	PackageUrl                    string           `position:"Query" name:"PackageUrl"`
 	TerminationGracePeriodSeconds requests.Integer `position:"Query" name:"TerminationGracePeriodSeconds"`
 	PhpConfig                     string           `position:"Body" name:"PhpConfig"`
+	SliceEnvs                     string           `position:"Query" name:"SliceEnvs"`
 	EnableImageAccl               requests.Boolean `position:"Body" name:"EnableImageAccl"`
-	MicroRegistration             string           `position:"Query" name:"MicroRegistration"`
 	Replicas                      requests.Integer `position:"Query" name:"Replicas"`
+	Workload                      string           `position:"Query" name:"Workload"`
 	Command                       string           `position:"Query" name:"Command"`
 	MountDesc                     string           `position:"Query" name:"MountDesc"`
 	Jdk                           string           `position:"Query" name:"Jdk"`
@@ -129,12 +131,13 @@ type CreateApplicationRequest struct {
 	VpcId                         string           `position:"Query" name:"VpcId"`
 	ImageUrl                      string           `position:"Query" name:"ImageUrl"`
 	Php                           string           `position:"Body" name:"Php"`
+	RefAppId                      string           `position:"Query" name:"RefAppId"`
 	PythonModules                 string           `position:"Query" name:"PythonModules"`
 	PhpConfigLocation             string           `position:"Query" name:"PhpConfigLocation"`
 }
 
-// CreateApplicationResponse is the response struct for api CreateApplication
-type CreateApplicationResponse struct {
+// CreateJobResponse is the response struct for api CreateJob
+type CreateJobResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Message   string `json:"Message" xml:"Message"`
@@ -145,19 +148,19 @@ type CreateApplicationResponse struct {
 	Data      Data   `json:"Data" xml:"Data"`
 }
 
-// CreateCreateApplicationRequest creates a request to invoke CreateApplication API
-func CreateCreateApplicationRequest() (request *CreateApplicationRequest) {
-	request = &CreateApplicationRequest{
+// CreateCreateJobRequest creates a request to invoke CreateJob API
+func CreateCreateJobRequest() (request *CreateJobRequest) {
+	request = &CreateJobRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("sae", "2019-05-06", "CreateApplication", "/pop/v1/sam/app/createApplication", "serverless", "openAPI")
+	request.InitWithApiInfo("sae", "2019-05-06", "CreateJob", "/pop/v1/sam/job/createJob", "serverless", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateCreateApplicationResponse creates a response to parse from CreateApplication response
-func CreateCreateApplicationResponse() (response *CreateApplicationResponse) {
-	response = &CreateApplicationResponse{
+// CreateCreateJobResponse creates a response to parse from CreateJob response
+func CreateCreateJobResponse() (response *CreateJobResponse) {
+	response = &CreateJobResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

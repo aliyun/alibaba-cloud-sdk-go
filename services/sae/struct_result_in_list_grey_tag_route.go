@@ -17,5 +17,5 @@ package sae
 
 // ResultInListGreyTagRoute is a nested struct in sae response
 type ResultInListGreyTagRoute struct {
-	Result []Result `json:"result" xml:"result"`
+	ResultItem []ResultItem `json:"result" xml:"result"`
 }

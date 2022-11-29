@@ -17,8 +17,8 @@ package sae
 
 // OssMountDesc is a nested struct in sae response
 type OssMountDesc struct {
-	BucketName string `json:"bucketName" xml:"bucketName"`
 	BucketPath string `json:"bucketPath" xml:"bucketPath"`
 	MountPath  string `json:"mountPath" xml:"mountPath"`
+	BucketName string `json:"bucketName" xml:"bucketName"`
 	ReadOnly   bool   `json:"readOnly" xml:"readOnly"`
 }

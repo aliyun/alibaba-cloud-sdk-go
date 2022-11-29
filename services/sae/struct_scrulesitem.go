@@ -18,10 +18,10 @@ package sae
 // Scrulesitem is a nested struct in sae response
 type Scrulesitem struct {
 	Type     string `json:"type" xml:"type"`
-	Name     string `json:"name" xml:"name"`
-	Operator string `json:"operator" xml:"operator"`
-	Value    string `json:"value" xml:"value"`
-	Cond     string `json:"cond" xml:"cond"`
-	Index    int    `json:"index" xml:"index"`
 	Expr     string `json:"expr" xml:"expr"`
+	Value    string `json:"value" xml:"value"`
+	Name     string `json:"name" xml:"name"`
+	Index    int    `json:"index" xml:"index"`
+	Operator string `json:"operator" xml:"operator"`
+	Cond     string `json:"cond" xml:"cond"`
 }

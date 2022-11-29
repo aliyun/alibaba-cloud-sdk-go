@@ -74,18 +74,20 @@ type DeployApplicationRequest struct {
 	NasId                            string           `position:"Query" name:"NasId"`
 	JarStartArgs                     string           `position:"Query" name:"JarStartArgs"`
 	OssAkSecret                      string           `position:"Body" name:"OssAkSecret"`
+	NasConfigs                       string           `position:"Query" name:"NasConfigs"`
 	MountHost                        string           `position:"Query" name:"MountHost"`
 	BatchWaitTime                    requests.Integer `position:"Query" name:"BatchWaitTime"`
 	Envs                             string           `position:"Query" name:"Envs"`
-	KafkaInstanceId                  string           `position:"Query" name:"KafkaInstanceId"`
 	PhpPECLExtensions                string           `position:"Body" name:"PhpPECLExtensions"`
 	PhpArmsConfigLocation            string           `position:"Query" name:"PhpArmsConfigLocation"`
 	CustomHostAlias                  string           `position:"Query" name:"CustomHostAlias"`
 	JarStartOptions                  string           `position:"Query" name:"JarStartOptions"`
+	PvtzDiscoverySvc                 string           `position:"Query" name:"PvtzDiscoverySvc"`
 	ConfigMapMountDesc               string           `position:"Body" name:"ConfigMapMountDesc"`
 	OssMountDescs                    string           `position:"Body" name:"OssMountDescs"`
-	KafkaEndpoint                    string           `position:"Query" name:"KafkaEndpoint"`
+	ImagePullSecrets                 string           `position:"Query" name:"ImagePullSecrets"`
 	PreStop                          string           `position:"Query" name:"PreStop"`
+	Python                           string           `position:"Query" name:"Python"`
 	UpdateStrategy                   string           `position:"Query" name:"UpdateStrategy"`
 	ChangeOrderDesc                  string           `position:"Query" name:"ChangeOrderDesc"`
 	MinReadyInstanceRatio            requests.Integer `position:"Query" name:"MinReadyInstanceRatio"`
@@ -97,7 +99,6 @@ type DeployApplicationRequest struct {
 	EnableAhas                       string           `position:"Query" name:"EnableAhas"`
 	SlsConfigs                       string           `position:"Query" name:"SlsConfigs"`
 	KafkaConfigs                     string           `position:"Query" name:"KafkaConfigs"`
-	OpenCollectToKafka               requests.Boolean `position:"Query" name:"OpenCollectToKafka"`
 	CommandArgs                      string           `position:"Query" name:"CommandArgs"`
 	AcrAssumeRoleArn                 string           `position:"Query" name:"AcrAssumeRoleArn"`
 	Readiness                        string           `position:"Query" name:"Readiness"`
@@ -107,20 +108,23 @@ type DeployApplicationRequest struct {
 	PackageVersion                   string           `position:"Query" name:"PackageVersion"`
 	TomcatConfig                     string           `position:"Query" name:"TomcatConfig"`
 	WarStartOptions                  string           `position:"Query" name:"WarStartOptions"`
+	PackageRuntimeCustomBuild        string           `position:"Body" name:"PackageRuntimeCustomBuild"`
 	EdasContainerVersion             string           `position:"Query" name:"EdasContainerVersion"`
 	PackageUrl                       string           `position:"Query" name:"PackageUrl"`
 	TerminationGracePeriodSeconds    requests.Integer `position:"Query" name:"TerminationGracePeriodSeconds"`
 	PhpConfig                        string           `position:"Body" name:"PhpConfig"`
+	EnableImageAccl                  requests.Boolean `position:"Body" name:"EnableImageAccl"`
+	MicroRegistration                string           `position:"Query" name:"MicroRegistration"`
 	EnableGreyTagRoute               requests.Boolean `position:"Query" name:"EnableGreyTagRoute"`
 	Command                          string           `position:"Query" name:"Command"`
 	MountDesc                        string           `position:"Query" name:"MountDesc"`
 	Jdk                              string           `position:"Query" name:"Jdk"`
 	MinReadyInstances                requests.Integer `position:"Query" name:"MinReadyInstances"`
-	KafkaLogfileConfig               string           `position:"Query" name:"KafkaLogfileConfig"`
 	AcrInstanceId                    string           `position:"Body" name:"AcrInstanceId"`
 	AppId                            string           `position:"Query" name:"AppId"`
 	ImageUrl                         string           `position:"Query" name:"ImageUrl"`
 	Php                              string           `position:"Body" name:"Php"`
+	PythonModules                    string           `position:"Query" name:"PythonModules"`
 	PhpConfigLocation                string           `position:"Query" name:"PhpConfigLocation"`
 }
 
