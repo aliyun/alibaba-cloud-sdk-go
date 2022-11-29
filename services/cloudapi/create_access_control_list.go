@@ -71,8 +71,9 @@ func (client *Client) CreateAccessControlListWithCallback(request *CreateAccessC
 // CreateAccessControlListRequest is the request struct for api CreateAccessControlList
 type CreateAccessControlListRequest struct {
 	*requests.RpcRequest
-	AclName       string `position:"Query" name:"AclName"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
+	AclName          string `position:"Query" name:"AclName"`
+	AddressIPVersion string `position:"Query" name:"AddressIPVersion"`
+	SecurityToken    string `position:"Query" name:"SecurityToken"`
 }
 
 // CreateAccessControlListResponse is the response struct for api CreateAccessControlList

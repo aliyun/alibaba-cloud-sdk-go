@@ -46,5 +46,9 @@ type InstanceAttribute struct {
 	AclStatus              string                 `json:"AclStatus" xml:"AclStatus"`
 	AclId                  string                 `json:"AclId" xml:"AclId"`
 	IntranetSegments       string                 `json:"IntranetSegments" xml:"IntranetSegments"`
+	IPV6AclName            string                 `json:"IPV6AclName" xml:"IPV6AclName"`
+	IPV6AclId              string                 `json:"IPV6AclId" xml:"IPV6AclId"`
+	IPV6AclType            string                 `json:"IPV6AclType" xml:"IPV6AclType"`
+	IPV6AclStatus          string                 `json:"IPV6AclStatus" xml:"IPV6AclStatus"`
 	InstanceSpecAttributes InstanceSpecAttributes `json:"InstanceSpecAttributes" xml:"InstanceSpecAttributes"`
 }

@@ -71,10 +71,11 @@ func (client *Client) DescribeAccessControlListsWithCallback(request *DescribeAc
 // DescribeAccessControlListsRequest is the request struct for api DescribeAccessControlLists
 type DescribeAccessControlListsRequest struct {
 	*requests.RpcRequest
-	AclName       string           `position:"Query" name:"AclName"`
-	PageNumber    requests.Integer `position:"Query" name:"PageNumber"`
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
-	PageSize      requests.Integer `position:"Query" name:"PageSize"`
+	AclName          string           `position:"Query" name:"AclName"`
+	AddressIPVersion string           `position:"Query" name:"AddressIPVersion"`
+	PageNumber       requests.Integer `position:"Query" name:"PageNumber"`
+	SecurityToken    string           `position:"Query" name:"SecurityToken"`
+	PageSize         requests.Integer `position:"Query" name:"PageSize"`
 }
 
 // DescribeAccessControlListsResponse is the response struct for api DescribeAccessControlLists

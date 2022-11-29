@@ -71,14 +71,15 @@ func (client *Client) CreateAppWithCallback(request *CreateAppRequest, callback 
 // CreateAppRequest is the request struct for api CreateApp
 type CreateAppRequest struct {
 	*requests.RpcRequest
-	Description   string          `position:"Query" name:"Description"`
-	Source        string          `position:"Query" name:"Source"`
-	AppName       string          `position:"Query" name:"AppName"`
-	SecurityToken string          `position:"Query" name:"SecurityToken"`
-	AppSecret     string          `position:"Query" name:"AppSecret"`
-	AppKey        string          `position:"Query" name:"AppKey"`
-	AppCode       string          `position:"Query" name:"AppCode"`
-	Tag           *[]CreateAppTag `position:"Query" name:"Tag"  type:"Repeated"`
+	Description    string           `position:"Query" name:"Description"`
+	AppOwnerUserId requests.Integer `position:"Query" name:"AppOwnerUserId"`
+	Source         string           `position:"Query" name:"Source"`
+	AppName        string           `position:"Query" name:"AppName"`
+	SecurityToken  string           `position:"Query" name:"SecurityToken"`
+	AppSecret      string           `position:"Query" name:"AppSecret"`
+	AppKey         string           `position:"Query" name:"AppKey"`
+	AppCode        string           `position:"Query" name:"AppCode"`
+	Tag            *[]CreateAppTag  `position:"Query" name:"Tag"  type:"Repeated"`
 }
 
 // CreateAppTag is a repeated param struct in CreateAppRequest

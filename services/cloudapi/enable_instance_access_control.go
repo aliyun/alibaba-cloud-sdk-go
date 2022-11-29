@@ -71,10 +71,11 @@ func (client *Client) EnableInstanceAccessControlWithCallback(request *EnableIns
 // EnableInstanceAccessControlRequest is the request struct for api EnableInstanceAccessControl
 type EnableInstanceAccessControlRequest struct {
 	*requests.RpcRequest
-	AclId         string `position:"Query" name:"AclId"`
-	AclType       string `position:"Query" name:"AclType"`
-	InstanceId    string `position:"Query" name:"InstanceId"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
+	AclId            string `position:"Query" name:"AclId"`
+	AddressIPVersion string `position:"Query" name:"AddressIPVersion"`
+	AclType          string `position:"Query" name:"AclType"`
+	InstanceId       string `position:"Query" name:"InstanceId"`
+	SecurityToken    string `position:"Query" name:"SecurityToken"`
 }
 
 // EnableInstanceAccessControlResponse is the response struct for api EnableInstanceAccessControl

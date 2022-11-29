@@ -71,9 +71,10 @@ func (client *Client) DisableInstanceAccessControlWithCallback(request *DisableI
 // DisableInstanceAccessControlRequest is the request struct for api DisableInstanceAccessControl
 type DisableInstanceAccessControlRequest struct {
 	*requests.RpcRequest
-	AclId         string `position:"Query" name:"AclId"`
-	InstanceId    string `position:"Query" name:"InstanceId"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
+	AclId            string `position:"Query" name:"AclId"`
+	AddressIPVersion string `position:"Query" name:"AddressIPVersion"`
+	InstanceId       string `position:"Query" name:"InstanceId"`
+	SecurityToken    string `position:"Query" name:"SecurityToken"`
 }
 
 // DisableInstanceAccessControlResponse is the response struct for api DisableInstanceAccessControl

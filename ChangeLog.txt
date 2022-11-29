@@ -1,3 +1,9 @@
+2022-11-29 Version: v1.62.47
+- Generated 2016-07-14 for `CloudAPI`.
+- Add DescribePluginApis.
+- Modify CreateApp.
+- Modify DeleteApp.
+
 2022-11-29 Version: v1.62.46
 - Generated 2018-01-15 for `dcdn`.
 - Update DescribeDcdnDeletedDomains.
