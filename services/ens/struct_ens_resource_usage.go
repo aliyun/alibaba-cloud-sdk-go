@@ -17,15 +17,5 @@ package ens
 
 // EnsResourceUsage is a nested struct in ens response
 type EnsResourceUsage struct {
-	InstanceCount        int    `json:"InstanceCount" xml:"InstanceCount"`
-	CpuSum               int64  `json:"CpuSum" xml:"CpuSum"`
-	GpuSum               int64  `json:"GpuSum" xml:"GpuSum"`
-	StorageSum           int64  `json:"StorageSum" xml:"StorageSum"`
-	ServiceType          string `json:"ServiceType" xml:"ServiceType"`
-	ExpiredCount         int    `json:"ExpiredCount" xml:"ExpiredCount"`
-	RunningCount         int    `json:"RunningCount" xml:"RunningCount"`
-	DownCount            int    `json:"DownCount" xml:"DownCount"`
-	ExpiringCount        int    `json:"ExpiringCount" xml:"ExpiringCount"`
-	DiskCount            int    `json:"DiskCount" xml:"DiskCount"`
-	ComputeResourceCount int    `json:"ComputeResourceCount" xml:"ComputeResourceCount"`
+	EnsResourceUsageItem []EnsResourceUsageItem `json:"ensResourceUsage" xml:"ensResourceUsage"`
 }

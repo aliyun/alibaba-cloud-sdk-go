@@ -80,8 +80,11 @@ type DescribeARMServerInstancesRequest struct {
 // DescribeARMServerInstancesResponse is the response struct for api DescribeARMServerInstances
 type DescribeARMServerInstancesResponse struct {
 	*responses.BaseResponse
-	RequestId string        `json:"RequestId" xml:"RequestId"`
-	Servers   []ServersItem `json:"Servers" xml:"Servers"`
+	RequestId  string        `json:"RequestId" xml:"RequestId"`
+	PageNumber int           `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int           `json:"PageSize" xml:"PageSize"`
+	TotalCount int           `json:"TotalCount" xml:"TotalCount"`
+	Servers    []ServersItem `json:"Servers" xml:"Servers"`
 }
 
 // CreateDescribeARMServerInstancesRequest creates a request to invoke DescribeARMServerInstances API

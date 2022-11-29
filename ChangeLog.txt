@@ -1,3 +1,8 @@
+2022-11-29 Version: v1.62.44
+- Generated 2017-11-10 for `Ens`.
+- Support DescribeARMServerInstances.
+- Support DeleteInstances.
+
 2022-11-29 Version: v1.62.43
 - Generated 2019-05-06 for `sae`.
 - Add python zip.

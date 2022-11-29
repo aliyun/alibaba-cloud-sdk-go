@@ -78,8 +78,8 @@ type DescribeEnsResourceUsageRequest struct {
 // DescribeEnsResourceUsageResponse is the response struct for api DescribeEnsResourceUsage
 type DescribeEnsResourceUsageResponse struct {
 	*responses.BaseResponse
-	RequestId        string             `json:"RequestId" xml:"RequestId"`
-	EnsResourceUsage []EnsResourceUsage `json:"EnsResourceUsage" xml:"EnsResourceUsage"`
+	RequestId        string                 `json:"RequestId" xml:"RequestId"`
+	EnsResourceUsage []EnsResourceUsageItem `json:"EnsResourceUsage" xml:"EnsResourceUsage"`
 }
 
 // CreateDescribeEnsResourceUsageRequest creates a request to invoke DescribeEnsResourceUsage API
