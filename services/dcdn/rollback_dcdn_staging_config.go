@@ -71,8 +71,7 @@ func (client *Client) RollbackDcdnStagingConfigWithCallback(request *RollbackDcd
 // RollbackDcdnStagingConfigRequest is the request struct for api RollbackDcdnStagingConfig
 type RollbackDcdnStagingConfigRequest struct {
 	*requests.RpcRequest
-	DomainName string           `position:"Query" name:"DomainName"`
-	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
+	DomainName string `position:"Query" name:"DomainName"`
 }
 
 // RollbackDcdnStagingConfigResponse is the response struct for api RollbackDcdnStagingConfig

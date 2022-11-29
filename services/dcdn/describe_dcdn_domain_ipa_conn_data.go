@@ -71,11 +71,10 @@ func (client *Client) DescribeDcdnDomainIpaConnDataWithCallback(request *Describ
 // DescribeDcdnDomainIpaConnDataRequest is the request struct for api DescribeDcdnDomainIpaConnData
 type DescribeDcdnDomainIpaConnDataRequest struct {
 	*requests.RpcRequest
-	StartTime  string           `position:"Query" name:"StartTime"`
-	SplitBy    string           `position:"Query" name:"SplitBy"`
-	DomainName string           `position:"Query" name:"DomainName"`
-	EndTime    string           `position:"Query" name:"EndTime"`
-	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
+	DomainName string `position:"Query" name:"DomainName"`
+	EndTime    string `position:"Query" name:"EndTime"`
+	StartTime  string `position:"Query" name:"StartTime"`
+	SplitBy    string `position:"Query" name:"SplitBy"`
 }
 
 // DescribeDcdnDomainIpaConnDataResponse is the response struct for api DescribeDcdnDomainIpaConnData

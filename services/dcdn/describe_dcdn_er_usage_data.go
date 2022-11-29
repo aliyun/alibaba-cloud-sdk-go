@@ -71,12 +71,11 @@ func (client *Client) DescribeDcdnErUsageDataWithCallback(request *DescribeDcdnE
 // DescribeDcdnErUsageDataRequest is the request struct for api DescribeDcdnErUsageData
 type DescribeDcdnErUsageDataRequest struct {
 	*requests.RpcRequest
-	StartTime string           `position:"Query" name:"StartTime"`
-	Spec      string           `position:"Query" name:"Spec"`
-	RoutineID string           `position:"Query" name:"RoutineID"`
-	SplitBy   string           `position:"Query" name:"SplitBy"`
-	EndTime   string           `position:"Query" name:"EndTime"`
-	OwnerId   requests.Integer `position:"Query" name:"OwnerId"`
+	EndTime   string `position:"Query" name:"EndTime"`
+	StartTime string `position:"Query" name:"StartTime"`
+	RoutineID string `position:"Query" name:"RoutineID"`
+	Spec      string `position:"Query" name:"Spec"`
+	SplitBy   string `position:"Query" name:"SplitBy"`
 }
 
 // DescribeDcdnErUsageDataResponse is the response struct for api DescribeDcdnErUsageData

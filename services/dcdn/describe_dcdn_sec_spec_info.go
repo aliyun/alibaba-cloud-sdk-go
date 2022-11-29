@@ -71,7 +71,6 @@ func (client *Client) DescribeDcdnSecSpecInfoWithCallback(request *DescribeDcdnS
 // DescribeDcdnSecSpecInfoRequest is the request struct for api DescribeDcdnSecSpecInfo
 type DescribeDcdnSecSpecInfoRequest struct {
 	*requests.RpcRequest
-	OwnerId requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeDcdnSecSpecInfoResponse is the response struct for api DescribeDcdnSecSpecInfo

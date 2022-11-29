@@ -18,14 +18,16 @@ package dcdn
 // PageData is a nested struct in dcdn response
 type PageData struct {
 	Cname           string                              `json:"Cname" xml:"Cname"`
-	Sandbox         string                              `json:"Sandbox" xml:"Sandbox"`
-	ResourceGroupId string                              `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	DomainStatus    string                              `json:"DomainStatus" xml:"DomainStatus"`
 	DomainId        int64                               `json:"DomainId" xml:"DomainId"`
 	DomainName      string                              `json:"DomainName" xml:"DomainName"`
 	GmtModified     string                              `json:"GmtModified" xml:"GmtModified"`
+	BizName         string                              `json:"BizName" xml:"BizName"`
 	SSLProtocol     string                              `json:"SSLProtocol" xml:"SSLProtocol"`
 	GmtCreated      string                              `json:"GmtCreated" xml:"GmtCreated"`
+	Sandbox         string                              `json:"Sandbox" xml:"Sandbox"`
+	ServiceCode     string                              `json:"ServiceCode" xml:"ServiceCode"`
+	ResourceGroupId string                              `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	Description     string                              `json:"Description" xml:"Description"`
 	SslProtocol     string                              `json:"SslProtocol" xml:"SslProtocol"`
 	Sources         SourcesInDescribeDcdnIpaUserDomains `json:"Sources" xml:"Sources"`

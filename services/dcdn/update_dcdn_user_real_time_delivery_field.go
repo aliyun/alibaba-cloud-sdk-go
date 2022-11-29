@@ -71,9 +71,8 @@ func (client *Client) UpdateDcdnUserRealTimeDeliveryFieldWithCallback(request *U
 // UpdateDcdnUserRealTimeDeliveryFieldRequest is the request struct for api UpdateDcdnUserRealTimeDeliveryField
 type UpdateDcdnUserRealTimeDeliveryFieldRequest struct {
 	*requests.RpcRequest
-	BusinessType string           `position:"Query" name:"BusinessType"`
-	OwnerId      requests.Integer `position:"Query" name:"OwnerId"`
-	Fields       string           `position:"Query" name:"Fields"`
+	Fields       string `position:"Query" name:"Fields"`
+	BusinessType string `position:"Query" name:"BusinessType"`
 }
 
 // UpdateDcdnUserRealTimeDeliveryFieldResponse is the response struct for api UpdateDcdnUserRealTimeDeliveryField

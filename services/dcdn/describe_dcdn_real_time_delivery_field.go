@@ -71,8 +71,7 @@ func (client *Client) DescribeDcdnRealTimeDeliveryFieldWithCallback(request *Des
 // DescribeDcdnRealTimeDeliveryFieldRequest is the request struct for api DescribeDcdnRealTimeDeliveryField
 type DescribeDcdnRealTimeDeliveryFieldRequest struct {
 	*requests.RpcRequest
-	BusinessType string           `position:"Query" name:"BusinessType"`
-	OwnerId      requests.Integer `position:"Query" name:"OwnerId"`
+	BusinessType string `position:"Query" name:"BusinessType"`
 }
 
 // DescribeDcdnRealTimeDeliveryFieldResponse is the response struct for api DescribeDcdnRealTimeDeliveryField

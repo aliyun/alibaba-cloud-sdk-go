@@ -71,13 +71,12 @@ func (client *Client) DescribeDcdnBgpBpsDataWithCallback(request *DescribeDcdnBg
 // DescribeDcdnBgpBpsDataRequest is the request struct for api DescribeDcdnBgpBpsData
 type DescribeDcdnBgpBpsDataRequest struct {
 	*requests.RpcRequest
-	Isp        string           `position:"Query" name:"Isp"`
-	StartTime  string           `position:"Query" name:"StartTime"`
-	DevicePort string           `position:"Query" name:"DevicePort"`
-	EndTime    string           `position:"Query" name:"EndTime"`
-	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
-	Interval   string           `position:"Query" name:"Interval"`
-	DeviceName string           `position:"Query" name:"DeviceName"`
+	Isp        string `position:"Query" name:"Isp"`
+	EndTime    string `position:"Query" name:"EndTime"`
+	Interval   string `position:"Query" name:"Interval"`
+	DeviceName string `position:"Query" name:"DeviceName"`
+	StartTime  string `position:"Query" name:"StartTime"`
+	DevicePort string `position:"Query" name:"DevicePort"`
 }
 
 // DescribeDcdnBgpBpsDataResponse is the response struct for api DescribeDcdnBgpBpsData
