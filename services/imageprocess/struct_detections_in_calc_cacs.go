@@ -17,5 +17,5 @@ package imageprocess
 
 // DetectionsInCalcCACS is a nested struct in imageprocess response
 type DetectionsInCalcCACS struct {
-	Detections []Detections `json:"detections" xml:"detections"`
+	DetectionsItem []DetectionsItem `json:"detections" xml:"detections"`
 }

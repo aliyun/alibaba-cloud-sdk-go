@@ -53,7 +53,7 @@ type Data struct {
 	Lesion            Lesion                 `json:"Lesion" xml:"Lesion"`
 	Fractures         []FracturesItem        `json:"Fractures" xml:"Fractures"`
 	Vertebras         []Vertebra             `json:"Vertebras" xml:"Vertebras"`
-	Detections        []Detections           `json:"Detections" xml:"Detections"`
+	Detections        []DetectionsItem       `json:"Detections" xml:"Detections"`
 	Series            []Serie                `json:"Series" xml:"Series"`
 	KLDetections      []KLDetectionsItem     `json:"KLDetections" xml:"KLDetections"`
 	KeyPoints         []KeyPointsItem        `json:"KeyPoints" xml:"KeyPoints"`
