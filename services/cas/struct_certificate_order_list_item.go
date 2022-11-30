@@ -52,4 +52,5 @@ type CertificateOrderListItem struct {
 	Upload          bool   `json:"Upload" xml:"Upload"`
 	StartDate       string `json:"StartDate" xml:"StartDate"`
 	EndDate         string `json:"EndDate" xml:"EndDate"`
+	ResourceGroupId string `json:"ResourceGroupId" xml:"ResourceGroupId"`
 }

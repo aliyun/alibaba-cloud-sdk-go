@@ -73,6 +73,7 @@ type UploadUserCertificateRequest struct {
 	*requests.RpcRequest
 	EncryptCert       string `position:"Query" name:"EncryptCert"`
 	Cert              string `position:"Query" name:"Cert"`
+	ResourceGroupId   string `position:"Query" name:"ResourceGroupId"`
 	SourceIp          string `position:"Query" name:"SourceIp"`
 	Key               string `position:"Query" name:"Key"`
 	EncryptPrivateKey string `position:"Query" name:"EncryptPrivateKey"`

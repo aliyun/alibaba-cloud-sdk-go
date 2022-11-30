@@ -78,23 +78,29 @@ type GetUserCertificateDetailRequest struct {
 // GetUserCertificateDetailResponse is the response struct for api GetUserCertificateDetail
 type GetUserCertificateDetailResponse struct {
 	*responses.BaseResponse
-	Cert        string `json:"Cert" xml:"Cert"`
-	Key         string `json:"Key" xml:"Key"`
-	Id          int64  `json:"Id" xml:"Id"`
-	Name        string `json:"Name" xml:"Name"`
-	RequestId   string `json:"RequestId" xml:"RequestId"`
-	Common      string `json:"Common" xml:"Common"`
-	Fingerprint string `json:"Fingerprint" xml:"Fingerprint"`
-	Issuer      string `json:"Issuer" xml:"Issuer"`
-	OrgName     string `json:"OrgName" xml:"OrgName"`
-	Province    string `json:"Province" xml:"Province"`
-	City        string `json:"City" xml:"City"`
-	Country     string `json:"Country" xml:"Country"`
-	StartDate   string `json:"StartDate" xml:"StartDate"`
-	EndDate     string `json:"EndDate" xml:"EndDate"`
-	Sans        string `json:"Sans" xml:"Sans"`
-	Expired     bool   `json:"Expired" xml:"Expired"`
-	BuyInAliyun bool   `json:"BuyInAliyun" xml:"BuyInAliyun"`
+	Cert              string `json:"Cert" xml:"Cert"`
+	Key               string `json:"Key" xml:"Key"`
+	EncryptCert       string `json:"EncryptCert" xml:"EncryptCert"`
+	EncryptPrivateKey string `json:"EncryptPrivateKey" xml:"EncryptPrivateKey"`
+	SignCert          string `json:"SignCert" xml:"SignCert"`
+	SignPrivateKey    string `json:"SignPrivateKey" xml:"SignPrivateKey"`
+	Id                int64  `json:"Id" xml:"Id"`
+	Name              string `json:"Name" xml:"Name"`
+	RequestId         string `json:"RequestId" xml:"RequestId"`
+	Common            string `json:"Common" xml:"Common"`
+	Fingerprint       string `json:"Fingerprint" xml:"Fingerprint"`
+	Issuer            string `json:"Issuer" xml:"Issuer"`
+	OrgName           string `json:"OrgName" xml:"OrgName"`
+	Province          string `json:"Province" xml:"Province"`
+	City              string `json:"City" xml:"City"`
+	Country           string `json:"Country" xml:"Country"`
+	StartDate         string `json:"StartDate" xml:"StartDate"`
+	EndDate           string `json:"EndDate" xml:"EndDate"`
+	Sans              string `json:"Sans" xml:"Sans"`
+	Expired           bool   `json:"Expired" xml:"Expired"`
+	BuyInAliyun       bool   `json:"BuyInAliyun" xml:"BuyInAliyun"`
+	OrderId           int64  `json:"OrderId" xml:"OrderId"`
+	ResourceGroupId   string `json:"ResourceGroupId" xml:"ResourceGroupId"`
 }
 
 // CreateGetUserCertificateDetailRequest creates a request to invoke GetUserCertificateDetail API
