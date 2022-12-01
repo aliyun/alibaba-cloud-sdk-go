@@ -17,10 +17,10 @@ package resourcemanager
 
 // RdAccountDeletionStatus is a nested struct in resourcemanager response
 type RdAccountDeletionStatus struct {
-	Status         string           `json:"Status" xml:"Status"`
-	AccountId      string           `json:"AccountId" xml:"AccountId"`
-	CreateTime     string           `json:"CreateTime" xml:"CreateTime"`
-	DeletionTime   string           `json:"DeletionTime" xml:"DeletionTime"`
-	DeletionType   string           `json:"DeletionType" xml:"DeletionType"`
-	FailReasonList []FailReasonList `json:"FailReasonList" xml:"FailReasonList"`
+	Status         string               `json:"Status" xml:"Status"`
+	AccountId      string               `json:"AccountId" xml:"AccountId"`
+	CreateTime     string               `json:"CreateTime" xml:"CreateTime"`
+	DeletionTime   string               `json:"DeletionTime" xml:"DeletionTime"`
+	DeletionType   string               `json:"DeletionType" xml:"DeletionType"`
+	FailReasonList []FailReasonListItem `json:"FailReasonList" xml:"FailReasonList"`
 }

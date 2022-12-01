@@ -17,6 +17,5 @@ package resourcemanager
 
 // FailReasonList is a nested struct in resourcemanager response
 type FailReasonList struct {
-	Name        string `json:"Name" xml:"Name"`
-	Description string `json:"Description" xml:"Description"`
+	FailReasonListItem []FailReasonListItem `json:"failReasonList" xml:"failReasonList"`
 }

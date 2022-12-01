@@ -1,3 +1,7 @@
+2022-12-01 Version: v1.62.58
+- Generated 2020-03-31 for `ResourceManager`.
+- Supported more language for resourcemanager.
+
 2022-12-01 Version: v1.62.57
 - Generated 2019-08-08 for `ARMS`.
 - Update go SDK.
