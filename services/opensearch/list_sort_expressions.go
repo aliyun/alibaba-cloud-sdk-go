@@ -87,7 +87,7 @@ func CreateListSortExpressionsRequest() (request *ListSortExpressionsRequest) {
 	request = &ListSortExpressionsRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "ListSortExpressions", "/v4/openapi/app-groups/[appGroupIdentity]/apps/[appId]/sort-expressions", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "ListSortExpressions", "/v4/openapi/app-groups/[appGroupIdentity]/apps/[appId]/sort-expressions", "", "")
 	request.Method = requests.GET
 	return
 }

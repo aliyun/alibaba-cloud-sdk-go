@@ -80,8 +80,8 @@ type DeleteABTestExperimentRequest struct {
 // DeleteABTestExperimentResponse is the response struct for api DeleteABTestExperiment
 type DeleteABTestExperimentResponse struct {
 	*responses.BaseResponse
-	RequestId string                 `json:"requestId" xml:"requestId"`
 	Result    map[string]interface{} `json:"result" xml:"result"`
+	RequestId string                 `json:"requestId" xml:"requestId"`
 }
 
 // CreateDeleteABTestExperimentRequest creates a request to invoke DeleteABTestExperiment API
@@ -89,7 +89,7 @@ func CreateDeleteABTestExperimentRequest() (request *DeleteABTestExperimentReque
 	request = &DeleteABTestExperimentRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "DeleteABTestExperiment", "/v4/openapi/app-groups/[appGroupIdentity]/scenes/[sceneId]/groups/[groupId]/experiments/[experimentId]", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "DeleteABTestExperiment", "/v4/openapi/app-groups/[appGroupIdentity]/scenes/[sceneId]/groups/[groupId]/experiments/[experimentId]", "", "")
 	request.Method = requests.DELETE
 	return
 }

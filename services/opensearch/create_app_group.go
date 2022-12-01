@@ -85,7 +85,7 @@ func CreateCreateAppGroupRequest() (request *CreateAppGroupRequest) {
 	request = &CreateAppGroupRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "CreateAppGroup", "/v4/openapi/app-groups", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "CreateAppGroup", "/v4/openapi/app-groups", "", "")
 	request.Method = requests.POST
 	return
 }

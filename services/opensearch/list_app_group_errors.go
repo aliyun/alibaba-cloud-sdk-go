@@ -82,8 +82,8 @@ type ListAppGroupErrorsRequest struct {
 // ListAppGroupErrorsResponse is the response struct for api ListAppGroupErrors
 type ListAppGroupErrorsResponse struct {
 	*responses.BaseResponse
-	RequestId  string                   `json:"requestId" xml:"requestId"`
 	TotalCount int64                    `json:"totalCount" xml:"totalCount"`
+	RequestId  string                   `json:"requestId" xml:"requestId"`
 	Result     []map[string]interface{} `json:"result" xml:"result"`
 }
 
@@ -92,7 +92,7 @@ func CreateListAppGroupErrorsRequest() (request *ListAppGroupErrorsRequest) {
 	request = &ListAppGroupErrorsRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "ListAppGroupErrors", "/v4/openapi/app-groups/[appGroupIdentity]/errors", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "ListAppGroupErrors", "/v4/openapi/app-groups/[appGroupIdentity]/errors", "", "")
 	request.Method = requests.GET
 	return
 }

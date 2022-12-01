@@ -87,7 +87,7 @@ func CreateGetModelProgressRequest() (request *GetModelProgressRequest) {
 	request = &GetModelProgressRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "GetModelProgress", "/v4/openapi/app-groups/[appGroupIdentity]/algorithm/models/[modelName]/progress", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "GetModelProgress", "/v4/openapi/app-groups/[appGroupIdentity]/algorithm/models/[modelName]/progress", "", "")
 	request.Method = requests.GET
 	return
 }

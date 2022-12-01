@@ -18,7 +18,7 @@ package opensearch
 // NerItem is a nested struct in opensearch response
 type NerItem struct {
 	Tag      string `json:"tag" xml:"tag"`
-	TagLabel string `json:"tagLabel" xml:"tagLabel"`
 	Token    string `json:"token" xml:"token"`
 	Order    int    `json:"order" xml:"order"`
+	TagLabel string `json:"tagLabel" xml:"tagLabel"`
 }

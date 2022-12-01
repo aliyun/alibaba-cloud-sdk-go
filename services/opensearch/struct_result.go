@@ -26,15 +26,21 @@ type Result struct {
 	Start              int                      `json:"start" xml:"start"`
 	AnalyzeStatus      string                   `json:"analyzeStatus" xml:"analyzeStatus"`
 	Domain             string                   `json:"domain" xml:"domain"`
+	VersionId          int64                    `json:"VersionId" xml:"VersionId"`
 	Name               string                   `json:"name" xml:"name"`
 	Index              int                      `json:"index" xml:"index"`
+	FunctionType       string                   `json:"FunctionType" xml:"FunctionType"`
 	CreateTime         string                   `json:"createTime" xml:"createTime"`
+	FunctionName       string                   `json:"FunctionName" xml:"FunctionName"`
 	Type               string                   `json:"type" xml:"type"`
 	Updated            int                      `json:"updated" xml:"updated"`
+	VersionName        string                   `json:"VersionName" xml:"VersionName"`
 	Content            string                   `json:"content" xml:"content"`
 	RegionId           string                   `json:"regionId" xml:"regionId"`
+	ModelType          string                   `json:"ModelType" xml:"ModelType"`
 	PrimaryKey         string                   `json:"primaryKey" xml:"primaryKey"`
 	MergeTable         map[string]interface{}   `json:"mergeTable" xml:"mergeTable"`
+	InstanceName       string                   `json:"InstanceName" xml:"InstanceName"`
 	Status             int                      `json:"status" xml:"status"`
 	Version            int64                    `json:"version" xml:"version"`
 	Online             bool                     `json:"online" xml:"online"`
@@ -50,6 +56,7 @@ type Result struct {
 	Processors         []map[string]interface{} `json:"processors" xml:"processors"`
 	Indexes            []string                 `json:"indexes" xml:"indexes"`
 	Values             []string                 `json:"values" xml:"values"`
-	ReceivedSample     []ReceivedSampleItem     `json:"receivedSample" xml:"receivedSample"`
+	VersionConfig      VersionConfig            `json:"VersionConfig" xml:"VersionConfig"`
 	Meta               []MetaItem               `json:"meta" xml:"meta"`
+	ReceivedSample     []ReceivedSampleItem     `json:"receivedSample" xml:"receivedSample"`
 }

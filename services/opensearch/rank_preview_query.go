@@ -86,7 +86,7 @@ func CreateRankPreviewQueryRequest() (request *RankPreviewQueryRequest) {
 	request = &RankPreviewQueryRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "RankPreviewQuery", "/v4/openapi/app-groups/[appGroupIdentity]/algorithm/models/[modelName]/actions/query-rank", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "RankPreviewQuery", "/v4/openapi/app-groups/[appGroupIdentity]/algorithm/models/[modelName]/actions/query-rank", "", "")
 	request.Method = requests.POST
 	return
 }

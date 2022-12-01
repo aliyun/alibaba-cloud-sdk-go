@@ -87,7 +87,7 @@ func CreateDescribeDataCollctionRequest() (request *DescribeDataCollctionRequest
 	request = &DescribeDataCollctionRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "DescribeDataCollction", "/v4/openapi/app-groups/[appGroupIdentity]/data-collections/[dataCollectionIdentity]", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "DescribeDataCollction", "/v4/openapi/app-groups/[appGroupIdentity]/data-collections/[dataCollectionIdentity]", "", "")
 	request.Method = requests.GET
 	return
 }

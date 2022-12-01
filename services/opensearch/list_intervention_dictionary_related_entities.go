@@ -86,7 +86,7 @@ func CreateListInterventionDictionaryRelatedEntitiesRequest() (request *ListInte
 	request = &ListInterventionDictionaryRelatedEntitiesRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "ListInterventionDictionaryRelatedEntities", "/v4/openapi/intervention-dictionaries/[name]/related", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "ListInterventionDictionaryRelatedEntities", "/v4/openapi/intervention-dictionaries/[name]/related", "", "")
 	request.Method = requests.GET
 	return
 }

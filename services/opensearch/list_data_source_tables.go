@@ -87,7 +87,7 @@ func CreateListDataSourceTablesRequest() (request *ListDataSourceTablesRequest) 
 	request = &ListDataSourceTablesRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "ListDataSourceTables", "/v4/openapi/assist/data-sources/[dataSourceType]/tables", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "ListDataSourceTables", "/v4/openapi/assist/data-sources/[dataSourceType]/tables", "", "")
 	request.Method = requests.GET
 	return
 }

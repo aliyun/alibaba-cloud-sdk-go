@@ -17,29 +17,29 @@ package opensearch
 
 // ResultInModifyAppGroup is a nested struct in opensearch response
 type ResultInModifyAppGroup struct {
-	Id                                string `json:"id" xml:"id"`
-	Name                              string `json:"name" xml:"name"`
+	Created                           int    `json:"created" xml:"created"`
 	CurrentVersion                    string `json:"currentVersion" xml:"currentVersion"`
-	SwitchedTime                      int    `json:"switchedTime" xml:"switchedTime"`
+	PendingSecondRankAlgoDeploymentId int    `json:"pendingSecondRankAlgoDeploymentId" xml:"pendingSecondRankAlgoDeploymentId"`
+	LockMode                          string `json:"lockMode" xml:"lockMode"`
+	Updated                           int    `json:"updated" xml:"updated"`
+	Id                                string `json:"id" xml:"id"`
+	ChargeType                        string `json:"chargeType" xml:"chargeType"`
+	HasPendingQuotaReviewTask         int    `json:"hasPendingQuotaReviewTask" xml:"hasPendingQuotaReviewTask"`
+	SecondRankAlgoDeploymentId        int    `json:"secondRankAlgoDeploymentId" xml:"secondRankAlgoDeploymentId"`
+	Name                              string `json:"name" xml:"name"`
+	InstanceId                        string `json:"instanceId" xml:"instanceId"`
+	ProcessingOrderId                 string `json:"processingOrderId" xml:"processingOrderId"`
 	ChargingWay                       int    `json:"chargingWay" xml:"chargingWay"`
 	Type                              string `json:"type" xml:"type"`
+	Status                            string `json:"status" xml:"status"`
 	ProjectId                         string `json:"projectId" xml:"projectId"`
-	ChargeType                        string `json:"chargeType" xml:"chargeType"`
-	ExpireOn                          string `json:"expireOn" xml:"expireOn"`
-	InstanceId                        string `json:"instanceId" xml:"instanceId"`
+	SwitchedTime                      int    `json:"switchedTime" xml:"switchedTime"`
 	CommodityCode                     string `json:"commodityCode" xml:"commodityCode"`
-	ProcessingOrderId                 string `json:"processingOrderId" xml:"processingOrderId"`
-	FirstRankAlgoDeploymentId         int    `json:"firstRankAlgoDeploymentId" xml:"firstRankAlgoDeploymentId"`
-	SecondRankAlgoDeploymentId        int    `json:"secondRankAlgoDeploymentId" xml:"secondRankAlgoDeploymentId"`
-	PendingSecondRankAlgoDeploymentId int    `json:"pendingSecondRankAlgoDeploymentId" xml:"pendingSecondRankAlgoDeploymentId"`
+	ExpireOn                          string `json:"expireOn" xml:"expireOn"`
+	Domain                            string `json:"domain" xml:"domain"`
 	Description                       string `json:"description" xml:"description"`
+	FirstRankAlgoDeploymentId         int    `json:"firstRankAlgoDeploymentId" xml:"firstRankAlgoDeploymentId"`
 	Produced                          int    `json:"produced" xml:"produced"`
 	LockedByExpiration                int    `json:"lockedByExpiration" xml:"lockedByExpiration"`
-	HasPendingQuotaReviewTask         int    `json:"hasPendingQuotaReviewTask" xml:"hasPendingQuotaReviewTask"`
-	Created                           int    `json:"created" xml:"created"`
-	Updated                           int    `json:"updated" xml:"updated"`
-	Status                            string `json:"status" xml:"status"`
-	LockMode                          string `json:"lockMode" xml:"lockMode"`
-	Domain                            string `json:"domain" xml:"domain"`
 	Quota                             Quota  `json:"quota" xml:"quota"`
 }

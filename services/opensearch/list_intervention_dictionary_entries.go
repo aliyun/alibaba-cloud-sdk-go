@@ -80,8 +80,8 @@ type ListInterventionDictionaryEntriesRequest struct {
 // ListInterventionDictionaryEntriesResponse is the response struct for api ListInterventionDictionaryEntries
 type ListInterventionDictionaryEntriesResponse struct {
 	*responses.BaseResponse
-	RequestId  string     `json:"requestId" xml:"requestId"`
 	TotalCount int        `json:"totalCount" xml:"totalCount"`
+	RequestId  string     `json:"requestId" xml:"requestId"`
 	Result     []WordItem `json:"result" xml:"result"`
 }
 
@@ -90,7 +90,7 @@ func CreateListInterventionDictionaryEntriesRequest() (request *ListIntervention
 	request = &ListInterventionDictionaryEntriesRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "ListInterventionDictionaryEntries", "/v4/openapi/intervention-dictionaries/[name]/entries", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "ListInterventionDictionaryEntries", "/v4/openapi/intervention-dictionaries/[name]/entries", "", "")
 	request.Method = requests.GET
 	return
 }

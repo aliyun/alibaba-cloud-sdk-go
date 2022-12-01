@@ -85,7 +85,7 @@ func CreateListRamRolesRequest() (request *ListRamRolesRequest) {
 	request = &ListRamRolesRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "ListRamRoles", "/v4/openapi/assist/ram/roles", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "ListRamRoles", "/v4/openapi/assist/ram/roles", "", "")
 	request.Method = requests.GET
 	return
 }

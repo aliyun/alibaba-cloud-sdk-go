@@ -88,7 +88,7 @@ func CreateRemoveFirstRankRequest() (request *RemoveFirstRankRequest) {
 	request = &RemoveFirstRankRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "RemoveFirstRank", "/v4/openapi/app-groups/[appGroupIdentity]/apps/[appId]/first-ranks/[name]", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "RemoveFirstRank", "/v4/openapi/app-groups/[appGroupIdentity]/apps/[appId]/first-ranks/[name]", "", "")
 	request.Method = requests.DELETE
 	return
 }

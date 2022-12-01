@@ -80,8 +80,8 @@ type ListUserAnalyzerEntriesRequest struct {
 // ListUserAnalyzerEntriesResponse is the response struct for api ListUserAnalyzerEntries
 type ListUserAnalyzerEntriesResponse struct {
 	*responses.BaseResponse
-	RequestId string                 `json:"RequestId" xml:"RequestId"`
 	Result    map[string]interface{} `json:"result" xml:"result"`
+	RequestId string                 `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateListUserAnalyzerEntriesRequest creates a request to invoke ListUserAnalyzerEntries API
@@ -89,7 +89,7 @@ func CreateListUserAnalyzerEntriesRequest() (request *ListUserAnalyzerEntriesReq
 	request = &ListUserAnalyzerEntriesRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "ListUserAnalyzerEntries", "/v4/openapi/user-analyzers/[name]/entries", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "ListUserAnalyzerEntries", "/v4/openapi/user-analyzers/[name]/entries", "", "")
 	request.Method = requests.GET
 	return
 }

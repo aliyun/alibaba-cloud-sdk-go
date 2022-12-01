@@ -78,8 +78,8 @@ type ModifyScheduledTaskRequest struct {
 // ModifyScheduledTaskResponse is the response struct for api ModifyScheduledTask
 type ModifyScheduledTaskResponse struct {
 	*responses.BaseResponse
-	RequestId string                 `json:"requestId" xml:"requestId"`
 	Result    map[string]interface{} `json:"result" xml:"result"`
+	RequestId string                 `json:"requestId" xml:"requestId"`
 }
 
 // CreateModifyScheduledTaskRequest creates a request to invoke ModifyScheduledTask API
@@ -87,7 +87,7 @@ func CreateModifyScheduledTaskRequest() (request *ModifyScheduledTaskRequest) {
 	request = &ModifyScheduledTaskRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "ModifyScheduledTask", "/v4/openapi/app-groups/[appGroupIdentity]/scheduled-tasks/[taskId]", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "ModifyScheduledTask", "/v4/openapi/app-groups/[appGroupIdentity]/scheduled-tasks/[taskId]", "", "")
 	request.Method = requests.PUT
 	return
 }

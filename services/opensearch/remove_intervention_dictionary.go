@@ -86,7 +86,7 @@ func CreateRemoveInterventionDictionaryRequest() (request *RemoveInterventionDic
 	request = &RemoveInterventionDictionaryRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "RemoveInterventionDictionary", "/v4/openapi/intervention-dictionaries/[name]", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "RemoveInterventionDictionary", "/v4/openapi/intervention-dictionaries/[name]", "", "")
 	request.Method = requests.DELETE
 	return
 }

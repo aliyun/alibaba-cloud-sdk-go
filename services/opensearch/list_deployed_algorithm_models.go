@@ -88,7 +88,7 @@ func CreateListDeployedAlgorithmModelsRequest() (request *ListDeployedAlgorithmM
 	request = &ListDeployedAlgorithmModelsRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "ListDeployedAlgorithmModels", "/v4/openapi/app-groups/[appGroupIdentity]/deployed-algorithm-models", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "ListDeployedAlgorithmModels", "/v4/openapi/app-groups/[appGroupIdentity]/deployed-algorithm-models", "", "")
 	request.Method = requests.GET
 	return
 }

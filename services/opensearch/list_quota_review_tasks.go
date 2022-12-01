@@ -79,8 +79,8 @@ type ListQuotaReviewTasksRequest struct {
 // ListQuotaReviewTasksResponse is the response struct for api ListQuotaReviewTasks
 type ListQuotaReviewTasksResponse struct {
 	*responses.BaseResponse
-	RequestId  string                             `json:"requestId" xml:"requestId"`
 	TotalCount int                                `json:"totalCount" xml:"totalCount"`
+	RequestId  string                             `json:"requestId" xml:"requestId"`
 	Result     []ResultItemInListQuotaReviewTasks `json:"result" xml:"result"`
 }
 
@@ -89,7 +89,7 @@ func CreateListQuotaReviewTasksRequest() (request *ListQuotaReviewTasksRequest) 
 	request = &ListQuotaReviewTasksRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "ListQuotaReviewTasks", "/v4/openapi/app-groups/[appGroupIdentity]/quota-review-tasks", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "ListQuotaReviewTasks", "/v4/openapi/app-groups/[appGroupIdentity]/quota-review-tasks", "", "")
 	request.Method = requests.GET
 	return
 }

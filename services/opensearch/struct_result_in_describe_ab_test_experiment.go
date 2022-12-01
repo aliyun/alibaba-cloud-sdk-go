@@ -17,11 +17,11 @@ package opensearch
 
 // ResultInDescribeABTestExperiment is a nested struct in opensearch response
 type ResultInDescribeABTestExperiment struct {
-	Id      string `json:"id" xml:"id"`
-	Name    string `json:"name" xml:"name"`
 	Created int    `json:"created" xml:"created"`
-	Updated int    `json:"updated" xml:"updated"`
-	Online  bool   `json:"online" xml:"online"`
 	Traffic int    `json:"traffic" xml:"traffic"`
+	Online  bool   `json:"online" xml:"online"`
+	Name    string `json:"name" xml:"name"`
+	Updated int    `json:"updated" xml:"updated"`
+	Id      string `json:"id" xml:"id"`
 	Params  Params `json:"params" xml:"params"`
 }

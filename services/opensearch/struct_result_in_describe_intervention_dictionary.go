@@ -17,9 +17,9 @@ package opensearch
 
 // ResultInDescribeInterventionDictionary is a nested struct in opensearch response
 type ResultInDescribeInterventionDictionary struct {
-	Name     string `json:"name" xml:"name"`
-	Type     string `json:"type" xml:"type"`
-	Analyzer string `json:"analyzer" xml:"analyzer"`
 	Created  string `json:"created" xml:"created"`
+	Analyzer string `json:"analyzer" xml:"analyzer"`
 	Updated  string `json:"updated" xml:"updated"`
+	Type     string `json:"type" xml:"type"`
+	Name     string `json:"name" xml:"name"`
 }

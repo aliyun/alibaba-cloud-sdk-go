@@ -79,8 +79,8 @@ type UpdateSummariesRequest struct {
 // UpdateSummariesResponse is the response struct for api UpdateSummaries
 type UpdateSummariesResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"requestId" xml:"requestId"`
 	Result    bool   `json:"result" xml:"result"`
+	RequestId string `json:"requestId" xml:"requestId"`
 }
 
 // CreateUpdateSummariesRequest creates a request to invoke UpdateSummaries API
@@ -88,7 +88,7 @@ func CreateUpdateSummariesRequest() (request *UpdateSummariesRequest) {
 	request = &UpdateSummariesRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "UpdateSummaries", "/v4/openapi/app-groups/[appGroupIdentity]/apps/[appId]/summaries", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "UpdateSummaries", "/v4/openapi/app-groups/[appGroupIdentity]/apps/[appId]/summaries", "", "")
 	request.Method = requests.PUT
 	return
 }

@@ -78,8 +78,8 @@ type DescribeAppStatisticsRequest struct {
 // DescribeAppStatisticsResponse is the response struct for api DescribeAppStatistics
 type DescribeAppStatisticsResponse struct {
 	*responses.BaseResponse
-	RequestId string                 `json:"requestId" xml:"requestId"`
 	Result    map[string]interface{} `json:"result" xml:"result"`
+	RequestId string                 `json:"requestId" xml:"requestId"`
 }
 
 // CreateDescribeAppStatisticsRequest creates a request to invoke DescribeAppStatistics API
@@ -87,7 +87,7 @@ func CreateDescribeAppStatisticsRequest() (request *DescribeAppStatisticsRequest
 	request = &DescribeAppStatisticsRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "DescribeAppStatistics", "/v4/openapi/app-groups/[appGroupIdentity]/apps/[appId]/statistics", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "DescribeAppStatistics", "/v4/openapi/app-groups/[appGroupIdentity]/apps/[appId]/statistics", "", "")
 	request.Method = requests.GET
 	return
 }

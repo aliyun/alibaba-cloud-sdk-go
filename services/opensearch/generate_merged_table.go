@@ -86,7 +86,7 @@ func CreateGenerateMergedTableRequest() (request *GenerateMergedTableRequest) {
 	request = &GenerateMergedTableRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "GenerateMergedTable", "/v4/openapi/assist/schema/actions/merge", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "GenerateMergedTable", "/v4/openapi/assist/schema/actions/merge", "", "")
 	request.Method = requests.POST
 	return
 }

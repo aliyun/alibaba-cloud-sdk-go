@@ -77,8 +77,8 @@ type StartSlowQueryAnalyzerRequest struct {
 // StartSlowQueryAnalyzerResponse is the response struct for api StartSlowQueryAnalyzer
 type StartSlowQueryAnalyzerResponse struct {
 	*responses.BaseResponse
-	RequestId string                 `json:"requestId" xml:"requestId"`
 	Result    map[string]interface{} `json:"result" xml:"result"`
+	RequestId string                 `json:"requestId" xml:"requestId"`
 }
 
 // CreateStartSlowQueryAnalyzerRequest creates a request to invoke StartSlowQueryAnalyzer API
@@ -86,7 +86,7 @@ func CreateStartSlowQueryAnalyzerRequest() (request *StartSlowQueryAnalyzerReque
 	request = &StartSlowQueryAnalyzerRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "StartSlowQueryAnalyzer", "/v4/openapi/app-groups/[appGroupIdentity]/optimizers/slow-query/actions/run", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "StartSlowQueryAnalyzer", "/v4/openapi/app-groups/[appGroupIdentity]/optimizers/slow-query/actions/run", "", "")
 	request.Method = requests.POST
 	return
 }

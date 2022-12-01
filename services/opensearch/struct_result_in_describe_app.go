@@ -17,16 +17,16 @@ package opensearch
 
 // ResultInDescribeApp is a nested struct in opensearch response
 type ResultInDescribeApp struct {
-	Id               string                 `json:"id" xml:"id"`
+	Created          int                    `json:"created" xml:"created"`
+	ClusterName      string                 `json:"clusterName" xml:"clusterName"`
+	AutoSwitch       bool                   `json:"autoSwitch" xml:"autoSwitch"`
+	AlgoDeploymentId int                    `json:"algoDeploymentId" xml:"algoDeploymentId"`
+	Type             string                 `json:"type" xml:"type"`
 	Description      string                 `json:"description" xml:"description"`
 	Status           string                 `json:"status" xml:"status"`
-	Type             string                 `json:"type" xml:"type"`
-	ClusterName      string                 `json:"clusterName" xml:"clusterName"`
-	AlgoDeploymentId int                    `json:"algoDeploymentId" xml:"algoDeploymentId"`
-	Created          int                    `json:"created" xml:"created"`
-	AutoSwitch       bool                   `json:"autoSwitch" xml:"autoSwitch"`
-	ProgressPercent  int                    `json:"progressPercent" xml:"progressPercent"`
 	Schema           map[string]interface{} `json:"schema" xml:"schema"`
+	ProgressPercent  int                    `json:"progressPercent" xml:"progressPercent"`
+	Id               string                 `json:"id" xml:"id"`
 	FetchFields      []string               `json:"fetchFields" xml:"fetchFields"`
 	Quota            Quota                  `json:"quota" xml:"quota"`
 	Domain           Domain                 `json:"domain" xml:"domain"`

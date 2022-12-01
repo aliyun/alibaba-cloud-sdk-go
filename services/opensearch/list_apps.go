@@ -86,7 +86,7 @@ func CreateListAppsRequest() (request *ListAppsRequest) {
 	request = &ListAppsRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "ListApps", "/v4/openapi/apps", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "ListApps", "/v4/openapi/apps", "", "")
 	request.Method = requests.GET
 	return
 }

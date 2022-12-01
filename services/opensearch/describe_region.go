@@ -85,7 +85,7 @@ func CreateDescribeRegionRequest() (request *DescribeRegionRequest) {
 	request = &DescribeRegionRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "DescribeRegion", "/v4/openapi/region", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "DescribeRegion", "/v4/openapi/region", "", "")
 	request.Method = requests.GET
 	return
 }

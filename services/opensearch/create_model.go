@@ -77,8 +77,8 @@ type CreateModelRequest struct {
 // CreateModelResponse is the response struct for api CreateModel
 type CreateModelResponse struct {
 	*responses.BaseResponse
-	RequestId string                 `json:"requestId" xml:"requestId"`
 	Result    map[string]interface{} `json:"result" xml:"result"`
+	RequestId string                 `json:"requestId" xml:"requestId"`
 }
 
 // CreateCreateModelRequest creates a request to invoke CreateModel API
@@ -86,7 +86,7 @@ func CreateCreateModelRequest() (request *CreateModelRequest) {
 	request = &CreateModelRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "CreateModel", "/v4/openapi/app-groups/[appGroupIdentity]/algorithm/models", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "CreateModel", "/v4/openapi/app-groups/[appGroupIdentity]/algorithm/models", "", "")
 	request.Method = requests.POST
 	return
 }

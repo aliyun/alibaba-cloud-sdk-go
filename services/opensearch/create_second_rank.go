@@ -79,8 +79,8 @@ type CreateSecondRankRequest struct {
 // CreateSecondRankResponse is the response struct for api CreateSecondRank
 type CreateSecondRankResponse struct {
 	*responses.BaseResponse
-	RequestId string                 `json:"RequestId" xml:"RequestId"`
 	Result    map[string]interface{} `json:"result" xml:"result"`
+	RequestId string                 `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCreateSecondRankRequest creates a request to invoke CreateSecondRank API
@@ -88,7 +88,7 @@ func CreateCreateSecondRankRequest() (request *CreateSecondRankRequest) {
 	request = &CreateSecondRankRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "CreateSecondRank", "/v4/openapi/app-groups/[appGroupIdentity]/apps/[appId]/second-ranks", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "CreateSecondRank", "/v4/openapi/app-groups/[appGroupIdentity]/apps/[appId]/second-ranks", "", "")
 	request.Method = requests.POST
 	return
 }

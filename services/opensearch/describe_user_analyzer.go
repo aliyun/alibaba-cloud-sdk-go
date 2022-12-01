@@ -78,8 +78,8 @@ type DescribeUserAnalyzerRequest struct {
 // DescribeUserAnalyzerResponse is the response struct for api DescribeUserAnalyzer
 type DescribeUserAnalyzerResponse struct {
 	*responses.BaseResponse
-	RequestId string                 `json:"requestId" xml:"requestId"`
 	Result    map[string]interface{} `json:"result" xml:"result"`
+	RequestId string                 `json:"requestId" xml:"requestId"`
 }
 
 // CreateDescribeUserAnalyzerRequest creates a request to invoke DescribeUserAnalyzer API
@@ -87,7 +87,7 @@ func CreateDescribeUserAnalyzerRequest() (request *DescribeUserAnalyzerRequest) 
 	request = &DescribeUserAnalyzerRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "DescribeUserAnalyzer", "/v4/openapi/user-analyzers/[name]", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "DescribeUserAnalyzer", "/v4/openapi/user-analyzers/[name]", "", "")
 	request.Method = requests.GET
 	return
 }

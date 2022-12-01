@@ -78,8 +78,8 @@ type GetModelReportRequest struct {
 // GetModelReportResponse is the response struct for api GetModelReport
 type GetModelReportResponse struct {
 	*responses.BaseResponse
-	RequestId string                 `json:"requestId" xml:"requestId"`
 	Result    map[string]interface{} `json:"result" xml:"result"`
+	RequestId string                 `json:"requestId" xml:"requestId"`
 }
 
 // CreateGetModelReportRequest creates a request to invoke GetModelReport API
@@ -87,7 +87,7 @@ func CreateGetModelReportRequest() (request *GetModelReportRequest) {
 	request = &GetModelReportRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "GetModelReport", "/v4/openapi/app-groups/[appGroupIdentity]/algorithm/models/[modelName]/report", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "GetModelReport", "/v4/openapi/app-groups/[appGroupIdentity]/algorithm/models/[modelName]/report", "", "")
 	request.Method = requests.GET
 	return
 }

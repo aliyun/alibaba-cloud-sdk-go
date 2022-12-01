@@ -17,11 +17,11 @@ package opensearch
 
 // DictsItem is a nested struct in opensearch response
 type DictsItem struct {
-	Id           string `json:"id" xml:"id"`
+	Created      int    `json:"created" xml:"created"`
+	EntriesCount int    `json:"entriesCount" xml:"entriesCount"`
 	Type         string `json:"type" xml:"type"`
 	EntriesLimit int    `json:"entriesLimit" xml:"entriesLimit"`
-	EntriesCount int    `json:"entriesCount" xml:"entriesCount"`
 	Available    bool   `json:"available" xml:"available"`
-	Created      int    `json:"created" xml:"created"`
 	Updated      int    `json:"updated" xml:"updated"`
+	Id           string `json:"id" xml:"id"`
 }

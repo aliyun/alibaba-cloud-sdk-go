@@ -86,7 +86,7 @@ func CreatePushInterventionDictionaryEntriesRequest() (request *PushIntervention
 	request = &PushInterventionDictionaryEntriesRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "PushInterventionDictionaryEntries", "/v4/openapi/intervention-dictionaries/[name]/entries/actions/bulk", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "PushInterventionDictionaryEntries", "/v4/openapi/intervention-dictionaries/[name]/entries/actions/bulk", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -79,8 +79,8 @@ type ListDataCollectionsRequest struct {
 // ListDataCollectionsResponse is the response struct for api ListDataCollections
 type ListDataCollectionsResponse struct {
 	*responses.BaseResponse
-	RequestId  string       `json:"requestId" xml:"requestId"`
 	TotalCount int          `json:"totalCount" xml:"totalCount"`
+	RequestId  string       `json:"requestId" xml:"requestId"`
 	Result     []ResultItem `json:"result" xml:"result"`
 }
 
@@ -89,7 +89,7 @@ func CreateListDataCollectionsRequest() (request *ListDataCollectionsRequest) {
 	request = &ListDataCollectionsRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "ListDataCollections", "/v4/openapi/app-groups/[appGroupIdentity]/data-collections", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "ListDataCollections", "/v4/openapi/app-groups/[appGroupIdentity]/data-collections", "", "")
 	request.Method = requests.GET
 	return
 }

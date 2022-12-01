@@ -88,7 +88,7 @@ func CreateCreateQueryProcessorRequest() (request *CreateQueryProcessorRequest) 
 	request = &CreateQueryProcessorRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "CreateQueryProcessor", "/v4/openapi/app-groups/[appGroupIdentity]/apps/[appId]/query-processors", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "CreateQueryProcessor", "/v4/openapi/app-groups/[appGroupIdentity]/apps/[appId]/query-processors", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -17,7 +17,7 @@ package opensearch
 
 // Functions is a nested struct in opensearch response
 type Functions struct {
+	Service []string `json:"service" xml:"service"`
 	Qp      []string `json:"qp" xml:"qp"`
 	Algo    []string `json:"algo" xml:"algo"`
-	Service []string `json:"service" xml:"service"`
 }

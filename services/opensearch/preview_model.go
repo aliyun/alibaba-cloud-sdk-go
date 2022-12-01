@@ -79,8 +79,8 @@ type PreviewModelRequest struct {
 // PreviewModelResponse is the response struct for api PreviewModel
 type PreviewModelResponse struct {
 	*responses.BaseResponse
-	RequestId  string                   `json:"requestId" xml:"requestId"`
 	TotalCount int64                    `json:"totalCount" xml:"totalCount"`
+	RequestId  string                   `json:"requestId" xml:"requestId"`
 	Result     []map[string]interface{} `json:"result" xml:"result"`
 }
 
@@ -89,7 +89,7 @@ func CreatePreviewModelRequest() (request *PreviewModelRequest) {
 	request = &PreviewModelRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "PreviewModel", "/v4/openapi/app-groups/[appGroupIdentity]/algorithm/models/[modelName]/actions/preview", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "PreviewModel", "/v4/openapi/app-groups/[appGroupIdentity]/algorithm/models/[modelName]/actions/preview", "", "")
 	request.Method = requests.GET
 	return
 }

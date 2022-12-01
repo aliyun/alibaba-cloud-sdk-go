@@ -86,7 +86,7 @@ func CreateModifyAppGroupRequest() (request *ModifyAppGroupRequest) {
 	request = &ModifyAppGroupRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "ModifyAppGroup", "/v4/openapi/app-groups/[appGroupIdentity]", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "ModifyAppGroup", "/v4/openapi/app-groups/[appGroupIdentity]", "", "")
 	request.Method = requests.PUT
 	return
 }

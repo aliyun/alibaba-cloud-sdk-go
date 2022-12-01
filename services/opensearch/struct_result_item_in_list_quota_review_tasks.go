@@ -17,20 +17,20 @@ package opensearch
 
 // ResultItemInListQuotaReviewTasks is a nested struct in opensearch response
 type ResultItemInListQuotaReviewTasks struct {
-	Id                 int    `json:"id" xml:"id"`
-	AppGroupId         int    `json:"appGroupId" xml:"appGroupId"`
-	AppGroupName       string `json:"appGroupName" xml:"appGroupName"`
-	AppGroupType       string `json:"appGroupType" xml:"appGroupType"`
+	OldDocSize         int    `json:"oldDocSize" xml:"oldDocSize"`
+	Pending            bool   `json:"pending" xml:"pending"`
+	Memo               string `json:"memo" xml:"memo"`
+	Approved           bool   `json:"approved" xml:"approved"`
 	OldSpec            string `json:"oldSpec" xml:"oldSpec"`
 	OldComputeResource int    `json:"oldComputeResource" xml:"oldComputeResource"`
-	OldDocSize         int    `json:"oldDocSize" xml:"oldDocSize"`
-	NewSpec            string `json:"newSpec" xml:"newSpec"`
-	NewComputeResource int    `json:"newComputeResource" xml:"newComputeResource"`
-	NewSocSize         int    `json:"newSocSize" xml:"newSocSize"`
-	Memo               string `json:"memo" xml:"memo"`
+	AppGroupType       string `json:"appGroupType" xml:"appGroupType"`
 	Available          bool   `json:"available" xml:"available"`
-	Pending            bool   `json:"pending" xml:"pending"`
-	Approved           bool   `json:"approved" xml:"approved"`
 	GmtCreate          string `json:"gmtCreate" xml:"gmtCreate"`
+	NewSocSize         int    `json:"newSocSize" xml:"newSocSize"`
+	Id                 int    `json:"id" xml:"id"`
+	AppGroupId         int    `json:"appGroupId" xml:"appGroupId"`
+	NewComputeResource int    `json:"newComputeResource" xml:"newComputeResource"`
+	AppGroupName       string `json:"appGroupName" xml:"appGroupName"`
 	GmtModified        string `json:"gmtModified" xml:"gmtModified"`
+	NewSpec            string `json:"newSpec" xml:"newSpec"`
 }

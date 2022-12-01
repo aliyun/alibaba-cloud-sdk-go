@@ -77,8 +77,8 @@ type PushUserAnalyzerEntriesRequest struct {
 // PushUserAnalyzerEntriesResponse is the response struct for api PushUserAnalyzerEntries
 type PushUserAnalyzerEntriesResponse struct {
 	*responses.BaseResponse
-	RequestId string                 `json:"RequestId" xml:"RequestId"`
 	Result    map[string]interface{} `json:"result" xml:"result"`
+	RequestId string                 `json:"RequestId" xml:"RequestId"`
 }
 
 // CreatePushUserAnalyzerEntriesRequest creates a request to invoke PushUserAnalyzerEntries API
@@ -86,7 +86,7 @@ func CreatePushUserAnalyzerEntriesRequest() (request *PushUserAnalyzerEntriesReq
 	request = &PushUserAnalyzerEntriesRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "PushUserAnalyzerEntries", "/v4/openapi/user-analyzers/[name]/entries/actions/bulk", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "PushUserAnalyzerEntries", "/v4/openapi/user-analyzers/[name]/entries/actions/bulk", "", "")
 	request.Method = requests.POST
 	return
 }

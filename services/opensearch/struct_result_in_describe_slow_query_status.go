@@ -18,6 +18,6 @@ package opensearch
 // ResultInDescribeSlowQueryStatus is a nested struct in opensearch response
 type ResultInDescribeSlowQueryStatus struct {
 	Region     string `json:"region" xml:"region"`
-	AppGroupId string `json:"appGroupId" xml:"appGroupId"`
 	Status     string `json:"status" xml:"status"`
+	AppGroupId string `json:"appGroupId" xml:"appGroupId"`
 }

@@ -88,7 +88,7 @@ func CreateDescribeSecondRankRequest() (request *DescribeSecondRankRequest) {
 	request = &DescribeSecondRankRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "DescribeSecondRank", "/v4/openapi/app-groups/[appGroupIdentity]/apps/[appId]/second-ranks/[name]", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "DescribeSecondRank", "/v4/openapi/app-groups/[appGroupIdentity]/apps/[appId]/second-ranks/[name]", "", "")
 	request.Method = requests.GET
 	return
 }

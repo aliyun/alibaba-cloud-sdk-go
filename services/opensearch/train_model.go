@@ -78,8 +78,8 @@ type TrainModelRequest struct {
 // TrainModelResponse is the response struct for api TrainModel
 type TrainModelResponse struct {
 	*responses.BaseResponse
-	RequestId string                 `json:"requestId" xml:"requestId"`
 	Result    map[string]interface{} `json:"result" xml:"result"`
+	RequestId string                 `json:"requestId" xml:"requestId"`
 }
 
 // CreateTrainModelRequest creates a request to invoke TrainModel API
@@ -87,7 +87,7 @@ func CreateTrainModelRequest() (request *TrainModelRequest) {
 	request = &TrainModelRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "TrainModel", "/v4/openapi/app-groups/[appGroupIdentity]/algorithm/models/[modelName]/actions/train", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "TrainModel", "/v4/openapi/app-groups/[appGroupIdentity]/algorithm/models/[modelName]/actions/train", "", "")
 	request.Method = requests.POST
 	return
 }

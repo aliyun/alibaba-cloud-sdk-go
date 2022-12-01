@@ -18,9 +18,9 @@ package opensearch
 // ModelsItem is a nested struct in opensearch response
 type ModelsItem struct {
 	ModelName     string `json:"modelName" xml:"modelName"`
-	ModelId       int    `json:"modelId" xml:"modelId"`
-	Progress      int    `json:"progress" xml:"progress"`
-	Status        string `json:"status" xml:"status"`
 	ProjectId     int    `json:"projectId" xml:"projectId"`
+	ModelId       int    `json:"modelId" xml:"modelId"`
 	AlgorithmType string `json:"algorithmType" xml:"algorithmType"`
+	Status        string `json:"status" xml:"status"`
+	Progress      int    `json:"progress" xml:"progress"`
 }

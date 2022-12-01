@@ -77,8 +77,8 @@ type EnableSlowQueryRequest struct {
 // EnableSlowQueryResponse is the response struct for api EnableSlowQuery
 type EnableSlowQueryResponse struct {
 	*responses.BaseResponse
-	RequestId string                 `json:"requestId" xml:"requestId"`
 	Result    map[string]interface{} `json:"result" xml:"result"`
+	RequestId string                 `json:"requestId" xml:"requestId"`
 }
 
 // CreateEnableSlowQueryRequest creates a request to invoke EnableSlowQuery API
@@ -86,7 +86,7 @@ func CreateEnableSlowQueryRequest() (request *EnableSlowQueryRequest) {
 	request = &EnableSlowQueryRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "EnableSlowQuery", "/v4/openapi/app-groups/[appGroupIdentity]/optimizers/slow-query/actions/enable", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "EnableSlowQuery", "/v4/openapi/app-groups/[appGroupIdentity]/optimizers/slow-query/actions/enable", "", "")
 	request.Method = requests.POST
 	return
 }

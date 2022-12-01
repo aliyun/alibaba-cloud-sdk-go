@@ -89,7 +89,7 @@ func CreateListModelsRequest() (request *ListModelsRequest) {
 	request = &ListModelsRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "ListModels", "/v4/openapi/app-groups/[appGroupIdentity]/algorithm/models", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "ListModels", "/v4/openapi/app-groups/[appGroupIdentity]/algorithm/models", "", "")
 	request.Method = requests.GET
 	return
 }

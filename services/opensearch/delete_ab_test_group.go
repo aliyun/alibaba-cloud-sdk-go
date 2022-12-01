@@ -79,8 +79,8 @@ type DeleteABTestGroupRequest struct {
 // DeleteABTestGroupResponse is the response struct for api DeleteABTestGroup
 type DeleteABTestGroupResponse struct {
 	*responses.BaseResponse
-	RequestId string                 `json:"requestId" xml:"requestId"`
 	Result    map[string]interface{} `json:"result" xml:"result"`
+	RequestId string                 `json:"requestId" xml:"requestId"`
 }
 
 // CreateDeleteABTestGroupRequest creates a request to invoke DeleteABTestGroup API
@@ -88,7 +88,7 @@ func CreateDeleteABTestGroupRequest() (request *DeleteABTestGroupRequest) {
 	request = &DeleteABTestGroupRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "DeleteABTestGroup", "/v4/openapi/app-groups/[appGroupIdentity]/scenes/[sceneId]/groups/[groupId]", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "DeleteABTestGroup", "/v4/openapi/app-groups/[appGroupIdentity]/scenes/[sceneId]/groups/[groupId]", "", "")
 	request.Method = requests.DELETE
 	return
 }

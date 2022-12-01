@@ -86,7 +86,7 @@ func CreateListQueryProcessorNersRequest() (request *ListQueryProcessorNersReque
 	request = &ListQueryProcessorNersRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "ListQueryProcessorNers", "/v4/openapi/query-processor/ner/default-priorities", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "ListQueryProcessorNers", "/v4/openapi/query-processor/ner/default-priorities", "", "")
 	request.Method = requests.GET
 	return
 }

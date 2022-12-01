@@ -78,8 +78,8 @@ type DescribeModelRequest struct {
 // DescribeModelResponse is the response struct for api DescribeModel
 type DescribeModelResponse struct {
 	*responses.BaseResponse
-	RequestId string                 `json:"requestId" xml:"requestId"`
 	Result    map[string]interface{} `json:"result" xml:"result"`
+	RequestId string                 `json:"requestId" xml:"requestId"`
 }
 
 // CreateDescribeModelRequest creates a request to invoke DescribeModel API
@@ -87,7 +87,7 @@ func CreateDescribeModelRequest() (request *DescribeModelRequest) {
 	request = &DescribeModelRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "DescribeModel", "/v4/openapi/app-groups/[appGroupIdentity]/algorithm/models/[modelName]", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "DescribeModel", "/v4/openapi/app-groups/[appGroupIdentity]/algorithm/models/[modelName]", "", "")
 	request.Method = requests.GET
 	return
 }

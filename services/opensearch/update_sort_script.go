@@ -87,7 +87,7 @@ func CreateUpdateSortScriptRequest() (request *UpdateSortScriptRequest) {
 	request = &UpdateSortScriptRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "UpdateSortScript", "/v4/openapi/app-groups/[appGroupIdentity]/apps/[appVersionId]/sort-scripts/[scriptName]", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "UpdateSortScript", "/v4/openapi/app-groups/[appGroupIdentity]/apps/[appVersionId]/sort-scripts/[scriptName]", "", "")
 	request.Method = requests.PUT
 	return
 }

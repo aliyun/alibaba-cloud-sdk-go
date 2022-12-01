@@ -86,7 +86,7 @@ func CreateRemoveAppGroupRequest() (request *RemoveAppGroupRequest) {
 	request = &RemoveAppGroupRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "RemoveAppGroup", "/v4/openapi/app-groups/[appGroupIdentity]", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "RemoveAppGroup", "/v4/openapi/app-groups/[appGroupIdentity]", "", "")
 	request.Method = requests.DELETE
 	return
 }

@@ -88,7 +88,7 @@ func CreateListABTestMetricsRequest() (request *ListABTestMetricsRequest) {
 	request = &ListABTestMetricsRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "ListABTestMetrics", "/v4/openapi/app-groups/[appGroupIdentity]/scenes/[sceneId]/groups/[groupId]/metrics", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "ListABTestMetrics", "/v4/openapi/app-groups/[appGroupIdentity]/scenes/[sceneId]/groups/[groupId]/metrics", "", "")
 	request.Method = requests.GET
 	return
 }

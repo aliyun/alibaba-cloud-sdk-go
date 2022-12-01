@@ -86,7 +86,7 @@ func CreateReplaceAppGroupCommodityCodeRequest() (request *ReplaceAppGroupCommod
 	request = &ReplaceAppGroupCommodityCodeRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "ReplaceAppGroupCommodityCode", "/v4/openapi/app-groups/[appGroupIdentity]/actions/to-instance-typed", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "ReplaceAppGroupCommodityCode", "/v4/openapi/app-groups/[appGroupIdentity]/actions/to-instance-typed", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -77,8 +77,8 @@ type DisableSlowQueryRequest struct {
 // DisableSlowQueryResponse is the response struct for api DisableSlowQuery
 type DisableSlowQueryResponse struct {
 	*responses.BaseResponse
-	RequestId string                 `json:"requestId" xml:"requestId"`
 	Result    map[string]interface{} `json:"result" xml:"result"`
+	RequestId string                 `json:"requestId" xml:"requestId"`
 }
 
 // CreateDisableSlowQueryRequest creates a request to invoke DisableSlowQuery API
@@ -86,7 +86,7 @@ func CreateDisableSlowQueryRequest() (request *DisableSlowQueryRequest) {
 	request = &DisableSlowQueryRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "DisableSlowQuery", "/v4/openapi/app-groups/[appGroupIdentity]/optimizers/slow-query/actions/disable", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "DisableSlowQuery", "/v4/openapi/app-groups/[appGroupIdentity]/optimizers/slow-query/actions/disable", "", "")
 	request.Method = requests.POST
 	return
 }

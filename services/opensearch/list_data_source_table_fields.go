@@ -78,8 +78,8 @@ type ListDataSourceTableFieldsRequest struct {
 // ListDataSourceTableFieldsResponse is the response struct for api ListDataSourceTableFields
 type ListDataSourceTableFieldsResponse struct {
 	*responses.BaseResponse
-	RequestId string                 `json:"requestId" xml:"requestId"`
 	Result    map[string]interface{} `json:"result" xml:"result"`
+	RequestId string                 `json:"requestId" xml:"requestId"`
 }
 
 // CreateListDataSourceTableFieldsRequest creates a request to invoke ListDataSourceTableFields API
@@ -87,7 +87,7 @@ func CreateListDataSourceTableFieldsRequest() (request *ListDataSourceTableField
 	request = &ListDataSourceTableFieldsRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "ListDataSourceTableFields", "/v4/openapi/assist/data-sources/[dataSourceType]/fields", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "ListDataSourceTableFields", "/v4/openapi/assist/data-sources/[dataSourceType]/fields", "", "")
 	request.Method = requests.GET
 	return
 }

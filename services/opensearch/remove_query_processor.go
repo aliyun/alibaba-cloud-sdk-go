@@ -79,8 +79,8 @@ type RemoveQueryProcessorRequest struct {
 // RemoveQueryProcessorResponse is the response struct for api RemoveQueryProcessor
 type RemoveQueryProcessorResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"requestId" xml:"requestId"`
 	Result    string `json:"result" xml:"result"`
+	RequestId string `json:"requestId" xml:"requestId"`
 }
 
 // CreateRemoveQueryProcessorRequest creates a request to invoke RemoveQueryProcessor API
@@ -88,7 +88,7 @@ func CreateRemoveQueryProcessorRequest() (request *RemoveQueryProcessorRequest) 
 	request = &RemoveQueryProcessorRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "RemoveQueryProcessor", "/v4/openapi/app-groups/[appGroupIdentity]/apps/[appId]/query-processors/[name]", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "RemoveQueryProcessor", "/v4/openapi/app-groups/[appGroupIdentity]/apps/[appId]/query-processors/[name]", "", "")
 	request.Method = requests.DELETE
 	return
 }

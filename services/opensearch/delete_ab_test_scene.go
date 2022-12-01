@@ -78,8 +78,8 @@ type DeleteABTestSceneRequest struct {
 // DeleteABTestSceneResponse is the response struct for api DeleteABTestScene
 type DeleteABTestSceneResponse struct {
 	*responses.BaseResponse
-	RequestId string                 `json:"requestId" xml:"requestId"`
 	Result    map[string]interface{} `json:"result" xml:"result"`
+	RequestId string                 `json:"requestId" xml:"requestId"`
 }
 
 // CreateDeleteABTestSceneRequest creates a request to invoke DeleteABTestScene API
@@ -87,7 +87,7 @@ func CreateDeleteABTestSceneRequest() (request *DeleteABTestSceneRequest) {
 	request = &DeleteABTestSceneRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "DeleteABTestScene", "/v4/openapi/app-groups/[appGroupIdentity]/scenes/[sceneId]", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "DeleteABTestScene", "/v4/openapi/app-groups/[appGroupIdentity]/scenes/[sceneId]", "", "")
 	request.Method = requests.DELETE
 	return
 }

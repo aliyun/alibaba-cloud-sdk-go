@@ -78,8 +78,8 @@ type ModifyModelRequest struct {
 // ModifyModelResponse is the response struct for api ModifyModel
 type ModifyModelResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"requestId" xml:"requestId"`
 	Result    string `json:"result" xml:"result"`
+	RequestId string `json:"requestId" xml:"requestId"`
 }
 
 // CreateModifyModelRequest creates a request to invoke ModifyModel API
@@ -87,7 +87,7 @@ func CreateModifyModelRequest() (request *ModifyModelRequest) {
 	request = &ModifyModelRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "ModifyModel", "/v4/openapi/app-groups/[appGroupIdentity]/algorithm/models/[modelName]", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "ModifyModel", "/v4/openapi/app-groups/[appGroupIdentity]/algorithm/models/[modelName]", "", "")
 	request.Method = requests.PUT
 	return
 }

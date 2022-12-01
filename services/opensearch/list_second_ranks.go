@@ -78,8 +78,8 @@ type ListSecondRanksRequest struct {
 // ListSecondRanksResponse is the response struct for api ListSecondRanks
 type ListSecondRanksResponse struct {
 	*responses.BaseResponse
-	RequestId  string       `json:"requestId" xml:"requestId"`
 	TotalCount int          `json:"totalCount" xml:"totalCount"`
+	RequestId  string       `json:"requestId" xml:"requestId"`
 	Result     []ResultItem `json:"result" xml:"result"`
 }
 
@@ -88,7 +88,7 @@ func CreateListSecondRanksRequest() (request *ListSecondRanksRequest) {
 	request = &ListSecondRanksRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "ListSecondRanks", "/v4/openapi/app-groups/[appGroupIdentity]/apps/[appId]/second-ranks", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "ListSecondRanks", "/v4/openapi/app-groups/[appGroupIdentity]/apps/[appId]/second-ranks", "", "")
 	request.Method = requests.GET
 	return
 }

@@ -17,9 +17,9 @@ package opensearch
 
 // ResultInGetSortScript is a nested struct in opensearch response
 type ResultInGetSortScript struct {
-	Type       string `json:"type" xml:"type"`
 	Scope      string `json:"scope" xml:"scope"`
-	Status     string `json:"status" xml:"status"`
 	CreateTime string `json:"createTime" xml:"createTime"`
+	Status     string `json:"status" xml:"status"`
 	ModifyTime string `json:"modifyTime" xml:"modifyTime"`
+	Type       string `json:"type" xml:"type"`
 }

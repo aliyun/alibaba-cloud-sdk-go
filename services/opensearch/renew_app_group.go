@@ -71,6 +71,7 @@ func (client *Client) RenewAppGroupWithCallback(request *RenewAppGroupRequest, c
 // RenewAppGroupRequest is the request struct for api RenewAppGroup
 type RenewAppGroupRequest struct {
 	*requests.RoaRequest
+	ClientToken      string `position:"Query" name:"clientToken"`
 	AppGroupIdentity string `position:"Path" name:"appGroupIdentity"`
 }
 
@@ -78,6 +79,7 @@ type RenewAppGroupRequest struct {
 type RenewAppGroupResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"requestId" xml:"requestId"`
+	Result    bool   `json:"result" xml:"result"`
 }
 
 // CreateRenewAppGroupRequest creates a request to invoke RenewAppGroup API
@@ -85,7 +87,7 @@ func CreateRenewAppGroupRequest() (request *RenewAppGroupRequest) {
 	request = &RenewAppGroupRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "RenewAppGroup", "/v4/openapi/app-groups/[appGroupIdentity]/actions/renew", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "RenewAppGroup", "/v4/openapi/app-groups/[appGroupIdentity]/actions/renew", "", "")
 	request.Method = requests.POST
 	return
 }

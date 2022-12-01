@@ -17,7 +17,7 @@ package opensearch
 
 // MetaItemInListFirstRanks is a nested struct in opensearch response
 type MetaItemInListFirstRanks struct {
-	Attribute string `json:"attribute" xml:"attribute"`
 	Arg       string `json:"arg" xml:"arg"`
+	Attribute string `json:"attribute" xml:"attribute"`
 	Weight    int    `json:"weight" xml:"weight"`
 }

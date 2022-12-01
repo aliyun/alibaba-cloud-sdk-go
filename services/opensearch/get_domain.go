@@ -78,8 +78,8 @@ type GetDomainRequest struct {
 // GetDomainResponse is the response struct for api GetDomain
 type GetDomainResponse struct {
 	*responses.BaseResponse
-	RequestId string                 `json:"requestId" xml:"requestId"`
 	Result    map[string]interface{} `json:"result" xml:"result"`
+	RequestId string                 `json:"requestId" xml:"requestId"`
 }
 
 // CreateGetDomainRequest creates a request to invoke GetDomain API
@@ -87,7 +87,7 @@ func CreateGetDomainRequest() (request *GetDomainRequest) {
 	request = &GetDomainRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "GetDomain", "/v4/openapi/domains/[domainName]", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "GetDomain", "/v4/openapi/domains/[domainName]", "", "")
 	request.Method = requests.GET
 	return
 }

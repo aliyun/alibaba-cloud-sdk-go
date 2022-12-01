@@ -86,7 +86,7 @@ func CreateCreateDataCollectionRequest() (request *CreateDataCollectionRequest) 
 	request = &CreateDataCollectionRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "CreateDataCollection", "/v4/openapi/app-groups/[appGroupIdentity]/data-collections", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "CreateDataCollection", "/v4/openapi/app-groups/[appGroupIdentity]/data-collections", "", "")
 	request.Method = requests.POST
 	return
 }

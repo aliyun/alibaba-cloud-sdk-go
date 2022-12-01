@@ -90,7 +90,7 @@ func CreateListAppGroupMetricsRequest() (request *ListAppGroupMetricsRequest) {
 	request = &ListAppGroupMetricsRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "ListAppGroupMetrics", "/v4/openapi/app-groups/[appGroupIdentity]/metrics", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "ListAppGroupMetrics", "/v4/openapi/app-groups/[appGroupIdentity]/metrics", "", "")
 	request.Method = requests.GET
 	return
 }

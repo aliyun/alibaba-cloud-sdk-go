@@ -86,7 +86,7 @@ func CreateDescribeSlowQueryStatusRequest() (request *DescribeSlowQueryStatusReq
 	request = &DescribeSlowQueryStatusRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "DescribeSlowQueryStatus", "/v4/openapi/app-groups/[appGroupIdentity]/optimizers/slow-query", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "DescribeSlowQueryStatus", "/v4/openapi/app-groups/[appGroupIdentity]/optimizers/slow-query", "", "")
 	request.Method = requests.GET
 	return
 }

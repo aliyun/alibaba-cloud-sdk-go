@@ -17,14 +17,14 @@ package opensearch
 
 // Message is a nested struct in opensearch response
 type Message struct {
-	ClientIp   string `json:"clientIp" xml:"clientIp"`
-	Arg3       string `json:"arg3" xml:"arg3"`
-	UserId     string `json:"userId" xml:"userId"`
-	Args       string `json:"args" xml:"args"`
-	Arg1       string `json:"arg1" xml:"arg1"`
-	SdkType    string `json:"sdkType" xml:"sdkType"`
-	SessionId  string `json:"sessionId" xml:"sessionId"`
 	EventId    int    `json:"eventId" xml:"eventId"`
+	Arg3       string `json:"arg3" xml:"arg3"`
+	Arg1       string `json:"arg1" xml:"arg1"`
 	SdkVersion string `json:"sdkVersion" xml:"sdkVersion"`
+	UserId     string `json:"userId" xml:"userId"`
 	Page       string `json:"page" xml:"page"`
+	Args       string `json:"args" xml:"args"`
+	SessionId  string `json:"sessionId" xml:"sessionId"`
+	SdkType    string `json:"sdkType" xml:"sdkType"`
+	ClientIp   string `json:"clientIp" xml:"clientIp"`
 }

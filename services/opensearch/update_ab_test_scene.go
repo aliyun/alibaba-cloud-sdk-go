@@ -87,7 +87,7 @@ func CreateUpdateABTestSceneRequest() (request *UpdateABTestSceneRequest) {
 	request = &UpdateABTestSceneRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "UpdateABTestScene", "/v4/openapi/app-groups/[appGroupIdentity]/scenes/[sceneId]", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "UpdateABTestScene", "/v4/openapi/app-groups/[appGroupIdentity]/scenes/[sceneId]", "", "")
 	request.Method = requests.PUT
 	return
 }

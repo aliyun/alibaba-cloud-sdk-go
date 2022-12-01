@@ -79,8 +79,8 @@ type UpdateFetchFieldsRequest struct {
 // UpdateFetchFieldsResponse is the response struct for api UpdateFetchFields
 type UpdateFetchFieldsResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"requestId" xml:"requestId"`
 	Result    bool   `json:"result" xml:"result"`
+	RequestId string `json:"requestId" xml:"requestId"`
 }
 
 // CreateUpdateFetchFieldsRequest creates a request to invoke UpdateFetchFields API
@@ -88,7 +88,7 @@ func CreateUpdateFetchFieldsRequest() (request *UpdateFetchFieldsRequest) {
 	request = &UpdateFetchFieldsRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "UpdateFetchFields", "/v4/openapi/app-groups/[appGroupIdentity]/apps/[appId]/fetch-fields", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "UpdateFetchFields", "/v4/openapi/app-groups/[appGroupIdentity]/apps/[appId]/fetch-fields", "", "")
 	request.Method = requests.PUT
 	return
 }

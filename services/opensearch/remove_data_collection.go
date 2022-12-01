@@ -78,8 +78,8 @@ type RemoveDataCollectionRequest struct {
 // RemoveDataCollectionResponse is the response struct for api RemoveDataCollection
 type RemoveDataCollectionResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"requestId" xml:"requestId"`
 	Result    string `json:"result" xml:"result"`
+	RequestId string `json:"requestId" xml:"requestId"`
 }
 
 // CreateRemoveDataCollectionRequest creates a request to invoke RemoveDataCollection API
@@ -87,7 +87,7 @@ func CreateRemoveDataCollectionRequest() (request *RemoveDataCollectionRequest) 
 	request = &RemoveDataCollectionRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "RemoveDataCollection", "/v4/openapi/app-groups/[appGroupIdentity]/data-collections/[dataCollectionIdentity]", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "RemoveDataCollection", "/v4/openapi/app-groups/[appGroupIdentity]/data-collections/[dataCollectionIdentity]", "", "")
 	request.Method = requests.DELETE
 	return
 }

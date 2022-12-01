@@ -83,8 +83,8 @@ type ListAppGroupsRequest struct {
 // ListAppGroupsResponse is the response struct for api ListAppGroups
 type ListAppGroupsResponse struct {
 	*responses.BaseResponse
-	RequestId  string                      `json:"requestId" xml:"requestId"`
 	TotalCount int                         `json:"totalCount" xml:"totalCount"`
+	RequestId  string                      `json:"requestId" xml:"requestId"`
 	Result     []ResultItemInListAppGroups `json:"result" xml:"result"`
 }
 
@@ -93,7 +93,7 @@ func CreateListAppGroupsRequest() (request *ListAppGroupsRequest) {
 	request = &ListAppGroupsRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "ListAppGroups", "/v4/openapi/app-groups", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "ListAppGroups", "/v4/openapi/app-groups", "", "")
 	request.Method = requests.GET
 	return
 }

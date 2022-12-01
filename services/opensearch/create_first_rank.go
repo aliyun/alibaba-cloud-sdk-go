@@ -88,7 +88,7 @@ func CreateCreateFirstRankRequest() (request *CreateFirstRankRequest) {
 	request = &CreateFirstRankRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "CreateFirstRank", "/v4/openapi/app-groups/[appGroupIdentity]/apps/[appId]/first-ranks", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "CreateFirstRank", "/v4/openapi/app-groups/[appGroupIdentity]/apps/[appId]/first-ranks", "", "")
 	request.Method = requests.POST
 	return
 }

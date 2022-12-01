@@ -1,3 +1,8 @@
+2022-12-01 Version: v1.62.56
+- Generated 2017-12-25 for `OpenSearch`.
+- Fixed bugs for GetScriptFileNames result.pathName
+- Fixed bugs for RenewAppGroup result
+
 2022-12-01 Version: v1.62.55
 - Generated 2021-05-19 for `ARMS`.
 - Update Go SDK.

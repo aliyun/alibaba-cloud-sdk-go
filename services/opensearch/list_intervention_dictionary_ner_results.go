@@ -87,7 +87,7 @@ func CreateListInterventionDictionaryNerResultsRequest() (request *ListIntervent
 	request = &ListInterventionDictionaryNerResultsRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "ListInterventionDictionaryNerResults", "/v4/openapi/intervention-dictionaries/[name]/ner-results", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "ListInterventionDictionaryNerResults", "/v4/openapi/intervention-dictionaries/[name]/ner-results", "", "")
 	request.Method = requests.GET
 	return
 }

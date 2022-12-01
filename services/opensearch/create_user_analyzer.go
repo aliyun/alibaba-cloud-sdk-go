@@ -76,8 +76,8 @@ type CreateUserAnalyzerRequest struct {
 // CreateUserAnalyzerResponse is the response struct for api CreateUserAnalyzer
 type CreateUserAnalyzerResponse struct {
 	*responses.BaseResponse
-	RequestId string                 `json:"RequestId" xml:"RequestId"`
 	Result    map[string]interface{} `json:"result" xml:"result"`
+	RequestId string                 `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCreateUserAnalyzerRequest creates a request to invoke CreateUserAnalyzer API
@@ -85,7 +85,7 @@ func CreateCreateUserAnalyzerRequest() (request *CreateUserAnalyzerRequest) {
 	request = &CreateUserAnalyzerRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "CreateUserAnalyzer", "/v4/openapi/user-analyzers", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "CreateUserAnalyzer", "/v4/openapi/user-analyzers", "", "")
 	request.Method = requests.POST
 	return
 }

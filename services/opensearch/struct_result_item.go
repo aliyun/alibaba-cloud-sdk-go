@@ -37,11 +37,13 @@ type ResultItem struct {
 	Endpoint           string                   `json:"endpoint" xml:"endpoint"`
 	ConsoleUrl         string                   `json:"consoleUrl" xml:"consoleUrl"`
 	Updated            int                      `json:"updated" xml:"updated"`
+	Code               string                   `json:"code" xml:"code"`
 	RegionId           string                   `json:"regionId" xml:"regionId"`
 	Tag                string                   `json:"tag" xml:"tag"`
 	TemplateId         string                   `json:"template_id" xml:"template_id"`
 	LocalName          string                   `json:"localName" xml:"localName"`
 	Status             int                      `json:"status" xml:"status"`
+	Message            string                   `json:"message" xml:"message"`
 	Ctr                float64                  `json:"ctr" xml:"ctr"`
 	Online             bool                     `json:"online" xml:"online"`
 	Description        string                   `json:"description" xml:"description"`
@@ -49,8 +51,8 @@ type ResultItem struct {
 	Available          bool                     `json:"available" xml:"available"`
 	Params             map[string]interface{}   `json:"params" xml:"params"`
 	DataCollectionType string                   `json:"dataCollectionType" xml:"dataCollectionType"`
-	Priority           string                   `json:"priority" xml:"priority"`
 	Order              int                      `json:"order" xml:"order"`
+	Priority           string                   `json:"priority" xml:"priority"`
 	IsDefault          string                   `json:"isDefault" xml:"isDefault"`
 	Ipv                int                      `json:"ipv" xml:"ipv"`
 	Uv                 int                      `json:"uv" xml:"uv"`
@@ -59,5 +61,6 @@ type ResultItem struct {
 	Processors         []map[string]interface{} `json:"processors" xml:"processors"`
 	Indexes            []string                 `json:"indexes" xml:"indexes"`
 	Values             []string                 `json:"values" xml:"values"`
+	DataSource         DataSource               `json:"dataSource" xml:"dataSource"`
 	Dicts              []DictsItem              `json:"dicts" xml:"dicts"`
 }

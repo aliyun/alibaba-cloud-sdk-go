@@ -86,7 +86,7 @@ func CreateListABTestScenesRequest() (request *ListABTestScenesRequest) {
 	request = &ListABTestScenesRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "ListABTestScenes", "/v4/openapi/app-groups/[appGroupIdentity]/scenes", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "ListABTestScenes", "/v4/openapi/app-groups/[appGroupIdentity]/scenes", "", "")
 	request.Method = requests.GET
 	return
 }

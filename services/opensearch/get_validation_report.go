@@ -87,7 +87,7 @@ func CreateGetValidationReportRequest() (request *GetValidationReportRequest) {
 	request = &GetValidationReportRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "GetValidationReport", "/v4/openapi/app-groups/[appGroupIdentity]/algorithm/data/validation-report", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "GetValidationReport", "/v4/openapi/app-groups/[appGroupIdentity]/algorithm/data/validation-report", "", "")
 	request.Method = requests.GET
 	return
 }

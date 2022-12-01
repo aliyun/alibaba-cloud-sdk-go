@@ -80,8 +80,8 @@ type ListScheduledTasksRequest struct {
 // ListScheduledTasksResponse is the response struct for api ListScheduledTasks
 type ListScheduledTasksResponse struct {
 	*responses.BaseResponse
-	RequestId  string                   `json:"requestId" xml:"requestId"`
 	TotalCount int64                    `json:"totalCount" xml:"totalCount"`
+	RequestId  string                   `json:"requestId" xml:"requestId"`
 	Result     []map[string]interface{} `json:"result" xml:"result"`
 }
 
@@ -90,7 +90,7 @@ func CreateListScheduledTasksRequest() (request *ListScheduledTasksRequest) {
 	request = &ListScheduledTasksRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "ListScheduledTasks", "/v4/openapi/app-groups/[appGroupIdentity]/scheduled-tasks", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "ListScheduledTasks", "/v4/openapi/app-groups/[appGroupIdentity]/scheduled-tasks", "", "")
 	request.Method = requests.GET
 	return
 }

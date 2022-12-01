@@ -89,7 +89,7 @@ func CreateModifyFirstRankRequest() (request *ModifyFirstRankRequest) {
 	request = &ModifyFirstRankRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "ModifyFirstRank", "/v4/openapi/app-groups/[appGroupIdentity]/apps/[appId]/first-ranks/[name]", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "ModifyFirstRank", "/v4/openapi/app-groups/[appGroupIdentity]/apps/[appId]/first-ranks/[name]", "", "")
 	request.Method = requests.PUT
 	return
 }

@@ -88,7 +88,7 @@ func CreateGetScriptFileNamesRequest() (request *GetScriptFileNamesRequest) {
 	request = &GetScriptFileNamesRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "GetScriptFileNames", "/v4/openapi/app-groups/[appGroupIdentity]/apps/[appVersionId]/sort-scripts/[scriptName]/file-names", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "GetScriptFileNames", "/v4/openapi/app-groups/[appGroupIdentity]/apps/[appVersionId]/sort-scripts/[scriptName]/file-names", "", "")
 	request.Method = requests.GET
 	return
 }

@@ -77,8 +77,8 @@ type CreateScheduledTaskRequest struct {
 // CreateScheduledTaskResponse is the response struct for api CreateScheduledTask
 type CreateScheduledTaskResponse struct {
 	*responses.BaseResponse
-	RequestId string                 `json:"requestId" xml:"requestId"`
 	Result    map[string]interface{} `json:"result" xml:"result"`
+	RequestId string                 `json:"requestId" xml:"requestId"`
 }
 
 // CreateCreateScheduledTaskRequest creates a request to invoke CreateScheduledTask API
@@ -86,7 +86,7 @@ func CreateCreateScheduledTaskRequest() (request *CreateScheduledTaskRequest) {
 	request = &CreateScheduledTaskRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "CreateScheduledTask", "/v4/openapi/app-groups/[appGroupIdentity]/scheduled-tasks", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "CreateScheduledTask", "/v4/openapi/app-groups/[appGroupIdentity]/scheduled-tasks", "", "")
 	request.Method = requests.POST
 	return
 }

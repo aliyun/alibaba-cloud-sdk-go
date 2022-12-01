@@ -17,7 +17,8 @@ package opensearch
 
 // FileInfos is a nested struct in opensearch response
 type FileInfos struct {
-	FileName   string `json:"fileName" xml:"fileName"`
 	CreateTime string `json:"createTime" xml:"createTime"`
+	FileName   string `json:"fileName" xml:"fileName"`
 	ModifyTime string `json:"modifyTime" xml:"modifyTime"`
+	PathName   string `json:"pathName" xml:"pathName"`
 }

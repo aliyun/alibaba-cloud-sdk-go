@@ -86,8 +86,8 @@ type ListStatisticLogsRequest struct {
 // ListStatisticLogsResponse is the response struct for api ListStatisticLogs
 type ListStatisticLogsResponse struct {
 	*responses.BaseResponse
-	RequestId  string                   `json:"requestId" xml:"requestId"`
 	TotalCount int64                    `json:"totalCount" xml:"totalCount"`
+	RequestId  string                   `json:"requestId" xml:"requestId"`
 	Result     []map[string]interface{} `json:"result" xml:"result"`
 }
 
@@ -96,7 +96,7 @@ func CreateListStatisticLogsRequest() (request *ListStatisticLogsRequest) {
 	request = &ListStatisticLogsRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "ListStatisticLogs", "/v4/openapi/app-groups/[appGroupIdentity]/statistic-logs/[moduleName]", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "ListStatisticLogs", "/v4/openapi/app-groups/[appGroupIdentity]/statistic-logs/[moduleName]", "", "")
 	request.Method = requests.GET
 	return
 }

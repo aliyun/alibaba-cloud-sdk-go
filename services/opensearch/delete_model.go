@@ -78,8 +78,8 @@ type DeleteModelRequest struct {
 // DeleteModelResponse is the response struct for api DeleteModel
 type DeleteModelResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"requestId" xml:"requestId"`
 	Result    string `json:"result" xml:"result"`
+	RequestId string `json:"requestId" xml:"requestId"`
 }
 
 // CreateDeleteModelRequest creates a request to invoke DeleteModel API
@@ -87,7 +87,7 @@ func CreateDeleteModelRequest() (request *DeleteModelRequest) {
 	request = &DeleteModelRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "DeleteModel", "/v4/openapi/app-groups/[appGroupIdentity]/algorithm/models/[modelName]", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "DeleteModel", "/v4/openapi/app-groups/[appGroupIdentity]/algorithm/models/[modelName]", "", "")
 	request.Method = requests.DELETE
 	return
 }

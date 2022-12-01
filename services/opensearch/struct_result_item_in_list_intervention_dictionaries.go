@@ -17,10 +17,10 @@ package opensearch
 
 // ResultItemInListInterventionDictionaries is a nested struct in opensearch response
 type ResultItemInListInterventionDictionaries struct {
-	Id       int    `json:"id" xml:"id"`
-	Name     string `json:"name" xml:"name"`
+	Created  int    `json:"created" xml:"created"`
 	Type     string `json:"type" xml:"type"`
 	Analyzer string `json:"analyzer" xml:"analyzer"`
-	Created  int    `json:"created" xml:"created"`
+	Name     string `json:"name" xml:"name"`
 	Updated  int    `json:"updated" xml:"updated"`
+	Id       int    `json:"id" xml:"id"`
 }

@@ -88,7 +88,7 @@ func CreateDescribeAppGroupDataReportRequest() (request *DescribeAppGroupDataRep
 	request = &DescribeAppGroupDataReportRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "DescribeAppGroupDataReport", "/v4/openapi/app-groups/[appGroupIdentity]/data-report", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "DescribeAppGroupDataReport", "/v4/openapi/app-groups/[appGroupIdentity]/data-report", "", "")
 	request.Method = requests.GET
 	return
 }

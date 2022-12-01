@@ -87,7 +87,7 @@ func CreateRemoveScheduledTaskRequest() (request *RemoveScheduledTaskRequest) {
 	request = &RemoveScheduledTaskRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "RemoveScheduledTask", "/v4/openapi/app-groups/[appGroupIdentity]/scheduled-tasks/[taskId]", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "RemoveScheduledTask", "/v4/openapi/app-groups/[appGroupIdentity]/scheduled-tasks/[taskId]", "", "")
 	request.Method = requests.DELETE
 	return
 }

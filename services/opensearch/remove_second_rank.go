@@ -79,8 +79,8 @@ type RemoveSecondRankRequest struct {
 // RemoveSecondRankResponse is the response struct for api RemoveSecondRank
 type RemoveSecondRankResponse struct {
 	*responses.BaseResponse
-	RequestId string                 `json:"requestId" xml:"requestId"`
 	Result    map[string]interface{} `json:"result" xml:"result"`
+	RequestId string                 `json:"requestId" xml:"requestId"`
 }
 
 // CreateRemoveSecondRankRequest creates a request to invoke RemoveSecondRank API
@@ -88,7 +88,7 @@ func CreateRemoveSecondRankRequest() (request *RemoveSecondRankRequest) {
 	request = &RemoveSecondRankRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "RemoveSecondRank", "/v4/openapi/app-groups/[appGroupIdentity]/apps/[appId]/second-ranks/[name]", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "RemoveSecondRank", "/v4/openapi/app-groups/[appGroupIdentity]/apps/[appId]/second-ranks/[name]", "", "")
 	request.Method = requests.DELETE
 	return
 }

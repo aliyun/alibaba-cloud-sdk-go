@@ -89,7 +89,7 @@ func CreateUpdateABTestFixedFlowDividersRequest() (request *UpdateABTestFixedFlo
 	request = &UpdateABTestFixedFlowDividersRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "UpdateABTestFixedFlowDividers", "/v4/openapi/app-groups/[appGroupIdentity]/scenes/[sceneId]/groups/[groupId]/experiments/[experimentId]/fixed-flow-dividers", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "UpdateABTestFixedFlowDividers", "/v4/openapi/app-groups/[appGroupIdentity]/scenes/[sceneId]/groups/[groupId]/experiments/[experimentId]/fixed-flow-dividers", "", "")
 	request.Method = requests.PUT
 	return
 }

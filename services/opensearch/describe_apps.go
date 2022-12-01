@@ -86,7 +86,7 @@ func CreateDescribeAppsRequest() (request *DescribeAppsRequest) {
 	request = &DescribeAppsRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "DescribeApps", "/v4/openapi/app-groups/[appGroupIdentity]/apps", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "DescribeApps", "/v4/openapi/app-groups/[appGroupIdentity]/apps", "", "")
 	request.Method = requests.GET
 	return
 }

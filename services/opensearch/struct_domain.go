@@ -17,7 +17,7 @@ package opensearch
 
 // Domain is a nested struct in opensearch response
 type Domain struct {
-	Name      string    `json:"name" xml:"name"`
 	Category  string    `json:"category" xml:"category"`
+	Name      string    `json:"name" xml:"name"`
 	Functions Functions `json:"functions" xml:"functions"`
 }

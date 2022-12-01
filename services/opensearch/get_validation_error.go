@@ -87,7 +87,7 @@ func CreateGetValidationErrorRequest() (request *GetValidationErrorRequest) {
 	request = &GetValidationErrorRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "GetValidationError", "/v4/openapi/app-groups/[appGroupIdentity]/algorithm/data/validation-error", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "GetValidationError", "/v4/openapi/app-groups/[appGroupIdentity]/algorithm/data/validation-error", "", "")
 	request.Method = requests.GET
 	return
 }

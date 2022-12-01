@@ -85,7 +85,7 @@ func CreateCreateInterventionDictionaryRequest() (request *CreateInterventionDic
 	request = &CreateInterventionDictionaryRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "CreateInterventionDictionary", "/v4/openapi/intervention-dictionaries", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "CreateInterventionDictionary", "/v4/openapi/intervention-dictionaries", "", "")
 	request.Method = requests.POST
 	return
 }

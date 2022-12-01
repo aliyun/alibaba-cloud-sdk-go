@@ -17,13 +17,13 @@ package opensearch
 
 // ResultInModifySecondRank is a nested struct in opensearch response
 type ResultInModifySecondRank struct {
-	Id          string `json:"id" xml:"id"`
-	Name        string `json:"name" xml:"name"`
-	Meta        string `json:"meta" xml:"meta"`
-	Active      bool   `json:"active" xml:"active"`
-	Description string `json:"description" xml:"description"`
 	Created     int    `json:"created" xml:"created"`
-	Updated     int    `json:"updated" xml:"updated"`
+	Active      bool   `json:"active" xml:"active"`
 	IsDefault   string `json:"isDefault" xml:"isDefault"`
 	IsSys       string `json:"isSys" xml:"isSys"`
+	Description string `json:"description" xml:"description"`
+	Updated     int    `json:"updated" xml:"updated"`
+	Name        string `json:"name" xml:"name"`
+	Meta        string `json:"meta" xml:"meta"`
+	Id          string `json:"id" xml:"id"`
 }

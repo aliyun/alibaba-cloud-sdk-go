@@ -86,7 +86,7 @@ func CreateListSlowQueryCategoriesRequest() (request *ListSlowQueryCategoriesReq
 	request = &ListSlowQueryCategoriesRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "ListSlowQueryCategories", "/v4/openapi/app-groups/[appGroupIdentity]/optimizers/slow-query/categories", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "ListSlowQueryCategories", "/v4/openapi/app-groups/[appGroupIdentity]/optimizers/slow-query/categories", "", "")
 	request.Method = requests.GET
 	return
 }

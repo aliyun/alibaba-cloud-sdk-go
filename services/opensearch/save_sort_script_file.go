@@ -88,7 +88,7 @@ func CreateSaveSortScriptFileRequest() (request *SaveSortScriptFileRequest) {
 	request = &SaveSortScriptFileRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "SaveSortScriptFile", "/v4/openapi/app-groups/[appGroupIdentity]/apps/[appVersionId]/sort-scripts/[scriptName]/files/src/[fileName]", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "SaveSortScriptFile", "/v4/openapi/app-groups/[appGroupIdentity]/apps/[appVersionId]/sort-scripts/[scriptName]/files/src/[fileName]", "", "")
 	request.Method = requests.PUT
 	return
 }

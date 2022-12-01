@@ -18,10 +18,10 @@ package opensearch
 // WordItem is a nested struct in opensearch response
 type WordItem struct {
 	Cmd       string                 `json:"cmd" xml:"cmd"`
-	Word      string                 `json:"word" xml:"word"`
 	Created   int64                  `json:"created" xml:"created"`
-	Updated   int64                  `json:"updated" xml:"updated"`
-	Status    string                 `json:"status" xml:"status"`
+	Word      string                 `json:"word" xml:"word"`
 	Relevance map[string]interface{} `json:"relevance" xml:"relevance"`
+	Status    string                 `json:"status" xml:"status"`
+	Updated   int64                  `json:"updated" xml:"updated"`
 	Tokens    []Token                `json:"tokens" xml:"tokens"`
 }

@@ -17,13 +17,13 @@ package opensearch
 
 // ResultItemInListDeployedAlgorithmModels is a nested struct in opensearch response
 type ResultItemInListDeployedAlgorithmModels struct {
-	Id           string       `json:"id" xml:"id"`
 	AppGroupName string       `json:"appGroupName" xml:"appGroupName"`
-	Scene        string       `json:"scene" xml:"scene"`
-	Desc         string       `json:"desc" xml:"desc"`
-	GmtCreate    string       `json:"gmtCreate" xml:"gmtCreate"`
 	GmtModified  string       `json:"gmtModified" xml:"gmtModified"`
 	Status       string       `json:"status" xml:"status"`
+	Scene        string       `json:"scene" xml:"scene"`
+	GmtCreate    string       `json:"gmtCreate" xml:"gmtCreate"`
+	Id           string       `json:"id" xml:"id"`
+	Desc         string       `json:"desc" xml:"desc"`
 	Apps         []string     `json:"apps" xml:"apps"`
 	Models       []ModelsItem `json:"models" xml:"models"`
 }

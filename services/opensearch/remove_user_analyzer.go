@@ -77,8 +77,8 @@ type RemoveUserAnalyzerRequest struct {
 // RemoveUserAnalyzerResponse is the response struct for api RemoveUserAnalyzer
 type RemoveUserAnalyzerResponse struct {
 	*responses.BaseResponse
-	RequestId string                 `json:"requestId" xml:"requestId"`
 	Result    map[string]interface{} `json:"result" xml:"result"`
+	RequestId string                 `json:"requestId" xml:"requestId"`
 }
 
 // CreateRemoveUserAnalyzerRequest creates a request to invoke RemoveUserAnalyzer API
@@ -86,7 +86,7 @@ func CreateRemoveUserAnalyzerRequest() (request *RemoveUserAnalyzerRequest) {
 	request = &RemoveUserAnalyzerRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "RemoveUserAnalyzer", "/v4/openapi/user-analyzers/[name]", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "RemoveUserAnalyzer", "/v4/openapi/user-analyzers/[name]", "", "")
 	request.Method = requests.DELETE
 	return
 }

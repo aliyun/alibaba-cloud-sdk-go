@@ -17,10 +17,10 @@ package opensearch
 
 // ScriptInfo is a nested struct in opensearch response
 type ScriptInfo struct {
-	ScriptName string `json:"scriptName" xml:"scriptName"`
 	Type       string `json:"type" xml:"type"`
 	Scope      string `json:"scope" xml:"scope"`
-	Status     string `json:"status" xml:"status"`
 	CreateTime string `json:"createTime" xml:"createTime"`
+	Status     string `json:"status" xml:"status"`
 	ModifyTime string `json:"modifyTime" xml:"modifyTime"`
+	ScriptName string `json:"scriptName" xml:"scriptName"`
 }
