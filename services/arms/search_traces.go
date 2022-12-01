@@ -72,7 +72,6 @@ func (client *Client) SearchTracesWithCallback(request *SearchTracesRequest, cal
 type SearchTracesRequest struct {
 	*requests.RpcRequest
 	EndTime          requests.Integer                `position:"Query" name:"EndTime"`
-	Pid              string                          `position:"Query" name:"Pid"`
 	StartTime        requests.Integer                `position:"Query" name:"StartTime"`
 	Reverse          requests.Boolean                `position:"Query" name:"Reverse"`
 	MinDuration      requests.Integer                `position:"Query" name:"MinDuration"`
@@ -107,7 +106,7 @@ func CreateSearchTracesRequest() (request *SearchTracesRequest) {
 	request = &SearchTracesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "SearchTraces", "arms", "openAPI")
+	request.InitWithApiInfo("ARMS", "2021-05-19", "SearchTraces", "arms", "openAPI")
 	request.Method = requests.POST
 	return
 }

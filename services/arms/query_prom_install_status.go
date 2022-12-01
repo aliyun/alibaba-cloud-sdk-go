@@ -78,7 +78,7 @@ type QueryPromInstallStatusRequest struct {
 type QueryPromInstallStatusResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Data      Data   `json:"Data" xml:"Data"`
+	Data      Data   `json:"data" xml:"data"`
 }
 
 // CreateQueryPromInstallStatusRequest creates a request to invoke QueryPromInstallStatus API
@@ -86,7 +86,7 @@ func CreateQueryPromInstallStatusRequest() (request *QueryPromInstallStatusReque
 	request = &QueryPromInstallStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "QueryPromInstallStatus", "arms", "openAPI")
+	request.InitWithApiInfo("ARMS", "2021-05-19", "QueryPromInstallStatus", "arms", "openAPI")
 	request.Method = requests.POST
 	return
 }

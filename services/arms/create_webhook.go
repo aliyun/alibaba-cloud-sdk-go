@@ -78,7 +78,6 @@ type CreateWebhookRequest struct {
 	Body        string `position:"Query" name:"Body"`
 	Url         string `position:"Query" name:"Url"`
 	ContactName string `position:"Query" name:"ContactName"`
-	RecoverBody string `position:"Query" name:"RecoverBody"`
 }
 
 // CreateWebhookResponse is the response struct for api CreateWebhook
@@ -93,7 +92,7 @@ func CreateCreateWebhookRequest() (request *CreateWebhookRequest) {
 	request = &CreateWebhookRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "CreateWebhook", "arms", "openAPI")
+	request.InitWithApiInfo("ARMS", "2021-05-19", "CreateWebhook", "arms", "openAPI")
 	request.Method = requests.POST
 	return
 }

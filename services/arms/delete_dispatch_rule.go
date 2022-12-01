@@ -87,7 +87,7 @@ func CreateDeleteDispatchRuleRequest() (request *DeleteDispatchRuleRequest) {
 	request = &DeleteDispatchRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "DeleteDispatchRule", "arms", "openAPI")
+	request.InitWithApiInfo("ARMS", "2021-05-19", "DeleteDispatchRule", "arms", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -87,7 +87,7 @@ func CreateStopAlertRequest() (request *StopAlertRequest) {
 	request = &StopAlertRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "StopAlert", "arms", "openAPI")
+	request.InitWithApiInfo("ARMS", "2021-05-19", "StopAlert", "arms", "openAPI")
 	request.Method = requests.POST
 	return
 }

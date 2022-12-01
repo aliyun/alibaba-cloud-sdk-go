@@ -19,7 +19,6 @@ package arms
 type Contact struct {
 	ContactName string `json:"ContactName" xml:"ContactName"`
 	Email       string `json:"Email" xml:"Email"`
-	Content     string `json:"Content" xml:"Content"`
 	UpdateTime  int64  `json:"UpdateTime" xml:"UpdateTime"`
 	UserId      string `json:"UserId" xml:"UserId"`
 	DingRobot   string `json:"DingRobot" xml:"DingRobot"`

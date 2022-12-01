@@ -1,3 +1,7 @@
+2022-12-01 Version: v1.62.55
+- Generated 2021-05-19 for `ARMS`.
+- Update Go SDK.
+
 2022-11-30 Version: v1.62.54
 - Generated 2020-04-07 for `cas`.
 - Support resourceGroup.

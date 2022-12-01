@@ -93,7 +93,7 @@ func CreateSaveTraceAppConfigRequest() (request *SaveTraceAppConfigRequest) {
 	request = &SaveTraceAppConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "SaveTraceAppConfig", "arms", "openAPI")
+	request.InitWithApiInfo("ARMS", "2021-05-19", "SaveTraceAppConfig", "arms", "openAPI")
 	request.Method = requests.POST
 	return
 }

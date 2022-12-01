@@ -79,7 +79,6 @@ type UpdateWebhookRequest struct {
 	Body        string           `position:"Query" name:"Body"`
 	Url         string           `position:"Query" name:"Url"`
 	ContactName string           `position:"Query" name:"ContactName"`
-	RecoverBody string           `position:"Query" name:"RecoverBody"`
 }
 
 // UpdateWebhookResponse is the response struct for api UpdateWebhook
@@ -94,7 +93,7 @@ func CreateUpdateWebhookRequest() (request *UpdateWebhookRequest) {
 	request = &UpdateWebhookRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "UpdateWebhook", "arms", "openAPI")
+	request.InitWithApiInfo("ARMS", "2021-05-19", "UpdateWebhook", "arms", "openAPI")
 	request.Method = requests.POST
 	return
 }

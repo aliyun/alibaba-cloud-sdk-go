@@ -17,7 +17,5 @@ package arms
 
 // NotifyObjects is a nested struct in arms response
 type NotifyObjects struct {
-	NotifyObjectName string `json:"NotifyObjectName" xml:"NotifyObjectName"`
-	NotifyObjectId   int64  `json:"NotifyObjectId" xml:"NotifyObjectId"`
-	NotifyObjectType string `json:"NotifyObjectType" xml:"NotifyObjectType"`
+	NotifyObject []NotifyObject `json:"NotifyObject" xml:"NotifyObject"`
 }

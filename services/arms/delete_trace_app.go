@@ -88,7 +88,7 @@ func CreateDeleteTraceAppRequest() (request *DeleteTraceAppRequest) {
 	request = &DeleteTraceAppRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "DeleteTraceApp", "arms", "openAPI")
+	request.InitWithApiInfo("ARMS", "2021-05-19", "DeleteTraceApp", "arms", "openAPI")
 	request.Method = requests.POST
 	return
 }

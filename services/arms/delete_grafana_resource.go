@@ -73,6 +73,7 @@ type DeleteGrafanaResourceRequest struct {
 	*requests.RpcRequest
 	ClusterName string `position:"Body" name:"ClusterName"`
 	ClusterId   string `position:"Body" name:"ClusterId"`
+	UserId      string `position:"Body" name:"UserId"`
 }
 
 // DeleteGrafanaResourceResponse is the response struct for api DeleteGrafanaResource
@@ -87,7 +88,7 @@ func CreateDeleteGrafanaResourceRequest() (request *DeleteGrafanaResourceRequest
 	request = &DeleteGrafanaResourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "DeleteGrafanaResource", "arms", "openAPI")
+	request.InitWithApiInfo("ARMS", "2021-05-19", "DeleteGrafanaResource", "arms", "openAPI")
 	request.Method = requests.POST
 	return
 }

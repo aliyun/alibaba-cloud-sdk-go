@@ -17,8 +17,6 @@ package arms
 
 // NotifyRule is a nested struct in arms response
 type NotifyRule struct {
-	NotifyStartTime string          `json:"NotifyStartTime" xml:"NotifyStartTime"`
-	NotifyEndTime   string          `json:"NotifyEndTime" xml:"NotifyEndTime"`
-	NotifyChannels  []string        `json:"NotifyChannels" xml:"NotifyChannels"`
-	NotifyObjects   []NotifyObjects `json:"NotifyObjects" xml:"NotifyObjects"`
+	NotifyChannels []string       `json:"NotifyChannels" xml:"NotifyChannels"`
+	NotifyObjects  []NotifyObject `json:"NotifyObjects" xml:"NotifyObjects"`
 }
