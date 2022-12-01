@@ -17,18 +17,22 @@ package arms
 
 // DashboardVosItem is a nested struct in arms response
 type DashboardVosItem struct {
-	Type           string   `json:"Type" xml:"Type"`
-	Time           string   `json:"Time" xml:"Time"`
-	NeedUpdate     bool     `json:"NeedUpdate" xml:"NeedUpdate"`
-	Kind           string   `json:"Kind" xml:"Kind"`
-	Url            string   `json:"Url" xml:"Url"`
-	DashboardType  string   `json:"DashboardType" xml:"DashboardType"`
-	Exporter       string   `json:"Exporter" xml:"Exporter"`
-	Version        string   `json:"Version" xml:"Version"`
-	IsArmsExporter bool     `json:"IsArmsExporter" xml:"IsArmsExporter"`
-	Title          string   `json:"Title" xml:"Title"`
-	Name           string   `json:"Name" xml:"Name"`
-	Id             string   `json:"Id" xml:"Id"`
-	Uid            string   `json:"Uid" xml:"Uid"`
-	Tags           []string `json:"Tags" xml:"Tags"`
+	Type           string    `json:"Type" xml:"Type"`
+	Time           string    `json:"Time" xml:"Time"`
+	NeedUpdate     bool      `json:"NeedUpdate" xml:"NeedUpdate"`
+	Kind           string    `json:"Kind" xml:"Kind"`
+	Language       string    `json:"Language" xml:"Language"`
+	Url            string    `json:"Url" xml:"Url"`
+	HttpsUrl       string    `json:"HttpsUrl" xml:"HttpsUrl"`
+	DashboardType  string    `json:"DashboardType" xml:"DashboardType"`
+	Exporter       string    `json:"Exporter" xml:"Exporter"`
+	Version        string    `json:"Version" xml:"Version"`
+	IsArmsExporter bool      `json:"IsArmsExporter" xml:"IsArmsExporter"`
+	HttpUrl        string    `json:"HttpUrl" xml:"HttpUrl"`
+	Title          string    `json:"Title" xml:"Title"`
+	Name           string    `json:"Name" xml:"Name"`
+	Id             string    `json:"Id" xml:"Id"`
+	Uid            string    `json:"Uid" xml:"Uid"`
+	Tags           []string  `json:"Tags" xml:"Tags"`
+	I18nChild      I18nChild `json:"I18nChild" xml:"I18nChild"`
 }

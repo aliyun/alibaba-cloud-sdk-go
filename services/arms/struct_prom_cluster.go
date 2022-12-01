@@ -17,22 +17,22 @@ package arms
 
 // PromCluster is a nested struct in arms response
 type PromCluster struct {
-	ClusterId             string `json:"ClusterId" xml:"ClusterId"`
-	ClusterType           string `json:"ClusterType" xml:"ClusterType"`
-	NodeNum               int    `json:"NodeNum" xml:"NodeNum"`
 	UpdateTime            int64  `json:"UpdateTime" xml:"UpdateTime"`
-	Id                    int64  `json:"Id" xml:"Id"`
-	Options               string `json:"Options" xml:"Options"`
 	CreateTime            int64  `json:"CreateTime" xml:"CreateTime"`
+	UserId                string `json:"UserId" xml:"UserId"`
+	Options               string `json:"Options" xml:"Options"`
+	IsControllerInstalled bool   `json:"IsControllerInstalled" xml:"IsControllerInstalled"`
+	AgentStatus           string `json:"AgentStatus" xml:"AgentStatus"`
 	Extra                 string `json:"Extra" xml:"Extra"`
+	InstallTime           int64  `json:"InstallTime" xml:"InstallTime"`
+	RegionId              string `json:"RegionId" xml:"RegionId"`
 	ControllerId          string `json:"ControllerId" xml:"ControllerId"`
 	PluginsJsonArray      string `json:"PluginsJsonArray" xml:"PluginsJsonArray"`
-	AgentStatus           string `json:"AgentStatus" xml:"AgentStatus"`
-	IsControllerInstalled bool   `json:"IsControllerInstalled" xml:"IsControllerInstalled"`
-	RegionId              string `json:"RegionId" xml:"RegionId"`
-	UserId                string `json:"UserId" xml:"UserId"`
+	ClusterType           string `json:"ClusterType" xml:"ClusterType"`
 	ClusterName           string `json:"ClusterName" xml:"ClusterName"`
-	LastHeartBeatTime     int64  `json:"LastHeartBeatTime" xml:"LastHeartBeatTime"`
 	StateJson             string `json:"StateJson" xml:"StateJson"`
-	InstallTime           int64  `json:"InstallTime" xml:"InstallTime"`
+	LastHeartBeatTime     int64  `json:"LastHeartBeatTime" xml:"LastHeartBeatTime"`
+	NodeNum               int    `json:"NodeNum" xml:"NodeNum"`
+	Id                    int64  `json:"Id" xml:"Id"`
+	ClusterId             string `json:"ClusterId" xml:"ClusterId"`
 }

@@ -20,10 +20,11 @@ type AlertRuleEntity struct {
 	Status             string       `json:"Status" xml:"Status"`
 	UpdateTime         int64        `json:"UpdateTime" xml:"UpdateTime"`
 	ContactGroupIdList string       `json:"ContactGroupIdList" xml:"ContactGroupIdList"`
-	AlertTitle         string       `json:"AlertTitle" xml:"AlertTitle"`
 	CreateTime         int64        `json:"CreateTime" xml:"CreateTime"`
+	AlertTitle         string       `json:"AlertTitle" xml:"AlertTitle"`
 	UserId             string       `json:"UserId" xml:"UserId"`
 	AlertVersion       int          `json:"AlertVersion" xml:"AlertVersion"`
+	HostByAlertManager bool         `json:"HostByAlertManager" xml:"HostByAlertManager"`
 	AlertType          int          `json:"AlertType" xml:"AlertType"`
 	ContactGroupIds    string       `json:"ContactGroupIds" xml:"ContactGroupIds"`
 	Config             string       `json:"Config" xml:"Config"`
@@ -34,7 +35,6 @@ type AlertRuleEntity struct {
 	TaskId             int64        `json:"TaskId" xml:"TaskId"`
 	Id                 int64        `json:"Id" xml:"Id"`
 	AlertWays          []string     `json:"AlertWays" xml:"AlertWays"`
-	AlertWay           []string     `json:"AlertWay" xml:"AlertWay"`
 	AlarmContext       AlarmContext `json:"AlarmContext" xml:"AlarmContext"`
 	AlertRule          AlertRule    `json:"AlertRule" xml:"AlertRule"`
 	MetricParam        MetricParam  `json:"MetricParam" xml:"MetricParam"`

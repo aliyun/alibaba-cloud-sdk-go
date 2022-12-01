@@ -91,7 +91,7 @@ func CreateListPrometheusAlertRulesRequest() (request *ListPrometheusAlertRulesR
 	request = &ListPrometheusAlertRulesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2021-05-19", "ListPrometheusAlertRules", "arms", "openAPI")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "ListPrometheusAlertRules", "arms", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -87,7 +87,7 @@ func CreateAddGrafanaRequest() (request *AddGrafanaRequest) {
 	request = &AddGrafanaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2021-05-19", "AddGrafana", "arms", "openAPI")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "AddGrafana", "arms", "openAPI")
 	request.Method = requests.POST
 	return
 }

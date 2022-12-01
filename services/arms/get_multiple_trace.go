@@ -86,7 +86,7 @@ func CreateGetMultipleTraceRequest() (request *GetMultipleTraceRequest) {
 	request = &GetMultipleTraceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2021-05-19", "GetMultipleTrace", "arms", "openAPI")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "GetMultipleTrace", "arms", "openAPI")
 	request.Method = requests.POST
 	return
 }

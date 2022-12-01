@@ -85,7 +85,7 @@ func CreateGetAgentDownloadUrlRequest() (request *GetAgentDownloadUrlRequest) {
 	request = &GetAgentDownloadUrlRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2021-05-19", "GetAgentDownloadUrl", "arms", "openAPI")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "GetAgentDownloadUrl", "arms", "openAPI")
 	request.Method = requests.GET
 	return
 }

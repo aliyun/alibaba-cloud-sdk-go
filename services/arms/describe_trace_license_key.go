@@ -85,7 +85,7 @@ func CreateDescribeTraceLicenseKeyRequest() (request *DescribeTraceLicenseKeyReq
 	request = &DescribeTraceLicenseKeyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2021-05-19", "DescribeTraceLicenseKey", "arms", "openAPI")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "DescribeTraceLicenseKey", "arms", "openAPI")
 	request.Method = requests.POST
 	return
 }

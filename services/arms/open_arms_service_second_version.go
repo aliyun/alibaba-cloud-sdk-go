@@ -86,7 +86,7 @@ func CreateOpenArmsServiceSecondVersionRequest() (request *OpenArmsServiceSecond
 	request = &OpenArmsServiceSecondVersionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2021-05-19", "OpenArmsServiceSecondVersion", "arms", "openAPI")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "OpenArmsServiceSecondVersion", "arms", "openAPI")
 	request.Method = requests.POST
 	return
 }

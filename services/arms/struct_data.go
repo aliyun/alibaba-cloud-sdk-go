@@ -17,9 +17,23 @@ package arms
 
 // Data is a nested struct in arms response
 type Data struct {
+	EnableTag             bool                     `json:"EnableTag" xml:"EnableTag"`
 	IsControllerInstalled bool                     `json:"isControllerInstalled" xml:"isControllerInstalled"`
+	Message               string                   `json:"Message" xml:"Message"`
+	Info                  string                   `json:"Info" xml:"Info"`
+	Version               string                   `json:"Version" xml:"Version"`
+	PageSize              int                      `json:"PageSize" xml:"PageSize"`
+	Success               bool                     `json:"Success" xml:"Success"`
 	Page                  int                      `json:"Page" xml:"Page"`
 	Total                 string                   `json:"Total" xml:"Total"`
-	PageSize              int                      `json:"PageSize" xml:"PageSize"`
+	TaskId                int64                    `json:"TaskId" xml:"TaskId"`
+	Size                  string                   `json:"Size" xml:"Size"`
+	Msg                   string                   `json:"Msg" xml:"Msg"`
+	Status                string                   `json:"Status" xml:"Status"`
+	UploadTime            string                   `json:"UploadTime" xml:"UploadTime"`
+	Fid                   string                   `json:"Fid" xml:"Fid"`
+	FileName              string                   `json:"FileName" xml:"FileName"`
 	Items                 []map[string]interface{} `json:"Items" xml:"Items"`
+	RetcodeSLSConfig      RetcodeSLSConfig         `json:"RetcodeSLSConfig" xml:"RetcodeSLSConfig"`
+	Products              []ProductsItem           `json:"Products" xml:"Products"`
 }

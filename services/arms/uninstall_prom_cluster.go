@@ -77,8 +77,8 @@ type UninstallPromClusterRequest struct {
 // UninstallPromClusterResponse is the response struct for api UninstallPromCluster
 type UninstallPromClusterResponse struct {
 	*responses.BaseResponse
+	Data      bool   `json:"Data" xml:"Data"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Data      bool   `json:"data" xml:"data"`
 }
 
 // CreateUninstallPromClusterRequest creates a request to invoke UninstallPromCluster API
@@ -86,7 +86,7 @@ func CreateUninstallPromClusterRequest() (request *UninstallPromClusterRequest) 
 	request = &UninstallPromClusterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2021-05-19", "UninstallPromCluster", "arms", "openAPI")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "UninstallPromCluster", "arms", "openAPI")
 	request.Method = requests.POST
 	return
 }

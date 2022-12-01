@@ -17,18 +17,19 @@ package arms
 
 // Span is a nested struct in arms response
 type Span struct {
-	ResultCode    string     `json:"ResultCode" xml:"ResultCode"`
-	RpcType       int        `json:"RpcType" xml:"RpcType"`
-	Timestamp     int64      `json:"Timestamp" xml:"Timestamp"`
-	RpcId         string     `json:"RpcId" xml:"RpcId"`
-	SpanId        string     `json:"SpanId" xml:"SpanId"`
-	HaveStack     bool       `json:"HaveStack" xml:"HaveStack"`
-	TraceID       string     `json:"TraceID" xml:"TraceID"`
-	ParentSpanId  string     `json:"ParentSpanId" xml:"ParentSpanId"`
-	OperationName string     `json:"OperationName" xml:"OperationName"`
-	Duration      int64      `json:"Duration" xml:"Duration"`
-	ServiceName   string     `json:"ServiceName" xml:"ServiceName"`
-	ServiceIp     string     `json:"ServiceIp" xml:"ServiceIp"`
-	LogEventList  []LogEvent `json:"LogEventList" xml:"LogEventList"`
-	TagEntryList  []TagEntry `json:"TagEntryList" xml:"TagEntryList"`
+	ResultCode    string                   `json:"ResultCode" xml:"ResultCode"`
+	RpcType       int                      `json:"RpcType" xml:"RpcType"`
+	Timestamp     int64                    `json:"Timestamp" xml:"Timestamp"`
+	RpcId         string                   `json:"RpcId" xml:"RpcId"`
+	SpanId        string                   `json:"SpanId" xml:"SpanId"`
+	HaveStack     bool                     `json:"HaveStack" xml:"HaveStack"`
+	TraceID       string                   `json:"TraceID" xml:"TraceID"`
+	ParentSpanId  string                   `json:"ParentSpanId" xml:"ParentSpanId"`
+	OperationName string                   `json:"OperationName" xml:"OperationName"`
+	Duration      int64                    `json:"Duration" xml:"Duration"`
+	ServiceName   string                   `json:"ServiceName" xml:"ServiceName"`
+	ServiceIp     string                   `json:"ServiceIp" xml:"ServiceIp"`
+	Children      []map[string]interface{} `json:"Children" xml:"Children"`
+	LogEventList  []LogEvent               `json:"LogEventList" xml:"LogEventList"`
+	TagEntryList  []TagEntry               `json:"TagEntryList" xml:"TagEntryList"`
 }

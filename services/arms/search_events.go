@@ -96,7 +96,7 @@ func CreateSearchEventsRequest() (request *SearchEventsRequest) {
 	request = &SearchEventsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2021-05-19", "SearchEvents", "arms", "openAPI")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "SearchEvents", "arms", "openAPI")
 	request.Method = requests.POST
 	return
 }

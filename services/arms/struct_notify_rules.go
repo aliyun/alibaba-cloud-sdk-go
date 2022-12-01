@@ -17,5 +17,5 @@ package arms
 
 // NotifyRules is a nested struct in arms response
 type NotifyRules struct {
-	NotifyRule []NotifyRule `json:"NotifyRule" xml:"NotifyRule"`
+	NotifyRule []NotifyRuleInDescribeDispatchRule `json:"NotifyRule" xml:"NotifyRule"`
 }

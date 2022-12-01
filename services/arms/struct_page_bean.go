@@ -17,15 +17,27 @@ package arms
 
 // PageBean is a nested struct in arms response
 type PageBean struct {
-	Total          int               `json:"Total" xml:"Total"`
-	TotalCount     int               `json:"TotalCount" xml:"TotalCount"`
-	PageNumber     int               `json:"PageNumber" xml:"PageNumber"`
-	PageSize       int               `json:"PageSize" xml:"PageSize"`
-	AlarmHistories []AlarmHistory    `json:"AlarmHistories" xml:"AlarmHistories"`
-	Event          []EventItem       `json:"Event" xml:"Event"`
-	Contacts       []Contact         `json:"Contacts" xml:"Contacts"`
-	TraceApps      []TraceApp        `json:"TraceApps" xml:"TraceApps"`
-	AlertRules     []AlertRuleEntity `json:"AlertRules" xml:"AlertRules"`
-	RetcodeApps    []RetcodeApp      `json:"RetcodeApps" xml:"RetcodeApps"`
-	TraceInfos     []TraceInfo       `json:"TraceInfos" xml:"TraceInfos"`
+	Page                    int64                    `json:"Page" xml:"Page"`
+	PageSize                int                      `json:"PageSize" xml:"PageSize"`
+	TotalCount              int                      `json:"TotalCount" xml:"TotalCount"`
+	Size                    int64                    `json:"Size" xml:"Size"`
+	PageNumber              int                      `json:"PageNumber" xml:"PageNumber"`
+	Total                   int64                    `json:"Total" xml:"Total"`
+	AlertContactGroups      []ContactGroups          `json:"AlertContactGroups" xml:"AlertContactGroups"`
+	AlertRules              []AlertRulesItem         `json:"AlertRules" xml:"AlertRules"`
+	SilencePolicies         []Policies               `json:"SilencePolicies" xml:"SilencePolicies"`
+	WebhookContacts         []WebhookContactsItem    `json:"WebhookContacts" xml:"WebhookContacts"`
+	ListAlerts              []ListAlertsItem         `json:"ListAlerts" xml:"ListAlerts"`
+	Event                   []EventItem              `json:"Event" xml:"Event"`
+	AlertIMRobots           []IMRobots               `json:"AlertIMRobots" xml:"AlertIMRobots"`
+	AlertContacts           []Contacts               `json:"AlertContacts" xml:"AlertContacts"`
+	NotificationPolicies    []Policies               `json:"NotificationPolicies" xml:"NotificationPolicies"`
+	OnCallSchedules         []OnCallSchedulesItem    `json:"OnCallSchedules" xml:"OnCallSchedules"`
+	RetcodeApps             []RetcodeApp             `json:"RetcodeApps" xml:"RetcodeApps"`
+	EscalationPolicies      []EscalationPoliciesItem `json:"EscalationPolicies" xml:"EscalationPolicies"`
+	AlarmHistories          []AlarmHistory           `json:"AlarmHistories" xml:"AlarmHistories"`
+	EventBridgeIntegrations []Integrations           `json:"EventBridgeIntegrations" xml:"EventBridgeIntegrations"`
+	Events                  []EventsItem             `json:"Events" xml:"Events"`
+	TraceApps               []TraceApp               `json:"TraceApps" xml:"TraceApps"`
+	Contacts                []Contact                `json:"Contacts" xml:"Contacts"`
 }
