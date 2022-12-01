@@ -17,7 +17,7 @@ package iot
 
 // PropertyStatusDataInfo is a nested struct in iot response
 type PropertyStatusDataInfo struct {
-	Identifier string `json:"Identifier" xml:"Identifier"`
 	Value      string `json:"Value" xml:"Value"`
 	Time       int64  `json:"Time" xml:"Time"`
+	Identifier string `json:"Identifier" xml:"Identifier"`
 }
