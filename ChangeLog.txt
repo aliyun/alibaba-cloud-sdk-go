@@ -1,3 +1,7 @@
+2022-12-01 Version: v1.62.59
+- Generated 2020-03-20 for `imageprocess`.
+- Release ScreenEC.
+
 2022-12-01 Version: v1.62.58
 - Generated 2020-03-31 for `ResourceManager`.
 - Supported more language for resourcemanager.
