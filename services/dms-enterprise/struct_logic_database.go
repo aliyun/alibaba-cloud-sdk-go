@@ -25,5 +25,6 @@ type LogicDatabase struct {
 	Alias         string                          `json:"Alias" xml:"Alias"`
 	DbType        string                          `json:"DbType" xml:"DbType"`
 	OwnerNameList OwnerNameListInGetLogicDatabase `json:"OwnerNameList" xml:"OwnerNameList"`
+	DatabaseIds   DatabaseIdsInGetLogicDatabase   `json:"DatabaseIds" xml:"DatabaseIds"`
 	OwnerIdList   OwnerIdListInGetLogicDatabase   `json:"OwnerIdList" xml:"OwnerIdList"`
 }

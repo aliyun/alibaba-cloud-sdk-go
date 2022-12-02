@@ -1,3 +1,7 @@
+2022-12-02 Version: v1.62.61
+- Generated 2018-11-01 for `dms-enterprise`.
+- Supported GetStructSyncOrderDetail OrderId param required.
+
 2022-12-01 Version: v1.62.60
 - Generated 2018-01-20 for `Iot`.
 - Storage open Api.
