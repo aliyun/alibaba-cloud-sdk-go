@@ -17,13 +17,18 @@ package dts
 
 // RetryState is a nested struct in dts response
 type RetryState struct {
-	RetryTarget  string `json:"RetryTarget" xml:"RetryTarget"`
-	JobId        string `json:"JobId" xml:"JobId"`
-	ErrMsg       string `json:"ErrMsg" xml:"ErrMsg"`
-	RetryTime    int    `json:"RetryTime" xml:"RetryTime"`
-	Retrying     bool   `json:"Retrying" xml:"Retrying"`
-	ErrMessage   string `json:"ErrMessage" xml:"ErrMessage"`
-	Module       string `json:"Module" xml:"Module"`
-	RetryCount   int    `json:"RetryCount" xml:"RetryCount"`
-	MaxRetryTime int    `json:"MaxRetryTime" xml:"MaxRetryTime"`
+	JobId                  string `json:"JobId" xml:"JobId"`
+	Retrying               bool   `json:"Retrying" xml:"Retrying"`
+	Module                 string `json:"Module" xml:"Module"`
+	RetryCount             int    `json:"RetryCount" xml:"RetryCount"`
+	MigrationErrMsg        string `json:"MigrationErrMsg" xml:"MigrationErrMsg"`
+	MigrationErrHelpDocKey string `json:"MigrationErrHelpDocKey" xml:"MigrationErrHelpDocKey"`
+	RetryTarget            string `json:"RetryTarget" xml:"RetryTarget"`
+	ErrMsg                 string `json:"ErrMsg" xml:"ErrMsg"`
+	MigrationErrCode       string `json:"MigrationErrCode" xml:"MigrationErrCode"`
+	RetryTime              int    `json:"RetryTime" xml:"RetryTime"`
+	ErrMessage             string `json:"ErrMessage" xml:"ErrMessage"`
+	MigrationErrHelpDocId  string `json:"MigrationErrHelpDocId" xml:"MigrationErrHelpDocId"`
+	MaxRetryTime           int    `json:"MaxRetryTime" xml:"MaxRetryTime"`
+	MigrationErrWorkaround string `json:"MigrationErrWorkaround" xml:"MigrationErrWorkaround"`
 }

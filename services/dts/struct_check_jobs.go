@@ -17,20 +17,5 @@ package dts
 
 // CheckJobs is a nested struct in dts response
 type CheckJobs struct {
-	InstanceClass string `json:"InstanceClass" xml:"InstanceClass"`
-	Status        int    `json:"Status" xml:"Status"`
-	TotalCount    int64  `json:"TotalCount" xml:"TotalCount"`
-	ParentJobType string `json:"ParentJobType" xml:"ParentJobType"`
-	ChargeType    string `json:"ChargeType" xml:"ChargeType"`
-	FinishCount   int64  `json:"FinishCount" xml:"FinishCount"`
-	DiffCount     int64  `json:"DiffCount" xml:"DiffCount"`
-	CheckPoint    int64  `json:"CheckPoint" xml:"CheckPoint"`
-	CheckType     int    `json:"CheckType" xml:"CheckType"`
-	RegionId      string `json:"RegionId" xml:"RegionId"`
-	DtsJobId      string `json:"DtsJobId" xml:"DtsJobId"`
-	JobStepId     string `json:"JobStepId" xml:"JobStepId"`
-	GroupId       string `json:"GroupId" xml:"GroupId"`
-	DiffSum       int64  `json:"DiffSum" xml:"DiffSum"`
-	JobName       string `json:"JobName" xml:"JobName"`
-	DtsInstanceID string `json:"DtsInstanceID" xml:"DtsInstanceID"`
+	CheckJobsItem []CheckJobsItem `json:"checkJobs" xml:"checkJobs"`
 }

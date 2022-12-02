@@ -23,14 +23,18 @@ type DtsJobStatus struct {
 	ErrorMessage                  string                          `json:"ErrorMessage" xml:"ErrorMessage"`
 	OriginType                    string                          `json:"OriginType" xml:"OriginType"`
 	CreateTime                    string                          `json:"CreateTime" xml:"CreateTime"`
+	MigrationErrMsg               string                          `json:"MigrationErrMsg" xml:"MigrationErrMsg"`
+	MigrationErrHelpDocKey        string                          `json:"MigrationErrHelpDocKey" xml:"MigrationErrHelpDocKey"`
 	EndTimestamp                  string                          `json:"EndTimestamp" xml:"EndTimestamp"`
 	BeginTimestamp                string                          `json:"BeginTimestamp" xml:"BeginTimestamp"`
 	ConsumptionClient             string                          `json:"ConsumptionClient" xml:"ConsumptionClient"`
 	Reserved                      string                          `json:"Reserved" xml:"Reserved"`
 	DbObject                      string                          `json:"DbObject" xml:"DbObject"`
 	ResourceGroupId               string                          `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	MigrationErrCode              string                          `json:"MigrationErrCode" xml:"MigrationErrCode"`
 	DtsJobId                      string                          `json:"DtsJobId" xml:"DtsJobId"`
 	Delay                         int64                           `json:"Delay" xml:"Delay"`
+	MigrationErrHelpDocId         string                          `json:"MigrationErrHelpDocId" xml:"MigrationErrHelpDocId"`
 	ExpireTime                    string                          `json:"ExpireTime" xml:"ExpireTime"`
 	DtsJobName                    string                          `json:"DtsJobName" xml:"DtsJobName"`
 	JobType                       string                          `json:"JobType" xml:"JobType"`
@@ -43,6 +47,7 @@ type DtsJobStatus struct {
 	Status                        string                          `json:"Status" xml:"Status"`
 	ConsumptionCheckpoint         string                          `json:"ConsumptionCheckpoint" xml:"ConsumptionCheckpoint"`
 	AppName                       string                          `json:"AppName" xml:"AppName"`
+	MigrationErrWorkaround        string                          `json:"MigrationErrWorkaround" xml:"MigrationErrWorkaround"`
 	DtsInstanceID                 string                          `json:"DtsInstanceID" xml:"DtsInstanceID"`
 	DataEtlStatus                 DataEtlStatus                   `json:"DataEtlStatus" xml:"DataEtlStatus"`
 	MigrationMode                 MigrationMode                   `json:"MigrationMode" xml:"MigrationMode"`
@@ -51,10 +56,11 @@ type DtsJobStatus struct {
 	SourceEndpoint                SourceEndpoint                  `json:"SourceEndpoint" xml:"SourceEndpoint"`
 	PrecheckStatus                PrecheckStatusInDescribeDtsJobs `json:"PrecheckStatus" xml:"PrecheckStatus"`
 	DataInitializationStatus      DataInitializationStatus        `json:"DataInitializationStatus" xml:"DataInitializationStatus"`
+	DataCloudStatus               DataCloudStatus                 `json:"DataCloudStatus" xml:"DataCloudStatus"`
 	Performance                   Performance                     `json:"Performance" xml:"Performance"`
 	DestinationEndpoint           DestinationEndpoint             `json:"DestinationEndpoint" xml:"DestinationEndpoint"`
-	StructureInitializationStatus StructureInitializationStatus   `json:"StructureInitializationStatus" xml:"StructureInitializationStatus"`
 	RetryState                    RetryState                      `json:"RetryState" xml:"RetryState"`
+	StructureInitializationStatus StructureInitializationStatus   `json:"StructureInitializationStatus" xml:"StructureInitializationStatus"`
 	TagList                       []DtsTag                        `json:"TagList" xml:"TagList"`
 	ErrorDetails                  []ErrorDetail                   `json:"ErrorDetails" xml:"ErrorDetails"`
 }

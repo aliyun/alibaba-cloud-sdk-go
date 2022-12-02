@@ -90,6 +90,12 @@ type DescribeDataCheckTableDetailsResponse struct {
 	PageNumber     int                `json:"PageNumber" xml:"PageNumber"`
 	DynamicCode    string             `json:"DynamicCode" xml:"DynamicCode"`
 	TotalCount     int64              `json:"TotalCount" xml:"TotalCount"`
+	RunningCount   int64              `json:"RunningCount" xml:"RunningCount"`
+	WarningCount   int64              `json:"WarningCount" xml:"WarningCount"`
+	FailedCount    int64              `json:"FailedCount" xml:"FailedCount"`
+	InitCount      int64              `json:"InitCount" xml:"InitCount"`
+	FinishedCount  int64              `json:"FinishedCount" xml:"FinishedCount"`
+	DiffRowCount   int64              `json:"DiffRowCount" xml:"DiffRowCount"`
 	TableDetails   []TableDetailsItem `json:"TableDetails" xml:"TableDetails"`
 }
 

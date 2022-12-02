@@ -81,17 +81,17 @@ type DescribeCheckJobsRequest struct {
 // DescribeCheckJobsResponse is the response struct for api DescribeCheckJobs
 type DescribeCheckJobsResponse struct {
 	*responses.BaseResponse
-	HttpStatusCode   int         `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	RequestId        string      `json:"RequestId" xml:"RequestId"`
-	ErrCode          string      `json:"ErrCode" xml:"ErrCode"`
-	Success          bool        `json:"Success" xml:"Success"`
-	DynamicCode      string      `json:"DynamicCode" xml:"DynamicCode"`
-	ErrMessage       string      `json:"ErrMessage" xml:"ErrMessage"`
-	DynamicMessage   string      `json:"DynamicMessage" xml:"DynamicMessage"`
-	PageNumber       int         `json:"PageNumber" xml:"PageNumber"`
-	PageRecordCount  int64       `json:"PageRecordCount" xml:"PageRecordCount"`
-	TotalRecordCount int64       `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	CheckJobs        []CheckJobs `json:"CheckJobs" xml:"CheckJobs"`
+	HttpStatusCode   int             `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	RequestId        string          `json:"RequestId" xml:"RequestId"`
+	ErrCode          string          `json:"ErrCode" xml:"ErrCode"`
+	Success          bool            `json:"Success" xml:"Success"`
+	DynamicCode      string          `json:"DynamicCode" xml:"DynamicCode"`
+	ErrMessage       string          `json:"ErrMessage" xml:"ErrMessage"`
+	DynamicMessage   string          `json:"DynamicMessage" xml:"DynamicMessage"`
+	PageNumber       int             `json:"PageNumber" xml:"PageNumber"`
+	PageRecordCount  int64           `json:"PageRecordCount" xml:"PageRecordCount"`
+	TotalRecordCount int64           `json:"TotalRecordCount" xml:"TotalRecordCount"`
+	CheckJobs        []CheckJobsItem `json:"CheckJobs" xml:"CheckJobs"`
 }
 
 // CreateDescribeCheckJobsRequest creates a request to invoke DescribeCheckJobs API
