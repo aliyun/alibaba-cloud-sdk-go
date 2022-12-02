@@ -1,3 +1,7 @@
+2022-12-02 Version: v1.62.62
+- Generated 2019-09-01 for `OceanBasePro`.
+- Update SDK.
+
 2022-12-02 Version: v1.62.61
 - Generated 2018-11-01 for `dms-enterprise`.
 - Supported GetStructSyncOrderDetail OrderId param required.

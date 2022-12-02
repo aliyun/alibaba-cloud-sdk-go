@@ -21,7 +21,6 @@ type ListItem struct {
 	TimeZone             string `json:"TimeZone" xml:"TimeZone"`
 	FailTimes            string `json:"FailTimes" xml:"FailTimes"`
 	QueueTime            string `json:"QueueTime" xml:"QueueTime"`
-	GetplanTime          string `json:"GetplanTime" xml:"GetplanTime"`
 	MemstoreReadRowCount string `json:"MemstoreReadRowCount" xml:"MemstoreReadRowCount"`
 	BlockCacheHit        string `json:"BlockCacheHit" xml:"BlockCacheHit"`
 	TenantName           string `json:"TenantName" xml:"TenantName"`
@@ -33,10 +32,10 @@ type ListItem struct {
 	ElapsedTime          string `json:"ElapsedTime" xml:"ElapsedTime"`
 	ExecuteTime          string `json:"ExecuteTime" xml:"ExecuteTime"`
 	AppWaitTime          string `json:"AppWaitTime" xml:"AppWaitTime"`
+	GetPlanTime          string `json:"GetPlanTime" xml:"GetPlanTime"`
 	RemotePlans          string `json:"RemotePlans" xml:"RemotePlans"`
 	ExecPerSecond        string `json:"ExecPerSecond" xml:"ExecPerSecond"`
 	ConcurrencyWaitTime  string `json:"ConcurrencyWaitTime" xml:"ConcurrencyWaitTime"`
-	NetwaitTime          string `json:"NetwaitTime" xml:"NetwaitTime"`
 	IOWaitTime           string `json:"IOWaitTime" xml:"IOWaitTime"`
 	RPCCount             string `json:"RPCCount" xml:"RPCCount"`
 	Description          string `json:"Description" xml:"Description"`
@@ -45,6 +44,7 @@ type ListItem struct {
 	SsstoreReadRowCount  string `json:"SsstoreReadRowCount" xml:"SsstoreReadRowCount"`
 	Executions           string `json:"Executions" xml:"Executions"`
 	SqlId                string `json:"SqlId" xml:"SqlId"`
+	NetWaitTime          string `json:"NetWaitTime" xml:"NetWaitTime"`
 	DbName               string `json:"DbName" xml:"DbName"`
 	AffectedRows         string `json:"AffectedRows" xml:"AffectedRows"`
 	LogicalRead          string `json:"LogicalRead" xml:"LogicalRead"`

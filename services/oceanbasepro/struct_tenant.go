@@ -34,6 +34,12 @@ type Tenant struct {
 	Collation                    string                  `json:"Collation" xml:"Collation"`
 	PrimaryZoneDeployType        string                  `json:"PrimaryZoneDeployType" xml:"PrimaryZoneDeployType"`
 	MasterIntranetAddressZone    string                  `json:"MasterIntranetAddressZone" xml:"MasterIntranetAddressZone"`
+	PayType                      string                  `json:"PayType" xml:"PayType"`
+	InstanceType                 string                  `json:"InstanceType" xml:"InstanceType"`
+	Series                       string                  `json:"Series" xml:"Series"`
+	DiskType                     string                  `json:"DiskType" xml:"DiskType"`
+	EnableReadWriteSplit         bool                    `json:"EnableReadWriteSplit" xml:"EnableReadWriteSplit"`
+	AvailableZones               []string                `json:"AvailableZones" xml:"AvailableZones"`
 	TenantResource               TenantResource          `json:"TenantResource" xml:"TenantResource"`
 	TenantConnections            []TenantConnectionsItem `json:"TenantConnections" xml:"TenantConnections"`
 	TenantZones                  []TenantZonesItem       `json:"TenantZones" xml:"TenantZones"`

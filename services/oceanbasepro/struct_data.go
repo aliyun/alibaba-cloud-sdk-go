@@ -23,6 +23,7 @@ type Data struct {
 	Executions             int64              `json:"Executions" xml:"Executions"`
 	ConcurrencyWaitTime    float64            `json:"ConcurrencyWaitTime" xml:"ConcurrencyWaitTime"`
 	ExecuteTime            float64            `json:"ExecuteTime" xml:"ExecuteTime"`
+	InstanceType           string             `json:"InstanceType" xml:"InstanceType"`
 	EnableUpgradeNodes     bool               `json:"EnableUpgradeNodes" xml:"EnableUpgradeNodes"`
 	CpuTime                float64            `json:"CpuTime" xml:"CpuTime"`
 	DbType                 string             `json:"DbType" xml:"DbType"`

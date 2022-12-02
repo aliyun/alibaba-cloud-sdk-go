@@ -28,5 +28,7 @@ type TenantConnectionsItem struct {
 	IntranetAddressSlaveZoneId  string   `json:"IntranetAddressSlaveZoneId" xml:"IntranetAddressSlaveZoneId"`
 	IntranetAddressStatus       string   `json:"IntranetAddressStatus" xml:"IntranetAddressStatus"`
 	InternetAddressStatus       string   `json:"InternetAddressStatus" xml:"InternetAddressStatus"`
+	TransactionSplit            bool     `json:"TransactionSplit" xml:"TransactionSplit"`
+	AddressType                 string   `json:"AddressType" xml:"AddressType"`
 	ConnectionZones             []string `json:"ConnectionZones" xml:"ConnectionZones"`
 }
