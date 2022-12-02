@@ -17,8 +17,8 @@ package dataworks_public
 
 // DataInListBaselines is a nested struct in dataworks_public response
 type DataInListBaselines struct {
-	PageNumber string      `json:"PageNumber" xml:"PageNumber"`
-	PageSize   string      `json:"PageSize" xml:"PageSize"`
-	TotalCount string      `json:"TotalCount" xml:"TotalCount"`
-	Baselines  []Baselines `json:"Baselines" xml:"Baselines"`
+	PageNumber string          `json:"PageNumber" xml:"PageNumber"`
+	PageSize   string          `json:"PageSize" xml:"PageSize"`
+	TotalCount string          `json:"TotalCount" xml:"TotalCount"`
+	Baselines  []BaselinesItem `json:"Baselines" xml:"Baselines"`
 }

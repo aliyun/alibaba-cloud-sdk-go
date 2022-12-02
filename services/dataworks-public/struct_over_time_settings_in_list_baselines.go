@@ -17,5 +17,5 @@ package dataworks_public
 
 // OverTimeSettingsInListBaselines is a nested struct in dataworks_public response
 type OverTimeSettingsInListBaselines struct {
-	OverTimeSettings []OverTimeSettings `json:"overTimeSettings" xml:"overTimeSettings"`
+	OverTimeSettingsItem []OverTimeSettingsItem `json:"overTimeSettings" xml:"overTimeSettings"`
 }

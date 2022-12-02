@@ -73,6 +73,7 @@ type ListResourceGroupsRequest struct {
 	*requests.RpcRequest
 	BizExtKey                      string                    `position:"Query" name:"BizExtKey"`
 	Tags                           *[]ListResourceGroupsTags `position:"Query" name:"Tags"  type:"Json"`
+	TypeNames                      string                    `position:"Query" name:"TypeNames"`
 	ResourceManagerResourceGroupId string                    `position:"Query" name:"ResourceManagerResourceGroupId"`
 	ResourceGroupType              requests.Integer          `position:"Query" name:"ResourceGroupType"`
 	Keyword                        string                    `position:"Query" name:"Keyword"`

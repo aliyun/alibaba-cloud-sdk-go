@@ -17,18 +17,22 @@ package dataworks_public
 
 // BaselinesItem is a nested struct in dataworks_public response
 type BaselinesItem struct {
-	HourSlaDetail string `json:"HourSlaDetail" xml:"HourSlaDetail"`
-	ExpMinu       int    `json:"ExpMinu" xml:"ExpMinu"`
-	Priority      int    `json:"Priority" xml:"Priority"`
-	Owner         string `json:"Owner" xml:"Owner"`
-	BaselineId    int64  `json:"BaselineId" xml:"BaselineId"`
-	SlaMinu       int    `json:"SlaMinu" xml:"SlaMinu"`
-	BaselineType  string `json:"BaselineType" xml:"BaselineType"`
-	IsDefault     bool   `json:"IsDefault" xml:"IsDefault"`
-	UseFlag       bool   `json:"UseFlag" xml:"UseFlag"`
-	ProjectId     int64  `json:"ProjectId" xml:"ProjectId"`
-	ExpHour       int    `json:"ExpHour" xml:"ExpHour"`
-	HourExpDetail string `json:"HourExpDetail" xml:"HourExpDetail"`
-	BaselineName  string `json:"BaselineName" xml:"BaselineName"`
-	SlaHour       int    `json:"SlaHour" xml:"SlaHour"`
+	HourSlaDetail        string                 `json:"HourSlaDetail" xml:"HourSlaDetail"`
+	ExpMinu              int                    `json:"ExpMinu" xml:"ExpMinu"`
+	Priority             int                    `json:"Priority" xml:"Priority"`
+	Owner                string                 `json:"Owner" xml:"Owner"`
+	BaselineId           int64                  `json:"BaselineId" xml:"BaselineId"`
+	SlaMinu              int                    `json:"SlaMinu" xml:"SlaMinu"`
+	BaselineType         string                 `json:"BaselineType" xml:"BaselineType"`
+	IsDefault            bool                   `json:"IsDefault" xml:"IsDefault"`
+	AlertMarginThreshold int                    `json:"AlertMarginThreshold" xml:"AlertMarginThreshold"`
+	Enabled              bool                   `json:"Enabled" xml:"Enabled"`
+	UseFlag              bool                   `json:"UseFlag" xml:"UseFlag"`
+	AlertEnabled         bool                   `json:"AlertEnabled" xml:"AlertEnabled"`
+	ProjectId            int64                  `json:"ProjectId" xml:"ProjectId"`
+	ExpHour              int                    `json:"ExpHour" xml:"ExpHour"`
+	HourExpDetail        string                 `json:"HourExpDetail" xml:"HourExpDetail"`
+	BaselineName         string                 `json:"BaselineName" xml:"BaselineName"`
+	SlaHour              int                    `json:"SlaHour" xml:"SlaHour"`
+	OverTimeSettings     []OverTimeSettingsItem `json:"OverTimeSettings" xml:"OverTimeSettings"`
 }

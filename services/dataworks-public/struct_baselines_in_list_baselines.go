@@ -17,5 +17,5 @@ package dataworks_public
 
 // BaselinesInListBaselines is a nested struct in dataworks_public response
 type BaselinesInListBaselines struct {
-	Baselines []Baselines `json:"baselines" xml:"baselines"`
+	BaselinesItem []BaselinesItem `json:"baselines" xml:"baselines"`
 }

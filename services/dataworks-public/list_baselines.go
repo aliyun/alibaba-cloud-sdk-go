@@ -73,7 +73,6 @@ type ListBaselinesRequest struct {
 	*requests.RpcRequest
 	Owner         string           `position:"Body" name:"Owner"`
 	SearchText    string           `position:"Body" name:"SearchText"`
-	ProjectEnv    string           `position:"Body" name:"ProjectEnv"`
 	Priority      string           `position:"Body" name:"Priority"`
 	PageNumber    requests.Integer `position:"Body" name:"PageNumber"`
 	Enable        requests.Boolean `position:"Body" name:"Enable"`
