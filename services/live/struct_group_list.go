@@ -17,9 +17,5 @@ package live
 
 // GroupList is a nested struct in live response
 type GroupList struct {
-	Status     int                    `json:"Status" xml:"Status"`
-	Extension  map[string]interface{} `json:"Extension" xml:"Extension"`
-	CreatorId  string                 `json:"CreatorId" xml:"CreatorId"`
-	GroupId    string                 `json:"GroupId" xml:"GroupId"`
-	CreateTime int64                  `json:"CreateTime" xml:"CreateTime"`
+	GroupListItem []GroupListItem `json:"groupList" xml:"groupList"`
 }

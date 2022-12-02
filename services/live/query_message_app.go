@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// ListMessage invokes the live.ListMessage API synchronously
-func (client *Client) ListMessage(request *ListMessageRequest) (response *ListMessageResponse, err error) {
-	response = CreateListMessageResponse()
+// QueryMessageApp invokes the live.QueryMessageApp API synchronously
+func (client *Client) QueryMessageApp(request *QueryMessageAppRequest) (response *QueryMessageAppResponse, err error) {
+	response = CreateQueryMessageAppResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// ListMessageWithChan invokes the live.ListMessage API asynchronously
-func (client *Client) ListMessageWithChan(request *ListMessageRequest) (<-chan *ListMessageResponse, <-chan error) {
-	responseChan := make(chan *ListMessageResponse, 1)
+// QueryMessageAppWithChan invokes the live.QueryMessageApp API asynchronously
+func (client *Client) QueryMessageAppWithChan(request *QueryMessageAppRequest) (<-chan *QueryMessageAppResponse, <-chan error) {
+	responseChan := make(chan *QueryMessageAppResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.ListMessage(request)
+		response, err := client.QueryMessageApp(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) ListMessageWithChan(request *ListMessageRequest) (<-chan *
 	return responseChan, errChan
 }
 
-// ListMessageWithCallback invokes the live.ListMessage API asynchronously
-func (client *Client) ListMessageWithCallback(request *ListMessageRequest, callback func(response *ListMessageResponse, err error)) <-chan int {
+// QueryMessageAppWithCallback invokes the live.QueryMessageApp API asynchronously
+func (client *Client) QueryMessageAppWithCallback(request *QueryMessageAppRequest, callback func(response *QueryMessageAppResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *ListMessageResponse
+		var response *QueryMessageAppResponse
 		var err error
 		defer close(result)
-		response, err = client.ListMessage(request)
+		response, err = client.QueryMessageApp(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,37 +68,36 @@ func (client *Client) ListMessageWithCallback(request *ListMessageRequest, callb
 	return result
 }
 
-// ListMessageRequest is the request struct for api ListMessage
-type ListMessageRequest struct {
+// QueryMessageAppRequest is the request struct for api QueryMessageApp
+type QueryMessageAppRequest struct {
 	*requests.RpcRequest
 	SortType requests.Integer `position:"Body" name:"SortType"`
-	Type     requests.Integer `position:"Body" name:"Type"`
 	PageNum  requests.Integer `position:"Body" name:"PageNum"`
+	AppName  string           `position:"Body" name:"AppName"`
 	PageSize requests.Integer `position:"Body" name:"PageSize"`
-	GroupId  string           `position:"Body" name:"GroupId"`
 	AppId    string           `position:"Body" name:"AppId"`
 }
 
-// ListMessageResponse is the response struct for api ListMessage
-type ListMessageResponse struct {
+// QueryMessageAppResponse is the response struct for api QueryMessageApp
+type QueryMessageAppResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Result    Result `json:"Result" xml:"Result"`
+	RequestId string       `json:"RequestId" xml:"RequestId"`
+	Result    []ResultItem `json:"Result" xml:"Result"`
 }
 
-// CreateListMessageRequest creates a request to invoke ListMessage API
-func CreateListMessageRequest() (request *ListMessageRequest) {
-	request = &ListMessageRequest{
+// CreateQueryMessageAppRequest creates a request to invoke QueryMessageApp API
+func CreateQueryMessageAppRequest() (request *QueryMessageAppRequest) {
+	request = &QueryMessageAppRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "ListMessage", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "QueryMessageApp", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateListMessageResponse creates a response to parse from ListMessage response
-func CreateListMessageResponse() (response *ListMessageResponse) {
-	response = &ListMessageResponse{
+// CreateQueryMessageAppResponse creates a response to parse from QueryMessageApp response
+func CreateQueryMessageAppResponse() (response *QueryMessageAppResponse) {
+	response = &QueryMessageAppResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

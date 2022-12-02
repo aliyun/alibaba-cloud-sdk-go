@@ -72,11 +72,10 @@ func (client *Client) ListMessageGroupUserWithCallback(request *ListMessageGroup
 type ListMessageGroupUserRequest struct {
 	*requests.RpcRequest
 	SortType requests.Integer `position:"Body" name:"SortType"`
-	GroupId  string           `position:"Body" name:"GroupId"`
-	Type     requests.Integer `position:"Body" name:"Type"`
 	PageNum  requests.Integer `position:"Body" name:"PageNum"`
-	AppId    string           `position:"Body" name:"AppId"`
 	PageSize requests.Integer `position:"Body" name:"PageSize"`
+	GroupId  string           `position:"Body" name:"GroupId"`
+	AppId    string           `position:"Body" name:"AppId"`
 }
 
 // ListMessageGroupUserResponse is the response struct for api ListMessageGroupUser

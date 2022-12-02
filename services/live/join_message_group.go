@@ -71,11 +71,11 @@ func (client *Client) JoinMessageGroupWithCallback(request *JoinMessageGroupRequ
 // JoinMessageGroupRequest is the request struct for api JoinMessageGroup
 type JoinMessageGroupRequest struct {
 	*requests.RpcRequest
+	UserId              string           `position:"Body" name:"UserId"`
+	BroadCastType       requests.Integer `position:"Body" name:"BroadCastType"`
 	BroadCastStatistics requests.Boolean `position:"Body" name:"BroadCastStatistics"`
 	GroupId             string           `position:"Body" name:"GroupId"`
-	UserId              string           `position:"Body" name:"UserId"`
 	AppId               string           `position:"Body" name:"AppId"`
-	BroadCastType       requests.Integer `position:"Body" name:"BroadCastType"`
 }
 
 // JoinMessageGroupResponse is the response struct for api JoinMessageGroup

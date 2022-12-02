@@ -18,20 +18,24 @@ package live
 // Result is a nested struct in live response
 type Result struct {
 	Status                 int                    `json:"Status" xml:"Status"`
-	HasOrderedIM           bool                   `json:"HasOrderedIM" xml:"HasOrderedIM"`
+	AppConfig              map[string]interface{} `json:"AppConfig" xml:"AppConfig"`
 	CreateTime             int64                  `json:"CreateTime" xml:"CreateTime"`
-	IsNewIMUser            bool                   `json:"IsNewIMUser" xml:"IsNewIMUser"`
 	IsMuteAll              bool                   `json:"IsMuteAll" xml:"IsMuteAll"`
 	RefreshToken           string                 `json:"RefreshToken" xml:"RefreshToken"`
 	HasMore                bool                   `json:"HasMore" xml:"HasMore"`
+	AppId                  string                 `json:"AppId" xml:"AppId"`
+	MessageId              string                 `json:"MessageId" xml:"MessageId"`
 	AccessTokenExpiredTime int64                  `json:"AccessTokenExpiredTime" xml:"AccessTokenExpiredTime"`
 	Success                bool                   `json:"Success" xml:"Success"`
 	Total                  int                    `json:"Total" xml:"Total"`
 	Extension              map[string]interface{} `json:"Extension" xml:"Extension"`
 	CreatorId              string                 `json:"CreatorId" xml:"CreatorId"`
 	AccessToken            string                 `json:"AccessToken" xml:"AccessToken"`
+	LikeCount              int                    `json:"LikeCount" xml:"LikeCount"`
 	GroupId                string                 `json:"GroupId" xml:"GroupId"`
-	UserList               []UserList             `json:"UserList" xml:"UserList"`
-	MessageList            []MessageList          `json:"MessageList" xml:"MessageList"`
-	GroupList              []GroupList            `json:"GroupList" xml:"GroupList"`
+	AppName                string                 `json:"AppName" xml:"AppName"`
+	UserList               []UserListItem         `json:"UserList" xml:"UserList"`
+	MessageList            []MessageListItem      `json:"MessageList" xml:"MessageList"`
+	GroupList              []GroupListItem        `json:"GroupList" xml:"GroupList"`
+	AppList                []AppListItem          `json:"AppList" xml:"AppList"`
 }

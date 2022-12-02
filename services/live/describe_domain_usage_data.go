@@ -71,24 +71,25 @@ func (client *Client) DescribeDomainUsageDataWithCallback(request *DescribeDomai
 // DescribeDomainUsageDataRequest is the request struct for api DescribeDomainUsageData
 type DescribeDomainUsageDataRequest struct {
 	*requests.RpcRequest
-	StartTime  string           `position:"Query" name:"StartTime"`
-	Type       string           `position:"Query" name:"Type"`
-	Area       string           `position:"Query" name:"Area"`
-	DomainName string           `position:"Query" name:"DomainName"`
-	EndTime    string           `position:"Query" name:"EndTime"`
-	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
-	Field      string           `position:"Query" name:"Field"`
-	Interval   string           `position:"Query" name:"Interval"`
+	StartTime    string           `position:"Query" name:"StartTime"`
+	Type         string           `position:"Query" name:"Type"`
+	DataProtocol string           `position:"Query" name:"DataProtocol"`
+	Area         string           `position:"Query" name:"Area"`
+	DomainName   string           `position:"Query" name:"DomainName"`
+	EndTime      string           `position:"Query" name:"EndTime"`
+	OwnerId      requests.Integer `position:"Query" name:"OwnerId"`
+	Field        string           `position:"Query" name:"Field"`
+	Interval     string           `position:"Query" name:"Interval"`
 }
 
 // DescribeDomainUsageDataResponse is the response struct for api DescribeDomainUsageData
 type DescribeDomainUsageDataResponse struct {
 	*responses.BaseResponse
 	EndTime              string               `json:"EndTime" xml:"EndTime"`
+	Type                 string               `json:"Type" xml:"Type"`
 	StartTime            string               `json:"StartTime" xml:"StartTime"`
 	RequestId            string               `json:"RequestId" xml:"RequestId"`
 	Area                 string               `json:"Area" xml:"Area"`
-	Field                string               `json:"Field" xml:"Field"`
 	DomainName           string               `json:"DomainName" xml:"DomainName"`
 	DataInterval         string               `json:"DataInterval" xml:"DataInterval"`
 	UsageDataPerInterval UsageDataPerInterval `json:"UsageDataPerInterval" xml:"UsageDataPerInterval"`

@@ -17,5 +17,5 @@ package live
 
 // UserListInListMessageGroupUser is a nested struct in live response
 type UserListInListMessageGroupUser struct {
-	UserList []UserList `json:"userList" xml:"userList"`
+	UserListItem []UserListItem `json:"userList" xml:"userList"`
 }

@@ -71,9 +71,9 @@ func (client *Client) GetMessageTokenWithCallback(request *GetMessageTokenReques
 // GetMessageTokenRequest is the request struct for api GetMessageToken
 type GetMessageTokenRequest struct {
 	*requests.RpcRequest
-	DeviceId   string `position:"Body" name:"DeviceId"`
 	UserId     string `position:"Body" name:"UserId"`
 	DeviceType string `position:"Body" name:"DeviceType"`
+	DeviceId   string `position:"Body" name:"DeviceId"`
 	AppId      string `position:"Body" name:"AppId"`
 }
 

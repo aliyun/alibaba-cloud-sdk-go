@@ -17,9 +17,5 @@ package live
 
 // MessageList is a nested struct in live response
 type MessageList struct {
-	MessageId string `json:"MessageId" xml:"MessageId"`
-	Data      string `json:"Data" xml:"Data"`
-	GroupId   string `json:"GroupId" xml:"GroupId"`
-	SenderId  string `json:"SenderId" xml:"SenderId"`
-	Type      int    `json:"Type" xml:"Type"`
+	MessageListItem []MessageListItem `json:"messageList" xml:"messageList"`
 }
