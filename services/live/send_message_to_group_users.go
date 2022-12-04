@@ -71,6 +71,12 @@ func (client *Client) SendMessageToGroupUsersWithCallback(request *SendMessageTo
 // SendMessageToGroupUsersRequest is the request struct for api SendMessageToGroupUsers
 type SendMessageToGroupUsersRequest struct {
 	*requests.RpcRequest
+	Data           string           `position:"Body" name:"Data"`
+	Type           requests.Integer `position:"Body" name:"Type"`
+	OperatorUserId string           `position:"Body" name:"OperatorUserId"`
+	ReceiverIdList *[]string        `position:"Body" name:"ReceiverIdList"  type:"Json"`
+	GroupId        string           `position:"Body" name:"GroupId"`
+	AppId          string           `position:"Body" name:"AppId"`
 }
 
 // SendMessageToGroupUsersResponse is the response struct for api SendMessageToGroupUsers

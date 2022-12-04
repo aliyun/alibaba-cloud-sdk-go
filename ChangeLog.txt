@@ -1,3 +1,7 @@
+2022-12-04 Version: v1.62.69
+- Generated 2016-11-01 for `live`.
+- Support live interaction and message.
+
 2022-12-02 Version: v1.62.68
 - Generated 2016-11-01 for `live`.
 - Support live interaction and message.
