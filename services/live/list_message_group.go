@@ -75,6 +75,7 @@ type ListMessageGroupRequest struct {
 	PageNum  requests.Integer `position:"Body" name:"PageNum"`
 	UserId   string           `position:"Body" name:"UserId"`
 	PageSize requests.Integer `position:"Body" name:"PageSize"`
+	AppId    string           `position:"Body" name:"AppId"`
 }
 
 // ListMessageGroupResponse is the response struct for api ListMessageGroup

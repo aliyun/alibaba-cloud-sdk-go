@@ -18,6 +18,7 @@ package live
 // GroupListItem is a nested struct in live response
 type GroupListItem struct {
 	GroupId    string                 `json:"GroupId" xml:"GroupId"`
+	AppId      string                 `json:"AppId" xml:"AppId"`
 	CreateTime int64                  `json:"CreateTime" xml:"CreateTime"`
 	Status     int                    `json:"Status" xml:"Status"`
 	CreatorId  string                 `json:"CreatorId" xml:"CreatorId"`
