@@ -79,13 +79,13 @@ type UpdateSecretRequest struct {
 // UpdateSecretResponse is the response struct for api UpdateSecret
 type UpdateSecretResponse struct {
 	*responses.BaseResponse
-	RequestId string             `json:"RequestId" xml:"RequestId"`
-	Message   string             `json:"Message" xml:"Message"`
-	TraceId   string             `json:"TraceId" xml:"TraceId"`
-	ErrorCode string             `json:"ErrorCode" xml:"ErrorCode"`
-	Code      string             `json:"Code" xml:"Code"`
-	Success   bool               `json:"Success" xml:"Success"`
-	Data      DataInUpdateSecret `json:"Data" xml:"Data"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Message   string `json:"Message" xml:"Message"`
+	TraceId   string `json:"TraceId" xml:"TraceId"`
+	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
+	Code      string `json:"Code" xml:"Code"`
+	Success   bool   `json:"Success" xml:"Success"`
+	Data      Data   `json:"Data" xml:"Data"`
 }
 
 // CreateUpdateSecretRequest creates a request to invoke UpdateSecret API
