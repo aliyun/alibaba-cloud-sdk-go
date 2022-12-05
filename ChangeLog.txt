@@ -1,3 +1,8 @@
+2022-12-05 Version: v1.62.77
+- Generated 2017-03-21 for `vod`.
+- Add API DescribeVodDomainSrcBpsData.
+- Add API DescribeVodDomainSrcTrafficData.
+
 2022-12-05 Version: v1.62.76
 - Generated 2016-11-01 for `live`.
 - Add list live message interface.

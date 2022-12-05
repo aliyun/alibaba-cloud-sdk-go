@@ -79,6 +79,7 @@ type GetAppInfosRequest struct {
 type GetAppInfosResponse struct {
 	*responses.BaseResponse
 	RequestId      string    `json:"RequestId" xml:"RequestId"`
+	Code           string    `json:"Code" xml:"Code"`
 	NonExistAppIds []string  `json:"NonExistAppIds" xml:"NonExistAppIds"`
 	AppInfoList    []AppInfo `json:"AppInfoList" xml:"AppInfoList"`
 }

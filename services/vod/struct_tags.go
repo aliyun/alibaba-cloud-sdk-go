@@ -17,6 +17,5 @@ package vod
 
 // Tags is a nested struct in vod response
 type Tags struct {
-	TagValue string `json:"TagValue" xml:"TagValue"`
-	TagKey   string `json:"TagKey" xml:"TagKey"`
+	TagsItem []TagsItem `json:"tags" xml:"tags"`
 }
