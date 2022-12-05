@@ -38,7 +38,7 @@ type RequestLog struct {
 	ResponseSize       string `json:"ResponseSize" xml:"ResponseSize"`
 	Region             string `json:"Region" xml:"Region"`
 	StatusCode         string `json:"StatusCode" xml:"StatusCode"`
-	ClientIp           int    `json:"ClientIp" xml:"ClientIp"`
+	ClientIp           string `json:"ClientIp" xml:"ClientIp"`
 	ServiceLatency     string `json:"ServiceLatency" xml:"ServiceLatency"`
 	RequestTime        string `json:"RequestTime" xml:"RequestTime"`
 	Exception          string `json:"Exception" xml:"Exception"`

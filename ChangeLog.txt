@@ -1,3 +1,7 @@
+2022-12-05 Version: v1.62.75
+- Generated 2016-07-14 for `CloudAPI`.
+- Modify QueryRequestLogs.
+
 2022-12-05 Version: v1.62.74
 - Generated 2019-05-06 for `sae`.
 - Add support for secret.
