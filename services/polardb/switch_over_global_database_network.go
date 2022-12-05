@@ -72,6 +72,7 @@ func (client *Client) SwitchOverGlobalDatabaseNetworkWithCallback(request *Switc
 type SwitchOverGlobalDatabaseNetworkRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Forced               requests.Boolean `position:"Query" name:"Forced"`
 	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	GDNId                string           `position:"Query" name:"GDNId"`

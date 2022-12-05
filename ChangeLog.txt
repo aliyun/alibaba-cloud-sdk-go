@@ -1,3 +1,7 @@
+2022-12-05 Version: v1.62.70
+- Generated 2017-08-01 for `polardb`.
+- Support GDN feature.
+
 2022-12-04 Version: v1.62.69
 - Generated 2016-11-01 for `live`.
 - Support live interaction and message.

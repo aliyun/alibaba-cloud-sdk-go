@@ -74,6 +74,7 @@ type CreateDBClusterRequest struct {
 	ResourceOwnerId                        requests.Integer      `position:"Query" name:"ResourceOwnerId"`
 	DBClusterDescription                   string                `position:"Query" name:"DBClusterDescription"`
 	ScaleMax                               string                `position:"Query" name:"ScaleMax"`
+	StorageType                            string                `position:"Query" name:"StorageType"`
 	CreationCategory                       string                `position:"Query" name:"CreationCategory"`
 	ResourceGroupId                        string                `position:"Query" name:"ResourceGroupId"`
 	DBNodeClass                            string                `position:"Query" name:"DBNodeClass"`

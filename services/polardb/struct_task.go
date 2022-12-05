@@ -17,18 +17,18 @@ package polardb
 
 // Task is a nested struct in polardb response
 type Task struct {
-	TaskId             string `json:"TaskId" xml:"TaskId"`
-	BeginTime          string `json:"BeginTime" xml:"BeginTime"`
 	FinishTime         string `json:"FinishTime" xml:"FinishTime"`
-	ExpectedFinishTime string `json:"ExpectedFinishTime" xml:"ExpectedFinishTime"`
-	TaskAction         string `json:"TaskAction" xml:"TaskAction"`
-	Progress           int    `json:"Progress" xml:"Progress"`
-	DBName             string `json:"DBName" xml:"DBName"`
-	ProgressInfo       string `json:"ProgressInfo" xml:"ProgressInfo"`
-	TaskErrorCode      string `json:"TaskErrorCode" xml:"TaskErrorCode"`
-	TaskErrorMessage   string `json:"TaskErrorMessage" xml:"TaskErrorMessage"`
 	StepsInfo          string `json:"StepsInfo" xml:"StepsInfo"`
-	Remain             int    `json:"Remain" xml:"Remain"`
-	StepProgressInfo   string `json:"StepProgressInfo" xml:"StepProgressInfo"`
+	Progress           int    `json:"Progress" xml:"Progress"`
+	ExpectedFinishTime string `json:"ExpectedFinishTime" xml:"ExpectedFinishTime"`
+	BeginTime          string `json:"BeginTime" xml:"BeginTime"`
+	TaskErrorCode      string `json:"TaskErrorCode" xml:"TaskErrorCode"`
+	ProgressInfo       string `json:"ProgressInfo" xml:"ProgressInfo"`
 	CurrentStepName    string `json:"CurrentStepName" xml:"CurrentStepName"`
+	StepProgressInfo   string `json:"StepProgressInfo" xml:"StepProgressInfo"`
+	TaskErrorMessage   string `json:"TaskErrorMessage" xml:"TaskErrorMessage"`
+	TaskAction         string `json:"TaskAction" xml:"TaskAction"`
+	DBName             string `json:"DBName" xml:"DBName"`
+	Remain             int    `json:"Remain" xml:"Remain"`
+	TaskId             string `json:"TaskId" xml:"TaskId"`
 }

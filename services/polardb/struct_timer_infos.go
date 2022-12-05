@@ -17,16 +17,5 @@ package polardb
 
 // TimerInfos is a nested struct in polardb response
 type TimerInfos struct {
-	Region               string `json:"Region" xml:"Region"`
-	DbClusterStatus      string `json:"DbClusterStatus" xml:"DbClusterStatus"`
-	TaskId               string `json:"TaskId" xml:"TaskId"`
-	Action               string `json:"Action" xml:"Action"`
-	PlannedStartTime     string `json:"PlannedStartTime" xml:"PlannedStartTime"`
-	Status               string `json:"Status" xml:"Status"`
-	PlannedEndTime       string `json:"PlannedEndTime" xml:"PlannedEndTime"`
-	DbClusterDescription string `json:"DbClusterDescription" xml:"DbClusterDescription"`
-	PlannedTime          string `json:"PlannedTime" xml:"PlannedTime"`
-	DBClusterId          string `json:"DBClusterId" xml:"DBClusterId"`
-	OrderId              string `json:"OrderId" xml:"OrderId"`
-	TaskCancel           bool   `json:"TaskCancel" xml:"TaskCancel"`
+	TimerInfosItem []TimerInfosItem `json:"timerInfos" xml:"timerInfos"`
 }

@@ -29,6 +29,7 @@ type DBNode struct {
 	AddedCpuCores    string `json:"AddedCpuCores" xml:"AddedCpuCores"`
 	RegionId         string `json:"RegionId" xml:"RegionId"`
 	ZoneId           string `json:"ZoneId" xml:"ZoneId"`
+	ServerWeight     string `json:"ServerWeight" xml:"ServerWeight"`
 	DBNodeId         string `json:"DBNodeId" xml:"DBNodeId"`
 	SccMode          string `json:"SccMode" xml:"SccMode"`
 	ImciSwitch       string `json:"ImciSwitch" xml:"ImciSwitch"`

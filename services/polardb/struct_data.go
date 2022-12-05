@@ -17,9 +17,9 @@ package polardb
 
 // Data is a nested struct in polardb response
 type Data struct {
-	PageNumber       int          `json:"PageNumber" xml:"PageNumber"`
-	PageSize         int          `json:"PageSize" xml:"PageSize"`
-	TotalRecordCount int          `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	RuleList         []string     `json:"RuleList" xml:"RuleList"`
-	TimerInfos       []TimerInfos `json:"TimerInfos" xml:"TimerInfos"`
+	PageNumber       int              `json:"PageNumber" xml:"PageNumber"`
+	PageSize         int              `json:"PageSize" xml:"PageSize"`
+	TotalRecordCount int              `json:"TotalRecordCount" xml:"TotalRecordCount"`
+	RuleList         []string         `json:"RuleList" xml:"RuleList"`
+	TimerInfos       []TimerInfosItem `json:"TimerInfos" xml:"TimerInfos"`
 }
