@@ -78,6 +78,7 @@ type CreateIngressRequest struct {
 	LoadBalanceType  string           `position:"Query" name:"LoadBalanceType"`
 	Rules            string           `position:"Body" name:"Rules"`
 	CertId           string           `position:"Query" name:"CertId"`
+	CertIds          string           `position:"Query" name:"CertIds"`
 	ListenerProtocol string           `position:"Query" name:"ListenerProtocol"`
 	DefaultRule      string           `position:"Query" name:"DefaultRule"`
 }

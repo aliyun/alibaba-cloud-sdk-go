@@ -23,6 +23,7 @@ type Ingress struct {
 	ListenerPort     string `json:"ListenerPort" xml:"ListenerPort"`
 	SlbType          string `json:"SlbType" xml:"SlbType"`
 	CertId           string `json:"CertId" xml:"CertId"`
+	CertIds          string `json:"CertIds" xml:"CertIds"`
 	Name             string `json:"Name" xml:"Name"`
 	Id               int64  `json:"Id" xml:"Id"`
 	LoadBalanceType  string `json:"LoadBalanceType" xml:"LoadBalanceType"`

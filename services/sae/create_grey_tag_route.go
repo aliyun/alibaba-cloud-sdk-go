@@ -75,7 +75,6 @@ type CreateGreyTagRouteRequest struct {
 	Name        string `position:"Query" name:"Name"`
 	Description string `position:"Query" name:"Description"`
 	DubboRules  string `position:"Query" name:"DubboRules"`
-	AlbRules    string `position:"Query" name:"AlbRules"`
 	ScRules     string `position:"Query" name:"ScRules"`
 }
 

@@ -17,12 +17,12 @@ package sae
 
 // Job is a nested struct in sae response
 type Job struct {
-	StartTime      int64  `json:"StartTime" xml:"StartTime"`
 	JobId          string `json:"JobId" xml:"JobId"`
-	Message        string `json:"Message" xml:"Message"`
-	State          string `json:"State" xml:"State"`
-	CompletionTime int64  `json:"CompletionTime" xml:"CompletionTime"`
-	Failed         int64  `json:"Failed" xml:"Failed"`
 	Active         int64  `json:"Active" xml:"Active"`
 	Succeeded      int64  `json:"Succeeded" xml:"Succeeded"`
+	Failed         int64  `json:"Failed" xml:"Failed"`
+	StartTime      int64  `json:"StartTime" xml:"StartTime"`
+	CompletionTime int64  `json:"CompletionTime" xml:"CompletionTime"`
+	Message        string `json:"Message" xml:"Message"`
+	State          string `json:"State" xml:"State"`
 }

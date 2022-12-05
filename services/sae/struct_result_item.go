@@ -17,12 +17,11 @@ package sae
 
 // ResultItem is a nested struct in sae response
 type ResultItem struct {
-	GreyTagRouteId int64                       `json:"GreyTagRouteId" xml:"GreyTagRouteId"`
-	Name           string                      `json:"Name" xml:"Name"`
-	Description    string                      `json:"Description" xml:"Description"`
-	CreateTime     int64                       `json:"CreateTime" xml:"CreateTime"`
-	UpdateTime     int64                       `json:"UpdateTime" xml:"UpdateTime"`
-	ScRules        []ScRuleInListGreyTagRoute  `json:"ScRules" xml:"ScRules"`
-	AlbRules       []AlbRuleInListGreyTagRoute `json:"AlbRules" xml:"AlbRules"`
-	DubboRules     []DubboRule                 `json:"DubboRules" xml:"DubboRules"`
+	GreyTagRouteId int64                      `json:"GreyTagRouteId" xml:"GreyTagRouteId"`
+	Name           string                     `json:"Name" xml:"Name"`
+	Description    string                     `json:"Description" xml:"Description"`
+	CreateTime     int64                      `json:"CreateTime" xml:"CreateTime"`
+	UpdateTime     int64                      `json:"UpdateTime" xml:"UpdateTime"`
+	ScRules        []ScRuleInListGreyTagRoute `json:"ScRules" xml:"ScRules"`
+	DubboRules     []DubboRule                `json:"DubboRules" xml:"DubboRules"`
 }
