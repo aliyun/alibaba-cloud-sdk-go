@@ -1,3 +1,7 @@
+2022-12-05 Version: v1.62.76
+- Generated 2016-11-01 for `live`.
+- Add list live message interface.
+
 2022-12-05 Version: v1.62.75
 - Generated 2016-07-14 for `CloudAPI`.
 - Modify QueryRequestLogs.

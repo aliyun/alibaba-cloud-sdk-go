@@ -74,7 +74,7 @@ type SendMessageToGroupUsersRequest struct {
 	Data           string           `position:"Body" name:"Data"`
 	Type           requests.Integer `position:"Body" name:"Type"`
 	OperatorUserId string           `position:"Body" name:"OperatorUserId"`
-	ReceiverIdList *[]string        `position:"Body" name:"ReceiverIdList"  type:"Json"`
+	ReceiverIdList *[]string        `position:"Body" name:"ReceiverIdList"  type:"Repeated"`
 	GroupId        string           `position:"Body" name:"GroupId"`
 	AppId          string           `position:"Body" name:"AppId"`
 }
