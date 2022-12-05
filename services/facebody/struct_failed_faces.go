@@ -17,7 +17,5 @@ package facebody
 
 // FailedFaces is a nested struct in facebody response
 type FailedFaces struct {
-	Message  string `json:"Message" xml:"Message"`
-	Code     string `json:"Code" xml:"Code"`
-	ImageURL string `json:"ImageURL" xml:"ImageURL"`
+	FailedFacesItem []FailedFacesItem `json:"failedFaces" xml:"failedFaces"`
 }

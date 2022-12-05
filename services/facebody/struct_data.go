@@ -18,98 +18,90 @@ package facebody
 // Data is a nested struct in facebody response
 type Data struct {
 	TemplateId           string                `json:"TemplateId" xml:"TemplateId"`
+	Confidence           float64               `json:"Confidence" xml:"Confidence"`
 	Age                  string                `json:"Age" xml:"Age"`
 	VerificationToken    string                `json:"VerificationToken" xml:"VerificationToken"`
-	HairScore            float64               `json:"HairScore" xml:"HairScore"`
-	QualityScoreA        float64               `json:"QualityScoreA" xml:"QualityScoreA"`
-	ObjTypeScore         float64               `json:"ObjTypeScore" xml:"ObjTypeScore"`
-	QualityScoreB        float64               `json:"QualityScoreB" xml:"QualityScoreB"`
-	Action               string                `json:"Action" xml:"Action"`
-	Id                   int64                 `json:"Id" xml:"Id"`
-	DbName               string                `json:"DbName" xml:"DbName"`
-	FingerPrint          string                `json:"FingerPrint" xml:"FingerPrint"`
-	InstanceId           int64                 `json:"InstanceId" xml:"InstanceId"`
-	TraceCount           int64                 `json:"TraceCount" xml:"TraceCount"`
-	ImageHeight          int64                 `json:"ImageHeight" xml:"ImageHeight"`
-	LowerType            string                `json:"LowerType" xml:"LowerType"`
-	Width                int                   `json:"Width" xml:"Width"`
-	Name                 string                `json:"Name" xml:"Name"`
-	Hair                 string                `json:"Hair" xml:"Hair"`
-	MessageTips          string                `json:"MessageTips" xml:"MessageTips"`
-	DenseFeatureLength   int                   `json:"DenseFeatureLength" xml:"DenseFeatureLength"`
-	LowerColor           string                `json:"LowerColor" xml:"LowerColor"`
-	QualitieScore        float64               `json:"QualitieScore" xml:"QualitieScore"`
-	IdentityInfo         string                `json:"IdentityInfo" xml:"IdentityInfo"`
-	Orientation          string                `json:"Orientation" xml:"Orientation"`
-	FaceId               string                `json:"FaceId" xml:"FaceId"`
-	UpperType            string                `json:"UpperType" xml:"UpperType"`
-	UpperTypeScore       float64               `json:"UpperTypeScore" xml:"UpperTypeScore"`
-	LowerTypeScore       float64               `json:"LowerTypeScore" xml:"LowerTypeScore"`
-	PersonNumber         int                   `json:"PersonNumber" xml:"PersonNumber"`
-	Labels               string                `json:"Labels" xml:"Labels"`
-	FaceCount            int                   `json:"FaceCount" xml:"FaceCount"`
-	Total                int64                 `json:"Total" xml:"Total"`
-	Confidence           float64               `json:"Confidence" xml:"Confidence"`
 	MaterialMatch        string                `json:"MaterialMatch" xml:"MaterialMatch"`
+	HairScore            float64               `json:"HairScore" xml:"HairScore"`
 	TotalCount           int                   `json:"TotalCount" xml:"TotalCount"`
 	ImageURL             string                `json:"ImageURL" xml:"ImageURL"`
 	ObjType              string                `json:"ObjType" xml:"ObjType"`
 	MaskRef              int                   `json:"MaskRef" xml:"MaskRef"`
+	QualityScoreA        float64               `json:"QualityScoreA" xml:"QualityScoreA"`
+	ObjTypeScore         float64               `json:"ObjTypeScore" xml:"ObjTypeScore"`
 	Token                string                `json:"Token" xml:"Token"`
 	HotMap               string                `json:"HotMap" xml:"HotMap"`
+	QualityScoreB        float64               `json:"QualityScoreB" xml:"QualityScoreB"`
+	Action               string                `json:"Action" xml:"Action"`
 	ChatScore            float64               `json:"ChatScore" xml:"ChatScore"`
 	OrientationScore     float64               `json:"OrientationScore" xml:"OrientationScore"`
-	DbId                 int64                 `json:"DbId" xml:"DbId"`
+	DbName               string                `json:"DbName" xml:"DbName"`
+	FingerPrint          string                `json:"FingerPrint" xml:"FingerPrint"`
 	EntityId             string                `json:"EntityId" xml:"EntityId"`
 	Gender               string                `json:"Gender" xml:"Gender"`
 	XFlowURL             string                `json:"XFlowURL" xml:"XFlowURL"`
 	PeopleNumber         int                   `json:"PeopleNumber" xml:"PeopleNumber"`
+	ImageHeight          int64                 `json:"ImageHeight" xml:"ImageHeight"`
+	LowerType            string                `json:"LowerType" xml:"LowerType"`
+	Width                int                   `json:"Width" xml:"Width"`
 	Passed               bool                  `json:"Passed" xml:"Passed"`
 	UpperColorScore      float64               `json:"UpperColorScore" xml:"UpperColorScore"`
 	ImageWidth           int64                 `json:"ImageWidth" xml:"ImageWidth"`
+	Hair                 string                `json:"Hair" xml:"Hair"`
+	MessageTips          string                `json:"MessageTips" xml:"MessageTips"`
 	Threshold            float64               `json:"Threshold" xml:"Threshold"`
+	DenseFeatureLength   int                   `json:"DenseFeatureLength" xml:"DenseFeatureLength"`
 	AgeScore             float64               `json:"AgeScore" xml:"AgeScore"`
+	LowerColor           string                `json:"LowerColor" xml:"LowerColor"`
+	QualitieScore        float64               `json:"QualitieScore" xml:"QualitieScore"`
 	LowerColorScore      float64               `json:"LowerColorScore" xml:"LowerColorScore"`
+	IdentityInfo         string                `json:"IdentityInfo" xml:"IdentityInfo"`
 	QualityScore         float64               `json:"QualityScore" xml:"QualityScore"`
+	Orientation          string                `json:"Orientation" xml:"Orientation"`
+	FaceId               string                `json:"FaceId" xml:"FaceId"`
+	UpperType            string                `json:"UpperType" xml:"UpperType"`
 	LandmarkCount        int                   `json:"LandmarkCount" xml:"LandmarkCount"`
 	Feature              string                `json:"Feature" xml:"Feature"`
+	UpperTypeScore       float64               `json:"UpperTypeScore" xml:"UpperTypeScore"`
 	UpperColor           string                `json:"UpperColor" xml:"UpperColor"`
+	LowerTypeScore       float64               `json:"LowerTypeScore" xml:"LowerTypeScore"`
+	PersonNumber         int                   `json:"PersonNumber" xml:"PersonNumber"`
 	GenderScore          float64               `json:"GenderScore" xml:"GenderScore"`
 	Mask                 int                   `json:"Mask" xml:"Mask"`
 	Height               int                   `json:"Height" xml:"Height"`
+	Labels               string                `json:"Labels" xml:"Labels"`
+	FaceCount            int                   `json:"FaceCount" xml:"FaceCount"`
 	YFlowURL             string                `json:"YFlowURL" xml:"YFlowURL"`
+	GenderList           []int                 `json:"GenderList" xml:"GenderList"`
+	PoseList             []float64             `json:"PoseList" xml:"PoseList"`
 	Pupils               []float64             `json:"Pupils" xml:"Pupils"`
 	Glasses              []int                 `json:"Glasses" xml:"Glasses"`
 	RectBList            []int                 `json:"RectBList" xml:"RectBList"`
-	Rectangle            []int                 `json:"Rectangle" xml:"Rectangle"`
-	BeautyList           []float64             `json:"BeautyList" xml:"BeautyList"`
-	Masks                []int64               `json:"Masks" xml:"Masks"`
-	AgeList              []int                 `json:"AgeList" xml:"AgeList"`
-	Expressions          []int                 `json:"Expressions" xml:"Expressions"`
-	GenderList           []int                 `json:"GenderList" xml:"GenderList"`
-	PoseList             []float64             `json:"PoseList" xml:"PoseList"`
 	DenseFeatures        []string              `json:"DenseFeatures" xml:"DenseFeatures"`
 	RectangleRef         []int                 `json:"RectangleRef" xml:"RectangleRef"`
 	HatList              []int                 `json:"HatList" xml:"HatList"`
+	Rectangle            []int                 `json:"Rectangle" xml:"Rectangle"`
 	Thresholds           []float64             `json:"Thresholds" xml:"Thresholds"`
 	Landmarks            []float64             `json:"Landmarks" xml:"Landmarks"`
 	FaceRectangles       []int                 `json:"FaceRectangles" xml:"FaceRectangles"`
+	BeautyList           []float64             `json:"BeautyList" xml:"BeautyList"`
+	Masks                []int64               `json:"Masks" xml:"Masks"`
 	RectAList            []int                 `json:"RectAList" xml:"RectAList"`
+	AgeList              []int                 `json:"AgeList" xml:"AgeList"`
 	FaceProbabilityList  []float64             `json:"FaceProbabilityList" xml:"FaceProbabilityList"`
+	Expressions          []int                 `json:"Expressions" xml:"Expressions"`
 	Qualities            Qualities             `json:"Qualities" xml:"Qualities"`
+	PersonInfo           PersonInfo            `json:"PersonInfo" xml:"PersonInfo"`
 	FaceInfo             FaceInfo              `json:"FaceInfo" xml:"FaceInfo"`
 	MetaObject           MetaObject            `json:"MetaObject" xml:"MetaObject"`
-	PersonInfo           PersonInfo            `json:"PersonInfo" xml:"PersonInfo"`
 	Elements             []ElementsItem        `json:"Elements" xml:"Elements"`
-	InsertedFaces        []InsertedFaces       `json:"InsertedFaces" xml:"InsertedFaces"`
 	Faces                []Face                `json:"Faces" xml:"Faces"`
+	FailedFaces          []FailedFacesItem     `json:"FailedFaces" xml:"FailedFaces"`
 	ImageInfoList        []ImageInfoListItem   `json:"ImageInfoList" xml:"ImageInfoList"`
-	DbList               []DbListItem          `json:"DbList" xml:"DbList"`
 	Outputs              []Output              `json:"Outputs" xml:"Outputs"`
+	DbList               []DbListItem          `json:"DbList" xml:"DbList"`
 	Entities             []Entity              `json:"Entities" xml:"Entities"`
-	FailedFaces          []FailedFaces         `json:"FailedFaces" xml:"FailedFaces"`
-	TraceList            []Trace               `json:"TraceList" xml:"TraceList"`
-	PersonList           []Person              `json:"PersonList" xml:"PersonList"`
-	MatchList            []Trace               `json:"MatchList" xml:"MatchList"`
+	InsertedFaces        []InsertedFacesItem   `json:"InsertedFaces" xml:"InsertedFaces"`
+	MatchList            []MatchListItem       `json:"MatchList" xml:"MatchList"`
 	FaceRecognizeResults []FaceRecognizeResult `json:"FaceRecognizeResults" xml:"FaceRecognizeResults"`
 }

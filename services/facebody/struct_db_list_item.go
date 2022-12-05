@@ -18,5 +18,4 @@ package facebody
 // DbListItem is a nested struct in facebody response
 type DbListItem struct {
 	Name string `json:"Name" xml:"Name"`
-	Id   int64  `json:"Id" xml:"Id"`
 }

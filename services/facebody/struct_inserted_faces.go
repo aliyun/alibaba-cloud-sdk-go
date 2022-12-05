@@ -17,7 +17,5 @@ package facebody
 
 // InsertedFaces is a nested struct in facebody response
 type InsertedFaces struct {
-	QualitieScore float64 `json:"QualitieScore" xml:"QualitieScore"`
-	ImageURL      string  `json:"ImageURL" xml:"ImageURL"`
-	FaceId        string  `json:"FaceId" xml:"FaceId"`
+	InsertedFacesItem []InsertedFacesItem `json:"insertedFaces" xml:"insertedFaces"`
 }
