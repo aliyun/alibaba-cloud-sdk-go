@@ -1,3 +1,7 @@
+2022-12-07 Version: v1.62.78
+- Generated 2014-08-28 for `Ess`.
+- DescribeScalingGroups response add initCapacity field.
+
 2022-12-05 Version: v1.62.77
 - Generated 2017-03-21 for `vod`.
 - Add API DescribeVodDomainSrcBpsData.

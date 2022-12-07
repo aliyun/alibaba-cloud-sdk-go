@@ -63,6 +63,7 @@ type ScalingGroup struct {
 	SpotAllocationStrategy              string                  `json:"SpotAllocationStrategy" xml:"SpotAllocationStrategy"`
 	MaxInstanceLifetime                 int                     `json:"MaxInstanceLifetime" xml:"MaxInstanceLifetime"`
 	CustomPolicyARN                     string                  `json:"CustomPolicyARN" xml:"CustomPolicyARN"`
+	InitCapacity                        int                     `json:"InitCapacity" xml:"InitCapacity"`
 	RemovalPolicies                     RemovalPolicies         `json:"RemovalPolicies" xml:"RemovalPolicies"`
 	DBInstanceIds                       DBInstanceIds           `json:"DBInstanceIds" xml:"DBInstanceIds"`
 	LoadBalancerIds                     LoadBalancerIds         `json:"LoadBalancerIds" xml:"LoadBalancerIds"`
