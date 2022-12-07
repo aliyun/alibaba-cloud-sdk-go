@@ -71,8 +71,9 @@ func (client *Client) StopJobsWithCallback(request *StopJobsRequest, callback fu
 // StopJobsRequest is the request struct for api StopJobs
 type StopJobsRequest struct {
 	*requests.RpcRequest
-	Jobs      string `position:"Query" name:"Jobs"`
-	ClusterId string `position:"Query" name:"ClusterId"`
+	Jobs      string           `position:"Query" name:"Jobs"`
+	ClusterId string           `position:"Query" name:"ClusterId"`
+	Async     requests.Boolean `position:"Query" name:"Async"`
 }
 
 // StopJobsResponse is the response struct for api StopJobs

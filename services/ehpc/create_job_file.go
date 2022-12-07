@@ -71,11 +71,12 @@ func (client *Client) CreateJobFileWithCallback(request *CreateJobFileRequest, c
 // CreateJobFileRequest is the request struct for api CreateJobFile
 type CreateJobFileRequest struct {
 	*requests.RpcRequest
-	TargetFile        string `position:"Query" name:"TargetFile"`
-	RunasUserPassword string `position:"Query" name:"RunasUserPassword"`
-	RunasUser         string `position:"Query" name:"RunasUser"`
-	ClusterId         string `position:"Query" name:"ClusterId"`
-	Content           string `position:"Query" name:"Content"`
+	TargetFile        string           `position:"Query" name:"TargetFile"`
+	RunasUserPassword string           `position:"Query" name:"RunasUserPassword"`
+	RunasUser         string           `position:"Query" name:"RunasUser"`
+	ClusterId         string           `position:"Query" name:"ClusterId"`
+	Content           string           `position:"Query" name:"Content"`
+	Async             requests.Boolean `position:"Query" name:"Async"`
 }
 
 // CreateJobFileResponse is the response struct for api CreateJobFile

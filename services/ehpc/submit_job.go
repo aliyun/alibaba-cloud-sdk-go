@@ -84,12 +84,14 @@ type SubmitJobRequest struct {
 	Variables          string           `position:"Query" name:"Variables"`
 	PostCmdLine        string           `position:"Query" name:"PostCmdLine"`
 	RunasUser          string           `position:"Query" name:"RunasUser"`
+	Cpu                requests.Integer `position:"Query" name:"Cpu"`
 	ClusterId          string           `position:"Query" name:"ClusterId"`
 	ReRunable          requests.Boolean `position:"Query" name:"ReRunable"`
 	Thread             requests.Integer `position:"Query" name:"Thread"`
 	Priority           requests.Integer `position:"Query" name:"Priority"`
 	Gpu                requests.Integer `position:"Query" name:"Gpu"`
 	Node               requests.Integer `position:"Query" name:"Node"`
+	Async              requests.Boolean `position:"Query" name:"Async"`
 	Task               requests.Integer `position:"Query" name:"Task"`
 	InputFileUrl       string           `position:"Query" name:"InputFileUrl"`
 	Name               string           `position:"Query" name:"Name"`
