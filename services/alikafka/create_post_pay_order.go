@@ -71,16 +71,24 @@ func (client *Client) CreatePostPayOrderWithCallback(request *CreatePostPayOrder
 // CreatePostPayOrderRequest is the request struct for api CreatePostPayOrder
 type CreatePostPayOrderRequest struct {
 	*requests.RpcRequest
-	PaidType        requests.Integer `position:"Query" name:"PaidType"`
-	DiskSize        requests.Integer `position:"Query" name:"DiskSize"`
-	IoMax           requests.Integer `position:"Query" name:"IoMax"`
-	IoMaxSpec       string           `position:"Query" name:"IoMaxSpec"`
-	DiskType        string           `position:"Query" name:"DiskType"`
-	TopicQuota      requests.Integer `position:"Query" name:"TopicQuota"`
-	EipMax          requests.Integer `position:"Query" name:"EipMax"`
-	SpecType        string           `position:"Query" name:"SpecType"`
-	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
-	DeployType      requests.Integer `position:"Query" name:"DeployType"`
+	IoMax           requests.Integer         `position:"Query" name:"IoMax"`
+	EipMax          requests.Integer         `position:"Query" name:"EipMax"`
+	SpecType        string                   `position:"Query" name:"SpecType"`
+	ResourceGroupId string                   `position:"Query" name:"ResourceGroupId"`
+	Tag             *[]CreatePostPayOrderTag `position:"Query" name:"Tag"  type:"Repeated"`
+	PartitionNum    requests.Integer         `position:"Query" name:"PartitionNum"`
+	PaidType        requests.Integer         `position:"Query" name:"PaidType"`
+	DiskSize        requests.Integer         `position:"Query" name:"DiskSize"`
+	IoMaxSpec       string                   `position:"Query" name:"IoMaxSpec"`
+	DiskType        string                   `position:"Query" name:"DiskType"`
+	TopicQuota      requests.Integer         `position:"Query" name:"TopicQuota"`
+	DeployType      requests.Integer         `position:"Query" name:"DeployType"`
+}
+
+// CreatePostPayOrderTag is a repeated param struct in CreatePostPayOrderRequest
+type CreatePostPayOrderTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // CreatePostPayOrderResponse is the response struct for api CreatePostPayOrder

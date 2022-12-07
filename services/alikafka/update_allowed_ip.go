@@ -75,6 +75,7 @@ type UpdateAllowedIpRequest struct {
 	AllowedListIp   string `position:"Query" name:"AllowedListIp"`
 	UpdateType      string `position:"Query" name:"UpdateType"`
 	AllowedListType string `position:"Query" name:"AllowedListType"`
+	Description     string `position:"Query" name:"Description"`
 	InstanceId      string `position:"Query" name:"InstanceId"`
 }
 

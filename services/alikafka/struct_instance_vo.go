@@ -43,6 +43,11 @@ type InstanceVO struct {
 	SslDomainEndpoint        string                   `json:"SslDomainEndpoint" xml:"SslDomainEndpoint"`
 	SaslDomainEndpoint       string                   `json:"SaslDomainEndpoint" xml:"SaslDomainEndpoint"`
 	ResourceGroupId          string                   `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	UsedTopicCount           int                      `json:"UsedTopicCount" xml:"UsedTopicCount"`
+	UsedGroupCount           int                      `json:"UsedGroupCount" xml:"UsedGroupCount"`
+	UsedPartitionCount       int                      `json:"UsedPartitionCount" xml:"UsedPartitionCount"`
+	KmsKeyId                 string                   `json:"KmsKeyId" xml:"KmsKeyId"`
+	StandardZoneId           string                   `json:"StandardZoneId" xml:"StandardZoneId"`
 	UpgradeServiceDetailInfo UpgradeServiceDetailInfo `json:"UpgradeServiceDetailInfo" xml:"UpgradeServiceDetailInfo"`
 	Tags                     TagsInGetInstanceList    `json:"Tags" xml:"Tags"`
 }

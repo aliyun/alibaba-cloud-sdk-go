@@ -71,14 +71,15 @@ func (client *Client) UpgradePostPayOrderWithCallback(request *UpgradePostPayOrd
 // UpgradePostPayOrderRequest is the request struct for api UpgradePostPayOrder
 type UpgradePostPayOrderRequest struct {
 	*requests.RpcRequest
-	DiskSize   requests.Integer `position:"Query" name:"DiskSize"`
-	IoMax      requests.Integer `position:"Query" name:"IoMax"`
-	EipModel   requests.Boolean `position:"Query" name:"EipModel"`
-	IoMaxSpec  string           `position:"Query" name:"IoMaxSpec"`
-	TopicQuota requests.Integer `position:"Query" name:"TopicQuota"`
-	EipMax     requests.Integer `position:"Query" name:"EipMax"`
-	SpecType   string           `position:"Query" name:"SpecType"`
-	InstanceId string           `position:"Query" name:"InstanceId"`
+	DiskSize     requests.Integer `position:"Query" name:"DiskSize"`
+	IoMax        requests.Integer `position:"Query" name:"IoMax"`
+	EipModel     requests.Boolean `position:"Query" name:"EipModel"`
+	IoMaxSpec    string           `position:"Query" name:"IoMaxSpec"`
+	TopicQuota   requests.Integer `position:"Query" name:"TopicQuota"`
+	EipMax       requests.Integer `position:"Query" name:"EipMax"`
+	SpecType     string           `position:"Query" name:"SpecType"`
+	InstanceId   string           `position:"Query" name:"InstanceId"`
+	PartitionNum requests.Integer `position:"Query" name:"PartitionNum"`
 }
 
 // UpgradePostPayOrderResponse is the response struct for api UpgradePostPayOrder

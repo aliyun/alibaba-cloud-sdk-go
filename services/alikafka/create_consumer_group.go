@@ -71,9 +71,16 @@ func (client *Client) CreateConsumerGroupWithCallback(request *CreateConsumerGro
 // CreateConsumerGroupRequest is the request struct for api CreateConsumerGroup
 type CreateConsumerGroupRequest struct {
 	*requests.RpcRequest
-	ConsumerId string `position:"Query" name:"ConsumerId"`
-	Remark     string `position:"Query" name:"Remark"`
-	InstanceId string `position:"Query" name:"InstanceId"`
+	ConsumerId string                    `position:"Query" name:"ConsumerId"`
+	Remark     string                    `position:"Query" name:"Remark"`
+	InstanceId string                    `position:"Query" name:"InstanceId"`
+	Tag        *[]CreateConsumerGroupTag `position:"Query" name:"Tag"  type:"Repeated"`
+}
+
+// CreateConsumerGroupTag is a repeated param struct in CreateConsumerGroupRequest
+type CreateConsumerGroupTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // CreateConsumerGroupResponse is the response struct for api CreateConsumerGroup

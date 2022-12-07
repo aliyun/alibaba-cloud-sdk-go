@@ -71,15 +71,22 @@ func (client *Client) CreateTopicWithCallback(request *CreateTopicRequest, callb
 // CreateTopicRequest is the request struct for api CreateTopic
 type CreateTopicRequest struct {
 	*requests.RpcRequest
-	Remark            string           `position:"Query" name:"Remark"`
-	ReplicationFactor requests.Integer `position:"Query" name:"ReplicationFactor"`
-	MinInsyncReplicas requests.Integer `position:"Query" name:"MinInsyncReplicas"`
-	InstanceId        string           `position:"Query" name:"InstanceId"`
-	Topic             string           `position:"Query" name:"Topic"`
-	CompactTopic      requests.Boolean `position:"Query" name:"CompactTopic"`
-	PartitionNum      string           `position:"Query" name:"PartitionNum"`
-	Config            string           `position:"Query" name:"Config"`
-	LocalTopic        requests.Boolean `position:"Query" name:"LocalTopic"`
+	Remark            string            `position:"Query" name:"Remark"`
+	ReplicationFactor requests.Integer  `position:"Query" name:"ReplicationFactor"`
+	MinInsyncReplicas requests.Integer  `position:"Query" name:"MinInsyncReplicas"`
+	InstanceId        string            `position:"Query" name:"InstanceId"`
+	Topic             string            `position:"Query" name:"Topic"`
+	CompactTopic      requests.Boolean  `position:"Query" name:"CompactTopic"`
+	Tag               *[]CreateTopicTag `position:"Query" name:"Tag"  type:"Repeated"`
+	PartitionNum      string            `position:"Query" name:"PartitionNum"`
+	Config            string            `position:"Query" name:"Config"`
+	LocalTopic        requests.Boolean  `position:"Query" name:"LocalTopic"`
+}
+
+// CreateTopicTag is a repeated param struct in CreateTopicRequest
+type CreateTopicTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // CreateTopicResponse is the response struct for api CreateTopic

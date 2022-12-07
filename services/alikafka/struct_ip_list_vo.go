@@ -17,6 +17,7 @@ package alikafka
 
 // IPListVO is a nested struct in alikafka response
 type IPListVO struct {
-	PortRange     string   `json:"PortRange" xml:"PortRange"`
-	AllowedIpList []string `json:"AllowedIpList" xml:"AllowedIpList"`
+	AllowedIpGroup map[string]interface{} `json:"AllowedIpGroup" xml:"AllowedIpGroup"`
+	PortRange      string                 `json:"PortRange" xml:"PortRange"`
+	AllowedIpList  []string               `json:"AllowedIpList" xml:"AllowedIpList"`
 }
