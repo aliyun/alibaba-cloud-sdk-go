@@ -17,9 +17,7 @@ package cdn
 
 // Content is a nested struct in cdn response
 type Content struct {
-	Name       string   `json:"Name" xml:"Name"`
-	DomainName string   `json:"DomainName" xml:"DomainName"`
-	DomainId   string   `json:"DomainId" xml:"DomainId"`
-	Columns    []string `json:"Columns" xml:"Columns"`
-	Points     []string `json:"Points" xml:"Points"`
+	Name    string   `json:"Name" xml:"Name"`
+	Columns []string `json:"Columns" xml:"Columns"`
+	Points  []string `json:"Points" xml:"Points"`
 }
