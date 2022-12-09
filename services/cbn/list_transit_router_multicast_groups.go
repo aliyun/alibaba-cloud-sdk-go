@@ -73,8 +73,10 @@ type ListTransitRouterMulticastGroupsRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId                   requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ClientToken                       string           `position:"Query" name:"ClientToken"`
+	NetworkInterfaceIds               *[]string        `position:"Query" name:"NetworkInterfaceIds"  type:"Repeated"`
 	VSwitchIds                        *[]string        `position:"Query" name:"VSwitchIds"  type:"Repeated"`
 	TransitRouterMulticastDomainId    string           `position:"Query" name:"TransitRouterMulticastDomainId"`
+	IsGroupSource                     requests.Boolean `position:"Query" name:"IsGroupSource"`
 	ConnectPeerIds                    *[]string        `position:"Query" name:"ConnectPeerIds"  type:"Repeated"`
 	NextToken                         string           `position:"Query" name:"NextToken"`
 	GroupIpAddress                    string           `position:"Query" name:"GroupIpAddress"`
@@ -86,6 +88,7 @@ type ListTransitRouterMulticastGroupsRequest struct {
 	ResourceType                      string           `position:"Query" name:"ResourceType"`
 	TransitRouterAttachmentId         string           `position:"Query" name:"TransitRouterAttachmentId"`
 	MaxResults                        requests.Integer `position:"Query" name:"MaxResults"`
+	IsGroupMember                     requests.Boolean `position:"Query" name:"IsGroupMember"`
 }
 
 // ListTransitRouterMulticastGroupsResponse is the response struct for api ListTransitRouterMulticastGroups

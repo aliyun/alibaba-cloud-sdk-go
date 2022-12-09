@@ -1,3 +1,20 @@
+2022-12-09 Version: v1.62.82
+- Generated 2017-09-12 for `Cbn`.
+- Add ListCenChildInstanceRouteEntriesToAttachment support query VPC instance route to Vpc Attachment.
+- Add ListTransitRouterAttachmentPropagations support query TransitRouter Propagations by Attachment Id.
+- ListTransitRouterMulticastGroups: add parameter isGroupSource, isGroupMember and NetworkInterfaceIds. add response TransitRouterMulticastDomainId. 
+- ListMulticastDomains: add response TransitRouterId.
+- ListCenInterRegionTrafficQosPolicies: add response TransitRouterId and TransitRouterAttachmentId. 
+- ListTrafficMarkingPolicies: add response TransitRouterId.
+- DescribeFlowlogs: add parameter TransitRouterAttachmentId.
+- DeleteTransitRouterConnectPeer: add ErrorCode.
+- ListTransitRouterVpcAttachments: add parameter VpcId.
+- ListTransitRouterMulticastGroups: param TransitRouterMulticastDomainId Required False.
+- DeleteTransitRouterConnectAttachment: add parameter Force.
+- DeleteTransitRouterVpcAttachment : add parameter Force.
+- DeleteTransitRouterVpnAttachment : add parameter Force.
+- DeleteTransitRouterVbrAttachment : add parameter Force.
+
 2022-12-09 Version: v1.62.81
 - Generated 2018-05-10 for `Cdn`.
 - Delete DescribeLiveStreamRecordContent.

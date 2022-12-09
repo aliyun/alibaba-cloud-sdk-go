@@ -21,5 +21,7 @@ type TrafficQosPolicy struct {
 	TrafficQosPolicyStatus      string            `json:"TrafficQosPolicyStatus" xml:"TrafficQosPolicyStatus"`
 	TrafficQosPolicyId          string            `json:"TrafficQosPolicyId" xml:"TrafficQosPolicyId"`
 	TrafficQosPolicyDescription string            `json:"TrafficQosPolicyDescription" xml:"TrafficQosPolicyDescription"`
+	TransitRouterId             string            `json:"TransitRouterId" xml:"TransitRouterId"`
+	TransitRouterAttachmentId   string            `json:"TransitRouterAttachmentId" xml:"TransitRouterAttachmentId"`
 	TrafficQosQueues            []TrafficQosQueue `json:"TrafficQosQueues" xml:"TrafficQosQueues"`
 }

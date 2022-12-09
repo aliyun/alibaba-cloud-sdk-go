@@ -71,21 +71,22 @@ func (client *Client) DescribeFlowlogsWithCallback(request *DescribeFlowlogsRequ
 // DescribeFlowlogsRequest is the request struct for api DescribeFlowlogs
 type DescribeFlowlogsRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer       `position:"Query" name:"ResourceOwnerId"`
-	ClientToken          string                 `position:"Query" name:"ClientToken"`
-	CenId                string                 `position:"Query" name:"CenId"`
-	Description          string                 `position:"Query" name:"Description"`
-	PageNumber           requests.Integer       `position:"Query" name:"PageNumber"`
-	PageSize             requests.Integer       `position:"Query" name:"PageSize"`
-	Tag                  *[]DescribeFlowlogsTag `position:"Query" name:"Tag"  type:"Repeated"`
-	ProjectName          string                 `position:"Query" name:"ProjectName"`
-	LogStoreName         string                 `position:"Query" name:"LogStoreName"`
-	ResourceOwnerAccount string                 `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string                 `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer       `position:"Query" name:"OwnerId"`
-	FlowLogId            string                 `position:"Query" name:"FlowLogId"`
-	FlowLogName          string                 `position:"Query" name:"FlowLogName"`
-	Status               string                 `position:"Query" name:"Status"`
+	ResourceOwnerId           requests.Integer       `position:"Query" name:"ResourceOwnerId"`
+	ClientToken               string                 `position:"Query" name:"ClientToken"`
+	CenId                     string                 `position:"Query" name:"CenId"`
+	Description               string                 `position:"Query" name:"Description"`
+	PageNumber                requests.Integer       `position:"Query" name:"PageNumber"`
+	PageSize                  requests.Integer       `position:"Query" name:"PageSize"`
+	Tag                       *[]DescribeFlowlogsTag `position:"Query" name:"Tag"  type:"Repeated"`
+	ProjectName               string                 `position:"Query" name:"ProjectName"`
+	LogStoreName              string                 `position:"Query" name:"LogStoreName"`
+	ResourceOwnerAccount      string                 `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount              string                 `position:"Query" name:"OwnerAccount"`
+	OwnerId                   requests.Integer       `position:"Query" name:"OwnerId"`
+	TransitRouterAttachmentId string                 `position:"Query" name:"TransitRouterAttachmentId"`
+	FlowLogId                 string                 `position:"Query" name:"FlowLogId"`
+	FlowLogName               string                 `position:"Query" name:"FlowLogName"`
+	Status                    string                 `position:"Query" name:"Status"`
 }
 
 // DescribeFlowlogsTag is a repeated param struct in DescribeFlowlogsRequest

@@ -71,15 +71,41 @@ func (client *Client) UpdateTrafficMarkingPolicyAttributeWithCallback(request *U
 // UpdateTrafficMarkingPolicyAttributeRequest is the request struct for api UpdateTrafficMarkingPolicyAttribute
 type UpdateTrafficMarkingPolicyAttributeRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId                 requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ClientToken                     string           `position:"Query" name:"ClientToken"`
-	TrafficMarkingPolicyDescription string           `position:"Query" name:"TrafficMarkingPolicyDescription"`
-	TrafficMarkingPolicyId          string           `position:"Query" name:"TrafficMarkingPolicyId"`
-	TrafficMarkingPolicyName        string           `position:"Query" name:"TrafficMarkingPolicyName"`
-	DryRun                          requests.Boolean `position:"Query" name:"DryRun"`
-	ResourceOwnerAccount            string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount                    string           `position:"Query" name:"OwnerAccount"`
-	OwnerId                         requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerId                 requests.Integer                                              `position:"Query" name:"ResourceOwnerId"`
+	ClientToken                     string                                                        `position:"Query" name:"ClientToken"`
+	AddTrafficMatchRules            *[]UpdateTrafficMarkingPolicyAttributeAddTrafficMatchRules    `position:"Query" name:"AddTrafficMatchRules"  type:"Repeated"`
+	TrafficMarkingPolicyDescription string                                                        `position:"Query" name:"TrafficMarkingPolicyDescription"`
+	TrafficMarkingPolicyId          string                                                        `position:"Query" name:"TrafficMarkingPolicyId"`
+	TrafficMarkingPolicyName        string                                                        `position:"Query" name:"TrafficMarkingPolicyName"`
+	DryRun                          requests.Boolean                                              `position:"Query" name:"DryRun"`
+	ResourceOwnerAccount            string                                                        `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount                    string                                                        `position:"Query" name:"OwnerAccount"`
+	OwnerId                         requests.Integer                                              `position:"Query" name:"OwnerId"`
+	DeleteTrafficMatchRules         *[]UpdateTrafficMarkingPolicyAttributeDeleteTrafficMatchRules `position:"Query" name:"DeleteTrafficMatchRules"  type:"Repeated"`
+}
+
+// UpdateTrafficMarkingPolicyAttributeAddTrafficMatchRules is a repeated param struct in UpdateTrafficMarkingPolicyAttributeRequest
+type UpdateTrafficMarkingPolicyAttributeAddTrafficMatchRules struct {
+	DstPortRange                *[]string `name:"DstPortRange" type:"Repeated"`
+	MatchDscp                   string    `name:"MatchDscp"`
+	Protocol                    string    `name:"Protocol"`
+	TrafficMatchRuleDescription string    `name:"TrafficMatchRuleDescription"`
+	SrcPortRange                *[]string `name:"SrcPortRange" type:"Repeated"`
+	DstCidr                     string    `name:"DstCidr"`
+	TrafficMatchRuleName        string    `name:"TrafficMatchRuleName"`
+	SrcCidr                     string    `name:"SrcCidr"`
+}
+
+// UpdateTrafficMarkingPolicyAttributeDeleteTrafficMatchRules is a repeated param struct in UpdateTrafficMarkingPolicyAttributeRequest
+type UpdateTrafficMarkingPolicyAttributeDeleteTrafficMatchRules struct {
+	DstPortRange                *[]string `name:"DstPortRange" type:"Repeated"`
+	MatchDscp                   string    `name:"MatchDscp"`
+	Protocol                    string    `name:"Protocol"`
+	TrafficMatchRuleDescription string    `name:"TrafficMatchRuleDescription"`
+	SrcPortRange                *[]string `name:"SrcPortRange" type:"Repeated"`
+	DstCidr                     string    `name:"DstCidr"`
+	TrafficMatchRuleName        string    `name:"TrafficMatchRuleName"`
+	SrcCidr                     string    `name:"SrcCidr"`
 }
 
 // UpdateTrafficMarkingPolicyAttributeResponse is the response struct for api UpdateTrafficMarkingPolicyAttribute

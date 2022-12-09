@@ -81,6 +81,7 @@ type ListTransitRouterVpcAttachmentsRequest struct {
 	TransitRouterId           string                                `position:"Query" name:"TransitRouterId"`
 	ResourceType              string                                `position:"Query" name:"ResourceType"`
 	TransitRouterAttachmentId string                                `position:"Query" name:"TransitRouterAttachmentId"`
+	VpcId                     string                                `position:"Query" name:"VpcId"`
 	MaxResults                requests.Integer                      `position:"Query" name:"MaxResults"`
 }
 

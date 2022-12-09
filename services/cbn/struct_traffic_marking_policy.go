@@ -23,5 +23,6 @@ type TrafficMarkingPolicy struct {
 	TrafficMarkingPolicyName        string             `json:"TrafficMarkingPolicyName" xml:"TrafficMarkingPolicyName"`
 	Priority                        int                `json:"Priority" xml:"Priority"`
 	TrafficMarkingPolicyDescription string             `json:"TrafficMarkingPolicyDescription" xml:"TrafficMarkingPolicyDescription"`
+	TransitRouterId                 string             `json:"TransitRouterId" xml:"TransitRouterId"`
 	TrafficMatchRules               []TrafficMatchRule `json:"TrafficMatchRules" xml:"TrafficMatchRules"`
 }

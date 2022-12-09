@@ -79,6 +79,7 @@ type DeleteTransitRouterVbrAttachmentRequest struct {
 	OwnerId                   requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceType              string           `position:"Query" name:"ResourceType"`
 	TransitRouterAttachmentId string           `position:"Query" name:"TransitRouterAttachmentId"`
+	Force                     requests.Boolean `position:"Query" name:"Force"`
 }
 
 // DeleteTransitRouterVbrAttachmentResponse is the response struct for api DeleteTransitRouterVbrAttachment

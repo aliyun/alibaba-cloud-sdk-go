@@ -21,5 +21,6 @@ type TransitRouterMulticastDomain struct {
 	TransitRouterMulticastDomainName        string `json:"TransitRouterMulticastDomainName" xml:"TransitRouterMulticastDomainName"`
 	TransitRouterMulticastDomainDescription string `json:"TransitRouterMulticastDomainDescription" xml:"TransitRouterMulticastDomainDescription"`
 	Status                                  string `json:"Status" xml:"Status"`
+	TransitRouterId                         string `json:"TransitRouterId" xml:"TransitRouterId"`
 	Tags                                    []Tag  `json:"Tags" xml:"Tags"`
 }
