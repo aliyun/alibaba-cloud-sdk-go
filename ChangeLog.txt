@@ -1,3 +1,7 @@
+2022-12-09 Version: v1.62.83
+- Generated 2019-09-30 for `imageenhan`.
+- Update MakeSuperResolutionImage.
+
 2022-12-09 Version: v1.62.82
 - Generated 2017-09-12 for `Cbn`.
 - Add ListCenChildInstanceRouteEntriesToAttachment support query VPC instance route to Vpc Attachment.
