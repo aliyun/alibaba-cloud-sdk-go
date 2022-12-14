@@ -1,3 +1,7 @@
+2022-12-14 Version: v1.62.86
+- Generated 2020-03-20 for `videoenhan`.
+- Release MergeVideoModelFace.
+
 2022-12-14 Version: v1.62.85
 - Generated 2019-09-30 for `imageenhan`.
 - Update MakeSuperResolutionImage.
