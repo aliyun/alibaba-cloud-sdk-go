@@ -1,3 +1,7 @@
+2022-12-14 Version: v1.62.84
+- Generated 2021-01-31 for `threedvision`.
+- Release EstimateMonocularVideoDepth.
+
 2022-12-09 Version: v1.62.83
 - Generated 2019-09-30 for `imageenhan`.
 - Update MakeSuperResolutionImage.
