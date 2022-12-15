@@ -1,3 +1,9 @@
+2022-12-15 Version: v1.62.88
+- Generated 2020-04-18 for `DBFS`.
+- Supported delete snapshots.
+- Supported auto snapshot.
+- Fix docx.
+
 2022-12-14 Version: v1.62.87
 - Generated 2019-12-30 for `facebody`.
 - Publish Swift.
