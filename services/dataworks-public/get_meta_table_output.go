@@ -76,6 +76,7 @@ type GetMetaTableOutputRequest struct {
 	EndDate    string           `position:"Query" name:"EndDate"`
 	TableGuid  string           `position:"Query" name:"TableGuid"`
 	PageSize   requests.Integer `position:"Query" name:"PageSize"`
+	TaskId     string           `position:"Query" name:"TaskId"`
 }
 
 // GetMetaTableOutputResponse is the response struct for api GetMetaTableOutput
