@@ -17,6 +17,6 @@ package imageaudit
 
 // Frame is a nested struct in imageaudit response
 type Frame struct {
-	Rate float64 `json:"Rate" xml:"Rate"`
 	URL  string  `json:"URL" xml:"URL"`
+	Rate float64 `json:"Rate" xml:"Rate"`
 }

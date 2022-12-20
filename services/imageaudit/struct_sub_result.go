@@ -18,13 +18,13 @@ package imageaudit
 // SubResult is a nested struct in imageaudit response
 type SubResult struct {
 	Suggestion          string            `json:"Suggestion" xml:"Suggestion"`
-	Rate                float64           `json:"Rate" xml:"Rate"`
 	Label               string            `json:"Label" xml:"Label"`
 	Scene               string            `json:"Scene" xml:"Scene"`
+	Rate                float64           `json:"Rate" xml:"Rate"`
 	OCRDataList         []string          `json:"OCRDataList" xml:"OCRDataList"`
-	Frames              []Frame           `json:"Frames" xml:"Frames"`
 	SfaceDataList       []SfaceData       `json:"SfaceDataList" xml:"SfaceDataList"`
 	HintWordsInfoList   []HintWordsInfo   `json:"HintWordsInfoList" xml:"HintWordsInfoList"`
-	LogoDataList        []LogoData        `json:"LogoDataList" xml:"LogoDataList"`
 	ProgramCodeDataList []ProgramCodeData `json:"ProgramCodeDataList" xml:"ProgramCodeDataList"`
+	Frames              []Frame           `json:"Frames" xml:"Frames"`
+	LogoDataList        []LogoData        `json:"LogoDataList" xml:"LogoDataList"`
 }

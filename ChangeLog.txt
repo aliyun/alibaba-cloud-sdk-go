@@ -1,3 +1,7 @@
+2022-12-20 Version: v1.62.91
+- Generated 2019-12-30 for `imageaudit`.
+- Update imageaudit.
+
 2022-12-16 Version: v1.62.90
 - Generated 2020-03-20 for `videoenhan`.
 - Release MergeVideoModelFace.
