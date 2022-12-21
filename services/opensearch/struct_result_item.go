@@ -17,21 +17,14 @@ package opensearch
 
 // ResultItem is a nested struct in opensearch response
 type ResultItem struct {
-	Date               string                   `json:"date" xml:"date"`
 	Traffic            int                      `json:"traffic" xml:"traffic"`
-	Service            string                   `json:"service" xml:"service"`
 	Created            int                      `json:"created" xml:"created"`
-	ZeroHitRate        float64                  `json:"zeroHitRate" xml:"zeroHitRate"`
 	IndustryName       string                   `json:"industryName" xml:"industryName"`
 	Meta               string                   `json:"meta" xml:"meta"`
 	Business           string                   `json:"business" xml:"business"`
-	IpvUv              int                      `json:"ipvUv" xml:"ipvUv"`
-	Pv                 int                      `json:"pv" xml:"pv"`
 	Label              string                   `json:"label" xml:"label"`
 	Domain             string                   `json:"domain" xml:"domain"`
-	ExperimentName     string                   `json:"experimentName" xml:"experimentName"`
 	Name               string                   `json:"name" xml:"name"`
-	Assumed            bool                     `json:"assumed" xml:"assumed"`
 	IsSys              string                   `json:"isSys" xml:"isSys"`
 	Type               string                   `json:"type" xml:"type"`
 	Endpoint           string                   `json:"endpoint" xml:"endpoint"`
@@ -40,11 +33,9 @@ type ResultItem struct {
 	Code               string                   `json:"code" xml:"code"`
 	RegionId           string                   `json:"regionId" xml:"regionId"`
 	Tag                string                   `json:"tag" xml:"tag"`
-	TemplateId         string                   `json:"template_id" xml:"template_id"`
 	LocalName          string                   `json:"localName" xml:"localName"`
 	Status             int                      `json:"status" xml:"status"`
 	Message            string                   `json:"message" xml:"message"`
-	Ctr                float64                  `json:"ctr" xml:"ctr"`
 	Online             bool                     `json:"online" xml:"online"`
 	Description        string                   `json:"description" xml:"description"`
 	SundialId          string                   `json:"sundialId" xml:"sundialId"`
@@ -54,8 +45,6 @@ type ResultItem struct {
 	Order              int                      `json:"order" xml:"order"`
 	Priority           string                   `json:"priority" xml:"priority"`
 	IsDefault          string                   `json:"isDefault" xml:"isDefault"`
-	Ipv                int                      `json:"ipv" xml:"ipv"`
-	Uv                 int                      `json:"uv" xml:"uv"`
 	Id                 string                   `json:"id" xml:"id"`
 	Active             bool                     `json:"active" xml:"active"`
 	Processors         []map[string]interface{} `json:"processors" xml:"processors"`

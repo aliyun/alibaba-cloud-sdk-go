@@ -20,7 +20,6 @@ type Result struct {
 	Config             map[string]interface{}   `json:"config" xml:"config"`
 	Traffic            int                      `json:"traffic" xml:"traffic"`
 	Created            int                      `json:"created" xml:"created"`
-	ReceivedCount      int                      `json:"receivedCount" xml:"receivedCount"`
 	End                int                      `json:"end" xml:"end"`
 	IndustryName       string                   `json:"industryName" xml:"industryName"`
 	Start              int                      `json:"start" xml:"start"`
@@ -58,5 +57,4 @@ type Result struct {
 	Values             []string                 `json:"values" xml:"values"`
 	VersionConfig      VersionConfig            `json:"VersionConfig" xml:"VersionConfig"`
 	Meta               []MetaItem               `json:"meta" xml:"meta"`
-	ReceivedSample     []ReceivedSampleItem     `json:"receivedSample" xml:"receivedSample"`
 }
