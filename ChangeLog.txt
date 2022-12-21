@@ -1,3 +1,7 @@
+2022-12-21 Version: v1.62.92
+- Generated 2018-11-01 for `dms-enterprise`.
+- Supported GetProxyAccess API.
+
 2022-12-20 Version: v1.62.91
 - Generated 2019-12-30 for `imageaudit`.
 - Update imageaudit.

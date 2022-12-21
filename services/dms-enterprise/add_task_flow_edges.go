@@ -85,10 +85,11 @@ type AddTaskFlowEdgesEdges struct {
 // AddTaskFlowEdgesResponse is the response struct for api AddTaskFlowEdges
 type AddTaskFlowEdgesResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
-	ErrorCode    string `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
-	Success      bool   `json:"Success" xml:"Success"`
+	RequestId    string  `json:"RequestId" xml:"RequestId"`
+	ErrorCode    string  `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage string  `json:"ErrorMessage" xml:"ErrorMessage"`
+	Success      bool    `json:"Success" xml:"Success"`
+	EdgeIds      EdgeIds `json:"EdgeIds" xml:"EdgeIds"`
 }
 
 // CreateAddTaskFlowEdgesRequest creates a request to invoke AddTaskFlowEdges API
