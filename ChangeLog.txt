@@ -1,3 +1,7 @@
+2022-12-22 Version: v1.62.94
+- Generated 2019-12-30 for `facebody`.
+- Publish Swift.
+
 2022-12-21 Version: v1.62.93
 - Generated 2017-12-25 for `OpenSearch`.
 - update.
