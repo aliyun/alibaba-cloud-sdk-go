@@ -85,9 +85,9 @@ type DescribeTagKeysForExpressConnectRequest struct {
 // DescribeTagKeysForExpressConnectResponse is the response struct for api DescribeTagKeysForExpressConnect
 type DescribeTagKeysForExpressConnectResponse struct {
 	*responses.BaseResponse
-	NextToken string  `json:"NextToken" xml:"NextToken"`
-	RequestId string  `json:"RequestId" xml:"RequestId"`
-	TagKeys   TagKeys `json:"TagKeys" xml:"TagKeys"`
+	NextToken string                                    `json:"NextToken" xml:"NextToken"`
+	RequestId string                                    `json:"RequestId" xml:"RequestId"`
+	TagKeys   TagKeysInDescribeTagKeysForExpressConnect `json:"TagKeys" xml:"TagKeys"`
 }
 
 // CreateDescribeTagKeysForExpressConnectRequest creates a request to invoke DescribeTagKeysForExpressConnect API

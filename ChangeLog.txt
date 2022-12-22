@@ -1,3 +1,8 @@
+2022-12-22 Version: v1.62.97
+- Generated 2016-04-28 for `Vpc`.
+- Supported set high definition monitor log status for eip.
+- Supported batch associate eip to cloud products.
+
 2022-12-22 Version: v1.62.96
 - Generated 2016-04-28 for `Vpc`.
 - Support FlowLog Managed.
