@@ -28,8 +28,10 @@ type DataItem struct {
 	CostTime   int          `json:"CostTime" xml:"CostTime"`
 	InstanceId int64        `json:"InstanceId" xml:"InstanceId"`
 	NodeName   string       `json:"NodeName" xml:"NodeName"`
+	TaskId     string       `json:"TaskId" xml:"TaskId"`
 	ApiId      int64        `json:"ApiId" xml:"ApiId"`
 	NodeId     int64        `json:"NodeId" xml:"NodeId"`
+	TaskName   string       `json:"TaskName" xml:"TaskName"`
 	TestId     int64        `json:"TestId" xml:"TestId"`
 	RetCode    int64        `json:"RetCode" xml:"RetCode"`
 	ProjectId  int64        `json:"ProjectId" xml:"ProjectId"`

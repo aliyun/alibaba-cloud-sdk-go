@@ -51,6 +51,7 @@ type Data struct {
 	MigrationId          int64                    `json:"MigrationId" xml:"MigrationId"`
 	CommitUser           string                   `json:"CommitUser" xml:"CommitUser"`
 	AlertMarginThreshold int                      `json:"AlertMarginThreshold" xml:"AlertMarginThreshold"`
+	NextToken            string                   `json:"NextToken" xml:"NextToken"`
 	UseFlag              bool                     `json:"UseFlag" xml:"UseFlag"`
 	DqcDescription       string                   `json:"DqcDescription" xml:"DqcDescription"`
 	CheckerName          string                   `json:"CheckerName" xml:"CheckerName"`
@@ -200,6 +201,7 @@ type Data struct {
 	File                 File                     `json:"File" xml:"File"`
 	ColumnList           []ColumnListItem         `json:"ColumnList" xml:"ColumnList"`
 	Apis                 []Api                    `json:"Apis" xml:"Apis"`
+	CollectionList       []CollectionListItem     `json:"CollectionList" xml:"CollectionList"`
 	ProjectMemberList    []ProjectMember          `json:"ProjectMemberList" xml:"ProjectMemberList"`
 	DataSources          []DataSourcesItem        `json:"DataSources" xml:"DataSources"`
 	Nodes                []NodesItem              `json:"Nodes" xml:"Nodes"`
@@ -213,6 +215,7 @@ type Data struct {
 	BaselineStatuses     []BaselineStatusesItem   `json:"BaselineStatuses" xml:"BaselineStatuses"`
 	DataEntityList       []DataEntityListItem     `json:"DataEntityList" xml:"DataEntityList"`
 	Projects             []ProjectsItem           `json:"Projects" xml:"Projects"`
+	EntityList           []EntityListItem         `json:"EntityList" xml:"EntityList"`
 	Folders              []FoldersItem            `json:"Folders" xml:"Folders"`
 	ApiAuthorizedList    []ApiAuthorized          `json:"ApiAuthorizedList" xml:"ApiAuthorizedList"`
 	Dags                 []Dag                    `json:"Dags" xml:"Dags"`
