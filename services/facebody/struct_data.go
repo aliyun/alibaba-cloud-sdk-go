@@ -37,6 +37,7 @@ type Data struct {
 	OrientationScore     float64               `json:"OrientationScore" xml:"OrientationScore"`
 	DbName               string                `json:"DbName" xml:"DbName"`
 	FingerPrint          string                `json:"FingerPrint" xml:"FingerPrint"`
+	IsMaskA              int64                 `json:"IsMaskA" xml:"IsMaskA"`
 	EntityId             string                `json:"EntityId" xml:"EntityId"`
 	Gender               string                `json:"Gender" xml:"Gender"`
 	XFlowURL             string                `json:"XFlowURL" xml:"XFlowURL"`
@@ -64,6 +65,7 @@ type Data struct {
 	Feature              string                `json:"Feature" xml:"Feature"`
 	UpperTypeScore       float64               `json:"UpperTypeScore" xml:"UpperTypeScore"`
 	UpperColor           string                `json:"UpperColor" xml:"UpperColor"`
+	IsMaskB              int64                 `json:"IsMaskB" xml:"IsMaskB"`
 	LowerTypeScore       float64               `json:"LowerTypeScore" xml:"LowerTypeScore"`
 	PersonNumber         int                   `json:"PersonNumber" xml:"PersonNumber"`
 	GenderScore          float64               `json:"GenderScore" xml:"GenderScore"`
@@ -90,6 +92,8 @@ type Data struct {
 	AgeList              []int                 `json:"AgeList" xml:"AgeList"`
 	FaceProbabilityList  []float64             `json:"FaceProbabilityList" xml:"FaceProbabilityList"`
 	Expressions          []int                 `json:"Expressions" xml:"Expressions"`
+	LandmarksAList       []int64               `json:"LandmarksAList" xml:"LandmarksAList"`
+	LandmarksBList       []int64               `json:"LandmarksBList" xml:"LandmarksBList"`
 	Qualities            Qualities             `json:"Qualities" xml:"Qualities"`
 	PersonInfo           PersonInfo            `json:"PersonInfo" xml:"PersonInfo"`
 	FaceInfo             FaceInfo              `json:"FaceInfo" xml:"FaceInfo"`
