@@ -1,3 +1,7 @@
+2022-12-23 Version: v1.62.98
+- Generated 2020-09-10, 2019-12-30 for `facebody`.
+- Update api ExecuteServerSideVerification The base64 data format is changed from string byte to string.
+
 2022-12-22 Version: v1.62.97
 - Generated 2016-04-28 for `Vpc`.
 - Supported set high definition monitor log status for eip.
