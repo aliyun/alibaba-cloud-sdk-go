@@ -17,6 +17,10 @@ package config
 
 // Scope is a nested struct in config response
 type Scope struct {
-	ComplianceResourceId    string   `json:"ComplianceResourceId" xml:"ComplianceResourceId"`
+	TagKeyScope             string   `json:"TagKeyScope" xml:"TagKeyScope"`
+	ExcludeResourceIdsScope string   `json:"ExcludeResourceIdsScope" xml:"ExcludeResourceIdsScope"`
+	RegionIdsScope          string   `json:"RegionIdsScope" xml:"RegionIdsScope"`
+	ResourceGroupIdsScope   string   `json:"ResourceGroupIdsScope" xml:"ResourceGroupIdsScope"`
+	TagValueScope           string   `json:"TagValueScope" xml:"TagValueScope"`
 	ComplianceResourceTypes []string `json:"ComplianceResourceTypes" xml:"ComplianceResourceTypes"`
 }

@@ -75,12 +75,11 @@ type ListAggregateDiscoveredResourcesRequest struct {
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	Regions         string           `position:"Query" name:"Regions"`
 	AggregatorId    string           `position:"Query" name:"AggregatorId"`
-	PageNumber      requests.Integer `position:"Query" name:"PageNumber"`
 	FolderId        string           `position:"Query" name:"FolderId"`
-	PageSize        requests.Integer `position:"Query" name:"PageSize"`
-	ComplianceType  string           `position:"Query" name:"ComplianceType"`
+	NextToken       string           `position:"Query" name:"NextToken"`
 	ResourceId      string           `position:"Query" name:"ResourceId"`
 	ResourceTypes   string           `position:"Query" name:"ResourceTypes"`
+	MaxResults      requests.Integer `position:"Query" name:"MaxResults"`
 }
 
 // ListAggregateDiscoveredResourcesResponse is the response struct for api ListAggregateDiscoveredResources
@@ -95,7 +94,7 @@ func CreateListAggregateDiscoveredResourcesRequest() (request *ListAggregateDisc
 	request = &ListAggregateDiscoveredResourcesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Config", "2019-01-08", "ListAggregateDiscoveredResources", "", "")
+	request.InitWithApiInfo("Config", "2020-09-07", "ListAggregateDiscoveredResources", "", "")
 	request.Method = requests.POST
 	return
 }

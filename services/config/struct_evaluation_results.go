@@ -17,8 +17,7 @@ package config
 
 // EvaluationResults is a nested struct in config response
 type EvaluationResults struct {
-	PageNumber           int                `json:"PageNumber" xml:"PageNumber"`
-	PageSize             int                `json:"PageSize" xml:"PageSize"`
-	TotalCount           int64              `json:"TotalCount" xml:"TotalCount"`
+	NextToken            string             `json:"NextToken" xml:"NextToken"`
+	MaxResults           int                `json:"MaxResults" xml:"MaxResults"`
 	EvaluationResultList []EvaluationResult `json:"EvaluationResultList" xml:"EvaluationResultList"`
 }

@@ -90,7 +90,7 @@ func CreateGetAggregateDiscoveredResourceRequest() (request *GetAggregateDiscove
 	request = &GetAggregateDiscoveredResourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Config", "2019-01-08", "GetAggregateDiscoveredResource", "", "")
+	request.InitWithApiInfo("Config", "2020-09-07", "GetAggregateDiscoveredResource", "", "")
 	request.Method = requests.GET
 	return
 }

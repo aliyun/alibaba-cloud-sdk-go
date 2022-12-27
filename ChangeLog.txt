@@ -1,3 +1,7 @@
+2022-12-27 Version: v1.62.102
+- Generated 2020-09-07 for `Config`.
+- Open Integrated Api.
+
 2022-12-27 Version: v1.62.101
 - Generated 2019-01-08 for `Config`.
 - Open Integrated Api.
