@@ -71,9 +71,8 @@ func (client *Client) DescribeRDDomainsWithCallback(request *DescribeRDDomainsRe
 // DescribeRDDomainsRequest is the request struct for api DescribeRDDomains
 type DescribeRDDomainsRequest struct {
 	*requests.RpcRequest
-	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
 	PageSize   requests.Integer `position:"Query" name:"PageSize"`
-	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
+	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 // DescribeRDDomainsResponse is the response struct for api DescribeRDDomains

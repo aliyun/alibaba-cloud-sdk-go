@@ -71,10 +71,9 @@ func (client *Client) DescribeDcdnWafDomainsWithCallback(request *DescribeDcdnWa
 // DescribeDcdnWafDomainsRequest is the request struct for api DescribeDcdnWafDomains
 type DescribeDcdnWafDomainsRequest struct {
 	*requests.RpcRequest
-	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
-	PageSize   requests.Integer `position:"Query" name:"PageSize"`
-	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
 	QueryArgs  string           `position:"Query" name:"QueryArgs"`
+	PageSize   requests.Integer `position:"Query" name:"PageSize"`
+	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 // DescribeDcdnWafDomainsResponse is the response struct for api DescribeDcdnWafDomains

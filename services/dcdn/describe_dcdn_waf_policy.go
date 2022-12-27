@@ -72,7 +72,6 @@ func (client *Client) DescribeDcdnWafPolicyWithCallback(request *DescribeDcdnWaf
 type DescribeDcdnWafPolicyRequest struct {
 	*requests.RpcRequest
 	PolicyId requests.Integer `position:"Query" name:"PolicyId"`
-	OwnerId  requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeDcdnWafPolicyResponse is the response struct for api DescribeDcdnWafPolicy

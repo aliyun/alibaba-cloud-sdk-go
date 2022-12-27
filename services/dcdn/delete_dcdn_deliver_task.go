@@ -72,7 +72,6 @@ func (client *Client) DeleteDcdnDeliverTaskWithCallback(request *DeleteDcdnDeliv
 type DeleteDcdnDeliverTaskRequest struct {
 	*requests.RpcRequest
 	DeliverId requests.Integer `position:"Query" name:"DeliverId"`
-	OwnerId   requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DeleteDcdnDeliverTaskResponse is the response struct for api DeleteDcdnDeliverTask

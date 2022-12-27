@@ -71,8 +71,7 @@ func (client *Client) SetRoutineSubdomainWithCallback(request *SetRoutineSubdoma
 // SetRoutineSubdomainRequest is the request struct for api SetRoutineSubdomain
 type SetRoutineSubdomainRequest struct {
 	*requests.RpcRequest
-	Subdomains string           `position:"Body" name:"Subdomains"`
-	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
+	Subdomains string `position:"Body" name:"Subdomains"`
 }
 
 // SetRoutineSubdomainResponse is the response struct for api SetRoutineSubdomain

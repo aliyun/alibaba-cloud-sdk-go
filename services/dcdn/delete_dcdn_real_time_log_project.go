@@ -71,8 +71,7 @@ func (client *Client) DeleteDcdnRealTimeLogProjectWithCallback(request *DeleteDc
 // DeleteDcdnRealTimeLogProjectRequest is the request struct for api DeleteDcdnRealTimeLogProject
 type DeleteDcdnRealTimeLogProjectRequest struct {
 	*requests.RpcRequest
-	ProjectName string           `position:"Query" name:"ProjectName"`
-	OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
+	ProjectName string `position:"Query" name:"ProjectName"`
 }
 
 // DeleteDcdnRealTimeLogProjectResponse is the response struct for api DeleteDcdnRealTimeLogProject

@@ -71,9 +71,8 @@ func (client *Client) UploadRoutineCodeWithCallback(request *UploadRoutineCodeRe
 // UploadRoutineCodeRequest is the request struct for api UploadRoutineCode
 type UploadRoutineCodeRequest struct {
 	*requests.RpcRequest
-	CodeDescription string           `position:"Body" name:"CodeDescription"`
-	OwnerId         requests.Integer `position:"Query" name:"OwnerId"`
-	Name            string           `position:"Body" name:"Name"`
+	CodeDescription string `position:"Body" name:"CodeDescription"`
+	Name            string `position:"Body" name:"Name"`
 }
 
 // UploadRoutineCodeResponse is the response struct for api UploadRoutineCode

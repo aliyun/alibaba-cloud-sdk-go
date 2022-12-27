@@ -72,7 +72,6 @@ func (client *Client) DescribeDcdnDeliverListWithCallback(request *DescribeDcdnD
 type DescribeDcdnDeliverListRequest struct {
 	*requests.RpcRequest
 	DeliverId requests.Integer `position:"Query" name:"DeliverId"`
-	OwnerId   requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeDcdnDeliverListResponse is the response struct for api DescribeDcdnDeliverList

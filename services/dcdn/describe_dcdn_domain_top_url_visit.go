@@ -71,10 +71,9 @@ func (client *Client) DescribeDcdnDomainTopUrlVisitWithCallback(request *Describ
 // DescribeDcdnDomainTopUrlVisitRequest is the request struct for api DescribeDcdnDomainTopUrlVisit
 type DescribeDcdnDomainTopUrlVisitRequest struct {
 	*requests.RpcRequest
-	StartTime  string           `position:"Query" name:"StartTime"`
-	DomainName string           `position:"Query" name:"DomainName"`
-	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
-	SortBy     string           `position:"Query" name:"SortBy"`
+	DomainName string `position:"Query" name:"DomainName"`
+	SortBy     string `position:"Query" name:"SortBy"`
+	StartTime  string `position:"Query" name:"StartTime"`
 }
 
 // DescribeDcdnDomainTopUrlVisitResponse is the response struct for api DescribeDcdnDomainTopUrlVisit

@@ -71,11 +71,10 @@ func (client *Client) ListDcdnRealTimeDeliveryProjectWithCallback(request *ListD
 // ListDcdnRealTimeDeliveryProjectRequest is the request struct for api ListDcdnRealTimeDeliveryProject
 type ListDcdnRealTimeDeliveryProjectRequest struct {
 	*requests.RpcRequest
+	DomainName   string           `position:"Query" name:"DomainName"`
+	PageSize     requests.Integer `position:"Query" name:"PageSize"`
 	PageNumber   requests.Integer `position:"Query" name:"PageNumber"`
 	BusinessType string           `position:"Query" name:"BusinessType"`
-	PageSize     requests.Integer `position:"Query" name:"PageSize"`
-	DomainName   string           `position:"Query" name:"DomainName"`
-	OwnerId      requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // ListDcdnRealTimeDeliveryProjectResponse is the response struct for api ListDcdnRealTimeDeliveryProject

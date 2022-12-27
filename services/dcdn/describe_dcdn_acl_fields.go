@@ -71,8 +71,7 @@ func (client *Client) DescribeDcdnAclFieldsWithCallback(request *DescribeDcdnAcl
 // DescribeDcdnAclFieldsRequest is the request struct for api DescribeDcdnAclFields
 type DescribeDcdnAclFieldsRequest struct {
 	*requests.RpcRequest
-	Lang    string           `position:"Query" name:"Lang"`
-	OwnerId requests.Integer `position:"Query" name:"OwnerId"`
+	Lang string `position:"Query" name:"Lang"`
 }
 
 // DescribeDcdnAclFieldsResponse is the response struct for api DescribeDcdnAclFields

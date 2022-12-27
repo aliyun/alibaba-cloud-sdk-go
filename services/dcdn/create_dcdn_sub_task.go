@@ -71,9 +71,8 @@ func (client *Client) CreateDcdnSubTaskWithCallback(request *CreateDcdnSubTaskRe
 // CreateDcdnSubTaskRequest is the request struct for api CreateDcdnSubTask
 type CreateDcdnSubTaskRequest struct {
 	*requests.RpcRequest
-	DomainName string           `position:"Body" name:"DomainName"`
-	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
-	ReportIds  string           `position:"Body" name:"ReportIds"`
+	ReportIds  string `position:"Body" name:"ReportIds"`
+	DomainName string `position:"Body" name:"DomainName"`
 }
 
 // CreateDcdnSubTaskResponse is the response struct for api CreateDcdnSubTask

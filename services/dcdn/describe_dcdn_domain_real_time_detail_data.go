@@ -71,15 +71,14 @@ func (client *Client) DescribeDcdnDomainRealTimeDetailDataWithCallback(request *
 // DescribeDcdnDomainRealTimeDetailDataRequest is the request struct for api DescribeDcdnDomainRealTimeDetailData
 type DescribeDcdnDomainRealTimeDetailDataRequest struct {
 	*requests.RpcRequest
-	LocationNameEn string           `position:"Query" name:"LocationNameEn"`
-	StartTime      string           `position:"Query" name:"StartTime"`
-	IspNameEn      string           `position:"Query" name:"IspNameEn"`
-	Merge          string           `position:"Query" name:"Merge"`
-	DomainName     string           `position:"Query" name:"DomainName"`
-	EndTime        string           `position:"Query" name:"EndTime"`
-	MergeLocIsp    string           `position:"Query" name:"MergeLocIsp"`
-	OwnerId        requests.Integer `position:"Query" name:"OwnerId"`
-	Field          string           `position:"Query" name:"Field"`
+	Field          string `position:"Query" name:"Field"`
+	Merge          string `position:"Query" name:"Merge"`
+	DomainName     string `position:"Query" name:"DomainName"`
+	EndTime        string `position:"Query" name:"EndTime"`
+	MergeLocIsp    string `position:"Query" name:"MergeLocIsp"`
+	LocationNameEn string `position:"Query" name:"LocationNameEn"`
+	StartTime      string `position:"Query" name:"StartTime"`
+	IspNameEn      string `position:"Query" name:"IspNameEn"`
 }
 
 // DescribeDcdnDomainRealTimeDetailDataResponse is the response struct for api DescribeDcdnDomainRealTimeDetailData

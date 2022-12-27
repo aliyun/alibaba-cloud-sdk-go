@@ -71,9 +71,8 @@ func (client *Client) UploadStagingRoutineCodeWithCallback(request *UploadStagin
 // UploadStagingRoutineCodeRequest is the request struct for api UploadStagingRoutineCode
 type UploadStagingRoutineCodeRequest struct {
 	*requests.RpcRequest
-	CodeDescription string           `position:"Body" name:"CodeDescription"`
-	OwnerId         requests.Integer `position:"Query" name:"OwnerId"`
-	Name            string           `position:"Body" name:"Name"`
+	CodeDescription string `position:"Body" name:"CodeDescription"`
+	Name            string `position:"Body" name:"Name"`
 }
 
 // UploadStagingRoutineCodeResponse is the response struct for api UploadStagingRoutineCode

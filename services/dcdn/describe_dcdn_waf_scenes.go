@@ -71,8 +71,7 @@ func (client *Client) DescribeDcdnWafScenesWithCallback(request *DescribeDcdnWaf
 // DescribeDcdnWafScenesRequest is the request struct for api DescribeDcdnWafScenes
 type DescribeDcdnWafScenesRequest struct {
 	*requests.RpcRequest
-	DefenseScenes string           `position:"Query" name:"DefenseScenes"`
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	DefenseScenes string `position:"Query" name:"DefenseScenes"`
 }
 
 // DescribeDcdnWafScenesResponse is the response struct for api DescribeDcdnWafScenes

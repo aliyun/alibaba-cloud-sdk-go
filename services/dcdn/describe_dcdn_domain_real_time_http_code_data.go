@@ -71,12 +71,11 @@ func (client *Client) DescribeDcdnDomainRealTimeHttpCodeDataWithCallback(request
 // DescribeDcdnDomainRealTimeHttpCodeDataRequest is the request struct for api DescribeDcdnDomainRealTimeHttpCodeData
 type DescribeDcdnDomainRealTimeHttpCodeDataRequest struct {
 	*requests.RpcRequest
-	LocationNameEn string           `position:"Query" name:"LocationNameEn"`
-	StartTime      string           `position:"Query" name:"StartTime"`
-	IspNameEn      string           `position:"Query" name:"IspNameEn"`
-	DomainName     string           `position:"Query" name:"DomainName"`
-	EndTime        string           `position:"Query" name:"EndTime"`
-	OwnerId        requests.Integer `position:"Query" name:"OwnerId"`
+	DomainName     string `position:"Query" name:"DomainName"`
+	EndTime        string `position:"Query" name:"EndTime"`
+	LocationNameEn string `position:"Query" name:"LocationNameEn"`
+	StartTime      string `position:"Query" name:"StartTime"`
+	IspNameEn      string `position:"Query" name:"IspNameEn"`
 }
 
 // DescribeDcdnDomainRealTimeHttpCodeDataResponse is the response struct for api DescribeDcdnDomainRealTimeHttpCodeData

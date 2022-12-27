@@ -71,10 +71,9 @@ func (client *Client) DescribeDcdnUserSecDropWithCallback(request *DescribeDcdnU
 // DescribeDcdnUserSecDropRequest is the request struct for api DescribeDcdnUserSecDrop
 type DescribeDcdnUserSecDropRequest struct {
 	*requests.RpcRequest
-	Data    string           `position:"Query" name:"Data"`
-	OwnerId requests.Integer `position:"Query" name:"OwnerId"`
-	Metric  string           `position:"Query" name:"Metric"`
-	SecFunc string           `position:"Query" name:"SecFunc"`
+	Data    string `position:"Query" name:"Data"`
+	Metric  string `position:"Query" name:"Metric"`
+	SecFunc string `position:"Query" name:"SecFunc"`
 }
 
 // DescribeDcdnUserSecDropResponse is the response struct for api DescribeDcdnUserSecDrop

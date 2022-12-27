@@ -71,15 +71,14 @@ func (client *Client) DescribeDcdnDomainIpaTrafficDataWithCallback(request *Desc
 // DescribeDcdnDomainIpaTrafficDataRequest is the request struct for api DescribeDcdnDomainIpaTrafficData
 type DescribeDcdnDomainIpaTrafficDataRequest struct {
 	*requests.RpcRequest
-	LocationNameEn string           `position:"Query" name:"LocationNameEn"`
-	StartTime      string           `position:"Query" name:"StartTime"`
-	IspNameEn      string           `position:"Query" name:"IspNameEn"`
-	FixTimeGap     string           `position:"Query" name:"FixTimeGap"`
-	TimeMerge      string           `position:"Query" name:"TimeMerge"`
-	DomainName     string           `position:"Query" name:"DomainName"`
-	EndTime        string           `position:"Query" name:"EndTime"`
-	OwnerId        requests.Integer `position:"Query" name:"OwnerId"`
-	Interval       string           `position:"Query" name:"Interval"`
+	FixTimeGap     string `position:"Query" name:"FixTimeGap"`
+	TimeMerge      string `position:"Query" name:"TimeMerge"`
+	DomainName     string `position:"Query" name:"DomainName"`
+	EndTime        string `position:"Query" name:"EndTime"`
+	Interval       string `position:"Query" name:"Interval"`
+	LocationNameEn string `position:"Query" name:"LocationNameEn"`
+	StartTime      string `position:"Query" name:"StartTime"`
+	IspNameEn      string `position:"Query" name:"IspNameEn"`
 }
 
 // DescribeDcdnDomainIpaTrafficDataResponse is the response struct for api DescribeDcdnDomainIpaTrafficData

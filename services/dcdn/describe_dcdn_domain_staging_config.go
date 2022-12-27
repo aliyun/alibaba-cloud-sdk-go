@@ -71,9 +71,8 @@ func (client *Client) DescribeDcdnDomainStagingConfigWithCallback(request *Descr
 // DescribeDcdnDomainStagingConfigRequest is the request struct for api DescribeDcdnDomainStagingConfig
 type DescribeDcdnDomainStagingConfigRequest struct {
 	*requests.RpcRequest
-	FunctionNames string           `position:"Query" name:"FunctionNames"`
-	DomainName    string           `position:"Query" name:"DomainName"`
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	FunctionNames string `position:"Query" name:"FunctionNames"`
+	DomainName    string `position:"Query" name:"DomainName"`
 }
 
 // DescribeDcdnDomainStagingConfigResponse is the response struct for api DescribeDcdnDomainStagingConfig

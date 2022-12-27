@@ -71,10 +71,9 @@ func (client *Client) DescribeDcdnDomainTopReferVisitWithCallback(request *Descr
 // DescribeDcdnDomainTopReferVisitRequest is the request struct for api DescribeDcdnDomainTopReferVisit
 type DescribeDcdnDomainTopReferVisitRequest struct {
 	*requests.RpcRequest
-	StartTime  string           `position:"Query" name:"StartTime"`
-	DomainName string           `position:"Query" name:"DomainName"`
-	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
-	SortBy     string           `position:"Query" name:"SortBy"`
+	DomainName string `position:"Query" name:"DomainName"`
+	SortBy     string `position:"Query" name:"SortBy"`
+	StartTime  string `position:"Query" name:"StartTime"`
 }
 
 // DescribeDcdnDomainTopReferVisitResponse is the response struct for api DescribeDcdnDomainTopReferVisit

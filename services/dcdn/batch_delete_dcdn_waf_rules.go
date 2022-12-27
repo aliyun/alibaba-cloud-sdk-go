@@ -71,8 +71,7 @@ func (client *Client) BatchDeleteDcdnWafRulesWithCallback(request *BatchDeleteDc
 // BatchDeleteDcdnWafRulesRequest is the request struct for api BatchDeleteDcdnWafRules
 type BatchDeleteDcdnWafRulesRequest struct {
 	*requests.RpcRequest
-	OwnerId requests.Integer `position:"Query" name:"OwnerId"`
-	RuleIds string           `position:"Body" name:"RuleIds"`
+	RuleIds string `position:"Body" name:"RuleIds"`
 }
 
 // BatchDeleteDcdnWafRulesResponse is the response struct for api BatchDeleteDcdnWafRules

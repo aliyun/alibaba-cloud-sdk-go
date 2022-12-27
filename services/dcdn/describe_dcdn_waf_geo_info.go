@@ -71,8 +71,7 @@ func (client *Client) DescribeDcdnWafGeoInfoWithCallback(request *DescribeDcdnWa
 // DescribeDcdnWafGeoInfoRequest is the request struct for api DescribeDcdnWafGeoInfo
 type DescribeDcdnWafGeoInfoRequest struct {
 	*requests.RpcRequest
-	Language string           `position:"Query" name:"Language"`
-	OwnerId  requests.Integer `position:"Query" name:"OwnerId"`
+	Language string `position:"Query" name:"Language"`
 }
 
 // DescribeDcdnWafGeoInfoResponse is the response struct for api DescribeDcdnWafGeoInfo

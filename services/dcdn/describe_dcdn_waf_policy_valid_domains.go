@@ -71,11 +71,10 @@ func (client *Client) DescribeDcdnWafPolicyValidDomainsWithCallback(request *Des
 // DescribeDcdnWafPolicyValidDomainsRequest is the request struct for api DescribeDcdnWafPolicyValidDomains
 type DescribeDcdnWafPolicyValidDomainsRequest struct {
 	*requests.RpcRequest
-	PageNumber     requests.Integer `position:"Query" name:"PageNumber"`
-	PageSize       requests.Integer `position:"Query" name:"PageSize"`
 	DefenseScene   string           `position:"Query" name:"DefenseScene"`
 	DomainNameLike string           `position:"Query" name:"DomainNameLike"`
-	OwnerId        requests.Integer `position:"Query" name:"OwnerId"`
+	PageSize       requests.Integer `position:"Query" name:"PageSize"`
+	PageNumber     requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 // DescribeDcdnWafPolicyValidDomainsResponse is the response struct for api DescribeDcdnWafPolicyValidDomains

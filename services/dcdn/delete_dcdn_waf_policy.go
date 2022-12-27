@@ -72,7 +72,6 @@ func (client *Client) DeleteDcdnWafPolicyWithCallback(request *DeleteDcdnWafPoli
 type DeleteDcdnWafPolicyRequest struct {
 	*requests.RpcRequest
 	PolicyId requests.Integer `position:"Body" name:"PolicyId"`
-	OwnerId  requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DeleteDcdnWafPolicyResponse is the response struct for api DeleteDcdnWafPolicy

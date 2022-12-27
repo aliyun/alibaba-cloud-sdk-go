@@ -71,11 +71,10 @@ func (client *Client) CreateDcdnWafPolicyWithCallback(request *CreateDcdnWafPoli
 // CreateDcdnWafPolicyRequest is the request struct for api CreateDcdnWafPolicy
 type CreateDcdnWafPolicyRequest struct {
 	*requests.RpcRequest
-	PolicyStatus string           `position:"Body" name:"PolicyStatus"`
-	DefenseScene string           `position:"Body" name:"DefenseScene"`
-	PolicyType   string           `position:"Body" name:"PolicyType"`
-	OwnerId      requests.Integer `position:"Query" name:"OwnerId"`
-	PolicyName   string           `position:"Body" name:"PolicyName"`
+	DefenseScene string `position:"Body" name:"DefenseScene"`
+	PolicyType   string `position:"Body" name:"PolicyType"`
+	PolicyStatus string `position:"Body" name:"PolicyStatus"`
+	PolicyName   string `position:"Body" name:"PolicyName"`
 }
 
 // CreateDcdnWafPolicyResponse is the response struct for api CreateDcdnWafPolicy

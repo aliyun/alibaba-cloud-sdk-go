@@ -71,8 +71,7 @@ func (client *Client) DescribeDcdnVerifyContentWithCallback(request *DescribeDcd
 // DescribeDcdnVerifyContentRequest is the request struct for api DescribeDcdnVerifyContent
 type DescribeDcdnVerifyContentRequest struct {
 	*requests.RpcRequest
-	DomainName string           `position:"Query" name:"DomainName"`
-	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
+	DomainName string `position:"Query" name:"DomainName"`
 }
 
 // DescribeDcdnVerifyContentResponse is the response struct for api DescribeDcdnVerifyContent

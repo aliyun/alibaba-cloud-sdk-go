@@ -71,9 +71,8 @@ func (client *Client) ModifyDcdnWafPolicyWithCallback(request *ModifyDcdnWafPoli
 // ModifyDcdnWafPolicyRequest is the request struct for api ModifyDcdnWafPolicy
 type ModifyDcdnWafPolicyRequest struct {
 	*requests.RpcRequest
-	PolicyStatus string           `position:"Body" name:"PolicyStatus"`
 	PolicyId     requests.Integer `position:"Body" name:"PolicyId"`
-	OwnerId      requests.Integer `position:"Query" name:"OwnerId"`
+	PolicyStatus string           `position:"Body" name:"PolicyStatus"`
 	PolicyName   string           `position:"Body" name:"PolicyName"`
 }
 

@@ -71,10 +71,9 @@ func (client *Client) CreateRoutineWithCallback(request *CreateRoutineRequest, c
 // CreateRoutineRequest is the request struct for api CreateRoutine
 type CreateRoutineRequest struct {
 	*requests.RpcRequest
-	Description string           `position:"Body" name:"Description"`
-	EnvConf     string           `position:"Body" name:"EnvConf"`
-	OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
-	Name        string           `position:"Body" name:"Name"`
+	EnvConf     string `position:"Body" name:"EnvConf"`
+	Name        string `position:"Body" name:"Name"`
+	Description string `position:"Body" name:"Description"`
 }
 
 // CreateRoutineResponse is the response struct for api CreateRoutine

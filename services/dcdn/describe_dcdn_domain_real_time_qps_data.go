@@ -71,12 +71,11 @@ func (client *Client) DescribeDcdnDomainRealTimeQpsDataWithCallback(request *Des
 // DescribeDcdnDomainRealTimeQpsDataRequest is the request struct for api DescribeDcdnDomainRealTimeQpsData
 type DescribeDcdnDomainRealTimeQpsDataRequest struct {
 	*requests.RpcRequest
-	LocationNameEn string           `position:"Query" name:"LocationNameEn"`
-	IspNameEn      string           `position:"Query" name:"IspNameEn"`
-	StartTime      string           `position:"Query" name:"StartTime"`
-	DomainName     string           `position:"Query" name:"DomainName"`
-	EndTime        string           `position:"Query" name:"EndTime"`
-	OwnerId        requests.Integer `position:"Query" name:"OwnerId"`
+	DomainName     string `position:"Query" name:"DomainName"`
+	EndTime        string `position:"Query" name:"EndTime"`
+	LocationNameEn string `position:"Query" name:"LocationNameEn"`
+	IspNameEn      string `position:"Query" name:"IspNameEn"`
+	StartTime      string `position:"Query" name:"StartTime"`
 }
 
 // DescribeDcdnDomainRealTimeQpsDataResponse is the response struct for api DescribeDcdnDomainRealTimeQpsData

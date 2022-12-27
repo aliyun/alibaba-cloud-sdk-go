@@ -71,7 +71,6 @@ func (client *Client) DescribeDcdnUserTagsWithCallback(request *DescribeDcdnUser
 // DescribeDcdnUserTagsRequest is the request struct for api DescribeDcdnUserTags
 type DescribeDcdnUserTagsRequest struct {
 	*requests.RpcRequest
-	OwnerId requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeDcdnUserTagsResponse is the response struct for api DescribeDcdnUserTags

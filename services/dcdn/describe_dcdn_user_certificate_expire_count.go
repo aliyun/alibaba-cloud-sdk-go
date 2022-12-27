@@ -71,7 +71,6 @@ func (client *Client) DescribeDcdnUserCertificateExpireCountWithCallback(request
 // DescribeDcdnUserCertificateExpireCountRequest is the request struct for api DescribeDcdnUserCertificateExpireCount
 type DescribeDcdnUserCertificateExpireCountRequest struct {
 	*requests.RpcRequest
-	OwnerId requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeDcdnUserCertificateExpireCountResponse is the response struct for api DescribeDcdnUserCertificateExpireCount

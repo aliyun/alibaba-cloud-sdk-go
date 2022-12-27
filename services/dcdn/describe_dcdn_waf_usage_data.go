@@ -71,12 +71,11 @@ func (client *Client) DescribeDcdnWafUsageDataWithCallback(request *DescribeDcdn
 // DescribeDcdnWafUsageDataRequest is the request struct for api DescribeDcdnWafUsageData
 type DescribeDcdnWafUsageDataRequest struct {
 	*requests.RpcRequest
-	StartTime  string           `position:"Query" name:"StartTime"`
-	SplitBy    string           `position:"Query" name:"SplitBy"`
-	DomainName string           `position:"Query" name:"DomainName"`
-	EndTime    string           `position:"Query" name:"EndTime"`
-	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
-	Interval   string           `position:"Query" name:"Interval"`
+	DomainName string `position:"Query" name:"DomainName"`
+	EndTime    string `position:"Query" name:"EndTime"`
+	Interval   string `position:"Query" name:"Interval"`
+	StartTime  string `position:"Query" name:"StartTime"`
+	SplitBy    string `position:"Query" name:"SplitBy"`
 }
 
 // DescribeDcdnWafUsageDataResponse is the response struct for api DescribeDcdnWafUsageData

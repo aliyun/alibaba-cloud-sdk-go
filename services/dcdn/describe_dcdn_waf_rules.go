@@ -71,10 +71,9 @@ func (client *Client) DescribeDcdnWafRulesWithCallback(request *DescribeDcdnWafR
 // DescribeDcdnWafRulesRequest is the request struct for api DescribeDcdnWafRules
 type DescribeDcdnWafRulesRequest struct {
 	*requests.RpcRequest
-	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
-	PageSize   requests.Integer `position:"Query" name:"PageSize"`
-	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
 	QueryArgs  string           `position:"Query" name:"QueryArgs"`
+	PageSize   requests.Integer `position:"Query" name:"PageSize"`
+	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 // DescribeDcdnWafRulesResponse is the response struct for api DescribeDcdnWafRules

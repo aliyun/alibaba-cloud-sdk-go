@@ -71,20 +71,19 @@ func (client *Client) DescribeDcdnDomainLogWithCallback(request *DescribeDcdnDom
 // DescribeDcdnDomainLogRequest is the request struct for api DescribeDcdnDomainLog
 type DescribeDcdnDomainLogRequest struct {
 	*requests.RpcRequest
+	DomainName string           `position:"Query" name:"DomainName"`
+	PageSize   requests.Integer `position:"Query" name:"PageSize"`
+	EndTime    string           `position:"Query" name:"EndTime"`
 	StartTime  string           `position:"Query" name:"StartTime"`
 	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
-	PageSize   requests.Integer `position:"Query" name:"PageSize"`
-	DomainName string           `position:"Query" name:"DomainName"`
-	EndTime    string           `position:"Query" name:"EndTime"`
-	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeDcdnDomainLogResponse is the response struct for api DescribeDcdnDomainLog
 type DescribeDcdnDomainLogResponse struct {
 	*responses.BaseResponse
-	DomainName       string           `json:"DomainName" xml:"DomainName"`
-	RequestId        string           `json:"RequestId" xml:"RequestId"`
-	DomainLogDetails DomainLogDetails `json:"DomainLogDetails" xml:"DomainLogDetails"`
+	DomainName       string                                  `json:"DomainName" xml:"DomainName"`
+	RequestId        string                                  `json:"RequestId" xml:"RequestId"`
+	DomainLogDetails DomainLogDetailsInDescribeDcdnDomainLog `json:"DomainLogDetails" xml:"DomainLogDetails"`
 }
 
 // CreateDescribeDcdnDomainLogRequest creates a request to invoke DescribeDcdnDomainLog API

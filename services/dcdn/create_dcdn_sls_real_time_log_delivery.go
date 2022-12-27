@@ -71,15 +71,14 @@ func (client *Client) CreateDcdnSLSRealTimeLogDeliveryWithCallback(request *Crea
 // CreateDcdnSLSRealTimeLogDeliveryRequest is the request struct for api CreateDcdnSLSRealTimeLogDelivery
 type CreateDcdnSLSRealTimeLogDeliveryRequest struct {
 	*requests.RpcRequest
-	SLSLogStore  string           `position:"Body" name:"SLSLogStore"`
-	SLSProject   string           `position:"Body" name:"SLSProject"`
-	BusinessType string           `position:"Body" name:"BusinessType"`
-	SLSRegion    string           `position:"Body" name:"SLSRegion"`
-	ProjectName  string           `position:"Body" name:"ProjectName"`
-	DomainName   string           `position:"Body" name:"DomainName"`
-	SamplingRate string           `position:"Body" name:"SamplingRate"`
-	DataCenter   string           `position:"Body" name:"DataCenter"`
-	OwnerId      requests.Integer `position:"Query" name:"OwnerId"`
+	SLSLogStore  string `position:"Body" name:"SLSLogStore"`
+	ProjectName  string `position:"Body" name:"ProjectName"`
+	DomainName   string `position:"Body" name:"DomainName"`
+	SamplingRate string `position:"Body" name:"SamplingRate"`
+	DataCenter   string `position:"Body" name:"DataCenter"`
+	SLSProject   string `position:"Body" name:"SLSProject"`
+	SLSRegion    string `position:"Body" name:"SLSRegion"`
+	BusinessType string `position:"Body" name:"BusinessType"`
 }
 
 // CreateDcdnSLSRealTimeLogDeliveryResponse is the response struct for api CreateDcdnSLSRealTimeLogDelivery

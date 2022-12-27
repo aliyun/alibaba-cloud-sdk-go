@@ -71,7 +71,6 @@ func (client *Client) DescribeDcdnStagingIpWithCallback(request *DescribeDcdnSta
 // DescribeDcdnStagingIpRequest is the request struct for api DescribeDcdnStagingIp
 type DescribeDcdnStagingIpRequest struct {
 	*requests.RpcRequest
-	OwnerId requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeDcdnStagingIpResponse is the response struct for api DescribeDcdnStagingIp

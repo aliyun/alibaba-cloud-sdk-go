@@ -71,9 +71,8 @@ func (client *Client) DescribeDcdnWafFilterInfoWithCallback(request *DescribeDcd
 // DescribeDcdnWafFilterInfoRequest is the request struct for api DescribeDcdnWafFilterInfo
 type DescribeDcdnWafFilterInfoRequest struct {
 	*requests.RpcRequest
-	DefenseScenes string           `position:"Query" name:"DefenseScenes"`
-	Language      string           `position:"Query" name:"Language"`
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	DefenseScenes string `position:"Query" name:"DefenseScenes"`
+	Language      string `position:"Query" name:"Language"`
 }
 
 // DescribeDcdnWafFilterInfoResponse is the response struct for api DescribeDcdnWafFilterInfo

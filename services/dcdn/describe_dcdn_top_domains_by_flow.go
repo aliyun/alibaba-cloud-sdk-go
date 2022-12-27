@@ -71,10 +71,9 @@ func (client *Client) DescribeDcdnTopDomainsByFlowWithCallback(request *Describe
 // DescribeDcdnTopDomainsByFlowRequest is the request struct for api DescribeDcdnTopDomainsByFlow
 type DescribeDcdnTopDomainsByFlowRequest struct {
 	*requests.RpcRequest
-	StartTime string           `position:"Query" name:"StartTime"`
 	Limit     requests.Integer `position:"Query" name:"Limit"`
 	EndTime   string           `position:"Query" name:"EndTime"`
-	OwnerId   requests.Integer `position:"Query" name:"OwnerId"`
+	StartTime string           `position:"Query" name:"StartTime"`
 }
 
 // DescribeDcdnTopDomainsByFlowResponse is the response struct for api DescribeDcdnTopDomainsByFlow

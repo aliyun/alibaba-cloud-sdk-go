@@ -71,8 +71,7 @@ func (client *Client) DeleteRoutineWithCallback(request *DeleteRoutineRequest, c
 // DeleteRoutineRequest is the request struct for api DeleteRoutine
 type DeleteRoutineRequest struct {
 	*requests.RpcRequest
-	OwnerId requests.Integer `position:"Query" name:"OwnerId"`
-	Name    string           `position:"Body" name:"Name"`
+	Name string `position:"Body" name:"Name"`
 }
 
 // DeleteRoutineResponse is the response struct for api DeleteRoutine

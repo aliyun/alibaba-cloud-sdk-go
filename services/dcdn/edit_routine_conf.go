@@ -71,10 +71,9 @@ func (client *Client) EditRoutineConfWithCallback(request *EditRoutineConfReques
 // EditRoutineConfRequest is the request struct for api EditRoutineConf
 type EditRoutineConfRequest struct {
 	*requests.RpcRequest
-	Description string           `position:"Body" name:"Description"`
-	EnvConf     string           `position:"Body" name:"EnvConf"`
-	OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
-	Name        string           `position:"Body" name:"Name"`
+	EnvConf     string `position:"Body" name:"EnvConf"`
+	Name        string `position:"Body" name:"Name"`
+	Description string `position:"Body" name:"Description"`
 }
 
 // EditRoutineConfResponse is the response struct for api EditRoutineConf

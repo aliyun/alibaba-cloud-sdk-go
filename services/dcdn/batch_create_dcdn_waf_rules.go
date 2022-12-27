@@ -72,7 +72,6 @@ func (client *Client) BatchCreateDcdnWafRulesWithCallback(request *BatchCreateDc
 type BatchCreateDcdnWafRulesRequest struct {
 	*requests.RpcRequest
 	PolicyId    requests.Integer `position:"Body" name:"PolicyId"`
-	OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
 	RuleConfigs string           `position:"Body" name:"RuleConfigs"`
 }
 

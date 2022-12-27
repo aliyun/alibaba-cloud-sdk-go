@@ -71,9 +71,8 @@ func (client *Client) CommitStagingRoutineCodeWithCallback(request *CommitStagin
 // CommitStagingRoutineCodeRequest is the request struct for api CommitStagingRoutineCode
 type CommitStagingRoutineCodeRequest struct {
 	*requests.RpcRequest
-	CodeDescription string           `position:"Body" name:"CodeDescription"`
-	OwnerId         requests.Integer `position:"Query" name:"OwnerId"`
-	Name            string           `position:"Body" name:"Name"`
+	CodeDescription string `position:"Body" name:"CodeDescription"`
+	Name            string `position:"Body" name:"Name"`
 }
 
 // CommitStagingRoutineCodeResponse is the response struct for api CommitStagingRoutineCode

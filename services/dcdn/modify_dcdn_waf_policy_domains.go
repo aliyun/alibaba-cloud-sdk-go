@@ -74,7 +74,6 @@ type ModifyDcdnWafPolicyDomainsRequest struct {
 	PolicyId      requests.Integer `position:"Body" name:"PolicyId"`
 	BindDomains   string           `position:"Body" name:"BindDomains"`
 	UnbindDomains string           `position:"Body" name:"UnbindDomains"`
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // ModifyDcdnWafPolicyDomainsResponse is the response struct for api ModifyDcdnWafPolicyDomains

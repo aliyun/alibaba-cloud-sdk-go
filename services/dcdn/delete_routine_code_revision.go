@@ -71,9 +71,8 @@ func (client *Client) DeleteRoutineCodeRevisionWithCallback(request *DeleteRouti
 // DeleteRoutineCodeRevisionRequest is the request struct for api DeleteRoutineCodeRevision
 type DeleteRoutineCodeRevisionRequest struct {
 	*requests.RpcRequest
-	SelectCodeRevision string           `position:"Body" name:"SelectCodeRevision"`
-	OwnerId            requests.Integer `position:"Query" name:"OwnerId"`
-	Name               string           `position:"Body" name:"Name"`
+	Name               string `position:"Body" name:"Name"`
+	SelectCodeRevision string `position:"Body" name:"SelectCodeRevision"`
 }
 
 // DeleteRoutineCodeRevisionResponse is the response struct for api DeleteRoutineCodeRevision

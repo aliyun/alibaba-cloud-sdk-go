@@ -74,7 +74,6 @@ type DescribeDcdnIpaUserDomainsRequest struct {
 	PageNumber       requests.Integer                 `position:"Query" name:"PageNumber"`
 	CheckDomainShow  requests.Boolean                 `position:"Query" name:"CheckDomainShow"`
 	ResourceGroupId  string                           `position:"Query" name:"ResourceGroupId"`
-	SecurityToken    string                           `position:"Query" name:"SecurityToken"`
 	PageSize         requests.Integer                 `position:"Query" name:"PageSize"`
 	Tag              *[]DescribeDcdnIpaUserDomainsTag `position:"Query" name:"Tag"  type:"Repeated"`
 	FuncFilter       string                           `position:"Query" name:"FuncFilter"`

@@ -71,10 +71,9 @@ func (client *Client) BatchSetDcdnWafDomainConfigsWithCallback(request *BatchSet
 // BatchSetDcdnWafDomainConfigsRequest is the request struct for api BatchSetDcdnWafDomainConfigs
 type BatchSetDcdnWafDomainConfigsRequest struct {
 	*requests.RpcRequest
-	DomainNames   string           `position:"Body" name:"DomainNames"`
-	ClientIpTag   string           `position:"Body" name:"ClientIpTag"`
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
-	DefenseStatus string           `position:"Body" name:"DefenseStatus"`
+	DomainNames   string `position:"Body" name:"DomainNames"`
+	ClientIpTag   string `position:"Body" name:"ClientIpTag"`
+	DefenseStatus string `position:"Body" name:"DefenseStatus"`
 }
 
 // BatchSetDcdnWafDomainConfigsResponse is the response struct for api BatchSetDcdnWafDomainConfigs

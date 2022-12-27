@@ -71,7 +71,6 @@ func (client *Client) DescribeDcdnWafSpecInfoWithCallback(request *DescribeDcdnW
 // DescribeDcdnWafSpecInfoRequest is the request struct for api DescribeDcdnWafSpecInfo
 type DescribeDcdnWafSpecInfoRequest struct {
 	*requests.RpcRequest
-	OwnerId requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeDcdnWafSpecInfoResponse is the response struct for api DescribeDcdnWafSpecInfo

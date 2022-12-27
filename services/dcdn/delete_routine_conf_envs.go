@@ -71,9 +71,8 @@ func (client *Client) DeleteRoutineConfEnvsWithCallback(request *DeleteRoutineCo
 // DeleteRoutineConfEnvsRequest is the request struct for api DeleteRoutineConfEnvs
 type DeleteRoutineConfEnvsRequest struct {
 	*requests.RpcRequest
-	Envs    string           `position:"Body" name:"Envs"`
-	OwnerId requests.Integer `position:"Query" name:"OwnerId"`
-	Name    string           `position:"Body" name:"Name"`
+	Name string `position:"Body" name:"Name"`
+	Envs string `position:"Body" name:"Envs"`
 }
 
 // DeleteRoutineConfEnvsResponse is the response struct for api DeleteRoutineConfEnvs

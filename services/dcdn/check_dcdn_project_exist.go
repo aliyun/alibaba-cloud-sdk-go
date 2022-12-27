@@ -71,8 +71,7 @@ func (client *Client) CheckDcdnProjectExistWithCallback(request *CheckDcdnProjec
 // CheckDcdnProjectExistRequest is the request struct for api CheckDcdnProjectExist
 type CheckDcdnProjectExistRequest struct {
 	*requests.RpcRequest
-	ProjectName string           `position:"Query" name:"ProjectName"`
-	OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
+	ProjectName string `position:"Query" name:"ProjectName"`
 }
 
 // CheckDcdnProjectExistResponse is the response struct for api CheckDcdnProjectExist

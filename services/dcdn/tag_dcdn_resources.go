@@ -71,9 +71,8 @@ func (client *Client) TagDcdnResourcesWithCallback(request *TagDcdnResourcesRequ
 // TagDcdnResourcesRequest is the request struct for api TagDcdnResources
 type TagDcdnResourcesRequest struct {
 	*requests.RpcRequest
-	Tag          *[]TagDcdnResourcesTag `position:"Query" name:"Tag"  type:"Repeated"`
 	ResourceId   *[]string              `position:"Query" name:"ResourceId"  type:"Repeated"`
-	OwnerId      requests.Integer       `position:"Query" name:"OwnerId"`
+	Tag          *[]TagDcdnResourcesTag `position:"Query" name:"Tag"  type:"Repeated"`
 	ResourceType string                 `position:"Query" name:"ResourceType"`
 }
 

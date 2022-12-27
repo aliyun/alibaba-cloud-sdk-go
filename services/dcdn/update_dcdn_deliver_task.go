@@ -72,12 +72,11 @@ func (client *Client) UpdateDcdnDeliverTaskWithCallback(request *UpdateDcdnDeliv
 type UpdateDcdnDeliverTaskRequest struct {
 	*requests.RpcRequest
 	Reports    string           `position:"Body" name:"Reports"`
-	Deliver    string           `position:"Body" name:"Deliver"`
-	DeliverId  requests.Integer `position:"Body" name:"DeliverId"`
-	DomainName string           `position:"Body" name:"DomainName"`
-	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
 	Schedule   string           `position:"Body" name:"Schedule"`
 	Name       string           `position:"Body" name:"Name"`
+	DomainName string           `position:"Body" name:"DomainName"`
+	Deliver    string           `position:"Body" name:"Deliver"`
+	DeliverId  requests.Integer `position:"Body" name:"DeliverId"`
 }
 
 // UpdateDcdnDeliverTaskResponse is the response struct for api UpdateDcdnDeliverTask

@@ -71,10 +71,9 @@ func (client *Client) ModifyDcdnWafRuleWithCallback(request *ModifyDcdnWafRuleRe
 // ModifyDcdnWafRuleRequest is the request struct for api ModifyDcdnWafRule
 type ModifyDcdnWafRuleRequest struct {
 	*requests.RpcRequest
-	RuleName   string           `position:"Body" name:"RuleName"`
-	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
 	RuleConfig string           `position:"Body" name:"RuleConfig"`
 	RuleStatus string           `position:"Body" name:"RuleStatus"`
+	RuleName   string           `position:"Body" name:"RuleName"`
 	RuleId     requests.Integer `position:"Body" name:"RuleId"`
 }
 

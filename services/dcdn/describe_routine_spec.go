@@ -71,7 +71,6 @@ func (client *Client) DescribeRoutineSpecWithCallback(request *DescribeRoutineSp
 // DescribeRoutineSpecRequest is the request struct for api DescribeRoutineSpec
 type DescribeRoutineSpecRequest struct {
 	*requests.RpcRequest
-	OwnerId requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeRoutineSpecResponse is the response struct for api DescribeRoutineSpec

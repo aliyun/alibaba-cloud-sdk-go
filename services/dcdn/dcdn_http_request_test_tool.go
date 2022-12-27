@@ -71,15 +71,14 @@ func (client *Client) DcdnHttpRequestTestToolWithCallback(request *DcdnHttpReque
 // DcdnHttpRequestTestToolRequest is the request struct for api DcdnHttpRequestTestTool
 type DcdnHttpRequestTestToolRequest struct {
 	*requests.RpcRequest
-	ProxyIp string           `position:"Body" name:"ProxyIp"`
-	Scheme  string           `position:"Body" name:"Scheme"`
-	Body    string           `position:"Body" name:"Body"`
-	Host    string           `position:"Body" name:"Host"`
-	Method  string           `position:"Body" name:"Method"`
-	OwnerId requests.Integer `position:"Query" name:"OwnerId"`
-	Uri     string           `position:"Body" name:"Uri"`
-	Args    string           `position:"Body" name:"Args"`
-	Header  string           `position:"Body" name:"Header"`
+	Args    string `position:"Body" name:"Args"`
+	ProxyIp string `position:"Body" name:"ProxyIp"`
+	Method  string `position:"Body" name:"Method"`
+	Scheme  string `position:"Body" name:"Scheme"`
+	Host    string `position:"Body" name:"Host"`
+	Header  string `position:"Body" name:"Header"`
+	Body    string `position:"Body" name:"Body"`
+	Uri     string `position:"Body" name:"Uri"`
 }
 
 // DcdnHttpRequestTestToolResponse is the response struct for api DcdnHttpRequestTestTool
