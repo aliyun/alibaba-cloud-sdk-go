@@ -17,26 +17,12 @@ package config
 
 // ManagedRule is a nested struct in config response
 type ManagedRule struct {
-	CompulsoryInputParameterDetails map[string]interface{}   `json:"CompulsoryInputParameterDetails" xml:"CompulsoryInputParameterDetails"`
-	RiskLevel                       int                      `json:"RiskLevel" xml:"RiskLevel"`
-	HelpUrl                         string                   `json:"HelpUrl" xml:"HelpUrl"`
-	CreateTimestamp                 int64                    `json:"CreateTimestamp" xml:"CreateTimestamp"`
-	OptionalInputParameterDetails   map[string]interface{}   `json:"OptionalInputParameterDetails" xml:"OptionalInputParameterDetails"`
-	HelpHint                        string                   `json:"HelpHint" xml:"HelpHint"`
-	DefaultName                     string                   `json:"DefaultName" xml:"DefaultName"`
-	UseCases                        string                   `json:"UseCases" xml:"UseCases"`
-	ConfigRuleName                  string                   `json:"ConfigRuleName" xml:"ConfigRuleName"`
-	HelpUrls                        string                   `json:"HelpUrls" xml:"HelpUrls"`
-	RegionId                        string                   `json:"RegionId" xml:"RegionId"`
-	Identifier                      string                   `json:"Identifier" xml:"Identifier"`
-	HelpDoc                         string                   `json:"HelpDoc" xml:"HelpDoc"`
-	ReferenceCount                  int                      `json:"ReferenceCount" xml:"ReferenceCount"`
-	Description                     string                   `json:"Description" xml:"Description"`
-	ManagedRuleName                 string                   `json:"ManagedRuleName" xml:"ManagedRuleName"`
-	ServiceName                     string                   `json:"ServiceName" xml:"ServiceName"`
-	FunctionName                    string                   `json:"FunctionName" xml:"FunctionName"`
-	SourceConditions                []map[string]interface{} `json:"SourceConditions" xml:"SourceConditions"`
-	Labels                          []string                 `json:"Labels" xml:"Labels"`
-	Scope                           Scope                    `json:"Scope" xml:"Scope"`
-	SourceDetails                   []SourceDetailsItem      `json:"SourceDetails" xml:"SourceDetails"`
+	HelpUrl                         string                 `json:"HelpUrl" xml:"HelpUrl"`
+	Description                     string                 `json:"Description" xml:"Description"`
+	Identifier                      string                 `json:"Identifier" xml:"Identifier"`
+	OptionalInputParameterDetails   map[string]interface{} `json:"OptionalInputParameterDetails" xml:"OptionalInputParameterDetails"`
+	ManagedRuleName                 string                 `json:"ManagedRuleName" xml:"ManagedRuleName"`
+	CompulsoryInputParameterDetails map[string]interface{} `json:"CompulsoryInputParameterDetails" xml:"CompulsoryInputParameterDetails"`
+	Labels                          []string               `json:"Labels" xml:"Labels"`
+	SourceDetails                   []SourceDetailsItem    `json:"SourceDetails" xml:"SourceDetails"`
 }
