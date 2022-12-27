@@ -1,3 +1,7 @@
+2022-12-27 Version: v1.62.104
+- Generated 2018-05-10 for `Cdn`.
+- Add ModifyCdnDomainOwner.
+
 2022-12-27 Version: v1.62.103
 - Generated 2018-01-15 for `dcdn`.
 - Add DescribeDcdnWafLogs.

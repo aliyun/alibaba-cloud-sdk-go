@@ -17,5 +17,5 @@ package cdn
 
 // HttpCodeDataInDescribeDomainSrcHttpCodeData is a nested struct in cdn response
 type HttpCodeDataInDescribeDomainSrcHttpCodeData struct {
-	UsageData []UsageDataInDescribeDomainSrcHttpCodeData `json:"UsageData" xml:"UsageData"`
+	UsageData []UsageData `json:"UsageData" xml:"UsageData"`
 }
