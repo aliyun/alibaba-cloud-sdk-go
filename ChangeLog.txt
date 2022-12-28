@@ -1,3 +1,7 @@
+2022-12-28 Version: v1.62.106
+- Generated 2016-11-01 for `live`.
+- Live sdk update.
+
 2022-12-27 Version: v1.62.105
 - Generated 2017-11-10 for `Ens`.
 - Support Snapshot API.

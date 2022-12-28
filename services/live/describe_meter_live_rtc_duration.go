@@ -81,13 +81,13 @@ type DescribeMeterLiveRtcDurationRequest struct {
 // DescribeMeterLiveRtcDurationResponse is the response struct for api DescribeMeterLiveRtcDuration
 type DescribeMeterLiveRtcDurationResponse struct {
 	*responses.BaseResponse
-	RequestId            string     `json:"RequestId" xml:"RequestId"`
-	TotalSummaryDuration int64      `json:"TotalSummaryDuration" xml:"TotalSummaryDuration"`
-	AudioSummaryDuration int64      `json:"AudioSummaryDuration" xml:"AudioSummaryDuration"`
-	V480SummaryDuration  int64      `json:"V480SummaryDuration" xml:"V480SummaryDuration"`
-	V720SummaryDuration  int64      `json:"V720SummaryDuration" xml:"V720SummaryDuration"`
-	V1080SummaryDuration int64      `json:"V1080SummaryDuration" xml:"V1080SummaryDuration"`
-	Data                 []DataItem `json:"Data" xml:"Data"`
+	RequestId            string                                   `json:"RequestId" xml:"RequestId"`
+	TotalSummaryDuration int64                                    `json:"TotalSummaryDuration" xml:"TotalSummaryDuration"`
+	AudioSummaryDuration int64                                    `json:"AudioSummaryDuration" xml:"AudioSummaryDuration"`
+	V480SummaryDuration  int64                                    `json:"V480SummaryDuration" xml:"V480SummaryDuration"`
+	V720SummaryDuration  int64                                    `json:"V720SummaryDuration" xml:"V720SummaryDuration"`
+	V1080SummaryDuration int64                                    `json:"V1080SummaryDuration" xml:"V1080SummaryDuration"`
+	Data                 []DataItemInDescribeMeterLiveRtcDuration `json:"Data" xml:"Data"`
 }
 
 // CreateDescribeMeterLiveRtcDurationRequest creates a request to invoke DescribeMeterLiveRtcDuration API
