@@ -17,8 +17,17 @@ package dds
 
 // Coupon is a nested struct in dds response
 type Coupon struct {
-	Name        string `json:"Name" xml:"Name"`
-	CouponNo    string `json:"CouponNo" xml:"CouponNo"`
-	IsSelected  string `json:"IsSelected" xml:"IsSelected"`
-	Description string `json:"Description" xml:"Description"`
+	Name                   string                 `json:"Name" xml:"Name"`
+	CouponNo               string                 `json:"CouponNo" xml:"CouponNo"`
+	PriceBreakThreshold    string                 `json:"PriceBreakThreshold" xml:"PriceBreakThreshold"`
+	IsSelected             string                 `json:"IsSelected" xml:"IsSelected"`
+	CanPromFee             string                 `json:"CanPromFee" xml:"CanPromFee"`
+	PromotionOptionCode    string                 `json:"PromotionOptionCode" xml:"PromotionOptionCode"`
+	LackForPriceBreak      string                 `json:"LackForPriceBreak" xml:"LackForPriceBreak"`
+	ActivityCategory       string                 `json:"ActivityCategory" xml:"ActivityCategory"`
+	PriceBreakReduceValue  string                 `json:"PriceBreakReduceValue" xml:"PriceBreakReduceValue"`
+	OptionCode             string                 `json:"OptionCode" xml:"OptionCode"`
+	Description            string                 `json:"Description" xml:"Description"`
+	PromotionRuleIdList    PromotionRuleIdList    `json:"PromotionRuleIdList" xml:"PromotionRuleIdList"`
+	TargetArticleItemCodes TargetArticleItemCodes `json:"TargetArticleItemCodes" xml:"TargetArticleItemCodes"`
 }

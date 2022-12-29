@@ -78,7 +78,9 @@ type DescribeAvailableResourceRequest struct {
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	Level                string           `position:"Query" name:"Level"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	MongoType            string           `position:"Query" name:"MongoType"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	StorageSupport       string           `position:"Query" name:"StorageSupport"`
 	DbType               string           `position:"Query" name:"DbType"`
 	ZoneId               string           `position:"Query" name:"ZoneId"`
 }

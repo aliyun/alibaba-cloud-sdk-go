@@ -81,6 +81,7 @@ type DescribeDBInstancesRequest struct {
 	SecurityToken         string                    `position:"Query" name:"SecurityToken"`
 	Engine                string                    `position:"Query" name:"Engine"`
 	PageSize              requests.Integer          `position:"Query" name:"PageSize"`
+	DBNodeType            string                    `position:"Query" name:"DBNodeType"`
 	DBInstanceId          string                    `position:"Query" name:"DBInstanceId"`
 	DBInstanceDescription string                    `position:"Query" name:"DBInstanceDescription"`
 	DBInstanceStatus      string                    `position:"Query" name:"DBInstanceStatus"`
