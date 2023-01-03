@@ -75,6 +75,7 @@ type RRpcRequest struct {
 	IotInstanceId     string           `position:"Query" name:"IotInstanceId"`
 	RequestBase64Byte string           `position:"Query" name:"RequestBase64Byte"`
 	ProductKey        string           `position:"Query" name:"ProductKey"`
+	ContentType       string           `position:"Query" name:"ContentType"`
 	ApiProduct        string           `position:"Body" name:"ApiProduct"`
 	Topic             string           `position:"Query" name:"Topic"`
 	ApiRevision       string           `position:"Body" name:"ApiRevision"`

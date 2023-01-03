@@ -183,13 +183,17 @@ type Data struct {
 	ExpiringQuota             int                                             `json:"ExpiringQuota" xml:"ExpiringQuota"`
 	TunnelState               string                                          `json:"TunnelState" xml:"TunnelState"`
 	InvalidDeviceNameList     InvalidDeviceNameListInBatchCheckDeviceNames    `json:"InvalidDeviceNameList" xml:"InvalidDeviceNameList"`
+	InvalidManufacturerList   InvalidManufacturerList                         `json:"InvalidManufacturerList" xml:"InvalidManufacturerList"`
 	InvalidSnList             InvalidSnListInBatchCheckImportDevice           `json:"InvalidSnList" xml:"InvalidSnList"`
+	RepeatedDeviceIdList      RepeatedDeviceIdList                            `json:"RepeatedDeviceIdList" xml:"RepeatedDeviceIdList"`
 	ResultList                ResultList                                      `json:"ResultList" xml:"ResultList"`
+	InvalidDeviceModelList    InvalidDeviceModelList                          `json:"InvalidDeviceModelList" xml:"InvalidDeviceModelList"`
 	FieldNameList             FieldNameList                                   `json:"FieldNameList" xml:"FieldNameList"`
 	Result                    Result                                          `json:"Result" xml:"Result"`
 	InvalidDeviceSecretList   InvalidDeviceSecretListInBatchCheckImportDevice `json:"InvalidDeviceSecretList" xml:"InvalidDeviceSecretList"`
 	InvalidDeviceNicknameList InvalidDeviceNicknameList                       `json:"InvalidDeviceNicknameList" xml:"InvalidDeviceNicknameList"`
 	RepeatedDeviceNameList    RepeatedDeviceNameListInBatchCheckImportDevice  `json:"RepeatedDeviceNameList" xml:"RepeatedDeviceNameList"`
+	InvalidDeviceIdList       InvalidDeviceIdList                             `json:"InvalidDeviceIdList" xml:"InvalidDeviceIdList"`
 	RouteContext              RouteContext                                    `json:"RouteContext" xml:"RouteContext"`
 	QuerySetting              QuerySetting                                    `json:"QuerySetting" xml:"QuerySetting"`
 	SqlTemplateDTO            SqlTemplateDTO                                  `json:"SqlTemplateDTO" xml:"SqlTemplateDTO"`

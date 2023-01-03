@@ -1,3 +1,11 @@
+2023-01-03 Version: v1.62.111
+- Generated 2018-01-20 for `Iot`.
+- Pub Support MessageExpiryInterval and Retained.
+- Rrpc Support ContentType.
+- BatchImportVehicleDevice batch create device by jt808 protocol.
+- BatchCheckVehicleDevice batch check device by jt808 protocol.
+- QueryVehicleDevice query jt808 device information.
+
 2023-01-03 Version: v1.62.110
 - Generated 2020-04-18 for `DBFS`.
 - Supported snapshot link for DBFS.

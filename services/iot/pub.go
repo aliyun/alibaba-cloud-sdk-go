@@ -76,11 +76,13 @@ type PubRequest struct {
 	Qos                    requests.Integer `position:"Query" name:"Qos"`
 	CorrelationData        string           `position:"Query" name:"CorrelationData"`
 	IotInstanceId          string           `position:"Query" name:"IotInstanceId"`
+	MessageExpiryInterval  requests.Integer `position:"Query" name:"MessageExpiryInterval"`
 	ResponseTopic          string           `position:"Query" name:"ResponseTopic"`
 	TopicFullName          string           `position:"Query" name:"TopicFullName"`
 	PayloadFormatIndicator requests.Integer `position:"Query" name:"PayloadFormatIndicator"`
 	ProductKey             string           `position:"Query" name:"ProductKey"`
 	ContentType            string           `position:"Query" name:"ContentType"`
+	Retained               requests.Boolean `position:"Query" name:"Retained"`
 	ApiProduct             string           `position:"Body" name:"ApiProduct"`
 	ApiRevision            string           `position:"Body" name:"ApiRevision"`
 	DeviceName             string           `position:"Query" name:"DeviceName"`
