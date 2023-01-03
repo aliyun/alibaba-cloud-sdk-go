@@ -1,3 +1,9 @@
+2023-01-03 Version: v1.62.110
+- Generated 2020-04-18 for `DBFS`.
+- Supported snapshot link for DBFS.
+- Supported showing snapshot info.
+- Support for showing snapshot info.
+
 2023-01-03 Version: v1.62.109
 - Generated 2022-05-30 for `eflo`.
 - First publish.

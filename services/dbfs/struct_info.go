@@ -38,6 +38,7 @@ type Info struct {
 	RaidStrip        int                 `json:"RaidStrip" xml:"RaidStrip"`
 	InstanceType     string              `json:"InstanceType" xml:"InstanceType"`
 	LastFailed       string              `json:"LastFailed" xml:"LastFailed"`
+	SnapshotInfo     SnapshotInfo        `json:"SnapshotInfo" xml:"SnapshotInfo"`
 	Tags             []TagListInListDbfs `json:"Tags" xml:"Tags"`
 	EcsList          []EcsListItem       `json:"EcsList" xml:"EcsList"`
 	EbsList          []EbsListItem       `json:"EbsList" xml:"EbsList"`

@@ -39,6 +39,7 @@ type DBFSInfo struct {
 	Status           string        `json:"Status" xml:"Status"`
 	AttachNodeNumber int           `json:"AttachNodeNumber" xml:"AttachNodeNumber"`
 	Encryption       bool          `json:"Encryption" xml:"Encryption"`
+	SnapshotInfo     SnapshotInfo  `json:"SnapshotInfo" xml:"SnapshotInfo"`
 	EcsList          []EcsListItem `json:"EcsList" xml:"EcsList"`
 	EbsList          []EbsListItem `json:"EbsList" xml:"EbsList"`
 	Tags             []TagList     `json:"Tags" xml:"Tags"`
