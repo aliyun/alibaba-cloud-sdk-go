@@ -1,3 +1,7 @@
+2023-01-03 Version: v1.62.112
+- Generated 2022-08-01 for `PAIElasticDatasetAccelerator`.
+- Support DLC integration.
+
 2023-01-03 Version: v1.62.111
 - Generated 2018-01-20 for `Iot`.
 - Pub Support MessageExpiryInterval and Retained.
