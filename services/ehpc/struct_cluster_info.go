@@ -20,6 +20,7 @@ type ClusterInfo struct {
 	Name               string                              `json:"Name" xml:"Name"`
 	VolumeProtocol     string                              `json:"VolumeProtocol" xml:"VolumeProtocol"`
 	VolumeId           string                              `json:"VolumeId" xml:"VolumeId"`
+	RamNodeTypes       string                              `json:"RamNodeTypes" xml:"RamNodeTypes"`
 	SecurityGroupId    string                              `json:"SecurityGroupId" xml:"SecurityGroupId"`
 	AccountType        string                              `json:"AccountType" xml:"AccountType"`
 	ImageId            string                              `json:"ImageId" xml:"ImageId"`
@@ -40,6 +41,7 @@ type ClusterInfo struct {
 	RemoteDirectory    string                              `json:"RemoteDirectory" xml:"RemoteDirectory"`
 	VolumeType         string                              `json:"VolumeType" xml:"VolumeType"`
 	HaEnable           bool                                `json:"HaEnable" xml:"HaEnable"`
+	RamRoleName        string                              `json:"RamRoleName" xml:"RamRoleName"`
 	Location           string                              `json:"Location" xml:"Location"`
 	EcsChargeType      string                              `json:"EcsChargeType" xml:"EcsChargeType"`
 	InstanceCount      int                                 `json:"InstanceCount" xml:"InstanceCount"`

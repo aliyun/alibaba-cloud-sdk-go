@@ -112,11 +112,13 @@ type SetAutoScaleConfigQueues struct {
 
 // SetAutoScaleConfigQueuesInstanceTypes is a repeated param struct in SetAutoScaleConfigRequest
 type SetAutoScaleConfigQueuesInstanceTypes struct {
-	VSwitchId      string `name:"VSwitchId"`
-	SpotStrategy   string `name:"SpotStrategy"`
-	ZoneId         string `name:"ZoneId"`
-	InstanceType   string `name:"InstanceType"`
-	SpotPriceLimit string `name:"SpotPriceLimit"`
+	VSwitchId                string `name:"VSwitchId"`
+	SpotStrategy             string `name:"SpotStrategy"`
+	SpotInterruptionBehavior string `name:"SpotInterruptionBehavior"`
+	ZoneId                   string `name:"ZoneId"`
+	InstanceType             string `name:"InstanceType"`
+	SpotPriceLimit           string `name:"SpotPriceLimit"`
+	SpotDuration             string `name:"SpotDuration"`
 }
 
 // SetAutoScaleConfigQueuesDataDisks is a repeated param struct in SetAutoScaleConfigRequest
