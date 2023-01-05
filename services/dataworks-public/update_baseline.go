@@ -72,11 +72,10 @@ func (client *Client) UpdateBaselineWithCallback(request *UpdateBaselineRequest,
 type UpdateBaselineRequest struct {
 	*requests.RpcRequest
 	Owner                string                            `position:"Body" name:"Owner"`
+	RemoveNodeIds        string                            `position:"Body" name:"RemoveNodeIds"`
 	AlertMarginThreshold requests.Integer                  `position:"Body" name:"AlertMarginThreshold"`
-	RemoveTaskIds        string                            `position:"Body" name:"RemoveTaskIds"`
 	OvertimeSettings     *[]UpdateBaselineOvertimeSettings `position:"Body" name:"OvertimeSettings"  type:"Json"`
 	Priority             requests.Integer                  `position:"Body" name:"Priority"`
-	TaskIds              string                            `position:"Body" name:"TaskIds"`
 	BaselineId           requests.Integer                  `position:"Body" name:"BaselineId"`
 	Enabled              requests.Boolean                  `position:"Body" name:"Enabled"`
 	BaselineType         string                            `position:"Body" name:"BaselineType"`
@@ -84,6 +83,7 @@ type UpdateBaselineRequest struct {
 	AlertSettings        *[]UpdateBaselineAlertSettings    `position:"Body" name:"AlertSettings"  type:"Json"`
 	BaselineName         string                            `position:"Body" name:"BaselineName"`
 	ProjectId            requests.Integer                  `position:"Body" name:"ProjectId"`
+	NodeIds              string                            `position:"Body" name:"NodeIds"`
 }
 
 // UpdateBaselineOvertimeSettings is a repeated param struct in UpdateBaselineRequest

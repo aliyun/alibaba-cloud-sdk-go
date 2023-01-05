@@ -75,10 +75,10 @@ type CreateBaselineRequest struct {
 	AlertMarginThreshold requests.Integer                  `position:"Body" name:"AlertMarginThreshold"`
 	OvertimeSettings     *[]CreateBaselineOvertimeSettings `position:"Body" name:"OvertimeSettings"  type:"Repeated"`
 	Priority             requests.Integer                  `position:"Body" name:"Priority"`
-	TaskIds              string                            `position:"Body" name:"TaskIds"`
 	BaselineType         string                            `position:"Body" name:"BaselineType"`
 	BaselineName         string                            `position:"Body" name:"BaselineName"`
 	ProjectId            requests.Integer                  `position:"Body" name:"ProjectId"`
+	NodeIds              string                            `position:"Body" name:"NodeIds"`
 }
 
 // CreateBaselineOvertimeSettings is a repeated param struct in CreateBaselineRequest

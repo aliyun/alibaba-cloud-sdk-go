@@ -73,10 +73,10 @@ type UpdateBusinessRequest struct {
 	*requests.RpcRequest
 	Owner             string           `position:"Body" name:"Owner"`
 	BusinessId        requests.Integer `position:"Body" name:"BusinessId"`
-	BusinessName      string           `position:"Body" name:"BusinessName"`
 	Description       string           `position:"Body" name:"Description"`
-	ProjectId         requests.Integer `position:"Body" name:"ProjectId"`
 	ProjectIdentifier string           `position:"Body" name:"ProjectIdentifier"`
+	BusinessName      string           `position:"Body" name:"BusinessName"`
+	ProjectId         requests.Integer `position:"Body" name:"ProjectId"`
 }
 
 // UpdateBusinessResponse is the response struct for api UpdateBusiness
