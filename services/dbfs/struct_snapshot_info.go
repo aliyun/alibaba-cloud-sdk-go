@@ -20,5 +20,5 @@ type SnapshotInfo struct {
 	SnapshotCount int    `json:"SnapshotCount" xml:"SnapshotCount"`
 	LinkId        string `json:"LinkId" xml:"LinkId"`
 	PolicyId      string `json:"PolicyId" xml:"PolicyId"`
-	TotalSize     int64  `json:"totalSize" xml:"totalSize"`
+	TotalSize     int64  `json:"TotalSize" xml:"TotalSize"`
 }
