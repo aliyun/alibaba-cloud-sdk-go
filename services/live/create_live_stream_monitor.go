@@ -71,6 +71,7 @@ func (client *Client) CreateLiveStreamMonitorWithCallback(request *CreateLiveStr
 // CreateLiveStreamMonitorRequest is the request struct for api CreateLiveStreamMonitor
 type CreateLiveStreamMonitorRequest struct {
 	*requests.RpcRequest
+	MonitorConfig  string           `position:"Query" name:"MonitorConfig"`
 	MonitorName    string           `position:"Query" name:"MonitorName"`
 	Stream         string           `position:"Query" name:"Stream"`
 	OutputTemplate string           `position:"Query" name:"OutputTemplate"`

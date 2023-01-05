@@ -72,6 +72,7 @@ func (client *Client) UpdateLiveStreamMonitorWithCallback(request *UpdateLiveStr
 type UpdateLiveStreamMonitorRequest struct {
 	*requests.RpcRequest
 	MonitorId      string           `position:"Query" name:"MonitorId"`
+	MonitorConfig  string           `position:"Query" name:"MonitorConfig"`
 	MonitorName    string           `position:"Query" name:"MonitorName"`
 	Stream         string           `position:"Query" name:"Stream"`
 	OutputTemplate string           `position:"Query" name:"OutputTemplate"`

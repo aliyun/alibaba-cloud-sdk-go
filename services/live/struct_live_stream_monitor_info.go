@@ -18,6 +18,7 @@ package live
 // LiveStreamMonitorInfo is a nested struct in live response
 type LiveStreamMonitorInfo struct {
 	Status         int           `json:"Status" xml:"Status"`
+	MonitorConfig  string        `json:"MonitorConfig" xml:"MonitorConfig"`
 	StartTime      string        `json:"StartTime" xml:"StartTime"`
 	MonitorId      string        `json:"MonitorId" xml:"MonitorId"`
 	Domain         string        `json:"Domain" xml:"Domain"`
