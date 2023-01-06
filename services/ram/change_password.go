@@ -21,7 +21,6 @@ import (
 )
 
 // ChangePassword invokes the ram.ChangePassword API synchronously
-// api document: https://help.aliyun.com/api/ram/changepassword.html
 func (client *Client) ChangePassword(request *ChangePasswordRequest) (response *ChangePasswordResponse, err error) {
 	response = CreateChangePasswordResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ChangePassword(request *ChangePasswordRequest) (response *
 }
 
 // ChangePasswordWithChan invokes the ram.ChangePassword API asynchronously
-// api document: https://help.aliyun.com/api/ram/changepassword.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ChangePasswordWithChan(request *ChangePasswordRequest) (<-chan *ChangePasswordResponse, <-chan error) {
 	responseChan := make(chan *ChangePasswordResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ChangePasswordWithChan(request *ChangePasswordRequest) (<-
 }
 
 // ChangePasswordWithCallback invokes the ram.ChangePassword API asynchronously
-// api document: https://help.aliyun.com/api/ram/changepassword.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ChangePasswordWithCallback(request *ChangePasswordRequest, callback func(response *ChangePasswordResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,6 +87,7 @@ func CreateChangePasswordRequest() (request *ChangePasswordRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ram", "2015-05-01", "ChangePassword", "Ram", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

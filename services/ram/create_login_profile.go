@@ -21,7 +21,6 @@ import (
 )
 
 // CreateLoginProfile invokes the ram.CreateLoginProfile API synchronously
-// api document: https://help.aliyun.com/api/ram/createloginprofile.html
 func (client *Client) CreateLoginProfile(request *CreateLoginProfileRequest) (response *CreateLoginProfileResponse, err error) {
 	response = CreateCreateLoginProfileResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateLoginProfile(request *CreateLoginProfileRequest) (re
 }
 
 // CreateLoginProfileWithChan invokes the ram.CreateLoginProfile API asynchronously
-// api document: https://help.aliyun.com/api/ram/createloginprofile.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateLoginProfileWithChan(request *CreateLoginProfileRequest) (<-chan *CreateLoginProfileResponse, <-chan error) {
 	responseChan := make(chan *CreateLoginProfileResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateLoginProfileWithChan(request *CreateLoginProfileRequ
 }
 
 // CreateLoginProfileWithCallback invokes the ram.CreateLoginProfile API asynchronously
-// api document: https://help.aliyun.com/api/ram/createloginprofile.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateLoginProfileWithCallback(request *CreateLoginProfileRequest, callback func(response *CreateLoginProfileResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,17 +71,17 @@ func (client *Client) CreateLoginProfileWithCallback(request *CreateLoginProfile
 // CreateLoginProfileRequest is the request struct for api CreateLoginProfile
 type CreateLoginProfileRequest struct {
 	*requests.RpcRequest
-	PasswordResetRequired requests.Boolean `position:"Query" name:"PasswordResetRequired"`
 	Password              string           `position:"Query" name:"Password"`
 	MFABindRequired       requests.Boolean `position:"Query" name:"MFABindRequired"`
+	PasswordResetRequired requests.Boolean `position:"Query" name:"PasswordResetRequired"`
 	UserName              string           `position:"Query" name:"UserName"`
 }
 
 // CreateLoginProfileResponse is the response struct for api CreateLoginProfile
 type CreateLoginProfileResponse struct {
 	*responses.BaseResponse
-	RequestId    string                           `json:"RequestId" xml:"RequestId"`
-	LoginProfile LoginProfileInCreateLoginProfile `json:"LoginProfile" xml:"LoginProfile"`
+	RequestId    string       `json:"RequestId" xml:"RequestId"`
+	LoginProfile LoginProfile `json:"LoginProfile" xml:"LoginProfile"`
 }
 
 // CreateCreateLoginProfileRequest creates a request to invoke CreateLoginProfile API
@@ -95,6 +90,7 @@ func CreateCreateLoginProfileRequest() (request *CreateLoginProfileRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ram", "2015-05-01", "CreateLoginProfile", "Ram", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

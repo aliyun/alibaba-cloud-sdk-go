@@ -21,7 +21,6 @@ import (
 )
 
 // DetachPolicyFromGroup invokes the ram.DetachPolicyFromGroup API synchronously
-// api document: https://help.aliyun.com/api/ram/detachpolicyfromgroup.html
 func (client *Client) DetachPolicyFromGroup(request *DetachPolicyFromGroupRequest) (response *DetachPolicyFromGroupResponse, err error) {
 	response = CreateDetachPolicyFromGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DetachPolicyFromGroup(request *DetachPolicyFromGroupReques
 }
 
 // DetachPolicyFromGroupWithChan invokes the ram.DetachPolicyFromGroup API asynchronously
-// api document: https://help.aliyun.com/api/ram/detachpolicyfromgroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetachPolicyFromGroupWithChan(request *DetachPolicyFromGroupRequest) (<-chan *DetachPolicyFromGroupResponse, <-chan error) {
 	responseChan := make(chan *DetachPolicyFromGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DetachPolicyFromGroupWithChan(request *DetachPolicyFromGro
 }
 
 // DetachPolicyFromGroupWithCallback invokes the ram.DetachPolicyFromGroup API asynchronously
-// api document: https://help.aliyun.com/api/ram/detachpolicyfromgroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetachPolicyFromGroupWithCallback(request *DetachPolicyFromGroupRequest, callback func(response *DetachPolicyFromGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +88,7 @@ func CreateDetachPolicyFromGroupRequest() (request *DetachPolicyFromGroupRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ram", "2015-05-01", "DetachPolicyFromGroup", "Ram", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // RemoveUserFromGroup invokes the ram.RemoveUserFromGroup API synchronously
-// api document: https://help.aliyun.com/api/ram/removeuserfromgroup.html
 func (client *Client) RemoveUserFromGroup(request *RemoveUserFromGroupRequest) (response *RemoveUserFromGroupResponse, err error) {
 	response = CreateRemoveUserFromGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RemoveUserFromGroup(request *RemoveUserFromGroupRequest) (
 }
 
 // RemoveUserFromGroupWithChan invokes the ram.RemoveUserFromGroup API asynchronously
-// api document: https://help.aliyun.com/api/ram/removeuserfromgroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveUserFromGroupWithChan(request *RemoveUserFromGroupRequest) (<-chan *RemoveUserFromGroupResponse, <-chan error) {
 	responseChan := make(chan *RemoveUserFromGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RemoveUserFromGroupWithChan(request *RemoveUserFromGroupRe
 }
 
 // RemoveUserFromGroupWithCallback invokes the ram.RemoveUserFromGroup API asynchronously
-// api document: https://help.aliyun.com/api/ram/removeuserfromgroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveUserFromGroupWithCallback(request *RemoveUserFromGroupRequest, callback func(response *RemoveUserFromGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,6 +87,7 @@ func CreateRemoveUserFromGroupRequest() (request *RemoveUserFromGroupRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ram", "2015-05-01", "RemoveUserFromGroup", "Ram", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // AttachPolicyToUser invokes the ram.AttachPolicyToUser API synchronously
-// api document: https://help.aliyun.com/api/ram/attachpolicytouser.html
 func (client *Client) AttachPolicyToUser(request *AttachPolicyToUserRequest) (response *AttachPolicyToUserResponse, err error) {
 	response = CreateAttachPolicyToUserResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AttachPolicyToUser(request *AttachPolicyToUserRequest) (re
 }
 
 // AttachPolicyToUserWithChan invokes the ram.AttachPolicyToUser API asynchronously
-// api document: https://help.aliyun.com/api/ram/attachpolicytouser.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AttachPolicyToUserWithChan(request *AttachPolicyToUserRequest) (<-chan *AttachPolicyToUserResponse, <-chan error) {
 	responseChan := make(chan *AttachPolicyToUserResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AttachPolicyToUserWithChan(request *AttachPolicyToUserRequ
 }
 
 // AttachPolicyToUserWithCallback invokes the ram.AttachPolicyToUser API asynchronously
-// api document: https://help.aliyun.com/api/ram/attachpolicytouser.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AttachPolicyToUserWithCallback(request *AttachPolicyToUserRequest, callback func(response *AttachPolicyToUserResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +88,7 @@ func CreateAttachPolicyToUserRequest() (request *AttachPolicyToUserRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ram", "2015-05-01", "AttachPolicyToUser", "Ram", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

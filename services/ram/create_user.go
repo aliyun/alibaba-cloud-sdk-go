@@ -21,7 +21,6 @@ import (
 )
 
 // CreateUser invokes the ram.CreateUser API synchronously
-// api document: https://help.aliyun.com/api/ram/createuser.html
 func (client *Client) CreateUser(request *CreateUserRequest) (response *CreateUserResponse, err error) {
 	response = CreateCreateUserResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateUser(request *CreateUserRequest) (response *CreateUs
 }
 
 // CreateUserWithChan invokes the ram.CreateUser API asynchronously
-// api document: https://help.aliyun.com/api/ram/createuser.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateUserWithChan(request *CreateUserRequest) (<-chan *CreateUserResponse, <-chan error) {
 	responseChan := make(chan *CreateUserResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateUserWithChan(request *CreateUserRequest) (<-chan *Cr
 }
 
 // CreateUserWithCallback invokes the ram.CreateUser API asynchronously
-// api document: https://help.aliyun.com/api/ram/createuser.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateUserWithCallback(request *CreateUserRequest, callback func(response *CreateUserResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -86,8 +81,8 @@ type CreateUserRequest struct {
 // CreateUserResponse is the response struct for api CreateUser
 type CreateUserResponse struct {
 	*responses.BaseResponse
-	RequestId string           `json:"RequestId" xml:"RequestId"`
-	User      UserInCreateUser `json:"User" xml:"User"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	User      User   `json:"User" xml:"User"`
 }
 
 // CreateCreateUserRequest creates a request to invoke CreateUser API
@@ -96,6 +91,7 @@ func CreateCreateUserRequest() (request *CreateUserRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ram", "2015-05-01", "CreateUser", "Ram", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

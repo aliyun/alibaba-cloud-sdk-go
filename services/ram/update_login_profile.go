@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateLoginProfile invokes the ram.UpdateLoginProfile API synchronously
-// api document: https://help.aliyun.com/api/ram/updateloginprofile.html
 func (client *Client) UpdateLoginProfile(request *UpdateLoginProfileRequest) (response *UpdateLoginProfileResponse, err error) {
 	response = CreateUpdateLoginProfileResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateLoginProfile(request *UpdateLoginProfileRequest) (re
 }
 
 // UpdateLoginProfileWithChan invokes the ram.UpdateLoginProfile API asynchronously
-// api document: https://help.aliyun.com/api/ram/updateloginprofile.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateLoginProfileWithChan(request *UpdateLoginProfileRequest) (<-chan *UpdateLoginProfileResponse, <-chan error) {
 	responseChan := make(chan *UpdateLoginProfileResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateLoginProfileWithChan(request *UpdateLoginProfileRequ
 }
 
 // UpdateLoginProfileWithCallback invokes the ram.UpdateLoginProfile API asynchronously
-// api document: https://help.aliyun.com/api/ram/updateloginprofile.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateLoginProfileWithCallback(request *UpdateLoginProfileRequest, callback func(response *UpdateLoginProfileResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,9 +71,9 @@ func (client *Client) UpdateLoginProfileWithCallback(request *UpdateLoginProfile
 // UpdateLoginProfileRequest is the request struct for api UpdateLoginProfile
 type UpdateLoginProfileRequest struct {
 	*requests.RpcRequest
-	PasswordResetRequired requests.Boolean `position:"Query" name:"PasswordResetRequired"`
 	Password              string           `position:"Query" name:"Password"`
 	MFABindRequired       requests.Boolean `position:"Query" name:"MFABindRequired"`
+	PasswordResetRequired requests.Boolean `position:"Query" name:"PasswordResetRequired"`
 	UserName              string           `position:"Query" name:"UserName"`
 }
 
@@ -94,6 +89,7 @@ func CreateUpdateLoginProfileRequest() (request *UpdateLoginProfileRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ram", "2015-05-01", "UpdateLoginProfile", "Ram", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

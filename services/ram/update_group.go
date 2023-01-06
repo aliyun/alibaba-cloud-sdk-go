@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateGroup invokes the ram.UpdateGroup API synchronously
-// api document: https://help.aliyun.com/api/ram/updategroup.html
 func (client *Client) UpdateGroup(request *UpdateGroupRequest) (response *UpdateGroupResponse, err error) {
 	response = CreateUpdateGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateGroup(request *UpdateGroupRequest) (response *Update
 }
 
 // UpdateGroupWithChan invokes the ram.UpdateGroup API asynchronously
-// api document: https://help.aliyun.com/api/ram/updategroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateGroupWithChan(request *UpdateGroupRequest) (<-chan *UpdateGroupResponse, <-chan error) {
 	responseChan := make(chan *UpdateGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateGroupWithChan(request *UpdateGroupRequest) (<-chan *
 }
 
 // UpdateGroupWithCallback invokes the ram.UpdateGroup API asynchronously
-// api document: https://help.aliyun.com/api/ram/updategroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateGroupWithCallback(request *UpdateGroupRequest, callback func(response *UpdateGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,8 +79,8 @@ type UpdateGroupRequest struct {
 // UpdateGroupResponse is the response struct for api UpdateGroup
 type UpdateGroupResponse struct {
 	*responses.BaseResponse
-	RequestId string             `json:"RequestId" xml:"RequestId"`
-	Group     GroupInUpdateGroup `json:"Group" xml:"Group"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Group     Group  `json:"Group" xml:"Group"`
 }
 
 // CreateUpdateGroupRequest creates a request to invoke UpdateGroup API
@@ -94,6 +89,7 @@ func CreateUpdateGroupRequest() (request *UpdateGroupRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ram", "2015-05-01", "UpdateGroup", "Ram", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

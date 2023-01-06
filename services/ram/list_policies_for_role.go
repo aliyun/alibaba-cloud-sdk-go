@@ -21,7 +21,6 @@ import (
 )
 
 // ListPoliciesForRole invokes the ram.ListPoliciesForRole API synchronously
-// api document: https://help.aliyun.com/api/ram/listpoliciesforrole.html
 func (client *Client) ListPoliciesForRole(request *ListPoliciesForRoleRequest) (response *ListPoliciesForRoleResponse, err error) {
 	response = CreateListPoliciesForRoleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListPoliciesForRole(request *ListPoliciesForRoleRequest) (
 }
 
 // ListPoliciesForRoleWithChan invokes the ram.ListPoliciesForRole API asynchronously
-// api document: https://help.aliyun.com/api/ram/listpoliciesforrole.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListPoliciesForRoleWithChan(request *ListPoliciesForRoleRequest) (<-chan *ListPoliciesForRoleResponse, <-chan error) {
 	responseChan := make(chan *ListPoliciesForRoleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListPoliciesForRoleWithChan(request *ListPoliciesForRoleRe
 }
 
 // ListPoliciesForRoleWithCallback invokes the ram.ListPoliciesForRole API asynchronously
-// api document: https://help.aliyun.com/api/ram/listpoliciesforrole.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListPoliciesForRoleWithCallback(request *ListPoliciesForRoleRequest, callback func(response *ListPoliciesForRoleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,6 +87,7 @@ func CreateListPoliciesForRoleRequest() (request *ListPoliciesForRoleRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ram", "2015-05-01", "ListPoliciesForRole", "Ram", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

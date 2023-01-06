@@ -21,7 +21,6 @@ import (
 )
 
 // GetPolicy invokes the ram.GetPolicy API synchronously
-// api document: https://help.aliyun.com/api/ram/getpolicy.html
 func (client *Client) GetPolicy(request *GetPolicyRequest) (response *GetPolicyResponse, err error) {
 	response = CreateGetPolicyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetPolicy(request *GetPolicyRequest) (response *GetPolicyR
 }
 
 // GetPolicyWithChan invokes the ram.GetPolicy API asynchronously
-// api document: https://help.aliyun.com/api/ram/getpolicy.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetPolicyWithChan(request *GetPolicyRequest) (<-chan *GetPolicyResponse, <-chan error) {
 	responseChan := make(chan *GetPolicyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetPolicyWithChan(request *GetPolicyRequest) (<-chan *GetP
 }
 
 // GetPolicyWithCallback invokes the ram.GetPolicy API asynchronously
-// api document: https://help.aliyun.com/api/ram/getpolicy.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetPolicyWithCallback(request *GetPolicyRequest, callback func(response *GetPolicyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,7 +79,7 @@ type GetPolicyRequest struct {
 type GetPolicyResponse struct {
 	*responses.BaseResponse
 	RequestId            string               `json:"RequestId" xml:"RequestId"`
-	Policy               PolicyInGetPolicy    `json:"Policy" xml:"Policy"`
+	Policy               Policy               `json:"Policy" xml:"Policy"`
 	DefaultPolicyVersion DefaultPolicyVersion `json:"DefaultPolicyVersion" xml:"DefaultPolicyVersion"`
 }
 
@@ -94,6 +89,7 @@ func CreateGetPolicyRequest() (request *GetPolicyRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ram", "2015-05-01", "GetPolicy", "Ram", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

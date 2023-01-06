@@ -21,7 +21,6 @@ import (
 )
 
 // ListRoles invokes the ram.ListRoles API synchronously
-// api document: https://help.aliyun.com/api/ram/listroles.html
 func (client *Client) ListRoles(request *ListRolesRequest) (response *ListRolesResponse, err error) {
 	response = CreateListRolesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListRoles(request *ListRolesRequest) (response *ListRolesR
 }
 
 // ListRolesWithChan invokes the ram.ListRoles API asynchronously
-// api document: https://help.aliyun.com/api/ram/listroles.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListRolesWithChan(request *ListRolesRequest) (<-chan *ListRolesResponse, <-chan error) {
 	responseChan := make(chan *ListRolesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListRolesWithChan(request *ListRolesRequest) (<-chan *List
 }
 
 // ListRolesWithCallback invokes the ram.ListRoles API asynchronously
-// api document: https://help.aliyun.com/api/ram/listroles.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListRolesWithCallback(request *ListRolesRequest, callback func(response *ListRolesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,6 +90,7 @@ func CreateListRolesRequest() (request *ListRolesRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ram", "2015-05-01", "ListRoles", "Ram", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

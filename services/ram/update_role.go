@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateRole invokes the ram.UpdateRole API synchronously
-// api document: https://help.aliyun.com/api/ram/updaterole.html
 func (client *Client) UpdateRole(request *UpdateRoleRequest) (response *UpdateRoleResponse, err error) {
 	response = CreateUpdateRoleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateRole(request *UpdateRoleRequest) (response *UpdateRo
 }
 
 // UpdateRoleWithChan invokes the ram.UpdateRole API asynchronously
-// api document: https://help.aliyun.com/api/ram/updaterole.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateRoleWithChan(request *UpdateRoleRequest) (<-chan *UpdateRoleResponse, <-chan error) {
 	responseChan := make(chan *UpdateRoleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateRoleWithChan(request *UpdateRoleRequest) (<-chan *Up
 }
 
 // UpdateRoleWithCallback invokes the ram.UpdateRole API asynchronously
-// api document: https://help.aliyun.com/api/ram/updaterole.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateRoleWithCallback(request *UpdateRoleRequest, callback func(response *UpdateRoleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,16 +71,17 @@ func (client *Client) UpdateRoleWithCallback(request *UpdateRoleRequest, callbac
 // UpdateRoleRequest is the request struct for api UpdateRole
 type UpdateRoleRequest struct {
 	*requests.RpcRequest
+	NewMaxSessionDuration       requests.Integer `position:"Query" name:"NewMaxSessionDuration"`
+	NewDescription              string           `position:"Query" name:"NewDescription"`
 	NewAssumeRolePolicyDocument string           `position:"Query" name:"NewAssumeRolePolicyDocument"`
 	RoleName                    string           `position:"Query" name:"RoleName"`
-	NewMaxSessionDuration       requests.Integer `position:"Query" name:"NewMaxSessionDuration"`
 }
 
 // UpdateRoleResponse is the response struct for api UpdateRole
 type UpdateRoleResponse struct {
 	*responses.BaseResponse
-	RequestId string           `json:"RequestId" xml:"RequestId"`
-	Role      RoleInUpdateRole `json:"Role" xml:"Role"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Role      Role   `json:"Role" xml:"Role"`
 }
 
 // CreateUpdateRoleRequest creates a request to invoke UpdateRole API
@@ -94,6 +90,7 @@ func CreateUpdateRoleRequest() (request *UpdateRoleRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ram", "2015-05-01", "UpdateRole", "Ram", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

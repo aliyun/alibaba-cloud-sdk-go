@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteRole invokes the ram.DeleteRole API synchronously
-// api document: https://help.aliyun.com/api/ram/deleterole.html
 func (client *Client) DeleteRole(request *DeleteRoleRequest) (response *DeleteRoleResponse, err error) {
 	response = CreateDeleteRoleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteRole(request *DeleteRoleRequest) (response *DeleteRo
 }
 
 // DeleteRoleWithChan invokes the ram.DeleteRole API asynchronously
-// api document: https://help.aliyun.com/api/ram/deleterole.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteRoleWithChan(request *DeleteRoleRequest) (<-chan *DeleteRoleResponse, <-chan error) {
 	responseChan := make(chan *DeleteRoleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteRoleWithChan(request *DeleteRoleRequest) (<-chan *De
 }
 
 // DeleteRoleWithCallback invokes the ram.DeleteRole API asynchronously
-// api document: https://help.aliyun.com/api/ram/deleterole.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteRoleWithCallback(request *DeleteRoleRequest, callback func(response *DeleteRoleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -91,6 +86,7 @@ func CreateDeleteRoleRequest() (request *DeleteRoleRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ram", "2015-05-01", "DeleteRole", "Ram", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateAccessKey invokes the ram.UpdateAccessKey API synchronously
-// api document: https://help.aliyun.com/api/ram/updateaccesskey.html
 func (client *Client) UpdateAccessKey(request *UpdateAccessKeyRequest) (response *UpdateAccessKeyResponse, err error) {
 	response = CreateUpdateAccessKeyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateAccessKey(request *UpdateAccessKeyRequest) (response
 }
 
 // UpdateAccessKeyWithChan invokes the ram.UpdateAccessKey API asynchronously
-// api document: https://help.aliyun.com/api/ram/updateaccesskey.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateAccessKeyWithChan(request *UpdateAccessKeyRequest) (<-chan *UpdateAccessKeyResponse, <-chan error) {
 	responseChan := make(chan *UpdateAccessKeyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateAccessKeyWithChan(request *UpdateAccessKeyRequest) (
 }
 
 // UpdateAccessKeyWithCallback invokes the ram.UpdateAccessKey API asynchronously
-// api document: https://help.aliyun.com/api/ram/updateaccesskey.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateAccessKeyWithCallback(request *UpdateAccessKeyRequest, callback func(response *UpdateAccessKeyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +88,7 @@ func CreateUpdateAccessKeyRequest() (request *UpdateAccessKeyRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ram", "2015-05-01", "UpdateAccessKey", "Ram", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

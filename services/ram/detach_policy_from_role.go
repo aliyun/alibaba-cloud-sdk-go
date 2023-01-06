@@ -21,7 +21,6 @@ import (
 )
 
 // DetachPolicyFromRole invokes the ram.DetachPolicyFromRole API synchronously
-// api document: https://help.aliyun.com/api/ram/detachpolicyfromrole.html
 func (client *Client) DetachPolicyFromRole(request *DetachPolicyFromRoleRequest) (response *DetachPolicyFromRoleResponse, err error) {
 	response = CreateDetachPolicyFromRoleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DetachPolicyFromRole(request *DetachPolicyFromRoleRequest)
 }
 
 // DetachPolicyFromRoleWithChan invokes the ram.DetachPolicyFromRole API asynchronously
-// api document: https://help.aliyun.com/api/ram/detachpolicyfromrole.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetachPolicyFromRoleWithChan(request *DetachPolicyFromRoleRequest) (<-chan *DetachPolicyFromRoleResponse, <-chan error) {
 	responseChan := make(chan *DetachPolicyFromRoleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DetachPolicyFromRoleWithChan(request *DetachPolicyFromRole
 }
 
 // DetachPolicyFromRoleWithCallback invokes the ram.DetachPolicyFromRole API asynchronously
-// api document: https://help.aliyun.com/api/ram/detachpolicyfromrole.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetachPolicyFromRoleWithCallback(request *DetachPolicyFromRoleRequest, callback func(response *DetachPolicyFromRoleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +88,7 @@ func CreateDetachPolicyFromRoleRequest() (request *DetachPolicyFromRoleRequest) 
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ram", "2015-05-01", "DetachPolicyFromRole", "Ram", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

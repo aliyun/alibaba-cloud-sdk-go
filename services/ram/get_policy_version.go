@@ -21,7 +21,6 @@ import (
 )
 
 // GetPolicyVersion invokes the ram.GetPolicyVersion API synchronously
-// api document: https://help.aliyun.com/api/ram/getpolicyversion.html
 func (client *Client) GetPolicyVersion(request *GetPolicyVersionRequest) (response *GetPolicyVersionResponse, err error) {
 	response = CreateGetPolicyVersionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetPolicyVersion(request *GetPolicyVersionRequest) (respon
 }
 
 // GetPolicyVersionWithChan invokes the ram.GetPolicyVersion API asynchronously
-// api document: https://help.aliyun.com/api/ram/getpolicyversion.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetPolicyVersionWithChan(request *GetPolicyVersionRequest) (<-chan *GetPolicyVersionResponse, <-chan error) {
 	responseChan := make(chan *GetPolicyVersionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetPolicyVersionWithChan(request *GetPolicyVersionRequest)
 }
 
 // GetPolicyVersionWithCallback invokes the ram.GetPolicyVersion API asynchronously
-// api document: https://help.aliyun.com/api/ram/getpolicyversion.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetPolicyVersionWithCallback(request *GetPolicyVersionRequest, callback func(response *GetPolicyVersionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,8 +79,8 @@ type GetPolicyVersionRequest struct {
 // GetPolicyVersionResponse is the response struct for api GetPolicyVersion
 type GetPolicyVersionResponse struct {
 	*responses.BaseResponse
-	RequestId     string                          `json:"RequestId" xml:"RequestId"`
-	PolicyVersion PolicyVersionInGetPolicyVersion `json:"PolicyVersion" xml:"PolicyVersion"`
+	RequestId     string        `json:"RequestId" xml:"RequestId"`
+	PolicyVersion PolicyVersion `json:"PolicyVersion" xml:"PolicyVersion"`
 }
 
 // CreateGetPolicyVersionRequest creates a request to invoke GetPolicyVersion API
@@ -94,6 +89,7 @@ func CreateGetPolicyVersionRequest() (request *GetPolicyVersionRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ram", "2015-05-01", "GetPolicyVersion", "Ram", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

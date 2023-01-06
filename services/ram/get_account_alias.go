@@ -21,7 +21,6 @@ import (
 )
 
 // GetAccountAlias invokes the ram.GetAccountAlias API synchronously
-// api document: https://help.aliyun.com/api/ram/getaccountalias.html
 func (client *Client) GetAccountAlias(request *GetAccountAliasRequest) (response *GetAccountAliasResponse, err error) {
 	response = CreateGetAccountAliasResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetAccountAlias(request *GetAccountAliasRequest) (response
 }
 
 // GetAccountAliasWithChan invokes the ram.GetAccountAlias API asynchronously
-// api document: https://help.aliyun.com/api/ram/getaccountalias.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetAccountAliasWithChan(request *GetAccountAliasRequest) (<-chan *GetAccountAliasResponse, <-chan error) {
 	responseChan := make(chan *GetAccountAliasResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetAccountAliasWithChan(request *GetAccountAliasRequest) (
 }
 
 // GetAccountAliasWithCallback invokes the ram.GetAccountAlias API asynchronously
-// api document: https://help.aliyun.com/api/ram/getaccountalias.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetAccountAliasWithCallback(request *GetAccountAliasRequest, callback func(response *GetAccountAliasResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -91,6 +86,7 @@ func CreateGetAccountAliasRequest() (request *GetAccountAliasRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ram", "2015-05-01", "GetAccountAlias", "Ram", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

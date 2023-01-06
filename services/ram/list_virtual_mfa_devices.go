@@ -21,7 +21,6 @@ import (
 )
 
 // ListVirtualMFADevices invokes the ram.ListVirtualMFADevices API synchronously
-// api document: https://help.aliyun.com/api/ram/listvirtualmfadevices.html
 func (client *Client) ListVirtualMFADevices(request *ListVirtualMFADevicesRequest) (response *ListVirtualMFADevicesResponse, err error) {
 	response = CreateListVirtualMFADevicesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListVirtualMFADevices(request *ListVirtualMFADevicesReques
 }
 
 // ListVirtualMFADevicesWithChan invokes the ram.ListVirtualMFADevices API asynchronously
-// api document: https://help.aliyun.com/api/ram/listvirtualmfadevices.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListVirtualMFADevicesWithChan(request *ListVirtualMFADevicesRequest) (<-chan *ListVirtualMFADevicesResponse, <-chan error) {
 	responseChan := make(chan *ListVirtualMFADevicesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListVirtualMFADevicesWithChan(request *ListVirtualMFADevic
 }
 
 // ListVirtualMFADevicesWithCallback invokes the ram.ListVirtualMFADevices API asynchronously
-// api document: https://help.aliyun.com/api/ram/listvirtualmfadevices.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListVirtualMFADevicesWithCallback(request *ListVirtualMFADevicesRequest, callback func(response *ListVirtualMFADevicesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -91,6 +86,7 @@ func CreateListVirtualMFADevicesRequest() (request *ListVirtualMFADevicesRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ram", "2015-05-01", "ListVirtualMFADevices", "Ram", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

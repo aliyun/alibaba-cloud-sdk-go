@@ -21,7 +21,6 @@ import (
 )
 
 // SetDefaultPolicyVersion invokes the ram.SetDefaultPolicyVersion API synchronously
-// api document: https://help.aliyun.com/api/ram/setdefaultpolicyversion.html
 func (client *Client) SetDefaultPolicyVersion(request *SetDefaultPolicyVersionRequest) (response *SetDefaultPolicyVersionResponse, err error) {
 	response = CreateSetDefaultPolicyVersionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SetDefaultPolicyVersion(request *SetDefaultPolicyVersionRe
 }
 
 // SetDefaultPolicyVersionWithChan invokes the ram.SetDefaultPolicyVersion API asynchronously
-// api document: https://help.aliyun.com/api/ram/setdefaultpolicyversion.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetDefaultPolicyVersionWithChan(request *SetDefaultPolicyVersionRequest) (<-chan *SetDefaultPolicyVersionResponse, <-chan error) {
 	responseChan := make(chan *SetDefaultPolicyVersionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SetDefaultPolicyVersionWithChan(request *SetDefaultPolicyV
 }
 
 // SetDefaultPolicyVersionWithCallback invokes the ram.SetDefaultPolicyVersion API asynchronously
-// api document: https://help.aliyun.com/api/ram/setdefaultpolicyversion.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetDefaultPolicyVersionWithCallback(request *SetDefaultPolicyVersionRequest, callback func(response *SetDefaultPolicyVersionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,6 +87,7 @@ func CreateSetDefaultPolicyVersionRequest() (request *SetDefaultPolicyVersionReq
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ram", "2015-05-01", "SetDefaultPolicyVersion", "Ram", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

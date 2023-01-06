@@ -21,7 +21,6 @@ import (
 )
 
 // ClearAccountAlias invokes the ram.ClearAccountAlias API synchronously
-// api document: https://help.aliyun.com/api/ram/clearaccountalias.html
 func (client *Client) ClearAccountAlias(request *ClearAccountAliasRequest) (response *ClearAccountAliasResponse, err error) {
 	response = CreateClearAccountAliasResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ClearAccountAlias(request *ClearAccountAliasRequest) (resp
 }
 
 // ClearAccountAliasWithChan invokes the ram.ClearAccountAlias API asynchronously
-// api document: https://help.aliyun.com/api/ram/clearaccountalias.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ClearAccountAliasWithChan(request *ClearAccountAliasRequest) (<-chan *ClearAccountAliasResponse, <-chan error) {
 	responseChan := make(chan *ClearAccountAliasResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ClearAccountAliasWithChan(request *ClearAccountAliasReques
 }
 
 // ClearAccountAliasWithCallback invokes the ram.ClearAccountAlias API asynchronously
-// api document: https://help.aliyun.com/api/ram/clearaccountalias.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ClearAccountAliasWithCallback(request *ClearAccountAliasRequest, callback func(response *ClearAccountAliasResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -90,6 +85,7 @@ func CreateClearAccountAliasRequest() (request *ClearAccountAliasRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ram", "2015-05-01", "ClearAccountAlias", "Ram", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

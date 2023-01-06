@@ -21,7 +21,6 @@ import (
 )
 
 // ListGroups invokes the ram.ListGroups API synchronously
-// api document: https://help.aliyun.com/api/ram/listgroups.html
 func (client *Client) ListGroups(request *ListGroupsRequest) (response *ListGroupsResponse, err error) {
 	response = CreateListGroupsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListGroups(request *ListGroupsRequest) (response *ListGrou
 }
 
 // ListGroupsWithChan invokes the ram.ListGroups API asynchronously
-// api document: https://help.aliyun.com/api/ram/listgroups.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListGroupsWithChan(request *ListGroupsRequest) (<-chan *ListGroupsResponse, <-chan error) {
 	responseChan := make(chan *ListGroupsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListGroupsWithChan(request *ListGroupsRequest) (<-chan *Li
 }
 
 // ListGroupsWithCallback invokes the ram.ListGroups API asynchronously
-// api document: https://help.aliyun.com/api/ram/listgroups.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListGroupsWithCallback(request *ListGroupsRequest, callback func(response *ListGroupsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,6 +90,7 @@ func CreateListGroupsRequest() (request *ListGroupsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ram", "2015-05-01", "ListGroups", "Ram", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

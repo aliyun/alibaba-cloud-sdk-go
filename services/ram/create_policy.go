@@ -21,7 +21,6 @@ import (
 )
 
 // CreatePolicy invokes the ram.CreatePolicy API synchronously
-// api document: https://help.aliyun.com/api/ram/createpolicy.html
 func (client *Client) CreatePolicy(request *CreatePolicyRequest) (response *CreatePolicyResponse, err error) {
 	response = CreateCreatePolicyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreatePolicy(request *CreatePolicyRequest) (response *Crea
 }
 
 // CreatePolicyWithChan invokes the ram.CreatePolicy API asynchronously
-// api document: https://help.aliyun.com/api/ram/createpolicy.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreatePolicyWithChan(request *CreatePolicyRequest) (<-chan *CreatePolicyResponse, <-chan error) {
 	responseChan := make(chan *CreatePolicyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreatePolicyWithChan(request *CreatePolicyRequest) (<-chan
 }
 
 // CreatePolicyWithCallback invokes the ram.CreatePolicy API asynchronously
-// api document: https://help.aliyun.com/api/ram/createpolicy.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreatePolicyWithCallback(request *CreatePolicyRequest, callback func(response *CreatePolicyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,8 +79,8 @@ type CreatePolicyRequest struct {
 // CreatePolicyResponse is the response struct for api CreatePolicy
 type CreatePolicyResponse struct {
 	*responses.BaseResponse
-	RequestId string               `json:"RequestId" xml:"RequestId"`
-	Policy    PolicyInCreatePolicy `json:"Policy" xml:"Policy"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Policy    Policy `json:"Policy" xml:"Policy"`
 }
 
 // CreateCreatePolicyRequest creates a request to invoke CreatePolicy API
@@ -94,6 +89,7 @@ func CreateCreatePolicyRequest() (request *CreatePolicyRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ram", "2015-05-01", "CreatePolicy", "Ram", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

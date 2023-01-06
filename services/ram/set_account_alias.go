@@ -21,7 +21,6 @@ import (
 )
 
 // SetAccountAlias invokes the ram.SetAccountAlias API synchronously
-// api document: https://help.aliyun.com/api/ram/setaccountalias.html
 func (client *Client) SetAccountAlias(request *SetAccountAliasRequest) (response *SetAccountAliasResponse, err error) {
 	response = CreateSetAccountAliasResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SetAccountAlias(request *SetAccountAliasRequest) (response
 }
 
 // SetAccountAliasWithChan invokes the ram.SetAccountAlias API asynchronously
-// api document: https://help.aliyun.com/api/ram/setaccountalias.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetAccountAliasWithChan(request *SetAccountAliasRequest) (<-chan *SetAccountAliasResponse, <-chan error) {
 	responseChan := make(chan *SetAccountAliasResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SetAccountAliasWithChan(request *SetAccountAliasRequest) (
 }
 
 // SetAccountAliasWithCallback invokes the ram.SetAccountAlias API asynchronously
-// api document: https://help.aliyun.com/api/ram/setaccountalias.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetAccountAliasWithCallback(request *SetAccountAliasRequest, callback func(response *SetAccountAliasResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -91,6 +86,7 @@ func CreateSetAccountAliasRequest() (request *SetAccountAliasRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ram", "2015-05-01", "SetAccountAlias", "Ram", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

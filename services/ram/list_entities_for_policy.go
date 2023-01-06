@@ -21,7 +21,6 @@ import (
 )
 
 // ListEntitiesForPolicy invokes the ram.ListEntitiesForPolicy API synchronously
-// api document: https://help.aliyun.com/api/ram/listentitiesforpolicy.html
 func (client *Client) ListEntitiesForPolicy(request *ListEntitiesForPolicyRequest) (response *ListEntitiesForPolicyResponse, err error) {
 	response = CreateListEntitiesForPolicyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListEntitiesForPolicy(request *ListEntitiesForPolicyReques
 }
 
 // ListEntitiesForPolicyWithChan invokes the ram.ListEntitiesForPolicy API asynchronously
-// api document: https://help.aliyun.com/api/ram/listentitiesforpolicy.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListEntitiesForPolicyWithChan(request *ListEntitiesForPolicyRequest) (<-chan *ListEntitiesForPolicyResponse, <-chan error) {
 	responseChan := make(chan *ListEntitiesForPolicyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListEntitiesForPolicyWithChan(request *ListEntitiesForPoli
 }
 
 // ListEntitiesForPolicyWithCallback invokes the ram.ListEntitiesForPolicy API asynchronously
-// api document: https://help.aliyun.com/api/ram/listentitiesforpolicy.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListEntitiesForPolicyWithCallback(request *ListEntitiesForPolicyRequest, callback func(response *ListEntitiesForPolicyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -85,8 +80,8 @@ type ListEntitiesForPolicyResponse struct {
 	*responses.BaseResponse
 	RequestId string                        `json:"RequestId" xml:"RequestId"`
 	Groups    GroupsInListEntitiesForPolicy `json:"Groups" xml:"Groups"`
-	Users     UsersInListEntitiesForPolicy  `json:"Users" xml:"Users"`
 	Roles     RolesInListEntitiesForPolicy  `json:"Roles" xml:"Roles"`
+	Users     UsersInListEntitiesForPolicy  `json:"Users" xml:"Users"`
 }
 
 // CreateListEntitiesForPolicyRequest creates a request to invoke ListEntitiesForPolicy API
@@ -95,6 +90,7 @@ func CreateListEntitiesForPolicyRequest() (request *ListEntitiesForPolicyRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ram", "2015-05-01", "ListEntitiesForPolicy", "Ram", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

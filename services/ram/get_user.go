@@ -21,7 +21,6 @@ import (
 )
 
 // GetUser invokes the ram.GetUser API synchronously
-// api document: https://help.aliyun.com/api/ram/getuser.html
 func (client *Client) GetUser(request *GetUserRequest) (response *GetUserResponse, err error) {
 	response = CreateGetUserResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetUser(request *GetUserRequest) (response *GetUserRespons
 }
 
 // GetUserWithChan invokes the ram.GetUser API asynchronously
-// api document: https://help.aliyun.com/api/ram/getuser.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetUserWithChan(request *GetUserRequest) (<-chan *GetUserResponse, <-chan error) {
 	responseChan := make(chan *GetUserResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetUserWithChan(request *GetUserRequest) (<-chan *GetUserR
 }
 
 // GetUserWithCallback invokes the ram.GetUser API asynchronously
-// api document: https://help.aliyun.com/api/ram/getuser.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetUserWithCallback(request *GetUserRequest, callback func(response *GetUserResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,8 +77,8 @@ type GetUserRequest struct {
 // GetUserResponse is the response struct for api GetUser
 type GetUserResponse struct {
 	*responses.BaseResponse
-	RequestId string        `json:"RequestId" xml:"RequestId"`
-	User      UserInGetUser `json:"User" xml:"User"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	User      User   `json:"User" xml:"User"`
 }
 
 // CreateGetUserRequest creates a request to invoke GetUser API
@@ -92,6 +87,7 @@ func CreateGetUserRequest() (request *GetUserRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ram", "2015-05-01", "GetUser", "Ram", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

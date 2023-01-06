@@ -21,7 +21,6 @@ import (
 )
 
 // GetSecurityPreference invokes the ram.GetSecurityPreference API synchronously
-// api document: https://help.aliyun.com/api/ram/getsecuritypreference.html
 func (client *Client) GetSecurityPreference(request *GetSecurityPreferenceRequest) (response *GetSecurityPreferenceResponse, err error) {
 	response = CreateGetSecurityPreferenceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetSecurityPreference(request *GetSecurityPreferenceReques
 }
 
 // GetSecurityPreferenceWithChan invokes the ram.GetSecurityPreference API asynchronously
-// api document: https://help.aliyun.com/api/ram/getsecuritypreference.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetSecurityPreferenceWithChan(request *GetSecurityPreferenceRequest) (<-chan *GetSecurityPreferenceResponse, <-chan error) {
 	responseChan := make(chan *GetSecurityPreferenceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetSecurityPreferenceWithChan(request *GetSecurityPreferen
 }
 
 // GetSecurityPreferenceWithCallback invokes the ram.GetSecurityPreference API asynchronously
-// api document: https://help.aliyun.com/api/ram/getsecuritypreference.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetSecurityPreferenceWithCallback(request *GetSecurityPreferenceRequest, callback func(response *GetSecurityPreferenceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,8 +76,8 @@ type GetSecurityPreferenceRequest struct {
 // GetSecurityPreferenceResponse is the response struct for api GetSecurityPreference
 type GetSecurityPreferenceResponse struct {
 	*responses.BaseResponse
-	RequestId          string                                    `json:"RequestId" xml:"RequestId"`
-	SecurityPreference SecurityPreferenceInGetSecurityPreference `json:"SecurityPreference" xml:"SecurityPreference"`
+	RequestId          string             `json:"RequestId" xml:"RequestId"`
+	SecurityPreference SecurityPreference `json:"SecurityPreference" xml:"SecurityPreference"`
 }
 
 // CreateGetSecurityPreferenceRequest creates a request to invoke GetSecurityPreference API
@@ -91,6 +86,7 @@ func CreateGetSecurityPreferenceRequest() (request *GetSecurityPreferenceRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ram", "2015-05-01", "GetSecurityPreference", "Ram", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

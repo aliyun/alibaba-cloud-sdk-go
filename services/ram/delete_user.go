@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteUser invokes the ram.DeleteUser API synchronously
-// api document: https://help.aliyun.com/api/ram/deleteuser.html
 func (client *Client) DeleteUser(request *DeleteUserRequest) (response *DeleteUserResponse, err error) {
 	response = CreateDeleteUserResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteUser(request *DeleteUserRequest) (response *DeleteUs
 }
 
 // DeleteUserWithChan invokes the ram.DeleteUser API asynchronously
-// api document: https://help.aliyun.com/api/ram/deleteuser.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteUserWithChan(request *DeleteUserRequest) (<-chan *DeleteUserResponse, <-chan error) {
 	responseChan := make(chan *DeleteUserResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteUserWithChan(request *DeleteUserRequest) (<-chan *De
 }
 
 // DeleteUserWithCallback invokes the ram.DeleteUser API asynchronously
-// api document: https://help.aliyun.com/api/ram/deleteuser.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteUserWithCallback(request *DeleteUserRequest, callback func(response *DeleteUserResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -91,6 +86,7 @@ func CreateDeleteUserRequest() (request *DeleteUserRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ram", "2015-05-01", "DeleteUser", "Ram", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

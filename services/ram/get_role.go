@@ -21,7 +21,6 @@ import (
 )
 
 // GetRole invokes the ram.GetRole API synchronously
-// api document: https://help.aliyun.com/api/ram/getrole.html
 func (client *Client) GetRole(request *GetRoleRequest) (response *GetRoleResponse, err error) {
 	response = CreateGetRoleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetRole(request *GetRoleRequest) (response *GetRoleRespons
 }
 
 // GetRoleWithChan invokes the ram.GetRole API asynchronously
-// api document: https://help.aliyun.com/api/ram/getrole.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetRoleWithChan(request *GetRoleRequest) (<-chan *GetRoleResponse, <-chan error) {
 	responseChan := make(chan *GetRoleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetRoleWithChan(request *GetRoleRequest) (<-chan *GetRoleR
 }
 
 // GetRoleWithCallback invokes the ram.GetRole API asynchronously
-// api document: https://help.aliyun.com/api/ram/getrole.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetRoleWithCallback(request *GetRoleRequest, callback func(response *GetRoleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,8 +77,8 @@ type GetRoleRequest struct {
 // GetRoleResponse is the response struct for api GetRole
 type GetRoleResponse struct {
 	*responses.BaseResponse
-	RequestId string        `json:"RequestId" xml:"RequestId"`
-	Role      RoleInGetRole `json:"Role" xml:"Role"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Role      Role   `json:"Role" xml:"Role"`
 }
 
 // CreateGetRoleRequest creates a request to invoke GetRole API
@@ -92,6 +87,7 @@ func CreateGetRoleRequest() (request *GetRoleRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ram", "2015-05-01", "GetRole", "Ram", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

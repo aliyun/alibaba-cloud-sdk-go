@@ -21,7 +21,6 @@ import (
 )
 
 // CreateAccessKey invokes the ram.CreateAccessKey API synchronously
-// api document: https://help.aliyun.com/api/ram/createaccesskey.html
 func (client *Client) CreateAccessKey(request *CreateAccessKeyRequest) (response *CreateAccessKeyResponse, err error) {
 	response = CreateCreateAccessKeyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateAccessKey(request *CreateAccessKeyRequest) (response
 }
 
 // CreateAccessKeyWithChan invokes the ram.CreateAccessKey API asynchronously
-// api document: https://help.aliyun.com/api/ram/createaccesskey.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateAccessKeyWithChan(request *CreateAccessKeyRequest) (<-chan *CreateAccessKeyResponse, <-chan error) {
 	responseChan := make(chan *CreateAccessKeyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateAccessKeyWithChan(request *CreateAccessKeyRequest) (
 }
 
 // CreateAccessKeyWithCallback invokes the ram.CreateAccessKey API asynchronously
-// api document: https://help.aliyun.com/api/ram/createaccesskey.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateAccessKeyWithCallback(request *CreateAccessKeyRequest, callback func(response *CreateAccessKeyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,8 +77,8 @@ type CreateAccessKeyRequest struct {
 // CreateAccessKeyResponse is the response struct for api CreateAccessKey
 type CreateAccessKeyResponse struct {
 	*responses.BaseResponse
-	RequestId string                     `json:"RequestId" xml:"RequestId"`
-	AccessKey AccessKeyInCreateAccessKey `json:"AccessKey" xml:"AccessKey"`
+	RequestId string    `json:"RequestId" xml:"RequestId"`
+	AccessKey AccessKey `json:"AccessKey" xml:"AccessKey"`
 }
 
 // CreateCreateAccessKeyRequest creates a request to invoke CreateAccessKey API
@@ -92,6 +87,7 @@ func CreateCreateAccessKeyRequest() (request *CreateAccessKeyRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ram", "2015-05-01", "CreateAccessKey", "Ram", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

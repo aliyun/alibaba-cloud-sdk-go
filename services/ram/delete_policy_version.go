@@ -21,7 +21,6 @@ import (
 )
 
 // DeletePolicyVersion invokes the ram.DeletePolicyVersion API synchronously
-// api document: https://help.aliyun.com/api/ram/deletepolicyversion.html
 func (client *Client) DeletePolicyVersion(request *DeletePolicyVersionRequest) (response *DeletePolicyVersionResponse, err error) {
 	response = CreateDeletePolicyVersionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeletePolicyVersion(request *DeletePolicyVersionRequest) (
 }
 
 // DeletePolicyVersionWithChan invokes the ram.DeletePolicyVersion API asynchronously
-// api document: https://help.aliyun.com/api/ram/deletepolicyversion.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeletePolicyVersionWithChan(request *DeletePolicyVersionRequest) (<-chan *DeletePolicyVersionResponse, <-chan error) {
 	responseChan := make(chan *DeletePolicyVersionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeletePolicyVersionWithChan(request *DeletePolicyVersionRe
 }
 
 // DeletePolicyVersionWithCallback invokes the ram.DeletePolicyVersion API asynchronously
-// api document: https://help.aliyun.com/api/ram/deletepolicyversion.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeletePolicyVersionWithCallback(request *DeletePolicyVersionRequest, callback func(response *DeletePolicyVersionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,6 +87,7 @@ func CreateDeletePolicyVersionRequest() (request *DeletePolicyVersionRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ram", "2015-05-01", "DeletePolicyVersion", "Ram", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

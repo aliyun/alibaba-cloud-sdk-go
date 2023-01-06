@@ -21,7 +21,6 @@ import (
 )
 
 // UnbindMFADevice invokes the ram.UnbindMFADevice API synchronously
-// api document: https://help.aliyun.com/api/ram/unbindmfadevice.html
 func (client *Client) UnbindMFADevice(request *UnbindMFADeviceRequest) (response *UnbindMFADeviceResponse, err error) {
 	response = CreateUnbindMFADeviceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UnbindMFADevice(request *UnbindMFADeviceRequest) (response
 }
 
 // UnbindMFADeviceWithChan invokes the ram.UnbindMFADevice API asynchronously
-// api document: https://help.aliyun.com/api/ram/unbindmfadevice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnbindMFADeviceWithChan(request *UnbindMFADeviceRequest) (<-chan *UnbindMFADeviceResponse, <-chan error) {
 	responseChan := make(chan *UnbindMFADeviceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UnbindMFADeviceWithChan(request *UnbindMFADeviceRequest) (
 }
 
 // UnbindMFADeviceWithCallback invokes the ram.UnbindMFADevice API asynchronously
-// api document: https://help.aliyun.com/api/ram/unbindmfadevice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnbindMFADeviceWithCallback(request *UnbindMFADeviceRequest, callback func(response *UnbindMFADeviceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,8 +77,8 @@ type UnbindMFADeviceRequest struct {
 // UnbindMFADeviceResponse is the response struct for api UnbindMFADevice
 type UnbindMFADeviceResponse struct {
 	*responses.BaseResponse
-	RequestId string                     `json:"RequestId" xml:"RequestId"`
-	MFADevice MFADeviceInUnbindMFADevice `json:"MFADevice" xml:"MFADevice"`
+	RequestId string    `json:"RequestId" xml:"RequestId"`
+	MFADevice MFADevice `json:"MFADevice" xml:"MFADevice"`
 }
 
 // CreateUnbindMFADeviceRequest creates a request to invoke UnbindMFADevice API
@@ -92,6 +87,7 @@ func CreateUnbindMFADeviceRequest() (request *UnbindMFADeviceRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ram", "2015-05-01", "UnbindMFADevice", "Ram", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

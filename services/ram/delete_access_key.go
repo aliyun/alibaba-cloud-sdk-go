@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteAccessKey invokes the ram.DeleteAccessKey API synchronously
-// api document: https://help.aliyun.com/api/ram/deleteaccesskey.html
 func (client *Client) DeleteAccessKey(request *DeleteAccessKeyRequest) (response *DeleteAccessKeyResponse, err error) {
 	response = CreateDeleteAccessKeyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteAccessKey(request *DeleteAccessKeyRequest) (response
 }
 
 // DeleteAccessKeyWithChan invokes the ram.DeleteAccessKey API asynchronously
-// api document: https://help.aliyun.com/api/ram/deleteaccesskey.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteAccessKeyWithChan(request *DeleteAccessKeyRequest) (<-chan *DeleteAccessKeyResponse, <-chan error) {
 	responseChan := make(chan *DeleteAccessKeyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteAccessKeyWithChan(request *DeleteAccessKeyRequest) (
 }
 
 // DeleteAccessKeyWithCallback invokes the ram.DeleteAccessKey API asynchronously
-// api document: https://help.aliyun.com/api/ram/deleteaccesskey.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteAccessKeyWithCallback(request *DeleteAccessKeyRequest, callback func(response *DeleteAccessKeyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,6 +87,7 @@ func CreateDeleteAccessKeyRequest() (request *DeleteAccessKeyRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ram", "2015-05-01", "DeleteAccessKey", "Ram", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // BindMFADevice invokes the ram.BindMFADevice API synchronously
-// api document: https://help.aliyun.com/api/ram/bindmfadevice.html
 func (client *Client) BindMFADevice(request *BindMFADeviceRequest) (response *BindMFADeviceResponse, err error) {
 	response = CreateBindMFADeviceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) BindMFADevice(request *BindMFADeviceRequest) (response *Bi
 }
 
 // BindMFADeviceWithChan invokes the ram.BindMFADevice API asynchronously
-// api document: https://help.aliyun.com/api/ram/bindmfadevice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BindMFADeviceWithChan(request *BindMFADeviceRequest) (<-chan *BindMFADeviceResponse, <-chan error) {
 	responseChan := make(chan *BindMFADeviceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) BindMFADeviceWithChan(request *BindMFADeviceRequest) (<-ch
 }
 
 // BindMFADeviceWithCallback invokes the ram.BindMFADevice API asynchronously
-// api document: https://help.aliyun.com/api/ram/bindmfadevice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BindMFADeviceWithCallback(request *BindMFADeviceRequest, callback func(response *BindMFADeviceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,9 +71,9 @@ func (client *Client) BindMFADeviceWithCallback(request *BindMFADeviceRequest, c
 // BindMFADeviceRequest is the request struct for api BindMFADevice
 type BindMFADeviceRequest struct {
 	*requests.RpcRequest
-	SerialNumber        string `position:"Query" name:"SerialNumber"`
 	AuthenticationCode2 string `position:"Query" name:"AuthenticationCode2"`
 	AuthenticationCode1 string `position:"Query" name:"AuthenticationCode1"`
+	SerialNumber        string `position:"Query" name:"SerialNumber"`
 	UserName            string `position:"Query" name:"UserName"`
 }
 
@@ -94,6 +89,7 @@ func CreateBindMFADeviceRequest() (request *BindMFADeviceRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ram", "2015-05-01", "BindMFADevice", "Ram", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

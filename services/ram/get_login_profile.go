@@ -21,7 +21,6 @@ import (
 )
 
 // GetLoginProfile invokes the ram.GetLoginProfile API synchronously
-// api document: https://help.aliyun.com/api/ram/getloginprofile.html
 func (client *Client) GetLoginProfile(request *GetLoginProfileRequest) (response *GetLoginProfileResponse, err error) {
 	response = CreateGetLoginProfileResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetLoginProfile(request *GetLoginProfileRequest) (response
 }
 
 // GetLoginProfileWithChan invokes the ram.GetLoginProfile API asynchronously
-// api document: https://help.aliyun.com/api/ram/getloginprofile.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetLoginProfileWithChan(request *GetLoginProfileRequest) (<-chan *GetLoginProfileResponse, <-chan error) {
 	responseChan := make(chan *GetLoginProfileResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetLoginProfileWithChan(request *GetLoginProfileRequest) (
 }
 
 // GetLoginProfileWithCallback invokes the ram.GetLoginProfile API asynchronously
-// api document: https://help.aliyun.com/api/ram/getloginprofile.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetLoginProfileWithCallback(request *GetLoginProfileRequest, callback func(response *GetLoginProfileResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,8 +77,8 @@ type GetLoginProfileRequest struct {
 // GetLoginProfileResponse is the response struct for api GetLoginProfile
 type GetLoginProfileResponse struct {
 	*responses.BaseResponse
-	RequestId    string                        `json:"RequestId" xml:"RequestId"`
-	LoginProfile LoginProfileInGetLoginProfile `json:"LoginProfile" xml:"LoginProfile"`
+	RequestId    string       `json:"RequestId" xml:"RequestId"`
+	LoginProfile LoginProfile `json:"LoginProfile" xml:"LoginProfile"`
 }
 
 // CreateGetLoginProfileRequest creates a request to invoke GetLoginProfile API
@@ -92,6 +87,7 @@ func CreateGetLoginProfileRequest() (request *GetLoginProfileRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ram", "2015-05-01", "GetLoginProfile", "Ram", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

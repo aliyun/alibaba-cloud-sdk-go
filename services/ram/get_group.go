@@ -21,7 +21,6 @@ import (
 )
 
 // GetGroup invokes the ram.GetGroup API synchronously
-// api document: https://help.aliyun.com/api/ram/getgroup.html
 func (client *Client) GetGroup(request *GetGroupRequest) (response *GetGroupResponse, err error) {
 	response = CreateGetGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetGroup(request *GetGroupRequest) (response *GetGroupResp
 }
 
 // GetGroupWithChan invokes the ram.GetGroup API asynchronously
-// api document: https://help.aliyun.com/api/ram/getgroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetGroupWithChan(request *GetGroupRequest) (<-chan *GetGroupResponse, <-chan error) {
 	responseChan := make(chan *GetGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetGroupWithChan(request *GetGroupRequest) (<-chan *GetGro
 }
 
 // GetGroupWithCallback invokes the ram.GetGroup API asynchronously
-// api document: https://help.aliyun.com/api/ram/getgroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetGroupWithCallback(request *GetGroupRequest, callback func(response *GetGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,8 +77,8 @@ type GetGroupRequest struct {
 // GetGroupResponse is the response struct for api GetGroup
 type GetGroupResponse struct {
 	*responses.BaseResponse
-	RequestId string          `json:"RequestId" xml:"RequestId"`
-	Group     GroupInGetGroup `json:"Group" xml:"Group"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Group     Group  `json:"Group" xml:"Group"`
 }
 
 // CreateGetGroupRequest creates a request to invoke GetGroup API
@@ -92,6 +87,7 @@ func CreateGetGroupRequest() (request *GetGroupRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ram", "2015-05-01", "GetGroup", "Ram", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

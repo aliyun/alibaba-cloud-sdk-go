@@ -21,7 +21,6 @@ import (
 )
 
 // ListAccessKeys invokes the ram.ListAccessKeys API synchronously
-// api document: https://help.aliyun.com/api/ram/listaccesskeys.html
 func (client *Client) ListAccessKeys(request *ListAccessKeysRequest) (response *ListAccessKeysResponse, err error) {
 	response = CreateListAccessKeysResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListAccessKeys(request *ListAccessKeysRequest) (response *
 }
 
 // ListAccessKeysWithChan invokes the ram.ListAccessKeys API asynchronously
-// api document: https://help.aliyun.com/api/ram/listaccesskeys.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAccessKeysWithChan(request *ListAccessKeysRequest) (<-chan *ListAccessKeysResponse, <-chan error) {
 	responseChan := make(chan *ListAccessKeysResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListAccessKeysWithChan(request *ListAccessKeysRequest) (<-
 }
 
 // ListAccessKeysWithCallback invokes the ram.ListAccessKeys API asynchronously
-// api document: https://help.aliyun.com/api/ram/listaccesskeys.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAccessKeysWithCallback(request *ListAccessKeysRequest, callback func(response *ListAccessKeysResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,6 +87,7 @@ func CreateListAccessKeysRequest() (request *ListAccessKeysRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ram", "2015-05-01", "ListAccessKeys", "Ram", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

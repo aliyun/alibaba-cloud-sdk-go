@@ -21,7 +21,6 @@ import (
 )
 
 // CreateGroup invokes the ram.CreateGroup API synchronously
-// api document: https://help.aliyun.com/api/ram/creategroup.html
 func (client *Client) CreateGroup(request *CreateGroupRequest) (response *CreateGroupResponse, err error) {
 	response = CreateCreateGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateGroup(request *CreateGroupRequest) (response *Create
 }
 
 // CreateGroupWithChan invokes the ram.CreateGroup API asynchronously
-// api document: https://help.aliyun.com/api/ram/creategroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateGroupWithChan(request *CreateGroupRequest) (<-chan *CreateGroupResponse, <-chan error) {
 	responseChan := make(chan *CreateGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateGroupWithChan(request *CreateGroupRequest) (<-chan *
 }
 
 // CreateGroupWithCallback invokes the ram.CreateGroup API asynchronously
-// api document: https://help.aliyun.com/api/ram/creategroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateGroupWithCallback(request *CreateGroupRequest, callback func(response *CreateGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,8 +78,8 @@ type CreateGroupRequest struct {
 // CreateGroupResponse is the response struct for api CreateGroup
 type CreateGroupResponse struct {
 	*responses.BaseResponse
-	RequestId string             `json:"RequestId" xml:"RequestId"`
-	Group     GroupInCreateGroup `json:"Group" xml:"Group"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Group     Group  `json:"Group" xml:"Group"`
 }
 
 // CreateCreateGroupRequest creates a request to invoke CreateGroup API
@@ -93,6 +88,7 @@ func CreateCreateGroupRequest() (request *CreateGroupRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ram", "2015-05-01", "CreateGroup", "Ram", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

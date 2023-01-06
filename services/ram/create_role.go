@@ -21,7 +21,6 @@ import (
 )
 
 // CreateRole invokes the ram.CreateRole API synchronously
-// api document: https://help.aliyun.com/api/ram/createrole.html
 func (client *Client) CreateRole(request *CreateRoleRequest) (response *CreateRoleResponse, err error) {
 	response = CreateCreateRoleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateRole(request *CreateRoleRequest) (response *CreateRo
 }
 
 // CreateRoleWithChan invokes the ram.CreateRole API asynchronously
-// api document: https://help.aliyun.com/api/ram/createrole.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateRoleWithChan(request *CreateRoleRequest) (<-chan *CreateRoleResponse, <-chan error) {
 	responseChan := make(chan *CreateRoleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateRoleWithChan(request *CreateRoleRequest) (<-chan *Cr
 }
 
 // CreateRoleWithCallback invokes the ram.CreateRole API asynchronously
-// api document: https://help.aliyun.com/api/ram/createrole.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateRoleWithCallback(request *CreateRoleRequest, callback func(response *CreateRoleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,17 +71,17 @@ func (client *Client) CreateRoleWithCallback(request *CreateRoleRequest, callbac
 // CreateRoleRequest is the request struct for api CreateRole
 type CreateRoleRequest struct {
 	*requests.RpcRequest
-	MaxSessionDuration       requests.Integer `position:"Query" name:"MaxSessionDuration"`
-	RoleName                 string           `position:"Query" name:"RoleName"`
 	Description              string           `position:"Query" name:"Description"`
 	AssumeRolePolicyDocument string           `position:"Query" name:"AssumeRolePolicyDocument"`
+	MaxSessionDuration       requests.Integer `position:"Query" name:"MaxSessionDuration"`
+	RoleName                 string           `position:"Query" name:"RoleName"`
 }
 
 // CreateRoleResponse is the response struct for api CreateRole
 type CreateRoleResponse struct {
 	*responses.BaseResponse
-	RequestId string           `json:"RequestId" xml:"RequestId"`
-	Role      RoleInCreateRole `json:"Role" xml:"Role"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Role      Role   `json:"Role" xml:"Role"`
 }
 
 // CreateCreateRoleRequest creates a request to invoke CreateRole API
@@ -95,6 +90,7 @@ func CreateCreateRoleRequest() (request *CreateRoleRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ram", "2015-05-01", "CreateRole", "Ram", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

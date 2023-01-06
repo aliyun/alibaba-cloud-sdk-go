@@ -21,7 +21,6 @@ import (
 )
 
 // AddUserToGroup invokes the ram.AddUserToGroup API synchronously
-// api document: https://help.aliyun.com/api/ram/addusertogroup.html
 func (client *Client) AddUserToGroup(request *AddUserToGroupRequest) (response *AddUserToGroupResponse, err error) {
 	response = CreateAddUserToGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AddUserToGroup(request *AddUserToGroupRequest) (response *
 }
 
 // AddUserToGroupWithChan invokes the ram.AddUserToGroup API asynchronously
-// api document: https://help.aliyun.com/api/ram/addusertogroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddUserToGroupWithChan(request *AddUserToGroupRequest) (<-chan *AddUserToGroupResponse, <-chan error) {
 	responseChan := make(chan *AddUserToGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AddUserToGroupWithChan(request *AddUserToGroupRequest) (<-
 }
 
 // AddUserToGroupWithCallback invokes the ram.AddUserToGroup API asynchronously
-// api document: https://help.aliyun.com/api/ram/addusertogroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddUserToGroupWithCallback(request *AddUserToGroupRequest, callback func(response *AddUserToGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,6 +87,7 @@ func CreateAddUserToGroupRequest() (request *AddUserToGroupRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ram", "2015-05-01", "AddUserToGroup", "Ram", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

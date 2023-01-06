@@ -21,7 +21,6 @@ import (
 )
 
 // CreatePolicyVersion invokes the ram.CreatePolicyVersion API synchronously
-// api document: https://help.aliyun.com/api/ram/createpolicyversion.html
 func (client *Client) CreatePolicyVersion(request *CreatePolicyVersionRequest) (response *CreatePolicyVersionResponse, err error) {
 	response = CreateCreatePolicyVersionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreatePolicyVersion(request *CreatePolicyVersionRequest) (
 }
 
 // CreatePolicyVersionWithChan invokes the ram.CreatePolicyVersion API asynchronously
-// api document: https://help.aliyun.com/api/ram/createpolicyversion.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreatePolicyVersionWithChan(request *CreatePolicyVersionRequest) (<-chan *CreatePolicyVersionResponse, <-chan error) {
 	responseChan := make(chan *CreatePolicyVersionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreatePolicyVersionWithChan(request *CreatePolicyVersionRe
 }
 
 // CreatePolicyVersionWithCallback invokes the ram.CreatePolicyVersion API asynchronously
-// api document: https://help.aliyun.com/api/ram/createpolicyversion.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreatePolicyVersionWithCallback(request *CreatePolicyVersionRequest, callback func(response *CreatePolicyVersionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,16 +72,16 @@ func (client *Client) CreatePolicyVersionWithCallback(request *CreatePolicyVersi
 type CreatePolicyVersionRequest struct {
 	*requests.RpcRequest
 	SetAsDefault   requests.Boolean `position:"Query" name:"SetAsDefault"`
+	RotateStrategy string           `position:"Query" name:"RotateStrategy"`
 	PolicyName     string           `position:"Query" name:"PolicyName"`
 	PolicyDocument string           `position:"Query" name:"PolicyDocument"`
-	RotateStrategy string           `position:"Query" name:"RotateStrategy"`
 }
 
 // CreatePolicyVersionResponse is the response struct for api CreatePolicyVersion
 type CreatePolicyVersionResponse struct {
 	*responses.BaseResponse
-	RequestId     string                             `json:"RequestId" xml:"RequestId"`
-	PolicyVersion PolicyVersionInCreatePolicyVersion `json:"PolicyVersion" xml:"PolicyVersion"`
+	RequestId     string        `json:"RequestId" xml:"RequestId"`
+	PolicyVersion PolicyVersion `json:"PolicyVersion" xml:"PolicyVersion"`
 }
 
 // CreateCreatePolicyVersionRequest creates a request to invoke CreatePolicyVersion API
@@ -95,6 +90,7 @@ func CreateCreatePolicyVersionRequest() (request *CreatePolicyVersionRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ram", "2015-05-01", "CreatePolicyVersion", "Ram", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

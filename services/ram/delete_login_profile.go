@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteLoginProfile invokes the ram.DeleteLoginProfile API synchronously
-// api document: https://help.aliyun.com/api/ram/deleteloginprofile.html
 func (client *Client) DeleteLoginProfile(request *DeleteLoginProfileRequest) (response *DeleteLoginProfileResponse, err error) {
 	response = CreateDeleteLoginProfileResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteLoginProfile(request *DeleteLoginProfileRequest) (re
 }
 
 // DeleteLoginProfileWithChan invokes the ram.DeleteLoginProfile API asynchronously
-// api document: https://help.aliyun.com/api/ram/deleteloginprofile.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteLoginProfileWithChan(request *DeleteLoginProfileRequest) (<-chan *DeleteLoginProfileResponse, <-chan error) {
 	responseChan := make(chan *DeleteLoginProfileResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteLoginProfileWithChan(request *DeleteLoginProfileRequ
 }
 
 // DeleteLoginProfileWithCallback invokes the ram.DeleteLoginProfile API asynchronously
-// api document: https://help.aliyun.com/api/ram/deleteloginprofile.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteLoginProfileWithCallback(request *DeleteLoginProfileRequest, callback func(response *DeleteLoginProfileResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -91,6 +86,7 @@ func CreateDeleteLoginProfileRequest() (request *DeleteLoginProfileRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ram", "2015-05-01", "DeleteLoginProfile", "Ram", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

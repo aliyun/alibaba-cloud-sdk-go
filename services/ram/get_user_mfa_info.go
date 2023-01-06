@@ -21,7 +21,6 @@ import (
 )
 
 // GetUserMFAInfo invokes the ram.GetUserMFAInfo API synchronously
-// api document: https://help.aliyun.com/api/ram/getusermfainfo.html
 func (client *Client) GetUserMFAInfo(request *GetUserMFAInfoRequest) (response *GetUserMFAInfoResponse, err error) {
 	response = CreateGetUserMFAInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetUserMFAInfo(request *GetUserMFAInfoRequest) (response *
 }
 
 // GetUserMFAInfoWithChan invokes the ram.GetUserMFAInfo API asynchronously
-// api document: https://help.aliyun.com/api/ram/getusermfainfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetUserMFAInfoWithChan(request *GetUserMFAInfoRequest) (<-chan *GetUserMFAInfoResponse, <-chan error) {
 	responseChan := make(chan *GetUserMFAInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetUserMFAInfoWithChan(request *GetUserMFAInfoRequest) (<-
 }
 
 // GetUserMFAInfoWithCallback invokes the ram.GetUserMFAInfo API asynchronously
-// api document: https://help.aliyun.com/api/ram/getusermfainfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetUserMFAInfoWithCallback(request *GetUserMFAInfoRequest, callback func(response *GetUserMFAInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,8 +77,8 @@ type GetUserMFAInfoRequest struct {
 // GetUserMFAInfoResponse is the response struct for api GetUserMFAInfo
 type GetUserMFAInfoResponse struct {
 	*responses.BaseResponse
-	RequestId string                    `json:"RequestId" xml:"RequestId"`
-	MFADevice MFADeviceInGetUserMFAInfo `json:"MFADevice" xml:"MFADevice"`
+	RequestId string    `json:"RequestId" xml:"RequestId"`
+	MFADevice MFADevice `json:"MFADevice" xml:"MFADevice"`
 }
 
 // CreateGetUserMFAInfoRequest creates a request to invoke GetUserMFAInfo API
@@ -92,6 +87,7 @@ func CreateGetUserMFAInfoRequest() (request *GetUserMFAInfoRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ram", "2015-05-01", "GetUserMFAInfo", "Ram", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

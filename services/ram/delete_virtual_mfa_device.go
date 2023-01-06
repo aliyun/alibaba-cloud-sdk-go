@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteVirtualMFADevice invokes the ram.DeleteVirtualMFADevice API synchronously
-// api document: https://help.aliyun.com/api/ram/deletevirtualmfadevice.html
 func (client *Client) DeleteVirtualMFADevice(request *DeleteVirtualMFADeviceRequest) (response *DeleteVirtualMFADeviceResponse, err error) {
 	response = CreateDeleteVirtualMFADeviceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteVirtualMFADevice(request *DeleteVirtualMFADeviceRequ
 }
 
 // DeleteVirtualMFADeviceWithChan invokes the ram.DeleteVirtualMFADevice API asynchronously
-// api document: https://help.aliyun.com/api/ram/deletevirtualmfadevice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteVirtualMFADeviceWithChan(request *DeleteVirtualMFADeviceRequest) (<-chan *DeleteVirtualMFADeviceResponse, <-chan error) {
 	responseChan := make(chan *DeleteVirtualMFADeviceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteVirtualMFADeviceWithChan(request *DeleteVirtualMFADe
 }
 
 // DeleteVirtualMFADeviceWithCallback invokes the ram.DeleteVirtualMFADevice API asynchronously
-// api document: https://help.aliyun.com/api/ram/deletevirtualmfadevice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteVirtualMFADeviceWithCallback(request *DeleteVirtualMFADeviceRequest, callback func(response *DeleteVirtualMFADeviceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -91,6 +86,7 @@ func CreateDeleteVirtualMFADeviceRequest() (request *DeleteVirtualMFADeviceReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ram", "2015-05-01", "DeleteVirtualMFADevice", "Ram", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

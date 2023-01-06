@@ -21,7 +21,6 @@ import (
 )
 
 // AttachPolicyToGroup invokes the ram.AttachPolicyToGroup API synchronously
-// api document: https://help.aliyun.com/api/ram/attachpolicytogroup.html
 func (client *Client) AttachPolicyToGroup(request *AttachPolicyToGroupRequest) (response *AttachPolicyToGroupResponse, err error) {
 	response = CreateAttachPolicyToGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AttachPolicyToGroup(request *AttachPolicyToGroupRequest) (
 }
 
 // AttachPolicyToGroupWithChan invokes the ram.AttachPolicyToGroup API asynchronously
-// api document: https://help.aliyun.com/api/ram/attachpolicytogroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AttachPolicyToGroupWithChan(request *AttachPolicyToGroupRequest) (<-chan *AttachPolicyToGroupResponse, <-chan error) {
 	responseChan := make(chan *AttachPolicyToGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AttachPolicyToGroupWithChan(request *AttachPolicyToGroupRe
 }
 
 // AttachPolicyToGroupWithCallback invokes the ram.AttachPolicyToGroup API asynchronously
-// api document: https://help.aliyun.com/api/ram/attachpolicytogroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AttachPolicyToGroupWithCallback(request *AttachPolicyToGroupRequest, callback func(response *AttachPolicyToGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +88,7 @@ func CreateAttachPolicyToGroupRequest() (request *AttachPolicyToGroupRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ram", "2015-05-01", "AttachPolicyToGroup", "Ram", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // GetAccessKeyLastUsed invokes the ram.GetAccessKeyLastUsed API synchronously
-// api document: https://help.aliyun.com/api/ram/getaccesskeylastused.html
 func (client *Client) GetAccessKeyLastUsed(request *GetAccessKeyLastUsedRequest) (response *GetAccessKeyLastUsedResponse, err error) {
 	response = CreateGetAccessKeyLastUsedResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetAccessKeyLastUsed(request *GetAccessKeyLastUsedRequest)
 }
 
 // GetAccessKeyLastUsedWithChan invokes the ram.GetAccessKeyLastUsed API asynchronously
-// api document: https://help.aliyun.com/api/ram/getaccesskeylastused.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetAccessKeyLastUsedWithChan(request *GetAccessKeyLastUsedRequest) (<-chan *GetAccessKeyLastUsedResponse, <-chan error) {
 	responseChan := make(chan *GetAccessKeyLastUsedResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetAccessKeyLastUsedWithChan(request *GetAccessKeyLastUsed
 }
 
 // GetAccessKeyLastUsedWithCallback invokes the ram.GetAccessKeyLastUsed API asynchronously
-// api document: https://help.aliyun.com/api/ram/getaccesskeylastused.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetAccessKeyLastUsedWithCallback(request *GetAccessKeyLastUsedRequest, callback func(response *GetAccessKeyLastUsedResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +88,7 @@ func CreateGetAccessKeyLastUsedRequest() (request *GetAccessKeyLastUsedRequest) 
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ram", "2015-05-01", "GetAccessKeyLastUsed", "Ram", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

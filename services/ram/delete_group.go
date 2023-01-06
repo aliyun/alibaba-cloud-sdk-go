@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteGroup invokes the ram.DeleteGroup API synchronously
-// api document: https://help.aliyun.com/api/ram/deletegroup.html
 func (client *Client) DeleteGroup(request *DeleteGroupRequest) (response *DeleteGroupResponse, err error) {
 	response = CreateDeleteGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteGroup(request *DeleteGroupRequest) (response *Delete
 }
 
 // DeleteGroupWithChan invokes the ram.DeleteGroup API asynchronously
-// api document: https://help.aliyun.com/api/ram/deletegroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteGroupWithChan(request *DeleteGroupRequest) (<-chan *DeleteGroupResponse, <-chan error) {
 	responseChan := make(chan *DeleteGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteGroupWithChan(request *DeleteGroupRequest) (<-chan *
 }
 
 // DeleteGroupWithCallback invokes the ram.DeleteGroup API asynchronously
-// api document: https://help.aliyun.com/api/ram/deletegroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteGroupWithCallback(request *DeleteGroupRequest, callback func(response *DeleteGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -91,6 +86,7 @@ func CreateDeleteGroupRequest() (request *DeleteGroupRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ram", "2015-05-01", "DeleteGroup", "Ram", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

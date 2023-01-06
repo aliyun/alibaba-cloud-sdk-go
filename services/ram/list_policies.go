@@ -21,7 +21,6 @@ import (
 )
 
 // ListPolicies invokes the ram.ListPolicies API synchronously
-// api document: https://help.aliyun.com/api/ram/listpolicies.html
 func (client *Client) ListPolicies(request *ListPoliciesRequest) (response *ListPoliciesResponse, err error) {
 	response = CreateListPoliciesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListPolicies(request *ListPoliciesRequest) (response *List
 }
 
 // ListPoliciesWithChan invokes the ram.ListPolicies API asynchronously
-// api document: https://help.aliyun.com/api/ram/listpolicies.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListPoliciesWithChan(request *ListPoliciesRequest) (<-chan *ListPoliciesResponse, <-chan error) {
 	responseChan := make(chan *ListPoliciesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListPoliciesWithChan(request *ListPoliciesRequest) (<-chan
 }
 
 // ListPoliciesWithCallback invokes the ram.ListPolicies API asynchronously
-// api document: https://help.aliyun.com/api/ram/listpolicies.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListPoliciesWithCallback(request *ListPoliciesRequest, callback func(response *ListPoliciesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,6 +91,7 @@ func CreateListPoliciesRequest() (request *ListPoliciesRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ram", "2015-05-01", "ListPolicies", "Ram", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

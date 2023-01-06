@@ -17,8 +17,8 @@ package ram
 
 // DefaultPolicyVersion is a nested struct in ram response
 type DefaultPolicyVersion struct {
-	VersionId        string `json:"VersionId" xml:"VersionId"`
 	IsDefaultVersion bool   `json:"IsDefaultVersion" xml:"IsDefaultVersion"`
 	PolicyDocument   string `json:"PolicyDocument" xml:"PolicyDocument"`
+	VersionId        string `json:"VersionId" xml:"VersionId"`
 	CreateDate       string `json:"CreateDate" xml:"CreateDate"`
 }

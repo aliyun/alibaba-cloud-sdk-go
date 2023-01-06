@@ -21,7 +21,6 @@ import (
 )
 
 // CreateVirtualMFADevice invokes the ram.CreateVirtualMFADevice API synchronously
-// api document: https://help.aliyun.com/api/ram/createvirtualmfadevice.html
 func (client *Client) CreateVirtualMFADevice(request *CreateVirtualMFADeviceRequest) (response *CreateVirtualMFADeviceResponse, err error) {
 	response = CreateCreateVirtualMFADeviceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateVirtualMFADevice(request *CreateVirtualMFADeviceRequ
 }
 
 // CreateVirtualMFADeviceWithChan invokes the ram.CreateVirtualMFADevice API asynchronously
-// api document: https://help.aliyun.com/api/ram/createvirtualmfadevice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateVirtualMFADeviceWithChan(request *CreateVirtualMFADeviceRequest) (<-chan *CreateVirtualMFADeviceResponse, <-chan error) {
 	responseChan := make(chan *CreateVirtualMFADeviceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateVirtualMFADeviceWithChan(request *CreateVirtualMFADe
 }
 
 // CreateVirtualMFADeviceWithCallback invokes the ram.CreateVirtualMFADevice API asynchronously
-// api document: https://help.aliyun.com/api/ram/createvirtualmfadevice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateVirtualMFADeviceWithCallback(request *CreateVirtualMFADeviceRequest, callback func(response *CreateVirtualMFADeviceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,8 +77,8 @@ type CreateVirtualMFADeviceRequest struct {
 // CreateVirtualMFADeviceResponse is the response struct for api CreateVirtualMFADevice
 type CreateVirtualMFADeviceResponse struct {
 	*responses.BaseResponse
-	RequestId        string                                   `json:"RequestId" xml:"RequestId"`
-	VirtualMFADevice VirtualMFADeviceInCreateVirtualMFADevice `json:"VirtualMFADevice" xml:"VirtualMFADevice"`
+	RequestId        string           `json:"RequestId" xml:"RequestId"`
+	VirtualMFADevice VirtualMFADevice `json:"VirtualMFADevice" xml:"VirtualMFADevice"`
 }
 
 // CreateCreateVirtualMFADeviceRequest creates a request to invoke CreateVirtualMFADevice API
@@ -92,6 +87,7 @@ func CreateCreateVirtualMFADeviceRequest() (request *CreateVirtualMFADeviceReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ram", "2015-05-01", "CreateVirtualMFADevice", "Ram", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

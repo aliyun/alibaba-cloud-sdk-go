@@ -21,7 +21,6 @@ import (
 )
 
 // SetPasswordPolicy invokes the ram.SetPasswordPolicy API synchronously
-// api document: https://help.aliyun.com/api/ram/setpasswordpolicy.html
 func (client *Client) SetPasswordPolicy(request *SetPasswordPolicyRequest) (response *SetPasswordPolicyResponse, err error) {
 	response = CreateSetPasswordPolicyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SetPasswordPolicy(request *SetPasswordPolicyRequest) (resp
 }
 
 // SetPasswordPolicyWithChan invokes the ram.SetPasswordPolicy API asynchronously
-// api document: https://help.aliyun.com/api/ram/setpasswordpolicy.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetPasswordPolicyWithChan(request *SetPasswordPolicyRequest) (<-chan *SetPasswordPolicyResponse, <-chan error) {
 	responseChan := make(chan *SetPasswordPolicyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SetPasswordPolicyWithChan(request *SetPasswordPolicyReques
 }
 
 // SetPasswordPolicyWithCallback invokes the ram.SetPasswordPolicy API asynchronously
-// api document: https://help.aliyun.com/api/ram/setpasswordpolicy.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetPasswordPolicyWithCallback(request *SetPasswordPolicyRequest, callback func(response *SetPasswordPolicyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -90,8 +85,8 @@ type SetPasswordPolicyRequest struct {
 // SetPasswordPolicyResponse is the response struct for api SetPasswordPolicy
 type SetPasswordPolicyResponse struct {
 	*responses.BaseResponse
-	RequestId      string                            `json:"RequestId" xml:"RequestId"`
-	PasswordPolicy PasswordPolicyInSetPasswordPolicy `json:"PasswordPolicy" xml:"PasswordPolicy"`
+	RequestId      string         `json:"RequestId" xml:"RequestId"`
+	PasswordPolicy PasswordPolicy `json:"PasswordPolicy" xml:"PasswordPolicy"`
 }
 
 // CreateSetPasswordPolicyRequest creates a request to invoke SetPasswordPolicy API
@@ -100,6 +95,7 @@ func CreateSetPasswordPolicyRequest() (request *SetPasswordPolicyRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ram", "2015-05-01", "SetPasswordPolicy", "Ram", "openAPI")
+	request.Method = requests.POST
 	return
 }
 
