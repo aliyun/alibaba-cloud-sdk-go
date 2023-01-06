@@ -88,7 +88,7 @@ func CreateConvertNatPublicIpToEipRequest() (request *ConvertNatPublicIpToEipReq
 	request = &ConvertNatPublicIpToEipRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ConvertNatPublicIpToEip", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ConvertNatPublicIpToEip", "", "")
 	request.Method = requests.POST
 	return
 }

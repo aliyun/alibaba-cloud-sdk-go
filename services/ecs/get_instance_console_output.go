@@ -93,7 +93,7 @@ func CreateGetInstanceConsoleOutputRequest() (request *GetInstanceConsoleOutputR
 	request = &GetInstanceConsoleOutputRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "GetInstanceConsoleOutput", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "GetInstanceConsoleOutput", "", "")
 	request.Method = requests.POST
 	return
 }

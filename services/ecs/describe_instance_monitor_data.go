@@ -93,7 +93,7 @@ func CreateDescribeInstanceMonitorDataRequest() (request *DescribeInstanceMonito
 	request = &DescribeInstanceMonitorDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeInstanceMonitorData", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeInstanceMonitorData", "", "")
 	request.Method = requests.POST
 	return
 }

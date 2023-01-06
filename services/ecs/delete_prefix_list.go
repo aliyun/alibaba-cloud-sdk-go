@@ -89,7 +89,7 @@ func CreateDeletePrefixListRequest() (request *DeletePrefixListRequest) {
 	request = &DeletePrefixListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DeletePrefixList", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DeletePrefixList", "", "")
 	request.Method = requests.POST
 	return
 }

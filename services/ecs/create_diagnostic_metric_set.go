@@ -89,7 +89,7 @@ func CreateCreateDiagnosticMetricSetRequest() (request *CreateDiagnosticMetricSe
 	request = &CreateDiagnosticMetricSetRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateDiagnosticMetricSet", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateDiagnosticMetricSet", "", "")
 	request.Method = requests.POST
 	return
 }

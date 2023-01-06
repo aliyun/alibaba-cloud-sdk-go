@@ -101,7 +101,7 @@ func CreateCreateDedicatedHostClusterRequest() (request *CreateDedicatedHostClus
 	request = &CreateDedicatedHostClusterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateDedicatedHostCluster", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateDedicatedHostCluster", "", "")
 	request.Method = requests.POST
 	return
 }

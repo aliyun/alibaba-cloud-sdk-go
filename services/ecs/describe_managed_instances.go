@@ -99,7 +99,7 @@ func CreateDescribeManagedInstancesRequest() (request *DescribeManagedInstancesR
 	request = &DescribeManagedInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeManagedInstances", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeManagedInstances", "", "")
 	request.Method = requests.POST
 	return
 }

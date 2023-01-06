@@ -102,7 +102,7 @@ func CreateDescribeSpotAdviceRequest() (request *DescribeSpotAdviceRequest) {
 	request = &DescribeSpotAdviceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeSpotAdvice", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeSpotAdvice", "", "")
 	request.Method = requests.POST
 	return
 }

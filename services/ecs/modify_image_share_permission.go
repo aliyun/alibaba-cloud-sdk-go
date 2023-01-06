@@ -93,7 +93,7 @@ func CreateModifyImageSharePermissionRequest() (request *ModifyImageSharePermiss
 	request = &ModifyImageSharePermissionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyImageSharePermission", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyImageSharePermission", "", "")
 	request.Method = requests.POST
 	return
 }

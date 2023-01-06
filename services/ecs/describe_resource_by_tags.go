@@ -101,7 +101,7 @@ func CreateDescribeResourceByTagsRequest() (request *DescribeResourceByTagsReque
 	request = &DescribeResourceByTagsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeResourceByTags", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeResourceByTags", "", "")
 	request.Method = requests.POST
 	return
 }

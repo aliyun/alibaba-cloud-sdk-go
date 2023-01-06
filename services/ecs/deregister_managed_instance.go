@@ -90,7 +90,7 @@ func CreateDeregisterManagedInstanceRequest() (request *DeregisterManagedInstanc
 	request = &DeregisterManagedInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DeregisterManagedInstance", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DeregisterManagedInstance", "", "")
 	request.Method = requests.POST
 	return
 }

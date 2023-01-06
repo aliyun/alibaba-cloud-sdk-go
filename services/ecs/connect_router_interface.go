@@ -88,7 +88,7 @@ func CreateConnectRouterInterfaceRequest() (request *ConnectRouterInterfaceReque
 	request = &ConnectRouterInterfaceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ConnectRouterInterface", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ConnectRouterInterface", "", "")
 	request.Method = requests.POST
 	return
 }

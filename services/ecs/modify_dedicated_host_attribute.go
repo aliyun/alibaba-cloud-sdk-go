@@ -97,7 +97,7 @@ func CreateModifyDedicatedHostAttributeRequest() (request *ModifyDedicatedHostAt
 	request = &ModifyDedicatedHostAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyDedicatedHostAttribute", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyDedicatedHostAttribute", "", "")
 	request.Method = requests.POST
 	return
 }

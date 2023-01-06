@@ -103,7 +103,7 @@ func CreateCreateImageComponentRequest() (request *CreateImageComponentRequest) 
 	request = &CreateImageComponentRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateImageComponent", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateImageComponent", "", "")
 	request.Method = requests.POST
 	return
 }

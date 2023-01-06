@@ -82,6 +82,7 @@ type DescribeTasksRequest struct {
 	EndTime              string           `position:"Query" name:"EndTime"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	TaskAction           string           `position:"Query" name:"TaskAction"`
+	ResourceIds          *[]string        `position:"Query" name:"ResourceIds"  type:"Repeated"`
 }
 
 // DescribeTasksResponse is the response struct for api DescribeTasks
@@ -100,7 +101,7 @@ func CreateDescribeTasksRequest() (request *DescribeTasksRequest) {
 	request = &DescribeTasksRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeTasks", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeTasks", "", "")
 	request.Method = requests.POST
 	return
 }

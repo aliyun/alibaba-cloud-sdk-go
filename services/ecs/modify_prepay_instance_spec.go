@@ -73,6 +73,7 @@ type ModifyPrepayInstanceSpecRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
+	CouponNo             string           `position:"Query" name:"CouponNo"`
 	OperatorType         string           `position:"Query" name:"OperatorType"`
 	SystemDiskCategory   string           `position:"Query" name:"SystemDisk.Category"`
 	RebootTime           string           `position:"Query" name:"RebootTime"`
@@ -99,7 +100,7 @@ func CreateModifyPrepayInstanceSpecRequest() (request *ModifyPrepayInstanceSpecR
 	request = &ModifyPrepayInstanceSpecRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyPrepayInstanceSpec", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyPrepayInstanceSpec", "", "")
 	request.Method = requests.POST
 	return
 }

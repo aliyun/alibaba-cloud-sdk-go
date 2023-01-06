@@ -90,7 +90,7 @@ func CreateDeleteActivationRequest() (request *DeleteActivationRequest) {
 	request = &DeleteActivationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteActivation", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteActivation", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -72,6 +72,7 @@ func (client *Client) ModifyInstanceMetadataOptionsWithCallback(request *ModifyI
 type ModifyInstanceMetadataOptionsRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId         requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	InstanceMetadataTags    string           `position:"Query" name:"InstanceMetadataTags"`
 	HttpPutResponseHopLimit requests.Integer `position:"Query" name:"HttpPutResponseHopLimit"`
 	HttpEndpoint            string           `position:"Query" name:"HttpEndpoint"`
 	ResourceOwnerAccount    string           `position:"Query" name:"ResourceOwnerAccount"`
@@ -91,7 +92,7 @@ func CreateModifyInstanceMetadataOptionsRequest() (request *ModifyInstanceMetada
 	request = &ModifyInstanceMetadataOptionsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyInstanceMetadataOptions", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyInstanceMetadataOptions", "", "")
 	request.Method = requests.POST
 	return
 }

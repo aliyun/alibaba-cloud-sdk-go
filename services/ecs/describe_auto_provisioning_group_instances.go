@@ -95,7 +95,7 @@ func CreateDescribeAutoProvisioningGroupInstancesRequest() (request *DescribeAut
 	request = &DescribeAutoProvisioningGroupInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeAutoProvisioningGroupInstances", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeAutoProvisioningGroupInstances", "", "")
 	request.Method = requests.POST
 	return
 }

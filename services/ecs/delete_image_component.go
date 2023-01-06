@@ -89,7 +89,7 @@ func CreateDeleteImageComponentRequest() (request *DeleteImageComponentRequest) 
 	request = &DeleteImageComponentRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteImageComponent", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteImageComponent", "", "")
 	request.Method = requests.POST
 	return
 }

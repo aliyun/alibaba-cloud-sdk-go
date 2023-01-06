@@ -91,7 +91,7 @@ func CreateModifyManagedInstanceRequest() (request *ModifyManagedInstanceRequest
 	request = &ModifyManagedInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyManagedInstance", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyManagedInstance", "", "")
 	request.Method = requests.POST
 	return
 }

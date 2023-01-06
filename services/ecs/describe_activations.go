@@ -96,7 +96,7 @@ func CreateDescribeActivationsRequest() (request *DescribeActivationsRequest) {
 	request = &DescribeActivationsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeActivations", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeActivations", "", "")
 	request.Method = requests.POST
 	return
 }

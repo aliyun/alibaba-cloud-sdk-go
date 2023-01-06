@@ -94,7 +94,7 @@ func CreateExportImageRequest() (request *ExportImageRequest) {
 	request = &ExportImageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ExportImage", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ExportImage", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -75,6 +75,7 @@ type SendFileRequest struct {
 	Description          string           `position:"Query" name:"Description"`
 	Timeout              requests.Integer `position:"Query" name:"Timeout"`
 	Content              string           `position:"Query" name:"Content"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	FileOwner            string           `position:"Query" name:"FileOwner"`
 	Overwrite            requests.Boolean `position:"Query" name:"Overwrite"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
@@ -100,7 +101,7 @@ func CreateSendFileRequest() (request *SendFileRequest) {
 	request = &SendFileRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "SendFile", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "SendFile", "", "")
 	request.Method = requests.POST
 	return
 }

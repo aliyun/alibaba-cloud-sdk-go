@@ -95,7 +95,7 @@ func CreateDescribeClassicLinkInstancesRequest() (request *DescribeClassicLinkIn
 	request = &DescribeClassicLinkInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeClassicLinkInstances", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeClassicLinkInstances", "", "")
 	request.Method = requests.POST
 	return
 }

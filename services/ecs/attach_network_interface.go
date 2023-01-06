@@ -77,6 +77,7 @@ type AttachNetworkInterfaceRequest struct {
 	OwnerAccount                     string           `position:"Query" name:"OwnerAccount"`
 	WaitForNetworkConfigurationReady requests.Boolean `position:"Query" name:"WaitForNetworkConfigurationReady"`
 	OwnerId                          requests.Integer `position:"Query" name:"OwnerId"`
+	NetworkCardIndex                 requests.Integer `position:"Query" name:"NetworkCardIndex"`
 	InstanceId                       string           `position:"Query" name:"InstanceId"`
 	NetworkInterfaceId               string           `position:"Query" name:"NetworkInterfaceId"`
 }
@@ -92,7 +93,7 @@ func CreateAttachNetworkInterfaceRequest() (request *AttachNetworkInterfaceReque
 	request = &AttachNetworkInterfaceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "AttachNetworkInterface", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "AttachNetworkInterface", "", "")
 	request.Method = requests.POST
 	return
 }

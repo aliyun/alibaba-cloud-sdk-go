@@ -106,7 +106,7 @@ func CreatePurchaseStorageCapacityUnitRequest() (request *PurchaseStorageCapacit
 	request = &PurchaseStorageCapacityUnitRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "PurchaseStorageCapacityUnit", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "PurchaseStorageCapacityUnit", "", "")
 	request.Method = requests.POST
 	return
 }

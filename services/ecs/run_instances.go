@@ -201,6 +201,7 @@ type RunInstancesNetworkInterface struct {
 	InstanceType                string    `name:"InstanceType"`
 	Ipv6AddressCount            string    `name:"Ipv6AddressCount"`
 	Ipv6Address                 *[]string `name:"Ipv6Address" type:"Repeated"`
+	NetworkCardIndex            string    `name:"NetworkCardIndex"`
 }
 
 // RunInstancesDataDisk is a repeated param struct in RunInstancesRequest
@@ -236,7 +237,7 @@ func CreateRunInstancesRequest() (request *RunInstancesRequest) {
 	request = &RunInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "RunInstances", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "RunInstances", "", "")
 	request.Method = requests.POST
 	return
 }

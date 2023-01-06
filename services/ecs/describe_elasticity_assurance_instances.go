@@ -96,7 +96,7 @@ func CreateDescribeElasticityAssuranceInstancesRequest() (request *DescribeElast
 	request = &DescribeElasticityAssuranceInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeElasticityAssuranceInstances", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeElasticityAssuranceInstances", "", "")
 	request.Method = requests.POST
 	return
 }

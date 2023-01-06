@@ -72,6 +72,7 @@ func (client *Client) UnassignIpv6AddressesWithCallback(request *UnassignIpv6Add
 type UnassignIpv6AddressesRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Ipv6Prefix           *[]string        `position:"Query" name:"Ipv6Prefix"  type:"Repeated"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -90,7 +91,7 @@ func CreateUnassignIpv6AddressesRequest() (request *UnassignIpv6AddressesRequest
 	request = &UnassignIpv6AddressesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "UnassignIpv6Addresses", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "UnassignIpv6Addresses", "", "")
 	request.Method = requests.POST
 	return
 }

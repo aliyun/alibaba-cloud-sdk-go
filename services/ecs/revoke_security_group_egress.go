@@ -93,6 +93,7 @@ type RevokeSecurityGroupEgressRequest struct {
 	DestGroupOwnerAccount string                                  `position:"Query" name:"DestGroupOwnerAccount"`
 	DestCidrIp            string                                  `position:"Query" name:"DestCidrIp"`
 	DestGroupOwnerId      requests.Integer                        `position:"Query" name:"DestGroupOwnerId"`
+	SecurityGroupRuleId   *[]string                               `position:"Query" name:"SecurityGroupRuleId"  type:"Repeated"`
 }
 
 // RevokeSecurityGroupEgressPermissions is a repeated param struct in RevokeSecurityGroupEgressRequest
@@ -125,7 +126,7 @@ func CreateRevokeSecurityGroupEgressRequest() (request *RevokeSecurityGroupEgres
 	request = &RevokeSecurityGroupEgressRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "RevokeSecurityGroupEgress", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "RevokeSecurityGroupEgress", "", "")
 	request.Method = requests.POST
 	return
 }

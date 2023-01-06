@@ -93,7 +93,7 @@ func CreateDescribePrefixListAssociationsRequest() (request *DescribePrefixListA
 	request = &DescribePrefixListAssociationsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribePrefixListAssociations", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribePrefixListAssociations", "", "")
 	request.Method = requests.POST
 	return
 }

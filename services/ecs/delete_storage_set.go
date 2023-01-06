@@ -90,7 +90,7 @@ func CreateDeleteStorageSetRequest() (request *DeleteStorageSetRequest) {
 	request = &DeleteStorageSetRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteStorageSet", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteStorageSet", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -123,6 +123,7 @@ type CreateLaunchTemplateVersionRequest struct {
 	SystemDiskSize                 requests.Integer                               `position:"Query" name:"SystemDisk.Size"`
 	VpcId                          string                                         `position:"Query" name:"VpcId"`
 	SystemDiskDescription          string                                         `position:"Query" name:"SystemDisk.Description"`
+	SystemDiskEncrypted            string                                         `position:"Query" name:"SystemDisk.Encrypted"`
 }
 
 // CreateLaunchTemplateVersionTag is a repeated param struct in CreateLaunchTemplateVersionRequest
@@ -171,7 +172,7 @@ func CreateCreateLaunchTemplateVersionRequest() (request *CreateLaunchTemplateVe
 	request = &CreateLaunchTemplateVersionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateLaunchTemplateVersion", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateLaunchTemplateVersion", "", "")
 	request.Method = requests.POST
 	return
 }

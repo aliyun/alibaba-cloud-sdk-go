@@ -90,7 +90,7 @@ func CreateDisableActivationRequest() (request *DisableActivationRequest) {
 	request = &DisableActivationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DisableActivation", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DisableActivation", "", "")
 	request.Method = requests.POST
 	return
 }

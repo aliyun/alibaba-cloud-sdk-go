@@ -90,7 +90,7 @@ func CreateDeleteSnapshotGroupRequest() (request *DeleteSnapshotGroupRequest) {
 	request = &DeleteSnapshotGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteSnapshotGroup", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteSnapshotGroup", "", "")
 	request.Method = requests.POST
 	return
 }

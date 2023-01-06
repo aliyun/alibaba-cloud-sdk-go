@@ -79,6 +79,7 @@ type RunCommandRequest struct {
 	CommandContent       string                 `position:"Query" name:"CommandContent"`
 	Timeout              requests.Integer       `position:"Query" name:"Timeout"`
 	Frequency            string                 `position:"Query" name:"Frequency"`
+	ResourceGroupId      string                 `position:"Query" name:"ResourceGroupId"`
 	ContentEncoding      string                 `position:"Query" name:"ContentEncoding"`
 	RepeatMode           string                 `position:"Query" name:"RepeatMode"`
 	WindowsPasswordName  string                 `position:"Query" name:"WindowsPasswordName"`
@@ -115,7 +116,7 @@ func CreateRunCommandRequest() (request *RunCommandRequest) {
 	request = &RunCommandRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "RunCommand", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "RunCommand", "", "")
 	request.Method = requests.POST
 	return
 }

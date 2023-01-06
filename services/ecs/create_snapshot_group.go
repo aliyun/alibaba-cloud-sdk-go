@@ -77,6 +77,7 @@ type CreateSnapshotGroupRequest struct {
 	Description                string                    `position:"Query" name:"Description"`
 	ResourceGroupId            string                    `position:"Query" name:"ResourceGroupId"`
 	InstantAccessRetentionDays requests.Integer          `position:"Query" name:"InstantAccessRetentionDays"`
+	StorageLocationArn         string                    `position:"Query" name:"StorageLocationArn"`
 	DiskId                     *[]string                 `position:"Query" name:"DiskId"  type:"Repeated"`
 	Tag                        *[]CreateSnapshotGroupTag `position:"Query" name:"Tag"  type:"Repeated"`
 	ResourceOwnerAccount       string                    `position:"Query" name:"ResourceOwnerAccount"`
@@ -104,7 +105,7 @@ func CreateCreateSnapshotGroupRequest() (request *CreateSnapshotGroupRequest) {
 	request = &CreateSnapshotGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateSnapshotGroup", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateSnapshotGroup", "", "")
 	request.Method = requests.POST
 	return
 }

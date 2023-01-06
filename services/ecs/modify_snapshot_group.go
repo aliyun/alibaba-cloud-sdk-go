@@ -91,7 +91,7 @@ func CreateModifySnapshotGroupRequest() (request *ModifySnapshotGroupRequest) {
 	request = &ModifySnapshotGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifySnapshotGroup", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifySnapshotGroup", "", "")
 	request.Method = requests.POST
 	return
 }

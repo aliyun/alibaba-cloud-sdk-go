@@ -97,7 +97,7 @@ func CreateDescribeSnapshotLinksRequest() (request *DescribeSnapshotLinksRequest
 	request = &DescribeSnapshotLinksRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeSnapshotLinks", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeSnapshotLinks", "", "")
 	request.Method = requests.POST
 	return
 }

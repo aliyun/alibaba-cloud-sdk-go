@@ -98,7 +98,7 @@ func CreateStartImagePipelineExecutionRequest() (request *StartImagePipelineExec
 	request = &StartImagePipelineExecutionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "StartImagePipelineExecution", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "StartImagePipelineExecution", "", "")
 	request.Method = requests.POST
 	return
 }

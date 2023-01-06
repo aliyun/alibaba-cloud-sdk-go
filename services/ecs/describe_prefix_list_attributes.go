@@ -96,7 +96,7 @@ func CreateDescribePrefixListAttributesRequest() (request *DescribePrefixListAtt
 	request = &DescribePrefixListAttributesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribePrefixListAttributes", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribePrefixListAttributes", "", "")
 	request.Method = requests.POST
 	return
 }

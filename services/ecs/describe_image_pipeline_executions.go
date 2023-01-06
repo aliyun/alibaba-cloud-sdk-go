@@ -104,7 +104,7 @@ func CreateDescribeImagePipelineExecutionsRequest() (request *DescribeImagePipel
 	request = &DescribeImagePipelineExecutionsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeImagePipelineExecutions", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeImagePipelineExecutions", "", "")
 	request.Method = requests.POST
 	return
 }

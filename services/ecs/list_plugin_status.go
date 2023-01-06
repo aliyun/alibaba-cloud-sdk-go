@@ -96,7 +96,7 @@ func CreateListPluginStatusRequest() (request *ListPluginStatusRequest) {
 	request = &ListPluginStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ListPluginStatus", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ListPluginStatus", "", "")
 	request.Method = requests.POST
 	return
 }
