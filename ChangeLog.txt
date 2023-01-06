@@ -1,3 +1,7 @@
+2023-01-06 Version: v1.62.121
+- Generated 2019-12-30 for `facebody`.
+- Release DetectInfraredLivingFace and CompareFaceWithMask.
+
 2023-01-06 Version: v1.62.120
 - Generated 2020-05-10 for `quotas`.
 - Quota category supported whiteListLabel.
