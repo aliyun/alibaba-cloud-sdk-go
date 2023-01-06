@@ -71,6 +71,7 @@ func (client *Client) GetProductQuotaDimensionWithCallback(request *GetProductQu
 // GetProductQuotaDimensionRequest is the request struct for api GetProductQuotaDimension
 type GetProductQuotaDimensionRequest struct {
 	*requests.RpcRequest
+	OriginalContext     string                                         `position:"Body" name:"OriginalContext"`
 	ProductCode         string                                         `position:"Body" name:"ProductCode"`
 	DependentDimensions *[]GetProductQuotaDimensionDependentDimensions `position:"Body" name:"DependentDimensions"  type:"Repeated"`
 	DimensionKey        string                                         `position:"Body" name:"DimensionKey"`

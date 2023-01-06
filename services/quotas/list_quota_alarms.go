@@ -75,6 +75,7 @@ type ListQuotaAlarmsRequest struct {
 	QuotaActionCode string                            `position:"Body" name:"QuotaActionCode"`
 	NextToken       string                            `position:"Body" name:"NextToken"`
 	QuotaDimensions *[]ListQuotaAlarmsQuotaDimensions `position:"Body" name:"QuotaDimensions"  type:"Repeated"`
+	OriginalContext string                            `position:"Body" name:"OriginalContext"`
 	MaxResults      requests.Integer                  `position:"Body" name:"MaxResults"`
 	AlarmName       string                            `position:"Body" name:"AlarmName"`
 }
@@ -89,8 +90,8 @@ type ListQuotaAlarmsQuotaDimensions struct {
 type ListQuotaAlarmsResponse struct {
 	*responses.BaseResponse
 	TotalCount  int          `json:"TotalCount" xml:"TotalCount"`
-	RequestId   string       `json:"RequestId" xml:"RequestId"`
 	NextToken   string       `json:"NextToken" xml:"NextToken"`
+	RequestId   string       `json:"RequestId" xml:"RequestId"`
 	MaxResults  int          `json:"MaxResults" xml:"MaxResults"`
 	QuotaAlarms []QuotaAlarm `json:"QuotaAlarms" xml:"QuotaAlarms"`
 }

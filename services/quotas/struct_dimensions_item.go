@@ -18,6 +18,6 @@ package quotas
 // DimensionsItem is a nested struct in quotas response
 type DimensionsItem struct {
 	DimensionKey       string   `json:"DimensionKey" xml:"DimensionKey"`
-	DimensionValues    []string `json:"DimensionValues" xml:"DimensionValues"`
 	DependentDimension []string `json:"DependentDimension" xml:"DependentDimension"`
+	DimensionValues    []string `json:"DimensionValues" xml:"DimensionValues"`
 }

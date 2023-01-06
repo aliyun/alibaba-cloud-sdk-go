@@ -78,6 +78,7 @@ type ListProductQuotasRequest struct {
 	SortOrder       string                         `position:"Body" name:"SortOrder"`
 	KeyWord         string                         `position:"Body" name:"KeyWord"`
 	QuotaCategory   string                         `position:"Body" name:"QuotaCategory"`
+	OriginalContext string                         `position:"Body" name:"OriginalContext"`
 	MaxResults      requests.Integer               `position:"Body" name:"MaxResults"`
 	SortField       string                         `position:"Body" name:"SortField"`
 	Dimensions      *[]ListProductQuotasDimensions `position:"Body" name:"Dimensions"  type:"Repeated"`
@@ -93,8 +94,8 @@ type ListProductQuotasDimensions struct {
 type ListProductQuotasResponse struct {
 	*responses.BaseResponse
 	TotalCount int                             `json:"TotalCount" xml:"TotalCount"`
-	RequestId  string                          `json:"RequestId" xml:"RequestId"`
 	NextToken  string                          `json:"NextToken" xml:"NextToken"`
+	RequestId  string                          `json:"RequestId" xml:"RequestId"`
 	MaxResults int                             `json:"MaxResults" xml:"MaxResults"`
 	Quotas     []QuotasItemInListProductQuotas `json:"Quotas" xml:"Quotas"`
 }

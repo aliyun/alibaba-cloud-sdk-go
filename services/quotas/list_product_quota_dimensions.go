@@ -71,18 +71,19 @@ func (client *Client) ListProductQuotaDimensionsWithCallback(request *ListProduc
 // ListProductQuotaDimensionsRequest is the request struct for api ListProductQuotaDimensions
 type ListProductQuotaDimensionsRequest struct {
 	*requests.RpcRequest
-	ProductCode   string           `position:"Body" name:"ProductCode"`
-	NextToken     string           `position:"Body" name:"NextToken"`
-	MaxResults    requests.Integer `position:"Body" name:"MaxResults"`
-	QuotaCategory string           `position:"Body" name:"QuotaCategory"`
+	OriginalContext string           `position:"Body" name:"OriginalContext"`
+	ProductCode     string           `position:"Body" name:"ProductCode"`
+	NextToken       string           `position:"Body" name:"NextToken"`
+	MaxResults      requests.Integer `position:"Body" name:"MaxResults"`
+	QuotaCategory   string           `position:"Body" name:"QuotaCategory"`
 }
 
 // ListProductQuotaDimensionsResponse is the response struct for api ListProductQuotaDimensions
 type ListProductQuotaDimensionsResponse struct {
 	*responses.BaseResponse
 	TotalCount      int                   `json:"TotalCount" xml:"TotalCount"`
-	RequestId       string                `json:"RequestId" xml:"RequestId"`
 	NextToken       string                `json:"NextToken" xml:"NextToken"`
+	RequestId       string                `json:"RequestId" xml:"RequestId"`
 	MaxResults      int                   `json:"MaxResults" xml:"MaxResults"`
 	QuotaDimensions []QuotaDimensionsItem `json:"QuotaDimensions" xml:"QuotaDimensions"`
 }

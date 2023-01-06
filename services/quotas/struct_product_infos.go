@@ -17,13 +17,14 @@ package quotas
 
 // ProductInfos is a nested struct in quotas response
 type ProductInfos struct {
-	SecondCategoryNameEn string `json:"SecondCategoryNameEn" xml:"SecondCategoryNameEn"`
-	Dynamic              bool   `json:"Dynamic" xml:"Dynamic"`
-	CommonQuotaSupport   string `json:"CommonQuotaSupport" xml:"CommonQuotaSupport"`
-	ProductName          string `json:"ProductName" xml:"ProductName"`
-	ProductCode          string `json:"ProductCode" xml:"ProductCode"`
-	SecondCategoryName   string `json:"SecondCategoryName" xml:"SecondCategoryName"`
-	FlowControlSupport   string `json:"FlowControlSupport" xml:"FlowControlSupport"`
-	SecondCategoryId     int64  `json:"SecondCategoryId" xml:"SecondCategoryId"`
-	ProductNameEn        string `json:"ProductNameEn" xml:"ProductNameEn"`
+	ProductName                string `json:"ProductName" xml:"ProductName"`
+	SecondCategoryId           int64  `json:"SecondCategoryId" xml:"SecondCategoryId"`
+	ProductNameEn              string `json:"ProductNameEn" xml:"ProductNameEn"`
+	Dynamic                    bool   `json:"Dynamic" xml:"Dynamic"`
+	SecondCategoryNameEn       string `json:"SecondCategoryNameEn" xml:"SecondCategoryNameEn"`
+	SecondCategoryName         string `json:"SecondCategoryName" xml:"SecondCategoryName"`
+	ProductCode                string `json:"ProductCode" xml:"ProductCode"`
+	FlowControlSupport         string `json:"FlowControlSupport" xml:"FlowControlSupport"`
+	CommonQuotaSupport         string `json:"CommonQuotaSupport" xml:"CommonQuotaSupport"`
+	WhiteListLabelQuotaSupport string `json:"WhiteListLabelQuotaSupport" xml:"WhiteListLabelQuotaSupport"`
 }

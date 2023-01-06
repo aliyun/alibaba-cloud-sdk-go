@@ -17,13 +17,13 @@ package quotas
 
 // AlarmHistory is a nested struct in quotas response
 type AlarmHistory struct {
-	AlarmName        string   `json:"AlarmName" xml:"AlarmName"`
 	QuotaUsage       float64  `json:"QuotaUsage" xml:"QuotaUsage"`
-	ProductCode      string   `json:"ProductCode" xml:"ProductCode"`
+	ThresholdPercent float64  `json:"ThresholdPercent" xml:"ThresholdPercent"`
 	CreateTime       string   `json:"CreateTime" xml:"CreateTime"`
+	QuotaActionCode  string   `json:"QuotaActionCode" xml:"QuotaActionCode"`
+	AlarmName        string   `json:"AlarmName" xml:"AlarmName"`
 	NotifyTarget     string   `json:"NotifyTarget" xml:"NotifyTarget"`
 	Threshold        float64  `json:"Threshold" xml:"Threshold"`
-	ThresholdPercent float64  `json:"ThresholdPercent" xml:"ThresholdPercent"`
-	QuotaActionCode  string   `json:"QuotaActionCode" xml:"QuotaActionCode"`
+	ProductCode      string   `json:"ProductCode" xml:"ProductCode"`
 	NotifyChannels   []string `json:"NotifyChannels" xml:"NotifyChannels"`
 }

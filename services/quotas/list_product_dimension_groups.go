@@ -71,17 +71,18 @@ func (client *Client) ListProductDimensionGroupsWithCallback(request *ListProduc
 // ListProductDimensionGroupsRequest is the request struct for api ListProductDimensionGroups
 type ListProductDimensionGroupsRequest struct {
 	*requests.RpcRequest
-	ProductCode string           `position:"Query" name:"ProductCode"`
-	NextToken   string           `position:"Query" name:"NextToken"`
-	MaxResults  requests.Integer `position:"Query" name:"MaxResults"`
+	OriginalContext string           `position:"Body" name:"OriginalContext"`
+	ProductCode     string           `position:"Query" name:"ProductCode"`
+	NextToken       string           `position:"Query" name:"NextToken"`
+	MaxResults      requests.Integer `position:"Query" name:"MaxResults"`
 }
 
 // ListProductDimensionGroupsResponse is the response struct for api ListProductDimensionGroups
 type ListProductDimensionGroupsResponse struct {
 	*responses.BaseResponse
 	TotalCount      int                   `json:"TotalCount" xml:"TotalCount"`
-	RequestId       string                `json:"RequestId" xml:"RequestId"`
 	NextToken       string                `json:"NextToken" xml:"NextToken"`
+	RequestId       string                `json:"RequestId" xml:"RequestId"`
 	MaxResults      int                   `json:"MaxResults" xml:"MaxResults"`
 	DimensionGroups []DimensionGroupsItem `json:"DimensionGroups" xml:"DimensionGroups"`
 }
@@ -92,7 +93,7 @@ func CreateListProductDimensionGroupsRequest() (request *ListProductDimensionGro
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("quotas", "2020-05-10", "ListProductDimensionGroups", "quotas", "openAPI")
-	request.Method = requests.GET
+	request.Method = requests.POST
 	return
 }
 

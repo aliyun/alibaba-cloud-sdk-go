@@ -18,22 +18,22 @@ package quotas
 // QuotaApplicationsItem is a nested struct in quotas response
 type QuotaApplicationsItem struct {
 	Status           string                        `json:"Status" xml:"Status"`
-	ApplyTime        string                        `json:"ApplyTime" xml:"ApplyTime"`
 	Comment          string                        `json:"Comment" xml:"Comment"`
-	QuotaDescription string                        `json:"QuotaDescription" xml:"QuotaDescription"`
-	ProductCode      string                        `json:"ProductCode" xml:"ProductCode"`
-	EffectiveTime    string                        `json:"EffectiveTime" xml:"EffectiveTime"`
-	AuditReason      string                        `json:"AuditReason" xml:"AuditReason"`
-	QuotaUnit        string                        `json:"QuotaUnit" xml:"QuotaUnit"`
-	Dimension        map[string]interface{}        `json:"Dimension" xml:"Dimension"`
-	ApproveValue     float64                       `json:"ApproveValue" xml:"ApproveValue"`
-	Reason           string                        `json:"Reason" xml:"Reason"`
-	QuotaActionCode  string                        `json:"QuotaActionCode" xml:"QuotaActionCode"`
-	QuotaName        string                        `json:"QuotaName" xml:"QuotaName"`
-	QuotaArn         string                        `json:"QuotaArn" xml:"QuotaArn"`
-	NoticeType       int                           `json:"NoticeType" xml:"NoticeType"`
-	ApplicationId    string                        `json:"ApplicationId" xml:"ApplicationId"`
-	DesireValue      float64                       `json:"DesireValue" xml:"DesireValue"`
 	ExpireTime       string                        `json:"ExpireTime" xml:"ExpireTime"`
+	QuotaUnit        string                        `json:"QuotaUnit" xml:"QuotaUnit"`
+	DesireValue      float64                       `json:"DesireValue" xml:"DesireValue"`
+	NoticeType       int                           `json:"NoticeType" xml:"NoticeType"`
+	QuotaActionCode  string                        `json:"QuotaActionCode" xml:"QuotaActionCode"`
+	Dimension        map[string]interface{}        `json:"Dimension" xml:"Dimension"`
+	QuotaDescription string                        `json:"QuotaDescription" xml:"QuotaDescription"`
+	QuotaArn         string                        `json:"QuotaArn" xml:"QuotaArn"`
+	EffectiveTime    string                        `json:"EffectiveTime" xml:"EffectiveTime"`
+	ApproveValue     float64                       `json:"ApproveValue" xml:"ApproveValue"`
+	QuotaName        string                        `json:"QuotaName" xml:"QuotaName"`
+	ApplicationId    string                        `json:"ApplicationId" xml:"ApplicationId"`
+	AuditReason      string                        `json:"AuditReason" xml:"AuditReason"`
+	Reason           string                        `json:"Reason" xml:"Reason"`
+	ApplyTime        string                        `json:"ApplyTime" xml:"ApplyTime"`
+	ProductCode      string                        `json:"ProductCode" xml:"ProductCode"`
 	Period           PeriodInListQuotaApplications `json:"Period" xml:"Period"`
 }

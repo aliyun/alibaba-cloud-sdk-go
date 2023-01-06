@@ -23,8 +23,8 @@ type QuotaAlarm struct {
 	ExceedThreshold  bool                   `json:"ExceedThreshold" xml:"ExceedThreshold"`
 	QuotaActionCode  string                 `json:"QuotaActionCode" xml:"QuotaActionCode"`
 	QuotaValue       float64                `json:"QuotaValue" xml:"QuotaValue"`
-	ProductCode      string                 `json:"ProductCode" xml:"ProductCode"`
 	ThresholdType    string                 `json:"ThresholdType" xml:"ThresholdType"`
+	ProductCode      string                 `json:"ProductCode" xml:"ProductCode"`
 	Threshold        float64                `json:"Threshold" xml:"Threshold"`
 	NotifyTarget     string                 `json:"NotifyTarget" xml:"NotifyTarget"`
 	QuotaUsage       float64                `json:"QuotaUsage" xml:"QuotaUsage"`

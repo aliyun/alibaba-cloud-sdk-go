@@ -76,6 +76,7 @@ type ListQuotaApplicationsRequest struct {
 	NextToken       string                             `position:"Body" name:"NextToken"`
 	KeyWord         string                             `position:"Body" name:"KeyWord"`
 	QuotaCategory   string                             `position:"Body" name:"QuotaCategory"`
+	OriginalContext string                             `position:"Body" name:"OriginalContext"`
 	MaxResults      requests.Integer                   `position:"Body" name:"MaxResults"`
 	Status          string                             `position:"Body" name:"Status"`
 	Dimensions      *[]ListQuotaApplicationsDimensions `position:"Body" name:"Dimensions"  type:"Repeated"`
@@ -91,8 +92,8 @@ type ListQuotaApplicationsDimensions struct {
 type ListQuotaApplicationsResponse struct {
 	*responses.BaseResponse
 	TotalCount        int                     `json:"TotalCount" xml:"TotalCount"`
-	RequestId         string                  `json:"RequestId" xml:"RequestId"`
 	NextToken         string                  `json:"NextToken" xml:"NextToken"`
+	RequestId         string                  `json:"RequestId" xml:"RequestId"`
 	MaxResults        int                     `json:"MaxResults" xml:"MaxResults"`
 	QuotaApplications []QuotaApplicationsItem `json:"QuotaApplications" xml:"QuotaApplications"`
 }

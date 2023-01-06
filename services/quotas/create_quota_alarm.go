@@ -77,6 +77,7 @@ type CreateQuotaAlarmRequest struct {
 	QuotaActionCode  string                             `position:"Body" name:"QuotaActionCode"`
 	ThresholdType    string                             `position:"Body" name:"ThresholdType"`
 	QuotaDimensions  *[]CreateQuotaAlarmQuotaDimensions `position:"Body" name:"QuotaDimensions"  type:"Repeated"`
+	OriginalContext  string                             `position:"Body" name:"OriginalContext"`
 	ThresholdPercent requests.Float                     `position:"Body" name:"ThresholdPercent"`
 	AlarmName        string                             `position:"Body" name:"AlarmName"`
 }

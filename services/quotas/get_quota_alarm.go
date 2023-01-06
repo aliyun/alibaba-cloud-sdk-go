@@ -71,7 +71,8 @@ func (client *Client) GetQuotaAlarmWithCallback(request *GetQuotaAlarmRequest, c
 // GetQuotaAlarmRequest is the request struct for api GetQuotaAlarm
 type GetQuotaAlarmRequest struct {
 	*requests.RpcRequest
-	AlarmId string `position:"Body" name:"AlarmId"`
+	OriginalContext string `position:"Body" name:"OriginalContext"`
+	AlarmId         string `position:"Body" name:"AlarmId"`
 }
 
 // GetQuotaAlarmResponse is the response struct for api GetQuotaAlarm

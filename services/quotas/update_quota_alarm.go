@@ -74,6 +74,7 @@ type UpdateQuotaAlarmRequest struct {
 	WebHook          string         `position:"Body" name:"WebHook"`
 	Threshold        requests.Float `position:"Body" name:"Threshold"`
 	ThresholdType    string         `position:"Body" name:"ThresholdType"`
+	OriginalContext  string         `position:"Body" name:"OriginalContext"`
 	ThresholdPercent requests.Float `position:"Body" name:"ThresholdPercent"`
 	AlarmId          string         `position:"Body" name:"AlarmId"`
 	AlarmName        string         `position:"Body" name:"AlarmName"`

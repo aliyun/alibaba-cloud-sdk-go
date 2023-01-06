@@ -17,21 +17,25 @@ package quotas
 
 // QuotasItemInListProductQuotas is a nested struct in quotas response
 type QuotasItemInListProductQuotas struct {
-	QuotaDescription   string                 `json:"QuotaDescription" xml:"QuotaDescription"`
-	Consumable         bool                   `json:"Consumable" xml:"Consumable"`
-	UnadjustableDetail string                 `json:"UnadjustableDetail" xml:"UnadjustableDetail"`
-	ProductCode        string                 `json:"ProductCode" xml:"ProductCode"`
+	QuotaUnit          string                 `json:"QuotaUnit" xml:"QuotaUnit"`
+	QuotaActionCode    string                 `json:"QuotaActionCode" xml:"QuotaActionCode"`
 	TotalUsage         float64                `json:"TotalUsage" xml:"TotalUsage"`
 	QuotaType          string                 `json:"QuotaType" xml:"QuotaType"`
-	Dimensions         map[string]interface{} `json:"Dimensions" xml:"Dimensions"`
-	QuotaUnit          string                 `json:"QuotaUnit" xml:"QuotaUnit"`
-	Adjustable         bool                   `json:"Adjustable" xml:"Adjustable"`
-	QuotaActionCode    string                 `json:"QuotaActionCode" xml:"QuotaActionCode"`
-	QuotaName          string                 `json:"QuotaName" xml:"QuotaName"`
+	QuotaDescription   string                 `json:"QuotaDescription" xml:"QuotaDescription"`
 	QuotaArn           string                 `json:"QuotaArn" xml:"QuotaArn"`
-	TotalQuota         float64                `json:"TotalQuota" xml:"TotalQuota"`
 	ApplicableType     string                 `json:"ApplicableType" xml:"ApplicableType"`
+	Dimensions         map[string]interface{} `json:"Dimensions" xml:"Dimensions"`
+	Adjustable         bool                   `json:"Adjustable" xml:"Adjustable"`
+	QuotaName          string                 `json:"QuotaName" xml:"QuotaName"`
+	UnadjustableDetail string                 `json:"UnadjustableDetail" xml:"UnadjustableDetail"`
+	Consumable         bool                   `json:"Consumable" xml:"Consumable"`
+	TotalQuota         float64                `json:"TotalQuota" xml:"TotalQuota"`
+	ProductCode        string                 `json:"ProductCode" xml:"ProductCode"`
+	EffectiveTime      string                 `json:"EffectiveTime" xml:"EffectiveTime"`
+	ExpireTime         string                 `json:"ExpireTime" xml:"ExpireTime"`
+	QuotaCategory      string                 `json:"QuotaCategory" xml:"QuotaCategory"`
 	ApplicableRange    []float64              `json:"ApplicableRange" xml:"ApplicableRange"`
+	SupportedRange     []float64              `json:"SupportedRange" xml:"SupportedRange"`
 	Period             Period                 `json:"Period" xml:"Period"`
 	QuotaItems         []QuotaItemsItem       `json:"QuotaItems" xml:"QuotaItems"`
 }

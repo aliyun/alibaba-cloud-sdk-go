@@ -71,21 +71,22 @@ func (client *Client) ListAlarmHistoriesWithCallback(request *ListAlarmHistories
 // ListAlarmHistoriesRequest is the request struct for api ListAlarmHistories
 type ListAlarmHistoriesRequest struct {
 	*requests.RpcRequest
-	ProductCode string           `position:"Body" name:"ProductCode"`
-	StartTime   requests.Integer `position:"Body" name:"StartTime"`
-	NextToken   string           `position:"Body" name:"NextToken"`
-	Keyword     string           `position:"Body" name:"Keyword"`
-	EndTime     requests.Integer `position:"Body" name:"EndTime"`
-	MaxResults  requests.Integer `position:"Body" name:"MaxResults"`
+	ProductCode     string           `position:"Body" name:"ProductCode"`
+	StartTime       requests.Integer `position:"Body" name:"StartTime"`
+	NextToken       string           `position:"Body" name:"NextToken"`
+	Keyword         string           `position:"Body" name:"Keyword"`
+	OriginalContext string           `position:"Body" name:"OriginalContext"`
+	EndTime         requests.Integer `position:"Body" name:"EndTime"`
+	MaxResults      requests.Integer `position:"Body" name:"MaxResults"`
 }
 
 // ListAlarmHistoriesResponse is the response struct for api ListAlarmHistories
 type ListAlarmHistoriesResponse struct {
 	*responses.BaseResponse
-	RequestId      string         `json:"RequestId" xml:"RequestId"`
-	NextToken      string         `json:"NextToken" xml:"NextToken"`
-	MaxResults     int            `json:"MaxResults" xml:"MaxResults"`
 	TotalCount     int            `json:"TotalCount" xml:"TotalCount"`
+	NextToken      string         `json:"NextToken" xml:"NextToken"`
+	RequestId      string         `json:"RequestId" xml:"RequestId"`
+	MaxResults     int            `json:"MaxResults" xml:"MaxResults"`
 	AlarmHistories []AlarmHistory `json:"AlarmHistories" xml:"AlarmHistories"`
 }
 

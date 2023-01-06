@@ -75,7 +75,11 @@ type CreateQuotaApplicationRequest struct {
 	ProductCode     string                              `position:"Body" name:"ProductCode"`
 	QuotaActionCode string                              `position:"Body" name:"QuotaActionCode"`
 	DesireValue     requests.Float                      `position:"Body" name:"DesireValue"`
+	EffectiveTime   string                              `position:"Body" name:"EffectiveTime"`
 	QuotaCategory   string                              `position:"Body" name:"QuotaCategory"`
+	OriginalContext string                              `position:"Body" name:"OriginalContext"`
+	ExpireTime      string                              `position:"Body" name:"ExpireTime"`
+	EnvLanguage     string                              `position:"Body" name:"EnvLanguage"`
 	NoticeType      requests.Integer                    `position:"Body" name:"NoticeType"`
 	AuditMode       string                              `position:"Body" name:"AuditMode"`
 	Dimensions      *[]CreateQuotaApplicationDimensions `position:"Body" name:"Dimensions"  type:"Repeated"`
@@ -90,24 +94,24 @@ type CreateQuotaApplicationDimensions struct {
 // CreateQuotaApplicationResponse is the response struct for api CreateQuotaApplication
 type CreateQuotaApplicationResponse struct {
 	*responses.BaseResponse
-	Status           string                 `json:"Status" xml:"Status"`
-	ApplyTime        string                 `json:"ApplyTime" xml:"ApplyTime"`
-	QuotaDescription string                 `json:"QuotaDescription" xml:"QuotaDescription"`
 	RequestId        string                 `json:"RequestId" xml:"RequestId"`
-	EffectiveTime    string                 `json:"EffectiveTime" xml:"EffectiveTime"`
-	ProductCode      string                 `json:"ProductCode" xml:"ProductCode"`
-	QuotaUnit        string                 `json:"QuotaUnit" xml:"QuotaUnit"`
-	AuditReason      string                 `json:"AuditReason" xml:"AuditReason"`
-	Dimension        map[string]interface{} `json:"Dimension" xml:"Dimension"`
-	ApproveValue     float64                `json:"ApproveValue" xml:"ApproveValue"`
-	Reason           string                 `json:"Reason" xml:"Reason"`
+	Status           string                 `json:"Status" xml:"Status"`
+	DesireValue      int                    `json:"DesireValue" xml:"DesireValue"`
 	QuotaActionCode  string                 `json:"QuotaActionCode" xml:"QuotaActionCode"`
 	QuotaName        string                 `json:"QuotaName" xml:"QuotaName"`
-	QuotaArn         string                 `json:"QuotaArn" xml:"QuotaArn"`
-	NoticeType       int64                  `json:"NoticeType" xml:"NoticeType"`
-	ExpireTime       string                 `json:"ExpireTime" xml:"ExpireTime"`
 	ApplicationId    string                 `json:"ApplicationId" xml:"ApplicationId"`
-	DesireValue      int                    `json:"DesireValue" xml:"DesireValue"`
+	Reason           string                 `json:"Reason" xml:"Reason"`
+	AuditReason      string                 `json:"AuditReason" xml:"AuditReason"`
+	QuotaDescription string                 `json:"QuotaDescription" xml:"QuotaDescription"`
+	ProductCode      string                 `json:"ProductCode" xml:"ProductCode"`
+	QuotaArn         string                 `json:"QuotaArn" xml:"QuotaArn"`
+	ApplyTime        string                 `json:"ApplyTime" xml:"ApplyTime"`
+	ApproveValue     float64                `json:"ApproveValue" xml:"ApproveValue"`
+	Dimension        map[string]interface{} `json:"Dimension" xml:"Dimension"`
+	NoticeType       int64                  `json:"NoticeType" xml:"NoticeType"`
+	EffectiveTime    string                 `json:"EffectiveTime" xml:"EffectiveTime"`
+	ExpireTime       string                 `json:"ExpireTime" xml:"ExpireTime"`
+	QuotaUnit        string                 `json:"QuotaUnit" xml:"QuotaUnit"`
 }
 
 // CreateCreateQuotaApplicationRequest creates a request to invoke CreateQuotaApplication API

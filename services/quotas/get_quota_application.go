@@ -71,7 +71,8 @@ func (client *Client) GetQuotaApplicationWithCallback(request *GetQuotaApplicati
 // GetQuotaApplicationRequest is the request struct for api GetQuotaApplication
 type GetQuotaApplicationRequest struct {
 	*requests.RpcRequest
-	ApplicationId string `position:"Body" name:"ApplicationId"`
+	OriginalContext string `position:"Body" name:"OriginalContext"`
+	ApplicationId   string `position:"Body" name:"ApplicationId"`
 }
 
 // GetQuotaApplicationResponse is the response struct for api GetQuotaApplication

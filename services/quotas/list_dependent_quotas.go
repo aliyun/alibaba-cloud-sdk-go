@@ -71,6 +71,7 @@ func (client *Client) ListDependentQuotasWithCallback(request *ListDependentQuot
 // ListDependentQuotasRequest is the request struct for api ListDependentQuotas
 type ListDependentQuotasRequest struct {
 	*requests.RpcRequest
+	OriginalContext string `position:"Body" name:"OriginalContext"`
 	ProductCode     string `position:"Body" name:"ProductCode"`
 	QuotaActionCode string `position:"Body" name:"QuotaActionCode"`
 }

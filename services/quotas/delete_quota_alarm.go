@@ -71,7 +71,8 @@ func (client *Client) DeleteQuotaAlarmWithCallback(request *DeleteQuotaAlarmRequ
 // DeleteQuotaAlarmRequest is the request struct for api DeleteQuotaAlarm
 type DeleteQuotaAlarmRequest struct {
 	*requests.RpcRequest
-	AlarmId string `position:"Body" name:"AlarmId"`
+	OriginalContext string `position:"Body" name:"OriginalContext"`
+	AlarmId         string `position:"Body" name:"AlarmId"`
 }
 
 // DeleteQuotaAlarmResponse is the response struct for api DeleteQuotaAlarm

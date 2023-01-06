@@ -19,7 +19,7 @@ package quotas
 type QuotaDimension struct {
 	DimensionKey         string                     `json:"DimensionKey" xml:"DimensionKey"`
 	Name                 string                     `json:"Name" xml:"Name"`
-	DimensionValues      []string                   `json:"DimensionValues" xml:"DimensionValues"`
 	DependentDimensions  []string                   `json:"DependentDimensions" xml:"DependentDimensions"`
+	DimensionValues      []string                   `json:"DimensionValues" xml:"DimensionValues"`
 	DimensionValueDetail []DimensionValueDetailItem `json:"DimensionValueDetail" xml:"DimensionValueDetail"`
 }

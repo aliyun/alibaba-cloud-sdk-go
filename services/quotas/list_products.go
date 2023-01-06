@@ -71,16 +71,17 @@ func (client *Client) ListProductsWithCallback(request *ListProductsRequest, cal
 // ListProductsRequest is the request struct for api ListProducts
 type ListProductsRequest struct {
 	*requests.RpcRequest
-	NextToken  string           `position:"Body" name:"NextToken"`
-	MaxResults requests.Integer `position:"Body" name:"MaxResults"`
+	OriginalContext string           `position:"Body" name:"OriginalContext"`
+	NextToken       string           `position:"Body" name:"NextToken"`
+	MaxResults      requests.Integer `position:"Body" name:"MaxResults"`
 }
 
 // ListProductsResponse is the response struct for api ListProducts
 type ListProductsResponse struct {
 	*responses.BaseResponse
 	TotalCount  int            `json:"TotalCount" xml:"TotalCount"`
-	RequestId   string         `json:"RequestId" xml:"RequestId"`
 	NextToken   string         `json:"NextToken" xml:"NextToken"`
+	RequestId   string         `json:"RequestId" xml:"RequestId"`
 	MaxResults  int            `json:"MaxResults" xml:"MaxResults"`
 	ProductInfo []ProductInfos `json:"ProductInfo" xml:"ProductInfo"`
 }
