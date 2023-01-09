@@ -72,8 +72,8 @@ func (client *Client) PhoneNumberEncryptWithCallback(request *PhoneNumberEncrypt
 type PhoneNumberEncryptRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	RouteName            string           `position:"Query" name:"RouteName"`
 	Mask                 string           `position:"Query" name:"Mask"`
-	OfferType            string           `position:"Query" name:"OfferType"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	AuthCode             string           `position:"Query" name:"AuthCode"`
@@ -84,8 +84,8 @@ type PhoneNumberEncryptRequest struct {
 type PhoneNumberEncryptResponse struct {
 	*responses.BaseResponse
 	RequestId string     `json:"RequestId" xml:"RequestId"`
-	Code      string     `json:"Code" xml:"Code"`
 	Message   string     `json:"Message" xml:"Message"`
+	Code      string     `json:"Code" xml:"Code"`
 	Data      []DataItem `json:"Data" xml:"Data"`
 }
 
