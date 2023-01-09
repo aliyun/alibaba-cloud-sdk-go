@@ -1,3 +1,19 @@
+2023-01-09 Version: v1.62.122
+- Generated 2016-04-28 for `Vpc`.
+- Fix typos in ErrorCodes.
+- Add ErrorMessage translation.
+- Vpn support tag.
+- Add attachment resource for terraform.
+- Support diagnose vpn connection.
+- Change timeout and api rate limit for fullnat.
+- Add error Code.
+- Add error code dependencyViolation vSwitchCidrReservation.
+- Change input param.
+- Add errorcode  IncorrectVpcStatus for action CreateVpnRouteEntry.
+- Add errorcode FinancialLocked for action DeleteVpnConnection.
+- Support resource group and tags.
+- Support Return ResourceUid.
+
 2023-01-06 Version: v1.62.121
 - Generated 2019-12-30 for `facebody`.
 - Release DetectInfraredLivingFace and CompareFaceWithMask.
