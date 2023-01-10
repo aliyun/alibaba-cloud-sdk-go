@@ -17,5 +17,5 @@ package cdn
 
 // ContentsInDescribeEsExecuteData is a nested struct in cdn response
 type ContentsInDescribeEsExecuteData struct {
-	Content []Content `json:"Content" xml:"Content"`
+	Content []ContentInDescribeEsExecuteData `json:"Content" xml:"Content"`
 }

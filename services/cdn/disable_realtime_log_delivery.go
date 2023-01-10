@@ -71,8 +71,7 @@ func (client *Client) DisableRealtimeLogDeliveryWithCallback(request *DisableRea
 // DisableRealtimeLogDeliveryRequest is the request struct for api DisableRealtimeLogDelivery
 type DisableRealtimeLogDeliveryRequest struct {
 	*requests.RpcRequest
-	OwnerId requests.Integer `position:"Query" name:"OwnerId"`
-	Domain  string           `position:"Query" name:"Domain"`
+	Domain string `position:"Query" name:"Domain"`
 }
 
 // DisableRealtimeLogDeliveryResponse is the response struct for api DisableRealtimeLogDelivery

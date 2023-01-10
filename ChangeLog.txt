@@ -1,3 +1,7 @@
+2023-01-10 Version: v1.62.126
+- Generated 2018-05-10 for `Cdn`.
+- Add DescribePreloadDetailById.
+
 2023-01-10 Version: v1.62.125
 - Generated 2020-01-16 for `DAS`.
 - Public SetEventSubscription API.

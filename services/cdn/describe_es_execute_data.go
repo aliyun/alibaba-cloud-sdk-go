@@ -80,8 +80,8 @@ type DescribeEsExecuteDataRequest struct {
 // DescribeEsExecuteDataResponse is the response struct for api DescribeEsExecuteData
 type DescribeEsExecuteDataResponse struct {
 	*responses.BaseResponse
-	RequestId string    `json:"RequestId" xml:"RequestId"`
-	Contents  []Content `json:"Contents" xml:"Contents"`
+	RequestId string                           `json:"RequestId" xml:"RequestId"`
+	Contents  []ContentInDescribeEsExecuteData `json:"Contents" xml:"Contents"`
 }
 
 // CreateDescribeEsExecuteDataRequest creates a request to invoke DescribeEsExecuteData API

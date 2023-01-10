@@ -71,11 +71,10 @@ func (client *Client) ModifyRealtimeLogDeliveryWithCallback(request *ModifyRealt
 // ModifyRealtimeLogDeliveryRequest is the request struct for api ModifyRealtimeLogDelivery
 type ModifyRealtimeLogDeliveryRequest struct {
 	*requests.RpcRequest
-	Project  string           `position:"Query" name:"Project"`
-	OwnerId  requests.Integer `position:"Query" name:"OwnerId"`
-	Domain   string           `position:"Query" name:"Domain"`
-	Region   string           `position:"Query" name:"Region"`
-	Logstore string           `position:"Query" name:"Logstore"`
+	Domain   string `position:"Query" name:"Domain"`
+	Project  string `position:"Query" name:"Project"`
+	Region   string `position:"Query" name:"Region"`
+	Logstore string `position:"Query" name:"Logstore"`
 }
 
 // ModifyRealtimeLogDeliveryResponse is the response struct for api ModifyRealtimeLogDelivery

@@ -71,7 +71,6 @@ func (client *Client) ListUserCustomLogConfigWithCallback(request *ListUserCusto
 // ListUserCustomLogConfigRequest is the request struct for api ListUserCustomLogConfig
 type ListUserCustomLogConfigRequest struct {
 	*requests.RpcRequest
-	OwnerId requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // ListUserCustomLogConfigResponse is the response struct for api ListUserCustomLogConfig

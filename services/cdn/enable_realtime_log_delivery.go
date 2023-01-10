@@ -71,8 +71,7 @@ func (client *Client) EnableRealtimeLogDeliveryWithCallback(request *EnableRealt
 // EnableRealtimeLogDeliveryRequest is the request struct for api EnableRealtimeLogDelivery
 type EnableRealtimeLogDeliveryRequest struct {
 	*requests.RpcRequest
-	OwnerId requests.Integer `position:"Query" name:"OwnerId"`
-	Domain  string           `position:"Query" name:"Domain"`
+	Domain string `position:"Query" name:"Domain"`
 }
 
 // EnableRealtimeLogDeliveryResponse is the response struct for api EnableRealtimeLogDelivery

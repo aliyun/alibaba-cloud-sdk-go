@@ -17,5 +17,5 @@ package cdn
 
 // PointsInDescribeEsExceptionData is a nested struct in cdn response
 type PointsInDescribeEsExceptionData struct {
-	Points []string `json:"points" xml:"points"`
+	PointsItem []PointsItem `json:"points" xml:"points"`
 }

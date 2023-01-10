@@ -71,15 +71,14 @@ func (client *Client) CreateCdnCertificateSigningRequestWithCallback(request *Cr
 // CreateCdnCertificateSigningRequestRequest is the request struct for api CreateCdnCertificateSigningRequest
 type CreateCdnCertificateSigningRequestRequest struct {
 	*requests.RpcRequest
-	Country          string           `position:"Query" name:"Country"`
-	City             string           `position:"Query" name:"City"`
-	CommonName       string           `position:"Query" name:"CommonName"`
-	State            string           `position:"Query" name:"State"`
-	Email            string           `position:"Query" name:"Email"`
-	SANs             string           `position:"Query" name:"SANs"`
-	OwnerId          requests.Integer `position:"Query" name:"OwnerId"`
-	Organization     string           `position:"Query" name:"Organization"`
-	OrganizationUnit string           `position:"Query" name:"OrganizationUnit"`
+	Country          string `position:"Query" name:"Country"`
+	CommonName       string `position:"Query" name:"CommonName"`
+	City             string `position:"Query" name:"City"`
+	SANs             string `position:"Query" name:"SANs"`
+	Organization     string `position:"Query" name:"Organization"`
+	State            string `position:"Query" name:"State"`
+	OrganizationUnit string `position:"Query" name:"OrganizationUnit"`
+	Email            string `position:"Query" name:"Email"`
 }
 
 // CreateCdnCertificateSigningRequestResponse is the response struct for api CreateCdnCertificateSigningRequest

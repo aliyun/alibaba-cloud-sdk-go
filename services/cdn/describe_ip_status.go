@@ -71,8 +71,7 @@ func (client *Client) DescribeIpStatusWithCallback(request *DescribeIpStatusRequ
 // DescribeIpStatusRequest is the request struct for api DescribeIpStatus
 type DescribeIpStatusRequest struct {
 	*requests.RpcRequest
-	OwnerId requests.Integer `position:"Query" name:"OwnerId"`
-	Ips     string           `position:"Query" name:"Ips"`
+	Ips string `position:"Query" name:"Ips"`
 }
 
 // DescribeIpStatusResponse is the response struct for api DescribeIpStatus

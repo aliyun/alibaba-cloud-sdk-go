@@ -71,9 +71,8 @@ func (client *Client) SetCdnDomainCSRCertificateWithCallback(request *SetCdnDoma
 // SetCdnDomainCSRCertificateRequest is the request struct for api SetCdnDomainCSRCertificate
 type SetCdnDomainCSRCertificateRequest struct {
 	*requests.RpcRequest
-	ServerCertificate string           `position:"Query" name:"ServerCertificate"`
-	DomainName        string           `position:"Query" name:"DomainName"`
-	OwnerId           requests.Integer `position:"Query" name:"OwnerId"`
+	ServerCertificate string `position:"Query" name:"ServerCertificate"`
+	DomainName        string `position:"Query" name:"DomainName"`
 }
 
 // SetCdnDomainCSRCertificateResponse is the response struct for api SetCdnDomainCSRCertificate

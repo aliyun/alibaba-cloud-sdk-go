@@ -71,9 +71,8 @@ func (client *Client) CreateIllegalUrlExportTaskWithCallback(request *CreateIlle
 // CreateIllegalUrlExportTaskRequest is the request struct for api CreateIllegalUrlExportTask
 type CreateIllegalUrlExportTaskRequest struct {
 	*requests.RpcRequest
-	TaskName  string           `position:"Query" name:"TaskName"`
-	OwnerId   requests.Integer `position:"Query" name:"OwnerId"`
-	TimePoint string           `position:"Query" name:"TimePoint"`
+	TaskName  string `position:"Query" name:"TaskName"`
+	TimePoint string `position:"Query" name:"TimePoint"`
 }
 
 // CreateIllegalUrlExportTaskResponse is the response struct for api CreateIllegalUrlExportTask

@@ -71,8 +71,7 @@ func (client *Client) DescribeIllegalUrlExportTaskWithCallback(request *Describe
 // DescribeIllegalUrlExportTaskRequest is the request struct for api DescribeIllegalUrlExportTask
 type DescribeIllegalUrlExportTaskRequest struct {
 	*requests.RpcRequest
-	TaskId  string           `position:"Query" name:"TaskId"`
-	OwnerId requests.Integer `position:"Query" name:"OwnerId"`
+	TaskId string `position:"Query" name:"TaskId"`
 }
 
 // DescribeIllegalUrlExportTaskResponse is the response struct for api DescribeIllegalUrlExportTask

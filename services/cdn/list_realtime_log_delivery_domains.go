@@ -71,10 +71,9 @@ func (client *Client) ListRealtimeLogDeliveryDomainsWithCallback(request *ListRe
 // ListRealtimeLogDeliveryDomainsRequest is the request struct for api ListRealtimeLogDeliveryDomains
 type ListRealtimeLogDeliveryDomainsRequest struct {
 	*requests.RpcRequest
-	Project  string           `position:"Query" name:"Project"`
-	OwnerId  requests.Integer `position:"Query" name:"OwnerId"`
-	Region   string           `position:"Query" name:"Region"`
-	Logstore string           `position:"Query" name:"Logstore"`
+	Project  string `position:"Query" name:"Project"`
+	Region   string `position:"Query" name:"Region"`
+	Logstore string `position:"Query" name:"Logstore"`
 }
 
 // ListRealtimeLogDeliveryDomainsResponse is the response struct for api ListRealtimeLogDeliveryDomains

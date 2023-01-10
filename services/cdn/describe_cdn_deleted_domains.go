@@ -71,9 +71,8 @@ func (client *Client) DescribeCdnDeletedDomainsWithCallback(request *DescribeCdn
 // DescribeCdnDeletedDomainsRequest is the request struct for api DescribeCdnDeletedDomains
 type DescribeCdnDeletedDomainsRequest struct {
 	*requests.RpcRequest
-	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
 	PageSize   requests.Integer `position:"Query" name:"PageSize"`
-	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
+	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 // DescribeCdnDeletedDomainsResponse is the response struct for api DescribeCdnDeletedDomains

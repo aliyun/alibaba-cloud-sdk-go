@@ -71,10 +71,9 @@ func (client *Client) DescribeEsExceptionDataWithCallback(request *DescribeEsExc
 // DescribeEsExceptionDataRequest is the request struct for api DescribeEsExceptionData
 type DescribeEsExceptionDataRequest struct {
 	*requests.RpcRequest
-	StartTime string           `position:"Query" name:"StartTime"`
-	EndTime   string           `position:"Query" name:"EndTime"`
-	OwnerId   requests.Integer `position:"Query" name:"OwnerId"`
-	RuleId    string           `position:"Query" name:"RuleId"`
+	EndTime   string `position:"Query" name:"EndTime"`
+	StartTime string `position:"Query" name:"StartTime"`
+	RuleId    string `position:"Query" name:"RuleId"`
 }
 
 // DescribeEsExceptionDataResponse is the response struct for api DescribeEsExceptionData

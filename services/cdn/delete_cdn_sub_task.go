@@ -71,7 +71,6 @@ func (client *Client) DeleteCdnSubTaskWithCallback(request *DeleteCdnSubTaskRequ
 // DeleteCdnSubTaskRequest is the request struct for api DeleteCdnSubTask
 type DeleteCdnSubTaskRequest struct {
 	*requests.RpcRequest
-	OwnerId requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DeleteCdnSubTaskResponse is the response struct for api DeleteCdnSubTask
