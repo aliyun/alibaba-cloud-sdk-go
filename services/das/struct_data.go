@@ -23,6 +23,7 @@ type Data struct {
 	Timestamp                                               int64                                      `json:"timestamp" xml:"timestamp"`
 	TotalInstanceCount                                      int64                                      `json:"TotalInstanceCount" xml:"TotalInstanceCount"`
 	TaskState                                               string                                     `json:"TaskState" xml:"TaskState"`
+	Lang                                                    string                                     `json:"lang" xml:"lang"`
 	BenchStep                                               string                                     `json:"BenchStep" xml:"BenchStep"`
 	Source                                                  string                                     `json:"Source" xml:"Source"`
 	ErrMsg                                                  string                                     `json:"ErrMsg" xml:"ErrMsg"`
@@ -31,6 +32,7 @@ type Data struct {
 	SqlCompleteReuse                                        string                                     `json:"SqlCompleteReuse" xml:"SqlCompleteReuse"`
 	DtsJobId                                                string                                     `json:"DtsJobId" xml:"DtsJobId"`
 	EndState                                                string                                     `json:"EndState" xml:"EndState"`
+	MinInterval                                             int                                        `json:"minInterval" xml:"minInterval"`
 	SqlFileOnOss                                            string                                     `json:"SqlFileOnOss" xml:"SqlFileOnOss"`
 	Port                                                    int                                        `json:"Port" xml:"Port"`
 	Error                                                   string                                     `json:"Error" xml:"Error"`
@@ -43,15 +45,18 @@ type Data struct {
 	Improvement                                             string                                     `json:"improvement" xml:"improvement"`
 	PageNo                                                  int64                                      `json:"PageNo" xml:"PageNo"`
 	Extra                                                   string                                     `json:"Extra" xml:"Extra"`
+	Active                                                  int                                        `json:"active" xml:"active"`
 	Count                                                   int                                        `json:"count" xml:"count"`
 	OriUuid                                                 string                                     `json:"OriUuid" xml:"OriUuid"`
 	AccountId                                               string                                     `json:"AccountId" xml:"AccountId"`
+	Level                                                   string                                     `json:"level" xml:"level"`
 	ArchiveState                                            int                                        `json:"ArchiveState" xml:"ArchiveState"`
 	Complete                                                bool                                       `json:"complete" xml:"complete"`
 	TaskType                                                string                                     `json:"TaskType" xml:"TaskType"`
 	Status                                                  string                                     `json:"Status" xml:"Status"`
 	Rate                                                    int64                                      `json:"Rate" xml:"Rate"`
 	ResultId                                                string                                     `json:"resultId" xml:"resultId"`
+	UserId                                                  string                                     `json:"userId" xml:"userId"`
 	TurnOffAutoResourceOptimizeCount                        int64                                      `json:"TurnOffAutoResourceOptimizeCount" xml:"TurnOffAutoResourceOptimizeCount"`
 	WorkDir                                                 string                                     `json:"WorkDir" xml:"WorkDir"`
 	ArchiveJobId                                            string                                     `json:"ArchiveJobId" xml:"ArchiveJobId"`
@@ -86,13 +91,16 @@ type Data struct {
 	Code                                                    int                                        `json:"Code" xml:"Code"`
 	Total                                                   int64                                      `json:"Total" xml:"Total"`
 	DstIp                                                   string                                     `json:"DstIp" xml:"DstIp"`
+	EventContext                                            string                                     `json:"eventContext" xml:"eventContext"`
 	TotalAutoThrottleRulesCount                             int64                                      `json:"TotalAutoThrottleRulesCount" xml:"TotalAutoThrottleRulesCount"`
 	IsFinish                                                bool                                       `json:"IsFinish" xml:"IsFinish"`
 	DtsJobStatus                                            string                                     `json:"DtsJobStatus" xml:"DtsJobStatus"`
+	ContactName                                             string                                     `json:"contactName" xml:"contactName"`
 	EnableAutoThrottleCount                                 int64                                      `json:"EnableAutoThrottleCount" xml:"EnableAutoThrottleCount"`
 	DstType                                                 string                                     `json:"DstType" xml:"DstType"`
 	VpcId                                                   string                                     `json:"VpcId" xml:"VpcId"`
 	Topic                                                   string                                     `json:"Topic" xml:"Topic"`
+	ContactGroupName                                        string                                     `json:"contactGroupName" xml:"contactGroupName"`
 	Token                                                   string                                     `json:"Token" xml:"Token"`
 	DstInstanceUuid                                         string                                     `json:"DstInstanceUuid" xml:"DstInstanceUuid"`
 	DbLinkId                                                int64                                      `json:"DbLinkId" xml:"DbLinkId"`
@@ -109,9 +117,9 @@ type Data struct {
 	Uuid                                                    string                                     `json:"Uuid" xml:"Uuid"`
 	NodeId                                                  string                                     `json:"NodeId" xml:"NodeId"`
 	DtsJobState                                             int                                        `json:"DtsJobState" xml:"DtsJobState"`
-	UserId                                                  string                                     `json:"UserId" xml:"UserId"`
 	SrcInstanceArea                                         string                                     `json:"SrcInstanceArea" xml:"SrcInstanceArea"`
 	MetaFileName                                            string                                     `json:"MetaFileName" xml:"MetaFileName"`
+	ChannelType                                             string                                     `json:"channelType" xml:"channelType"`
 	Description                                             string                                     `json:"Description" xml:"Description"`
 	ErrorCode                                               string                                     `json:"ErrorCode" xml:"ErrorCode"`
 	BenchStepStatus                                         string                                     `json:"BenchStepStatus" xml:"BenchStepStatus"`
@@ -125,6 +133,11 @@ type Data struct {
 	LoadCmd                                                 string                                     `json:"LoadCmd" xml:"LoadCmd"`
 	NeverEnableAutoThrottleOrReleasedInstanceIdList         []string                                   `json:"NeverEnableAutoThrottleOrReleasedInstanceIdList" xml:"NeverEnableAutoThrottleOrReleasedInstanceIdList"`
 	NeverEnableAutoResourceOptimizeOrReleasedInstanceIdList []string                                   `json:"NeverEnableAutoResourceOptimizeOrReleasedInstanceIdList" xml:"NeverEnableAutoResourceOptimizeOrReleasedInstanceIdList"`
+	Storage                                                 Storage                                    `json:"Storage" xml:"Storage"`
+	Resource                                                Resource                                   `json:"Resource" xml:"Resource"`
+	Shard                                                   Shard                                      `json:"Shard" xml:"Shard"`
+	Spec                                                    Spec                                       `json:"Spec" xml:"Spec"`
+	Bandwidth                                               Bandwidth                                  `json:"Bandwidth" xml:"Bandwidth"`
 	ConfigResponse                                          ConfigResponse                             `json:"ConfigResponse" xml:"ConfigResponse"`
 	SourceStats                                             []SourceStatsItem                          `json:"SourceStats" xml:"SourceStats"`
 	SubResults                                              SubResultsInGetHDMAliyunResourceSyncResult `json:"SubResults" xml:"SubResults"`
@@ -137,7 +150,7 @@ type Data struct {
 	EnableAutoThrottleList                                  []EnableAutoThrottleListItem               `json:"EnableAutoThrottleList" xml:"EnableAutoThrottleList"`
 	TurnOffAutoThrottleList                                 []TurnOffAutoThrottleListItem              `json:"TurnOffAutoThrottleList" xml:"TurnOffAutoThrottleList"`
 	BigKeys                                                 BigKeysInCreateCacheAnalysisJob            `json:"BigKeys" xml:"BigKeys"`
-	Result                                                  []List                                     `json:"result" xml:"result"`
+	Result                                                  []ResultItem                               `json:"result" xml:"result"`
 	Sessions                                                []SessionsItem                             `json:"Sessions" xml:"Sessions"`
 	EnableAutoResourceOptimizeList                          []EnableAutoResourceOptimizeListItem       `json:"EnableAutoResourceOptimizeList" xml:"EnableAutoResourceOptimizeList"`
 }
