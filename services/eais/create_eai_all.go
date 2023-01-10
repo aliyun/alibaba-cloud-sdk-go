@@ -75,6 +75,7 @@ type CreateEaiAllRequest struct {
 	ClientSystemDiskCategory      string           `position:"Query" name:"ClientSystemDiskCategory"`
 	ClientInternetMaxBandwidthOut requests.Integer `position:"Query" name:"ClientInternetMaxBandwidthOut"`
 	ClientToken                   string           `position:"Query" name:"ClientToken"`
+	ResourceGroupId               string           `position:"Query" name:"ResourceGroupId"`
 	ClientInstanceName            string           `position:"Query" name:"ClientInstanceName"`
 	ClientInternetMaxBandwidthIn  requests.Integer `position:"Query" name:"ClientInternetMaxBandwidthIn"`
 	ClientSystemDiskSize          requests.Integer `position:"Query" name:"ClientSystemDiskSize"`

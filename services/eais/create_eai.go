@@ -74,6 +74,7 @@ type CreateEaiRequest struct {
 	ClientToken     string `position:"Query" name:"ClientToken"`
 	SecurityGroupId string `position:"Query" name:"SecurityGroupId"`
 	VSwitchId       string `position:"Query" name:"VSwitchId"`
+	ResourceGroupId string `position:"Query" name:"ResourceGroupId"`
 	InstanceName    string `position:"Query" name:"InstanceName"`
 	InstanceType    string `position:"Query" name:"InstanceType"`
 }

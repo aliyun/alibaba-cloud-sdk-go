@@ -75,6 +75,7 @@ type CreateEaiJupyterRequest struct {
 	SecurityGroupId string                            `position:"Query" name:"SecurityGroupId"`
 	EaisType        string                            `position:"Query" name:"EaisType"`
 	VSwitchId       string                            `position:"Query" name:"VSwitchId"`
+	ResourceGroupId string                            `position:"Query" name:"ResourceGroupId"`
 	EnvironmentVar  *[]CreateEaiJupyterEnvironmentVar `position:"Query" name:"EnvironmentVar"  type:"Json"`
 }
 

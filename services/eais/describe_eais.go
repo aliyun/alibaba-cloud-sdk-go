@@ -73,6 +73,7 @@ type DescribeEaisRequest struct {
 	*requests.RpcRequest
 	ElasticAcceleratedInstanceIds string           `position:"Query" name:"ElasticAcceleratedInstanceIds"`
 	PageNumber                    requests.Integer `position:"Query" name:"PageNumber"`
+	ResourceGroupId               string           `position:"Query" name:"ResourceGroupId"`
 	InstanceName                  string           `position:"Query" name:"InstanceName"`
 	PageSize                      requests.Integer `position:"Query" name:"PageSize"`
 	InstanceType                  string           `position:"Query" name:"InstanceType"`

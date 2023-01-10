@@ -1,3 +1,7 @@
+2023-01-10 Version: v1.62.124
+- Generated 2019-06-24 for `eais`.
+- Support ResourceGroup.
+
 2023-01-09 Version: v1.62.123
 - Generated 2020-02-17 for `Dytnsapi`.
 - Delete numberType.

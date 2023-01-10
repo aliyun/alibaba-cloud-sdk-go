@@ -33,5 +33,6 @@ type Instance struct {
 	VSwitchId                    string `json:"VSwitchId" xml:"VSwitchId"`
 	SecurityGroupId              string `json:"SecurityGroupId" xml:"SecurityGroupId"`
 	StartTime                    string `json:"StartTime" xml:"StartTime"`
+	ResourceGroupId              string `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	Tags                         Tags   `json:"Tags" xml:"Tags"`
 }
