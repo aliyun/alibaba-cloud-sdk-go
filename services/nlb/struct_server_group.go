@@ -30,6 +30,7 @@ type ServerGroup struct {
 	ConnectionDrainEnabled  bool        `json:"ConnectionDrainEnabled" xml:"ConnectionDrainEnabled"`
 	ConnectionDrainTimeout  int         `json:"ConnectionDrainTimeout" xml:"ConnectionDrainTimeout"`
 	PreserveClientIpEnabled bool        `json:"PreserveClientIpEnabled" xml:"PreserveClientIpEnabled"`
+	AnyPortEnabled          bool        `json:"AnyPortEnabled" xml:"AnyPortEnabled"`
 	ResourceGroupId         string      `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	ServerGroupStatus       string      `json:"ServerGroupStatus" xml:"ServerGroupStatus"`
 	AliUid                  int64       `json:"AliUid" xml:"AliUid"`

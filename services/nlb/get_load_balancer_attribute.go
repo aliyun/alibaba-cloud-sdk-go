@@ -79,35 +79,38 @@ type GetLoadBalancerAttributeRequest struct {
 // GetLoadBalancerAttributeResponse is the response struct for api GetLoadBalancerAttribute
 type GetLoadBalancerAttributeResponse struct {
 	*responses.BaseResponse
-	RequestId                  string                    `json:"RequestId" xml:"RequestId"`
-	Success                    bool                      `json:"Success" xml:"Success"`
-	Code                       string                    `json:"Code" xml:"Code"`
-	Message                    string                    `json:"Message" xml:"Message"`
-	HttpStatusCode             int                       `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	DynamicCode                string                    `json:"DynamicCode" xml:"DynamicCode"`
-	DynamicMessage             string                    `json:"DynamicMessage" xml:"DynamicMessage"`
-	RegionId                   string                    `json:"RegionId" xml:"RegionId"`
-	LoadBalancerId             string                    `json:"LoadBalancerId" xml:"LoadBalancerId"`
-	LoadBalancerName           string                    `json:"LoadBalancerName" xml:"LoadBalancerName"`
-	LoadBalancerType           string                    `json:"LoadBalancerType" xml:"LoadBalancerType"`
-	AddressType                string                    `json:"AddressType" xml:"AddressType"`
-	AddressIpVersion           string                    `json:"AddressIpVersion" xml:"AddressIpVersion"`
-	Ipv6AddressType            string                    `json:"Ipv6AddressType" xml:"Ipv6AddressType"`
-	LoadBalancerStatus         string                    `json:"LoadBalancerStatus" xml:"LoadBalancerStatus"`
-	LoadBalancerBusinessStatus string                    `json:"LoadBalancerBusinessStatus" xml:"LoadBalancerBusinessStatus"`
-	VpcId                      string                    `json:"VpcId" xml:"VpcId"`
-	CapacityUnitCount          int64                     `json:"CapacityUnitCount" xml:"CapacityUnitCount"`
-	CreateTime                 string                    `json:"CreateTime" xml:"CreateTime"`
-	ResourceGroupId            string                    `json:"ResourceGroupId" xml:"ResourceGroupId"`
-	DNSName                    string                    `json:"DNSName" xml:"DNSName"`
-	BandwidthPackageId         string                    `json:"BandwidthPackageId" xml:"BandwidthPackageId"`
-	CrossZoneEnabled           bool                      `json:"CrossZoneEnabled" xml:"CrossZoneEnabled"`
-	TrafficAffinityEnabled     bool                      `json:"TrafficAffinityEnabled" xml:"TrafficAffinityEnabled"`
-	Cps                        int                       `json:"Cps" xml:"Cps"`
-	SecurityGroupIds           []string                  `json:"SecurityGroupIds" xml:"SecurityGroupIds"`
-	LoadBalancerBillingConfig  LoadBalancerBillingConfig `json:"LoadBalancerBillingConfig" xml:"LoadBalancerBillingConfig"`
-	OperationLocks             []OperationLock           `json:"OperationLocks" xml:"OperationLocks"`
-	ZoneMappings               []ZoneMapping             `json:"ZoneMappings" xml:"ZoneMappings"`
+	RequestId                    string                       `json:"RequestId" xml:"RequestId"`
+	Success                      bool                         `json:"Success" xml:"Success"`
+	Code                         string                       `json:"Code" xml:"Code"`
+	Message                      string                       `json:"Message" xml:"Message"`
+	HttpStatusCode               int                          `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	DynamicCode                  string                       `json:"DynamicCode" xml:"DynamicCode"`
+	DynamicMessage               string                       `json:"DynamicMessage" xml:"DynamicMessage"`
+	RegionId                     string                       `json:"RegionId" xml:"RegionId"`
+	LoadBalancerId               string                       `json:"LoadBalancerId" xml:"LoadBalancerId"`
+	LoadBalancerName             string                       `json:"LoadBalancerName" xml:"LoadBalancerName"`
+	LoadBalancerType             string                       `json:"LoadBalancerType" xml:"LoadBalancerType"`
+	AddressType                  string                       `json:"AddressType" xml:"AddressType"`
+	AddressIpVersion             string                       `json:"AddressIpVersion" xml:"AddressIpVersion"`
+	Ipv6AddressType              string                       `json:"Ipv6AddressType" xml:"Ipv6AddressType"`
+	LoadBalancerStatus           string                       `json:"LoadBalancerStatus" xml:"LoadBalancerStatus"`
+	LoadBalancerBusinessStatus   string                       `json:"LoadBalancerBusinessStatus" xml:"LoadBalancerBusinessStatus"`
+	VpcId                        string                       `json:"VpcId" xml:"VpcId"`
+	CapacityUnitCount            int64                        `json:"CapacityUnitCount" xml:"CapacityUnitCount"`
+	CreateTime                   string                       `json:"CreateTime" xml:"CreateTime"`
+	ResourceGroupId              string                       `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	DNSName                      string                       `json:"DNSName" xml:"DNSName"`
+	BandwidthPackageId           string                       `json:"BandwidthPackageId" xml:"BandwidthPackageId"`
+	CrossZoneEnabled             bool                         `json:"CrossZoneEnabled" xml:"CrossZoneEnabled"`
+	TrafficAffinityEnabled       bool                         `json:"TrafficAffinityEnabled" xml:"TrafficAffinityEnabled"`
+	Cps                          int                          `json:"Cps" xml:"Cps"`
+	SysSecurityGroupId           string                       `json:"SysSecurityGroupId" xml:"SysSecurityGroupId"`
+	SecurityGroupIds             []string                     `json:"SecurityGroupIds" xml:"SecurityGroupIds"`
+	LoadBalancerBillingConfig    LoadBalancerBillingConfig    `json:"LoadBalancerBillingConfig" xml:"LoadBalancerBillingConfig"`
+	DeletionProtectionConfig     DeletionProtectionConfig     `json:"DeletionProtectionConfig" xml:"DeletionProtectionConfig"`
+	ModificationProtectionConfig ModificationProtectionConfig `json:"ModificationProtectionConfig" xml:"ModificationProtectionConfig"`
+	OperationLocks               []OperationLock              `json:"OperationLocks" xml:"OperationLocks"`
+	ZoneMappings                 []ZoneMapping                `json:"ZoneMappings" xml:"ZoneMappings"`
 }
 
 // CreateGetLoadBalancerAttributeRequest creates a request to invoke GetLoadBalancerAttribute API

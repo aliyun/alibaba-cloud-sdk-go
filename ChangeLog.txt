@@ -1,3 +1,7 @@
+2023-01-11 Version: v1.62.128
+- Generated 2022-04-30 for `Nlb`.
+- NLB new sdk.
+
 2023-01-11 Version: v1.62.127
 - Generated 2019-02-14 for `Ons`.
 - Add OnsMessageDetail for query message body.

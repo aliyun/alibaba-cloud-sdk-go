@@ -30,10 +30,10 @@ type ListenerInfo struct {
 	CaEnabled            bool     `json:"CaEnabled" xml:"CaEnabled"`
 	ListenerStatus       string   `json:"ListenerStatus" xml:"ListenerStatus"`
 	RegionId             string   `json:"RegionId" xml:"RegionId"`
-	AlpnEnabled          string   `json:"AlpnEnabled" xml:"AlpnEnabled"`
+	AlpnEnabled          bool     `json:"AlpnEnabled" xml:"AlpnEnabled"`
 	AlpnPolicy           string   `json:"AlpnPolicy" xml:"AlpnPolicy"`
-	SecSensorEnabled     string   `json:"SecSensorEnabled" xml:"SecSensorEnabled"`
-	ProxyProtocolEnabled string   `json:"ProxyProtocolEnabled" xml:"ProxyProtocolEnabled"`
+	SecSensorEnabled     bool     `json:"SecSensorEnabled" xml:"SecSensorEnabled"`
+	ProxyProtocolEnabled bool     `json:"ProxyProtocolEnabled" xml:"ProxyProtocolEnabled"`
 	Cps                  int      `json:"Cps" xml:"Cps"`
 	Mss                  int      `json:"Mss" xml:"Mss"`
 	CertificateIds       []string `json:"CertificateIds" xml:"CertificateIds"`

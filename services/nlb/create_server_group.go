@@ -84,6 +84,7 @@ type CreateServerGroupRequest struct {
 	DryRun                  requests.Boolean                   `position:"Body" name:"DryRun"`
 	ConnectionDrainEnabled  requests.Boolean                   `position:"Body" name:"ConnectionDrainEnabled"`
 	ConnectionDrainTimeout  requests.Integer                   `position:"Body" name:"ConnectionDrainTimeout"`
+	AnyPortEnabled          requests.Boolean                   `position:"Body" name:"AnyPortEnabled"`
 	ServerGroupType         string                             `position:"Body" name:"ServerGroupType"`
 	VpcId                   string                             `position:"Body" name:"VpcId"`
 }

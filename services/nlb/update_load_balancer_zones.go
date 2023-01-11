@@ -83,6 +83,7 @@ type UpdateLoadBalancerZonesZoneMappings struct {
 	ZoneId             string `name:"ZoneId"`
 	PrivateIPv4Address string `name:"PrivateIPv4Address"`
 	AllocationId       string `name:"AllocationId"`
+	EipType            string `name:"EipType"`
 }
 
 // UpdateLoadBalancerZonesResponse is the response struct for api UpdateLoadBalancerZones

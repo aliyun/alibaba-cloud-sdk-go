@@ -100,8 +100,8 @@ type GetListenerAttributeResponse struct {
 	CaEnabled            bool     `json:"CaEnabled" xml:"CaEnabled"`
 	AlpnEnabled          bool     `json:"AlpnEnabled" xml:"AlpnEnabled"`
 	AlpnPolicy           string   `json:"AlpnPolicy" xml:"AlpnPolicy"`
-	ProxyProtocolEnabled string   `json:"ProxyProtocolEnabled" xml:"ProxyProtocolEnabled"`
-	SecSensorEnabled     string   `json:"SecSensorEnabled" xml:"SecSensorEnabled"`
+	ProxyProtocolEnabled bool     `json:"ProxyProtocolEnabled" xml:"ProxyProtocolEnabled"`
+	SecSensorEnabled     bool     `json:"SecSensorEnabled" xml:"SecSensorEnabled"`
 	ListenerStatus       string   `json:"ListenerStatus" xml:"ListenerStatus"`
 	Cps                  int      `json:"Cps" xml:"Cps"`
 	Mss                  int      `json:"Mss" xml:"Mss"`

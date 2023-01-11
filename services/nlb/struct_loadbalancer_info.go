@@ -17,27 +17,30 @@ package nlb
 
 // LoadbalancerInfo is a nested struct in nlb response
 type LoadbalancerInfo struct {
-	RegionId                   string                    `json:"RegionId" xml:"RegionId"`
-	LoadBalancerId             string                    `json:"LoadBalancerId" xml:"LoadBalancerId"`
-	LoadBalancerName           string                    `json:"LoadBalancerName" xml:"LoadBalancerName"`
-	LoadBalancerType           string                    `json:"LoadBalancerType" xml:"LoadBalancerType"`
-	AddressType                string                    `json:"AddressType" xml:"AddressType"`
-	AddressIpVersion           string                    `json:"AddressIpVersion" xml:"AddressIpVersion"`
-	Ipv6AddressType            string                    `json:"Ipv6AddressType" xml:"Ipv6AddressType"`
-	LoadBalancerStatus         string                    `json:"LoadBalancerStatus" xml:"LoadBalancerStatus"`
-	LoadBalancerBusinessStatus string                    `json:"LoadBalancerBusinessStatus" xml:"LoadBalancerBusinessStatus"`
-	VpcId                      string                    `json:"VpcId" xml:"VpcId"`
-	CapacityUnitCount          int64                     `json:"CapacityUnitCount" xml:"CapacityUnitCount"`
-	CreateTime                 string                    `json:"CreateTime" xml:"CreateTime"`
-	ResourceGroupId            string                    `json:"ResourceGroupId" xml:"ResourceGroupId"`
-	DNSName                    string                    `json:"DNSName" xml:"DNSName"`
-	BandwidthPackageId         string                    `json:"BandwidthPackageId" xml:"BandwidthPackageId"`
-	CrossZoneEnabled           bool                      `json:"CrossZoneEnabled" xml:"CrossZoneEnabled"`
-	TrafficAffinityEnabled     bool                      `json:"TrafficAffinityEnabled" xml:"TrafficAffinityEnabled"`
-	AliUid                     int64                     `json:"AliUid" xml:"AliUid"`
-	SecurityGroupIds           []string                  `json:"SecurityGroupIds" xml:"SecurityGroupIds"`
-	LoadBalancerBillingConfig  LoadBalancerBillingConfig `json:"LoadBalancerBillingConfig" xml:"LoadBalancerBillingConfig"`
-	OperationLocks             []OperationLock           `json:"OperationLocks" xml:"OperationLocks"`
-	ZoneMappings               []ZoneMapping             `json:"ZoneMappings" xml:"ZoneMappings"`
-	Tags                       []TagModels               `json:"Tags" xml:"Tags"`
+	RegionId                     string                       `json:"RegionId" xml:"RegionId"`
+	LoadBalancerId               string                       `json:"LoadBalancerId" xml:"LoadBalancerId"`
+	LoadBalancerName             string                       `json:"LoadBalancerName" xml:"LoadBalancerName"`
+	LoadBalancerType             string                       `json:"LoadBalancerType" xml:"LoadBalancerType"`
+	AddressType                  string                       `json:"AddressType" xml:"AddressType"`
+	AddressIpVersion             string                       `json:"AddressIpVersion" xml:"AddressIpVersion"`
+	Ipv6AddressType              string                       `json:"Ipv6AddressType" xml:"Ipv6AddressType"`
+	LoadBalancerStatus           string                       `json:"LoadBalancerStatus" xml:"LoadBalancerStatus"`
+	LoadBalancerBusinessStatus   string                       `json:"LoadBalancerBusinessStatus" xml:"LoadBalancerBusinessStatus"`
+	VpcId                        string                       `json:"VpcId" xml:"VpcId"`
+	CapacityUnitCount            int64                        `json:"CapacityUnitCount" xml:"CapacityUnitCount"`
+	CreateTime                   string                       `json:"CreateTime" xml:"CreateTime"`
+	ResourceGroupId              string                       `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	DNSName                      string                       `json:"DNSName" xml:"DNSName"`
+	BandwidthPackageId           string                       `json:"BandwidthPackageId" xml:"BandwidthPackageId"`
+	SysSecurityGroupId           string                       `json:"SysSecurityGroupId" xml:"SysSecurityGroupId"`
+	CrossZoneEnabled             bool                         `json:"CrossZoneEnabled" xml:"CrossZoneEnabled"`
+	TrafficAffinityEnabled       bool                         `json:"TrafficAffinityEnabled" xml:"TrafficAffinityEnabled"`
+	AliUid                       int64                        `json:"AliUid" xml:"AliUid"`
+	SecurityGroupIds             []string                     `json:"SecurityGroupIds" xml:"SecurityGroupIds"`
+	LoadBalancerBillingConfig    LoadBalancerBillingConfig    `json:"LoadBalancerBillingConfig" xml:"LoadBalancerBillingConfig"`
+	DeletionProtectionConfig     DeletionProtectionConfig     `json:"DeletionProtectionConfig" xml:"DeletionProtectionConfig"`
+	ModificationProtectionConfig ModificationProtectionConfig `json:"ModificationProtectionConfig" xml:"ModificationProtectionConfig"`
+	OperationLocks               []OperationLock              `json:"OperationLocks" xml:"OperationLocks"`
+	ZoneMappings                 []ZoneMapping                `json:"ZoneMappings" xml:"ZoneMappings"`
+	Tags                         []TagModels                  `json:"Tags" xml:"Tags"`
 }

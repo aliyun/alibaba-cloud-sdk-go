@@ -71,19 +71,21 @@ func (client *Client) CreateLoadBalancerWithCallback(request *CreateLoadBalancer
 // CreateLoadBalancerRequest is the request struct for api CreateLoadBalancer
 type CreateLoadBalancerRequest struct {
 	*requests.RpcRequest
-	ClientToken               string                                      `position:"Body" name:"ClientToken"`
-	LoadBalancerBillingConfig CreateLoadBalancerLoadBalancerBillingConfig `position:"Body" name:"LoadBalancerBillingConfig"  type:"Struct"`
-	BizFlag                   string                                      `position:"Body" name:"BizFlag"`
-	AddressIpVersion          string                                      `position:"Body" name:"AddressIpVersion"`
-	ResourceGroupId           string                                      `position:"Body" name:"ResourceGroupId"`
-	LoadBalancerName          string                                      `position:"Body" name:"LoadBalancerName"`
-	AddressType               string                                      `position:"Body" name:"AddressType"`
-	BandwidthPackageId        string                                      `position:"Body" name:"BandwidthPackageId"`
-	DryRun                    requests.Boolean                            `position:"Body" name:"DryRun"`
-	ZoneMappings              *[]CreateLoadBalancerZoneMappings           `position:"Body" name:"ZoneMappings"  type:"Repeated"`
-	SecurityGroupIds          *[]string                                   `position:"Body" name:"SecurityGroupIds"  type:"Repeated"`
-	LoadBalancerType          string                                      `position:"Body" name:"LoadBalancerType"`
-	VpcId                     string                                      `position:"Body" name:"VpcId"`
+	ClientToken                  string                                         `position:"Body" name:"ClientToken"`
+	ModificationProtectionConfig CreateLoadBalancerModificationProtectionConfig `position:"Body" name:"ModificationProtectionConfig"  type:"Struct"`
+	LoadBalancerBillingConfig    CreateLoadBalancerLoadBalancerBillingConfig    `position:"Body" name:"LoadBalancerBillingConfig"  type:"Struct"`
+	BizFlag                      string                                         `position:"Body" name:"BizFlag"`
+	DeletionProtectionConfig     CreateLoadBalancerDeletionProtectionConfig     `position:"Body" name:"DeletionProtectionConfig"  type:"Struct"`
+	AddressIpVersion             string                                         `position:"Body" name:"AddressIpVersion"`
+	ResourceGroupId              string                                         `position:"Body" name:"ResourceGroupId"`
+	LoadBalancerName             string                                         `position:"Body" name:"LoadBalancerName"`
+	AddressType                  string                                         `position:"Body" name:"AddressType"`
+	BandwidthPackageId           string                                         `position:"Body" name:"BandwidthPackageId"`
+	DryRun                       requests.Boolean                               `position:"Body" name:"DryRun"`
+	ZoneMappings                 *[]CreateLoadBalancerZoneMappings              `position:"Body" name:"ZoneMappings"  type:"Repeated"`
+	SecurityGroupIds             *[]string                                      `position:"Body" name:"SecurityGroupIds"  type:"Repeated"`
+	LoadBalancerType             string                                         `position:"Body" name:"LoadBalancerType"`
+	VpcId                        string                                         `position:"Body" name:"VpcId"`
 }
 
 // CreateLoadBalancerZoneMappings is a repeated param struct in CreateLoadBalancerRequest
@@ -94,9 +96,21 @@ type CreateLoadBalancerZoneMappings struct {
 	AllocationId       string `name:"AllocationId"`
 }
 
+// CreateLoadBalancerModificationProtectionConfig is a repeated param struct in CreateLoadBalancerRequest
+type CreateLoadBalancerModificationProtectionConfig struct {
+	Status string `name:"Status"`
+	Reason string `name:"Reason"`
+}
+
 // CreateLoadBalancerLoadBalancerBillingConfig is a repeated param struct in CreateLoadBalancerRequest
 type CreateLoadBalancerLoadBalancerBillingConfig struct {
 	PayType string `name:"PayType"`
+}
+
+// CreateLoadBalancerDeletionProtectionConfig is a repeated param struct in CreateLoadBalancerRequest
+type CreateLoadBalancerDeletionProtectionConfig struct {
+	Enabled string `name:"Enabled"`
+	Reason  string `name:"Reason"`
 }
 
 // CreateLoadBalancerResponse is the response struct for api CreateLoadBalancer

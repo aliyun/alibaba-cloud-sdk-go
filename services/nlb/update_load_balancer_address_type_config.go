@@ -83,6 +83,7 @@ type UpdateLoadBalancerAddressTypeConfigZoneMappings struct {
 	VSwitchId    string `name:"VSwitchId"`
 	ZoneId       string `name:"ZoneId"`
 	AllocationId string `name:"AllocationId"`
+	EipType      string `name:"EipType"`
 }
 
 // UpdateLoadBalancerAddressTypeConfigResponse is the response struct for api UpdateLoadBalancerAddressTypeConfig
