@@ -1,3 +1,7 @@
+2023-01-11 Version: v1.62.127
+- Generated 2019-02-14 for `Ons`.
+- Add OnsMessageDetail for query message body.
+
 2023-01-10 Version: v1.62.126
 - Generated 2018-05-10 for `Cdn`.
 - Add DescribePreloadDetailById.

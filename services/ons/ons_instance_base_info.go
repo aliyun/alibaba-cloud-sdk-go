@@ -71,6 +71,7 @@ func (client *Client) OnsInstanceBaseInfoWithCallback(request *OnsInstanceBaseIn
 // OnsInstanceBaseInfoRequest is the request struct for api OnsInstanceBaseInfo
 type OnsInstanceBaseInfoRequest struct {
 	*requests.RpcRequest
+	UserId     string `position:"Query" name:"UserId"`
 	InstanceId string `position:"Query" name:"InstanceId"`
 }
 

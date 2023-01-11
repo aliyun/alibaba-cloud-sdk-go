@@ -73,6 +73,7 @@ type OnsTopicCreateRequest struct {
 	*requests.RpcRequest
 	MessageType requests.Integer `position:"Query" name:"MessageType"`
 	Remark      string           `position:"Query" name:"Remark"`
+	UserId      string           `position:"Query" name:"UserId"`
 	InstanceId  string           `position:"Query" name:"InstanceId"`
 	Topic       string           `position:"Query" name:"Topic"`
 }

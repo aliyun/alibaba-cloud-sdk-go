@@ -23,5 +23,6 @@ type InstanceVO struct {
 	InstanceStatus    int                            `json:"InstanceStatus" xml:"InstanceStatus"`
 	InstanceId        string                         `json:"InstanceId" xml:"InstanceId"`
 	InstanceType      int                            `json:"InstanceType" xml:"InstanceType"`
+	CreateTime        int64                          `json:"CreateTime" xml:"CreateTime"`
 	Tags              TagsInOnsInstanceInServiceList `json:"Tags" xml:"Tags"`
 }

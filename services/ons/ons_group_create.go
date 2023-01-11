@@ -73,6 +73,7 @@ type OnsGroupCreateRequest struct {
 	*requests.RpcRequest
 	GroupId    string `position:"Query" name:"GroupId"`
 	Remark     string `position:"Query" name:"Remark"`
+	UserId     string `position:"Query" name:"UserId"`
 	InstanceId string `position:"Query" name:"InstanceId"`
 	GroupType  string `position:"Query" name:"GroupType"`
 }
