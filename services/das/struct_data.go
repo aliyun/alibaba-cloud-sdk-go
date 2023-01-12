@@ -32,7 +32,6 @@ type Data struct {
 	SqlCompleteReuse                                        string                                     `json:"SqlCompleteReuse" xml:"SqlCompleteReuse"`
 	DtsJobId                                                string                                     `json:"DtsJobId" xml:"DtsJobId"`
 	EndState                                                string                                     `json:"EndState" xml:"EndState"`
-	MinInterval                                             int                                        `json:"minInterval" xml:"minInterval"`
 	SqlFileOnOss                                            string                                     `json:"SqlFileOnOss" xml:"SqlFileOnOss"`
 	Port                                                    int                                        `json:"Port" xml:"Port"`
 	Error                                                   string                                     `json:"Error" xml:"Error"`
@@ -55,6 +54,7 @@ type Data struct {
 	TaskType                                                string                                     `json:"TaskType" xml:"TaskType"`
 	Status                                                  string                                     `json:"Status" xml:"Status"`
 	Rate                                                    int64                                      `json:"Rate" xml:"Rate"`
+	MinInterval                                             string                                     `json:"minInterval" xml:"minInterval"`
 	ResultId                                                string                                     `json:"resultId" xml:"resultId"`
 	UserId                                                  string                                     `json:"userId" xml:"userId"`
 	TurnOffAutoResourceOptimizeCount                        int64                                      `json:"TurnOffAutoResourceOptimizeCount" xml:"TurnOffAutoResourceOptimizeCount"`
@@ -63,9 +63,11 @@ type Data struct {
 	State                                                   string                                     `json:"state" xml:"state"`
 	External                                                string                                     `json:"External" xml:"External"`
 	CreateTime                                              string                                     `json:"CreateTime" xml:"CreateTime"`
+	Id                                                      int64                                      `json:"id" xml:"id"`
 	DownloadUrl                                             string                                     `json:"DownloadUrl" xml:"DownloadUrl"`
 	JarOnOss                                                string                                     `json:"JarOnOss" xml:"JarOnOss"`
 	SqlFilePath                                             string                                     `json:"SqlFilePath" xml:"SqlFilePath"`
+	GmtModified                                             int64                                      `json:"gmtModified" xml:"gmtModified"`
 	InstanceId                                              string                                     `json:"InstanceId" xml:"InstanceId"`
 	SrcPublicIp                                             string                                     `json:"SrcPublicIp" xml:"SrcPublicIp"`
 	ExpireTime                                              string                                     `json:"ExpireTime" xml:"ExpireTime"`
@@ -124,6 +126,7 @@ type Data struct {
 	ErrorCode                                               string                                     `json:"ErrorCode" xml:"ErrorCode"`
 	BenchStepStatus                                         string                                     `json:"BenchStepStatus" xml:"BenchStepStatus"`
 	SmartPressureTime                                       int                                        `json:"SmartPressureTime" xml:"SmartPressureTime"`
+	GmtCreate                                               int64                                      `json:"gmtCreate" xml:"gmtCreate"`
 	Results                                                 string                                     `json:"Results" xml:"Results"`
 	SqlFileName                                             string                                     `json:"SqlFileName" xml:"SqlFileName"`
 	SyncStatus                                              string                                     `json:"SyncStatus" xml:"SyncStatus"`
@@ -131,6 +134,7 @@ type Data struct {
 	TotalAutoResourceOptimizeRulesCount                     int64                                      `json:"TotalAutoResourceOptimizeRulesCount" xml:"TotalAutoResourceOptimizeRulesCount"`
 	StatusCode                                              string                                     `json:"StatusCode" xml:"StatusCode"`
 	LoadCmd                                                 string                                     `json:"LoadCmd" xml:"LoadCmd"`
+	EventSendGroup                                          []string                                   `json:"eventSendGroup" xml:"eventSendGroup"`
 	NeverEnableAutoThrottleOrReleasedInstanceIdList         []string                                   `json:"NeverEnableAutoThrottleOrReleasedInstanceIdList" xml:"NeverEnableAutoThrottleOrReleasedInstanceIdList"`
 	NeverEnableAutoResourceOptimizeOrReleasedInstanceIdList []string                                   `json:"NeverEnableAutoResourceOptimizeOrReleasedInstanceIdList" xml:"NeverEnableAutoResourceOptimizeOrReleasedInstanceIdList"`
 	Storage                                                 Storage                                    `json:"Storage" xml:"Storage"`
@@ -150,7 +154,9 @@ type Data struct {
 	EnableAutoThrottleList                                  []EnableAutoThrottleListItem               `json:"EnableAutoThrottleList" xml:"EnableAutoThrottleList"`
 	TurnOffAutoThrottleList                                 []TurnOffAutoThrottleListItem              `json:"TurnOffAutoThrottleList" xml:"TurnOffAutoThrottleList"`
 	BigKeys                                                 BigKeysInCreateCacheAnalysisJob            `json:"BigKeys" xml:"BigKeys"`
+	ContactGroups                                           []ContactGroupsItem                        `json:"contactGroups" xml:"contactGroups"`
 	Result                                                  []ResultItem                               `json:"result" xml:"result"`
 	Sessions                                                []SessionsItem                             `json:"Sessions" xml:"Sessions"`
 	EnableAutoResourceOptimizeList                          []EnableAutoResourceOptimizeListItem       `json:"EnableAutoResourceOptimizeList" xml:"EnableAutoResourceOptimizeList"`
+	Contacts                                                []ContactsItem                             `json:"contacts" xml:"contacts"`
 }

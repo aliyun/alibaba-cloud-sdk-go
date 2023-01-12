@@ -85,11 +85,11 @@ type SetEventSubscriptionRequest struct {
 // SetEventSubscriptionResponse is the response struct for api SetEventSubscription
 type SetEventSubscriptionResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Message   string `json:"Message" xml:"Message"`
-	Code      string `json:"Code" xml:"Code"`
-	Success   string `json:"Success" xml:"Success"`
-	Data      Data   `json:"Data" xml:"Data"`
+	RequestId string                     `json:"RequestId" xml:"RequestId"`
+	Message   string                     `json:"Message" xml:"Message"`
+	Code      string                     `json:"Code" xml:"Code"`
+	Success   string                     `json:"Success" xml:"Success"`
+	Data      DataInSetEventSubscription `json:"Data" xml:"Data"`
 }
 
 // CreateSetEventSubscriptionRequest creates a request to invoke SetEventSubscription API

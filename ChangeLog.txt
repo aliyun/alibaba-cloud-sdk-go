@@ -1,3 +1,7 @@
+2023-01-12 Version: v1.62.129
+- Generated 2020-01-16 for `DAS`.
+- Public GetEventSubscription API.
+
 2023-01-11 Version: v1.62.128
 - Generated 2022-04-30 for `Nlb`.
 - NLB new sdk.
