@@ -27,5 +27,6 @@ type Data struct {
 	IsPrivacyNumber     bool   `json:"IsPrivacyNumber" xml:"IsPrivacyNumber"`
 	Status              string `json:"Status" xml:"Status"`
 	City                string `json:"City" xml:"City"`
+	Number              string `json:"Number" xml:"Number"`
 	Province            string `json:"Province" xml:"Province"`
 }
