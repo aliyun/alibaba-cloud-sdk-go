@@ -90,7 +90,7 @@ func CreateCreateNumberDistrictInfoDownloadUrlRequest() (request *CreateNumberDi
 	request = &CreateNumberDistrictInfoDownloadUrlRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "CreateNumberDistrictInfoDownloadUrl", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "CreateNumberDistrictInfoDownloadUrl", "", "")
 	request.Method = requests.POST
 	return
 }

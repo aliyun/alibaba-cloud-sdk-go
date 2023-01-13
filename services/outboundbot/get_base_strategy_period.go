@@ -92,7 +92,7 @@ func CreateGetBaseStrategyPeriodRequest() (request *GetBaseStrategyPeriodRequest
 	request = &GetBaseStrategyPeriodRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "GetBaseStrategyPeriod", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "GetBaseStrategyPeriod", "", "")
 	request.Method = requests.POST
 	return
 }

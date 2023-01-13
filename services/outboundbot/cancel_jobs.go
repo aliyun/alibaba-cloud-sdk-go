@@ -94,7 +94,7 @@ func CreateCancelJobsRequest() (request *CancelJobsRequest) {
 	request = &CancelJobsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "CancelJobs", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "CancelJobs", "", "")
 	request.Method = requests.POST
 	return
 }

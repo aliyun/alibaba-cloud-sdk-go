@@ -91,7 +91,7 @@ func CreateGenerateUploadUrlRequest() (request *GenerateUploadUrlRequest) {
 	request = &GenerateUploadUrlRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "GenerateUploadUrl", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "GenerateUploadUrl", "", "")
 	request.Method = requests.POST
 	return
 }

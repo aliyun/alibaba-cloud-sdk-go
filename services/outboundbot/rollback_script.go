@@ -91,7 +91,7 @@ func CreateRollbackScriptRequest() (request *RollbackScriptRequest) {
 	request = &RollbackScriptRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "RollbackScript", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "RollbackScript", "", "")
 	request.Method = requests.POST
 	return
 }

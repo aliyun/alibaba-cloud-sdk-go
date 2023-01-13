@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// ExportScript invokes the outboundbot.ExportScript API synchronously
-func (client *Client) ExportScript(request *ExportScriptRequest) (response *ExportScriptResponse, err error) {
-	response = CreateExportScriptResponse()
+// DownloadScriptRecording invokes the outboundbot.DownloadScriptRecording API synchronously
+func (client *Client) DownloadScriptRecording(request *DownloadScriptRecordingRequest) (response *DownloadScriptRecordingResponse, err error) {
+	response = CreateDownloadScriptRecordingResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// ExportScriptWithChan invokes the outboundbot.ExportScript API asynchronously
-func (client *Client) ExportScriptWithChan(request *ExportScriptRequest) (<-chan *ExportScriptResponse, <-chan error) {
-	responseChan := make(chan *ExportScriptResponse, 1)
+// DownloadScriptRecordingWithChan invokes the outboundbot.DownloadScriptRecording API asynchronously
+func (client *Client) DownloadScriptRecordingWithChan(request *DownloadScriptRecordingRequest) (<-chan *DownloadScriptRecordingResponse, <-chan error) {
+	responseChan := make(chan *DownloadScriptRecordingResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.ExportScript(request)
+		response, err := client.DownloadScriptRecording(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) ExportScriptWithChan(request *ExportScriptRequest) (<-chan
 	return responseChan, errChan
 }
 
-// ExportScriptWithCallback invokes the outboundbot.ExportScript API asynchronously
-func (client *Client) ExportScriptWithCallback(request *ExportScriptRequest, callback func(response *ExportScriptResponse, err error)) <-chan int {
+// DownloadScriptRecordingWithCallback invokes the outboundbot.DownloadScriptRecording API asynchronously
+func (client *Client) DownloadScriptRecordingWithCallback(request *DownloadScriptRecordingRequest, callback func(response *DownloadScriptRecordingResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *ExportScriptResponse
+		var response *DownloadScriptRecordingResponse
 		var err error
 		defer close(result)
-		response, err = client.ExportScript(request)
+		response, err = client.DownloadScriptRecording(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,15 +68,16 @@ func (client *Client) ExportScriptWithCallback(request *ExportScriptRequest, cal
 	return result
 }
 
-// ExportScriptRequest is the request struct for api ExportScript
-type ExportScriptRequest struct {
+// DownloadScriptRecordingRequest is the request struct for api DownloadScriptRecording
+type DownloadScriptRecordingRequest struct {
 	*requests.RpcRequest
+	Uuid       string `position:"Query" name:"Uuid"`
 	ScriptId   string `position:"Query" name:"ScriptId"`
 	InstanceId string `position:"Query" name:"InstanceId"`
 }
 
-// ExportScriptResponse is the response struct for api ExportScript
-type ExportScriptResponse struct {
+// DownloadScriptRecordingResponse is the response struct for api DownloadScriptRecording
+type DownloadScriptRecordingResponse struct {
 	*responses.BaseResponse
 	HttpStatusCode int            `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	Code           string         `json:"Code" xml:"Code"`
@@ -86,19 +87,19 @@ type ExportScriptResponse struct {
 	DownloadParams DownloadParams `json:"DownloadParams" xml:"DownloadParams"`
 }
 
-// CreateExportScriptRequest creates a request to invoke ExportScript API
-func CreateExportScriptRequest() (request *ExportScriptRequest) {
-	request = &ExportScriptRequest{
+// CreateDownloadScriptRecordingRequest creates a request to invoke DownloadScriptRecording API
+func CreateDownloadScriptRecordingRequest() (request *DownloadScriptRecordingRequest) {
+	request = &DownloadScriptRecordingRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "ExportScript", "", "")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "DownloadScriptRecording", "", "")
 	request.Method = requests.POST
 	return
 }
 
-// CreateExportScriptResponse creates a response to parse from ExportScript response
-func CreateExportScriptResponse() (response *ExportScriptResponse) {
-	response = &ExportScriptResponse{
+// CreateDownloadScriptRecordingResponse creates a response to parse from DownloadScriptRecording response
+func CreateDownloadScriptRecordingResponse() (response *DownloadScriptRecordingResponse) {
+	response = &DownloadScriptRecordingResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

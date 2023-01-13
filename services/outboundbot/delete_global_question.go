@@ -91,7 +91,7 @@ func CreateDeleteGlobalQuestionRequest() (request *DeleteGlobalQuestionRequest) 
 	request = &DeleteGlobalQuestionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "DeleteGlobalQuestion", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "DeleteGlobalQuestion", "", "")
 	request.Method = requests.POST
 	return
 }

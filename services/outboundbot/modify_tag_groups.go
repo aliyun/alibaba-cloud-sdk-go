@@ -94,7 +94,7 @@ func CreateModifyTagGroupsRequest() (request *ModifyTagGroupsRequest) {
 	request = &ModifyTagGroupsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "ModifyTagGroups", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "ModifyTagGroups", "", "")
 	request.Method = requests.POST
 	return
 }

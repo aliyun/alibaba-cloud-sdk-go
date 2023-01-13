@@ -92,7 +92,7 @@ func CreateDescribeJobRequest() (request *DescribeJobRequest) {
 	request = &DescribeJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "DescribeJob", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "DescribeJob", "", "")
 	request.Method = requests.POST
 	return
 }

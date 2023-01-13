@@ -92,7 +92,7 @@ func CreateDescribeJobGroupRequest() (request *DescribeJobGroupRequest) {
 	request = &DescribeJobGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "DescribeJobGroup", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "DescribeJobGroup", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -21,6 +21,7 @@ type Script struct {
 	ScriptName                string `json:"ScriptName" xml:"ScriptName"`
 	Name                      string `json:"Name" xml:"Name"`
 	MiniPlaybackEnable        bool   `json:"MiniPlaybackEnable" xml:"MiniPlaybackEnable"`
+	EmotionEnable             bool   `json:"EmotionEnable" xml:"EmotionEnable"`
 	UpdateTime                int64  `json:"UpdateTime" xml:"UpdateTime"`
 	MiniPlaybackConfigEnabled bool   `json:"MiniPlaybackConfigEnabled" xml:"MiniPlaybackConfigEnabled"`
 	Industry                  string `json:"Industry" xml:"Industry"`
@@ -29,6 +30,7 @@ type Script struct {
 	DebugStatus               string `json:"DebugStatus" xml:"DebugStatus"`
 	ScriptId                  string `json:"ScriptId" xml:"ScriptId"`
 	Scene                     string `json:"Scene" xml:"Scene"`
+	IsPreset                  bool   `json:"IsPreset" xml:"IsPreset"`
 	LongWaitEnable            bool   `json:"LongWaitEnable" xml:"LongWaitEnable"`
 	ChatbotId                 string `json:"ChatbotId" xml:"ChatbotId"`
 	TtsConfig                 string `json:"TtsConfig" xml:"TtsConfig"`

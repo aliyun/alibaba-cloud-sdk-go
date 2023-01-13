@@ -93,7 +93,7 @@ func CreateSaveBaseStrategyPeriodRequest() (request *SaveBaseStrategyPeriodReque
 	request = &SaveBaseStrategyPeriodRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "SaveBaseStrategyPeriod", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "SaveBaseStrategyPeriod", "", "")
 	request.Method = requests.POST
 	return
 }

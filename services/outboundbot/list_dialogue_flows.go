@@ -91,7 +91,7 @@ func CreateListDialogueFlowsRequest() (request *ListDialogueFlowsRequest) {
 	request = &ListDialogueFlowsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "ListDialogueFlows", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "ListDialogueFlows", "", "")
 	request.Method = requests.POST
 	return
 }

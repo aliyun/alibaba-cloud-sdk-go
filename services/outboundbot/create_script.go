@@ -78,6 +78,7 @@ type CreateScriptRequest struct {
 	ScriptWaveform                   *[]string        `position:"Query" name:"ScriptWaveform"  type:"Repeated"`
 	AsrConfig                        string           `position:"Query" name:"AsrConfig"`
 	MiniPlaybackConfigListJsonString string           `position:"Query" name:"MiniPlaybackConfigListJsonString"`
+	EmotionEnable                    requests.Boolean `position:"Query" name:"EmotionEnable"`
 	NewBargeInEnable                 requests.Boolean `position:"Query" name:"NewBargeInEnable"`
 	MiniPlaybackEnable               requests.Boolean `position:"Query" name:"MiniPlaybackEnable"`
 	ChatbotId                        string           `position:"Query" name:"ChatbotId"`
@@ -104,7 +105,7 @@ func CreateCreateScriptRequest() (request *CreateScriptRequest) {
 	request = &CreateScriptRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "CreateScript", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "CreateScript", "", "")
 	request.Method = requests.POST
 	return
 }

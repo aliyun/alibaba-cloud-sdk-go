@@ -91,7 +91,7 @@ func CreateSaveMaxAttemptsPerDayRequest() (request *SaveMaxAttemptsPerDayRequest
 	request = &SaveMaxAttemptsPerDayRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "SaveMaxAttemptsPerDay", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "SaveMaxAttemptsPerDay", "", "")
 	request.Method = requests.POST
 	return
 }

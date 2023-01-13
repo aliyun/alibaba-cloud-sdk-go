@@ -115,7 +115,7 @@ func CreateCreateTaskExportTaskRequest() (request *CreateTaskExportTaskRequest) 
 	request = &CreateTaskExportTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "CreateTaskExportTask", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "CreateTaskExportTask", "", "")
 	request.Method = requests.GET
 	return
 }

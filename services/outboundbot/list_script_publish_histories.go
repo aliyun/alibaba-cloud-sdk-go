@@ -93,7 +93,7 @@ func CreateListScriptPublishHistoriesRequest() (request *ListScriptPublishHistor
 	request = &ListScriptPublishHistoriesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "ListScriptPublishHistories", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "ListScriptPublishHistories", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -96,7 +96,7 @@ func CreateModifyTTSConfigRequest() (request *ModifyTTSConfigRequest) {
 	request = &ModifyTTSConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "ModifyTTSConfig", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "ModifyTTSConfig", "", "")
 	request.Method = requests.POST
 	return
 }

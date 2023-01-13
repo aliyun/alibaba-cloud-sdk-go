@@ -88,7 +88,7 @@ func CreateDeleteAllNumberDistrictInfoRequest() (request *DeleteAllNumberDistric
 	request = &DeleteAllNumberDistrictInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "DeleteAllNumberDistrictInfo", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "DeleteAllNumberDistrictInfo", "", "")
 	request.Method = requests.POST
 	return
 }

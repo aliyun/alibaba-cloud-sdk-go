@@ -90,7 +90,7 @@ func CreateGetAsrServerInfoRequest() (request *GetAsrServerInfoRequest) {
 	request = &GetAsrServerInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "GetAsrServerInfo", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "GetAsrServerInfo", "", "")
 	request.Method = requests.POST
 	return
 }

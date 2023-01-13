@@ -93,7 +93,7 @@ func CreateCreateTagRequest() (request *CreateTagRequest) {
 	request = &CreateTagRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "CreateTag", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "CreateTag", "", "")
 	request.Method = requests.POST
 	return
 }

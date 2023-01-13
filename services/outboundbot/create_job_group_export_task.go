@@ -92,7 +92,7 @@ func CreateCreateJobGroupExportTaskRequest() (request *CreateJobGroupExportTaskR
 	request = &CreateJobGroupExportTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "CreateJobGroupExportTask", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "CreateJobGroupExportTask", "", "")
 	request.Method = requests.POST
 	return
 }

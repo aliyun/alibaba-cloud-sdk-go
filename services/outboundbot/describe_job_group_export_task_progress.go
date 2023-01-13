@@ -92,7 +92,7 @@ func CreateDescribeJobGroupExportTaskProgressRequest() (request *DescribeJobGrou
 	request = &DescribeJobGroupExportTaskProgressRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "DescribeJobGroupExportTaskProgress", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "DescribeJobGroupExportTaskProgress", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -92,7 +92,7 @@ func CreateDescribeIntentRequest() (request *DescribeIntentRequest) {
 	request = &DescribeIntentRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "DescribeIntent", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "DescribeIntent", "", "")
 	request.Method = requests.POST
 	return
 }

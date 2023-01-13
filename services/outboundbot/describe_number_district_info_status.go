@@ -91,7 +91,7 @@ func CreateDescribeNumberDistrictInfoStatusRequest() (request *DescribeNumberDis
 	request = &DescribeNumberDistrictInfoStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "DescribeNumberDistrictInfoStatus", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "DescribeNumberDistrictInfoStatus", "", "")
 	request.Method = requests.POST
 	return
 }

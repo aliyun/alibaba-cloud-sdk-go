@@ -90,7 +90,7 @@ func CreateDescribeTenantBindNumberRequest() (request *DescribeTenantBindNumberR
 	request = &DescribeTenantBindNumberRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "DescribeTenantBindNumber", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "DescribeTenantBindNumber", "", "")
 	request.Method = requests.POST
 	return
 }

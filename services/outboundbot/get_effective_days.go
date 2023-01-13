@@ -91,7 +91,7 @@ func CreateGetEffectiveDaysRequest() (request *GetEffectiveDaysRequest) {
 	request = &GetEffectiveDaysRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "GetEffectiveDays", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "GetEffectiveDays", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -94,7 +94,7 @@ func CreateSuspendJobsRequest() (request *SuspendJobsRequest) {
 	request = &SuspendJobsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "SuspendJobs", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "SuspendJobs", "", "")
 	request.Method = requests.POST
 	return
 }

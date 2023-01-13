@@ -91,7 +91,7 @@ func CreateDeleteIntentRequest() (request *DeleteIntentRequest) {
 	request = &DeleteIntentRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "DeleteIntent", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "DeleteIntent", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -96,7 +96,7 @@ func CreateModifyIntentRequest() (request *ModifyIntentRequest) {
 	request = &ModifyIntentRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "ModifyIntent", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "ModifyIntent", "", "")
 	request.Method = requests.POST
 	return
 }

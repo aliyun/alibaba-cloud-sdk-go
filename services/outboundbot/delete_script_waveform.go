@@ -91,7 +91,7 @@ func CreateDeleteScriptWaveformRequest() (request *DeleteScriptWaveformRequest) 
 	request = &DeleteScriptWaveformRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "DeleteScriptWaveform", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "DeleteScriptWaveform", "", "")
 	request.Method = requests.POST
 	return
 }

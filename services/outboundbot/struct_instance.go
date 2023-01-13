@@ -28,6 +28,7 @@ type Instance struct {
 	ResourceGroupId           string        `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	NluServiceType            string        `json:"NluServiceType" xml:"NluServiceType"`
 	InstanceId                string        `json:"InstanceId" xml:"InstanceId"`
+	IsPreset                  bool          `json:"IsPreset" xml:"IsPreset"`
 	CreatorId                 int64         `json:"CreatorId" xml:"CreatorId"`
 	MaxConcurrentConversation int           `json:"MaxConcurrentConversation" xml:"MaxConcurrentConversation"`
 	NluProfile                NluProfile    `json:"NluProfile" xml:"NluProfile"`

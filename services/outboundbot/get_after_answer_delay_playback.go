@@ -91,7 +91,7 @@ func CreateGetAfterAnswerDelayPlaybackRequest() (request *GetAfterAnswerDelayPla
 	request = &GetAfterAnswerDelayPlaybackRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "GetAfterAnswerDelayPlayback", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "GetAfterAnswerDelayPlayback", "", "")
 	request.Method = requests.POST
 	return
 }

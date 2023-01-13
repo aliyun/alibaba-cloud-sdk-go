@@ -96,7 +96,7 @@ func CreateModifyGlobalQuestionRequest() (request *ModifyGlobalQuestionRequest) 
 	request = &ModifyGlobalQuestionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "ModifyGlobalQuestion", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "ModifyGlobalQuestion", "", "")
 	request.Method = requests.POST
 	return
 }

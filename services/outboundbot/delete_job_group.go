@@ -90,7 +90,7 @@ func CreateDeleteJobGroupRequest() (request *DeleteJobGroupRequest) {
 	request = &DeleteJobGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "DeleteJobGroup", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "DeleteJobGroup", "", "")
 	request.Method = requests.POST
 	return
 }

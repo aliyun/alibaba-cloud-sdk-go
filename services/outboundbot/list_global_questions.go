@@ -93,7 +93,7 @@ func CreateListGlobalQuestionsRequest() (request *ListGlobalQuestionsRequest) {
 	request = &ListGlobalQuestionsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "ListGlobalQuestions", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "ListGlobalQuestions", "", "")
 	request.Method = requests.POST
 	return
 }

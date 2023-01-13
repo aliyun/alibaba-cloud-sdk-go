@@ -96,7 +96,7 @@ func CreateDescribeTTSDemoRequest() (request *DescribeTTSDemoRequest) {
 	request = &DescribeTTSDemoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "DescribeTTSDemo", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "DescribeTTSDemo", "", "")
 	request.Method = requests.POST
 	return
 }

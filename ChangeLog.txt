@@ -1,3 +1,7 @@
+2023-01-13 Version: v1.62.132
+- Generated 2019-12-26 for `OutboundBot`.
+- Supported new features for outbound.
+
 2023-01-13 Version: v1.62.131
 - Generated 2020-02-17 for `Dytnsapi`.
 - Support Service of empty number.

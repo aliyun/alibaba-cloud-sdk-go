@@ -90,7 +90,7 @@ func CreateCreateNumberDistrictInfoParsingTaskRequest() (request *CreateNumberDi
 	request = &CreateNumberDistrictInfoParsingTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "CreateNumberDistrictInfoParsingTask", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "CreateNumberDistrictInfoParsingTask", "", "")
 	request.Method = requests.POST
 	return
 }

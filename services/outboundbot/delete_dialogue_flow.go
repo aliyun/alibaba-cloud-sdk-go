@@ -91,7 +91,7 @@ func CreateDeleteDialogueFlowRequest() (request *DeleteDialogueFlowRequest) {
 	request = &DeleteDialogueFlowRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "DeleteDialogueFlow", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "DeleteDialogueFlow", "", "")
 	request.Method = requests.POST
 	return
 }

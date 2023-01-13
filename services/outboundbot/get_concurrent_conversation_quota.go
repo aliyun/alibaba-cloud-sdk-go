@@ -90,7 +90,7 @@ func CreateGetConcurrentConversationQuotaRequest() (request *GetConcurrentConver
 	request = &GetConcurrentConversationQuotaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "GetConcurrentConversationQuota", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "GetConcurrentConversationQuota", "", "")
 	request.Method = requests.POST
 	return
 }

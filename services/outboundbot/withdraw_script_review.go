@@ -91,7 +91,7 @@ func CreateWithdrawScriptReviewRequest() (request *WithdrawScriptReviewRequest) 
 	request = &WithdrawScriptReviewRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "WithdrawScriptReview", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "WithdrawScriptReview", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -94,7 +94,7 @@ func CreateCreateScriptWaveformRequest() (request *CreateScriptWaveformRequest) 
 	request = &CreateScriptWaveformRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "CreateScriptWaveform", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "CreateScriptWaveform", "", "")
 	request.Method = requests.POST
 	return
 }

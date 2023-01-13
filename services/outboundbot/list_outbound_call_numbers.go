@@ -92,7 +92,7 @@ func CreateListOutboundCallNumbersRequest() (request *ListOutboundCallNumbersReq
 	request = &ListOutboundCallNumbersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "ListOutboundCallNumbers", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "ListOutboundCallNumbers", "", "")
 	request.Method = requests.POST
 	return
 }

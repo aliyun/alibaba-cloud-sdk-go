@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DescribeScript invokes the outboundbot.DescribeScript API synchronously
-func (client *Client) DescribeScript(request *DescribeScriptRequest) (response *DescribeScriptResponse, err error) {
-	response = CreateDescribeScriptResponse()
+// UploadScriptRecording invokes the outboundbot.UploadScriptRecording API synchronously
+func (client *Client) UploadScriptRecording(request *UploadScriptRecordingRequest) (response *UploadScriptRecordingResponse, err error) {
+	response = CreateUploadScriptRecordingResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DescribeScriptWithChan invokes the outboundbot.DescribeScript API asynchronously
-func (client *Client) DescribeScriptWithChan(request *DescribeScriptRequest) (<-chan *DescribeScriptResponse, <-chan error) {
-	responseChan := make(chan *DescribeScriptResponse, 1)
+// UploadScriptRecordingWithChan invokes the outboundbot.UploadScriptRecording API asynchronously
+func (client *Client) UploadScriptRecordingWithChan(request *UploadScriptRecordingRequest) (<-chan *UploadScriptRecordingResponse, <-chan error) {
+	responseChan := make(chan *UploadScriptRecordingResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DescribeScript(request)
+		response, err := client.UploadScriptRecording(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) DescribeScriptWithChan(request *DescribeScriptRequest) (<-
 	return responseChan, errChan
 }
 
-// DescribeScriptWithCallback invokes the outboundbot.DescribeScript API asynchronously
-func (client *Client) DescribeScriptWithCallback(request *DescribeScriptRequest, callback func(response *DescribeScriptResponse, err error)) <-chan int {
+// UploadScriptRecordingWithCallback invokes the outboundbot.UploadScriptRecording API asynchronously
+func (client *Client) UploadScriptRecordingWithCallback(request *UploadScriptRecordingRequest, callback func(response *UploadScriptRecordingResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DescribeScriptResponse
+		var response *UploadScriptRecordingResponse
 		var err error
 		defer close(result)
-		response, err = client.DescribeScript(request)
+		response, err = client.UploadScriptRecording(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,41 +68,40 @@ func (client *Client) DescribeScriptWithCallback(request *DescribeScriptRequest,
 	return result
 }
 
-// DescribeScriptRequest is the request struct for api DescribeScript
-type DescribeScriptRequest struct {
+// UploadScriptRecordingRequest is the request struct for api UploadScriptRecording
+type UploadScriptRecordingRequest struct {
 	*requests.RpcRequest
+	Content    string `position:"Query" name:"Content"`
 	ScriptId   string `position:"Query" name:"ScriptId"`
 	InstanceId string `position:"Query" name:"InstanceId"`
+	FileName   string `position:"Query" name:"FileName"`
+	FileId     string `position:"Query" name:"FileId"`
 }
 
-// DescribeScriptResponse is the response struct for api DescribeScript
-type DescribeScriptResponse struct {
+// UploadScriptRecordingResponse is the response struct for api UploadScriptRecording
+type UploadScriptRecordingResponse struct {
 	*responses.BaseResponse
 	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Uuid           string `json:"Uuid" xml:"Uuid"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
 	Success        bool   `json:"Success" xml:"Success"`
-	ChatbotId      string `json:"ChatbotId" xml:"ChatbotId"`
 	Code           string `json:"Code" xml:"Code"`
 	Message        string `json:"Message" xml:"Message"`
-	TtsConfig      string `json:"TtsConfig" xml:"TtsConfig"`
-	AsrConfig      string `json:"AsrConfig" xml:"AsrConfig"`
-	NlsConfig      string `json:"NlsConfig" xml:"NlsConfig"`
-	Script         Script `json:"Script" xml:"Script"`
 }
 
-// CreateDescribeScriptRequest creates a request to invoke DescribeScript API
-func CreateDescribeScriptRequest() (request *DescribeScriptRequest) {
-	request = &DescribeScriptRequest{
+// CreateUploadScriptRecordingRequest creates a request to invoke UploadScriptRecording API
+func CreateUploadScriptRecordingRequest() (request *UploadScriptRecordingRequest) {
+	request = &UploadScriptRecordingRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "DescribeScript", "", "")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "UploadScriptRecording", "", "")
 	request.Method = requests.POST
 	return
 }
 
-// CreateDescribeScriptResponse creates a response to parse from DescribeScript response
-func CreateDescribeScriptResponse() (response *DescribeScriptResponse) {
-	response = &DescribeScriptResponse{
+// CreateUploadScriptRecordingResponse creates a response to parse from UploadScriptRecording response
+func CreateUploadScriptRecordingResponse() (response *UploadScriptRecordingResponse) {
+	response = &UploadScriptRecordingResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

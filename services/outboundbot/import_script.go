@@ -91,7 +91,7 @@ func CreateImportScriptRequest() (request *ImportScriptRequest) {
 	request = &ImportScriptRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "ImportScript", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "ImportScript", "", "")
 	request.Method = requests.POST
 	return
 }

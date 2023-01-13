@@ -91,7 +91,7 @@ func CreateSuspendCallRequest() (request *SuspendCallRequest) {
 	request = &SuspendCallRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "SuspendCall", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "SuspendCall", "", "")
 	request.Method = requests.POST
 	return
 }

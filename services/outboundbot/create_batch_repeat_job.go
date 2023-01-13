@@ -101,7 +101,7 @@ func CreateCreateBatchRepeatJobRequest() (request *CreateBatchRepeatJobRequest) 
 	request = &CreateBatchRepeatJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "CreateBatchRepeatJob", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "CreateBatchRepeatJob", "", "")
 	request.Method = requests.POST
 	return
 }

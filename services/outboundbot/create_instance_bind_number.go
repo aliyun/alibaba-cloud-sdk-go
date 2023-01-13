@@ -91,7 +91,7 @@ func CreateCreateInstanceBindNumberRequest() (request *CreateInstanceBindNumberR
 	request = &CreateInstanceBindNumberRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "CreateInstanceBindNumber", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "CreateInstanceBindNumber", "", "")
 	request.Method = requests.POST
 	return
 }

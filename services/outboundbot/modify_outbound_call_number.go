@@ -94,7 +94,7 @@ func CreateModifyOutboundCallNumberRequest() (request *ModifyOutboundCallNumberR
 	request = &ModifyOutboundCallNumberRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "ModifyOutboundCallNumber", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "ModifyOutboundCallNumber", "", "")
 	request.Method = requests.POST
 	return
 }

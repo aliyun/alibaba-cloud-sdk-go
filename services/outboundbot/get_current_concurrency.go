@@ -92,7 +92,7 @@ func CreateGetCurrentConcurrencyRequest() (request *GetCurrentConcurrencyRequest
 	request = &GetCurrentConcurrencyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "GetCurrentConcurrency", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "GetCurrentConcurrency", "", "")
 	request.Method = requests.POST
 	return
 }

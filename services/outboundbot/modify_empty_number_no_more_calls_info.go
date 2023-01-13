@@ -91,7 +91,7 @@ func CreateModifyEmptyNumberNoMoreCallsInfoRequest() (request *ModifyEmptyNumber
 	request = &ModifyEmptyNumberNoMoreCallsInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "ModifyEmptyNumberNoMoreCallsInfo", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "ModifyEmptyNumberNoMoreCallsInfo", "", "")
 	request.Method = requests.POST
 	return
 }

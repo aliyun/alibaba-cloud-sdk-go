@@ -89,7 +89,7 @@ func CreateGetVersionRequest() (request *GetVersionRequest) {
 	request = &GetVersionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "GetVersion", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "GetVersion", "", "")
 	request.Method = requests.POST
 	return
 }

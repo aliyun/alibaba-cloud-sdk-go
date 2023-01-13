@@ -73,6 +73,7 @@ type QueryJobsWithResultRequest struct {
 	*requests.RpcRequest
 	HasReachedEndOfFlowFilter  requests.Boolean `position:"Query" name:"HasReachedEndOfFlowFilter"`
 	HasAnsweredFilter          requests.Boolean `position:"Query" name:"HasAnsweredFilter"`
+	TaskStatusFilter           string           `position:"Query" name:"TaskStatusFilter"`
 	PageNumber                 requests.Integer `position:"Query" name:"PageNumber"`
 	QueryText                  string           `position:"Query" name:"QueryText"`
 	HasHangUpByRejectionFilter requests.Boolean `position:"Query" name:"HasHangUpByRejectionFilter"`
@@ -99,7 +100,7 @@ func CreateQueryJobsWithResultRequest() (request *QueryJobsWithResultRequest) {
 	request = &QueryJobsWithResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "QueryJobsWithResult", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "QueryJobsWithResult", "", "")
 	request.Method = requests.POST
 	return
 }

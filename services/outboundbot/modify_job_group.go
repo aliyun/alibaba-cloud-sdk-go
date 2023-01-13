@@ -102,7 +102,7 @@ func CreateModifyJobGroupRequest() (request *ModifyJobGroupRequest) {
 	request = &ModifyJobGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "ModifyJobGroup", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "ModifyJobGroup", "", "")
 	request.Method = requests.POST
 	return
 }

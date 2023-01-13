@@ -91,7 +91,7 @@ func CreateSubmitScriptReviewRequest() (request *SubmitScriptReviewRequest) {
 	request = &SubmitScriptReviewRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "SubmitScriptReview", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "SubmitScriptReview", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -93,7 +93,7 @@ func CreateDescribeGroupExecutingInfoRequest() (request *DescribeGroupExecutingI
 	request = &DescribeGroupExecutingInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "DescribeGroupExecutingInfo", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "DescribeGroupExecutingInfo", "", "")
 	request.Method = requests.POST
 	return
 }

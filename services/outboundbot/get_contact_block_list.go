@@ -93,7 +93,7 @@ func CreateGetContactBlockListRequest() (request *GetContactBlockListRequest) {
 	request = &GetContactBlockListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "GetContactBlockList", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "GetContactBlockList", "", "")
 	request.Method = requests.POST
 	return
 }

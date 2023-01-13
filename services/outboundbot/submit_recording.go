@@ -93,7 +93,7 @@ func CreateSubmitRecordingRequest() (request *SubmitRecordingRequest) {
 	request = &SubmitRecordingRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "SubmitRecording", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "SubmitRecording", "", "")
 	request.Method = requests.POST
 	return
 }

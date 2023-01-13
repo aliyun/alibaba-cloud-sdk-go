@@ -92,7 +92,7 @@ func CreateDeleteContactBlockListRequest() (request *DeleteContactBlockListReque
 	request = &DeleteContactBlockListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "DeleteContactBlockList", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "DeleteContactBlockList", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -79,6 +79,7 @@ type ModifyScriptRequest struct {
 	ScriptWaveform                   *[]string        `position:"Query" name:"ScriptWaveform"  type:"Repeated"`
 	AsrConfig                        string           `position:"Query" name:"AsrConfig"`
 	MiniPlaybackConfigListJsonString string           `position:"Query" name:"MiniPlaybackConfigListJsonString"`
+	EmotionEnable                    requests.Boolean `position:"Query" name:"EmotionEnable"`
 	NlsConfig                        string           `position:"Query" name:"NlsConfig"`
 	NewBargeInEnable                 requests.Boolean `position:"Query" name:"NewBargeInEnable"`
 	MiniPlaybackEnable               requests.Boolean `position:"Query" name:"MiniPlaybackEnable"`
@@ -106,7 +107,7 @@ func CreateModifyScriptRequest() (request *ModifyScriptRequest) {
 	request = &ModifyScriptRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "ModifyScript", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "ModifyScript", "", "")
 	request.Method = requests.POST
 	return
 }

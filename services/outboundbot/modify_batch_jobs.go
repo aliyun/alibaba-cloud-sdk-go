@@ -99,7 +99,7 @@ func CreateModifyBatchJobsRequest() (request *ModifyBatchJobsRequest) {
 	request = &ModifyBatchJobsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "ModifyBatchJobs", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "ModifyBatchJobs", "", "")
 	request.Method = requests.POST
 	return
 }

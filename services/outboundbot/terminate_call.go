@@ -90,7 +90,7 @@ func CreateTerminateCallRequest() (request *TerminateCallRequest) {
 	request = &TerminateCallRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "TerminateCall", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "TerminateCall", "", "")
 	request.Method = requests.POST
 	return
 }

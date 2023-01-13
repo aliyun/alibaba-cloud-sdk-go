@@ -90,7 +90,7 @@ func CreateDescribeInstanceRequest() (request *DescribeInstanceRequest) {
 	request = &DescribeInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "DescribeInstance", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "DescribeInstance", "", "")
 	request.Method = requests.POST
 	return
 }

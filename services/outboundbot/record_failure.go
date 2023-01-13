@@ -97,7 +97,7 @@ func CreateRecordFailureRequest() (request *RecordFailureRequest) {
 	request = &RecordFailureRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "RecordFailure", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "RecordFailure", "", "")
 	request.Method = requests.POST
 	return
 }

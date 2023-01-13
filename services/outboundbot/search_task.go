@@ -115,7 +115,7 @@ func CreateSearchTaskRequest() (request *SearchTaskRequest) {
 	request = &SearchTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "SearchTask", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "SearchTask", "", "")
 	request.Method = requests.GET
 	return
 }

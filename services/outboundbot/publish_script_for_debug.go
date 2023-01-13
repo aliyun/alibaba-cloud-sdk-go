@@ -90,7 +90,7 @@ func CreatePublishScriptForDebugRequest() (request *PublishScriptForDebugRequest
 	request = &PublishScriptForDebugRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "PublishScriptForDebug", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "PublishScriptForDebug", "", "")
 	request.Method = requests.POST
 	return
 }

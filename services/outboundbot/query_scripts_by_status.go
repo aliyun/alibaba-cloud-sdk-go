@@ -93,7 +93,7 @@ func CreateQueryScriptsByStatusRequest() (request *QueryScriptsByStatusRequest) 
 	request = &QueryScriptsByStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "QueryScriptsByStatus", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "QueryScriptsByStatus", "", "")
 	request.Method = requests.POST
 	return
 }

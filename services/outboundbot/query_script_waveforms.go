@@ -92,7 +92,7 @@ func CreateQueryScriptWaveformsRequest() (request *QueryScriptWaveformsRequest) 
 	request = &QueryScriptWaveformsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "QueryScriptWaveforms", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "QueryScriptWaveforms", "", "")
 	request.Method = requests.POST
 	return
 }

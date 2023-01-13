@@ -92,7 +92,7 @@ func CreateDuplicateScriptRequest() (request *DuplicateScriptRequest) {
 	request = &DuplicateScriptRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "DuplicateScript", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "DuplicateScript", "", "")
 	request.Method = requests.POST
 	return
 }

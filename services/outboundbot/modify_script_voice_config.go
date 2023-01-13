@@ -94,7 +94,7 @@ func CreateModifyScriptVoiceConfigRequest() (request *ModifyScriptVoiceConfigReq
 	request = &ModifyScriptVoiceConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "ModifyScriptVoiceConfig", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "ModifyScriptVoiceConfig", "", "")
 	request.Method = requests.POST
 	return
 }

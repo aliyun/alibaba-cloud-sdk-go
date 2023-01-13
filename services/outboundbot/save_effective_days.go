@@ -91,7 +91,7 @@ func CreateSaveEffectiveDaysRequest() (request *SaveEffectiveDaysRequest) {
 	request = &SaveEffectiveDaysRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "SaveEffectiveDays", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "SaveEffectiveDays", "", "")
 	request.Method = requests.POST
 	return
 }

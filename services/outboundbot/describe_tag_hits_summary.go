@@ -92,7 +92,7 @@ func CreateDescribeTagHitsSummaryRequest() (request *DescribeTagHitsSummaryReque
 	request = &DescribeTagHitsSummaryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "DescribeTagHitsSummary", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "DescribeTagHitsSummary", "", "")
 	request.Method = requests.POST
 	return
 }

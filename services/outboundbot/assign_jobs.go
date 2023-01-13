@@ -98,7 +98,7 @@ func CreateAssignJobsRequest() (request *AssignJobsRequest) {
 	request = &AssignJobsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "AssignJobs", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "AssignJobs", "", "")
 	request.Method = requests.POST
 	return
 }

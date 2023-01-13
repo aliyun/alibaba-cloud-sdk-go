@@ -92,7 +92,7 @@ func CreateListScriptsRequest() (request *ListScriptsRequest) {
 	request = &ListScriptsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "ListScripts", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "ListScripts", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -90,7 +90,7 @@ func CreateListAllTenantBindNumberBindingRequest() (request *ListAllTenantBindNu
 	request = &ListAllTenantBindNumberBindingRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "ListAllTenantBindNumberBinding", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "ListAllTenantBindNumberBinding", "", "")
 	request.Method = requests.POST
 	return
 }

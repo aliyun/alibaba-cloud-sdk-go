@@ -91,7 +91,7 @@ func CreateListDownloadTasksRequest() (request *ListDownloadTasksRequest) {
 	request = &ListDownloadTasksRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "ListDownloadTasks", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "ListDownloadTasks", "", "")
 	request.Method = requests.GET
 	return
 }

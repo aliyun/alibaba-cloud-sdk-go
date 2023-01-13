@@ -90,7 +90,7 @@ func CreateDeleteScriptRequest() (request *DeleteScriptRequest) {
 	request = &DeleteScriptRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "DeleteScript", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "DeleteScript", "", "")
 	request.Method = requests.POST
 	return
 }

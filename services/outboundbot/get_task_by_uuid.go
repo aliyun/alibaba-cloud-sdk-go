@@ -88,7 +88,7 @@ func CreateGetTaskByUuidRequest() (request *GetTaskByUuidRequest) {
 	request = &GetTaskByUuidRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "GetTaskByUuid", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "GetTaskByUuid", "", "")
 	request.Method = requests.GET
 	return
 }

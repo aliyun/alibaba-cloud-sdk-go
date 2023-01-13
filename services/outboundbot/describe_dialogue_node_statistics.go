@@ -95,7 +95,7 @@ func CreateDescribeDialogueNodeStatisticsRequest() (request *DescribeDialogueNod
 	request = &DescribeDialogueNodeStatisticsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "DescribeDialogueNodeStatistics", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "DescribeDialogueNodeStatistics", "", "")
 	request.Method = requests.POST
 	return
 }

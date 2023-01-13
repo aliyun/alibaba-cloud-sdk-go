@@ -92,7 +92,7 @@ func CreateTaskPreparingRequest() (request *TaskPreparingRequest) {
 	request = &TaskPreparingRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "TaskPreparing", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "TaskPreparing", "", "")
 	request.Method = requests.POST
 	return
 }

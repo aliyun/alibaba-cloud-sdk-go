@@ -95,7 +95,7 @@ func CreateListJobGroupsAsyncRequest() (request *ListJobGroupsAsyncRequest) {
 	request = &ListJobGroupsAsyncRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "ListJobGroupsAsync", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "ListJobGroupsAsync", "", "")
 	request.Method = requests.GET
 	return
 }

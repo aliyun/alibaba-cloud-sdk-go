@@ -95,7 +95,7 @@ func CreateCreateIntentRequest() (request *CreateIntentRequest) {
 	request = &CreateIntentRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "CreateIntent", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "CreateIntent", "", "")
 	request.Method = requests.POST
 	return
 }

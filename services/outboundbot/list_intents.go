@@ -94,7 +94,7 @@ func CreateListIntentsRequest() (request *ListIntentsRequest) {
 	request = &ListIntentsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "ListIntents", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "ListIntents", "", "")
 	request.Method = requests.POST
 	return
 }

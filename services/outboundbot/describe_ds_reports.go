@@ -91,7 +91,7 @@ func CreateDescribeDsReportsRequest() (request *DescribeDsReportsRequest) {
 	request = &DescribeDsReportsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "DescribeDsReports", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "DescribeDsReports", "", "")
 	request.Method = requests.POST
 	return
 }

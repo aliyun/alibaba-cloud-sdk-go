@@ -99,7 +99,7 @@ func CreateQueryJobsRequest() (request *QueryJobsRequest) {
 	request = &QueryJobsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "QueryJobs", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "QueryJobs", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -91,7 +91,7 @@ func CreateDescribeJobDataParsingTaskProgressRequest() (request *DescribeJobData
 	request = &DescribeJobDataParsingTaskProgressRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "DescribeJobDataParsingTaskProgress", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "DescribeJobDataParsingTaskProgress", "", "")
 	request.Method = requests.POST
 	return
 }

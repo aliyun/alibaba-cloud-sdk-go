@@ -92,7 +92,7 @@ func CreateSaveContactWhiteListRequest() (request *SaveContactWhiteListRequest) 
 	request = &SaveContactWhiteListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "SaveContactWhiteList", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "SaveContactWhiteList", "", "")
 	request.Method = requests.POST
 	return
 }

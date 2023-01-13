@@ -91,7 +91,7 @@ func CreateInflightTaskTimeoutRequest() (request *InflightTaskTimeoutRequest) {
 	request = &InflightTaskTimeoutRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "InflightTaskTimeout", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "InflightTaskTimeout", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -91,7 +91,7 @@ func CreateCreateJobDataParsingTaskRequest() (request *CreateJobDataParsingTaskR
 	request = &CreateJobDataParsingTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "CreateJobDataParsingTask", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "CreateJobDataParsingTask", "", "")
 	request.Method = requests.POST
 	return
 }

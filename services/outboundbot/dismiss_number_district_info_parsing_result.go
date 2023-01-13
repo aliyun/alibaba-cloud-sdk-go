@@ -89,7 +89,7 @@ func CreateDismissNumberDistrictInfoParsingResultRequest() (request *DismissNumb
 	request = &DismissNumberDistrictInfoParsingResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "DismissNumberDistrictInfoParsingResult", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "DismissNumberDistrictInfoParsingResult", "", "")
 	request.Method = requests.POST
 	return
 }

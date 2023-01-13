@@ -90,7 +90,7 @@ func CreateDeleteOutboundCallNumberRequest() (request *DeleteOutboundCallNumberR
 	request = &DeleteOutboundCallNumberRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "DeleteOutboundCallNumber", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "DeleteOutboundCallNumber", "", "")
 	request.Method = requests.POST
 	return
 }

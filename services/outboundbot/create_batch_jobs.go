@@ -98,7 +98,7 @@ func CreateCreateBatchJobsRequest() (request *CreateBatchJobsRequest) {
 	request = &CreateBatchJobsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "CreateBatchJobs", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "CreateBatchJobs", "", "")
 	request.Method = requests.POST
 	return
 }

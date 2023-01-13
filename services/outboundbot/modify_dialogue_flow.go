@@ -95,7 +95,7 @@ func CreateModifyDialogueFlowRequest() (request *ModifyDialogueFlowRequest) {
 	request = &ModifyDialogueFlowRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "ModifyDialogueFlow", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "ModifyDialogueFlow", "", "")
 	request.Method = requests.POST
 	return
 }

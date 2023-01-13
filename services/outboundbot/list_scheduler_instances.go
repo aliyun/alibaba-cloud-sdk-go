@@ -90,7 +90,7 @@ func CreateListSchedulerInstancesRequest() (request *ListSchedulerInstancesReque
 	request = &ListSchedulerInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "ListSchedulerInstances", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "ListSchedulerInstances", "", "")
 	request.Method = requests.POST
 	return
 }

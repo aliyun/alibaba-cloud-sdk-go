@@ -91,7 +91,7 @@ func CreateCreateDownloadUrlRequest() (request *CreateDownloadUrlRequest) {
 	request = &CreateDownloadUrlRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "CreateDownloadUrl", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "CreateDownloadUrl", "", "")
 	request.Method = requests.GET
 	return
 }

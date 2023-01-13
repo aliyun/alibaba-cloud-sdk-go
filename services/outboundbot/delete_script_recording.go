@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// SubmitBatchJobs invokes the outboundbot.SubmitBatchJobs API synchronously
-func (client *Client) SubmitBatchJobs(request *SubmitBatchJobsRequest) (response *SubmitBatchJobsResponse, err error) {
-	response = CreateSubmitBatchJobsResponse()
+// DeleteScriptRecording invokes the outboundbot.DeleteScriptRecording API synchronously
+func (client *Client) DeleteScriptRecording(request *DeleteScriptRecordingRequest) (response *DeleteScriptRecordingResponse, err error) {
+	response = CreateDeleteScriptRecordingResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// SubmitBatchJobsWithChan invokes the outboundbot.SubmitBatchJobs API asynchronously
-func (client *Client) SubmitBatchJobsWithChan(request *SubmitBatchJobsRequest) (<-chan *SubmitBatchJobsResponse, <-chan error) {
-	responseChan := make(chan *SubmitBatchJobsResponse, 1)
+// DeleteScriptRecordingWithChan invokes the outboundbot.DeleteScriptRecording API asynchronously
+func (client *Client) DeleteScriptRecordingWithChan(request *DeleteScriptRecordingRequest) (<-chan *DeleteScriptRecordingResponse, <-chan error) {
+	responseChan := make(chan *DeleteScriptRecordingResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.SubmitBatchJobs(request)
+		response, err := client.DeleteScriptRecording(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) SubmitBatchJobsWithChan(request *SubmitBatchJobsRequest) (
 	return responseChan, errChan
 }
 
-// SubmitBatchJobsWithCallback invokes the outboundbot.SubmitBatchJobs API asynchronously
-func (client *Client) SubmitBatchJobsWithCallback(request *SubmitBatchJobsRequest, callback func(response *SubmitBatchJobsResponse, err error)) <-chan int {
+// DeleteScriptRecordingWithCallback invokes the outboundbot.DeleteScriptRecording API asynchronously
+func (client *Client) DeleteScriptRecordingWithCallback(request *DeleteScriptRecordingRequest, callback func(response *DeleteScriptRecordingResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *SubmitBatchJobsResponse
+		var response *DeleteScriptRecordingResponse
 		var err error
 		defer close(result)
-		response, err = client.SubmitBatchJobs(request)
+		response, err = client.DeleteScriptRecording(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,15 +68,16 @@ func (client *Client) SubmitBatchJobsWithCallback(request *SubmitBatchJobsReques
 	return result
 }
 
-// SubmitBatchJobsRequest is the request struct for api SubmitBatchJobs
-type SubmitBatchJobsRequest struct {
+// DeleteScriptRecordingRequest is the request struct for api DeleteScriptRecording
+type DeleteScriptRecordingRequest struct {
 	*requests.RpcRequest
+	UuidsJson  string `position:"Query" name:"UuidsJson"`
+	ScriptId   string `position:"Query" name:"ScriptId"`
 	InstanceId string `position:"Query" name:"InstanceId"`
-	JobGroupId string `position:"Query" name:"JobGroupId"`
 }
 
-// SubmitBatchJobsResponse is the response struct for api SubmitBatchJobs
-type SubmitBatchJobsResponse struct {
+// DeleteScriptRecordingResponse is the response struct for api DeleteScriptRecording
+type DeleteScriptRecordingResponse struct {
 	*responses.BaseResponse
 	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	Code           string `json:"Code" xml:"Code"`
@@ -85,19 +86,19 @@ type SubmitBatchJobsResponse struct {
 	Success        bool   `json:"Success" xml:"Success"`
 }
 
-// CreateSubmitBatchJobsRequest creates a request to invoke SubmitBatchJobs API
-func CreateSubmitBatchJobsRequest() (request *SubmitBatchJobsRequest) {
-	request = &SubmitBatchJobsRequest{
+// CreateDeleteScriptRecordingRequest creates a request to invoke DeleteScriptRecording API
+func CreateDeleteScriptRecordingRequest() (request *DeleteScriptRecordingRequest) {
+	request = &DeleteScriptRecordingRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "SubmitBatchJobs", "", "")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "DeleteScriptRecording", "", "")
 	request.Method = requests.POST
 	return
 }
 
-// CreateSubmitBatchJobsResponse creates a response to parse from SubmitBatchJobs response
-func CreateSubmitBatchJobsResponse() (response *SubmitBatchJobsResponse) {
-	response = &SubmitBatchJobsResponse{
+// CreateDeleteScriptRecordingResponse creates a response to parse from DeleteScriptRecording response
+func CreateDeleteScriptRecordingResponse() (response *DeleteScriptRecordingResponse) {
+	response = &DeleteScriptRecordingResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return
