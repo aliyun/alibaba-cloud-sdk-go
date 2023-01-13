@@ -79,6 +79,7 @@ type DescribeCenRegionDomainRouteEntriesRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	DestinationCidrBlock string           `position:"Query" name:"DestinationCidrBlock"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Version              string           `position:"Query" name:"Version"`
 	CenRegionId          string           `position:"Query" name:"CenRegionId"`
 	Status               string           `position:"Query" name:"Status"`
 }
@@ -98,7 +99,7 @@ func CreateDescribeCenRegionDomainRouteEntriesRequest() (request *DescribeCenReg
 	request = &DescribeCenRegionDomainRouteEntriesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeCenRegionDomainRouteEntries", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeCenRegionDomainRouteEntries", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -80,6 +80,7 @@ type DeleteCenChildInstanceRouteEntryToAttachmentRequest struct {
 	OwnerAccount              string           `position:"Query" name:"OwnerAccount"`
 	DestinationCidrBlock      string           `position:"Query" name:"DestinationCidrBlock"`
 	OwnerId                   requests.Integer `position:"Query" name:"OwnerId"`
+	Version                   string           `position:"Query" name:"Version"`
 	TransitRouterAttachmentId string           `position:"Query" name:"TransitRouterAttachmentId"`
 }
 
@@ -94,7 +95,7 @@ func CreateDeleteCenChildInstanceRouteEntryToAttachmentRequest() (request *Delet
 	request = &DeleteCenChildInstanceRouteEntryToAttachmentRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DeleteCenChildInstanceRouteEntryToAttachment", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DeleteCenChildInstanceRouteEntryToAttachment", "", "")
 	request.Method = requests.POST
 	return
 }

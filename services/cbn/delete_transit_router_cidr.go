@@ -79,6 +79,7 @@ type DeleteTransitRouterCidrRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	TransitRouterId      string           `position:"Query" name:"TransitRouterId"`
+	Version              string           `position:"Query" name:"Version"`
 }
 
 // DeleteTransitRouterCidrResponse is the response struct for api DeleteTransitRouterCidr
@@ -92,7 +93,7 @@ func CreateDeleteTransitRouterCidrRequest() (request *DeleteTransitRouterCidrReq
 	request = &DeleteTransitRouterCidrRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DeleteTransitRouterCidr", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DeleteTransitRouterCidr", "", "")
 	request.Method = requests.POST
 	return
 }

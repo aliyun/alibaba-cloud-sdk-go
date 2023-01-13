@@ -81,6 +81,7 @@ type CreateTransitRouterCidrRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	TransitRouterId      string           `position:"Query" name:"TransitRouterId"`
+	Version              string           `position:"Query" name:"Version"`
 	Name                 string           `position:"Query" name:"Name"`
 }
 
@@ -96,7 +97,7 @@ func CreateCreateTransitRouterCidrRequest() (request *CreateTransitRouterCidrReq
 	request = &CreateTransitRouterCidrRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "CreateTransitRouterCidr", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "CreateTransitRouterCidr", "", "")
 	request.Method = requests.POST
 	return
 }

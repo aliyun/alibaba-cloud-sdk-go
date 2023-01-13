@@ -72,10 +72,11 @@ func (client *Client) CheckTransitRouterServiceWithCallback(request *CheckTransi
 type CheckTransitRouterServiceRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Version              string           `position:"Query" name:"Version"`
 }
 
 // CheckTransitRouterServiceResponse is the response struct for api CheckTransitRouterService
@@ -90,7 +91,7 @@ func CreateCheckTransitRouterServiceRequest() (request *CheckTransitRouterServic
 	request = &CheckTransitRouterServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "CheckTransitRouterService", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "CheckTransitRouterService", "", "")
 	request.Method = requests.POST
 	return
 }

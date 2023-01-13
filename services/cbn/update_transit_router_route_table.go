@@ -71,15 +71,22 @@ func (client *Client) UpdateTransitRouterRouteTableWithCallback(request *UpdateT
 // UpdateTransitRouterRouteTableRequest is the request struct for api UpdateTransitRouterRouteTable
 type UpdateTransitRouterRouteTableRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId                    requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ClientToken                        string           `position:"Query" name:"ClientToken"`
-	TransitRouterRouteTableId          string           `position:"Query" name:"TransitRouterRouteTableId"`
-	TransitRouterRouteTableDescription string           `position:"Query" name:"TransitRouterRouteTableDescription"`
-	DryRun                             requests.Boolean `position:"Query" name:"DryRun"`
-	TransitRouterRouteTableName        string           `position:"Query" name:"TransitRouterRouteTableName"`
-	ResourceOwnerAccount               string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount                       string           `position:"Query" name:"OwnerAccount"`
-	OwnerId                            requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerId                    requests.Integer                               `position:"Query" name:"ResourceOwnerId"`
+	ClientToken                        string                                         `position:"Query" name:"ClientToken"`
+	RouteTableOptions                  UpdateTransitRouterRouteTableRouteTableOptions `position:"Query" name:"RouteTableOptions"  type:"Struct"`
+	TransitRouterRouteTableId          string                                         `position:"Query" name:"TransitRouterRouteTableId"`
+	TransitRouterRouteTableDescription string                                         `position:"Query" name:"TransitRouterRouteTableDescription"`
+	DryRun                             requests.Boolean                               `position:"Query" name:"DryRun"`
+	TransitRouterRouteTableName        string                                         `position:"Query" name:"TransitRouterRouteTableName"`
+	ResourceOwnerAccount               string                                         `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount                       string                                         `position:"Query" name:"OwnerAccount"`
+	OwnerId                            requests.Integer                               `position:"Query" name:"OwnerId"`
+	Version                            string                                         `position:"Query" name:"Version"`
+}
+
+// UpdateTransitRouterRouteTableRouteTableOptions is a repeated param struct in UpdateTransitRouterRouteTableRequest
+type UpdateTransitRouterRouteTableRouteTableOptions struct {
+	MultiRegionECMP string `name:"MultiRegionECMP"`
 }
 
 // UpdateTransitRouterRouteTableResponse is the response struct for api UpdateTransitRouterRouteTable
@@ -93,7 +100,7 @@ func CreateUpdateTransitRouterRouteTableRequest() (request *UpdateTransitRouterR
 	request = &UpdateTransitRouterRouteTableRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "UpdateTransitRouterRouteTable", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "UpdateTransitRouterRouteTable", "", "")
 	request.Method = requests.POST
 	return
 }

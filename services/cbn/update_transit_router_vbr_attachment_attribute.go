@@ -80,6 +80,7 @@ type UpdateTransitRouterVbrAttachmentAttributeRequest struct {
 	OwnerAccount                       string           `position:"Query" name:"OwnerAccount"`
 	OwnerId                            requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceType                       string           `position:"Query" name:"ResourceType"`
+	Version                            string           `position:"Query" name:"Version"`
 	TransitRouterAttachmentId          string           `position:"Query" name:"TransitRouterAttachmentId"`
 	TransitRouterAttachmentDescription string           `position:"Query" name:"TransitRouterAttachmentDescription"`
 }
@@ -95,7 +96,7 @@ func CreateUpdateTransitRouterVbrAttachmentAttributeRequest() (request *UpdateTr
 	request = &UpdateTransitRouterVbrAttachmentAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "UpdateTransitRouterVbrAttachmentAttribute", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "UpdateTransitRouterVbrAttachmentAttribute", "", "")
 	request.Method = requests.POST
 	return
 }

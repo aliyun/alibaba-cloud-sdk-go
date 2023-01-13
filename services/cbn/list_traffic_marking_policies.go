@@ -80,6 +80,7 @@ type ListTrafficMarkingPoliciesRequest struct {
 	OwnerAccount                    string           `position:"Query" name:"OwnerAccount"`
 	OwnerId                         requests.Integer `position:"Query" name:"OwnerId"`
 	TransitRouterId                 string           `position:"Query" name:"TransitRouterId"`
+	Version                         string           `position:"Query" name:"Version"`
 	MaxResults                      requests.Integer `position:"Query" name:"MaxResults"`
 }
 
@@ -98,7 +99,7 @@ func CreateListTrafficMarkingPoliciesRequest() (request *ListTrafficMarkingPolic
 	request = &ListTrafficMarkingPoliciesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "ListTrafficMarkingPolicies", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "ListTrafficMarkingPolicies", "", "")
 	request.Method = requests.POST
 	return
 }

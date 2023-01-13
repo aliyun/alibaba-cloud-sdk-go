@@ -86,6 +86,7 @@ type CreateCenBandwidthPackageRequest struct {
 	Bandwidth                  requests.Integer                `position:"Query" name:"Bandwidth"`
 	OwnerAccount               string                          `position:"Query" name:"OwnerAccount"`
 	OwnerId                    requests.Integer                `position:"Query" name:"OwnerId"`
+	Version                    string                          `position:"Query" name:"Version"`
 	ServiceType                string                          `position:"Query" name:"ServiceType"`
 	AutoRenew                  requests.Boolean                `position:"Query" name:"AutoRenew"`
 	Name                       string                          `position:"Query" name:"Name"`
@@ -111,7 +112,7 @@ func CreateCreateCenBandwidthPackageRequest() (request *CreateCenBandwidthPackag
 	request = &CreateCenBandwidthPackageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "CreateCenBandwidthPackage", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "CreateCenBandwidthPackage", "", "")
 	request.Method = requests.POST
 	return
 }

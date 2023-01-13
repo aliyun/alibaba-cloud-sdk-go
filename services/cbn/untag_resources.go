@@ -78,6 +78,7 @@ type UntagResourcesRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceType         string           `position:"Query" name:"ResourceType"`
+	Version              string           `position:"Query" name:"Version"`
 	TagKey               *[]string        `position:"Query" name:"TagKey"  type:"Repeated"`
 }
 
@@ -92,7 +93,7 @@ func CreateUntagResourcesRequest() (request *UntagResourcesRequest) {
 	request = &UntagResourcesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "UntagResources", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "UntagResources", "", "")
 	request.Method = requests.POST
 	return
 }

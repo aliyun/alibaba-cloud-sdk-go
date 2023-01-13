@@ -86,6 +86,7 @@ type ListTransitRouterMulticastGroupsRequest struct {
 	PeerTransitRouterMulticastDomains *[]string        `position:"Query" name:"PeerTransitRouterMulticastDomains"  type:"Repeated"`
 	OwnerId                           requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceType                      string           `position:"Query" name:"ResourceType"`
+	Version                           string           `position:"Query" name:"Version"`
 	TransitRouterAttachmentId         string           `position:"Query" name:"TransitRouterAttachmentId"`
 	MaxResults                        requests.Integer `position:"Query" name:"MaxResults"`
 	IsGroupMember                     requests.Boolean `position:"Query" name:"IsGroupMember"`
@@ -106,7 +107,7 @@ func CreateListTransitRouterMulticastGroupsRequest() (request *ListTransitRouter
 	request = &ListTransitRouterMulticastGroupsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "ListTransitRouterMulticastGroups", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "ListTransitRouterMulticastGroups", "", "")
 	request.Method = requests.POST
 	return
 }

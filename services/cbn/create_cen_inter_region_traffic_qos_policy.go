@@ -81,6 +81,7 @@ type CreateCenInterRegionTrafficQosPolicyRequest struct {
 	TrafficQosPolicyDescription string                                                  `position:"Query" name:"TrafficQosPolicyDescription"`
 	OwnerId                     requests.Integer                                        `position:"Query" name:"OwnerId"`
 	TransitRouterId             string                                                  `position:"Query" name:"TransitRouterId"`
+	Version                     string                                                  `position:"Query" name:"Version"`
 	TransitRouterAttachmentId   string                                                  `position:"Query" name:"TransitRouterAttachmentId"`
 }
 
@@ -104,7 +105,7 @@ func CreateCreateCenInterRegionTrafficQosPolicyRequest() (request *CreateCenInte
 	request = &CreateCenInterRegionTrafficQosPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "CreateCenInterRegionTrafficQosPolicy", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "CreateCenInterRegionTrafficQosPolicy", "", "")
 	request.Method = requests.POST
 	return
 }

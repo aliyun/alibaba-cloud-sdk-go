@@ -78,6 +78,7 @@ type ListTransitRouterMulticastDomainVSwitchesRequest struct {
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Version              string           `position:"Query" name:"Version"`
 	VpcId                string           `position:"Query" name:"VpcId"`
 	MaxResults           requests.Integer `position:"Query" name:"MaxResults"`
 }
@@ -97,7 +98,7 @@ func CreateListTransitRouterMulticastDomainVSwitchesRequest() (request *ListTran
 	request = &ListTransitRouterMulticastDomainVSwitchesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "ListTransitRouterMulticastDomainVSwitches", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "ListTransitRouterMulticastDomainVSwitches", "", "")
 	request.Method = requests.POST
 	return
 }

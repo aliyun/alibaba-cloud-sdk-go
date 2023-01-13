@@ -79,6 +79,7 @@ type AssociateTransitRouterMulticastDomainRequest struct {
 	ResourceOwnerAccount           string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount                   string           `position:"Query" name:"OwnerAccount"`
 	OwnerId                        requests.Integer `position:"Query" name:"OwnerId"`
+	Version                        string           `position:"Query" name:"Version"`
 	TransitRouterAttachmentId      string           `position:"Query" name:"TransitRouterAttachmentId"`
 }
 
@@ -93,7 +94,7 @@ func CreateAssociateTransitRouterMulticastDomainRequest() (request *AssociateTra
 	request = &AssociateTransitRouterMulticastDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "AssociateTransitRouterMulticastDomain", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "AssociateTransitRouterMulticastDomain", "", "")
 	request.Method = requests.POST
 	return
 }

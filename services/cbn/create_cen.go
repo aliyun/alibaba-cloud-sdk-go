@@ -80,6 +80,7 @@ type CreateCenRequest struct {
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Version              string           `position:"Query" name:"Version"`
 	ProtectionLevel      string           `position:"Query" name:"ProtectionLevel"`
 	Name                 string           `position:"Query" name:"Name"`
 }
@@ -102,7 +103,7 @@ func CreateCreateCenRequest() (request *CreateCenRequest) {
 	request = &CreateCenRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "CreateCen", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "CreateCen", "", "")
 	request.Method = requests.POST
 	return
 }

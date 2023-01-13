@@ -79,6 +79,7 @@ type DetachCenChildInstanceRequest struct {
 	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
 	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
 	ChildInstanceType     string           `position:"Query" name:"ChildInstanceType"`
+	Version               string           `position:"Query" name:"Version"`
 	ChildInstanceOwnerId  requests.Integer `position:"Query" name:"ChildInstanceOwnerId"`
 	ChildInstanceId       string           `position:"Query" name:"ChildInstanceId"`
 }
@@ -94,7 +95,7 @@ func CreateDetachCenChildInstanceRequest() (request *DetachCenChildInstanceReque
 	request = &DetachCenChildInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DetachCenChildInstance", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DetachCenChildInstance", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -85,6 +85,7 @@ type ModifyCenRouteMapRequest struct {
 	Preference                         requests.Integer `position:"Query" name:"Preference"`
 	OwnerId                            requests.Integer `position:"Query" name:"OwnerId"`
 	Priority                           requests.Integer `position:"Query" name:"Priority"`
+	Version                            string           `position:"Query" name:"Version"`
 	DestinationChildInstanceTypes      *[]string        `position:"Query" name:"DestinationChildInstanceTypes"  type:"Repeated"`
 	SourceRouteTableIds                *[]string        `position:"Query" name:"SourceRouteTableIds"  type:"Repeated"`
 	SourceChildInstanceTypes           *[]string        `position:"Query" name:"SourceChildInstanceTypes"  type:"Repeated"`
@@ -121,7 +122,7 @@ func CreateModifyCenRouteMapRequest() (request *ModifyCenRouteMapRequest) {
 	request = &ModifyCenRouteMapRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "ModifyCenRouteMap", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "ModifyCenRouteMap", "", "")
 	request.Method = requests.POST
 	return
 }

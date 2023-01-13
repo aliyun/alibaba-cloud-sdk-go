@@ -87,6 +87,7 @@ type CreateTransitRouterPeerAttachmentRequest struct {
 	OwnerId                            requests.Integer                        `position:"Query" name:"OwnerId"`
 	TransitRouterId                    string                                  `position:"Query" name:"TransitRouterId"`
 	ResourceType                       string                                  `position:"Query" name:"ResourceType"`
+	Version                            string                                  `position:"Query" name:"Version"`
 	TransitRouterAttachmentDescription string                                  `position:"Query" name:"TransitRouterAttachmentDescription"`
 	PeerTransitRouterRegionId          string                                  `position:"Query" name:"PeerTransitRouterRegionId"`
 	CenBandwidthPackageId              string                                  `position:"Query" name:"CenBandwidthPackageId"`
@@ -111,7 +112,7 @@ func CreateCreateTransitRouterPeerAttachmentRequest() (request *CreateTransitRou
 	request = &CreateTransitRouterPeerAttachmentRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "CreateTransitRouterPeerAttachment", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "CreateTransitRouterPeerAttachment", "", "")
 	request.Method = requests.POST
 	return
 }

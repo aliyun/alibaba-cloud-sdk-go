@@ -77,6 +77,7 @@ type TempUpgradeCenBandwidthPackageSpecRequest struct {
 	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
 	EndTime               string           `position:"Query" name:"EndTime"`
 	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
+	Version               string           `position:"Query" name:"Version"`
 	CenBandwidthPackageId string           `position:"Query" name:"CenBandwidthPackageId"`
 }
 
@@ -91,7 +92,7 @@ func CreateTempUpgradeCenBandwidthPackageSpecRequest() (request *TempUpgradeCenB
 	request = &TempUpgradeCenBandwidthPackageSpecRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "TempUpgradeCenBandwidthPackageSpec", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "TempUpgradeCenBandwidthPackageSpec", "", "")
 	request.Method = requests.POST
 	return
 }

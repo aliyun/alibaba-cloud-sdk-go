@@ -78,6 +78,7 @@ type DeleteTransitRouterMulticastDomainRequest struct {
 	ResourceOwnerAccount           string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount                   string           `position:"Query" name:"OwnerAccount"`
 	OwnerId                        requests.Integer `position:"Query" name:"OwnerId"`
+	Version                        string           `position:"Query" name:"Version"`
 }
 
 // DeleteTransitRouterMulticastDomainResponse is the response struct for api DeleteTransitRouterMulticastDomain
@@ -91,7 +92,7 @@ func CreateDeleteTransitRouterMulticastDomainRequest() (request *DeleteTransitRo
 	request = &DeleteTransitRouterMulticastDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DeleteTransitRouterMulticastDomain", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DeleteTransitRouterMulticastDomain", "", "")
 	request.Method = requests.POST
 	return
 }

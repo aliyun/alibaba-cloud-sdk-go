@@ -80,6 +80,7 @@ type ListTagResourcesRequest struct {
 	OwnerAccount         string                 `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer       `position:"Query" name:"OwnerId"`
 	ResourceType         string                 `position:"Query" name:"ResourceType"`
+	Version              string                 `position:"Query" name:"Version"`
 }
 
 // ListTagResourcesTag is a repeated param struct in ListTagResourcesRequest
@@ -101,7 +102,7 @@ func CreateListTagResourcesRequest() (request *ListTagResourcesRequest) {
 	request = &ListTagResourcesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "ListTagResources", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "ListTagResources", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -84,6 +84,7 @@ type ListTransitRoutersRequest struct {
 	OwnerAccount         string                             `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer                   `position:"Query" name:"OwnerId"`
 	TransitRouterId      string                             `position:"Query" name:"TransitRouterId"`
+	Version              string                             `position:"Query" name:"Version"`
 	Status               string                             `position:"Query" name:"Status"`
 }
 
@@ -114,7 +115,7 @@ func CreateListTransitRoutersRequest() (request *ListTransitRoutersRequest) {
 	request = &ListTransitRoutersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "ListTransitRouters", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "ListTransitRouters", "", "")
 	request.Method = requests.POST
 	return
 }

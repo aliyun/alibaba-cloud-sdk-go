@@ -80,6 +80,7 @@ type DeleteCenChildInstanceRouteEntryToCenRequest struct {
 	DestinationCidrBlock  string           `position:"Query" name:"DestinationCidrBlock"`
 	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
 	ChildInstanceType     string           `position:"Query" name:"ChildInstanceType"`
+	Version               string           `position:"Query" name:"Version"`
 	ChildInstanceId       string           `position:"Query" name:"ChildInstanceId"`
 	ChildInstanceAliUid   requests.Integer `position:"Query" name:"ChildInstanceAliUid"`
 }
@@ -95,7 +96,7 @@ func CreateDeleteCenChildInstanceRouteEntryToCenRequest() (request *DeleteCenChi
 	request = &DeleteCenChildInstanceRouteEntryToCenRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DeleteCenChildInstanceRouteEntryToCen", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DeleteCenChildInstanceRouteEntryToCen", "", "")
 	request.Method = requests.POST
 	return
 }

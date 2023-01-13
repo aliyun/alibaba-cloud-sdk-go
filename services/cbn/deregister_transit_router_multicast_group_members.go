@@ -82,6 +82,7 @@ type DeregisterTransitRouterMulticastGroupMembersRequest struct {
 	OwnerAccount                      string           `position:"Query" name:"OwnerAccount"`
 	PeerTransitRouterMulticastDomains *[]string        `position:"Query" name:"PeerTransitRouterMulticastDomains"  type:"Repeated"`
 	OwnerId                           requests.Integer `position:"Query" name:"OwnerId"`
+	Version                           string           `position:"Query" name:"Version"`
 }
 
 // DeregisterTransitRouterMulticastGroupMembersResponse is the response struct for api DeregisterTransitRouterMulticastGroupMembers
@@ -95,7 +96,7 @@ func CreateDeregisterTransitRouterMulticastGroupMembersRequest() (request *Dereg
 	request = &DeregisterTransitRouterMulticastGroupMembersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DeregisterTransitRouterMulticastGroupMembers", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DeregisterTransitRouterMulticastGroupMembers", "", "")
 	request.Method = requests.POST
 	return
 }

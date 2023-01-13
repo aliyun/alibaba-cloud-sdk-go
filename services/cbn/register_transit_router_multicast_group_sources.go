@@ -81,6 +81,7 @@ type RegisterTransitRouterMulticastGroupSourcesRequest struct {
 	ResourceOwnerAccount           string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount                   string           `position:"Query" name:"OwnerAccount"`
 	OwnerId                        requests.Integer `position:"Query" name:"OwnerId"`
+	Version                        string           `position:"Query" name:"Version"`
 	VpcId                          string           `position:"Query" name:"VpcId"`
 }
 
@@ -95,7 +96,7 @@ func CreateRegisterTransitRouterMulticastGroupSourcesRequest() (request *Registe
 	request = &RegisterTransitRouterMulticastGroupSourcesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "RegisterTransitRouterMulticastGroupSources", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "RegisterTransitRouterMulticastGroupSources", "", "")
 	request.Method = requests.POST
 	return
 }

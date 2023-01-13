@@ -78,6 +78,7 @@ type ListGrantVSwitchesToCenRequest struct {
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Version              string           `position:"Query" name:"Version"`
 	VpcId                string           `position:"Query" name:"VpcId"`
 	ZoneId               string           `position:"Query" name:"ZoneId"`
 }
@@ -97,7 +98,7 @@ func CreateListGrantVSwitchesToCenRequest() (request *ListGrantVSwitchesToCenReq
 	request = &ListGrantVSwitchesToCenRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "ListGrantVSwitchesToCen", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "ListGrantVSwitchesToCen", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -78,6 +78,7 @@ type DescribeGrantRulesToResourceRequest struct {
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Version              string           `position:"Query" name:"Version"`
 	MaxResults           requests.Integer `position:"Query" name:"MaxResults"`
 }
 
@@ -96,7 +97,7 @@ func CreateDescribeGrantRulesToResourceRequest() (request *DescribeGrantRulesToR
 	request = &DescribeGrantRulesToResourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeGrantRulesToResource", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeGrantRulesToResource", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -78,6 +78,7 @@ type ListGrantVSwitchEnisRequest struct {
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Version              string           `position:"Query" name:"Version"`
 	VSwitchId            string           `position:"Query" name:"VSwitchId"`
 	VpcId                string           `position:"Query" name:"VpcId"`
 }
@@ -95,7 +96,7 @@ func CreateListGrantVSwitchEnisRequest() (request *ListGrantVSwitchEnisRequest) 
 	request = &ListGrantVSwitchEnisRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "ListGrantVSwitchEnis", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "ListGrantVSwitchEnis", "", "")
 	request.Method = requests.POST
 	return
 }

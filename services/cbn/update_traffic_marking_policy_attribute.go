@@ -81,6 +81,7 @@ type UpdateTrafficMarkingPolicyAttributeRequest struct {
 	ResourceOwnerAccount            string                                                        `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount                    string                                                        `position:"Query" name:"OwnerAccount"`
 	OwnerId                         requests.Integer                                              `position:"Query" name:"OwnerId"`
+	Version                         string                                                        `position:"Query" name:"Version"`
 	DeleteTrafficMatchRules         *[]UpdateTrafficMarkingPolicyAttributeDeleteTrafficMatchRules `position:"Query" name:"DeleteTrafficMatchRules"  type:"Repeated"`
 }
 
@@ -119,7 +120,7 @@ func CreateUpdateTrafficMarkingPolicyAttributeRequest() (request *UpdateTrafficM
 	request = &UpdateTrafficMarkingPolicyAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "UpdateTrafficMarkingPolicyAttribute", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "UpdateTrafficMarkingPolicyAttribute", "", "")
 	request.Method = requests.POST
 	return
 }

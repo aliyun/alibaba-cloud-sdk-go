@@ -77,6 +77,7 @@ type PublishRouteEntriesRequest struct {
 	ResourceOwnerAccount      string           `position:"Query" name:"ResourceOwnerAccount"`
 	DestinationCidrBlock      string           `position:"Query" name:"DestinationCidrBlock"`
 	ChildInstanceType         string           `position:"Query" name:"ChildInstanceType"`
+	Version                   string           `position:"Query" name:"Version"`
 	ChildInstanceId           string           `position:"Query" name:"ChildInstanceId"`
 	ChildInstanceRouteTableId string           `position:"Query" name:"ChildInstanceRouteTableId"`
 }
@@ -92,7 +93,7 @@ func CreatePublishRouteEntriesRequest() (request *PublishRouteEntriesRequest) {
 	request = &PublishRouteEntriesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "PublishRouteEntries", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "PublishRouteEntries", "", "")
 	request.Method = requests.POST
 	return
 }

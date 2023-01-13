@@ -76,6 +76,7 @@ type AssociateCenBandwidthPackageRequest struct {
 	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
 	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
+	Version               string           `position:"Query" name:"Version"`
 	CenBandwidthPackageId string           `position:"Query" name:"CenBandwidthPackageId"`
 }
 
@@ -90,7 +91,7 @@ func CreateAssociateCenBandwidthPackageRequest() (request *AssociateCenBandwidth
 	request = &AssociateCenBandwidthPackageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "AssociateCenBandwidthPackage", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "AssociateCenBandwidthPackage", "", "")
 	request.Method = requests.POST
 	return
 }

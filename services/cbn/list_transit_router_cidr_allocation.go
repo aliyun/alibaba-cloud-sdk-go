@@ -83,6 +83,7 @@ type ListTransitRouterCidrAllocationRequest struct {
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	TransitRouterId      string           `position:"Query" name:"TransitRouterId"`
 	AttachmentName       string           `position:"Query" name:"AttachmentName"`
+	Version              string           `position:"Query" name:"Version"`
 	CidrBlock            string           `position:"Query" name:"CidrBlock"`
 	MaxResults           requests.Integer `position:"Query" name:"MaxResults"`
 	AttachmentId         string           `position:"Query" name:"AttachmentId"`
@@ -103,7 +104,7 @@ func CreateListTransitRouterCidrAllocationRequest() (request *ListTransitRouterC
 	request = &ListTransitRouterCidrAllocationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "ListTransitRouterCidrAllocation", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "ListTransitRouterCidrAllocation", "", "")
 	request.Method = requests.POST
 	return
 }

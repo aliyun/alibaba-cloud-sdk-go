@@ -78,6 +78,7 @@ type DeleteCenInterRegionTrafficQosPolicyRequest struct {
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Version              string           `position:"Query" name:"Version"`
 }
 
 // DeleteCenInterRegionTrafficQosPolicyResponse is the response struct for api DeleteCenInterRegionTrafficQosPolicy
@@ -91,7 +92,7 @@ func CreateDeleteCenInterRegionTrafficQosPolicyRequest() (request *DeleteCenInte
 	request = &DeleteCenInterRegionTrafficQosPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DeleteCenInterRegionTrafficQosPolicy", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DeleteCenInterRegionTrafficQosPolicy", "", "")
 	request.Method = requests.POST
 	return
 }

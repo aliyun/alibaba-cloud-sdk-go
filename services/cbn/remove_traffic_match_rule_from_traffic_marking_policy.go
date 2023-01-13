@@ -79,6 +79,7 @@ type RemoveTrafficMatchRuleFromTrafficMarkingPolicyRequest struct {
 	OwnerAccount           string           `position:"Query" name:"OwnerAccount"`
 	TrafficMarkRuleIds     *[]string        `position:"Query" name:"TrafficMarkRuleIds"  type:"Repeated"`
 	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
+	Version                string           `position:"Query" name:"Version"`
 }
 
 // RemoveTrafficMatchRuleFromTrafficMarkingPolicyResponse is the response struct for api RemoveTrafficMatchRuleFromTrafficMarkingPolicy
@@ -92,7 +93,7 @@ func CreateRemoveTrafficMatchRuleFromTrafficMarkingPolicyRequest() (request *Rem
 	request = &RemoveTrafficMatchRuleFromTrafficMarkingPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "RemoveTrafficMatchRuleFromTrafficMarkingPolicy", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "RemoveTrafficMatchRuleFromTrafficMarkingPolicy", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -80,6 +80,7 @@ type UpdateCenInterRegionTrafficQosPolicyAttributeRequest struct {
 	OwnerAccount                string           `position:"Query" name:"OwnerAccount"`
 	TrafficQosPolicyDescription string           `position:"Query" name:"TrafficQosPolicyDescription"`
 	OwnerId                     requests.Integer `position:"Query" name:"OwnerId"`
+	Version                     string           `position:"Query" name:"Version"`
 }
 
 // UpdateCenInterRegionTrafficQosPolicyAttributeResponse is the response struct for api UpdateCenInterRegionTrafficQosPolicyAttribute
@@ -93,7 +94,7 @@ func CreateUpdateCenInterRegionTrafficQosPolicyAttributeRequest() (request *Upda
 	request = &UpdateCenInterRegionTrafficQosPolicyAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "UpdateCenInterRegionTrafficQosPolicyAttribute", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "UpdateCenInterRegionTrafficQosPolicyAttribute", "", "")
 	request.Method = requests.POST
 	return
 }

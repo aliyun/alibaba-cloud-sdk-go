@@ -78,6 +78,7 @@ type DeleteTrafficMarkingPolicyRequest struct {
 	ResourceOwnerAccount   string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount           string           `position:"Query" name:"OwnerAccount"`
 	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
+	Version                string           `position:"Query" name:"Version"`
 }
 
 // DeleteTrafficMarkingPolicyResponse is the response struct for api DeleteTrafficMarkingPolicy
@@ -91,7 +92,7 @@ func CreateDeleteTrafficMarkingPolicyRequest() (request *DeleteTrafficMarkingPol
 	request = &DeleteTrafficMarkingPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DeleteTrafficMarkingPolicy", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DeleteTrafficMarkingPolicy", "", "")
 	request.Method = requests.POST
 	return
 }

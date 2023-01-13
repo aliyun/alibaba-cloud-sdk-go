@@ -79,6 +79,7 @@ type RoutePrivateZoneInCenToVpcRequest struct {
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Version              string           `position:"Query" name:"Version"`
 }
 
 // RoutePrivateZoneInCenToVpcResponse is the response struct for api RoutePrivateZoneInCenToVpc
@@ -92,7 +93,7 @@ func CreateRoutePrivateZoneInCenToVpcRequest() (request *RoutePrivateZoneInCenTo
 	request = &RoutePrivateZoneInCenToVpcRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "RoutePrivateZoneInCenToVpc", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "RoutePrivateZoneInCenToVpc", "", "")
 	request.Method = requests.POST
 	return
 }

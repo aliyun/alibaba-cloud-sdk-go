@@ -87,6 +87,7 @@ type CreateCenRouteMapRequest struct {
 	Preference                         requests.Integer `position:"Query" name:"Preference"`
 	OwnerId                            requests.Integer `position:"Query" name:"OwnerId"`
 	Priority                           requests.Integer `position:"Query" name:"Priority"`
+	Version                            string           `position:"Query" name:"Version"`
 	DestinationChildInstanceTypes      *[]string        `position:"Query" name:"DestinationChildInstanceTypes"  type:"Repeated"`
 	SourceRouteTableIds                *[]string        `position:"Query" name:"SourceRouteTableIds"  type:"Repeated"`
 	SourceChildInstanceTypes           *[]string        `position:"Query" name:"SourceChildInstanceTypes"  type:"Repeated"`
@@ -124,7 +125,7 @@ func CreateCreateCenRouteMapRequest() (request *CreateCenRouteMapRequest) {
 	request = &CreateCenRouteMapRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "CreateCenRouteMap", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "CreateCenRouteMap", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -17,9 +17,16 @@ package cbn
 
 // TrafficQosQueue is a nested struct in cbn response
 type TrafficQosQueue struct {
-	QosQueueName           string `json:"QosQueueName" xml:"QosQueueName"`
-	RemainBandwidthPercent int    `json:"RemainBandwidthPercent" xml:"RemainBandwidthPercent"`
-	QosQueueId             string `json:"QosQueueId" xml:"QosQueueId"`
-	QosQueueDescription    string `json:"QosQueueDescription" xml:"QosQueueDescription"`
-	Dscps                  []int  `json:"Dscps" xml:"Dscps"`
+	TransitRouterAttachmentId  string `json:"TransitRouterAttachmentId" xml:"TransitRouterAttachmentId"`
+	TrafficQosPolicyId         string `json:"TrafficQosPolicyId" xml:"TrafficQosPolicyId"`
+	TrafficQosQueueDescription string `json:"TrafficQosQueueDescription" xml:"TrafficQosQueueDescription"`
+	QosQueueName               string `json:"QosQueueName" xml:"QosQueueName"`
+	TransitRouterId            string `json:"TransitRouterId" xml:"TransitRouterId"`
+	TrafficQosQueueName        string `json:"TrafficQosQueueName" xml:"TrafficQosQueueName"`
+	TrafficQosQueueId          string `json:"TrafficQosQueueId" xml:"TrafficQosQueueId"`
+	Status                     string `json:"Status" xml:"Status"`
+	QosQueueId                 string `json:"QosQueueId" xml:"QosQueueId"`
+	RemainBandwidthPercent     int    `json:"RemainBandwidthPercent" xml:"RemainBandwidthPercent"`
+	QosQueueDescription        string `json:"QosQueueDescription" xml:"QosQueueDescription"`
+	Dscps                      []int  `json:"Dscps" xml:"Dscps"`
 }

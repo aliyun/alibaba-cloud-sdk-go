@@ -86,6 +86,7 @@ type CreateTransitRouterVpnAttachmentRequest struct {
 	OwnerId                            requests.Integer                        `position:"Query" name:"OwnerId"`
 	TransitRouterId                    string                                  `position:"Query" name:"TransitRouterId"`
 	ResourceType                       string                                  `position:"Query" name:"ResourceType"`
+	Version                            string                                  `position:"Query" name:"Version"`
 	TransitRouterAttachmentDescription string                                  `position:"Query" name:"TransitRouterAttachmentDescription"`
 	VpnOwnerId                         requests.Integer                        `position:"Query" name:"VpnOwnerId"`
 	ChargeType                         string                                  `position:"Query" name:"ChargeType"`
@@ -115,7 +116,7 @@ func CreateCreateTransitRouterVpnAttachmentRequest() (request *CreateTransitRout
 	request = &CreateTransitRouterVpnAttachmentRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "CreateTransitRouterVpnAttachment", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "CreateTransitRouterVpnAttachment", "", "")
 	request.Method = requests.POST
 	return
 }

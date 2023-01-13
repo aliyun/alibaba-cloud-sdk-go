@@ -79,6 +79,7 @@ type ListTransitRouterCidrRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	TransitRouterId      string           `position:"Query" name:"TransitRouterId"`
+	Version              string           `position:"Query" name:"Version"`
 }
 
 // ListTransitRouterCidrResponse is the response struct for api ListTransitRouterCidr
@@ -93,7 +94,7 @@ func CreateListTransitRouterCidrRequest() (request *ListTransitRouterCidrRequest
 	request = &ListTransitRouterCidrRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "ListTransitRouterCidr", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "ListTransitRouterCidr", "", "")
 	request.Method = requests.POST
 	return
 }

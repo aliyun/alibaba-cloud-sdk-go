@@ -85,6 +85,7 @@ type CreateTransitRouterRequest struct {
 	OwnerId                  requests.Integer                            `position:"Query" name:"OwnerId"`
 	TransitRouterDescription string                                      `position:"Query" name:"TransitRouterDescription"`
 	SupportMulticast         requests.Boolean                            `position:"Query" name:"SupportMulticast"`
+	Version                  string                                      `position:"Query" name:"Version"`
 }
 
 // CreateTransitRouterTransitRouterCidrList is a repeated param struct in CreateTransitRouterRequest
@@ -113,7 +114,7 @@ func CreateCreateTransitRouterRequest() (request *CreateTransitRouterRequest) {
 	request = &CreateTransitRouterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "CreateTransitRouter", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "CreateTransitRouter", "", "")
 	request.Method = requests.POST
 	return
 }

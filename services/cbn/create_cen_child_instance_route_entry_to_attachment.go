@@ -80,6 +80,7 @@ type CreateCenChildInstanceRouteEntryToAttachmentRequest struct {
 	OwnerAccount              string           `position:"Query" name:"OwnerAccount"`
 	DestinationCidrBlock      string           `position:"Query" name:"DestinationCidrBlock"`
 	OwnerId                   requests.Integer `position:"Query" name:"OwnerId"`
+	Version                   string           `position:"Query" name:"Version"`
 	TransitRouterAttachmentId string           `position:"Query" name:"TransitRouterAttachmentId"`
 }
 
@@ -94,7 +95,7 @@ func CreateCreateCenChildInstanceRouteEntryToAttachmentRequest() (request *Creat
 	request = &CreateCenChildInstanceRouteEntryToAttachmentRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "CreateCenChildInstanceRouteEntryToAttachment", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "CreateCenChildInstanceRouteEntryToAttachment", "", "")
 	request.Method = requests.POST
 	return
 }

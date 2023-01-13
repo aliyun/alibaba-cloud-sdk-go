@@ -78,6 +78,7 @@ type ListTransitRouterAvailableResourceRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	SupportMulticast     requests.Boolean `position:"Query" name:"SupportMulticast"`
+	Version              string           `position:"Query" name:"Version"`
 }
 
 // ListTransitRouterAvailableResourceResponse is the response struct for api ListTransitRouterAvailableResource
@@ -94,7 +95,7 @@ func CreateListTransitRouterAvailableResourceRequest() (request *ListTransitRout
 	request = &ListTransitRouterAvailableResourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "ListTransitRouterAvailableResource", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "ListTransitRouterAvailableResource", "", "")
 	request.Method = requests.POST
 	return
 }

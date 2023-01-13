@@ -81,6 +81,7 @@ type DeleteTransitRouterPrefixListAssociationRequest struct {
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	TransitRouterId      string           `position:"Query" name:"TransitRouterId"`
 	TransitRouterTableId string           `position:"Query" name:"TransitRouterTableId"`
+	Version              string           `position:"Query" name:"Version"`
 	NextHop              string           `position:"Query" name:"NextHop"`
 }
 
@@ -95,7 +96,7 @@ func CreateDeleteTransitRouterPrefixListAssociationRequest() (request *DeleteTra
 	request = &DeleteTransitRouterPrefixListAssociationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DeleteTransitRouterPrefixListAssociation", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DeleteTransitRouterPrefixListAssociation", "", "")
 	request.Method = requests.POST
 	return
 }

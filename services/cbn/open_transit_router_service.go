@@ -72,10 +72,11 @@ func (client *Client) OpenTransitRouterServiceWithCallback(request *OpenTransitR
 type OpenTransitRouterServiceRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Version              string           `position:"Query" name:"Version"`
 }
 
 // OpenTransitRouterServiceResponse is the response struct for api OpenTransitRouterService
@@ -90,7 +91,7 @@ func CreateOpenTransitRouterServiceRequest() (request *OpenTransitRouterServiceR
 	request = &OpenTransitRouterServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "OpenTransitRouterService", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "OpenTransitRouterService", "", "")
 	request.Method = requests.POST
 	return
 }

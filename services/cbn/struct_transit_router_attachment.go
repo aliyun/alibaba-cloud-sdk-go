@@ -36,6 +36,7 @@ type TransitRouterAttachment struct {
 	CreationTime                       string        `json:"CreationTime" xml:"CreationTime"`
 	AutoPublishRouteEnabled            bool          `json:"AutoPublishRouteEnabled" xml:"AutoPublishRouteEnabled"`
 	ServiceMode                        string        `json:"ServiceMode" xml:"ServiceMode"`
+	OrderType                          string        `json:"OrderType" xml:"OrderType"`
 	ResourceType                       string        `json:"ResourceType" xml:"ResourceType"`
 	TransitRouterAttachmentId          string        `json:"TransitRouterAttachmentId" xml:"TransitRouterAttachmentId"`
 	BandwidthType                      string        `json:"BandwidthType" xml:"BandwidthType"`

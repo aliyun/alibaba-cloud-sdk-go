@@ -82,6 +82,7 @@ type ListTransitRouterPrefixListAssociationRequest struct {
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	TransitRouterId      string           `position:"Query" name:"TransitRouterId"`
 	TransitRouterTableId string           `position:"Query" name:"TransitRouterTableId"`
+	Version              string           `position:"Query" name:"Version"`
 	NextHop              string           `position:"Query" name:"NextHop"`
 }
 
@@ -100,7 +101,7 @@ func CreateListTransitRouterPrefixListAssociationRequest() (request *ListTransit
 	request = &ListTransitRouterPrefixListAssociationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "ListTransitRouterPrefixListAssociation", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "ListTransitRouterPrefixListAssociation", "", "")
 	request.Method = requests.POST
 	return
 }

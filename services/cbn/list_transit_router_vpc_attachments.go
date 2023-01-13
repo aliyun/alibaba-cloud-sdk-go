@@ -80,9 +80,12 @@ type ListTransitRouterVpcAttachmentsRequest struct {
 	OwnerId                   requests.Integer                      `position:"Query" name:"OwnerId"`
 	TransitRouterId           string                                `position:"Query" name:"TransitRouterId"`
 	ResourceType              string                                `position:"Query" name:"ResourceType"`
+	Version                   string                                `position:"Query" name:"Version"`
 	TransitRouterAttachmentId string                                `position:"Query" name:"TransitRouterAttachmentId"`
 	VpcId                     string                                `position:"Query" name:"VpcId"`
 	MaxResults                requests.Integer                      `position:"Query" name:"MaxResults"`
+	OrderType                 string                                `position:"Query" name:"OrderType"`
+	Status                    string                                `position:"Query" name:"Status"`
 }
 
 // ListTransitRouterVpcAttachmentsTag is a repeated param struct in ListTransitRouterVpcAttachmentsRequest
@@ -106,7 +109,7 @@ func CreateListTransitRouterVpcAttachmentsRequest() (request *ListTransitRouterV
 	request = &ListTransitRouterVpcAttachmentsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "ListTransitRouterVpcAttachments", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "ListTransitRouterVpcAttachments", "", "")
 	request.Method = requests.POST
 	return
 }

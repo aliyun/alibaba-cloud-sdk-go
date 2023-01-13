@@ -82,6 +82,7 @@ type ResolveAndRouteServiceInCenRequest struct {
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Version              string           `position:"Query" name:"Version"`
 	AccessRegionIds      *[]string        `position:"Query" name:"AccessRegionIds"  type:"Repeated"`
 }
 
@@ -96,7 +97,7 @@ func CreateResolveAndRouteServiceInCenRequest() (request *ResolveAndRouteService
 	request = &ResolveAndRouteServiceInCenRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "ResolveAndRouteServiceInCen", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "ResolveAndRouteServiceInCen", "", "")
 	request.Method = requests.POST
 	return
 }

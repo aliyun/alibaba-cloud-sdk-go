@@ -80,6 +80,7 @@ type UpdateCenInterRegionTrafficQosQueueAttributeRequest struct {
 	ResourceOwnerAccount   string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount           string           `position:"Query" name:"OwnerAccount"`
 	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
+	Version                string           `position:"Query" name:"Version"`
 	QosQueueId             string           `position:"Query" name:"QosQueueId"`
 	QosQueueDescription    string           `position:"Query" name:"QosQueueDescription"`
 }
@@ -95,7 +96,7 @@ func CreateUpdateCenInterRegionTrafficQosQueueAttributeRequest() (request *Updat
 	request = &UpdateCenInterRegionTrafficQosQueueAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "UpdateCenInterRegionTrafficQosQueueAttribute", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "UpdateCenInterRegionTrafficQosQueueAttribute", "", "")
 	request.Method = requests.POST
 	return
 }

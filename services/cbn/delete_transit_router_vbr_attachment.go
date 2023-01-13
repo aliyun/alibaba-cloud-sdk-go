@@ -78,6 +78,7 @@ type DeleteTransitRouterVbrAttachmentRequest struct {
 	OwnerAccount              string           `position:"Query" name:"OwnerAccount"`
 	OwnerId                   requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceType              string           `position:"Query" name:"ResourceType"`
+	Version                   string           `position:"Query" name:"Version"`
 	TransitRouterAttachmentId string           `position:"Query" name:"TransitRouterAttachmentId"`
 	Force                     requests.Boolean `position:"Query" name:"Force"`
 }
@@ -93,7 +94,7 @@ func CreateDeleteTransitRouterVbrAttachmentRequest() (request *DeleteTransitRout
 	request = &DeleteTransitRouterVbrAttachmentRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DeleteTransitRouterVbrAttachment", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DeleteTransitRouterVbrAttachment", "", "")
 	request.Method = requests.POST
 	return
 }

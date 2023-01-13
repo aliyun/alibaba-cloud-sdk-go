@@ -80,6 +80,7 @@ type ListCenInterRegionTrafficQosPoliciesRequest struct {
 	TrafficQosPolicyDescription string           `position:"Query" name:"TrafficQosPolicyDescription"`
 	OwnerId                     requests.Integer `position:"Query" name:"OwnerId"`
 	TransitRouterId             string           `position:"Query" name:"TransitRouterId"`
+	Version                     string           `position:"Query" name:"Version"`
 	TransitRouterAttachmentId   string           `position:"Query" name:"TransitRouterAttachmentId"`
 	MaxResults                  requests.Integer `position:"Query" name:"MaxResults"`
 }
@@ -99,7 +100,7 @@ func CreateListCenInterRegionTrafficQosPoliciesRequest() (request *ListCenInterR
 	request = &ListCenInterRegionTrafficQosPoliciesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "ListCenInterRegionTrafficQosPolicies", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "ListCenInterRegionTrafficQosPolicies", "", "")
 	request.Method = requests.POST
 	return
 }

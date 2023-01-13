@@ -82,6 +82,7 @@ type ModifyTransitRouterCidrRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	TransitRouterId      string           `position:"Query" name:"TransitRouterId"`
+	Version              string           `position:"Query" name:"Version"`
 	Name                 string           `position:"Query" name:"Name"`
 }
 
@@ -96,7 +97,7 @@ func CreateModifyTransitRouterCidrRequest() (request *ModifyTransitRouterCidrReq
 	request = &ModifyTransitRouterCidrRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "ModifyTransitRouterCidr", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "ModifyTransitRouterCidr", "", "")
 	request.Method = requests.POST
 	return
 }

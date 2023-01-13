@@ -78,6 +78,7 @@ type DescribeCenPrivateZoneRoutesRequest struct {
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	HostRegionId         string           `position:"Query" name:"HostRegionId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	Version              string           `position:"Query" name:"Version"`
 }
 
 // DescribeCenPrivateZoneRoutesResponse is the response struct for api DescribeCenPrivateZoneRoutes
@@ -97,7 +98,7 @@ func CreateDescribeCenPrivateZoneRoutesRequest() (request *DescribeCenPrivateZon
 	request = &DescribeCenPrivateZoneRoutesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeCenPrivateZoneRoutes", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeCenPrivateZoneRoutes", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -81,6 +81,7 @@ type ListTransitRouterRouteEntriesRequest struct {
 	TransitRouterRouteEntryNames                *[]string        `position:"Query" name:"TransitRouterRouteEntryNames"  type:"Repeated"`
 	TransitRouterRouteEntryIds                  *[]string        `position:"Query" name:"TransitRouterRouteEntryIds"  type:"Repeated"`
 	OwnerId                                     requests.Integer `position:"Query" name:"OwnerId"`
+	Version                                     string           `position:"Query" name:"Version"`
 	MaxResults                                  requests.Integer `position:"Query" name:"MaxResults"`
 }
 
@@ -99,7 +100,7 @@ func CreateListTransitRouterRouteEntriesRequest() (request *ListTransitRouterRou
 	request = &ListTransitRouterRouteEntriesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "ListTransitRouterRouteEntries", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "ListTransitRouterRouteEntries", "", "")
 	request.Method = requests.POST
 	return
 }

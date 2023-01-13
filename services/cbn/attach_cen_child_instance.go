@@ -78,6 +78,7 @@ type AttachCenChildInstanceRequest struct {
 	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
 	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
 	ChildInstanceType     string           `position:"Query" name:"ChildInstanceType"`
+	Version               string           `position:"Query" name:"Version"`
 	ChildInstanceOwnerId  requests.Integer `position:"Query" name:"ChildInstanceOwnerId"`
 	ChildInstanceId       string           `position:"Query" name:"ChildInstanceId"`
 }
@@ -93,7 +94,7 @@ func CreateAttachCenChildInstanceRequest() (request *AttachCenChildInstanceReque
 	request = &AttachCenChildInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "AttachCenChildInstance", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "AttachCenChildInstance", "", "")
 	request.Method = requests.POST
 	return
 }

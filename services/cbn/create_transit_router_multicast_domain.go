@@ -83,6 +83,7 @@ type CreateTransitRouterMulticastDomainRequest struct {
 	OwnerAccount                            string                                   `position:"Query" name:"OwnerAccount"`
 	OwnerId                                 requests.Integer                         `position:"Query" name:"OwnerId"`
 	TransitRouterId                         string                                   `position:"Query" name:"TransitRouterId"`
+	Version                                 string                                   `position:"Query" name:"Version"`
 }
 
 // CreateTransitRouterMulticastDomainTag is a repeated param struct in CreateTransitRouterMulticastDomainRequest
@@ -103,7 +104,7 @@ func CreateCreateTransitRouterMulticastDomainRequest() (request *CreateTransitRo
 	request = &CreateTransitRouterMulticastDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "CreateTransitRouterMulticastDomain", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "CreateTransitRouterMulticastDomain", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -83,6 +83,7 @@ type DescribeFlowlogsRequest struct {
 	ResourceOwnerAccount      string                 `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount              string                 `position:"Query" name:"OwnerAccount"`
 	OwnerId                   requests.Integer       `position:"Query" name:"OwnerId"`
+	Version                   string                 `position:"Query" name:"Version"`
 	TransitRouterAttachmentId string                 `position:"Query" name:"TransitRouterAttachmentId"`
 	FlowLogId                 string                 `position:"Query" name:"FlowLogId"`
 	FlowLogName               string                 `position:"Query" name:"FlowLogName"`
@@ -111,7 +112,7 @@ func CreateDescribeFlowlogsRequest() (request *DescribeFlowlogsRequest) {
 	request = &DescribeFlowlogsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeFlowlogs", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeFlowlogs", "", "")
 	request.Method = requests.POST
 	return
 }

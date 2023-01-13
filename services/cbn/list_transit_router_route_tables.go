@@ -71,18 +71,25 @@ func (client *Client) ListTransitRouterRouteTablesWithCallback(request *ListTran
 // ListTransitRouterRouteTablesRequest is the request struct for api ListTransitRouterRouteTables
 type ListTransitRouterRouteTablesRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId               requests.Integer                   `position:"Query" name:"ResourceOwnerId"`
-	TransitRouterRouteTableNames  *[]string                          `position:"Query" name:"TransitRouterRouteTableNames"  type:"Repeated"`
-	TransitRouterRouteTableType   string                             `position:"Query" name:"TransitRouterRouteTableType"`
-	TransitRouterRouteTableStatus string                             `position:"Query" name:"TransitRouterRouteTableStatus"`
-	TransitRouterRouteTableIds    *[]string                          `position:"Query" name:"TransitRouterRouteTableIds"  type:"Repeated"`
-	NextToken                     string                             `position:"Query" name:"NextToken"`
-	Tag                           *[]ListTransitRouterRouteTablesTag `position:"Query" name:"Tag"  type:"Repeated"`
-	ResourceOwnerAccount          string                             `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount                  string                             `position:"Query" name:"OwnerAccount"`
-	OwnerId                       requests.Integer                   `position:"Query" name:"OwnerId"`
-	TransitRouterId               string                             `position:"Query" name:"TransitRouterId"`
-	MaxResults                    requests.Integer                   `position:"Query" name:"MaxResults"`
+	ResourceOwnerId               requests.Integer                              `position:"Query" name:"ResourceOwnerId"`
+	TransitRouterRouteTableNames  *[]string                                     `position:"Query" name:"TransitRouterRouteTableNames"  type:"Repeated"`
+	RouteTableOptions             ListTransitRouterRouteTablesRouteTableOptions `position:"Query" name:"RouteTableOptions"  type:"Struct"`
+	TransitRouterRouteTableType   string                                        `position:"Query" name:"TransitRouterRouteTableType"`
+	TransitRouterRouteTableStatus string                                        `position:"Query" name:"TransitRouterRouteTableStatus"`
+	TransitRouterRouteTableIds    *[]string                                     `position:"Query" name:"TransitRouterRouteTableIds"  type:"Repeated"`
+	NextToken                     string                                        `position:"Query" name:"NextToken"`
+	Tag                           *[]ListTransitRouterRouteTablesTag            `position:"Query" name:"Tag"  type:"Repeated"`
+	ResourceOwnerAccount          string                                        `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount                  string                                        `position:"Query" name:"OwnerAccount"`
+	OwnerId                       requests.Integer                              `position:"Query" name:"OwnerId"`
+	TransitRouterId               string                                        `position:"Query" name:"TransitRouterId"`
+	Version                       string                                        `position:"Query" name:"Version"`
+	MaxResults                    requests.Integer                              `position:"Query" name:"MaxResults"`
+}
+
+// ListTransitRouterRouteTablesRouteTableOptions is a repeated param struct in ListTransitRouterRouteTablesRequest
+type ListTransitRouterRouteTablesRouteTableOptions struct {
+	MultiRegionECMP string `name:"MultiRegionECMP"`
 }
 
 // ListTransitRouterRouteTablesTag is a repeated param struct in ListTransitRouterRouteTablesRequest
@@ -106,7 +113,7 @@ func CreateListTransitRouterRouteTablesRequest() (request *ListTransitRouterRout
 	request = &ListTransitRouterRouteTablesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "ListTransitRouterRouteTables", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "ListTransitRouterRouteTables", "", "")
 	request.Method = requests.POST
 	return
 }

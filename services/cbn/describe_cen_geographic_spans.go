@@ -78,6 +78,7 @@ type DescribeCenGeographicSpansRequest struct {
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Version              string           `position:"Query" name:"Version"`
 }
 
 // DescribeCenGeographicSpansResponse is the response struct for api DescribeCenGeographicSpans
@@ -95,7 +96,7 @@ func CreateDescribeCenGeographicSpansRequest() (request *DescribeCenGeographicSp
 	request = &DescribeCenGeographicSpansRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeCenGeographicSpans", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeCenGeographicSpans", "", "")
 	request.Method = requests.POST
 	return
 }

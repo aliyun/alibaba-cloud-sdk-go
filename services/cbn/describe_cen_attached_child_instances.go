@@ -80,6 +80,7 @@ type DescribeCenAttachedChildInstancesRequest struct {
 	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
 	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
 	ChildInstanceType     string           `position:"Query" name:"ChildInstanceType"`
+	Version               string           `position:"Query" name:"Version"`
 }
 
 // DescribeCenAttachedChildInstancesResponse is the response struct for api DescribeCenAttachedChildInstances
@@ -97,7 +98,7 @@ func CreateDescribeCenAttachedChildInstancesRequest() (request *DescribeCenAttac
 	request = &DescribeCenAttachedChildInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeCenAttachedChildInstances", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeCenAttachedChildInstances", "", "")
 	request.Method = requests.POST
 	return
 }

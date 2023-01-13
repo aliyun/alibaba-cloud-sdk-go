@@ -77,6 +77,7 @@ type DeactiveFlowLogRequest struct {
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Version              string           `position:"Query" name:"Version"`
 	FlowLogId            string           `position:"Query" name:"FlowLogId"`
 }
 
@@ -92,7 +93,7 @@ func CreateDeactiveFlowLogRequest() (request *DeactiveFlowLogRequest) {
 	request = &DeactiveFlowLogRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DeactiveFlowLog", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DeactiveFlowLog", "", "")
 	request.Method = requests.POST
 	return
 }

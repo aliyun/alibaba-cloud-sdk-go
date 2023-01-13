@@ -79,6 +79,7 @@ type DescribeCenAttachedChildInstanceAttributeRequest struct {
 	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
 	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
 	ChildInstanceType     string           `position:"Query" name:"ChildInstanceType"`
+	Version               string           `position:"Query" name:"Version"`
 	ChildInstanceId       string           `position:"Query" name:"ChildInstanceId"`
 }
 
@@ -103,7 +104,7 @@ func CreateDescribeCenAttachedChildInstanceAttributeRequest() (request *Describe
 	request = &DescribeCenAttachedChildInstanceAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeCenAttachedChildInstanceAttribute", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeCenAttachedChildInstanceAttribute", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -77,6 +77,7 @@ type ActiveFlowLogRequest struct {
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Version              string           `position:"Query" name:"Version"`
 	FlowLogId            string           `position:"Query" name:"FlowLogId"`
 }
 
@@ -92,7 +93,7 @@ func CreateActiveFlowLogRequest() (request *ActiveFlowLogRequest) {
 	request = &ActiveFlowLogRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "ActiveFlowLog", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "ActiveFlowLog", "", "")
 	request.Method = requests.POST
 	return
 }

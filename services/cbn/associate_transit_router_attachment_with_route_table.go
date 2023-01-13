@@ -78,6 +78,7 @@ type AssociateTransitRouterAttachmentWithRouteTableRequest struct {
 	ResourceOwnerAccount      string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount              string           `position:"Query" name:"OwnerAccount"`
 	OwnerId                   requests.Integer `position:"Query" name:"OwnerId"`
+	Version                   string           `position:"Query" name:"Version"`
 	TransitRouterAttachmentId string           `position:"Query" name:"TransitRouterAttachmentId"`
 }
 
@@ -92,7 +93,7 @@ func CreateAssociateTransitRouterAttachmentWithRouteTableRequest() (request *Ass
 	request = &AssociateTransitRouterAttachmentWithRouteTableRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "AssociateTransitRouterAttachmentWithRouteTable", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "AssociateTransitRouterAttachmentWithRouteTable", "", "")
 	request.Method = requests.POST
 	return
 }

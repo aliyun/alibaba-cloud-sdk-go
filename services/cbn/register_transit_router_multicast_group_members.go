@@ -82,6 +82,7 @@ type RegisterTransitRouterMulticastGroupMembersRequest struct {
 	OwnerAccount                      string           `position:"Query" name:"OwnerAccount"`
 	PeerTransitRouterMulticastDomains *[]string        `position:"Query" name:"PeerTransitRouterMulticastDomains"  type:"Repeated"`
 	OwnerId                           requests.Integer `position:"Query" name:"OwnerId"`
+	Version                           string           `position:"Query" name:"Version"`
 	VpcId                             string           `position:"Query" name:"VpcId"`
 }
 
@@ -96,7 +97,7 @@ func CreateRegisterTransitRouterMulticastGroupMembersRequest() (request *Registe
 	request = &RegisterTransitRouterMulticastGroupMembersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "RegisterTransitRouterMulticastGroupMembers", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "RegisterTransitRouterMulticastGroupMembers", "", "")
 	request.Method = requests.POST
 	return
 }
