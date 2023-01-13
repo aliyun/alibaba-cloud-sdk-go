@@ -24,4 +24,6 @@ type Follower struct {
 	ProjectName         string `json:"ProjectName" xml:"ProjectName"`
 	Id                  int64  `json:"Id" xml:"Id"`
 	Follower            string `json:"Follower" xml:"Follower"`
+	CreateTime          int64  `json:"CreateTime" xml:"CreateTime"`
+	ModifyTime          int64  `json:"ModifyTime" xml:"ModifyTime"`
 }

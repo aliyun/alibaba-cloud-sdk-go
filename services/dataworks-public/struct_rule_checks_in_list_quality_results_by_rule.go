@@ -17,5 +17,5 @@ package dataworks_public
 
 // RuleChecksInListQualityResultsByRule is a nested struct in dataworks_public response
 type RuleChecksInListQualityResultsByRule struct {
-	RuleChecksItem []RuleChecksItem `json:"RuleChecks" xml:"RuleChecks"`
+	RuleChecksItem []RuleChecksItemInListQualityResultsByRule `json:"RuleChecks" xml:"RuleChecks"`
 }

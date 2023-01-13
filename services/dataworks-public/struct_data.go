@@ -46,6 +46,7 @@ type Data struct {
 	BusinessId           int64                    `json:"BusinessId" xml:"BusinessId"`
 	BaselineName         string                   `json:"BaselineName" xml:"BaselineName"`
 	Bizdate              int64                    `json:"Bizdate" xml:"Bizdate"`
+	OpenSwitch           bool                     `json:"OpenSwitch" xml:"OpenSwitch"`
 	TotalColumnCount     int64                    `json:"TotalColumnCount" xml:"TotalColumnCount"`
 	NextPrimaryKey       string                   `json:"NextPrimaryKey" xml:"NextPrimaryKey"`
 	MigrationId          int64                    `json:"MigrationId" xml:"MigrationId"`
