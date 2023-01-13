@@ -1,3 +1,8 @@
+2023-01-13 Version: v1.62.130
+- Generated 2018-11-01 for `dms-enterprise`.
+- Supported GetProxy, ListProxies to return RegionId information.
+- Supported SearchDatabase to return CatalogName information.
+
 2023-01-12 Version: v1.62.129
 - Generated 2020-01-16 for `DAS`.
 - Public GetEventSubscription API.

@@ -30,6 +30,7 @@ type SearchDatabase struct {
 	DbType        string                        `json:"DbType" xml:"DbType"`
 	SearchName    string                        `json:"SearchName" xml:"SearchName"`
 	Alias         string                        `json:"Alias" xml:"Alias"`
+	CatalogName   string                        `json:"CatalogName" xml:"CatalogName"`
 	OwnerIdList   OwnerIdListInSearchDatabase   `json:"OwnerIdList" xml:"OwnerIdList"`
 	OwnerNameList OwnerNameListInSearchDatabase `json:"OwnerNameList" xml:"OwnerNameList"`
 }

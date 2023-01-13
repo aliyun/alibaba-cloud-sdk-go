@@ -28,4 +28,5 @@ type ProxyListItem struct {
 	HttpsPort     int    `json:"HttpsPort" xml:"HttpsPort"`
 	ProtocolType  string `json:"ProtocolType" xml:"ProtocolType"`
 	ProtocolPort  int    `json:"ProtocolPort" xml:"ProtocolPort"`
+	RegionId      string `json:"RegionId" xml:"RegionId"`
 }
