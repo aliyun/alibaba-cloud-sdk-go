@@ -80,7 +80,7 @@ type Data struct {
 	CostUnitStatisInfo          CostUnitStatisInfo                                      `json:"CostUnitStatisInfo" xml:"CostUnitStatisInfo"`
 	CostUnit                    CostUnit                                                `json:"CostUnit" xml:"CostUnit"`
 	Modules                     Modules                                                 `json:"Modules" xml:"Modules"`
-	Items                       []ItemInDescribeSavingsPlansUsageDetail                 `json:"Items" xml:"Items"`
+	Items                       []Item                                                  `json:"Items" xml:"Items"`
 	PeriodCoverage              []Item                                                  `json:"PeriodCoverage" xml:"PeriodCoverage"`
 	CustomerInvoiceAddressList  CustomerInvoiceAddressList                              `json:"CustomerInvoiceAddressList" xml:"CustomerInvoiceAddressList"`
 	ModuleDetails               ModuleDetailsInGetPayAsYouGoPrice                       `json:"ModuleDetails" xml:"ModuleDetails"`
