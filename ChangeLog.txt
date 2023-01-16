@@ -1,3 +1,9 @@
+2023-01-16 Version: v1.62.135
+- Generated 2016-04-28 for `Vpc`.
+- Supported set high definition monitor log status for eip.
+- Supported batch associate eip to cloud products.
+- Supported VpcDescribeVpcNatGatewayNetworkInterfaceQuota.
+
 2023-01-13 Version: v1.62.134
 - Generated 2020-05-18 for `dataworks-public`.
 
