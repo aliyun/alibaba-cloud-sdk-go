@@ -71,13 +71,12 @@ func (client *Client) DescribeDomainTopClientIpVisitWithCallback(request *Descri
 // DescribeDomainTopClientIpVisitRequest is the request struct for api DescribeDomainTopClientIpVisit
 type DescribeDomainTopClientIpVisitRequest struct {
 	*requests.RpcRequest
-	LocationNameEn string           `position:"Query" name:"LocationNameEn"`
-	StartTime      string           `position:"Query" name:"StartTime"`
-	Limit          string           `position:"Query" name:"Limit"`
-	DomainName     string           `position:"Query" name:"DomainName"`
-	EndTime        string           `position:"Query" name:"EndTime"`
-	OwnerId        requests.Integer `position:"Query" name:"OwnerId"`
-	SortBy         string           `position:"Query" name:"SortBy"`
+	DomainName     string `position:"Query" name:"DomainName"`
+	Limit          string `position:"Query" name:"Limit"`
+	EndTime        string `position:"Query" name:"EndTime"`
+	LocationNameEn string `position:"Query" name:"LocationNameEn"`
+	SortBy         string `position:"Query" name:"SortBy"`
+	StartTime      string `position:"Query" name:"StartTime"`
 }
 
 // DescribeDomainTopClientIpVisitResponse is the response struct for api DescribeDomainTopClientIpVisit

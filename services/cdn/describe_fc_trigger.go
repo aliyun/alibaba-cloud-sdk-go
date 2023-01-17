@@ -71,8 +71,7 @@ func (client *Client) DescribeFCTriggerWithCallback(request *DescribeFCTriggerRe
 // DescribeFCTriggerRequest is the request struct for api DescribeFCTrigger
 type DescribeFCTriggerRequest struct {
 	*requests.RpcRequest
-	TriggerARN string           `position:"Query" name:"TriggerARN"`
-	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
+	TriggerARN string `position:"Query" name:"TriggerARN"`
 }
 
 // DescribeFCTriggerResponse is the response struct for api DescribeFCTrigger

@@ -71,7 +71,6 @@ func (client *Client) DescribeStagingIpWithCallback(request *DescribeStagingIpRe
 // DescribeStagingIpRequest is the request struct for api DescribeStagingIp
 type DescribeStagingIpRequest struct {
 	*requests.RpcRequest
-	OwnerId requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeStagingIpResponse is the response struct for api DescribeStagingIp

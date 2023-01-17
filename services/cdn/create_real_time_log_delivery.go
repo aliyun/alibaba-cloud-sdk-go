@@ -71,11 +71,10 @@ func (client *Client) CreateRealTimeLogDeliveryWithCallback(request *CreateRealT
 // CreateRealTimeLogDeliveryRequest is the request struct for api CreateRealTimeLogDelivery
 type CreateRealTimeLogDeliveryRequest struct {
 	*requests.RpcRequest
-	Project  string           `position:"Query" name:"Project"`
-	OwnerId  requests.Integer `position:"Query" name:"OwnerId"`
-	Domain   string           `position:"Query" name:"Domain"`
-	Region   string           `position:"Query" name:"Region"`
-	Logstore string           `position:"Query" name:"Logstore"`
+	Domain   string `position:"Query" name:"Domain"`
+	Project  string `position:"Query" name:"Project"`
+	Region   string `position:"Query" name:"Region"`
+	Logstore string `position:"Query" name:"Logstore"`
 }
 
 // CreateRealTimeLogDeliveryResponse is the response struct for api CreateRealTimeLogDelivery

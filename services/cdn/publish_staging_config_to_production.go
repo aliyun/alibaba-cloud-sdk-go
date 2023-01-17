@@ -71,8 +71,7 @@ func (client *Client) PublishStagingConfigToProductionWithCallback(request *Publ
 // PublishStagingConfigToProductionRequest is the request struct for api PublishStagingConfigToProduction
 type PublishStagingConfigToProductionRequest struct {
 	*requests.RpcRequest
-	DomainName string           `position:"Query" name:"DomainName"`
-	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
+	DomainName string `position:"Query" name:"DomainName"`
 }
 
 // PublishStagingConfigToProductionResponse is the response struct for api PublishStagingConfigToProduction

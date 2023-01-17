@@ -71,8 +71,7 @@ func (client *Client) DescribeBlockedRegionsWithCallback(request *DescribeBlocke
 // DescribeBlockedRegionsRequest is the request struct for api DescribeBlockedRegions
 type DescribeBlockedRegionsRequest struct {
 	*requests.RpcRequest
-	Language string           `position:"Query" name:"Language"`
-	OwnerId  requests.Integer `position:"Query" name:"OwnerId"`
+	Language string `position:"Query" name:"Language"`
 }
 
 // DescribeBlockedRegionsResponse is the response struct for api DescribeBlockedRegions

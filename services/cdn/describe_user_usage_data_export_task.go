@@ -71,9 +71,8 @@ func (client *Client) DescribeUserUsageDataExportTaskWithCallback(request *Descr
 // DescribeUserUsageDataExportTaskRequest is the request struct for api DescribeUserUsageDataExportTask
 type DescribeUserUsageDataExportTaskRequest struct {
 	*requests.RpcRequest
-	PageNumber string           `position:"Query" name:"PageNumber"`
-	PageSize   string           `position:"Query" name:"PageSize"`
-	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
+	PageSize   string `position:"Query" name:"PageSize"`
+	PageNumber string `position:"Query" name:"PageNumber"`
 }
 
 // DescribeUserUsageDataExportTaskResponse is the response struct for api DescribeUserUsageDataExportTask

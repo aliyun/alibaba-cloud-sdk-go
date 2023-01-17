@@ -71,8 +71,7 @@ func (client *Client) DescribeDomainRealtimeLogDeliveryWithCallback(request *Des
 // DescribeDomainRealtimeLogDeliveryRequest is the request struct for api DescribeDomainRealtimeLogDelivery
 type DescribeDomainRealtimeLogDeliveryRequest struct {
 	*requests.RpcRequest
-	OwnerId requests.Integer `position:"Query" name:"OwnerId"`
-	Domain  string           `position:"Query" name:"Domain"`
+	Domain string `position:"Query" name:"Domain"`
 }
 
 // DescribeDomainRealtimeLogDeliveryResponse is the response struct for api DescribeDomainRealtimeLogDelivery

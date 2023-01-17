@@ -71,10 +71,9 @@ func (client *Client) DescribeCdnHttpsDomainListWithCallback(request *DescribeCd
 // DescribeCdnHttpsDomainListRequest is the request struct for api DescribeCdnHttpsDomainList
 type DescribeCdnHttpsDomainListRequest struct {
 	*requests.RpcRequest
-	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
 	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 	Keyword    string           `position:"Query" name:"Keyword"`
-	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
+	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 // DescribeCdnHttpsDomainListResponse is the response struct for api DescribeCdnHttpsDomainList

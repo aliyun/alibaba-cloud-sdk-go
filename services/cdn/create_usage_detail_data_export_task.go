@@ -71,14 +71,13 @@ func (client *Client) CreateUsageDetailDataExportTaskWithCallback(request *Creat
 // CreateUsageDetailDataExportTaskRequest is the request struct for api CreateUsageDetailDataExportTask
 type CreateUsageDetailDataExportTaskRequest struct {
 	*requests.RpcRequest
-	DomainNames string           `position:"Query" name:"DomainNames"`
-	TaskName    string           `position:"Query" name:"TaskName"`
-	Language    string           `position:"Query" name:"Language"`
-	StartTime   string           `position:"Query" name:"StartTime"`
-	Type        string           `position:"Query" name:"Type"`
-	Group       string           `position:"Query" name:"Group"`
-	EndTime     string           `position:"Query" name:"EndTime"`
-	OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
+	DomainNames string `position:"Query" name:"DomainNames"`
+	EndTime     string `position:"Query" name:"EndTime"`
+	TaskName    string `position:"Query" name:"TaskName"`
+	Language    string `position:"Query" name:"Language"`
+	StartTime   string `position:"Query" name:"StartTime"`
+	Type        string `position:"Query" name:"Type"`
+	Group       string `position:"Query" name:"Group"`
 }
 
 // CreateUsageDetailDataExportTaskResponse is the response struct for api CreateUsageDetailDataExportTask

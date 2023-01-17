@@ -71,7 +71,6 @@ func (client *Client) ListRealtimeLogDeliveryInfosWithCallback(request *ListReal
 // ListRealtimeLogDeliveryInfosRequest is the request struct for api ListRealtimeLogDeliveryInfos
 type ListRealtimeLogDeliveryInfosRequest struct {
 	*requests.RpcRequest
-	OwnerId requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // ListRealtimeLogDeliveryInfosResponse is the response struct for api ListRealtimeLogDeliveryInfos

@@ -71,8 +71,7 @@ func (client *Client) DescribeCertificateInfoByIDWithCallback(request *DescribeC
 // DescribeCertificateInfoByIDRequest is the request struct for api DescribeCertificateInfoByID
 type DescribeCertificateInfoByIDRequest struct {
 	*requests.RpcRequest
-	CertId  string           `position:"Query" name:"CertId"`
-	OwnerId requests.Integer `position:"Query" name:"OwnerId"`
+	CertId string `position:"Query" name:"CertId"`
 }
 
 // DescribeCertificateInfoByIDResponse is the response struct for api DescribeCertificateInfoByID

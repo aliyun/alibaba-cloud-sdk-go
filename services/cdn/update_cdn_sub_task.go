@@ -71,11 +71,10 @@ func (client *Client) UpdateCdnSubTaskWithCallback(request *UpdateCdnSubTaskRequ
 // UpdateCdnSubTaskRequest is the request struct for api UpdateCdnSubTask
 type UpdateCdnSubTaskRequest struct {
 	*requests.RpcRequest
-	StartTime  string           `position:"Body" name:"StartTime"`
-	DomainName string           `position:"Body" name:"DomainName"`
-	EndTime    string           `position:"Body" name:"EndTime"`
-	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
-	ReportIds  string           `position:"Body" name:"ReportIds"`
+	ReportIds  string `position:"Body" name:"ReportIds"`
+	DomainName string `position:"Body" name:"DomainName"`
+	EndTime    string `position:"Body" name:"EndTime"`
+	StartTime  string `position:"Body" name:"StartTime"`
 }
 
 // UpdateCdnSubTaskResponse is the response struct for api UpdateCdnSubTask

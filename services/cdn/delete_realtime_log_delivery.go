@@ -71,11 +71,10 @@ func (client *Client) DeleteRealtimeLogDeliveryWithCallback(request *DeleteRealt
 // DeleteRealtimeLogDeliveryRequest is the request struct for api DeleteRealtimeLogDelivery
 type DeleteRealtimeLogDeliveryRequest struct {
 	*requests.RpcRequest
-	Project  string           `position:"Query" name:"Project"`
-	OwnerId  requests.Integer `position:"Query" name:"OwnerId"`
-	Domain   string           `position:"Query" name:"Domain"`
-	Region   string           `position:"Query" name:"Region"`
-	Logstore string           `position:"Query" name:"Logstore"`
+	Domain   string `position:"Query" name:"Domain"`
+	Project  string `position:"Query" name:"Project"`
+	Region   string `position:"Query" name:"Region"`
+	Logstore string `position:"Query" name:"Logstore"`
 }
 
 // DeleteRealtimeLogDeliveryResponse is the response struct for api DeleteRealtimeLogDelivery

@@ -71,11 +71,10 @@ func (client *Client) DescribeDomainSrcTopUrlVisitWithCallback(request *Describe
 // DescribeDomainSrcTopUrlVisitRequest is the request struct for api DescribeDomainSrcTopUrlVisit
 type DescribeDomainSrcTopUrlVisitRequest struct {
 	*requests.RpcRequest
-	StartTime  string           `position:"Query" name:"StartTime"`
-	DomainName string           `position:"Query" name:"DomainName"`
-	EndTime    string           `position:"Query" name:"EndTime"`
-	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
-	SortBy     string           `position:"Query" name:"SortBy"`
+	DomainName string `position:"Query" name:"DomainName"`
+	EndTime    string `position:"Query" name:"EndTime"`
+	SortBy     string `position:"Query" name:"SortBy"`
+	StartTime  string `position:"Query" name:"StartTime"`
 }
 
 // DescribeDomainSrcTopUrlVisitResponse is the response struct for api DescribeDomainSrcTopUrlVisit

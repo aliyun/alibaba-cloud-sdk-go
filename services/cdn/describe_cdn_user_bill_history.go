@@ -71,9 +71,8 @@ func (client *Client) DescribeCdnUserBillHistoryWithCallback(request *DescribeCd
 // DescribeCdnUserBillHistoryRequest is the request struct for api DescribeCdnUserBillHistory
 type DescribeCdnUserBillHistoryRequest struct {
 	*requests.RpcRequest
-	StartTime string           `position:"Query" name:"StartTime"`
-	EndTime   string           `position:"Query" name:"EndTime"`
-	OwnerId   requests.Integer `position:"Query" name:"OwnerId"`
+	EndTime   string `position:"Query" name:"EndTime"`
+	StartTime string `position:"Query" name:"StartTime"`
 }
 
 // DescribeCdnUserBillHistoryResponse is the response struct for api DescribeCdnUserBillHistory

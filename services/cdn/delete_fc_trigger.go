@@ -71,8 +71,7 @@ func (client *Client) DeleteFCTriggerWithCallback(request *DeleteFCTriggerReques
 // DeleteFCTriggerRequest is the request struct for api DeleteFCTrigger
 type DeleteFCTriggerRequest struct {
 	*requests.RpcRequest
-	TriggerARN string           `position:"Query" name:"TriggerARN"`
-	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
+	TriggerARN string `position:"Query" name:"TriggerARN"`
 }
 
 // DeleteFCTriggerResponse is the response struct for api DeleteFCTrigger

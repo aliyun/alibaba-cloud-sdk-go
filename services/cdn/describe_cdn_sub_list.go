@@ -71,7 +71,6 @@ func (client *Client) DescribeCdnSubListWithCallback(request *DescribeCdnSubList
 // DescribeCdnSubListRequest is the request struct for api DescribeCdnSubList
 type DescribeCdnSubListRequest struct {
 	*requests.RpcRequest
-	OwnerId requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeCdnSubListResponse is the response struct for api DescribeCdnSubList

@@ -71,9 +71,8 @@ func (client *Client) ListFCTriggerWithCallback(request *ListFCTriggerRequest, c
 // ListFCTriggerRequest is the request struct for api ListFCTrigger
 type ListFCTriggerRequest struct {
 	*requests.RpcRequest
-	EventMetaVersion string           `position:"Query" name:"EventMetaVersion"`
-	OwnerId          requests.Integer `position:"Query" name:"OwnerId"`
-	EventMetaName    string           `position:"Query" name:"EventMetaName"`
+	EventMetaVersion string `position:"Query" name:"EventMetaVersion"`
+	EventMetaName    string `position:"Query" name:"EventMetaName"`
 }
 
 // ListFCTriggerResponse is the response struct for api ListFCTrigger
