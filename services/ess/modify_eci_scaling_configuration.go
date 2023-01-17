@@ -93,6 +93,7 @@ type ModifyEciScalingConfigurationRequest struct {
 	Volume                        *[]ModifyEciScalingConfigurationVolume                  `position:"Query" name:"Volume"  type:"Repeated"`
 	InstanceFamilyLevel           string                                                  `position:"Query" name:"InstanceFamilyLevel"`
 	DnsConfigOption               *[]ModifyEciScalingConfigurationDnsConfigOption         `position:"Query" name:"DnsConfigOption"  type:"Repeated"`
+	ContainersUpdateType          string                                                  `position:"Query" name:"ContainersUpdateType"`
 	EphemeralStorage              requests.Integer                                        `position:"Query" name:"EphemeralStorage"`
 	EipBandwidth                  requests.Integer                                        `position:"Query" name:"EipBandwidth"`
 	CostOptimization              requests.Boolean                                        `position:"Query" name:"CostOptimization"`

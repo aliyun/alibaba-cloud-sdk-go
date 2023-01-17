@@ -1,3 +1,7 @@
+2023-01-17 Version: v1.62.136
+- Generated 2014-08-28 for `Ess`.
+- New AttachServerGroups and DetachServerGroups.
+
 2023-01-16 Version: v1.62.135
 - Generated 2016-04-28 for `Vpc`.
 - Supported set high definition monitor log status for eip.

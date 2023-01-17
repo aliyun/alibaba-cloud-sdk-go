@@ -17,17 +17,28 @@ package ess
 
 // ScalingActivity is a nested struct in ess response
 type ScalingActivity struct {
-	Progress              int    `json:"Progress" xml:"Progress"`
-	ScalingInstanceNumber int    `json:"ScalingInstanceNumber" xml:"ScalingInstanceNumber"`
-	AttachedCapacity      string `json:"AttachedCapacity" xml:"AttachedCapacity"`
-	TotalCapacity         string `json:"TotalCapacity" xml:"TotalCapacity"`
-	ScalingGroupId        string `json:"ScalingGroupId" xml:"ScalingGroupId"`
-	AutoCreatedCapacity   string `json:"AutoCreatedCapacity" xml:"AutoCreatedCapacity"`
-	EndTime               string `json:"EndTime" xml:"EndTime"`
-	StartTime             string `json:"StartTime" xml:"StartTime"`
-	Description           string `json:"Description" xml:"Description"`
-	StatusCode            string `json:"StatusCode" xml:"StatusCode"`
-	Cause                 string `json:"Cause" xml:"Cause"`
-	ScalingActivityId     string `json:"ScalingActivityId" xml:"ScalingActivityId"`
-	StatusMessage         string `json:"StatusMessage" xml:"StatusMessage"`
+	Progress              int                `json:"Progress" xml:"Progress"`
+	ScalingInstanceNumber int                `json:"ScalingInstanceNumber" xml:"ScalingInstanceNumber"`
+	AttachedCapacity      string             `json:"AttachedCapacity" xml:"AttachedCapacity"`
+	TotalCapacity         string             `json:"TotalCapacity" xml:"TotalCapacity"`
+	ScalingGroupId        string             `json:"ScalingGroupId" xml:"ScalingGroupId"`
+	AutoCreatedCapacity   string             `json:"AutoCreatedCapacity" xml:"AutoCreatedCapacity"`
+	EndTime               string             `json:"EndTime" xml:"EndTime"`
+	StartTime             string             `json:"StartTime" xml:"StartTime"`
+	Description           string             `json:"Description" xml:"Description"`
+	StatusCode            string             `json:"StatusCode" xml:"StatusCode"`
+	Cause                 string             `json:"Cause" xml:"Cause"`
+	ScalingActivityId     string             `json:"ScalingActivityId" xml:"ScalingActivityId"`
+	StatusMessage         string             `json:"StatusMessage" xml:"StatusMessage"`
+	CreatedCapacity       int                `json:"CreatedCapacity" xml:"CreatedCapacity"`
+	DestroyedCapacity     int                `json:"DestroyedCapacity" xml:"DestroyedCapacity"`
+	StartedCapacity       int                `json:"StartedCapacity" xml:"StartedCapacity"`
+	StoppedCapacity       int                `json:"StoppedCapacity" xml:"StoppedCapacity"`
+	ErrorCode             string             `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage          string             `json:"ErrorMessage" xml:"ErrorMessage"`
+	Detail                string             `json:"Detail" xml:"Detail"`
+	CreatedInstances      CreatedInstances   `json:"CreatedInstances" xml:"CreatedInstances"`
+	DestroyedInstances    DestroyedInstances `json:"DestroyedInstances" xml:"DestroyedInstances"`
+	StartedInstances      StartedInstances   `json:"StartedInstances" xml:"StartedInstances"`
+	StoppedInstances      StoppedInstances   `json:"StoppedInstances" xml:"StoppedInstances"`
 }

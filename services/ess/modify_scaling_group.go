@@ -109,6 +109,7 @@ type ModifyScalingGroupRequest struct {
 type ModifyScalingGroupLaunchTemplateOverride struct {
 	WeightedCapacity string `name:"WeightedCapacity"`
 	InstanceType     string `name:"InstanceType"`
+	SpotPriceLimit   string `name:"SpotPriceLimit"`
 }
 
 // ModifyScalingGroupResponse is the response struct for api ModifyScalingGroup

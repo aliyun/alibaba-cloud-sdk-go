@@ -76,6 +76,7 @@ type CreateScalingGroupRequest struct {
 	MaxInstanceLifetime                 requests.Integer                            `position:"Query" name:"MaxInstanceLifetime"`
 	SpotInstanceRemedy                  requests.Boolean                            `position:"Query" name:"SpotInstanceRemedy"`
 	ScaleOutAmountCheck                 requests.Boolean                            `position:"Query" name:"ScaleOutAmountCheck"`
+	ResourceGroupId                     string                                      `position:"Query" name:"ResourceGroupId"`
 	GroupType                           string                                      `position:"Query" name:"GroupType"`
 	SyncAlarmRuleToCms                  requests.Boolean                            `position:"Query" name:"SyncAlarmRuleToCms"`
 	CustomPolicyARN                     string                                      `position:"Query" name:"CustomPolicyARN"`
@@ -127,6 +128,7 @@ type CreateScalingGroupTag struct {
 type CreateScalingGroupLaunchTemplateOverride struct {
 	WeightedCapacity string `name:"WeightedCapacity"`
 	InstanceType     string `name:"InstanceType"`
+	SpotPriceLimit   string `name:"SpotPriceLimit"`
 }
 
 // CreateScalingGroupAlbServerGroup is a repeated param struct in CreateScalingGroupRequest

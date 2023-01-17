@@ -72,6 +72,7 @@ func (client *Client) DescribeScalingGroupsWithCallback(request *DescribeScaling
 type DescribeScalingGroupsRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	GroupType            string           `position:"Query" name:"GroupType"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ScalingGroupId       *[]string        `position:"Query" name:"ScalingGroupId"  type:"Repeated"`

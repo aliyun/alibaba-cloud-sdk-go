@@ -44,6 +44,7 @@ type ScalingConfigurationInDescribeScalingConfigurations struct {
 	Memory                          int                                 `json:"Memory" xml:"Memory"`
 	ImageId                         string                              `json:"ImageId" xml:"ImageId"`
 	ImageFamily                     string                              `json:"ImageFamily" xml:"ImageFamily"`
+	ImageOwnerAlias                 string                              `json:"ImageOwnerAlias" xml:"ImageOwnerAlias"`
 	LoadBalancerWeight              int                                 `json:"LoadBalancerWeight" xml:"LoadBalancerWeight"`
 	SystemDiskCategory              string                              `json:"SystemDiskCategory" xml:"SystemDiskCategory"`
 	HostName                        string                              `json:"HostName" xml:"HostName"`
