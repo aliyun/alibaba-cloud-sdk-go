@@ -17,16 +17,16 @@ package scdn
 
 // ISPProportionData is a nested struct in scdn response
 type ISPProportionData struct {
-	AvgObjectSize   string `json:"AvgObjectSize" xml:"AvgObjectSize"`
+	TotalQuery      string `json:"TotalQuery" xml:"TotalQuery"`
+	TotalBytes      string `json:"TotalBytes" xml:"TotalBytes"`
 	AvgResponseRate string `json:"AvgResponseRate" xml:"AvgResponseRate"`
-	Bps             string `json:"Bps" xml:"Bps"`
-	IspEname        string `json:"IspEname" xml:"IspEname"`
 	AvgResponseTime string `json:"AvgResponseTime" xml:"AvgResponseTime"`
+	ReqErrRate      string `json:"ReqErrRate" xml:"ReqErrRate"`
+	AvgObjectSize   string `json:"AvgObjectSize" xml:"AvgObjectSize"`
+	Bps             string `json:"Bps" xml:"Bps"`
 	Qps             string `json:"Qps" xml:"Qps"`
 	Proportion      string `json:"Proportion" xml:"Proportion"`
-	TotalQuery      string `json:"TotalQuery" xml:"TotalQuery"`
+	IspEname        string `json:"IspEname" xml:"IspEname"`
 	ISP             string `json:"ISP" xml:"ISP"`
 	BytesProportion string `json:"BytesProportion" xml:"BytesProportion"`
-	TotalBytes      string `json:"TotalBytes" xml:"TotalBytes"`
-	ReqErrRate      string `json:"ReqErrRate" xml:"ReqErrRate"`
 }

@@ -75,6 +75,7 @@ type PreloadScdnObjectCachesRequest struct {
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	L2Preload     requests.Boolean `position:"Query" name:"L2Preload"`
 	Area          string           `position:"Query" name:"Area"`
+	WithHeader    string           `position:"Query" name:"WithHeader"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 }
 
