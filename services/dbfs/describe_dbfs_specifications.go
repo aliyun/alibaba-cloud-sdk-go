@@ -88,7 +88,7 @@ func CreateDescribeDbfsSpecificationsRequest() (request *DescribeDbfsSpecificati
 	request = &DescribeDbfsSpecificationsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("DBFS", "2020-04-18", "DescribeDbfsSpecifications", "dbfs", "openAPI")
+	request.InitWithApiInfo("DBFS", "2020-04-18", "DescribeDbfsSpecifications", "", "")
 	request.Method = requests.POST
 	return
 }

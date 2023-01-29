@@ -17,29 +17,33 @@ package dbfs
 
 // Info is a nested struct in dbfs response
 type Info struct {
-	Status           string              `json:"Status" xml:"Status"`
-	Encryption       bool                `json:"Encryption" xml:"Encryption"`
-	PayType          string              `json:"PayType" xml:"PayType"`
-	FsId             string              `json:"FsId" xml:"FsId"`
-	SizeG            int                 `json:"SizeG" xml:"SizeG"`
-	RegionId         string              `json:"RegionId" xml:"RegionId"`
-	DBFSClusterId    string              `json:"DBFSClusterId" xml:"DBFSClusterId"`
-	ZoneId           string              `json:"ZoneId" xml:"ZoneId"`
-	FsName           string              `json:"FsName" xml:"FsName"`
 	Category         string              `json:"Category" xml:"Category"`
-	CreatedTime      string              `json:"CreatedTime" xml:"CreatedTime"`
-	AttachNodeNumber int                 `json:"AttachNodeNumber" xml:"AttachNodeNumber"`
-	KMSKeyId         string              `json:"KMSKeyId" xml:"KMSKeyId"`
-	PerformanceLevel string              `json:"PerformanceLevel" xml:"PerformanceLevel"`
-	UsedScene        string              `json:"UsedScene" xml:"UsedScene"`
-	LastMountTime    string              `json:"LastMountTime" xml:"LastMountTime"`
-	LastUmountTime   string              `json:"LastUmountTime" xml:"LastUmountTime"`
-	EnableRaid       bool                `json:"EnableRaid" xml:"EnableRaid"`
-	RaidStrip        int                 `json:"RaidStrip" xml:"RaidStrip"`
+	SizeG            int                 `json:"SizeG" xml:"SizeG"`
 	InstanceType     string              `json:"InstanceType" xml:"InstanceType"`
 	LastFailed       string              `json:"LastFailed" xml:"LastFailed"`
+	TotalSize        int64               `json:"TotalSize" xml:"TotalSize"`
+	SnapshotCount    int                 `json:"SnapshotCount" xml:"SnapshotCount"`
+	RegionId         string              `json:"RegionId" xml:"RegionId"`
+	CreatedTime      string              `json:"CreatedTime" xml:"CreatedTime"`
+	LastUmountTime   string              `json:"LastUmountTime" xml:"LastUmountTime"`
+	SourceSize       int                 `json:"SourceSize" xml:"SourceSize"`
+	EnableRaid       bool                `json:"EnableRaid" xml:"EnableRaid"`
+	FsName           string              `json:"FsName" xml:"FsName"`
+	LinkId           string              `json:"LinkId" xml:"LinkId"`
+	PayType          string              `json:"PayType" xml:"PayType"`
+	UsedScene        string              `json:"UsedScene" xml:"UsedScene"`
+	KMSKeyId         string              `json:"KMSKeyId" xml:"KMSKeyId"`
+	FsId             string              `json:"FsId" xml:"FsId"`
+	DBFSClusterId    string              `json:"DBFSClusterId" xml:"DBFSClusterId"`
+	ZoneId           string              `json:"ZoneId" xml:"ZoneId"`
+	LastMountTime    string              `json:"LastMountTime" xml:"LastMountTime"`
+	RaidStrip        int                 `json:"RaidStrip" xml:"RaidStrip"`
+	PerformanceLevel string              `json:"PerformanceLevel" xml:"PerformanceLevel"`
+	Status           string              `json:"Status" xml:"Status"`
+	AttachNodeNumber int                 `json:"AttachNodeNumber" xml:"AttachNodeNumber"`
+	Encryption       bool                `json:"Encryption" xml:"Encryption"`
 	SnapshotInfo     SnapshotInfo        `json:"SnapshotInfo" xml:"SnapshotInfo"`
-	Tags             []TagListInListDbfs `json:"Tags" xml:"Tags"`
 	EcsList          []EcsListItem       `json:"EcsList" xml:"EcsList"`
 	EbsList          []EbsListItem       `json:"EbsList" xml:"EbsList"`
+	Tags             []TagListInListDbfs `json:"Tags" xml:"Tags"`
 }

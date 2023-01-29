@@ -89,7 +89,7 @@ func CreateAttachDbfsRequest() (request *AttachDbfsRequest) {
 	request = &AttachDbfsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("DBFS", "2020-04-18", "AttachDbfs", "dbfs", "openAPI")
+	request.InitWithApiInfo("DBFS", "2020-04-18", "AttachDbfs", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -86,7 +86,7 @@ func CreateResizeDbfsRequest() (request *ResizeDbfsRequest) {
 	request = &ResizeDbfsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("DBFS", "2020-04-18", "ResizeDbfs", "dbfs", "openAPI")
+	request.InitWithApiInfo("DBFS", "2020-04-18", "ResizeDbfs", "", "")
 	request.Method = requests.POST
 	return
 }

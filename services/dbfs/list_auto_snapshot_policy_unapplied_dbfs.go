@@ -80,11 +80,11 @@ type ListAutoSnapshotPolicyUnappliedDbfsRequest struct {
 // ListAutoSnapshotPolicyUnappliedDbfsResponse is the response struct for api ListAutoSnapshotPolicyUnappliedDbfs
 type ListAutoSnapshotPolicyUnappliedDbfsResponse struct {
 	*responses.BaseResponse
-	PageNumber int                                                 `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int                                                 `json:"PageSize" xml:"PageSize"`
-	TotalCount int                                                 `json:"TotalCount" xml:"TotalCount"`
-	RequestId  string                                              `json:"RequestId" xml:"RequestId"`
-	DbfsList   []DbfsListItemInListAutoSnapshotPolicyUnappliedDbfs `json:"DbfsList" xml:"DbfsList"`
+	PageNumber int            `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int            `json:"PageSize" xml:"PageSize"`
+	TotalCount int            `json:"TotalCount" xml:"TotalCount"`
+	RequestId  string         `json:"RequestId" xml:"RequestId"`
+	DbfsList   []DbfsListItem `json:"DbfsList" xml:"DbfsList"`
 }
 
 // CreateListAutoSnapshotPolicyUnappliedDbfsRequest creates a request to invoke ListAutoSnapshotPolicyUnappliedDbfs API
@@ -92,7 +92,7 @@ func CreateListAutoSnapshotPolicyUnappliedDbfsRequest() (request *ListAutoSnapsh
 	request = &ListAutoSnapshotPolicyUnappliedDbfsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("DBFS", "2020-04-18", "ListAutoSnapshotPolicyUnappliedDbfs", "dbfs", "openAPI")
+	request.InitWithApiInfo("DBFS", "2020-04-18", "ListAutoSnapshotPolicyUnappliedDbfs", "", "")
 	request.Method = requests.POST
 	return
 }

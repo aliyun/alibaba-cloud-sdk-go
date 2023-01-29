@@ -89,7 +89,7 @@ func CreateCreateAutoSnapshotPolicyRequest() (request *CreateAutoSnapshotPolicyR
 	request = &CreateAutoSnapshotPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("DBFS", "2020-04-18", "CreateAutoSnapshotPolicy", "dbfs", "openAPI")
+	request.InitWithApiInfo("DBFS", "2020-04-18", "CreateAutoSnapshotPolicy", "", "")
 	request.Method = requests.POST
 	return
 }

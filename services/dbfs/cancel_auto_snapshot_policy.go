@@ -86,7 +86,7 @@ func CreateCancelAutoSnapshotPolicyRequest() (request *CancelAutoSnapshotPolicyR
 	request = &CancelAutoSnapshotPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("DBFS", "2020-04-18", "CancelAutoSnapshotPolicy", "dbfs", "openAPI")
+	request.InitWithApiInfo("DBFS", "2020-04-18", "CancelAutoSnapshotPolicy", "", "")
 	request.Method = requests.POST
 	return
 }

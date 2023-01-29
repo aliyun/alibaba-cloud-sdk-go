@@ -17,5 +17,5 @@ package dbfs
 
 // DbfsListInListAutoSnapshotPolicyUnappliedDbfs is a nested struct in dbfs response
 type DbfsListInListAutoSnapshotPolicyUnappliedDbfs struct {
-	DbfsListItem []DbfsListItemInListAutoSnapshotPolicyUnappliedDbfs `json:"DbfsList" xml:"DbfsList"`
+	DbfsListItem []DbfsListItem `json:"DbfsList" xml:"DbfsList"`
 }

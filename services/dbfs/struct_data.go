@@ -17,16 +17,24 @@ package dbfs
 
 // Data is a nested struct in dbfs response
 type Data struct {
-	PolicyId          string   `json:"PolicyId" xml:"PolicyId"`
-	PolicyName        string   `json:"PolicyName" xml:"PolicyName"`
-	AccountId         string   `json:"AccountId" xml:"AccountId"`
-	RegionId          string   `json:"RegionId" xml:"RegionId"`
-	Status            string   `json:"Status" xml:"Status"`
-	StatusDetail      string   `json:"StatusDetail" xml:"StatusDetail"`
-	RetentionDays     int      `json:"RetentionDays" xml:"RetentionDays"`
-	AppliedDbfsNumber int      `json:"AppliedDbfsNumber" xml:"AppliedDbfsNumber"`
-	CreatedTime       string   `json:"CreatedTime" xml:"CreatedTime"`
-	LastModified      string   `json:"LastModified" xml:"LastModified"`
-	RepeatWeekdays    []string `json:"RepeatWeekdays" xml:"RepeatWeekdays"`
-	TimePoints        []string `json:"TimePoints" xml:"TimePoints"`
+	Category          string        `json:"Category" xml:"Category"`
+	FsName            string        `json:"FsName" xml:"FsName"`
+	LinkId            string        `json:"LinkId" xml:"LinkId"`
+	LastModified      string        `json:"LastModified" xml:"LastModified"`
+	StatusDetail      string        `json:"StatusDetail" xml:"StatusDetail"`
+	PolicyName        string        `json:"PolicyName" xml:"PolicyName"`
+	TotalSize         int64         `json:"TotalSize" xml:"TotalSize"`
+	AppliedDbfsNumber int           `json:"AppliedDbfsNumber" xml:"AppliedDbfsNumber"`
+	FsId              string        `json:"FsId" xml:"FsId"`
+	SnapshotCount     int           `json:"SnapshotCount" xml:"SnapshotCount"`
+	AccountId         string        `json:"AccountId" xml:"AccountId"`
+	RegionId          string        `json:"RegionId" xml:"RegionId"`
+	RetentionDays     int           `json:"RetentionDays" xml:"RetentionDays"`
+	CreatedTime       string        `json:"CreatedTime" xml:"CreatedTime"`
+	PolicyId          string        `json:"PolicyId" xml:"PolicyId"`
+	SourceSize        int           `json:"SourceSize" xml:"SourceSize"`
+	Status            string        `json:"Status" xml:"Status"`
+	TimePoints        []string      `json:"TimePoints" xml:"TimePoints"`
+	RepeatWeekdays    []string      `json:"RepeatWeekdays" xml:"RepeatWeekdays"`
+	EcsList           []EcsListItem `json:"EcsList" xml:"EcsList"`
 }

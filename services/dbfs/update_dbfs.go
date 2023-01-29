@@ -88,7 +88,7 @@ func CreateUpdateDbfsRequest() (request *UpdateDbfsRequest) {
 	request = &UpdateDbfsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("DBFS", "2020-04-18", "UpdateDbfs", "dbfs", "openAPI")
+	request.InitWithApiInfo("DBFS", "2020-04-18", "UpdateDbfs", "", "")
 	request.Method = requests.POST
 	return
 }

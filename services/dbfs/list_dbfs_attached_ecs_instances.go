@@ -86,7 +86,7 @@ func CreateListDbfsAttachedEcsInstancesRequest() (request *ListDbfsAttachedEcsIn
 	request = &ListDbfsAttachedEcsInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("DBFS", "2020-04-18", "ListDbfsAttachedEcsInstances", "dbfs", "openAPI")
+	request.InitWithApiInfo("DBFS", "2020-04-18", "ListDbfsAttachedEcsInstances", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -86,7 +86,7 @@ func CreateTagDbfsRequest() (request *TagDbfsRequest) {
 	request = &TagDbfsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("DBFS", "2020-04-18", "TagDbfs", "dbfs", "openAPI")
+	request.InitWithApiInfo("DBFS", "2020-04-18", "TagDbfs", "", "")
 	request.Method = requests.POST
 	return
 }

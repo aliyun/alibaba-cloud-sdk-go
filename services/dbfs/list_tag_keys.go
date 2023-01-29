@@ -85,7 +85,7 @@ func CreateListTagKeysRequest() (request *ListTagKeysRequest) {
 	request = &ListTagKeysRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("DBFS", "2020-04-18", "ListTagKeys", "dbfs", "openAPI")
+	request.InitWithApiInfo("DBFS", "2020-04-18", "ListTagKeys", "", "")
 	request.Method = requests.POST
 	return
 }

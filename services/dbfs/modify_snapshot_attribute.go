@@ -87,7 +87,7 @@ func CreateModifySnapshotAttributeRequest() (request *ModifySnapshotAttributeReq
 	request = &ModifySnapshotAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("DBFS", "2020-04-18", "ModifySnapshotAttribute", "dbfs", "openAPI")
+	request.InitWithApiInfo("DBFS", "2020-04-18", "ModifySnapshotAttribute", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -85,7 +85,7 @@ func CreateDescribeInstanceTypesRequest() (request *DescribeInstanceTypesRequest
 	request = &DescribeInstanceTypesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("DBFS", "2020-04-18", "DescribeInstanceTypes", "dbfs", "openAPI")
+	request.InitWithApiInfo("DBFS", "2020-04-18", "DescribeInstanceTypes", "", "")
 	request.Method = requests.POST
 	return
 }

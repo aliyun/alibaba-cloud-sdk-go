@@ -86,7 +86,7 @@ func CreateRenameDbfsRequest() (request *RenameDbfsRequest) {
 	request = &RenameDbfsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("DBFS", "2020-04-18", "RenameDbfs", "dbfs", "openAPI")
+	request.InitWithApiInfo("DBFS", "2020-04-18", "RenameDbfs", "", "")
 	request.Method = requests.POST
 	return
 }
