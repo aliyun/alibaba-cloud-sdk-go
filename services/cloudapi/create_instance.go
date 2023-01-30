@@ -71,20 +71,28 @@ func (client *Client) CreateInstanceWithCallback(request *CreateInstanceRequest,
 // CreateInstanceRequest is the request struct for api CreateInstance
 type CreateInstanceRequest struct {
 	*requests.RpcRequest
-	AutoPay      requests.Boolean `position:"Query" name:"AutoPay"`
-	InstanceSpec string           `position:"Query" name:"InstanceSpec"`
-	HttpsPolicy  string           `position:"Query" name:"HttpsPolicy"`
-	Token        string           `position:"Query" name:"Token"`
-	Duration     requests.Integer `position:"Query" name:"Duration"`
-	InstanceName string           `position:"Query" name:"InstanceName"`
-	ZoneId       string           `position:"Query" name:"ZoneId"`
-	ChargeType   string           `position:"Query" name:"ChargeType"`
-	PricingCycle string           `position:"Query" name:"PricingCycle"`
+	InstanceSpec string               `position:"Query" name:"InstanceSpec"`
+	HttpsPolicy  string               `position:"Query" name:"HttpsPolicy"`
+	Duration     requests.Integer     `position:"Query" name:"Duration"`
+	Tag          *[]CreateInstanceTag `position:"Query" name:"Tag"  type:"Repeated"`
+	AutoPay      requests.Boolean     `position:"Query" name:"AutoPay"`
+	Token        string               `position:"Query" name:"Token"`
+	InstanceName string               `position:"Query" name:"InstanceName"`
+	ZoneId       string               `position:"Query" name:"ZoneId"`
+	ChargeType   string               `position:"Query" name:"ChargeType"`
+	PricingCycle string               `position:"Query" name:"PricingCycle"`
+}
+
+// CreateInstanceTag is a repeated param struct in CreateInstanceRequest
+type CreateInstanceTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // CreateInstanceResponse is the response struct for api CreateInstance
 type CreateInstanceResponse struct {
 	*responses.BaseResponse
+	TagStatus  bool   `json:"TagStatus" xml:"TagStatus"`
 	InstanceId string `json:"InstanceId" xml:"InstanceId"`
 	RequestId  string `json:"RequestId" xml:"RequestId"`
 }

@@ -115,7 +115,7 @@ type DescribeApiResponse struct {
 	RequestParameters      RequestParametersInDescribeApi      `json:"RequestParameters" xml:"RequestParameters"`
 	ServiceParameters      ServiceParametersInDescribeApi      `json:"ServiceParameters" xml:"ServiceParameters"`
 	ServiceParametersMap   ServiceParametersMapInDescribeApi   `json:"ServiceParametersMap" xml:"ServiceParametersMap"`
-	DeployedInfos          DeployedInfos                       `json:"DeployedInfos" xml:"DeployedInfos"`
+	DeployedInfos          DeployedInfosInDescribeApi          `json:"DeployedInfos" xml:"DeployedInfos"`
 }
 
 // CreateDescribeApiRequest creates a request to invoke DescribeApi API

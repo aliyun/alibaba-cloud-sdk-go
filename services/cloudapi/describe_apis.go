@@ -71,6 +71,7 @@ func (client *Client) DescribeApisWithCallback(request *DescribeApisRequest, cal
 // DescribeApisRequest is the request struct for api DescribeApis
 type DescribeApisRequest struct {
 	*requests.RpcRequest
+	StageName     string             `position:"Query" name:"StageName"`
 	PageNumber    requests.Integer   `position:"Query" name:"PageNumber"`
 	SecurityToken string             `position:"Query" name:"SecurityToken"`
 	UnDeployed    requests.Boolean   `position:"Query" name:"UnDeployed"`
