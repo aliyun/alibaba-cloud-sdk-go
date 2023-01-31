@@ -71,8 +71,7 @@ func (client *Client) DescribeRefreshTaskByIdWithCallback(request *DescribeRefre
 // DescribeRefreshTaskByIdRequest is the request struct for api DescribeRefreshTaskById
 type DescribeRefreshTaskByIdRequest struct {
 	*requests.RpcRequest
-	TaskId  string           `position:"Query" name:"TaskId"`
-	OwnerId requests.Integer `position:"Query" name:"OwnerId"`
+	TaskId string `position:"Query" name:"TaskId"`
 }
 
 // DescribeRefreshTaskByIdResponse is the response struct for api DescribeRefreshTaskById

@@ -1,3 +1,7 @@
+2023-01-31 Version: v1.62.142
+- Generated 2018-05-10 for `Cdn`.
+- Update PushObjectCache.
+
 2023-01-30 Version: v1.62.141
 - Generated 2016-07-14 for `CloudAPI`.
 - Modify DescribeApis.
