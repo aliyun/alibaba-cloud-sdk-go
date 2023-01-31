@@ -80,8 +80,8 @@ type RunPreTrainServiceRequest struct {
 // RunPreTrainServiceResponse is the response struct for api RunPreTrainService
 type RunPreTrainServiceResponse struct {
 	*responses.BaseResponse
-	RequestId     string `json:"RequestId" xml:"RequestId"`
 	PredictResult string `json:"PredictResult" xml:"PredictResult"`
+	RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateRunPreTrainServiceRequest creates a request to invoke RunPreTrainService API
@@ -89,7 +89,7 @@ func CreateRunPreTrainServiceRequest() (request *RunPreTrainServiceRequest) {
 	request = &RunPreTrainServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("nlp-automl", "2019-11-11", "RunPreTrainService", "nlpautoml", "openAPI")
+	request.InitWithApiInfo("nlp-automl", "2019-11-11", "RunPreTrainService", "", "")
 	request.Method = requests.POST
 	return
 }

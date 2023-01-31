@@ -78,9 +78,9 @@ type GetAsyncPredictRequest struct {
 // GetAsyncPredictResponse is the response struct for api GetAsyncPredict
 type GetAsyncPredictResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
 	AsyncPredictId int    `json:"AsyncPredictId" xml:"AsyncPredictId"`
 	Status         int    `json:"Status" xml:"Status"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
 	Content        string `json:"Content" xml:"Content"`
 }
 
@@ -89,7 +89,7 @@ func CreateGetAsyncPredictRequest() (request *GetAsyncPredictRequest) {
 	request = &GetAsyncPredictRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("nlp-automl", "2019-11-11", "GetAsyncPredict", "nlpautoml", "openAPI")
+	request.InitWithApiInfo("nlp-automl", "2019-11-11", "GetAsyncPredict", "", "")
 	request.Method = requests.GET
 	return
 }

@@ -82,8 +82,8 @@ type GetPredictResultRequest struct {
 // GetPredictResultResponse is the response struct for api GetPredictResult
 type GetPredictResultResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Content   string `json:"Content" xml:"Content"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateGetPredictResultRequest creates a request to invoke GetPredictResult API
@@ -91,7 +91,7 @@ func CreateGetPredictResultRequest() (request *GetPredictResultRequest) {
 	request = &GetPredictResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("nlp-automl", "2019-11-11", "GetPredictResult", "nlpautoml", "openAPI")
+	request.InitWithApiInfo("nlp-automl", "2019-11-11", "GetPredictResult", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -71,23 +71,25 @@ func (client *Client) CreateAsyncPredictWithCallback(request *CreateAsyncPredict
 // CreateAsyncPredictRequest is the request struct for api CreateAsyncPredict
 type CreateAsyncPredictRequest struct {
 	*requests.RpcRequest
-	TopK         requests.Integer `position:"Body" name:"TopK"`
-	FileType     string           `position:"Body" name:"FileType"`
-	DetailTag    string           `position:"Body" name:"DetailTag"`
-	FetchContent string           `position:"Body" name:"FetchContent"`
-	Content      string           `position:"Body" name:"Content"`
-	FileContent  string           `position:"Body" name:"FileContent"`
-	Product      string           `position:"Body" name:"Product"`
-	ModelId      requests.Integer `position:"Body" name:"ModelId"`
-	FileUrl      string           `position:"Body" name:"FileUrl"`
-	ModelVersion string           `position:"Body" name:"ModelVersion"`
+	TopK           requests.Integer `position:"Body" name:"TopK"`
+	FileType       string           `position:"Body" name:"FileType"`
+	DetailTag      string           `position:"Body" name:"DetailTag"`
+	FetchContent   string           `position:"Body" name:"FetchContent"`
+	Content        string           `position:"Body" name:"Content"`
+	FileContent    string           `position:"Body" name:"FileContent"`
+	ServiceName    string           `position:"Body" name:"ServiceName"`
+	Product        string           `position:"Body" name:"Product"`
+	ModelId        requests.Integer `position:"Body" name:"ModelId"`
+	ServiceVersion string           `position:"Body" name:"ServiceVersion"`
+	FileUrl        string           `position:"Body" name:"FileUrl"`
+	ModelVersion   string           `position:"Body" name:"ModelVersion"`
 }
 
 // CreateAsyncPredictResponse is the response struct for api CreateAsyncPredict
 type CreateAsyncPredictResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
 	AsyncPredictId int64  `json:"AsyncPredictId" xml:"AsyncPredictId"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCreateAsyncPredictRequest creates a request to invoke CreateAsyncPredict API
@@ -95,7 +97,7 @@ func CreateCreateAsyncPredictRequest() (request *CreateAsyncPredictRequest) {
 	request = &CreateAsyncPredictRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("nlp-automl", "2019-11-11", "CreateAsyncPredict", "nlpautoml", "openAPI")
+	request.InitWithApiInfo("nlp-automl", "2019-11-11", "CreateAsyncPredict", "", "")
 	request.Method = requests.POST
 	return
 }
