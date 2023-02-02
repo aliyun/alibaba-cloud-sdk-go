@@ -72,6 +72,7 @@ func (client *Client) ModifyUserPasswordsWithCallback(request *ModifyUserPasswor
 type ModifyUserPasswordsRequest struct {
 	*requests.RpcRequest
 	ClusterId string                     `position:"Query" name:"ClusterId"`
+	Async     requests.Boolean           `position:"Query" name:"Async"`
 	User      *[]ModifyUserPasswordsUser `position:"Query" name:"User"  type:"Repeated"`
 }
 

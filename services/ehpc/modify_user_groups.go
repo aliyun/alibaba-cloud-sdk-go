@@ -72,6 +72,7 @@ func (client *Client) ModifyUserGroupsWithCallback(request *ModifyUserGroupsRequ
 type ModifyUserGroupsRequest struct {
 	*requests.RpcRequest
 	ClusterId string                  `position:"Query" name:"ClusterId"`
+	Async     requests.Boolean        `position:"Query" name:"Async"`
 	User      *[]ModifyUserGroupsUser `position:"Query" name:"User"  type:"Repeated"`
 }
 

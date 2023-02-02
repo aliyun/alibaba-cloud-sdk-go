@@ -71,8 +71,9 @@ func (client *Client) AddUsersWithCallback(request *AddUsersRequest, callback fu
 // AddUsersRequest is the request struct for api AddUsers
 type AddUsersRequest struct {
 	*requests.RpcRequest
-	ClusterId string          `position:"Query" name:"ClusterId"`
-	User      *[]AddUsersUser `position:"Query" name:"User"  type:"Repeated"`
+	ClusterId string           `position:"Query" name:"ClusterId"`
+	Async     requests.Boolean `position:"Query" name:"Async"`
+	User      *[]AddUsersUser  `position:"Query" name:"User"  type:"Repeated"`
 }
 
 // AddUsersUser is a repeated param struct in AddUsersRequest

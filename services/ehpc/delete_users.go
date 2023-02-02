@@ -72,6 +72,7 @@ func (client *Client) DeleteUsersWithCallback(request *DeleteUsersRequest, callb
 type DeleteUsersRequest struct {
 	*requests.RpcRequest
 	ClusterId string             `position:"Query" name:"ClusterId"`
+	Async     requests.Boolean   `position:"Query" name:"Async"`
 	User      *[]DeleteUsersUser `position:"Query" name:"User"  type:"Repeated"`
 }
 
