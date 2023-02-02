@@ -74,6 +74,7 @@ type ModifyDBInstanceSpecRequest struct {
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	DBInstanceStorage    string           `position:"Query" name:"DBInstanceStorage"`
 	ReadonlyReplicas     string           `position:"Query" name:"ReadonlyReplicas"`
+	ExtraParam           string           `position:"Query" name:"ExtraParam"`
 	CouponNo             string           `position:"Query" name:"CouponNo"`
 	ReplicationFactor    string           `position:"Query" name:"ReplicationFactor"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`

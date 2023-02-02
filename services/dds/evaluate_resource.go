@@ -74,6 +74,7 @@ type EvaluateResourceRequest struct {
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ReadonlyReplicas     string           `position:"Query" name:"ReadonlyReplicas"`
 	EngineVersion        string           `position:"Query" name:"EngineVersion"`
+	Storage              string           `position:"Query" name:"Storage"`
 	ShardsInfo           string           `position:"Query" name:"ShardsInfo"`
 	ReplicationFactor    string           `position:"Query" name:"ReplicationFactor"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
