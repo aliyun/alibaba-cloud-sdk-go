@@ -71,11 +71,12 @@ func (client *Client) UpdateGatewayRouteHeaderOpWithCallback(request *UpdateGate
 // UpdateGatewayRouteHeaderOpRequest is the request struct for api UpdateGatewayRouteHeaderOp
 type UpdateGatewayRouteHeaderOpRequest struct {
 	*requests.RpcRequest
+	MseSessionId    string           `position:"Query" name:"MseSessionId"`
 	GatewayUniqueId string           `position:"Query" name:"GatewayUniqueId"`
 	HeaderOpJSON    string           `position:"Query" name:"HeaderOpJSON"`
-	AcceptLanguage  string           `position:"Query" name:"AcceptLanguage"`
 	Id              requests.Integer `position:"Query" name:"Id"`
 	GatewayId       requests.Integer `position:"Query" name:"GatewayId"`
+	AcceptLanguage  string           `position:"Query" name:"AcceptLanguage"`
 }
 
 // UpdateGatewayRouteHeaderOpResponse is the response struct for api UpdateGatewayRouteHeaderOp

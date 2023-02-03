@@ -71,30 +71,74 @@ func (client *Client) UpdateGatewayRouteWithCallback(request *UpdateGatewayRoute
 // UpdateGatewayRouteRequest is the request struct for api UpdateGatewayRoute
 type UpdateGatewayRouteRequest struct {
 	*requests.RpcRequest
-	GatewayUniqueId    string                               `position:"Query" name:"GatewayUniqueId"`
-	DestinationType    string                               `position:"Query" name:"DestinationType"`
-	DomainIdListJSON   string                               `position:"Query" name:"DomainIdListJSON"`
-	Id                 requests.Integer                     `position:"Query" name:"Id"`
-	GatewayId          requests.Integer                     `position:"Query" name:"GatewayId"`
-	RouteOrder         requests.Integer                     `position:"Query" name:"RouteOrder"`
-	EnableWaf          requests.Boolean                     `position:"Query" name:"EnableWaf"`
-	Services           *[]UpdateGatewayRouteServices        `position:"Query" name:"Services"  type:"Json"`
-	Predicates         UpdateGatewayRoutePredicates         `position:"Query" name:"Predicates"  type:"Struct"`
-	RedirectJSON       UpdateGatewayRouteRedirectJSON       `position:"Query" name:"RedirectJSON"  type:"Struct"`
-	DirectResponseJSON UpdateGatewayRouteDirectResponseJSON `position:"Query" name:"DirectResponseJSON"  type:"Struct"`
-	Name               string                               `position:"Query" name:"Name"`
-	AcceptLanguage     string                               `position:"Query" name:"AcceptLanguage"`
+	MseSessionId       string                                `position:"Query" name:"MseSessionId"`
+	GatewayUniqueId    string                                `position:"Query" name:"GatewayUniqueId"`
+	DestinationType    string                                `position:"Query" name:"DestinationType"`
+	DomainIdListJSON   string                                `position:"Query" name:"DomainIdListJSON"`
+	Id                 requests.Integer                      `position:"Query" name:"Id"`
+	GatewayId          requests.Integer                      `position:"Query" name:"GatewayId"`
+	RouteOrder         requests.Integer                      `position:"Query" name:"RouteOrder"`
+	EnableWaf          requests.Boolean                      `position:"Query" name:"EnableWaf"`
+	Services           *[]UpdateGatewayRouteServices         `position:"Query" name:"Services"  type:"Json"`
+	Predicates         UpdateGatewayRoutePredicates          `position:"Query" name:"Predicates"  type:"Struct"`
+	RedirectJSON       UpdateGatewayRouteRedirectJSON        `position:"Query" name:"RedirectJSON"  type:"Struct"`
+	DirectResponseJSON UpdateGatewayRouteDirectResponseJSON  `position:"Query" name:"DirectResponseJSON"  type:"Struct"`
+	Name               string                                `position:"Query" name:"Name"`
+	AcceptLanguage     string                                `position:"Query" name:"AcceptLanguage"`
+	FallbackServices   *[]UpdateGatewayRouteFallbackServices `position:"Query" name:"FallbackServices"  type:"Json"`
+	Fallback           requests.Boolean                      `position:"Query" name:"Fallback"`
 }
 
 // UpdateGatewayRouteServices is a repeated param struct in UpdateGatewayRouteRequest
 type UpdateGatewayRouteServices struct {
-	Name       string `name:"Name"`
-	Namespace  string `name:"Namespace"`
-	SourceType string `name:"SourceType"`
-	ServiceId  string `name:"ServiceId"`
-	Percent    string `name:"Percent"`
-	Version    string `name:"Version"`
-	GroupName  string `name:"GroupName"`
+	HttpDubboTranscoder UpdateGatewayRouteServicesHttpDubboTranscoder `name:"HttpDubboTranscoder" type:"Struct"`
+	AgreementType       string                                        `name:"AgreementType"`
+	Name                string                                        `name:"Name"`
+	Namespace           string                                        `name:"Namespace"`
+	SourceType          string                                        `name:"SourceType"`
+	ServiceId           string                                        `name:"ServiceId"`
+	Percent             string                                        `name:"Percent"`
+	Version             string                                        `name:"Version"`
+	GroupName           string                                        `name:"GroupName"`
+	ServicePort         string                                        `name:"ServicePort"`
+}
+
+// UpdateGatewayRouteFallbackServices is a repeated param struct in UpdateGatewayRouteRequest
+type UpdateGatewayRouteFallbackServices struct {
+	AgreementType string `name:"AgreementType"`
+	Name          string `name:"Name"`
+	Namespace     string `name:"Namespace"`
+	SourceType    string `name:"SourceType"`
+	ServiceId     string `name:"ServiceId"`
+	Percent       string `name:"Percent"`
+	Version       string `name:"Version"`
+	GroupName     string `name:"GroupName"`
+	ServicePort   string `name:"ServicePort"`
+}
+
+// UpdateGatewayRouteServicesHttpDubboTranscoder is a repeated param struct in UpdateGatewayRouteRequest
+type UpdateGatewayRouteServicesHttpDubboTranscoder struct {
+	DubboServiceName    string                                                            `name:"DubboServiceName"`
+	MothedMapList       *[]UpdateGatewayRouteServicesHttpDubboTranscoderMothedMapListItem `name:"MothedMapList" type:"Repeated"`
+	DubboServiceVersion string                                                            `name:"DubboServiceVersion"`
+	DubboServiceGroup   string                                                            `name:"DubboServiceGroup"`
+}
+
+// UpdateGatewayRouteServicesHttpDubboTranscoderMothedMapListItem is a repeated param struct in UpdateGatewayRouteRequest
+type UpdateGatewayRouteServicesHttpDubboTranscoderMothedMapListItem struct {
+	HttpMothed            string                                                                             `name:"HttpMothed"`
+	ParamMapsList         *[]UpdateGatewayRouteServicesHttpDubboTranscoderMothedMapListItemParamMapsListItem `name:"ParamMapsList" type:"Repeated"`
+	Mothedpath            string                                                                             `name:"Mothedpath"`
+	DubboMothedName       string                                                                             `name:"DubboMothedName"`
+	PassThroughAllHeaders string                                                                             `name:"PassThroughAllHeaders"`
+	PassThroughList       *[]string                                                                          `name:"PassThroughList" type:"Repeated"`
+}
+
+// UpdateGatewayRouteServicesHttpDubboTranscoderMothedMapListItemParamMapsListItem is a repeated param struct in UpdateGatewayRouteRequest
+type UpdateGatewayRouteServicesHttpDubboTranscoderMothedMapListItemParamMapsListItem struct {
+	ExtractKeySpec string `name:"ExtractKeySpec"`
+	ExtractKey     string `name:"ExtractKey"`
+	MappingType    string `name:"MappingType"`
 }
 
 // UpdateGatewayRoutePredicates is a repeated param struct in UpdateGatewayRouteRequest

@@ -71,6 +71,7 @@ func (client *Client) ModifyGovernanceKubernetesClusterWithCallback(request *Mod
 // ModifyGovernanceKubernetesClusterRequest is the request struct for api ModifyGovernanceKubernetesCluster
 type ModifyGovernanceKubernetesClusterRequest struct {
 	*requests.RpcRequest
+	MseSessionId   string `position:"Query" name:"MseSessionId"`
 	NamespaceInfos string `position:"Query" name:"NamespaceInfos"`
 	ClusterId      string `position:"Query" name:"ClusterId"`
 	AcceptLanguage string `position:"Query" name:"AcceptLanguage"`

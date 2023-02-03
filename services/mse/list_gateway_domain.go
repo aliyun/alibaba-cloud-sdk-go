@@ -71,6 +71,7 @@ func (client *Client) ListGatewayDomainWithCallback(request *ListGatewayDomainRe
 // ListGatewayDomainRequest is the request struct for api ListGatewayDomain
 type ListGatewayDomainRequest struct {
 	*requests.RpcRequest
+	MseSessionId    string `position:"Query" name:"MseSessionId"`
 	GatewayUniqueId string `position:"Query" name:"GatewayUniqueId"`
 	Type            string `position:"Query" name:"Type"`
 	AcceptLanguage  string `position:"Query" name:"AcceptLanguage"`

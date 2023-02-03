@@ -71,6 +71,7 @@ func (client *Client) ImportNacosConfigWithCallback(request *ImportNacosConfigRe
 // ImportNacosConfigRequest is the request struct for api ImportNacosConfig
 type ImportNacosConfigRequest struct {
 	*requests.RpcRequest
+	MseSessionId   string `position:"Query" name:"MseSessionId"`
 	InstanceId     string `position:"Query" name:"InstanceId"`
 	NamespaceId    string `position:"Query" name:"NamespaceId"`
 	AcceptLanguage string `position:"Query" name:"AcceptLanguage"`

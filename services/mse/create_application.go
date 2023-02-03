@@ -71,11 +71,13 @@ func (client *Client) CreateApplicationWithCallback(request *CreateApplicationRe
 // CreateApplicationRequest is the request struct for api CreateApplication
 type CreateApplicationRequest struct {
 	*requests.RpcRequest
+	MseSessionId   string `position:"Query" name:"MseSessionId"`
 	Language       string `position:"Query" name:"Language"`
 	Source         string `position:"Query" name:"Source"`
 	ExtraInfo      string `position:"Query" name:"ExtraInfo"`
 	AppName        string `position:"Query" name:"AppName"`
 	SwitchEnable   string `position:"Query" name:"SwitchEnable"`
+	Namespace      string `position:"Query" name:"Namespace"`
 	AcceptLanguage string `position:"Query" name:"AcceptLanguage"`
 	SentinelEnable string `position:"Query" name:"SentinelEnable"`
 	Region         string `position:"Query" name:"Region"`

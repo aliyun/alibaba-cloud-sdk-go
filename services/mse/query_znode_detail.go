@@ -71,6 +71,7 @@ func (client *Client) QueryZnodeDetailWithCallback(request *QueryZnodeDetailRequ
 // QueryZnodeDetailRequest is the request struct for api QueryZnodeDetail
 type QueryZnodeDetailRequest struct {
 	*requests.RpcRequest
+	MseSessionId   string `position:"Query" name:"MseSessionId"`
 	ClusterId      string `position:"Query" name:"ClusterId"`
 	Path           string `position:"Query" name:"Path"`
 	InstanceId     string `position:"Query" name:"InstanceId"`

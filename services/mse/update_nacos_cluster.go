@@ -71,6 +71,7 @@ func (client *Client) UpdateNacosClusterWithCallback(request *UpdateNacosCluster
 // UpdateNacosClusterRequest is the request struct for api UpdateNacosCluster
 type UpdateNacosClusterRequest struct {
 	*requests.RpcRequest
+	MseSessionId            string           `position:"Query" name:"MseSessionId"`
 	ClusterName             string           `position:"Query" name:"ClusterName"`
 	CheckPort               requests.Integer `position:"Query" name:"CheckPort"`
 	GroupName               string           `position:"Query" name:"GroupName"`

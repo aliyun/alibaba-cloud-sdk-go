@@ -71,6 +71,7 @@ func (client *Client) QueryGovernanceKubernetesClusterWithCallback(request *Quer
 // QueryGovernanceKubernetesClusterRequest is the request struct for api QueryGovernanceKubernetesCluster
 type QueryGovernanceKubernetesClusterRequest struct {
 	*requests.RpcRequest
+	MseSessionId   string           `position:"Query" name:"MseSessionId"`
 	ClusterName    string           `position:"Query" name:"ClusterName"`
 	ClusterId      string           `position:"Query" name:"ClusterId"`
 	PageNumber     requests.Integer `position:"Query" name:"PageNumber"`

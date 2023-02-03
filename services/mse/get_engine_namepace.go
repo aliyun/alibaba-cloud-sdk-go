@@ -71,6 +71,7 @@ func (client *Client) GetEngineNamepaceWithCallback(request *GetEngineNamepaceRe
 // GetEngineNamepaceRequest is the request struct for api GetEngineNamepace
 type GetEngineNamepaceRequest struct {
 	*requests.RpcRequest
+	MseSessionId   string `position:"Query" name:"MseSessionId"`
 	ClusterId      string `position:"Query" name:"ClusterId"`
 	InstanceId     string `position:"Query" name:"InstanceId"`
 	AcceptLanguage string `position:"Query" name:"AcceptLanguage"`

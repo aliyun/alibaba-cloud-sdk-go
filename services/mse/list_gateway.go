@@ -71,6 +71,7 @@ func (client *Client) ListGatewayWithCallback(request *ListGatewayRequest, callb
 // ListGatewayRequest is the request struct for api ListGateway
 type ListGatewayRequest struct {
 	*requests.RpcRequest
+	MseSessionId   string                  `position:"Query" name:"MseSessionId"`
 	PageNumber     requests.Integer        `position:"Query" name:"PageNumber"`
 	OrderItem      string                  `position:"Query" name:"OrderItem"`
 	PageSize       requests.Integer        `position:"Query" name:"PageSize"`
@@ -81,11 +82,13 @@ type ListGatewayRequest struct {
 
 // ListGatewayFilterParams is a repeated param struct in ListGatewayRequest
 type ListGatewayFilterParams struct {
+	ResourceGroupId string `name:"ResourceGroupId"`
 	GatewayType     string `name:"GatewayType"`
 	InstanceId      string `name:"InstanceId"`
 	GatewayUniqueId string `name:"GatewayUniqueId"`
 	Name            string `name:"Name"`
 	Vpc             string `name:"Vpc"`
+	MseTag          string `name:"MseTag"`
 }
 
 // ListGatewayResponse is the response struct for api ListGateway

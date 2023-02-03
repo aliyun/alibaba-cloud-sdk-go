@@ -71,9 +71,11 @@ func (client *Client) PullServicesWithCallback(request *PullServicesRequest, cal
 // PullServicesRequest is the request struct for api PullServices
 type PullServicesRequest struct {
 	*requests.RpcRequest
+	MseSessionId    string `position:"Query" name:"MseSessionId"`
 	GatewayUniqueId string `position:"Query" name:"GatewayUniqueId"`
-	AcceptLanguage  string `position:"Query" name:"AcceptLanguage"`
 	SourceType      string `position:"Query" name:"SourceType"`
+	Namespace       string `position:"Query" name:"Namespace"`
+	AcceptLanguage  string `position:"Query" name:"AcceptLanguage"`
 }
 
 // PullServicesResponse is the response struct for api PullServices

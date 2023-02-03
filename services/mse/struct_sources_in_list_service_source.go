@@ -27,5 +27,8 @@ type SourcesInListServiceSource struct {
 	GmtCreate          string         `json:"GmtCreate" xml:"GmtCreate"`
 	GmtModified        string         `json:"GmtModified" xml:"GmtModified"`
 	SourceUniqueId     string         `json:"SourceUniqueId" xml:"SourceUniqueId"`
+	GatewayUniqueId    string         `json:"GatewayUniqueId" xml:"GatewayUniqueId"`
+	GroupList          []string       `json:"GroupList" xml:"GroupList"`
+	PathList           []string       `json:"PathList" xml:"PathList"`
 	IngressOptions     IngressOptions `json:"IngressOptions" xml:"IngressOptions"`
 }

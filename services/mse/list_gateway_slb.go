@@ -71,6 +71,7 @@ func (client *Client) ListGatewaySlbWithCallback(request *ListGatewaySlbRequest,
 // ListGatewaySlbRequest is the request struct for api ListGatewaySlb
 type ListGatewaySlbRequest struct {
 	*requests.RpcRequest
+	MseSessionId    string `position:"Query" name:"MseSessionId"`
 	GatewayUniqueId string `position:"Query" name:"GatewayUniqueId"`
 	AcceptLanguage  string `position:"Query" name:"AcceptLanguage"`
 }

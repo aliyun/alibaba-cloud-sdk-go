@@ -71,6 +71,7 @@ func (client *Client) CreateZnodeWithCallback(request *CreateZnodeRequest, callb
 // CreateZnodeRequest is the request struct for api CreateZnode
 type CreateZnodeRequest struct {
 	*requests.RpcRequest
+	MseSessionId   string `position:"Query" name:"MseSessionId"`
 	Data           string `position:"Query" name:"Data"`
 	ClusterId      string `position:"Query" name:"ClusterId"`
 	Path           string `position:"Query" name:"Path"`

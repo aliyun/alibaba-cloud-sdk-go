@@ -71,6 +71,7 @@ func (client *Client) UpdateNacosServiceWithCallback(request *UpdateNacosService
 // UpdateNacosServiceRequest is the request struct for api UpdateNacosService
 type UpdateNacosServiceRequest struct {
 	*requests.RpcRequest
+	MseSessionId     string `position:"Query" name:"MseSessionId"`
 	ClusterId        string `position:"Query" name:"ClusterId"`
 	GroupName        string `position:"Query" name:"GroupName"`
 	InstanceId       string `position:"Query" name:"InstanceId"`

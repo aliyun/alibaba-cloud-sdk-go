@@ -71,6 +71,7 @@ func (client *Client) ListGatewayRouteWithCallback(request *ListGatewayRouteRequ
 // ListGatewayRouteRequest is the request struct for api ListGatewayRoute
 type ListGatewayRouteRequest struct {
 	*requests.RpcRequest
+	MseSessionId   string                       `position:"Query" name:"MseSessionId"`
 	PageNumber     requests.Integer             `position:"Query" name:"PageNumber"`
 	OrderItem      string                       `position:"Query" name:"OrderItem"`
 	PageSize       requests.Integer             `position:"Query" name:"PageSize"`

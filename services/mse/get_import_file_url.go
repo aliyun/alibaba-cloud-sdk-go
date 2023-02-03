@@ -71,6 +71,7 @@ func (client *Client) GetImportFileUrlWithCallback(request *GetImportFileUrlRequ
 // GetImportFileUrlRequest is the request struct for api GetImportFileUrl
 type GetImportFileUrlRequest struct {
 	*requests.RpcRequest
+	MseSessionId   string `position:"Query" name:"MseSessionId"`
 	ContentType    string `position:"Query" name:"ContentType"`
 	InstanceId     string `position:"Query" name:"InstanceId"`
 	NamespaceId    string `position:"Query" name:"NamespaceId"`

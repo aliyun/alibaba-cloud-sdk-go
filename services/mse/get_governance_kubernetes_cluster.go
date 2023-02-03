@@ -71,6 +71,7 @@ func (client *Client) GetGovernanceKubernetesClusterWithCallback(request *GetGov
 // GetGovernanceKubernetesClusterRequest is the request struct for api GetGovernanceKubernetesCluster
 type GetGovernanceKubernetesClusterRequest struct {
 	*requests.RpcRequest
+	MseSessionId   string `position:"Query" name:"MseSessionId"`
 	ClusterId      string `position:"Query" name:"ClusterId"`
 	AcceptLanguage string `position:"Query" name:"AcceptLanguage"`
 }

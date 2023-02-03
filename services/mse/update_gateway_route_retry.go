@@ -71,11 +71,12 @@ func (client *Client) UpdateGatewayRouteRetryWithCallback(request *UpdateGateway
 // UpdateGatewayRouteRetryRequest is the request struct for api UpdateGatewayRouteRetry
 type UpdateGatewayRouteRetryRequest struct {
 	*requests.RpcRequest
+	MseSessionId    string                           `position:"Query" name:"MseSessionId"`
 	GatewayUniqueId string                           `position:"Query" name:"GatewayUniqueId"`
 	RetryJSON       UpdateGatewayRouteRetryRetryJSON `position:"Query" name:"RetryJSON"  type:"Struct"`
-	AcceptLanguage  string                           `position:"Query" name:"AcceptLanguage"`
 	Id              requests.Integer                 `position:"Query" name:"Id"`
 	GatewayId       requests.Integer                 `position:"Query" name:"GatewayId"`
+	AcceptLanguage  string                           `position:"Query" name:"AcceptLanguage"`
 }
 
 // UpdateGatewayRouteRetryRetryJSON is a repeated param struct in UpdateGatewayRouteRetryRequest

@@ -71,6 +71,7 @@ func (client *Client) UpdateGatewayOptionWithCallback(request *UpdateGatewayOpti
 // UpdateGatewayOptionRequest is the request struct for api UpdateGatewayOption
 type UpdateGatewayOptionRequest struct {
 	*requests.RpcRequest
+	MseSessionId    string                           `position:"Query" name:"MseSessionId"`
 	GatewayUniqueId string                           `position:"Query" name:"GatewayUniqueId"`
 	GatewayOption   UpdateGatewayOptionGatewayOption `position:"Query" name:"GatewayOption"  type:"Struct"`
 	GatewayId       requests.Integer                 `position:"Query" name:"GatewayId"`

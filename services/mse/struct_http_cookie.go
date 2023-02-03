@@ -19,5 +19,6 @@ package mse
 type HttpCookie struct {
 	Name string `json:"Name" xml:"Name"`
 	Path string `json:"Path" xml:"Path"`
+	Ttl  string `json:"Ttl" xml:"Ttl"`
 	TTL  string `json:"TTL" xml:"TTL"`
 }

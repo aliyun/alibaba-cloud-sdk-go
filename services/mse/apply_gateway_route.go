@@ -71,6 +71,7 @@ func (client *Client) ApplyGatewayRouteWithCallback(request *ApplyGatewayRouteRe
 // ApplyGatewayRouteRequest is the request struct for api ApplyGatewayRoute
 type ApplyGatewayRouteRequest struct {
 	*requests.RpcRequest
+	MseSessionId    string `position:"Query" name:"MseSessionId"`
 	GatewayUniqueId string `position:"Query" name:"GatewayUniqueId"`
 	RouteId         string `position:"Query" name:"RouteId"`
 	AcceptLanguage  string `position:"Query" name:"AcceptLanguage"`

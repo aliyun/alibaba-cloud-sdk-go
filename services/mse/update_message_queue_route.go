@@ -71,9 +71,13 @@ func (client *Client) UpdateMessageQueueRouteWithCallback(request *UpdateMessage
 // UpdateMessageQueueRouteRequest is the request struct for api UpdateMessageQueueRoute
 type UpdateMessageQueueRouteRequest struct {
 	*requests.RpcRequest
-	Tags           *[]string        `position:"Query" name:"Tags"  type:"Json"`
+	MseSessionId   string           `position:"Query" name:"MseSessionId"`
+	AppName        string           `position:"Query" name:"AppName"`
 	Enable         requests.Boolean `position:"Query" name:"Enable"`
+	Tags           *[]string        `position:"Query" name:"Tags"  type:"Json"`
+	FilterSide     string           `position:"Query" name:"FilterSide"`
 	AppId          string           `position:"Query" name:"AppId"`
+	Namespace      string           `position:"Query" name:"Namespace"`
 	AcceptLanguage string           `position:"Query" name:"AcceptLanguage"`
 	Region         string           `position:"Query" name:"Region"`
 }

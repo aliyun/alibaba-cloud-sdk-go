@@ -17,22 +17,24 @@ package mse
 
 // ClusterForListModel is a nested struct in mse response
 type ClusterForListModel struct {
-	EndDate          string `json:"EndDate" xml:"EndDate"`
-	IntranetDomain   string `json:"IntranetDomain" xml:"IntranetDomain"`
-	InternetDomain   string `json:"InternetDomain" xml:"InternetDomain"`
-	CreateTime       string `json:"CreateTime" xml:"CreateTime"`
-	ChargeType       string `json:"ChargeType" xml:"ChargeType"`
-	IntranetAddress  string `json:"IntranetAddress" xml:"IntranetAddress"`
-	InstanceId       string `json:"InstanceId" xml:"InstanceId"`
-	InternetAddress  string `json:"InternetAddress" xml:"InternetAddress"`
-	ClusterAliasName string `json:"ClusterAliasName" xml:"ClusterAliasName"`
-	ClusterType      string `json:"ClusterType" xml:"ClusterType"`
-	InitStatus       string `json:"InitStatus" xml:"InitStatus"`
-	AppVersion       string `json:"AppVersion" xml:"AppVersion"`
-	ClusterId        string `json:"ClusterId" xml:"ClusterId"`
-	CanUpdate        bool   `json:"CanUpdate" xml:"CanUpdate"`
-	VersionCode      string `json:"VersionCode" xml:"VersionCode"`
-	InstanceCount    int64  `json:"InstanceCount" xml:"InstanceCount"`
-	ClusterName      string `json:"ClusterName" xml:"ClusterName"`
-	MseVersion       string `json:"MseVersion" xml:"MseVersion"`
+	EndDate          string                 `json:"EndDate" xml:"EndDate"`
+	IntranetDomain   string                 `json:"IntranetDomain" xml:"IntranetDomain"`
+	InternetDomain   string                 `json:"InternetDomain" xml:"InternetDomain"`
+	CreateTime       string                 `json:"CreateTime" xml:"CreateTime"`
+	ChargeType       string                 `json:"ChargeType" xml:"ChargeType"`
+	IntranetAddress  string                 `json:"IntranetAddress" xml:"IntranetAddress"`
+	InstanceId       string                 `json:"InstanceId" xml:"InstanceId"`
+	InternetAddress  string                 `json:"InternetAddress" xml:"InternetAddress"`
+	ClusterAliasName string                 `json:"ClusterAliasName" xml:"ClusterAliasName"`
+	ClusterType      string                 `json:"ClusterType" xml:"ClusterType"`
+	InitStatus       string                 `json:"InitStatus" xml:"InitStatus"`
+	AppVersion       string                 `json:"AppVersion" xml:"AppVersion"`
+	ClusterId        string                 `json:"ClusterId" xml:"ClusterId"`
+	CanUpdate        bool                   `json:"CanUpdate" xml:"CanUpdate"`
+	VersionCode      string                 `json:"VersionCode" xml:"VersionCode"`
+	InstanceCount    int64                  `json:"InstanceCount" xml:"InstanceCount"`
+	ClusterName      string                 `json:"ClusterName" xml:"ClusterName"`
+	MseVersion       string                 `json:"MseVersion" xml:"MseVersion"`
+	Tags             map[string]interface{} `json:"Tags" xml:"Tags"`
+	ResourceGroupId  string                 `json:"ResourceGroupId" xml:"ResourceGroupId"`
 }

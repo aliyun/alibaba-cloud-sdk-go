@@ -71,6 +71,7 @@ func (client *Client) UpdateNacosInstanceWithCallback(request *UpdateNacosInstan
 // UpdateNacosInstanceRequest is the request struct for api UpdateNacosInstance
 type UpdateNacosInstanceRequest struct {
 	*requests.RpcRequest
+	MseSessionId   string           `position:"Query" name:"MseSessionId"`
 	Metadata       string           `position:"Body" name:"Metadata"`
 	ClusterName    string           `position:"Query" name:"ClusterName"`
 	Ephemeral      requests.Boolean `position:"Query" name:"Ephemeral"`

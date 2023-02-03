@@ -71,6 +71,7 @@ func (client *Client) AddSSLCertWithCallback(request *AddSSLCertRequest, callbac
 // AddSSLCertRequest is the request struct for api AddSSLCert
 type AddSSLCertRequest struct {
 	*requests.RpcRequest
+	MseSessionId    string           `position:"Query" name:"MseSessionId"`
 	GatewayUniqueId string           `position:"Query" name:"GatewayUniqueId"`
 	DomainId        requests.Integer `position:"Query" name:"DomainId"`
 	CertIdentifier  string           `position:"Query" name:"CertIdentifier"`

@@ -71,6 +71,7 @@ func (client *Client) DeleteEngineNamespaceWithCallback(request *DeleteEngineNam
 // DeleteEngineNamespaceRequest is the request struct for api DeleteEngineNamespace
 type DeleteEngineNamespaceRequest struct {
 	*requests.RpcRequest
+	MseSessionId   string `position:"Query" name:"MseSessionId"`
 	ClusterId      string `position:"Query" name:"ClusterId"`
 	InstanceId     string `position:"Query" name:"InstanceId"`
 	AcceptLanguage string `position:"Query" name:"AcceptLanguage"`

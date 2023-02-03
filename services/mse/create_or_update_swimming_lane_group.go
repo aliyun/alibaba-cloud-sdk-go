@@ -71,19 +71,24 @@ func (client *Client) CreateOrUpdateSwimmingLaneGroupWithCallback(request *Creat
 // CreateOrUpdateSwimmingLaneGroupRequest is the request struct for api CreateOrUpdateSwimmingLaneGroup
 type CreateOrUpdateSwimmingLaneGroupRequest struct {
 	*requests.RpcRequest
-	Source         string           `position:"Query" name:"Source"`
-	GmtModified    string           `position:"Query" name:"GmtModified"`
-	UserId         string           `position:"Query" name:"UserId"`
-	LicenseKey     string           `position:"Query" name:"LicenseKey"`
-	AppIds         string           `position:"Query" name:"AppIds"`
-	Enable         requests.Boolean `position:"Query" name:"Enable"`
-	EntryApp       string           `position:"Query" name:"EntryApp"`
-	Id             requests.Integer `position:"Query" name:"Id"`
-	GmtCreate      string           `position:"Query" name:"GmtCreate"`
-	Name           string           `position:"Query" name:"Name"`
-	AcceptLanguage string           `position:"Query" name:"AcceptLanguage"`
-	Region         string           `position:"Query" name:"Region"`
-	Status         requests.Integer `position:"Query" name:"Status"`
+	MseSessionId           string           `position:"Query" name:"MseSessionId"`
+	Source                 string           `position:"Query" name:"Source"`
+	GmtModified            string           `position:"Query" name:"GmtModified"`
+	UserId                 string           `position:"Query" name:"UserId"`
+	LicenseKey             string           `position:"Query" name:"LicenseKey"`
+	AppIds                 string           `position:"Query" name:"AppIds"`
+	MessageQueueGrayEnable requests.Boolean `position:"Query" name:"MessageQueueGrayEnable"`
+	DbGrayEnable           requests.Boolean `position:"Query" name:"DbGrayEnable"`
+	Enable                 requests.Boolean `position:"Query" name:"Enable"`
+	EntryApp               string           `position:"Query" name:"EntryApp"`
+	Id                     requests.Integer `position:"Query" name:"Id"`
+	GmtCreate              string           `position:"Query" name:"GmtCreate"`
+	Name                   string           `position:"Query" name:"Name"`
+	MessageQueueFilterSide string           `position:"Query" name:"MessageQueueFilterSide"`
+	Namespace              string           `position:"Query" name:"Namespace"`
+	AcceptLanguage         string           `position:"Query" name:"AcceptLanguage"`
+	Region                 string           `position:"Query" name:"Region"`
+	Status                 requests.Integer `position:"Query" name:"Status"`
 }
 
 // CreateOrUpdateSwimmingLaneGroupResponse is the response struct for api CreateOrUpdateSwimmingLaneGroup

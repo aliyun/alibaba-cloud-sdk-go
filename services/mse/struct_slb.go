@@ -17,12 +17,5 @@ package mse
 
 // Slb is a nested struct in mse response
 type Slb struct {
-	SlbSpec          string `json:"SlbSpec" xml:"SlbSpec"`
-	SlbPort          string `json:"SlbPort" xml:"SlbPort"`
-	GatewaySlbStatus string `json:"GatewaySlbStatus" xml:"GatewaySlbStatus"`
-	GatewaySlbMode   string `json:"GatewaySlbMode" xml:"GatewaySlbMode"`
-	StatusDesc       string `json:"StatusDesc" xml:"StatusDesc"`
-	SlbId            string `json:"SlbId" xml:"SlbId"`
-	SlbIp            string `json:"SlbIp" xml:"SlbIp"`
-	Type             string `json:"Type" xml:"Type"`
+	SlbItem []SlbItem `json:"slb" xml:"slb"`
 }

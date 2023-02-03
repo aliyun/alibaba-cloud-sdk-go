@@ -71,11 +71,12 @@ func (client *Client) UpdateGatewayRouteHTTPRewriteWithCallback(request *UpdateG
 // UpdateGatewayRouteHTTPRewriteRequest is the request struct for api UpdateGatewayRouteHTTPRewrite
 type UpdateGatewayRouteHTTPRewriteRequest struct {
 	*requests.RpcRequest
+	MseSessionId    string           `position:"Query" name:"MseSessionId"`
 	GatewayUniqueId string           `position:"Query" name:"GatewayUniqueId"`
-	HttpRewriteJSON string           `position:"Query" name:"HttpRewriteJSON"`
-	AcceptLanguage  string           `position:"Query" name:"AcceptLanguage"`
 	Id              requests.Integer `position:"Query" name:"Id"`
 	GatewayId       requests.Integer `position:"Query" name:"GatewayId"`
+	HttpRewriteJSON string           `position:"Query" name:"HttpRewriteJSON"`
+	AcceptLanguage  string           `position:"Query" name:"AcceptLanguage"`
 }
 
 // UpdateGatewayRouteHTTPRewriteResponse is the response struct for api UpdateGatewayRouteHTTPRewrite

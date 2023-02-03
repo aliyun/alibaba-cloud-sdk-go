@@ -17,21 +17,27 @@ package mse
 
 // Services is a nested struct in mse response
 type Services struct {
-	Name                  string         `json:"Name" xml:"Name"`
-	ServiceNameInRegistry string         `json:"ServiceNameInRegistry" xml:"ServiceNameInRegistry"`
-	GatewayId             int64          `json:"GatewayId" xml:"GatewayId"`
-	MetaInfo              string         `json:"MetaInfo" xml:"MetaInfo"`
-	HealehStatus          string         `json:"HealehStatus" xml:"HealehStatus"`
-	GmtModified           string         `json:"GmtModified" xml:"GmtModified"`
-	ServicePort           int64          `json:"ServicePort" xml:"ServicePort"`
-	Id                    int64          `json:"Id" xml:"Id"`
-	GroupName             string         `json:"GroupName" xml:"GroupName"`
-	GatewayUniqueId       string         `json:"GatewayUniqueId" xml:"GatewayUniqueId"`
-	SourceId              int64          `json:"SourceId" xml:"SourceId"`
-	GmtCreate             string         `json:"GmtCreate" xml:"GmtCreate"`
-	SourceType            string         `json:"SourceType" xml:"SourceType"`
-	ServiceProtocol       string         `json:"ServiceProtocol" xml:"ServiceProtocol"`
-	Namespace             string         `json:"Namespace" xml:"Namespace"`
-	Ips                   []string       `json:"Ips" xml:"Ips"`
-	Versions              []VersionsItem `json:"Versions" xml:"Versions"`
+	Name                  string               `json:"Name" xml:"Name"`
+	ServiceNameInRegistry string               `json:"ServiceNameInRegistry" xml:"ServiceNameInRegistry"`
+	GatewayId             int64                `json:"GatewayId" xml:"GatewayId"`
+	MetaInfo              string               `json:"MetaInfo" xml:"MetaInfo"`
+	HealehStatus          string               `json:"HealehStatus" xml:"HealehStatus"`
+	GmtModified           string               `json:"GmtModified" xml:"GmtModified"`
+	ServicePort           int64                `json:"ServicePort" xml:"ServicePort"`
+	Id                    int64                `json:"Id" xml:"Id"`
+	GroupName             string               `json:"GroupName" xml:"GroupName"`
+	HealthCheck           bool                 `json:"HealthCheck" xml:"HealthCheck"`
+	GatewayUniqueId       string               `json:"GatewayUniqueId" xml:"GatewayUniqueId"`
+	SourceId              int64                `json:"SourceId" xml:"SourceId"`
+	GmtCreate             string               `json:"GmtCreate" xml:"GmtCreate"`
+	SourceType            string               `json:"SourceType" xml:"SourceType"`
+	ServiceProtocol       string               `json:"ServiceProtocol" xml:"ServiceProtocol"`
+	Namespace             string               `json:"Namespace" xml:"Namespace"`
+	HealthStatus          string               `json:"HealthStatus" xml:"HealthStatus"`
+	Ips                   []string             `json:"Ips" xml:"Ips"`
+	Ports                 []int                `json:"Ports" xml:"Ports"`
+	UnhealthyEndpoints    []string             `json:"UnhealthyEndpoints" xml:"UnhealthyEndpoints"`
+	HealthCheckInfo       HealthCheckInfo      `json:"HealthCheckInfo" xml:"HealthCheckInfo"`
+	GatewayTrafficPolicy  GatewayTrafficPolicy `json:"GatewayTrafficPolicy" xml:"GatewayTrafficPolicy"`
+	Versions              []VersionsItem       `json:"Versions" xml:"Versions"`
 }

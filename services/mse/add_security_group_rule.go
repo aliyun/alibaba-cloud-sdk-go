@@ -71,10 +71,11 @@ func (client *Client) AddSecurityGroupRuleWithCallback(request *AddSecurityGroup
 // AddSecurityGroupRuleRequest is the request struct for api AddSecurityGroupRule
 type AddSecurityGroupRuleRequest struct {
 	*requests.RpcRequest
-	PortRange       string `position:"Query" name:"PortRange"`
+	MseSessionId    string `position:"Query" name:"MseSessionId"`
 	GatewayUniqueId string `position:"Query" name:"GatewayUniqueId"`
 	SecurityGroupId string `position:"Query" name:"SecurityGroupId"`
 	Description     string `position:"Query" name:"Description"`
+	PortRange       string `position:"Query" name:"PortRange"`
 	AcceptLanguage  string `position:"Query" name:"AcceptLanguage"`
 }
 

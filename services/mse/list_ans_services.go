@@ -71,16 +71,17 @@ func (client *Client) ListAnsServicesWithCallback(request *ListAnsServicesReques
 // ListAnsServicesRequest is the request struct for api ListAnsServices
 type ListAnsServicesRequest struct {
 	*requests.RpcRequest
-	ClusterId      string           `position:"Query" name:"ClusterId"`
+	MseSessionId   string           `position:"Query" name:"MseSessionId"`
 	PageNum        requests.Integer `position:"Query" name:"PageNum"`
-	GroupName      string           `position:"Query" name:"GroupName"`
-	HasIpCount     string           `position:"Query" name:"HasIpCount"`
-	InstanceId     string           `position:"Query" name:"InstanceId"`
 	NamespaceId    string           `position:"Query" name:"NamespaceId"`
 	RequestPars    string           `position:"Query" name:"RequestPars"`
 	PageSize       requests.Integer `position:"Query" name:"PageSize"`
-	AcceptLanguage string           `position:"Query" name:"AcceptLanguage"`
 	ServiceName    string           `position:"Query" name:"ServiceName"`
+	ClusterId      string           `position:"Query" name:"ClusterId"`
+	GroupName      string           `position:"Query" name:"GroupName"`
+	HasIpCount     string           `position:"Query" name:"HasIpCount"`
+	InstanceId     string           `position:"Query" name:"InstanceId"`
+	AcceptLanguage string           `position:"Query" name:"AcceptLanguage"`
 }
 
 // ListAnsServicesResponse is the response struct for api ListAnsServices

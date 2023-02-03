@@ -72,10 +72,11 @@ func (client *Client) UpdateGatewayRouteTimeoutWithCallback(request *UpdateGatew
 type UpdateGatewayRouteTimeoutRequest struct {
 	*requests.RpcRequest
 	TimeoutJSON     UpdateGatewayRouteTimeoutTimeoutJSON `position:"Query" name:"TimeoutJSON"  type:"Struct"`
+	MseSessionId    string                               `position:"Query" name:"MseSessionId"`
 	GatewayUniqueId string                               `position:"Query" name:"GatewayUniqueId"`
-	AcceptLanguage  string                               `position:"Query" name:"AcceptLanguage"`
 	Id              requests.Integer                     `position:"Query" name:"Id"`
 	GatewayId       requests.Integer                     `position:"Query" name:"GatewayId"`
+	AcceptLanguage  string                               `position:"Query" name:"AcceptLanguage"`
 }
 
 // UpdateGatewayRouteTimeoutTimeoutJSON is a repeated param struct in UpdateGatewayRouteTimeoutRequest

@@ -71,6 +71,7 @@ func (client *Client) UpdateZnodeWithCallback(request *UpdateZnodeRequest, callb
 // UpdateZnodeRequest is the request struct for api UpdateZnode
 type UpdateZnodeRequest struct {
 	*requests.RpcRequest
+	MseSessionId   string `position:"Query" name:"MseSessionId"`
 	Data           string `position:"Query" name:"Data"`
 	ClusterId      string `position:"Query" name:"ClusterId"`
 	Path           string `position:"Query" name:"Path"`

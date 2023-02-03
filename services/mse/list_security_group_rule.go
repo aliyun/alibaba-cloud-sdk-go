@@ -71,6 +71,7 @@ func (client *Client) ListSecurityGroupRuleWithCallback(request *ListSecurityGro
 // ListSecurityGroupRuleRequest is the request struct for api ListSecurityGroupRule
 type ListSecurityGroupRuleRequest struct {
 	*requests.RpcRequest
+	MseSessionId    string `position:"Query" name:"MseSessionId"`
 	GatewayUniqueId string `position:"Query" name:"GatewayUniqueId"`
 	AcceptLanguage  string `position:"Query" name:"AcceptLanguage"`
 }
@@ -92,7 +93,7 @@ func CreateListSecurityGroupRuleRequest() (request *ListSecurityGroupRuleRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("mse", "2019-05-31", "ListSecurityGroupRule", "mse", "openAPI")
-	request.Method = requests.GET
+	request.Method = requests.POST
 	return
 }
 

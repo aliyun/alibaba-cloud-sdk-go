@@ -71,6 +71,7 @@ func (client *Client) UpdateGatewayServiceVersionWithCallback(request *UpdateGat
 // UpdateGatewayServiceVersionRequest is the request struct for api UpdateGatewayServiceVersion
 type UpdateGatewayServiceVersionRequest struct {
 	*requests.RpcRequest
+	MseSessionId    string           `position:"Query" name:"MseSessionId"`
 	GatewayUniqueId string           `position:"Query" name:"GatewayUniqueId"`
 	ServiceVersion  string           `position:"Query" name:"ServiceVersion"`
 	AcceptLanguage  string           `position:"Query" name:"AcceptLanguage"`

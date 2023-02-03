@@ -71,10 +71,11 @@ func (client *Client) GetBlackWhiteListWithCallback(request *GetBlackWhiteListRe
 // GetBlackWhiteListRequest is the request struct for api GetBlackWhiteList
 type GetBlackWhiteListRequest struct {
 	*requests.RpcRequest
+	MseSessionId    string           `position:"Query" name:"MseSessionId"`
 	GatewayUniqueId string           `position:"Query" name:"GatewayUniqueId"`
 	Type            string           `position:"Query" name:"Type"`
-	ResourceType    string           `position:"Query" name:"ResourceType"`
 	IsWhite         requests.Boolean `position:"Query" name:"IsWhite"`
+	ResourceType    string           `position:"Query" name:"ResourceType"`
 	AcceptLanguage  string           `position:"Query" name:"AcceptLanguage"`
 }
 

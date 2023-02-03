@@ -17,13 +17,5 @@ package mse
 
 // InternetSlb is a nested struct in mse response
 type InternetSlb struct {
-	SlbSpec             string `json:"SlbSpec" xml:"SlbSpec"`
-	SlbPort             string `json:"SlbPort" xml:"SlbPort"`
-	GatewaySlbStatus    string `json:"GatewaySlbStatus" xml:"GatewaySlbStatus"`
-	GatewaySlbMode      string `json:"GatewaySlbMode" xml:"GatewaySlbMode"`
-	InternetNetworkFlow string `json:"InternetNetworkFlow" xml:"InternetNetworkFlow"`
-	StatusDesc          string `json:"StatusDesc" xml:"StatusDesc"`
-	SlbId               string `json:"SlbId" xml:"SlbId"`
-	SlbIp               string `json:"SlbIp" xml:"SlbIp"`
-	Type                string `json:"Type" xml:"Type"`
+	InternetSlbItem []InternetSlbItem `json:"internetSlb" xml:"internetSlb"`
 }

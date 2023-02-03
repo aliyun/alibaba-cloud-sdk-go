@@ -71,21 +71,31 @@ func (client *Client) CreateOrUpdateSwimmingLaneWithCallback(request *CreateOrUp
 // CreateOrUpdateSwimmingLaneRequest is the request struct for api CreateOrUpdateSwimmingLane
 type CreateOrUpdateSwimmingLaneRequest struct {
 	*requests.RpcRequest
-	Source         string                                  `position:"Query" name:"Source"`
-	GmtModified    string                                  `position:"Query" name:"GmtModified"`
-	UserId         string                                  `position:"Query" name:"UserId"`
-	LicenseKey     string                                  `position:"Query" name:"LicenseKey"`
-	EntryRule      string                                  `position:"Query" name:"EntryRule"`
-	Enable         requests.Boolean                        `position:"Query" name:"Enable"`
-	Id             requests.Integer                        `position:"Query" name:"Id"`
-	Tag            string                                  `position:"Query" name:"Tag"`
-	EntryRules     *[]CreateOrUpdateSwimmingLaneEntryRules `position:"Query" name:"EntryRules"  type:"Repeated"`
-	GroupId        requests.Integer                        `position:"Query" name:"GroupId"`
-	GmtCreate      string                                  `position:"Query" name:"GmtCreate"`
-	EnableRules    requests.Boolean                        `position:"Query" name:"EnableRules"`
-	Name           string                                  `position:"Query" name:"Name"`
-	AcceptLanguage string                                  `position:"Query" name:"AcceptLanguage"`
-	Status         requests.Integer                        `position:"Query" name:"Status"`
+	MseSessionId                 string                                                 `position:"Query" name:"MseSessionId"`
+	Source                       string                                                 `position:"Query" name:"Source"`
+	GmtModified                  string                                                 `position:"Query" name:"GmtModified"`
+	UserId                       string                                                 `position:"Query" name:"UserId"`
+	LicenseKey                   string                                                 `position:"Query" name:"LicenseKey"`
+	GatewaySwimmingLaneRouteJson CreateOrUpdateSwimmingLaneGatewaySwimmingLaneRouteJson `position:"Query" name:"GatewaySwimmingLaneRouteJson"  type:"Struct"`
+	EntryRule                    string                                                 `position:"Query" name:"EntryRule"`
+	Enable                       requests.Boolean                                       `position:"Query" name:"Enable"`
+	Id                           requests.Integer                                       `position:"Query" name:"Id"`
+	Tag                          string                                                 `position:"Query" name:"Tag"`
+	EntryRules                   *[]CreateOrUpdateSwimmingLaneEntryRules                `position:"Query" name:"EntryRules"  type:"Repeated"`
+	GroupId                      requests.Integer                                       `position:"Query" name:"GroupId"`
+	GmtCreate                    string                                                 `position:"Query" name:"GmtCreate"`
+	EnableRules                  requests.Boolean                                       `position:"Query" name:"EnableRules"`
+	Name                         string                                                 `position:"Query" name:"Name"`
+	AcceptLanguage               string                                                 `position:"Query" name:"AcceptLanguage"`
+	Status                       requests.Integer                                       `position:"Query" name:"Status"`
+}
+
+// CreateOrUpdateSwimmingLaneGatewaySwimmingLaneRouteJson is a repeated param struct in CreateOrUpdateSwimmingLaneRequest
+type CreateOrUpdateSwimmingLaneGatewaySwimmingLaneRouteJson struct {
+	GatewayUniqueId string                                                                  `name:"GatewayUniqueId"`
+	RouteIdList     *[]string                                                               `name:"RouteIdList" type:"Repeated"`
+	Conditions      *[]CreateOrUpdateSwimmingLaneGatewaySwimmingLaneRouteJsonConditionsItem `name:"Conditions" type:"Repeated"`
+	GatewayId       string                                                                  `name:"GatewayId"`
 }
 
 // CreateOrUpdateSwimmingLaneEntryRules is a repeated param struct in CreateOrUpdateSwimmingLaneRequest
@@ -94,7 +104,16 @@ type CreateOrUpdateSwimmingLaneEntryRules struct {
 	Path      string                                           `name:"Path"`
 	Condition string                                           `name:"Condition"`
 	Enable    string                                           `name:"Enable"`
+	Paths     *[]string                                        `name:"Paths" type:"Repeated"`
 	Priority  string                                           `name:"Priority"`
+}
+
+// CreateOrUpdateSwimmingLaneGatewaySwimmingLaneRouteJsonConditionsItem is a repeated param struct in CreateOrUpdateSwimmingLaneRequest
+type CreateOrUpdateSwimmingLaneGatewaySwimmingLaneRouteJsonConditionsItem struct {
+	Name  string `name:"Name"`
+	Type  string `name:"Type"`
+	Cond  string `name:"Cond"`
+	Value string `name:"Value"`
 }
 
 // CreateOrUpdateSwimmingLaneEntryRulesRestItems is a repeated param struct in CreateOrUpdateSwimmingLaneRequest

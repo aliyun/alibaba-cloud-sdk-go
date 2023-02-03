@@ -71,16 +71,17 @@ func (client *Client) ListAnsInstancesWithCallback(request *ListAnsInstancesRequ
 // ListAnsInstancesRequest is the request struct for api ListAnsInstances
 type ListAnsInstancesRequest struct {
 	*requests.RpcRequest
+	MseSessionId   string           `position:"Query" name:"MseSessionId"`
 	ClusterName    string           `position:"Query" name:"ClusterName"`
-	ClusterId      string           `position:"Query" name:"ClusterId"`
 	PageNum        requests.Integer `position:"Query" name:"PageNum"`
-	GroupName      string           `position:"Query" name:"GroupName"`
-	InstanceId     string           `position:"Query" name:"InstanceId"`
 	NamespaceId    string           `position:"Query" name:"NamespaceId"`
 	RequestPars    string           `position:"Query" name:"RequestPars"`
 	PageSize       requests.Integer `position:"Query" name:"PageSize"`
-	AcceptLanguage string           `position:"Query" name:"AcceptLanguage"`
 	ServiceName    string           `position:"Query" name:"ServiceName"`
+	ClusterId      string           `position:"Query" name:"ClusterId"`
+	GroupName      string           `position:"Query" name:"GroupName"`
+	InstanceId     string           `position:"Query" name:"InstanceId"`
+	AcceptLanguage string           `position:"Query" name:"AcceptLanguage"`
 }
 
 // ListAnsInstancesResponse is the response struct for api ListAnsInstances

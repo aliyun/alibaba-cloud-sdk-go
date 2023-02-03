@@ -71,8 +71,9 @@ func (client *Client) UpdateGatewayRouteWafStatusWithCallback(request *UpdateGat
 // UpdateGatewayRouteWafStatusRequest is the request struct for api UpdateGatewayRouteWafStatus
 type UpdateGatewayRouteWafStatusRequest struct {
 	*requests.RpcRequest
-	EnableWaf       requests.Boolean `position:"Query" name:"EnableWaf"`
+	MseSessionId    string           `position:"Query" name:"MseSessionId"`
 	GatewayUniqueId string           `position:"Query" name:"GatewayUniqueId"`
+	EnableWaf       requests.Boolean `position:"Query" name:"EnableWaf"`
 	RouteId         requests.Integer `position:"Query" name:"RouteId"`
 	AcceptLanguage  string           `position:"Query" name:"AcceptLanguage"`
 }
@@ -80,12 +81,12 @@ type UpdateGatewayRouteWafStatusRequest struct {
 // UpdateGatewayRouteWafStatusResponse is the response struct for api UpdateGatewayRouteWafStatus
 type UpdateGatewayRouteWafStatusResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	Message        string `json:"Message" xml:"Message"`
-	Code           int    `json:"Code" xml:"Code"`
-	Success        bool   `json:"Success" xml:"Success"`
-	Data           Data   `json:"Data" xml:"Data"`
+	RequestId      string                            `json:"RequestId" xml:"RequestId"`
+	HttpStatusCode int                               `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Message        string                            `json:"Message" xml:"Message"`
+	Code           int                               `json:"Code" xml:"Code"`
+	Success        bool                              `json:"Success" xml:"Success"`
+	Data           DataInUpdateGatewayRouteWafStatus `json:"Data" xml:"Data"`
 }
 
 // CreateUpdateGatewayRouteWafStatusRequest creates a request to invoke UpdateGatewayRouteWafStatus API

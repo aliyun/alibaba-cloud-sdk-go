@@ -71,11 +71,20 @@ func (client *Client) ListClustersWithCallback(request *ListClustersRequest, cal
 // ListClustersRequest is the request struct for api ListClusters
 type ListClustersRequest struct {
 	*requests.RpcRequest
-	ClusterAliasName string           `position:"Query" name:"ClusterAliasName"`
-	PageNum          requests.Integer `position:"Query" name:"PageNum"`
-	RequestPars      string           `position:"Query" name:"RequestPars"`
-	PageSize         requests.Integer `position:"Query" name:"PageSize"`
-	AcceptLanguage   string           `position:"Query" name:"AcceptLanguage"`
+	MseSessionId     string             `position:"Query" name:"MseSessionId"`
+	ClusterAliasName string             `position:"Query" name:"ClusterAliasName"`
+	PageNum          requests.Integer   `position:"Query" name:"PageNum"`
+	ResourceGroupId  string             `position:"Query" name:"ResourceGroupId"`
+	RequestPars      string             `position:"Query" name:"RequestPars"`
+	PageSize         requests.Integer   `position:"Query" name:"PageSize"`
+	AcceptLanguage   string             `position:"Query" name:"AcceptLanguage"`
+	Tag              *[]ListClustersTag `position:"Query" name:"Tag"  type:"Repeated"`
+}
+
+// ListClustersTag is a repeated param struct in ListClustersRequest
+type ListClustersTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // ListClustersResponse is the response struct for api ListClusters

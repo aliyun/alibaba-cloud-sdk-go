@@ -71,6 +71,7 @@ func (client *Client) ListNacosHistoryConfigsWithCallback(request *ListNacosHist
 // ListNacosHistoryConfigsRequest is the request struct for api ListNacosHistoryConfigs
 type ListNacosHistoryConfigsRequest struct {
 	*requests.RpcRequest
+	MseSessionId   string           `position:"Query" name:"MseSessionId"`
 	PageNum        requests.Integer `position:"Query" name:"PageNum"`
 	InstanceId     string           `position:"Query" name:"InstanceId"`
 	DataId         string           `position:"Query" name:"DataId"`

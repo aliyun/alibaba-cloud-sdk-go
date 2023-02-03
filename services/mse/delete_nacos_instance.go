@@ -71,6 +71,7 @@ func (client *Client) DeleteNacosInstanceWithCallback(request *DeleteNacosInstan
 // DeleteNacosInstanceRequest is the request struct for api DeleteNacosInstance
 type DeleteNacosInstanceRequest struct {
 	*requests.RpcRequest
+	MseSessionId   string           `position:"Query" name:"MseSessionId"`
 	ClusterName    string           `position:"Query" name:"ClusterName"`
 	Ip             string           `position:"Query" name:"Ip"`
 	Ephemeral      requests.Boolean `position:"Query" name:"Ephemeral"`

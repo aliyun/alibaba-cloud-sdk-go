@@ -71,11 +71,12 @@ func (client *Client) UpdateGatewayServiceTrafficPolicyWithCallback(request *Upd
 // UpdateGatewayServiceTrafficPolicyRequest is the request struct for api UpdateGatewayServiceTrafficPolicy
 type UpdateGatewayServiceTrafficPolicyRequest struct {
 	*requests.RpcRequest
+	MseSessionId         string                                                `position:"Query" name:"MseSessionId"`
 	GatewayUniqueId      string                                                `position:"Query" name:"GatewayUniqueId"`
+	GatewayId            requests.Integer                                      `position:"Query" name:"GatewayId"`
 	GatewayTrafficPolicy UpdateGatewayServiceTrafficPolicyGatewayTrafficPolicy `position:"Query" name:"GatewayTrafficPolicy"  type:"Struct"`
 	AcceptLanguage       string                                                `position:"Query" name:"AcceptLanguage"`
 	ServiceId            requests.Integer                                      `position:"Query" name:"ServiceId"`
-	GatewayId            requests.Integer                                      `position:"Query" name:"GatewayId"`
 }
 
 // UpdateGatewayServiceTrafficPolicyGatewayTrafficPolicy is a repeated param struct in UpdateGatewayServiceTrafficPolicyRequest
@@ -116,12 +117,12 @@ type UpdateGatewayServiceTrafficPolicyGatewayTrafficPolicyLoadBalancerSettingsCo
 // UpdateGatewayServiceTrafficPolicyResponse is the response struct for api UpdateGatewayServiceTrafficPolicy
 type UpdateGatewayServiceTrafficPolicyResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	Message        string `json:"Message" xml:"Message"`
-	Code           int    `json:"Code" xml:"Code"`
-	Success        bool   `json:"Success" xml:"Success"`
-	Data           Data   `json:"Data" xml:"Data"`
+	RequestId      string                                  `json:"RequestId" xml:"RequestId"`
+	HttpStatusCode int                                     `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Message        string                                  `json:"Message" xml:"Message"`
+	Code           int                                     `json:"Code" xml:"Code"`
+	Success        bool                                    `json:"Success" xml:"Success"`
+	Data           DataInUpdateGatewayServiceTrafficPolicy `json:"Data" xml:"Data"`
 }
 
 // CreateUpdateGatewayServiceTrafficPolicyRequest creates a request to invoke UpdateGatewayServiceTrafficPolicy API

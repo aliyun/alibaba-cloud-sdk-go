@@ -72,6 +72,7 @@ func (client *Client) QueryClusterDetailWithCallback(request *QueryClusterDetail
 type QueryClusterDetailRequest struct {
 	*requests.RpcRequest
 	AclSwitch      requests.Boolean `position:"Query" name:"AclSwitch"`
+	MseSessionId   string           `position:"Query" name:"MseSessionId"`
 	OrderId        string           `position:"Query" name:"OrderId"`
 	ClusterId      string           `position:"Query" name:"ClusterId"`
 	InstanceId     string           `position:"Query" name:"InstanceId"`

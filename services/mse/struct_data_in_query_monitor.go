@@ -17,5 +17,5 @@ package mse
 
 // DataInQueryMonitor is a nested struct in mse response
 type DataInQueryMonitor struct {
-	Data []Data `json:"data" xml:"data"`
+	DataItem []DataItem `json:"data" xml:"data"`
 }

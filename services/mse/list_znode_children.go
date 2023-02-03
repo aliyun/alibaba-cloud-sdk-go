@@ -71,6 +71,7 @@ func (client *Client) ListZnodeChildrenWithCallback(request *ListZnodeChildrenRe
 // ListZnodeChildrenRequest is the request struct for api ListZnodeChildren
 type ListZnodeChildrenRequest struct {
 	*requests.RpcRequest
+	MseSessionId   string `position:"Query" name:"MseSessionId"`
 	ClusterId      string `position:"Query" name:"ClusterId"`
 	Path           string `position:"Query" name:"Path"`
 	AcceptLanguage string `position:"Query" name:"AcceptLanguage"`

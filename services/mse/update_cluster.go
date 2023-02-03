@@ -71,6 +71,7 @@ func (client *Client) UpdateClusterWithCallback(request *UpdateClusterRequest, c
 // UpdateClusterRequest is the request struct for api UpdateCluster
 type UpdateClusterRequest struct {
 	*requests.RpcRequest
+	MseSessionId     string `position:"Query" name:"MseSessionId"`
 	ClusterAliasName string `position:"Query" name:"ClusterAliasName"`
 	ClusterId        string `position:"Query" name:"ClusterId"`
 	InstanceId       string `position:"Query" name:"InstanceId"`
@@ -81,10 +82,11 @@ type UpdateClusterRequest struct {
 // UpdateClusterResponse is the response struct for api UpdateCluster
 type UpdateClusterResponse struct {
 	*responses.BaseResponse
-	Message   string `json:"Message" xml:"Message"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
-	Success   bool   `json:"Success" xml:"Success"`
+	Message        string `json:"Message" xml:"Message"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	ErrorCode      string `json:"ErrorCode" xml:"ErrorCode"`
+	Success        bool   `json:"Success" xml:"Success"`
+	HttpStatusCode string `json:"HttpStatusCode" xml:"HttpStatusCode"`
 }
 
 // CreateUpdateClusterRequest creates a request to invoke UpdateCluster API

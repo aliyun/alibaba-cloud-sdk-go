@@ -71,11 +71,13 @@ func (client *Client) QueryConfigWithCallback(request *QueryConfigRequest, callb
 // QueryConfigRequest is the request struct for api QueryConfig
 type QueryConfigRequest struct {
 	*requests.RpcRequest
-	ConfigType     string `position:"Query" name:"ConfigType"`
-	ClusterId      string `position:"Query" name:"ClusterId"`
-	InstanceId     string `position:"Query" name:"InstanceId"`
-	RequestPars    string `position:"Query" name:"RequestPars"`
-	AcceptLanguage string `position:"Query" name:"AcceptLanguage"`
+	NeedRunningConf requests.Boolean `position:"Query" name:"NeedRunningConf"`
+	MseSessionId    string           `position:"Query" name:"MseSessionId"`
+	ConfigType      string           `position:"Query" name:"ConfigType"`
+	ClusterId       string           `position:"Query" name:"ClusterId"`
+	InstanceId      string           `position:"Query" name:"InstanceId"`
+	RequestPars     string           `position:"Query" name:"RequestPars"`
+	AcceptLanguage  string           `position:"Query" name:"AcceptLanguage"`
 }
 
 // QueryConfigResponse is the response struct for api QueryConfig

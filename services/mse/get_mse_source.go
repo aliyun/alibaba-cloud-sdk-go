@@ -71,7 +71,9 @@ func (client *Client) GetMseSourceWithCallback(request *GetMseSourceRequest, cal
 // GetMseSourceRequest is the request struct for api GetMseSource
 type GetMseSourceRequest struct {
 	*requests.RpcRequest
+	MseSessionId    string `position:"Query" name:"MseSessionId"`
 	GatewayUniqueId string `position:"Query" name:"GatewayUniqueId"`
+	Type            string `position:"Query" name:"Type"`
 	AcceptLanguage  string `position:"Query" name:"AcceptLanguage"`
 }
 
@@ -92,7 +94,7 @@ func CreateGetMseSourceRequest() (request *GetMseSourceRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("mse", "2019-05-31", "GetMseSource", "mse", "openAPI")
-	request.Method = requests.GET
+	request.Method = requests.POST
 	return
 }
 

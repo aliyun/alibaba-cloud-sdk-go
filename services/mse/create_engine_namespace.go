@@ -71,6 +71,7 @@ func (client *Client) CreateEngineNamespaceWithCallback(request *CreateEngineNam
 // CreateEngineNamespaceRequest is the request struct for api CreateEngineNamespace
 type CreateEngineNamespaceRequest struct {
 	*requests.RpcRequest
+	MseSessionId   string           `position:"Query" name:"MseSessionId"`
 	ClusterId      string           `position:"Query" name:"ClusterId"`
 	InstanceId     string           `position:"Query" name:"InstanceId"`
 	ServiceCount   requests.Integer `position:"Query" name:"ServiceCount"`

@@ -71,11 +71,12 @@ func (client *Client) UpdateGatewayRouteCORSWithCallback(request *UpdateGatewayR
 // UpdateGatewayRouteCORSRequest is the request struct for api UpdateGatewayRouteCORS
 type UpdateGatewayRouteCORSRequest struct {
 	*requests.RpcRequest
-	CorsJSON        UpdateGatewayRouteCORSCorsJSON `position:"Query" name:"CorsJSON"  type:"Struct"`
+	MseSessionId    string                         `position:"Query" name:"MseSessionId"`
 	GatewayUniqueId string                         `position:"Query" name:"GatewayUniqueId"`
-	AcceptLanguage  string                         `position:"Query" name:"AcceptLanguage"`
 	Id              requests.Integer               `position:"Query" name:"Id"`
 	GatewayId       requests.Integer               `position:"Query" name:"GatewayId"`
+	CorsJSON        UpdateGatewayRouteCORSCorsJSON `position:"Query" name:"CorsJSON"  type:"Struct"`
+	AcceptLanguage  string                         `position:"Query" name:"AcceptLanguage"`
 }
 
 // UpdateGatewayRouteCORSCorsJSON is a repeated param struct in UpdateGatewayRouteCORSRequest

@@ -71,6 +71,7 @@ func (client *Client) RetryClusterWithCallback(request *RetryClusterRequest, cal
 // RetryClusterRequest is the request struct for api RetryCluster
 type RetryClusterRequest struct {
 	*requests.RpcRequest
+	MseSessionId   string `position:"Query" name:"MseSessionId"`
 	ClusterId      string `position:"Query" name:"ClusterId"`
 	InstanceId     string `position:"Query" name:"InstanceId"`
 	RequestPars    string `position:"Query" name:"RequestPars"`

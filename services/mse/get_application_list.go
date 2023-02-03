@@ -71,6 +71,7 @@ func (client *Client) GetApplicationListWithCallback(request *GetApplicationList
 // GetApplicationListRequest is the request struct for api GetApplicationList
 type GetApplicationListRequest struct {
 	*requests.RpcRequest
+	MseSessionId   string           `position:"Query" name:"MseSessionId"`
 	Language       string           `position:"Query" name:"Language"`
 	Source         string           `position:"Query" name:"Source"`
 	PageNumber     requests.Integer `position:"Query" name:"PageNumber"`
@@ -78,6 +79,7 @@ type GetApplicationListRequest struct {
 	PageSize       requests.Integer `position:"Query" name:"PageSize"`
 	SwitchEnable   requests.Boolean `position:"Query" name:"SwitchEnable"`
 	AppId          string           `position:"Query" name:"AppId"`
+	Namespace      string           `position:"Query" name:"Namespace"`
 	AcceptLanguage string           `position:"Query" name:"AcceptLanguage"`
 	SentinelEnable requests.Boolean `position:"Query" name:"SentinelEnable"`
 	Region         string           `position:"Query" name:"Region"`

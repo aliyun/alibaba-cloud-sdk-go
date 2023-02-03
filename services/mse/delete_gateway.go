@@ -72,6 +72,7 @@ func (client *Client) DeleteGatewayWithCallback(request *DeleteGatewayRequest, c
 type DeleteGatewayRequest struct {
 	*requests.RpcRequest
 	DeleteSlb       requests.Boolean `position:"Query" name:"DeleteSlb"`
+	MseSessionId    string           `position:"Query" name:"MseSessionId"`
 	GatewayUniqueId string           `position:"Query" name:"GatewayUniqueId"`
 	AcceptLanguage  string           `position:"Query" name:"AcceptLanguage"`
 }
@@ -79,12 +80,12 @@ type DeleteGatewayRequest struct {
 // DeleteGatewayResponse is the response struct for api DeleteGateway
 type DeleteGatewayResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	Message        string `json:"Message" xml:"Message"`
-	Code           int    `json:"Code" xml:"Code"`
-	Success        bool   `json:"Success" xml:"Success"`
-	Data           Data   `json:"Data" xml:"Data"`
+	RequestId      string              `json:"RequestId" xml:"RequestId"`
+	HttpStatusCode int                 `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Message        string              `json:"Message" xml:"Message"`
+	Code           int                 `json:"Code" xml:"Code"`
+	Success        bool                `json:"Success" xml:"Success"`
+	Data           DataInDeleteGateway `json:"Data" xml:"Data"`
 }
 
 // CreateDeleteGatewayRequest creates a request to invoke DeleteGateway API

@@ -71,10 +71,16 @@ func (client *Client) AddGatewaySlbWithCallback(request *AddGatewaySlbRequest, c
 // AddGatewaySlbRequest is the request struct for api AddGatewaySlb
 type AddGatewaySlbRequest struct {
 	*requests.RpcRequest
-	SlbId           string `position:"Query" name:"SlbId"`
-	GatewayUniqueId string `position:"Query" name:"GatewayUniqueId"`
-	Type            string `position:"Query" name:"Type"`
-	AcceptLanguage  string `position:"Query" name:"AcceptLanguage"`
+	MseSessionId        string           `position:"Query" name:"MseSessionId"`
+	SlbId               string           `position:"Query" name:"SlbId"`
+	GatewayUniqueId     string           `position:"Query" name:"GatewayUniqueId"`
+	Type                string           `position:"Query" name:"Type"`
+	HttpPort            requests.Integer `position:"Query" name:"HttpPort"`
+	ServiceWeight       requests.Integer `position:"Query" name:"ServiceWeight"`
+	VServerGroupId      string           `position:"Query" name:"VServerGroupId"`
+	HttpsVServerGroupId string           `position:"Query" name:"HttpsVServerGroupId"`
+	AcceptLanguage      string           `position:"Query" name:"AcceptLanguage"`
+	HttpsPort           requests.Integer `position:"Query" name:"HttpsPort"`
 }
 
 // AddGatewaySlbResponse is the response struct for api AddGatewaySlb

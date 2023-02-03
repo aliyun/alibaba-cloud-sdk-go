@@ -71,6 +71,7 @@ func (client *Client) ListSSLCertWithCallback(request *ListSSLCertRequest, callb
 // ListSSLCertRequest is the request struct for api ListSSLCert
 type ListSSLCertRequest struct {
 	*requests.RpcRequest
+	MseSessionId    string `position:"Query" name:"MseSessionId"`
 	GatewayUniqueId string `position:"Query" name:"GatewayUniqueId"`
 	AcceptLanguage  string `position:"Query" name:"AcceptLanguage"`
 }

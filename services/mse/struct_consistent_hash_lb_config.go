@@ -18,6 +18,7 @@ package mse
 // ConsistentHashLBConfig is a nested struct in mse response
 type ConsistentHashLBConfig struct {
 	ParameterName        string     `json:"ParameterName" xml:"ParameterName"`
+	MinimumRingSize      int64      `json:"MinimumRingSize" xml:"MinimumRingSize"`
 	ConsistentHashLBType string     `json:"ConsistentHashLBType" xml:"ConsistentHashLBType"`
 	HttpCookie           HttpCookie `json:"HttpCookie" xml:"HttpCookie"`
 }

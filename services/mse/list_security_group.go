@@ -71,6 +71,7 @@ func (client *Client) ListSecurityGroupWithCallback(request *ListSecurityGroupRe
 // ListSecurityGroupRequest is the request struct for api ListSecurityGroup
 type ListSecurityGroupRequest struct {
 	*requests.RpcRequest
+	MseSessionId    string `position:"Query" name:"MseSessionId"`
 	GatewayUniqueId string `position:"Query" name:"GatewayUniqueId"`
 	AcceptLanguage  string `position:"Query" name:"AcceptLanguage"`
 }

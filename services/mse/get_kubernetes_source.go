@@ -71,7 +71,9 @@ func (client *Client) GetKubernetesSourceWithCallback(request *GetKubernetesSour
 // GetKubernetesSourceRequest is the request struct for api GetKubernetesSource
 type GetKubernetesSourceRequest struct {
 	*requests.RpcRequest
+	MseSessionId    string `position:"Query" name:"MseSessionId"`
 	GatewayUniqueId string `position:"Query" name:"GatewayUniqueId"`
+	VpcId           string `position:"Query" name:"VpcId"`
 	AcceptLanguage  string `position:"Query" name:"AcceptLanguage"`
 }
 

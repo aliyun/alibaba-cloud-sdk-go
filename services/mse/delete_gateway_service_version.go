@@ -71,6 +71,7 @@ func (client *Client) DeleteGatewayServiceVersionWithCallback(request *DeleteGat
 // DeleteGatewayServiceVersionRequest is the request struct for api DeleteGatewayServiceVersion
 type DeleteGatewayServiceVersionRequest struct {
 	*requests.RpcRequest
+	MseSessionId    string           `position:"Query" name:"MseSessionId"`
 	GatewayUniqueId string           `position:"Query" name:"GatewayUniqueId"`
 	ServiceVersion  string           `position:"Query" name:"ServiceVersion"`
 	AcceptLanguage  string           `position:"Query" name:"AcceptLanguage"`

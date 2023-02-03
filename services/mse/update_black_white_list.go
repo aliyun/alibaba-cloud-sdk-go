@@ -71,14 +71,18 @@ func (client *Client) UpdateBlackWhiteListWithCallback(request *UpdateBlackWhite
 // UpdateBlackWhiteListRequest is the request struct for api UpdateBlackWhiteList
 type UpdateBlackWhiteListRequest struct {
 	*requests.RpcRequest
-	GatewayUniqueId string           `position:"Query" name:"GatewayUniqueId"`
-	Type            string           `position:"Query" name:"Type"`
-	Content         string           `position:"Query" name:"Content"`
-	IsWhite         requests.Boolean `position:"Query" name:"IsWhite"`
-	Id              requests.Integer `position:"Query" name:"Id"`
-	ResourceType    string           `position:"Query" name:"ResourceType"`
-	AcceptLanguage  string           `position:"Query" name:"AcceptLanguage"`
-	Status          string           `position:"Query" name:"Status"`
+	Note               string           `position:"Query" name:"Note"`
+	MseSessionId       string           `position:"Query" name:"MseSessionId"`
+	GatewayUniqueId    string           `position:"Query" name:"GatewayUniqueId"`
+	Type               string           `position:"Query" name:"Type"`
+	Content            string           `position:"Query" name:"Content"`
+	IsWhite            requests.Boolean `position:"Query" name:"IsWhite"`
+	ResourceIdJsonList string           `position:"Query" name:"ResourceIdJsonList"`
+	Id                 requests.Integer `position:"Query" name:"Id"`
+	ResourceType       string           `position:"Query" name:"ResourceType"`
+	Name               string           `position:"Query" name:"Name"`
+	AcceptLanguage     string           `position:"Query" name:"AcceptLanguage"`
+	Status             string           `position:"Query" name:"Status"`
 }
 
 // UpdateBlackWhiteListResponse is the response struct for api UpdateBlackWhiteList

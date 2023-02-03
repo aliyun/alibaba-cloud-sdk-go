@@ -71,6 +71,7 @@ func (client *Client) UpdateSSLCertWithCallback(request *UpdateSSLCertRequest, c
 // UpdateSSLCertRequest is the request struct for api UpdateSSLCert
 type UpdateSSLCertRequest struct {
 	*requests.RpcRequest
+	MseSessionId    string           `position:"Query" name:"MseSessionId"`
 	GatewayUniqueId string           `position:"Query" name:"GatewayUniqueId"`
 	DomainId        requests.Integer `position:"Query" name:"DomainId"`
 	CertIdentifier  string           `position:"Query" name:"CertIdentifier"`

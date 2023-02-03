@@ -71,6 +71,7 @@ func (client *Client) SelectGatewaySlbWithCallback(request *SelectGatewaySlbRequ
 // SelectGatewaySlbRequest is the request struct for api SelectGatewaySlb
 type SelectGatewaySlbRequest struct {
 	*requests.RpcRequest
+	MseSessionId    string `position:"Query" name:"MseSessionId"`
 	GatewayUniqueId string `position:"Query" name:"GatewayUniqueId"`
 	Type            string `position:"Query" name:"Type"`
 	Name            string `position:"Query" name:"Name"`
@@ -94,7 +95,7 @@ func CreateSelectGatewaySlbRequest() (request *SelectGatewaySlbRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("mse", "2019-05-31", "SelectGatewaySlb", "mse", "openAPI")
-	request.Method = requests.GET
+	request.Method = requests.POST
 	return
 }
 

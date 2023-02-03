@@ -71,6 +71,7 @@ func (client *Client) ListServiceSourceWithCallback(request *ListServiceSourceRe
 // ListServiceSourceRequest is the request struct for api ListServiceSource
 type ListServiceSourceRequest struct {
 	*requests.RpcRequest
+	MseSessionId    string `position:"Query" name:"MseSessionId"`
 	GatewayUniqueId string `position:"Query" name:"GatewayUniqueId"`
 	AcceptLanguage  string `position:"Query" name:"AcceptLanguage"`
 }

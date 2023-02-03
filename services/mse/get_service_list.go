@@ -71,6 +71,7 @@ func (client *Client) GetServiceListWithCallback(request *GetServiceListRequest,
 // GetServiceListRequest is the request struct for api GetServiceList
 type GetServiceListRequest struct {
 	*requests.RpcRequest
+	MseSessionId   string `position:"Query" name:"MseSessionId"`
 	ServiceName    string `position:"Query" name:"ServiceName"`
 	Ip             string `position:"Query" name:"Ip"`
 	ServiceType    string `position:"Query" name:"ServiceType"`

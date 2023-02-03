@@ -71,6 +71,7 @@ func (client *Client) UpdateImageWithCallback(request *UpdateImageRequest, callb
 // UpdateImageRequest is the request struct for api UpdateImage
 type UpdateImageRequest struct {
 	*requests.RpcRequest
+	MseSessionId   string `position:"Query" name:"MseSessionId"`
 	ClusterId      string `position:"Query" name:"ClusterId"`
 	AcceptLanguage string `position:"Query" name:"AcceptLanguage"`
 	VersionCode    string `position:"Query" name:"VersionCode"`

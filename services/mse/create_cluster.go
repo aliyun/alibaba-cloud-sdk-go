@@ -71,23 +71,33 @@ func (client *Client) CreateClusterWithCallback(request *CreateClusterRequest, c
 // CreateClusterRequest is the request struct for api CreateCluster
 type CreateClusterRequest struct {
 	*requests.RpcRequest
-	ClusterSpecification    string           `position:"Query" name:"ClusterSpecification"`
-	PubSlbSpecification     string           `position:"Query" name:"PubSlbSpecification"`
-	PrivateSlbSpecification string           `position:"Query" name:"PrivateSlbSpecification"`
-	InstanceCount           requests.Integer `position:"Query" name:"InstanceCount"`
-	RequestPars             string           `position:"Query" name:"RequestPars"`
-	ConnectionType          string           `position:"Query" name:"ConnectionType"`
-	ClusterVersion          string           `position:"Query" name:"ClusterVersion"`
-	DiskCapacity            requests.Integer `position:"Query" name:"DiskCapacity"`
-	DiskType                string           `position:"Query" name:"DiskType"`
-	VSwitchId               string           `position:"Query" name:"VSwitchId"`
-	ClusterType             string           `position:"Query" name:"ClusterType"`
-	PubNetworkFlow          string           `position:"Query" name:"PubNetworkFlow"`
-	VpcId                   string           `position:"Query" name:"VpcId"`
-	NetType                 string           `position:"Query" name:"NetType"`
-	MseVersion              string           `position:"Query" name:"MseVersion"`
-	AcceptLanguage          string           `position:"Query" name:"AcceptLanguage"`
-	Region                  string           `position:"Query" name:"Region"`
+	ClusterSpecification    string              `position:"Query" name:"ClusterSpecification"`
+	MseSessionId            string              `position:"Query" name:"MseSessionId"`
+	PubSlbSpecification     string              `position:"Query" name:"PubSlbSpecification"`
+	PrivateSlbSpecification string              `position:"Query" name:"PrivateSlbSpecification"`
+	ResourceGroupId         string              `position:"Query" name:"ResourceGroupId"`
+	InstanceCount           requests.Integer    `position:"Query" name:"InstanceCount"`
+	RequestPars             string              `position:"Query" name:"RequestPars"`
+	Tag                     *[]CreateClusterTag `position:"Query" name:"Tag"  type:"Repeated"`
+	ConnectionType          string              `position:"Query" name:"ConnectionType"`
+	ClusterVersion          string              `position:"Query" name:"ClusterVersion"`
+	DiskCapacity            requests.Integer    `position:"Query" name:"DiskCapacity"`
+	DiskType                string              `position:"Query" name:"DiskType"`
+	VSwitchId               string              `position:"Query" name:"VSwitchId"`
+	ClusterType             string              `position:"Query" name:"ClusterType"`
+	InstanceName            string              `position:"Query" name:"InstanceName"`
+	PubNetworkFlow          string              `position:"Query" name:"PubNetworkFlow"`
+	VpcId                   string              `position:"Query" name:"VpcId"`
+	NetType                 string              `position:"Query" name:"NetType"`
+	MseVersion              string              `position:"Query" name:"MseVersion"`
+	AcceptLanguage          string              `position:"Query" name:"AcceptLanguage"`
+	Region                  string              `position:"Query" name:"Region"`
+}
+
+// CreateClusterTag is a repeated param struct in CreateClusterRequest
+type CreateClusterTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // CreateClusterResponse is the response struct for api CreateCluster

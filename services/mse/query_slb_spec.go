@@ -71,6 +71,7 @@ func (client *Client) QuerySlbSpecWithCallback(request *QuerySlbSpecRequest, cal
 // QuerySlbSpecRequest is the request struct for api QuerySlbSpec
 type QuerySlbSpecRequest struct {
 	*requests.RpcRequest
+	MseSessionId   string `position:"Query" name:"MseSessionId"`
 	AcceptLanguage string `position:"Query" name:"AcceptLanguage"`
 }
 

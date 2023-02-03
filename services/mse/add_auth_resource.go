@@ -71,11 +71,22 @@ func (client *Client) AddAuthResourceWithCallback(request *AddAuthResourceReques
 // AddAuthResourceRequest is the request struct for api AddAuthResource
 type AddAuthResourceRequest struct {
 	*requests.RpcRequest
-	GatewayUniqueId string           `position:"Query" name:"GatewayUniqueId"`
-	AuthId          requests.Integer `position:"Query" name:"AuthId"`
-	DomainId        requests.Integer `position:"Query" name:"DomainId"`
-	Path            string           `position:"Query" name:"Path"`
-	AcceptLanguage  string           `position:"Query" name:"AcceptLanguage"`
+	IgnoreCase             requests.Boolean                         `position:"Query" name:"IgnoreCase"`
+	MseSessionId           string                                   `position:"Query" name:"MseSessionId"`
+	GatewayUniqueId        string                                   `position:"Query" name:"GatewayUniqueId"`
+	DomainId               requests.Integer                         `position:"Query" name:"DomainId"`
+	Path                   string                                   `position:"Query" name:"Path"`
+	MatchType              string                                   `position:"Query" name:"MatchType"`
+	AuthId                 requests.Integer                         `position:"Query" name:"AuthId"`
+	AuthResourceHeaderList *[]AddAuthResourceAuthResourceHeaderList `position:"Query" name:"AuthResourceHeaderList"  type:"Json"`
+	AcceptLanguage         string                                   `position:"Query" name:"AcceptLanguage"`
+}
+
+// AddAuthResourceAuthResourceHeaderList is a repeated param struct in AddAuthResourceRequest
+type AddAuthResourceAuthResourceHeaderList struct {
+	HeaderValue  string `name:"HeaderValue"`
+	HeaderMethod string `name:"HeaderMethod"`
+	HeaderKey    string `name:"HeaderKey"`
 }
 
 // AddAuthResourceResponse is the response struct for api AddAuthResource

@@ -71,10 +71,14 @@ func (client *Client) UpdateGatewayDomainWithCallback(request *UpdateGatewayDoma
 // UpdateGatewayDomainRequest is the request struct for api UpdateGatewayDomain
 type UpdateGatewayDomainRequest struct {
 	*requests.RpcRequest
+	MseSessionId    string           `position:"Query" name:"MseSessionId"`
 	GatewayUniqueId string           `position:"Query" name:"GatewayUniqueId"`
+	TlsMax          string           `position:"Query" name:"TlsMax"`
 	Protocol        string           `position:"Query" name:"Protocol"`
 	MustHttps       requests.Boolean `position:"Query" name:"MustHttps"`
+	Http2           string           `position:"Query" name:"Http2"`
 	Id              requests.Integer `position:"Query" name:"Id"`
+	TlsMin          string           `position:"Query" name:"TlsMin"`
 	CertIdentifier  string           `position:"Query" name:"CertIdentifier"`
 	AcceptLanguage  string           `position:"Query" name:"AcceptLanguage"`
 }

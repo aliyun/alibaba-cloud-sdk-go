@@ -71,6 +71,7 @@ func (client *Client) CreateNacosServiceWithCallback(request *CreateNacosService
 // CreateNacosServiceRequest is the request struct for api CreateNacosService
 type CreateNacosServiceRequest struct {
 	*requests.RpcRequest
+	MseSessionId     string           `position:"Query" name:"MseSessionId"`
 	Ephemeral        requests.Boolean `position:"Query" name:"Ephemeral"`
 	ClusterId        string           `position:"Query" name:"ClusterId"`
 	GroupName        string           `position:"Query" name:"GroupName"`

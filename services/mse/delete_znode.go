@@ -71,6 +71,7 @@ func (client *Client) DeleteZnodeWithCallback(request *DeleteZnodeRequest, callb
 // DeleteZnodeRequest is the request struct for api DeleteZnode
 type DeleteZnodeRequest struct {
 	*requests.RpcRequest
+	MseSessionId   string `position:"Query" name:"MseSessionId"`
 	ClusterId      string `position:"Query" name:"ClusterId"`
 	Path           string `position:"Query" name:"Path"`
 	RequestPars    string `position:"Query" name:"RequestPars"`

@@ -71,6 +71,7 @@ func (client *Client) GetMseFeatureSwitchWithCallback(request *GetMseFeatureSwit
 // GetMseFeatureSwitchRequest is the request struct for api GetMseFeatureSwitch
 type GetMseFeatureSwitchRequest struct {
 	*requests.RpcRequest
+	MseSessionId   string `position:"Query" name:"MseSessionId"`
 	AcceptLanguage string `position:"Query" name:"AcceptLanguage"`
 }
 

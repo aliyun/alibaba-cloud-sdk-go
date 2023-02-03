@@ -20,4 +20,5 @@ type IngressOptions struct {
 	EnableIngress  bool   `json:"EnableIngress" xml:"EnableIngress"`
 	IngressClass   string `json:"IngressClass" xml:"IngressClass"`
 	WatchNamespace string `json:"WatchNamespace" xml:"WatchNamespace"`
+	EnableStatus   bool   `json:"EnableStatus" xml:"EnableStatus"`
 }

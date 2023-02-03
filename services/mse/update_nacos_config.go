@@ -71,6 +71,7 @@ func (client *Client) UpdateNacosConfigWithCallback(request *UpdateNacosConfigRe
 // UpdateNacosConfigRequest is the request struct for api UpdateNacosConfig
 type UpdateNacosConfigRequest struct {
 	*requests.RpcRequest
+	MseSessionId     string `position:"Query" name:"MseSessionId"`
 	EncryptedDataKey string `position:"Query" name:"EncryptedDataKey"`
 	Type             string `position:"Query" name:"Type"`
 	Content          string `position:"Query" name:"Content"`

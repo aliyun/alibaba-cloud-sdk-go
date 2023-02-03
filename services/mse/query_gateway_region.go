@@ -71,6 +71,7 @@ func (client *Client) QueryGatewayRegionWithCallback(request *QueryGatewayRegion
 // QueryGatewayRegionRequest is the request struct for api QueryGatewayRegion
 type QueryGatewayRegionRequest struct {
 	*requests.RpcRequest
+	MseSessionId   string `position:"Query" name:"MseSessionId"`
 	AcceptLanguage string `position:"Query" name:"AcceptLanguage"`
 }
 

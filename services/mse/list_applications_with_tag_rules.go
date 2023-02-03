@@ -71,6 +71,7 @@ func (client *Client) ListApplicationsWithTagRulesWithCallback(request *ListAppl
 // ListApplicationsWithTagRulesRequest is the request struct for api ListApplicationsWithTagRules
 type ListApplicationsWithTagRulesRequest struct {
 	*requests.RpcRequest
+	MseSessionId   string           `position:"Query" name:"MseSessionId"`
 	Source         string           `position:"Query" name:"Source"`
 	PageNumber     requests.Integer `position:"Query" name:"PageNumber"`
 	AppName        string           `position:"Query" name:"AppName"`

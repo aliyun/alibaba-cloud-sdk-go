@@ -72,13 +72,17 @@ func (client *Client) UpdateConfigWithCallback(request *UpdateConfigRequest, cal
 type UpdateConfigRequest struct {
 	*requests.RpcRequest
 	OpenSuperAcl             string           `position:"Body" name:"OpenSuperAcl"`
+	MseSessionId             string           `position:"Query" name:"MseSessionId"`
 	ConfigAuthEnabled        requests.Boolean `position:"Query" name:"ConfigAuthEnabled"`
 	PassWord                 string           `position:"Query" name:"PassWord"`
+	SnapshotCount            string           `position:"Query" name:"SnapshotCount"`
 	MinSessionTimeout        string           `position:"Query" name:"MinSessionTimeout"`
 	MaxClientCnxns           string           `position:"Query" name:"MaxClientCnxns"`
 	RequestPars              string           `position:"Query" name:"RequestPars"`
 	JuteMaxbuffer            string           `position:"Query" name:"JuteMaxbuffer"`
+	NamingAuthEnabled        requests.Boolean `position:"Query" name:"NamingAuthEnabled"`
 	ConfigType               string           `position:"Query" name:"ConfigType"`
+	ExtendedTypesEnable      string           `position:"Query" name:"ExtendedTypesEnable"`
 	AutopurgeSnapRetainCount string           `position:"Query" name:"AutopurgeSnapRetainCount"`
 	MaxSessionTimeout        string           `position:"Query" name:"MaxSessionTimeout"`
 	ConfigSecretEnabled      requests.Boolean `position:"Query" name:"ConfigSecretEnabled"`

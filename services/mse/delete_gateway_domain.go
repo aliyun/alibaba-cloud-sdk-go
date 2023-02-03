@@ -71,6 +71,7 @@ func (client *Client) DeleteGatewayDomainWithCallback(request *DeleteGatewayDoma
 // DeleteGatewayDomainRequest is the request struct for api DeleteGatewayDomain
 type DeleteGatewayDomainRequest struct {
 	*requests.RpcRequest
+	MseSessionId    string `position:"Query" name:"MseSessionId"`
 	GatewayUniqueId string `position:"Query" name:"GatewayUniqueId"`
 	AcceptLanguage  string `position:"Query" name:"AcceptLanguage"`
 	Id              string `position:"Query" name:"Id"`
@@ -79,12 +80,12 @@ type DeleteGatewayDomainRequest struct {
 // DeleteGatewayDomainResponse is the response struct for api DeleteGatewayDomain
 type DeleteGatewayDomainResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	Message        string `json:"Message" xml:"Message"`
-	Code           int    `json:"Code" xml:"Code"`
-	Success        bool   `json:"Success" xml:"Success"`
-	Data           Data   `json:"Data" xml:"Data"`
+	RequestId      string                    `json:"RequestId" xml:"RequestId"`
+	HttpStatusCode int                       `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Message        string                    `json:"Message" xml:"Message"`
+	Code           int                       `json:"Code" xml:"Code"`
+	Success        bool                      `json:"Success" xml:"Success"`
+	Data           DataInDeleteGatewayDomain `json:"Data" xml:"Data"`
 }
 
 // CreateDeleteGatewayDomainRequest creates a request to invoke DeleteGatewayDomain API

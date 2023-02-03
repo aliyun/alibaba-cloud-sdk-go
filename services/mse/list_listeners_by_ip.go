@@ -71,6 +71,7 @@ func (client *Client) ListListenersByIpWithCallback(request *ListListenersByIpRe
 // ListListenersByIpRequest is the request struct for api ListListenersByIp
 type ListListenersByIpRequest struct {
 	*requests.RpcRequest
+	MseSessionId   string `position:"Query" name:"MseSessionId"`
 	Ip             string `position:"Query" name:"Ip"`
 	InstanceId     string `position:"Query" name:"InstanceId"`
 	NamespaceId    string `position:"Query" name:"NamespaceId"`

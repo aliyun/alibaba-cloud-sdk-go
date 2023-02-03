@@ -71,6 +71,7 @@ func (client *Client) DeleteNacosConfigWithCallback(request *DeleteNacosConfigRe
 // DeleteNacosConfigRequest is the request struct for api DeleteNacosConfig
 type DeleteNacosConfigRequest struct {
 	*requests.RpcRequest
+	MseSessionId   string           `position:"Query" name:"MseSessionId"`
 	InstanceId     string           `position:"Query" name:"InstanceId"`
 	DataId         string           `position:"Query" name:"DataId"`
 	NamespaceId    string           `position:"Query" name:"NamespaceId"`

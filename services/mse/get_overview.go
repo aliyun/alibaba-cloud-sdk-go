@@ -71,6 +71,7 @@ func (client *Client) GetOverviewWithCallback(request *GetOverviewRequest, callb
 // GetOverviewRequest is the request struct for api GetOverview
 type GetOverviewRequest struct {
 	*requests.RpcRequest
+	MseSessionId   string           `position:"Query" name:"MseSessionId"`
 	Period         requests.Integer `position:"Query" name:"Period"`
 	AcceptLanguage string           `position:"Query" name:"AcceptLanguage"`
 	Region         string           `position:"Query" name:"Region"`

@@ -71,6 +71,7 @@ func (client *Client) RestartClusterWithCallback(request *RestartClusterRequest,
 // RestartClusterRequest is the request struct for api RestartCluster
 type RestartClusterRequest struct {
 	*requests.RpcRequest
+	MseSessionId   string `position:"Query" name:"MseSessionId"`
 	ClusterId      string `position:"Query" name:"ClusterId"`
 	PodNameList    string `position:"Query" name:"PodNameList"`
 	InstanceId     string `position:"Query" name:"InstanceId"`

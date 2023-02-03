@@ -71,11 +71,12 @@ func (client *Client) ImportServicesWithCallback(request *ImportServicesRequest,
 // ImportServicesRequest is the request struct for api ImportServices
 type ImportServicesRequest struct {
 	*requests.RpcRequest
-	SourceId        string                       `position:"Query" name:"SourceId"`
+	MseSessionId    string                       `position:"Query" name:"MseSessionId"`
 	GatewayUniqueId string                       `position:"Query" name:"GatewayUniqueId"`
 	ServiceList     *[]ImportServicesServiceList `position:"Query" name:"ServiceList"  type:"Json"`
-	AcceptLanguage  string                       `position:"Query" name:"AcceptLanguage"`
+	TlsSetting      string                       `position:"Query" name:"TlsSetting"`
 	SourceType      string                       `position:"Query" name:"SourceType"`
+	AcceptLanguage  string                       `position:"Query" name:"AcceptLanguage"`
 }
 
 // ImportServicesServiceList is a repeated param struct in ImportServicesRequest

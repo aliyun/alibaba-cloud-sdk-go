@@ -71,9 +71,13 @@ func (client *Client) AddGatewayDomainWithCallback(request *AddGatewayDomainRequ
 // AddGatewayDomainRequest is the request struct for api AddGatewayDomain
 type AddGatewayDomainRequest struct {
 	*requests.RpcRequest
+	MseSessionId    string           `position:"Query" name:"MseSessionId"`
 	GatewayUniqueId string           `position:"Query" name:"GatewayUniqueId"`
+	TlsMax          string           `position:"Query" name:"TlsMax"`
 	Protocol        string           `position:"Query" name:"Protocol"`
 	MustHttps       requests.Boolean `position:"Query" name:"MustHttps"`
+	Http2           string           `position:"Query" name:"Http2"`
+	TlsMin          string           `position:"Query" name:"TlsMin"`
 	CertIdentifier  string           `position:"Query" name:"CertIdentifier"`
 	Name            string           `position:"Query" name:"Name"`
 	AcceptLanguage  string           `position:"Query" name:"AcceptLanguage"`

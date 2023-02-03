@@ -71,6 +71,7 @@ func (client *Client) OfflineGatewayRouteWithCallback(request *OfflineGatewayRou
 // OfflineGatewayRouteRequest is the request struct for api OfflineGatewayRoute
 type OfflineGatewayRouteRequest struct {
 	*requests.RpcRequest
+	MseSessionId    string `position:"Query" name:"MseSessionId"`
 	GatewayUniqueId string `position:"Query" name:"GatewayUniqueId"`
 	RouteId         string `position:"Query" name:"RouteId"`
 	AcceptLanguage  string `position:"Query" name:"AcceptLanguage"`

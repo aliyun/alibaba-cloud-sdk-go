@@ -71,6 +71,7 @@ func (client *Client) DeleteGatewayRouteWithCallback(request *DeleteGatewayRoute
 // DeleteGatewayRouteRequest is the request struct for api DeleteGatewayRoute
 type DeleteGatewayRouteRequest struct {
 	*requests.RpcRequest
+	MseSessionId    string `position:"Query" name:"MseSessionId"`
 	GatewayUniqueId string `position:"Query" name:"GatewayUniqueId"`
 	RouteId         string `position:"Query" name:"RouteId"`
 	AcceptLanguage  string `position:"Query" name:"AcceptLanguage"`
@@ -79,12 +80,12 @@ type DeleteGatewayRouteRequest struct {
 // DeleteGatewayRouteResponse is the response struct for api DeleteGatewayRoute
 type DeleteGatewayRouteResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	Message        string `json:"Message" xml:"Message"`
-	Code           int    `json:"Code" xml:"Code"`
-	Success        bool   `json:"Success" xml:"Success"`
-	Data           Data   `json:"Data" xml:"Data"`
+	RequestId      string                   `json:"RequestId" xml:"RequestId"`
+	HttpStatusCode int                      `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Message        string                   `json:"Message" xml:"Message"`
+	Code           int                      `json:"Code" xml:"Code"`
+	Success        bool                     `json:"Success" xml:"Success"`
+	Data           DataInDeleteGatewayRoute `json:"Data" xml:"Data"`
 }
 
 // CreateDeleteGatewayRouteRequest creates a request to invoke DeleteGatewayRoute API

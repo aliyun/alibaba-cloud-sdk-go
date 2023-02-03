@@ -71,13 +71,17 @@ func (client *Client) AddBlackWhiteListWithCallback(request *AddBlackWhiteListRe
 // AddBlackWhiteListRequest is the request struct for api AddBlackWhiteList
 type AddBlackWhiteListRequest struct {
 	*requests.RpcRequest
-	GatewayUniqueId string           `position:"Query" name:"GatewayUniqueId"`
-	Type            string           `position:"Query" name:"Type"`
-	Content         string           `position:"Query" name:"Content"`
-	IsWhite         requests.Boolean `position:"Query" name:"IsWhite"`
-	ResourceType    string           `position:"Query" name:"ResourceType"`
-	AcceptLanguage  string           `position:"Query" name:"AcceptLanguage"`
-	Status          string           `position:"Query" name:"Status"`
+	Note               string           `position:"Query" name:"Note"`
+	MseSessionId       string           `position:"Query" name:"MseSessionId"`
+	GatewayUniqueId    string           `position:"Query" name:"GatewayUniqueId"`
+	Type               string           `position:"Query" name:"Type"`
+	Content            string           `position:"Query" name:"Content"`
+	IsWhite            requests.Boolean `position:"Query" name:"IsWhite"`
+	ResourceIdJsonList string           `position:"Query" name:"ResourceIdJsonList"`
+	ResourceType       string           `position:"Query" name:"ResourceType"`
+	Name               string           `position:"Query" name:"Name"`
+	AcceptLanguage     string           `position:"Query" name:"AcceptLanguage"`
+	Status             string           `position:"Query" name:"Status"`
 }
 
 // AddBlackWhiteListResponse is the response struct for api AddBlackWhiteList

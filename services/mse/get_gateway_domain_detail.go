@@ -71,6 +71,7 @@ func (client *Client) GetGatewayDomainDetailWithCallback(request *GetGatewayDoma
 // GetGatewayDomainDetailRequest is the request struct for api GetGatewayDomainDetail
 type GetGatewayDomainDetailRequest struct {
 	*requests.RpcRequest
+	MseSessionId    string `position:"Query" name:"MseSessionId"`
 	GatewayUniqueId string `position:"Query" name:"GatewayUniqueId"`
 	AcceptLanguage  string `position:"Query" name:"AcceptLanguage"`
 	Id              string `position:"Query" name:"Id"`
@@ -79,12 +80,12 @@ type GetGatewayDomainDetailRequest struct {
 // GetGatewayDomainDetailResponse is the response struct for api GetGatewayDomainDetail
 type GetGatewayDomainDetailResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	Message        string `json:"Message" xml:"Message"`
-	Code           int    `json:"Code" xml:"Code"`
-	Success        bool   `json:"Success" xml:"Success"`
-	Data           Data   `json:"Data" xml:"Data"`
+	RequestId      string                       `json:"RequestId" xml:"RequestId"`
+	HttpStatusCode int                          `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Message        string                       `json:"Message" xml:"Message"`
+	Code           int                          `json:"Code" xml:"Code"`
+	Success        bool                         `json:"Success" xml:"Success"`
+	Data           DataInGetGatewayDomainDetail `json:"Data" xml:"Data"`
 }
 
 // CreateGetGatewayDomainDetailRequest creates a request to invoke GetGatewayDomainDetail API

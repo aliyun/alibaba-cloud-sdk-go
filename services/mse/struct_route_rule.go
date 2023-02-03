@@ -26,6 +26,6 @@ type RouteRule struct {
 	Rules       string `json:"Rules" xml:"Rules"`
 	Id          int64  `json:"Id" xml:"Id"`
 	Rate        int    `json:"Rate" xml:"Rate"`
-	GmtModified int64  `json:"GmtModified" xml:"GmtModified"`
+	GmtModified string `json:"GmtModified" xml:"GmtModified"`
 	Enable      bool   `json:"Enable" xml:"Enable"`
 }

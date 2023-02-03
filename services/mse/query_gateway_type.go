@@ -71,6 +71,7 @@ func (client *Client) QueryGatewayTypeWithCallback(request *QueryGatewayTypeRequ
 // QueryGatewayTypeRequest is the request struct for api QueryGatewayType
 type QueryGatewayTypeRequest struct {
 	*requests.RpcRequest
+	MseSessionId   string `position:"Query" name:"MseSessionId"`
 	AcceptLanguage string `position:"Query" name:"AcceptLanguage"`
 }
 

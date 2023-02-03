@@ -71,6 +71,7 @@ func (client *Client) ListEurekaInstancesWithCallback(request *ListEurekaInstanc
 // ListEurekaInstancesRequest is the request struct for api ListEurekaInstances
 type ListEurekaInstancesRequest struct {
 	*requests.RpcRequest
+	MseSessionId   string           `position:"Query" name:"MseSessionId"`
 	ClusterId      string           `position:"Query" name:"ClusterId"`
 	PageNum        requests.Integer `position:"Query" name:"PageNum"`
 	RequestPars    string           `position:"Query" name:"RequestPars"`

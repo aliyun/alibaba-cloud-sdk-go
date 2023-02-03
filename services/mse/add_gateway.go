@@ -71,6 +71,7 @@ func (client *Client) AddGatewayWithCallback(request *AddGatewayRequest, callbac
 // AddGatewayRequest is the request struct for api AddGateway
 type AddGatewayRequest struct {
 	*requests.RpcRequest
+	MseSessionId               string           `position:"Query" name:"MseSessionId"`
 	InternetSlbSpec            string           `position:"Query" name:"InternetSlbSpec"`
 	EnableXtrace               requests.Boolean `position:"Query" name:"EnableXtrace"`
 	XtraceRatio                string           `position:"Query" name:"XtraceRatio"`
@@ -79,13 +80,21 @@ type AddGatewayRequest struct {
 	EnableHardwareAcceleration requests.Boolean `position:"Query" name:"EnableHardwareAcceleration"`
 	EnableSls                  requests.Boolean `position:"Query" name:"EnableSls"`
 	Spec                       string           `position:"Query" name:"Spec"`
+	ResourceGroupId            string           `position:"Query" name:"ResourceGroupId"`
 	EnterpriseSecurityGroup    requests.Boolean `position:"Query" name:"EnterpriseSecurityGroup"`
+	Tag                        *[]AddGatewayTag `position:"Query" name:"Tag"  type:"Repeated"`
 	Vpc                        string           `position:"Query" name:"Vpc"`
 	VSwitchId                  string           `position:"Query" name:"VSwitchId"`
 	SlbSpec                    string           `position:"Query" name:"SlbSpec"`
 	Name                       string           `position:"Query" name:"Name"`
 	AcceptLanguage             string           `position:"Query" name:"AcceptLanguage"`
 	Region                     string           `position:"Query" name:"Region"`
+}
+
+// AddGatewayTag is a repeated param struct in AddGatewayRequest
+type AddGatewayTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // AddGatewayResponse is the response struct for api AddGateway

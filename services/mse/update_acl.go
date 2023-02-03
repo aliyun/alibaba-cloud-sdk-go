@@ -71,6 +71,7 @@ func (client *Client) UpdateAclWithCallback(request *UpdateAclRequest, callback 
 // UpdateAclRequest is the request struct for api UpdateAcl
 type UpdateAclRequest struct {
 	*requests.RpcRequest
+	MseSessionId   string `position:"Query" name:"MseSessionId"`
 	ClusterId      string `position:"Query" name:"ClusterId"`
 	AclEntryList   string `position:"Query" name:"AclEntryList"`
 	InstanceId     string `position:"Query" name:"InstanceId"`

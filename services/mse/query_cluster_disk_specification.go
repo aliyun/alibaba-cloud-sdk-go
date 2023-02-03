@@ -71,6 +71,7 @@ func (client *Client) QueryClusterDiskSpecificationWithCallback(request *QueryCl
 // QueryClusterDiskSpecificationRequest is the request struct for api QueryClusterDiskSpecification
 type QueryClusterDiskSpecificationRequest struct {
 	*requests.RpcRequest
+	MseSessionId   string `position:"Query" name:"MseSessionId"`
 	ClusterType    string `position:"Query" name:"ClusterType"`
 	AcceptLanguage string `position:"Query" name:"AcceptLanguage"`
 }

@@ -71,6 +71,7 @@ func (client *Client) ListEngineNamespacesWithCallback(request *ListEngineNamesp
 // ListEngineNamespacesRequest is the request struct for api ListEngineNamespaces
 type ListEngineNamespacesRequest struct {
 	*requests.RpcRequest
+	MseSessionId   string           `position:"Query" name:"MseSessionId"`
 	ClusterId      string           `position:"Query" name:"ClusterId"`
 	PageNum        requests.Integer `position:"Query" name:"PageNum"`
 	InstanceId     string           `position:"Query" name:"InstanceId"`

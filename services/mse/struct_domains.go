@@ -26,12 +26,15 @@ type Domains struct {
 	Issuer         string  `json:"Issuer" xml:"Issuer"`
 	GmtBefore      string  `json:"GmtBefore" xml:"GmtBefore"`
 	GatewayId      int64   `json:"GatewayId" xml:"GatewayId"`
+	TlsMax         string  `json:"TlsMax" xml:"TlsMax"`
 	Algorithm      string  `json:"Algorithm" xml:"Algorithm"`
 	GmtModified    string  `json:"GmtModified" xml:"GmtModified"`
 	Id             int64   `json:"Id" xml:"Id"`
 	CertIdentifier string  `json:"CertIdentifier" xml:"CertIdentifier"`
+	TlsMin         string  `json:"TlsMin" xml:"TlsMin"`
 	GmtAfter       string  `json:"GmtAfter" xml:"GmtAfter"`
 	GmtCreate      string  `json:"GmtCreate" xml:"GmtCreate"`
+	Http2          string  `json:"Http2" xml:"Http2"`
 	AfterDate      string  `json:"AfterDate" xml:"AfterDate"`
 	BeforeDate     string  `json:"BeforeDate" xml:"BeforeDate"`
 	MustHttps      bool    `json:"MustHttps" xml:"MustHttps"`

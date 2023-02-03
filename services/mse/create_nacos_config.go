@@ -71,16 +71,17 @@ func (client *Client) CreateNacosConfigWithCallback(request *CreateNacosConfigRe
 // CreateNacosConfigRequest is the request struct for api CreateNacosConfig
 type CreateNacosConfigRequest struct {
 	*requests.RpcRequest
+	MseSessionId   string `position:"Query" name:"MseSessionId"`
 	Type           string `position:"Query" name:"Type"`
 	Content        string `position:"Query" name:"Content"`
+	AppName        string `position:"Query" name:"AppName"`
+	NamespaceId    string `position:"Query" name:"NamespaceId"`
+	Group          string `position:"Query" name:"Group"`
 	Tags           string `position:"Query" name:"Tags"`
 	BetaIps        string `position:"Query" name:"BetaIps"`
 	InstanceId     string `position:"Query" name:"InstanceId"`
 	DataId         string `position:"Query" name:"DataId"`
-	AppName        string `position:"Query" name:"AppName"`
-	NamespaceId    string `position:"Query" name:"NamespaceId"`
 	AcceptLanguage string `position:"Query" name:"AcceptLanguage"`
-	Group          string `position:"Query" name:"Group"`
 	Desc           string `position:"Query" name:"Desc"`
 }
 

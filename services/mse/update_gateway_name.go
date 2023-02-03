@@ -71,6 +71,7 @@ func (client *Client) UpdateGatewayNameWithCallback(request *UpdateGatewayNameRe
 // UpdateGatewayNameRequest is the request struct for api UpdateGatewayName
 type UpdateGatewayNameRequest struct {
 	*requests.RpcRequest
+	MseSessionId    string `position:"Query" name:"MseSessionId"`
 	GatewayUniqueId string `position:"Query" name:"GatewayUniqueId"`
 	Name            string `position:"Query" name:"Name"`
 	AcceptLanguage  string `position:"Query" name:"AcceptLanguage"`

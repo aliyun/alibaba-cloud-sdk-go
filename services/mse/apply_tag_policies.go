@@ -71,6 +71,7 @@ func (client *Client) ApplyTagPoliciesWithCallback(request *ApplyTagPoliciesRequ
 // ApplyTagPoliciesRequest is the request struct for api ApplyTagPolicies
 type ApplyTagPoliciesRequest struct {
 	*requests.RpcRequest
+	MseSessionId   string           `position:"Query" name:"MseSessionId"`
 	Rules          string           `position:"Query" name:"Rules"`
 	Source         string           `position:"Query" name:"Source"`
 	NamespaceId    string           `position:"Query" name:"NamespaceId"`

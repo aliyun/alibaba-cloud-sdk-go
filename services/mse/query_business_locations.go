@@ -71,6 +71,7 @@ func (client *Client) QueryBusinessLocationsWithCallback(request *QueryBusinessL
 // QueryBusinessLocationsRequest is the request struct for api QueryBusinessLocations
 type QueryBusinessLocationsRequest struct {
 	*requests.RpcRequest
+	MseSessionId   string `position:"Query" name:"MseSessionId"`
 	AcceptLanguage string `position:"Query" name:"AcceptLanguage"`
 }
 

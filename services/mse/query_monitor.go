@@ -72,6 +72,7 @@ func (client *Client) QueryMonitorWithCallback(request *QueryMonitorRequest, cal
 type QueryMonitorRequest struct {
 	*requests.RpcRequest
 	MonitorType    string           `position:"Query" name:"MonitorType"`
+	MseSessionId   string           `position:"Query" name:"MseSessionId"`
 	EndTime        requests.Integer `position:"Query" name:"EndTime"`
 	ClusterId      string           `position:"Query" name:"ClusterId"`
 	StartTime      requests.Integer `position:"Query" name:"StartTime"`
@@ -84,11 +85,11 @@ type QueryMonitorRequest struct {
 // QueryMonitorResponse is the response struct for api QueryMonitor
 type QueryMonitorResponse struct {
 	*responses.BaseResponse
-	Message   string `json:"Message" xml:"Message"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
-	Success   bool   `json:"Success" xml:"Success"`
-	Data      []Data `json:"Data" xml:"Data"`
+	Message   string     `json:"Message" xml:"Message"`
+	RequestId string     `json:"RequestId" xml:"RequestId"`
+	ErrorCode string     `json:"ErrorCode" xml:"ErrorCode"`
+	Success   bool       `json:"Success" xml:"Success"`
+	Data      []DataItem `json:"Data" xml:"Data"`
 }
 
 // CreateQueryMonitorRequest creates a request to invoke QueryMonitor API

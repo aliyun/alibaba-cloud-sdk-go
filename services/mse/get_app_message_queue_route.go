@@ -71,6 +71,7 @@ func (client *Client) GetAppMessageQueueRouteWithCallback(request *GetAppMessage
 // GetAppMessageQueueRouteRequest is the request struct for api GetAppMessageQueueRoute
 type GetAppMessageQueueRouteRequest struct {
 	*requests.RpcRequest
+	MseSessionId   string `position:"Query" name:"MseSessionId"`
 	AppId          string `position:"Query" name:"AppId"`
 	AcceptLanguage string `position:"Query" name:"AcceptLanguage"`
 	Region         string `position:"Query" name:"Region"`

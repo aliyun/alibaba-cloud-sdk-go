@@ -71,6 +71,7 @@ func (client *Client) DeleteSwimmingLaneWithCallback(request *DeleteSwimmingLane
 // DeleteSwimmingLaneRequest is the request struct for api DeleteSwimmingLane
 type DeleteSwimmingLaneRequest struct {
 	*requests.RpcRequest
+	MseSessionId   string           `position:"Query" name:"MseSessionId"`
 	LaneId         requests.Integer `position:"Query" name:"LaneId"`
 	AcceptLanguage string           `position:"Query" name:"AcceptLanguage"`
 }

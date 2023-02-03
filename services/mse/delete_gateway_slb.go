@@ -72,9 +72,10 @@ func (client *Client) DeleteGatewaySlbWithCallback(request *DeleteGatewaySlbRequ
 type DeleteGatewaySlbRequest struct {
 	*requests.RpcRequest
 	DeleteSlb       requests.Boolean `position:"Query" name:"DeleteSlb"`
+	MseSessionId    string           `position:"Query" name:"MseSessionId"`
 	GatewayUniqueId string           `position:"Query" name:"GatewayUniqueId"`
-	AcceptLanguage  string           `position:"Query" name:"AcceptLanguage"`
 	Id              string           `position:"Query" name:"Id"`
+	AcceptLanguage  string           `position:"Query" name:"AcceptLanguage"`
 }
 
 // DeleteGatewaySlbResponse is the response struct for api DeleteGatewaySlb

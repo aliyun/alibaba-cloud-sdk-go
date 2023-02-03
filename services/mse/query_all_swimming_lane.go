@@ -71,6 +71,7 @@ func (client *Client) QueryAllSwimmingLaneWithCallback(request *QueryAllSwimming
 // QueryAllSwimmingLaneRequest is the request struct for api QueryAllSwimmingLane
 type QueryAllSwimmingLaneRequest struct {
 	*requests.RpcRequest
+	MseSessionId   string           `position:"Query" name:"MseSessionId"`
 	GroupId        requests.Integer `position:"Query" name:"GroupId"`
 	AcceptLanguage string           `position:"Query" name:"AcceptLanguage"`
 }

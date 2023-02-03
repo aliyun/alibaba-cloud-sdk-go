@@ -17,12 +17,15 @@ package mse
 
 // RouteServicesItem is a nested struct in mse response
 type RouteServicesItem struct {
-	Name        string `json:"Name" xml:"Name"`
-	Percent     int    `json:"Percent" xml:"Percent"`
-	SourceType  string `json:"SourceType" xml:"SourceType"`
-	Namespace   string `json:"Namespace" xml:"Namespace"`
-	ServiceId   int64  `json:"ServiceId" xml:"ServiceId"`
-	Version     string `json:"Version" xml:"Version"`
-	GroupName   string `json:"GroupName" xml:"GroupName"`
-	ServiceName string `json:"ServiceName" xml:"ServiceName"`
+	Name                string              `json:"Name" xml:"Name"`
+	AgreementType       string              `json:"AgreementType" xml:"AgreementType"`
+	ServicePort         int                 `json:"ServicePort" xml:"ServicePort"`
+	Percent             int                 `json:"Percent" xml:"Percent"`
+	SourceType          string              `json:"SourceType" xml:"SourceType"`
+	Namespace           string              `json:"Namespace" xml:"Namespace"`
+	ServiceId           int64               `json:"ServiceId" xml:"ServiceId"`
+	Version             string              `json:"Version" xml:"Version"`
+	GroupName           string              `json:"GroupName" xml:"GroupName"`
+	ServiceName         string              `json:"ServiceName" xml:"ServiceName"`
+	HttpDubboTranscoder HttpDubboTranscoder `json:"HttpDubboTranscoder" xml:"HttpDubboTranscoder"`
 }

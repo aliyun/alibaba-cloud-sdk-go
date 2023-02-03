@@ -17,28 +17,30 @@ package mse
 
 // Routes is a nested struct in mse response
 type Routes struct {
-	Id                 int64               `json:"Id" xml:"Id"`
-	Name               string              `json:"Name" xml:"Name"`
-	GatewayUniqueId    string              `json:"GatewayUniqueId" xml:"GatewayUniqueId"`
-	GatewayId          int64               `json:"GatewayId" xml:"GatewayId"`
-	Status             int                 `json:"Status" xml:"Status"`
-	RouteOrder         int                 `json:"RouteOrder" xml:"RouteOrder"`
-	DefaultServiceName string              `json:"DefaultServiceName" xml:"DefaultServiceName"`
-	DefaultServiceId   int64               `json:"DefaultServiceId" xml:"DefaultServiceId"`
-	Predicates         string              `json:"Predicates" xml:"Predicates"`
-	GmtCreate          string              `json:"GmtCreate" xml:"GmtCreate"`
-	GmtModified        string              `json:"GmtModified" xml:"GmtModified"`
-	Services           string              `json:"Services" xml:"Services"`
-	DomainId           int64               `json:"DomainId" xml:"DomainId"`
-	DomainName         string              `json:"DomainName" xml:"DomainName"`
-	DestinationType    string              `json:"DestinationType" xml:"DestinationType"`
-	Type               string              `json:"Type" xml:"Type"`
-	EnableWaf          string              `json:"EnableWaf" xml:"EnableWaf"`
-	DomainIdList       []int64             `json:"DomainIdList" xml:"DomainIdList"`
-	DomainNameList     []string            `json:"DomainNameList" xml:"DomainNameList"`
-	RoutePredicates    RoutePredicates     `json:"RoutePredicates" xml:"RoutePredicates"`
-	DirectResponse     DirectResponse      `json:"DirectResponse" xml:"DirectResponse"`
-	Redirect           Redirect            `json:"Redirect" xml:"Redirect"`
-	Comment            Comment             `json:"Comment" xml:"Comment"`
-	RouteServices      []RouteServicesItem `json:"RouteServices" xml:"RouteServices"`
+	Id                 int64                  `json:"Id" xml:"Id"`
+	Name               string                 `json:"Name" xml:"Name"`
+	GatewayUniqueId    string                 `json:"GatewayUniqueId" xml:"GatewayUniqueId"`
+	GatewayId          int64                  `json:"GatewayId" xml:"GatewayId"`
+	Status             int                    `json:"Status" xml:"Status"`
+	RouteOrder         int                    `json:"RouteOrder" xml:"RouteOrder"`
+	DefaultServiceName string                 `json:"DefaultServiceName" xml:"DefaultServiceName"`
+	DefaultServiceId   int64                  `json:"DefaultServiceId" xml:"DefaultServiceId"`
+	Predicates         string                 `json:"Predicates" xml:"Predicates"`
+	GmtCreate          string                 `json:"GmtCreate" xml:"GmtCreate"`
+	GmtModified        string                 `json:"GmtModified" xml:"GmtModified"`
+	Services           string                 `json:"Services" xml:"Services"`
+	DomainId           int64                  `json:"DomainId" xml:"DomainId"`
+	DomainName         string                 `json:"DomainName" xml:"DomainName"`
+	DestinationType    string                 `json:"DestinationType" xml:"DestinationType"`
+	Type               string                 `json:"Type" xml:"Type"`
+	EnableWaf          string                 `json:"EnableWaf" xml:"EnableWaf"`
+	Fallback           bool                   `json:"Fallback" xml:"Fallback"`
+	DomainIdList       []int64                `json:"DomainIdList" xml:"DomainIdList"`
+	DomainNameList     []string               `json:"DomainNameList" xml:"DomainNameList"`
+	RoutePredicates    RoutePredicates        `json:"RoutePredicates" xml:"RoutePredicates"`
+	DirectResponse     DirectResponse         `json:"DirectResponse" xml:"DirectResponse"`
+	Redirect           Redirect               `json:"Redirect" xml:"Redirect"`
+	Comment            Comment                `json:"Comment" xml:"Comment"`
+	RouteServices      []RouteServicesItem    `json:"RouteServices" xml:"RouteServices"`
+	FallbackServices   []FallbackServicesItem `json:"FallbackServices" xml:"FallbackServices"`
 }

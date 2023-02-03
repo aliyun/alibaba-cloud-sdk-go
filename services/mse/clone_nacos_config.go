@@ -71,6 +71,7 @@ func (client *Client) CloneNacosConfigWithCallback(request *CloneNacosConfigRequ
 // CloneNacosConfigRequest is the request struct for api CloneNacosConfig
 type CloneNacosConfigRequest struct {
 	*requests.RpcRequest
+	MseSessionId      string `position:"Query" name:"MseSessionId"`
 	TargetNamespaceId string `position:"Query" name:"TargetNamespaceId"`
 	InstanceId        string `position:"Query" name:"InstanceId"`
 	AcceptLanguage    string `position:"Query" name:"AcceptLanguage"`
