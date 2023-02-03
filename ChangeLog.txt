@@ -1,3 +1,7 @@
+2023-02-03 Version: v1.62.152
+- Generated 2019-09-30 for `imageenhan`.
+- Release GenerateImageWithText GenerateImageWithTextAndImage.
+
 2023-02-03 Version: v1.62.151
 - Generated 2019-12-30 for `facebody`.
 - Release CompareFaceWithMask DetectInfraredLivingFace.
