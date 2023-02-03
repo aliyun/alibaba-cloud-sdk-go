@@ -17,12 +17,15 @@ package facebody
 
 // ElementsItem is a nested struct in facebody response
 type ElementsItem struct {
-	Category    string    `json:"Category" xml:"Category"`
-	TemplateId  string    `json:"TemplateId" xml:"TemplateId"`
-	TemplateURL string    `json:"TemplateURL" xml:"TemplateURL"`
-	UpdateTime  string    `json:"UpdateTime" xml:"UpdateTime"`
-	Confidence  float64   `json:"Confidence" xml:"Confidence"`
-	UserId      string    `json:"UserId" xml:"UserId"`
-	CreateTime  string    `json:"CreateTime" xml:"CreateTime"`
-	Box         []float64 `json:"Box" xml:"Box"`
+	Category    string        `json:"Category" xml:"Category"`
+	TemplateId  string        `json:"TemplateId" xml:"TemplateId"`
+	TemplateURL string        `json:"TemplateURL" xml:"TemplateURL"`
+	UpdateTime  string        `json:"UpdateTime" xml:"UpdateTime"`
+	Confidence  float64       `json:"Confidence" xml:"Confidence"`
+	UserId      string        `json:"UserId" xml:"UserId"`
+	CreateTime  string        `json:"CreateTime" xml:"CreateTime"`
+	ImageURL    string        `json:"ImageURL" xml:"ImageURL"`
+	FaceNumber  int64         `json:"FaceNumber" xml:"FaceNumber"`
+	Box         []float64     `json:"Box" xml:"Box"`
+	Results     []ResultsItem `json:"Results" xml:"Results"`
 }
