@@ -35,6 +35,7 @@ type ServiceInstance struct {
 	EndTime                   string  `json:"EndTime" xml:"EndTime"`
 	ServiceType               string  `json:"ServiceType" xml:"ServiceType"`
 	PayType                   string  `json:"PayType" xml:"PayType"`
+	IsOperated                bool    `json:"IsOperated" xml:"IsOperated"`
 	Service                   Service `json:"Service" xml:"Service"`
 	Tags                      []Tag   `json:"Tags" xml:"Tags"`
 }
