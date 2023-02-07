@@ -100,7 +100,7 @@ func CreateQueryInstanceBillRequest() (request *QueryInstanceBillRequest) {
 	request = &QueryInstanceBillRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "QueryInstanceBill", "", "")
+	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "QueryInstanceBill", "bssopenapi", "openAPI")
 	request.Method = requests.POST
 	return
 }

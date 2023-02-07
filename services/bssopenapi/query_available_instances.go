@@ -101,7 +101,7 @@ func CreateQueryAvailableInstancesRequest() (request *QueryAvailableInstancesReq
 	request = &QueryAvailableInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "QueryAvailableInstances", "", "")
+	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "QueryAvailableInstances", "bssopenapi", "openAPI")
 	request.Method = requests.POST
 	return
 }

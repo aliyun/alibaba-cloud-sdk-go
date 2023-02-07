@@ -72,8 +72,8 @@ func (client *Client) TagResourcesWithCallback(request *TagResourcesRequest, cal
 type TagResourcesRequest struct {
 	*requests.RpcRequest
 	ResourceId   *[]string          `position:"Query" name:"ResourceId"  type:"Repeated"`
-	Tag          *[]TagResourcesTag `position:"Query" name:"Tag"  type:"Repeated"`
 	ResourceType string             `position:"Query" name:"ResourceType"`
+	Tag          *[]TagResourcesTag `position:"Query" name:"Tag"  type:"Repeated"`
 }
 
 // TagResourcesTag is a repeated param struct in TagResourcesRequest
@@ -97,7 +97,7 @@ func CreateTagResourcesRequest() (request *TagResourcesRequest) {
 	request = &TagResourcesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "TagResources", "", "")
+	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "TagResources", "bssopenapi", "openAPI")
 	request.Method = requests.POST
 	return
 }

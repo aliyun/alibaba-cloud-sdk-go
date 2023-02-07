@@ -90,7 +90,7 @@ func CreateCancelOrderRequest() (request *CancelOrderRequest) {
 	request = &CancelOrderRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "CancelOrder", "", "")
+	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "CancelOrder", "bssopenapi", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -73,8 +73,8 @@ type UntagResourcesRequest struct {
 	*requests.RpcRequest
 	All          requests.Boolean `position:"Query" name:"All"`
 	ResourceId   *[]string        `position:"Query" name:"ResourceId"  type:"Repeated"`
-	TagKey       *[]string        `position:"Query" name:"TagKey"  type:"Repeated"`
 	ResourceType string           `position:"Query" name:"ResourceType"`
+	TagKey       *[]string        `position:"Query" name:"TagKey"  type:"Repeated"`
 }
 
 // UntagResourcesResponse is the response struct for api UntagResources
@@ -92,7 +92,7 @@ func CreateUntagResourcesRequest() (request *UntagResourcesRequest) {
 	request = &UntagResourcesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "UntagResources", "", "")
+	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "UntagResources", "bssopenapi", "openAPI")
 	request.Method = requests.POST
 	return
 }

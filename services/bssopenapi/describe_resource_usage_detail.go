@@ -95,7 +95,7 @@ func CreateDescribeResourceUsageDetailRequest() (request *DescribeResourceUsageD
 	request = &DescribeResourceUsageDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "DescribeResourceUsageDetail", "", "")
+	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "DescribeResourceUsageDetail", "bssopenapi", "openAPI")
 	request.Method = requests.POST
 	return
 }

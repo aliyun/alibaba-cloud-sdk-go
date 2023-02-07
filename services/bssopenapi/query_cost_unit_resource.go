@@ -92,7 +92,7 @@ func CreateQueryCostUnitResourceRequest() (request *QueryCostUnitResourceRequest
 	request = &QueryCostUnitResourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "QueryCostUnitResource", "", "")
+	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "QueryCostUnitResource", "bssopenapi", "openAPI")
 	request.Method = requests.POST
 	return
 }

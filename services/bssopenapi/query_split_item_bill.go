@@ -96,7 +96,7 @@ func CreateQuerySplitItemBillRequest() (request *QuerySplitItemBillRequest) {
 	request = &QuerySplitItemBillRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "QuerySplitItemBill", "", "")
+	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "QuerySplitItemBill", "bssopenapi", "openAPI")
 	request.Method = requests.POST
 	return
 }

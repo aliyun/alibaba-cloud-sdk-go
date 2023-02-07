@@ -93,7 +93,7 @@ func CreateRefundInstanceRequest() (request *RefundInstanceRequest) {
 	request = &RefundInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "RefundInstance", "", "")
+	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "RefundInstance", "bssopenapi", "openAPI")
 	request.Method = requests.POST
 	return
 }

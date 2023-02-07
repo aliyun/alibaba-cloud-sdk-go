@@ -92,7 +92,7 @@ func CreateInquiryPriceRefundInstanceRequest() (request *InquiryPriceRefundInsta
 	request = &InquiryPriceRefundInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "InquiryPriceRefundInstance", "", "")
+	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "InquiryPriceRefundInstance", "bssopenapi", "openAPI")
 	request.Method = requests.POST
 	return
 }

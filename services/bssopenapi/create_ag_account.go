@@ -97,7 +97,7 @@ func CreateCreateAgAccountRequest() (request *CreateAgAccountRequest) {
 	request = &CreateAgAccountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "CreateAgAccount", "", "")
+	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "CreateAgAccount", "bssopenapi", "openAPI")
 	request.Method = requests.POST
 	return
 }

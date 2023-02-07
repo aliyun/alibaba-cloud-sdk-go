@@ -105,7 +105,7 @@ func CreateSetCreditLabelActionRequest() (request *SetCreditLabelActionRequest) 
 	request = &SetCreditLabelActionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "SetCreditLabelAction", "", "")
+	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "SetCreditLabelAction", "bssopenapi", "openAPI")
 	request.Method = requests.POST
 	return
 }

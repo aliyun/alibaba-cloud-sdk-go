@@ -92,7 +92,7 @@ func CreateQueryRelationListRequest() (request *QueryRelationListRequest) {
 	request = &QueryRelationListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "QueryRelationList", "", "")
+	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "QueryRelationList", "bssopenapi", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -30,6 +30,7 @@ type Instance struct {
 	TotalAmountUnit     string   `json:"TotalAmountUnit" xml:"TotalAmountUnit"`
 	SubscriptionType    string   `json:"SubscriptionType" xml:"SubscriptionType"`
 	RemainingAmountUnit string   `json:"RemainingAmountUnit" xml:"RemainingAmountUnit"`
+	CommodityCode       string   `json:"CommodityCode" xml:"CommodityCode"`
 	StopTime            string   `json:"StopTime" xml:"StopTime"`
 	Seller              string   `json:"Seller" xml:"Seller"`
 	Remark              string   `json:"Remark" xml:"Remark"`

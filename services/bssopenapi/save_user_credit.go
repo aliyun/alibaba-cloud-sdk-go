@@ -95,7 +95,7 @@ func CreateSaveUserCreditRequest() (request *SaveUserCreditRequest) {
 	request = &SaveUserCreditRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "SaveUserCredit", "", "")
+	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "SaveUserCredit", "bssopenapi", "openAPI")
 	request.Method = requests.POST
 	return
 }

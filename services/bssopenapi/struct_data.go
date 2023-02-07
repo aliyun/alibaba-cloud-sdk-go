@@ -26,9 +26,7 @@ type Data struct {
 	Quantity                    int                                                     `json:"Quantity" xml:"Quantity"`
 	MemberNickName              string                                                  `json:"MemberNickName" xml:"MemberNickName"`
 	HostName                    string                                                  `json:"HostName" xml:"HostName"`
-	TotalOutstandingAmount      float64                                                 `json:"TotalOutstandingAmount" xml:"TotalOutstandingAmount"`
 	Status                      string                                                  `json:"Status" xml:"Status"`
-	NewInvoiceAmount            float64                                                 `json:"NewInvoiceAmount" xml:"NewInvoiceAmount"`
 	Marker                      string                                                  `json:"Marker" xml:"Marker"`
 	PageSize                    int                                                     `json:"PageSize" xml:"PageSize"`
 	MybankCreditAmount          string                                                  `json:"MybankCreditAmount" xml:"MybankCreditAmount"`
@@ -55,7 +53,6 @@ type Data struct {
 	HostingStatus               string                                                  `json:"HostingStatus" xml:"HostingStatus"`
 	TotalCount                  int                                                     `json:"TotalCount" xml:"TotalCount"`
 	BillingCycle                string                                                  `json:"BillingCycle" xml:"BillingCycle"`
-	OutstandingAmount           float64                                                 `json:"OutstandingAmount" xml:"OutstandingAmount"`
 	AvailableCashAmount         string                                                  `json:"AvailableCashAmount" xml:"AvailableCashAmount"`
 	GmtModified                 int64                                                   `json:"GmtModified" xml:"GmtModified"`
 	ParentUserId                int64                                                   `json:"ParentUserId" xml:"ParentUserId"`
@@ -75,11 +72,13 @@ type Data struct {
 	Mpk                         int64                                                   `json:"Mpk" xml:"Mpk"`
 	OmsData                     []map[string]interface{}                                `json:"OmsData" xml:"OmsData"`
 	UidList                     []string                                                `json:"UidList" xml:"UidList"`
+	SkuPricePage                SkuPricePage                                            `json:"SkuPricePage" xml:"SkuPricePage"`
 	TotalUsage                  TotalUsage                                              `json:"TotalUsage" xml:"TotalUsage"`
 	TotalCoverage               TotalCoverage                                           `json:"TotalCoverage" xml:"TotalCoverage"`
 	CostUnitStatisInfo          CostUnitStatisInfo                                      `json:"CostUnitStatisInfo" xml:"CostUnitStatisInfo"`
 	CostUnit                    CostUnit                                                `json:"CostUnit" xml:"CostUnit"`
 	Modules                     Modules                                                 `json:"Modules" xml:"Modules"`
+	CommodityList               []CommodityDTO                                          `json:"CommodityList" xml:"CommodityList"`
 	Items                       []ItemInDescribeSavingsPlansUsageDetail                 `json:"Items" xml:"Items"`
 	PeriodCoverage              []Item                                                  `json:"PeriodCoverage" xml:"PeriodCoverage"`
 	CustomerInvoiceAddressList  CustomerInvoiceAddressList                              `json:"CustomerInvoiceAddressList" xml:"CustomerInvoiceAddressList"`
@@ -92,6 +91,7 @@ type Data struct {
 	AccountTransactionsList     AccountTransactionsListInQueryAccountTransactionDetails `json:"AccountTransactionsList" xml:"AccountTransactionsList"`
 	CostUnitDtoList             []CostUnitDtoListItem                                   `json:"CostUnitDtoList" xml:"CostUnitDtoList"`
 	EvaluateList                EvaluateList                                            `json:"EvaluateList" xml:"EvaluateList"`
+	PriceEntityInfoList         []PriceEntityInfoDTO                                    `json:"PriceEntityInfoList" xml:"PriceEntityInfoList"`
 	CustomerInvoiceList         CustomerInvoiceList                                     `json:"CustomerInvoiceList" xml:"CustomerInvoiceList"`
 	InstanceList                []Instance                                              `json:"InstanceList" xml:"InstanceList"`
 	Promotions                  Promotions                                              `json:"Promotions" xml:"Promotions"`

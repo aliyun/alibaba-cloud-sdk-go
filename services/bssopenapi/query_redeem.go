@@ -93,7 +93,7 @@ func CreateQueryRedeemRequest() (request *QueryRedeemRequest) {
 	request = &QueryRedeemRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "QueryRedeem", "", "")
+	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "QueryRedeem", "bssopenapi", "openAPI")
 	request.Method = requests.GET
 	return
 }

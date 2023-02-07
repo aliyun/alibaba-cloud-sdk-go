@@ -107,7 +107,7 @@ func CreateDescribeSplitItemBillRequest() (request *DescribeSplitItemBillRequest
 	request = &DescribeSplitItemBillRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "DescribeSplitItemBill", "", "")
+	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "DescribeSplitItemBill", "bssopenapi", "openAPI")
 	request.Method = requests.POST
 	return
 }

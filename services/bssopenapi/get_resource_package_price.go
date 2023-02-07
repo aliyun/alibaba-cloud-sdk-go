@@ -97,7 +97,7 @@ func CreateGetResourcePackagePriceRequest() (request *GetResourcePackagePriceReq
 	request = &GetResourcePackagePriceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "GetResourcePackagePrice", "", "")
+	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "GetResourcePackagePrice", "bssopenapi", "openAPI")
 	request.Method = requests.POST
 	return
 }

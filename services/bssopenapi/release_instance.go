@@ -95,7 +95,7 @@ func CreateReleaseInstanceRequest() (request *ReleaseInstanceRequest) {
 	request = &ReleaseInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "ReleaseInstance", "", "")
+	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "ReleaseInstance", "bssopenapi", "openAPI")
 	request.Method = requests.POST
 	return
 }

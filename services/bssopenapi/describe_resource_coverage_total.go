@@ -93,7 +93,7 @@ func CreateDescribeResourceCoverageTotalRequest() (request *DescribeResourceCove
 	request = &DescribeResourceCoverageTotalRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "DescribeResourceCoverageTotal", "", "")
+	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "DescribeResourceCoverageTotal", "bssopenapi", "openAPI")
 	request.Method = requests.POST
 	return
 }

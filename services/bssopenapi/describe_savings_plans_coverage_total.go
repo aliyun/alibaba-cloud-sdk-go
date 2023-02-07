@@ -92,7 +92,7 @@ func CreateDescribeSavingsPlansCoverageTotalRequest() (request *DescribeSavingsP
 	request = &DescribeSavingsPlansCoverageTotalRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "DescribeSavingsPlansCoverageTotal", "", "")
+	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "DescribeSavingsPlansCoverageTotal", "bssopenapi", "openAPI")
 	request.Method = requests.POST
 	return
 }

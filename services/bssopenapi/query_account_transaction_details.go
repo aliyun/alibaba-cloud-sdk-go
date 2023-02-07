@@ -97,7 +97,7 @@ func CreateQueryAccountTransactionDetailsRequest() (request *QueryAccountTransac
 	request = &QueryAccountTransactionDetailsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "QueryAccountTransactionDetails", "", "")
+	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "QueryAccountTransactionDetails", "bssopenapi", "openAPI")
 	request.Method = requests.POST
 	return
 }

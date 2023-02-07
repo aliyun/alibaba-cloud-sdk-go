@@ -101,7 +101,7 @@ func CreateQuerySavingsPlansInstanceRequest() (request *QuerySavingsPlansInstanc
 	request = &QuerySavingsPlansInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "QuerySavingsPlansInstance", "", "")
+	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "QuerySavingsPlansInstance", "bssopenapi", "openAPI")
 	request.Method = requests.POST
 	return
 }

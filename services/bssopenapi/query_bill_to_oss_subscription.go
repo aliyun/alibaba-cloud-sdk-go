@@ -88,7 +88,7 @@ func CreateQueryBillToOSSSubscriptionRequest() (request *QueryBillToOSSSubscript
 	request = &QueryBillToOSSSubscriptionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "QueryBillToOSSSubscription", "", "")
+	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "QueryBillToOSSSubscription", "bssopenapi", "openAPI")
 	request.Method = requests.POST
 	return
 }

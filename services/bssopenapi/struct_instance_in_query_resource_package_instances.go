@@ -29,5 +29,6 @@ type InstanceInQueryResourcePackageInstances struct {
 	DeductType          string             `json:"DeductType" xml:"DeductType"`
 	TotalAmountUnit     string             `json:"TotalAmountUnit" xml:"TotalAmountUnit"`
 	RemainingAmount     string             `json:"RemainingAmount" xml:"RemainingAmount"`
+	CommodityCode       string             `json:"CommodityCode" xml:"CommodityCode"`
 	ApplicableProducts  ApplicableProducts `json:"ApplicableProducts" xml:"ApplicableProducts"`
 }

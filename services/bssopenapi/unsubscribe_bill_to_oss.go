@@ -89,7 +89,7 @@ func CreateUnsubscribeBillToOSSRequest() (request *UnsubscribeBillToOSSRequest) 
 	request = &UnsubscribeBillToOSSRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "UnsubscribeBillToOSS", "", "")
+	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "UnsubscribeBillToOSS", "bssopenapi", "openAPI")
 	request.Method = requests.POST
 	return
 }

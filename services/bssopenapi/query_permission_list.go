@@ -89,7 +89,7 @@ func CreateQueryPermissionListRequest() (request *QueryPermissionListRequest) {
 	request = &QueryPermissionListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "QueryPermissionList", "", "")
+	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "QueryPermissionList", "bssopenapi", "openAPI")
 	request.Method = requests.POST
 	return
 }

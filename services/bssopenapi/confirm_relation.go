@@ -95,7 +95,7 @@ func CreateConfirmRelationRequest() (request *ConfirmRelationRequest) {
 	request = &ConfirmRelationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "ConfirmRelation", "", "")
+	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "ConfirmRelation", "bssopenapi", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -101,7 +101,7 @@ func CreateDescribeInstanceBillRequest() (request *DescribeInstanceBillRequest) 
 	request = &DescribeInstanceBillRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "DescribeInstanceBill", "", "")
+	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "DescribeInstanceBill", "bssopenapi", "openAPI")
 	request.Method = requests.POST
 	return
 }

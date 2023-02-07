@@ -97,7 +97,7 @@ func CreateModifyAccountRelationRequest() (request *ModifyAccountRelationRequest
 	request = &ModifyAccountRelationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "ModifyAccountRelation", "", "")
+	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "ModifyAccountRelation", "bssopenapi", "openAPI")
 	request.Method = requests.POST
 	return
 }

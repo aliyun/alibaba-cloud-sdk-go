@@ -72,8 +72,8 @@ func (client *Client) QueryInstanceByTagWithCallback(request *QueryInstanceByTag
 type QueryInstanceByTagRequest struct {
 	*requests.RpcRequest
 	ResourceId   *[]string                `position:"Query" name:"ResourceId"  type:"Repeated"`
-	Tag          *[]QueryInstanceByTagTag `position:"Query" name:"Tag"  type:"Repeated"`
 	ResourceType string                   `position:"Query" name:"ResourceType"`
+	Tag          *[]QueryInstanceByTagTag `position:"Query" name:"Tag"  type:"Repeated"`
 }
 
 // QueryInstanceByTagTag is a repeated param struct in QueryInstanceByTagRequest
@@ -98,7 +98,7 @@ func CreateQueryInstanceByTagRequest() (request *QueryInstanceByTagRequest) {
 	request = &QueryInstanceByTagRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "QueryInstanceByTag", "", "")
+	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "QueryInstanceByTag", "bssopenapi", "openAPI")
 	request.Method = requests.POST
 	return
 }

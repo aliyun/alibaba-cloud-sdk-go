@@ -90,7 +90,7 @@ func CreateQueryResellerAvailableQuotaRequest() (request *QueryResellerAvailable
 	request = &QueryResellerAvailableQuotaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "QueryResellerAvailableQuota", "", "")
+	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "QueryResellerAvailableQuota", "bssopenapi", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -101,7 +101,7 @@ func CreateGetPayAsYouGoPriceRequest() (request *GetPayAsYouGoPriceRequest) {
 	request = &GetPayAsYouGoPriceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "GetPayAsYouGoPrice", "", "")
+	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "GetPayAsYouGoPrice", "bssopenapi", "openAPI")
 	request.Method = requests.POST
 	return
 }

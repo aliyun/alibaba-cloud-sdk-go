@@ -89,7 +89,7 @@ func CreateSetAllExpirationDayRequest() (request *SetAllExpirationDayRequest) {
 	request = &SetAllExpirationDayRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "SetAllExpirationDay", "", "")
+	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "SetAllExpirationDay", "bssopenapi", "openAPI")
 	request.Method = requests.POST
 	return
 }

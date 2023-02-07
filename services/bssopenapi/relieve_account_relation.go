@@ -93,7 +93,7 @@ func CreateRelieveAccountRelationRequest() (request *RelieveAccountRelationReque
 	request = &RelieveAccountRelationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "RelieveAccountRelation", "", "")
+	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "RelieveAccountRelation", "bssopenapi", "openAPI")
 	request.Method = requests.POST
 	return
 }

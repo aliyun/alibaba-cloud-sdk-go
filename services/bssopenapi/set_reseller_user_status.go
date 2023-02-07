@@ -71,6 +71,7 @@ func (client *Client) SetResellerUserStatusWithCallback(request *SetResellerUser
 // SetResellerUserStatusRequest is the request struct for api SetResellerUserStatus
 type SetResellerUserStatusRequest struct {
 	*requests.RpcRequest
+	StopMode     string `position:"Query" name:"StopMode"`
 	OwnerId      string `position:"Query" name:"OwnerId"`
 	BusinessType string `position:"Query" name:"BusinessType"`
 	Status       string `position:"Query" name:"Status"`
@@ -91,7 +92,7 @@ func CreateSetResellerUserStatusRequest() (request *SetResellerUserStatusRequest
 	request = &SetResellerUserStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "SetResellerUserStatus", "", "")
+	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "SetResellerUserStatus", "bssopenapi", "openAPI")
 	request.Method = requests.POST
 	return
 }

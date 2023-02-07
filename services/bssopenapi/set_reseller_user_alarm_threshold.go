@@ -91,7 +91,7 @@ func CreateSetResellerUserAlarmThresholdRequest() (request *SetResellerUserAlarm
 	request = &SetResellerUserAlarmThresholdRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "SetResellerUserAlarmThreshold", "", "")
+	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "SetResellerUserAlarmThreshold", "bssopenapi", "openAPI")
 	request.Method = requests.POST
 	return
 }
