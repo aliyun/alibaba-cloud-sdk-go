@@ -93,6 +93,7 @@ type DeployApplicationRequest struct {
 	ChangeOrderDesc                  string           `position:"Query" name:"ChangeOrderDesc"`
 	MinReadyInstanceRatio            requests.Integer `position:"Query" name:"MinReadyInstanceRatio"`
 	AutoEnableApplicationScalingRule requests.Boolean `position:"Query" name:"AutoEnableApplicationScalingRule"`
+	PackageType                      string           `position:"Query" name:"PackageType"`
 	PostStart                        string           `position:"Query" name:"PostStart"`
 	PhpExtensions                    string           `position:"Body" name:"PhpExtensions"`
 	AssociateEip                     requests.Boolean `position:"Body" name:"AssociateEip"`

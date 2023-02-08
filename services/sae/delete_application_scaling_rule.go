@@ -80,6 +80,10 @@ type DeleteApplicationScalingRuleResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	TraceId   string `json:"TraceId" xml:"TraceId"`
+	Message   string `json:"Message" xml:"Message"`
+	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
+	Code      string `json:"Code" xml:"Code"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateDeleteApplicationScalingRuleRequest creates a request to invoke DeleteApplicationScalingRule API

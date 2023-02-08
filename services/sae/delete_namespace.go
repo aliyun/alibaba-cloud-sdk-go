@@ -71,7 +71,8 @@ func (client *Client) DeleteNamespaceWithCallback(request *DeleteNamespaceReques
 // DeleteNamespaceRequest is the request struct for api DeleteNamespace
 type DeleteNamespaceRequest struct {
 	*requests.RoaRequest
-	NamespaceId string `position:"Query" name:"NamespaceId"`
+	NamespaceId      string `position:"Query" name:"NamespaceId"`
+	NameSpaceShortId string `position:"Query" name:"NameSpaceShortId"`
 }
 
 // DeleteNamespaceResponse is the response struct for api DeleteNamespace

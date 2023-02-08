@@ -71,7 +71,8 @@ func (client *Client) DescribeNamespaceResourcesWithCallback(request *DescribeNa
 // DescribeNamespaceResourcesRequest is the request struct for api DescribeNamespaceResources
 type DescribeNamespaceResourcesRequest struct {
 	*requests.RoaRequest
-	NamespaceId string `position:"Query" name:"NamespaceId"`
+	NamespaceId      string `position:"Query" name:"NamespaceId"`
+	NameSpaceShortId string `position:"Query" name:"NameSpaceShortId"`
 }
 
 // DescribeNamespaceResourcesResponse is the response struct for api DescribeNamespaceResources

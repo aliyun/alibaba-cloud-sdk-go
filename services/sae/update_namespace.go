@@ -74,6 +74,7 @@ type UpdateNamespaceRequest struct {
 	NamespaceName        string `position:"Query" name:"NamespaceName"`
 	NamespaceDescription string `position:"Query" name:"NamespaceDescription"`
 	NamespaceId          string `position:"Query" name:"NamespaceId"`
+	NameSpaceShortId     string `position:"Query" name:"NameSpaceShortId"`
 }
 
 // UpdateNamespaceResponse is the response struct for api UpdateNamespace

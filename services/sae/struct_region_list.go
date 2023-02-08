@@ -27,4 +27,5 @@ type RegionList struct {
 	Current           bool   `json:"Current" xml:"Current"`
 	NamespaceName     string `json:"NamespaceName" xml:"NamespaceName"`
 	RegionId          string `json:"RegionId" xml:"RegionId"`
+	NameSpaceShortId  string `json:"NameSpaceShortId" xml:"NameSpaceShortId"`
 }

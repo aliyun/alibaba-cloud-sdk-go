@@ -25,4 +25,5 @@ type Namespace struct {
 	NamespaceName        string `json:"NamespaceName" xml:"NamespaceName"`
 	TenantId             string `json:"TenantId" xml:"TenantId"`
 	RegionId             string `json:"RegionId" xml:"RegionId"`
+	NameSpaceShortId     string `json:"NameSpaceShortId" xml:"NameSpaceShortId"`
 }

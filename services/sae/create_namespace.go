@@ -74,6 +74,7 @@ type CreateNamespaceRequest struct {
 	NamespaceName        string `position:"Query" name:"NamespaceName"`
 	NamespaceDescription string `position:"Query" name:"NamespaceDescription"`
 	NamespaceId          string `position:"Query" name:"NamespaceId"`
+	NameSpaceShortId     string `position:"Query" name:"NameSpaceShortId"`
 }
 
 // CreateNamespaceResponse is the response struct for api CreateNamespace
