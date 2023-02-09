@@ -32,6 +32,7 @@ type Data struct {
 	ImageURL          string         `json:"ImageURL" xml:"ImageURL"`
 	Status            string         `json:"Status" xml:"Status"`
 	ErrorCode         string         `json:"ErrorCode" xml:"ErrorCode"`
+	ResultUrl         string         `json:"ResultUrl" xml:"ResultUrl"`
 	ImageUrls         []string       `json:"ImageUrls" xml:"ImageUrls"`
 	ImageList         []string       `json:"ImageList" xml:"ImageList"`
 	RetainLocation    RetainLocation `json:"RetainLocation" xml:"RetainLocation"`
