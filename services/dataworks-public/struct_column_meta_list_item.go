@@ -19,4 +19,5 @@ package dataworks_public
 type ColumnMetaListItem struct {
 	ColumnName    string `json:"ColumnName" xml:"ColumnName"`
 	ColumnComment string `json:"ColumnComment" xml:"ColumnComment"`
+	SecurityLevel string `json:"SecurityLevel" xml:"SecurityLevel"`
 }
