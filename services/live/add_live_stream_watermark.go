@@ -80,6 +80,7 @@ type AddLiveStreamWatermarkRequest struct {
 	OwnerId      requests.Integer `position:"Query" name:"OwnerId"`
 	RefWidth     requests.Integer `position:"Query" name:"RefWidth"`
 	Transparency requests.Integer `position:"Query" name:"Transparency"`
+	Domain       string           `position:"Query" name:"Domain"`
 	Name         string           `position:"Query" name:"Name"`
 	OffsetCorner string           `position:"Query" name:"OffsetCorner"`
 	RefHeight    requests.Integer `position:"Query" name:"RefHeight"`

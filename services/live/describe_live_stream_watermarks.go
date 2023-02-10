@@ -73,12 +73,15 @@ type DescribeLiveStreamWatermarksRequest struct {
 	*requests.RpcRequest
 	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
 	PageSize   requests.Integer `position:"Query" name:"PageSize"`
+	KeyWord    string           `position:"Query" name:"KeyWord"`
 	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
+	Domain     string           `position:"Query" name:"Domain"`
 }
 
 // DescribeLiveStreamWatermarksResponse is the response struct for api DescribeLiveStreamWatermarks
 type DescribeLiveStreamWatermarksResponse struct {
 	*responses.BaseResponse
+	Total         int           `json:"Total" xml:"Total"`
 	RequestId     string        `json:"RequestId" xml:"RequestId"`
 	WatermarkList WatermarkList `json:"WatermarkList" xml:"WatermarkList"`
 }

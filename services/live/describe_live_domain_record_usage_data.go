@@ -76,11 +76,14 @@ type DescribeLiveDomainRecordUsageDataRequest struct {
 	DomainName string           `position:"Query" name:"DomainName"`
 	EndTime    string           `position:"Query" name:"EndTime"`
 	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
+	Interval   string           `position:"Query" name:"Interval"`
 }
 
 // DescribeLiveDomainRecordUsageDataResponse is the response struct for api DescribeLiveDomainRecordUsageData
 type DescribeLiveDomainRecordUsageDataResponse struct {
 	*responses.BaseResponse
+	EndTime         string          `json:"EndTime" xml:"EndTime"`
+	StartTime       string          `json:"StartTime" xml:"StartTime"`
 	RequestId       string          `json:"RequestId" xml:"RequestId"`
 	RecordUsageData RecordUsageData `json:"RecordUsageData" xml:"RecordUsageData"`
 }

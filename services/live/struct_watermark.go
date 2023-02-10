@@ -27,6 +27,7 @@ type Watermark struct {
 	Transparency int     `json:"Transparency" xml:"Transparency"`
 	Description  string  `json:"Description" xml:"Description"`
 	OffsetCorner string  `json:"OffsetCorner" xml:"OffsetCorner"`
+	RuleCount    int     `json:"RuleCount" xml:"RuleCount"`
 	Name         string  `json:"Name" xml:"Name"`
 	TemplateId   string  `json:"TemplateId" xml:"TemplateId"`
 }

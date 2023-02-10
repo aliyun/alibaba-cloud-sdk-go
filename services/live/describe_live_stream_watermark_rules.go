@@ -74,11 +74,13 @@ type DescribeLiveStreamWatermarkRulesRequest struct {
 	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
 	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
+	Domain     string           `position:"Query" name:"Domain"`
 }
 
 // DescribeLiveStreamWatermarkRulesResponse is the response struct for api DescribeLiveStreamWatermarkRules
 type DescribeLiveStreamWatermarkRulesResponse struct {
 	*responses.BaseResponse
+	Total        int          `json:"Total" xml:"Total"`
 	RequestId    string       `json:"RequestId" xml:"RequestId"`
 	RuleInfoList RuleInfoList `json:"RuleInfoList" xml:"RuleInfoList"`
 }

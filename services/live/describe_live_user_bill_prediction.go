@@ -72,8 +72,6 @@ func (client *Client) DescribeLiveUserBillPredictionWithCallback(request *Descri
 type DescribeLiveUserBillPredictionRequest struct {
 	*requests.RpcRequest
 	StartTime string           `position:"Query" name:"StartTime"`
-	Dimension string           `position:"Query" name:"Dimension"`
-	Area      string           `position:"Query" name:"Area"`
 	EndTime   string           `position:"Query" name:"EndTime"`
 	OwnerId   requests.Integer `position:"Query" name:"OwnerId"`
 }
