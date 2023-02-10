@@ -17,7 +17,16 @@ package schedulerx2
 
 // Node is a nested struct in schedulerx2 response
 type Node struct {
-	Id     int64  `json:"Id" xml:"Id"`
-	Label  string `json:"Label" xml:"Label"`
-	Status int    `json:"Status" xml:"Status"`
+	JobId         int64  `json:"JobId" xml:"JobId"`
+	ScheduleTime  string `json:"ScheduleTime" xml:"ScheduleTime"`
+	Status        int    `json:"Status" xml:"Status"`
+	Attempt       int    `json:"Attempt" xml:"Attempt"`
+	JobInstanceId int64  `json:"JobInstanceId" xml:"JobInstanceId"`
+	StartTime     string `json:"StartTime" xml:"StartTime"`
+	EndTime       string `json:"EndTime" xml:"EndTime"`
+	Label         string `json:"Label" xml:"Label"`
+	Result        string `json:"Result" xml:"Result"`
+	Id            int64  `json:"Id" xml:"Id"`
+	WorkAddr      string `json:"WorkAddr" xml:"WorkAddr"`
+	DataTime      string `json:"DataTime" xml:"DataTime"`
 }

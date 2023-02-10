@@ -20,16 +20,21 @@ type Data struct {
 	JobId              int64                    `json:"JobId" xml:"JobId"`
 	JobInstanceId      int64                    `json:"JobInstanceId" xml:"JobInstanceId"`
 	AppKey             string                   `json:"AppKey" xml:"AppKey"`
+	WorkflowId         int64                    `json:"WorkflowId" xml:"WorkflowId"`
 	WfInstanceId       int64                    `json:"WfInstanceId" xml:"WfInstanceId"`
 	AppGroupId         int64                    `json:"AppGroupId" xml:"AppGroupId"`
 	NamespaceUid       string                   `json:"NamespaceUid" xml:"NamespaceUid"`
+	Logs               []string                 `json:"Logs" xml:"Logs"`
 	JobInstanceDetail  JobInstanceDetail        `json:"JobInstanceDetail" xml:"JobInstanceDetail"`
+	WfInstanceDag      WfInstanceDag            `json:"WfInstanceDag" xml:"WfInstanceDag"`
 	WorkFlowInfo       WorkFlowInfo             `json:"WorkFlowInfo" xml:"WorkFlowInfo"`
 	JobConfigInfo      JobConfigInfo            `json:"JobConfigInfo" xml:"JobConfigInfo"`
 	WorkFlowNodeInfo   WorkFlowNodeInfo         `json:"WorkFlowNodeInfo" xml:"WorkFlowNodeInfo"`
+	WfInstanceInfo     WfInstanceInfo           `json:"WfInstanceInfo" xml:"WfInstanceInfo"`
 	WorkerInfos        []WorkerInfo             `json:"WorkerInfos" xml:"WorkerInfos"`
 	Namespaces         []Namespace              `json:"Namespaces" xml:"Namespaces"`
 	JobInstanceDetails []JobInstanceDetailsItem `json:"JobInstanceDetails" xml:"JobInstanceDetails"`
 	AppGroups          []AppGroup               `json:"AppGroups" xml:"AppGroups"`
 	Jobs               []Job                    `json:"Jobs" xml:"Jobs"`
+	WfInstanceInfos    []WfInstanceInfosItem    `json:"WfInstanceInfos" xml:"WfInstanceInfos"`
 }

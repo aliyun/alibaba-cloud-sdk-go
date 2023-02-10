@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// GetJobInstanceList invokes the schedulerx2.GetJobInstanceList API synchronously
-func (client *Client) GetJobInstanceList(request *GetJobInstanceListRequest) (response *GetJobInstanceListResponse, err error) {
-	response = CreateGetJobInstanceListResponse()
+// GetLog invokes the schedulerx2.GetLog API synchronously
+func (client *Client) GetLog(request *GetLogRequest) (response *GetLogResponse, err error) {
+	response = CreateGetLogResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// GetJobInstanceListWithChan invokes the schedulerx2.GetJobInstanceList API asynchronously
-func (client *Client) GetJobInstanceListWithChan(request *GetJobInstanceListRequest) (<-chan *GetJobInstanceListResponse, <-chan error) {
-	responseChan := make(chan *GetJobInstanceListResponse, 1)
+// GetLogWithChan invokes the schedulerx2.GetLog API asynchronously
+func (client *Client) GetLogWithChan(request *GetLogRequest) (<-chan *GetLogResponse, <-chan error) {
+	responseChan := make(chan *GetLogResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.GetJobInstanceList(request)
+		response, err := client.GetLog(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) GetJobInstanceListWithChan(request *GetJobInstanceListRequ
 	return responseChan, errChan
 }
 
-// GetJobInstanceListWithCallback invokes the schedulerx2.GetJobInstanceList API asynchronously
-func (client *Client) GetJobInstanceListWithCallback(request *GetJobInstanceListRequest, callback func(response *GetJobInstanceListResponse, err error)) <-chan int {
+// GetLogWithCallback invokes the schedulerx2.GetLog API asynchronously
+func (client *Client) GetLogWithCallback(request *GetLogRequest, callback func(response *GetLogResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *GetJobInstanceListResponse
+		var response *GetLogResponse
 		var err error
 		defer close(result)
-		response, err = client.GetJobInstanceList(request)
+		response, err = client.GetLog(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,41 +68,45 @@ func (client *Client) GetJobInstanceListWithCallback(request *GetJobInstanceList
 	return result
 }
 
-// GetJobInstanceListRequest is the request struct for api GetJobInstanceList
-type GetJobInstanceListRequest struct {
+// GetLogRequest is the request struct for api GetLog
+type GetLogRequest struct {
 	*requests.RpcRequest
 	NamespaceSource string           `position:"Query" name:"NamespaceSource"`
-	GroupId         string           `position:"Query" name:"GroupId"`
+	Line            requests.Integer `position:"Query" name:"Line"`
 	StartTimestamp  requests.Integer `position:"Query" name:"StartTimestamp"`
 	EndTimestamp    requests.Integer `position:"Query" name:"EndTimestamp"`
-	JobId           requests.Integer `position:"Query" name:"JobId"`
+	JobId           string           `position:"Query" name:"JobId"`
+	Keyword         string           `position:"Query" name:"Keyword"`
+	Offset          requests.Integer `position:"Query" name:"Offset"`
+	GroupId         string           `position:"Query" name:"GroupId"`
+	Reverse         requests.Boolean `position:"Query" name:"Reverse"`
 	Namespace       string           `position:"Query" name:"Namespace"`
-	Status          requests.Integer `position:"Query" name:"Status"`
+	JobInstanceId   string           `position:"Query" name:"JobInstanceId"`
 }
 
-// GetJobInstanceListResponse is the response struct for api GetJobInstanceList
-type GetJobInstanceListResponse struct {
+// GetLogResponse is the response struct for api GetLog
+type GetLogResponse struct {
 	*responses.BaseResponse
-	Code      int    `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Code      int    `json:"Code" xml:"Code"`
 	Success   bool   `json:"Success" xml:"Success"`
+	Message   string `json:"Message" xml:"Message"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 
-// CreateGetJobInstanceListRequest creates a request to invoke GetJobInstanceList API
-func CreateGetJobInstanceListRequest() (request *GetJobInstanceListRequest) {
-	request = &GetJobInstanceListRequest{
+// CreateGetLogRequest creates a request to invoke GetLog API
+func CreateGetLogRequest() (request *GetLogRequest) {
+	request = &GetLogRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("schedulerx2", "2019-04-30", "GetJobInstanceList", "", "")
+	request.InitWithApiInfo("schedulerx2", "2019-04-30", "GetLog", "", "")
 	request.Method = requests.GET
 	return
 }
 
-// CreateGetJobInstanceListResponse creates a response to parse from GetJobInstanceList response
-func CreateGetJobInstanceListResponse() (response *GetJobInstanceListResponse) {
-	response = &GetJobInstanceListResponse{
+// CreateGetLogResponse creates a response to parse from GetLog response
+func CreateGetLogResponse() (response *GetLogResponse) {
+	response = &GetLogResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

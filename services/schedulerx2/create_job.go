@@ -72,10 +72,11 @@ func (client *Client) CreateJobWithCallback(request *CreateJobRequest, callback 
 type CreateJobRequest struct {
 	*requests.RpcRequest
 	AttemptInterval     requests.Integer        `position:"Body" name:"AttemptInterval"`
+	FailTimes           requests.Integer        `position:"Body" name:"FailTimes"`
 	ConsumerSize        requests.Integer        `position:"Body" name:"ConsumerSize"`
 	JarUrl              string                  `position:"Body" name:"JarUrl"`
-	DataOffset          requests.Integer        `position:"Body" name:"DataOffset"`
 	GroupId             string                  `position:"Body" name:"GroupId"`
+	DataOffset          requests.Integer        `position:"Body" name:"DataOffset"`
 	TaskMaxAttempt      requests.Integer        `position:"Body" name:"TaskMaxAttempt"`
 	DispatcherSize      requests.Integer        `position:"Body" name:"DispatcherSize"`
 	JobType             string                  `position:"Body" name:"JobType"`
@@ -99,6 +100,7 @@ type CreateJobRequest struct {
 	SendChannel         string                  `position:"Body" name:"SendChannel"`
 	MaxAttempt          requests.Integer        `position:"Body" name:"MaxAttempt"`
 	MissWorkerEnable    requests.Boolean        `position:"Body" name:"MissWorkerEnable"`
+	SuccessNoticeEnable requests.Boolean        `position:"Body" name:"SuccessNoticeEnable"`
 	QueueSize           requests.Integer        `position:"Body" name:"QueueSize"`
 	ClassName           string                  `position:"Body" name:"ClassName"`
 	Namespace           string                  `position:"Body" name:"Namespace"`
