@@ -71,10 +71,12 @@ func (client *Client) GetThingScriptWithCallback(request *GetThingScriptRequest,
 // GetThingScriptRequest is the request struct for api GetThingScript
 type GetThingScriptRequest struct {
 	*requests.RpcRequest
-	ProductKey    string `position:"Query" name:"ProductKey"`
-	IotInstanceId string `position:"Query" name:"IotInstanceId"`
-	ApiProduct    string `position:"Body" name:"ApiProduct"`
-	ApiRevision   string `position:"Body" name:"ApiRevision"`
+	RealTenantId      string `position:"Query" name:"RealTenantId"`
+	RealTripartiteKey string `position:"Query" name:"RealTripartiteKey"`
+	IotInstanceId     string `position:"Query" name:"IotInstanceId"`
+	ProductKey        string `position:"Query" name:"ProductKey"`
+	ApiProduct        string `position:"Body" name:"ApiProduct"`
+	ApiRevision       string `position:"Body" name:"ApiRevision"`
 }
 
 // GetThingScriptResponse is the response struct for api GetThingScript

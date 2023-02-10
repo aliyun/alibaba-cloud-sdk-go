@@ -100,6 +100,7 @@ type QuerySubscribeRelationResponse struct {
 	DeviceTagFlag           bool     `json:"DeviceTagFlag" xml:"DeviceTagFlag"`
 	OtaVersionFlag          bool     `json:"OtaVersionFlag" xml:"OtaVersionFlag"`
 	OtaJobFlag              bool     `json:"OtaJobFlag" xml:"OtaJobFlag"`
+	SubscribeFlags          string   `json:"SubscribeFlags" xml:"SubscribeFlags"`
 	ConsumerGroupIds        []string `json:"ConsumerGroupIds" xml:"ConsumerGroupIds"`
 }
 

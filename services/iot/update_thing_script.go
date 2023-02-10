@@ -71,12 +71,14 @@ func (client *Client) UpdateThingScriptWithCallback(request *UpdateThingScriptRe
 // UpdateThingScriptRequest is the request struct for api UpdateThingScript
 type UpdateThingScriptRequest struct {
 	*requests.RpcRequest
-	IotInstanceId string `position:"Query" name:"IotInstanceId"`
-	ScriptType    string `position:"Query" name:"ScriptType"`
-	ProductKey    string `position:"Query" name:"ProductKey"`
-	ApiProduct    string `position:"Body" name:"ApiProduct"`
-	ApiRevision   string `position:"Body" name:"ApiRevision"`
-	ScriptContent string `position:"Query" name:"ScriptContent"`
+	RealTenantId      string `position:"Query" name:"RealTenantId"`
+	RealTripartiteKey string `position:"Query" name:"RealTripartiteKey"`
+	IotInstanceId     string `position:"Query" name:"IotInstanceId"`
+	ScriptType        string `position:"Query" name:"ScriptType"`
+	ProductKey        string `position:"Query" name:"ProductKey"`
+	ApiProduct        string `position:"Body" name:"ApiProduct"`
+	ApiRevision       string `position:"Body" name:"ApiRevision"`
+	ScriptContent     string `position:"Query" name:"ScriptContent"`
 }
 
 // UpdateThingScriptResponse is the response struct for api UpdateThingScript

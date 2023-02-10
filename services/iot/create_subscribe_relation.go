@@ -86,6 +86,7 @@ type CreateSubscribeRelationRequest struct {
 	ThingHistoryFlag        requests.Boolean `position:"Query" name:"ThingHistoryFlag"`
 	FoundDeviceListFlag     requests.Boolean `position:"Query" name:"FoundDeviceListFlag"`
 	OtaJobFlag              requests.Boolean `position:"Query" name:"OtaJobFlag"`
+	SubscribeFlags          string           `position:"Query" name:"SubscribeFlags"`
 	ApiProduct              string           `position:"Body" name:"ApiProduct"`
 	DeviceDataFlag          requests.Boolean `position:"Query" name:"DeviceDataFlag"`
 	ApiRevision             string           `position:"Body" name:"ApiRevision"`

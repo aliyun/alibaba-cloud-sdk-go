@@ -40,8 +40,8 @@ type Data struct {
 	DeviceConnState           string                                          `json:"DeviceConnState" xml:"DeviceConnState"`
 	FileId                    string                                          `json:"FileId" xml:"FileId"`
 	ThingModelJson            string                                          `json:"ThingModelJson" xml:"ThingModelJson"`
-	LastUpdateTime            int64                                           `json:"LastUpdateTime" xml:"LastUpdateTime"`
 	Versions                  string                                          `json:"Versions" xml:"Versions"`
+	LastUpdateTime            int64                                           `json:"LastUpdateTime" xml:"LastUpdateTime"`
 	TotalCount                int64                                           `json:"TotalCount" xml:"TotalCount"`
 	TslUri                    string                                          `json:"TslUri" xml:"TslUri"`
 	Code                      string                                          `json:"Code" xml:"Code"`
