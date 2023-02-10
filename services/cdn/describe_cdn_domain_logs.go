@@ -71,12 +71,11 @@ func (client *Client) DescribeCdnDomainLogsWithCallback(request *DescribeCdnDoma
 // DescribeCdnDomainLogsRequest is the request struct for api DescribeCdnDomainLogs
 type DescribeCdnDomainLogsRequest struct {
 	*requests.RpcRequest
+	DomainName string           `position:"Query" name:"DomainName"`
+	PageSize   requests.Integer `position:"Query" name:"PageSize"`
+	EndTime    string           `position:"Query" name:"EndTime"`
 	StartTime  string           `position:"Query" name:"StartTime"`
 	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
-	PageSize   requests.Integer `position:"Query" name:"PageSize"`
-	DomainName string           `position:"Query" name:"DomainName"`
-	EndTime    string           `position:"Query" name:"EndTime"`
-	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeCdnDomainLogsResponse is the response struct for api DescribeCdnDomainLogs

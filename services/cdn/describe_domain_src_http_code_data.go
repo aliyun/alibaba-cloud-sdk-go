@@ -71,11 +71,10 @@ func (client *Client) DescribeDomainSrcHttpCodeDataWithCallback(request *Describ
 // DescribeDomainSrcHttpCodeDataRequest is the request struct for api DescribeDomainSrcHttpCodeData
 type DescribeDomainSrcHttpCodeDataRequest struct {
 	*requests.RpcRequest
-	StartTime  string           `position:"Query" name:"StartTime"`
-	DomainName string           `position:"Query" name:"DomainName"`
-	EndTime    string           `position:"Query" name:"EndTime"`
-	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
-	Interval   string           `position:"Query" name:"Interval"`
+	DomainName string `position:"Query" name:"DomainName"`
+	EndTime    string `position:"Query" name:"EndTime"`
+	Interval   string `position:"Query" name:"Interval"`
+	StartTime  string `position:"Query" name:"StartTime"`
 }
 
 // DescribeDomainSrcHttpCodeDataResponse is the response struct for api DescribeDomainSrcHttpCodeData

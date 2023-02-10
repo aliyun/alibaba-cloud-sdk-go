@@ -71,10 +71,9 @@ func (client *Client) DescribeTagResourcesWithCallback(request *DescribeTagResou
 // DescribeTagResourcesRequest is the request struct for api DescribeTagResources
 type DescribeTagResourcesRequest struct {
 	*requests.RpcRequest
+	ResourceId   *[]string                  `position:"Query" name:"ResourceId"  type:"Repeated"`
 	Scope        string                     `position:"Query" name:"Scope"`
 	Tag          *[]DescribeTagResourcesTag `position:"Query" name:"Tag"  type:"Repeated"`
-	ResourceId   *[]string                  `position:"Query" name:"ResourceId"  type:"Repeated"`
-	OwnerId      requests.Integer           `position:"Query" name:"OwnerId"`
 	ResourceType string                     `position:"Query" name:"ResourceType"`
 }
 

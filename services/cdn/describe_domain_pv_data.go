@@ -71,10 +71,9 @@ func (client *Client) DescribeDomainPvDataWithCallback(request *DescribeDomainPv
 // DescribeDomainPvDataRequest is the request struct for api DescribeDomainPvData
 type DescribeDomainPvDataRequest struct {
 	*requests.RpcRequest
-	StartTime  string           `position:"Query" name:"StartTime"`
-	DomainName string           `position:"Query" name:"DomainName"`
-	EndTime    string           `position:"Query" name:"EndTime"`
-	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
+	DomainName string `position:"Query" name:"DomainName"`
+	EndTime    string `position:"Query" name:"EndTime"`
+	StartTime  string `position:"Query" name:"StartTime"`
 }
 
 // DescribeDomainPvDataResponse is the response struct for api DescribeDomainPvData

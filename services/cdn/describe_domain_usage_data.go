@@ -71,15 +71,14 @@ func (client *Client) DescribeDomainUsageDataWithCallback(request *DescribeDomai
 // DescribeDomainUsageDataRequest is the request struct for api DescribeDomainUsageData
 type DescribeDomainUsageDataRequest struct {
 	*requests.RpcRequest
-	StartTime    string           `position:"Query" name:"StartTime"`
-	Type         string           `position:"Query" name:"Type"`
-	DataProtocol string           `position:"Query" name:"DataProtocol"`
-	Area         string           `position:"Query" name:"Area"`
-	DomainName   string           `position:"Query" name:"DomainName"`
-	EndTime      string           `position:"Query" name:"EndTime"`
-	OwnerId      requests.Integer `position:"Query" name:"OwnerId"`
-	Field        string           `position:"Query" name:"Field"`
-	Interval     string           `position:"Query" name:"Interval"`
+	Area         string `position:"Query" name:"Area"`
+	Field        string `position:"Query" name:"Field"`
+	DomainName   string `position:"Query" name:"DomainName"`
+	EndTime      string `position:"Query" name:"EndTime"`
+	Interval     string `position:"Query" name:"Interval"`
+	StartTime    string `position:"Query" name:"StartTime"`
+	Type         string `position:"Query" name:"Type"`
+	DataProtocol string `position:"Query" name:"DataProtocol"`
 }
 
 // DescribeDomainUsageDataResponse is the response struct for api DescribeDomainUsageData

@@ -71,8 +71,7 @@ func (client *Client) DescribeCdnUserConfigsWithCallback(request *DescribeCdnUse
 // DescribeCdnUserConfigsRequest is the request struct for api DescribeCdnUserConfigs
 type DescribeCdnUserConfigsRequest struct {
 	*requests.RpcRequest
-	FunctionName string           `position:"Query" name:"FunctionName"`
-	OwnerId      requests.Integer `position:"Query" name:"OwnerId"`
+	FunctionName string `position:"Query" name:"FunctionName"`
 }
 
 // DescribeCdnUserConfigsResponse is the response struct for api DescribeCdnUserConfigs

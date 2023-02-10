@@ -1,3 +1,7 @@
+2023-02-10 Version: v1.62.161
+- Generated 2018-05-10 for `Cdn`.
+- Add DescribeCdnIpCidr.
+
 2023-02-10 Version: v1.62.160
 - Generated 2019-04-30 for `schedulerx2`.
 - Support Create Workflow.

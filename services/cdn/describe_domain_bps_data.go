@@ -71,13 +71,12 @@ func (client *Client) DescribeDomainBpsDataWithCallback(request *DescribeDomainB
 // DescribeDomainBpsDataRequest is the request struct for api DescribeDomainBpsData
 type DescribeDomainBpsDataRequest struct {
 	*requests.RpcRequest
-	LocationNameEn string           `position:"Query" name:"LocationNameEn"`
-	StartTime      string           `position:"Query" name:"StartTime"`
-	IspNameEn      string           `position:"Query" name:"IspNameEn"`
-	DomainName     string           `position:"Query" name:"DomainName"`
-	EndTime        string           `position:"Query" name:"EndTime"`
-	OwnerId        requests.Integer `position:"Query" name:"OwnerId"`
-	Interval       string           `position:"Query" name:"Interval"`
+	DomainName     string `position:"Query" name:"DomainName"`
+	EndTime        string `position:"Query" name:"EndTime"`
+	Interval       string `position:"Query" name:"Interval"`
+	LocationNameEn string `position:"Query" name:"LocationNameEn"`
+	StartTime      string `position:"Query" name:"StartTime"`
+	IspNameEn      string `position:"Query" name:"IspNameEn"`
 }
 
 // DescribeDomainBpsDataResponse is the response struct for api DescribeDomainBpsData

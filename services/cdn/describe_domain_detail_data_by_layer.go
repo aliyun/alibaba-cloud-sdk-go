@@ -71,14 +71,13 @@ func (client *Client) DescribeDomainDetailDataByLayerWithCallback(request *Descr
 // DescribeDomainDetailDataByLayerRequest is the request struct for api DescribeDomainDetailDataByLayer
 type DescribeDomainDetailDataByLayerRequest struct {
 	*requests.RpcRequest
-	LocationNameEn string           `position:"Query" name:"LocationNameEn"`
-	StartTime      string           `position:"Query" name:"StartTime"`
-	IspNameEn      string           `position:"Query" name:"IspNameEn"`
-	Layer          string           `position:"Query" name:"Layer"`
-	DomainName     string           `position:"Query" name:"DomainName"`
-	EndTime        string           `position:"Query" name:"EndTime"`
-	OwnerId        requests.Integer `position:"Query" name:"OwnerId"`
-	Field          string           `position:"Query" name:"Field"`
+	Field          string `position:"Query" name:"Field"`
+	DomainName     string `position:"Query" name:"DomainName"`
+	EndTime        string `position:"Query" name:"EndTime"`
+	LocationNameEn string `position:"Query" name:"LocationNameEn"`
+	StartTime      string `position:"Query" name:"StartTime"`
+	IspNameEn      string `position:"Query" name:"IspNameEn"`
+	Layer          string `position:"Query" name:"Layer"`
 }
 
 // DescribeDomainDetailDataByLayerResponse is the response struct for api DescribeDomainDetailDataByLayer

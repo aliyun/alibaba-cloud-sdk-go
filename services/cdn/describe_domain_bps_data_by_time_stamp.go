@@ -71,11 +71,10 @@ func (client *Client) DescribeDomainBpsDataByTimeStampWithCallback(request *Desc
 // DescribeDomainBpsDataByTimeStampRequest is the request struct for api DescribeDomainBpsDataByTimeStamp
 type DescribeDomainBpsDataByTimeStampRequest struct {
 	*requests.RpcRequest
-	LocationNames string           `position:"Query" name:"LocationNames"`
-	IspNames      string           `position:"Query" name:"IspNames"`
-	DomainName    string           `position:"Query" name:"DomainName"`
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
-	TimePoint     string           `position:"Query" name:"TimePoint"`
+	IspNames      string `position:"Query" name:"IspNames"`
+	LocationNames string `position:"Query" name:"LocationNames"`
+	DomainName    string `position:"Query" name:"DomainName"`
+	TimePoint     string `position:"Query" name:"TimePoint"`
 }
 
 // DescribeDomainBpsDataByTimeStampResponse is the response struct for api DescribeDomainBpsDataByTimeStamp

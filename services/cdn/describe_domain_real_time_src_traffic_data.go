@@ -71,10 +71,9 @@ func (client *Client) DescribeDomainRealTimeSrcTrafficDataWithCallback(request *
 // DescribeDomainRealTimeSrcTrafficDataRequest is the request struct for api DescribeDomainRealTimeSrcTrafficData
 type DescribeDomainRealTimeSrcTrafficDataRequest struct {
 	*requests.RpcRequest
-	StartTime  string           `position:"Query" name:"StartTime"`
-	DomainName string           `position:"Query" name:"DomainName"`
-	EndTime    string           `position:"Query" name:"EndTime"`
-	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
+	DomainName string `position:"Query" name:"DomainName"`
+	EndTime    string `position:"Query" name:"EndTime"`
+	StartTime  string `position:"Query" name:"StartTime"`
 }
 
 // DescribeDomainRealTimeSrcTrafficDataResponse is the response struct for api DescribeDomainRealTimeSrcTrafficData
