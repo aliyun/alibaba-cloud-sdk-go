@@ -76,6 +76,7 @@ type SubscribeBillToOSSRequest struct {
 	SubscribeBucket         string           `position:"Query" name:"SubscribeBucket"`
 	BucketPath              string           `position:"Query" name:"BucketPath"`
 	BeginBillingCycle       string           `position:"Query" name:"BeginBillingCycle"`
+	RowLimitPerFile         requests.Integer `position:"Query" name:"RowLimitPerFile"`
 	MultAccountRelSubscribe string           `position:"Query" name:"MultAccountRelSubscribe"`
 }
 

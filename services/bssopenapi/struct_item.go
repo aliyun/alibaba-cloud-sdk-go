@@ -67,6 +67,7 @@ type Item struct {
 	BillingItem               string                 `json:"BillingItem" xml:"BillingItem"`
 	SavedCost                 string                 `json:"SavedCost" xml:"SavedCost"`
 	DeductQuantity            float64                `json:"DeductQuantity" xml:"DeductQuantity"`
+	RowLimitPerFile           int                    `json:"RowLimitPerFile" xml:"RowLimitPerFile"`
 	BudgetName                string                 `json:"BudgetName" xml:"BudgetName"`
 	Budget                    map[string]interface{} `json:"Budget" xml:"Budget"`
 	ItemName                  string                 `json:"ItemName" xml:"ItemName"`
