@@ -91,7 +91,7 @@ func CreateRedeployInstanceRequest() (request *RedeployInstanceRequest) {
 	request = &RedeployInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "RedeployInstance", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "RedeployInstance", "ecs", "openAPI")
 	request.Method = requests.POST
 	return
 }

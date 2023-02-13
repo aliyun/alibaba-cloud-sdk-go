@@ -89,7 +89,7 @@ func CreateDeleteImagePipelineRequest() (request *DeleteImagePipelineRequest) {
 	request = &DeleteImagePipelineRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteImagePipeline", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteImagePipeline", "ecs", "openAPI")
 	request.Method = requests.POST
 	return
 }

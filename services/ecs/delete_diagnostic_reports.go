@@ -85,7 +85,7 @@ func CreateDeleteDiagnosticReportsRequest() (request *DeleteDiagnosticReportsReq
 	request = &DeleteDiagnosticReportsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteDiagnosticReports", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteDiagnosticReports", "ecs", "openAPI")
 	request.Method = requests.POST
 	return
 }

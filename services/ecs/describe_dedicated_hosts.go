@@ -73,6 +73,7 @@ type DescribeDedicatedHostsRequest struct {
 	*requests.RpcRequest
 	DedicatedHostIds       string                       `position:"Query" name:"DedicatedHostIds"`
 	ResourceOwnerId        requests.Integer             `position:"Query" name:"ResourceOwnerId"`
+	SocketDetails          string                       `position:"Query" name:"SocketDetails"`
 	PageNumber             requests.Integer             `position:"Query" name:"PageNumber"`
 	ResourceGroupId        string                       `position:"Query" name:"ResourceGroupId"`
 	LockReason             string                       `position:"Query" name:"LockReason"`
@@ -110,7 +111,7 @@ func CreateDescribeDedicatedHostsRequest() (request *DescribeDedicatedHostsReque
 	request = &DescribeDedicatedHostsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeDedicatedHosts", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeDedicatedHosts", "ecs", "openAPI")
 	request.Method = requests.POST
 	return
 }

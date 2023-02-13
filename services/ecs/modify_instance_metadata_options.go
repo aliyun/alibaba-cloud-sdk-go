@@ -92,7 +92,7 @@ func CreateModifyInstanceMetadataOptionsRequest() (request *ModifyInstanceMetada
 	request = &ModifyInstanceMetadataOptionsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyInstanceMetadataOptions", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyInstanceMetadataOptions", "ecs", "openAPI")
 	request.Method = requests.POST
 	return
 }

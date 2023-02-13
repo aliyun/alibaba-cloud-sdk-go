@@ -172,11 +172,18 @@ type CreateAutoProvisioningGroupLaunchConfigurationSystemDisk struct {
 
 // CreateAutoProvisioningGroupLaunchTemplateConfig is a repeated param struct in CreateAutoProvisioningGroupRequest
 type CreateAutoProvisioningGroupLaunchTemplateConfig struct {
-	VSwitchId        string `name:"VSwitchId"`
-	MaxPrice         string `name:"MaxPrice"`
-	Priority         string `name:"Priority"`
-	InstanceType     string `name:"InstanceType"`
-	WeightedCapacity string `name:"WeightedCapacity"`
+	VSwitchId             string    `name:"VSwitchId"`
+	MaxPrice              string    `name:"MaxPrice"`
+	Priority              string    `name:"Priority"`
+	InstanceType          string    `name:"InstanceType"`
+	WeightedCapacity      string    `name:"WeightedCapacity"`
+	MaxQuantity           string    `name:"MaxQuantity"`
+	Cores                 *[]string `name:"Cores" type:"Repeated"`
+	Memories              *[]string `name:"Memories" type:"Repeated"`
+	InstanceFamilyLevel   string    `name:"InstanceFamilyLevel"`
+	ExcludedInstanceTypes *[]string `name:"ExcludedInstanceTypes" type:"Repeated"`
+	Architectures         *[]string `name:"Architectures" type:"Repeated"`
+	BurstablePerformance  string    `name:"BurstablePerformance"`
 }
 
 // CreateAutoProvisioningGroupLaunchConfigurationTag is a repeated param struct in CreateAutoProvisioningGroupRequest
@@ -198,7 +205,7 @@ func CreateCreateAutoProvisioningGroupRequest() (request *CreateAutoProvisioning
 	request = &CreateAutoProvisioningGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateAutoProvisioningGroup", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateAutoProvisioningGroup", "ecs", "openAPI")
 	request.Method = requests.POST
 	return
 }

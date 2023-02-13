@@ -101,7 +101,7 @@ func CreateCreatePrefixListRequest() (request *CreatePrefixListRequest) {
 	request = &CreatePrefixListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "CreatePrefixList", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "CreatePrefixList", "ecs", "openAPI")
 	request.Method = requests.POST
 	return
 }

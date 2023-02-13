@@ -126,7 +126,7 @@ func CreateRevokeSecurityGroupRequest() (request *RevokeSecurityGroupRequest) {
 	request = &RevokeSecurityGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "RevokeSecurityGroup", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "RevokeSecurityGroup", "ecs", "openAPI")
 	request.Method = requests.POST
 	return
 }

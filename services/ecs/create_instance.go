@@ -189,7 +189,7 @@ func CreateCreateInstanceRequest() (request *CreateInstanceRequest) {
 	request = &CreateInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateInstance", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateInstance", "ecs", "openAPI")
 	request.Method = requests.POST
 	return
 }

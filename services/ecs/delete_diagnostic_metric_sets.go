@@ -85,7 +85,7 @@ func CreateDeleteDiagnosticMetricSetsRequest() (request *DeleteDiagnosticMetricS
 	request = &DeleteDiagnosticMetricSetsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteDiagnosticMetricSets", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteDiagnosticMetricSets", "ecs", "openAPI")
 	request.Method = requests.POST
 	return
 }

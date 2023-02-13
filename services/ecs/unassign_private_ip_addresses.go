@@ -91,7 +91,7 @@ func CreateUnassignPrivateIpAddressesRequest() (request *UnassignPrivateIpAddres
 	request = &UnassignPrivateIpAddressesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "UnassignPrivateIpAddresses", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "UnassignPrivateIpAddresses", "ecs", "openAPI")
 	request.Method = requests.POST
 	return
 }

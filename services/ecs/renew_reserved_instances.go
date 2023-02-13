@@ -96,7 +96,7 @@ func CreateRenewReservedInstancesRequest() (request *RenewReservedInstancesReque
 	request = &RenewReservedInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "RenewReservedInstances", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "RenewReservedInstances", "ecs", "openAPI")
 	request.Method = requests.POST
 	return
 }

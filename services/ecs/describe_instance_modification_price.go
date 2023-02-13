@@ -100,7 +100,7 @@ func CreateDescribeInstanceModificationPriceRequest() (request *DescribeInstance
 	request = &DescribeInstanceModificationPriceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeInstanceModificationPrice", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeInstanceModificationPrice", "ecs", "openAPI")
 	request.Method = requests.POST
 	return
 }

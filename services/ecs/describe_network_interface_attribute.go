@@ -126,7 +126,7 @@ func CreateDescribeNetworkInterfaceAttributeRequest() (request *DescribeNetworkI
 	request = &DescribeNetworkInterfaceAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeNetworkInterfaceAttribute", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeNetworkInterfaceAttribute", "ecs", "openAPI")
 	request.Method = requests.POST
 	return
 }

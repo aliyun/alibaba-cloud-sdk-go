@@ -105,7 +105,7 @@ func CreateCreateSnapshotGroupRequest() (request *CreateSnapshotGroupRequest) {
 	request = &CreateSnapshotGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateSnapshotGroup", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateSnapshotGroup", "ecs", "openAPI")
 	request.Method = requests.POST
 	return
 }

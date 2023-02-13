@@ -105,7 +105,7 @@ func CreateDescribeSnapshotGroupsRequest() (request *DescribeSnapshotGroupsReque
 	request = &DescribeSnapshotGroupsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeSnapshotGroups", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeSnapshotGroups", "ecs", "openAPI")
 	request.Method = requests.POST
 	return
 }

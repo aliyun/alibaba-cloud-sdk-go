@@ -143,7 +143,7 @@ func CreateDescribeInstancesRequest() (request *DescribeInstancesRequest) {
 	request = &DescribeInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeInstances", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeInstances", "ecs", "openAPI")
 	request.Method = requests.POST
 	return
 }

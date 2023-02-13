@@ -93,7 +93,7 @@ func CreateStartTerminalSessionRequest() (request *StartTerminalSessionRequest) 
 	request = &StartTerminalSessionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "StartTerminalSession", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "StartTerminalSession", "ecs", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -34,6 +34,7 @@ type Instance struct {
 	MachineId                       string                               `json:"MachineId" xml:"MachineId"`
 	PrivatePoolOptionsId            string                               `json:"PrivatePoolOptionsId" xml:"PrivatePoolOptionsId"`
 	ClusterId                       string                               `json:"ClusterId" xml:"ClusterId"`
+	SocketId                        string                               `json:"SocketId" xml:"SocketId"`
 	InstanceName                    string                               `json:"InstanceName" xml:"InstanceName"`
 	PrivatePoolOptionsMatchCriteria string                               `json:"PrivatePoolOptionsMatchCriteria" xml:"PrivatePoolOptionsMatchCriteria"`
 	DeploymentSetGroupNo            int                                  `json:"DeploymentSetGroupNo" xml:"DeploymentSetGroupNo"`

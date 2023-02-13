@@ -97,7 +97,7 @@ func CreateDescribeDiagnosticReportAttributesRequest() (request *DescribeDiagnos
 	request = &DescribeDiagnosticReportAttributesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeDiagnosticReportAttributes", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeDiagnosticReportAttributes", "ecs", "openAPI")
 	request.Method = requests.POST
 	return
 }

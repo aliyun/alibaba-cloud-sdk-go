@@ -127,7 +127,7 @@ func CreateDescribeInstanceTypesRequest() (request *DescribeInstanceTypesRequest
 	request = &DescribeInstanceTypesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeInstanceTypes", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeInstanceTypes", "ecs", "openAPI")
 	request.Method = requests.POST
 	return
 }

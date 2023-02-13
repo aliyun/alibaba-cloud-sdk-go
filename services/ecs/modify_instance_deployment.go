@@ -99,7 +99,7 @@ func CreateModifyInstanceDeploymentRequest() (request *ModifyInstanceDeploymentR
 	request = &ModifyInstanceDeploymentRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyInstanceDeployment", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyInstanceDeployment", "ecs", "openAPI")
 	request.Method = requests.POST
 	return
 }
