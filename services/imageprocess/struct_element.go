@@ -17,18 +17,22 @@ package imageprocess
 
 // Element is a nested struct in imageprocess response
 type Element struct {
-	Z              float64 `json:"Z" xml:"Z"`
-	Lobe           string  `json:"Lobe" xml:"Lobe"`
-	MeanValue      float64 `json:"MeanValue" xml:"MeanValue"`
-	ImageZ         float64 `json:"ImageZ" xml:"ImageZ"`
-	Lung           string  `json:"Lung" xml:"Lung"`
-	Confidence     float64 `json:"Confidence" xml:"Confidence"`
-	SOPInstanceUID string  `json:"SOPInstanceUID" xml:"SOPInstanceUID"`
-	ImageX         float64 `json:"ImageX" xml:"ImageX"`
-	Y              float64 `json:"Y" xml:"Y"`
-	Category       string  `json:"Category" xml:"Category"`
-	Volume         float64 `json:"Volume" xml:"Volume"`
-	ImageY         float64 `json:"ImageY" xml:"ImageY"`
-	Diameter       float64 `json:"Diameter" xml:"Diameter"`
-	X              float64 `json:"X" xml:"X"`
+	Z                    float64   `json:"Z" xml:"Z"`
+	Lobe                 string    `json:"Lobe" xml:"Lobe"`
+	MeanValue            float64   `json:"MeanValue" xml:"MeanValue"`
+	ImageZ               float64   `json:"ImageZ" xml:"ImageZ"`
+	Lung                 string    `json:"Lung" xml:"Lung"`
+	Confidence           float64   `json:"Confidence" xml:"Confidence"`
+	SOPInstanceUID       string    `json:"SOPInstanceUID" xml:"SOPInstanceUID"`
+	ImageX               float64   `json:"ImageX" xml:"ImageX"`
+	Y                    float64   `json:"Y" xml:"Y"`
+	Category             string    `json:"Category" xml:"Category"`
+	Volume               float64   `json:"Volume" xml:"Volume"`
+	ImageY               float64   `json:"ImageY" xml:"ImageY"`
+	Diameter             float64   `json:"Diameter" xml:"Diameter"`
+	X                    float64   `json:"X" xml:"X"`
+	RecistSOPInstanceUID string    `json:"RecistSOPInstanceUID" xml:"RecistSOPInstanceUID"`
+	Risk                 float64   `json:"Risk" xml:"Risk"`
+	MajorAxis            []float64 `json:"MajorAxis" xml:"MajorAxis"`
+	MinorAxis            []float64 `json:"MinorAxis" xml:"MinorAxis"`
 }

@@ -51,10 +51,10 @@ type Data struct {
 	ResultUrl         string                 `json:"ResultUrl" xml:"ResultUrl"`
 	Options           []string               `json:"Options" xml:"Options"`
 	Lesion            Lesion                 `json:"Lesion" xml:"Lesion"`
+	Series            []Serie                `json:"Series" xml:"Series"`
 	Fractures         []FracturesItem        `json:"Fractures" xml:"Fractures"`
 	Vertebras         []Vertebra             `json:"Vertebras" xml:"Vertebras"`
 	Detections        []DetectionsItem       `json:"Detections" xml:"Detections"`
-	Series            []Serie                `json:"Series" xml:"Series"`
 	KLDetections      []KLDetectionsItem     `json:"KLDetections" xml:"KLDetections"`
 	KeyPoints         []KeyPointsItem        `json:"KeyPoints" xml:"KeyPoints"`
 	Discs             []Disc                 `json:"Discs" xml:"Discs"`
