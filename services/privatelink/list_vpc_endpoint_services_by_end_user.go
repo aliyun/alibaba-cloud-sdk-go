@@ -71,11 +71,19 @@ func (client *Client) ListVpcEndpointServicesByEndUserWithCallback(request *List
 // ListVpcEndpointServicesByEndUserRequest is the request struct for api ListVpcEndpointServicesByEndUser
 type ListVpcEndpointServicesByEndUserRequest struct {
 	*requests.RpcRequest
-	NextToken   string           `position:"Query" name:"NextToken"`
-	ServiceName string           `position:"Query" name:"ServiceName"`
-	ServiceType string           `position:"Query" name:"ServiceType"`
-	MaxResults  requests.Integer `position:"Query" name:"MaxResults"`
-	ServiceId   string           `position:"Query" name:"ServiceId"`
+	ResourceGroupId string                                 `position:"Query" name:"ResourceGroupId"`
+	NextToken       string                                 `position:"Query" name:"NextToken"`
+	ServiceName     string                                 `position:"Query" name:"ServiceName"`
+	Tag             *[]ListVpcEndpointServicesByEndUserTag `position:"Query" name:"Tag"  type:"Repeated"`
+	ServiceType     string                                 `position:"Query" name:"ServiceType"`
+	MaxResults      requests.Integer                       `position:"Query" name:"MaxResults"`
+	ServiceId       string                                 `position:"Query" name:"ServiceId"`
+}
+
+// ListVpcEndpointServicesByEndUserTag is a repeated param struct in ListVpcEndpointServicesByEndUserRequest
+type ListVpcEndpointServicesByEndUserTag struct {
+	Key   string `name:"Key"`
+	Value string `name:"Value"`
 }
 
 // ListVpcEndpointServicesByEndUserResponse is the response struct for api ListVpcEndpointServicesByEndUser
@@ -83,7 +91,7 @@ type ListVpcEndpointServicesByEndUserResponse struct {
 	*responses.BaseResponse
 	NextToken  string    `json:"NextToken" xml:"NextToken"`
 	RequestId  string    `json:"RequestId" xml:"RequestId"`
-	MaxResults string    `json:"MaxResults" xml:"MaxResults"`
+	MaxResults int       `json:"MaxResults" xml:"MaxResults"`
 	Services   []Service `json:"Services" xml:"Services"`
 }
 

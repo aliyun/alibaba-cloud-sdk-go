@@ -78,6 +78,7 @@ type UpdateVpcEndpointServiceAttributeRequest struct {
 	ConnectBandwidth            requests.Integer `position:"Query" name:"ConnectBandwidth"`
 	ZoneAffinityEnabled         requests.Boolean `position:"Query" name:"ZoneAffinityEnabled"`
 	DryRun                      requests.Boolean `position:"Query" name:"DryRun"`
+	ServiceSupportIPv6          requests.Boolean `position:"Query" name:"ServiceSupportIPv6"`
 	ServiceDescription          string           `position:"Query" name:"ServiceDescription"`
 	ServiceId                   string           `position:"Query" name:"ServiceId"`
 }

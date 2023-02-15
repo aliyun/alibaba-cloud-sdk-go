@@ -74,7 +74,9 @@ type ListVpcEndpointConnectionsRequest struct {
 	EndpointId         string           `position:"Query" name:"EndpointId"`
 	EndpointOwnerId    requests.Integer `position:"Query" name:"EndpointOwnerId"`
 	ReplacedResourceId string           `position:"Query" name:"ReplacedResourceId"`
+	ResourceGroupId    string           `position:"Query" name:"ResourceGroupId"`
 	NextToken          string           `position:"Query" name:"NextToken"`
+	ConnectionId       requests.Integer `position:"Query" name:"ConnectionId"`
 	ResourceId         string           `position:"Query" name:"ResourceId"`
 	ConnectionStatus   string           `position:"Query" name:"ConnectionStatus"`
 	MaxResults         requests.Integer `position:"Query" name:"MaxResults"`
@@ -88,7 +90,7 @@ type ListVpcEndpointConnectionsResponse struct {
 	*responses.BaseResponse
 	NextToken   string       `json:"NextToken" xml:"NextToken"`
 	RequestId   string       `json:"RequestId" xml:"RequestId"`
-	MaxResults  string       `json:"MaxResults" xml:"MaxResults"`
+	MaxResults  int          `json:"MaxResults" xml:"MaxResults"`
 	Connections []Connection `json:"Connections" xml:"Connections"`
 }
 

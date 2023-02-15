@@ -28,4 +28,5 @@ type Resource struct {
 	RelatedDeprecatedEndpointCount int64  `json:"RelatedDeprecatedEndpointCount" xml:"RelatedDeprecatedEndpointCount"`
 	AutoAllocatedEnabled           bool   `json:"AutoAllocatedEnabled" xml:"AutoAllocatedEnabled"`
 	StatusInfo                     string `json:"StatusInfo" xml:"StatusInfo"`
+	ResourceSupportIPv6            bool   `json:"ResourceSupportIPv6" xml:"ResourceSupportIPv6"`
 }

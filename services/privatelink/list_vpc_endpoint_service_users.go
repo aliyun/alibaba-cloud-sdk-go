@@ -71,19 +71,21 @@ func (client *Client) ListVpcEndpointServiceUsersWithCallback(request *ListVpcEn
 // ListVpcEndpointServiceUsersRequest is the request struct for api ListVpcEndpointServiceUsers
 type ListVpcEndpointServiceUsersRequest struct {
 	*requests.RpcRequest
-	UserId     requests.Integer `position:"Query" name:"UserId"`
-	NextToken  string           `position:"Query" name:"NextToken"`
-	MaxResults requests.Integer `position:"Query" name:"MaxResults"`
-	ServiceId  string           `position:"Query" name:"ServiceId"`
+	UserListType string           `position:"Query" name:"UserListType"`
+	UserId       requests.Integer `position:"Query" name:"UserId"`
+	NextToken    string           `position:"Query" name:"NextToken"`
+	MaxResults   requests.Integer `position:"Query" name:"MaxResults"`
+	ServiceId    string           `position:"Query" name:"ServiceId"`
 }
 
 // ListVpcEndpointServiceUsersResponse is the response struct for api ListVpcEndpointServiceUsers
 type ListVpcEndpointServiceUsersResponse struct {
 	*responses.BaseResponse
-	NextToken  string `json:"NextToken" xml:"NextToken"`
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	MaxResults string `json:"MaxResults" xml:"MaxResults"`
-	Users      []User `json:"Users" xml:"Users"`
+	NextToken  string    `json:"NextToken" xml:"NextToken"`
+	RequestId  string    `json:"RequestId" xml:"RequestId"`
+	MaxResults int       `json:"MaxResults" xml:"MaxResults"`
+	Users      []User    `json:"Users" xml:"Users"`
+	UserARNs   []UserARN `json:"UserARNs" xml:"UserARNs"`
 }
 
 // CreateListVpcEndpointServiceUsersRequest creates a request to invoke ListVpcEndpointServiceUsers API

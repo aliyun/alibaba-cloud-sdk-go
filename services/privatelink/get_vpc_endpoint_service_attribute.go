@@ -101,6 +101,8 @@ type GetVpcEndpointServiceAttributeResponse struct {
 	PrivateServiceDomainVerifyName     string   `json:"PrivateServiceDomainVerifyName" xml:"PrivateServiceDomainVerifyName"`
 	PrivateServiceDomainVerifyValue    string   `json:"PrivateServiceDomainVerifyValue" xml:"PrivateServiceDomainVerifyValue"`
 	PrivateServiceName                 string   `json:"PrivateServiceName" xml:"PrivateServiceName"`
+	ServiceSupportIPv6                 bool     `json:"ServiceSupportIPv6" xml:"ServiceSupportIPv6"`
+	ResourceGroupId                    string   `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	Zones                              []string `json:"Zones" xml:"Zones"`
 }
 

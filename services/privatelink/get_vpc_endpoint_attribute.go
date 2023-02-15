@@ -97,6 +97,7 @@ type GetVpcEndpointAttributeResponse struct {
 	ConnectionStatus          string `json:"ConnectionStatus" xml:"ConnectionStatus"`
 	ZoneAffinityEnabled       bool   `json:"ZoneAffinityEnabled" xml:"ZoneAffinityEnabled"`
 	PrivateServiceName        string `json:"PrivateServiceName" xml:"PrivateServiceName"`
+	ResourceGroupId           string `json:"ResourceGroupId" xml:"ResourceGroupId"`
 }
 
 // CreateGetVpcEndpointAttributeRequest creates a request to invoke GetVpcEndpointAttribute API

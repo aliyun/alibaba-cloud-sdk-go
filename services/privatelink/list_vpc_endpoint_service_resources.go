@@ -82,7 +82,7 @@ type ListVpcEndpointServiceResourcesResponse struct {
 	*responses.BaseResponse
 	NextToken  string     `json:"NextToken" xml:"NextToken"`
 	RequestId  string     `json:"RequestId" xml:"RequestId"`
-	MaxResults string     `json:"MaxResults" xml:"MaxResults"`
+	MaxResults int        `json:"MaxResults" xml:"MaxResults"`
 	Resources  []Resource `json:"Resources" xml:"Resources"`
 }
 

@@ -71,18 +71,28 @@ func (client *Client) CreateVpcEndpointWithCallback(request *CreateVpcEndpointRe
 // CreateVpcEndpointRequest is the request struct for api CreateVpcEndpoint
 type CreateVpcEndpointRequest struct {
 	*requests.RpcRequest
-	ClientToken               string                   `position:"Query" name:"ClientToken"`
-	SecurityGroupId           *[]string                `position:"Query" name:"SecurityGroupId"  type:"Repeated"`
-	EndpointType              string                   `position:"Query" name:"EndpointType"`
-	Zone                      *[]CreateVpcEndpointZone `position:"Query" name:"Zone"  type:"Repeated"`
-	ServiceName               string                   `position:"Query" name:"ServiceName"`
-	DryRun                    requests.Boolean         `position:"Query" name:"DryRun"`
-	EndpointDescription       string                   `position:"Query" name:"EndpointDescription"`
-	ZonePrivateIpAddressCount requests.Integer         `position:"Query" name:"ZonePrivateIpAddressCount"`
-	ProtectedEnabled          requests.Boolean         `position:"Query" name:"ProtectedEnabled"`
-	EndpointName              string                   `position:"Query" name:"EndpointName"`
-	VpcId                     string                   `position:"Query" name:"VpcId"`
-	ServiceId                 string                   `position:"Query" name:"ServiceId"`
+	ClientToken               string                        `position:"Query" name:"ClientToken"`
+	SystemTag                 *[]CreateVpcEndpointSystemTag `position:"Query" name:"SystemTag"  type:"Repeated"`
+	SecurityGroupId           *[]string                     `position:"Query" name:"SecurityGroupId"  type:"Repeated"`
+	ResourceGroupId           string                        `position:"Query" name:"ResourceGroupId"`
+	EndpointType              string                        `position:"Query" name:"EndpointType"`
+	Zone                      *[]CreateVpcEndpointZone      `position:"Query" name:"Zone"  type:"Repeated"`
+	ServiceName               string                        `position:"Query" name:"ServiceName"`
+	Tag                       *[]CreateVpcEndpointTag       `position:"Query" name:"Tag"  type:"Repeated"`
+	DryRun                    requests.Boolean              `position:"Query" name:"DryRun"`
+	EndpointDescription       string                        `position:"Query" name:"EndpointDescription"`
+	ZonePrivateIpAddressCount requests.Integer              `position:"Query" name:"ZonePrivateIpAddressCount"`
+	ProtectedEnabled          requests.Boolean              `position:"Query" name:"ProtectedEnabled"`
+	EndpointName              string                        `position:"Query" name:"EndpointName"`
+	VpcId                     string                        `position:"Query" name:"VpcId"`
+	ServiceId                 string                        `position:"Query" name:"ServiceId"`
+}
+
+// CreateVpcEndpointSystemTag is a repeated param struct in CreateVpcEndpointRequest
+type CreateVpcEndpointSystemTag struct {
+	Key   string `name:"Key"`
+	Value string `name:"Value"`
+	Scope string `name:"Scope"`
 }
 
 // CreateVpcEndpointZone is a repeated param struct in CreateVpcEndpointRequest
@@ -90,6 +100,12 @@ type CreateVpcEndpointZone struct {
 	VSwitchId string `name:"VSwitchId"`
 	ZoneId    string `name:"ZoneId"`
 	Ip        string `name:"ip"`
+}
+
+// CreateVpcEndpointTag is a repeated param struct in CreateVpcEndpointRequest
+type CreateVpcEndpointTag struct {
+	Key   string `name:"Key"`
+	Value string `name:"Value"`
 }
 
 // CreateVpcEndpointResponse is the response struct for api CreateVpcEndpoint

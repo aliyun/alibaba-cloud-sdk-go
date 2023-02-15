@@ -17,22 +17,25 @@ package privatelink
 
 // Service is a nested struct in privatelink response
 type Service struct {
-	MaxBandwidth          int      `json:"MaxBandwidth" xml:"MaxBandwidth"`
-	ServiceDomain         string   `json:"ServiceDomain" xml:"ServiceDomain"`
-	ConnectBandwidth      int      `json:"ConnectBandwidth" xml:"ConnectBandwidth"`
-	ZoneAffinityEnabled   bool     `json:"ZoneAffinityEnabled" xml:"ZoneAffinityEnabled"`
-	CreateTime            string   `json:"CreateTime" xml:"CreateTime"`
-	ServiceResourceType   string   `json:"ServiceResourceType" xml:"ServiceResourceType"`
-	AutoAcceptEnabled     bool     `json:"AutoAcceptEnabled" xml:"AutoAcceptEnabled"`
-	PrivateServiceName    string   `json:"PrivateServiceName" xml:"PrivateServiceName"`
-	Payer                 string   `json:"Payer" xml:"Payer"`
-	ServiceStatus         string   `json:"ServiceStatus" xml:"ServiceStatus"`
-	ServiceId             string   `json:"ServiceId" xml:"ServiceId"`
-	RegionId              string   `json:"RegionId" xml:"RegionId"`
-	MinBandwidth          int      `json:"MinBandwidth" xml:"MinBandwidth"`
-	ServiceDescription    string   `json:"ServiceDescription" xml:"ServiceDescription"`
-	ServiceBusinessStatus string   `json:"ServiceBusinessStatus" xml:"ServiceBusinessStatus"`
-	ServiceType           string   `json:"ServiceType" xml:"ServiceType"`
-	ServiceName           string   `json:"ServiceName" xml:"ServiceName"`
-	Zones                 []string `json:"Zones" xml:"Zones"`
+	MaxBandwidth          int        `json:"MaxBandwidth" xml:"MaxBandwidth"`
+	ServiceDomain         string     `json:"ServiceDomain" xml:"ServiceDomain"`
+	ConnectBandwidth      int        `json:"ConnectBandwidth" xml:"ConnectBandwidth"`
+	ZoneAffinityEnabled   bool       `json:"ZoneAffinityEnabled" xml:"ZoneAffinityEnabled"`
+	CreateTime            string     `json:"CreateTime" xml:"CreateTime"`
+	ServiceResourceType   string     `json:"ServiceResourceType" xml:"ServiceResourceType"`
+	AutoAcceptEnabled     bool       `json:"AutoAcceptEnabled" xml:"AutoAcceptEnabled"`
+	PrivateServiceName    string     `json:"PrivateServiceName" xml:"PrivateServiceName"`
+	Payer                 string     `json:"Payer" xml:"Payer"`
+	ServiceStatus         string     `json:"ServiceStatus" xml:"ServiceStatus"`
+	ServiceId             string     `json:"ServiceId" xml:"ServiceId"`
+	RegionId              string     `json:"RegionId" xml:"RegionId"`
+	ResourceGroupId       string     `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	MinBandwidth          int        `json:"MinBandwidth" xml:"MinBandwidth"`
+	ServiceDescription    string     `json:"ServiceDescription" xml:"ServiceDescription"`
+	ServiceSupportIPv6    bool       `json:"ServiceSupportIPv6" xml:"ServiceSupportIPv6"`
+	ServiceBusinessStatus string     `json:"ServiceBusinessStatus" xml:"ServiceBusinessStatus"`
+	ServiceType           string     `json:"ServiceType" xml:"ServiceType"`
+	ServiceName           string     `json:"ServiceName" xml:"ServiceName"`
+	Zones                 []string   `json:"Zones" xml:"Zones"`
+	Tags                  []TagModel `json:"Tags" xml:"Tags"`
 }

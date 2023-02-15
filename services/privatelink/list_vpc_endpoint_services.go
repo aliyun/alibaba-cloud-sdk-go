@@ -71,16 +71,24 @@ func (client *Client) ListVpcEndpointServicesWithCallback(request *ListVpcEndpoi
 // ListVpcEndpointServicesRequest is the request struct for api ListVpcEndpointServices
 type ListVpcEndpointServicesRequest struct {
 	*requests.RpcRequest
-	ServiceBusinessStatus string           `position:"Query" name:"ServiceBusinessStatus"`
-	AutoAcceptEnabled     requests.Boolean `position:"Query" name:"AutoAcceptEnabled"`
-	ServiceStatus         string           `position:"Query" name:"ServiceStatus"`
-	NextToken             string           `position:"Query" name:"NextToken"`
-	ZoneAffinityEnabled   requests.Boolean `position:"Query" name:"ZoneAffinityEnabled"`
-	ServiceName           string           `position:"Query" name:"ServiceName"`
-	ResourceId            string           `position:"Query" name:"ResourceId"`
-	ServiceResourceType   string           `position:"Query" name:"ServiceResourceType"`
-	MaxResults            requests.Integer `position:"Query" name:"MaxResults"`
-	ServiceId             string           `position:"Query" name:"ServiceId"`
+	ServiceBusinessStatus string                        `position:"Query" name:"ServiceBusinessStatus"`
+	AutoAcceptEnabled     requests.Boolean              `position:"Query" name:"AutoAcceptEnabled"`
+	ServiceStatus         string                        `position:"Query" name:"ServiceStatus"`
+	ResourceGroupId       string                        `position:"Query" name:"ResourceGroupId"`
+	NextToken             string                        `position:"Query" name:"NextToken"`
+	ZoneAffinityEnabled   requests.Boolean              `position:"Query" name:"ZoneAffinityEnabled"`
+	ServiceName           string                        `position:"Query" name:"ServiceName"`
+	Tag                   *[]ListVpcEndpointServicesTag `position:"Query" name:"Tag"  type:"Repeated"`
+	ResourceId            string                        `position:"Query" name:"ResourceId"`
+	ServiceResourceType   string                        `position:"Query" name:"ServiceResourceType"`
+	MaxResults            requests.Integer              `position:"Query" name:"MaxResults"`
+	ServiceId             string                        `position:"Query" name:"ServiceId"`
+}
+
+// ListVpcEndpointServicesTag is a repeated param struct in ListVpcEndpointServicesRequest
+type ListVpcEndpointServicesTag struct {
+	Key   string `name:"Key"`
+	Value string `name:"Value"`
 }
 
 // ListVpcEndpointServicesResponse is the response struct for api ListVpcEndpointServices
@@ -88,7 +96,7 @@ type ListVpcEndpointServicesResponse struct {
 	*responses.BaseResponse
 	NextToken  string    `json:"NextToken" xml:"NextToken"`
 	RequestId  string    `json:"RequestId" xml:"RequestId"`
-	MaxResults string    `json:"MaxResults" xml:"MaxResults"`
+	MaxResults int       `json:"MaxResults" xml:"MaxResults"`
 	Services   []Service `json:"Services" xml:"Services"`
 }
 

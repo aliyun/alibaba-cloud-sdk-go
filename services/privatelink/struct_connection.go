@@ -25,5 +25,6 @@ type Connection struct {
 	ConnectionStatus string `json:"ConnectionStatus" xml:"ConnectionStatus"`
 	EndpointId       string `json:"EndpointId" xml:"EndpointId"`
 	EndpointVpcId    string `json:"EndpointVpcId" xml:"EndpointVpcId"`
+	ResourceGroupId  string `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	Zones            []Zone `json:"Zones" xml:"Zones"`
 }

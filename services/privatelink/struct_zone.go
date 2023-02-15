@@ -23,11 +23,16 @@ type Zone struct {
 	LocalName          string `json:"LocalName" xml:"LocalName"`
 	EniIp              string `json:"EniIp" xml:"EniIp"`
 	ZoneDomain         string `json:"ZoneDomain" xml:"ZoneDomain"`
+	ZoneIpv6Address    string `json:"ZoneIpv6Address" xml:"ZoneIpv6Address"`
 	ServiceStatus      string `json:"ServiceStatus" xml:"ServiceStatus"`
+	ConnectionId       int64  `json:"ConnectionId" xml:"ConnectionId"`
 	RegionId           string `json:"RegionId" xml:"RegionId"`
 	ZoneId             string `json:"ZoneId" xml:"ZoneId"`
 	EniId              string `json:"EniId" xml:"EniId"`
 	StatusInfo         string `json:"StatusInfo" xml:"StatusInfo"`
 	ZoneStatus         string `json:"ZoneStatus" xml:"ZoneStatus"`
+	NsiIndex           int64  `json:"NsiIndex" xml:"NsiIndex"`
 	ReplacedResourceId string `json:"ReplacedResourceId" xml:"ReplacedResourceId"`
+	ConnectionStringId string `json:"ConnectionStringId" xml:"ConnectionStringId"`
+	NsiIndexString     string `json:"NsiIndexString" xml:"NsiIndexString"`
 }

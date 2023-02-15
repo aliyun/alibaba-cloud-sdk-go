@@ -71,6 +71,7 @@ func (client *Client) DescribeZonesWithCallback(request *DescribeZonesRequest, c
 // DescribeZonesRequest is the request struct for api DescribeZones
 type DescribeZonesRequest struct {
 	*requests.RpcRequest
+	ServiceResourceType string `position:"Query" name:"ServiceResourceType"`
 }
 
 // DescribeZonesResponse is the response struct for api DescribeZones

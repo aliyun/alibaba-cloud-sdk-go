@@ -71,16 +71,33 @@ func (client *Client) CreateVpcEndpointServiceWithCallback(request *CreateVpcEnd
 // CreateVpcEndpointServiceRequest is the request struct for api CreateVpcEndpointService
 type CreateVpcEndpointServiceRequest struct {
 	*requests.RpcRequest
-	PrivateServiceDomainEnabled requests.Boolean                    `position:"Query" name:"PrivateServiceDomainEnabled"`
-	PrivateServiceDomain        string                              `position:"Query" name:"PrivateServiceDomain"`
-	AutoAcceptEnabled           requests.Boolean                    `position:"Query" name:"AutoAcceptEnabled"`
-	ClientToken                 string                              `position:"Query" name:"ClientToken"`
-	Payer                       string                              `position:"Query" name:"Payer"`
-	ZoneAffinityEnabled         requests.Boolean                    `position:"Query" name:"ZoneAffinityEnabled"`
-	DryRun                      requests.Boolean                    `position:"Query" name:"DryRun"`
-	Resource                    *[]CreateVpcEndpointServiceResource `position:"Query" name:"Resource"  type:"Repeated"`
-	ServiceResourceType         string                              `position:"Query" name:"ServiceResourceType"`
-	ServiceDescription          string                              `position:"Query" name:"ServiceDescription"`
+	PrivateServiceDomainEnabled requests.Boolean                     `position:"Query" name:"PrivateServiceDomainEnabled"`
+	PrivateServiceDomain        string                               `position:"Query" name:"PrivateServiceDomain"`
+	AutoAcceptEnabled           requests.Boolean                     `position:"Query" name:"AutoAcceptEnabled"`
+	ClientToken                 string                               `position:"Query" name:"ClientToken"`
+	SystemTag                   *[]CreateVpcEndpointServiceSystemTag `position:"Query" name:"SystemTag"  type:"Repeated"`
+	Payer                       string                               `position:"Query" name:"Payer"`
+	ResourceGroupId             string                               `position:"Query" name:"ResourceGroupId"`
+	ZoneAffinityEnabled         requests.Boolean                     `position:"Query" name:"ZoneAffinityEnabled"`
+	Tag                         *[]CreateVpcEndpointServiceTag       `position:"Query" name:"Tag"  type:"Repeated"`
+	DryRun                      requests.Boolean                     `position:"Query" name:"DryRun"`
+	Resource                    *[]CreateVpcEndpointServiceResource  `position:"Query" name:"Resource"  type:"Repeated"`
+	ServiceResourceType         string                               `position:"Query" name:"ServiceResourceType"`
+	ServiceSupportIPv6          requests.Boolean                     `position:"Query" name:"ServiceSupportIPv6"`
+	ServiceDescription          string                               `position:"Query" name:"ServiceDescription"`
+}
+
+// CreateVpcEndpointServiceSystemTag is a repeated param struct in CreateVpcEndpointServiceRequest
+type CreateVpcEndpointServiceSystemTag struct {
+	Key   string `name:"Key"`
+	Value string `name:"Value"`
+	Scope string `name:"Scope"`
+}
+
+// CreateVpcEndpointServiceTag is a repeated param struct in CreateVpcEndpointServiceRequest
+type CreateVpcEndpointServiceTag struct {
+	Key   string `name:"Key"`
+	Value string `name:"Value"`
 }
 
 // CreateVpcEndpointServiceResource is a repeated param struct in CreateVpcEndpointServiceRequest
@@ -103,6 +120,8 @@ type CreateVpcEndpointServiceResponse struct {
 	ZoneAffinityEnabled   bool   `json:"ZoneAffinityEnabled" xml:"ZoneAffinityEnabled"`
 	AutoAcceptEnabled     bool   `json:"AutoAcceptEnabled" xml:"AutoAcceptEnabled"`
 	ServiceId             string `json:"ServiceId" xml:"ServiceId"`
+	ServiceSupportIPv6    bool   `json:"ServiceSupportIPv6" xml:"ServiceSupportIPv6"`
+	ResourceGroupId       string `json:"ResourceGroupId" xml:"ResourceGroupId"`
 }
 
 // CreateCreateVpcEndpointServiceRequest creates a request to invoke CreateVpcEndpointService API

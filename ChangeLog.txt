@@ -1,3 +1,7 @@
+2023-02-15 Version: v1.62.169
+- Generated 2020-04-15 for `Privatelink`.
+- Support resource scheduler.
+
 2023-02-15 Version: v1.62.168
 - Generated 2020-10-28 for `mPaaS`.
 - Support vivo classification.

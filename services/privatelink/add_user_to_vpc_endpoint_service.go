@@ -72,6 +72,7 @@ func (client *Client) AddUserToVpcEndpointServiceWithCallback(request *AddUserTo
 type AddUserToVpcEndpointServiceRequest struct {
 	*requests.RpcRequest
 	ClientToken string           `position:"Query" name:"ClientToken"`
+	UserARN     string           `position:"Query" name:"UserARN"`
 	UserId      requests.Integer `position:"Query" name:"UserId"`
 	DryRun      requests.Boolean `position:"Query" name:"DryRun"`
 	ServiceId   string           `position:"Query" name:"ServiceId"`

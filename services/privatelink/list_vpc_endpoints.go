@@ -71,15 +71,23 @@ func (client *Client) ListVpcEndpointsWithCallback(request *ListVpcEndpointsRequ
 // ListVpcEndpointsRequest is the request struct for api ListVpcEndpoints
 type ListVpcEndpointsRequest struct {
 	*requests.RpcRequest
-	EndpointId       string           `position:"Query" name:"EndpointId"`
-	EndpointStatus   string           `position:"Query" name:"EndpointStatus"`
-	NextToken        string           `position:"Query" name:"NextToken"`
-	EndpointType     string           `position:"Query" name:"EndpointType"`
-	ServiceName      string           `position:"Query" name:"ServiceName"`
-	ConnectionStatus string           `position:"Query" name:"ConnectionStatus"`
-	VpcId            string           `position:"Query" name:"VpcId"`
-	EndpointName     string           `position:"Query" name:"EndpointName"`
-	MaxResults       requests.Integer `position:"Query" name:"MaxResults"`
+	EndpointId       string                 `position:"Query" name:"EndpointId"`
+	EndpointStatus   string                 `position:"Query" name:"EndpointStatus"`
+	ResourceGroupId  string                 `position:"Query" name:"ResourceGroupId"`
+	NextToken        string                 `position:"Query" name:"NextToken"`
+	EndpointType     string                 `position:"Query" name:"EndpointType"`
+	ServiceName      string                 `position:"Query" name:"ServiceName"`
+	Tag              *[]ListVpcEndpointsTag `position:"Query" name:"Tag"  type:"Repeated"`
+	ConnectionStatus string                 `position:"Query" name:"ConnectionStatus"`
+	VpcId            string                 `position:"Query" name:"VpcId"`
+	EndpointName     string                 `position:"Query" name:"EndpointName"`
+	MaxResults       requests.Integer       `position:"Query" name:"MaxResults"`
+}
+
+// ListVpcEndpointsTag is a repeated param struct in ListVpcEndpointsRequest
+type ListVpcEndpointsTag struct {
+	Key   string `name:"Key"`
+	Value string `name:"Value"`
 }
 
 // ListVpcEndpointsResponse is the response struct for api ListVpcEndpoints
@@ -87,7 +95,7 @@ type ListVpcEndpointsResponse struct {
 	*responses.BaseResponse
 	NextToken  string     `json:"NextToken" xml:"NextToken"`
 	RequestId  string     `json:"RequestId" xml:"RequestId"`
-	MaxResults string     `json:"MaxResults" xml:"MaxResults"`
+	MaxResults int        `json:"MaxResults" xml:"MaxResults"`
 	Endpoints  []Endpoint `json:"Endpoints" xml:"Endpoints"`
 }
 
