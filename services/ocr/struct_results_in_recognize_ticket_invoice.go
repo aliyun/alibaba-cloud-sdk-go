@@ -17,5 +17,5 @@ package ocr
 
 // ResultsInRecognizeTicketInvoice is a nested struct in ocr response
 type ResultsInRecognizeTicketInvoice struct {
-	Results []Results `json:"results" xml:"results"`
+	ResultsItem []ResultsItem `json:"results" xml:"results"`
 }

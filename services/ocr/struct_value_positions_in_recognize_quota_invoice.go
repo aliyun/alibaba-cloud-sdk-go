@@ -17,5 +17,5 @@ package ocr
 
 // ValuePositionsInRecognizeQuotaInvoice is a nested struct in ocr response
 type ValuePositionsInRecognizeQuotaInvoice struct {
-	ValuePositions []ValuePositions `json:"valuePositions" xml:"valuePositions"`
+	ValuePositionsItem []ValuePositionsItem `json:"valuePositions" xml:"valuePositions"`
 }

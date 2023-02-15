@@ -17,11 +17,11 @@ package ocr
 
 // DataInRecognizePdf is a nested struct in ocr response
 type DataInRecognizePdf struct {
-	Height    int64       `json:"Height" xml:"Height"`
-	Width     int64       `json:"Width" xml:"Width"`
-	OrgHeight int64       `json:"OrgHeight" xml:"OrgHeight"`
-	OrgWidth  int64       `json:"OrgWidth" xml:"OrgWidth"`
-	PageIndex int64       `json:"PageIndex" xml:"PageIndex"`
-	Angle     int64       `json:"Angle" xml:"Angle"`
-	WordsInfo []WordsInfo `json:"WordsInfo" xml:"WordsInfo"`
+	Height    int64           `json:"Height" xml:"Height"`
+	Width     int64           `json:"Width" xml:"Width"`
+	OrgHeight int64           `json:"OrgHeight" xml:"OrgHeight"`
+	OrgWidth  int64           `json:"OrgWidth" xml:"OrgWidth"`
+	PageIndex int64           `json:"PageIndex" xml:"PageIndex"`
+	Angle     int64           `json:"Angle" xml:"Angle"`
+	WordsInfo []WordsInfoItem `json:"WordsInfo" xml:"WordsInfo"`
 }

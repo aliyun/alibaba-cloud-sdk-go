@@ -17,11 +17,11 @@ package ocr
 
 // DataInRecognizeQuotaInvoice is a nested struct in ocr response
 type DataInRecognizeQuotaInvoice struct {
-	Angle         int64           `json:"Angle" xml:"Angle"`
-	Height        int64           `json:"Height" xml:"Height"`
-	Width         int64           `json:"Width" xml:"Width"`
-	OrgHeight     int64           `json:"OrgHeight" xml:"OrgHeight"`
-	OrgWidth      int64           `json:"OrgWidth" xml:"OrgWidth"`
-	Content       Content         `json:"Content" xml:"Content"`
-	KeyValueInfos []KeyValueInfos `json:"KeyValueInfos" xml:"KeyValueInfos"`
+	Angle         int64               `json:"Angle" xml:"Angle"`
+	Height        int64               `json:"Height" xml:"Height"`
+	Width         int64               `json:"Width" xml:"Width"`
+	OrgHeight     int64               `json:"OrgHeight" xml:"OrgHeight"`
+	OrgWidth      int64               `json:"OrgWidth" xml:"OrgWidth"`
+	Content       Content             `json:"Content" xml:"Content"`
+	KeyValueInfos []KeyValueInfosItem `json:"KeyValueInfos" xml:"KeyValueInfos"`
 }

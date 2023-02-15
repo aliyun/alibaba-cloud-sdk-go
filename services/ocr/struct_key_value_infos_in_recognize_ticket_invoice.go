@@ -17,5 +17,5 @@ package ocr
 
 // KeyValueInfosInRecognizeTicketInvoice is a nested struct in ocr response
 type KeyValueInfosInRecognizeTicketInvoice struct {
-	KeyValueInfos []KeyValueInfos `json:"keyValueInfos" xml:"keyValueInfos"`
+	KeyValueInfosItem []KeyValueInfosItem `json:"keyValueInfos" xml:"keyValueInfos"`
 }

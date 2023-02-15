@@ -17,6 +17,5 @@ package ocr
 
 // SliceRectangle is a nested struct in ocr response
 type SliceRectangle struct {
-	Y int64 `json:"Y" xml:"Y"`
-	X int64 `json:"X" xml:"X"`
+	SliceRectangleItem []SliceRectangleItem `json:"sliceRectangle" xml:"sliceRectangle"`
 }

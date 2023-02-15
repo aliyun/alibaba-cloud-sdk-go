@@ -93,6 +93,7 @@ type Data struct {
 	FrontResult         FrontResult          `json:"FrontResult" xml:"FrontResult"`
 	Title               Title                `json:"Title" xml:"Title"`
 	QRCode              QRCode               `json:"QRCode" xml:"QRCode"`
+	Plates              []Plate              `json:"Plates" xml:"Plates"`
 	Elements            []Element            `json:"Elements" xml:"Elements"`
 	Frames              []Frame              `json:"Frames" xml:"Frames"`
 	InvalidStampAreas   []InvalidStampArea   `json:"InvalidStampAreas" xml:"InvalidStampAreas"`
@@ -102,7 +103,6 @@ type Data struct {
 	UndertakeStampAreas []UndertakeStampArea `json:"UndertakeStampAreas" xml:"UndertakeStampAreas"`
 	RegisterStampAreas  []RegisterStampArea  `json:"RegisterStampAreas" xml:"RegisterStampAreas"`
 	OtherStampAreas     []OtherStampArea     `json:"OtherStampAreas" xml:"OtherStampAreas"`
-	Plates              []Plate              `json:"Plates" xml:"Plates"`
 	Signboards          []SignboardsItem     `json:"Signboards" xml:"Signboards"`
 	Tables              []Table              `json:"Tables" xml:"Tables"`
 }

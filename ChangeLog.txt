@@ -1,3 +1,7 @@
+2023-02-15 Version: v1.62.167
+- Generated 2019-12-30 for `ocr`.
+- Update RecognizeVideoCharacter.
+
 2023-02-15 Version: v1.62.166
 - Generated 2019-05-06 for `sae`.
 - Add execjob api.

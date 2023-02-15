@@ -17,10 +17,10 @@ package ocr
 
 // Plate is a nested struct in ocr response
 type Plate struct {
-	PlateTypeConfidence float64     `json:"PlateTypeConfidence" xml:"PlateTypeConfidence"`
-	PlateType           string      `json:"PlateType" xml:"PlateType"`
-	Confidence          float64     `json:"Confidence" xml:"Confidence"`
-	PlateNumber         string      `json:"PlateNumber" xml:"PlateNumber"`
-	Roi                 Roi         `json:"Roi" xml:"Roi"`
-	Positions           []Positions `json:"Positions" xml:"Positions"`
+	PlateTypeConfidence float64         `json:"PlateTypeConfidence" xml:"PlateTypeConfidence"`
+	PlateType           string          `json:"PlateType" xml:"PlateType"`
+	Confidence          float64         `json:"Confidence" xml:"Confidence"`
+	PlateNumber         string          `json:"PlateNumber" xml:"PlateNumber"`
+	Roi                 Roi             `json:"Roi" xml:"Roi"`
+	Positions           []PositionsItem `json:"Positions" xml:"Positions"`
 }

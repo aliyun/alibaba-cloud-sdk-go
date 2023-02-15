@@ -17,5 +17,5 @@ package ocr
 
 // KeyValueInfosInRecognizeQuotaInvoice is a nested struct in ocr response
 type KeyValueInfosInRecognizeQuotaInvoice struct {
-	KeyValueInfos []KeyValueInfos `json:"keyValueInfos" xml:"keyValueInfos"`
+	KeyValueInfosItem []KeyValueInfosItem `json:"keyValueInfos" xml:"keyValueInfos"`
 }

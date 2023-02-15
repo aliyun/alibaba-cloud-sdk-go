@@ -17,5 +17,5 @@ package ocr
 
 // PositionsInRecognizePdf is a nested struct in ocr response
 type PositionsInRecognizePdf struct {
-	Positions []Positions `json:"positions" xml:"positions"`
+	PositionsItem []PositionsItem `json:"positions" xml:"positions"`
 }

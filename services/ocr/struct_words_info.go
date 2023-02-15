@@ -17,11 +17,5 @@ package ocr
 
 // WordsInfo is a nested struct in ocr response
 type WordsInfo struct {
-	Y         int64       `json:"Y" xml:"Y"`
-	Width     int64       `json:"Width" xml:"Width"`
-	X         int64       `json:"X" xml:"X"`
-	Word      string      `json:"Word" xml:"Word"`
-	Angle     int64       `json:"Angle" xml:"Angle"`
-	Height    int64       `json:"Height" xml:"Height"`
-	Positions []Positions `json:"Positions" xml:"Positions"`
+	WordsInfoItem []WordsInfoItem `json:"wordsInfo" xml:"wordsInfo"`
 }

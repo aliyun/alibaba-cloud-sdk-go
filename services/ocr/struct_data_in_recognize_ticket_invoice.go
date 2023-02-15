@@ -17,10 +17,10 @@ package ocr
 
 // DataInRecognizeTicketInvoice is a nested struct in ocr response
 type DataInRecognizeTicketInvoice struct {
-	Count     int64     `json:"Count" xml:"Count"`
-	Height    int64     `json:"Height" xml:"Height"`
-	Width     int64     `json:"Width" xml:"Width"`
-	OrgHeight int64     `json:"OrgHeight" xml:"OrgHeight"`
-	OrgWidth  int64     `json:"OrgWidth" xml:"OrgWidth"`
-	Results   []Results `json:"Results" xml:"Results"`
+	Count     int64         `json:"Count" xml:"Count"`
+	Height    int64         `json:"Height" xml:"Height"`
+	Width     int64         `json:"Width" xml:"Width"`
+	OrgHeight int64         `json:"OrgHeight" xml:"OrgHeight"`
+	OrgWidth  int64         `json:"OrgWidth" xml:"OrgWidth"`
+	Results   []ResultsItem `json:"Results" xml:"Results"`
 }

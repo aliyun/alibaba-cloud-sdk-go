@@ -17,5 +17,5 @@ package ocr
 
 // PositionsInRecognizeLicensePlate is a nested struct in ocr response
 type PositionsInRecognizeLicensePlate struct {
-	Positions []Positions `json:"positions" xml:"positions"`
+	PositionsItem []PositionsItem `json:"positions" xml:"positions"`
 }

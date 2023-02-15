@@ -17,5 +17,5 @@ package ocr
 
 // ValuePositionsInRecognizeTicketInvoice is a nested struct in ocr response
 type ValuePositionsInRecognizeTicketInvoice struct {
-	ValuePositions []ValuePositions `json:"valuePositions" xml:"valuePositions"`
+	ValuePositionsItem []ValuePositionsItem `json:"valuePositions" xml:"valuePositions"`
 }
