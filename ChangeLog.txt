@@ -1,3 +1,7 @@
+2023-02-15 Version: v1.62.168
+- Generated 2020-10-28 for `mPaaS`.
+- Support vivo classification.
+
 2023-02-15 Version: v1.62.167
 - Generated 2019-12-30 for `ocr`.
 - Update RecognizeVideoCharacter.
