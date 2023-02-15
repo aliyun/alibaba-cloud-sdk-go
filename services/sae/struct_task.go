@@ -26,4 +26,7 @@ type Task struct {
 	Message          string `json:"Message" xml:"Message"`
 	ShowManualIgnore bool   `json:"ShowManualIgnore" xml:"ShowManualIgnore"`
 	TaskId           string `json:"TaskId" xml:"TaskId"`
+	CreateTime       int64  `json:"CreateTime" xml:"CreateTime"`
+	StartTime        int64  `json:"StartTime" xml:"StartTime"`
+	UpdateTime       int64  `json:"UpdateTime" xml:"UpdateTime"`
 }

@@ -75,6 +75,7 @@ type ExecJobRequest struct {
 	JarStartOptions string `position:"Query" name:"JarStartOptions"`
 	JarStartArgs    string `position:"Query" name:"JarStartArgs"`
 	CommandArgs     string `position:"Query" name:"CommandArgs"`
+	Replicas        string `position:"Query" name:"Replicas"`
 	AppId           string `position:"Query" name:"AppId"`
 	Envs            string `position:"Query" name:"Envs"`
 	Time            string `position:"Query" name:"Time"`
