@@ -1,3 +1,7 @@
+2023-02-16 Version: v1.62.170
+- Generated 2020-04-01 for `eventbridge`.
+- Add new interface.
+
 2023-02-15 Version: v1.62.169
 - Generated 2020-04-15 for `Privatelink`.
 - Support resource scheduler.
