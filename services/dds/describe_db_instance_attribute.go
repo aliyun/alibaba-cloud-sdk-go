@@ -81,6 +81,7 @@ type DescribeDBInstanceAttributeRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ChargeType           string           `position:"Query" name:"ChargeType"`
+	IsDelete             requests.Boolean `position:"Query" name:"IsDelete"`
 }
 
 // DescribeDBInstanceAttributeResponse is the response struct for api DescribeDBInstanceAttribute

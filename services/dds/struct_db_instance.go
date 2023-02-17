@@ -19,6 +19,7 @@ package dds
 type DBInstance struct {
 	ReplicaSetName              string                                        `json:"ReplicaSetName" xml:"ReplicaSetName"`
 	Engine                      string                                        `json:"Engine" xml:"Engine"`
+	DBInstanceOrderStatus       string                                        `json:"DBInstanceOrderStatus" xml:"DBInstanceOrderStatus"`
 	DBInstanceClass             string                                        `json:"DBInstanceClass" xml:"DBInstanceClass"`
 	VpcAuthMode                 string                                        `json:"VpcAuthMode" xml:"VpcAuthMode"`
 	LastDowngradeTime           string                                        `json:"LastDowngradeTime" xml:"LastDowngradeTime"`
