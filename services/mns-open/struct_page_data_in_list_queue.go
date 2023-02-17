@@ -17,5 +17,5 @@ package mns_open
 
 // PageDataInListQueue is a nested struct in mns_open response
 type PageDataInListQueue struct {
-	PageData []PageData `json:"pageData" xml:"pageData"`
+	PageDataItem []PageDataItem `json:"pageData" xml:"pageData"`
 }

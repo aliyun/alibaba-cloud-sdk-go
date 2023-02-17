@@ -17,5 +17,5 @@ package mns_open
 
 // PageDataInListSubscriptionByTopic is a nested struct in mns_open response
 type PageDataInListSubscriptionByTopic struct {
-	PageData []PageData `json:"pageData" xml:"pageData"`
+	PageDataItem []PageDataItem `json:"pageData" xml:"pageData"`
 }

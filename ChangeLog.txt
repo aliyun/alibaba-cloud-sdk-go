@@ -1,3 +1,7 @@
+2023-02-17 Version: v1.62.172
+- Generated 2022-01-19 for `Mns-open`.
+- Remove some useless response parameters.
+
 2023-02-17 Version: v1.62.171
 - Generated 2015-12-01 for `Dds`.
 - Update by SDK platform.
