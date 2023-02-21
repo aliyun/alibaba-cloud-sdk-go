@@ -17,22 +17,22 @@ package cc5g
 
 // Card is a nested struct in cc5g response
 type Card struct {
-	Iccid          string `json:"Iccid" xml:"Iccid"`
-	NetType        string `json:"NetType" xml:"NetType"`
-	APN            string `json:"APN" xml:"APN"`
-	ISP            string `json:"ISP" xml:"ISP"`
-	IpAddress      string `json:"IpAddress" xml:"IpAddress"`
-	Imsi           string `json:"Imsi" xml:"Imsi"`
+	Name           string `json:"Name" xml:"Name"`
 	Imei           string `json:"Imei" xml:"Imei"`
-	Lock           bool   `json:"Lock" xml:"Lock"`
+	UsageDataMonth int64  `json:"UsageDataMonth" xml:"UsageDataMonth"`
+	IpAddress      string `json:"IpAddress" xml:"IpAddress"`
+	Msisdn         string `json:"Msisdn" xml:"Msisdn"`
+	APN            string `json:"APN" xml:"APN"`
 	Spec           string `json:"Spec" xml:"Spec"`
+	ActivatedTime  string `json:"ActivatedTime" xml:"ActivatedTime"`
+	Iccid          string `json:"Iccid" xml:"Iccid"`
+	OrderId        string `json:"OrderId" xml:"OrderId"`
+	UsageDataTotal string `json:"UsageDataTotal" xml:"UsageDataTotal"`
+	BusinessStatus string `json:"BusinessStatus" xml:"BusinessStatus"`
+	Lock           bool   `json:"Lock" xml:"Lock"`
+	ISP            string `json:"ISP" xml:"ISP"`
 	Status         string `json:"Status" xml:"Status"`
 	Description    string `json:"Description" xml:"Description"`
-	Name           string `json:"Name" xml:"Name"`
-	UsageDataMonth int64  `json:"UsageDataMonth" xml:"UsageDataMonth"`
-	OrderId        string `json:"OrderId" xml:"OrderId"`
-	ActivatedTime  string `json:"ActivatedTime" xml:"ActivatedTime"`
-	BusinessStatus string `json:"BusinessStatus" xml:"BusinessStatus"`
-	Msisdn         string `json:"Msisdn" xml:"Msisdn"`
-	UsageDataTotal string `json:"UsageDataTotal" xml:"UsageDataTotal"`
+	NetType        string `json:"NetType" xml:"NetType"`
+	Imsi           string `json:"Imsi" xml:"Imsi"`
 }

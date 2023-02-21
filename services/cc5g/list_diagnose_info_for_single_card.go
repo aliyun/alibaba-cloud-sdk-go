@@ -83,11 +83,11 @@ type ListDiagnoseInfoForSingleCardRequest struct {
 // ListDiagnoseInfoForSingleCardResponse is the response struct for api ListDiagnoseInfoForSingleCard
 type ListDiagnoseInfoForSingleCardResponse struct {
 	*responses.BaseResponse
-	RequestId    string         `json:"RequestId" xml:"RequestId"`
-	NextToken    string         `json:"NextToken" xml:"NextToken"`
-	MaxResults   int64          `json:"MaxResults" xml:"MaxResults"`
-	TotalCount   int64          `json:"TotalCount" xml:"TotalCount"`
-	DiagnoseInfo []DiagnoseInfo `json:"DiagnoseInfo" xml:"DiagnoseInfo"`
+	RequestId    string             `json:"RequestId" xml:"RequestId"`
+	NextToken    string             `json:"NextToken" xml:"NextToken"`
+	MaxResults   int64              `json:"MaxResults" xml:"MaxResults"`
+	TotalCount   int64              `json:"TotalCount" xml:"TotalCount"`
+	DiagnoseInfo []DiagnoseInfoItem `json:"DiagnoseInfo" xml:"DiagnoseInfo"`
 }
 
 // CreateListDiagnoseInfoForSingleCardRequest creates a request to invoke ListDiagnoseInfoForSingleCard API

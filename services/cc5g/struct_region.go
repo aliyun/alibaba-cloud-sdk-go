@@ -17,12 +17,11 @@ package cc5g
 
 // Region is a nested struct in cc5g response
 type Region struct {
-	Name           string   `json:"Name" xml:"Name"`
-	RegionId       string   `json:"RegionId" xml:"RegionId"`
-	LocalName      string   `json:"LocalName" xml:"LocalName"`
-	APN            string   `json:"APN" xml:"APN"`
-	ISP            string   `json:"ISP" xml:"ISP"`
-	Description    string   `json:"Description" xml:"Description"`
-	RegionEndpoint string   `json:"RegionEndpoint" xml:"RegionEndpoint"`
-	Zones          []string `json:"Zones" xml:"Zones"`
+	Name        string   `json:"Name" xml:"Name"`
+	RegionId    string   `json:"RegionId" xml:"RegionId"`
+	LocalName   string   `json:"LocalName" xml:"LocalName"`
+	APN         string   `json:"APN" xml:"APN"`
+	ISP         string   `json:"ISP" xml:"ISP"`
+	Description string   `json:"Description" xml:"Description"`
+	Zones       []string `json:"Zones" xml:"Zones"`
 }

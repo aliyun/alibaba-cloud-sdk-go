@@ -17,6 +17,5 @@ package cc5g
 
 // DiagnoseItem is a nested struct in cc5g response
 type DiagnoseItem struct {
-	Part   string `json:"Part" xml:"Part"`
-	Status string `json:"Status" xml:"Status"`
+	DiagnoseItemItem []DiagnoseItemItem `json:"diagnoseItem" xml:"diagnoseItem"`
 }

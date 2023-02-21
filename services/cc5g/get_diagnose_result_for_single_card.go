@@ -78,17 +78,17 @@ type GetDiagnoseResultForSingleCardRequest struct {
 // GetDiagnoseResultForSingleCardResponse is the response struct for api GetDiagnoseResultForSingleCard
 type GetDiagnoseResultForSingleCardResponse struct {
 	*responses.BaseResponse
-	RequestId                string           `json:"RequestId" xml:"RequestId"`
-	WirelessCloudConnectorId string           `json:"WirelessCloudConnectorId" xml:"WirelessCloudConnectorId"`
-	CardIp                   string           `json:"CardIp" xml:"CardIp"`
-	IccId                    string           `json:"IccId" xml:"IccId"`
-	Destination              string           `json:"Destination" xml:"Destination"`
-	DestinationType          string           `json:"DestinationType" xml:"DestinationType"`
-	BeginTime                int64            `json:"BeginTime" xml:"BeginTime"`
-	EndTime                  int64            `json:"EndTime" xml:"EndTime"`
-	Status                   string           `json:"Status" xml:"Status"`
-	ErrorResult              []DiagnoseResult `json:"ErrorResult" xml:"ErrorResult"`
-	DiagnoseItem             []DiagnoseItem   `json:"DiagnoseItem" xml:"DiagnoseItem"`
+	RequestId                string             `json:"RequestId" xml:"RequestId"`
+	WirelessCloudConnectorId string             `json:"WirelessCloudConnectorId" xml:"WirelessCloudConnectorId"`
+	CardIp                   string             `json:"CardIp" xml:"CardIp"`
+	IccId                    string             `json:"IccId" xml:"IccId"`
+	Destination              string             `json:"Destination" xml:"Destination"`
+	DestinationType          string             `json:"DestinationType" xml:"DestinationType"`
+	BeginTime                int64              `json:"BeginTime" xml:"BeginTime"`
+	EndTime                  int64              `json:"EndTime" xml:"EndTime"`
+	Status                   string             `json:"Status" xml:"Status"`
+	ErrorResult              []DiagnoseResult   `json:"ErrorResult" xml:"ErrorResult"`
+	DiagnoseItem             []DiagnoseItemItem `json:"DiagnoseItem" xml:"DiagnoseItem"`
 }
 
 // CreateGetDiagnoseResultForSingleCardRequest creates a request to invoke GetDiagnoseResultForSingleCard API

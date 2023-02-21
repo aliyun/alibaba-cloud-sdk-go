@@ -19,6 +19,7 @@ package cc5g
 type DiagnoseResult struct {
 	ErrorLevel      string `json:"ErrorLevel" xml:"ErrorLevel"`
 	ErrorPart       string `json:"ErrorPart" xml:"ErrorPart"`
+	ErrorItem       string `json:"ErrorItem" xml:"ErrorItem"`
 	ErrorDesc       string `json:"ErrorDesc" xml:"ErrorDesc"`
 	ErrorSuggestion string `json:"ErrorSuggestion" xml:"ErrorSuggestion"`
 }
