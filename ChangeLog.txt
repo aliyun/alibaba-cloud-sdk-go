@@ -1,3 +1,7 @@
+2023-02-21 Version: v1.62.178
+- Generated 2022-08-29 for `dt-oc-info`.
+- Supported GetQccSearchCertification and GetQccCertificationDetailById Api For Zhimaxinyong.
+
 2023-02-21 Version: v1.62.177
 - Generated 2019-04-30 for `schedulerx2`.
 - Update AppGroup Hide xattrs.
