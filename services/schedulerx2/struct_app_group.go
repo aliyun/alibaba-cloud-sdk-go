@@ -22,4 +22,5 @@ type AppGroup struct {
 	AppKey      string `json:"AppKey" xml:"AppKey"`
 	Description string `json:"Description" xml:"Description"`
 	GroupId     string `json:"GroupId" xml:"GroupId"`
+	Xattrs      string `json:"Xattrs" xml:"Xattrs"`
 }

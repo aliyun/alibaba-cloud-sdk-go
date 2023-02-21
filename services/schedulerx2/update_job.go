@@ -94,6 +94,7 @@ type UpdateJobRequest struct {
 	Timeout             requests.Integer        `position:"Body" name:"Timeout"`
 	TimeoutKillEnable   requests.Boolean        `position:"Body" name:"TimeoutKillEnable"`
 	PageSize            requests.Integer        `position:"Body" name:"PageSize"`
+	TaskDispatchMode    string                  `position:"Body" name:"TaskDispatchMode"`
 	Calendar            string                  `position:"Body" name:"Calendar"`
 	FailEnable          requests.Boolean        `position:"Body" name:"FailEnable"`
 	SendChannel         string                  `position:"Body" name:"SendChannel"`
