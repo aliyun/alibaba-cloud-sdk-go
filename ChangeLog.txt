@@ -1,3 +1,7 @@
+2023-02-22 Version: v1.62.182
+- Generated 2020-03-20 for `videorecog`.
+- Update EvaluateVideoQuality.
+
 2023-02-22 Version: v1.62.181
 - Generated 2020-03-20 for `videoenhan`.
 - Release GenerateHumanAnimeStyleVideo.
