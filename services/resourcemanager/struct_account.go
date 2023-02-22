@@ -21,6 +21,7 @@ type Account struct {
 	DelegationEnabledTime string `json:"DelegationEnabledTime" xml:"DelegationEnabledTime"`
 	JoinTime              string `json:"JoinTime" xml:"JoinTime"`
 	ResourceDirectoryPath string `json:"ResourceDirectoryPath" xml:"ResourceDirectoryPath"`
+	EmailStatus           string `json:"EmailStatus" xml:"EmailStatus"`
 	FolderId              string `json:"FolderId" xml:"FolderId"`
 	DisplayName           string `json:"DisplayName" xml:"DisplayName"`
 	Location              string `json:"Location" xml:"Location"`

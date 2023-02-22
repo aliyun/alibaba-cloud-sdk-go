@@ -1,3 +1,7 @@
+2023-02-22 Version: v1.62.179
+- Generated 2020-03-31 for `ResourceManager`.
+- Supported more language for resourcemanager.
+
 2023-02-21 Version: v1.62.178
 - Generated 2022-08-29 for `dt-oc-info`.
 - Supported GetQccSearchCertification and GetQccCertificationDetailById Api For Zhimaxinyong.
