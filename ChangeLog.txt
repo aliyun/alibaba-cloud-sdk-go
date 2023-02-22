@@ -1,3 +1,7 @@
+2023-02-22 Version: v1.62.180
+- Generated 2020-03-20 for `videorecog`.
+- Update EvaluateVideoQuality.
+
 2023-02-22 Version: v1.62.179
 - Generated 2020-03-31 for `ResourceManager`.
 - Supported more language for resourcemanager.

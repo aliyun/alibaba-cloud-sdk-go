@@ -71,6 +71,7 @@ func (client *Client) SplitVideoPartsWithCallback(request *SplitVideoPartsReques
 // SplitVideoPartsRequest is the request struct for api SplitVideoParts
 type SplitVideoPartsRequest struct {
 	*requests.RpcRequest
+	Template string           `position:"Body" name:"Template"`
 	Async    requests.Boolean `position:"Body" name:"Async"`
 	VideoUrl string           `position:"Body" name:"VideoUrl"`
 }
