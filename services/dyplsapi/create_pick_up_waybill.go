@@ -71,20 +71,23 @@ func (client *Client) CreatePickUpWaybillWithCallback(request *CreatePickUpWaybi
 // CreatePickUpWaybillRequest is the request struct for api CreatePickUpWaybill
 type CreatePickUpWaybillRequest struct {
 	*requests.RpcRequest
-	ConsigneeName    string                              `position:"Query" name:"ConsigneeName"`
-	OrderChannels    string                              `position:"Query" name:"OrderChannels"`
-	SendAddress      CreatePickUpWaybillSendAddress      `position:"Query" name:"SendAddress"  type:"Struct"`
-	OuterOrderCode   string                              `position:"Query" name:"OuterOrderCode"`
-	Remark           string                              `position:"Query" name:"Remark"`
-	CpCode           string                              `position:"Query" name:"CpCode"`
-	SendMobile       string                              `position:"Query" name:"SendMobile"`
-	ConsigneeMobile  string                              `position:"Query" name:"ConsigneeMobile"`
-	ContentType      string                              `position:"Header" name:"Content-Type"`
-	ConsigneeAddress CreatePickUpWaybillConsigneeAddress `position:"Query" name:"ConsigneeAddress"  type:"Struct"`
-	SendPhone        string                              `position:"Query" name:"SendPhone"`
-	GoodsInfos       *[]CreatePickUpWaybillGoodsInfos    `position:"Query" name:"GoodsInfos"  type:"Json"`
-	SendName         string                              `position:"Query" name:"SendName"`
-	ConsigneePhone   string                              `position:"Query" name:"ConsigneePhone"`
+	ConsigneeName       string                              `position:"Query" name:"ConsigneeName"`
+	OrderChannels       string                              `position:"Query" name:"OrderChannels"`
+	SendAddress         CreatePickUpWaybillSendAddress      `position:"Query" name:"SendAddress"  type:"Struct"`
+	OuterOrderCode      string                              `position:"Query" name:"OuterOrderCode"`
+	Remark              string                              `position:"Query" name:"Remark"`
+	AppointGotStartTime string                              `position:"Query" name:"AppointGotStartTime"`
+	AppointGotEndTime   string                              `position:"Query" name:"AppointGotEndTime"`
+	CpCode              string                              `position:"Query" name:"CpCode"`
+	SendMobile          string                              `position:"Query" name:"SendMobile"`
+	ConsigneeMobile     string                              `position:"Query" name:"ConsigneeMobile"`
+	ContentType         string                              `position:"Header" name:"Content-Type"`
+	ConsigneeAddress    CreatePickUpWaybillConsigneeAddress `position:"Query" name:"ConsigneeAddress"  type:"Struct"`
+	SendPhone           string                              `position:"Query" name:"SendPhone"`
+	GoodsInfos          *[]CreatePickUpWaybillGoodsInfos    `position:"Query" name:"GoodsInfos"  type:"Json"`
+	BizType             requests.Integer                    `position:"Query" name:"BizType"`
+	SendName            string                              `position:"Query" name:"SendName"`
+	ConsigneePhone      string                              `position:"Query" name:"ConsigneePhone"`
 }
 
 // CreatePickUpWaybillGoodsInfos is a repeated param struct in CreatePickUpWaybillRequest

@@ -81,6 +81,7 @@ type BindAxbRequest struct {
 	PhoneNoA             string           `position:"Query" name:"PhoneNoA"`
 	ExpectCity           string           `position:"Query" name:"ExpectCity"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	DtmfConfig           string           `position:"Query" name:"DtmfConfig"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	OutOrderId           string           `position:"Query" name:"OutOrderId"`
 	PoolKey              string           `position:"Query" name:"PoolKey"`
