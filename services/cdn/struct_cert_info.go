@@ -20,25 +20,26 @@ type CertInfo struct {
 	CertName                string `json:"CertName" xml:"CertName"`
 	CertOrg                 string `json:"CertOrg" xml:"CertOrg"`
 	DomainList              string `json:"DomainList" xml:"DomainList"`
-	Issuer                  string `json:"Issuer" xml:"Issuer"`
-	HttpsCrt                string `json:"HttpsCrt" xml:"HttpsCrt"`
 	DomainNames             string `json:"DomainNames" xml:"DomainNames"`
 	CertExpireTime          string `json:"CertExpireTime" xml:"CertExpireTime"`
 	CertStatus              string `json:"CertStatus" xml:"CertStatus"`
-	CertType                string `json:"CertType" xml:"CertType"`
-	DomainName              string `json:"DomainName" xml:"DomainName"`
 	DomainCnameStatus       string `json:"DomainCnameStatus" xml:"DomainCnameStatus"`
 	CreateTime              string `json:"CreateTime" xml:"CreateTime"`
-	ServerCertificate       string `json:"ServerCertificate" xml:"ServerCertificate"`
 	ServerCertificateStatus string `json:"ServerCertificateStatus" xml:"ServerCertificateStatus"`
 	CertUpdateTime          string `json:"CertUpdateTime" xml:"CertUpdateTime"`
 	CertSubjectCommonName   string `json:"CertSubjectCommonName" xml:"CertSubjectCommonName"`
 	CertCaIsLegacy          string `json:"CertCaIsLegacy" xml:"CertCaIsLegacy"`
+	CertDomainName          string `json:"CertDomainName" xml:"CertDomainName"`
+	CertStartTime           string `json:"CertStartTime" xml:"CertStartTime"`
+	CertId                  string `json:"CertId" xml:"CertId"`
+	Issuer                  string `json:"Issuer" xml:"Issuer"`
+	HttpsCrt                string `json:"HttpsCrt" xml:"HttpsCrt"`
+	CertType                string `json:"CertType" xml:"CertType"`
+	DomainName              string `json:"DomainName" xml:"DomainName"`
+	CertRegion              string `json:"CertRegion" xml:"CertRegion"`
+	ServerCertificate       string `json:"ServerCertificate" xml:"ServerCertificate"`
 	CertCommonName          string `json:"CertCommonName" xml:"CertCommonName"`
 	Status                  string `json:"Status" xml:"Status"`
 	CertExpired             string `json:"CertExpired" xml:"CertExpired"`
 	CertLife                string `json:"CertLife" xml:"CertLife"`
-	CertDomainName          string `json:"CertDomainName" xml:"CertDomainName"`
-	CertStartTime           string `json:"CertStartTime" xml:"CertStartTime"`
-	CertId                  string `json:"CertId" xml:"CertId"`
 }
