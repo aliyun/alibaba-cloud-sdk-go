@@ -77,6 +77,7 @@ type DescribeDcdnDomainUsageDataRequest struct {
 	EndTime      string `position:"Query" name:"EndTime"`
 	Interval     string `position:"Query" name:"Interval"`
 	StartTime    string `position:"Query" name:"StartTime"`
+	Type         string `position:"Query" name:"Type"`
 	DataProtocol string `position:"Query" name:"DataProtocol"`
 }
 

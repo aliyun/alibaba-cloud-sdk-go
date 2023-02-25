@@ -17,6 +17,7 @@ package dcdn
 
 // DefenseSceneItem is a nested struct in dcdn response
 type DefenseSceneItem struct {
+	PolicyIds    string `json:"PolicyIds" xml:"PolicyIds"`
 	RuleCount    int    `json:"RuleCount" xml:"RuleCount"`
 	PolicyCount  int    `json:"PolicyCount" xml:"PolicyCount"`
 	DefenseScene string `json:"DefenseScene" xml:"DefenseScene"`

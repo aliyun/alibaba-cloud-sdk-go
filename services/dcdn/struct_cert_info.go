@@ -26,6 +26,7 @@ type CertInfo struct {
 	CertStatus            string `json:"CertStatus" xml:"CertStatus"`
 	CertType              string `json:"CertType" xml:"CertType"`
 	DomainName            string `json:"DomainName" xml:"DomainName"`
+	CertRegion            string `json:"CertRegion" xml:"CertRegion"`
 	SSLPub                string `json:"SSLPub" xml:"SSLPub"`
 	SSLProtocol           string `json:"SSLProtocol" xml:"SSLProtocol"`
 	CertUpdateTime        string `json:"CertUpdateTime" xml:"CertUpdateTime"`
@@ -37,4 +38,5 @@ type CertInfo struct {
 	CertLife              string `json:"CertLife" xml:"CertLife"`
 	CertDomainName        string `json:"CertDomainName" xml:"CertDomainName"`
 	CertStartTime         string `json:"CertStartTime" xml:"CertStartTime"`
+	CertId                string `json:"CertId" xml:"CertId"`
 }

@@ -17,13 +17,16 @@ package dcdn
 
 // Policy is a nested struct in dcdn response
 type Policy struct {
-	PolicyStatus string `json:"PolicyStatus" xml:"PolicyStatus"`
-	DefenseScene string `json:"DefenseScene" xml:"DefenseScene"`
-	DomainCount  int    `json:"DomainCount" xml:"DomainCount"`
-	RuleConfigs  string `json:"RuleConfigs" xml:"RuleConfigs"`
-	PolicyName   string `json:"PolicyName" xml:"PolicyName"`
-	PolicyId     int64  `json:"PolicyId" xml:"PolicyId"`
+	Name         string `json:"Name" xml:"Name"`
 	RuleCount    int64  `json:"RuleCount" xml:"RuleCount"`
-	GmtModified  string `json:"GmtModified" xml:"GmtModified"`
+	PolicyStatus string `json:"PolicyStatus" xml:"PolicyStatus"`
 	PolicyType   string `json:"PolicyType" xml:"PolicyType"`
+	GmtModified  string `json:"GmtModified" xml:"GmtModified"`
+	DomainCount  int    `json:"DomainCount" xml:"DomainCount"`
+	Id           int64  `json:"Id" xml:"Id"`
+	DefenseScene string `json:"DefenseScene" xml:"DefenseScene"`
+	PolicyName   string `json:"PolicyName" xml:"PolicyName"`
+	RuleConfigs  string `json:"RuleConfigs" xml:"RuleConfigs"`
+	PolicyId     int64  `json:"PolicyId" xml:"PolicyId"`
+	Type         string `json:"Type" xml:"Type"`
 }

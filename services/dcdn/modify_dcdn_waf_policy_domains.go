@@ -72,6 +72,7 @@ func (client *Client) ModifyDcdnWafPolicyDomainsWithCallback(request *ModifyDcdn
 type ModifyDcdnWafPolicyDomainsRequest struct {
 	*requests.RpcRequest
 	PolicyId      requests.Integer `position:"Body" name:"PolicyId"`
+	Method        requests.Integer `position:"Body" name:"Method"`
 	BindDomains   string           `position:"Body" name:"BindDomains"`
 	UnbindDomains string           `position:"Body" name:"UnbindDomains"`
 }
