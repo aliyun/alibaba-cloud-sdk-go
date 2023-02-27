@@ -20,7 +20,7 @@ type Data struct {
 	Token      string          `json:"Token" xml:"Token"`
 	DataId     string          `json:"DataId" xml:"DataId"`
 	TotalCount int             `json:"TotalCount" xml:"TotalCount"`
-	DbList     []DbListItem    `json:"DbList" xml:"DbList"`
 	ImageList  []ImageListItem `json:"ImageList" xml:"ImageList"`
+	DbList     []DbListItem    `json:"DbList" xml:"DbList"`
 	MatchList  []MatchListItem `json:"MatchList" xml:"MatchList"`
 }

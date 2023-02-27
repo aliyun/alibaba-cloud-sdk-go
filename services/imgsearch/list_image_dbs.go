@@ -85,7 +85,7 @@ func CreateListImageDbsRequest() (request *ListImageDbsRequest) {
 	request = &ListImageDbsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imgsearch", "2020-03-20", "ListImageDbs", "imgsearch", "openAPI")
+	request.InitWithApiInfo("imgsearch", "2020-03-20", "ListImageDbs", "", "")
 	request.Method = requests.POST
 	return
 }

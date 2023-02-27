@@ -17,9 +17,9 @@ package imgsearch
 
 // MatchListItem is a nested struct in imgsearch response
 type MatchListItem struct {
+	ImageUrl  string  `json:"ImageUrl" xml:"ImageUrl"`
+	EntityId  string  `json:"EntityId" xml:"EntityId"`
+	Score     float64 `json:"Score" xml:"Score"`
 	DataId    string  `json:"DataId" xml:"DataId"`
 	ExtraData string  `json:"ExtraData" xml:"ExtraData"`
-	EntityId  string  `json:"EntityId" xml:"EntityId"`
-	ImageUrl  string  `json:"ImageUrl" xml:"ImageUrl"`
-	Score     float64 `json:"Score" xml:"Score"`
 }

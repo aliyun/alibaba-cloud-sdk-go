@@ -17,9 +17,9 @@ package imgsearch
 
 // ImageListItem is a nested struct in imgsearch response
 type ImageListItem struct {
+	EntityId  string `json:"EntityId" xml:"EntityId"`
+	CreatedAt int64  `json:"CreatedAt" xml:"CreatedAt"`
+	UpdatedAt int64  `json:"UpdatedAt" xml:"UpdatedAt"`
 	DataId    string `json:"DataId" xml:"DataId"`
 	ExtraData string `json:"ExtraData" xml:"ExtraData"`
-	EntityId  string `json:"EntityId" xml:"EntityId"`
-	UpdatedAt int64  `json:"UpdatedAt" xml:"UpdatedAt"`
-	CreatedAt int64  `json:"CreatedAt" xml:"CreatedAt"`
 }
