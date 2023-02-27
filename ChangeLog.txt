@@ -1,3 +1,7 @@
+2023-02-27 Version: v1.62.193
+- Generated 2020-04-01 for `eventbridge`.
+- Add new interface.
+
 2023-02-27 Version: v1.62.192
 - Generated 2019-04-30 for `schedulerx2`.
 - Create Job Support Timezone.
