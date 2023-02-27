@@ -78,6 +78,7 @@ type QuerySavingsPlansInstanceRequest struct {
 	InstanceId string                          `position:"Query" name:"InstanceId"`
 	PageSize   requests.Integer                `position:"Query" name:"PageSize"`
 	Tag        *[]QuerySavingsPlansInstanceTag `position:"Query" name:"Tag"  type:"Repeated"`
+	Status     string                          `position:"Query" name:"Status"`
 }
 
 // QuerySavingsPlansInstanceTag is a repeated param struct in QuerySavingsPlansInstanceRequest
