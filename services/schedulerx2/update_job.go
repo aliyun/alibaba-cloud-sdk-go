@@ -89,6 +89,7 @@ type UpdateJobRequest struct {
 	TimeType            requests.Integer        `position:"Body" name:"TimeType"`
 	Parameters          string                  `position:"Body" name:"Parameters"`
 	NamespaceSource     string                  `position:"Body" name:"NamespaceSource"`
+	Timezone            string                  `position:"Body" name:"Timezone"`
 	Description         string                  `position:"Body" name:"Description"`
 	Content             string                  `position:"Body" name:"Content"`
 	Timeout             requests.Integer        `position:"Body" name:"Timeout"`
