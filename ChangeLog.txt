@@ -1,3 +1,7 @@
+2023-02-28 Version: v1.62.195
+- Generated 2018-02-08 for `Domain`.
+- QueryPurchasedDomains.
+
 2023-02-28 Version: v1.62.194
 - Generated 2014-05-26 for `Ecs`.
 - AssignIpv6Addresses add ClientToken.

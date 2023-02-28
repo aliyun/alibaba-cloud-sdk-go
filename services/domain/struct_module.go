@@ -17,9 +17,14 @@ package domain
 
 // Module is a nested struct in domain response
 type Module struct {
-	Domain   string  `json:"Domain" xml:"Domain"`
-	Price    float64 `json:"Price" xml:"Price"`
-	RegDate  int64   `json:"RegDate" xml:"RegDate"`
-	DeadDate int64   `json:"DeadDate" xml:"DeadDate"`
-	EndTime  int64   `json:"EndTime" xml:"EndTime"`
+	Domain         string     `json:"Domain" xml:"Domain"`
+	CurrentPageNum int        `json:"CurrentPageNum" xml:"CurrentPageNum"`
+	TotalItemNum   int        `json:"TotalItemNum" xml:"TotalItemNum"`
+	Price          float64    `json:"Price" xml:"Price"`
+	TotalPageNum   int        `json:"TotalPageNum" xml:"TotalPageNum"`
+	RegDate        int64      `json:"RegDate" xml:"RegDate"`
+	DeadDate       int64      `json:"DeadDate" xml:"DeadDate"`
+	PageSize       int        `json:"PageSize" xml:"PageSize"`
+	EndTime        int64      `json:"EndTime" xml:"EndTime"`
+	Data           []DataItem `json:"Data" xml:"Data"`
 }
