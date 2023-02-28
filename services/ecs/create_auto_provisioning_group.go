@@ -82,6 +82,7 @@ type CreateAutoProvisioningGroupRequest struct {
 	LaunchConfigurationImageId                     string                                                    `position:"Query" name:"LaunchConfiguration.ImageId"`
 	LaunchConfigurationResourceGroupId             string                                                    `position:"Query" name:"LaunchConfiguration.ResourceGroupId"`
 	LaunchConfigurationPassword                    string                                                    `position:"Query" name:"LaunchConfiguration.Password"`
+	LaunchConfigurationAutoReleaseTime             string                                                    `position:"Query" name:"LaunchConfiguration.AutoReleaseTime"`
 	PayAsYouGoAllocationStrategy                   string                                                    `position:"Query" name:"PayAsYouGoAllocationStrategy"`
 	DefaultTargetCapacityType                      string                                                    `position:"Query" name:"DefaultTargetCapacityType"`
 	LaunchConfigurationKeyPairName                 string                                                    `position:"Query" name:"LaunchConfiguration.KeyPairName"`

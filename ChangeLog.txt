@@ -1,3 +1,7 @@
+2023-02-28 Version: v1.62.194
+- Generated 2014-05-26 for `Ecs`.
+- AssignIpv6Addresses add ClientToken.
+
 2023-02-27 Version: v1.62.193
 - Generated 2020-04-01 for `eventbridge`.
 - Add new interface.
