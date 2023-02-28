@@ -1,3 +1,7 @@
+2023-02-28 Version: v1.62.196
+- Generated 2016-11-01 for `live`.
+- Live sdk update.
+
 2023-02-28 Version: v1.62.195
 - Generated 2018-02-08 for `Domain`.
 - QueryPurchasedDomains.

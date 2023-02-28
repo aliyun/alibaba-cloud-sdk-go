@@ -72,6 +72,7 @@ func (client *Client) SendMessageToGroupWithCallback(request *SendMessageToGroup
 type SendMessageToGroupRequest struct {
 	*requests.RpcRequest
 	Data           string           `position:"Body" name:"Data"`
+	SkipAudit      requests.Boolean `position:"Query" name:"SkipAudit"`
 	Type           requests.Integer `position:"Body" name:"Type"`
 	OperatorUserId string           `position:"Body" name:"OperatorUserId"`
 	GroupId        string           `position:"Body" name:"GroupId"`

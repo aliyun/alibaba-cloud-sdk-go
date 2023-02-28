@@ -72,6 +72,7 @@ func (client *Client) SendMessageToGroupUsersWithCallback(request *SendMessageTo
 type SendMessageToGroupUsersRequest struct {
 	*requests.RpcRequest
 	Data           string           `position:"Body" name:"Data"`
+	SkipAudit      requests.Boolean `position:"Query" name:"SkipAudit"`
 	Type           requests.Integer `position:"Body" name:"Type"`
 	OperatorUserId string           `position:"Body" name:"OperatorUserId"`
 	ReceiverIdList *[]string        `position:"Body" name:"ReceiverIdList"  type:"Repeated"`

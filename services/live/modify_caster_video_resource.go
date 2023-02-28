@@ -71,6 +71,7 @@ func (client *Client) ModifyCasterVideoResourceWithCallback(request *ModifyCaste
 // ModifyCasterVideoResourceRequest is the request struct for api ModifyCasterVideoResource
 type ModifyCasterVideoResourceRequest struct {
 	*requests.RpcRequest
+	InputType           requests.Integer `position:"Query" name:"InputType"`
 	EndOffset           requests.Integer `position:"Query" name:"EndOffset"`
 	MaterialId          string           `position:"Query" name:"MaterialId"`
 	ResourceId          string           `position:"Query" name:"ResourceId"`

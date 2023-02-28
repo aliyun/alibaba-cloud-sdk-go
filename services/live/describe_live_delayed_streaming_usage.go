@@ -77,6 +77,7 @@ type DescribeLiveDelayedStreamingUsageRequest struct {
 	DomainName string           `position:"Query" name:"DomainName"`
 	EndTime    string           `position:"Query" name:"EndTime"`
 	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
+	Interval   string           `position:"Query" name:"Interval"`
 	Region     string           `position:"Query" name:"Region"`
 }
 
