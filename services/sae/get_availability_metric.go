@@ -71,7 +71,7 @@ func (client *Client) GetAvailabilityMetricWithCallback(request *GetAvailability
 // GetAvailabilityMetricRequest is the request struct for api GetAvailabilityMetric
 type GetAvailabilityMetricRequest struct {
 	*requests.RoaRequest
-	Limit requests.Integer `position:"Path" name:"Limit"`
+	Limit requests.Integer `position:"Query" name:"Limit"`
 }
 
 // GetAvailabilityMetricResponse is the response struct for api GetAvailabilityMetric

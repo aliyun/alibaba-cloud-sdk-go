@@ -22,6 +22,7 @@ type Application struct {
 	Instances            int        `json:"Instances" xml:"Instances"`
 	Failed               int64      `json:"Failed" xml:"Failed"`
 	RunningInstances     int        `json:"RunningInstances" xml:"RunningInstances"`
+	Mem                  int        `json:"Mem" xml:"Mem"`
 	LastChangeorderState string     `json:"LastChangeorderState" xml:"LastChangeorderState"`
 	LastJobState         string     `json:"LastJobState" xml:"LastJobState"`
 	AppDeletingStatus    bool       `json:"AppDeletingStatus" xml:"AppDeletingStatus"`
@@ -33,6 +34,7 @@ type Application struct {
 	NamespaceId          string     `json:"NamespaceId" xml:"NamespaceId"`
 	CompletionTime       int64      `json:"CompletionTime" xml:"CompletionTime"`
 	Suspend              bool       `json:"Suspend" xml:"Suspend"`
+	Cpu                  int        `json:"Cpu" xml:"Cpu"`
 	Active               int64      `json:"Active" xml:"Active"`
 	AppName              string     `json:"AppName" xml:"AppName"`
 	Succeeded            int64      `json:"Succeeded" xml:"Succeeded"`

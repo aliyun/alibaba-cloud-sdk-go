@@ -71,10 +71,10 @@ func (client *Client) GetArmsTopNMetricWithCallback(request *GetArmsTopNMetricRe
 // GetArmsTopNMetricRequest is the request struct for api GetArmsTopNMetric
 type GetArmsTopNMetricRequest struct {
 	*requests.RoaRequest
-	Limit     requests.Integer `position:"Path" name:"Limit"`
-	OrderBy   string           `position:"Path" name:"OrderBy"`
-	EndTime   requests.Integer `position:"Path" name:"EndTime"`
-	StartTime requests.Integer `position:"Path" name:"StartTime"`
+	Limit     requests.Integer `position:"Query" name:"Limit"`
+	OrderBy   string           `position:"Query" name:"OrderBy"`
+	EndTime   requests.Integer `position:"Query" name:"EndTime"`
+	StartTime requests.Integer `position:"Query" name:"StartTime"`
 }
 
 // GetArmsTopNMetricResponse is the response struct for api GetArmsTopNMetric

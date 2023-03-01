@@ -72,6 +72,7 @@ type Data struct {
 	CertId                        string                   `json:"CertId" xml:"CertId"`
 	SecretType                    string                   `json:"SecretType" xml:"SecretType"`
 	CrUrl                         string                   `json:"CrUrl" xml:"CrUrl"`
+	EnableMicroRegistration       bool                     `json:"EnableMicroRegistration" xml:"EnableMicroRegistration"`
 	Jdk                           string                   `json:"Jdk" xml:"Jdk"`
 	Metadata                      map[string]interface{}   `json:"Metadata" xml:"Metadata"`
 	Php                           string                   `json:"Php" xml:"Php"`
@@ -185,6 +186,7 @@ type Data struct {
 	OssMountDescs                 []OssMountDesc           `json:"OssMountDescs" xml:"OssMountDescs"`
 	TagResources                  []TagResource            `json:"TagResources" xml:"TagResources"`
 	Rules                         []Rule                   `json:"Rules" xml:"Rules"`
+	Applications                  []Application            `json:"Applications" xml:"Applications"`
 	Intranet                      []IntranetItem           `json:"Intranet" xml:"Intranet"`
 	DubboRules                    []DubboRule              `json:"DubboRules" xml:"DubboRules"`
 	Tags                          []Tag                    `json:"Tags" xml:"Tags"`
@@ -196,7 +198,6 @@ type Data struct {
 	RelateApps                    []RelateApp              `json:"RelateApps" xml:"RelateApps"`
 	LogConfigs                    []LogConfig              `json:"LogConfigs" xml:"LogConfigs"`
 	ScRules                       []ScRule                 `json:"ScRules" xml:"ScRules"`
-	Applications                  []Application            `json:"Applications" xml:"Applications"`
 	ChangeOrderList               []ChangeOrder            `json:"ChangeOrderList" xml:"ChangeOrderList"`
 	IngressList                   []Ingress                `json:"IngressList" xml:"IngressList"`
 	Svcs                          []Svc                    `json:"Svcs" xml:"Svcs"`

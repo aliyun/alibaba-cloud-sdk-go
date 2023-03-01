@@ -71,7 +71,7 @@ func (client *Client) GetScaleAppMetricWithCallback(request *GetScaleAppMetricRe
 // GetScaleAppMetricRequest is the request struct for api GetScaleAppMetric
 type GetScaleAppMetricRequest struct {
 	*requests.RoaRequest
-	Limit requests.Integer `position:"Path" name:"Limit"`
+	Limit requests.Integer `position:"Query" name:"Limit"`
 }
 
 // GetScaleAppMetricResponse is the response struct for api GetScaleAppMetric
