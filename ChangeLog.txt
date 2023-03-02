@@ -1,3 +1,19 @@
+2023-03-02 Version: v1.62.200
+- Generated 2020-06-01 for `SWAS-OPEN`.
+- Add new apis.
+- DescribeDatabaseInstances.
+- StartDatabaseInstance.
+- StopDatabaseInstance.
+- RetartDatabaseInstance.
+- ResetDatabaseAccountPassword.
+- AllocatePublicConnection.
+- ReleasePublicConnection.
+- DescribeDatabaseInstanceMetricData.
+- DescribeDatabaseSlowLogRecords.
+- DescribeDatabaseErrorLogs.
+- DescribeDatabaseInstanceParameters.
+- ModifyDatabaseInstanceParameter.
+
 2023-03-01 Version: v1.62.199
 - Generated 2019-05-06 for `sae`.
 - Fix getMetric api.
