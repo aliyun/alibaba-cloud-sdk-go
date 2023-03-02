@@ -71,8 +71,9 @@ func (client *Client) MountDirectoryWithCallback(request *MountDirectoryRequest,
 // MountDirectoryRequest is the request struct for api MountDirectory
 type MountDirectoryRequest struct {
 	*requests.RpcRequest
-	TargetType string `position:"Body" name:"TargetType"`
-	TargetId   string `position:"Body" name:"TargetId"`
+	TargetType   string `position:"Body" name:"TargetType"`
+	TargetId     string `position:"Body" name:"TargetId"`
+	TargetUserId string `position:"Body" name:"TargetUserId"`
 }
 
 // MountDirectoryResponse is the response struct for api MountDirectory

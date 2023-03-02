@@ -214,7 +214,6 @@ type Data struct {
 	DISyncTasks          []DISyncTasksItem        `json:"DISyncTasks" xml:"DISyncTasks"`
 	Instances            []Instance               `json:"Instances" xml:"Instances"`
 	BaselineStatuses     []BaselineStatusesItem   `json:"BaselineStatuses" xml:"BaselineStatuses"`
-	DataEntityList       []DataEntityListItem     `json:"DataEntityList" xml:"DataEntityList"`
 	Projects             []ProjectsItem           `json:"Projects" xml:"Projects"`
 	EntityList           []EntityListItem         `json:"EntityList" xml:"EntityList"`
 	Folders              []FoldersItem            `json:"Folders" xml:"Folders"`
@@ -223,6 +222,7 @@ type Data struct {
 	ApiAuthorizationList []ApiAuthorization       `json:"ApiAuthorizationList" xml:"ApiAuthorizationList"`
 	OverTimeSettings     []OverTimeSetting        `json:"OverTimeSettings" xml:"OverTimeSettings"`
 	Robots               []RobotsItem             `json:"Robots" xml:"Robots"`
+	DataEntityList       []DataEntityListItem     `json:"DataEntityList" xml:"DataEntityList"`
 	AlertSettings        []AlertSetting           `json:"AlertSettings" xml:"AlertSettings"`
 	BizProcesses         []BizProcessesItem       `json:"BizProcesses" xml:"BizProcesses"`
 	Influences           []InfluencesItem         `json:"Influences" xml:"Influences"`

@@ -71,8 +71,9 @@ func (client *Client) UmountDirectoryWithCallback(request *UmountDirectoryReques
 // UmountDirectoryRequest is the request struct for api UmountDirectory
 type UmountDirectoryRequest struct {
 	*requests.RpcRequest
-	TargetType string `position:"Body" name:"TargetType"`
-	TargetId   string `position:"Body" name:"TargetId"`
+	TargetType   string `position:"Body" name:"TargetType"`
+	TargetId     string `position:"Body" name:"TargetId"`
+	TargetUserId string `position:"Body" name:"TargetUserId"`
 }
 
 // UmountDirectoryResponse is the response struct for api UmountDirectory

@@ -17,23 +17,25 @@ package dataworks_public
 
 // DataInGetNode is a nested struct in dataworks_public response
 type DataInGetNode struct {
-	SchedulerType  string `json:"SchedulerType" xml:"SchedulerType"`
-	RepeatInterval int64  `json:"RepeatInterval" xml:"RepeatInterval"`
-	Repeatability  string `json:"Repeatability" xml:"Repeatability"`
-	ProjectId      int64  `json:"ProjectId" xml:"ProjectId"`
-	ProgramType    string `json:"ProgramType" xml:"ProgramType"`
-	Priority       int    `json:"Priority" xml:"Priority"`
-	OwnerId        string `json:"OwnerId" xml:"OwnerId"`
-	Connection     string `json:"Connection" xml:"Connection"`
-	ParamValues    string `json:"ParamValues" xml:"ParamValues"`
-	RelatedFlowId  int64  `json:"RelatedFlowId" xml:"RelatedFlowId"`
-	DqcType        int    `json:"DqcType" xml:"DqcType"`
-	BaselineId     int64  `json:"BaselineId" xml:"BaselineId"`
-	Description    string `json:"Description" xml:"Description"`
-	NodeName       string `json:"NodeName" xml:"NodeName"`
-	ResGroupName   string `json:"ResGroupName" xml:"ResGroupName"`
-	BusinessId     int64  `json:"BusinessId" xml:"BusinessId"`
-	DqcDescription string `json:"DqcDescription" xml:"DqcDescription"`
-	CronExpress    string `json:"CronExpress" xml:"CronExpress"`
-	NodeId         int64  `json:"NodeId" xml:"NodeId"`
+	SchedulerType      string `json:"SchedulerType" xml:"SchedulerType"`
+	RepeatInterval     int64  `json:"RepeatInterval" xml:"RepeatInterval"`
+	Repeatability      string `json:"Repeatability" xml:"Repeatability"`
+	ProjectId          int64  `json:"ProjectId" xml:"ProjectId"`
+	ProgramType        string `json:"ProgramType" xml:"ProgramType"`
+	Priority           int    `json:"Priority" xml:"Priority"`
+	OwnerId            string `json:"OwnerId" xml:"OwnerId"`
+	Connection         string `json:"Connection" xml:"Connection"`
+	ParamValues        string `json:"ParamValues" xml:"ParamValues"`
+	RelatedFlowId      int64  `json:"RelatedFlowId" xml:"RelatedFlowId"`
+	DqcType            int    `json:"DqcType" xml:"DqcType"`
+	BaselineId         int64  `json:"BaselineId" xml:"BaselineId"`
+	Description        string `json:"Description" xml:"Description"`
+	NodeName           string `json:"NodeName" xml:"NodeName"`
+	ResGroupName       string `json:"ResGroupName" xml:"ResGroupName"`
+	BusinessId         int64  `json:"BusinessId" xml:"BusinessId"`
+	DqcDescription     string `json:"DqcDescription" xml:"DqcDescription"`
+	CronExpress        string `json:"CronExpress" xml:"CronExpress"`
+	NodeId             int64  `json:"NodeId" xml:"NodeId"`
+	ResGroupIdentifier string `json:"ResGroupIdentifier" xml:"ResGroupIdentifier"`
+	FileType           int    `json:"FileType" xml:"FileType"`
 }
