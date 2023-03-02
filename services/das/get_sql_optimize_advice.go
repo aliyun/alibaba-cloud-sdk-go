@@ -81,11 +81,11 @@ type GetSqlOptimizeAdviceRequest struct {
 // GetSqlOptimizeAdviceResponse is the response struct for api GetSqlOptimizeAdvice
 type GetSqlOptimizeAdviceResponse struct {
 	*responses.BaseResponse
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   string `json:"Success" xml:"Success"`
-	Data      Data   `json:"Data" xml:"Data"`
+	Code      string                     `json:"Code" xml:"Code"`
+	Message   string                     `json:"Message" xml:"Message"`
+	RequestId string                     `json:"RequestId" xml:"RequestId"`
+	Success   string                     `json:"Success" xml:"Success"`
+	Data      DataInGetSqlOptimizeAdvice `json:"Data" xml:"Data"`
 }
 
 // CreateGetSqlOptimizeAdviceRequest creates a request to invoke GetSqlOptimizeAdvice API

@@ -24,9 +24,11 @@ type Data struct {
 	TotalInstanceCount                                      int64                                      `json:"TotalInstanceCount" xml:"TotalInstanceCount"`
 	TaskState                                               string                                     `json:"TaskState" xml:"TaskState"`
 	Lang                                                    string                                     `json:"lang" xml:"lang"`
+	Uuid                                                    string                                     `json:"uuid" xml:"uuid"`
 	BenchStep                                               string                                     `json:"BenchStep" xml:"BenchStep"`
 	Source                                                  string                                     `json:"Source" xml:"Source"`
 	ErrMsg                                                  string                                     `json:"ErrMsg" xml:"ErrMsg"`
+	IsSpare                                                 bool                                       `json:"isSpare" xml:"isSpare"`
 	TaskId                                                  string                                     `json:"TaskId" xml:"TaskId"`
 	Role                                                    string                                     `json:"Role" xml:"Role"`
 	SqlCompleteReuse                                        string                                     `json:"SqlCompleteReuse" xml:"SqlCompleteReuse"`
@@ -44,6 +46,7 @@ type Data struct {
 	Improvement                                             string                                     `json:"improvement" xml:"improvement"`
 	PageNo                                                  int64                                      `json:"PageNo" xml:"PageNo"`
 	Extra                                                   string                                     `json:"Extra" xml:"Extra"`
+	VpcId                                                   string                                     `json:"vpcId" xml:"vpcId"`
 	Active                                                  int                                        `json:"active" xml:"active"`
 	Count                                                   int                                        `json:"count" xml:"count"`
 	OriUuid                                                 string                                     `json:"OriUuid" xml:"OriUuid"`
@@ -62,15 +65,13 @@ type Data struct {
 	ArchiveJobId                                            string                                     `json:"ArchiveJobId" xml:"ArchiveJobId"`
 	State                                                   string                                     `json:"state" xml:"state"`
 	External                                                string                                     `json:"External" xml:"External"`
-	CreateTime                                              string                                     `json:"CreateTime" xml:"CreateTime"`
+	CustinsId                                               int64                                      `json:"custinsId" xml:"custinsId"`
 	Id                                                      int64                                      `json:"id" xml:"id"`
-	DownloadUrl                                             string                                     `json:"DownloadUrl" xml:"DownloadUrl"`
 	JarOnOss                                                string                                     `json:"JarOnOss" xml:"JarOnOss"`
 	SqlFilePath                                             string                                     `json:"SqlFilePath" xml:"SqlFilePath"`
 	GmtModified                                             int64                                      `json:"gmtModified" xml:"gmtModified"`
 	InstanceId                                              string                                     `json:"InstanceId" xml:"InstanceId"`
 	SrcPublicIp                                             string                                     `json:"SrcPublicIp" xml:"SrcPublicIp"`
-	ExpireTime                                              string                                     `json:"ExpireTime" xml:"ExpireTime"`
 	DtsJobName                                              string                                     `json:"DtsJobName" xml:"DtsJobName"`
 	ClientJarPath                                           string                                     `json:"ClientJarPath" xml:"ClientJarPath"`
 	BenchCmd                                                string                                     `json:"BenchCmd" xml:"BenchCmd"`
@@ -93,32 +94,42 @@ type Data struct {
 	Code                                                    int                                        `json:"Code" xml:"Code"`
 	Total                                                   int64                                      `json:"Total" xml:"Total"`
 	DstIp                                                   string                                     `json:"DstIp" xml:"DstIp"`
+	ExpireTime                                              int64                                      `json:"expireTime" xml:"expireTime"`
 	EventContext                                            string                                     `json:"eventContext" xml:"eventContext"`
 	TotalAutoThrottleRulesCount                             int64                                      `json:"TotalAutoThrottleRulesCount" xml:"TotalAutoThrottleRulesCount"`
+	KillSuccessCount                                        int64                                      `json:"KillSuccessCount" xml:"KillSuccessCount"`
 	IsFinish                                                bool                                       `json:"IsFinish" xml:"IsFinish"`
+	SqlRetention                                            string                                     `json:"sqlRetention" xml:"sqlRetention"`
+	StorageFreeQuotaInMB                                    string                                     `json:"storageFreeQuotaInMB" xml:"storageFreeQuotaInMB"`
 	DtsJobStatus                                            string                                     `json:"DtsJobStatus" xml:"DtsJobStatus"`
 	ContactName                                             string                                     `json:"contactName" xml:"contactName"`
 	EnableAutoThrottleCount                                 int64                                      `json:"EnableAutoThrottleCount" xml:"EnableAutoThrottleCount"`
 	DstType                                                 string                                     `json:"DstType" xml:"DstType"`
-	VpcId                                                   string                                     `json:"VpcId" xml:"VpcId"`
+	Engine                                                  string                                     `json:"engine" xml:"engine"`
+	InstanceAlias                                           string                                     `json:"instanceAlias" xml:"instanceAlias"`
+	ServiceUnitId                                           string                                     `json:"serviceUnitId" xml:"serviceUnitId"`
 	Topic                                                   string                                     `json:"Topic" xml:"Topic"`
+	StorageUsed                                             int64                                      `json:"storageUsed" xml:"storageUsed"`
 	ContactGroupName                                        string                                     `json:"contactGroupName" xml:"contactGroupName"`
 	Token                                                   string                                     `json:"Token" xml:"Token"`
 	DstInstanceUuid                                         string                                     `json:"DstInstanceUuid" xml:"DstInstanceUuid"`
 	DbLinkId                                                int64                                      `json:"DbLinkId" xml:"DbLinkId"`
 	ConfigSuccessInstanceCount                              int64                                      `json:"ConfigSuccessInstanceCount" xml:"ConfigSuccessInstanceCount"`
+	IgnoredUserSessionCount                                 int64                                      `json:"IgnoredUserSessionCount" xml:"IgnoredUserSessionCount"`
 	SrcInstanceUuid                                         string                                     `json:"SrcInstanceUuid" xml:"SrcInstanceUuid"`
 	ArchiveFolder                                           string                                     `json:"ArchiveFolder" xml:"ArchiveFolder"`
 	TurnOffAutoThrottleCount                                int64                                      `json:"TurnOffAutoThrottleCount" xml:"TurnOffAutoThrottleCount"`
 	EcsInstanceId                                           string                                     `json:"EcsInstanceId" xml:"EcsInstanceId"`
 	ArchiveOssTableName                                     string                                     `json:"ArchiveOssTableName" xml:"ArchiveOssTableName"`
+	StartTime                                               int64                                      `json:"startTime" xml:"startTime"`
 	HasEnableRuleButNotDasProCount                          int64                                      `json:"HasEnableRuleButNotDasProCount" xml:"HasEnableRuleButNotDasProCount"`
 	MetaFileOnOss                                           string                                     `json:"MetaFileOnOss" xml:"MetaFileOnOss"`
 	BackupId                                                string                                     `json:"BackupId" xml:"BackupId"`
+	KillFailCount                                           int64                                      `json:"KillFailCount" xml:"KillFailCount"`
 	ErrorMessage                                            string                                     `json:"ErrorMessage" xml:"ErrorMessage"`
-	Uuid                                                    string                                     `json:"Uuid" xml:"Uuid"`
 	NodeId                                                  string                                     `json:"NodeId" xml:"NodeId"`
 	DtsJobState                                             int                                        `json:"DtsJobState" xml:"DtsJobState"`
+	CommodityInstanceId                                     string                                     `json:"commodityInstanceId" xml:"commodityInstanceId"`
 	SrcInstanceArea                                         string                                     `json:"SrcInstanceArea" xml:"SrcInstanceArea"`
 	MetaFileName                                            string                                     `json:"MetaFileName" xml:"MetaFileName"`
 	ChannelType                                             string                                     `json:"channelType" xml:"channelType"`
@@ -132,18 +143,18 @@ type Data struct {
 	SyncStatus                                              string                                     `json:"SyncStatus" xml:"SyncStatus"`
 	DstPort                                                 int                                        `json:"DstPort" xml:"DstPort"`
 	TotalAutoResourceOptimizeRulesCount                     int64                                      `json:"TotalAutoResourceOptimizeRulesCount" xml:"TotalAutoResourceOptimizeRulesCount"`
-	StatusCode                                              string                                     `json:"StatusCode" xml:"StatusCode"`
+	Region                                                  string                                     `json:"region" xml:"region"`
 	LoadCmd                                                 string                                     `json:"LoadCmd" xml:"LoadCmd"`
 	EventSendGroup                                          []string                                   `json:"eventSendGroup" xml:"eventSendGroup"`
 	NeverEnableAutoThrottleOrReleasedInstanceIdList         []string                                   `json:"NeverEnableAutoThrottleOrReleasedInstanceIdList" xml:"NeverEnableAutoThrottleOrReleasedInstanceIdList"`
 	NeverEnableAutoResourceOptimizeOrReleasedInstanceIdList []string                                   `json:"NeverEnableAutoResourceOptimizeOrReleasedInstanceIdList" xml:"NeverEnableAutoResourceOptimizeOrReleasedInstanceIdList"`
+	Sessions                                                []int64                                    `json:"Sessions" xml:"Sessions"`
 	Storage                                                 Storage                                    `json:"Storage" xml:"Storage"`
 	Resource                                                Resource                                   `json:"Resource" xml:"Resource"`
 	Shard                                                   Shard                                      `json:"Shard" xml:"Shard"`
 	Spec                                                    Spec                                       `json:"Spec" xml:"Spec"`
 	Bandwidth                                               Bandwidth                                  `json:"Bandwidth" xml:"Bandwidth"`
 	ConfigResponse                                          ConfigResponse                             `json:"ConfigResponse" xml:"ConfigResponse"`
-	SourceStats                                             []SourceStatsItem                          `json:"SourceStats" xml:"SourceStats"`
 	SubResults                                              SubResultsInGetHDMAliyunResourceSyncResult `json:"SubResults" xml:"SubResults"`
 	KeyPrefixes                                             KeyPrefixes                                `json:"KeyPrefixes" xml:"KeyPrefixes"`
 	ConfigFailInstanceList                                  []ConfigFailInstanceListItem               `json:"ConfigFailInstanceList" xml:"ConfigFailInstanceList"`
@@ -156,7 +167,6 @@ type Data struct {
 	BigKeys                                                 BigKeysInCreateCacheAnalysisJob            `json:"BigKeys" xml:"BigKeys"`
 	ContactGroups                                           []ContactGroupsItem                        `json:"contactGroups" xml:"contactGroups"`
 	Result                                                  []ResultItem                               `json:"result" xml:"result"`
-	Sessions                                                []SessionsItem                             `json:"Sessions" xml:"Sessions"`
 	EnableAutoResourceOptimizeList                          []EnableAutoResourceOptimizeListItem       `json:"EnableAutoResourceOptimizeList" xml:"EnableAutoResourceOptimizeList"`
 	Contacts                                                []ContactsItem                             `json:"contacts" xml:"contacts"`
 }

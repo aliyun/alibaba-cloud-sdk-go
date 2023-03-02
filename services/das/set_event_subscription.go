@@ -73,8 +73,10 @@ type SetEventSubscriptionRequest struct {
 	*requests.RpcRequest
 	ContactGroupName string `position:"Query" name:"ContactGroupName"`
 	ContactName      string `position:"Query" name:"ContactName"`
+	DispatchRule     string `position:"Query" name:"DispatchRule"`
 	ChannelType      string `position:"Query" name:"ChannelType"`
 	Lang             string `position:"Query" name:"Lang"`
+	Severity         string `position:"Query" name:"Severity"`
 	Level            string `position:"Query" name:"Level"`
 	Active           string `position:"Query" name:"Active"`
 	MinInterval      string `position:"Query" name:"MinInterval"`

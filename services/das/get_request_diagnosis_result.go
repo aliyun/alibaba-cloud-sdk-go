@@ -71,7 +71,9 @@ func (client *Client) GetRequestDiagnosisResultWithCallback(request *GetRequestD
 // GetRequestDiagnosisResultRequest is the request struct for api GetRequestDiagnosisResult
 type GetRequestDiagnosisResultRequest struct {
 	*requests.RpcRequest
+	SqlId      string `position:"Query" name:"SqlId"`
 	MessageId  string `position:"Query" name:"MessageId"`
+	Source     string `position:"Query" name:"Source"`
 	InstanceId string `position:"Query" name:"InstanceId"`
 	NodeId     string `position:"Query" name:"NodeId"`
 }
