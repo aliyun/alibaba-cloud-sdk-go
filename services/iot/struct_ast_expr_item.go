@@ -17,6 +17,6 @@ package iot
 
 // AstExprItem is a nested struct in iot response
 type AstExprItem struct {
-	ExprType string `json:"ExprType" xml:"ExprType"`
 	Expr     string `json:"Expr" xml:"Expr"`
+	ExprType string `json:"ExprType" xml:"ExprType"`
 }

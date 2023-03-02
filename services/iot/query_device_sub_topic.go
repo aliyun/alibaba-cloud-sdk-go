@@ -93,7 +93,7 @@ func CreateQueryDeviceSubTopicRequest() (request *QueryDeviceSubTopicRequest) {
 	request = &QueryDeviceSubTopicRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "QueryDeviceSubTopic", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "QueryDeviceSubTopic", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

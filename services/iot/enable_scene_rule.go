@@ -91,7 +91,7 @@ func CreateEnableSceneRuleRequest() (request *EnableSceneRuleRequest) {
 	request = &EnableSceneRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "EnableSceneRule", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "EnableSceneRule", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

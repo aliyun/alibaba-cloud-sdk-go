@@ -91,7 +91,7 @@ func CreateGetSpeechLicenseDeviceStatisticsRequest() (request *GetSpeechLicenseD
 	request = &GetSpeechLicenseDeviceStatisticsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "GetSpeechLicenseDeviceStatistics", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "GetSpeechLicenseDeviceStatistics", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

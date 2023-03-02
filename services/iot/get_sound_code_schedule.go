@@ -92,7 +92,7 @@ func CreateGetSoundCodeScheduleRequest() (request *GetSoundCodeScheduleRequest) 
 	request = &GetSoundCodeScheduleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "GetSoundCodeSchedule", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "GetSoundCodeSchedule", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

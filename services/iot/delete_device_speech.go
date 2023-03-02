@@ -98,7 +98,7 @@ func CreateDeleteDeviceSpeechRequest() (request *DeleteDeviceSpeechRequest) {
 	request = &DeleteDeviceSpeechRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "DeleteDeviceSpeech", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "DeleteDeviceSpeech", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -98,7 +98,7 @@ func CreatePushSpeechRequest() (request *PushSpeechRequest) {
 	request = &PushSpeechRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "PushSpeech", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "PushSpeech", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

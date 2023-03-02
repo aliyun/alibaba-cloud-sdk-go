@@ -92,7 +92,7 @@ func CreateQueryMessageInfoRequest() (request *QueryMessageInfoRequest) {
 	request = &QueryMessageInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "QueryMessageInfo", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "QueryMessageInfo", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

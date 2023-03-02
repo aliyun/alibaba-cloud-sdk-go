@@ -17,12 +17,11 @@ package iot
 
 // HeaderItem is a nested struct in iot response
 type HeaderItem struct {
-	FieldType     string `json:"FieldType" xml:"FieldType"`
-	TimeClass     string `json:"TimeClass" xml:"TimeClass"`
-	GeoClass      string `json:"GeoClass" xml:"GeoClass"`
-	FieldName     string `json:"FieldName" xml:"FieldName"`
-	DimDateClass  string `json:"DimDateClass" xml:"DimDateClass"`
-	Alias         string `json:"Alias" xml:"Alias"`
-	TypeClass     string `json:"TypeClass" xml:"TypeClass"`
-	DataPrecision string `json:"DataPrecision" xml:"DataPrecision"`
+	FieldName    string `json:"FieldName" xml:"FieldName"`
+	Alias        string `json:"Alias" xml:"Alias"`
+	FieldType    string `json:"FieldType" xml:"FieldType"`
+	TypeClass    string `json:"TypeClass" xml:"TypeClass"`
+	TimeClass    string `json:"TimeClass" xml:"TimeClass"`
+	GeoClass     string `json:"GeoClass" xml:"GeoClass"`
+	DimDateClass string `json:"DimDateClass" xml:"DimDateClass"`
 }

@@ -91,7 +91,7 @@ func CreateDeleteSoundCodeRequest() (request *DeleteSoundCodeRequest) {
 	request = &DeleteSoundCodeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "DeleteSoundCode", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "DeleteSoundCode", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

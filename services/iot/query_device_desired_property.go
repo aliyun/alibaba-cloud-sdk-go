@@ -98,7 +98,7 @@ func CreateQueryDeviceDesiredPropertyRequest() (request *QueryDeviceDesiredPrope
 	request = &QueryDeviceDesiredPropertyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "QueryDeviceDesiredProperty", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "QueryDeviceDesiredProperty", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

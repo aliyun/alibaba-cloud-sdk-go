@@ -92,7 +92,7 @@ func CreateUnbindSceneRuleFromEdgeInstanceRequest() (request *UnbindSceneRuleFro
 	request = &UnbindSceneRuleFromEdgeInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "UnbindSceneRuleFromEdgeInstance", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "UnbindSceneRuleFromEdgeInstance", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

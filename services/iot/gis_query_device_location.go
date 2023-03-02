@@ -98,7 +98,7 @@ func CreateGisQueryDeviceLocationRequest() (request *GisQueryDeviceLocationReque
 	request = &GisQueryDeviceLocationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "GisQueryDeviceLocation", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "GisQueryDeviceLocation", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

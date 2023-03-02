@@ -92,7 +92,7 @@ func CreateGetParserDataSourceRequest() (request *GetParserDataSourceRequest) {
 	request = &GetParserDataSourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "GetParserDataSource", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "GetParserDataSource", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

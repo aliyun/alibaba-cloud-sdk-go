@@ -96,7 +96,7 @@ func CreateCreateProductDistributeJobRequest() (request *CreateProductDistribute
 	request = &CreateProductDistributeJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "CreateProductDistributeJob", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "CreateProductDistributeJob", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

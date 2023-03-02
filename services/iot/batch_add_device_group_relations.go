@@ -104,7 +104,7 @@ func CreateBatchAddDeviceGroupRelationsRequest() (request *BatchAddDeviceGroupRe
 	request = &BatchAddDeviceGroupRelationsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "BatchAddDeviceGroupRelations", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "BatchAddDeviceGroupRelations", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

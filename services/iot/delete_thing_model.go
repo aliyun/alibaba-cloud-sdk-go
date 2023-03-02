@@ -100,7 +100,7 @@ func CreateDeleteThingModelRequest() (request *DeleteThingModelRequest) {
 	request = &DeleteThingModelRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "DeleteThingModel", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "DeleteThingModel", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -95,7 +95,7 @@ func CreatePageQuerySpeechBroadcastHourRequest() (request *PageQuerySpeechBroadc
 	request = &PageQuerySpeechBroadcastHourRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "PageQuerySpeechBroadcastHour", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "PageQuerySpeechBroadcastHour", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

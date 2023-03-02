@@ -91,7 +91,7 @@ func CreateStopParserRequest() (request *StopParserRequest) {
 	request = &StopParserRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "StopParser", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "StopParser", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

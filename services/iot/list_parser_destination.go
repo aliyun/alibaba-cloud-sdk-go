@@ -93,7 +93,7 @@ func CreateListParserDestinationRequest() (request *ListParserDestinationRequest
 	request = &ListParserDestinationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "ListParserDestination", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "ListParserDestination", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -92,7 +92,7 @@ func CreateDetachDestinationRequest() (request *DetachDestinationRequest) {
 	request = &DetachDestinationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "DetachDestination", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "DetachDestination", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

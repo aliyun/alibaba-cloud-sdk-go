@@ -74,7 +74,6 @@ type CreateDownloadDataJobRequest struct {
 	StartTime        requests.Integer `position:"Query" name:"StartTime"`
 	FileConfig       string           `position:"Query" name:"FileConfig"`
 	IotInstanceId    string           `position:"Body" name:"IotInstanceId"`
-	Context          string           `position:"Body" name:"Context"`
 	TableName        string           `position:"Query" name:"TableName"`
 	EndTime          requests.Integer `position:"Query" name:"EndTime"`
 	DownloadDataType string           `position:"Query" name:"DownloadDataType"`
@@ -85,11 +84,11 @@ type CreateDownloadDataJobRequest struct {
 // CreateDownloadDataJobResponse is the response struct for api CreateDownloadDataJob
 type CreateDownloadDataJobResponse struct {
 	*responses.BaseResponse
-	RequestId    string                      `json:"RequestId" xml:"RequestId"`
-	Success      bool                        `json:"Success" xml:"Success"`
-	Code         string                      `json:"Code" xml:"Code"`
-	ErrorMessage string                      `json:"ErrorMessage" xml:"ErrorMessage"`
-	Data         DataInCreateDownloadDataJob `json:"Data" xml:"Data"`
+	RequestId    string `json:"RequestId" xml:"RequestId"`
+	Success      bool   `json:"Success" xml:"Success"`
+	Code         string `json:"Code" xml:"Code"`
+	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
+	Data         Data   `json:"Data" xml:"Data"`
 }
 
 // CreateCreateDownloadDataJobRequest creates a request to invoke CreateDownloadDataJob API
@@ -97,7 +96,7 @@ func CreateCreateDownloadDataJobRequest() (request *CreateDownloadDataJobRequest
 	request = &CreateDownloadDataJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "CreateDownloadDataJob", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "CreateDownloadDataJob", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

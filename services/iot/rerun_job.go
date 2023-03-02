@@ -91,7 +91,7 @@ func CreateRerunJobRequest() (request *RerunJobRequest) {
 	request = &RerunJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "RerunJob", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "RerunJob", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

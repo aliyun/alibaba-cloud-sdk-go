@@ -95,7 +95,7 @@ func CreateUpdateProductRequest() (request *UpdateProductRequest) {
 	request = &UpdateProductRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "UpdateProduct", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "UpdateProduct", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

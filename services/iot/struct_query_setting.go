@@ -17,6 +17,6 @@ package iot
 
 // QuerySetting is a nested struct in iot response
 type QuerySetting struct {
-	AstExpr         []AstExprItem         `json:"AstExpr" xml:"AstExpr"`
 	SelectedHeaders []SelectedHeadersItem `json:"SelectedHeaders" xml:"SelectedHeaders"`
+	AstExpr         []AstExprItem         `json:"AstExpr" xml:"AstExpr"`
 }

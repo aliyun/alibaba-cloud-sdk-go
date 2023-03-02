@@ -17,10 +17,10 @@ package iot
 
 // SelectedHeadersItem is a nested struct in iot response
 type SelectedHeadersItem struct {
+	FieldName    string `json:"FieldName" xml:"FieldName"`
+	Alias        string `json:"Alias" xml:"Alias"`
 	FieldType    string `json:"FieldType" xml:"FieldType"`
 	TimeClass    string `json:"TimeClass" xml:"TimeClass"`
 	GeoClass     string `json:"GeoClass" xml:"GeoClass"`
-	FieldName    string `json:"FieldName" xml:"FieldName"`
 	DimDateClass string `json:"DimDateClass" xml:"DimDateClass"`
-	Alias        string `json:"Alias" xml:"Alias"`
 }

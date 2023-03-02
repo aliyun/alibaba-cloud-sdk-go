@@ -94,7 +94,7 @@ func CreateReBindLicenseDeviceRequest() (request *ReBindLicenseDeviceRequest) {
 	request = &ReBindLicenseDeviceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "ReBindLicenseDevice", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "ReBindLicenseDevice", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

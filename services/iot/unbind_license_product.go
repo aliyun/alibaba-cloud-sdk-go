@@ -93,7 +93,7 @@ func CreateUnbindLicenseProductRequest() (request *UnbindLicenseProductRequest) 
 	request = &UnbindLicenseProductRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "UnbindLicenseProduct", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "UnbindLicenseProduct", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

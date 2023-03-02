@@ -97,7 +97,7 @@ func CreateQuerySpeechLicenseDeviceListRequest() (request *QuerySpeechLicenseDev
 	request = &QuerySpeechLicenseDeviceListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "QuerySpeechLicenseDeviceList", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "QuerySpeechLicenseDeviceList", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -91,7 +91,7 @@ func CreateResetConsumerGroupPositionRequest() (request *ResetConsumerGroupPosit
 	request = &ResetConsumerGroupPositionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "ResetConsumerGroupPosition", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "ResetConsumerGroupPosition", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

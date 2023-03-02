@@ -91,7 +91,7 @@ func CreateDeleteSoundCodeLabelRequest() (request *DeleteSoundCodeLabelRequest) 
 	request = &DeleteSoundCodeLabelRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "DeleteSoundCodeLabel", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "DeleteSoundCodeLabel", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

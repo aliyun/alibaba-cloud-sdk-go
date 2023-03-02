@@ -94,7 +94,7 @@ func CreateCheckBindLicenseDeviceProgressRequest() (request *CheckBindLicenseDev
 	request = &CheckBindLicenseDeviceProgressRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "CheckBindLicenseDeviceProgress", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "CheckBindLicenseDeviceProgress", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

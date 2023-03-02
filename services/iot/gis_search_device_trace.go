@@ -96,7 +96,7 @@ func CreateGisSearchDeviceTraceRequest() (request *GisSearchDeviceTraceRequest) 
 	request = &GisSearchDeviceTraceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "GisSearchDeviceTrace", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "GisSearchDeviceTrace", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }
