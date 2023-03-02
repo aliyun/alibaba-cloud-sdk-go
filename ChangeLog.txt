@@ -1,3 +1,7 @@
+2023-03-02 Version: v1.62.206
+- Generated 2015-04-01 for `Sts`.
+- Publish AssumeRole API With ExternalId Parameter.
+
 2023-03-02 Version: v1.62.205
 - Generated 2021-07-07 for `lto`.
 - Release.

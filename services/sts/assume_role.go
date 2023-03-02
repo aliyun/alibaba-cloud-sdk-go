@@ -71,6 +71,7 @@ func (client *Client) AssumeRoleWithCallback(request *AssumeRoleRequest, callbac
 // AssumeRoleRequest is the request struct for api AssumeRole
 type AssumeRoleRequest struct {
 	*requests.RpcRequest
+	ExternalId      string           `position:"Query" name:"ExternalId"`
 	RoleSessionName string           `position:"Query" name:"RoleSessionName"`
 	Policy          string           `position:"Query" name:"Policy"`
 	RoleArn         string           `position:"Query" name:"RoleArn"`
