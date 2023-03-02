@@ -21,6 +21,7 @@ type Database struct {
 	DBStatus         string                      `json:"DBStatus" xml:"DBStatus"`
 	DBName           string                      `json:"DBName" xml:"DBName"`
 	Engine           string                      `json:"Engine" xml:"Engine"`
+	MasterID         string                      `json:"MasterID" xml:"MasterID"`
 	CharacterSetName string                      `json:"CharacterSetName" xml:"CharacterSetName"`
 	Accounts         AccountsInDescribeDatabases `json:"Accounts" xml:"Accounts"`
 }

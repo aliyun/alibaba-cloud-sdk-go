@@ -89,6 +89,7 @@ type CreateDBClusterRequest struct {
 	SecurityIPList                         string                `position:"Query" name:"SecurityIPList"`
 	DBMinorVersion                         string                `position:"Query" name:"DBMinorVersion"`
 	AutoRenew                              requests.Boolean      `position:"Query" name:"AutoRenew"`
+	HotStandbyCluster                      string                `position:"Query" name:"HotStandbyCluster"`
 	ZoneId                                 string                `position:"Query" name:"ZoneId"`
 	TDEStatus                              requests.Boolean      `position:"Query" name:"TDEStatus"`
 	AllowShutDown                          string                `position:"Query" name:"AllowShutDown"`
@@ -109,6 +110,7 @@ type CreateDBClusterRequest struct {
 	DBVersion                              string                `position:"Query" name:"DBVersion"`
 	CloneDataPoint                         string                `position:"Query" name:"CloneDataPoint"`
 	PayType                                string                `position:"Query" name:"PayType"`
+	StorageSpace                           requests.Integer      `position:"Query" name:"StorageSpace"`
 	ServerlessType                         string                `position:"Query" name:"ServerlessType"`
 }
 
