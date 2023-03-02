@@ -78,6 +78,7 @@ type DescribeVodDomainUsageDataRequest struct {
 	EndTime    string           `position:"Query" name:"EndTime"`
 	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
 	Field      string           `position:"Query" name:"Field"`
+	Interval   string           `position:"Query" name:"Interval"`
 }
 
 // DescribeVodDomainUsageDataResponse is the response struct for api DescribeVodDomainUsageData
