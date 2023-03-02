@@ -73,17 +73,18 @@ type UpdateDataServiceApiRequest struct {
 	*requests.RpcRequest
 	ScriptDetails       string           `position:"Body" name:"ScriptDetails"`
 	RequestMethod       requests.Integer `position:"Body" name:"RequestMethod"`
-	ApiPath             string           `position:"Body" name:"ApiPath"`
-	WizardDetails       string           `position:"Body" name:"WizardDetails"`
-	VisibleRange        requests.Integer `position:"Body" name:"VisibleRange"`
 	ApiDescription      string           `position:"Body" name:"ApiDescription"`
 	Timeout             requests.Integer `position:"Body" name:"Timeout"`
-	RegistrationDetails string           `position:"Body" name:"RegistrationDetails"`
+	ResourceGroupId     requests.Integer `position:"Body" name:"ResourceGroupId"`
 	TenantId            requests.Integer `position:"Body" name:"TenantId"`
 	Protocols           string           `position:"Body" name:"Protocols"`
 	ProjectId           requests.Integer `position:"Body" name:"ProjectId"`
-	ApiId               requests.Integer `position:"Body" name:"ApiId"`
 	ResponseContentType requests.Integer `position:"Body" name:"ResponseContentType"`
+	ApiPath             string           `position:"Body" name:"ApiPath"`
+	WizardDetails       string           `position:"Body" name:"WizardDetails"`
+	VisibleRange        requests.Integer `position:"Body" name:"VisibleRange"`
+	RegistrationDetails string           `position:"Body" name:"RegistrationDetails"`
+	ApiId               requests.Integer `position:"Body" name:"ApiId"`
 }
 
 // UpdateDataServiceApiResponse is the response struct for api UpdateDataServiceApi

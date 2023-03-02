@@ -76,6 +76,8 @@ type CreateDataServiceApiRequest struct {
 	ApiDescription      string           `position:"Body" name:"ApiDescription"`
 	Timeout             requests.Integer `position:"Body" name:"Timeout"`
 	FolderId            requests.Integer `position:"Body" name:"FolderId"`
+	ResourceGroupId     requests.Integer `position:"Body" name:"ResourceGroupId"`
+	SqlMode             requests.Integer `position:"Body" name:"SqlMode"`
 	TenantId            requests.Integer `position:"Body" name:"TenantId"`
 	Protocols           string           `position:"Body" name:"Protocols"`
 	ProjectId           requests.Integer `position:"Body" name:"ProjectId"`
