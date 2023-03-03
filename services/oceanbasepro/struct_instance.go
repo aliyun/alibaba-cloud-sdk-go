@@ -37,6 +37,9 @@ type Instance struct {
 	ObRpmVersion         string   `json:"ObRpmVersion" xml:"ObRpmVersion"`
 	IsLatestObVersion    bool     `json:"IsLatestObVersion" xml:"IsLatestObVersion"`
 	EnableUpgradeLogDisk bool     `json:"EnableUpgradeLogDisk" xml:"EnableUpgradeLogDisk"`
+	InstanceRole         string   `json:"InstanceRole" xml:"InstanceRole"`
+	NodeNum              string   `json:"NodeNum" xml:"NodeNum"`
 	AvailableZones       []string `json:"AvailableZones" xml:"AvailableZones"`
+	Zones                []string `json:"Zones" xml:"Zones"`
 	Resource             Resource `json:"Resource" xml:"Resource"`
 }

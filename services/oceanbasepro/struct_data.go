@@ -116,6 +116,7 @@ type Data struct {
 	AvgExecutionMS         float64            `json:"AvgExecutionMS" xml:"AvgExecutionMS"`
 	UserStatus             string             `json:"UserStatus" xml:"UserStatus"`
 	QueueTime              float64            `json:"QueueTime" xml:"QueueTime"`
+	InstanceRole           string             `json:"InstanceRole" xml:"InstanceRole"`
 	PageNumber             int                `json:"PageNumber" xml:"PageNumber"`
 	TotalWaitTime          float64            `json:"TotalWaitTime" xml:"TotalWaitTime"`
 	Description            string             `json:"Description" xml:"Description"`
