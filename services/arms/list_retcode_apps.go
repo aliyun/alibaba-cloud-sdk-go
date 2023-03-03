@@ -71,14 +71,21 @@ func (client *Client) ListRetcodeAppsWithCallback(request *ListRetcodeAppsReques
 // ListRetcodeAppsRequest is the request struct for api ListRetcodeApps
 type ListRetcodeAppsRequest struct {
 	*requests.RpcRequest
-	SecurityToken string `position:"Query" name:"SecurityToken"`
+	ResourceGroupId string                 `position:"Query" name:"ResourceGroupId"`
+	Tags            *[]ListRetcodeAppsTags `position:"Query" name:"Tags"  type:"Repeated"`
+}
+
+// ListRetcodeAppsTags is a repeated param struct in ListRetcodeAppsRequest
+type ListRetcodeAppsTags struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // ListRetcodeAppsResponse is the response struct for api ListRetcodeApps
 type ListRetcodeAppsResponse struct {
 	*responses.BaseResponse
-	RequestId   string       `json:"RequestId" xml:"RequestId"`
-	RetcodeApps []RetcodeApp `json:"RetcodeApps" xml:"RetcodeApps"`
+	RequestId   string                        `json:"RequestId" xml:"RequestId"`
+	RetcodeApps []RetcodeAppInListRetcodeApps `json:"RetcodeApps" xml:"RetcodeApps"`
 }
 
 // CreateListRetcodeAppsRequest creates a request to invoke ListRetcodeApps API

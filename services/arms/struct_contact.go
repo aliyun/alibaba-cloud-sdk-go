@@ -17,15 +17,16 @@ package arms
 
 // Contact is a nested struct in arms response
 type Contact struct {
-	ContactName string `json:"ContactName" xml:"ContactName"`
-	Email       string `json:"Email" xml:"Email"`
-	Content     string `json:"Content" xml:"Content"`
-	UpdateTime  int64  `json:"UpdateTime" xml:"UpdateTime"`
-	UserId      string `json:"UserId" xml:"UserId"`
-	DingRobot   string `json:"DingRobot" xml:"DingRobot"`
-	CreateTime  int64  `json:"CreateTime" xml:"CreateTime"`
-	Webhook     string `json:"Webhook" xml:"Webhook"`
-	ContactId   int64  `json:"ContactId" xml:"ContactId"`
-	Phone       string `json:"Phone" xml:"Phone"`
-	SystemNoc   bool   `json:"SystemNoc" xml:"SystemNoc"`
+	ContactName     string `json:"ContactName" xml:"ContactName"`
+	Email           string `json:"Email" xml:"Email"`
+	Content         string `json:"Content" xml:"Content"`
+	ResourceGroupId string `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	UpdateTime      int64  `json:"UpdateTime" xml:"UpdateTime"`
+	UserId          string `json:"UserId" xml:"UserId"`
+	DingRobot       string `json:"DingRobot" xml:"DingRobot"`
+	CreateTime      int64  `json:"CreateTime" xml:"CreateTime"`
+	Webhook         string `json:"Webhook" xml:"Webhook"`
+	ContactId       int64  `json:"ContactId" xml:"ContactId"`
+	Phone           string `json:"Phone" xml:"Phone"`
+	SystemNoc       bool   `json:"SystemNoc" xml:"SystemNoc"`
 }

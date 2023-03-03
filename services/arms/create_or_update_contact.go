@@ -76,6 +76,8 @@ type CreateOrUpdateContactRequest struct {
 	IsVerify          requests.Boolean `position:"Body" name:"IsVerify"`
 	ProxyUserId       string           `position:"Body" name:"ProxyUserId"`
 	ContactName       string           `position:"Body" name:"ContactName"`
+	ResourceGroupId   string           `position:"Query" name:"ResourceGroupId"`
+	DingRobotUrl      string           `position:"Query" name:"DingRobotUrl"`
 	Phone             string           `position:"Body" name:"Phone"`
 	Email             string           `position:"Body" name:"Email"`
 	IsEmailVerify     requests.Boolean `position:"Body" name:"IsEmailVerify"`

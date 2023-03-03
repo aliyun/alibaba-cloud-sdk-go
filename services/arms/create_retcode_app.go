@@ -71,8 +71,16 @@ func (client *Client) CreateRetcodeAppWithCallback(request *CreateRetcodeAppRequ
 // CreateRetcodeAppRequest is the request struct for api CreateRetcodeApp
 type CreateRetcodeAppRequest struct {
 	*requests.RpcRequest
-	RetcodeAppName string `position:"Query" name:"RetcodeAppName"`
-	RetcodeAppType string `position:"Query" name:"RetcodeAppType"`
+	ResourceGroupId string                  `position:"Query" name:"ResourceGroupId"`
+	RetcodeAppName  string                  `position:"Query" name:"RetcodeAppName"`
+	RetcodeAppType  string                  `position:"Query" name:"RetcodeAppType"`
+	Tags            *[]CreateRetcodeAppTags `position:"Query" name:"Tags"  type:"Repeated"`
+}
+
+// CreateRetcodeAppTags is a repeated param struct in CreateRetcodeAppRequest
+type CreateRetcodeAppTags struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // CreateRetcodeAppResponse is the response struct for api CreateRetcodeApp

@@ -71,9 +71,18 @@ func (client *Client) SearchRetcodeAppByPageWithCallback(request *SearchRetcodeA
 // SearchRetcodeAppByPageRequest is the request struct for api SearchRetcodeAppByPage
 type SearchRetcodeAppByPageRequest struct {
 	*requests.RpcRequest
-	RetcodeAppName string           `position:"Query" name:"RetcodeAppName"`
-	PageSize       requests.Integer `position:"Query" name:"PageSize"`
-	PageNumber     requests.Integer `position:"Query" name:"PageNumber"`
+	RetcodeAppId    string                        `position:"Query" name:"RetcodeAppId"`
+	PageNumber      requests.Integer              `position:"Query" name:"PageNumber"`
+	Tags            *[]SearchRetcodeAppByPageTags `position:"Query" name:"Tags"  type:"Repeated"`
+	ResourceGroupId string                        `position:"Query" name:"ResourceGroupId"`
+	RetcodeAppName  string                        `position:"Query" name:"RetcodeAppName"`
+	PageSize        requests.Integer              `position:"Query" name:"PageSize"`
+}
+
+// SearchRetcodeAppByPageTags is a repeated param struct in SearchRetcodeAppByPageRequest
+type SearchRetcodeAppByPageTags struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // SearchRetcodeAppByPageResponse is the response struct for api SearchRetcodeAppByPage

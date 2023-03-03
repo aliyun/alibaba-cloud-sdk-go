@@ -71,14 +71,16 @@ func (client *Client) SearchAlertRulesWithCallback(request *SearchAlertRulesRequ
 // SearchAlertRulesRequest is the request struct for api SearchAlertRules
 type SearchAlertRulesRequest struct {
 	*requests.RpcRequest
-	AppType        string           `position:"Query" name:"AppType"`
-	CurrentPage    requests.Integer `position:"Query" name:"CurrentPage"`
-	Pid            string           `position:"Query" name:"Pid"`
-	SystemRegionId string           `position:"Query" name:"SystemRegionId"`
-	ProxyUserId    string           `position:"Query" name:"ProxyUserId"`
-	Title          string           `position:"Query" name:"Title"`
-	Type           string           `position:"Query" name:"Type"`
-	PageSize       requests.Integer `position:"Query" name:"PageSize"`
+	AppType         string           `position:"Query" name:"AppType"`
+	CurrentPage     requests.Integer `position:"Query" name:"CurrentPage"`
+	Pid             string           `position:"Query" name:"Pid"`
+	SystemRegionId  string           `position:"Query" name:"SystemRegionId"`
+	ProxyUserId     string           `position:"Query" name:"ProxyUserId"`
+	Title           string           `position:"Query" name:"Title"`
+	Type            string           `position:"Query" name:"Type"`
+	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
+	AlertRuleId     string           `position:"Query" name:"AlertRuleId"`
+	PageSize        requests.Integer `position:"Query" name:"PageSize"`
 }
 
 // SearchAlertRulesResponse is the response struct for api SearchAlertRules

@@ -78,6 +78,7 @@ type InstallManagedPrometheusRequest struct {
 	KubeConfig        string `position:"Query" name:"KubeConfig"`
 	ClusterType       string `position:"Query" name:"ClusterType"`
 	VSwitchId         string `position:"Query" name:"VSwitchId"`
+	ResourceGroupId   string `position:"Query" name:"ResourceGroupId"`
 	VpcId             string `position:"Query" name:"VpcId"`
 }
 

@@ -71,15 +71,23 @@ func (client *Client) AddPrometheusGlobalViewWithCallback(request *AddPrometheus
 // AddPrometheusGlobalViewRequest is the request struct for api AddPrometheusGlobalView
 type AddPrometheusGlobalViewRequest struct {
 	*requests.RpcRequest
-	GroupName string `position:"Query" name:"GroupName"`
-	Clusters  string `position:"Query" name:"Clusters"`
+	ResourceGroupId string                        `position:"Query" name:"ResourceGroupId"`
+	Tag             *[]AddPrometheusGlobalViewTag `position:"Query" name:"Tag"  type:"Repeated"`
+	GroupName       string                        `position:"Query" name:"GroupName"`
+	Clusters        string                        `position:"Query" name:"Clusters"`
+}
+
+// AddPrometheusGlobalViewTag is a repeated param struct in AddPrometheusGlobalViewRequest
+type AddPrometheusGlobalViewTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // AddPrometheusGlobalViewResponse is the response struct for api AddPrometheusGlobalView
 type AddPrometheusGlobalViewResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Data      Data   `json:"Data" xml:"Data"`
+	RequestId string                        `json:"RequestId" xml:"RequestId"`
+	Data      DataInAddPrometheusGlobalView `json:"Data" xml:"Data"`
 }
 
 // CreateAddPrometheusGlobalViewRequest creates a request to invoke AddPrometheusGlobalView API

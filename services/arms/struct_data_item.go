@@ -17,11 +17,14 @@ package arms
 
 // DataItem is a nested struct in arms response
 type DataItem struct {
-	ClientType     int64  `json:"ClientType" xml:"ClientType"`
-	CityCode       int64  `json:"CityCode" xml:"CityCode"`
-	City           string `json:"City" xml:"City"`
-	District       string `json:"District" xml:"District"`
-	NetServiceId   int64  `json:"NetServiceId" xml:"NetServiceId"`
-	NetServiceName string `json:"NetServiceName" xml:"NetServiceName"`
-	Busy           int64  `json:"Busy" xml:"Busy"`
+	Region         string    `json:"Region" xml:"Region"`
+	CityCode       int64     `json:"CityCode" xml:"CityCode"`
+	NetServiceName string    `json:"NetServiceName" xml:"NetServiceName"`
+	ClientType     int64     `json:"ClientType" xml:"ClientType"`
+	NetServiceId   int64     `json:"NetServiceId" xml:"NetServiceId"`
+	ProductCode    string    `json:"ProductCode" xml:"ProductCode"`
+	City           string    `json:"City" xml:"City"`
+	Busy           int64     `json:"Busy" xml:"Busy"`
+	District       string    `json:"District" xml:"District"`
+	RemoteUrl      RemoteUrl `json:"RemoteUrl" xml:"RemoteUrl"`
 }

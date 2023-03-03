@@ -17,15 +17,17 @@ package arms
 
 // TraceApp is a nested struct in arms response
 type TraceApp struct {
-	Show       bool       `json:"Show" xml:"Show"`
-	AppId      int64      `json:"AppId" xml:"AppId"`
-	RegionId   string     `json:"RegionId" xml:"RegionId"`
-	UpdateTime int64      `json:"UpdateTime" xml:"UpdateTime"`
-	Pid        string     `json:"Pid" xml:"Pid"`
-	UserId     string     `json:"UserId" xml:"UserId"`
-	CreateTime int64      `json:"CreateTime" xml:"CreateTime"`
-	AppName    string     `json:"AppName" xml:"AppName"`
-	Type       string     `json:"Type" xml:"Type"`
-	Labels     []string   `json:"Labels" xml:"Labels"`
-	Tags       []TagsItem `json:"Tags" xml:"Tags"`
+	Show            bool       `json:"Show" xml:"Show"`
+	UpdateTime      int64      `json:"UpdateTime" xml:"UpdateTime"`
+	CreateTime      int64      `json:"CreateTime" xml:"CreateTime"`
+	Source          string     `json:"Source" xml:"Source"`
+	AppId           int64      `json:"AppId" xml:"AppId"`
+	RegionId        string     `json:"RegionId" xml:"RegionId"`
+	ResourceGroupId string     `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	Pid             string     `json:"Pid" xml:"Pid"`
+	UserId          string     `json:"UserId" xml:"UserId"`
+	AppName         string     `json:"AppName" xml:"AppName"`
+	Type            string     `json:"Type" xml:"Type"`
+	Labels          []string   `json:"Labels" xml:"Labels"`
+	Tags            []TagsItem `json:"Tags" xml:"Tags"`
 }

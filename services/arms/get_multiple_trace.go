@@ -71,7 +71,9 @@ func (client *Client) GetMultipleTraceWithCallback(request *GetMultipleTraceRequ
 // GetMultipleTraceRequest is the request struct for api GetMultipleTrace
 type GetMultipleTraceRequest struct {
 	*requests.RpcRequest
-	TraceIDs *[]string `position:"Query" name:"TraceIDs"  type:"Repeated"`
+	TraceIDs  *[]string        `position:"Query" name:"TraceIDs"  type:"Repeated"`
+	EndTime   requests.Integer `position:"Query" name:"EndTime"`
+	StartTime requests.Integer `position:"Query" name:"StartTime"`
 }
 
 // GetMultipleTraceResponse is the response struct for api GetMultipleTrace

@@ -22,6 +22,7 @@ type DispatchRule struct {
 	State                    string                             `json:"State" xml:"State"`
 	RuleId                   int64                              `json:"RuleId" xml:"RuleId"`
 	IsRecover                bool                               `json:"IsRecover" xml:"IsRecover"`
+	Id                       int64                              `json:"id" xml:"id"`
 	LabelMatchExpressionGrid LabelMatchExpressionGrid           `json:"LabelMatchExpressionGrid" xml:"LabelMatchExpressionGrid"`
 	GroupRules               []GroupRule                        `json:"GroupRules" xml:"GroupRules"`
 	NotifyRules              []NotifyRuleInDescribeDispatchRule `json:"NotifyRules" xml:"NotifyRules"`

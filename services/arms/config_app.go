@@ -73,6 +73,7 @@ type ConfigAppRequest struct {
 	*requests.RpcRequest
 	AppIds string `position:"Query" name:"AppIds"`
 	Enable string `position:"Query" name:"Enable"`
+	Type   string `position:"Query" name:"Type"`
 }
 
 // ConfigAppResponse is the response struct for api ConfigApp

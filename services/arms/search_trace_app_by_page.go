@@ -71,9 +71,17 @@ func (client *Client) SearchTraceAppByPageWithCallback(request *SearchTraceAppBy
 // SearchTraceAppByPageRequest is the request struct for api SearchTraceAppByPage
 type SearchTraceAppByPageRequest struct {
 	*requests.RpcRequest
-	TraceAppName string           `position:"Query" name:"TraceAppName"`
-	PageSize     requests.Integer `position:"Query" name:"PageSize"`
-	PageNumber   requests.Integer `position:"Query" name:"PageNumber"`
+	PageNumber      requests.Integer            `position:"Query" name:"PageNumber"`
+	Tags            *[]SearchTraceAppByPageTags `position:"Query" name:"Tags"  type:"Repeated"`
+	ResourceGroupId string                      `position:"Query" name:"ResourceGroupId"`
+	TraceAppName    string                      `position:"Query" name:"TraceAppName"`
+	PageSize        requests.Integer            `position:"Query" name:"PageSize"`
+}
+
+// SearchTraceAppByPageTags is a repeated param struct in SearchTraceAppByPageRequest
+type SearchTraceAppByPageTags struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // SearchTraceAppByPageResponse is the response struct for api SearchTraceAppByPage

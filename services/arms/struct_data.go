@@ -17,22 +17,41 @@ package arms
 
 // Data is a nested struct in arms response
 type Data struct {
+	ExporterType          string                   `json:"ExporterType" xml:"ExporterType"`
+	CanEditor             bool                     `json:"CanEditor" xml:"CanEditor"`
+	Describe              string                   `json:"Describe" xml:"Describe"`
+	PageSize              int                      `json:"PageSize" xml:"PageSize"`
+	ShowDescribe          bool                     `json:"ShowDescribe" xml:"ShowDescribe"`
+	Param                 string                   `json:"Param" xml:"Param"`
+	ResourceGroupId       string                   `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	Total                 string                   `json:"Total" xml:"Total"`
+	UploadTime            string                   `json:"UploadTime" xml:"UploadTime"`
+	FileName              string                   `json:"FileName" xml:"FileName"`
 	EnableTag             bool                     `json:"EnableTag" xml:"EnableTag"`
+	ResourceId            string                   `json:"ResourceId" xml:"ResourceId"`
+	ClusterId             string                   `json:"ClusterId" xml:"ClusterId"`
 	IsControllerInstalled bool                     `json:"isControllerInstalled" xml:"isControllerInstalled"`
+	RemoteWriteName       string                   `json:"RemoteWriteName" xml:"RemoteWriteName"`
 	Message               string                   `json:"Message" xml:"Message"`
 	Info                  string                   `json:"Info" xml:"Info"`
+	InstanceName          string                   `json:"InstanceName" xml:"InstanceName"`
 	Version               string                   `json:"Version" xml:"Version"`
-	PageSize              int                      `json:"PageSize" xml:"PageSize"`
+	CanDelete             bool                     `json:"CanDelete" xml:"CanDelete"`
+	InstanceId            int64                    `json:"InstanceId" xml:"InstanceId"`
+	IntegrationType       string                   `json:"IntegrationType" xml:"IntegrationType"`
 	Success               bool                     `json:"Success" xml:"Success"`
 	Page                  int                      `json:"Page" xml:"Page"`
-	Total                 string                   `json:"Total" xml:"Total"`
+	Namespace             string                   `json:"Namespace" xml:"Namespace"`
 	TaskId                int64                    `json:"TaskId" xml:"TaskId"`
 	Size                  string                   `json:"Size" xml:"Size"`
+	ContainerName         string                   `json:"ContainerName" xml:"ContainerName"`
+	Target                string                   `json:"Target" xml:"Target"`
 	Msg                   string                   `json:"Msg" xml:"Msg"`
 	Status                string                   `json:"Status" xml:"Status"`
-	UploadTime            string                   `json:"UploadTime" xml:"UploadTime"`
 	Fid                   string                   `json:"Fid" xml:"Fid"`
-	FileName              string                   `json:"FileName" xml:"FileName"`
+	ShowLog               string                   `json:"ShowLog" xml:"ShowLog"`
+	NeedUpgrade           bool                     `json:"NeedUpgrade" xml:"NeedUpgrade"`
+	RemoteWriteYaml       string                   `json:"RemoteWriteYaml" xml:"RemoteWriteYaml"`
 	Items                 []map[string]interface{} `json:"Items" xml:"Items"`
 	RetcodeSLSConfig      RetcodeSLSConfig         `json:"RetcodeSLSConfig" xml:"RetcodeSLSConfig"`
 	Products              []ProductsItem           `json:"Products" xml:"Products"`

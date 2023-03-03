@@ -24,4 +24,5 @@ type AlertContact struct {
 	IsVerify          bool    `json:"IsVerify" xml:"IsVerify"`
 	ReissueSendNotice int64   `json:"ReissueSendNotice" xml:"ReissueSendNotice"`
 	IsEmailVerify     bool    `json:"isEmailVerify" xml:"isEmailVerify"`
+	DingRobotUrl      string  `json:"DingRobotUrl" xml:"DingRobotUrl"`
 }

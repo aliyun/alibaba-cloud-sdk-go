@@ -71,9 +71,10 @@ func (client *Client) UninstallManagedPrometheusWithCallback(request *UninstallM
 // UninstallManagedPrometheusRequest is the request struct for api UninstallManagedPrometheus
 type UninstallManagedPrometheusRequest struct {
 	*requests.RpcRequest
-	ClusterType string `position:"Query" name:"ClusterType"`
-	VpcId       string `position:"Query" name:"VpcId"`
-	ClusterId   string `position:"Query" name:"ClusterId"`
+	ClusterId       string `position:"Query" name:"ClusterId"`
+	ClusterType     string `position:"Query" name:"ClusterType"`
+	ResourceGroupId string `position:"Query" name:"ResourceGroupId"`
+	VpcId           string `position:"Query" name:"VpcId"`
 }
 
 // UninstallManagedPrometheusResponse is the response struct for api UninstallManagedPrometheus

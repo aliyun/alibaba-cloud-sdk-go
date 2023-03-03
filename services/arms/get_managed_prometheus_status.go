@@ -71,9 +71,10 @@ func (client *Client) GetManagedPrometheusStatusWithCallback(request *GetManaged
 // GetManagedPrometheusStatusRequest is the request struct for api GetManagedPrometheusStatus
 type GetManagedPrometheusStatusRequest struct {
 	*requests.RpcRequest
-	ClusterType string `position:"Query" name:"ClusterType"`
-	VpcId       string `position:"Query" name:"VpcId"`
-	ClusterId   string `position:"Query" name:"ClusterId"`
+	ClusterId       string `position:"Query" name:"ClusterId"`
+	ClusterType     string `position:"Query" name:"ClusterType"`
+	ResourceGroupId string `position:"Query" name:"ResourceGroupId"`
+	VpcId           string `position:"Query" name:"VpcId"`
 }
 
 // GetManagedPrometheusStatusResponse is the response struct for api GetManagedPrometheusStatus

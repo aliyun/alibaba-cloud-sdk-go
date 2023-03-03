@@ -71,6 +71,14 @@ func (client *Client) ListTraceAppsWithCallback(request *ListTraceAppsRequest, c
 // ListTraceAppsRequest is the request struct for api ListTraceApps
 type ListTraceAppsRequest struct {
 	*requests.RpcRequest
+	ResourceGroupId string               `position:"Query" name:"ResourceGroupId"`
+	Tags            *[]ListTraceAppsTags `position:"Query" name:"Tags"  type:"Repeated"`
+}
+
+// ListTraceAppsTags is a repeated param struct in ListTraceAppsRequest
+type ListTraceAppsTags struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // ListTraceAppsResponse is the response struct for api ListTraceApps

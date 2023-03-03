@@ -17,11 +17,13 @@ package arms
 
 // IMRobots is a nested struct in arms response
 type IMRobots struct {
-	RobotId      float64 `json:"RobotId" xml:"RobotId"`
-	Type         string  `json:"Type" xml:"Type"`
-	RobotName    string  `json:"RobotName" xml:"RobotName"`
-	RobotAddr    string  `json:"RobotAddr" xml:"RobotAddr"`
-	DailyNoc     bool    `json:"DailyNoc" xml:"DailyNoc"`
-	DailyNocTime string  `json:"DailyNocTime" xml:"DailyNocTime"`
-	DingSignKey  string  `json:"DingSignKey" xml:"DingSignKey"`
+	RobotId       float64        `json:"RobotId" xml:"RobotId"`
+	Type          string         `json:"Type" xml:"Type"`
+	RobotName     string         `json:"RobotName" xml:"RobotName"`
+	RobotAddr     string         `json:"RobotAddr" xml:"RobotAddr"`
+	DailyNoc      bool           `json:"DailyNoc" xml:"DailyNoc"`
+	DailyNocTime  string         `json:"DailyNocTime" xml:"DailyNocTime"`
+	DingSignKey   string         `json:"DingSignKey" xml:"DingSignKey"`
+	CreateTime    string         `json:"CreateTime" xml:"CreateTime"`
+	DispatchRules []DispatchRule `json:"DispatchRules" xml:"DispatchRules"`
 }

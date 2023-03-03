@@ -17,5 +17,5 @@ package arms
 
 // RetcodeAppsInSearchRetcodeAppByPage is a nested struct in arms response
 type RetcodeAppsInSearchRetcodeAppByPage struct {
-	RetcodeApp []RetcodeApp `json:"RetcodeApp" xml:"RetcodeApp"`
+	RetcodeApp []RetcodeAppInSearchRetcodeAppByPage `json:"RetcodeApp" xml:"RetcodeApp"`
 }

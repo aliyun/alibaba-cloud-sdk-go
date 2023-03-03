@@ -17,5 +17,5 @@ package arms
 
 // RetcodeAppsInListRetcodeApps is a nested struct in arms response
 type RetcodeAppsInListRetcodeApps struct {
-	RetcodeApp []RetcodeApp `json:"RetcodeApp" xml:"RetcodeApp"`
+	RetcodeApp []RetcodeAppInListRetcodeApps `json:"RetcodeApp" xml:"RetcodeApp"`
 }
