@@ -71,13 +71,13 @@ func (client *Client) CreateKillInstanceSessionTaskWithCallback(request *CreateK
 // CreateKillInstanceSessionTaskRequest is the request struct for api CreateKillInstanceSessionTask
 type CreateKillInstanceSessionTaskRequest struct {
 	*requests.RpcRequest
-	KillAllSessions string `position:"Query" name:"KillAllSessions"`
-	DbUser          string `position:"Query" name:"DbUser"`
-	SessionIds      string `position:"Query" name:"SessionIds"`
-	DbUserPassword  string `position:"Query" name:"DbUserPassword"`
-	InstanceId      string `position:"Query" name:"InstanceId"`
-	IgnoredUsers    string `position:"Query" name:"IgnoredUsers"`
-	NodeId          string `position:"Query" name:"NodeId"`
+	KillAllSessions requests.Boolean `position:"Query" name:"KillAllSessions"`
+	DbUser          string           `position:"Query" name:"DbUser"`
+	SessionIds      string           `position:"Query" name:"SessionIds"`
+	DbUserPassword  string           `position:"Query" name:"DbUserPassword"`
+	InstanceId      string           `position:"Query" name:"InstanceId"`
+	IgnoredUsers    string           `position:"Query" name:"IgnoredUsers"`
+	NodeId          string           `position:"Query" name:"NodeId"`
 }
 
 // CreateKillInstanceSessionTaskResponse is the response struct for api CreateKillInstanceSessionTask
