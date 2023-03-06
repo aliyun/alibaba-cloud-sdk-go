@@ -94,7 +94,7 @@ func CreateAddShareTaskDeviceRequest() (request *AddShareTaskDeviceRequest) {
 	request = &AddShareTaskDeviceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "AddShareTaskDevice", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "AddShareTaskDevice", "", "")
 	request.Method = requests.POST
 	return
 }

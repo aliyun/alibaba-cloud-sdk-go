@@ -109,7 +109,7 @@ func CreatePubRequest() (request *PubRequest) {
 	request = &PubRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "Pub", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "Pub", "", "")
 	request.Method = requests.POST
 	return
 }

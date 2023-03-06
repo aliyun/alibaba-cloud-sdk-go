@@ -83,11 +83,11 @@ type BindLicenseDeviceRequest struct {
 // BindLicenseDeviceResponse is the response struct for api BindLicenseDevice
 type BindLicenseDeviceResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
-	Success      bool   `json:"Success" xml:"Success"`
-	Code         string `json:"Code" xml:"Code"`
-	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
-	Data         Data   `json:"Data" xml:"Data"`
+	RequestId    string                  `json:"RequestId" xml:"RequestId"`
+	Success      bool                    `json:"Success" xml:"Success"`
+	Code         string                  `json:"Code" xml:"Code"`
+	ErrorMessage string                  `json:"ErrorMessage" xml:"ErrorMessage"`
+	Data         DataInBindLicenseDevice `json:"Data" xml:"Data"`
 }
 
 // CreateBindLicenseDeviceRequest creates a request to invoke BindLicenseDevice API
@@ -95,7 +95,7 @@ func CreateBindLicenseDeviceRequest() (request *BindLicenseDeviceRequest) {
 	request = &BindLicenseDeviceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "BindLicenseDevice", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "BindLicenseDevice", "", "")
 	request.Method = requests.POST
 	return
 }

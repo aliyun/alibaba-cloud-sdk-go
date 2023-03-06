@@ -94,7 +94,7 @@ func CreateQuerySchedulePeriodListRequest() (request *QuerySchedulePeriodListReq
 	request = &QuerySchedulePeriodListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "QuerySchedulePeriodList", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "QuerySchedulePeriodList", "", "")
 	request.Method = requests.POST
 	return
 }

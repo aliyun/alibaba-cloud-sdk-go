@@ -100,7 +100,7 @@ func CreateQueryDeviceGroupListRequest() (request *QueryDeviceGroupListRequest) 
 	request = &QueryDeviceGroupListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "QueryDeviceGroupList", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "QueryDeviceGroupList", "", "")
 	request.Method = requests.POST
 	return
 }

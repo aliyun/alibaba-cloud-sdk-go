@@ -95,7 +95,7 @@ func CreateQueryShareTaskDeviceListRequest() (request *QueryShareTaskDeviceListR
 	request = &QueryShareTaskDeviceListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "QueryShareTaskDeviceList", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "QueryShareTaskDeviceList", "", "")
 	request.Method = requests.POST
 	return
 }

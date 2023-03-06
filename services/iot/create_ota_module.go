@@ -94,7 +94,7 @@ func CreateCreateOTAModuleRequest() (request *CreateOTAModuleRequest) {
 	request = &CreateOTAModuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "CreateOTAModule", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "CreateOTAModule", "", "")
 	request.Method = requests.POST
 	return
 }

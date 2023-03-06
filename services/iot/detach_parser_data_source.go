@@ -92,7 +92,7 @@ func CreateDetachParserDataSourceRequest() (request *DetachParserDataSourceReque
 	request = &DetachParserDataSourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "DetachParserDataSource", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "DetachParserDataSource", "", "")
 	request.Method = requests.POST
 	return
 }

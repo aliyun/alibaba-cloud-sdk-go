@@ -93,7 +93,7 @@ func CreateUpdateParserRequest() (request *UpdateParserRequest) {
 	request = &UpdateParserRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "UpdateParser", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "UpdateParser", "", "")
 	request.Method = requests.POST
 	return
 }

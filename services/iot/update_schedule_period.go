@@ -95,7 +95,7 @@ func CreateUpdateSchedulePeriodRequest() (request *UpdateSchedulePeriodRequest) 
 	request = &UpdateSchedulePeriodRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "UpdateSchedulePeriod", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "UpdateSchedulePeriod", "", "")
 	request.Method = requests.POST
 	return
 }

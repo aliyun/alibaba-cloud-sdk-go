@@ -92,7 +92,7 @@ func CreateSaveScriptRequest() (request *SaveScriptRequest) {
 	request = &SaveScriptRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "SaveScript", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "SaveScript", "", "")
 	request.Method = requests.POST
 	return
 }

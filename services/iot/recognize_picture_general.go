@@ -91,7 +91,7 @@ func CreateRecognizePictureGeneralRequest() (request *RecognizePictureGeneralReq
 	request = &RecognizePictureGeneralRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "RecognizePictureGeneral", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "RecognizePictureGeneral", "", "")
 	request.Method = requests.POST
 	return
 }

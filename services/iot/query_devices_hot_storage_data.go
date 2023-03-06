@@ -103,7 +103,7 @@ func CreateQueryDevicesHotStorageDataRequest() (request *QueryDevicesHotStorageD
 	request = &QueryDevicesHotStorageDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "QueryDevicesHotStorageData", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "QueryDevicesHotStorageData", "", "")
 	request.Method = requests.POST
 	return
 }

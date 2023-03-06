@@ -96,7 +96,7 @@ func CreateQueryStudioAppListRequest() (request *QueryStudioAppListRequest) {
 	request = &QueryStudioAppListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "QueryStudioAppList", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "QueryStudioAppList", "", "")
 	request.Method = requests.POST
 	return
 }

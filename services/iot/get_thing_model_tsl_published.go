@@ -98,7 +98,7 @@ func CreateGetThingModelTslPublishedRequest() (request *GetThingModelTslPublishe
 	request = &GetThingModelTslPublishedRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "GetThingModelTslPublished", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "GetThingModelTslPublished", "", "")
 	request.Method = requests.POST
 	return
 }

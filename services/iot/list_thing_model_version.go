@@ -94,7 +94,7 @@ func CreateListThingModelVersionRequest() (request *ListThingModelVersionRequest
 	request = &ListThingModelVersionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "ListThingModelVersion", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "ListThingModelVersion", "", "")
 	request.Method = requests.POST
 	return
 }

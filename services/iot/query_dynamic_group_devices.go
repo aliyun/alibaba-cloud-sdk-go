@@ -104,7 +104,7 @@ func CreateQueryDynamicGroupDevicesRequest() (request *QueryDynamicGroupDevicesR
 	request = &QueryDynamicGroupDevicesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "QueryDynamicGroupDevices", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "QueryDynamicGroupDevices", "", "")
 	request.Method = requests.POST
 	return
 }

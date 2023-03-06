@@ -92,7 +92,7 @@ func CreateQueryDeviceProvisioningRequest() (request *QueryDeviceProvisioningReq
 	request = &QueryDeviceProvisioningRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "QueryDeviceProvisioning", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "QueryDeviceProvisioning", "", "")
 	request.Method = requests.POST
 	return
 }

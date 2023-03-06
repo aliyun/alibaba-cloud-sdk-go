@@ -109,7 +109,7 @@ func CreateQuerySubscribeRelationRequest() (request *QuerySubscribeRelationReque
 	request = &QuerySubscribeRelationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "QuerySubscribeRelation", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "QuerySubscribeRelation", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -96,7 +96,7 @@ func CreateCreateDownloadDataJobRequest() (request *CreateDownloadDataJobRequest
 	request = &CreateDownloadDataJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "CreateDownloadDataJob", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "CreateDownloadDataJob", "", "")
 	request.Method = requests.POST
 	return
 }

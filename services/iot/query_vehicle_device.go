@@ -95,7 +95,7 @@ func CreateQueryVehicleDeviceRequest() (request *QueryVehicleDeviceRequest) {
 	request = &QueryVehicleDeviceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "QueryVehicleDevice", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "QueryVehicleDevice", "", "")
 	request.Method = requests.POST
 	return
 }

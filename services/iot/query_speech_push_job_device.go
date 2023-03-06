@@ -96,7 +96,7 @@ func CreateQuerySpeechPushJobDeviceRequest() (request *QuerySpeechPushJobDeviceR
 	request = &QuerySpeechPushJobDeviceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "QuerySpeechPushJobDevice", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "QuerySpeechPushJobDevice", "", "")
 	request.Method = requests.POST
 	return
 }

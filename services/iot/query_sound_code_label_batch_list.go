@@ -94,7 +94,7 @@ func CreateQuerySoundCodeLabelBatchListRequest() (request *QuerySoundCodeLabelBa
 	request = &QuerySoundCodeLabelBatchListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "QuerySoundCodeLabelBatchList", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "QuerySoundCodeLabelBatchList", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -92,7 +92,7 @@ func CreateQuerySoundCodeLabelBatchFailedResultRequest() (request *QuerySoundCod
 	request = &QuerySoundCodeLabelBatchFailedResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "QuerySoundCodeLabelBatchFailedResult", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "QuerySoundCodeLabelBatchFailedResult", "", "")
 	request.Method = requests.POST
 	return
 }

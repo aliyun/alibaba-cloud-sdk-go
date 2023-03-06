@@ -95,7 +95,7 @@ func CreateQueryProjectShareDeviceListRequest() (request *QueryProjectShareDevic
 	request = &QueryProjectShareDeviceListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "QueryProjectShareDeviceList", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "QueryProjectShareDeviceList", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -93,7 +93,7 @@ func CreateAttachDestinationRequest() (request *AttachDestinationRequest) {
 	request = &AttachDestinationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "AttachDestination", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "AttachDestination", "", "")
 	request.Method = requests.POST
 	return
 }

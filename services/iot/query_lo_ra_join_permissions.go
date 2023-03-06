@@ -92,7 +92,7 @@ func CreateQueryLoRaJoinPermissionsRequest() (request *QueryLoRaJoinPermissionsR
 	request = &QueryLoRaJoinPermissionsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "QueryLoRaJoinPermissions", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "QueryLoRaJoinPermissions", "", "")
 	request.Method = requests.POST
 	return
 }

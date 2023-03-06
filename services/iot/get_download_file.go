@@ -93,7 +93,7 @@ func CreateGetDownloadFileRequest() (request *GetDownloadFileRequest) {
 	request = &GetDownloadFileRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "GetDownloadFile", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "GetDownloadFile", "", "")
 	request.Method = requests.POST
 	return
 }

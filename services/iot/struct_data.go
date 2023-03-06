@@ -23,7 +23,6 @@ type Data struct {
 	RoleAttachTime            string                                          `json:"RoleAttachTime" xml:"RoleAttachTime"`
 	RequestProtocol           string                                          `json:"RequestProtocol" xml:"RequestProtocol"`
 	ContainerConfig           string                                          `json:"ContainerConfig" xml:"ContainerConfig"`
-	SuccessSum                int64                                           `json:"SuccessSum" xml:"SuccessSum"`
 	RoleName                  string                                          `json:"RoleName" xml:"RoleName"`
 	Spec                      int                                             `json:"Spec" xml:"Spec"`
 	RequestMethod             string                                          `json:"RequestMethod" xml:"RequestMethod"`
@@ -56,6 +55,7 @@ type Data struct {
 	Host                      string                                          `json:"Host" xml:"Host"`
 	DeviceName                string                                          `json:"DeviceName" xml:"DeviceName"`
 	PageCount                 int64                                           `json:"PageCount" xml:"PageCount"`
+	FailSum                   int                                             `json:"FailSum" xml:"FailSum"`
 	Count                     int64                                           `json:"Count" xml:"Count"`
 	Size                      string                                          `json:"Size" xml:"Size"`
 	Udi                       string                                          `json:"Udi" xml:"Udi"`
@@ -66,6 +66,7 @@ type Data struct {
 	ProductName               string                                          `json:"ProductName" xml:"ProductName"`
 	Name                      string                                          `json:"Name" xml:"Name"`
 	DatasetId                 string                                          `json:"DatasetId" xml:"DatasetId"`
+	SuccessSum                int                                             `json:"SuccessSum" xml:"SuccessSum"`
 	GmtCreateTimestamp        int64                                           `json:"GmtCreateTimestamp" xml:"GmtCreateTimestamp"`
 	SpeechCode                string                                          `json:"SpeechCode" xml:"SpeechCode"`
 	SpeechType                string                                          `json:"SpeechType" xml:"SpeechType"`
@@ -129,11 +130,11 @@ type Data struct {
 	Token                     string                                          `json:"Token" xml:"Token"`
 	Tags                      string                                          `json:"Tags" xml:"Tags"`
 	Configuration             string                                          `json:"Configuration" xml:"Configuration"`
-	ResultCsvFile             string                                          `json:"ResultCsvFile" xml:"ResultCsvFile"`
 	AuthMode                  int                                             `json:"AuthMode" xml:"AuthMode"`
 	UtcCreatedOn              string                                          `json:"UtcCreatedOn" xml:"UtcCreatedOn"`
 	ExpiredQuota              int                                             `json:"ExpiredQuota" xml:"ExpiredQuota"`
 	Longitude                 float64                                         `json:"Longitude" xml:"Longitude"`
+	FailedResultCsvFile       string                                          `json:"FailedResultCsvFile" xml:"FailedResultCsvFile"`
 	Province                  string                                          `json:"Province" xml:"Province"`
 	AppId                     string                                          `json:"AppId" xml:"AppId"`
 	MessageId                 string                                          `json:"MessageId" xml:"MessageId"`
@@ -159,7 +160,6 @@ type Data struct {
 	FirmwareUrl               string                                          `json:"FirmwareUrl" xml:"FirmwareUrl"`
 	RoleAttachTimestamp       int64                                           `json:"RoleAttachTimestamp" xml:"RoleAttachTimestamp"`
 	GmtOpened                 int64                                           `json:"GmtOpened" xml:"GmtOpened"`
-	CheckProgressId           string                                          `json:"CheckProgressId" xml:"CheckProgressId"`
 	Description               string                                          `json:"Description" xml:"Description"`
 	GmtModifiedTimestamp      int64                                           `json:"GmtModifiedTimestamp" xml:"GmtModifiedTimestamp"`
 	Sn                        string                                          `json:"Sn" xml:"Sn"`
@@ -176,7 +176,6 @@ type Data struct {
 	DisplayName               string                                          `json:"DisplayName" xml:"DisplayName"`
 	VersionState              string                                          `json:"VersionState" xml:"VersionState"`
 	IotId                     string                                          `json:"IotId" xml:"IotId"`
-	FailSum                   int64                                           `json:"FailSum" xml:"FailSum"`
 	GroupDesc                 string                                          `json:"GroupDesc" xml:"GroupDesc"`
 	Argument                  string                                          `json:"Argument" xml:"Argument"`
 	SpeechRate                int                                             `json:"SpeechRate" xml:"SpeechRate"`

@@ -98,7 +98,7 @@ func CreateListDataSourceItemRequest() (request *ListDataSourceItemRequest) {
 	request = &ListDataSourceItemRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "ListDataSourceItem", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "ListDataSourceItem", "", "")
 	request.Method = requests.POST
 	return
 }

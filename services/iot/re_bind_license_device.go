@@ -82,11 +82,11 @@ type ReBindLicenseDeviceRequest struct {
 // ReBindLicenseDeviceResponse is the response struct for api ReBindLicenseDevice
 type ReBindLicenseDeviceResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
-	Success      bool   `json:"Success" xml:"Success"`
-	Code         string `json:"Code" xml:"Code"`
-	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
-	Data         Data   `json:"Data" xml:"Data"`
+	RequestId    string                    `json:"RequestId" xml:"RequestId"`
+	Success      bool                      `json:"Success" xml:"Success"`
+	Code         string                    `json:"Code" xml:"Code"`
+	ErrorMessage string                    `json:"ErrorMessage" xml:"ErrorMessage"`
+	Data         DataInReBindLicenseDevice `json:"Data" xml:"Data"`
 }
 
 // CreateReBindLicenseDeviceRequest creates a request to invoke ReBindLicenseDevice API
@@ -94,7 +94,7 @@ func CreateReBindLicenseDeviceRequest() (request *ReBindLicenseDeviceRequest) {
 	request = &ReBindLicenseDeviceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "ReBindLicenseDevice", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "ReBindLicenseDevice", "", "")
 	request.Method = requests.POST
 	return
 }

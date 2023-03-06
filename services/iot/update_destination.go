@@ -95,7 +95,7 @@ func CreateUpdateDestinationRequest() (request *UpdateDestinationRequest) {
 	request = &UpdateDestinationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "UpdateDestination", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "UpdateDestination", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -94,7 +94,7 @@ func CreateBindGatewayToEdgeInstanceRequest() (request *BindGatewayToEdgeInstanc
 	request = &BindGatewayToEdgeInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "BindGatewayToEdgeInstance", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "BindGatewayToEdgeInstance", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -94,7 +94,7 @@ func CreateBatchCreateSoundCodeLabelWithLabelsRequest() (request *BatchCreateSou
 	request = &BatchCreateSoundCodeLabelWithLabelsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "BatchCreateSoundCodeLabelWithLabels", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "BatchCreateSoundCodeLabelWithLabels", "", "")
 	request.Method = requests.POST
 	return
 }

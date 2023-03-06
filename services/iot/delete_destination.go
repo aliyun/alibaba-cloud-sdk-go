@@ -91,7 +91,7 @@ func CreateDeleteDestinationRequest() (request *DeleteDestinationRequest) {
 	request = &DeleteDestinationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "DeleteDestination", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "DeleteDestination", "", "")
 	request.Method = requests.POST
 	return
 }

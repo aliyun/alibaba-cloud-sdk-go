@@ -82,11 +82,11 @@ type CheckBindLicenseDeviceProgressRequest struct {
 // CheckBindLicenseDeviceProgressResponse is the response struct for api CheckBindLicenseDeviceProgress
 type CheckBindLicenseDeviceProgressResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
-	Success      bool   `json:"Success" xml:"Success"`
-	Code         string `json:"Code" xml:"Code"`
-	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
-	Data         Data   `json:"Data" xml:"Data"`
+	RequestId    string                               `json:"RequestId" xml:"RequestId"`
+	Success      bool                                 `json:"Success" xml:"Success"`
+	Code         string                               `json:"Code" xml:"Code"`
+	ErrorMessage string                               `json:"ErrorMessage" xml:"ErrorMessage"`
+	Data         DataInCheckBindLicenseDeviceProgress `json:"Data" xml:"Data"`
 }
 
 // CreateCheckBindLicenseDeviceProgressRequest creates a request to invoke CheckBindLicenseDeviceProgress API
@@ -94,7 +94,7 @@ func CreateCheckBindLicenseDeviceProgressRequest() (request *CheckBindLicenseDev
 	request = &CheckBindLicenseDeviceProgressRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "CheckBindLicenseDeviceProgress", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "CheckBindLicenseDeviceProgress", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -97,7 +97,7 @@ func CreateWriteDevicesHotStorageDataRequest() (request *WriteDevicesHotStorageD
 	request = &WriteDevicesHotStorageDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "WriteDevicesHotStorageData", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "WriteDevicesHotStorageData", "", "")
 	request.Method = requests.POST
 	return
 }

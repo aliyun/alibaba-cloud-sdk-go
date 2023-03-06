@@ -96,7 +96,7 @@ func CreateImportDeviceRequest() (request *ImportDeviceRequest) {
 	request = &ImportDeviceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "ImportDevice", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "ImportDevice", "", "")
 	request.Method = requests.POST
 	return
 }

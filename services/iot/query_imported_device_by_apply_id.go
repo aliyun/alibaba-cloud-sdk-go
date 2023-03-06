@@ -98,7 +98,7 @@ func CreateQueryImportedDeviceByApplyIdRequest() (request *QueryImportedDeviceBy
 	request = &QueryImportedDeviceByApplyIdRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "QueryImportedDeviceByApplyId", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "QueryImportedDeviceByApplyId", "", "")
 	request.Method = requests.POST
 	return
 }
