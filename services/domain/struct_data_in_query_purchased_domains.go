@@ -17,5 +17,5 @@ package domain
 
 // DataInQueryPurchasedDomains is a nested struct in domain response
 type DataInQueryPurchasedDomains struct {
-	DataItem []DataItem `json:"Data" xml:"Data"`
+	Domain []Domain `json:"Domain" xml:"Domain"`
 }
