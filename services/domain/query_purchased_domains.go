@@ -85,12 +85,12 @@ type QueryPurchasedDomainsRequest struct {
 // QueryPurchasedDomainsResponse is the response struct for api QueryPurchasedDomains
 type QueryPurchasedDomainsResponse struct {
 	*responses.BaseResponse
-	RequestId      string   `json:"RequestId" xml:"RequestId"`
-	TotalItemNum   int      `json:"TotalItemNum" xml:"TotalItemNum"`
-	CurrentPageNum int      `json:"CurrentPageNum" xml:"CurrentPageNum"`
-	PageSize       int      `json:"PageSize" xml:"PageSize"`
-	TotalPageNum   int      `json:"TotalPageNum" xml:"TotalPageNum"`
-	Data           []Domain `json:"Data" xml:"Data"`
+	RequestId      string             `json:"RequestId" xml:"RequestId"`
+	TotalItemNum   int                `json:"TotalItemNum" xml:"TotalItemNum"`
+	CurrentPageNum int                `json:"CurrentPageNum" xml:"CurrentPageNum"`
+	PageSize       int                `json:"PageSize" xml:"PageSize"`
+	TotalPageNum   int                `json:"TotalPageNum" xml:"TotalPageNum"`
+	Data           []PurchasedDomains `json:"Data" xml:"Data"`
 }
 
 // CreateQueryPurchasedDomainsRequest creates a request to invoke QueryPurchasedDomains API
