@@ -1,3 +1,7 @@
+2023-03-07 Version: v1.62.222
+- Generated 2022-12-01 for `ResourceCenter`.
+- Supported java
+
 2023-03-07 Version: v1.62.221
 - Generated 2018-04-12 for `EHPC`.
 - Support JobRetry parameters in SubmitJob API.
