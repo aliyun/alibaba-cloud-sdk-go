@@ -120,6 +120,7 @@ type CreateClusterRequest struct {
 	ClusterVersion              string                            `position:"Query" name:"ClusterVersion"`
 	IsComputeEss                requests.Boolean                  `position:"Query" name:"IsComputeEss"`
 	RamRoleName                 string                            `position:"Query" name:"RamRoleName"`
+	NetworkInterfaceTrafficMode string                            `position:"Query" name:"NetworkInterfaceTrafficMode"`
 	Plugin                      string                            `position:"Query" name:"Plugin"`
 	Application                 *[]CreateClusterApplication       `position:"Query" name:"Application"  type:"Repeated"`
 	EcsChargeType               string                            `position:"Query" name:"EcsChargeType"`

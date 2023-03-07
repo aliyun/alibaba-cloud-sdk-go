@@ -74,12 +74,14 @@ type SubmitJobRequest struct {
 	StderrRedirectPath string           `position:"Query" name:"StderrRedirectPath"`
 	RunasUserPassword  string           `position:"Query" name:"RunasUserPassword"`
 	ClockTime          string           `position:"Query" name:"ClockTime"`
+	JobRetryPriority   requests.Integer `position:"Query" name:"JobRetry.Priority"`
 	CommandLine        string           `position:"Query" name:"CommandLine"`
 	JobQueue           string           `position:"Query" name:"JobQueue"`
 	ArrayRequest       string           `position:"Query" name:"ArrayRequest"`
 	UnzipCmd           string           `position:"Query" name:"UnzipCmd"`
 	PackagePath        string           `position:"Query" name:"PackagePath"`
 	Mem                string           `position:"Query" name:"Mem"`
+	JobRetryCount      requests.Integer `position:"Query" name:"JobRetry.Count"`
 	StdoutRedirectPath string           `position:"Query" name:"StdoutRedirectPath"`
 	Variables          string           `position:"Query" name:"Variables"`
 	PostCmdLine        string           `position:"Query" name:"PostCmdLine"`
@@ -90,6 +92,7 @@ type SubmitJobRequest struct {
 	Thread             requests.Integer `position:"Query" name:"Thread"`
 	Priority           requests.Integer `position:"Query" name:"Priority"`
 	Gpu                requests.Integer `position:"Query" name:"Gpu"`
+	JobRetryOnExitCode requests.Integer `position:"Query" name:"JobRetry.OnExitCode"`
 	Node               requests.Integer `position:"Query" name:"Node"`
 	Async              requests.Boolean `position:"Query" name:"Async"`
 	Task               requests.Integer `position:"Query" name:"Task"`

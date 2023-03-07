@@ -93,6 +93,7 @@ type AddNodesRequest struct {
 	ComputeSpotStrategy             string               `position:"Query" name:"ComputeSpotStrategy"`
 	HostNameSuffix                  string               `position:"Query" name:"HostNameSuffix"`
 	Sync                            requests.Boolean     `position:"Query" name:"Sync"`
+	NetworkInterfaceTrafficMode     string               `position:"Query" name:"NetworkInterfaceTrafficMode"`
 	VSwitchId                       string               `position:"Query" name:"VSwitchId"`
 	ComputeSpotDuration             requests.Integer     `position:"Query" name:"ComputeSpotDuration"`
 	PeriodUnit                      string               `position:"Query" name:"PeriodUnit"`

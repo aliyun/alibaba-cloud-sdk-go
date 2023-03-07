@@ -23,4 +23,6 @@ type OsInfo struct {
 	OsTag        string `json:"OsTag" xml:"OsTag"`
 	ImageId      string `json:"ImageId" xml:"ImageId"`
 	Architecture string `json:"Architecture" xml:"Architecture"`
+	OSName       string `json:"OSName" xml:"OSName"`
+	OSNameEn     string `json:"OSNameEn" xml:"OSNameEn"`
 }
