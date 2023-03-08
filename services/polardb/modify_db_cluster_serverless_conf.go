@@ -73,8 +73,10 @@ type ModifyDBClusterServerlessConfRequest struct {
 	*requests.RpcRequest
 	ScaleRoNumMax         string           `position:"Query" name:"ScaleRoNumMax"`
 	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ScaleApRoNumMax       string           `position:"Query" name:"ScaleApRoNumMax"`
 	ScaleMax              string           `position:"Query" name:"ScaleMax"`
 	SecondsUntilAutoPause string           `position:"Query" name:"SecondsUntilAutoPause"`
+	ScaleApRoNumMin       string           `position:"Query" name:"ScaleApRoNumMin"`
 	ScaleMin              string           `position:"Query" name:"ScaleMin"`
 	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
 	DBClusterId           string           `position:"Query" name:"DBClusterId"`

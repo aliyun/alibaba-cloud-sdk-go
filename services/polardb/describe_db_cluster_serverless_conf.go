@@ -89,6 +89,8 @@ type DescribeDBClusterServerlessConfResponse struct {
 	AllowShutDown         string `json:"AllowShutDown" xml:"AllowShutDown"`
 	SecondsUntilAutoPause string `json:"SecondsUntilAutoPause" xml:"SecondsUntilAutoPause"`
 	DBClusterId           string `json:"DBClusterId" xml:"DBClusterId"`
+	ScaleApRoNumMin       string `json:"ScaleApRoNumMin" xml:"ScaleApRoNumMin"`
+	ScaleApRoNumMax       string `json:"ScaleApRoNumMax" xml:"ScaleApRoNumMax"`
 }
 
 // CreateDescribeDBClusterServerlessConfRequest creates a request to invoke DescribeDBClusterServerlessConf API
