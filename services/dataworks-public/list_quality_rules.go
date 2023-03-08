@@ -75,6 +75,7 @@ type ListQualityRulesRequest struct {
 	EntityId    requests.Integer `position:"Body" name:"EntityId"`
 	PageNumber  requests.Integer `position:"Body" name:"PageNumber"`
 	PageSize    requests.Integer `position:"Body" name:"PageSize"`
+	ProjectId   requests.Integer `position:"Body" name:"ProjectId"`
 }
 
 // ListQualityRulesResponse is the response struct for api ListQualityRules

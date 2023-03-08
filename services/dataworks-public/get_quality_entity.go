@@ -71,10 +71,11 @@ func (client *Client) GetQualityEntityWithCallback(request *GetQualityEntityRequ
 // GetQualityEntityRequest is the request struct for api GetQualityEntity
 type GetQualityEntityRequest struct {
 	*requests.RpcRequest
-	ProjectName     string `position:"Body" name:"ProjectName"`
-	MatchExpression string `position:"Body" name:"MatchExpression"`
-	EnvType         string `position:"Body" name:"EnvType"`
-	TableName       string `position:"Body" name:"TableName"`
+	ProjectName     string           `position:"Body" name:"ProjectName"`
+	MatchExpression string           `position:"Body" name:"MatchExpression"`
+	EnvType         string           `position:"Body" name:"EnvType"`
+	TableName       string           `position:"Body" name:"TableName"`
+	ProjectId       requests.Integer `position:"Body" name:"ProjectId"`
 }
 
 // GetQualityEntityResponse is the response struct for api GetQualityEntity

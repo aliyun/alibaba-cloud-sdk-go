@@ -73,6 +73,7 @@ type DeleteQualityRuleRequest struct {
 	*requests.RpcRequest
 	ProjectName string           `position:"Body" name:"ProjectName"`
 	RuleId      requests.Integer `position:"Body" name:"RuleId"`
+	ProjectId   requests.Integer `position:"Body" name:"ProjectId"`
 }
 
 // DeleteQualityRuleResponse is the response struct for api DeleteQualityRule

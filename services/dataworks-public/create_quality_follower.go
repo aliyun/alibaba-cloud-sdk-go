@@ -75,6 +75,7 @@ type CreateQualityFollowerRequest struct {
 	Follower    string           `position:"Body" name:"Follower"`
 	EntityId    requests.Integer `position:"Body" name:"EntityId"`
 	AlarmMode   requests.Integer `position:"Body" name:"AlarmMode"`
+	ProjectId   requests.Integer `position:"Body" name:"ProjectId"`
 }
 
 // CreateQualityFollowerResponse is the response struct for api CreateQualityFollower

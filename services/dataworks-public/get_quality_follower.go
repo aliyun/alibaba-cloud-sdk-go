@@ -73,6 +73,7 @@ type GetQualityFollowerRequest struct {
 	*requests.RpcRequest
 	ProjectName string           `position:"Body" name:"ProjectName"`
 	EntityId    requests.Integer `position:"Body" name:"EntityId"`
+	ProjectId   requests.Integer `position:"Body" name:"ProjectId"`
 }
 
 // GetQualityFollowerResponse is the response struct for api GetQualityFollower

@@ -71,10 +71,11 @@ func (client *Client) UpdateQualityFollowerWithCallback(request *UpdateQualityFo
 // UpdateQualityFollowerRequest is the request struct for api UpdateQualityFollower
 type UpdateQualityFollowerRequest struct {
 	*requests.RpcRequest
-	AlarmMode   requests.Integer `position:"Body" name:"AlarmMode"`
 	ProjectName string           `position:"Body" name:"ProjectName"`
 	Follower    string           `position:"Body" name:"Follower"`
 	FollowerId  requests.Integer `position:"Body" name:"FollowerId"`
+	AlarmMode   requests.Integer `position:"Body" name:"AlarmMode"`
+	ProjectId   requests.Integer `position:"Body" name:"ProjectId"`
 }
 
 // UpdateQualityFollowerResponse is the response struct for api UpdateQualityFollower

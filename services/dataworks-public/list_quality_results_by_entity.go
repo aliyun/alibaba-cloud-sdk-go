@@ -77,6 +77,7 @@ type ListQualityResultsByEntityRequest struct {
 	PageNumber  requests.Integer `position:"Body" name:"PageNumber"`
 	EndDate     string           `position:"Body" name:"EndDate"`
 	PageSize    requests.Integer `position:"Body" name:"PageSize"`
+	ProjectId   requests.Integer `position:"Body" name:"ProjectId"`
 }
 
 // ListQualityResultsByEntityResponse is the response struct for api ListQualityResultsByEntity

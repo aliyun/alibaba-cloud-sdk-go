@@ -81,6 +81,7 @@ type UpdateQualityRuleRequest struct {
 	Property          string           `position:"Body" name:"Property"`
 	Id                requests.Integer `position:"Body" name:"Id"`
 	WarningThreshold  string           `position:"Body" name:"WarningThreshold"`
+	ProjectId         requests.Integer `position:"Body" name:"ProjectId"`
 	MethodName        string           `position:"Body" name:"MethodName"`
 	ProjectName       string           `position:"Body" name:"ProjectName"`
 	RuleType          requests.Integer `position:"Body" name:"RuleType"`

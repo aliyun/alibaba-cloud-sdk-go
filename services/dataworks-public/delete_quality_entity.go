@@ -72,8 +72,9 @@ func (client *Client) DeleteQualityEntityWithCallback(request *DeleteQualityEnti
 type DeleteQualityEntityRequest struct {
 	*requests.RpcRequest
 	ProjectName string           `position:"Body" name:"ProjectName"`
-	EnvType     string           `position:"Body" name:"EnvType"`
 	EntityId    requests.Integer `position:"Body" name:"EntityId"`
+	EnvType     string           `position:"Body" name:"EnvType"`
+	ProjectId   requests.Integer `position:"Body" name:"ProjectId"`
 }
 
 // DeleteQualityEntityResponse is the response struct for api DeleteQualityEntity

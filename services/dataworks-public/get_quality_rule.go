@@ -73,6 +73,7 @@ type GetQualityRuleRequest struct {
 	*requests.RpcRequest
 	ProjectName string           `position:"Body" name:"ProjectName"`
 	RuleId      requests.Integer `position:"Body" name:"RuleId"`
+	ProjectId   requests.Integer `position:"Body" name:"ProjectId"`
 }
 
 // GetQualityRuleResponse is the response struct for api GetQualityRule

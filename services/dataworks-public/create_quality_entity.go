@@ -76,6 +76,7 @@ type CreateQualityEntityRequest struct {
 	MatchExpression string           `position:"Body" name:"MatchExpression"`
 	EnvType         string           `position:"Body" name:"EnvType"`
 	TableName       string           `position:"Body" name:"TableName"`
+	ProjectId       requests.Integer `position:"Body" name:"ProjectId"`
 }
 
 // CreateQualityEntityResponse is the response struct for api CreateQualityEntity

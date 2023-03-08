@@ -77,6 +77,7 @@ type ListQualityResultsByRuleRequest struct {
 	EndDate     string           `position:"Body" name:"EndDate"`
 	PageSize    requests.Integer `position:"Body" name:"PageSize"`
 	RuleId      requests.Integer `position:"Body" name:"RuleId"`
+	ProjectId   requests.Integer `position:"Body" name:"ProjectId"`
 }
 
 // ListQualityResultsByRuleResponse is the response struct for api ListQualityResultsByRule

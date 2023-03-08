@@ -73,6 +73,7 @@ type DeleteQualityFollowerRequest struct {
 	*requests.RpcRequest
 	ProjectName string           `position:"Body" name:"ProjectName"`
 	FollowerId  requests.Integer `position:"Body" name:"FollowerId"`
+	ProjectId   requests.Integer `position:"Body" name:"ProjectId"`
 }
 
 // DeleteQualityFollowerResponse is the response struct for api DeleteQualityFollower
