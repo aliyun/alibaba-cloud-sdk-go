@@ -1,3 +1,7 @@
+2023-03-09 Version: v1.62.230
+- Generated 2017-08-01 for `polardb`.
+- Support modify dbcluster storage space.
+
 2023-03-09 Version: v1.62.229
 - Generated 2020-01-16 for `DAS`.
 - Public GetMySQLAllSessionAsync.
