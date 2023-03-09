@@ -24,7 +24,6 @@ type Data struct {
 	TotalInstanceCount                                      int64                                      `json:"TotalInstanceCount" xml:"TotalInstanceCount"`
 	TaskState                                               string                                     `json:"TaskState" xml:"TaskState"`
 	Lang                                                    string                                     `json:"lang" xml:"lang"`
-	Uuid                                                    string                                     `json:"uuid" xml:"uuid"`
 	BenchStep                                               string                                     `json:"BenchStep" xml:"BenchStep"`
 	Source                                                  string                                     `json:"Source" xml:"Source"`
 	ErrMsg                                                  string                                     `json:"ErrMsg" xml:"ErrMsg"`
@@ -65,7 +64,6 @@ type Data struct {
 	ArchiveJobId                                            string                                     `json:"ArchiveJobId" xml:"ArchiveJobId"`
 	State                                                   string                                     `json:"state" xml:"state"`
 	External                                                string                                     `json:"External" xml:"External"`
-	CustinsId                                               int64                                      `json:"custinsId" xml:"custinsId"`
 	Id                                                      int64                                      `json:"id" xml:"id"`
 	JarOnOss                                                string                                     `json:"JarOnOss" xml:"JarOnOss"`
 	SqlFilePath                                             string                                     `json:"SqlFilePath" xml:"SqlFilePath"`
@@ -127,6 +125,7 @@ type Data struct {
 	BackupId                                                string                                     `json:"BackupId" xml:"BackupId"`
 	KillFailCount                                           int64                                      `json:"KillFailCount" xml:"KillFailCount"`
 	ErrorMessage                                            string                                     `json:"ErrorMessage" xml:"ErrorMessage"`
+	Uuid                                                    string                                     `json:"Uuid" xml:"Uuid"`
 	NodeId                                                  string                                     `json:"NodeId" xml:"NodeId"`
 	DtsJobState                                             int                                        `json:"DtsJobState" xml:"DtsJobState"`
 	CommodityInstanceId                                     string                                     `json:"commodityInstanceId" xml:"commodityInstanceId"`
@@ -150,6 +149,7 @@ type Data struct {
 	NeverEnableAutoResourceOptimizeOrReleasedInstanceIdList []string                                   `json:"NeverEnableAutoResourceOptimizeOrReleasedInstanceIdList" xml:"NeverEnableAutoResourceOptimizeOrReleasedInstanceIdList"`
 	Sessions                                                []int64                                    `json:"Sessions" xml:"Sessions"`
 	Storage                                                 Storage                                    `json:"Storage" xml:"Storage"`
+	SessionData                                             SessionData                                `json:"SessionData" xml:"SessionData"`
 	Resource                                                Resource                                   `json:"Resource" xml:"Resource"`
 	Shard                                                   Shard                                      `json:"Shard" xml:"Shard"`
 	Spec                                                    Spec                                       `json:"Spec" xml:"Spec"`
