@@ -17,40 +17,50 @@ package adb
 
 // ItemsItem is a nested struct in adb response
 type ItemsItem struct {
-	Name            string `json:"Name" xml:"Name"`
+	RollbackSQL     string `json:"RollbackSQL" xml:"RollbackSQL"`
 	Region          string `json:"Region" xml:"Region"`
 	User            string `json:"User" xml:"User"`
 	DBType          string `json:"DBType" xml:"DBType"`
 	ResultInfo      string `json:"ResultInfo" xml:"ResultInfo"`
+	PageSize        int64  `json:"PageSize" xml:"PageSize"`
 	AvgTaskCount    string `json:"AvgTaskCount" xml:"AvgTaskCount"`
-	Max             string `json:"Max" xml:"Max"`
 	AccessIP        string `json:"AccessIP" xml:"AccessIP"`
 	Pattern         string `json:"Pattern" xml:"Pattern"`
 	Deadline        string `json:"Deadline" xml:"Deadline"`
 	MaxStageCount   string `json:"MaxStageCount" xml:"MaxStageCount"`
-	Key             string `json:"Key" xml:"Key"`
+	Reason          string `json:"Reason" xml:"Reason"`
 	ModifiedTime    string `json:"ModifiedTime" xml:"ModifiedTime"`
+	AdviceDate      string `json:"AdviceDate" xml:"AdviceDate"`
 	CreatedTime     string `json:"CreatedTime" xml:"CreatedTime"`
 	MaxPeakMemory   string `json:"MaxPeakMemory" xml:"MaxPeakMemory"`
+	AdviceId        string `json:"AdviceId" xml:"AdviceId"`
+	SubmitTime      string `json:"SubmitTime" xml:"SubmitTime"`
 	AvgPeakMemory   string `json:"AvgPeakMemory" xml:"AvgPeakMemory"`
 	SwitchTime      string `json:"SwitchTime" xml:"SwitchTime"`
+	BuildSQL        string `json:"BuildSQL" xml:"BuildSQL"`
+	JobStatus       string `json:"JobStatus" xml:"JobStatus"`
 	MaxScanSize     string `json:"MaxScanSize" xml:"MaxScanSize"`
+	PageNumber      int64  `json:"PageNumber" xml:"PageNumber"`
 	Id              int    `json:"Id" xml:"Id"`
 	MaxCpuTime      string `json:"MaxCpuTime" xml:"MaxCpuTime"`
 	DBVersion       string `json:"DBVersion" xml:"DBVersion"`
+	TotalCount      int64  `json:"TotalCount" xml:"TotalCount"`
 	ReportDate      string `json:"ReportDate" xml:"ReportDate"`
 	InstanceName    string `json:"InstanceName" xml:"InstanceName"`
 	TableSchema     string `json:"TableSchema" xml:"TableSchema"`
 	AvgScanSize     string `json:"AvgScanSize" xml:"AvgScanSize"`
+	SQL             string `json:"SQL" xml:"SQL"`
 	AvgCpuTime      string `json:"AvgCpuTime" xml:"AvgCpuTime"`
 	TableName       string `json:"TableName" xml:"TableName"`
 	DBClusterId     string `json:"DBClusterId" xml:"DBClusterId"`
+	AdviceType      string `json:"AdviceType" xml:"AdviceType"`
 	PrepareInterval string `json:"PrepareInterval" xml:"PrepareInterval"`
 	AccessCount     string `json:"AccessCount" xml:"AccessCount"`
+	Benefit         string `json:"Benefit" xml:"Benefit"`
 	StartTime       string `json:"StartTime" xml:"StartTime"`
-	Avg             string `json:"Avg" xml:"Avg"`
 	AvgStageCount   string `json:"AvgStageCount" xml:"AvgStageCount"`
 	MaxTaskCount    string `json:"MaxTaskCount" xml:"MaxTaskCount"`
+	SubmitStatus    string `json:"SubmitStatus" xml:"SubmitStatus"`
 	Status          string `json:"Status" xml:"Status"`
 	TaskType        string `json:"TaskType" xml:"TaskType"`
 	QueryCount      string `json:"QueryCount" xml:"QueryCount"`

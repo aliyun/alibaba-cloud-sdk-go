@@ -22,8 +22,8 @@ type Items struct {
 	ResourceGroup         string `json:"ResourceGroup" xml:"ResourceGroup"`
 	Cost                  int64  `json:"Cost" xml:"Cost"`
 	StartTime             int64  `json:"StartTime" xml:"StartTime"`
-	RcHost                string `json:"RcHost" xml:"RcHost"`
 	ProcessId             string `json:"ProcessId" xml:"ProcessId"`
+	RcHost                string `json:"RcHost" xml:"RcHost"`
 	OutputDataSize        int64  `json:"OutputDataSize" xml:"OutputDataSize"`
 	TotalPlanningTime     int64  `json:"TotalPlanningTime" xml:"TotalPlanningTime"`
 	DownloadId            int64  `json:"DownloadId" xml:"DownloadId"`

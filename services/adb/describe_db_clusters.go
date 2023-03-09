@@ -81,6 +81,7 @@ type DescribeDBClustersRequest struct {
 	ResourceOwnerAccount string                   `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string                   `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer         `position:"Query" name:"OwnerId"`
+	DBVersion            string                   `position:"Query" name:"DBVersion"`
 	DBClusterIds         string                   `position:"Query" name:"DBClusterIds"`
 }
 

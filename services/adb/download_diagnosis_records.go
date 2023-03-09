@@ -71,21 +71,21 @@ func (client *Client) DownloadDiagnosisRecordsWithCallback(request *DownloadDiag
 // DownloadDiagnosisRecordsRequest is the request struct for api DownloadDiagnosisRecords
 type DownloadDiagnosisRecordsRequest struct {
 	*requests.RpcRequest
+	QueryCondition string           `position:"Query" name:"QueryCondition"`
+	StartTime      string           `position:"Query" name:"StartTime"`
+	RawStartTime   string           `position:"Query" name:"RawStartTime"`
+	RawEndTime     string           `position:"Query" name:"RawEndTime"`
+	Database       string           `position:"Query" name:"Database"`
+	ClientIp       string           `position:"Query" name:"ClientIp"`
+	Keyword        string           `position:"Query" name:"Keyword"`
+	Lang           string           `position:"Query" name:"Lang"`
 	MaxScanSize    requests.Integer `position:"Query" name:"MaxScanSize"`
 	ResourceGroup  string           `position:"Query" name:"ResourceGroup"`
 	DBClusterId    string           `position:"Query" name:"DBClusterId"`
-	QueryCondition string           `position:"Query" name:"QueryCondition"`
 	EndTime        string           `position:"Query" name:"EndTime"`
-	StartTime      string           `position:"Query" name:"StartTime"`
-	RawStartTime   string           `position:"Query" name:"RawStartTime"`
 	MinPeakMemory  requests.Integer `position:"Query" name:"MinPeakMemory"`
-	RawEndTime     string           `position:"Query" name:"RawEndTime"`
 	MinScanSize    requests.Integer `position:"Query" name:"MinScanSize"`
-	Database       string           `position:"Query" name:"Database"`
-	ClientIp       string           `position:"Query" name:"ClientIp"`
 	MaxPeakMemory  requests.Integer `position:"Query" name:"MaxPeakMemory"`
-	Keyword        string           `position:"Query" name:"Keyword"`
-	Lang           string           `position:"Query" name:"Lang"`
 	UserName       string           `position:"Query" name:"UserName"`
 }
 

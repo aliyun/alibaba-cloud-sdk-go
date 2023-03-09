@@ -82,8 +82,9 @@ type DescribeDBResourceGroupRequest struct {
 // DescribeDBResourceGroupResponse is the response struct for api DescribeDBResourceGroup
 type DescribeDBResourceGroupResponse struct {
 	*responses.BaseResponse
-	RequestId  string     `json:"RequestId" xml:"RequestId"`
-	GroupsInfo []PoolInfo `json:"GroupsInfo" xml:"GroupsInfo"`
+	RequestId   string     `json:"RequestId" xml:"RequestId"`
+	DBClusterId string     `json:"DBClusterId" xml:"DBClusterId"`
+	GroupsInfo  []PoolInfo `json:"GroupsInfo" xml:"GroupsInfo"`
 }
 
 // CreateDescribeDBResourceGroupRequest creates a request to invoke DescribeDBResourceGroup API

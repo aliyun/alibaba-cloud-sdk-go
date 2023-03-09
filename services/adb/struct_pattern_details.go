@@ -17,21 +17,5 @@ package adb
 
 // PatternDetails is a nested struct in adb response
 type PatternDetails struct {
-	User                 string `json:"User" xml:"User"`
-	MaxScanSize          int64  `json:"MaxScanSize" xml:"MaxScanSize"`
-	QueryCount           int64  `json:"QueryCount" xml:"QueryCount"`
-	AveragePeakMemory    string `json:"AveragePeakMemory" xml:"AveragePeakMemory"`
-	AccessIp             string `json:"AccessIp" xml:"AccessIp"`
-	FailedCount          int64  `json:"FailedCount" xml:"FailedCount"`
-	Blockable            bool   `json:"Blockable" xml:"Blockable"`
-	AverageQueryTime     string `json:"AverageQueryTime" xml:"AverageQueryTime"`
-	PatternId            string `json:"PatternId" xml:"PatternId"`
-	SQLPattern           string `json:"SQLPattern" xml:"SQLPattern"`
-	MaxQueryTime         int64  `json:"MaxQueryTime" xml:"MaxQueryTime"`
-	PatternCreationTime  string `json:"PatternCreationTime" xml:"PatternCreationTime"`
-	MaxExecutionTime     int64  `json:"MaxExecutionTime" xml:"MaxExecutionTime"`
-	AverageScanSize      string `json:"AverageScanSize" xml:"AverageScanSize"`
-	MaxPeakMemory        int64  `json:"MaxPeakMemory" xml:"MaxPeakMemory"`
-	Tables               string `json:"Tables" xml:"Tables"`
-	AverageExecutionTime string `json:"AverageExecutionTime" xml:"AverageExecutionTime"`
+	PatternDetailsItem []PatternDetailsItem `json:"patternDetails" xml:"patternDetails"`
 }

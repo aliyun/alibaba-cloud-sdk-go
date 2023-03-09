@@ -72,9 +72,11 @@ func (client *Client) ModifyElasticPlanWithCallback(request *ModifyElasticPlanRe
 type ModifyElasticPlanRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId         requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ElasticPlanType         string           `position:"Query" name:"ElasticPlanType"`
 	ElasticPlanTimeStart    string           `position:"Query" name:"ElasticPlanTimeStart"`
 	ElasticPlanEndDay       string           `position:"Query" name:"ElasticPlanEndDay"`
 	ElasticPlanWeeklyRepeat string           `position:"Query" name:"ElasticPlanWeeklyRepeat"`
+	ElasticPlanWorkerSpec   string           `position:"Query" name:"ElasticPlanWorkerSpec"`
 	ElasticPlanEnable       requests.Boolean `position:"Query" name:"ElasticPlanEnable"`
 	ElasticPlanTimeEnd      string           `position:"Query" name:"ElasticPlanTimeEnd"`
 	ElasticPlanStartDay     string           `position:"Query" name:"ElasticPlanStartDay"`

@@ -51,5 +51,7 @@ type DBClusterInDescribeDBClusters struct {
 	ZoneId               string                   `json:"ZoneId" xml:"ZoneId"`
 	Category             string                   `json:"Category" xml:"Category"`
 	Engine               string                   `json:"Engine" xml:"Engine"`
+	InnerIp              string                   `json:"InnerIp" xml:"InnerIp"`
+	InnerPort            string                   `json:"InnerPort" xml:"InnerPort"`
 	Tags                 TagsInDescribeDBClusters `json:"Tags" xml:"Tags"`
 }

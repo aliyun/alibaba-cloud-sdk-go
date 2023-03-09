@@ -17,13 +17,15 @@ package adb
 
 // ElasticDailyPlanInfo is a nested struct in adb response
 type ElasticDailyPlanInfo struct {
-	Status           int    `json:"Status" xml:"Status"`
-	Day              string `json:"Day" xml:"Day"`
-	ResourcePoolName string `json:"ResourcePoolName" xml:"ResourcePoolName"`
-	StartTs          string `json:"StartTs" xml:"StartTs"`
-	PlanEndTs        string `json:"PlanEndTs" xml:"PlanEndTs"`
-	PlanStartTs      string `json:"PlanStartTs" xml:"PlanStartTs"`
-	ElasticNodeNum   int    `json:"ElasticNodeNum" xml:"ElasticNodeNum"`
-	EndTs            string `json:"EndTs" xml:"EndTs"`
-	PlanName         string `json:"PlanName" xml:"PlanName"`
+	Status                int    `json:"Status" xml:"Status"`
+	Day                   string `json:"Day" xml:"Day"`
+	ResourcePoolName      string `json:"ResourcePoolName" xml:"ResourcePoolName"`
+	StartTs               string `json:"StartTs" xml:"StartTs"`
+	PlanEndTs             string `json:"PlanEndTs" xml:"PlanEndTs"`
+	PlanStartTs           string `json:"PlanStartTs" xml:"PlanStartTs"`
+	ElasticNodeNum        int    `json:"ElasticNodeNum" xml:"ElasticNodeNum"`
+	EndTs                 string `json:"EndTs" xml:"EndTs"`
+	PlanName              string `json:"PlanName" xml:"PlanName"`
+	ElasticPlanType       string `json:"ElasticPlanType" xml:"ElasticPlanType"`
+	ElasticPlanWorkerSpec string `json:"ElasticPlanWorkerSpec" xml:"ElasticPlanWorkerSpec"`
 }

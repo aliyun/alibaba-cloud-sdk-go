@@ -71,21 +71,23 @@ func (client *Client) ModifyDBClusterWithCallback(request *ModifyDBClusterReques
 // ModifyDBClusterRequest is the request struct for api ModifyDBCluster
 type ModifyDBClusterRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Mode                 string           `position:"Query" name:"Mode"`
-	StorageResource      string           `position:"Query" name:"StorageResource"`
-	DBNodeClass          string           `position:"Query" name:"DBNodeClass"`
-	DBClusterCategory    string           `position:"Query" name:"DBClusterCategory"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	DBClusterId          string           `position:"Query" name:"DBClusterId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	DBNodeGroupCount     string           `position:"Query" name:"DBNodeGroupCount"`
-	DBNodeStorage        string           `position:"Query" name:"DBNodeStorage"`
-	ExecutorCount        string           `position:"Query" name:"ExecutorCount"`
-	ModifyType           string           `position:"Query" name:"ModifyType"`
-	ComputeResource      string           `position:"Query" name:"ComputeResource"`
-	ElasticIOResource    requests.Integer `position:"Query" name:"ElasticIOResource"`
+	ElasticIOResourceSize string           `position:"Query" name:"ElasticIOResourceSize"`
+	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Mode                  string           `position:"Query" name:"Mode"`
+	StorageResource       string           `position:"Query" name:"StorageResource"`
+	DBNodeClass           string           `position:"Query" name:"DBNodeClass"`
+	DBClusterCategory     string           `position:"Query" name:"DBClusterCategory"`
+	DiskPerformanceLevel  string           `position:"Query" name:"DiskPerformanceLevel"`
+	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
+	DBClusterId           string           `position:"Query" name:"DBClusterId"`
+	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
+	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
+	DBNodeGroupCount      string           `position:"Query" name:"DBNodeGroupCount"`
+	DBNodeStorage         string           `position:"Query" name:"DBNodeStorage"`
+	ExecutorCount         string           `position:"Query" name:"ExecutorCount"`
+	ModifyType            string           `position:"Query" name:"ModifyType"`
+	ComputeResource       string           `position:"Query" name:"ComputeResource"`
+	ElasticIOResource     requests.Integer `position:"Query" name:"ElasticIOResource"`
 }
 
 // ModifyDBClusterResponse is the response struct for api ModifyDBCluster

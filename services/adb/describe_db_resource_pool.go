@@ -82,8 +82,9 @@ type DescribeDBResourcePoolRequest struct {
 // DescribeDBResourcePoolResponse is the response struct for api DescribeDBResourcePool
 type DescribeDBResourcePoolResponse struct {
 	*responses.BaseResponse
-	RequestId string     `json:"RequestId" xml:"RequestId"`
-	PoolsInfo []PoolInfo `json:"PoolsInfo" xml:"PoolsInfo"`
+	RequestId   string     `json:"RequestId" xml:"RequestId"`
+	DBClusterId string     `json:"DBClusterId" xml:"DBClusterId"`
+	PoolsInfo   []PoolInfo `json:"PoolsInfo" xml:"PoolsInfo"`
 }
 
 // CreateDescribeDBResourcePoolRequest creates a request to invoke DescribeDBResourcePool API

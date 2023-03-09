@@ -85,7 +85,7 @@ type DescribeDiagnosisRecordsRequest struct {
 	MaxScanSize    requests.Integer `position:"Query" name:"MaxScanSize"`
 	ResourceGroup  string           `position:"Query" name:"ResourceGroup"`
 	DBClusterId    string           `position:"Query" name:"DBClusterId"`
-	PatternId      requests.Integer `position:"Query" name:"PatternId"`
+	PatternId      string           `position:"Query" name:"PatternId"`
 	EndTime        string           `position:"Query" name:"EndTime"`
 	MinPeakMemory  requests.Integer `position:"Query" name:"MinPeakMemory"`
 	MinScanSize    requests.Integer `position:"Query" name:"MinScanSize"`

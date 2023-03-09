@@ -84,11 +84,11 @@ type DescribeSQLPatternsRequest struct {
 // DescribeSQLPatternsResponse is the response struct for api DescribeSQLPatterns
 type DescribeSQLPatternsResponse struct {
 	*responses.BaseResponse
-	PageNumber     int              `json:"PageNumber" xml:"PageNumber"`
-	PageSize       int              `json:"PageSize" xml:"PageSize"`
-	TotalCount     int              `json:"TotalCount" xml:"TotalCount"`
-	RequestId      string           `json:"RequestId" xml:"RequestId"`
-	PatternDetails []PatternDetails `json:"PatternDetails" xml:"PatternDetails"`
+	PageNumber     int                  `json:"PageNumber" xml:"PageNumber"`
+	PageSize       int                  `json:"PageSize" xml:"PageSize"`
+	TotalCount     int                  `json:"TotalCount" xml:"TotalCount"`
+	RequestId      string               `json:"RequestId" xml:"RequestId"`
+	PatternDetails []PatternDetailsItem `json:"PatternDetails" xml:"PatternDetails"`
 }
 
 // CreateDescribeSQLPatternsRequest creates a request to invoke DescribeSQLPatterns API
