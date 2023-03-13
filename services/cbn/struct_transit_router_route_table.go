@@ -24,6 +24,7 @@ type TransitRouterRouteTable struct {
 	TransitRouterRouteTableName        string            `json:"TransitRouterRouteTableName" xml:"TransitRouterRouteTableName"`
 	TransitRouterRouteTableDescription string            `json:"TransitRouterRouteTableDescription" xml:"TransitRouterRouteTableDescription"`
 	RegionId                           string            `json:"RegionId" xml:"RegionId"`
+	TransitRouterId                    string            `json:"TransitRouterId" xml:"TransitRouterId"`
 	RouteTableOptions                  RouteTableOptions `json:"RouteTableOptions" xml:"RouteTableOptions"`
 	Tags                               []Tag             `json:"Tags" xml:"Tags"`
 }

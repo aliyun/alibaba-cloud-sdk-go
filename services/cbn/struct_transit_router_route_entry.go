@@ -28,4 +28,9 @@ type TransitRouterRouteEntry struct {
 	TransitRouterRouteEntryDescription          string `json:"TransitRouterRouteEntryDescription" xml:"TransitRouterRouteEntryDescription"`
 	OperationalMode                             bool   `json:"OperationalMode" xml:"OperationalMode"`
 	Tag                                         string `json:"Tag" xml:"Tag"`
+	TransitRouterRouteEntryNextHopResourceId    string `json:"TransitRouterRouteEntryNextHopResourceId" xml:"TransitRouterRouteEntryNextHopResourceId"`
+	TransitRouterRouteEntryNextHopResourceType  string `json:"TransitRouterRouteEntryNextHopResourceType" xml:"TransitRouterRouteEntryNextHopResourceType"`
+	TransitRouterRouteEntryOriginResourceType   string `json:"TransitRouterRouteEntryOriginResourceType" xml:"TransitRouterRouteEntryOriginResourceType"`
+	TransitRouterRouteEntryOriginResourceId     string `json:"TransitRouterRouteEntryOriginResourceId" xml:"TransitRouterRouteEntryOriginResourceId"`
+	PrefixListId                                string `json:"PrefixListId" xml:"PrefixListId"`
 }

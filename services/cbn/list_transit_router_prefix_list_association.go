@@ -73,6 +73,7 @@ type ListTransitRouterPrefixListAssociationRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	NextHopInstanceId    string           `position:"Query" name:"NextHopInstanceId"`
 	PrefixListId         string           `position:"Query" name:"PrefixListId"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	OwnerUid             requests.Integer `position:"Query" name:"OwnerUid"`
@@ -84,6 +85,7 @@ type ListTransitRouterPrefixListAssociationRequest struct {
 	TransitRouterTableId string           `position:"Query" name:"TransitRouterTableId"`
 	Version              string           `position:"Query" name:"Version"`
 	NextHop              string           `position:"Query" name:"NextHop"`
+	Status               string           `position:"Query" name:"Status"`
 }
 
 // ListTransitRouterPrefixListAssociationResponse is the response struct for api ListTransitRouterPrefixListAssociation

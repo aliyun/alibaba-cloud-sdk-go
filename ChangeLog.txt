@@ -1,3 +1,8 @@
+2023-03-13 Version: v1.62.236
+- Generated 2017-09-12 for `Cbn`.
+- Update API DescribeCens support parameter resourceGroupId.
+- Update API DescribeCens support parameter resourceGroupId, tag and response resourceGroupId, tags.
+
 2023-03-10 Version: v1.62.235
 - Generated 2016-04-28 for `Vpc`.
 - Support create default VPC and create default vSwitch .

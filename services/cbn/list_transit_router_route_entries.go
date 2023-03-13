@@ -71,18 +71,33 @@ func (client *Client) ListTransitRouterRouteEntriesWithCallback(request *ListTra
 // ListTransitRouterRouteEntriesRequest is the request struct for api ListTransitRouterRouteEntries
 type ListTransitRouterRouteEntriesRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId                             requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	TransitRouterRouteEntryDestinationCidrBlock string           `position:"Query" name:"TransitRouterRouteEntryDestinationCidrBlock"`
-	TransitRouterRouteTableId                   string           `position:"Query" name:"TransitRouterRouteTableId"`
-	NextToken                                   string           `position:"Query" name:"NextToken"`
-	TransitRouterRouteEntryStatus               string           `position:"Query" name:"TransitRouterRouteEntryStatus"`
-	ResourceOwnerAccount                        string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount                                string           `position:"Query" name:"OwnerAccount"`
-	TransitRouterRouteEntryNames                *[]string        `position:"Query" name:"TransitRouterRouteEntryNames"  type:"Repeated"`
-	TransitRouterRouteEntryIds                  *[]string        `position:"Query" name:"TransitRouterRouteEntryIds"  type:"Repeated"`
-	OwnerId                                     requests.Integer `position:"Query" name:"OwnerId"`
-	Version                                     string           `position:"Query" name:"Version"`
-	MaxResults                                  requests.Integer `position:"Query" name:"MaxResults"`
+	TransitRouterRouteEntryType                 string                                      `position:"Query" name:"TransitRouterRouteEntryType"`
+	ResourceOwnerId                             requests.Integer                            `position:"Query" name:"ResourceOwnerId"`
+	TransitRouterRouteEntryNextHopResourceType  string                                      `position:"Query" name:"TransitRouterRouteEntryNextHopResourceType"`
+	TransitRouterRouteEntryNextHopType          string                                      `position:"Query" name:"TransitRouterRouteEntryNextHopType"`
+	TransitRouterRouteEntryDestinationCidrBlock string                                      `position:"Query" name:"TransitRouterRouteEntryDestinationCidrBlock"`
+	TransitRouterRouteTableId                   string                                      `position:"Query" name:"TransitRouterRouteTableId"`
+	NextToken                                   string                                      `position:"Query" name:"NextToken"`
+	PrefixListId                                string                                      `position:"Query" name:"PrefixListId"`
+	TransitRouterRouteEntryNextHopId            string                                      `position:"Query" name:"TransitRouterRouteEntryNextHopId"`
+	TransitRouterRouteEntryStatus               string                                      `position:"Query" name:"TransitRouterRouteEntryStatus"`
+	RouteFilter                                 *[]ListTransitRouterRouteEntriesRouteFilter `position:"Query" name:"RouteFilter"  type:"Repeated"`
+	ResourceOwnerAccount                        string                                      `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount                                string                                      `position:"Query" name:"OwnerAccount"`
+	TransitRouterRouteEntryNames                *[]string                                   `position:"Query" name:"TransitRouterRouteEntryNames"  type:"Repeated"`
+	TransitRouterRouteEntryIds                  *[]string                                   `position:"Query" name:"TransitRouterRouteEntryIds"  type:"Repeated"`
+	OwnerId                                     requests.Integer                            `position:"Query" name:"OwnerId"`
+	Version                                     string                                      `position:"Query" name:"Version"`
+	TransitRouterRouteEntryOriginResourceType   string                                      `position:"Query" name:"TransitRouterRouteEntryOriginResourceType"`
+	MaxResults                                  requests.Integer                            `position:"Query" name:"MaxResults"`
+	TransitRouterRouteEntryOriginResourceId     string                                      `position:"Query" name:"TransitRouterRouteEntryOriginResourceId"`
+	TransitRouterRouteEntryNextHopResourceId    string                                      `position:"Query" name:"TransitRouterRouteEntryNextHopResourceId"`
+}
+
+// ListTransitRouterRouteEntriesRouteFilter is a repeated param struct in ListTransitRouterRouteEntriesRequest
+type ListTransitRouterRouteEntriesRouteFilter struct {
+	Value *[]string `name:"Value" type:"Repeated"`
+	Key   string    `name:"Key"`
 }
 
 // ListTransitRouterRouteEntriesResponse is the response struct for api ListTransitRouterRouteEntries
