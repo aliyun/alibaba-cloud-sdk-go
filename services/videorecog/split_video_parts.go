@@ -72,6 +72,8 @@ func (client *Client) SplitVideoPartsWithCallback(request *SplitVideoPartsReques
 type SplitVideoPartsRequest struct {
 	*requests.RpcRequest
 	Template string           `position:"Body" name:"Template"`
+	MinTime  requests.Integer `position:"Body" name:"MinTime"`
+	MaxTime  requests.Integer `position:"Body" name:"MaxTime"`
 	Async    requests.Boolean `position:"Body" name:"Async"`
 	VideoUrl string           `position:"Body" name:"VideoUrl"`
 }
