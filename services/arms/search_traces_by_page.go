@@ -77,6 +77,7 @@ type SearchTracesByPageRequest struct {
 	Reverse          requests.Boolean                      `position:"Query" name:"Reverse"`
 	MinDuration      requests.Integer                      `position:"Query" name:"MinDuration"`
 	PageNumber       requests.Integer                      `position:"Query" name:"PageNumber"`
+	IsError          requests.Boolean                      `position:"Query" name:"IsError"`
 	Tags             *[]SearchTracesByPageTags             `position:"Query" name:"Tags"  type:"Repeated"`
 	ServiceIp        string                                `position:"Query" name:"ServiceIp"`
 	ExclusionFilters *[]SearchTracesByPageExclusionFilters `position:"Query" name:"ExclusionFilters"  type:"Repeated"`
