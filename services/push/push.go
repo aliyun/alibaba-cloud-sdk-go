@@ -81,6 +81,7 @@ type PushRequest struct {
 	AndroidPopupActivity             string           `position:"Query" name:"AndroidPopupActivity"`
 	IOSRemindBody                    string           `position:"Query" name:"iOSRemindBody"`
 	Trim                             requests.Boolean `position:"Query" name:"Trim"`
+	AndroidMessageVivoCategory       string           `position:"Query" name:"AndroidMessageVivoCategory"`
 	AndroidNotifyType                string           `position:"Query" name:"AndroidNotifyType"`
 	AndroidPopupTitle                string           `position:"Query" name:"AndroidPopupTitle"`
 	AndroidMessageHuaweiCategory     string           `position:"Query" name:"AndroidMessageHuaweiCategory"`
@@ -105,6 +106,7 @@ type PushRequest struct {
 	AndroidXiaomiBigPictureUrl       string           `position:"Query" name:"AndroidXiaomiBigPictureUrl"`
 	IOSRemind                        requests.Boolean `position:"Query" name:"iOSRemind"`
 	IOSNotificationThreadId          string           `position:"Query" name:"iOSNotificationThreadId"`
+	AndroidHuaweiTargetUserType      requests.Integer `position:"Query" name:"AndroidHuaweiTargetUserType"`
 	AndroidMusic                     string           `position:"Query" name:"AndroidMusic"`
 	IOSNotificationCollapseId        string           `position:"Query" name:"iOSNotificationCollapseId"`
 	AndroidMessageHuaweiUrgency      string           `position:"Query" name:"AndroidMessageHuaweiUrgency"`
@@ -119,6 +121,7 @@ type PushRequest struct {
 	SmsDelaySecs                     requests.Integer `position:"Query" name:"SmsDelaySecs"`
 	AndroidRenderStyle               requests.Integer `position:"Query" name:"AndroidRenderStyle"`
 	IOSExtParameters                 string           `position:"Query" name:"iOSExtParameters"`
+	AndroidHuaweiReceiptId           string           `position:"Query" name:"AndroidHuaweiReceiptId"`
 	AndroidNotificationHonorChannel  string           `position:"Query" name:"AndroidNotificationHonorChannel"`
 	AndroidXiaomiImageUrl            string           `position:"Query" name:"AndroidXiaomiImageUrl"`
 	SmsTemplateName                  string           `position:"Query" name:"SmsTemplateName"`
