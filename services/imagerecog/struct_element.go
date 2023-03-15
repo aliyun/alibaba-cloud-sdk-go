@@ -17,19 +17,16 @@ package imagerecog
 
 // Element is a nested struct in imagerecog response
 type Element struct {
+	CategoryScore float64   `json:"CategoryScore" xml:"CategoryScore"`
 	Category      string    `json:"Category" xml:"Category"`
 	Name          string    `json:"Name" xml:"Name"`
+	X             int       `json:"X" xml:"X"`
 	Score         float64   `json:"Score" xml:"Score"`
 	Y             int       `json:"Y" xml:"Y"`
-	RubbishScore  float64   `json:"RubbishScore" xml:"RubbishScore"`
-	CategoryScore float64   `json:"CategoryScore" xml:"CategoryScore"`
-	X             int       `json:"X" xml:"X"`
-	TaskId        string    `json:"TaskId" xml:"TaskId"`
-	ImageURL      string    `json:"ImageURL" xml:"ImageURL"`
 	Width         int       `json:"Width" xml:"Width"`
 	Height        int       `json:"Height" xml:"Height"`
 	Rubbish       string    `json:"Rubbish" xml:"Rubbish"`
+	RubbishScore  float64   `json:"RubbishScore" xml:"RubbishScore"`
 	Type          string    `json:"Type" xml:"Type"`
 	Box           []float64 `json:"Box" xml:"Box"`
-	Results       []Result  `json:"Results" xml:"Results"`
 }

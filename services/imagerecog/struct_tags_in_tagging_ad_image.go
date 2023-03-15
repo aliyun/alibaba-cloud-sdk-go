@@ -17,5 +17,5 @@ package imagerecog
 
 // TagsInTaggingAdImage is a nested struct in imagerecog response
 type TagsInTaggingAdImage struct {
-	Tags []Tags `json:"tags" xml:"tags"`
+	TagsItem []TagsItem `json:"tags" xml:"tags"`
 }

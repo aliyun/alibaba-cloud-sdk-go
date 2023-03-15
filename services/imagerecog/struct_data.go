@@ -26,7 +26,7 @@ type Data struct {
 	ErrorCode         string          `json:"ErrorCode" xml:"ErrorCode"`
 	Styles            []string        `json:"Styles" xml:"Styles"`
 	TopFives          []TopFivesItem  `json:"TopFives" xml:"TopFives"`
-	Elements          []Element       `json:"Elements" xml:"Elements"`
 	Tags              []Tag           `json:"Tags" xml:"Tags"`
 	ColorTemplateList []ColorTemplate `json:"ColorTemplateList" xml:"ColorTemplateList"`
+	Elements          []Element       `json:"Elements" xml:"Elements"`
 }
