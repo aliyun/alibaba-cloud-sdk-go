@@ -73,6 +73,8 @@ type CreateDBClusterRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId                        requests.Integer      `position:"Query" name:"ResourceOwnerId"`
 	DBClusterDescription                   string                `position:"Query" name:"DBClusterDescription"`
+	ProxyClass                             string                `position:"Query" name:"ProxyClass"`
+	ProxyType                              string                `position:"Query" name:"ProxyType"`
 	ScaleMax                               string                `position:"Query" name:"ScaleMax"`
 	StorageType                            string                `position:"Query" name:"StorageType"`
 	CreationCategory                       string                `position:"Query" name:"CreationCategory"`
@@ -104,6 +106,7 @@ type CreateDBClusterRequest struct {
 	ResourceOwnerAccount                   string                `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount                           string                `position:"Query" name:"OwnerAccount"`
 	UsedTime                               string                `position:"Query" name:"UsedTime"`
+	DBNodeNum                              requests.Integer      `position:"Query" name:"DBNodeNum"`
 	VPCId                                  string                `position:"Query" name:"VPCId"`
 	ScaleRoNumMin                          string                `position:"Query" name:"ScaleRoNumMin"`
 	DBType                                 string                `position:"Query" name:"DBType"`
