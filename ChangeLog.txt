@@ -1,3 +1,10 @@
+2023-03-16 Version: v1.62.243
+- Generated 2020-04-18 for `DBFS`.
+- Increase flow control value for ListDbfs.
+- Fix errorcode.
+- Add ImageId for ListDbfsAttachableEcsInstances.
+- Support list snapshot links in batch.
+
 2023-03-15 Version: v1.62.242
 - Generated 2016-08-01 for `Push`.
 - Supported AndroidMessageVivoCategory for Push and MassPush.

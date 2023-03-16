@@ -74,7 +74,9 @@ type ListSnapshotLinksRequest struct {
 	FilterValue string           `position:"Query" name:"FilterValue"`
 	PageNumber  requests.Integer `position:"Query" name:"PageNumber"`
 	FilterKey   string           `position:"Query" name:"FilterKey"`
+	LinkIds     string           `position:"Query" name:"LinkIds"`
 	PageSize    requests.Integer `position:"Query" name:"PageSize"`
+	FsIds       string           `position:"Query" name:"FsIds"`
 }
 
 // ListSnapshotLinksResponse is the response struct for api ListSnapshotLinks
@@ -92,7 +94,7 @@ func CreateListSnapshotLinksRequest() (request *ListSnapshotLinksRequest) {
 	request = &ListSnapshotLinksRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("DBFS", "2020-04-18", "ListSnapshotLinks", "", "")
+	request.InitWithApiInfo("DBFS", "2020-04-18", "ListSnapshotLinks", "dbfs", "openAPI")
 	request.Method = requests.POST
 	return
 }

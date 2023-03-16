@@ -86,7 +86,7 @@ func CreateGetSnapshotLinkRequest() (request *GetSnapshotLinkRequest) {
 	request = &GetSnapshotLinkRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("DBFS", "2020-04-18", "GetSnapshotLink", "", "")
+	request.InitWithApiInfo("DBFS", "2020-04-18", "GetSnapshotLink", "dbfs", "openAPI")
 	request.Method = requests.GET
 	return
 }

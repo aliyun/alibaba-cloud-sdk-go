@@ -99,7 +99,7 @@ func CreateListSnapshotRequest() (request *ListSnapshotRequest) {
 	request = &ListSnapshotRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("DBFS", "2020-04-18", "ListSnapshot", "", "")
+	request.InitWithApiInfo("DBFS", "2020-04-18", "ListSnapshot", "dbfs", "openAPI")
 	request.Method = requests.POST
 	return
 }

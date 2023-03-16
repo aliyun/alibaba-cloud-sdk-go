@@ -21,6 +21,7 @@ type LabelInfo struct {
 	ZoneId             string `json:"ZoneId" xml:"ZoneId"`
 	InstanceTypeFamily string `json:"InstanceTypeFamily" xml:"InstanceTypeFamily"`
 	Label              string `json:"label" xml:"label"`
+	ImageId            string `json:"ImageId" xml:"ImageId"`
 	OSName             string `json:"OSName" xml:"OSName"`
 	MountedTime        string `json:"MountedTime" xml:"MountedTime"`
 	Status             string `json:"Status" xml:"Status"`

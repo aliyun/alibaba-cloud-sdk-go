@@ -92,7 +92,7 @@ func CreateListAutoSnapshotPolicyUnappliedDbfsRequest() (request *ListAutoSnapsh
 	request = &ListAutoSnapshotPolicyUnappliedDbfsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("DBFS", "2020-04-18", "ListAutoSnapshotPolicyUnappliedDbfs", "", "")
+	request.InitWithApiInfo("DBFS", "2020-04-18", "ListAutoSnapshotPolicyUnappliedDbfs", "dbfs", "openAPI")
 	request.Method = requests.POST
 	return
 }
