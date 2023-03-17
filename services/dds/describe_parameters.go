@@ -72,6 +72,7 @@ func (client *Client) DescribeParametersWithCallback(request *DescribeParameters
 type DescribeParametersRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ExtraParam           string           `position:"Query" name:"ExtraParam"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	NodeId               string           `position:"Query" name:"NodeId"`
