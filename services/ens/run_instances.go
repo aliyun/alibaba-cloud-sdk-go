@@ -93,6 +93,7 @@ type RunInstancesRequest struct {
 	ImageId                 string                  `position:"Query" name:"ImageId"`
 	InternetMaxBandwidthOut requests.Integer        `position:"Query" name:"InternetMaxBandwidthOut"`
 	UserData                string                  `position:"Query" name:"UserData"`
+	PasswordInherit         requests.Boolean        `position:"Query" name:"PasswordInherit"`
 	InstanceType            string                  `position:"Query" name:"InstanceType"`
 	InstanceChargeType      string                  `position:"Query" name:"InstanceChargeType"`
 	Amount                  requests.Integer        `position:"Query" name:"Amount"`

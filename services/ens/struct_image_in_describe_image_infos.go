@@ -23,4 +23,5 @@ type ImageInDescribeImageInfos struct {
 	ImageVersion string `json:"ImageVersion" xml:"ImageVersion"`
 	OSName       string `json:"OSName" xml:"OSName"`
 	OSType       string `json:"OSType" xml:"OSType"`
+	ComputeType  string `json:"ComputeType" xml:"ComputeType"`
 }

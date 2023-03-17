@@ -29,4 +29,5 @@ type DisksItem struct {
 	Status         string `json:"Status" xml:"Status"`
 	Type           string `json:"Type" xml:"Type"`
 	Portable       bool   `json:"Portable" xml:"Portable"`
+	SnapshotId     string `json:"SnapshotId" xml:"SnapshotId"`
 }

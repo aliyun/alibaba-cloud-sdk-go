@@ -72,6 +72,7 @@ func (client *Client) DescribeSelfImagesWithCallback(request *DescribeSelfImages
 type DescribeSelfImagesRequest struct {
 	*requests.RpcRequest
 	ImageId    string           `position:"Query" name:"ImageId"`
+	SnapshotId string           `position:"Query" name:"SnapshotId"`
 	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
 	ImageName  string           `position:"Query" name:"ImageName"`
 	PageSize   requests.Integer `position:"Query" name:"PageSize"`

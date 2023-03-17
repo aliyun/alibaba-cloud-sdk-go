@@ -74,10 +74,10 @@ type DescribeImagesRequest struct {
 	EnsRegionId string `position:"Query" name:"EnsRegionId"`
 	Status      string `position:"Query" name:"Status"`
 	ImageId     string `position:"Query" name:"ImageId"`
+	SnapshotId  string `position:"Query" name:"SnapshotId"`
 	PageNumber  string `position:"Query" name:"PageNumber"`
 	ImageName   string `position:"Query" name:"ImageName"`
 	PageSize    string `position:"Query" name:"PageSize"`
-	Product     string `position:"Query" name:"product"`
 }
 
 // DescribeImagesResponse is the response struct for api DescribeImages

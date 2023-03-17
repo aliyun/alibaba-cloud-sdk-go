@@ -76,6 +76,7 @@ type DescribeDataDistResultRequest struct {
 	MaxDate      string           `position:"Query" name:"MaxDate"`
 	PageNumber   requests.Integer `position:"Query" name:"PageNumber"`
 	PageSize     requests.Integer `position:"Query" name:"PageSize"`
+	EnsRegionIds *[]string        `position:"Query" name:"EnsRegionIds"  type:"Json"`
 	MinDate      string           `position:"Query" name:"MinDate"`
 	AppId        string           `position:"Query" name:"AppId"`
 	DataNames    string           `position:"Query" name:"DataNames"`

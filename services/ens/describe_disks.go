@@ -76,7 +76,9 @@ type DescribeDisksRequest struct {
 	DiskName       string `position:"Query" name:"DiskName"`
 	DiskChargeType string `position:"Query" name:"DiskChargeType"`
 	EnsRegionId    string `position:"Query" name:"EnsRegionId"`
+	InstanceId     string `position:"Query" name:"InstanceId"`
 	Status         string `position:"Query" name:"Status"`
+	SnapshotId     string `position:"Query" name:"SnapshotId"`
 	PageNumber     string `position:"Query" name:"PageNumber"`
 	PageSize       string `position:"Query" name:"PageSize"`
 	DiskIds        string `position:"Query" name:"DiskIds"`

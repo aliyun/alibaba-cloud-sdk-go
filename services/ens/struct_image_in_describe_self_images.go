@@ -27,4 +27,6 @@ type ImageInDescribeSelfImages struct {
 	OsVersion       string `json:"OsVersion" xml:"OsVersion"`
 	Platform        string `json:"Platform" xml:"Platform"`
 	Status          string `json:"Status" xml:"Status"`
+	ComputeType     string `json:"ComputeType" xml:"ComputeType"`
+	SnapshotId      string `json:"SnapshotId" xml:"SnapshotId"`
 }
