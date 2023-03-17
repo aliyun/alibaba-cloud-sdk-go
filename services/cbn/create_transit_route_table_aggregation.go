@@ -77,8 +77,8 @@ type CreateTransitRouteTableAggregationRequest struct {
 	TransitRouteTableAggregationName        string           `position:"Query" name:"TransitRouteTableAggregationName"`
 	DryRun                                  requests.Boolean `position:"Query" name:"DryRun"`
 	ResourceOwnerAccount                    string           `position:"Query" name:"ResourceOwnerAccount"`
+	TransitRouteTableAggregationScope       string           `position:"Query" name:"TransitRouteTableAggregationScope"`
 	OwnerAccount                            string           `position:"Query" name:"OwnerAccount"`
-	TransitRouteTableAggregationScop        string           `position:"Query" name:"TransitRouteTableAggregationScop"`
 	OwnerId                                 requests.Integer `position:"Query" name:"OwnerId"`
 	Version                                 string           `position:"Query" name:"Version"`
 	TransitRouteTableId                     string           `position:"Query" name:"TransitRouteTableId"`

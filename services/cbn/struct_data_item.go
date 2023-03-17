@@ -23,7 +23,7 @@ type DataItem struct {
 	InstanceId                       string `json:"InstanceId" xml:"InstanceId"`
 	RouteType                        string `json:"RouteType" xml:"RouteType"`
 	TransitRouteTableAggregationCidr string `json:"TransitRouteTableAggregationCidr" xml:"TransitRouteTableAggregationCidr"`
-	Scop                             string `json:"Scop" xml:"Scop"`
+	Scope                            string `json:"Scope" xml:"Scope"`
 	Status                           string `json:"Status" xml:"Status"`
 	Description                      string `json:"Description" xml:"Description"`
 }
