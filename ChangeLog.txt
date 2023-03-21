@@ -1,3 +1,7 @@
+2023-03-21 Version: v1.62.248
+- Generated 2020-04-01 for `eventbridge`.
+- Add new interface.
+
 2023-03-20 Version: v1.62.247
 - Generated 2019-03-15 for `adb`.
 - Support DryRunCluster For LakeVersion.

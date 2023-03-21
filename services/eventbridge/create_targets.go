@@ -83,7 +83,9 @@ type CreateTargetsTargets struct {
 	PushRetryStrategy string                               `name:"PushRetryStrategy"`
 	ParamList         *[]CreateTargetsTargetsParamListItem `name:"ParamList" type:"Repeated"`
 	Id                string                               `name:"Id"`
+	DeadLetterQueue   CreateTargetsTargetsDeadLetterQueue  `name:"DeadLetterQueue" type:"Struct"`
 	Type              string                               `name:"Type"`
+	ErrorsTolerance   string                               `name:"ErrorsTolerance"`
 }
 
 // CreateTargetsTargetsParamListItem is a repeated param struct in CreateTargetsRequest
@@ -92,6 +94,11 @@ type CreateTargetsTargetsParamListItem struct {
 	ResourceKey string `name:"ResourceKey"`
 	Form        string `name:"Form"`
 	Value       string `name:"Value"`
+}
+
+// CreateTargetsTargetsDeadLetterQueue is a repeated param struct in CreateTargetsRequest
+type CreateTargetsTargetsDeadLetterQueue struct {
+	Arn string `name:"Arn"`
 }
 
 // CreateTargetsResponse is the response struct for api CreateTargets

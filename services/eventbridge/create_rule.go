@@ -89,6 +89,7 @@ type CreateRuleEventTargets struct {
 	Id                string                                 `name:"Id"`
 	DeadLetterQueue   CreateRuleEventTargetsDeadLetterQueue  `name:"DeadLetterQueue" type:"Struct"`
 	Type              string                                 `name:"Type"`
+	ErrorsTolerance   string                                 `name:"ErrorsTolerance"`
 }
 
 // CreateRuleEventTargetsParamListItem is a repeated param struct in CreateRuleRequest
