@@ -38,4 +38,5 @@ type Result struct {
 	MessageList            []MessageListItem      `json:"MessageList" xml:"MessageList"`
 	GroupList              []GroupListItem        `json:"GroupList" xml:"GroupList"`
 	AppList                []AppListItem          `json:"AppList" xml:"AppList"`
+	OnlineUsers            []OnlineUsersItem      `json:"OnlineUsers" xml:"OnlineUsers"`
 }

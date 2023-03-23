@@ -84,6 +84,7 @@ type UpdateCasterSceneAudioAudioLayer struct {
 	VolumeRate         string `name:"VolumeRate"`
 	FixedDelayDuration string `name:"FixedDelayDuration"`
 	ValidChannel       string `name:"ValidChannel"`
+	Filter             string `name:"Filter"`
 }
 
 // UpdateCasterSceneAudioResponse is the response struct for api UpdateCasterSceneAudio
