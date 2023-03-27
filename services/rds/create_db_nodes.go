@@ -72,12 +72,11 @@ func (client *Client) CreateDBNodesWithCallback(request *CreateDBNodesRequest, c
 type CreateDBNodesRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	SourceBiz            string           `position:"Query" name:"SourceBiz"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	DBNode               string           `position:"Query" name:"DBNode"`
 }
 
@@ -87,6 +86,7 @@ type CreateDBNodesResponse struct {
 	RequestId    string `json:"RequestId" xml:"RequestId"`
 	DBInstanceId string `json:"DBInstanceId" xml:"DBInstanceId"`
 	OrderId      int64  `json:"OrderId" xml:"OrderId"`
+	NodeIds      string `json:"NodeIds" xml:"NodeIds"`
 }
 
 // CreateCreateDBNodesRequest creates a request to invoke CreateDBNodes API

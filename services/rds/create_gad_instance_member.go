@@ -95,6 +95,7 @@ type CreateGadInstanceMemberUnitNode struct {
 	VpcID                 string `name:"VpcID"`
 	ZoneID                string `name:"ZoneID"`
 	DBInstanceDescription string `name:"DBInstanceDescription"`
+	DBInstanceStorageType string `name:"DBInstanceStorageType"`
 	DtsConflict           string `name:"DtsConflict"`
 }
 

@@ -78,6 +78,7 @@ type ModifyDBInstanceSpecRequest struct {
 	ResourceGroupId         string                                      `position:"Query" name:"ResourceGroupId"`
 	ServerlessConfiguration ModifyDBInstanceSpecServerlessConfiguration `position:"Query" name:"ServerlessConfiguration"  type:"Struct"`
 	EffectiveTime           string                                      `position:"Query" name:"EffectiveTime"`
+	DBInstanceTransType     string                                      `position:"Query" name:"DBInstanceTransType"`
 	DBInstanceId            string                                      `position:"Query" name:"DBInstanceId"`
 	SwitchTime              string                                      `position:"Query" name:"SwitchTime"`
 	DBInstanceStorageType   string                                      `position:"Query" name:"DBInstanceStorageType"`

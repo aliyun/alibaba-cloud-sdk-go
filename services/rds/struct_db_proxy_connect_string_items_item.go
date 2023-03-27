@@ -24,4 +24,6 @@ type DBProxyConnectStringItemsItem struct {
 	DBProxyEndpointId               string `json:"DBProxyEndpointId" xml:"DBProxyEndpointId"`
 	DBProxyConnectStringPort        string `json:"DBProxyConnectStringPort" xml:"DBProxyConnectStringPort"`
 	DBProxyConnectString            string `json:"DBProxyConnectString" xml:"DBProxyConnectString"`
+	DBProxyVpcId                    string `json:"DBProxyVpcId" xml:"DBProxyVpcId"`
+	DBProxyVswitchId                string `json:"DBProxyVswitchId" xml:"DBProxyVswitchId"`
 }

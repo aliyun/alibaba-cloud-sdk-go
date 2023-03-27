@@ -103,6 +103,7 @@ type CreateGADInstanceUnitNode struct {
 	VpcID                 string `name:"VpcID"`
 	ZoneID                string `name:"ZoneID"`
 	DBInstanceDescription string `name:"DBInstanceDescription"`
+	DBInstanceStorageType string `name:"DBInstanceStorageType"`
 	PayType               string `name:"PayType"`
 	DtsConflict           string `name:"DtsConflict"`
 }

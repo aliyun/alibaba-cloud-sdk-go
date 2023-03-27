@@ -95,6 +95,7 @@ type CreateDBInstanceRequest struct {
 	PrivateIpAddress               string                           `position:"Query" name:"PrivateIpAddress"`
 	TargetDedicatedHostIdForLog    string                           `position:"Query" name:"TargetDedicatedHostIdForLog"`
 	AutoRenew                      string                           `position:"Query" name:"AutoRenew"`
+	Port                           string                           `position:"Query" name:"Port"`
 	RoleARN                        string                           `position:"Query" name:"RoleARN"`
 	TunnelId                       string                           `position:"Query" name:"TunnelId"`
 	ZoneId                         string                           `position:"Query" name:"ZoneId"`

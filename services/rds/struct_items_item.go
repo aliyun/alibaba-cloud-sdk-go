@@ -17,8 +17,35 @@ package rds
 
 // ItemsItem is a nested struct in rds response
 type ItemsItem struct {
+	Region                string                `json:"Region" xml:"Region"`
+	ResultInfo            string                `json:"ResultInfo" xml:"ResultInfo"`
+	InsName               string                `json:"InsName" xml:"InsName"`
+	TaskTypeEn            string                `json:"TaskTypeEn" xml:"TaskTypeEn"`
+	Impact                string                `json:"Impact" xml:"Impact"`
+	InsComment            string                `json:"InsComment" xml:"InsComment"`
+	Deadline              string                `json:"Deadline" xml:"Deadline"`
+	ImpactZh              string                `json:"ImpactZh" xml:"ImpactZh"`
+	DbType                string                `json:"DbType" xml:"DbType"`
+	ModifiedTime          string                `json:"ModifiedTime" xml:"ModifiedTime"`
+	DbVersion             string                `json:"DbVersion" xml:"DbVersion"`
+	AllowCancel           string                `json:"AllowCancel" xml:"AllowCancel"`
+	CreatedTime           string                `json:"CreatedTime" xml:"CreatedTime"`
+	SwitchTime            string                `json:"SwitchTime" xml:"SwitchTime"`
 	DBInstanceId          string                `json:"DBInstanceId" xml:"DBInstanceId"`
-	ReadDelayTimes        ReadDelayTimes        `json:"ReadDelayTimes" xml:"ReadDelayTimes"`
-	ReadDBInstanceNames   ReadDBInstanceNames   `json:"ReadDBInstanceNames" xml:"ReadDBInstanceNames"`
+	AllowChange           string                `json:"AllowChange" xml:"AllowChange"`
+	ChangeLevel           string                `json:"ChangeLevel" xml:"ChangeLevel"`
+	Id                    int                   `json:"Id" xml:"Id"`
+	Status                int                   `json:"Status" xml:"Status"`
+	ImpactEn              string                `json:"ImpactEn" xml:"ImpactEn"`
+	ChangeLevelEn         string                `json:"ChangeLevelEn" xml:"ChangeLevelEn"`
+	PrepareInterval       string                `json:"PrepareInterval" xml:"PrepareInterval"`
+	CurrentAVZ            string                `json:"CurrentAVZ" xml:"CurrentAVZ"`
+	StartTime             string                `json:"StartTime" xml:"StartTime"`
+	ChangeLevelZh         string                `json:"ChangeLevelZh" xml:"ChangeLevelZh"`
+	TaskType              string                `json:"TaskType" xml:"TaskType"`
+	TaskTypeZh            string                `json:"TaskTypeZh" xml:"TaskTypeZh"`
+	ReadDBInstanceNames   []string              `json:"ReadDBInstanceNames" xml:"ReadDBInstanceNames"`
+	ReadDelayTimes        []string              `json:"ReadDelayTimes" xml:"ReadDelayTimes"`
+	SubInsNames           []string              `json:"SubInsNames" xml:"SubInsNames"`
 	ReadonlyInstanceDelay ReadonlyInstanceDelay `json:"ReadonlyInstanceDelay" xml:"ReadonlyInstanceDelay"`
 }

@@ -94,6 +94,7 @@ type DescribeDBProxyResponse struct {
 	DBProxyEngineType                  string                    `json:"DBProxyEngineType" xml:"DBProxyEngineType"`
 	AccountName                        string                    `json:"AccountName" xml:"AccountName"`
 	ResourceGroupId                    string                    `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	DBProxyAVZones                     DBProxyAVZones            `json:"DBProxyAVZones" xml:"DBProxyAVZones"`
 	DBProxyConnectStringItems          DBProxyConnectStringItems `json:"DBProxyConnectStringItems" xml:"DBProxyConnectStringItems"`
 	DbProxyEndpointItems               DbProxyEndpointItems      `json:"DbProxyEndpointItems" xml:"DbProxyEndpointItems"`
 }

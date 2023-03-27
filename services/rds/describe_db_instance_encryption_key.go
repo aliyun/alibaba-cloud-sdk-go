@@ -84,15 +84,16 @@ type DescribeDBInstanceEncryptionKeyRequest struct {
 // DescribeDBInstanceEncryptionKeyResponse is the response struct for api DescribeDBInstanceEncryptionKey
 type DescribeDBInstanceEncryptionKeyResponse struct {
 	*responses.BaseResponse
-	DeleteDate          string `json:"DeleteDate" xml:"DeleteDate"`
-	RequestId           string `json:"RequestId" xml:"RequestId"`
-	Description         string `json:"Description" xml:"Description"`
-	Origin              string `json:"Origin" xml:"Origin"`
-	MaterialExpireTime  string `json:"MaterialExpireTime" xml:"MaterialExpireTime"`
-	EncryptionKeyStatus string `json:"EncryptionKeyStatus" xml:"EncryptionKeyStatus"`
-	KeyUsage            string `json:"KeyUsage" xml:"KeyUsage"`
-	EncryptionKey       string `json:"EncryptionKey" xml:"EncryptionKey"`
-	Creator             string `json:"Creator" xml:"Creator"`
+	DeleteDate          string              `json:"DeleteDate" xml:"DeleteDate"`
+	RequestId           string              `json:"RequestId" xml:"RequestId"`
+	Description         string              `json:"Description" xml:"Description"`
+	Origin              string              `json:"Origin" xml:"Origin"`
+	MaterialExpireTime  string              `json:"MaterialExpireTime" xml:"MaterialExpireTime"`
+	EncryptionKeyStatus string              `json:"EncryptionKeyStatus" xml:"EncryptionKeyStatus"`
+	KeyUsage            string              `json:"KeyUsage" xml:"KeyUsage"`
+	EncryptionKey       string              `json:"EncryptionKey" xml:"EncryptionKey"`
+	Creator             string              `json:"Creator" xml:"Creator"`
+	EncryptionKeyList   []EncryptionKeyInfo `json:"EncryptionKeyList" xml:"EncryptionKeyList"`
 }
 
 // CreateDescribeDBInstanceEncryptionKeyRequest creates a request to invoke DescribeDBInstanceEncryptionKey API
