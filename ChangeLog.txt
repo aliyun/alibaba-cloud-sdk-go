@@ -1,3 +1,7 @@
+2023-03-28 Version: v1.62.257
+- Generated 2020-03-20 for `videoenhan`.
+- Release ReduceVideoNoise and EnhancePortraitVideo. 
+
 2023-03-28 Version: v1.62.256
 - Generated 2020-10-20 for `PTS`.
 - Add new API for querying the sample logs of PTS debug plan.
