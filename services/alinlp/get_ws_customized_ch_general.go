@@ -89,7 +89,7 @@ func CreateGetWsCustomizedChGeneralRequest() (request *GetWsCustomizedChGeneralR
 	request = &GetWsCustomizedChGeneralRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alinlp", "2020-06-29", "GetWsCustomizedChGeneral", "", "")
+	request.InitWithApiInfo("alinlp", "2020-06-29", "GetWsCustomizedChGeneral", "alinlp", "openAPI")
 	request.Method = requests.POST
 	return
 }

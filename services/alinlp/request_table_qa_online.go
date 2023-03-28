@@ -89,7 +89,7 @@ func CreateRequestTableQAOnlineRequest() (request *RequestTableQAOnlineRequest) 
 	request = &RequestTableQAOnlineRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alinlp", "2020-06-29", "RequestTableQAOnline", "", "")
+	request.InitWithApiInfo("alinlp", "2020-06-29", "RequestTableQAOnline", "alinlp", "openAPI")
 	request.Method = requests.POST
 	return
 }

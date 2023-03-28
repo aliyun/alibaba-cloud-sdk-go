@@ -87,7 +87,7 @@ func CreateGetSummaryChEcomRequest() (request *GetSummaryChEcomRequest) {
 	request = &GetSummaryChEcomRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alinlp", "2020-06-29", "GetSummaryChEcom", "", "")
+	request.InitWithApiInfo("alinlp", "2020-06-29", "GetSummaryChEcom", "alinlp", "openAPI")
 	request.Method = requests.POST
 	return
 }

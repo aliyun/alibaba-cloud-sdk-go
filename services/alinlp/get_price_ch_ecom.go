@@ -87,7 +87,7 @@ func CreateGetPriceChEcomRequest() (request *GetPriceChEcomRequest) {
 	request = &GetPriceChEcomRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alinlp", "2020-06-29", "GetPriceChEcom", "", "")
+	request.InitWithApiInfo("alinlp", "2020-06-29", "GetPriceChEcom", "alinlp", "openAPI")
 	request.Method = requests.POST
 	return
 }

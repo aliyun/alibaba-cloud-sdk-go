@@ -89,7 +89,7 @@ func CreateGetWsCustomizedChO2ORequest() (request *GetWsCustomizedChO2ORequest) 
 	request = &GetWsCustomizedChO2ORequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alinlp", "2020-06-29", "GetWsCustomizedChO2O", "", "")
+	request.InitWithApiInfo("alinlp", "2020-06-29", "GetWsCustomizedChO2O", "alinlp", "openAPI")
 	request.Method = requests.POST
 	return
 }

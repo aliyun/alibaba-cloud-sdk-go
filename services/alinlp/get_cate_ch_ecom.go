@@ -89,7 +89,7 @@ func CreateGetCateChEcomRequest() (request *GetCateChEcomRequest) {
 	request = &GetCateChEcomRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alinlp", "2020-06-29", "GetCateChEcom", "", "")
+	request.InitWithApiInfo("alinlp", "2020-06-29", "GetCateChEcom", "alinlp", "openAPI")
 	request.Method = requests.POST
 	return
 }

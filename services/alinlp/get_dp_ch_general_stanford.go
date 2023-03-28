@@ -87,7 +87,7 @@ func CreateGetDpChGeneralStanfordRequest() (request *GetDpChGeneralStanfordReque
 	request = &GetDpChGeneralStanfordRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alinlp", "2020-06-29", "GetDpChGeneralStanford", "", "")
+	request.InitWithApiInfo("alinlp", "2020-06-29", "GetDpChGeneralStanford", "alinlp", "openAPI")
 	request.Method = requests.POST
 	return
 }

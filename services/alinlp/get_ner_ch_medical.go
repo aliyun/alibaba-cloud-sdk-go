@@ -87,7 +87,7 @@ func CreateGetNerChMedicalRequest() (request *GetNerChMedicalRequest) {
 	request = &GetNerChMedicalRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alinlp", "2020-06-29", "GetNerChMedical", "", "")
+	request.InitWithApiInfo("alinlp", "2020-06-29", "GetNerChMedical", "alinlp", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -88,7 +88,7 @@ func CreateGetNerCustomizedChEcomRequest() (request *GetNerCustomizedChEcomReque
 	request = &GetNerCustomizedChEcomRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alinlp", "2020-06-29", "GetNerCustomizedChEcom", "", "")
+	request.InitWithApiInfo("alinlp", "2020-06-29", "GetNerCustomizedChEcom", "alinlp", "openAPI")
 	request.Method = requests.POST
 	return
 }

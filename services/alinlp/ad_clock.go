@@ -87,7 +87,7 @@ func CreateADClockRequest() (request *ADClockRequest) {
 	request = &ADClockRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alinlp", "2020-06-29", "ADClock", "", "")
+	request.InitWithApiInfo("alinlp", "2020-06-29", "ADClock", "alinlp", "openAPI")
 	request.Method = requests.POST
 	return
 }

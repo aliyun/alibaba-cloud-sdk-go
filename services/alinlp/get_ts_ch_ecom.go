@@ -89,7 +89,7 @@ func CreateGetTsChEcomRequest() (request *GetTsChEcomRequest) {
 	request = &GetTsChEcomRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alinlp", "2020-06-29", "GetTsChEcom", "", "")
+	request.InitWithApiInfo("alinlp", "2020-06-29", "GetTsChEcom", "alinlp", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -87,7 +87,7 @@ func CreateGetTcChGeneralRequest() (request *GetTcChGeneralRequest) {
 	request = &GetTcChGeneralRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alinlp", "2020-06-29", "GetTcChGeneral", "", "")
+	request.InitWithApiInfo("alinlp", "2020-06-29", "GetTcChGeneral", "alinlp", "openAPI")
 	request.Method = requests.POST
 	return
 }

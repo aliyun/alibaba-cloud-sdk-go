@@ -89,7 +89,7 @@ func CreateGetPosChGeneralRequest() (request *GetPosChGeneralRequest) {
 	request = &GetPosChGeneralRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alinlp", "2020-06-29", "GetPosChGeneral", "", "")
+	request.InitWithApiInfo("alinlp", "2020-06-29", "GetPosChGeneral", "alinlp", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -89,7 +89,7 @@ func CreateGetWsCustomizedChEntertainmentRequest() (request *GetWsCustomizedChEn
 	request = &GetWsCustomizedChEntertainmentRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alinlp", "2020-06-29", "GetWsCustomizedChEntertainment", "", "")
+	request.InitWithApiInfo("alinlp", "2020-06-29", "GetWsCustomizedChEntertainment", "alinlp", "openAPI")
 	request.Method = requests.POST
 	return
 }

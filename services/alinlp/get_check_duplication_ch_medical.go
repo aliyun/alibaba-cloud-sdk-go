@@ -88,7 +88,7 @@ func CreateGetCheckDuplicationChMedicalRequest() (request *GetCheckDuplicationCh
 	request = &GetCheckDuplicationChMedicalRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alinlp", "2020-06-29", "GetCheckDuplicationChMedical", "", "")
+	request.InitWithApiInfo("alinlp", "2020-06-29", "GetCheckDuplicationChMedical", "alinlp", "openAPI")
 	request.Method = requests.POST
 	return
 }

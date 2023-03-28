@@ -88,7 +88,7 @@ func CreateGetNerChEcomRequest() (request *GetNerChEcomRequest) {
 	request = &GetNerChEcomRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alinlp", "2020-06-29", "GetNerChEcom", "", "")
+	request.InitWithApiInfo("alinlp", "2020-06-29", "GetNerChEcom", "alinlp", "openAPI")
 	request.Method = requests.POST
 	return
 }

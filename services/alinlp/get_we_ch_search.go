@@ -91,7 +91,7 @@ func CreateGetWeChSearchRequest() (request *GetWeChSearchRequest) {
 	request = &GetWeChSearchRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alinlp", "2020-06-29", "GetWeChSearch", "", "")
+	request.InitWithApiInfo("alinlp", "2020-06-29", "GetWeChSearch", "alinlp", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// GetWeChGeneral invokes the alinlp.GetWeChGeneral API synchronously
-func (client *Client) GetWeChGeneral(request *GetWeChGeneralRequest) (response *GetWeChGeneralResponse, err error) {
-	response = CreateGetWeChGeneralResponse()
+// GetUserUploadSign invokes the alinlp.GetUserUploadSign API synchronously
+func (client *Client) GetUserUploadSign(request *GetUserUploadSignRequest) (response *GetUserUploadSignResponse, err error) {
+	response = CreateGetUserUploadSignResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// GetWeChGeneralWithChan invokes the alinlp.GetWeChGeneral API asynchronously
-func (client *Client) GetWeChGeneralWithChan(request *GetWeChGeneralRequest) (<-chan *GetWeChGeneralResponse, <-chan error) {
-	responseChan := make(chan *GetWeChGeneralResponse, 1)
+// GetUserUploadSignWithChan invokes the alinlp.GetUserUploadSign API asynchronously
+func (client *Client) GetUserUploadSignWithChan(request *GetUserUploadSignRequest) (<-chan *GetUserUploadSignResponse, <-chan error) {
+	responseChan := make(chan *GetUserUploadSignResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.GetWeChGeneral(request)
+		response, err := client.GetUserUploadSign(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) GetWeChGeneralWithChan(request *GetWeChGeneralRequest) (<-
 	return responseChan, errChan
 }
 
-// GetWeChGeneralWithCallback invokes the alinlp.GetWeChGeneral API asynchronously
-func (client *Client) GetWeChGeneralWithCallback(request *GetWeChGeneralRequest, callback func(response *GetWeChGeneralResponse, err error)) <-chan int {
+// GetUserUploadSignWithCallback invokes the alinlp.GetUserUploadSign API asynchronously
+func (client *Client) GetUserUploadSignWithCallback(request *GetUserUploadSignRequest, callback func(response *GetUserUploadSignResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *GetWeChGeneralResponse
+		var response *GetUserUploadSignResponse
 		var err error
 		defer close(result)
-		response, err = client.GetWeChGeneral(request)
+		response, err = client.GetUserUploadSign(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,36 +68,32 @@ func (client *Client) GetWeChGeneralWithCallback(request *GetWeChGeneralRequest,
 	return result
 }
 
-// GetWeChGeneralRequest is the request struct for api GetWeChGeneral
-type GetWeChGeneralRequest struct {
+// GetUserUploadSignRequest is the request struct for api GetUserUploadSign
+type GetUserUploadSignRequest struct {
 	*requests.RpcRequest
-	Type        string `position:"Body" name:"Type"`
 	ServiceCode string `position:"Body" name:"ServiceCode"`
-	Size        string `position:"Body" name:"Size"`
-	Text        string `position:"Body" name:"Text"`
-	Operation   string `position:"Body" name:"Operation"`
 }
 
-// GetWeChGeneralResponse is the response struct for api GetWeChGeneral
-type GetWeChGeneralResponse struct {
+// GetUserUploadSignResponse is the response struct for api GetUserUploadSign
+type GetUserUploadSignResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Data      string `json:"Data" xml:"Data"`
 }
 
-// CreateGetWeChGeneralRequest creates a request to invoke GetWeChGeneral API
-func CreateGetWeChGeneralRequest() (request *GetWeChGeneralRequest) {
-	request = &GetWeChGeneralRequest{
+// CreateGetUserUploadSignRequest creates a request to invoke GetUserUploadSign API
+func CreateGetUserUploadSignRequest() (request *GetUserUploadSignRequest) {
+	request = &GetUserUploadSignRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alinlp", "2020-06-29", "GetWeChGeneral", "alinlp", "openAPI")
+	request.InitWithApiInfo("alinlp", "2020-06-29", "GetUserUploadSign", "alinlp", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateGetWeChGeneralResponse creates a response to parse from GetWeChGeneral response
-func CreateGetWeChGeneralResponse() (response *GetWeChGeneralResponse) {
-	response = &GetWeChGeneralResponse{
+// CreateGetUserUploadSignResponse creates a response to parse from GetUserUploadSign response
+func CreateGetUserUploadSignResponse() (response *GetUserUploadSignResponse) {
+	response = &GetUserUploadSignResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

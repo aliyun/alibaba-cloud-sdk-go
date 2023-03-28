@@ -87,7 +87,7 @@ func CreateGetKeywordEnEcomRequest() (request *GetKeywordEnEcomRequest) {
 	request = &GetKeywordEnEcomRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alinlp", "2020-06-29", "GetKeywordEnEcom", "", "")
+	request.InitWithApiInfo("alinlp", "2020-06-29", "GetKeywordEnEcom", "alinlp", "openAPI")
 	request.Method = requests.POST
 	return
 }

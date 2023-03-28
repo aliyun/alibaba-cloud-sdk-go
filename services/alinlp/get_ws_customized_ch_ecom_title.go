@@ -89,7 +89,7 @@ func CreateGetWsCustomizedChEcomTitleRequest() (request *GetWsCustomizedChEcomTi
 	request = &GetWsCustomizedChEcomTitleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alinlp", "2020-06-29", "GetWsCustomizedChEcomTitle", "", "")
+	request.InitWithApiInfo("alinlp", "2020-06-29", "GetWsCustomizedChEcomTitle", "alinlp", "openAPI")
 	request.Method = requests.POST
 	return
 }

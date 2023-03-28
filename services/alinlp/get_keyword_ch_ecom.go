@@ -88,7 +88,7 @@ func CreateGetKeywordChEcomRequest() (request *GetKeywordChEcomRequest) {
 	request = &GetKeywordChEcomRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alinlp", "2020-06-29", "GetKeywordChEcom", "", "")
+	request.InitWithApiInfo("alinlp", "2020-06-29", "GetKeywordChEcom", "alinlp", "openAPI")
 	request.Method = requests.POST
 	return
 }

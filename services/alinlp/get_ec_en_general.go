@@ -87,7 +87,7 @@ func CreateGetEcEnGeneralRequest() (request *GetEcEnGeneralRequest) {
 	request = &GetEcEnGeneralRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alinlp", "2020-06-29", "GetEcEnGeneral", "", "")
+	request.InitWithApiInfo("alinlp", "2020-06-29", "GetEcEnGeneral", "alinlp", "openAPI")
 	request.Method = requests.POST
 	return
 }

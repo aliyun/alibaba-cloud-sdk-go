@@ -85,7 +85,7 @@ func CreateOpenAlinlpServiceRequest() (request *OpenAlinlpServiceRequest) {
 	request = &OpenAlinlpServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alinlp", "2020-06-29", "OpenAlinlpService", "", "")
+	request.InitWithApiInfo("alinlp", "2020-06-29", "OpenAlinlpService", "alinlp", "openAPI")
 	request.Method = requests.POST
 	return
 }

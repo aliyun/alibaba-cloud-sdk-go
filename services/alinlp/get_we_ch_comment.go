@@ -91,7 +91,7 @@ func CreateGetWeChCommentRequest() (request *GetWeChCommentRequest) {
 	request = &GetWeChCommentRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alinlp", "2020-06-29", "GetWeChComment", "", "")
+	request.InitWithApiInfo("alinlp", "2020-06-29", "GetWeChComment", "alinlp", "openAPI")
 	request.Method = requests.POST
 	return
 }

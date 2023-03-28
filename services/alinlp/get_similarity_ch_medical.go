@@ -88,7 +88,7 @@ func CreateGetSimilarityChMedicalRequest() (request *GetSimilarityChMedicalReque
 	request = &GetSimilarityChMedicalRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alinlp", "2020-06-29", "GetSimilarityChMedical", "", "")
+	request.InitWithApiInfo("alinlp", "2020-06-29", "GetSimilarityChMedical", "alinlp", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -87,7 +87,7 @@ func CreateGetTableQAServiceInfoByIdRequest() (request *GetTableQAServiceInfoByI
 	request = &GetTableQAServiceInfoByIdRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alinlp", "2020-06-29", "GetTableQAServiceInfoById", "", "")
+	request.InitWithApiInfo("alinlp", "2020-06-29", "GetTableQAServiceInfoById", "alinlp", "openAPI")
 	request.Method = requests.POST
 	return
 }

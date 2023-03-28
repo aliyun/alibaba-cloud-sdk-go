@@ -87,7 +87,7 @@ func CreateADMMURequest() (request *ADMMURequest) {
 	request = &ADMMURequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alinlp", "2020-06-29", "ADMMU", "", "")
+	request.InitWithApiInfo("alinlp", "2020-06-29", "ADMMU", "alinlp", "openAPI")
 	request.Method = requests.POST
 	return
 }

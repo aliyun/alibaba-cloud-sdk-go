@@ -88,7 +88,7 @@ func CreateGetItemPubChEcomRequest() (request *GetItemPubChEcomRequest) {
 	request = &GetItemPubChEcomRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alinlp", "2020-06-29", "GetItemPubChEcom", "", "")
+	request.InitWithApiInfo("alinlp", "2020-06-29", "GetItemPubChEcom", "alinlp", "openAPI")
 	request.Method = requests.POST
 	return
 }

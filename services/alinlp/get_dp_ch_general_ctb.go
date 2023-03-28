@@ -87,7 +87,7 @@ func CreateGetDpChGeneralCTBRequest() (request *GetDpChGeneralCTBRequest) {
 	request = &GetDpChGeneralCTBRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alinlp", "2020-06-29", "GetDpChGeneralCTB", "", "")
+	request.InitWithApiInfo("alinlp", "2020-06-29", "GetDpChGeneralCTB", "alinlp", "openAPI")
 	request.Method = requests.POST
 	return
 }

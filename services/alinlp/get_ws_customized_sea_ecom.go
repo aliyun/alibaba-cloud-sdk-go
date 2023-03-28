@@ -88,7 +88,7 @@ func CreateGetWsCustomizedSeaEcomRequest() (request *GetWsCustomizedSeaEcomReque
 	request = &GetWsCustomizedSeaEcomRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alinlp", "2020-06-29", "GetWsCustomizedSeaEcom", "", "")
+	request.InitWithApiInfo("alinlp", "2020-06-29", "GetWsCustomizedSeaEcom", "alinlp", "openAPI")
 	request.Method = requests.POST
 	return
 }

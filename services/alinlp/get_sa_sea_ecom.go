@@ -88,7 +88,7 @@ func CreateGetSaSeaEcomRequest() (request *GetSaSeaEcomRequest) {
 	request = &GetSaSeaEcomRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alinlp", "2020-06-29", "GetSaSeaEcom", "", "")
+	request.InitWithApiInfo("alinlp", "2020-06-29", "GetSaSeaEcom", "alinlp", "openAPI")
 	request.Method = requests.POST
 	return
 }

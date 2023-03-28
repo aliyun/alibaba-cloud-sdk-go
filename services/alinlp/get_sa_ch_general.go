@@ -87,7 +87,7 @@ func CreateGetSaChGeneralRequest() (request *GetSaChGeneralRequest) {
 	request = &GetSaChGeneralRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alinlp", "2020-06-29", "GetSaChGeneral", "", "")
+	request.InitWithApiInfo("alinlp", "2020-06-29", "GetSaChGeneral", "alinlp", "openAPI")
 	request.Method = requests.POST
 	return
 }

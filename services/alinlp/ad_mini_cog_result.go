@@ -87,7 +87,7 @@ func CreateADMiniCogResultRequest() (request *ADMiniCogResultRequest) {
 	request = &ADMiniCogResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alinlp", "2020-06-29", "ADMiniCogResult", "", "")
+	request.InitWithApiInfo("alinlp", "2020-06-29", "ADMiniCogResult", "alinlp", "openAPI")
 	request.Method = requests.POST
 	return
 }
