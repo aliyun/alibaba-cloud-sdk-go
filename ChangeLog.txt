@@ -1,3 +1,7 @@
+2023-03-29 Version: v1.62.260
+- Generated 2018-05-10 for `Cdn`.
+- Delete SetConfigOfVersion.
+
 2023-03-28 Version: v1.62.259
 - Generated 2020-06-29 for `alinlp`.
 - Supported getUserUploadSign for user.
