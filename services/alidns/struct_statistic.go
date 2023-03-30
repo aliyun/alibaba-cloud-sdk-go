@@ -28,6 +28,6 @@ type Statistic struct {
 	V6HttpsCount int64  `json:"V6HttpsCount" xml:"V6HttpsCount"`
 	IpCount      int64  `json:"IpCount" xml:"IpCount"`
 	HttpsCount   int64  `json:"HttpsCount" xml:"HttpsCount"`
-	Count        int64  `json:"Count" xml:"Count"`
+	Count        string `json:"Count" xml:"Count"`
 	V4HttpsCount int64  `json:"V4HttpsCount" xml:"V4HttpsCount"`
 }

@@ -94,6 +94,7 @@ type DescribeDomainRecordInfoResponse struct {
 	DomainId   string `json:"DomainId" xml:"DomainId"`
 	Value      string `json:"Value" xml:"Value"`
 	RecordId   string `json:"RecordId" xml:"RecordId"`
+	Remark     string `json:"Remark" xml:"Remark"`
 }
 
 // CreateDescribeDomainRecordInfoRequest creates a request to invoke DescribeDomainRecordInfo API

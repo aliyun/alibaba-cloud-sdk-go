@@ -80,11 +80,12 @@ type DescribeDomainNsRequest struct {
 // DescribeDomainNsResponse is the response struct for api DescribeDomainNs
 type DescribeDomainNsResponse struct {
 	*responses.BaseResponse
-	AllAliDns        bool                         `json:"AllAliDns" xml:"AllAliDns"`
-	RequestId        string                       `json:"RequestId" xml:"RequestId"`
-	IncludeAliDns    bool                         `json:"IncludeAliDns" xml:"IncludeAliDns"`
-	ExpectDnsServers ExpectDnsServers             `json:"ExpectDnsServers" xml:"ExpectDnsServers"`
-	DnsServers       DnsServersInDescribeDomainNs `json:"DnsServers" xml:"DnsServers"`
+	AllAliDns              bool                         `json:"AllAliDns" xml:"AllAliDns"`
+	RequestId              string                       `json:"RequestId" xml:"RequestId"`
+	IncludeAliDns          bool                         `json:"IncludeAliDns" xml:"IncludeAliDns"`
+	DetectFailedReasonCode string                       `json:"DetectFailedReasonCode" xml:"DetectFailedReasonCode"`
+	ExpectDnsServers       ExpectDnsServers             `json:"ExpectDnsServers" xml:"ExpectDnsServers"`
+	DnsServers             DnsServersInDescribeDomainNs `json:"DnsServers" xml:"DnsServers"`
 }
 
 // CreateDescribeDomainNsRequest creates a request to invoke DescribeDomainNs API

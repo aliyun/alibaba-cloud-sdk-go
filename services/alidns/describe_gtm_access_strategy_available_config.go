@@ -79,9 +79,10 @@ type DescribeGtmAccessStrategyAvailableConfigRequest struct {
 // DescribeGtmAccessStrategyAvailableConfigResponse is the response struct for api DescribeGtmAccessStrategyAvailableConfig
 type DescribeGtmAccessStrategyAvailableConfigResponse struct {
 	*responses.BaseResponse
-	RequestId string                                              `json:"RequestId" xml:"RequestId"`
-	AddrPools AddrPoolsInDescribeGtmAccessStrategyAvailableConfig `json:"AddrPools" xml:"AddrPools"`
-	Lines     LinesInDescribeGtmAccessStrategyAvailableConfig     `json:"Lines" xml:"Lines"`
+	RequestId             string                                              `json:"RequestId" xml:"RequestId"`
+	SuggestSetDefaultLine bool                                                `json:"SuggestSetDefaultLine" xml:"SuggestSetDefaultLine"`
+	AddrPools             AddrPoolsInDescribeGtmAccessStrategyAvailableConfig `json:"AddrPools" xml:"AddrPools"`
+	Lines                 LinesInDescribeGtmAccessStrategyAvailableConfig     `json:"Lines" xml:"Lines"`
 }
 
 // CreateDescribeGtmAccessStrategyAvailableConfigRequest creates a request to invoke DescribeGtmAccessStrategyAvailableConfig API
