@@ -79,6 +79,7 @@ type ResetAccountPasswordRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	AccountPassword      string           `position:"Query" name:"AccountPassword"`
+	CharacterType        string           `position:"Query" name:"CharacterType"`
 }
 
 // ResetAccountPasswordResponse is the response struct for api ResetAccountPassword
