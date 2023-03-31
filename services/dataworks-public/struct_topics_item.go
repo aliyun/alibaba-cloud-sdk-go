@@ -17,8 +17,17 @@ package dataworks_public
 
 // TopicsItem is a nested struct in dataworks_public response
 type TopicsItem struct {
-	InstanceId int64 `json:"InstanceId" xml:"InstanceId"`
-	TopicName  int64 `json:"TopicName" xml:"TopicName"`
-	TopicId    int64 `json:"TopicId" xml:"TopicId"`
-	AddTime    int64 `json:"AddTime" xml:"AddTime"`
+	TopicName   string `json:"TopicName" xml:"TopicName"`
+	TopicId     int64  `json:"TopicId" xml:"TopicId"`
+	TopicStatus string `json:"TopicStatus" xml:"TopicStatus"`
+	TopicType   string `json:"TopicType" xml:"TopicType"`
+	NodeOwner   string `json:"NodeOwner" xml:"NodeOwner"`
+	AddTime     int64  `json:"AddTime" xml:"AddTime"`
+	InstanceId  int64  `json:"InstanceId" xml:"InstanceId"`
+	NodeName    string `json:"NodeName" xml:"NodeName"`
+	NodeId      int64  `json:"NodeId" xml:"NodeId"`
+	ProjectId   int64  `json:"ProjectId" xml:"ProjectId"`
+	HappenTime  int64  `json:"HappenTime" xml:"HappenTime"`
+	FixTime     int64  `json:"FixTime" xml:"FixTime"`
+	TopicOwner  string `json:"TopicOwner" xml:"TopicOwner"`
 }

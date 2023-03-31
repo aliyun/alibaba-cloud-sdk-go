@@ -17,5 +17,5 @@ package dataworks_public
 
 // TopicsInListTopics is a nested struct in dataworks_public response
 type TopicsInListTopics struct {
-	TopicsItem []TopicsItemInListTopics `json:"Topics" xml:"Topics"`
+	TopicsItem []TopicsItem `json:"Topics" xml:"Topics"`
 }

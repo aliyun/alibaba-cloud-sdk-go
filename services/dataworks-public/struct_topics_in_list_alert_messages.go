@@ -17,5 +17,5 @@ package dataworks_public
 
 // TopicsInListAlertMessages is a nested struct in dataworks_public response
 type TopicsInListAlertMessages struct {
-	TopicsItem []TopicsItemInListAlertMessages `json:"Topics" xml:"Topics"`
+	TopicsItem []TopicsItem `json:"Topics" xml:"Topics"`
 }

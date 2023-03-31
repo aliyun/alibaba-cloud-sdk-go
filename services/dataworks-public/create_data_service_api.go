@@ -79,6 +79,7 @@ type CreateDataServiceApiRequest struct {
 	ResourceGroupId     requests.Integer `position:"Body" name:"ResourceGroupId"`
 	SqlMode             requests.Integer `position:"Body" name:"SqlMode"`
 	TenantId            requests.Integer `position:"Body" name:"TenantId"`
+	RequestContentType  requests.Integer `position:"Body" name:"RequestContentType"`
 	Protocols           string           `position:"Body" name:"Protocols"`
 	ProjectId           requests.Integer `position:"Body" name:"ProjectId"`
 	ResponseContentType requests.Integer `position:"Body" name:"ResponseContentType"`
