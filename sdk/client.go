@@ -692,6 +692,7 @@ func (client *Client) DoActionWithSigner(request requests.AcsRequest, response r
 				return
 			}
 		}
+		defer httpResponse.Body.Close()
 		if isCertificateError(err) {
 			return
 		}
