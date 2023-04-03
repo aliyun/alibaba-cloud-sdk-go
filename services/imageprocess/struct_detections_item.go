@@ -17,16 +17,21 @@ package imageprocess
 
 // DetectionsItem is a nested struct in imageprocess response
 type DetectionsItem struct {
-	FractureLocation   string  `json:"FractureLocation" xml:"FractureLocation"`
 	CalciumScore       float64 `json:"CalciumScore" xml:"CalciumScore"`
-	FracSOPInstanceUID string  `json:"FracSOPInstanceUID" xml:"FracSOPInstanceUID"`
+	VertCategory       float64 `json:"VertCategory" xml:"VertCategory"`
 	CalciumId          int64   `json:"CalciumId" xml:"CalciumId"`
 	CalciumVolume      float64 `json:"CalciumVolume" xml:"CalciumVolume"`
+	VertTScore         float64 `json:"VertTScore" xml:"VertTScore"`
+	FractureSegment    int64   `json:"FractureSegment" xml:"FractureSegment"`
+	VertBMD            float64 `json:"VertBMD" xml:"VertBMD"`
+	FractureLocation   string  `json:"FractureLocation" xml:"FractureLocation"`
+	FracSOPInstanceUID string  `json:"FracSOPInstanceUID" xml:"FracSOPInstanceUID"`
 	FractureConfidence float64 `json:"FractureConfidence" xml:"FractureConfidence"`
 	FractureCategory   string  `json:"FractureCategory" xml:"FractureCategory"`
-	FractureSegment    int64   `json:"FractureSegment" xml:"FractureSegment"`
 	FractureId         int     `json:"FractureId" xml:"FractureId"`
+	VertId             string  `json:"VertId" xml:"VertId"`
+	VertZScore         float64 `json:"VertZScore" xml:"VertZScore"`
 	CalciumCenter      []int64 `json:"CalciumCenter" xml:"CalciumCenter"`
-	CoordinateImage    []int   `json:"CoordinateImage" xml:"CoordinateImage"`
 	Coordinates        []int   `json:"Coordinates" xml:"Coordinates"`
+	CoordinateImage    []int   `json:"CoordinateImage" xml:"CoordinateImage"`
 }

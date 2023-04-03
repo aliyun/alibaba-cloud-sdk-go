@@ -22,7 +22,6 @@ type Data struct {
 	NormalProbability string                 `json:"NormalProbability" xml:"NormalProbability"`
 	SessionId         string                 `json:"SessionId" xml:"SessionId"`
 	NewProbability    string                 `json:"NewProbability" xml:"NewProbability"`
-	Score             string                 `json:"Score" xml:"Score"`
 	Reports           map[string]interface{} `json:"Reports" xml:"Reports"`
 	DUrl              string                 `json:"DUrl" xml:"DUrl"`
 	ImageUrl          string                 `json:"ImageUrl" xml:"ImageUrl"`
@@ -30,7 +29,6 @@ type Data struct {
 	ResultsEnglish    map[string]interface{} `json:"ResultsEnglish" xml:"ResultsEnglish"`
 	ErrorCode         string                 `json:"ErrorCode" xml:"ErrorCode"`
 	BodyPart          string                 `json:"BodyPart" xml:"BodyPart"`
-	VolumeScore       string                 `json:"VolumeScore" xml:"VolumeScore"`
 	JobId             string                 `json:"JobId" xml:"JobId"`
 	OrgId             string                 `json:"OrgId" xml:"OrgId"`
 	Data              string                 `json:"Data" xml:"Data"`
@@ -46,10 +44,11 @@ type Data struct {
 	ImageQuality      float64                `json:"ImageQuality" xml:"ImageQuality"`
 	Status            string                 `json:"Status" xml:"Status"`
 	Results           map[string]interface{} `json:"Results" xml:"Results"`
-	OrgName           string                 `json:"OrgName" xml:"OrgName"`
 	ResultURL         string                 `json:"ResultURL" xml:"ResultURL"`
-	ResultUrl         string                 `json:"ResultUrl" xml:"ResultUrl"`
+	OrgName           string                 `json:"OrgName" xml:"OrgName"`
+	Spacing           []float64              `json:"Spacing" xml:"Spacing"`
 	Options           []string               `json:"Options" xml:"Options"`
+	Origin            []float64              `json:"Origin" xml:"Origin"`
 	Lesion            Lesion                 `json:"Lesion" xml:"Lesion"`
 	Series            []Serie                `json:"Series" xml:"Series"`
 	Fractures         []FracturesItem        `json:"Fractures" xml:"Fractures"`
