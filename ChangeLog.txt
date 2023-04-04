@@ -1,3 +1,7 @@
+2023-04-04 Version: v1.62.268
+- Generated 2015-01-09 for `Alidns`.
+- New Resolve Statistic Summary API.
+
 2023-04-03 Version: v1.62.267
 - Generated 2020-03-20 for `imageprocess`.
 - Release CalcBMD.
