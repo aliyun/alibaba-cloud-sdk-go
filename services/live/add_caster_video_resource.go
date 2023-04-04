@@ -71,6 +71,7 @@ func (client *Client) AddCasterVideoResourceWithCallback(request *AddCasterVideo
 // AddCasterVideoResourceRequest is the request struct for api AddCasterVideoResource
 type AddCasterVideoResourceRequest struct {
 	*requests.RpcRequest
+	ImageId             string           `position:"Query" name:"ImageId"`
 	InputType           requests.Integer `position:"Query" name:"InputType"`
 	EndOffset           requests.Integer `position:"Query" name:"EndOffset"`
 	MaterialId          string           `position:"Query" name:"MaterialId"`
@@ -83,6 +84,7 @@ type AddCasterVideoResourceRequest struct {
 	FixedDelayDuration  requests.Integer `position:"Query" name:"FixedDelayDuration"`
 	LiveStreamUrl       string           `position:"Query" name:"LiveStreamUrl"`
 	LocationId          string           `position:"Query" name:"LocationId"`
+	ImageUrl            string           `position:"Query" name:"ImageUrl"`
 	PtsCallbackInterval requests.Integer `position:"Query" name:"PtsCallbackInterval"`
 	ResourceName        string           `position:"Query" name:"ResourceName"`
 	RepeatNum           requests.Integer `position:"Query" name:"RepeatNum"`

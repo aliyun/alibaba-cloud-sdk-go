@@ -28,4 +28,6 @@ type VideoResource struct {
 	ResourceId          string `json:"ResourceId" xml:"ResourceId"`
 	RepeatNum           int    `json:"RepeatNum" xml:"RepeatNum"`
 	ResourceName        string `json:"ResourceName" xml:"ResourceName"`
+	ImageId             string `json:"ImageId" xml:"ImageId"`
+	ImageUrl            string `json:"ImageUrl" xml:"ImageUrl"`
 }

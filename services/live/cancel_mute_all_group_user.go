@@ -71,9 +71,10 @@ func (client *Client) CancelMuteAllGroupUserWithCallback(request *CancelMuteAllG
 // CancelMuteAllGroupUserRequest is the request struct for api CancelMuteAllGroupUser
 type CancelMuteAllGroupUserRequest struct {
 	*requests.RpcRequest
-	OperatorUserId string `position:"Body" name:"OperatorUserId"`
-	GroupId        string `position:"Body" name:"GroupId"`
-	AppId          string `position:"Body" name:"AppId"`
+	OperatorUserId string           `position:"Body" name:"OperatorUserId"`
+	BroadCastType  requests.Integer `position:"Body" name:"BroadCastType"`
+	GroupId        string           `position:"Body" name:"GroupId"`
+	AppId          string           `position:"Body" name:"AppId"`
 }
 
 // CancelMuteAllGroupUserResponse is the response struct for api CancelMuteAllGroupUser

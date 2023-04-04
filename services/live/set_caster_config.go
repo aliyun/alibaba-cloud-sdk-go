@@ -74,6 +74,7 @@ type SetCasterConfigRequest struct {
 	ChannelEnable       requests.Integer `position:"Query" name:"ChannelEnable"`
 	ProgramEffect       requests.Integer `position:"Query" name:"ProgramEffect"`
 	ProgramName         string           `position:"Query" name:"ProgramName"`
+	UrgentImageUrl      string           `position:"Query" name:"UrgentImageUrl"`
 	RecordConfig        string           `position:"Query" name:"RecordConfig"`
 	UrgentMaterialId    string           `position:"Query" name:"UrgentMaterialId"`
 	TranscodeConfig     string           `position:"Query" name:"TranscodeConfig"`
@@ -86,6 +87,7 @@ type SetCasterConfigRequest struct {
 	DomainName          string           `position:"Query" name:"DomainName"`
 	OwnerId             requests.Integer `position:"Query" name:"OwnerId"`
 	Delay               requests.Float   `position:"Query" name:"Delay"`
+	UrgentImageId       string           `position:"Query" name:"UrgentImageId"`
 	CallbackUrl         string           `position:"Query" name:"CallbackUrl"`
 }
 

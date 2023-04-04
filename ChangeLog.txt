@@ -1,3 +1,7 @@
+2023-04-04 Version: v1.62.269
+- Generated 2016-11-01 for `live`.
+- Live sdk update.
+
 2023-04-04 Version: v1.62.268
 - Generated 2015-01-09 for `Alidns`.
 - New Resolve Statistic Summary API.

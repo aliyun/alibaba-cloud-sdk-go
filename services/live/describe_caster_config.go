@@ -81,6 +81,8 @@ type DescribeCasterConfigResponse struct {
 	Delay               float64          `json:"Delay" xml:"Delay"`
 	UrgentLiveStreamUrl string           `json:"UrgentLiveStreamUrl" xml:"UrgentLiveStreamUrl"`
 	UrgentMaterialId    string           `json:"UrgentMaterialId" xml:"UrgentMaterialId"`
+	UrgentImageId       string           `json:"UrgentImageId" xml:"UrgentImageId"`
+	UrgentImageUrl      string           `json:"UrgentImageUrl" xml:"UrgentImageUrl"`
 	CallbackUrl         string           `json:"CallbackUrl" xml:"CallbackUrl"`
 	ProgramName         string           `json:"ProgramName" xml:"ProgramName"`
 	CasterName          string           `json:"CasterName" xml:"CasterName"`
