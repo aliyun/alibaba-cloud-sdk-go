@@ -17,11 +17,10 @@ package eventbridge
 
 // ConnectionsItem is a nested struct in eventbridge response
 type ConnectionsItem struct {
-	GmtCreate          int64             `json:"GmtCreate" xml:"GmtCreate"`
-	ApiDestinationName string            `json:"ApiDestinationName" xml:"ApiDestinationName"`
-	ConnectionName     string            `json:"ConnectionName" xml:"ConnectionName"`
-	Id                 int64             `json:"Id" xml:"Id"`
-	Description        string            `json:"Description" xml:"Description"`
-	NetworkParameters  NetworkParameters `json:"NetworkParameters" xml:"NetworkParameters"`
-	AuthParameters     AuthParameters    `json:"AuthParameters" xml:"AuthParameters"`
+	GmtCreate         int64             `json:"GmtCreate" xml:"GmtCreate"`
+	ConnectionName    string            `json:"ConnectionName" xml:"ConnectionName"`
+	Id                int64             `json:"Id" xml:"Id"`
+	Description       string            `json:"Description" xml:"Description"`
+	NetworkParameters NetworkParameters `json:"NetworkParameters" xml:"NetworkParameters"`
+	AuthParameters    AuthParameters    `json:"AuthParameters" xml:"AuthParameters"`
 }

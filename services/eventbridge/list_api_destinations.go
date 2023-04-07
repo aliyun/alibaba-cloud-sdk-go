@@ -74,6 +74,7 @@ type ListApiDestinationsRequest struct {
 	ClientToken              string           `position:"Query" name:"ClientToken"`
 	Description              string           `position:"Query" name:"Description"`
 	NextToken                string           `position:"Query" name:"NextToken"`
+	ConnectionName           string           `position:"Query" name:"ConnectionName"`
 	MaxResults               requests.Integer `position:"Query" name:"MaxResults"`
 	ApiDestinationNamePrefix string           `position:"Query" name:"ApiDestinationNamePrefix"`
 }
