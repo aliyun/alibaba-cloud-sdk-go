@@ -71,15 +71,20 @@ func (client *Client) AssociateAnycastEipAddressWithCallback(request *AssociateA
 // AssociateAnycastEipAddressRequest is the request struct for api AssociateAnycastEipAddress
 type AssociateAnycastEipAddressRequest struct {
 	*requests.RpcRequest
-	DryRun               requests.Boolean `position:"Query" name:"DryRun"`
-	AssociationMode      string           `position:"Query" name:"AssociationMode"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	PopLocations         string           `position:"Query" name:"PopLocations"`
-	BindInstanceType     string           `position:"Query" name:"BindInstanceType"`
-	BindInstanceRegionId string           `position:"Query" name:"BindInstanceRegionId"`
-	PrivateIpAddress     string           `position:"Query" name:"PrivateIpAddress"`
-	AnycastId            string           `position:"Query" name:"AnycastId"`
-	BindInstanceId       string           `position:"Query" name:"BindInstanceId"`
+	ClientToken          string                                    `position:"Query" name:"ClientToken"`
+	PopLocations         *[]AssociateAnycastEipAddressPopLocations `position:"Query" name:"PopLocations"  type:"Repeated"`
+	DryRun               requests.Boolean                          `position:"Query" name:"DryRun"`
+	AssociationMode      string                                    `position:"Query" name:"AssociationMode"`
+	BindInstanceType     string                                    `position:"Query" name:"BindInstanceType"`
+	BindInstanceRegionId string                                    `position:"Query" name:"BindInstanceRegionId"`
+	PrivateIpAddress     string                                    `position:"Query" name:"PrivateIpAddress"`
+	AnycastId            string                                    `position:"Query" name:"AnycastId"`
+	BindInstanceId       string                                    `position:"Query" name:"BindInstanceId"`
+}
+
+// AssociateAnycastEipAddressPopLocations is a repeated param struct in AssociateAnycastEipAddressRequest
+type AssociateAnycastEipAddressPopLocations struct {
+	PopLocation string `name:"PopLocation"`
 }
 
 // AssociateAnycastEipAddressResponse is the response struct for api AssociateAnycastEipAddress

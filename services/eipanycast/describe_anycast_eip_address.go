@@ -94,6 +94,7 @@ type DescribeAnycastEipAddressResponse struct {
 	Bid                    string               `json:"Bid" xml:"Bid"`
 	AliUid                 int64                `json:"AliUid" xml:"AliUid"`
 	AnycastEipBindInfoList []AnycastEipBindInfo `json:"AnycastEipBindInfoList" xml:"AnycastEipBindInfoList"`
+	Tags                   []Tag                `json:"Tags" xml:"Tags"`
 }
 
 // CreateDescribeAnycastEipAddressRequest creates a request to invoke DescribeAnycastEipAddress API

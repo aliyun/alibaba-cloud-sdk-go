@@ -30,5 +30,7 @@ type Anycast struct {
 	InternetChargeType     string               `json:"InternetChargeType" xml:"InternetChargeType"`
 	BusinessStatus         string               `json:"BusinessStatus" xml:"BusinessStatus"`
 	Name                   string               `json:"Name" xml:"Name"`
+	ServiceManaged         int                  `json:"ServiceManaged" xml:"ServiceManaged"`
 	AnycastEipBindInfoList []AnycastEipBindInfo `json:"AnycastEipBindInfoList" xml:"AnycastEipBindInfoList"`
+	Tags                   []Tag                `json:"Tags" xml:"Tags"`
 }

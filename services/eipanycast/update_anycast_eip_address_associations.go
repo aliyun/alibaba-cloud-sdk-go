@@ -71,13 +71,23 @@ func (client *Client) UpdateAnycastEipAddressAssociationsWithCallback(request *U
 // UpdateAnycastEipAddressAssociationsRequest is the request struct for api UpdateAnycastEipAddressAssociations
 type UpdateAnycastEipAddressAssociationsRequest struct {
 	*requests.RpcRequest
-	DryRun                requests.Boolean `position:"Query" name:"DryRun"`
-	AssociationMode       string           `position:"Query" name:"AssociationMode"`
-	ClientToken           string           `position:"Query" name:"ClientToken"`
-	PopLocationDeleteList string           `position:"Query" name:"PopLocationDeleteList"`
-	AnycastId             string           `position:"Query" name:"AnycastId"`
-	PopLocationAddList    string           `position:"Query" name:"PopLocationAddList"`
-	BindInstanceId        string           `position:"Query" name:"BindInstanceId"`
+	DryRun                requests.Boolean                                            `position:"Query" name:"DryRun"`
+	AssociationMode       string                                                      `position:"Query" name:"AssociationMode"`
+	ClientToken           string                                                      `position:"Query" name:"ClientToken"`
+	PopLocationDeleteList *[]UpdateAnycastEipAddressAssociationsPopLocationDeleteList `position:"Query" name:"PopLocationDeleteList"  type:"Repeated"`
+	AnycastId             string                                                      `position:"Query" name:"AnycastId"`
+	PopLocationAddList    *[]UpdateAnycastEipAddressAssociationsPopLocationAddList    `position:"Query" name:"PopLocationAddList"  type:"Repeated"`
+	BindInstanceId        string                                                      `position:"Query" name:"BindInstanceId"`
+}
+
+// UpdateAnycastEipAddressAssociationsPopLocationDeleteList is a repeated param struct in UpdateAnycastEipAddressAssociationsRequest
+type UpdateAnycastEipAddressAssociationsPopLocationDeleteList struct {
+	PopLocation string `name:"PopLocation"`
+}
+
+// UpdateAnycastEipAddressAssociationsPopLocationAddList is a repeated param struct in UpdateAnycastEipAddressAssociationsRequest
+type UpdateAnycastEipAddressAssociationsPopLocationAddList struct {
+	PopLocation string `name:"PopLocation"`
 }
 
 // UpdateAnycastEipAddressAssociationsResponse is the response struct for api UpdateAnycastEipAddressAssociations

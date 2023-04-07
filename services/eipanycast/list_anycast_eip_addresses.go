@@ -71,17 +71,25 @@ func (client *Client) ListAnycastEipAddressesWithCallback(request *ListAnycastEi
 // ListAnycastEipAddressesRequest is the request struct for api ListAnycastEipAddresses
 type ListAnycastEipAddressesRequest struct {
 	*requests.RpcRequest
-	NextToken          string           `position:"Query" name:"NextToken"`
-	InstanceChargeType string           `position:"Query" name:"InstanceChargeType"`
-	BusinessStatus     string           `position:"Query" name:"BusinessStatus"`
-	ServiceLocation    string           `position:"Query" name:"ServiceLocation"`
-	AnycastEipAddress  string           `position:"Query" name:"AnycastEipAddress"`
-	InternetChargeType string           `position:"Query" name:"InternetChargeType"`
-	AnycastId          string           `position:"Query" name:"AnycastId"`
-	Name               string           `position:"Query" name:"Name"`
-	BindInstanceIds    *[]string        `position:"Query" name:"BindInstanceIds"  type:"Repeated"`
-	MaxResults         requests.Integer `position:"Query" name:"MaxResults"`
-	Status             string           `position:"Query" name:"Status"`
+	NextToken          string                         `position:"Query" name:"NextToken"`
+	InstanceChargeType string                         `position:"Query" name:"InstanceChargeType"`
+	BusinessStatus     string                         `position:"Query" name:"BusinessStatus"`
+	ServiceLocation    string                         `position:"Query" name:"ServiceLocation"`
+	AnycastEipAddress  string                         `position:"Query" name:"AnycastEipAddress"`
+	AnycastIds         *[]string                      `position:"Query" name:"AnycastIds"  type:"Repeated"`
+	Tags               *[]ListAnycastEipAddressesTags `position:"Query" name:"Tags"  type:"Repeated"`
+	InternetChargeType string                         `position:"Query" name:"InternetChargeType"`
+	AnycastId          string                         `position:"Query" name:"AnycastId"`
+	Name               string                         `position:"Query" name:"Name"`
+	BindInstanceIds    *[]string                      `position:"Query" name:"BindInstanceIds"  type:"Repeated"`
+	MaxResults         requests.Integer               `position:"Query" name:"MaxResults"`
+	Status             string                         `position:"Query" name:"Status"`
+}
+
+// ListAnycastEipAddressesTags is a repeated param struct in ListAnycastEipAddressesRequest
+type ListAnycastEipAddressesTags struct {
+	Key   string `name:"Key"`
+	Value string `name:"Value"`
 }
 
 // ListAnycastEipAddressesResponse is the response struct for api ListAnycastEipAddresses
