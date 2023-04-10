@@ -18,6 +18,7 @@ package sae
 // Application is a nested struct in sae response
 type Application struct {
 	LastStartTime        int64      `json:"LastStartTime" xml:"LastStartTime"`
+	Message              string     `json:"Message" xml:"Message"`
 	ScaleRuleEnabled     bool       `json:"ScaleRuleEnabled" xml:"ScaleRuleEnabled"`
 	Instances            int        `json:"Instances" xml:"Instances"`
 	Failed               int64      `json:"Failed" xml:"Failed"`
@@ -34,8 +35,8 @@ type Application struct {
 	NamespaceId          string     `json:"NamespaceId" xml:"NamespaceId"`
 	CompletionTime       int64      `json:"CompletionTime" xml:"CompletionTime"`
 	Suspend              bool       `json:"Suspend" xml:"Suspend"`
-	Active               int64      `json:"Active" xml:"Active"`
 	Cpu                  int        `json:"Cpu" xml:"Cpu"`
+	Active               int64      `json:"Active" xml:"Active"`
 	AppName              string     `json:"AppName" xml:"AppName"`
 	Succeeded            int64      `json:"Succeeded" xml:"Succeeded"`
 	Tags                 []TagsItem `json:"Tags" xml:"Tags"`

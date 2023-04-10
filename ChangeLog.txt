@@ -1,3 +1,7 @@
+2023-04-10 Version: v1.62.275
+- Generated 2019-05-06 for `sae`.
+- Support Restartapplication AutoEnableApplicationScalingRule.
+
 2023-04-10 Version: v1.62.274
 - Generated 2019-09-01 for `OceanBasePro`.
 - Update SDK.

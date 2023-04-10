@@ -95,6 +95,7 @@ type CreateApplicationRequest struct {
 	Python                        string           `position:"Query" name:"Python"`
 	Cpu                           requests.Integer `position:"Query" name:"Cpu"`
 	VSwitchId                     string           `position:"Query" name:"VSwitchId"`
+	EnableEbpf                    string           `position:"Query" name:"EnableEbpf"`
 	PackageType                   string           `position:"Query" name:"PackageType"`
 	PostStart                     string           `position:"Query" name:"PostStart"`
 	PhpExtensions                 string           `position:"Body" name:"PhpExtensions"`
