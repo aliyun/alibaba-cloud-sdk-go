@@ -97,7 +97,11 @@ type GetLoadBalancerAttributeResponse struct {
 	ConfigManagedEnabled         bool                         `json:"ConfigManagedEnabled" xml:"ConfigManagedEnabled"`
 	AddressIpVersion             string                       `json:"AddressIpVersion" xml:"AddressIpVersion"`
 	Ipv6AddressType              string                       `json:"Ipv6AddressType" xml:"Ipv6AddressType"`
+	BackToOriginRouteEnabled     bool                         `json:"BackToOriginRouteEnabled" xml:"BackToOriginRouteEnabled"`
+	LoadBalancerVersion          string                       `json:"LoadBalancerVersion" xml:"LoadBalancerVersion"`
+	SysSecurityGroupId           string                       `json:"SysSecurityGroupId" xml:"SysSecurityGroupId"`
 	FeatureLabels                []string                     `json:"FeatureLabels" xml:"FeatureLabels"`
+	SecurityGroupIds             []string                     `json:"SecurityGroupIds" xml:"SecurityGroupIds"`
 	AccessLogConfig              AccessLogConfig              `json:"AccessLogConfig" xml:"AccessLogConfig"`
 	DeletionProtectionConfig     DeletionProtectionConfig     `json:"DeletionProtectionConfig" xml:"DeletionProtectionConfig"`
 	LoadBalancerBillingConfig    LoadBalancerBillingConfig    `json:"LoadBalancerBillingConfig" xml:"LoadBalancerBillingConfig"`

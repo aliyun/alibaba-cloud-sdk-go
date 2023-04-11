@@ -20,6 +20,7 @@ type SecurityPolicy struct {
 	ServiceManagedEnabled bool     `json:"ServiceManagedEnabled" xml:"ServiceManagedEnabled"`
 	ResourceGroupId       string   `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	ServiceManagedMode    string   `json:"ServiceManagedMode" xml:"ServiceManagedMode"`
+	CreateTime            string   `json:"CreateTime" xml:"CreateTime"`
 	SecurityPolicyId      string   `json:"SecurityPolicyId" xml:"SecurityPolicyId"`
 	SecurityPolicyName    string   `json:"SecurityPolicyName" xml:"SecurityPolicyName"`
 	SecurityPolicyStatus  string   `json:"SecurityPolicyStatus" xml:"SecurityPolicyStatus"`
