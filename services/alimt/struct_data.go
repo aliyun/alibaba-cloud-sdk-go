@@ -17,26 +17,28 @@ package alimt
 
 // Data is a nested struct in alimt response
 type Data struct {
-	Translated              string                        `json:"Translated" xml:"Translated"`
-	WordSpelledCorrectError string                        `json:"WordSpelledCorrectError" xml:"WordSpelledCorrectError"`
-	ContainCoreClasses      string                        `json:"ContainCoreClasses" xml:"ContainCoreClasses"`
-	OverLengthLimit         string                        `json:"OverLengthLimit" xml:"OverLengthLimit"`
-	Titles                  string                        `json:"Titles" xml:"Titles"`
-	Language                string                        `json:"Language" xml:"Language"`
-	DuplicateWords          string                        `json:"DuplicateWords" xml:"DuplicateWords"`
-	NoFirstUppercaseList    string                        `json:"NoFirstUppercaseList" xml:"NoFirstUppercaseList"`
-	ImageData               string                        `json:"ImageData" xml:"ImageData"`
-	AllUppercaseWords       string                        `json:"AllUppercaseWords" xml:"AllUppercaseWords"`
-	Url                     string                        `json:"Url" xml:"Url"`
-	TemplateJson            string                        `json:"TemplateJson" xml:"TemplateJson"`
-	TaskId                  string                        `json:"TaskId" xml:"TaskId"`
-	LanguageQualityScore    string                        `json:"LanguageQualityScore" xml:"LanguageQualityScore"`
-	InPaintingUrl           string                        `json:"InPaintingUrl" xml:"InPaintingUrl"`
-	FinalImageUrl           string                        `json:"FinalImageUrl" xml:"FinalImageUrl"`
-	PictureEditor           string                        `json:"PictureEditor" xml:"PictureEditor"`
-	Orc                     string                        `json:"Orc" xml:"Orc"`
-	WordCount               string                        `json:"WordCount" xml:"WordCount"`
-	TotalScore              string                        `json:"TotalScore" xml:"TotalScore"`
-	DisableWords            string                        `json:"DisableWords" xml:"DisableWords"`
-	TranslatedValues        []CertificateTranslateItemDTO `json:"TranslatedValues" xml:"TranslatedValues"`
+	Translated              string                            `json:"Translated" xml:"Translated"`
+	WordSpelledCorrectError string                            `json:"WordSpelledCorrectError" xml:"WordSpelledCorrectError"`
+	ContainCoreClasses      string                            `json:"ContainCoreClasses" xml:"ContainCoreClasses"`
+	OverLengthLimit         string                            `json:"OverLengthLimit" xml:"OverLengthLimit"`
+	Titles                  string                            `json:"Titles" xml:"Titles"`
+	Language                string                            `json:"Language" xml:"Language"`
+	DuplicateWords          string                            `json:"DuplicateWords" xml:"DuplicateWords"`
+	NoFirstUppercaseList    string                            `json:"NoFirstUppercaseList" xml:"NoFirstUppercaseList"`
+	ImageData               string                            `json:"ImageData" xml:"ImageData"`
+	AllUppercaseWords       string                            `json:"AllUppercaseWords" xml:"AllUppercaseWords"`
+	Url                     string                            `json:"Url" xml:"Url"`
+	TemplateJson            string                            `json:"TemplateJson" xml:"TemplateJson"`
+	TaskId                  string                            `json:"TaskId" xml:"TaskId"`
+	LanguageQualityScore    string                            `json:"LanguageQualityScore" xml:"LanguageQualityScore"`
+	InPaintingUrl           string                            `json:"InPaintingUrl" xml:"InPaintingUrl"`
+	FinalImageUrl           string                            `json:"FinalImageUrl" xml:"FinalImageUrl"`
+	PictureEditor           string                            `json:"PictureEditor" xml:"PictureEditor"`
+	Status                  string                            `json:"Status" xml:"Status"`
+	Orc                     string                            `json:"Orc" xml:"Orc"`
+	WordCount               string                            `json:"WordCount" xml:"WordCount"`
+	TotalScore              string                            `json:"TotalScore" xml:"TotalScore"`
+	DisableWords            string                            `json:"DisableWords" xml:"DisableWords"`
+	Result                  []CertificateImageTranslateResult `json:"Result" xml:"Result"`
+	TranslatedValues        []CertificateTranslateItemDTO     `json:"TranslatedValues" xml:"TranslatedValues"`
 }

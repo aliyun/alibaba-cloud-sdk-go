@@ -75,6 +75,7 @@ type TranslateGeneralRequest struct {
 	SourceText     string `position:"Body" name:"SourceText"`
 	FormatType     string `position:"Body" name:"FormatType"`
 	Scene          string `position:"Body" name:"Scene"`
+	Context        string `position:"Query" name:"Context"`
 	TargetLanguage string `position:"Body" name:"TargetLanguage"`
 }
 
