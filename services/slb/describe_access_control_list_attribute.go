@@ -73,12 +73,14 @@ type DescribeAccessControlListAttributeRequest struct {
 	*requests.RpcRequest
 	AccessKeyId          string           `position:"Query" name:"access_key_id"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	AclId                string           `position:"Query" name:"AclId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	AclEntryComment      string           `position:"Query" name:"AclEntryComment"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	Tags                 string           `position:"Query" name:"Tags"`
+	Page                 requests.Integer `position:"Query" name:"Page"`
 }
 
 // DescribeAccessControlListAttributeResponse is the response struct for api DescribeAccessControlListAttribute
@@ -91,6 +93,7 @@ type DescribeAccessControlListAttributeResponse struct {
 	ResourceGroupId    string           `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	AclName            string           `json:"AclName" xml:"AclName"`
 	CreateTime         string           `json:"CreateTime" xml:"CreateTime"`
+	TotalAclEntry      int              `json:"TotalAclEntry" xml:"TotalAclEntry"`
 	AclEntrys          AclEntrys        `json:"AclEntrys" xml:"AclEntrys"`
 	RelatedListeners   RelatedListeners `json:"RelatedListeners" xml:"RelatedListeners"`
 }

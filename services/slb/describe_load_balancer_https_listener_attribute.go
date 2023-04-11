@@ -137,6 +137,7 @@ type DescribeLoadBalancerHTTPSListenerAttributeResponse struct {
 	XForwardedForSLBIP                       string                                                         `json:"XForwardedFor_SLBIP" xml:"XForwardedFor_SLBIP"`
 	StickySession                            string                                                         `json:"StickySession" xml:"StickySession"`
 	HealthCheck                              string                                                         `json:"HealthCheck" xml:"HealthCheck"`
+	LoadBalancerId                           string                                                         `json:"LoadBalancerId" xml:"LoadBalancerId"`
 	AclIds                                   AclIdsInDescribeLoadBalancerHTTPSListenerAttribute             `json:"AclIds" xml:"AclIds"`
 	Rules                                    RulesInDescribeLoadBalancerHTTPSListenerAttribute              `json:"Rules" xml:"Rules"`
 	DomainExtensions                         DomainExtensionsInDescribeLoadBalancerHTTPSListenerAttribute   `json:"DomainExtensions" xml:"DomainExtensions"`

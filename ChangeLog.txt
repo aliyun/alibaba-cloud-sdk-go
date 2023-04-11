@@ -1,3 +1,7 @@
+2023-04-11 Version: v1.62.280
+- Generated 2014-05-15 for `Slb`.
+- Support Latest APIs.
+
 2023-04-11 Version: v1.62.279
 - Generated 2018-10-12 for `alimt`.
 - Add image batch translate API.
