@@ -1,3 +1,7 @@
+2023-04-11 Version: v1.62.277
+- Generated 2018-11-01 for `dms-enterprise`.
+- Supported ListDataImportSQLPreCheckDetail,GetDataImportSQL,ListDataImportSQLType API.
+
 2023-04-10 Version: v1.62.276
 - Generated 2022-12-29 for `documentAutoml`.
 - DocumentInit.
