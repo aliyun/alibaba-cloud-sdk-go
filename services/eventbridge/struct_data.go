@@ -32,6 +32,7 @@ type Data struct {
 	EventStreamingARN            string                `json:"EventStreamingARN" xml:"EventStreamingARN"`
 	MaxResults                   float64               `json:"MaxResults" xml:"MaxResults"`
 	RuleARN                      string                `json:"RuleARN" xml:"RuleARN"`
+	Result                       bool                  `json:"Result" xml:"Result"`
 	EventStreamingName           string                `json:"EventStreamingName" xml:"EventStreamingName"`
 	GmtCreate                    int64                 `json:"GmtCreate" xml:"GmtCreate"`
 	NextToken                    string                `json:"NextToken" xml:"NextToken"`

@@ -1,3 +1,7 @@
+2023-04-12 Version: v1.62.281
+- Generated 2020-04-01 for `eventbridge`.
+- Add new api.
+
 2023-04-11 Version: v1.62.280
 - Generated 2014-05-15 for `Slb`.
 - Support Latest APIs.
