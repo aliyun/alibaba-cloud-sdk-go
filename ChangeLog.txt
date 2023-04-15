@@ -1,3 +1,17 @@
+2023-04-15 Version: v1.62.282
+- Generated 2016-04-28 for `Vpc`.
+- CreateForwardEntry add error code.
+- Fix description error.
+- Add Error Code.
+- Parameter Tag is requeired for TagResources.
+- Add error code and message.
+- Supported Zone for AllocateEipAddress.
+- Add Delete IPv4Gw ErrorCode.
+- Supported Ipam for Vpc.
+- Support for multi-zone backend.
+- Add ErrorCode.
+- Add new ErrorCode and TrafficMirror supports to cumtomize PackageLength.
+
 2023-04-12 Version: v1.62.281
 - Generated 2020-04-01 for `eventbridge`.
 - Add new api.
