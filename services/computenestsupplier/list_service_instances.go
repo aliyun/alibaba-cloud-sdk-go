@@ -71,10 +71,11 @@ func (client *Client) ListServiceInstancesWithCallback(request *ListServiceInsta
 // ListServiceInstancesRequest is the request struct for api ListServiceInstances
 type ListServiceInstancesRequest struct {
 	*requests.RpcRequest
-	NextToken  string                        `position:"Query" name:"NextToken"`
-	Tag        *[]ListServiceInstancesTag    `position:"Query" name:"Tag"  type:"Repeated"`
-	Filter     *[]ListServiceInstancesFilter `position:"Query" name:"Filter"  type:"Repeated"`
-	MaxResults string                        `position:"Query" name:"MaxResults"`
+	NextToken   string                        `position:"Query" name:"NextToken"`
+	Tag         *[]ListServiceInstancesTag    `position:"Query" name:"Tag"  type:"Repeated"`
+	ShowDeleted requests.Boolean              `position:"Query" name:"ShowDeleted"`
+	Filter      *[]ListServiceInstancesFilter `position:"Query" name:"Filter"  type:"Repeated"`
+	MaxResults  string                        `position:"Query" name:"MaxResults"`
 }
 
 // ListServiceInstancesTag is a repeated param struct in ListServiceInstancesRequest

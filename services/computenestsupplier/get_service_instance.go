@@ -101,6 +101,7 @@ type GetServiceInstanceResponse struct {
 	PayType                   string        `json:"PayType" xml:"PayType"`
 	LicenseMetadata           string        `json:"LicenseMetadata" xml:"LicenseMetadata"`
 	Name                      string        `json:"Name" xml:"Name"`
+	EnableUserPrometheus      string        `json:"EnableUserPrometheus" xml:"EnableUserPrometheus"`
 	Service                   Service       `json:"Service" xml:"Service"`
 	NetworkConfig             NetworkConfig `json:"NetworkConfig" xml:"NetworkConfig"`
 	Tags                      []Tag         `json:"Tags" xml:"Tags"`

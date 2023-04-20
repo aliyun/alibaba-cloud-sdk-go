@@ -17,17 +17,19 @@ package computenestsupplier
 
 // Service is a nested struct in computenestsupplier response
 type Service struct {
-	VersionName       string        `json:"VersionName" xml:"VersionName"`
-	SupplierUrl       string        `json:"SupplierUrl" xml:"SupplierUrl"`
-	Version           string        `json:"Version" xml:"Version"`
-	DeployType        string        `json:"DeployType" xml:"DeployType"`
-	DeployMetadata    string        `json:"DeployMetadata" xml:"DeployMetadata"`
-	ServiceId         string        `json:"ServiceId" xml:"ServiceId"`
-	ServiceProductUrl string        `json:"ServiceProductUrl" xml:"ServiceProductUrl"`
-	ServiceDocUrl     string        `json:"ServiceDocUrl" xml:"ServiceDocUrl"`
-	SupplierName      string        `json:"SupplierName" xml:"SupplierName"`
-	Status            string        `json:"Status" xml:"Status"`
-	PublishTime       string        `json:"PublishTime" xml:"PublishTime"`
-	ServiceType       string        `json:"ServiceType" xml:"ServiceType"`
-	ServiceInfos      []ServiceInfo `json:"ServiceInfos" xml:"ServiceInfos"`
+	VersionName                string        `json:"VersionName" xml:"VersionName"`
+	SupplierUrl                string        `json:"SupplierUrl" xml:"SupplierUrl"`
+	Version                    string        `json:"Version" xml:"Version"`
+	DeployType                 string        `json:"DeployType" xml:"DeployType"`
+	DeployMetadata             string        `json:"DeployMetadata" xml:"DeployMetadata"`
+	ServiceId                  string        `json:"ServiceId" xml:"ServiceId"`
+	ServiceProductUrl          string        `json:"ServiceProductUrl" xml:"ServiceProductUrl"`
+	ServiceDocUrl              string        `json:"ServiceDocUrl" xml:"ServiceDocUrl"`
+	SupplierName               string        `json:"SupplierName" xml:"SupplierName"`
+	Status                     string        `json:"Status" xml:"Status"`
+	PublishTime                string        `json:"PublishTime" xml:"PublishTime"`
+	ServiceType                string        `json:"ServiceType" xml:"ServiceType"`
+	EnablePrivateVpcConnection bool          `json:"EnablePrivateVpcConnection" xml:"EnablePrivateVpcConnection"`
+	UpgradableServiceVersions  []string      `json:"UpgradableServiceVersions" xml:"UpgradableServiceVersions"`
+	ServiceInfos               []ServiceInfo `json:"ServiceInfos" xml:"ServiceInfos"`
 }
