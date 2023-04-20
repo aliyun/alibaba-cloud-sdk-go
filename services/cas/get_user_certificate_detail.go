@@ -71,8 +71,9 @@ func (client *Client) GetUserCertificateDetailWithCallback(request *GetUserCerti
 // GetUserCertificateDetailRequest is the request struct for api GetUserCertificateDetail
 type GetUserCertificateDetailRequest struct {
 	*requests.RpcRequest
-	CertId   requests.Integer `position:"Query" name:"CertId"`
-	SourceIp string           `position:"Query" name:"SourceIp"`
+	CertId     requests.Integer `position:"Query" name:"CertId"`
+	SourceIp   string           `position:"Query" name:"SourceIp"`
+	CertFilter requests.Boolean `position:"Query" name:"CertFilter"`
 }
 
 // GetUserCertificateDetailResponse is the response struct for api GetUserCertificateDetail
@@ -101,6 +102,7 @@ type GetUserCertificateDetailResponse struct {
 	BuyInAliyun       bool   `json:"BuyInAliyun" xml:"BuyInAliyun"`
 	OrderId           int64  `json:"OrderId" xml:"OrderId"`
 	ResourceGroupId   string `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	Algorithm         string `json:"Algorithm" xml:"Algorithm"`
 }
 
 // CreateGetUserCertificateDetailRequest creates a request to invoke GetUserCertificateDetail API
