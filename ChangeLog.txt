@@ -1,3 +1,7 @@
+2023-04-21 Version: v1.62.287
+- Generated 2019-12-30 for `facebody`.
+- Release MergeImageFace.
+
 2023-04-21 Version: v1.62.286
 - Generated 2020-04-01 for `eventbridge`.
 - Update api param.

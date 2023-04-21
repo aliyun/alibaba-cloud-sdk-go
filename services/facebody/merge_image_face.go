@@ -71,12 +71,21 @@ func (client *Client) MergeImageFaceWithCallback(request *MergeImageFaceRequest,
 // MergeImageFaceRequest is the request struct for api MergeImageFace
 type MergeImageFaceRequest struct {
 	*requests.RpcRequest
-	FormatResultToJson requests.Boolean `position:"Query" name:"FormatResultToJson"`
-	UserId             string           `position:"Body" name:"UserId"`
-	OssFile            string           `position:"Query" name:"OssFile"`
-	TemplateId         string           `position:"Body" name:"TemplateId"`
-	RequestProxyBy     string           `position:"Query" name:"RequestProxyBy"`
-	ImageURL           string           `position:"Body" name:"ImageURL"`
+	FormatResultToJson requests.Boolean            `position:"Query" name:"FormatResultToJson"`
+	MergeInfos         *[]MergeImageFaceMergeInfos `position:"Body" name:"MergeInfos"  type:"Repeated"`
+	UserId             string                      `position:"Body" name:"UserId"`
+	OssFile            string                      `position:"Query" name:"OssFile"`
+	TemplateId         string                      `position:"Body" name:"TemplateId"`
+	RequestProxyBy     string                      `position:"Query" name:"RequestProxyBy"`
+	ImageURL           string                      `position:"Body" name:"ImageURL"`
+	AddWatermark       requests.Boolean            `position:"Body" name:"AddWatermark"`
+	ModelVersion       string                      `position:"Body" name:"ModelVersion"`
+}
+
+// MergeImageFaceMergeInfos is a repeated param struct in MergeImageFaceRequest
+type MergeImageFaceMergeInfos struct {
+	ImageURL       string `name:"ImageURL"`
+	TemplateFaceID string `name:"TemplateFaceID"`
 }
 
 // MergeImageFaceResponse is the response struct for api MergeImageFace

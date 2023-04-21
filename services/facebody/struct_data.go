@@ -98,6 +98,7 @@ type Data struct {
 	PersonInfo           PersonInfo            `json:"PersonInfo" xml:"PersonInfo"`
 	FaceInfo             FaceInfo              `json:"FaceInfo" xml:"FaceInfo"`
 	MetaObject           MetaObject            `json:"MetaObject" xml:"MetaObject"`
+	FaceInfos            []FaceInfosItem       `json:"FaceInfos" xml:"FaceInfos"`
 	Elements             []ElementsItem        `json:"Elements" xml:"Elements"`
 	Faces                []Face                `json:"Faces" xml:"Faces"`
 	FailedFaces          []FailedFacesItem     `json:"FailedFaces" xml:"FailedFaces"`
