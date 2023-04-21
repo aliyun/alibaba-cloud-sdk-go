@@ -1,3 +1,7 @@
+2023-04-21 Version: v1.62.286
+- Generated 2020-04-01 for `eventbridge`.
+- Update api param.
+
 2023-04-20 Version: v1.62.285
 - Generated 2020-04-07 for `cas`.
 - Support certFilter for getUserCertificateDetail API.

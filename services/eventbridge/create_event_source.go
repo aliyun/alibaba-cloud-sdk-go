@@ -71,17 +71,19 @@ func (client *Client) CreateEventSourceWithCallback(request *CreateEventSourceRe
 // CreateEventSourceRequest is the request struct for api CreateEventSource
 type CreateEventSourceRequest struct {
 	*requests.RpcRequest
-	Description               string                                     `position:"Body" name:"Description"`
-	EventBusName              string                                     `position:"Body" name:"EventBusName"`
-	SourceMNSParameters       CreateEventSourceSourceMNSParameters       `position:"Body" name:"SourceMNSParameters"  type:"Struct"`
-	LinkedExternalSource      requests.Boolean                           `position:"Body" name:"LinkedExternalSource"`
-	ExternalSourceType        string                                     `position:"Body" name:"ExternalSourceType"`
-	ExternalSourceConfig      string                                     `position:"Body" name:"ExternalSourceConfig"`
-	SourceRabbitMQParameters  CreateEventSourceSourceRabbitMQParameters  `position:"Body" name:"SourceRabbitMQParameters"  type:"Struct"`
-	SourceRocketMQParameters  CreateEventSourceSourceRocketMQParameters  `position:"Body" name:"SourceRocketMQParameters"  type:"Struct"`
-	SourceSLSParameters       CreateEventSourceSourceSLSParameters       `position:"Body" name:"SourceSLSParameters"  type:"Struct"`
-	SourceHttpEventParameters CreateEventSourceSourceHttpEventParameters `position:"Body" name:"SourceHttpEventParameters"  type:"Struct"`
-	EventSourceName           string                                     `position:"Body" name:"EventSourceName"`
+	Description                    string                                          `position:"Body" name:"Description"`
+	EventBusName                   string                                          `position:"Body" name:"EventBusName"`
+	SourceMNSParameters            CreateEventSourceSourceMNSParameters            `position:"Body" name:"SourceMNSParameters"  type:"Struct"`
+	LinkedExternalSource           requests.Boolean                                `position:"Body" name:"LinkedExternalSource"`
+	ExternalSourceType             string                                          `position:"Body" name:"ExternalSourceType"`
+	ExternalSourceConfig           string                                          `position:"Body" name:"ExternalSourceConfig"`
+	SourceRabbitMQParameters       CreateEventSourceSourceRabbitMQParameters       `position:"Body" name:"SourceRabbitMQParameters"  type:"Struct"`
+	SourceRocketMQParameters       CreateEventSourceSourceRocketMQParameters       `position:"Body" name:"SourceRocketMQParameters"  type:"Struct"`
+	SourceSLSParameters            CreateEventSourceSourceSLSParameters            `position:"Body" name:"SourceSLSParameters"  type:"Struct"`
+	SourceScheduledEventParameters CreateEventSourceSourceScheduledEventParameters `position:"Body" name:"SourceScheduledEventParameters"  type:"Struct"`
+	SourceKafkaParameters          CreateEventSourceSourceKafkaParameters          `position:"Body" name:"SourceKafkaParameters"  type:"Struct"`
+	SourceHttpEventParameters      CreateEventSourceSourceHttpEventParameters      `position:"Body" name:"SourceHttpEventParameters"  type:"Struct"`
+	EventSourceName                string                                          `position:"Body" name:"EventSourceName"`
 }
 
 // CreateEventSourceSourceMNSParameters is a repeated param struct in CreateEventSourceRequest
@@ -121,6 +123,26 @@ type CreateEventSourceSourceSLSParameters struct {
 	Project         string `name:"Project"`
 	LogStore        string `name:"LogStore"`
 	ConsumePosition string `name:"ConsumePosition"`
+}
+
+// CreateEventSourceSourceScheduledEventParameters is a repeated param struct in CreateEventSourceRequest
+type CreateEventSourceSourceScheduledEventParameters struct {
+	Schedule string `name:"Schedule"`
+	TimeZone string `name:"TimeZone"`
+}
+
+// CreateEventSourceSourceKafkaParameters is a repeated param struct in CreateEventSourceRequest
+type CreateEventSourceSourceKafkaParameters struct {
+	InstanceId      string `name:"InstanceId"`
+	ConsumerGroup   string `name:"ConsumerGroup"`
+	RegionId        string `name:"RegionId"`
+	VSwitchIds      string `name:"VSwitchIds"`
+	VpcId           string `name:"VpcId"`
+	SecurityGroupId string `name:"SecurityGroupId"`
+	Topic           string `name:"Topic"`
+	OffsetReset     string `name:"OffsetReset"`
+	MaximumTasks    string `name:"MaximumTasks"`
+	Network         string `name:"Network"`
 }
 
 // CreateEventSourceSourceHttpEventParameters is a repeated param struct in CreateEventSourceRequest

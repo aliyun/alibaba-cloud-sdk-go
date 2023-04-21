@@ -71,17 +71,19 @@ func (client *Client) UpdateEventSourceWithCallback(request *UpdateEventSourceRe
 // UpdateEventSourceRequest is the request struct for api UpdateEventSource
 type UpdateEventSourceRequest struct {
 	*requests.RpcRequest
-	Description               string                                     `position:"Body" name:"Description"`
-	EventBusName              string                                     `position:"Body" name:"EventBusName"`
-	SourceMNSParameters       UpdateEventSourceSourceMNSParameters       `position:"Body" name:"SourceMNSParameters"  type:"Struct"`
-	LinkedExternalSource      requests.Boolean                           `position:"Body" name:"LinkedExternalSource"`
-	ExternalSourceType        string                                     `position:"Body" name:"ExternalSourceType"`
-	ExternalSourceConfig      map[string]string                          `position:"Body" name:"ExternalSourceConfig"  type:"Map"`
-	SourceRabbitMQParameters  UpdateEventSourceSourceRabbitMQParameters  `position:"Body" name:"SourceRabbitMQParameters"  type:"Struct"`
-	SourceRocketMQParameters  UpdateEventSourceSourceRocketMQParameters  `position:"Body" name:"SourceRocketMQParameters"  type:"Struct"`
-	SourceSLSParameters       UpdateEventSourceSourceSLSParameters       `position:"Body" name:"SourceSLSParameters"  type:"Struct"`
-	SourceHttpEventParameters UpdateEventSourceSourceHttpEventParameters `position:"Body" name:"SourceHttpEventParameters"  type:"Struct"`
-	EventSourceName           string                                     `position:"Body" name:"EventSourceName"`
+	Description                    string                                          `position:"Body" name:"Description"`
+	EventBusName                   string                                          `position:"Body" name:"EventBusName"`
+	SourceMNSParameters            UpdateEventSourceSourceMNSParameters            `position:"Body" name:"SourceMNSParameters"  type:"Struct"`
+	LinkedExternalSource           requests.Boolean                                `position:"Body" name:"LinkedExternalSource"`
+	ExternalSourceType             string                                          `position:"Body" name:"ExternalSourceType"`
+	ExternalSourceConfig           map[string]string                               `position:"Body" name:"ExternalSourceConfig"  type:"Map"`
+	SourceRabbitMQParameters       UpdateEventSourceSourceRabbitMQParameters       `position:"Body" name:"SourceRabbitMQParameters"  type:"Struct"`
+	SourceRocketMQParameters       UpdateEventSourceSourceRocketMQParameters       `position:"Body" name:"SourceRocketMQParameters"  type:"Struct"`
+	SourceSLSParameters            UpdateEventSourceSourceSLSParameters            `position:"Body" name:"SourceSLSParameters"  type:"Struct"`
+	SourceScheduledEventParameters UpdateEventSourceSourceScheduledEventParameters `position:"Body" name:"SourceScheduledEventParameters"  type:"Struct"`
+	SourceKafkaParameters          UpdateEventSourceSourceKafkaParameters          `position:"Body" name:"SourceKafkaParameters"  type:"Struct"`
+	SourceHttpEventParameters      UpdateEventSourceSourceHttpEventParameters      `position:"Body" name:"SourceHttpEventParameters"  type:"Struct"`
+	EventSourceName                string                                          `position:"Body" name:"EventSourceName"`
 }
 
 // UpdateEventSourceSourceMNSParameters is a repeated param struct in UpdateEventSourceRequest
@@ -121,6 +123,26 @@ type UpdateEventSourceSourceSLSParameters struct {
 	Project         string `name:"Project"`
 	LogStore        string `name:"LogStore"`
 	ConsumePosition string `name:"ConsumePosition"`
+}
+
+// UpdateEventSourceSourceScheduledEventParameters is a repeated param struct in UpdateEventSourceRequest
+type UpdateEventSourceSourceScheduledEventParameters struct {
+	Schedule string `name:"Schedule"`
+	TimeZone string `name:"TimeZone"`
+}
+
+// UpdateEventSourceSourceKafkaParameters is a repeated param struct in UpdateEventSourceRequest
+type UpdateEventSourceSourceKafkaParameters struct {
+	InstanceId      string `name:"InstanceId"`
+	ConsumerGroup   string `name:"ConsumerGroup"`
+	RegionId        string `name:"RegionId"`
+	VSwitchIds      string `name:"VSwitchIds"`
+	VpcId           string `name:"VpcId"`
+	SecurityGroupId string `name:"SecurityGroupId"`
+	Topic           string `name:"Topic"`
+	OffsetReset     string `name:"OffsetReset"`
+	MaximumTasks    string `name:"MaximumTasks"`
+	Network         string `name:"Network"`
 }
 
 // UpdateEventSourceSourceHttpEventParameters is a repeated param struct in UpdateEventSourceRequest

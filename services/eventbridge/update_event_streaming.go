@@ -147,6 +147,7 @@ type UpdateEventStreamingSinkSinkFcParameters struct {
 	Qualifier      UpdateEventStreamingSinkSinkFcParametersQualifier      `name:"Qualifier" type:"Struct"`
 	ServiceName    UpdateEventStreamingSinkSinkFcParametersServiceName    `name:"ServiceName" type:"Struct"`
 	Body           UpdateEventStreamingSinkSinkFcParametersBody           `name:"Body" type:"Struct"`
+	Concurrency    UpdateEventStreamingSinkSinkFcParametersConcurrency    `name:"Concurrency" type:"Struct"`
 }
 
 // UpdateEventStreamingSinkSinkSLSParameters is a repeated param struct in UpdateEventStreamingRequest
@@ -404,6 +405,13 @@ type UpdateEventStreamingSinkSinkFcParametersServiceName struct {
 
 // UpdateEventStreamingSinkSinkFcParametersBody is a repeated param struct in UpdateEventStreamingRequest
 type UpdateEventStreamingSinkSinkFcParametersBody struct {
+	Template string `name:"Template"`
+	Form     string `name:"Form"`
+	Value    string `name:"Value"`
+}
+
+// UpdateEventStreamingSinkSinkFcParametersConcurrency is a repeated param struct in UpdateEventStreamingRequest
+type UpdateEventStreamingSinkSinkFcParametersConcurrency struct {
 	Template string `name:"Template"`
 	Form     string `name:"Form"`
 	Value    string `name:"Value"`

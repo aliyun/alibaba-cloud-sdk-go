@@ -22,7 +22,6 @@ type EventSourceListItem struct {
 	ExternalSourceConfig      map[string]interface{}                                `json:"ExternalSourceConfig" xml:"ExternalSourceConfig"`
 	FullName                  string                                                `json:"FullName" xml:"FullName"`
 	EventBusName              string                                                `json:"EventBusName" xml:"EventBusName"`
-	LinkedExternalSource      bool                                                  `json:"LinkedExternalSource" xml:"LinkedExternalSource"`
 	ExternalSourceType        string                                                `json:"ExternalSourceType" xml:"ExternalSourceType"`
 	Arn                       string                                                `json:"Arn" xml:"Arn"`
 	Status                    string                                                `json:"Status" xml:"Status"`
