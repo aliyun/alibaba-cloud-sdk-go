@@ -1,3 +1,7 @@
+2023-04-24 Version: v1.62.288
+- Generated 2014-05-26 for `Ecs`.
+- ModifyDiskSpec add PerformanceControlOptions.
+
 2023-04-21 Version: v1.62.287
 - Generated 2019-12-30 for `facebody`.
 - Release MergeImageFace.
