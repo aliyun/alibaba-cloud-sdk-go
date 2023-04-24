@@ -26,5 +26,6 @@ type DDLPublishRecord struct {
 	RiskLevel           string            `json:"RiskLevel" xml:"RiskLevel"`
 	StatusDesc          string            `json:"StatusDesc" xml:"StatusDesc"`
 	WorkflowInstanceId  int64             `json:"WorkflowInstanceId" xml:"WorkflowInstanceId"`
+	Comment             string            `json:"Comment" xml:"Comment"`
 	PublishTaskInfoList []PublishTaskInfo `json:"PublishTaskInfoList" xml:"PublishTaskInfoList"`
 }

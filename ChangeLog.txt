@@ -1,3 +1,8 @@
+2023-04-24 Version: v1.62.289
+- Generated 2018-11-01 for `dms-enterprise`.
+- Supported GetDatabaseExportOrderDetail,CreateDatabaseExportOrder,CreateDataExportOrder API.
+- Supported CreateDataTrackOrder,GetDataTrackJobDegree,GetDataTrackJobTableMeta,GetDataTrackOrderDetail,SearchDataTrackResult,DownloadDataTrackResult,QueryDataTrackResultDownloadStatus API.
+
 2023-04-24 Version: v1.62.288
 - Generated 2014-05-26 for `Ecs`.
 - ModifyDiskSpec add PerformanceControlOptions.

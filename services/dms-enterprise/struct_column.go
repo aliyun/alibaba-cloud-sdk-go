@@ -17,19 +17,22 @@ package dms_enterprise
 
 // Column is a nested struct in dms_enterprise response
 type Column struct {
-	AutoIncrement bool   `json:"AutoIncrement" xml:"AutoIncrement"`
-	ColumnId      string `json:"ColumnId" xml:"ColumnId"`
-	PrimaryKey    string `json:"PrimaryKey" xml:"PrimaryKey"`
-	DefaultValue  string `json:"DefaultValue" xml:"DefaultValue"`
-	Sensitive     bool   `json:"Sensitive" xml:"Sensitive"`
-	Nullable      bool   `json:"Nullable" xml:"Nullable"`
-	ColumnName    string `json:"ColumnName" xml:"ColumnName"`
-	SecurityLevel string `json:"SecurityLevel" xml:"SecurityLevel"`
-	ColumnType    string `json:"ColumnType" xml:"ColumnType"`
-	Position      int    `json:"Position" xml:"Position"`
-	DataLength    int64  `json:"DataLength" xml:"DataLength"`
-	FunctionType  string `json:"FunctionType" xml:"FunctionType"`
-	Description   string `json:"Description" xml:"Description"`
-	DataScale     int    `json:"DataScale" xml:"DataScale"`
-	DataPrecision int    `json:"DataPrecision" xml:"DataPrecision"`
+	Charset        string `json:"Charset" xml:"Charset"`
+	AutoIncrement  bool   `json:"AutoIncrement" xml:"AutoIncrement"`
+	ColumnId       string `json:"ColumnId" xml:"ColumnId"`
+	ColumnPosition int    `json:"ColumnPosition" xml:"ColumnPosition"`
+	PrimaryKey     string `json:"PrimaryKey" xml:"PrimaryKey"`
+	DefaultValue   string `json:"DefaultValue" xml:"DefaultValue"`
+	Sensitive      bool   `json:"Sensitive" xml:"Sensitive"`
+	Nullable       bool   `json:"Nullable" xml:"Nullable"`
+	Fictive        bool   `json:"Fictive" xml:"Fictive"`
+	ColumnName     string `json:"ColumnName" xml:"ColumnName"`
+	SecurityLevel  string `json:"SecurityLevel" xml:"SecurityLevel"`
+	ColumnType     string `json:"ColumnType" xml:"ColumnType"`
+	Position       int    `json:"Position" xml:"Position"`
+	DataLength     int64  `json:"DataLength" xml:"DataLength"`
+	FunctionType   string `json:"FunctionType" xml:"FunctionType"`
+	Description    string `json:"Description" xml:"Description"`
+	DataScale      int    `json:"DataScale" xml:"DataScale"`
+	DataPrecision  int    `json:"DataPrecision" xml:"DataPrecision"`
 }

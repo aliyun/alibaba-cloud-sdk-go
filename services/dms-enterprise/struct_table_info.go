@@ -17,7 +17,10 @@ package dms_enterprise
 
 // TableInfo is a nested struct in dms_enterprise response
 type TableInfo struct {
-	SourceTableName string `json:"SourceTableName" xml:"SourceTableName"`
-	TargetTableName string `json:"TargetTableName" xml:"TargetTableName"`
-	TableName       string `json:"TableName" xml:"TableName"`
+	SourceTableName string   `json:"SourceTableName" xml:"SourceTableName"`
+	TargetTableName string   `json:"TargetTableName" xml:"TargetTableName"`
+	SchemaName      string   `json:"SchemaName" xml:"SchemaName"`
+	TableName       string   `json:"TableName" xml:"TableName"`
+	Description     string   `json:"Description" xml:"Description"`
+	Columns         []Column `json:"Columns" xml:"Columns"`
 }
