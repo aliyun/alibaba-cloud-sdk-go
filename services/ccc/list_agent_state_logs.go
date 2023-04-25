@@ -92,7 +92,7 @@ func CreateListAgentStateLogsRequest() (request *ListAgentStateLogsRequest) {
 	request = &ListAgentStateLogsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "ListAgentStateLogs", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "ListAgentStateLogs", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }

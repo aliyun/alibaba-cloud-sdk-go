@@ -92,7 +92,7 @@ func CreateResetAgentStateRequest() (request *ResetAgentStateRequest) {
 	request = &ResetAgentStateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "ResetAgentState", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "ResetAgentState", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }

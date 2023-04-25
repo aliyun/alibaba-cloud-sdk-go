@@ -90,7 +90,7 @@ func CreateGetRealtimeCampaignStatsRequest() (request *GetRealtimeCampaignStatsR
 	request = &GetRealtimeCampaignStatsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "GetRealtimeCampaignStats", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "GetRealtimeCampaignStats", "CCC", "openAPI")
 	request.Method = requests.GET
 	return
 }

@@ -80,11 +80,10 @@ type ImportDoNotCallNumbersRequest struct {
 // ImportDoNotCallNumbersResponse is the response struct for api ImportDoNotCallNumbers
 type ImportDoNotCallNumbersResponse struct {
 	*responses.BaseResponse
-	Code           string   `json:"Code" xml:"Code"`
-	HttpStatusCode int      `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	Message        string   `json:"Message" xml:"Message"`
-	RequestId      string   `json:"RequestId" xml:"RequestId"`
-	Params         []string `json:"Params" xml:"Params"`
+	Code           string `json:"Code" xml:"Code"`
+	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Message        string `json:"Message" xml:"Message"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateImportDoNotCallNumbersRequest creates a request to invoke ImportDoNotCallNumbers API
@@ -92,7 +91,7 @@ func CreateImportDoNotCallNumbersRequest() (request *ImportDoNotCallNumbersReque
 	request = &ImportDoNotCallNumbersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "ImportDoNotCallNumbers", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "ImportDoNotCallNumbers", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }

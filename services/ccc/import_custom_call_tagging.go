@@ -90,7 +90,7 @@ func CreateImportCustomCallTaggingRequest() (request *ImportCustomCallTaggingReq
 	request = &ImportCustomCallTaggingRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "ImportCustomCallTagging", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "ImportCustomCallTagging", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }

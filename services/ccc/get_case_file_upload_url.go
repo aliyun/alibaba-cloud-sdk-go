@@ -90,7 +90,7 @@ func CreateGetCaseFileUploadUrlRequest() (request *GetCaseFileUploadUrlRequest) 
 	request = &GetCaseFileUploadUrlRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "GetCaseFileUploadUrl", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "GetCaseFileUploadUrl", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }

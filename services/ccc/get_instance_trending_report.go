@@ -91,7 +91,7 @@ func CreateGetInstanceTrendingReportRequest() (request *GetInstanceTrendingRepor
 	request = &GetInstanceTrendingReportRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "GetInstanceTrendingReport", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "GetInstanceTrendingReport", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }

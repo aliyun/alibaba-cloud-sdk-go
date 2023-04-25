@@ -92,7 +92,7 @@ func CreatePickOutboundNumbersRequest() (request *PickOutboundNumbersRequest) {
 	request = &PickOutboundNumbersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "PickOutboundNumbers", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "PickOutboundNumbers", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }

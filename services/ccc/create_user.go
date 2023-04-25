@@ -86,12 +86,11 @@ type CreateUserRequest struct {
 // CreateUserResponse is the response struct for api CreateUser
 type CreateUserResponse struct {
 	*responses.BaseResponse
-	Code           string   `json:"Code" xml:"Code"`
-	HttpStatusCode int      `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	Message        string   `json:"Message" xml:"Message"`
-	RequestId      string   `json:"RequestId" xml:"RequestId"`
-	Params         []string `json:"Params" xml:"Params"`
-	Data           Data     `json:"Data" xml:"Data"`
+	Code           string `json:"Code" xml:"Code"`
+	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Message        string `json:"Message" xml:"Message"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	Data           Data   `json:"Data" xml:"Data"`
 }
 
 // CreateCreateUserRequest creates a request to invoke CreateUser API
@@ -99,7 +98,7 @@ func CreateCreateUserRequest() (request *CreateUserRequest) {
 	request = &CreateUserRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "CreateUser", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "CreateUser", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }

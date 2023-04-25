@@ -78,12 +78,11 @@ type ModifyInstanceRequest struct {
 // ModifyInstanceResponse is the response struct for api ModifyInstance
 type ModifyInstanceResponse struct {
 	*responses.BaseResponse
-	HttpStatusCode int      `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	Code           string   `json:"Code" xml:"Code"`
-	Message        string   `json:"Message" xml:"Message"`
-	Data           string   `json:"Data" xml:"Data"`
-	RequestId      string   `json:"RequestId" xml:"RequestId"`
-	Params         []string `json:"Params" xml:"Params"`
+	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Code           string `json:"Code" xml:"Code"`
+	Message        string `json:"Message" xml:"Message"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	Data           string `json:"Data" xml:"Data"`
 }
 
 // CreateModifyInstanceRequest creates a request to invoke ModifyInstance API
@@ -91,7 +90,7 @@ func CreateModifyInstanceRequest() (request *ModifyInstanceRequest) {
 	request = &ModifyInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "ModifyInstance", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "ModifyInstance", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -25,4 +25,5 @@ type UserSkillLevelInListUserLevelsOfSkillGroup struct {
 	SkillGroupName string `json:"SkillGroupName" xml:"SkillGroupName"`
 	RoleName       string `json:"RoleName" xml:"RoleName"`
 	RoleId         string `json:"RoleId" xml:"RoleId"`
+	RamId          string `json:"RamId" xml:"RamId"`
 }

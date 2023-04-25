@@ -91,7 +91,7 @@ func CreateModifyPhoneNumberRequest() (request *ModifyPhoneNumberRequest) {
 	request = &ModifyPhoneNumberRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "ModifyPhoneNumber", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "ModifyPhoneNumber", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }

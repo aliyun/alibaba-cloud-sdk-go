@@ -85,7 +85,6 @@ type ListDoNotCallNumbersResponse struct {
 	HttpStatusCode int                        `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	Message        string                     `json:"Message" xml:"Message"`
 	RequestId      string                     `json:"RequestId" xml:"RequestId"`
-	Params         []string                   `json:"Params" xml:"Params"`
 	Data           DataInListDoNotCallNumbers `json:"Data" xml:"Data"`
 }
 
@@ -94,7 +93,7 @@ func CreateListDoNotCallNumbersRequest() (request *ListDoNotCallNumbersRequest) 
 	request = &ListDoNotCallNumbersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "ListDoNotCallNumbers", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "ListDoNotCallNumbers", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }

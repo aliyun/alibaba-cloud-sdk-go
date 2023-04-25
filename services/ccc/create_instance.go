@@ -81,12 +81,11 @@ type CreateInstanceRequest struct {
 // CreateInstanceResponse is the response struct for api CreateInstance
 type CreateInstanceResponse struct {
 	*responses.BaseResponse
-	HttpStatusCode int      `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	Code           string   `json:"Code" xml:"Code"`
-	Message        string   `json:"Message" xml:"Message"`
-	Data           string   `json:"Data" xml:"Data"`
-	RequestId      string   `json:"RequestId" xml:"RequestId"`
-	Params         []string `json:"Params" xml:"Params"`
+	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Code           string `json:"Code" xml:"Code"`
+	Message        string `json:"Message" xml:"Message"`
+	Data           string `json:"Data" xml:"Data"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCreateInstanceRequest creates a request to invoke CreateInstance API
@@ -94,7 +93,7 @@ func CreateCreateInstanceRequest() (request *CreateInstanceRequest) {
 	request = &CreateInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "CreateInstance", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "CreateInstance", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -94,7 +94,7 @@ func CreateUnmuteCallRequest() (request *UnmuteCallRequest) {
 	request = &UnmuteCallRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "UnmuteCall", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "UnmuteCall", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }

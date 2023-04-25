@@ -79,11 +79,10 @@ type ModifySkillLevelsOfUserRequest struct {
 // ModifySkillLevelsOfUserResponse is the response struct for api ModifySkillLevelsOfUser
 type ModifySkillLevelsOfUserResponse struct {
 	*responses.BaseResponse
-	Code           string   `json:"Code" xml:"Code"`
-	HttpStatusCode int      `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	Message        string   `json:"Message" xml:"Message"`
-	RequestId      string   `json:"RequestId" xml:"RequestId"`
-	Params         []string `json:"Params" xml:"Params"`
+	Code           string `json:"Code" xml:"Code"`
+	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Message        string `json:"Message" xml:"Message"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateModifySkillLevelsOfUserRequest creates a request to invoke ModifySkillLevelsOfUser API
@@ -91,7 +90,7 @@ func CreateModifySkillLevelsOfUserRequest() (request *ModifySkillLevelsOfUserReq
 	request = &ModifySkillLevelsOfUserRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "ModifySkillLevelsOfUser", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "ModifySkillLevelsOfUser", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }

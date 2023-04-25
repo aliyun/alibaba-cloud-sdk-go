@@ -95,7 +95,7 @@ func CreateCoachCallRequest() (request *CoachCallRequest) {
 	request = &CoachCallRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "CoachCall", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "CoachCall", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }

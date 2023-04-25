@@ -92,7 +92,7 @@ func CreateSignOutGroupRequest() (request *SignOutGroupRequest) {
 	request = &SignOutGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "SignOutGroup", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "SignOutGroup", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }

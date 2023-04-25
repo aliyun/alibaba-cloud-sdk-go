@@ -89,7 +89,7 @@ func CreatePauseCampaignRequest() (request *PauseCampaignRequest) {
 	request = &PauseCampaignRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "PauseCampaign", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "PauseCampaign", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }

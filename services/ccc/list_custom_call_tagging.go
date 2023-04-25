@@ -93,7 +93,7 @@ func CreateListCustomCallTaggingRequest() (request *ListCustomCallTaggingRequest
 	request = &ListCustomCallTaggingRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "ListCustomCallTagging", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "ListCustomCallTagging", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }

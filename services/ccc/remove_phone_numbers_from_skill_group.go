@@ -90,7 +90,7 @@ func CreateRemovePhoneNumbersFromSkillGroupRequest() (request *RemovePhoneNumber
 	request = &RemovePhoneNumbersFromSkillGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "RemovePhoneNumbersFromSkillGroup", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "RemovePhoneNumbersFromSkillGroup", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }

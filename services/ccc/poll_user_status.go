@@ -92,7 +92,7 @@ func CreatePollUserStatusRequest() (request *PollUserStatusRequest) {
 	request = &PollUserStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "PollUserStatus", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "PollUserStatus", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }

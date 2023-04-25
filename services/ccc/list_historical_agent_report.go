@@ -94,7 +94,7 @@ func CreateListHistoricalAgentReportRequest() (request *ListHistoricalAgentRepor
 	request = &ListHistoricalAgentReportRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "ListHistoricalAgentReport", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "ListHistoricalAgentReport", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }

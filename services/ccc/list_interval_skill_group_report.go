@@ -93,7 +93,7 @@ func CreateListIntervalSkillGroupReportRequest() (request *ListIntervalSkillGrou
 	request = &ListIntervalSkillGroupReportRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "ListIntervalSkillGroupReport", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "ListIntervalSkillGroupReport", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }

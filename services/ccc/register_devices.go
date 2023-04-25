@@ -92,7 +92,7 @@ func CreateRegisterDevicesRequest() (request *RegisterDevicesRequest) {
 	request = &RegisterDevicesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "RegisterDevices", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "RegisterDevices", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }

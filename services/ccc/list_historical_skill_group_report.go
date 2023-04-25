@@ -94,7 +94,7 @@ func CreateListHistoricalSkillGroupReportRequest() (request *ListHistoricalSkill
 	request = &ListHistoricalSkillGroupReportRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "ListHistoricalSkillGroupReport", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "ListHistoricalSkillGroupReport", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }

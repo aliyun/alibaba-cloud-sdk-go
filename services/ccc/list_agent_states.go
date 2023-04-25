@@ -71,12 +71,13 @@ func (client *Client) ListAgentStatesWithCallback(request *ListAgentStatesReques
 // ListAgentStatesRequest is the request struct for api ListAgentStates
 type ListAgentStatesRequest struct {
 	*requests.RpcRequest
-	AgentIds     string           `position:"Query" name:"AgentIds"`
-	PageNumber   requests.Integer `position:"Query" name:"PageNumber"`
-	InstanceId   string           `position:"Query" name:"InstanceId"`
-	SkillGroupId string           `position:"Query" name:"SkillGroupId"`
-	PageSize     requests.Integer `position:"Query" name:"PageSize"`
-	State        string           `position:"Query" name:"State"`
+	AgentIds            string           `position:"Query" name:"AgentIds"`
+	PageNumber          requests.Integer `position:"Query" name:"PageNumber"`
+	InstanceId          string           `position:"Query" name:"InstanceId"`
+	SkillGroupId        string           `position:"Query" name:"SkillGroupId"`
+	PageSize            requests.Integer `position:"Query" name:"PageSize"`
+	State               string           `position:"Query" name:"State"`
+	ExcludeOfflineUsers requests.Boolean `position:"Query" name:"ExcludeOfflineUsers"`
 }
 
 // ListAgentStatesResponse is the response struct for api ListAgentStates
@@ -95,7 +96,7 @@ func CreateListAgentStatesRequest() (request *ListAgentStatesRequest) {
 	request = &ListAgentStatesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "ListAgentStates", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "ListAgentStates", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }

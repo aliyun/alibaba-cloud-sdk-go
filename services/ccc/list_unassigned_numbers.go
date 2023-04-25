@@ -73,7 +73,6 @@ type ListUnassignedNumbersRequest struct {
 	*requests.RpcRequest
 	PageNumber    requests.Integer `position:"Query" name:"PageNumber"`
 	SearchPattern string           `position:"Query" name:"SearchPattern"`
-	InstanceId    string           `position:"Query" name:"InstanceId"`
 	PageSize      requests.Integer `position:"Query" name:"PageSize"`
 }
 
@@ -92,7 +91,7 @@ func CreateListUnassignedNumbersRequest() (request *ListUnassignedNumbersRequest
 	request = &ListUnassignedNumbersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "ListUnassignedNumbers", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "ListUnassignedNumbers", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }

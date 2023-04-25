@@ -17,5 +17,5 @@ package ccc
 
 // ListInListUnassignedNumbers is a nested struct in ccc response
 type ListInListUnassignedNumbers struct {
-	PhoneNumber []PhoneNumberInListUnassignedNumbers `json:"PhoneNumber" xml:"PhoneNumber"`
+	PhoneNumber []PhoneNumber `json:"PhoneNumber" xml:"PhoneNumber"`
 }

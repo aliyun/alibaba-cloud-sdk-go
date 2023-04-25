@@ -94,7 +94,7 @@ func CreateListAgentSummaryReportsSinceMidnightRequest() (request *ListAgentSumm
 	request = &ListAgentSummaryReportsSinceMidnightRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "ListAgentSummaryReportsSinceMidnight", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "ListAgentSummaryReportsSinceMidnight", "CCC", "openAPI")
 	request.Method = requests.GET
 	return
 }

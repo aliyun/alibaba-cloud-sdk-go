@@ -97,7 +97,7 @@ func CreateMakeCallRequest() (request *MakeCallRequest) {
 	request = &MakeCallRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "MakeCall", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "MakeCall", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }

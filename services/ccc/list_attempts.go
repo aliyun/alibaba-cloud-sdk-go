@@ -73,6 +73,7 @@ type ListAttemptsRequest struct {
 	*requests.RpcRequest
 	ContactId  string           `position:"Query" name:"ContactId"`
 	CampaignId string           `position:"Query" name:"CampaignId"`
+	Criteria   string           `position:"Query" name:"Criteria"`
 	Callee     string           `position:"Query" name:"Callee"`
 	StartTime  requests.Integer `position:"Query" name:"StartTime"`
 	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
@@ -101,7 +102,7 @@ func CreateListAttemptsRequest() (request *ListAttemptsRequest) {
 	request = &ListAttemptsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "ListAttempts", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "ListAttempts", "CCC", "openAPI")
 	request.Method = requests.GET
 	return
 }

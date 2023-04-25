@@ -80,11 +80,10 @@ type UpdateConfigItemsRequest struct {
 // UpdateConfigItemsResponse is the response struct for api UpdateConfigItems
 type UpdateConfigItemsResponse struct {
 	*responses.BaseResponse
-	Code           string   `json:"Code" xml:"Code"`
-	HttpStatusCode int      `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	Message        string   `json:"Message" xml:"Message"`
-	RequestId      string   `json:"RequestId" xml:"RequestId"`
-	Params         []string `json:"Params" xml:"Params"`
+	Code           string `json:"Code" xml:"Code"`
+	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Message        string `json:"Message" xml:"Message"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateUpdateConfigItemsRequest creates a request to invoke UpdateConfigItems API
@@ -92,7 +91,7 @@ func CreateUpdateConfigItemsRequest() (request *UpdateConfigItemsRequest) {
 	request = &UpdateConfigItemsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "UpdateConfigItems", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "UpdateConfigItems", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }

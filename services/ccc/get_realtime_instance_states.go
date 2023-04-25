@@ -89,7 +89,7 @@ func CreateGetRealtimeInstanceStatesRequest() (request *GetRealtimeInstanceState
 	request = &GetRealtimeInstanceStatesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "GetRealtimeInstanceStates", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "GetRealtimeInstanceStates", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }

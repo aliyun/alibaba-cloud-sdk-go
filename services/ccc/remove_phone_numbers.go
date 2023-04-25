@@ -84,7 +84,6 @@ type RemovePhoneNumbersResponse struct {
 	Message        string   `json:"Message" xml:"Message"`
 	RequestId      string   `json:"RequestId" xml:"RequestId"`
 	Data           []string `json:"Data" xml:"Data"`
-	Params         []string `json:"Params" xml:"Params"`
 }
 
 // CreateRemovePhoneNumbersRequest creates a request to invoke RemovePhoneNumbers API
@@ -92,7 +91,7 @@ func CreateRemovePhoneNumbersRequest() (request *RemovePhoneNumbersRequest) {
 	request = &RemovePhoneNumbersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "RemovePhoneNumbers", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "RemovePhoneNumbers", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }

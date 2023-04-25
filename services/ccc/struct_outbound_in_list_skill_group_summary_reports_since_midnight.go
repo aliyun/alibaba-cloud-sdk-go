@@ -32,4 +32,5 @@ type OutboundInListSkillGroupSummaryReportsSinceMidnight struct {
 	SatisfactionSurveysResponded int64   `json:"SatisfactionSurveysResponded" xml:"SatisfactionSurveysResponded"`
 	MaxTalkTime                  int64   `json:"MaxTalkTime" xml:"MaxTalkTime"`
 	AverageDialingTime           int64   `json:"AverageDialingTime" xml:"AverageDialingTime"`
+	CallsServiceLevel30          string  `json:"CallsServiceLevel30" xml:"CallsServiceLevel30"`
 }

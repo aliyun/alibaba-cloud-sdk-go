@@ -90,7 +90,7 @@ func CreateGetNumberLocationRequest() (request *GetNumberLocationRequest) {
 	request = &GetNumberLocationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "GetNumberLocation", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "GetNumberLocation", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }

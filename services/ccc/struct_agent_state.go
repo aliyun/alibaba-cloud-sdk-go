@@ -25,6 +25,11 @@ type AgentState struct {
 	AgentName          string   `json:"AgentName" xml:"AgentName"`
 	InstanceId         string   `json:"InstanceId" xml:"InstanceId"`
 	CounterParty       string   `json:"CounterParty" xml:"CounterParty"`
+	WorkMode           string   `json:"WorkMode" xml:"WorkMode"`
+	OutboundScenario   bool     `json:"OutboundScenario" xml:"OutboundScenario"`
+	Mobile             string   `json:"Mobile" xml:"Mobile"`
+	CallType           string   `json:"CallType" xml:"CallType"`
+	Duration           int64    `json:"Duration" xml:"Duration"`
 	SkillGroupIdList   []string `json:"SkillGroupIdList" xml:"SkillGroupIdList"`
 	SkillGroupNameList []string `json:"SkillGroupNameList" xml:"SkillGroupNameList"`
 }

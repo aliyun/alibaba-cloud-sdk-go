@@ -91,7 +91,7 @@ func CreateListDevicesRequest() (request *ListDevicesRequest) {
 	request = &ListDevicesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "ListDevices", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "ListDevices", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }

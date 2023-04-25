@@ -89,7 +89,7 @@ func CreateUnregisterDeviceRequest() (request *UnregisterDeviceRequest) {
 	request = &UnregisterDeviceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "UnregisterDevice", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "UnregisterDevice", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -93,7 +93,7 @@ func CreateAnswerCallRequest() (request *AnswerCallRequest) {
 	request = &AnswerCallRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "AnswerCall", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "AnswerCall", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -33,6 +33,7 @@ type CallDetailRecord struct {
 	ReleaseTime               int64  `json:"ReleaseTime" xml:"ReleaseTime"`
 	Broker                    string `json:"Broker" xml:"Broker"`
 	Duration                  int64  `json:"Duration" xml:"Duration"`
+	DialingTime               int64  `json:"DialingTime" xml:"DialingTime"`
 	RingTime                  int64  `json:"RingTime" xml:"RingTime"`
 	QueueTime                 int64  `json:"QueueTime" xml:"QueueTime"`
 	ContactId                 string `json:"ContactId" xml:"ContactId"`
@@ -45,7 +46,9 @@ type CallDetailRecord struct {
 	AdditionalBroker          string `json:"AdditionalBroker" xml:"AdditionalBroker"`
 	CallingNumber             string `json:"CallingNumber" xml:"CallingNumber"`
 	SatisfactionSurveyOffered bool   `json:"SatisfactionSurveyOffered" xml:"SatisfactionSurveyOffered"`
+	ReleaseReason             string `json:"ReleaseReason" xml:"ReleaseReason"`
 	ContactDisposition        string `json:"ContactDisposition" xml:"ContactDisposition"`
+	TalkTime                  int64  `json:"TalkTime" xml:"TalkTime"`
 	SatisfactionDescription   string `json:"SatisfactionDescription" xml:"SatisfactionDescription"`
 	ReleaseInitiator          string `json:"ReleaseInitiator" xml:"ReleaseInitiator"`
 }

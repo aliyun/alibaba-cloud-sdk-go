@@ -75,6 +75,7 @@ type ListCasesRequest struct {
 	CampaignId  string           `position:"Query" name:"CampaignId"`
 	PhoneNumber string           `position:"Query" name:"PhoneNumber"`
 	PageSize    requests.Integer `position:"Query" name:"PageSize"`
+	State       string           `position:"Query" name:"State"`
 	PageNumber  requests.Integer `position:"Query" name:"PageNumber"`
 }
 
@@ -85,7 +86,6 @@ type ListCasesResponse struct {
 	Message        string          `json:"Message" xml:"Message"`
 	HttpStatusCode int64           `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	Code           string          `json:"Code" xml:"Code"`
-	Success        bool            `json:"Success" xml:"Success"`
 	Data           DataInListCases `json:"Data" xml:"Data"`
 }
 
@@ -94,7 +94,7 @@ func CreateListCasesRequest() (request *ListCasesRequest) {
 	request = &ListCasesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "ListCases", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "ListCases", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -90,7 +90,7 @@ func CreateDeleteSkillGroupRequest() (request *DeleteSkillGroupRequest) {
 	request = &DeleteSkillGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "DeleteSkillGroup", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "DeleteSkillGroup", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -91,7 +91,7 @@ func CreateAddPersonalNumbersToUserRequest() (request *AddPersonalNumbersToUserR
 	request = &AddPersonalNumbersToUserRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "AddPersonalNumbersToUser", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "AddPersonalNumbersToUser", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }

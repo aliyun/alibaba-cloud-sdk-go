@@ -90,7 +90,7 @@ func CreateCreateCallTagsRequest() (request *CreateCallTagsRequest) {
 	request = &CreateCallTagsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "CreateCallTags", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "CreateCallTags", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -17,14 +17,21 @@ package ccc
 
 // RealTimeSkillGroupState is a nested struct in ccc response
 type RealTimeSkillGroupState struct {
-	WorkingAgents  int64  `json:"WorkingAgents" xml:"WorkingAgents"`
-	LoggedInAgents int64  `json:"LoggedInAgents" xml:"LoggedInAgents"`
-	BreakingAgents int64  `json:"BreakingAgents" xml:"BreakingAgents"`
-	LongestCall    int64  `json:"LongestCall" xml:"LongestCall"`
-	WaitingCalls   int64  `json:"WaitingCalls" xml:"WaitingCalls"`
-	TalkingAgents  int64  `json:"TalkingAgents" xml:"TalkingAgents"`
-	SkillGroupName string `json:"SkillGroupName" xml:"SkillGroupName"`
-	SkillGroupId   string `json:"SkillGroupId" xml:"SkillGroupId"`
-	ReadyAgents    int64  `json:"ReadyAgents" xml:"ReadyAgents"`
-	InstanceId     string `json:"InstanceId" xml:"InstanceId"`
+	WorkingAgents               int64  `json:"WorkingAgents" xml:"WorkingAgents"`
+	LoggedInAgents              int64  `json:"LoggedInAgents" xml:"LoggedInAgents"`
+	BreakingAgents              int64  `json:"BreakingAgents" xml:"BreakingAgents"`
+	LongestCall                 int64  `json:"LongestCall" xml:"LongestCall"`
+	WaitingCalls                int64  `json:"WaitingCalls" xml:"WaitingCalls"`
+	TalkingAgents               int64  `json:"TalkingAgents" xml:"TalkingAgents"`
+	SkillGroupName              string `json:"SkillGroupName" xml:"SkillGroupName"`
+	SkillGroupId                string `json:"SkillGroupId" xml:"SkillGroupId"`
+	ReadyAgents                 int64  `json:"ReadyAgents" xml:"ReadyAgents"`
+	InstanceId                  string `json:"InstanceId" xml:"InstanceId"`
+	AverageWaitingTime          int64  `json:"AverageWaitingTime" xml:"AverageWaitingTime"`
+	WaitingCallsLevel10         int64  `json:"WaitingCallsLevel10" xml:"WaitingCallsLevel10"`
+	WaitingCallsLevel20         int64  `json:"WaitingCallsLevel20" xml:"WaitingCallsLevel20"`
+	WaitingCallsLevel30         int64  `json:"WaitingCallsLevel30" xml:"WaitingCallsLevel30"`
+	OutboundScenarioReadyAgents int64  `json:"OutboundScenarioReadyAgents" xml:"OutboundScenarioReadyAgents"`
+	InboundTalkingAgents        int64  `json:"InboundTalkingAgents" xml:"InboundTalkingAgents"`
+	OutboundTalkingAgents       int64  `json:"OutboundTalkingAgents" xml:"OutboundTalkingAgents"`
 }

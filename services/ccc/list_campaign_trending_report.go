@@ -92,7 +92,7 @@ func CreateListCampaignTrendingReportRequest() (request *ListCampaignTrendingRep
 	request = &ListCampaignTrendingReportRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "ListCampaignTrendingReport", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "ListCampaignTrendingReport", "CCC", "openAPI")
 	request.Method = requests.GET
 	return
 }

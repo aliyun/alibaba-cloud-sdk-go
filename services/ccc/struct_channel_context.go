@@ -17,20 +17,19 @@ package ccc
 
 // ChannelContext is a nested struct in ccc response
 type ChannelContext struct {
-	JobId            string                 `json:"JobId" xml:"JobId"`
-	ChannelState     string                 `json:"ChannelState" xml:"ChannelState"`
-	Timestamp        int64                  `json:"Timestamp" xml:"Timestamp"`
-	Destination      string                 `json:"Destination" xml:"Destination"`
-	ChannelFlags     string                 `json:"ChannelFlags" xml:"ChannelFlags"`
-	CallType         string                 `json:"CallType" xml:"CallType"`
-	Index            int                    `json:"Index" xml:"Index"`
-	ReleaseReason    string                 `json:"ReleaseReason" xml:"ReleaseReason"`
-	UserExtension    string                 `json:"UserExtension" xml:"UserExtension"`
-	SkillGroupId     string                 `json:"SkillGroupId" xml:"SkillGroupId"`
-	Originator       string                 `json:"Originator" xml:"Originator"`
-	ChannelId        string                 `json:"ChannelId" xml:"ChannelId"`
-	UserId           string                 `json:"UserId" xml:"UserId"`
-	ChannelVariables string                 `json:"ChannelVariables" xml:"ChannelVariables"`
-	ReleaseInitiator string                 `json:"ReleaseInitiator" xml:"ReleaseInitiator"`
-	AssociatedData   map[string]interface{} `json:"AssociatedData" xml:"AssociatedData"`
+	JobId            string `json:"JobId" xml:"JobId"`
+	ChannelState     string `json:"ChannelState" xml:"ChannelState"`
+	Timestamp        int64  `json:"Timestamp" xml:"Timestamp"`
+	Destination      string `json:"Destination" xml:"Destination"`
+	ChannelFlags     string `json:"ChannelFlags" xml:"ChannelFlags"`
+	CallType         string `json:"CallType" xml:"CallType"`
+	Index            int    `json:"Index" xml:"Index"`
+	ReleaseReason    string `json:"ReleaseReason" xml:"ReleaseReason"`
+	UserExtension    string `json:"UserExtension" xml:"UserExtension"`
+	SkillGroupId     string `json:"SkillGroupId" xml:"SkillGroupId"`
+	Originator       string `json:"Originator" xml:"Originator"`
+	ChannelId        string `json:"ChannelId" xml:"ChannelId"`
+	UserId           string `json:"UserId" xml:"UserId"`
+	ChannelVariables string `json:"ChannelVariables" xml:"ChannelVariables"`
+	ReleaseInitiator string `json:"ReleaseInitiator" xml:"ReleaseInitiator"`
 }

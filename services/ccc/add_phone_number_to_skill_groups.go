@@ -90,7 +90,7 @@ func CreateAddPhoneNumberToSkillGroupsRequest() (request *AddPhoneNumberToSkillG
 	request = &AddPhoneNumberToSkillGroupsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "AddPhoneNumberToSkillGroups", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "AddPhoneNumberToSkillGroups", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }

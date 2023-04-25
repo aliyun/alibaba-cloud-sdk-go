@@ -89,7 +89,7 @@ func CreateDeleteCustomCallTaggingRequest() (request *DeleteCustomCallTaggingReq
 	request = &DeleteCustomCallTaggingRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "DeleteCustomCallTagging", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "DeleteCustomCallTagging", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }

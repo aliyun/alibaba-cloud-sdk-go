@@ -90,7 +90,7 @@ func CreateRemovePersonalNumbersFromUserRequest() (request *RemovePersonalNumber
 	request = &RemovePersonalNumbersFromUserRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "RemovePersonalNumbersFromUser", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "RemovePersonalNumbersFromUser", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }

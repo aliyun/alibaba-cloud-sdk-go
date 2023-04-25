@@ -84,7 +84,6 @@ type ListRamUsersResponse struct {
 	HttpStatusCode int                `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	Message        string             `json:"Message" xml:"Message"`
 	RequestId      string             `json:"RequestId" xml:"RequestId"`
-	Params         []string           `json:"Params" xml:"Params"`
 	Data           DataInListRamUsers `json:"Data" xml:"Data"`
 }
 
@@ -93,7 +92,7 @@ func CreateListRamUsersRequest() (request *ListRamUsersRequest) {
 	request = &ListRamUsersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "ListRamUsers", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "ListRamUsers", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }

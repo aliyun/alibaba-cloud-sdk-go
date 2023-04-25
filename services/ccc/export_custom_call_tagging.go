@@ -77,12 +77,11 @@ type ExportCustomCallTaggingRequest struct {
 // ExportCustomCallTaggingResponse is the response struct for api ExportCustomCallTagging
 type ExportCustomCallTaggingResponse struct {
 	*responses.BaseResponse
-	HttpStatusCode int      `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	Code           string   `json:"Code" xml:"Code"`
-	Message        string   `json:"Message" xml:"Message"`
-	Data           string   `json:"Data" xml:"Data"`
-	RequestId      string   `json:"RequestId" xml:"RequestId"`
-	Params         []string `json:"Params" xml:"Params"`
+	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Code           string `json:"Code" xml:"Code"`
+	Message        string `json:"Message" xml:"Message"`
+	Data           string `json:"Data" xml:"Data"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateExportCustomCallTaggingRequest creates a request to invoke ExportCustomCallTagging API
@@ -90,7 +89,7 @@ func CreateExportCustomCallTaggingRequest() (request *ExportCustomCallTaggingReq
 	request = &ExportCustomCallTaggingRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "ExportCustomCallTagging", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "ExportCustomCallTagging", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }

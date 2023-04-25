@@ -93,7 +93,7 @@ func CreateCompleteAttendedTransferRequest() (request *CompleteAttendedTransferR
 	request = &CompleteAttendedTransferRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "CompleteAttendedTransfer", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "CompleteAttendedTransfer", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }

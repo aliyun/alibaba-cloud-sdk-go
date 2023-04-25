@@ -17,8 +17,8 @@ package ccc
 
 // DataInListCampaigns is a nested struct in ccc response
 type DataInListCampaigns struct {
-	PageNumber int64  `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int64  `json:"PageSize" xml:"PageSize"`
-	TotalCount int64  `json:"TotalCount" xml:"TotalCount"`
-	List       []List `json:"List" xml:"List"`
+	PageNumber int64      `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int64      `json:"PageSize" xml:"PageSize"`
+	TotalCount int64      `json:"TotalCount" xml:"TotalCount"`
+	List       []ListItem `json:"List" xml:"List"`
 }

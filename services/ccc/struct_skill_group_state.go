@@ -17,14 +17,15 @@ package ccc
 
 // SkillGroupState is a nested struct in ccc response
 type SkillGroupState struct {
-	WorkingAgents      int64  `json:"WorkingAgents" xml:"WorkingAgents"`
-	LongestWaitingTime int64  `json:"LongestWaitingTime" xml:"LongestWaitingTime"`
-	LoggedInAgents     int64  `json:"LoggedInAgents" xml:"LoggedInAgents"`
-	WaitingCalls       int64  `json:"WaitingCalls" xml:"WaitingCalls"`
-	BreakingAgents     int64  `json:"BreakingAgents" xml:"BreakingAgents"`
-	TalkingAgents      int64  `json:"TalkingAgents" xml:"TalkingAgents"`
-	SkillGroupName     string `json:"SkillGroupName" xml:"SkillGroupName"`
-	SkillGroupId       string `json:"SkillGroupId" xml:"SkillGroupId"`
-	ReadyAgents        int64  `json:"ReadyAgents" xml:"ReadyAgents"`
-	InstanceId         string `json:"InstanceId" xml:"InstanceId"`
+	WorkingAgents               int64  `json:"WorkingAgents" xml:"WorkingAgents"`
+	LongestWaitingTime          int64  `json:"LongestWaitingTime" xml:"LongestWaitingTime"`
+	LoggedInAgents              int64  `json:"LoggedInAgents" xml:"LoggedInAgents"`
+	WaitingCalls                int64  `json:"WaitingCalls" xml:"WaitingCalls"`
+	BreakingAgents              int64  `json:"BreakingAgents" xml:"BreakingAgents"`
+	TalkingAgents               int64  `json:"TalkingAgents" xml:"TalkingAgents"`
+	SkillGroupName              string `json:"SkillGroupName" xml:"SkillGroupName"`
+	SkillGroupId                string `json:"SkillGroupId" xml:"SkillGroupId"`
+	ReadyAgents                 int64  `json:"ReadyAgents" xml:"ReadyAgents"`
+	InstanceId                  string `json:"InstanceId" xml:"InstanceId"`
+	OutboundScenarioReadyAgents int64  `json:"OutboundScenarioReadyAgents" xml:"OutboundScenarioReadyAgents"`
 }

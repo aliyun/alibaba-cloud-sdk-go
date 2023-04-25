@@ -98,7 +98,7 @@ func CreateStartPredictiveCallRequest() (request *StartPredictiveCallRequest) {
 	request = &StartPredictiveCallRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "StartPredictiveCall", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "StartPredictiveCall", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }

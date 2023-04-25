@@ -94,7 +94,7 @@ func CreateMonitorCallRequest() (request *MonitorCallRequest) {
 	request = &MonitorCallRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "MonitorCall", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "MonitorCall", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }

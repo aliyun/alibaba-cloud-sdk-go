@@ -44,4 +44,7 @@ type InboundInListSkillGroupSummaryReportsSinceMidnight struct {
 	QueueWaitTimeDuration                     int64   `json:"QueueWaitTimeDuration" xml:"QueueWaitTimeDuration"`
 	CallsServiceLevel20                       int64   `json:"CallsServiceLevel20" xml:"CallsServiceLevel20"`
 	CallsServiceLevel30                       int64   `json:"CallsServiceLevel30" xml:"CallsServiceLevel30"`
+	CallsServiceLevel10                       int64   `json:"CallsServiceLevel10" xml:"CallsServiceLevel10"`
+	CallsAttendedTransferOut                  int64   `json:"CallsAttendedTransferOut" xml:"CallsAttendedTransferOut"`
+	CallsBlindTransferOut                     int64   `json:"CallsBlindTransferOut" xml:"CallsBlindTransferOut"`
 }

@@ -75,9 +75,12 @@ type BlindTransferRequest struct {
 	Transferor     string           `position:"Query" name:"Transferor"`
 	UserId         string           `position:"Query" name:"UserId"`
 	DeviceId       string           `position:"Query" name:"DeviceId"`
+	StrategyName   string           `position:"Query" name:"StrategyName"`
 	TimeoutSeconds requests.Integer `position:"Query" name:"TimeoutSeconds"`
 	JobId          string           `position:"Query" name:"JobId"`
 	InstanceId     string           `position:"Query" name:"InstanceId"`
+	StrategyParams string           `position:"Query" name:"StrategyParams"`
+	CallPriority   requests.Integer `position:"Query" name:"CallPriority"`
 }
 
 // BlindTransferResponse is the response struct for api BlindTransfer
@@ -96,7 +99,7 @@ func CreateBlindTransferRequest() (request *BlindTransferRequest) {
 	request = &BlindTransferRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "BlindTransfer", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "BlindTransfer", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }

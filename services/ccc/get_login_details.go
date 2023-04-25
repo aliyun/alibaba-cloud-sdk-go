@@ -91,7 +91,7 @@ func CreateGetLoginDetailsRequest() (request *GetLoginDetailsRequest) {
 	request = &GetLoginDetailsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "GetLoginDetails", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "GetLoginDetails", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }

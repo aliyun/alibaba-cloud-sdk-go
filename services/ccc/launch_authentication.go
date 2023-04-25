@@ -95,7 +95,7 @@ func CreateLaunchAuthenticationRequest() (request *LaunchAuthenticationRequest) 
 	request = &LaunchAuthenticationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "LaunchAuthentication", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "LaunchAuthentication", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }

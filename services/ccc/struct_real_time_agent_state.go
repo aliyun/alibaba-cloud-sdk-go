@@ -17,11 +17,13 @@ package ccc
 
 // RealTimeAgentState is a nested struct in ccc response
 type RealTimeAgentState struct {
-	LoginName     string `json:"LoginName" xml:"LoginName"`
-	Dn            string `json:"Dn" xml:"Dn"`
-	StateDuration string `json:"StateDuration" xml:"StateDuration"`
-	State         string `json:"State" xml:"State"`
-	AgentId       string `json:"AgentId" xml:"AgentId"`
-	AgentName     string `json:"AgentName" xml:"AgentName"`
-	InstanceId    string `json:"InstanceId" xml:"InstanceId"`
+	LoginName        string `json:"LoginName" xml:"LoginName"`
+	Dn               string `json:"Dn" xml:"Dn"`
+	StateDuration    string `json:"StateDuration" xml:"StateDuration"`
+	State            string `json:"State" xml:"State"`
+	AgentId          string `json:"AgentId" xml:"AgentId"`
+	AgentName        string `json:"AgentName" xml:"AgentName"`
+	InstanceId       string `json:"InstanceId" xml:"InstanceId"`
+	BreakCode        string `json:"BreakCode" xml:"BreakCode"`
+	OutboundScenario bool   `json:"OutboundScenario" xml:"OutboundScenario"`
 }

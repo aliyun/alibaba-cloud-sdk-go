@@ -95,7 +95,7 @@ func CreateListPhoneNumbersOfSkillGroupRequest() (request *ListPhoneNumbersOfSki
 	request = &ListPhoneNumbersOfSkillGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "ListPhoneNumbersOfSkillGroup", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "ListPhoneNumbersOfSkillGroup", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -94,7 +94,7 @@ func CreateRetrieveCallRequest() (request *RetrieveCallRequest) {
 	request = &RetrieveCallRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "RetrieveCall", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "RetrieveCall", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }

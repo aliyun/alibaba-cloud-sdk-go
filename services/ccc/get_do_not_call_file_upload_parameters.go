@@ -91,7 +91,7 @@ func CreateGetDoNotCallFileUploadParametersRequest() (request *GetDoNotCallFileU
 	request = &GetDoNotCallFileUploadParametersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "GetDoNotCallFileUploadParameters", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "GetDoNotCallFileUploadParameters", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }

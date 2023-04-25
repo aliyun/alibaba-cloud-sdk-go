@@ -17,5 +17,5 @@ package ccc
 
 // ListInListCampaigns is a nested struct in ccc response
 type ListInListCampaigns struct {
-	List []List `json:"list" xml:"list"`
+	ListItem []ListItem `json:"list" xml:"list"`
 }

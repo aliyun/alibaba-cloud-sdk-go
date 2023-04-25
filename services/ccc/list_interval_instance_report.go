@@ -92,7 +92,7 @@ func CreateListIntervalInstanceReportRequest() (request *ListIntervalInstanceRep
 	request = &ListIntervalInstanceReportRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "ListIntervalInstanceReport", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "ListIntervalInstanceReport", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -93,7 +93,7 @@ func CreateSignInGroupRequest() (request *SignInGroupRequest) {
 	request = &SignInGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "SignInGroup", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "SignInGroup", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }

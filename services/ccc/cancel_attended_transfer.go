@@ -93,7 +93,7 @@ func CreateCancelAttendedTransferRequest() (request *CancelAttendedTransferReque
 	request = &CancelAttendedTransferRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "CancelAttendedTransfer", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "CancelAttendedTransfer", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }

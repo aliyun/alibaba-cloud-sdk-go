@@ -90,7 +90,7 @@ func CreateGetCallDetailRecordRequest() (request *GetCallDetailRecordRequest) {
 	request = &GetCallDetailRecordRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "GetCallDetailRecord", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "GetCallDetailRecord", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }

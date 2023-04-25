@@ -97,7 +97,7 @@ func CreateLaunchSurveyRequest() (request *LaunchSurveyRequest) {
 	request = &LaunchSurveyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "LaunchSurvey", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "LaunchSurvey", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }

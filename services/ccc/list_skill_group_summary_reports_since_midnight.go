@@ -93,7 +93,7 @@ func CreateListSkillGroupSummaryReportsSinceMidnightRequest() (request *ListSkil
 	request = &ListSkillGroupSummaryReportsSinceMidnightRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "ListSkillGroupSummaryReportsSinceMidnight", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "ListSkillGroupSummaryReportsSinceMidnight", "CCC", "openAPI")
 	request.Method = requests.GET
 	return
 }

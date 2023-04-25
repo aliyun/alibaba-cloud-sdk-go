@@ -89,7 +89,7 @@ func CreateAbortCampaignRequest() (request *AbortCampaignRequest) {
 	request = &AbortCampaignRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "AbortCampaign", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "AbortCampaign", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }

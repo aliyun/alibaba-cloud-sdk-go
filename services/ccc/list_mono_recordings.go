@@ -90,7 +90,7 @@ func CreateListMonoRecordingsRequest() (request *ListMonoRecordingsRequest) {
 	request = &ListMonoRecordingsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "ListMonoRecordings", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "ListMonoRecordings", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }

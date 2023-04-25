@@ -99,7 +99,7 @@ func CreateListCampaignsRequest() (request *ListCampaignsRequest) {
 	request = &ListCampaignsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "ListCampaigns", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "ListCampaigns", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }

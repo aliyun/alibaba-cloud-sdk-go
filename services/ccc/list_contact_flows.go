@@ -92,7 +92,7 @@ func CreateListContactFlowsRequest() (request *ListContactFlowsRequest) {
 	request = &ListContactFlowsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "ListContactFlows", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "ListContactFlows", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }

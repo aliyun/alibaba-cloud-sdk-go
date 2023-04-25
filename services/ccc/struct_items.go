@@ -17,12 +17,14 @@ package ccc
 
 // Items is a nested struct in ccc response
 type Items struct {
-	SkillGroupName string                              `json:"SkillGroupName" xml:"SkillGroupName"`
-	AgentName      string                              `json:"AgentName" xml:"AgentName"`
-	AgentId        string                              `json:"AgentId" xml:"AgentId"`
-	SkillGroupId   string                              `json:"SkillGroupId" xml:"SkillGroupId"`
-	DisplayId      string                              `json:"DisplayId" xml:"DisplayId"`
-	Outbound       OutboundInListHistoricalAgentReport `json:"Outbound" xml:"Outbound"`
-	Overall        Overall                             `json:"Overall" xml:"Overall"`
-	Inbound        Inbound                             `json:"Inbound" xml:"Inbound"`
+	SkillGroupNames string                              `json:"SkillGroupNames" xml:"SkillGroupNames"`
+	SkillGroupName  string                              `json:"SkillGroupName" xml:"SkillGroupName"`
+	AgentName       string                              `json:"AgentName" xml:"AgentName"`
+	AgentId         string                              `json:"AgentId" xml:"AgentId"`
+	SkillGroupId    string                              `json:"SkillGroupId" xml:"SkillGroupId"`
+	SkillGroupIds   string                              `json:"SkillGroupIds" xml:"SkillGroupIds"`
+	DisplayId       string                              `json:"DisplayId" xml:"DisplayId"`
+	Outbound        OutboundInListHistoricalAgentReport `json:"Outbound" xml:"Outbound"`
+	Overall         Overall                             `json:"Overall" xml:"Overall"`
+	Inbound         Inbound                             `json:"Inbound" xml:"Inbound"`
 }

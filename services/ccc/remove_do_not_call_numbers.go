@@ -78,12 +78,11 @@ type RemoveDoNotCallNumbersRequest struct {
 // RemoveDoNotCallNumbersResponse is the response struct for api RemoveDoNotCallNumbers
 type RemoveDoNotCallNumbersResponse struct {
 	*responses.BaseResponse
-	HttpStatusCode int      `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	Code           string   `json:"Code" xml:"Code"`
-	Message        string   `json:"Message" xml:"Message"`
-	Data           string   `json:"Data" xml:"Data"`
-	RequestId      string   `json:"RequestId" xml:"RequestId"`
-	Params         []string `json:"Params" xml:"Params"`
+	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Code           string `json:"Code" xml:"Code"`
+	Message        string `json:"Message" xml:"Message"`
+	Data           string `json:"Data" xml:"Data"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateRemoveDoNotCallNumbersRequest creates a request to invoke RemoveDoNotCallNumbers API
@@ -91,7 +90,7 @@ func CreateRemoveDoNotCallNumbersRequest() (request *RemoveDoNotCallNumbersReque
 	request = &RemoveDoNotCallNumbersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "RemoveDoNotCallNumbers", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "RemoveDoNotCallNumbers", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }

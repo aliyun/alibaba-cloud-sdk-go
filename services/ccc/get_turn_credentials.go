@@ -78,12 +78,11 @@ type GetTurnCredentialsRequest struct {
 // GetTurnCredentialsResponse is the response struct for api GetTurnCredentials
 type GetTurnCredentialsResponse struct {
 	*responses.BaseResponse
-	Code           string   `json:"Code" xml:"Code"`
-	HttpStatusCode int      `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	Message        string   `json:"Message" xml:"Message"`
-	RequestId      string   `json:"RequestId" xml:"RequestId"`
-	Params         []string `json:"Params" xml:"Params"`
-	Data           Data     `json:"Data" xml:"Data"`
+	Code           string `json:"Code" xml:"Code"`
+	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Message        string `json:"Message" xml:"Message"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	Data           Data   `json:"Data" xml:"Data"`
 }
 
 // CreateGetTurnCredentialsRequest creates a request to invoke GetTurnCredentials API
@@ -91,7 +90,7 @@ func CreateGetTurnCredentialsRequest() (request *GetTurnCredentialsRequest) {
 	request = &GetTurnCredentialsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "GetTurnCredentials", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "GetTurnCredentials", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }

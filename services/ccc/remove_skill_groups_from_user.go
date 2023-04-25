@@ -91,7 +91,7 @@ func CreateRemoveSkillGroupsFromUserRequest() (request *RemoveSkillGroupsFromUse
 	request = &RemoveSkillGroupsFromUserRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "RemoveSkillGroupsFromUser", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "RemoveSkillGroupsFromUser", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }

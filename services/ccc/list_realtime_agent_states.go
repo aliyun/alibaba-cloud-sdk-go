@@ -71,13 +71,17 @@ func (client *Client) ListRealtimeAgentStatesWithCallback(request *ListRealtimeA
 // ListRealtimeAgentStatesRequest is the request struct for api ListRealtimeAgentStates
 type ListRealtimeAgentStatesRequest struct {
 	*requests.RpcRequest
-	PageNumber   requests.Integer `position:"Query" name:"PageNumber"`
-	InstanceId   string           `position:"Query" name:"InstanceId"`
-	AgentIdList  string           `position:"Body" name:"AgentIdList"`
-	SkillGroupId string           `position:"Query" name:"SkillGroupId"`
-	AgentName    string           `position:"Query" name:"AgentName"`
-	PageSize     requests.Integer `position:"Query" name:"PageSize"`
-	StateList    string           `position:"Body" name:"StateList"`
+	CallTypeList     string           `position:"Query" name:"CallTypeList"`
+	Query            string           `position:"Query" name:"Query"`
+	OutboundScenario requests.Boolean `position:"Query" name:"OutboundScenario"`
+	PageNumber       requests.Integer `position:"Query" name:"PageNumber"`
+	InstanceId       string           `position:"Query" name:"InstanceId"`
+	WorkModeList     string           `position:"Query" name:"WorkModeList"`
+	AgentIdList      string           `position:"Body" name:"AgentIdList"`
+	SkillGroupId     string           `position:"Query" name:"SkillGroupId"`
+	AgentName        string           `position:"Query" name:"AgentName"`
+	PageSize         requests.Integer `position:"Query" name:"PageSize"`
+	StateList        string           `position:"Body" name:"StateList"`
 }
 
 // ListRealtimeAgentStatesResponse is the response struct for api ListRealtimeAgentStates
@@ -95,7 +99,7 @@ func CreateListRealtimeAgentStatesRequest() (request *ListRealtimeAgentStatesReq
 	request = &ListRealtimeAgentStatesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "ListRealtimeAgentStates", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "ListRealtimeAgentStates", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }

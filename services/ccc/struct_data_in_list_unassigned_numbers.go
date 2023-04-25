@@ -17,8 +17,8 @@ package ccc
 
 // DataInListUnassignedNumbers is a nested struct in ccc response
 type DataInListUnassignedNumbers struct {
-	PageNumber int                                  `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int                                  `json:"PageSize" xml:"PageSize"`
-	TotalCount int                                  `json:"TotalCount" xml:"TotalCount"`
-	List       []PhoneNumberInListUnassignedNumbers `json:"List" xml:"List"`
+	PageNumber int           `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int           `json:"PageSize" xml:"PageSize"`
+	TotalCount int           `json:"TotalCount" xml:"TotalCount"`
+	List       []PhoneNumber `json:"List" xml:"List"`
 }

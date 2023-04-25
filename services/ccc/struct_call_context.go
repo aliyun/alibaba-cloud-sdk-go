@@ -19,6 +19,7 @@ package ccc
 type CallContext struct {
 	JobId           string           `json:"JobId" xml:"JobId"`
 	InstanceId      string           `json:"InstanceId" xml:"InstanceId"`
+	CallVariables   string           `json:"CallVariables" xml:"CallVariables"`
 	CallType        string           `json:"CallType" xml:"CallType"`
 	ChannelContexts []ChannelContext `json:"ChannelContexts" xml:"ChannelContexts"`
 }

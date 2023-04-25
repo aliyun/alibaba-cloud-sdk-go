@@ -92,7 +92,7 @@ func CreateListRealtimeSkillGroupStatesRequest() (request *ListRealtimeSkillGrou
 	request = &ListRealtimeSkillGroupStatesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "ListRealtimeSkillGroupStates", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "ListRealtimeSkillGroupStates", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }

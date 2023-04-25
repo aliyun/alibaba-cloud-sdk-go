@@ -77,12 +77,11 @@ type GetTurnServerListRequest struct {
 // GetTurnServerListResponse is the response struct for api GetTurnServerList
 type GetTurnServerListResponse struct {
 	*responses.BaseResponse
-	HttpStatusCode int      `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	Code           string   `json:"Code" xml:"Code"`
-	Message        string   `json:"Message" xml:"Message"`
-	Data           string   `json:"Data" xml:"Data"`
-	RequestId      string   `json:"RequestId" xml:"RequestId"`
-	Params         []string `json:"Params" xml:"Params"`
+	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Code           string `json:"Code" xml:"Code"`
+	Message        string `json:"Message" xml:"Message"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	Data           string `json:"Data" xml:"Data"`
 }
 
 // CreateGetTurnServerListRequest creates a request to invoke GetTurnServerList API
@@ -90,7 +89,7 @@ func CreateGetTurnServerListRequest() (request *GetTurnServerListRequest) {
 	request = &GetTurnServerListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "GetTurnServerList", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "GetTurnServerList", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }

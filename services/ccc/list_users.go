@@ -84,7 +84,6 @@ type ListUsersResponse struct {
 	HttpStatusCode int             `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	Message        string          `json:"Message" xml:"Message"`
 	RequestId      string          `json:"RequestId" xml:"RequestId"`
-	Params         []string        `json:"Params" xml:"Params"`
 	Data           DataInListUsers `json:"Data" xml:"Data"`
 }
 
@@ -93,7 +92,7 @@ func CreateListUsersRequest() (request *ListUsersRequest) {
 	request = &ListUsersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "ListUsers", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "ListUsers", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }

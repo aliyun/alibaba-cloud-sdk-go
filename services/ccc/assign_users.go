@@ -84,7 +84,6 @@ type AssignUsersResponse struct {
 	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	Data           string `json:"Data" xml:"Data"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
-	Sync           string `json:"Sync" xml:"Sync"`
 	Code           string `json:"Code" xml:"Code"`
 	WorkflowId     string `json:"WorkflowId" xml:"WorkflowId"`
 	Message        string `json:"Message" xml:"Message"`
@@ -95,7 +94,7 @@ func CreateAssignUsersRequest() (request *AssignUsersRequest) {
 	request = &AssignUsersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "AssignUsers", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "AssignUsers", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }

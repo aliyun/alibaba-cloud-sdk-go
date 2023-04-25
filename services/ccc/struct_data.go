@@ -26,9 +26,12 @@ type Data struct {
 	ActualStartTime                int64                `json:"ActualStartTime" xml:"ActualStartTime"`
 	RoleName                       string               `json:"RoleName" xml:"RoleName"`
 	SkillGroupId                   string               `json:"SkillGroupId" xml:"SkillGroupId"`
+	Published                      bool                 `json:"Published" xml:"Published"`
 	CallDuration                   int64                `json:"CallDuration" xml:"CallDuration"`
 	Reserved                       int64                `json:"Reserved" xml:"Reserved"`
 	FileName                       string               `json:"FileName" xml:"FileName"`
+	Duration                       int64                `json:"Duration" xml:"Duration"`
+	Type                           string               `json:"Type" xml:"Type"`
 	WaitingCalls                   int64                `json:"WaitingCalls" xml:"WaitingCalls"`
 	TalkingAgents                  int64                `json:"TalkingAgents" xml:"TalkingAgents"`
 	CallsAbandoned                 int64                `json:"CallsAbandoned" xml:"CallsAbandoned"`
@@ -41,6 +44,8 @@ type Data struct {
 	RecordingReady                 bool                 `json:"RecordingReady" xml:"RecordingReady"`
 	AbandonedRate                  float64              `json:"AbandonedRate" xml:"AbandonedRate"`
 	Host                           string               `json:"Host" xml:"Host"`
+	ParamsStr                      string               `json:"ParamsStr" xml:"ParamsStr"`
+	DraftId                        string               `json:"DraftId" xml:"DraftId"`
 	DeviceExt                      string               `json:"DeviceExt" xml:"DeviceExt"`
 	Status                         string               `json:"Status" xml:"Status"`
 	UserKey                        string               `json:"UserKey" xml:"UserKey"`
@@ -50,6 +55,8 @@ type Data struct {
 	DeviceState                    string               `json:"DeviceState" xml:"DeviceState"`
 	DisplayId                      string               `json:"DisplayId" xml:"DisplayId"`
 	PageSize                       int                  `json:"PageSize" xml:"PageSize"`
+	OssFileKey                     string               `json:"OssFileKey" xml:"OssFileKey"`
+	CreatedTime                    string               `json:"CreatedTime" xml:"CreatedTime"`
 	InstanceId                     string               `json:"InstanceId" xml:"InstanceId"`
 	Satisfaction                   int                  `json:"Satisfaction" xml:"Satisfaction"`
 	StrategyType                   string               `json:"StrategyType" xml:"StrategyType"`
@@ -61,11 +68,12 @@ type Data struct {
 	InteractiveCalls               int64                `json:"InteractiveCalls" xml:"InteractiveCalls"`
 	JobId                          string               `json:"JobId" xml:"JobId"`
 	Caps                           int64                `json:"Caps" xml:"Caps"`
-	CalledNumber                   string               `json:"CalledNumber" xml:"CalledNumber"`
 	AccessKeyId                    string               `json:"AccessKeyId" xml:"AccessKeyId"`
+	CalledNumber                   string               `json:"CalledNumber" xml:"CalledNumber"`
 	SatisfactionSurveyOffered      bool                 `json:"SatisfactionSurveyOffered" xml:"SatisfactionSurveyOffered"`
-	TotalCases                     int64                `json:"TotalCases" xml:"TotalCases"`
 	Signature                      string               `json:"Signature" xml:"Signature"`
+	ReleaseReason                  string               `json:"ReleaseReason" xml:"ReleaseReason"`
+	TotalCases                     int64                `json:"TotalCases" xml:"TotalCases"`
 	State                          string               `json:"State" xml:"State"`
 	TotalCalls                     int64                `json:"TotalCalls" xml:"TotalCalls"`
 	LoginName                      string               `json:"LoginName" xml:"LoginName"`
@@ -84,33 +92,43 @@ type Data struct {
 	Signature2                     string               `json:"Signature2" xml:"Signature2"`
 	TotalCount                     int                  `json:"TotalCount" xml:"TotalCount"`
 	Id                             string               `json:"Id" xml:"Id"`
+	Topic                          string               `json:"Topic" xml:"Topic"`
 	ActualEndTime                  int64                `json:"ActualEndTime" xml:"ActualEndTime"`
+	ExpiredTime                    int64                `json:"ExpiredTime" xml:"ExpiredTime"`
 	LongestWaitingTime             int64                `json:"LongestWaitingTime" xml:"LongestWaitingTime"`
 	ContactId                      string               `json:"ContactId" xml:"ContactId"`
+	UpdatedTime                    string               `json:"UpdatedTime" xml:"UpdatedTime"`
 	AgentNames                     string               `json:"AgentNames" xml:"AgentNames"`
 	SimulationParameters           string               `json:"SimulationParameters" xml:"SimulationParameters"`
 	LoggedInAgents                 int64                `json:"LoggedInAgents" xml:"LoggedInAgents"`
+	AudioFileName                  string               `json:"AudioFileName" xml:"AudioFileName"`
 	ContactType                    string               `json:"ContactType" xml:"ContactType"`
 	Province                       string               `json:"Province" xml:"Province"`
 	CasesUncompletedAfterAttempted int64                `json:"CasesUncompletedAfterAttempted" xml:"CasesUncompletedAfterAttempted"`
 	CasesConnected                 int64                `json:"CasesConnected" xml:"CasesConnected"`
 	FileUrl                        string               `json:"FileUrl" xml:"FileUrl"`
 	Mobile                         string               `json:"Mobile" xml:"Mobile"`
+	TokenInfo                      string               `json:"TokenInfo" xml:"TokenInfo"`
 	ConsoleUrl                     string               `json:"ConsoleUrl" xml:"ConsoleUrl"`
 	CampaignId                     string               `json:"CampaignId" xml:"CampaignId"`
 	CallerLocation                 string               `json:"CallerLocation" xml:"CallerLocation"`
 	StrategyParameters             string               `json:"StrategyParameters" xml:"StrategyParameters"`
+	Endpoint                       string               `json:"Endpoint" xml:"Endpoint"`
 	CasesAborted                   int64                `json:"CasesAborted" xml:"CasesAborted"`
 	UserState                      string               `json:"UserState" xml:"UserState"`
 	UserId                         string               `json:"UserId" xml:"UserId"`
 	DeviceId                       string               `json:"DeviceId" xml:"DeviceId"`
 	LastCallingTime                int64                `json:"LastCallingTime" xml:"LastCallingTime"`
 	PageNumber                     int                  `json:"PageNumber" xml:"PageNumber"`
+	AudioResourceId                string               `json:"AudioResourceId" xml:"AudioResourceId"`
 	EstablishedTime                int64                `json:"EstablishedTime" xml:"EstablishedTime"`
+	ContactFlowId                  string               `json:"ContactFlowId" xml:"ContactFlowId"`
 	Description                    string               `json:"Description" xml:"Description"`
 	PlanedStartTime                int64                `json:"PlanedStartTime" xml:"PlanedStartTime"`
+	Definition                     string               `json:"Definition" xml:"Definition"`
 	Heartbeat                      int64                `json:"Heartbeat" xml:"Heartbeat"`
 	CaseFileKey                    string               `json:"CaseFileKey" xml:"CaseFileKey"`
+	Editor                         string               `json:"Editor" xml:"Editor"`
 	City                           string               `json:"City" xml:"City"`
 	DisplayName                    string               `json:"DisplayName" xml:"DisplayName"`
 	SipServerUrl                   string               `json:"SipServerUrl" xml:"SipServerUrl"`
@@ -120,6 +138,7 @@ type Data struct {
 	CallingNumber                  string               `json:"CallingNumber" xml:"CallingNumber"`
 	WorkingAgents                  int64                `json:"WorkingAgents" xml:"WorkingAgents"`
 	MinAttemptInterval             int64                `json:"MinAttemptInterval" xml:"MinAttemptInterval"`
+	ClientId                       string               `json:"ClientId" xml:"ClientId"`
 	OutboundScenario               bool                 `json:"OutboundScenario" xml:"OutboundScenario"`
 	ContactDisposition             string               `json:"ContactDisposition" xml:"ContactDisposition"`
 	PlanedEndTime                  int64                `json:"PlanedEndTime" xml:"PlanedEndTime"`
@@ -136,8 +155,8 @@ type Data struct {
 	IvrEvents                      []IvrEventsItem      `json:"IvrEvents" xml:"IvrEvents"`
 	CustomerEvents                 []CustomerEventsItem `json:"CustomerEvents" xml:"CustomerEvents"`
 	QueueEvents                    []QueueEventsItem    `json:"QueueEvents" xml:"QueueEvents"`
-	List                           []RealTimeAgentState `json:"List" xml:"List"`
 	AdminList                      []User               `json:"AdminList" xml:"AdminList"`
 	AgentEvents                    []AgentEventsItem    `json:"AgentEvents" xml:"AgentEvents"`
 	NumberList                     []PhoneNumber        `json:"NumberList" xml:"NumberList"`
+	List                           []RealTimeAgentState `json:"List" xml:"List"`
 }

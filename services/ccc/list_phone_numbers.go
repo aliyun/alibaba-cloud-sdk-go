@@ -86,8 +86,6 @@ type ListPhoneNumbersResponse struct {
 	RequestId      string                 `json:"RequestId" xml:"RequestId"`
 	Code           string                 `json:"Code" xml:"Code"`
 	Message        string                 `json:"Message" xml:"Message"`
-	PageNumber     int                    `json:"PageNumber" xml:"PageNumber"`
-	PageSize       int                    `json:"PageSize" xml:"PageSize"`
 	Data           DataInListPhoneNumbers `json:"Data" xml:"Data"`
 }
 
@@ -96,7 +94,7 @@ func CreateListPhoneNumbersRequest() (request *ListPhoneNumbersRequest) {
 	request = &ListPhoneNumbersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "ListPhoneNumbers", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "ListPhoneNumbers", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }

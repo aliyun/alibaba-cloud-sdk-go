@@ -17,5 +17,5 @@ package ccc
 
 // ListInListCases is a nested struct in ccc response
 type ListInListCases struct {
-	List []List `json:"list" xml:"list"`
+	ListItem []ListItem `json:"list" xml:"list"`
 }

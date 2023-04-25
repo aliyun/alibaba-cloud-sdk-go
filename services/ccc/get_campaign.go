@@ -81,7 +81,6 @@ type GetCampaignResponse struct {
 	RequestId      string `json:"RequestId" xml:"RequestId"`
 	HttpStatusCode int64  `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	Code           string `json:"Code" xml:"Code"`
-	Success        bool   `json:"Success" xml:"Success"`
 	Data           Data   `json:"Data" xml:"Data"`
 }
 
@@ -90,7 +89,7 @@ func CreateGetCampaignRequest() (request *GetCampaignRequest) {
 	request = &GetCampaignRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2020-07-01", "GetCampaign", "", "")
+	request.InitWithApiInfo("CCC", "2020-07-01", "GetCampaign", "CCC", "openAPI")
 	request.Method = requests.POST
 	return
 }
