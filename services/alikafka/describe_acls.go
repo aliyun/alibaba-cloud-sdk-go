@@ -93,7 +93,7 @@ func CreateDescribeAclsRequest() (request *DescribeAclsRequest) {
 	request = &DescribeAclsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alikafka", "2019-09-16", "DescribeAcls", "alikafka", "openAPI")
+	request.InitWithApiInfo("alikafka", "2019-09-16", "DescribeAcls", "", "")
 	request.Method = requests.POST
 	return
 }

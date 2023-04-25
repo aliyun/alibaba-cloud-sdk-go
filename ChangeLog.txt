@@ -1,3 +1,7 @@
+2023-04-25 Version: v1.62.293
+- Generated 2019-09-16 for `alikafka`.
+- Add UpdateConsumerOffset api.
+
 2023-04-25 Version: v1.62.292
 - Generated 2020-07-01 for `CCC`.
 - Iteration v2-10-0.

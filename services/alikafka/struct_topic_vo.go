@@ -27,5 +27,6 @@ type TopicVO struct {
 	InstanceId   string             `json:"InstanceId" xml:"InstanceId"`
 	LocalTopic   bool               `json:"LocalTopic" xml:"LocalTopic"`
 	RegionId     string             `json:"RegionId" xml:"RegionId"`
+	AutoCreate   bool               `json:"AutoCreate" xml:"AutoCreate"`
 	Tags         TagsInGetTopicList `json:"Tags" xml:"Tags"`
 }

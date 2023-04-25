@@ -90,7 +90,7 @@ func CreateConvertPostPayOrderRequest() (request *ConvertPostPayOrderRequest) {
 	request = &ConvertPostPayOrderRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alikafka", "2019-09-16", "ConvertPostPayOrder", "alikafka", "openAPI")
+	request.InitWithApiInfo("alikafka", "2019-09-16", "ConvertPostPayOrder", "", "")
 	request.Method = requests.POST
 	return
 }

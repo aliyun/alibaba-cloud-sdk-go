@@ -89,7 +89,7 @@ func CreateUpgradeInstanceVersionRequest() (request *UpgradeInstanceVersionReque
 	request = &UpgradeInstanceVersionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alikafka", "2019-09-16", "UpgradeInstanceVersion", "alikafka", "openAPI")
+	request.InitWithApiInfo("alikafka", "2019-09-16", "UpgradeInstanceVersion", "", "")
 	request.Method = requests.POST
 	return
 }

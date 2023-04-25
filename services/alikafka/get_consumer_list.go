@@ -92,7 +92,7 @@ func CreateGetConsumerListRequest() (request *GetConsumerListRequest) {
 	request = &GetConsumerListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alikafka", "2019-09-16", "GetConsumerList", "alikafka", "openAPI")
+	request.InitWithApiInfo("alikafka", "2019-09-16", "GetConsumerList", "", "")
 	request.Method = requests.POST
 	return
 }

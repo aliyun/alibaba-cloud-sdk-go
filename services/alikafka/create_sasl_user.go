@@ -91,7 +91,7 @@ func CreateCreateSaslUserRequest() (request *CreateSaslUserRequest) {
 	request = &CreateSaslUserRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alikafka", "2019-09-16", "CreateSaslUser", "alikafka", "openAPI")
+	request.InitWithApiInfo("alikafka", "2019-09-16", "CreateSaslUser", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -89,7 +89,7 @@ func CreateGetQuotaTipRequest() (request *GetQuotaTipRequest) {
 	request = &GetQuotaTipRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alikafka", "2019-09-16", "GetQuotaTip", "alikafka", "openAPI")
+	request.InitWithApiInfo("alikafka", "2019-09-16", "GetQuotaTip", "", "")
 	request.Method = requests.POST
 	return
 }

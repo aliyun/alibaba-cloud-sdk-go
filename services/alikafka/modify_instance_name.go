@@ -89,7 +89,7 @@ func CreateModifyInstanceNameRequest() (request *ModifyInstanceNameRequest) {
 	request = &ModifyInstanceNameRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alikafka", "2019-09-16", "ModifyInstanceName", "alikafka", "openAPI")
+	request.InitWithApiInfo("alikafka", "2019-09-16", "ModifyInstanceName", "", "")
 	request.Method = requests.POST
 	return
 }

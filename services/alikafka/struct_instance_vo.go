@@ -48,6 +48,7 @@ type InstanceVO struct {
 	UsedPartitionCount       int                      `json:"UsedPartitionCount" xml:"UsedPartitionCount"`
 	KmsKeyId                 string                   `json:"KmsKeyId" xml:"KmsKeyId"`
 	StandardZoneId           string                   `json:"StandardZoneId" xml:"StandardZoneId"`
+	IoMaxSpec                string                   `json:"IoMaxSpec" xml:"IoMaxSpec"`
 	UpgradeServiceDetailInfo UpgradeServiceDetailInfo `json:"UpgradeServiceDetailInfo" xml:"UpgradeServiceDetailInfo"`
 	Tags                     TagsInGetInstanceList    `json:"Tags" xml:"Tags"`
 }

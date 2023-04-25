@@ -93,7 +93,7 @@ func CreateUpdateAllowedIpRequest() (request *UpdateAllowedIpRequest) {
 	request = &UpdateAllowedIpRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alikafka", "2019-09-16", "UpdateAllowedIp", "alikafka", "openAPI")
+	request.InitWithApiInfo("alikafka", "2019-09-16", "UpdateAllowedIp", "", "")
 	request.Method = requests.POST
 	return
 }

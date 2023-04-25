@@ -96,7 +96,7 @@ func CreateUpgradePrePayOrderRequest() (request *UpgradePrePayOrderRequest) {
 	request = &UpgradePrePayOrderRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alikafka", "2019-09-16", "UpgradePrePayOrder", "alikafka", "openAPI")
+	request.InitWithApiInfo("alikafka", "2019-09-16", "UpgradePrePayOrder", "", "")
 	request.Method = requests.POST
 	return
 }

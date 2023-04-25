@@ -105,7 +105,7 @@ func CreateCreatePrePayOrderRequest() (request *CreatePrePayOrderRequest) {
 	request = &CreatePrePayOrderRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alikafka", "2019-09-16", "CreatePrePayOrder", "alikafka", "openAPI")
+	request.InitWithApiInfo("alikafka", "2019-09-16", "CreatePrePayOrder", "", "")
 	request.Method = requests.POST
 	return
 }

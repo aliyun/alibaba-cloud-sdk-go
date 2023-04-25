@@ -90,7 +90,7 @@ func CreateReleaseInstanceRequest() (request *ReleaseInstanceRequest) {
 	request = &ReleaseInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alikafka", "2019-09-16", "ReleaseInstance", "alikafka", "openAPI")
+	request.InitWithApiInfo("alikafka", "2019-09-16", "ReleaseInstance", "", "")
 	request.Method = requests.POST
 	return
 }

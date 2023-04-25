@@ -28,4 +28,5 @@ type QuotaData struct {
 	GroupLeft         int `json:"GroupLeft" xml:"GroupLeft"`
 	GroupUsed         int `json:"GroupUsed" xml:"GroupUsed"`
 	IsPartitionBuy    int `json:"IsPartitionBuy" xml:"IsPartitionBuy"`
+	PartitionQuota    int `json:"PartitionQuota" xml:"PartitionQuota"`
 }

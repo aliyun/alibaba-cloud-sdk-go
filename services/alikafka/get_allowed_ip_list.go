@@ -89,7 +89,7 @@ func CreateGetAllowedIpListRequest() (request *GetAllowedIpListRequest) {
 	request = &GetAllowedIpListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alikafka", "2019-09-16", "GetAllowedIpList", "alikafka", "openAPI")
+	request.InitWithApiInfo("alikafka", "2019-09-16", "GetAllowedIpList", "", "")
 	request.Method = requests.POST
 	return
 }

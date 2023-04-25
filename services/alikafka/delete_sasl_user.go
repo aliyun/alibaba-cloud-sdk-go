@@ -90,7 +90,7 @@ func CreateDeleteSaslUserRequest() (request *DeleteSaslUserRequest) {
 	request = &DeleteSaslUserRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alikafka", "2019-09-16", "DeleteSaslUser", "alikafka", "openAPI")
+	request.InitWithApiInfo("alikafka", "2019-09-16", "DeleteSaslUser", "", "")
 	request.Method = requests.POST
 	return
 }
