@@ -81,13 +81,14 @@ type DescribeDomainMax95BpsDataRequest struct {
 // DescribeDomainMax95BpsDataResponse is the response struct for api DescribeDomainMax95BpsData
 type DescribeDomainMax95BpsDataResponse struct {
 	*responses.BaseResponse
-	EndTime          string `json:"EndTime" xml:"EndTime"`
-	StartTime        string `json:"StartTime" xml:"StartTime"`
-	RequestId        string `json:"RequestId" xml:"RequestId"`
-	DomesticMax95Bps string `json:"DomesticMax95Bps" xml:"DomesticMax95Bps"`
-	OverseasMax95Bps string `json:"OverseasMax95Bps" xml:"OverseasMax95Bps"`
-	Max95Bps         string `json:"Max95Bps" xml:"Max95Bps"`
-	DomainName       string `json:"DomainName" xml:"DomainName"`
+	RequestId        string     `json:"RequestId" xml:"RequestId"`
+	DomainName       string     `json:"DomainName" xml:"DomainName"`
+	EndTime          string     `json:"EndTime" xml:"EndTime"`
+	StartTime        string     `json:"StartTime" xml:"StartTime"`
+	DomesticMax95Bps string     `json:"DomesticMax95Bps" xml:"DomesticMax95Bps"`
+	OverseasMax95Bps string     `json:"OverseasMax95Bps" xml:"OverseasMax95Bps"`
+	Max95Bps         string     `json:"Max95Bps" xml:"Max95Bps"`
+	DetailData       DetailData `json:"DetailData" xml:"DetailData"`
 }
 
 // CreateDescribeDomainMax95BpsDataRequest creates a request to invoke DescribeDomainMax95BpsData API

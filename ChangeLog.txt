@@ -1,3 +1,7 @@
+2023-04-25 Version: v1.62.290
+- Generated 2018-05-10 for `Cdn`.
+- Add CheckCdnDomainExist.
+
 2023-04-24 Version: v1.62.289
 - Generated 2018-11-01 for `dms-enterprise`.
 - Supported GetDatabaseExportOrderDetail,CreateDatabaseExportOrder,CreateDataExportOrder API.
