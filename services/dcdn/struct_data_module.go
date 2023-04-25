@@ -34,6 +34,7 @@ type DataModule struct {
 	OriginBps                 float64                                                 `json:"OriginBps" xml:"OriginBps"`
 	Bps                       float64                                                 `json:"Bps" xml:"Bps"`
 	DynamicHttpBps            float64                                                 `json:"DynamicHttpBps" xml:"DynamicHttpBps"`
+	StaticTrafficValue        string                                                  `json:"StaticTrafficValue" xml:"StaticTrafficValue"`
 	AccValue                  string                                                  `json:"AccValue" xml:"AccValue"`
 	Value                     string                                                  `json:"Value" xml:"Value"`
 	Qps                       float64                                                 `json:"Qps" xml:"Qps"`
@@ -43,11 +44,13 @@ type DataModule struct {
 	DynamicHttpQps            float64                                                 `json:"DynamicHttpQps" xml:"DynamicHttpQps"`
 	AccOverseasValue          string                                                  `json:"AccOverseasValue" xml:"AccOverseasValue"`
 	StaticHttpBps             float64                                                 `json:"StaticHttpBps" xml:"StaticHttpBps"`
+	DynamicValue              string                                                  `json:"DynamicValue" xml:"DynamicValue"`
 	DynamicHttpOriginBps      float64                                                 `json:"DynamicHttpOriginBps" xml:"DynamicHttpOriginBps"`
 	StaticHttpsOriginTraffic  float64                                                 `json:"StaticHttpsOriginTraffic" xml:"StaticHttpsOriginTraffic"`
 	StaticHttpAcc             float64                                                 `json:"StaticHttpAcc" xml:"StaticHttpAcc"`
 	OriginTraffic             float64                                                 `json:"OriginTraffic" xml:"OriginTraffic"`
 	DynamicHttpAcc            float64                                                 `json:"DynamicHttpAcc" xml:"DynamicHttpAcc"`
+	DynamicTrafficValue       string                                                  `json:"DynamicTrafficValue" xml:"DynamicTrafficValue"`
 	IpaTraffic                float64                                                 `json:"IpaTraffic" xml:"IpaTraffic"`
 	StaticHttpsTraffic        float64                                                 `json:"StaticHttpsTraffic" xml:"StaticHttpsTraffic"`
 	ReqHitRate                float64                                                 `json:"ReqHitRate" xml:"ReqHitRate"`
@@ -60,6 +63,7 @@ type DataModule struct {
 	DomesticValue             string                                                  `json:"DomesticValue" xml:"DomesticValue"`
 	DynamicHttpsOriginTraffic float64                                                 `json:"DynamicHttpsOriginTraffic" xml:"DynamicHttpsOriginTraffic"`
 	DynamicHttpsTraffic       float64                                                 `json:"DynamicHttpsTraffic" xml:"DynamicHttpsTraffic"`
+	StaticValue               string                                                  `json:"StaticValue" xml:"StaticValue"`
 	AccDomesticValue          string                                                  `json:"AccDomesticValue" xml:"AccDomesticValue"`
 	TrafficValue              string                                                  `json:"TrafficValue" xml:"TrafficValue"`
 	ByteHitRate               float64                                                 `json:"ByteHitRate" xml:"ByteHitRate"`

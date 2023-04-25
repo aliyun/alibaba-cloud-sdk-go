@@ -1,3 +1,7 @@
+2023-04-25 Version: v1.62.291
+- Generated 2018-01-15 for `dcdn`.
+- Add CheckDcdnDomainExist.
+
 2023-04-25 Version: v1.62.290
 - Generated 2018-05-10 for `Cdn`.
 - Add CheckCdnDomainExist.
