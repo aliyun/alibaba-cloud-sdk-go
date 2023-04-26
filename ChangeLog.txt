@@ -1,3 +1,7 @@
+2023-04-26 Version: v1.62.296
+- Generated 2017-03-21 for `vod`.
+- Api add media storage class.
+
 2023-04-26 Version: v1.62.295
 - Generated 2022-05-30 for `eflo`.
 - Update for lingjunnetworkinterface.
