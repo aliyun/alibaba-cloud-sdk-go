@@ -39,6 +39,9 @@ type Audio struct {
 	CustomMediaInfo   string                  `json:"CustomMediaInfo" xml:"CustomMediaInfo"`
 	AuditAIResult     string                  `json:"AuditAIResult" xml:"AuditAIResult"`
 	PreprocessStatus  string                  `json:"PreprocessStatus" xml:"PreprocessStatus"`
+	RestoreExpiration string                  `json:"RestoreExpiration" xml:"RestoreExpiration"`
+	RestoreStatus     string                  `json:"RestoreStatus" xml:"RestoreStatus"`
+	StorageClass      string                  `json:"StorageClass" xml:"StorageClass"`
 	Size              int64                   `json:"Size" xml:"Size"`
 	Duration          float64                 `json:"Duration" xml:"Duration"`
 	Title             string                  `json:"Title" xml:"Title"`

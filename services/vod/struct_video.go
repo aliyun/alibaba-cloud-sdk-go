@@ -23,6 +23,7 @@ type Video struct {
 	Title                string                      `json:"Title" xml:"Title"`
 	CreateTime           string                      `json:"CreateTime" xml:"CreateTime"`
 	TemplateGroupId      string                      `json:"TemplateGroupId" xml:"TemplateGroupId"`
+	StorageClass         string                      `json:"StorageClass" xml:"StorageClass"`
 	MediaType            string                      `json:"MediaType" xml:"MediaType"`
 	AuditAbnormalModules string                      `json:"AuditAbnormalModules" xml:"AuditAbnormalModules"`
 	CustomMediaInfo      string                      `json:"CustomMediaInfo" xml:"CustomMediaInfo"`
@@ -33,6 +34,8 @@ type Video struct {
 	Size                 int64                       `json:"Size" xml:"Size"`
 	Description          string                      `json:"Description" xml:"Description"`
 	CateId               int64                       `json:"CateId" xml:"CateId"`
+	RestoreExpiration    string                      `json:"RestoreExpiration" xml:"RestoreExpiration"`
+	RestoreStatus        string                      `json:"RestoreStatus" xml:"RestoreStatus"`
 	Tags                 string                      `json:"Tags" xml:"Tags"`
 	AuditLabel           string                      `json:"AuditLabel" xml:"AuditLabel"`
 	PreprocessStatus     string                      `json:"PreprocessStatus" xml:"PreprocessStatus"`
