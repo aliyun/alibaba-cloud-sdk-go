@@ -71,7 +71,10 @@ func (client *Client) GetVccWithCallback(request *GetVccRequest, callback func(r
 // GetVccRequest is the request struct for api GetVcc
 type GetVccRequest struct {
 	*requests.RpcRequest
-	VccId string `position:"Body" name:"VccId"`
+	PageNumber requests.Integer `position:"Body" name:"PageNumber"`
+	EnablePage requests.Boolean `position:"Body" name:"EnablePage"`
+	PageSize   requests.Integer `position:"Body" name:"PageSize"`
+	VccId      string           `position:"Body" name:"VccId"`
 }
 
 // GetVccResponse is the response struct for api GetVcc

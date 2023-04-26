@@ -71,16 +71,25 @@ func (client *Client) ListVccsWithCallback(request *ListVccsRequest, callback fu
 // ListVccsRequest is the request struct for api ListVccs
 type ListVccsRequest struct {
 	*requests.RpcRequest
-	CenId      string           `position:"Body" name:"CenId"`
-	PageNumber requests.Integer `position:"Body" name:"PageNumber"`
-	PageSize   requests.Integer `position:"Body" name:"PageSize"`
-	VccId      string           `position:"Body" name:"VccId"`
-	Bandwidth  requests.Integer `position:"Body" name:"Bandwidth"`
-	ExStatus   string           `position:"Body" name:"ExStatus"`
-	VpdId      string           `position:"Body" name:"VpdId"`
-	VpcId      string           `position:"Body" name:"VpcId"`
-	EnablePage requests.Boolean `position:"Body" name:"EnablePage"`
-	Status     string           `position:"Body" name:"Status"`
+	CenId           string           `position:"Body" name:"CenId"`
+	PageNumber      requests.Integer `position:"Body" name:"PageNumber"`
+	ResourceGroupId string           `position:"Body" name:"ResourceGroupId"`
+	PageSize        requests.Integer `position:"Body" name:"PageSize"`
+	Tag             *[]ListVccsTag   `position:"Body" name:"Tag"  type:"Repeated"`
+	VccId           string           `position:"Body" name:"VccId"`
+	Bandwidth       requests.Integer `position:"Body" name:"Bandwidth"`
+	ExStatus        string           `position:"Body" name:"ExStatus"`
+	FilterErId      string           `position:"Body" name:"FilterErId"`
+	VpdId           string           `position:"Body" name:"VpdId"`
+	VpcId           string           `position:"Body" name:"VpcId"`
+	EnablePage      requests.Boolean `position:"Body" name:"EnablePage"`
+	Status          string           `position:"Body" name:"Status"`
+}
+
+// ListVccsTag is a repeated param struct in ListVccsRequest
+type ListVccsTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // ListVccsResponse is the response struct for api ListVccs

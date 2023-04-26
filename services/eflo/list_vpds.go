@@ -71,16 +71,24 @@ func (client *Client) ListVpdsWithCallback(request *ListVpdsRequest, callback fu
 // ListVpdsRequest is the request struct for api ListVpds
 type ListVpdsRequest struct {
 	*requests.RpcRequest
-	PageNumber     requests.Integer `position:"Body" name:"PageNumber"`
-	WithDependence requests.Boolean `position:"Body" name:"WithDependence"`
-	WithoutVcc     requests.Boolean `position:"Body" name:"WithoutVcc"`
-	PageSize       requests.Integer `position:"Body" name:"PageSize"`
-	ForSelect      requests.Boolean `position:"Body" name:"ForSelect"`
-	FilterErId     string           `position:"Body" name:"FilterErId"`
-	VpdId          string           `position:"Body" name:"VpdId"`
-	EnablePage     requests.Boolean `position:"Body" name:"EnablePage"`
-	Name           string           `position:"Body" name:"Name"`
-	Status         string           `position:"Body" name:"Status"`
+	VpdName         string           `position:"Body" name:"VpdName"`
+	PageNumber      requests.Integer `position:"Body" name:"PageNumber"`
+	WithDependence  requests.Boolean `position:"Body" name:"WithDependence"`
+	ResourceGroupId string           `position:"Body" name:"ResourceGroupId"`
+	WithoutVcc      requests.Boolean `position:"Body" name:"WithoutVcc"`
+	PageSize        requests.Integer `position:"Body" name:"PageSize"`
+	Tag             *[]ListVpdsTag   `position:"Body" name:"Tag"  type:"Repeated"`
+	ForSelect       requests.Boolean `position:"Body" name:"ForSelect"`
+	FilterErId      string           `position:"Body" name:"FilterErId"`
+	VpdId           string           `position:"Body" name:"VpdId"`
+	EnablePage      requests.Boolean `position:"Body" name:"EnablePage"`
+	Status          string           `position:"Body" name:"Status"`
+}
+
+// ListVpdsTag is a repeated param struct in ListVpdsRequest
+type ListVpdsTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // ListVpdsResponse is the response struct for api ListVpds

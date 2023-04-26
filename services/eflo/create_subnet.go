@@ -71,11 +71,18 @@ func (client *Client) CreateSubnetWithCallback(request *CreateSubnetRequest, cal
 // CreateSubnetRequest is the request struct for api CreateSubnet
 type CreateSubnetRequest struct {
 	*requests.RpcRequest
-	Type   string `position:"Body" name:"Type"`
-	VpdId  string `position:"Body" name:"VpdId"`
-	Name   string `position:"Body" name:"Name"`
-	ZoneId string `position:"Body" name:"ZoneId"`
-	Cidr   string `position:"Body" name:"Cidr"`
+	Type       string             `position:"Body" name:"Type"`
+	Cidr       string             `position:"Body" name:"Cidr"`
+	Tag        *[]CreateSubnetTag `position:"Body" name:"Tag"  type:"Repeated"`
+	VpdId      string             `position:"Body" name:"VpdId"`
+	ZoneId     string             `position:"Body" name:"ZoneId"`
+	SubnetName string             `position:"Body" name:"SubnetName"`
+}
+
+// CreateSubnetTag is a repeated param struct in CreateSubnetRequest
+type CreateSubnetTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // CreateSubnetResponse is the response struct for api CreateSubnet

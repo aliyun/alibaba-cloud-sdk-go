@@ -75,10 +75,22 @@ type CreateVccRequest struct {
 	CenId              string           `position:"Body" name:"CenId"`
 	Description        string           `position:"Body" name:"Description"`
 	AccessCouldService requests.Boolean `position:"Body" name:"AccessCouldService"`
+	ResourceGroupId    string           `position:"Body" name:"ResourceGroupId"`
+	VccName            string           `position:"Body" name:"VccName"`
+	Tag                *[]CreateVccTag  `position:"Body" name:"Tag"  type:"Repeated"`
 	VccId              string           `position:"Body" name:"VccId"`
+	ConnectionType     string           `position:"Body" name:"ConnectionType"`
+	Bandwidth          requests.Integer `position:"Body" name:"Bandwidth"`
 	VSwitchId          string           `position:"Body" name:"VSwitchId"`
 	VpdId              string           `position:"Body" name:"VpdId"`
 	VpcId              string           `position:"Body" name:"VpcId"`
+	ZoneId             string           `position:"Body" name:"ZoneId"`
+}
+
+// CreateVccTag is a repeated param struct in CreateVccRequest
+type CreateVccTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // CreateVccResponse is the response struct for api CreateVcc

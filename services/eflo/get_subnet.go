@@ -72,6 +72,7 @@ func (client *Client) GetSubnetWithCallback(request *GetSubnetRequest, callback 
 type GetSubnetRequest struct {
 	*requests.RpcRequest
 	SubnetId string `position:"Body" name:"SubnetId"`
+	VpdId    string `position:"Body" name:"VpdId"`
 }
 
 // GetSubnetResponse is the response struct for api GetSubnet

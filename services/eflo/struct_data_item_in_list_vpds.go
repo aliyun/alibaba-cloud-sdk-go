@@ -17,17 +17,20 @@ package eflo
 
 // DataItemInListVpds is a nested struct in eflo response
 type DataItemInListVpds struct {
-	RegionId    string                 `json:"RegionId" xml:"RegionId"`
-	VpdId       string                 `json:"VpdId" xml:"VpdId"`
-	Name        string                 `json:"Name" xml:"Name"`
-	Cidr        string                 `json:"Cidr" xml:"Cidr"`
-	ServiceCidr string                 `json:"ServiceCidr" xml:"ServiceCidr"`
-	Status      string                 `json:"Status" xml:"Status"`
-	Message     string                 `json:"Message" xml:"Message"`
-	Route       int                    `json:"Route" xml:"Route"`
-	NcCount     int                    `json:"NcCount" xml:"NcCount"`
-	SubnetCount int                    `json:"SubnetCount" xml:"SubnetCount"`
-	GmtCreate   string                 `json:"GmtCreate" xml:"GmtCreate"`
-	GmtModified string                 `json:"GmtModified" xml:"GmtModified"`
-	Dependence  map[string]interface{} `json:"Dependence" xml:"Dependence"`
+	TenantId        string                 `json:"TenantId" xml:"TenantId"`
+	RegionId        string                 `json:"RegionId" xml:"RegionId"`
+	VpdId           string                 `json:"VpdId" xml:"VpdId"`
+	VpdName         string                 `json:"VpdName" xml:"VpdName"`
+	Cidr            string                 `json:"Cidr" xml:"Cidr"`
+	ServiceCidr     string                 `json:"ServiceCidr" xml:"ServiceCidr"`
+	Status          string                 `json:"Status" xml:"Status"`
+	Message         string                 `json:"Message" xml:"Message"`
+	NcCount         int                    `json:"NcCount" xml:"NcCount"`
+	SubnetCount     int                    `json:"SubnetCount" xml:"SubnetCount"`
+	CreateTime      string                 `json:"CreateTime" xml:"CreateTime"`
+	GmtModified     string                 `json:"GmtModified" xml:"GmtModified"`
+	Dependence      map[string]interface{} `json:"Dependence" xml:"Dependence"`
+	ResourceGroupId string                 `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	ErInfos         []ErInfo               `json:"ErInfos" xml:"ErInfos"`
+	Tags            []Tag                  `json:"Tags" xml:"Tags"`
 }

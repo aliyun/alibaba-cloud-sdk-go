@@ -71,18 +71,26 @@ func (client *Client) CreateVpdWithCallback(request *CreateVpdRequest, callback 
 // CreateVpdRequest is the request struct for api CreateVpd
 type CreateVpdRequest struct {
 	*requests.RpcRequest
-	Name    string              `position:"Body" name:"Name"`
-	Cidr    string              `position:"Body" name:"Cidr"`
-	Subnets *[]CreateVpdSubnets `position:"Body" name:"Subnets"  type:"Repeated"`
+	VpdName         string              `position:"Body" name:"VpdName"`
+	ResourceGroupId string              `position:"Body" name:"ResourceGroupId"`
+	Cidr            string              `position:"Body" name:"Cidr"`
+	Subnets         *[]CreateVpdSubnets `position:"Body" name:"Subnets"  type:"Repeated"`
+	Tag             *[]CreateVpdTag     `position:"Body" name:"Tag"  type:"Repeated"`
 }
 
 // CreateVpdSubnets is a repeated param struct in CreateVpdRequest
 type CreateVpdSubnets struct {
-	RegionId string `name:"RegionId"`
-	Name     string `name:"Name"`
-	ZoneId   string `name:"ZoneId"`
-	Cidr     string `name:"Cidr"`
-	Type     string `name:"Type"`
+	RegionId   string `name:"RegionId"`
+	ZoneId     string `name:"ZoneId"`
+	Cidr       string `name:"Cidr"`
+	SubnetName string `name:"SubnetName"`
+	Type       string `name:"Type"`
+}
+
+// CreateVpdTag is a repeated param struct in CreateVpdRequest
+type CreateVpdTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // CreateVpdResponse is the response struct for api CreateVpd

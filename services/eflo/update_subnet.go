@@ -71,11 +71,10 @@ func (client *Client) UpdateSubnetWithCallback(request *UpdateSubnetRequest, cal
 // UpdateSubnetRequest is the request struct for api UpdateSubnet
 type UpdateSubnetRequest struct {
 	*requests.RpcRequest
-	SubnetId    string `position:"Body" name:"SubnetId"`
-	Description string `position:"Body" name:"Description"`
-	VpdId       string `position:"Body" name:"VpdId"`
-	Name        string `position:"Body" name:"Name"`
-	ZoneId      string `position:"Body" name:"ZoneId"`
+	SubnetId   string `position:"Body" name:"SubnetId"`
+	VpdId      string `position:"Body" name:"VpdId"`
+	ZoneId     string `position:"Body" name:"ZoneId"`
+	SubnetName string `position:"Body" name:"SubnetName"`
 }
 
 // UpdateSubnetResponse is the response struct for api UpdateSubnet

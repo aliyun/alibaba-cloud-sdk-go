@@ -71,6 +71,7 @@ func (client *Client) InitializeVccWithCallback(request *InitializeVccRequest, c
 // InitializeVccRequest is the request struct for api InitializeVcc
 type InitializeVccRequest struct {
 	*requests.RpcRequest
+	ResourceGroupId string `position:"Body" name:"ResourceGroupId"`
 }
 
 // InitializeVccResponse is the response struct for api InitializeVcc

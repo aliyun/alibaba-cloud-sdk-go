@@ -71,15 +71,23 @@ func (client *Client) ListSubnetsWithCallback(request *ListSubnetsRequest, callb
 // ListSubnetsRequest is the request struct for api ListSubnets
 type ListSubnetsRequest struct {
 	*requests.RpcRequest
-	Type       string           `position:"Body" name:"Type"`
-	PageNumber requests.Integer `position:"Body" name:"PageNumber"`
-	PageSize   requests.Integer `position:"Body" name:"PageSize"`
-	SubnetId   string           `position:"Body" name:"SubnetId"`
-	VpdId      string           `position:"Body" name:"VpdId"`
-	EnablePage requests.Boolean `position:"Body" name:"EnablePage"`
-	Name       string           `position:"Body" name:"Name"`
-	ZoneId     string           `position:"Body" name:"ZoneId"`
-	Status     string           `position:"Body" name:"Status"`
+	Type            string            `position:"Body" name:"Type"`
+	PageNumber      requests.Integer  `position:"Body" name:"PageNumber"`
+	ResourceGroupId string            `position:"Body" name:"ResourceGroupId"`
+	PageSize        requests.Integer  `position:"Body" name:"PageSize"`
+	Tag             *[]ListSubnetsTag `position:"Body" name:"Tag"  type:"Repeated"`
+	SubnetId        string            `position:"Body" name:"SubnetId"`
+	VpdId           string            `position:"Body" name:"VpdId"`
+	EnablePage      requests.Boolean  `position:"Body" name:"EnablePage"`
+	ZoneId          string            `position:"Body" name:"ZoneId"`
+	SubnetName      string            `position:"Body" name:"SubnetName"`
+	Status          string            `position:"Body" name:"Status"`
+}
+
+// ListSubnetsTag is a repeated param struct in ListSubnetsRequest
+type ListSubnetsTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // ListSubnetsResponse is the response struct for api ListSubnets

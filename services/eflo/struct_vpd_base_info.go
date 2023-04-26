@@ -17,8 +17,8 @@ package eflo
 
 // VpdBaseInfo is a nested struct in eflo response
 type VpdBaseInfo struct {
-	Name      string `json:"Name" xml:"Name"`
-	GmtCreate string `json:"GmtCreate" xml:"GmtCreate"`
-	Cidr      string `json:"Cidr" xml:"Cidr"`
-	VpdId     string `json:"VpdId" xml:"VpdId"`
+	VpdName    string `json:"VpdName" xml:"VpdName"`
+	Cidr       string `json:"Cidr" xml:"Cidr"`
+	VpdId      string `json:"VpdId" xml:"VpdId"`
+	CreateTime string `json:"CreateTime" xml:"CreateTime"`
 }

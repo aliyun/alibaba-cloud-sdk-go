@@ -71,9 +71,8 @@ func (client *Client) UpdateVpdWithCallback(request *UpdateVpdRequest, callback 
 // UpdateVpdRequest is the request struct for api UpdateVpd
 type UpdateVpdRequest struct {
 	*requests.RpcRequest
-	Description string `position:"Body" name:"Description"`
-	VpdId       string `position:"Body" name:"VpdId"`
-	Name        string `position:"Body" name:"Name"`
+	VpdName string `position:"Body" name:"VpdName"`
+	VpdId   string `position:"Body" name:"VpdId"`
 }
 
 // UpdateVpdResponse is the response struct for api UpdateVpd
