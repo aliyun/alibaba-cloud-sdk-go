@@ -17,22 +17,23 @@ package cc5g
 
 // Card is a nested struct in cc5g response
 type Card struct {
-	Name           string `json:"Name" xml:"Name"`
-	Imei           string `json:"Imei" xml:"Imei"`
-	UsageDataMonth int64  `json:"UsageDataMonth" xml:"UsageDataMonth"`
-	IpAddress      string `json:"IpAddress" xml:"IpAddress"`
-	Msisdn         string `json:"Msisdn" xml:"Msisdn"`
-	APN            string `json:"APN" xml:"APN"`
-	Spec           string `json:"Spec" xml:"Spec"`
-	ActivatedTime  string `json:"ActivatedTime" xml:"ActivatedTime"`
-	Iccid          string `json:"Iccid" xml:"Iccid"`
-	OrderId        string `json:"OrderId" xml:"OrderId"`
-	UsageDataTotal string `json:"UsageDataTotal" xml:"UsageDataTotal"`
-	BusinessStatus string `json:"BusinessStatus" xml:"BusinessStatus"`
-	Lock           bool   `json:"Lock" xml:"Lock"`
-	ISP            string `json:"ISP" xml:"ISP"`
-	Status         string `json:"Status" xml:"Status"`
-	Description    string `json:"Description" xml:"Description"`
-	NetType        string `json:"NetType" xml:"NetType"`
-	Imsi           string `json:"Imsi" xml:"Imsi"`
+	Name            string           `json:"Name" xml:"Name"`
+	Imei            string           `json:"Imei" xml:"Imei"`
+	UsageDataMonth  int64            `json:"UsageDataMonth" xml:"UsageDataMonth"`
+	IpAddress       string           `json:"IpAddress" xml:"IpAddress"`
+	Msisdn          string           `json:"Msisdn" xml:"Msisdn"`
+	APN             string           `json:"APN" xml:"APN"`
+	Spec            string           `json:"Spec" xml:"Spec"`
+	ActivatedTime   string           `json:"ActivatedTime" xml:"ActivatedTime"`
+	Iccid           string           `json:"Iccid" xml:"Iccid"`
+	OrderId         string           `json:"OrderId" xml:"OrderId"`
+	UsageDataTotal  string           `json:"UsageDataTotal" xml:"UsageDataTotal"`
+	BusinessStatus  string           `json:"BusinessStatus" xml:"BusinessStatus"`
+	Lock            bool             `json:"Lock" xml:"Lock"`
+	ISP             string           `json:"ISP" xml:"ISP"`
+	Status          string           `json:"Status" xml:"Status"`
+	Description     string           `json:"Description" xml:"Description"`
+	NetType         string           `json:"NetType" xml:"NetType"`
+	Imsi            string           `json:"Imsi" xml:"Imsi"`
+	UsageDataMonths []UsageDataMonth `json:"UsageDataMonths" xml:"UsageDataMonths"`
 }
