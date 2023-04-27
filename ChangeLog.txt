@@ -1,3 +1,7 @@
+2023-04-27 Version: v1.62.300
+- Generated 2017-09-12 for `Cbn`.
+- Update API DescribeCenAttachedChildInstanceAttribute support returning VPC Cidrs.
+
 2023-04-27 Version: v1.62.299
 - Generated 2020-03-20 for `imageprocess`.
 - Release ChestCT.

@@ -96,6 +96,7 @@ type DescribeCenAttachedChildInstanceAttributeResponse struct {
 	ChildInstanceName        string                   `json:"ChildInstanceName" xml:"ChildInstanceName"`
 	Ipv6StatusInCen          string                   `json:"Ipv6StatusInCen" xml:"Ipv6StatusInCen"`
 	ChildInstanceAttachTime  string                   `json:"ChildInstanceAttachTime" xml:"ChildInstanceAttachTime"`
+	ChildInstanceAttributes  ChildInstanceAttributes  `json:"ChildInstanceAttributes" xml:"ChildInstanceAttributes"`
 	ChildInstanceRouteTables ChildInstanceRouteTables `json:"ChildInstanceRouteTables" xml:"ChildInstanceRouteTables"`
 }
 
