@@ -1,3 +1,8 @@
+2023-04-27 Version: v1.62.297
+- Generated 2018-11-01 for `dms-enterprise`.
+- Support GetDataExportPreCheckDetail API.
+- Modify GetOpLog API.
+
 2023-04-26 Version: v1.62.296
 - Generated 2017-03-21 for `vod`.
 - Api add media storage class.
