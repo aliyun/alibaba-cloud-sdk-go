@@ -1,3 +1,16 @@
+2023-04-28 Version: v1.62.301
+- Generated 2020-02-17 for `Dytnsapi`.
+- Change api backend.
+- Modify error code.
+- Delete headers module in response.
+- Add return param .
+- Fixed bug.
+- Change to brick.
+- Supported for hiding old api.
+- Access bill.
+- Improve error code.
+- Add credit verify.
+
 2023-04-27 Version: v1.62.300
 - Generated 2017-09-12 for `Cbn`.
 - Update API DescribeCenAttachedChildInstanceAttribute support returning VPC Cidrs.

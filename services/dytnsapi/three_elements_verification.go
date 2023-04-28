@@ -72,6 +72,7 @@ func (client *Client) ThreeElementsVerificationWithCallback(request *ThreeElemen
 type ThreeElementsVerificationRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ExtendFunction       string           `position:"Query" name:"ExtendFunction"`
 	CertCode             string           `position:"Query" name:"CertCode"`
 	RouteName            string           `position:"Query" name:"RouteName"`
 	Mask                 string           `position:"Query" name:"Mask"`

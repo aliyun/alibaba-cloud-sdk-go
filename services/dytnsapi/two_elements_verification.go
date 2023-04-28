@@ -72,6 +72,7 @@ func (client *Client) TwoElementsVerificationWithCallback(request *TwoElementsVe
 type TwoElementsVerificationRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ExtendFunction       string           `position:"Query" name:"ExtendFunction"`
 	RouteName            string           `position:"Query" name:"RouteName"`
 	Mask                 string           `position:"Query" name:"Mask"`
 	ResultCount          string           `position:"Query" name:"ResultCount"`

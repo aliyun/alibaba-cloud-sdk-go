@@ -73,6 +73,7 @@ type DescribePhoneTwiceTelVerifyRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	StartTime            string           `position:"Query" name:"StartTime"`
+	ExtendFunction       string           `position:"Query" name:"ExtendFunction"`
 	RouteName            string           `position:"Query" name:"RouteName"`
 	Mask                 string           `position:"Query" name:"Mask"`
 	OfferType            string           `position:"Query" name:"OfferType"`

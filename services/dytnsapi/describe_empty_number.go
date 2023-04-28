@@ -72,6 +72,7 @@ func (client *Client) DescribeEmptyNumberWithCallback(request *DescribeEmptyNumb
 type DescribeEmptyNumberRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ExtendFunction       string           `position:"Query" name:"ExtendFunction"`
 	RouteName            string           `position:"Query" name:"RouteName"`
 	Mask                 string           `position:"Query" name:"Mask"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
