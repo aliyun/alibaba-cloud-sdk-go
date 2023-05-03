@@ -1,3 +1,12 @@
+2023-05-03 Version: v1.62.302
+- Generated 2016-04-28 for `Vpc`.
+- Supported Zone for AllocateEipAddress.
+- Support HA-VPN.
+- CreateFullNatEntry, ModifyFullNatEntryAttribute, DeleteFullNatEntry support idempotent.
+- Support VBR allow prefixes.
+- Support adDetailLocation.
+- Fix ErrorCode.
+
 2023-04-28 Version: v1.62.301
 - Generated 2020-02-17 for `Dytnsapi`.
 - Change api backend.
