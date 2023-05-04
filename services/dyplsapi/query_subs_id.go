@@ -72,10 +72,10 @@ func (client *Client) QuerySubsIdWithCallback(request *QuerySubsIdRequest, callb
 type QuerySubsIdRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	PhoneNoX             string           `position:"Query" name:"PhoneNoX"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	PoolKey              string           `position:"Query" name:"PoolKey"`
-	PhoneNoX             string           `position:"Query" name:"PhoneNoX"`
 }
 
 // QuerySubsIdResponse is the response struct for api QuerySubsId

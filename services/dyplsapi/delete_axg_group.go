@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// ReleaseSecretNo invokes the dyplsapi.ReleaseSecretNo API synchronously
-func (client *Client) ReleaseSecretNo(request *ReleaseSecretNoRequest) (response *ReleaseSecretNoResponse, err error) {
-	response = CreateReleaseSecretNoResponse()
+// DeleteAxgGroup invokes the dyplsapi.DeleteAxgGroup API synchronously
+func (client *Client) DeleteAxgGroup(request *DeleteAxgGroupRequest) (response *DeleteAxgGroupResponse, err error) {
+	response = CreateDeleteAxgGroupResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// ReleaseSecretNoWithChan invokes the dyplsapi.ReleaseSecretNo API asynchronously
-func (client *Client) ReleaseSecretNoWithChan(request *ReleaseSecretNoRequest) (<-chan *ReleaseSecretNoResponse, <-chan error) {
-	responseChan := make(chan *ReleaseSecretNoResponse, 1)
+// DeleteAxgGroupWithChan invokes the dyplsapi.DeleteAxgGroup API asynchronously
+func (client *Client) DeleteAxgGroupWithChan(request *DeleteAxgGroupRequest) (<-chan *DeleteAxgGroupResponse, <-chan error) {
+	responseChan := make(chan *DeleteAxgGroupResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.ReleaseSecretNo(request)
+		response, err := client.DeleteAxgGroup(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) ReleaseSecretNoWithChan(request *ReleaseSecretNoRequest) (
 	return responseChan, errChan
 }
 
-// ReleaseSecretNoWithCallback invokes the dyplsapi.ReleaseSecretNo API asynchronously
-func (client *Client) ReleaseSecretNoWithCallback(request *ReleaseSecretNoRequest, callback func(response *ReleaseSecretNoResponse, err error)) <-chan int {
+// DeleteAxgGroupWithCallback invokes the dyplsapi.DeleteAxgGroup API asynchronously
+func (client *Client) DeleteAxgGroupWithCallback(request *DeleteAxgGroupRequest, callback func(response *DeleteAxgGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *ReleaseSecretNoResponse
+		var response *DeleteAxgGroupResponse
 		var err error
 		defer close(result)
-		response, err = client.ReleaseSecretNo(request)
+		response, err = client.DeleteAxgGroup(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,37 +68,37 @@ func (client *Client) ReleaseSecretNoWithCallback(request *ReleaseSecretNoReques
 	return result
 }
 
-// ReleaseSecretNoRequest is the request struct for api ReleaseSecretNo
-type ReleaseSecretNoRequest struct {
+// DeleteAxgGroupRequest is the request struct for api DeleteAxgGroup
+type DeleteAxgGroupRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	SecretNo             string           `position:"Query" name:"SecretNo"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	GroupId              requests.Integer `position:"Query" name:"GroupId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	PoolKey              string           `position:"Query" name:"PoolKey"`
 }
 
-// ReleaseSecretNoResponse is the response struct for api ReleaseSecretNo
-type ReleaseSecretNoResponse struct {
+// DeleteAxgGroupResponse is the response struct for api DeleteAxgGroup
+type DeleteAxgGroupResponse struct {
 	*responses.BaseResponse
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateReleaseSecretNoRequest creates a request to invoke ReleaseSecretNo API
-func CreateReleaseSecretNoRequest() (request *ReleaseSecretNoRequest) {
-	request = &ReleaseSecretNoRequest{
+// CreateDeleteAxgGroupRequest creates a request to invoke DeleteAxgGroup API
+func CreateDeleteAxgGroupRequest() (request *DeleteAxgGroupRequest) {
+	request = &DeleteAxgGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dyplsapi", "2017-05-25", "ReleaseSecretNo", "", "")
+	request.InitWithApiInfo("Dyplsapi", "2017-05-25", "DeleteAxgGroup", "", "")
 	request.Method = requests.POST
 	return
 }
 
-// CreateReleaseSecretNoResponse creates a response to parse from ReleaseSecretNo response
-func CreateReleaseSecretNoResponse() (response *ReleaseSecretNoResponse) {
-	response = &ReleaseSecretNoResponse{
+// CreateDeleteAxgGroupResponse creates a response to parse from DeleteAxgGroup response
+func CreateDeleteAxgGroupResponse() (response *DeleteAxgGroupResponse) {
+	response = &DeleteAxgGroupResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return
