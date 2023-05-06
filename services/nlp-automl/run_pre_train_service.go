@@ -82,6 +82,7 @@ type RunPreTrainServiceResponse struct {
 	*responses.BaseResponse
 	PredictResult string `json:"PredictResult" xml:"PredictResult"`
 	RequestId     string `json:"RequestId" xml:"RequestId"`
+	BillingCount  int    `json:"BillingCount" xml:"BillingCount"`
 }
 
 // CreateRunPreTrainServiceRequest creates a request to invoke RunPreTrainService API
