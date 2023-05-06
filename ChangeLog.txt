@@ -1,3 +1,7 @@
+2023-05-06 Version: v1.62.305
+- Generated 2020-06-29 for `alinlp`.
+- Supported more api for user.
+
 2023-05-04 Version: v1.62.304
 - Generated 2018-05-10 for `Cdn`.
 - Add SetCdnDomainSSLCertificate.
