@@ -17,14 +17,15 @@ package ccc
 
 // RecordingDTOInListMultiChannelRecordings is a nested struct in ccc response
 type RecordingDTOInListMultiChannelRecordings struct {
-	FileName       string `json:"FileName" xml:"FileName"`
-	FileUrl        string `json:"FileUrl" xml:"FileUrl"`
-	AgentId        string `json:"AgentId" xml:"AgentId"`
-	AgentName      string `json:"AgentName" xml:"AgentName"`
-	StartTime      int64  `json:"StartTime" xml:"StartTime"`
-	ContactId      string `json:"ContactId" xml:"ContactId"`
-	Duration       string `json:"Duration" xml:"Duration"`
-	SkillGroupId   string `json:"SkillGroupId" xml:"SkillGroupId"`
-	RamId          string `json:"RamId" xml:"RamId"`
-	AgentChannelId string `json:"AgentChannelId" xml:"AgentChannelId"`
+	FileName         string            `json:"FileName" xml:"FileName"`
+	FileUrl          string            `json:"FileUrl" xml:"FileUrl"`
+	AgentId          string            `json:"AgentId" xml:"AgentId"`
+	AgentName        string            `json:"AgentName" xml:"AgentName"`
+	StartTime        int64             `json:"StartTime" xml:"StartTime"`
+	ContactId        string            `json:"ContactId" xml:"ContactId"`
+	Duration         string            `json:"Duration" xml:"Duration"`
+	SkillGroupId     string            `json:"SkillGroupId" xml:"SkillGroupId"`
+	RamId            string            `json:"RamId" xml:"RamId"`
+	AgentChannelId   string            `json:"AgentChannelId" xml:"AgentChannelId"`
+	HoldTimeSegments []HoldTimeSegment `json:"HoldTimeSegments" xml:"HoldTimeSegments"`
 }

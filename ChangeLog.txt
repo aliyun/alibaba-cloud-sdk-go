@@ -1,3 +1,7 @@
+2023-05-08 Version: v1.62.307
+- Generated 2020-07-01 for `CCC`.
+- Supported GetVideo Api.
+
 2023-05-06 Version: v1.62.306
 - Generated 2019-11-11 for `nlp-automl`.
 - Add The billingCount return value to the RunPreTrainService Api.
