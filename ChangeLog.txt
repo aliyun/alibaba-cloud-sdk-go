@@ -1,3 +1,7 @@
+2023-05-09 Version: v1.62.308
+- Generated 2020-07-01 for `CCC`.
+- Supported GetVideo Api.
+
 2023-05-08 Version: v1.62.307
 - Generated 2020-07-01 for `CCC`.
 - Supported GetVideo Api.
