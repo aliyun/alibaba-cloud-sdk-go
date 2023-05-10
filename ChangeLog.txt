@@ -1,3 +1,8 @@
+2023-05-10 Version: v1.62.310
+- Generated 2020-02-17 for `Dytnsapi`.
+- Supported insufficient balance check.
+- Other improvements.
+
 2023-05-10 Version: v1.62.309
 - Generated 2022-01-30 for `avatar`.
 - SendMessage add Feedback param
