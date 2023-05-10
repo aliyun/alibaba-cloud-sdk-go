@@ -1,3 +1,7 @@
+2023-05-10 Version: v1.62.309
+- Generated 2022-01-30 for `avatar`.
+- SendMessage add Feedback param
+
 2023-05-09 Version: v1.62.308
 - Generated 2020-07-01 for `CCC`.
 - Supported GetVideo Api.
