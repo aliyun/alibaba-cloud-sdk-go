@@ -74,6 +74,7 @@ type GetEmbeddingRequest struct {
 	Business    string `position:"Query" name:"Business"`
 	ServiceCode string `position:"Body" name:"ServiceCode"`
 	Text        string `position:"Body" name:"Text"`
+	TextType    string `position:"Body" name:"TextType"`
 }
 
 // GetEmbeddingResponse is the response struct for api GetEmbedding
