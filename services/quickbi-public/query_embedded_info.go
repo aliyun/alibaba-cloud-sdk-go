@@ -88,7 +88,7 @@ func CreateQueryEmbeddedInfoRequest() (request *QueryEmbeddedInfoRequest) {
 	request = &QueryEmbeddedInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2022-01-01", "QueryEmbeddedInfo", "quickbi", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "QueryEmbeddedInfo", "2.2.0", "openAPI")
 	request.Method = requests.POST
 	return
 }

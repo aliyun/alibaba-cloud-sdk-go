@@ -90,7 +90,7 @@ func CreateQueryWorksRequest() (request *QueryWorksRequest) {
 	request = &QueryWorksRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2022-01-01", "QueryWorks", "quickbi", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "QueryWorks", "2.2.0", "openAPI")
 	request.Method = requests.POST
 	return
 }

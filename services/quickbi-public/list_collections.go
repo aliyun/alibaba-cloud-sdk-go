@@ -89,7 +89,7 @@ func CreateListCollectionsRequest() (request *ListCollectionsRequest) {
 	request = &ListCollectionsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2022-01-01", "ListCollections", "quickbi", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "ListCollections", "2.2.0", "openAPI")
 	request.Method = requests.POST
 	return
 }

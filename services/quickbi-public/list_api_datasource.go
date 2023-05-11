@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// ListSharedReports invokes the quickbi_public.ListSharedReports API synchronously
-func (client *Client) ListSharedReports(request *ListSharedReportsRequest) (response *ListSharedReportsResponse, err error) {
-	response = CreateListSharedReportsResponse()
+// ListApiDatasource invokes the quickbi_public.ListApiDatasource API synchronously
+func (client *Client) ListApiDatasource(request *ListApiDatasourceRequest) (response *ListApiDatasourceResponse, err error) {
+	response = CreateListApiDatasourceResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// ListSharedReportsWithChan invokes the quickbi_public.ListSharedReports API asynchronously
-func (client *Client) ListSharedReportsWithChan(request *ListSharedReportsRequest) (<-chan *ListSharedReportsResponse, <-chan error) {
-	responseChan := make(chan *ListSharedReportsResponse, 1)
+// ListApiDatasourceWithChan invokes the quickbi_public.ListApiDatasource API asynchronously
+func (client *Client) ListApiDatasourceWithChan(request *ListApiDatasourceRequest) (<-chan *ListApiDatasourceResponse, <-chan error) {
+	responseChan := make(chan *ListApiDatasourceResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.ListSharedReports(request)
+		response, err := client.ListApiDatasource(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) ListSharedReportsWithChan(request *ListSharedReportsReques
 	return responseChan, errChan
 }
 
-// ListSharedReportsWithCallback invokes the quickbi_public.ListSharedReports API asynchronously
-func (client *Client) ListSharedReportsWithCallback(request *ListSharedReportsRequest, callback func(response *ListSharedReportsResponse, err error)) <-chan int {
+// ListApiDatasourceWithCallback invokes the quickbi_public.ListApiDatasource API asynchronously
+func (client *Client) ListApiDatasourceWithCallback(request *ListApiDatasourceRequest, callback func(response *ListApiDatasourceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *ListSharedReportsResponse
+		var response *ListApiDatasourceResponse
 		var err error
 		defer close(result)
-		response, err = client.ListSharedReports(request)
+		response, err = client.ListApiDatasource(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,38 +68,38 @@ func (client *Client) ListSharedReportsWithCallback(request *ListSharedReportsRe
 	return result
 }
 
-// ListSharedReportsRequest is the request struct for api ListSharedReports
-type ListSharedReportsRequest struct {
+// ListApiDatasourceRequest is the request struct for api ListApiDatasource
+type ListApiDatasourceRequest struct {
 	*requests.RpcRequest
-	TreeType    string           `position:"Query" name:"TreeType"`
 	AccessPoint string           `position:"Query" name:"AccessPoint"`
 	PageSize    requests.Integer `position:"Query" name:"PageSize"`
 	SignType    string           `position:"Query" name:"SignType"`
-	Keyword     string           `position:"Query" name:"Keyword"`
-	UserId      string           `position:"Query" name:"UserId"`
+	PageNum     requests.Integer `position:"Query" name:"PageNum"`
+	KeyWord     string           `position:"Query" name:"KeyWord"`
+	WorkspaceId string           `position:"Query" name:"WorkspaceId"`
 }
 
-// ListSharedReportsResponse is the response struct for api ListSharedReports
-type ListSharedReportsResponse struct {
+// ListApiDatasourceResponse is the response struct for api ListApiDatasource
+type ListApiDatasourceResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
 	Result    Result `json:"Result" xml:"Result"`
 }
 
-// CreateListSharedReportsRequest creates a request to invoke ListSharedReports API
-func CreateListSharedReportsRequest() (request *ListSharedReportsRequest) {
-	request = &ListSharedReportsRequest{
+// CreateListApiDatasourceRequest creates a request to invoke ListApiDatasource API
+func CreateListApiDatasourceRequest() (request *ListApiDatasourceRequest) {
+	request = &ListApiDatasourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2022-01-01", "ListSharedReports", "2.2.0", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "ListApiDatasource", "2.2.0", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateListSharedReportsResponse creates a response to parse from ListSharedReports response
-func CreateListSharedReportsResponse() (response *ListSharedReportsResponse) {
-	response = &ListSharedReportsResponse{
+// CreateListApiDatasourceResponse creates a response to parse from ListApiDatasource response
+func CreateListApiDatasourceResponse() (response *ListApiDatasourceResponse) {
+	response = &ListApiDatasourceResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

@@ -90,7 +90,7 @@ func CreateDeleteUserFromWorkspaceRequest() (request *DeleteUserFromWorkspaceReq
 	request = &DeleteUserFromWorkspaceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2022-01-01", "DeleteUserFromWorkspace", "quickbi", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "DeleteUserFromWorkspace", "2.2.0", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -89,7 +89,7 @@ func CreateDeleteUserTagMetaRequest() (request *DeleteUserTagMetaRequest) {
 	request = &DeleteUserTagMetaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2022-01-01", "DeleteUserTagMeta", "quickbi", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "DeleteUserTagMeta", "2.2.0", "openAPI")
 	request.Method = requests.POST
 	return
 }

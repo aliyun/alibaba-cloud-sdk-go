@@ -90,7 +90,7 @@ func CreateDeleteDataLevelRuleConfigRequest() (request *DeleteDataLevelRuleConfi
 	request = &DeleteDataLevelRuleConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2022-01-01", "DeleteDataLevelRuleConfig", "quickbi", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "DeleteDataLevelRuleConfig", "2.2.0", "openAPI")
 	request.Method = requests.POST
 	return
 }

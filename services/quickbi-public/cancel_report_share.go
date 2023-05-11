@@ -91,7 +91,7 @@ func CreateCancelReportShareRequest() (request *CancelReportShareRequest) {
 	request = &CancelReportShareRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2022-01-01", "CancelReportShare", "quickbi", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "CancelReportShare", "2.2.0", "openAPI")
 	request.Method = requests.POST
 	return
 }

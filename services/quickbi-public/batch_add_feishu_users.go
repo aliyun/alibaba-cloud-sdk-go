@@ -93,7 +93,7 @@ func CreateBatchAddFeishuUsersRequest() (request *BatchAddFeishuUsersRequest) {
 	request = &BatchAddFeishuUsersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2022-01-01", "BatchAddFeishuUsers", "quickbi", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "BatchAddFeishuUsers", "2.2.0", "openAPI")
 	request.Method = requests.POST
 	return
 }

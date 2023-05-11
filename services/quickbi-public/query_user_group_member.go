@@ -90,7 +90,7 @@ func CreateQueryUserGroupMemberRequest() (request *QueryUserGroupMemberRequest) 
 	request = &QueryUserGroupMemberRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2022-01-01", "QueryUserGroupMember", "quickbi", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "QueryUserGroupMember", "2.2.0", "openAPI")
 	request.Method = requests.POST
 	return
 }

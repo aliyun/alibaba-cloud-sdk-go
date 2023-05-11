@@ -94,7 +94,7 @@ func CreateListRecentViewReportsRequest() (request *ListRecentViewReportsRequest
 	request = &ListRecentViewReportsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2022-01-01", "ListRecentViewReports", "quickbi", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "ListRecentViewReports", "2.2.0", "openAPI")
 	request.Method = requests.POST
 	return
 }

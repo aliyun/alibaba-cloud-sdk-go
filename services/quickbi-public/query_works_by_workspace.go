@@ -94,7 +94,7 @@ func CreateQueryWorksByWorkspaceRequest() (request *QueryWorksByWorkspaceRequest
 	request = &QueryWorksByWorkspaceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2022-01-01", "QueryWorksByWorkspace", "quickbi", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "QueryWorksByWorkspace", "2.2.0", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -73,6 +73,7 @@ type Result struct {
 	IsOpenRowLevelPermission    int                      `json:"IsOpenRowLevelPermission" xml:"IsOpenRowLevelPermission"`
 	AdminUser                   bool                     `json:"AdminUser" xml:"AdminUser"`
 	RoleId                      int64                    `json:"RoleId" xml:"RoleId"`
+	Attention                   string                   `json:"Attention" xml:"Attention"`
 	AccountName                 string                   `json:"AccountName" xml:"AccountName"`
 	OwnerId                     string                   `json:"OwnerId" xml:"OwnerId"`
 	DsType                      string                   `json:"DsType" xml:"DsType"`

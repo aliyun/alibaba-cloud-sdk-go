@@ -1,3 +1,8 @@
+2023-05-11 Version: v1.62.312
+- Generated 2022-01-01 for `quickbi-public`.
+- Add AllotDatasetAccelerationTask API.
+- Update error code description.
+
 2023-05-11 Version: v1.62.311
 - Generated 2017-09-12 for `Cbn`.
 - Update API DescribeGrantRulesToCen support ChildInstanceOwnerId and ChildInstanceId.

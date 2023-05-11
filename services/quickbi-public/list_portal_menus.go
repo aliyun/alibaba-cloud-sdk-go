@@ -90,7 +90,7 @@ func CreateListPortalMenusRequest() (request *ListPortalMenusRequest) {
 	request = &ListPortalMenusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2022-01-01", "ListPortalMenus", "quickbi", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "ListPortalMenus", "2.2.0", "openAPI")
 	request.Method = requests.POST
 	return
 }

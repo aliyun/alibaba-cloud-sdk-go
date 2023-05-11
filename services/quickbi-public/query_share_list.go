@@ -89,7 +89,7 @@ func CreateQueryShareListRequest() (request *QueryShareListRequest) {
 	request = &QueryShareListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("quickbi-public", "2022-01-01", "QueryShareList", "quickbi", "openAPI")
+	request.InitWithApiInfo("quickbi-public", "2022-01-01", "QueryShareList", "2.2.0", "openAPI")
 	request.Method = requests.POST
 	return
 }

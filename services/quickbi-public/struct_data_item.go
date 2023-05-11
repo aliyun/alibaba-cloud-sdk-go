@@ -17,6 +17,7 @@ package quickbi_public
 
 // DataItem is a nested struct in quickbi_public response
 type DataItem struct {
+	DataSize              float64    `json:"DataSize" xml:"DataSize"`
 	ModifyUserAccountName string     `json:"ModifyUserAccountName" xml:"ModifyUserAccountName"`
 	ViewCount             int64      `json:"ViewCount" xml:"ViewCount"`
 	Auth3rdFlag           int        `json:"Auth3rdFlag" xml:"Auth3rdFlag"`
@@ -24,16 +25,20 @@ type DataItem struct {
 	GmtModify             string     `json:"GmtModify" xml:"GmtModify"`
 	WorkType              string     `json:"WorkType" xml:"WorkType"`
 	Favorite              bool       `json:"Favorite" xml:"Favorite"`
+	StatusType            int        `json:"StatusType" xml:"StatusType"`
 	OrganizationId        string     `json:"OrganizationId" xml:"OrganizationId"`
 	Type                  string     `json:"Type" xml:"Type"`
+	ShowName              string     `json:"ShowName" xml:"ShowName"`
 	PublishStatus         int        `json:"PublishStatus" xml:"PublishStatus"`
 	OwnerNum              string     `json:"OwnerNum" xml:"OwnerNum"`
 	Email                 string     `json:"Email" xml:"Email"`
 	OwnerName             string     `json:"OwnerName" xml:"OwnerName"`
 	ModifyUser            string     `json:"ModifyUser" xml:"ModifyUser"`
 	WorkspaceName         string     `json:"WorkspaceName" xml:"WorkspaceName"`
+	DateUpdateTime        string     `json:"DateUpdateTime" xml:"DateUpdateTime"`
 	RowLevel              bool       `json:"RowLevel" xml:"RowLevel"`
 	WorksId               string     `json:"WorksId" xml:"WorksId"`
+	Parameters            string     `json:"Parameters" xml:"Parameters"`
 	AllowPublishOperation bool       `json:"AllowPublishOperation" xml:"AllowPublishOperation"`
 	AccountId             string     `json:"AccountId" xml:"AccountId"`
 	SecurityLevel         string     `json:"SecurityLevel" xml:"SecurityLevel"`
@@ -57,12 +62,15 @@ type DataItem struct {
 	Description           string     `json:"Description" xml:"Description"`
 	Phone                 string     `json:"Phone" xml:"Phone"`
 	CreateUserAccountName string     `json:"CreateUserAccountName" xml:"CreateUserAccountName"`
+	JobId                 string     `json:"JobId" xml:"JobId"`
 	Status                int        `json:"Status" xml:"Status"`
 	ModifyName            string     `json:"ModifyName" xml:"ModifyName"`
 	DatasetName           string     `json:"DatasetName" xml:"DatasetName"`
 	GmtModified           string     `json:"GmtModified" xml:"GmtModified"`
 	Owner                 string     `json:"Owner" xml:"Owner"`
+	Body                  string     `json:"Body" xml:"Body"`
 	AdminUser             bool       `json:"AdminUser" xml:"AdminUser"`
+	ApiId                 string     `json:"ApiId" xml:"ApiId"`
 	LatestViewTime        string     `json:"LatestViewTime" xml:"LatestViewTime"`
 	AccountName           string     `json:"AccountName" xml:"AccountName"`
 	OwnerId               string     `json:"OwnerId" xml:"OwnerId"`
