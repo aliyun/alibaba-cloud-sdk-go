@@ -71,12 +71,14 @@ func (client *Client) DescribeDnsProductInstancesWithCallback(request *DescribeD
 // DescribeDnsProductInstancesRequest is the request struct for api DescribeDnsProductInstances
 type DescribeDnsProductInstancesRequest struct {
 	*requests.RpcRequest
+	OrderBy      string           `position:"Query" name:"OrderBy"`
 	PageNumber   requests.Integer `position:"Query" name:"PageNumber"`
 	DomainType   string           `position:"Query" name:"DomainType"`
 	UserClientIp string           `position:"Query" name:"UserClientIp"`
 	PageSize     requests.Integer `position:"Query" name:"PageSize"`
 	Lang         string           `position:"Query" name:"Lang"`
 	VersionCode  string           `position:"Query" name:"VersionCode"`
+	Direction    string           `position:"Query" name:"Direction"`
 }
 
 // DescribeDnsProductInstancesResponse is the response struct for api DescribeDnsProductInstances
