@@ -1,3 +1,7 @@
+2023-05-11 Version: v1.62.311
+- Generated 2017-09-12 for `Cbn`.
+- Update API DescribeGrantRulesToCen support ChildInstanceOwnerId and ChildInstanceId.
+
 2023-05-10 Version: v1.62.310
 - Generated 2020-02-17 for `Dytnsapi`.
 - Supported insufficient balance check.
