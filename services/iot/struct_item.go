@@ -19,12 +19,15 @@ package iot
 type Item struct {
 	ProductName      string `json:"ProductName" xml:"ProductName"`
 	LicenseCode      string `json:"LicenseCode" xml:"LicenseCode"`
+	Message          string `json:"Message" xml:"Message"`
+	ProductKey       string `json:"ProductKey" xml:"ProductKey"`
+	DeviceStatus     string `json:"DeviceStatus" xml:"DeviceStatus"`
 	GmtCreate        int64  `json:"GmtCreate" xml:"GmtCreate"`
 	DeviceName       string `json:"DeviceName" xml:"DeviceName"`
 	ExpiryTime       int64  `json:"ExpiryTime" xml:"ExpiryTime"`
 	InSpecifiedGroup bool   `json:"InSpecifiedGroup" xml:"InSpecifiedGroup"`
 	IotId            string `json:"IotId" xml:"IotId"`
-	ProductKey       string `json:"ProductKey" xml:"ProductKey"`
-	DeviceStatus     string `json:"DeviceStatus" xml:"DeviceStatus"`
 	LicenseStatus    string `json:"LicenseStatus" xml:"LicenseStatus"`
+	Status           string `json:"Status" xml:"Status"`
+	Code             int    `json:"Code" xml:"Code"`
 }

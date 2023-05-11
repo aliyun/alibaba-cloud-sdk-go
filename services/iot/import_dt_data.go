@@ -72,6 +72,7 @@ func (client *Client) ImportDTDataWithCallback(request *ImportDTDataRequest, cal
 type ImportDTDataRequest struct {
 	*requests.RpcRequest
 	RealTenantId      string               `position:"Body" name:"RealTenantId"`
+	DTInstanceId      string               `position:"Query" name:"DTInstanceId"`
 	RealTripartiteKey string               `position:"Query" name:"RealTripartiteKey"`
 	IotInstanceId     string               `position:"Body" name:"IotInstanceId"`
 	ProductKey        string               `position:"Body" name:"ProductKey"`

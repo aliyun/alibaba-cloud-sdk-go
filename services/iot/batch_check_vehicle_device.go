@@ -73,13 +73,14 @@ type BatchCheckVehicleDeviceRequest struct {
 	*requests.RpcRequest
 	IotInstanceId string                               `position:"Query" name:"IotInstanceId"`
 	ProductKey    string                               `position:"Query" name:"ProductKey"`
-	DeviceList    *[]BatchCheckVehicleDeviceDeviceList `position:"Query" name:"DeviceList"  type:"Repeated"`
+	DeviceList    *[]BatchCheckVehicleDeviceDeviceList `position:"Body" name:"DeviceList"  type:"Repeated"`
 	ApiProduct    string                               `position:"Body" name:"ApiProduct"`
 	ApiRevision   string                               `position:"Body" name:"ApiRevision"`
 }
 
 // BatchCheckVehicleDeviceDeviceList is a repeated param struct in BatchCheckVehicleDeviceRequest
 type BatchCheckVehicleDeviceDeviceList struct {
+	DeviceName   string `name:"DeviceName"`
 	DeviceId     string `name:"DeviceId"`
 	Manufacturer string `name:"Manufacturer"`
 	DeviceModel  string `name:"DeviceModel"`

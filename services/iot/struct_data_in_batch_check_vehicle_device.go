@@ -17,8 +17,11 @@ package iot
 
 // DataInBatchCheckVehicleDevice is a nested struct in iot response
 type DataInBatchCheckVehicleDevice struct {
-	InvalidManufacturerList []string `json:"InvalidManufacturerList" xml:"InvalidManufacturerList"`
-	InvalidDeviceModelList  []string `json:"InvalidDeviceModelList" xml:"InvalidDeviceModelList"`
-	InvalidDeviceIdList     []string `json:"InvalidDeviceIdList" xml:"InvalidDeviceIdList"`
-	RepeatedDeviceIdList    []string `json:"RepeatedDeviceIdList" xml:"RepeatedDeviceIdList"`
+	InvalidManufacturerList []string                `json:"InvalidManufacturerList" xml:"InvalidManufacturerList"`
+	InvalidDeviceModelList  []string                `json:"InvalidDeviceModelList" xml:"InvalidDeviceModelList"`
+	InvalidDeviceIdList     []string                `json:"InvalidDeviceIdList" xml:"InvalidDeviceIdList"`
+	RepeatedDeviceIdList    []string                `json:"RepeatedDeviceIdList" xml:"RepeatedDeviceIdList"`
+	InvalidDeviceNameList   []string                `json:"InvalidDeviceNameList" xml:"InvalidDeviceNameList"`
+	RepeatedDeviceNameList  []string                `json:"RepeatedDeviceNameList" xml:"RepeatedDeviceNameList"`
+	InvalidDetailList       []InvalidDetailListItem `json:"InvalidDetailList" xml:"InvalidDetailList"`
 }

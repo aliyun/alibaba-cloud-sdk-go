@@ -17,7 +17,8 @@ package iot
 
 // DataInQueryBatchRegisterDeviceStatus is a nested struct in iot response
 type DataInQueryBatchRegisterDeviceStatus struct {
-	Status      string      `json:"Status" xml:"Status"`
-	ValidList   ValidList   `json:"ValidList" xml:"ValidList"`
-	InvalidList InvalidList `json:"InvalidList" xml:"InvalidList"`
+	Status            string                                            `json:"Status" xml:"Status"`
+	ValidList         ValidList                                         `json:"ValidList" xml:"ValidList"`
+	InvalidList       InvalidList                                       `json:"InvalidList" xml:"InvalidList"`
+	InvalidDetailList InvalidDetailListInQueryBatchRegisterDeviceStatus `json:"InvalidDetailList" xml:"InvalidDetailList"`
 }

@@ -72,9 +72,11 @@ func (client *Client) CreateConsumerGroupWithCallback(request *CreateConsumerGro
 type CreateConsumerGroupRequest struct {
 	*requests.RpcRequest
 	RealTenantId      string `position:"Query" name:"RealTenantId"`
+	Type              string `position:"Query" name:"Type"`
 	RealTripartiteKey string `position:"Query" name:"RealTripartiteKey"`
 	IotInstanceId     string `position:"Query" name:"IotInstanceId"`
 	GroupName         string `position:"Query" name:"GroupName"`
+	SubBizCode        string `position:"Query" name:"SubBizCode"`
 	ApiProduct        string `position:"Body" name:"ApiProduct"`
 	ApiRevision       string `position:"Body" name:"ApiRevision"`
 }

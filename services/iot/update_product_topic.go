@@ -71,13 +71,15 @@ func (client *Client) UpdateProductTopicWithCallback(request *UpdateProductTopic
 // UpdateProductTopicRequest is the request struct for api UpdateProductTopic
 type UpdateProductTopicRequest struct {
 	*requests.RpcRequest
-	TopicId        string `position:"Query" name:"TopicId"`
-	IotInstanceId  string `position:"Query" name:"IotInstanceId"`
-	TopicShortName string `position:"Query" name:"TopicShortName"`
-	ApiProduct     string `position:"Body" name:"ApiProduct"`
-	ApiRevision    string `position:"Body" name:"ApiRevision"`
-	Operation      string `position:"Query" name:"Operation"`
-	Desc           string `position:"Query" name:"Desc"`
+	TopicId              string           `position:"Query" name:"TopicId"`
+	IotInstanceId        string           `position:"Query" name:"IotInstanceId"`
+	TopicShortName       string           `position:"Query" name:"TopicShortName"`
+	EnableProxySubscribe requests.Boolean `position:"Query" name:"EnableProxySubscribe"`
+	Codec                string           `position:"Query" name:"Codec"`
+	ApiProduct           string           `position:"Body" name:"ApiProduct"`
+	ApiRevision          string           `position:"Body" name:"ApiRevision"`
+	Operation            string           `position:"Query" name:"Operation"`
+	Desc                 string           `position:"Query" name:"Desc"`
 }
 
 // UpdateProductTopicResponse is the response struct for api UpdateProductTopic

@@ -83,11 +83,11 @@ type QueryVehicleDeviceRequest struct {
 // QueryVehicleDeviceResponse is the response struct for api QueryVehicleDevice
 type QueryVehicleDeviceResponse struct {
 	*responses.BaseResponse
-	RequestId    string                   `json:"RequestId" xml:"RequestId"`
-	Success      bool                     `json:"Success" xml:"Success"`
-	Code         string                   `json:"Code" xml:"Code"`
-	ErrorMessage string                   `json:"ErrorMessage" xml:"ErrorMessage"`
-	Data         DataInQueryVehicleDevice `json:"Data" xml:"Data"`
+	RequestId    string `json:"RequestId" xml:"RequestId"`
+	Success      bool   `json:"Success" xml:"Success"`
+	Code         string `json:"Code" xml:"Code"`
+	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
+	Data         Data   `json:"Data" xml:"Data"`
 }
 
 // CreateQueryVehicleDeviceRequest creates a request to invoke QueryVehicleDevice API

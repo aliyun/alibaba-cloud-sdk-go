@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// UpdateTopicConfig invokes the iot.UpdateTopicConfig API synchronously
-func (client *Client) UpdateTopicConfig(request *UpdateTopicConfigRequest) (response *UpdateTopicConfigResponse, err error) {
-	response = CreateUpdateTopicConfigResponse()
+// CreateTopicConfig invokes the iot.CreateTopicConfig API synchronously
+func (client *Client) CreateTopicConfig(request *CreateTopicConfigRequest) (response *CreateTopicConfigResponse, err error) {
+	response = CreateCreateTopicConfigResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// UpdateTopicConfigWithChan invokes the iot.UpdateTopicConfig API asynchronously
-func (client *Client) UpdateTopicConfigWithChan(request *UpdateTopicConfigRequest) (<-chan *UpdateTopicConfigResponse, <-chan error) {
-	responseChan := make(chan *UpdateTopicConfigResponse, 1)
+// CreateTopicConfigWithChan invokes the iot.CreateTopicConfig API asynchronously
+func (client *Client) CreateTopicConfigWithChan(request *CreateTopicConfigRequest) (<-chan *CreateTopicConfigResponse, <-chan error) {
+	responseChan := make(chan *CreateTopicConfigResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.UpdateTopicConfig(request)
+		response, err := client.CreateTopicConfig(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) UpdateTopicConfigWithChan(request *UpdateTopicConfigReques
 	return responseChan, errChan
 }
 
-// UpdateTopicConfigWithCallback invokes the iot.UpdateTopicConfig API asynchronously
-func (client *Client) UpdateTopicConfigWithCallback(request *UpdateTopicConfigRequest, callback func(response *UpdateTopicConfigResponse, err error)) <-chan int {
+// CreateTopicConfigWithCallback invokes the iot.CreateTopicConfig API asynchronously
+func (client *Client) CreateTopicConfigWithCallback(request *CreateTopicConfigRequest, callback func(response *CreateTopicConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *UpdateTopicConfigResponse
+		var response *CreateTopicConfigResponse
 		var err error
 		defer close(result)
-		response, err = client.UpdateTopicConfig(request)
+		response, err = client.CreateTopicConfig(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,8 +68,8 @@ func (client *Client) UpdateTopicConfigWithCallback(request *UpdateTopicConfigRe
 	return result
 }
 
-// UpdateTopicConfigRequest is the request struct for api UpdateTopicConfig
-type UpdateTopicConfigRequest struct {
+// CreateTopicConfigRequest is the request struct for api CreateTopicConfig
+type CreateTopicConfigRequest struct {
 	*requests.RpcRequest
 	Description          string           `position:"Query" name:"Description"`
 	IotInstanceId        string           `position:"Query" name:"IotInstanceId"`
@@ -83,8 +83,8 @@ type UpdateTopicConfigRequest struct {
 	Operation            string           `position:"Query" name:"Operation"`
 }
 
-// UpdateTopicConfigResponse is the response struct for api UpdateTopicConfig
-type UpdateTopicConfigResponse struct {
+// CreateTopicConfigResponse is the response struct for api CreateTopicConfig
+type CreateTopicConfigResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
@@ -92,19 +92,19 @@ type UpdateTopicConfigResponse struct {
 	Message   string `json:"Message" xml:"Message"`
 }
 
-// CreateUpdateTopicConfigRequest creates a request to invoke UpdateTopicConfig API
-func CreateUpdateTopicConfigRequest() (request *UpdateTopicConfigRequest) {
-	request = &UpdateTopicConfigRequest{
+// CreateCreateTopicConfigRequest creates a request to invoke CreateTopicConfig API
+func CreateCreateTopicConfigRequest() (request *CreateTopicConfigRequest) {
+	request = &CreateTopicConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "UpdateTopicConfig", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "CreateTopicConfig", "", "")
 	request.Method = requests.POST
 	return
 }
 
-// CreateUpdateTopicConfigResponse creates a response to parse from UpdateTopicConfig response
-func CreateUpdateTopicConfigResponse() (response *UpdateTopicConfigResponse) {
-	response = &UpdateTopicConfigResponse{
+// CreateCreateTopicConfigResponse creates a response to parse from CreateTopicConfig response
+func CreateCreateTopicConfigResponse() (response *CreateTopicConfigResponse) {
+	response = &CreateTopicConfigResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

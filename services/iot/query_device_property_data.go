@@ -81,6 +81,7 @@ type QueryDevicePropertyDataRequest struct {
 	EndTime           requests.Integer `position:"Query" name:"EndTime"`
 	ProductKey        string           `position:"Query" name:"ProductKey"`
 	Asc               requests.Integer `position:"Query" name:"Asc"`
+	NeedIopsCheck     requests.Boolean `position:"Query" name:"NeedIopsCheck"`
 	ApiProduct        string           `position:"Body" name:"ApiProduct"`
 	ApiRevision       string           `position:"Body" name:"ApiRevision"`
 	DeviceName        string           `position:"Query" name:"DeviceName"`

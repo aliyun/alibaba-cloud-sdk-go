@@ -73,12 +73,12 @@ type BatchCheckDeviceNamesRequest struct {
 	*requests.RpcRequest
 	RealTenantId      string                                 `position:"Query" name:"RealTenantId"`
 	RealTripartiteKey string                                 `position:"Query" name:"RealTripartiteKey"`
-	DeviceNameList    *[]BatchCheckDeviceNamesDeviceNameList `position:"Query" name:"DeviceNameList"  type:"Repeated"`
+	DeviceNameList    *[]BatchCheckDeviceNamesDeviceNameList `position:"Body" name:"DeviceNameList"  type:"Repeated"`
 	IotInstanceId     string                                 `position:"Query" name:"IotInstanceId"`
 	ProductKey        string                                 `position:"Query" name:"ProductKey"`
 	ApiProduct        string                                 `position:"Body" name:"ApiProduct"`
 	ApiRevision       string                                 `position:"Body" name:"ApiRevision"`
-	DeviceName        *[]string                              `position:"Query" name:"DeviceName"  type:"Repeated"`
+	DeviceName        *[]string                              `position:"Body" name:"DeviceName"  type:"Repeated"`
 }
 
 // BatchCheckDeviceNamesDeviceNameList is a repeated param struct in BatchCheckDeviceNamesRequest

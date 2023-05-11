@@ -71,15 +71,17 @@ func (client *Client) CreateProductTopicWithCallback(request *CreateProductTopic
 // CreateProductTopicRequest is the request struct for api CreateProductTopic
 type CreateProductTopicRequest struct {
 	*requests.RpcRequest
-	RealTenantId      string `position:"Query" name:"RealTenantId"`
-	RealTripartiteKey string `position:"Query" name:"RealTripartiteKey"`
-	IotInstanceId     string `position:"Query" name:"IotInstanceId"`
-	TopicShortName    string `position:"Query" name:"TopicShortName"`
-	ProductKey        string `position:"Query" name:"ProductKey"`
-	ApiProduct        string `position:"Body" name:"ApiProduct"`
-	ApiRevision       string `position:"Body" name:"ApiRevision"`
-	Operation         string `position:"Query" name:"Operation"`
-	Desc              string `position:"Query" name:"Desc"`
+	RealTenantId         string           `position:"Query" name:"RealTenantId"`
+	RealTripartiteKey    string           `position:"Query" name:"RealTripartiteKey"`
+	IotInstanceId        string           `position:"Query" name:"IotInstanceId"`
+	TopicShortName       string           `position:"Query" name:"TopicShortName"`
+	EnableProxySubscribe requests.Boolean `position:"Query" name:"EnableProxySubscribe"`
+	ProductKey           string           `position:"Query" name:"ProductKey"`
+	Codec                string           `position:"Query" name:"Codec"`
+	ApiProduct           string           `position:"Body" name:"ApiProduct"`
+	ApiRevision          string           `position:"Body" name:"ApiRevision"`
+	Operation            string           `position:"Query" name:"Operation"`
+	Desc                 string           `position:"Query" name:"Desc"`
 }
 
 // CreateProductTopicResponse is the response struct for api CreateProductTopic

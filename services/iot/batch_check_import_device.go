@@ -73,7 +73,7 @@ type BatchCheckImportDeviceRequest struct {
 	*requests.RpcRequest
 	IotInstanceId string                              `position:"Query" name:"IotInstanceId"`
 	ProductKey    string                              `position:"Query" name:"ProductKey"`
-	DeviceList    *[]BatchCheckImportDeviceDeviceList `position:"Query" name:"DeviceList"  type:"Repeated"`
+	DeviceList    *[]BatchCheckImportDeviceDeviceList `position:"Body" name:"DeviceList"  type:"Repeated"`
 	ApiProduct    string                              `position:"Body" name:"ApiProduct"`
 	ApiRevision   string                              `position:"Body" name:"ApiRevision"`
 }
