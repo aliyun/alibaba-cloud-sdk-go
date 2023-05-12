@@ -71,14 +71,23 @@ func (client *Client) CreateDBEndpointAddressWithCallback(request *CreateDBEndpo
 // CreateDBEndpointAddressRequest is the request struct for api CreateDBEndpointAddress
 type CreateDBEndpointAddressRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId        requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ConnectionStringPrefix string           `position:"Query" name:"ConnectionStringPrefix"`
-	DBEndpointId           string           `position:"Query" name:"DBEndpointId"`
-	ResourceOwnerAccount   string           `position:"Query" name:"ResourceOwnerAccount"`
-	DBClusterId            string           `position:"Query" name:"DBClusterId"`
-	OwnerAccount           string           `position:"Query" name:"OwnerAccount"`
-	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
-	NetType                string           `position:"Query" name:"NetType"`
+	ResourceOwnerId        requests.Integer                   `position:"Query" name:"ResourceOwnerId"`
+	ConnectionStringPrefix string                             `position:"Query" name:"ConnectionStringPrefix"`
+	ZoneInfo               *[]CreateDBEndpointAddressZoneInfo `position:"Query" name:"ZoneInfo"  type:"Repeated"`
+	SecurityGroupId        string                             `position:"Query" name:"SecurityGroupId"`
+	DBEndpointId           string                             `position:"Query" name:"DBEndpointId"`
+	ResourceOwnerAccount   string                             `position:"Query" name:"ResourceOwnerAccount"`
+	DBClusterId            string                             `position:"Query" name:"DBClusterId"`
+	OwnerAccount           string                             `position:"Query" name:"OwnerAccount"`
+	OwnerId                requests.Integer                   `position:"Query" name:"OwnerId"`
+	NetType                string                             `position:"Query" name:"NetType"`
+	VPCId                  string                             `position:"Query" name:"VPCId"`
+}
+
+// CreateDBEndpointAddressZoneInfo is a repeated param struct in CreateDBEndpointAddressRequest
+type CreateDBEndpointAddressZoneInfo struct {
+	VSwitchId string `name:"VSwitchId"`
+	ZoneId    string `name:"ZoneId"`
 }
 
 // CreateDBEndpointAddressResponse is the response struct for api CreateDBEndpointAddress

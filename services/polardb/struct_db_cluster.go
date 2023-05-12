@@ -38,12 +38,13 @@ type DBCluster struct {
 	PayType              string                      `json:"PayType" xml:"PayType"`
 	DBClusterId          string                      `json:"DBClusterId" xml:"DBClusterId"`
 	DBClusterStatus      string                      `json:"DBClusterStatus" xml:"DBClusterStatus"`
+	StrictConsistency    string                      `json:"StrictConsistency" xml:"StrictConsistency"`
 	ZoneId               string                      `json:"ZoneId" xml:"ZoneId"`
 	StorageUsed          int64                       `json:"StorageUsed" xml:"StorageUsed"`
 	StorageSpace         int64                       `json:"StorageSpace" xml:"StorageSpace"`
 	IsDeleted            int                         `json:"IsDeleted" xml:"IsDeleted"`
 	DBClusterDescription string                      `json:"DBClusterDescription" xml:"DBClusterDescription"`
 	LockMode             string                      `json:"LockMode" xml:"LockMode"`
-	DBNodes              DBNodesInDescribeDBClusters `json:"DBNodes" xml:"DBNodes"`
 	Tags                 TagsInDescribeDBClusters    `json:"Tags" xml:"Tags"`
+	DBNodes              DBNodesInDescribeDBClusters `json:"DBNodes" xml:"DBNodes"`
 }

@@ -72,6 +72,7 @@ func (client *Client) DescribeDBClusterServerlessConfWithCallback(request *Descr
 type DescribeDBClusterServerlessConfRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	RequestType          string           `position:"Query" name:"RequestType"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	DBClusterId          string           `position:"Query" name:"DBClusterId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
@@ -91,6 +92,8 @@ type DescribeDBClusterServerlessConfResponse struct {
 	DBClusterId           string `json:"DBClusterId" xml:"DBClusterId"`
 	ScaleApRoNumMin       string `json:"ScaleApRoNumMin" xml:"ScaleApRoNumMin"`
 	ScaleApRoNumMax       string `json:"ScaleApRoNumMax" xml:"ScaleApRoNumMax"`
+	Switchs               string `json:"Switchs" xml:"Switchs"`
+	DBMaxscaleId          string `json:"DBMaxscaleId" xml:"DBMaxscaleId"`
 }
 
 // CreateDescribeDBClusterServerlessConfRequest creates a request to invoke DescribeDBClusterServerlessConf API

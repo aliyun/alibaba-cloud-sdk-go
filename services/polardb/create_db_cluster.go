@@ -97,6 +97,7 @@ type CreateDBClusterRequest struct {
 	AllowShutDown                          string                `position:"Query" name:"AllowShutDown"`
 	LowerCaseTableNames                    string                `position:"Query" name:"LowerCaseTableNames"`
 	ScaleRoNumMax                          string                `position:"Query" name:"ScaleRoNumMax"`
+	StandbyAZ                              string                `position:"Query" name:"StandbyAZ"`
 	ClientToken                            string                `position:"Query" name:"ClientToken"`
 	DefaultTimeZone                        string                `position:"Query" name:"DefaultTimeZone"`
 	ClusterNetworkType                     string                `position:"Query" name:"ClusterNetworkType"`
@@ -111,6 +112,7 @@ type CreateDBClusterRequest struct {
 	ScaleRoNumMin                          string                `position:"Query" name:"ScaleRoNumMin"`
 	DBType                                 string                `position:"Query" name:"DBType"`
 	DBVersion                              string                `position:"Query" name:"DBVersion"`
+	StrictConsistency                      string                `position:"Query" name:"StrictConsistency"`
 	CloneDataPoint                         string                `position:"Query" name:"CloneDataPoint"`
 	PayType                                string                `position:"Query" name:"PayType"`
 	StorageSpace                           requests.Integer      `position:"Query" name:"StorageSpace"`

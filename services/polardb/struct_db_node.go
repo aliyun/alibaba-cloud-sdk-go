@@ -26,6 +26,7 @@ type DBNode struct {
 	CreationTime     string `json:"CreationTime" xml:"CreationTime"`
 	HotReplicaMode   string `json:"HotReplicaMode" xml:"HotReplicaMode"`
 	ServerlessType   string `json:"ServerlessType" xml:"ServerlessType"`
+	Serverless       string `json:"Serverless" xml:"Serverless"`
 	MaxConnections   int    `json:"MaxConnections" xml:"MaxConnections"`
 	AddedCpuCores    string `json:"AddedCpuCores" xml:"AddedCpuCores"`
 	RegionId         string `json:"RegionId" xml:"RegionId"`

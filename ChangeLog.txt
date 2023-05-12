@@ -1,3 +1,7 @@
+2023-05-12 Version: v1.62.318
+- Generated 2017-08-01 for `polardb`.
+- Update some parameters.
+
 2023-05-11 Version: v1.62.317
 - Generated 2015-01-09 for `Alidns`.
 - Supported sorting for DescribeDnsProduceInstances.
