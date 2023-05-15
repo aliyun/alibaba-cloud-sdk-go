@@ -1,3 +1,7 @@
+2023-05-15 Version: v1.62.319
+- Generated 2018-11-01 for `dms-enterprise`.
+- Support SkipDataCorrectRowCheck API.
+
 2023-05-12 Version: v1.62.318
 - Generated 2017-08-01 for `polardb`.
 - Update some parameters.
