@@ -1,3 +1,7 @@
+2023-05-16 Version: v1.62.323
+- Generated 2016-11-01 for `live`.
+- Live sdk update.
+
 2023-05-16 Version: v1.62.322
 - Generated 2021-06-01 for `ComputeNest`.
 - Generate SDK for service instance APIs.
