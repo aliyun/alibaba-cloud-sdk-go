@@ -17,19 +17,33 @@ package computenestsupplier
 
 // Service is a nested struct in computenestsupplier response
 type Service struct {
-	VersionName                string        `json:"VersionName" xml:"VersionName"`
-	SupplierUrl                string        `json:"SupplierUrl" xml:"SupplierUrl"`
-	Version                    string        `json:"Version" xml:"Version"`
+	CreateTime                 string        `json:"CreateTime" xml:"CreateTime"`
+	RelationType               string        `json:"RelationType" xml:"RelationType"`
 	DeployType                 string        `json:"DeployType" xml:"DeployType"`
 	DeployMetadata             string        `json:"DeployMetadata" xml:"DeployMetadata"`
 	ServiceId                  string        `json:"ServiceId" xml:"ServiceId"`
 	ServiceProductUrl          string        `json:"ServiceProductUrl" xml:"ServiceProductUrl"`
-	ServiceDocUrl              string        `json:"ServiceDocUrl" xml:"ServiceDocUrl"`
+	ResourceGroupId            string        `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	TrialType                  string        `json:"TrialType" xml:"TrialType"`
 	SupplierName               string        `json:"SupplierName" xml:"SupplierName"`
-	Status                     string        `json:"Status" xml:"Status"`
+	ArtifactId                 string        `json:"ArtifactId" xml:"ArtifactId"`
+	CommodityCode              string        `json:"CommodityCode" xml:"CommodityCode"`
 	PublishTime                string        `json:"PublishTime" xml:"PublishTime"`
 	ServiceType                string        `json:"ServiceType" xml:"ServiceType"`
+	ApprovalType               string        `json:"ApprovalType" xml:"ApprovalType"`
+	ArtifactVersion            string        `json:"ArtifactVersion" xml:"ArtifactVersion"`
+	VersionName                string        `json:"VersionName" xml:"VersionName"`
+	UpdateTime                 string        `json:"UpdateTime" xml:"UpdateTime"`
+	SupplierUrl                string        `json:"SupplierUrl" xml:"SupplierUrl"`
+	Version                    string        `json:"Version" xml:"Version"`
+	DefaultVersion             bool          `json:"DefaultVersion" xml:"DefaultVersion"`
+	ServiceDocUrl              string        `json:"ServiceDocUrl" xml:"ServiceDocUrl"`
+	SourceImage                string        `json:"SourceImage" xml:"SourceImage"`
+	TenantType                 string        `json:"TenantType" xml:"TenantType"`
+	Status                     string        `json:"Status" xml:"Status"`
 	EnablePrivateVpcConnection bool          `json:"EnablePrivateVpcConnection" xml:"EnablePrivateVpcConnection"`
+	ShareType                  string        `json:"ShareType" xml:"ShareType"`
 	UpgradableServiceVersions  []string      `json:"UpgradableServiceVersions" xml:"UpgradableServiceVersions"`
+	Tags                       []Tag         `json:"Tags" xml:"Tags"`
 	ServiceInfos               []ServiceInfo `json:"ServiceInfos" xml:"ServiceInfos"`
 }

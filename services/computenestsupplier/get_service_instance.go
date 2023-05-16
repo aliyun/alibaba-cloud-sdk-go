@@ -102,6 +102,7 @@ type GetServiceInstanceResponse struct {
 	LicenseMetadata           string        `json:"LicenseMetadata" xml:"LicenseMetadata"`
 	Name                      string        `json:"Name" xml:"Name"`
 	EnableUserPrometheus      string        `json:"EnableUserPrometheus" xml:"EnableUserPrometheus"`
+	RdAccountLoginUrl         string        `json:"RdAccountLoginUrl" xml:"RdAccountLoginUrl"`
 	Service                   Service       `json:"Service" xml:"Service"`
 	NetworkConfig             NetworkConfig `json:"NetworkConfig" xml:"NetworkConfig"`
 	Tags                      []Tag         `json:"Tags" xml:"Tags"`
