@@ -33,6 +33,7 @@ type Database struct {
 	SearchName    string                     `json:"SearchName" xml:"SearchName"`
 	InstanceId    string                     `json:"InstanceId" xml:"InstanceId"`
 	DbId          int                        `json:"DbId" xml:"DbId"`
+	InstanceAlias string                     `json:"InstanceAlias" xml:"InstanceAlias"`
 	OwnerNameList OwnerNameListInGetDatabase `json:"OwnerNameList" xml:"OwnerNameList"`
 	OwnerIdList   OwnerIdListInGetDatabase   `json:"OwnerIdList" xml:"OwnerIdList"`
 }
