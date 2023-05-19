@@ -1,3 +1,7 @@
+2023-05-19 Version: v1.62.329
+- Generated 2018-01-15 for `dcdn`.
+- Add DescribeDcdnDomainMd5Info.
+
 2023-05-19 Version: v1.62.328
 - Generated 2018-05-10 for `Cdn`.
 - Add DescribeDomainMd5Info.
