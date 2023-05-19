@@ -1,3 +1,7 @@
+2023-05-19 Version: v1.62.327
+- Generated 2017-12-14 for `BssOpenApi`.
+- DescribeInstanceAmortizedCostByAmortizationPeriodDate
+
 2023-05-18 Version: v1.62.326
 - Generated 2018-11-01 for `dms-enterprise`.
 - Support GetDatabase, GetPhysicalDatabase to return InstanceAlias information.
