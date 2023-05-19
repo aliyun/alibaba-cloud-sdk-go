@@ -39,6 +39,7 @@ type Tenant struct {
 	Series                       string                  `json:"Series" xml:"Series"`
 	DiskType                     string                  `json:"DiskType" xml:"DiskType"`
 	EnableReadWriteSplit         bool                    `json:"EnableReadWriteSplit" xml:"EnableReadWriteSplit"`
+	EnableBinlogService          bool                    `json:"EnableBinlogService" xml:"EnableBinlogService"`
 	AvailableZones               []string                `json:"AvailableZones" xml:"AvailableZones"`
 	TenantResource               TenantResource          `json:"TenantResource" xml:"TenantResource"`
 	TenantConnections            []TenantConnectionsItem `json:"TenantConnections" xml:"TenantConnections"`

@@ -49,6 +49,7 @@ type Data struct {
 	DbName                 string             `json:"DbName" xml:"DbName"`
 	DiskRead               int64              `json:"DiskRead" xml:"DiskRead"`
 	ZoneId                 string             `json:"ZoneId" xml:"ZoneId"`
+	Readonly               bool               `json:"Readonly" xml:"Readonly"`
 	MinMem                 int64              `json:"MinMem" xml:"MinMem"`
 	MaxMem                 int64              `json:"MaxMem" xml:"MaxMem"`
 	Status                 string             `json:"Status" xml:"Status"`

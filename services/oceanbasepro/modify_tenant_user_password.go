@@ -71,10 +71,11 @@ func (client *Client) ModifyTenantUserPasswordWithCallback(request *ModifyTenant
 // ModifyTenantUserPasswordRequest is the request struct for api ModifyTenantUserPassword
 type ModifyTenantUserPasswordRequest struct {
 	*requests.RpcRequest
-	UserPassword string `position:"Body" name:"UserPassword"`
-	InstanceId   string `position:"Body" name:"InstanceId"`
-	TenantId     string `position:"Body" name:"TenantId"`
-	UserName     string `position:"Body" name:"UserName"`
+	UserPassword   string `position:"Body" name:"UserPassword"`
+	InstanceId     string `position:"Body" name:"InstanceId"`
+	TenantId       string `position:"Body" name:"TenantId"`
+	EncryptionType string `position:"Body" name:"EncryptionType"`
+	UserName       string `position:"Body" name:"UserName"`
 }
 
 // ModifyTenantUserPasswordResponse is the response struct for api ModifyTenantUserPassword
