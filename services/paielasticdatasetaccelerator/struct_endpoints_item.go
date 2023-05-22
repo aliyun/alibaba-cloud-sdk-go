@@ -23,6 +23,7 @@ type EndpointsItem struct {
 	GmtModifiedTime string `json:"GmtModifiedTime" xml:"GmtModifiedTime"`
 	UserId          string `json:"UserId" xml:"UserId"`
 	OwnerId         string `json:"OwnerId" xml:"OwnerId"`
+	InstanceId      string `json:"InstanceId" xml:"InstanceId"`
 	VswitchId       string `json:"VswitchId" xml:"VswitchId"`
 	VpcId           string `json:"VpcId" xml:"VpcId"`
 	Type            string `json:"Type" xml:"Type"`

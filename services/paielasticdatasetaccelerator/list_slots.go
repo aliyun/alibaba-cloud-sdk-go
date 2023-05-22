@@ -71,14 +71,16 @@ func (client *Client) ListSlotsWithCallback(request *ListSlotsRequest, callback 
 // ListSlotsRequest is the request struct for api ListSlots
 type ListSlotsRequest struct {
 	*requests.RoaRequest
-	SlotIds     string           `position:"Query" name:"SlotIds"`
 	Phase       string           `position:"Query" name:"Phase"`
+	StorageType string           `position:"Query" name:"StorageType"`
+	PageNumber  requests.Integer `position:"Query" name:"PageNumber"`
+	EndpointIds string           `position:"Query" name:"EndpointIds"`
+	SlotIds     string           `position:"Query" name:"SlotIds"`
 	InstanceIds string           `position:"Query" name:"InstanceIds"`
 	Name        string           `position:"Query" name:"Name"`
 	PageSize    requests.Integer `position:"Query" name:"PageSize"`
 	SortBy      string           `position:"Query" name:"SortBy"`
-	StorageType string           `position:"Query" name:"StorageType"`
-	PageNumber  requests.Integer `position:"Query" name:"PageNumber"`
+	StorageUri  string           `position:"Query" name:"StorageUri"`
 	Order       string           `position:"Query" name:"Order"`
 }
 

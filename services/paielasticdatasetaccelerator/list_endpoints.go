@@ -72,6 +72,7 @@ func (client *Client) ListEndpointsWithCallback(request *ListEndpointsRequest, c
 type ListEndpointsRequest struct {
 	*requests.RoaRequest
 	SlotIds     string           `position:"Query" name:"SlotIds"`
+	InstanceIds string           `position:"Query" name:"InstanceIds"`
 	Name        string           `position:"Query" name:"Name"`
 	PageSize    requests.Integer `position:"Query" name:"PageSize"`
 	SortBy      string           `position:"Query" name:"SortBy"`

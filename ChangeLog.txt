@@ -1,3 +1,16 @@
+2023-05-22 Version: v1.62.333
+- Generated 2022-08-01 for `PAIElasticDatasetAccelerator`.
+- Support CPFS slot.
+- Change Metric api user flow control to 20.
+- Deprecated instance create and delete.
+- Open white list.
+- Add reload slot api.
+- Add CreateSlots api.
+- Support CreateSlots api.
+- Raise api timeout limit.
+- Cancle Reload slot api whitelist.
+- Add instanceid for endpoint.
+
 2023-05-22 Version: v1.62.332
 - Generated 2016-04-28 for `Vpc`.
 - Add ErrorCode.
