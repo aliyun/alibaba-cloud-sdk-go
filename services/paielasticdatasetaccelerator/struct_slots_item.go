@@ -28,6 +28,7 @@ type SlotsItem struct {
 	StorageType     string          `json:"StorageType" xml:"StorageType"`
 	StorageUri      string          `json:"StorageUri" xml:"StorageUri"`
 	Capacity        string          `json:"Capacity" xml:"Capacity"`
+	IoType          string          `json:"IoType" xml:"IoType"`
 	LifeCycle       LifeCycle       `json:"LifeCycle" xml:"LifeCycle"`
 	Status          Status          `json:"Status" xml:"Status"`
 	Tags            []TagsItem      `json:"Tags" xml:"Tags"`
