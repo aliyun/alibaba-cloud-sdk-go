@@ -89,6 +89,9 @@ type DescribeInstanceResponse struct {
 	PaymentType     string     `json:"PaymentType" xml:"PaymentType"`
 	Capacity        string     `json:"Capacity" xml:"Capacity"`
 	MaxSlot         int        `json:"MaxSlot" xml:"MaxSlot"`
+	MaxEndpoint     int        `json:"MaxEndpoint" xml:"MaxEndpoint"`
+	StorageType     string     `json:"StorageType" xml:"StorageType"`
+	ProviderType    string     `json:"ProviderType" xml:"ProviderType"`
 	Status          Status     `json:"Status" xml:"Status"`
 	Tags            []TagsItem `json:"Tags" xml:"Tags"`
 }
