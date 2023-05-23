@@ -93,6 +93,9 @@ type DescribeEngineVersionResponse struct {
 	MajorVersion              string `json:"MajorVersion" xml:"MajorVersion"`
 	Engine                    string `json:"Engine" xml:"Engine"`
 	MinorVersion              string `json:"MinorVersion" xml:"MinorVersion"`
+	IsRedisCompatibleVersion  string `json:"IsRedisCompatibleVersion" xml:"IsRedisCompatibleVersion"`
+	IsSSLEnable               string `json:"IsSSLEnable" xml:"IsSSLEnable"`
+	IsNewSSLMode              string `json:"IsNewSSLMode" xml:"IsNewSSLMode"`
 }
 
 // CreateDescribeEngineVersionRequest creates a request to invoke DescribeEngineVersion API

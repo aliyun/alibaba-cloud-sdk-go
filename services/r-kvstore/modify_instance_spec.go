@@ -79,6 +79,7 @@ type ModifyInstanceSpecRequest struct {
 	EffectiveTime        string           `position:"Query" name:"EffectiveTime"`
 	SourceBiz            string           `position:"Query" name:"SourceBiz"`
 	BusinessInfo         string           `position:"Query" name:"BusinessInfo"`
+	ShardCount           requests.Integer `position:"Query" name:"ShardCount"`
 	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`
 	FromApp              string           `position:"Query" name:"FromApp"`
 	MajorVersion         string           `position:"Query" name:"MajorVersion"`
@@ -86,6 +87,7 @@ type ModifyInstanceSpecRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
+	ReadOnlyCount        requests.Integer `position:"Query" name:"ReadOnlyCount"`
 	ForceUpgrade         requests.Boolean `position:"Query" name:"ForceUpgrade"`
 	OrderType            string           `position:"Query" name:"OrderType"`
 }

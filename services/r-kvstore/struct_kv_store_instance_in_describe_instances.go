@@ -56,5 +56,7 @@ type KVStoreInstanceInDescribeInstances struct {
 	ProxyCount          int                     `json:"ProxyCount" xml:"ProxyCount"`
 	CloudType           string                  `json:"CloudType" xml:"CloudType"`
 	EditionType         string                  `json:"EditionType" xml:"EditionType"`
+	ReadOnlyCount       string                  `json:"ReadOnlyCount" xml:"ReadOnlyCount"`
+	ShardClass          string                  `json:"ShardClass" xml:"ShardClass"`
 	Tags                TagsInDescribeInstances `json:"Tags" xml:"Tags"`
 }

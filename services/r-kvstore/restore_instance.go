@@ -74,6 +74,7 @@ type RestoreInstanceRequest struct {
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	FilterKey            string           `position:"Query" name:"FilterKey"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
+	TimeShift            string           `position:"Query" name:"TimeShift"`
 	RestoreTime          string           `position:"Query" name:"RestoreTime"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`

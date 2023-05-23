@@ -92,6 +92,8 @@ type DescribeEncryptionKeyResponse struct {
 	KeyUsage            string `json:"KeyUsage" xml:"KeyUsage"`
 	EncryptionKey       string `json:"EncryptionKey" xml:"EncryptionKey"`
 	Creator             string `json:"Creator" xml:"Creator"`
+	EncryptionName      string `json:"EncryptionName" xml:"EncryptionName"`
+	RoleArn             string `json:"RoleArn" xml:"RoleArn"`
 }
 
 // CreateDescribeEncryptionKeyRequest creates a request to invoke DescribeEncryptionKey API

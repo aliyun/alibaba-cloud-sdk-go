@@ -82,11 +82,12 @@ type DescribeInstanceSSLRequest struct {
 // DescribeInstanceSSLResponse is the response struct for api DescribeInstanceSSL
 type DescribeInstanceSSLResponse struct {
 	*responses.BaseResponse
-	InstanceId     string `json:"InstanceId" xml:"InstanceId"`
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	SSLEnabled     string `json:"SSLEnabled" xml:"SSLEnabled"`
-	SSLExpiredTime string `json:"SSLExpiredTime" xml:"SSLExpiredTime"`
-	CertCommonName string `json:"CertCommonName" xml:"CertCommonName"`
+	InstanceId      string `json:"InstanceId" xml:"InstanceId"`
+	RequestId       string `json:"RequestId" xml:"RequestId"`
+	SSLEnabled      string `json:"SSLEnabled" xml:"SSLEnabled"`
+	SSLExpiredTime  string `json:"SSLExpiredTime" xml:"SSLExpiredTime"`
+	CertCommonName  string `json:"CertCommonName" xml:"CertCommonName"`
+	CertDownloadURL string `json:"CertDownloadURL" xml:"CertDownloadURL"`
 }
 
 // CreateDescribeInstanceSSLRequest creates a request to invoke DescribeInstanceSSL API

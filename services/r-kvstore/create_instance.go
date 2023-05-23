@@ -71,45 +71,49 @@ func (client *Client) CreateInstanceWithCallback(request *CreateInstanceRequest,
 // CreateInstanceRequest is the request struct for api CreateInstance
 type CreateInstanceRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer     `position:"Query" name:"ResourceOwnerId"`
-	SecondaryZoneId      string               `position:"Query" name:"SecondaryZoneId"`
-	CouponNo             string               `position:"Query" name:"CouponNo"`
-	NetworkType          string               `position:"Query" name:"NetworkType"`
-	EngineVersion        string               `position:"Query" name:"EngineVersion"`
-	ResourceGroupId      string               `position:"Query" name:"ResourceGroupId"`
-	Password             string               `position:"Query" name:"Password"`
-	SecurityToken        string               `position:"Query" name:"SecurityToken"`
-	Tag                  *[]CreateInstanceTag `position:"Query" name:"Tag"  type:"Repeated"`
-	BusinessInfo         string               `position:"Query" name:"BusinessInfo"`
-	ShardCount           requests.Integer     `position:"Query" name:"ShardCount"`
-	AutoRenewPeriod      string               `position:"Query" name:"AutoRenewPeriod"`
-	Period               string               `position:"Query" name:"Period"`
-	DryRun               requests.Boolean     `position:"Query" name:"DryRun"`
-	BackupId             string               `position:"Query" name:"BackupId"`
-	OwnerId              requests.Integer     `position:"Query" name:"OwnerId"`
-	VSwitchId            string               `position:"Query" name:"VSwitchId"`
-	PrivateIpAddress     string               `position:"Query" name:"PrivateIpAddress"`
-	InstanceName         string               `position:"Query" name:"InstanceName"`
-	AutoRenew            string               `position:"Query" name:"AutoRenew"`
-	Port                 string               `position:"Query" name:"Port"`
-	ZoneId               string               `position:"Query" name:"ZoneId"`
-	NodeType             string               `position:"Query" name:"NodeType"`
-	AutoUseCoupon        string               `position:"Query" name:"AutoUseCoupon"`
-	InstanceClass        string               `position:"Query" name:"InstanceClass"`
-	Capacity             requests.Integer     `position:"Query" name:"Capacity"`
-	InstanceType         string               `position:"Query" name:"InstanceType"`
-	DedicatedHostGroupId string               `position:"Query" name:"DedicatedHostGroupId"`
-	RestoreTime          string               `position:"Query" name:"RestoreTime"`
-	ResourceOwnerAccount string               `position:"Query" name:"ResourceOwnerAccount"`
-	SrcDBInstanceId      string               `position:"Query" name:"SrcDBInstanceId"`
-	OwnerAccount         string               `position:"Query" name:"OwnerAccount"`
-	GlobalInstance       requests.Boolean     `position:"Query" name:"GlobalInstance"`
-	Token                string               `position:"Query" name:"Token"`
-	GlobalInstanceId     string               `position:"Query" name:"GlobalInstanceId"`
-	VpcId                string               `position:"Query" name:"VpcId"`
-	ReadOnlyCount        requests.Integer     `position:"Query" name:"ReadOnlyCount"`
-	ChargeType           string               `position:"Query" name:"ChargeType"`
-	Config               string               `position:"Query" name:"Config"`
+	ResourceOwnerId        requests.Integer     `position:"Query" name:"ResourceOwnerId"`
+	SecondaryZoneId        string               `position:"Query" name:"SecondaryZoneId"`
+	CouponNo               string               `position:"Query" name:"CouponNo"`
+	NetworkType            string               `position:"Query" name:"NetworkType"`
+	EngineVersion          string               `position:"Query" name:"EngineVersion"`
+	PhysicalInstanceId     string               `position:"Query" name:"PhysicalInstanceId"`
+	ResourceGroupId        string               `position:"Query" name:"ResourceGroupId"`
+	Password               string               `position:"Query" name:"Password"`
+	SecurityToken          string               `position:"Query" name:"SecurityToken"`
+	Tag                    *[]CreateInstanceTag `position:"Query" name:"Tag"  type:"Repeated"`
+	GlobalSecurityGroupIds string               `position:"Query" name:"GlobalSecurityGroupIds"`
+	BusinessInfo           string               `position:"Query" name:"BusinessInfo"`
+	ShardCount             requests.Integer     `position:"Query" name:"ShardCount"`
+	AutoRenewPeriod        string               `position:"Query" name:"AutoRenewPeriod"`
+	Period                 string               `position:"Query" name:"Period"`
+	DryRun                 requests.Boolean     `position:"Query" name:"DryRun"`
+	BackupId               string               `position:"Query" name:"BackupId"`
+	OwnerId                requests.Integer     `position:"Query" name:"OwnerId"`
+	VSwitchId              string               `position:"Query" name:"VSwitchId"`
+	PrivateIpAddress       string               `position:"Query" name:"PrivateIpAddress"`
+	InstanceName           string               `position:"Query" name:"InstanceName"`
+	AutoRenew              string               `position:"Query" name:"AutoRenew"`
+	Port                   string               `position:"Query" name:"Port"`
+	ZoneId                 string               `position:"Query" name:"ZoneId"`
+	Appendonly             string               `position:"Query" name:"Appendonly"`
+	NodeType               string               `position:"Query" name:"NodeType"`
+	AutoUseCoupon          string               `position:"Query" name:"AutoUseCoupon"`
+	InstanceClass          string               `position:"Query" name:"InstanceClass"`
+	Capacity               requests.Integer     `position:"Query" name:"Capacity"`
+	InstanceType           string               `position:"Query" name:"InstanceType"`
+	DedicatedHostGroupId   string               `position:"Query" name:"DedicatedHostGroupId"`
+	RestoreTime            string               `position:"Query" name:"RestoreTime"`
+	ResourceOwnerAccount   string               `position:"Query" name:"ResourceOwnerAccount"`
+	SrcDBInstanceId        string               `position:"Query" name:"SrcDBInstanceId"`
+	OwnerAccount           string               `position:"Query" name:"OwnerAccount"`
+	GlobalInstance         requests.Boolean     `position:"Query" name:"GlobalInstance"`
+	Token                  string               `position:"Query" name:"Token"`
+	GlobalInstanceId       string               `position:"Query" name:"GlobalInstanceId"`
+	VpcId                  string               `position:"Query" name:"VpcId"`
+	DeletePhysicalInstance requests.Boolean     `position:"Query" name:"DeletePhysicalInstance"`
+	ReadOnlyCount          requests.Integer     `position:"Query" name:"ReadOnlyCount"`
+	ChargeType             string               `position:"Query" name:"ChargeType"`
+	Config                 string               `position:"Query" name:"Config"`
 }
 
 // CreateInstanceTag is a repeated param struct in CreateInstanceRequest
@@ -142,6 +146,7 @@ type CreateInstanceResponse struct {
 	InstanceStatus   string `json:"InstanceStatus" xml:"InstanceStatus"`
 	PrivateIpAddr    string `json:"PrivateIpAddr" xml:"PrivateIpAddr"`
 	UserName         string `json:"UserName" xml:"UserName"`
+	OrderId          int64  `json:"OrderId" xml:"OrderId"`
 }
 
 // CreateCreateInstanceRequest creates a request to invoke CreateInstance API

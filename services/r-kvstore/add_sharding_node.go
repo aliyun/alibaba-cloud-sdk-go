@@ -83,7 +83,6 @@ type AddShardingNodeRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
-	ShardClass           string           `position:"Query" name:"ShardClass"`
 }
 
 // AddShardingNodeResponse is the response struct for api AddShardingNode

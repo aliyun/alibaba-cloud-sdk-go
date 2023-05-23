@@ -71,38 +71,49 @@ func (client *Client) CreateTairInstanceWithCallback(request *CreateTairInstance
 // CreateTairInstanceRequest is the request struct for api CreateTairInstance
 type CreateTairInstanceRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	SecondaryZoneId      string           `position:"Query" name:"SecondaryZoneId"`
-	CouponNo             string           `position:"Query" name:"CouponNo"`
-	EngineVersion        string           `position:"Query" name:"EngineVersion"`
-	StorageType          string           `position:"Query" name:"StorageType"`
-	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
-	Password             string           `position:"Query" name:"Password"`
-	SecurityToken        string           `position:"Query" name:"SecurityToken"`
-	BusinessInfo         string           `position:"Query" name:"BusinessInfo"`
-	ShardCount           requests.Integer `position:"Query" name:"ShardCount"`
-	AutoRenewPeriod      string           `position:"Query" name:"AutoRenewPeriod"`
-	Period               requests.Integer `position:"Query" name:"Period"`
-	BackupId             string           `position:"Query" name:"BackupId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ShardType            string           `position:"Query" name:"ShardType"`
-	VSwitchId            string           `position:"Query" name:"VSwitchId"`
-	PrivateIpAddress     string           `position:"Query" name:"PrivateIpAddress"`
-	InstanceName         string           `position:"Query" name:"InstanceName"`
-	AutoRenew            string           `position:"Query" name:"AutoRenew"`
-	ZoneId               string           `position:"Query" name:"ZoneId"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	AutoUseCoupon        string           `position:"Query" name:"AutoUseCoupon"`
-	Storage              requests.Integer `position:"Query" name:"Storage"`
-	InstanceClass        string           `position:"Query" name:"InstanceClass"`
-	InstanceType         string           `position:"Query" name:"InstanceType"`
-	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	SrcDBInstanceId      string           `position:"Query" name:"SrcDBInstanceId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	GlobalInstanceId     string           `position:"Query" name:"GlobalInstanceId"`
-	VpcId                string           `position:"Query" name:"VpcId"`
-	ChargeType           string           `position:"Query" name:"ChargeType"`
+	ResourceOwnerId        requests.Integer         `position:"Query" name:"ResourceOwnerId"`
+	SecondaryZoneId        string                   `position:"Query" name:"SecondaryZoneId"`
+	CouponNo               string                   `position:"Query" name:"CouponNo"`
+	EngineVersion          string                   `position:"Query" name:"EngineVersion"`
+	StorageType            string                   `position:"Query" name:"StorageType"`
+	ResourceGroupId        string                   `position:"Query" name:"ResourceGroupId"`
+	Password               string                   `position:"Query" name:"Password"`
+	SecurityToken          string                   `position:"Query" name:"SecurityToken"`
+	Tag                    *[]CreateTairInstanceTag `position:"Query" name:"Tag"  type:"Repeated"`
+	GlobalSecurityGroupIds string                   `position:"Query" name:"GlobalSecurityGroupIds"`
+	BusinessInfo           string                   `position:"Query" name:"BusinessInfo"`
+	ShardCount             requests.Integer         `position:"Query" name:"ShardCount"`
+	AutoRenewPeriod        string                   `position:"Query" name:"AutoRenewPeriod"`
+	Period                 requests.Integer         `position:"Query" name:"Period"`
+	DryRun                 requests.Boolean         `position:"Query" name:"DryRun"`
+	BackupId               string                   `position:"Query" name:"BackupId"`
+	OwnerId                requests.Integer         `position:"Query" name:"OwnerId"`
+	ShardType              string                   `position:"Query" name:"ShardType"`
+	VSwitchId              string                   `position:"Query" name:"VSwitchId"`
+	PrivateIpAddress       string                   `position:"Query" name:"PrivateIpAddress"`
+	InstanceName           string                   `position:"Query" name:"InstanceName"`
+	AutoRenew              string                   `position:"Query" name:"AutoRenew"`
+	Port                   requests.Integer         `position:"Query" name:"Port"`
+	ZoneId                 string                   `position:"Query" name:"ZoneId"`
+	ClientToken            string                   `position:"Query" name:"ClientToken"`
+	AutoUseCoupon          string                   `position:"Query" name:"AutoUseCoupon"`
+	Storage                requests.Integer         `position:"Query" name:"Storage"`
+	InstanceClass          string                   `position:"Query" name:"InstanceClass"`
+	InstanceType           string                   `position:"Query" name:"InstanceType"`
+	AutoPay                requests.Boolean         `position:"Query" name:"AutoPay"`
+	ResourceOwnerAccount   string                   `position:"Query" name:"ResourceOwnerAccount"`
+	SrcDBInstanceId        string                   `position:"Query" name:"SrcDBInstanceId"`
+	OwnerAccount           string                   `position:"Query" name:"OwnerAccount"`
+	GlobalInstanceId       string                   `position:"Query" name:"GlobalInstanceId"`
+	VpcId                  string                   `position:"Query" name:"VpcId"`
+	ReadOnlyCount          requests.Integer         `position:"Query" name:"ReadOnlyCount"`
+	ChargeType             string                   `position:"Query" name:"ChargeType"`
+}
+
+// CreateTairInstanceTag is a repeated param struct in CreateTairInstanceRequest
+type CreateTairInstanceTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // CreateTairInstanceResponse is the response struct for api CreateTairInstance
@@ -122,6 +133,7 @@ type CreateTairInstanceResponse struct {
 	ZoneId           string `json:"ZoneId" xml:"ZoneId"`
 	InstanceStatus   string `json:"InstanceStatus" xml:"InstanceStatus"`
 	TaskId           string `json:"TaskId" xml:"TaskId"`
+	OrderId          int64  `json:"OrderId" xml:"OrderId"`
 }
 
 // CreateCreateTairInstanceRequest creates a request to invoke CreateTairInstance API

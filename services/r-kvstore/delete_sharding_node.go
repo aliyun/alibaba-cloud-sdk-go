@@ -85,6 +85,7 @@ type DeleteShardingNodeRequest struct {
 type DeleteShardingNodeResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	OrderId   string `json:"OrderId" xml:"OrderId"`
 }
 
 // CreateDeleteShardingNodeRequest creates a request to invoke DeleteShardingNode API

@@ -39,13 +39,15 @@ type DBInstanceAttribute struct {
 	InstanceName              string                          `json:"InstanceName" xml:"InstanceName"`
 	SecurityIPList            string                          `json:"SecurityIPList" xml:"SecurityIPList"`
 	ShardCount                int                             `json:"ShardCount" xml:"ShardCount"`
+	ReadOnlyCount             int                             `json:"ReadOnlyCount" xml:"ReadOnlyCount"`
 	GlobalInstanceId          string                          `json:"GlobalInstanceId" xml:"GlobalInstanceId"`
 	QPS                       int64                           `json:"QPS" xml:"QPS"`
 	AuditLogRetention         string                          `json:"AuditLogRetention" xml:"AuditLogRetention"`
 	ZoneType                  string                          `json:"ZoneType" xml:"ZoneType"`
 	MaintainStartTime         string                          `json:"MaintainStartTime" xml:"MaintainStartTime"`
-	InstanceClass             string                          `json:"InstanceClass" xml:"InstanceClass"`
 	MaintainEndTime           string                          `json:"MaintainEndTime" xml:"MaintainEndTime"`
+	InstanceClass             string                          `json:"InstanceClass" xml:"InstanceClass"`
+	RealInstanceClass         string                          `json:"RealInstanceClass" xml:"RealInstanceClass"`
 	InstanceId                string                          `json:"InstanceId" xml:"InstanceId"`
 	InstanceType              string                          `json:"InstanceType" xml:"InstanceType"`
 	HasRenewChangeOrder       string                          `json:"HasRenewChangeOrder" xml:"HasRenewChangeOrder"`
@@ -64,5 +66,7 @@ type DBInstanceAttribute struct {
 	Engine                    string                          `json:"Engine" xml:"Engine"`
 	Storage                   string                          `json:"Storage" xml:"Storage"`
 	CloudType                 string                          `json:"CloudType" xml:"CloudType"`
+	IsOrderCompleted          bool                            `json:"IsOrderCompleted" xml:"IsOrderCompleted"`
+	IsSupportTDE              bool                            `json:"IsSupportTDE" xml:"IsSupportTDE"`
 	Tags                      TagsInDescribeInstanceAttribute `json:"Tags" xml:"Tags"`
 }
