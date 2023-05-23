@@ -20,9 +20,11 @@ type DataItem struct {
 	Name             string                            `json:"Name" xml:"Name"`
 	StateCode        string                            `json:"StateCode" xml:"StateCode"`
 	StartTime        int64                             `json:"StartTime" xml:"StartTime"`
+	WorkMode         string                            `json:"WorkMode" xml:"WorkMode"`
 	State            string                            `json:"State" xml:"State"`
 	OutboundScenario bool                              `json:"OutboundScenario" xml:"OutboundScenario"`
 	InstanceId       string                            `json:"InstanceId" xml:"InstanceId"`
+	BreakCode        string                            `json:"BreakCode" xml:"BreakCode"`
 	Scope            string                            `json:"Scope" xml:"Scope"`
 	StatsTime        int64                             `json:"StatsTime" xml:"StatsTime"`
 	Duration         int64                             `json:"Duration" xml:"Duration"`

@@ -1,3 +1,7 @@
+2023-05-23 Version: v1.62.340
+- Generated 2020-07-01 for `CCC`.
+- Supported BreakCodeDetails,FirstCheckInTime, LastCheckoutTime .
+
 2023-05-23 Version: v1.62.339
 - Generated 2015-01-01 for `R-kvstore`.
 - Update Golang Sdk.
