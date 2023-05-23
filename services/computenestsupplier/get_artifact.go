@@ -72,6 +72,7 @@ func (client *Client) GetArtifactWithCallback(request *GetArtifactRequest, callb
 type GetArtifactRequest struct {
 	*requests.RpcRequest
 	ArtifactVersion string `position:"Query" name:"ArtifactVersion"`
+	ArtifactName    string `position:"Query" name:"ArtifactName"`
 	ArtifactId      string `position:"Query" name:"ArtifactId"`
 }
 
