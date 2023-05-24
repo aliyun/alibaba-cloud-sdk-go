@@ -71,20 +71,21 @@ func (client *Client) DescribeDBInstancePerformanceWithCallback(request *Describ
 // DescribeDBInstancePerformanceRequest is the request struct for api DescribeDBInstancePerformance
 type DescribeDBInstancePerformanceRequest struct {
 	*requests.RpcRequest
-	StartTime    string `position:"Query" name:"StartTime"`
-	DBInstanceId string `position:"Query" name:"DBInstanceId"`
-	Key          string `position:"Query" name:"Key"`
-	EndTime      string `position:"Query" name:"EndTime"`
+	StartTime       string `position:"Query" name:"StartTime"`
+	ResourceGroupId string `position:"Query" name:"ResourceGroupId"`
+	DBInstanceId    string `position:"Query" name:"DBInstanceId"`
+	Key             string `position:"Query" name:"Key"`
+	EndTime         string `position:"Query" name:"EndTime"`
 }
 
 // DescribeDBInstancePerformanceResponse is the response struct for api DescribeDBInstancePerformance
 type DescribeDBInstancePerformanceResponse struct {
 	*responses.BaseResponse
 	EndTime         string   `json:"EndTime" xml:"EndTime"`
-	RequestId       string   `json:"RequestId" xml:"RequestId"`
-	DBInstanceId    string   `json:"DBInstanceId" xml:"DBInstanceId"`
 	StartTime       string   `json:"StartTime" xml:"StartTime"`
+	DBInstanceId    string   `json:"DBInstanceId" xml:"DBInstanceId"`
 	Engine          string   `json:"Engine" xml:"Engine"`
+	RequestId       string   `json:"RequestId" xml:"RequestId"`
 	PerformanceKeys []string `json:"PerformanceKeys" xml:"PerformanceKeys"`
 }
 

@@ -21,6 +21,7 @@ type SupportedInstanceClass struct {
 	DisplayClass  string      `json:"DisplayClass" xml:"DisplayClass"`
 	InstanceClass string      `json:"InstanceClass" xml:"InstanceClass"`
 	StorageType   string      `json:"StorageType" xml:"StorageType"`
+	Category      string      `json:"Category" xml:"Category"`
 	NodeCount     NodeCount   `json:"NodeCount" xml:"NodeCount"`
 	StorageSize   StorageSize `json:"StorageSize" xml:"StorageSize"`
 }

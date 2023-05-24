@@ -17,7 +17,6 @@ package gpdb
 
 // SeriesItem is a nested struct in gpdb response
 type SeriesItem struct {
-	Name   string      `json:"Name" xml:"Name"`
-	Role   string      `json:"Role" xml:"Role"`
-	Values []ValueItem `json:"Values" xml:"Values"`
+	Name   string       `json:"Name" xml:"Name"`
+	Values []ValuesItem `json:"Values" xml:"Values"`
 }

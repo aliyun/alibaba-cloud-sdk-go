@@ -71,6 +71,7 @@ func (client *Client) ModifyDBInstanceDescriptionWithCallback(request *ModifyDBI
 // ModifyDBInstanceDescriptionRequest is the request struct for api ModifyDBInstanceDescription
 type ModifyDBInstanceDescriptionRequest struct {
 	*requests.RpcRequest
+	ResourceGroupId       string `position:"Query" name:"ResourceGroupId"`
 	DBInstanceId          string `position:"Query" name:"DBInstanceId"`
 	DBInstanceDescription string `position:"Query" name:"DBInstanceDescription"`
 }

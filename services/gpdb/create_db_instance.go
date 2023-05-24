@@ -71,22 +71,46 @@ func (client *Client) CreateDBInstanceWithCallback(request *CreateDBInstanceRequ
 // CreateDBInstanceRequest is the request struct for api CreateDBInstance
 type CreateDBInstanceRequest struct {
 	*requests.RpcRequest
-	ClientToken           string           `position:"Query" name:"ClientToken"`
-	EngineVersion         string           `position:"Query" name:"EngineVersion"`
-	Engine                string           `position:"Query" name:"Engine"`
-	DBInstanceDescription string           `position:"Query" name:"DBInstanceDescription"`
-	DBInstanceGroupCount  string           `position:"Query" name:"DBInstanceGroupCount"`
-	Period                string           `position:"Query" name:"Period"`
-	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
-	UsedTime              string           `position:"Query" name:"UsedTime"`
-	DBInstanceClass       string           `position:"Query" name:"DBInstanceClass"`
-	SecurityIPList        string           `position:"Query" name:"SecurityIPList"`
-	VSwitchId             string           `position:"Query" name:"VSwitchId"`
-	PrivateIpAddress      string           `position:"Query" name:"PrivateIpAddress"`
-	VPCId                 string           `position:"Query" name:"VPCId"`
-	ZoneId                string           `position:"Query" name:"ZoneId"`
-	PayType               string           `position:"Query" name:"PayType"`
-	InstanceNetworkType   string           `position:"Query" name:"InstanceNetworkType"`
+	EngineVersion             string                 `position:"Query" name:"EngineVersion"`
+	DBInstanceCategory        string                 `position:"Query" name:"DBInstanceCategory"`
+	StorageType               string                 `position:"Query" name:"StorageType"`
+	ResourceGroupId           string                 `position:"Query" name:"ResourceGroupId"`
+	EncryptionType            string                 `position:"Query" name:"EncryptionType"`
+	DBInstanceDescription     string                 `position:"Query" name:"DBInstanceDescription"`
+	ServerlessMode            string                 `position:"Query" name:"ServerlessMode"`
+	Tag                       *[]CreateDBInstanceTag `position:"Query" name:"Tag"  type:"Repeated"`
+	Period                    string                 `position:"Query" name:"Period"`
+	VectorConfigurationStatus string                 `position:"Query" name:"VectorConfigurationStatus"`
+	EncryptionKey             string                 `position:"Query" name:"EncryptionKey"`
+	OwnerId                   requests.Integer       `position:"Query" name:"OwnerId"`
+	SegDiskPerformanceLevel   string                 `position:"Query" name:"SegDiskPerformanceLevel"`
+	DBInstanceClass           string                 `position:"Query" name:"DBInstanceClass"`
+	SecurityIPList            string                 `position:"Query" name:"SecurityIPList"`
+	VSwitchId                 string                 `position:"Query" name:"VSwitchId"`
+	PrivateIpAddress          string                 `position:"Query" name:"PrivateIpAddress"`
+	ZoneId                    string                 `position:"Query" name:"ZoneId"`
+	InstanceNetworkType       string                 `position:"Query" name:"InstanceNetworkType"`
+	ClientToken               string                 `position:"Query" name:"ClientToken"`
+	InstanceSpec              string                 `position:"Query" name:"InstanceSpec"`
+	StorageSize               requests.Integer       `position:"Query" name:"StorageSize"`
+	SegStorageType            string                 `position:"Query" name:"SegStorageType"`
+	MasterNodeNum             string                 `position:"Query" name:"MasterNodeNum"`
+	SegNodeNum                string                 `position:"Query" name:"SegNodeNum"`
+	Engine                    string                 `position:"Query" name:"Engine"`
+	CreateSampleData          requests.Boolean       `position:"Query" name:"CreateSampleData"`
+	DBInstanceGroupCount      string                 `position:"Query" name:"DBInstanceGroupCount"`
+	DBInstanceMode            string                 `position:"Query" name:"DBInstanceMode"`
+	UsedTime                  string                 `position:"Query" name:"UsedTime"`
+	VPCId                     string                 `position:"Query" name:"VPCId"`
+	ServerlessResource        requests.Integer       `position:"Query" name:"ServerlessResource"`
+	IdleTime                  requests.Integer       `position:"Query" name:"IdleTime"`
+	PayType                   string                 `position:"Query" name:"PayType"`
+}
+
+// CreateDBInstanceTag is a repeated param struct in CreateDBInstanceRequest
+type CreateDBInstanceTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // CreateDBInstanceResponse is the response struct for api CreateDBInstance

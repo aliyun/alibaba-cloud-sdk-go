@@ -71,7 +71,8 @@ func (client *Client) DescribeDBInstanceIPArrayListWithCallback(request *Describ
 // DescribeDBInstanceIPArrayListRequest is the request struct for api DescribeDBInstanceIPArrayList
 type DescribeDBInstanceIPArrayListRequest struct {
 	*requests.RpcRequest
-	DBInstanceId string `position:"Query" name:"DBInstanceId"`
+	ResourceGroupId string `position:"Query" name:"ResourceGroupId"`
+	DBInstanceId    string `position:"Query" name:"DBInstanceId"`
 }
 
 // DescribeDBInstanceIPArrayListResponse is the response struct for api DescribeDBInstanceIPArrayList

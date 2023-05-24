@@ -71,10 +71,12 @@ func (client *Client) DescribeDBClusterPerformanceWithCallback(request *Describe
 // DescribeDBClusterPerformanceRequest is the request struct for api DescribeDBClusterPerformance
 type DescribeDBClusterPerformanceRequest struct {
 	*requests.RpcRequest
+	NodeType     string `position:"Query" name:"NodeType"`
 	StartTime    string `position:"Query" name:"StartTime"`
 	DBInstanceId string `position:"Query" name:"DBInstanceId"`
 	Key          string `position:"Query" name:"Key"`
 	EndTime      string `position:"Query" name:"EndTime"`
+	Nodes        string `position:"Query" name:"Nodes"`
 }
 
 // DescribeDBClusterPerformanceResponse is the response struct for api DescribeDBClusterPerformance

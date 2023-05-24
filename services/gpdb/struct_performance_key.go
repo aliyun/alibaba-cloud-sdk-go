@@ -17,7 +17,7 @@ package gpdb
 
 // PerformanceKey is a nested struct in gpdb response
 type PerformanceKey struct {
-	Unit   string       `json:"Unit" xml:"Unit"`
-	Name   string       `json:"Name" xml:"Name"`
-	Series []SeriesItem `json:"Series" xml:"Series"`
+	Unit   string                                     `json:"Unit" xml:"Unit"`
+	Name   string                                     `json:"Name" xml:"Name"`
+	Series []SeriesItemInDescribeDBClusterPerformance `json:"Series" xml:"Series"`
 }

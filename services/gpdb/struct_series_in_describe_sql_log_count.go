@@ -17,5 +17,5 @@ package gpdb
 
 // SeriesInDescribeSQLLogCount is a nested struct in gpdb response
 type SeriesInDescribeSQLLogCount struct {
-	SeriesItem []SeriesItem `json:"SeriesItem" xml:"SeriesItem"`
+	SeriesItem []SeriesItemInDescribeSQLLogCount `json:"SeriesItem" xml:"SeriesItem"`
 }

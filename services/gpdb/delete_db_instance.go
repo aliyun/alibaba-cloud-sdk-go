@@ -71,9 +71,10 @@ func (client *Client) DeleteDBInstanceWithCallback(request *DeleteDBInstanceRequ
 // DeleteDBInstanceRequest is the request struct for api DeleteDBInstance
 type DeleteDBInstanceRequest struct {
 	*requests.RpcRequest
-	ClientToken  string           `position:"Query" name:"ClientToken"`
-	DBInstanceId string           `position:"Query" name:"DBInstanceId"`
-	OwnerId      requests.Integer `position:"Query" name:"OwnerId"`
+	ClientToken     string           `position:"Query" name:"ClientToken"`
+	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
+	DBInstanceId    string           `position:"Query" name:"DBInstanceId"`
+	OwnerId         requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DeleteDBInstanceResponse is the response struct for api DeleteDBInstance

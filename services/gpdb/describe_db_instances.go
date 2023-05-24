@@ -74,6 +74,7 @@ type DescribeDBInstancesRequest struct {
 	DBInstanceModes       *[]string                 `position:"Query" name:"DBInstanceModes"  type:"Repeated"`
 	DBInstanceStatuses    *[]string                 `position:"Query" name:"DBInstanceStatuses"  type:"Repeated"`
 	PageNumber            requests.Integer          `position:"Query" name:"PageNumber"`
+	ResourceGroupId       string                    `position:"Query" name:"ResourceGroupId"`
 	PageSize              requests.Integer          `position:"Query" name:"PageSize"`
 	DBInstanceDescription string                    `position:"Query" name:"DBInstanceDescription"`
 	Tag                   *[]DescribeDBInstancesTag `position:"Query" name:"Tag"  type:"Repeated"`

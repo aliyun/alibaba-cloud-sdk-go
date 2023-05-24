@@ -17,5 +17,5 @@ package gpdb
 
 // SeriesInDescribeDBClusterPerformance is a nested struct in gpdb response
 type SeriesInDescribeDBClusterPerformance struct {
-	SeriesItem []SeriesItem `json:"SeriesItem" xml:"SeriesItem"`
+	SeriesItem []SeriesItemInDescribeDBClusterPerformance `json:"SeriesItem" xml:"SeriesItem"`
 }

@@ -72,7 +72,9 @@ func (client *Client) ModifySecurityIpsWithCallback(request *ModifySecurityIpsRe
 type ModifySecurityIpsRequest struct {
 	*requests.RpcRequest
 	DBInstanceIPArrayName      string `position:"Query" name:"DBInstanceIPArrayName"`
+	ResourceGroupId            string `position:"Query" name:"ResourceGroupId"`
 	DBInstanceId               string `position:"Query" name:"DBInstanceId"`
+	ModifyMode                 string `position:"Query" name:"ModifyMode"`
 	SecurityIPList             string `position:"Query" name:"SecurityIPList"`
 	DBInstanceIPArrayAttribute string `position:"Query" name:"DBInstanceIPArrayAttribute"`
 }

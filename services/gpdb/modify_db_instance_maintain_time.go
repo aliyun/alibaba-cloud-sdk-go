@@ -71,9 +71,10 @@ func (client *Client) ModifyDBInstanceMaintainTimeWithCallback(request *ModifyDB
 // ModifyDBInstanceMaintainTimeRequest is the request struct for api ModifyDBInstanceMaintainTime
 type ModifyDBInstanceMaintainTimeRequest struct {
 	*requests.RpcRequest
-	StartTime    string `position:"Query" name:"StartTime"`
-	DBInstanceId string `position:"Query" name:"DBInstanceId"`
-	EndTime      string `position:"Query" name:"EndTime"`
+	StartTime       string `position:"Query" name:"StartTime"`
+	ResourceGroupId string `position:"Query" name:"ResourceGroupId"`
+	DBInstanceId    string `position:"Query" name:"DBInstanceId"`
+	EndTime         string `position:"Query" name:"EndTime"`
 }
 
 // ModifyDBInstanceMaintainTimeResponse is the response struct for api ModifyDBInstanceMaintainTime

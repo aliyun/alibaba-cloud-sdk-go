@@ -71,30 +71,38 @@ func (client *Client) CreateECSDBInstanceWithCallback(request *CreateECSDBInstan
 // CreateECSDBInstanceRequest is the request struct for api CreateECSDBInstance
 type CreateECSDBInstanceRequest struct {
 	*requests.RpcRequest
-	EngineVersion         string           `position:"Query" name:"EngineVersion"`
-	DBInstanceCategory    string           `position:"Query" name:"DBInstanceCategory"`
-	EncryptionType        string           `position:"Query" name:"EncryptionType"`
-	DBInstanceDescription string           `position:"Query" name:"DBInstanceDescription"`
-	Period                string           `position:"Query" name:"Period"`
-	BackupId              string           `position:"Query" name:"BackupId"`
-	EncryptionKey         string           `position:"Query" name:"EncryptionKey"`
-	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
-	SecurityIPList        string           `position:"Query" name:"SecurityIPList"`
-	VSwitchId             string           `position:"Query" name:"VSwitchId"`
-	PrivateIpAddress      string           `position:"Query" name:"PrivateIpAddress"`
-	ZoneId                string           `position:"Query" name:"ZoneId"`
-	InstanceNetworkType   string           `position:"Query" name:"InstanceNetworkType"`
-	ClientToken           string           `position:"Query" name:"ClientToken"`
-	InstanceSpec          string           `position:"Query" name:"InstanceSpec"`
-	StorageSize           requests.Integer `position:"Query" name:"StorageSize"`
-	SegStorageType        string           `position:"Query" name:"SegStorageType"`
-	MasterNodeNum         requests.Integer `position:"Query" name:"MasterNodeNum"`
-	SegNodeNum            requests.Integer `position:"Query" name:"SegNodeNum"`
-	Engine                string           `position:"Query" name:"Engine"`
-	UsedTime              string           `position:"Query" name:"UsedTime"`
-	VPCId                 string           `position:"Query" name:"VPCId"`
-	PayType               string           `position:"Query" name:"PayType"`
-	SrcDbInstanceName     string           `position:"Query" name:"SrcDbInstanceName"`
+	EngineVersion         string                    `position:"Query" name:"EngineVersion"`
+	DBInstanceCategory    string                    `position:"Query" name:"DBInstanceCategory"`
+	ResourceGroupId       string                    `position:"Query" name:"ResourceGroupId"`
+	EncryptionType        string                    `position:"Query" name:"EncryptionType"`
+	DBInstanceDescription string                    `position:"Query" name:"DBInstanceDescription"`
+	Tag                   *[]CreateECSDBInstanceTag `position:"Query" name:"Tag"  type:"Repeated"`
+	Period                string                    `position:"Query" name:"Period"`
+	BackupId              string                    `position:"Query" name:"BackupId"`
+	EncryptionKey         string                    `position:"Query" name:"EncryptionKey"`
+	OwnerId               requests.Integer          `position:"Query" name:"OwnerId"`
+	SecurityIPList        string                    `position:"Query" name:"SecurityIPList"`
+	VSwitchId             string                    `position:"Query" name:"VSwitchId"`
+	PrivateIpAddress      string                    `position:"Query" name:"PrivateIpAddress"`
+	ZoneId                string                    `position:"Query" name:"ZoneId"`
+	InstanceNetworkType   string                    `position:"Query" name:"InstanceNetworkType"`
+	ClientToken           string                    `position:"Query" name:"ClientToken"`
+	InstanceSpec          string                    `position:"Query" name:"InstanceSpec"`
+	StorageSize           requests.Integer          `position:"Query" name:"StorageSize"`
+	SegStorageType        string                    `position:"Query" name:"SegStorageType"`
+	MasterNodeNum         requests.Integer          `position:"Query" name:"MasterNodeNum"`
+	SegNodeNum            requests.Integer          `position:"Query" name:"SegNodeNum"`
+	Engine                string                    `position:"Query" name:"Engine"`
+	UsedTime              string                    `position:"Query" name:"UsedTime"`
+	VPCId                 string                    `position:"Query" name:"VPCId"`
+	PayType               string                    `position:"Query" name:"PayType"`
+	SrcDbInstanceName     string                    `position:"Query" name:"SrcDbInstanceName"`
+}
+
+// CreateECSDBInstanceTag is a repeated param struct in CreateECSDBInstanceRequest
+type CreateECSDBInstanceTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // CreateECSDBInstanceResponse is the response struct for api CreateECSDBInstance

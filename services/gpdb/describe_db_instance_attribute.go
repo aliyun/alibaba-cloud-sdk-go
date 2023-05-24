@@ -71,8 +71,9 @@ func (client *Client) DescribeDBInstanceAttributeWithCallback(request *DescribeD
 // DescribeDBInstanceAttributeRequest is the request struct for api DescribeDBInstanceAttribute
 type DescribeDBInstanceAttributeRequest struct {
 	*requests.RpcRequest
-	DBInstanceId string           `position:"Query" name:"DBInstanceId"`
-	OwnerId      requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
+	DBInstanceId    string           `position:"Query" name:"DBInstanceId"`
+	OwnerId         requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeDBInstanceAttributeResponse is the response struct for api DescribeDBInstanceAttribute

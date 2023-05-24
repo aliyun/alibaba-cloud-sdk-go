@@ -71,11 +71,19 @@ func (client *Client) UpgradeDBInstanceWithCallback(request *UpgradeDBInstanceRe
 // UpgradeDBInstanceRequest is the request struct for api UpgradeDBInstance
 type UpgradeDBInstanceRequest struct {
 	*requests.RpcRequest
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	DBInstanceGroupCount string           `position:"Query" name:"DBInstanceGroupCount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	DBInstanceClass      string           `position:"Query" name:"DBInstanceClass"`
-	PayType              string           `position:"Query" name:"PayType"`
+	InstanceSpec            string           `position:"Query" name:"InstanceSpec"`
+	StorageSize             string           `position:"Query" name:"StorageSize"`
+	SegStorageType          string           `position:"Query" name:"SegStorageType"`
+	MasterNodeNum           string           `position:"Query" name:"MasterNodeNum"`
+	UpgradeType             requests.Integer `position:"Query" name:"UpgradeType"`
+	ResourceGroupId         string           `position:"Query" name:"ResourceGroupId"`
+	SegNodeNum              string           `position:"Query" name:"SegNodeNum"`
+	DBInstanceId            string           `position:"Query" name:"DBInstanceId"`
+	DBInstanceGroupCount    string           `position:"Query" name:"DBInstanceGroupCount"`
+	OwnerId                 requests.Integer `position:"Query" name:"OwnerId"`
+	SegDiskPerformanceLevel string           `position:"Query" name:"SegDiskPerformanceLevel"`
+	DBInstanceClass         string           `position:"Query" name:"DBInstanceClass"`
+	PayType                 string           `position:"Query" name:"PayType"`
 }
 
 // UpgradeDBInstanceResponse is the response struct for api UpgradeDBInstance
