@@ -71,12 +71,12 @@ func (client *Client) DescribeContactGroupsWithCallback(request *DescribeContact
 // DescribeContactGroupsRequest is the request struct for api DescribeContactGroups
 type DescribeContactGroupsRequest struct {
 	*requests.RpcRequest
-	Size             requests.Integer `position:"Query" name:"Size"`
-	GroupIds         string           `position:"Query" name:"GroupIds"`
 	IsDetail         requests.Boolean `position:"Query" name:"IsDetail"`
-	Page             requests.Integer `position:"Query" name:"Page"`
 	ContactGroupName string           `position:"Query" name:"ContactGroupName"`
 	Verbose          string           `position:"Query" name:"Verbose"`
+	Size             requests.Integer `position:"Query" name:"Size"`
+	GroupIds         string           `position:"Query" name:"GroupIds"`
+	Page             requests.Integer `position:"Query" name:"Page"`
 }
 
 // DescribeContactGroupsResponse is the response struct for api DescribeContactGroups

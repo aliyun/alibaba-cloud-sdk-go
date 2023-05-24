@@ -28,5 +28,6 @@ type PrometheusAlertRule struct {
 	AlertName      string       `json:"AlertName" xml:"AlertName"`
 	AlertId        int64        `json:"AlertId" xml:"AlertId"`
 	Labels         []Label      `json:"Labels" xml:"Labels"`
+	Tags           []TagsItem   `json:"Tags" xml:"Tags"`
 	Annotations    []Annotation `json:"Annotations" xml:"Annotations"`
 }

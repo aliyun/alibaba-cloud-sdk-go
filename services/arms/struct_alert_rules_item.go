@@ -36,9 +36,11 @@ type AlertRulesItem struct {
 	Duration              string            `json:"Duration" xml:"Duration"`
 	Level                 string            `json:"Level" xml:"Level"`
 	Message               string            `json:"Message" xml:"Message"`
+	DurationCompareType   string            `json:"DurationCompareType" xml:"DurationCompareType"`
 	Pids                  []string          `json:"Pids" xml:"Pids"`
 	AlertRuleContent      AlertRuleContent  `json:"AlertRuleContent" xml:"AlertRuleContent"`
 	Filters               Filters           `json:"Filters" xml:"Filters"`
 	Labels                []LabelsItem      `json:"Labels" xml:"Labels"`
 	Annotations           []AnnotationsItem `json:"Annotations" xml:"Annotations"`
+	Tags                  []TagsItem        `json:"Tags" xml:"Tags"`
 }

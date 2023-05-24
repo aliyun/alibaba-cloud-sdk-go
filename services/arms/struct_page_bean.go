@@ -24,19 +24,19 @@ type PageBean struct {
 	PageNumber              int                                  `json:"PageNumber" xml:"PageNumber"`
 	Total                   int64                                `json:"Total" xml:"Total"`
 	AlertContactGroups      []ContactGroups                      `json:"AlertContactGroups" xml:"AlertContactGroups"`
-	AlertRules              []AlertRulesItem                     `json:"AlertRules" xml:"AlertRules"`
 	SilencePolicies         []Policies                           `json:"SilencePolicies" xml:"SilencePolicies"`
 	WebhookContacts         []WebhookContactsItem                `json:"WebhookContacts" xml:"WebhookContacts"`
 	Contacts                []Contact                            `json:"Contacts" xml:"Contacts"`
 	AlertIMRobots           []IMRobots                           `json:"AlertIMRobots" xml:"AlertIMRobots"`
-	ListAlerts              []ListAlertsItem                     `json:"ListAlerts" xml:"ListAlerts"`
 	Event                   []EventItem                          `json:"Event" xml:"Event"`
 	RetcodeApps             []RetcodeAppInSearchRetcodeAppByPage `json:"RetcodeApps" xml:"RetcodeApps"`
 	AlertContacts           []Contacts                           `json:"AlertContacts" xml:"AlertContacts"`
-	NotificationPolicies    []Policies                           `json:"NotificationPolicies" xml:"NotificationPolicies"`
 	OnCallSchedules         []OnCallSchedulesItem                `json:"OnCallSchedules" xml:"OnCallSchedules"`
+	AlertRules              []AlertRulesItem                     `json:"AlertRules" xml:"AlertRules"`
 	TraceApps               []TraceApp                           `json:"TraceApps" xml:"TraceApps"`
+	NotificationPolicies    []Policies                           `json:"NotificationPolicies" xml:"NotificationPolicies"`
 	EscalationPolicies      []EscalationPoliciesItem             `json:"EscalationPolicies" xml:"EscalationPolicies"`
+	ListAlerts              []ListAlertsItem                     `json:"ListAlerts" xml:"ListAlerts"`
 	AlarmHistories          []AlarmHistory                       `json:"AlarmHistories" xml:"AlarmHistories"`
 	EventBridgeIntegrations []Integrations                       `json:"EventBridgeIntegrations" xml:"EventBridgeIntegrations"`
 	Events                  []EventsItem                         `json:"Events" xml:"Events"`

@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// GetExploreUrl invokes the arms.GetExploreUrl API synchronously
-func (client *Client) GetExploreUrl(request *GetExploreUrlRequest) (response *GetExploreUrlResponse, err error) {
-	response = CreateGetExploreUrlResponse()
+// EnableMetric invokes the arms.EnableMetric API synchronously
+func (client *Client) EnableMetric(request *EnableMetricRequest) (response *EnableMetricResponse, err error) {
+	response = CreateEnableMetricResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// GetExploreUrlWithChan invokes the arms.GetExploreUrl API asynchronously
-func (client *Client) GetExploreUrlWithChan(request *GetExploreUrlRequest) (<-chan *GetExploreUrlResponse, <-chan error) {
-	responseChan := make(chan *GetExploreUrlResponse, 1)
+// EnableMetricWithChan invokes the arms.EnableMetric API asynchronously
+func (client *Client) EnableMetricWithChan(request *EnableMetricRequest) (<-chan *EnableMetricResponse, <-chan error) {
+	responseChan := make(chan *EnableMetricResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.GetExploreUrl(request)
+		response, err := client.EnableMetric(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) GetExploreUrlWithChan(request *GetExploreUrlRequest) (<-ch
 	return responseChan, errChan
 }
 
-// GetExploreUrlWithCallback invokes the arms.GetExploreUrl API asynchronously
-func (client *Client) GetExploreUrlWithCallback(request *GetExploreUrlRequest, callback func(response *GetExploreUrlResponse, err error)) <-chan int {
+// EnableMetricWithCallback invokes the arms.EnableMetric API asynchronously
+func (client *Client) EnableMetricWithCallback(request *EnableMetricRequest, callback func(response *EnableMetricResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *GetExploreUrlResponse
+		var response *EnableMetricResponse
 		var err error
 		defer close(result)
-		response, err = client.GetExploreUrl(request)
+		response, err = client.EnableMetric(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,37 +68,36 @@ func (client *Client) GetExploreUrlWithCallback(request *GetExploreUrlRequest, c
 	return result
 }
 
-// GetExploreUrlRequest is the request struct for api GetExploreUrl
-type GetExploreUrlRequest struct {
+// EnableMetricRequest is the request struct for api EnableMetric
+type EnableMetricRequest struct {
 	*requests.RpcRequest
-	Expression string `position:"Query" name:"Expression"`
+	DropMetric string `position:"Query" name:"DropMetric"`
 	ClusterId  string `position:"Query" name:"ClusterId"`
-	Type       string `position:"Query" name:"Type"`
 }
 
-// GetExploreUrlResponse is the response struct for api GetExploreUrl
-type GetExploreUrlResponse struct {
+// EnableMetricResponse is the response struct for api EnableMetric
+type EnableMetricResponse struct {
 	*responses.BaseResponse
-	Data      string `json:"Data" xml:"Data"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Code      int    `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
 	Success   bool   `json:"Success" xml:"Success"`
+	Data      string `json:"Data" xml:"Data"`
+	Code      int64  `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
 }
 
-// CreateGetExploreUrlRequest creates a request to invoke GetExploreUrl API
-func CreateGetExploreUrlRequest() (request *GetExploreUrlRequest) {
-	request = &GetExploreUrlRequest{
+// CreateEnableMetricRequest creates a request to invoke EnableMetric API
+func CreateEnableMetricRequest() (request *EnableMetricRequest) {
+	request = &EnableMetricRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "GetExploreUrl", "arms", "openAPI")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "EnableMetric", "arms", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateGetExploreUrlResponse creates a response to parse from GetExploreUrl response
-func CreateGetExploreUrlResponse() (response *GetExploreUrlResponse) {
-	response = &GetExploreUrlResponse{
+// CreateEnableMetricResponse creates a response to parse from EnableMetric response
+func CreateEnableMetricResponse() (response *EnableMetricResponse) {
+	response = &EnableMetricResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

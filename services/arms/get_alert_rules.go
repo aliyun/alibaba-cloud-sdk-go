@@ -71,14 +71,22 @@ func (client *Client) GetAlertRulesWithCallback(request *GetAlertRulesRequest, c
 // GetAlertRulesRequest is the request struct for api GetAlertRules
 type GetAlertRulesRequest struct {
 	*requests.RpcRequest
-	ProductCode string           `position:"Query" name:"ProductCode"`
-	AlertStatus string           `position:"Query" name:"AlertStatus"`
-	ClusterId   string           `position:"Query" name:"ClusterId"`
-	AlertNames  string           `position:"Query" name:"AlertNames"`
-	AlertType   string           `position:"Query" name:"AlertType"`
-	Size        requests.Integer `position:"Query" name:"Size"`
-	AlertIds    string           `position:"Query" name:"AlertIds"`
-	Page        requests.Integer `position:"Query" name:"Page"`
+	ProductCode string               `position:"Query" name:"ProductCode"`
+	AlertStatus string               `position:"Query" name:"AlertStatus"`
+	ClusterId   string               `position:"Query" name:"ClusterId"`
+	Tags        *[]GetAlertRulesTags `position:"Query" name:"Tags"  type:"Repeated"`
+	AlertNames  string               `position:"Query" name:"AlertNames"`
+	AlertType   string               `position:"Query" name:"AlertType"`
+	Size        requests.Integer     `position:"Query" name:"Size"`
+	AlertIds    string               `position:"Query" name:"AlertIds"`
+	Page        requests.Integer     `position:"Query" name:"Page"`
+	IsOr        requests.Boolean     `position:"Query" name:"IsOr"`
+}
+
+// GetAlertRulesTags is a repeated param struct in GetAlertRulesRequest
+type GetAlertRulesTags struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // GetAlertRulesResponse is the response struct for api GetAlertRules

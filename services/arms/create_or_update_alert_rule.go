@@ -71,26 +71,34 @@ func (client *Client) CreateOrUpdateAlertRuleWithCallback(request *CreateOrUpdat
 // CreateOrUpdateAlertRuleRequest is the request struct for api CreateOrUpdateAlertRule
 type CreateOrUpdateAlertRuleRequest struct {
 	*requests.RpcRequest
-	AlertGroup            requests.Integer `position:"Body" name:"AlertGroup"`
-	AlertName             string           `position:"Body" name:"AlertName"`
-	AlertStatus           string           `position:"Body" name:"AlertStatus"`
-	Annotations           string           `position:"Body" name:"Annotations"`
-	Duration              requests.Integer `position:"Body" name:"Duration"`
-	MetricsKey            string           `position:"Body" name:"MetricsKey"`
-	AlertRuleContent      string           `position:"Body" name:"AlertRuleContent"`
-	PromQL                string           `position:"Body" name:"PromQL"`
-	Level                 string           `position:"Body" name:"Level"`
-	AutoAddNewApplication requests.Boolean `position:"Body" name:"AutoAddNewApplication"`
-	Filters               string           `position:"Body" name:"Filters"`
-	ClusterId             string           `position:"Body" name:"ClusterId"`
-	Message               string           `position:"Body" name:"Message"`
-	NotifyStrategy        string           `position:"Body" name:"NotifyStrategy"`
-	Labels                string           `position:"Body" name:"Labels"`
-	AlertType             string           `position:"Body" name:"AlertType"`
-	AlertCheckType        string           `position:"Body" name:"AlertCheckType"`
-	MetricsType           string           `position:"Body" name:"MetricsType"`
-	AlertId               requests.Integer `position:"Body" name:"AlertId"`
-	Pids                  string           `position:"Body" name:"Pids"`
+	AlertGroup            requests.Integer               `position:"Body" name:"AlertGroup"`
+	AlertName             string                         `position:"Body" name:"AlertName"`
+	AlertStatus           string                         `position:"Body" name:"AlertStatus"`
+	Annotations           string                         `position:"Body" name:"Annotations"`
+	Duration              requests.Integer               `position:"Body" name:"Duration"`
+	MetricsKey            string                         `position:"Body" name:"MetricsKey"`
+	AlertRuleContent      string                         `position:"Body" name:"AlertRuleContent"`
+	PromQL                string                         `position:"Body" name:"PromQL"`
+	Level                 string                         `position:"Body" name:"Level"`
+	AutoAddNewApplication requests.Boolean               `position:"Body" name:"AutoAddNewApplication"`
+	Filters               string                         `position:"Body" name:"Filters"`
+	ClusterId             string                         `position:"Body" name:"ClusterId"`
+	Message               string                         `position:"Body" name:"Message"`
+	DurationCompareType   string                         `position:"Body" name:"DurationCompareType"`
+	NotifyStrategy        string                         `position:"Body" name:"NotifyStrategy"`
+	Labels                string                         `position:"Body" name:"Labels"`
+	Tags                  *[]CreateOrUpdateAlertRuleTags `position:"Body" name:"Tags"  type:"Repeated"`
+	AlertType             string                         `position:"Body" name:"AlertType"`
+	AlertCheckType        string                         `position:"Body" name:"AlertCheckType"`
+	MetricsType           string                         `position:"Body" name:"MetricsType"`
+	AlertId               requests.Integer               `position:"Body" name:"AlertId"`
+	Pids                  string                         `position:"Body" name:"Pids"`
+}
+
+// CreateOrUpdateAlertRuleTags is a repeated param struct in CreateOrUpdateAlertRuleRequest
+type CreateOrUpdateAlertRuleTags struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // CreateOrUpdateAlertRuleResponse is the response struct for api CreateOrUpdateAlertRule

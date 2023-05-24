@@ -24,6 +24,7 @@ type ListAlertsItem struct {
 	DispatchRuleName string            `json:"DispatchRuleName" xml:"DispatchRuleName"`
 	CreateTime       string            `json:"CreateTime" xml:"CreateTime"`
 	AlertId          int64             `json:"AlertId" xml:"AlertId"`
+	Solution         string            `json:"Solution" xml:"Solution"`
 	Activities       []ActivitiesItem  `json:"Activities" xml:"Activities"`
 	AlertEvents      []AlertEventsItem `json:"AlertEvents" xml:"AlertEvents"`
 }

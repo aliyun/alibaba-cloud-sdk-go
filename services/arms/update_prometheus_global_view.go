@@ -71,9 +71,10 @@ func (client *Client) UpdatePrometheusGlobalViewWithCallback(request *UpdateProm
 // UpdatePrometheusGlobalViewRequest is the request struct for api UpdatePrometheusGlobalView
 type UpdatePrometheusGlobalViewRequest struct {
 	*requests.RpcRequest
-	ResourceGroupId string `position:"Query" name:"ResourceGroupId"`
-	ClusterId       string `position:"Query" name:"ClusterId"`
-	SubClustersJson string `position:"Query" name:"SubClustersJson"`
+	AllSubClustersSuccess requests.Boolean `position:"Query" name:"AllSubClustersSuccess"`
+	ClusterId             string           `position:"Query" name:"ClusterId"`
+	ResourceGroupId       string           `position:"Query" name:"ResourceGroupId"`
+	SubClustersJson       string           `position:"Query" name:"SubClustersJson"`
 }
 
 // UpdatePrometheusGlobalViewResponse is the response struct for api UpdatePrometheusGlobalView

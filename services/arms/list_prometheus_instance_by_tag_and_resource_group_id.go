@@ -72,6 +72,7 @@ func (client *Client) ListPrometheusInstanceByTagAndResourceGroupIdWithCallback(
 type ListPrometheusInstanceByTagAndResourceGroupIdRequest struct {
 	*requests.RpcRequest
 	ResourceGroupId string                                              `position:"Query" name:"ResourceGroupId"`
+	ListAsConsole   requests.Boolean                                    `position:"Query" name:"ListAsConsole"`
 	Tag             *[]ListPrometheusInstanceByTagAndResourceGroupIdTag `position:"Query" name:"Tag"  type:"Repeated"`
 }
 

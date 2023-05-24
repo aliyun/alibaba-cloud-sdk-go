@@ -80,6 +80,8 @@ type RemoveSourcesFromPrometheusGlobalViewRequest struct {
 type RemoveSourcesFromPrometheusGlobalViewResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Message   string `json:"Message" xml:"Message"`
+	Code      int    `json:"Code" xml:"Code"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 

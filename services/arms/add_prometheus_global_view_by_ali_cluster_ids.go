@@ -80,6 +80,8 @@ type AddPrometheusGlobalViewByAliClusterIdsRequest struct {
 type AddPrometheusGlobalViewByAliClusterIdsResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Code      int    `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 

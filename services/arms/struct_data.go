@@ -24,6 +24,7 @@ type Data struct {
 	Total                 string                    `json:"Total" xml:"Total"`
 	VpcId                 string                    `json:"VpcId" xml:"VpcId"`
 	FileName              string                    `json:"FileName" xml:"FileName"`
+	Type                  string                    `json:"Type" xml:"Type"`
 	EnableTag             bool                      `json:"EnableTag" xml:"EnableTag"`
 	ResourceId            string                    `json:"ResourceId" xml:"ResourceId"`
 	ClusterId             string                    `json:"ClusterId" xml:"ClusterId"`
@@ -32,6 +33,7 @@ type Data struct {
 	Message               string                    `json:"Message" xml:"Message"`
 	Info                  string                    `json:"Info" xml:"Info"`
 	InstanceName          string                    `json:"InstanceName" xml:"InstanceName"`
+	ConfigYaml            string                    `json:"ConfigYaml" xml:"ConfigYaml"`
 	InstanceId            int64                     `json:"InstanceId" xml:"InstanceId"`
 	IntegrationType       string                    `json:"IntegrationType" xml:"IntegrationType"`
 	ResourceType          string                    `json:"ResourceType" xml:"ResourceType"`
@@ -50,6 +52,7 @@ type Data struct {
 	ResourceGroupId       string                    `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	UserId                string                    `json:"UserId" xml:"UserId"`
 	ClusterName           string                    `json:"ClusterName" xml:"ClusterName"`
+	MonitoringName        string                    `json:"MonitoringName" xml:"MonitoringName"`
 	UploadTime            string                    `json:"UploadTime" xml:"UploadTime"`
 	ClusterType           string                    `json:"ClusterType" xml:"ClusterType"`
 	VSwitchId             string                    `json:"VSwitchId" xml:"VSwitchId"`
@@ -66,7 +69,7 @@ type Data struct {
 	Items                 []map[string]interface{}  `json:"Items" xml:"Items"`
 	RetcodeSLSConfig      RetcodeSLSConfig          `json:"RetcodeSLSConfig" xml:"RetcodeSLSConfig"`
 	FailedInstances       []FailedInstance          `json:"FailedInstances" xml:"FailedInstances"`
+	Tags                  []TagsItem                `json:"Tags" xml:"Tags"`
 	PrometheusInstances   []PrometheusInstancesItem `json:"PrometheusInstances" xml:"PrometheusInstances"`
-	Tags                  []Tag                     `json:"Tags" xml:"Tags"`
 	Products              []ProductsItem            `json:"Products" xml:"Products"`
 }

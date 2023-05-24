@@ -81,6 +81,8 @@ type ManageRecordingRuleResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Data      string `json:"Data" xml:"Data"`
+	Code      int    `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
 }
 
 // CreateManageRecordingRuleRequest creates a request to invoke ManageRecordingRule API

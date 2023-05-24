@@ -17,5 +17,5 @@ package arms
 
 // TagsInGetPrometheusInstance is a nested struct in arms response
 type TagsInGetPrometheusInstance struct {
-	Tag []Tag `json:"tag" xml:"tag"`
+	TagsItem []TagsItem `json:"tags" xml:"tags"`
 }

@@ -71,6 +71,7 @@ func (client *Client) ListPrometheusInstancesWithCallback(request *ListPrometheu
 // ListPrometheusInstancesRequest is the request struct for api ListPrometheusInstances
 type ListPrometheusInstancesRequest struct {
 	*requests.RpcRequest
+	ClusterType    string           `position:"Query" name:"ClusterType"`
 	ShowGlobalView requests.Boolean `position:"Query" name:"ShowGlobalView"`
 }
 
@@ -79,6 +80,8 @@ type ListPrometheusInstancesResponse struct {
 	*responses.BaseResponse
 	Data      string `json:"Data" xml:"Data"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Code      int    `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
 }
 
 // CreateListPrometheusInstancesRequest creates a request to invoke ListPrometheusInstances API

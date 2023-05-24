@@ -80,6 +80,8 @@ type GetIntegrationStateResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	State     bool   `json:"State" xml:"State"`
+	Code      int    `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
 }
 
 // CreateGetIntegrationStateRequest creates a request to invoke GetIntegrationState API

@@ -71,18 +71,25 @@ func (client *Client) CreatePrometheusAlertRuleWithCallback(request *CreateProme
 // CreatePrometheusAlertRuleRequest is the request struct for api CreatePrometheusAlertRule
 type CreatePrometheusAlertRuleRequest struct {
 	*requests.RpcRequest
-	ProductCode    string           `position:"Query" name:"ProductCode"`
-	Expression     string           `position:"Query" name:"Expression"`
-	AlertName      string           `position:"Query" name:"AlertName"`
-	Annotations    string           `position:"Query" name:"Annotations"`
-	ClusterId      string           `position:"Query" name:"ClusterId"`
-	DispatchRuleId requests.Integer `position:"Query" name:"DispatchRuleId"`
-	ProxyUserId    string           `position:"Query" name:"ProxyUserId"`
-	Type           string           `position:"Query" name:"Type"`
-	Message        string           `position:"Query" name:"Message"`
-	Labels         string           `position:"Query" name:"Labels"`
-	Duration       string           `position:"Query" name:"Duration"`
-	NotifyType     string           `position:"Query" name:"NotifyType"`
+	ProductCode    string                           `position:"Query" name:"ProductCode"`
+	Expression     string                           `position:"Query" name:"Expression"`
+	AlertName      string                           `position:"Query" name:"AlertName"`
+	Annotations    string                           `position:"Query" name:"Annotations"`
+	ClusterId      string                           `position:"Query" name:"ClusterId"`
+	DispatchRuleId requests.Integer                 `position:"Query" name:"DispatchRuleId"`
+	ProxyUserId    string                           `position:"Query" name:"ProxyUserId"`
+	Type           string                           `position:"Query" name:"Type"`
+	Message        string                           `position:"Query" name:"Message"`
+	Labels         string                           `position:"Query" name:"Labels"`
+	Tags           *[]CreatePrometheusAlertRuleTags `position:"Query" name:"Tags"  type:"Repeated"`
+	Duration       string                           `position:"Query" name:"Duration"`
+	NotifyType     string                           `position:"Query" name:"NotifyType"`
+}
+
+// CreatePrometheusAlertRuleTags is a repeated param struct in CreatePrometheusAlertRuleRequest
+type CreatePrometheusAlertRuleTags struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // CreatePrometheusAlertRuleResponse is the response struct for api CreatePrometheusAlertRule

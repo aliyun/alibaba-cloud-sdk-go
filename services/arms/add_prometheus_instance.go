@@ -80,6 +80,9 @@ type AddPrometheusInstanceResponse struct {
 	*responses.BaseResponse
 	Data      string `json:"Data" xml:"Data"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Code      int    `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateAddPrometheusInstanceRequest creates a request to invoke AddPrometheusInstance API

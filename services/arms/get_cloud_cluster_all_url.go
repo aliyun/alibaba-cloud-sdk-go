@@ -78,6 +78,9 @@ type GetCloudClusterAllUrlRequest struct {
 type GetCloudClusterAllUrlResponse struct {
 	*responses.BaseResponse
 	RequestId string     `json:"RequestId" xml:"RequestId"`
+	Code      int        `json:"Code" xml:"Code"`
+	Message   string     `json:"Message" xml:"Message"`
+	Success   bool       `json:"Success" xml:"Success"`
 	Data      []DataItem `json:"Data" xml:"Data"`
 }
 

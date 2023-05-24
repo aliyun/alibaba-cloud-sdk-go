@@ -29,5 +29,6 @@ type PrometheusInstancesItem struct {
 	PaymentType       string     `json:"PaymentType" xml:"PaymentType"`
 	GrafanaInstanceId string     `json:"GrafanaInstanceId" xml:"GrafanaInstanceId"`
 	ResourceGroupId   string     `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	ResourceType      string     `json:"ResourceType" xml:"ResourceType"`
 	Tags              []TagsItem `json:"Tags" xml:"Tags"`
 }

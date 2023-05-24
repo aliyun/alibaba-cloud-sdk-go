@@ -36,6 +36,7 @@ type AlertRuleEntity struct {
 	Id                 int64        `json:"Id" xml:"Id"`
 	ResourceGroupId    string       `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	AlertWays          []string     `json:"AlertWays" xml:"AlertWays"`
+	AlertWay           []string     `json:"AlertWay" xml:"AlertWay"`
 	AlarmContext       AlarmContext `json:"AlarmContext" xml:"AlarmContext"`
 	AlertRule          AlertRule    `json:"AlertRule" xml:"AlertRule"`
 	MetricParam        MetricParam  `json:"MetricParam" xml:"MetricParam"`

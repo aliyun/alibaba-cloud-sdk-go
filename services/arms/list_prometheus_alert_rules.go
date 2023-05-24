@@ -71,12 +71,19 @@ func (client *Client) ListPrometheusAlertRulesWithCallback(request *ListPromethe
 // ListPrometheusAlertRulesRequest is the request struct for api ListPrometheusAlertRules
 type ListPrometheusAlertRulesRequest struct {
 	*requests.RpcRequest
-	ClusterId        string           `position:"Query" name:"ClusterId"`
-	ProxyUserId      string           `position:"Query" name:"ProxyUserId"`
-	Type             string           `position:"Query" name:"Type"`
-	Name             string           `position:"Query" name:"Name"`
-	MatchExpressions string           `position:"Query" name:"MatchExpressions"`
-	Status           requests.Integer `position:"Query" name:"Status"`
+	ClusterId        string                          `position:"Query" name:"ClusterId"`
+	ProxyUserId      string                          `position:"Query" name:"ProxyUserId"`
+	Type             string                          `position:"Query" name:"Type"`
+	Tags             *[]ListPrometheusAlertRulesTags `position:"Query" name:"Tags"  type:"Repeated"`
+	Name             string                          `position:"Query" name:"Name"`
+	MatchExpressions string                          `position:"Query" name:"MatchExpressions"`
+	Status           requests.Integer                `position:"Query" name:"Status"`
+}
+
+// ListPrometheusAlertRulesTags is a repeated param struct in ListPrometheusAlertRulesRequest
+type ListPrometheusAlertRulesTags struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // ListPrometheusAlertRulesResponse is the response struct for api ListPrometheusAlertRules

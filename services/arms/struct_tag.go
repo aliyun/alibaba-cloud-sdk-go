@@ -17,6 +17,6 @@ package arms
 
 // Tag is a nested struct in arms response
 type Tag struct {
-	TagKey   string `json:"TagKey" xml:"TagKey"`
-	TagValue string `json:"TagValue" xml:"TagValue"`
+	Key   string `json:"Key" xml:"Key"`
+	Value string `json:"Value" xml:"Value"`
 }

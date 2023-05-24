@@ -71,16 +71,17 @@ func (client *Client) CreatePrometheusInstanceWithCallback(request *CreatePromet
 // CreatePrometheusInstanceRequest is the request struct for api CreatePrometheusInstance
 type CreatePrometheusInstanceRequest struct {
 	*requests.RpcRequest
-	GrafanaInstanceId string                          `position:"Query" name:"GrafanaInstanceId"`
-	ClusterName       string                          `position:"Query" name:"ClusterName"`
-	SecurityGroupId   string                          `position:"Query" name:"SecurityGroupId"`
-	ClusterId         string                          `position:"Query" name:"ClusterId"`
-	Tags              *[]CreatePrometheusInstanceTags `position:"Query" name:"Tags"  type:"Repeated"`
-	ClusterType       string                          `position:"Query" name:"ClusterType"`
-	VSwitchId         string                          `position:"Query" name:"VSwitchId"`
-	ResourceGroupId   string                          `position:"Query" name:"ResourceGroupId"`
-	VpcId             string                          `position:"Query" name:"VpcId"`
-	SubClustersJson   string                          `position:"Query" name:"SubClustersJson"`
+	GrafanaInstanceId     string                          `position:"Query" name:"GrafanaInstanceId"`
+	AllSubClustersSuccess requests.Boolean                `position:"Query" name:"AllSubClustersSuccess"`
+	ClusterName           string                          `position:"Query" name:"ClusterName"`
+	SecurityGroupId       string                          `position:"Query" name:"SecurityGroupId"`
+	ClusterId             string                          `position:"Query" name:"ClusterId"`
+	Tags                  *[]CreatePrometheusInstanceTags `position:"Query" name:"Tags"  type:"Repeated"`
+	ClusterType           string                          `position:"Query" name:"ClusterType"`
+	VSwitchId             string                          `position:"Query" name:"VSwitchId"`
+	ResourceGroupId       string                          `position:"Query" name:"ResourceGroupId"`
+	VpcId                 string                          `position:"Query" name:"VpcId"`
+	SubClustersJson       string                          `position:"Query" name:"SubClustersJson"`
 }
 
 // CreatePrometheusInstanceTags is a repeated param struct in CreatePrometheusInstanceRequest

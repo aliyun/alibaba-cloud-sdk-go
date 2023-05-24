@@ -41,6 +41,7 @@ type AlertRule struct {
 	Filters               Filters           `json:"Filters" xml:"Filters"`
 	AlertRuleContent      AlertRuleContent  `json:"AlertRuleContent" xml:"AlertRuleContent"`
 	Annotations           []AnnotationsItem `json:"Annotations" xml:"Annotations"`
+	Tags                  []Tag             `json:"Tags" xml:"Tags"`
 	Labels                []LabelsItem      `json:"Labels" xml:"Labels"`
 	Rules                 []Rule            `json:"Rules" xml:"Rules"`
 }

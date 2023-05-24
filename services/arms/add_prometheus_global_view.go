@@ -87,6 +87,8 @@ type AddPrometheusGlobalViewTag struct {
 type AddPrometheusGlobalViewResponse struct {
 	*responses.BaseResponse
 	RequestId string                        `json:"RequestId" xml:"RequestId"`
+	Code      int                           `json:"Code" xml:"Code"`
+	Message   string                        `json:"Message" xml:"Message"`
 	Data      DataInAddPrometheusGlobalView `json:"Data" xml:"Data"`
 }
 

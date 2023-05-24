@@ -80,6 +80,8 @@ type DeleteIntegrationResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Data      string `json:"Data" xml:"Data"`
+	Code      int    `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
 }
 
 // CreateDeleteIntegrationRequest creates a request to invoke DeleteIntegration API
