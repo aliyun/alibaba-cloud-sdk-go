@@ -1,3 +1,7 @@
+2023-05-25 Version: v1.62.344
+- Generated 2017-08-01 for `polardb`.
+- CreateDBCluster support xengine and binlog feature.
+
 2023-05-25 Version: v1.62.343
 - Generated 2014-05-26 for `Ecs`.
 - DescribeDemands add PrivatePoolId.

@@ -104,8 +104,11 @@ type CreateDBClusterRequest struct {
 	ParameterGroupId                       string                `position:"Query" name:"ParameterGroupId"`
 	Engine                                 string                `position:"Query" name:"Engine"`
 	GDNId                                  string                `position:"Query" name:"GDNId"`
+	LooseXEngine                           string                `position:"Query" name:"LooseXEngine"`
+	LoosePolarLogBin                       string                `position:"Query" name:"LoosePolarLogBin"`
 	ResourceOwnerAccount                   string                `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount                           string                `position:"Query" name:"OwnerAccount"`
+	LooseXEngineUseMemoryPct               string                `position:"Query" name:"LooseXEngineUseMemoryPct"`
 	UsedTime                               string                `position:"Query" name:"UsedTime"`
 	DBNodeNum                              requests.Integer      `position:"Query" name:"DBNodeNum"`
 	VPCId                                  string                `position:"Query" name:"VPCId"`
