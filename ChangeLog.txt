@@ -1,3 +1,10 @@
+2023-05-25 Version: v1.62.345
+- Generated 2018-11-01 for `dms-enterprise`.
+- Support AnalyzeLineage API.
+- Modify ListTaskFlowsByPage API. Add input parameters: DagIdList. Add output parameters: CronSwitch, CronStr, CronParam, TriggerType, CronType, TimeZoneId
+- Modify BackFill API. Add output parameters DagInstanceId (same as the existed parameter NodeId).
+- Modify ListTaskFlowInstance API. Add Input parameters: StartBizTime、EndBizTime.
+
 2023-05-25 Version: v1.62.344
 - Generated 2017-08-01 for `polardb`.
 - CreateDBCluster support xengine and binlog feature.

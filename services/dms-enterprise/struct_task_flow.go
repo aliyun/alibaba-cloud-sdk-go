@@ -17,14 +17,21 @@ package dms_enterprise
 
 // TaskFlow is a nested struct in dms_enterprise response
 type TaskFlow struct {
-	DeployId             int64  `json:"DeployId" xml:"DeployId"`
 	Status               int    `json:"Status" xml:"Status"`
 	LatestInstanceStatus int    `json:"LatestInstanceStatus" xml:"LatestInstanceStatus"`
-	CreatorId            string `json:"CreatorId" xml:"CreatorId"`
 	Id                   int64  `json:"Id" xml:"Id"`
 	CreatorNickName      string `json:"CreatorNickName" xml:"CreatorNickName"`
+	ScenarioId           string `json:"ScenarioId" xml:"ScenarioId"`
+	CronStr              string `json:"CronStr" xml:"CronStr"`
+	CronSwitch           bool   `json:"CronSwitch" xml:"CronSwitch"`
+	CronParam            string `json:"CronParam" xml:"CronParam"`
+	DeployId             int64  `json:"DeployId" xml:"DeployId"`
+	TimeZoneId           string `json:"TimeZoneId" xml:"TimeZoneId"`
+	CronType             int    `json:"CronType" xml:"CronType"`
+	CreatorId            string `json:"CreatorId" xml:"CreatorId"`
 	LatestInstanceTime   string `json:"LatestInstanceTime" xml:"LatestInstanceTime"`
 	DagOwnerNickName     string `json:"DagOwnerNickName" xml:"DagOwnerNickName"`
 	DagName              string `json:"DagName" xml:"DagName"`
 	Description          string `json:"Description" xml:"Description"`
+	TriggerType          int    `json:"TriggerType" xml:"TriggerType"`
 }

@@ -17,17 +17,17 @@ package dms_enterprise
 
 // OrderBaseInfo is a nested struct in dms_enterprise response
 type OrderBaseInfo struct {
-	Comment             string              `json:"Comment" xml:"Comment"`
-	CreateTime          string              `json:"CreateTime" xml:"CreateTime"`
-	Committer           string              `json:"Committer" xml:"Committer"`
-	WorkflowInstanceId  int64               `json:"WorkflowInstanceId" xml:"WorkflowInstanceId"`
-	CommitterId         int64               `json:"CommitterId" xml:"CommitterId"`
-	LastModifyTime      string              `json:"LastModifyTime" xml:"LastModifyTime"`
-	StatusCode          string              `json:"StatusCode" xml:"StatusCode"`
-	WorkflowStatusDesc  string              `json:"WorkflowStatusDesc" xml:"WorkflowStatusDesc"`
-	StatusDesc          string              `json:"StatusDesc" xml:"StatusDesc"`
-	PluginType          string              `json:"PluginType" xml:"PluginType"`
-	OrderId             int64               `json:"OrderId" xml:"OrderId"`
-	RelatedUserNickList RelatedUserNickList `json:"RelatedUserNickList" xml:"RelatedUserNickList"`
-	RelatedUserList     RelatedUserList     `json:"RelatedUserList" xml:"RelatedUserList"`
+	Comment             string                                `json:"Comment" xml:"Comment"`
+	CreateTime          string                                `json:"CreateTime" xml:"CreateTime"`
+	Committer           string                                `json:"Committer" xml:"Committer"`
+	WorkflowInstanceId  int64                                 `json:"WorkflowInstanceId" xml:"WorkflowInstanceId"`
+	CommitterId         int64                                 `json:"CommitterId" xml:"CommitterId"`
+	LastModifyTime      string                                `json:"LastModifyTime" xml:"LastModifyTime"`
+	StatusCode          string                                `json:"StatusCode" xml:"StatusCode"`
+	WorkflowStatusDesc  string                                `json:"WorkflowStatusDesc" xml:"WorkflowStatusDesc"`
+	StatusDesc          string                                `json:"StatusDesc" xml:"StatusDesc"`
+	PluginType          string                                `json:"PluginType" xml:"PluginType"`
+	OrderId             int64                                 `json:"OrderId" xml:"OrderId"`
+	RelatedUserNickList RelatedUserNickListInGetOrderBaseInfo `json:"RelatedUserNickList" xml:"RelatedUserNickList"`
+	RelatedUserList     RelatedUserListInGetOrderBaseInfo     `json:"RelatedUserList" xml:"RelatedUserList"`
 }

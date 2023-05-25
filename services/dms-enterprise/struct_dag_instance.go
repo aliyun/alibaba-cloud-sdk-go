@@ -19,6 +19,7 @@ package dms_enterprise
 type DAGInstance struct {
 	Id           int64  `json:"Id" xml:"Id"`
 	BusinessTime string `json:"BusinessTime" xml:"BusinessTime"`
+	StartTime    string `json:"startTime" xml:"startTime"`
 	EndTime      string `json:"EndTime" xml:"EndTime"`
 	DagId        string `json:"DagId" xml:"DagId"`
 	TriggerType  int    `json:"TriggerType" xml:"TriggerType"`

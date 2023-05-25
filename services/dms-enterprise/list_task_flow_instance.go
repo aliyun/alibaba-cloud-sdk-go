@@ -71,6 +71,7 @@ func (client *Client) ListTaskFlowInstanceWithCallback(request *ListTaskFlowInst
 // ListTaskFlowInstanceRequest is the request struct for api ListTaskFlowInstance
 type ListTaskFlowInstanceRequest struct {
 	*requests.RpcRequest
+	UseBizDate     requests.Boolean `position:"Query" name:"UseBizDate"`
 	TriggerType    requests.Integer `position:"Query" name:"TriggerType"`
 	DagId          requests.Integer `position:"Query" name:"DagId"`
 	Tid            requests.Integer `position:"Query" name:"Tid"`
@@ -78,6 +79,7 @@ type ListTaskFlowInstanceRequest struct {
 	PageIndex      requests.Integer `position:"Query" name:"PageIndex"`
 	StartTimeBegin string           `position:"Query" name:"StartTimeBegin"`
 	StartTimeEnd   string           `position:"Query" name:"StartTimeEnd"`
+	Status         requests.Integer `position:"Query" name:"Status"`
 }
 
 // ListTaskFlowInstanceResponse is the response struct for api ListTaskFlowInstance

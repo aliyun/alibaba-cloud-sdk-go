@@ -72,9 +72,11 @@ func (client *Client) ListTaskFlowsByPageWithCallback(request *ListTaskFlowsByPa
 type ListTaskFlowsByPageRequest struct {
 	*requests.RpcRequest
 	SearchKey           string           `position:"Query" name:"SearchKey"`
+	DagIdList           *[]string        `position:"Query" name:"DagIdList"  type:"Json"`
 	Tid                 requests.Integer `position:"Query" name:"Tid"`
 	PageSize            requests.Integer `position:"Query" name:"PageSize"`
 	PageIndex           requests.Integer `position:"Query" name:"PageIndex"`
+	ScenarioId          requests.Integer `position:"Query" name:"ScenarioId"`
 	NeedLastDagInstance requests.Boolean `position:"Query" name:"NeedLastDagInstance"`
 }
 

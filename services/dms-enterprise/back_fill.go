@@ -77,6 +77,7 @@ type BackFillRequest struct {
 	BackFillDateEnd   string           `position:"Query" name:"BackFillDateEnd"`
 	HistoryDagId      requests.Integer `position:"Query" name:"HistoryDagId"`
 	StartNodeIds      *[]string        `position:"Query" name:"StartNodeIds"  type:"Json"`
+	FilterNodeIds     *[]string        `position:"Query" name:"FilterNodeIds"  type:"Json"`
 	BackFillDateBegin string           `position:"Query" name:"BackFillDateBegin"`
 	BackFillDate      string           `position:"Query" name:"BackFillDate"`
 	Asc               requests.Boolean `position:"Query" name:"Asc"`
@@ -86,11 +87,12 @@ type BackFillRequest struct {
 // BackFillResponse is the response struct for api BackFill
 type BackFillResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
-	ErrorCode    string `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
-	Success      bool   `json:"Success" xml:"Success"`
-	NodeId       int64  `json:"NodeId" xml:"NodeId"`
+	RequestId     string `json:"RequestId" xml:"RequestId"`
+	ErrorCode     string `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage  string `json:"ErrorMessage" xml:"ErrorMessage"`
+	Success       bool   `json:"Success" xml:"Success"`
+	DagInstanceId int64  `json:"DagInstanceId" xml:"DagInstanceId"`
+	NodeId        int64  `json:"NodeId" xml:"NodeId"`
 }
 
 // CreateBackFillRequest creates a request to invoke BackFill API
