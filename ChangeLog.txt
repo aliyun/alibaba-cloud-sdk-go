@@ -1,3 +1,7 @@
+2023-05-25 Version: v1.62.343
+- Generated 2014-05-26 for `Ecs`.
+- DescribeDemands add PrivatePoolId.
+
 2023-05-24 Version: v1.62.342
 - Generated 2019-08-08 for `ARMS`.
 - Add ManagedPrometheus APIs.
