@@ -17,16 +17,16 @@ package config
 
 // ComplianceListItem is a nested struct in config response
 type ComplianceListItem struct {
-	Region             string `json:"Region" xml:"Region"`
-	ResourceType       string `json:"ResourceType" xml:"ResourceType"`
-	ResourceId         string `json:"ResourceId" xml:"ResourceId"`
-	ResourceStatus     string `json:"ResourceStatus" xml:"ResourceStatus"`
 	Tags               string `json:"Tags" xml:"Tags"`
 	AccountId          string `json:"AccountId" xml:"AccountId"`
 	AvailabilityZone   string `json:"AvailabilityZone" xml:"AvailabilityZone"`
-	Configuration      string `json:"Configuration" xml:"Configuration"`
-	ResourceName       string `json:"ResourceName" xml:"ResourceName"`
+	ResourceType       string `json:"ResourceType" xml:"ResourceType"`
 	ResourceCreateTime int64  `json:"ResourceCreateTime" xml:"ResourceCreateTime"`
+	Region             string `json:"Region" xml:"Region"`
+	Configuration      string `json:"Configuration" xml:"Configuration"`
 	CaptureTime        int64  `json:"CaptureTime" xml:"CaptureTime"`
 	ConfigurationDiff  string `json:"ConfigurationDiff" xml:"ConfigurationDiff"`
+	ResourceId         string `json:"ResourceId" xml:"ResourceId"`
+	ResourceName       string `json:"ResourceName" xml:"ResourceName"`
+	ResourceStatus     string `json:"ResourceStatus" xml:"ResourceStatus"`
 }

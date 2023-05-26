@@ -17,31 +17,12 @@ package config
 
 // ManagedRule is a nested struct in config response
 type ManagedRule struct {
-	RiskLevel                       int                      `json:"RiskLevel" xml:"RiskLevel"`
-	CreateTimestamp                 int64                    `json:"CreateTimestamp" xml:"CreateTimestamp"`
-	HelpHint                        string                   `json:"HelpHint" xml:"HelpHint"`
-	HelpUrls                        string                   `json:"HelpUrls" xml:"HelpUrls"`
-	RegionId                        string                   `json:"RegionId" xml:"RegionId"`
-	HelpDoc                         string                   `json:"HelpDoc" xml:"HelpDoc"`
-	ReferenceCount                  int                      `json:"ReferenceCount" xml:"ReferenceCount"`
-	Description                     string                   `json:"Description" xml:"Description"`
-	ManagedRuleName                 string                   `json:"ManagedRuleName" xml:"ManagedRuleName"`
-	ServiceName                     string                   `json:"ServiceName" xml:"ServiceName"`
-	DefaultEnable                   bool                     `json:"DefaultEnable" xml:"DefaultEnable"`
-	FunctionName                    string                   `json:"FunctionName" xml:"FunctionName"`
-	CompulsoryInputParameterDetails map[string]interface{}   `json:"CompulsoryInputParameterDetails" xml:"CompulsoryInputParameterDetails"`
-	HelpUrl                         string                   `json:"HelpUrl" xml:"HelpUrl"`
-	OptionalInputParameterDetails   map[string]interface{}   `json:"OptionalInputParameterDetails" xml:"OptionalInputParameterDetails"`
-	DefaultName                     string                   `json:"DefaultName" xml:"DefaultName"`
-	NonCompliantSample              string                   `json:"NonCompliantSample" xml:"NonCompliantSample"`
-	UseCases                        string                   `json:"UseCases" xml:"UseCases"`
-	ConfigRuleName                  string                   `json:"ConfigRuleName" xml:"ConfigRuleName"`
-	CompliantSample                 string                   `json:"CompliantSample" xml:"CompliantSample"`
-	ResourceType                    string                   `json:"ResourceType" xml:"ResourceType"`
-	InputParameters                 map[string]interface{}   `json:"InputParameters" xml:"InputParameters"`
-	Identifier                      string                   `json:"Identifier" xml:"Identifier"`
-	SourceConditions                []map[string]interface{} `json:"SourceConditions" xml:"SourceConditions"`
-	Labels                          []string                 `json:"Labels" xml:"Labels"`
-	Scope                           Scope                    `json:"Scope" xml:"Scope"`
-	SourceDetails                   []SourceDetailsItem      `json:"SourceDetails" xml:"SourceDetails"`
+	HelpUrl                         string                 `json:"HelpUrl" xml:"HelpUrl"`
+	Description                     string                 `json:"Description" xml:"Description"`
+	Identifier                      string                 `json:"Identifier" xml:"Identifier"`
+	OptionalInputParameterDetails   map[string]interface{} `json:"OptionalInputParameterDetails" xml:"OptionalInputParameterDetails"`
+	ManagedRuleName                 string                 `json:"ManagedRuleName" xml:"ManagedRuleName"`
+	CompulsoryInputParameterDetails map[string]interface{} `json:"CompulsoryInputParameterDetails" xml:"CompulsoryInputParameterDetails"`
+	Labels                          []string               `json:"Labels" xml:"Labels"`
+	SourceDetails                   []SourceDetailsItem    `json:"SourceDetails" xml:"SourceDetails"`
 }

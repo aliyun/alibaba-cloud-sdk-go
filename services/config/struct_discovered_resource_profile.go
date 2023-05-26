@@ -22,8 +22,6 @@ type DiscoveredResourceProfile struct {
 	ResourceId           string `json:"ResourceId" xml:"ResourceId"`
 	ResourceStatus       string `json:"ResourceStatus" xml:"ResourceStatus"`
 	Tags                 string `json:"Tags" xml:"Tags"`
-	Version              int64  `json:"Version" xml:"Version"`
-	AvailabilityZone     string `json:"AvailabilityZone" xml:"AvailabilityZone"`
 	AccountId            int64  `json:"AccountId" xml:"AccountId"`
 	ResourceName         string `json:"ResourceName" xml:"ResourceName"`
 	ResourceOwnerId      int64  `json:"ResourceOwnerId" xml:"ResourceOwnerId"`
