@@ -19,12 +19,14 @@ package dms_enterprise
 type TaskFlow struct {
 	Status               int    `json:"Status" xml:"Status"`
 	LatestInstanceStatus int    `json:"LatestInstanceStatus" xml:"LatestInstanceStatus"`
+	ScheduleParam        string `json:"ScheduleParam" xml:"ScheduleParam"`
+	CronEndDate          string `json:"CronEndDate" xml:"CronEndDate"`
 	Id                   int64  `json:"Id" xml:"Id"`
 	CreatorNickName      string `json:"CreatorNickName" xml:"CreatorNickName"`
+	CronBeginDate        string `json:"CronBeginDate" xml:"CronBeginDate"`
 	ScenarioId           string `json:"ScenarioId" xml:"ScenarioId"`
 	CronStr              string `json:"CronStr" xml:"CronStr"`
 	CronSwitch           bool   `json:"CronSwitch" xml:"CronSwitch"`
-	CronParam            string `json:"CronParam" xml:"CronParam"`
 	DeployId             int64  `json:"DeployId" xml:"DeployId"`
 	TimeZoneId           string `json:"TimeZoneId" xml:"TimeZoneId"`
 	CronType             int    `json:"CronType" xml:"CronType"`
