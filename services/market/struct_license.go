@@ -17,16 +17,16 @@ package market
 
 // License is a nested struct in market response
 type License struct {
+	ActivateTime  string      `json:"ActivateTime" xml:"ActivateTime"`
 	LicenseStatus string      `json:"LicenseStatus" xml:"LicenseStatus"`
+	ProductName   string      `json:"ProductName" xml:"ProductName"`
+	ExpiredTime   string      `json:"ExpiredTime" xml:"ExpiredTime"`
+	ProductSkuId  string      `json:"ProductSkuId" xml:"ProductSkuId"`
+	CreateTime    string      `json:"CreateTime" xml:"CreateTime"`
 	LicenseCode   string      `json:"LicenseCode" xml:"LicenseCode"`
 	InstanceId    string      `json:"InstanceId" xml:"InstanceId"`
-	CreateTime    string      `json:"CreateTime" xml:"CreateTime"`
-	ExpiredTime   string      `json:"ExpiredTime" xml:"ExpiredTime"`
-	ActivateTime  string      `json:"ActivateTime" xml:"ActivateTime"`
-	ProductSkuId  string      `json:"ProductSkuId" xml:"ProductSkuId"`
-	ProductCode   string      `json:"ProductCode" xml:"ProductCode"`
-	ProductName   string      `json:"ProductName" xml:"ProductName"`
 	SupplierName  string      `json:"SupplierName" xml:"SupplierName"`
+	ProductCode   string      `json:"ProductCode" xml:"ProductCode"`
 	ExtendInfo    ExtendInfo  `json:"ExtendInfo" xml:"ExtendInfo"`
 	ExtendArray   ExtendArray `json:"ExtendArray" xml:"ExtendArray"`
 }

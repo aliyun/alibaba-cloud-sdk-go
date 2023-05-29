@@ -17,11 +17,11 @@ package market
 
 // ProductSku is a nested struct in market response
 type ProductSku struct {
-	Name         string                   `json:"Name" xml:"Name"`
-	Code         string                   `json:"Code" xml:"Code"`
-	ChargeType   string                   `json:"ChargeType" xml:"ChargeType"`
-	Constraints  string                   `json:"Constraints" xml:"Constraints"`
 	Hidden       bool                     `json:"Hidden" xml:"Hidden"`
+	Code         string                   `json:"Code" xml:"Code"`
+	Constraints  string                   `json:"Constraints" xml:"Constraints"`
+	Name         string                   `json:"Name" xml:"Name"`
+	ChargeType   string                   `json:"ChargeType" xml:"ChargeType"`
 	OrderPeriods OrderPeriods             `json:"OrderPeriods" xml:"OrderPeriods"`
 	Modules      ModulesInDescribeProduct `json:"Modules" xml:"Modules"`
 }

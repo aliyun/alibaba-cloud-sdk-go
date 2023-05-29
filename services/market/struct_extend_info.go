@@ -18,7 +18,7 @@ package market
 // ExtendInfo is a nested struct in market response
 type ExtendInfo struct {
 	AliUid          int64  `json:"AliUid" xml:"AliUid"`
+	AccountQuantity int64  `json:"AccountQuantity" xml:"AccountQuantity"`
 	Email           string `json:"Email" xml:"Email"`
 	Mobile          string `json:"Mobile" xml:"Mobile"`
-	AccountQuantity int64  `json:"AccountQuantity" xml:"AccountQuantity"`
 }

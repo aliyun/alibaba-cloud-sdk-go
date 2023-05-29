@@ -17,21 +17,21 @@ package market
 
 // InstanceItem is a nested struct in market response
 type InstanceItem struct {
-	InstanceId     int64  `json:"InstanceId" xml:"InstanceId"`
-	OrderId        int64  `json:"OrderId" xml:"OrderId"`
-	SupplierName   string `json:"SupplierName" xml:"SupplierName"`
-	ProductCode    string `json:"ProductCode" xml:"ProductCode"`
-	ProductSkuCode string `json:"ProductSkuCode" xml:"ProductSkuCode"`
-	ProductName    string `json:"ProductName" xml:"ProductName"`
-	ProductType    string `json:"ProductType" xml:"ProductType"`
 	Status         string `json:"Status" xml:"Status"`
-	BeganOn        int64  `json:"BeganOn" xml:"BeganOn"`
-	EndOn          int64  `json:"EndOn" xml:"EndOn"`
-	CreatedOn      int64  `json:"CreatedOn" xml:"CreatedOn"`
-	ExtendJson     string `json:"ExtendJson" xml:"ExtendJson"`
-	HostJson       string `json:"HostJson" xml:"HostJson"`
 	AppJson        string `json:"AppJson" xml:"AppJson"`
 	ApiJson        string `json:"ApiJson" xml:"ApiJson"`
+	ProductName    string `json:"ProductName" xml:"ProductName"`
 	ImageJson      string `json:"ImageJson" xml:"ImageJson"`
+	InstanceId     int64  `json:"InstanceId" xml:"InstanceId"`
+	ExtendJson     string `json:"ExtendJson" xml:"ExtendJson"`
+	BeganOn        int64  `json:"BeganOn" xml:"BeganOn"`
+	ProductType    string `json:"ProductType" xml:"ProductType"`
+	HostJson       string `json:"HostJson" xml:"HostJson"`
+	ProductSkuCode string `json:"ProductSkuCode" xml:"ProductSkuCode"`
+	CreatedOn      int64  `json:"CreatedOn" xml:"CreatedOn"`
 	IdaasJson      string `json:"IdaasJson" xml:"IdaasJson"`
+	EndOn          int64  `json:"EndOn" xml:"EndOn"`
+	OrderId        int64  `json:"OrderId" xml:"OrderId"`
+	ProductCode    string `json:"ProductCode" xml:"ProductCode"`
+	SupplierName   string `json:"SupplierName" xml:"SupplierName"`
 }

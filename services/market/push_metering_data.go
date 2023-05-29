@@ -21,7 +21,6 @@ import (
 )
 
 // PushMeteringData invokes the market.PushMeteringData API synchronously
-// api document: https://help.aliyun.com/api/market/pushmeteringdata.html
 func (client *Client) PushMeteringData(request *PushMeteringDataRequest) (response *PushMeteringDataResponse, err error) {
 	response = CreatePushMeteringDataResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) PushMeteringData(request *PushMeteringDataRequest) (respon
 }
 
 // PushMeteringDataWithChan invokes the market.PushMeteringData API asynchronously
-// api document: https://help.aliyun.com/api/market/pushmeteringdata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PushMeteringDataWithChan(request *PushMeteringDataRequest) (<-chan *PushMeteringDataResponse, <-chan error) {
 	responseChan := make(chan *PushMeteringDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) PushMeteringDataWithChan(request *PushMeteringDataRequest)
 }
 
 // PushMeteringDataWithCallback invokes the market.PushMeteringData API asynchronously
-// api document: https://help.aliyun.com/api/market/pushmeteringdata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PushMeteringDataWithCallback(request *PushMeteringDataRequest, callback func(response *PushMeteringDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,8 +77,8 @@ type PushMeteringDataRequest struct {
 // PushMeteringDataResponse is the response struct for api PushMeteringData
 type PushMeteringDataResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreatePushMeteringDataRequest creates a request to invoke PushMeteringData API
@@ -91,7 +86,8 @@ func CreatePushMeteringDataRequest() (request *PushMeteringDataRequest) {
 	request = &PushMeteringDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Market", "2015-11-01", "PushMeteringData", "yunmarket", "openAPI")
+	request.InitWithApiInfo("Market", "2015-11-01", "PushMeteringData", "", "")
+	request.Method = requests.POST
 	return
 }
 

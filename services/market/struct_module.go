@@ -17,8 +17,8 @@ package market
 
 // Module is a nested struct in market response
 type Module struct {
-	Name       string                      `json:"Name" xml:"Name"`
-	Code       string                      `json:"Code" xml:"Code"`
-	Id         string                      `json:"Id" xml:"Id"`
-	Properties PropertiesInDescribeProduct `json:"Properties" xml:"Properties"`
+	Name       string                       `json:"Name" xml:"Name"`
+	Code       string                       `json:"Code" xml:"Code"`
+	Id         string                       `json:"Id" xml:"Id"`
+	Properties PropertiesInDescribeInstance `json:"Properties" xml:"Properties"`
 }

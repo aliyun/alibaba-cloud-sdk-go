@@ -17,5 +17,51 @@ package market
 
 // Result is a nested struct in market response
 type Result struct {
-	ImageProduct []ImageProduct `json:"ImageProduct" xml:"ImageProduct"`
+	Name               string   `json:"Name" xml:"Name"`
+	SupplierUId        string   `json:"SupplierUId" xml:"SupplierUId"`
+	ProductName        string   `json:"ProductName" xml:"ProductName"`
+	TemplateForm       string   `json:"TemplateForm" xml:"TemplateForm"`
+	FirstCategoryName  string   `json:"FirstCategoryName" xml:"FirstCategoryName"`
+	ProductSkuCode     string   `json:"ProductSkuCode" xml:"ProductSkuCode"`
+	TemplateId         int64    `json:"TemplateId" xml:"TemplateId"`
+	OrderId            int64    `json:"OrderId" xml:"OrderId"`
+	CustomerAliUid     int64    `json:"CustomerAliUid" xml:"CustomerAliUid"`
+	AutoFinishNode     bool     `json:"AutoFinishNode" xml:"AutoFinishNode"`
+	SubmissionRadio    string   `json:"SubmissionRadio" xml:"SubmissionRadio"`
+	Score              string   `json:"Score" xml:"Score"`
+	NodeName           string   `json:"NodeName" xml:"NodeName"`
+	TradeCount         string   `json:"TradeCount" xml:"TradeCount"`
+	ParentNodeId       int64    `json:"ParentNodeId" xml:"ParentNodeId"`
+	ImageUrl           string   `json:"ImageUrl" xml:"ImageUrl"`
+	InstanceId         string   `json:"InstanceId" xml:"InstanceId"`
+	SupplierName       string   `json:"SupplierName" xml:"SupplierName"`
+	FinishType         string   `json:"FinishType" xml:"FinishType"`
+	TemplateType       string   `json:"TemplateType" xml:"TemplateType"`
+	Type               string   `json:"Type" xml:"Type"`
+	Uid                string   `json:"Uid" xml:"Uid"`
+	ProjectStatus      string   `json:"ProjectStatus" xml:"ProjectStatus"`
+	ShortDescription   string   `json:"ShortDescription" xml:"ShortDescription"`
+	SupplierAliUid     int64    `json:"SupplierAliUid" xml:"SupplierAliUid"`
+	FinalStepNo        int      `json:"FinalStepNo" xml:"FinalStepNo"`
+	OperatorRole       string   `json:"OperatorRole" xml:"OperatorRole"`
+	Code               string   `json:"Code" xml:"Code"`
+	UserCommentCount   string   `json:"UserCommentCount" xml:"UserCommentCount"`
+	Price              string   `json:"Price" xml:"Price"`
+	ProductSkuName     string   `json:"ProductSkuName" xml:"ProductSkuName"`
+	SecondCategoryName string   `json:"SecondCategoryName" xml:"SecondCategoryName"`
+	GmtStart           int64    `json:"GmtStart" xml:"GmtStart"`
+	NodeStatus         string   `json:"NodeStatus" xml:"NodeStatus"`
+	StepNo             int      `json:"StepNo" xml:"StepNo"`
+	AllowRollbackNode  bool     `json:"AllowRollbackNode" xml:"AllowRollbackNode"`
+	ProductCode        string   `json:"ProductCode" xml:"ProductCode"`
+	NeedAttachment     bool     `json:"NeedAttachment" xml:"NeedAttachment"`
+	GmtCreate          int64    `json:"GmtCreate" xml:"GmtCreate"`
+	AuthTime           int64    `json:"AuthTime" xml:"AuthTime"`
+	GmtExpired         int64    `json:"GmtExpired" xml:"GmtExpired"`
+	CurrentStepNo      int      `json:"CurrentStepNo" xml:"CurrentStepNo"`
+	PreviousNodeId     int64    `json:"PreviousNodeId" xml:"PreviousNodeId"`
+	NodeId             int64    `json:"NodeId" xml:"NodeId"`
+	GmtFinished        int64    `json:"GmtFinished" xml:"GmtFinished"`
+	NextNodeId         int64    `json:"NextNodeId" xml:"NextNodeId"`
+	AuthRoles          []string `json:"AuthRoles" xml:"AuthRoles"`
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeProducts invokes the market.DescribeProducts API synchronously
-// api document: https://help.aliyun.com/api/market/describeproducts.html
 func (client *Client) DescribeProducts(request *DescribeProductsRequest) (response *DescribeProductsResponse, err error) {
 	response = CreateDescribeProductsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeProducts(request *DescribeProductsRequest) (respon
 }
 
 // DescribeProductsWithChan invokes the market.DescribeProducts API asynchronously
-// api document: https://help.aliyun.com/api/market/describeproducts.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeProductsWithChan(request *DescribeProductsRequest) (<-chan *DescribeProductsResponse, <-chan error) {
 	responseChan := make(chan *DescribeProductsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeProductsWithChan(request *DescribeProductsRequest)
 }
 
 // DescribeProductsWithCallback invokes the market.DescribeProducts API asynchronously
-// api document: https://help.aliyun.com/api/market/describeproducts.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeProductsWithCallback(request *DescribeProductsRequest, callback func(response *DescribeProductsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,10 +71,10 @@ func (client *Client) DescribeProductsWithCallback(request *DescribeProductsRequ
 // DescribeProductsRequest is the request struct for api DescribeProducts
 type DescribeProductsRequest struct {
 	*requests.RpcRequest
-	Filter     *[]DescribeProductsFilter `position:"Query" name:"Filter"  type:"Repeated"`
 	SearchTerm string                    `position:"Query" name:"SearchTerm"`
-	PageSize   requests.Integer          `position:"Query" name:"PageSize"`
 	PageNumber requests.Integer          `position:"Query" name:"PageNumber"`
+	Filter     *[]DescribeProductsFilter `position:"Query" name:"Filter"  type:"Repeated"`
+	PageSize   requests.Integer          `position:"Query" name:"PageSize"`
 }
 
 // DescribeProductsFilter is a repeated param struct in DescribeProductsRequest
@@ -103,7 +98,8 @@ func CreateDescribeProductsRequest() (request *DescribeProductsRequest) {
 	request = &DescribeProductsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Market", "2015-11-01", "DescribeProducts", "yunmarket", "openAPI")
+	request.InitWithApiInfo("Market", "2015-11-01", "DescribeProducts", "", "")
+	request.Method = requests.POST
 	return
 }
 

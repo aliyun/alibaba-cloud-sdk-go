@@ -17,9 +17,9 @@ package market
 
 // ProductExtra is a nested struct in market response
 type ProductExtra struct {
+	Type   string `json:"Type" xml:"Type"`
 	Key    string `json:"Key" xml:"Key"`
-	Values string `json:"Values" xml:"Values"`
 	Label  string `json:"Label" xml:"Label"`
 	Order  int    `json:"Order" xml:"Order"`
-	Type   string `json:"Type" xml:"Type"`
+	Values string `json:"Values" xml:"Values"`
 }

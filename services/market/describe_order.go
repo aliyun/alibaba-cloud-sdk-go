@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeOrder invokes the market.DescribeOrder API synchronously
-// api document: https://help.aliyun.com/api/market/describeorder.html
 func (client *Client) DescribeOrder(request *DescribeOrderRequest) (response *DescribeOrderResponse, err error) {
 	response = CreateDescribeOrderResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeOrder(request *DescribeOrderRequest) (response *De
 }
 
 // DescribeOrderWithChan invokes the market.DescribeOrder API asynchronously
-// api document: https://help.aliyun.com/api/market/describeorder.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeOrderWithChan(request *DescribeOrderRequest) (<-chan *DescribeOrderResponse, <-chan error) {
 	responseChan := make(chan *DescribeOrderResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeOrderWithChan(request *DescribeOrderRequest) (<-ch
 }
 
 // DescribeOrderWithCallback invokes the market.DescribeOrder API asynchronously
-// api document: https://help.aliyun.com/api/market/describeorder.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeOrderWithCallback(request *DescribeOrderRequest, callback func(response *DescribeOrderResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,24 +77,26 @@ type DescribeOrderRequest struct {
 // DescribeOrderResponse is the response struct for api DescribeOrder
 type DescribeOrderResponse struct {
 	*responses.BaseResponse
-	OrderId             int64                      `json:"OrderId" xml:"OrderId"`
-	AliUid              int64                      `json:"AliUid" xml:"AliUid"`
-	SupplierCompanyName string                     `json:"SupplierCompanyName" xml:"SupplierCompanyName"`
-	ProductCode         string                     `json:"ProductCode" xml:"ProductCode"`
-	ProductSkuCode      string                     `json:"ProductSkuCode" xml:"ProductSkuCode"`
 	ProductName         string                     `json:"ProductName" xml:"ProductName"`
-	PeriodType          string                     `json:"PeriodType" xml:"PeriodType"`
-	Quantity            int                        `json:"Quantity" xml:"Quantity"`
-	AccountQuantity     int64                      `json:"AccountQuantity" xml:"AccountQuantity"`
-	OrderType           string                     `json:"OrderType" xml:"OrderType"`
-	OrderStatus         string                     `json:"OrderStatus" xml:"OrderStatus"`
-	PayStatus           string                     `json:"PayStatus" xml:"PayStatus"`
-	PaidOn              int64                      `json:"PaidOn" xml:"PaidOn"`
-	CreatedOn           int64                      `json:"CreatedOn" xml:"CreatedOn"`
+	SupplierCompanyName string                     `json:"SupplierCompanyName" xml:"SupplierCompanyName"`
 	OriginalPrice       float64                    `json:"OriginalPrice" xml:"OriginalPrice"`
-	TotalPrice          float64                    `json:"TotalPrice" xml:"TotalPrice"`
-	PaymentPrice        float64                    `json:"PaymentPrice" xml:"PaymentPrice"`
+	AliUid              int64                      `json:"AliUid" xml:"AliUid"`
 	CouponPrice         float64                    `json:"CouponPrice" xml:"CouponPrice"`
+	AccountQuantity     int64                      `json:"AccountQuantity" xml:"AccountQuantity"`
+	PeriodType          string                     `json:"PeriodType" xml:"PeriodType"`
+	RequestId           string                     `json:"RequestId" xml:"RequestId"`
+	PayStatus           string                     `json:"PayStatus" xml:"PayStatus"`
+	PaymentPrice        float64                    `json:"PaymentPrice" xml:"PaymentPrice"`
+	OrderStatus         string                     `json:"OrderStatus" xml:"OrderStatus"`
+	ProductSkuCode      string                     `json:"ProductSkuCode" xml:"ProductSkuCode"`
+	PaidOn              int64                      `json:"PaidOn" xml:"PaidOn"`
+	Components          map[string]interface{}     `json:"Components" xml:"Components"`
+	CreatedOn           int64                      `json:"CreatedOn" xml:"CreatedOn"`
+	OrderType           string                     `json:"OrderType" xml:"OrderType"`
+	TotalPrice          float64                    `json:"TotalPrice" xml:"TotalPrice"`
+	Quantity            int                        `json:"Quantity" xml:"Quantity"`
+	OrderId             int64                      `json:"OrderId" xml:"OrderId"`
+	ProductCode         string                     `json:"ProductCode" xml:"ProductCode"`
 	SupplierTelephones  SupplierTelephones         `json:"SupplierTelephones" xml:"SupplierTelephones"`
 	InstanceIds         InstanceIdsInDescribeOrder `json:"InstanceIds" xml:"InstanceIds"`
 }
@@ -109,7 +106,8 @@ func CreateDescribeOrderRequest() (request *DescribeOrderRequest) {
 	request = &DescribeOrderRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Market", "2015-11-01", "DescribeOrder", "yunmarket", "openAPI")
+	request.InitWithApiInfo("Market", "2015-11-01", "DescribeOrder", "", "")
+	request.Method = requests.POST
 	return
 }
 

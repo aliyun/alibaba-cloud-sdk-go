@@ -17,9 +17,9 @@ package market
 
 // ShopInfo is a nested struct in market response
 type ShopInfo struct {
-	Id         int64      `json:"Id" xml:"Id"`
 	Name       string     `json:"Name" xml:"Name"`
 	Emails     string     `json:"Emails" xml:"Emails"`
+	Id         int64      `json:"Id" xml:"Id"`
 	Telephones Telephones `json:"Telephones" xml:"Telephones"`
 	WangWangs  WangWangs  `json:"WangWangs" xml:"WangWangs"`
 }

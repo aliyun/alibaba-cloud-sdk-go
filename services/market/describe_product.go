@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeProduct invokes the market.DescribeProduct API synchronously
-// api document: https://help.aliyun.com/api/market/describeproduct.html
 func (client *Client) DescribeProduct(request *DescribeProductRequest) (response *DescribeProductResponse, err error) {
 	response = CreateDescribeProductResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeProduct(request *DescribeProductRequest) (response
 }
 
 // DescribeProductWithChan invokes the market.DescribeProduct API asynchronously
-// api document: https://help.aliyun.com/api/market/describeproduct.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeProductWithChan(request *DescribeProductRequest) (<-chan *DescribeProductResponse, <-chan error) {
 	responseChan := make(chan *DescribeProductResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeProductWithChan(request *DescribeProductRequest) (
 }
 
 // DescribeProductWithCallback invokes the market.DescribeProduct API asynchronously
-// api document: https://help.aliyun.com/api/market/describeproduct.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeProductWithCallback(request *DescribeProductRequest, callback func(response *DescribeProductResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,20 +79,23 @@ type DescribeProductRequest struct {
 // DescribeProductResponse is the response struct for api DescribeProduct
 type DescribeProductResponse struct {
 	*responses.BaseResponse
-	Code             string        `json:"Code" xml:"Code"`
-	Name             string        `json:"Name" xml:"Name"`
+	FrontCategoryId  int64         `json:"FrontCategoryId" xml:"FrontCategoryId"`
+	Status           string        `json:"Status" xml:"Status"`
 	Type             string        `json:"Type" xml:"Type"`
 	PicUrl           string        `json:"PicUrl" xml:"PicUrl"`
-	Description      string        `json:"Description" xml:"Description"`
-	ShortDescription string        `json:"ShortDescription" xml:"ShortDescription"`
-	UseCount         int64         `json:"UseCount" xml:"UseCount"`
 	Score            float64       `json:"Score" xml:"Score"`
-	Status           string        `json:"Status" xml:"Status"`
-	AuditStatus      string        `json:"AuditStatus" xml:"AuditStatus"`
-	AuditFailMsg     string        `json:"AuditFailMsg" xml:"AuditFailMsg"`
-	AuditTime        int64         `json:"AuditTime" xml:"AuditTime"`
-	GmtCreated       int64         `json:"GmtCreated" xml:"GmtCreated"`
+	UseCount         int64         `json:"UseCount" xml:"UseCount"`
 	GmtModified      int64         `json:"GmtModified" xml:"GmtModified"`
+	SupplierPk       int64         `json:"SupplierPk" xml:"SupplierPk"`
+	GmtCreated       int64         `json:"GmtCreated" xml:"GmtCreated"`
+	RequestId        string        `json:"RequestId" xml:"RequestId"`
+	ShortDescription string        `json:"ShortDescription" xml:"ShortDescription"`
+	Description      string        `json:"Description" xml:"Description"`
+	Code             string        `json:"Code" xml:"Code"`
+	AuditFailMsg     string        `json:"AuditFailMsg" xml:"AuditFailMsg"`
+	Name             string        `json:"Name" xml:"Name"`
+	AuditTime        int64         `json:"AuditTime" xml:"AuditTime"`
+	AuditStatus      string        `json:"AuditStatus" xml:"AuditStatus"`
 	ShopInfo         ShopInfo      `json:"ShopInfo" xml:"ShopInfo"`
 	ProductSkus      ProductSkus   `json:"ProductSkus" xml:"ProductSkus"`
 	ProductExtras    ProductExtras `json:"ProductExtras" xml:"ProductExtras"`
@@ -108,7 +106,8 @@ func CreateDescribeProductRequest() (request *DescribeProductRequest) {
 	request = &DescribeProductRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Market", "2015-11-01", "DescribeProduct", "yunmarket", "openAPI")
+	request.InitWithApiInfo("Market", "2015-11-01", "DescribeProduct", "", "")
+	request.Method = requests.POST
 	return
 }
 

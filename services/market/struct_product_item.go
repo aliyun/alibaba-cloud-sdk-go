@@ -17,19 +17,20 @@ package market
 
 // ProductItem is a nested struct in market response
 type ProductItem struct {
-	Code             string `json:"Code" xml:"Code"`
-	Name             string `json:"Name" xml:"Name"`
-	CategoryId       int64  `json:"CategoryId" xml:"CategoryId"`
-	SupplierId       int64  `json:"SupplierId" xml:"SupplierId"`
-	SupplierName     string `json:"SupplierName" xml:"SupplierName"`
-	ShortDescription string `json:"ShortDescription" xml:"ShortDescription"`
-	Tags             string `json:"Tags" xml:"Tags"`
-	SuggestedPrice   string `json:"SuggestedPrice" xml:"SuggestedPrice"`
-	TargetUrl        string `json:"TargetUrl" xml:"TargetUrl"`
-	ImageUrl         string `json:"ImageUrl" xml:"ImageUrl"`
-	Score            string `json:"Score" xml:"Score"`
-	OperationSystem  string `json:"OperationSystem" xml:"OperationSystem"`
-	WarrantyDate     string `json:"WarrantyDate" xml:"WarrantyDate"`
-	DeliveryDate     string `json:"DeliveryDate" xml:"DeliveryDate"`
+	PriceInfo        string `json:"PriceInfo" xml:"PriceInfo"`
 	DeliveryWay      string `json:"DeliveryWay" xml:"DeliveryWay"`
+	ImageUrl         string `json:"ImageUrl" xml:"ImageUrl"`
+	WarrantyDate     string `json:"WarrantyDate" xml:"WarrantyDate"`
+	Tags             string `json:"Tags" xml:"Tags"`
+	Score            string `json:"Score" xml:"Score"`
+	SupplierId       int64  `json:"SupplierId" xml:"SupplierId"`
+	OperationSystem  string `json:"OperationSystem" xml:"OperationSystem"`
+	ShortDescription string `json:"ShortDescription" xml:"ShortDescription"`
+	DeliveryDate     string `json:"DeliveryDate" xml:"DeliveryDate"`
+	TargetUrl        string `json:"TargetUrl" xml:"TargetUrl"`
+	Code             string `json:"Code" xml:"Code"`
+	CategoryId       int64  `json:"CategoryId" xml:"CategoryId"`
+	Name             string `json:"Name" xml:"Name"`
+	SuggestedPrice   string `json:"SuggestedPrice" xml:"SuggestedPrice"`
+	SupplierName     string `json:"SupplierName" xml:"SupplierName"`
 }

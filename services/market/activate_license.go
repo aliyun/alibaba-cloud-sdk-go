@@ -21,7 +21,6 @@ import (
 )
 
 // ActivateLicense invokes the market.ActivateLicense API synchronously
-// api document: https://help.aliyun.com/api/market/activatelicense.html
 func (client *Client) ActivateLicense(request *ActivateLicenseRequest) (response *ActivateLicenseResponse, err error) {
 	response = CreateActivateLicenseResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ActivateLicense(request *ActivateLicenseRequest) (response
 }
 
 // ActivateLicenseWithChan invokes the market.ActivateLicense API asynchronously
-// api document: https://help.aliyun.com/api/market/activatelicense.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ActivateLicenseWithChan(request *ActivateLicenseRequest) (<-chan *ActivateLicenseResponse, <-chan error) {
 	responseChan := make(chan *ActivateLicenseResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ActivateLicenseWithChan(request *ActivateLicenseRequest) (
 }
 
 // ActivateLicenseWithCallback invokes the market.ActivateLicense API asynchronously
-// api document: https://help.aliyun.com/api/market/activatelicense.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ActivateLicenseWithCallback(request *ActivateLicenseRequest, callback func(response *ActivateLicenseResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,8 +78,8 @@ type ActivateLicenseRequest struct {
 // ActivateLicenseResponse is the response struct for api ActivateLicense
 type ActivateLicenseResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateActivateLicenseRequest creates a request to invoke ActivateLicense API
@@ -92,7 +87,8 @@ func CreateActivateLicenseRequest() (request *ActivateLicenseRequest) {
 	request = &ActivateLicenseRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Market", "2015-11-01", "ActivateLicense", "yunmarket", "openAPI")
+	request.InitWithApiInfo("Market", "2015-11-01", "ActivateLicense", "", "")
+	request.Method = requests.POST
 	return
 }
 

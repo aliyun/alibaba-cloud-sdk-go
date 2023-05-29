@@ -21,7 +21,6 @@ import (
 )
 
 // DescribePrice invokes the market.DescribePrice API synchronously
-// api document: https://help.aliyun.com/api/market/describeprice.html
 func (client *Client) DescribePrice(request *DescribePriceRequest) (response *DescribePriceResponse, err error) {
 	response = CreateDescribePriceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribePrice(request *DescribePriceRequest) (response *De
 }
 
 // DescribePriceWithChan invokes the market.DescribePrice API asynchronously
-// api document: https://help.aliyun.com/api/market/describeprice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribePriceWithChan(request *DescribePriceRequest) (<-chan *DescribePriceResponse, <-chan error) {
 	responseChan := make(chan *DescribePriceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribePriceWithChan(request *DescribePriceRequest) (<-ch
 }
 
 // DescribePriceWithCallback invokes the market.DescribePrice API asynchronously
-// api document: https://help.aliyun.com/api/market/describeprice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribePriceWithCallback(request *DescribePriceRequest, callback func(response *DescribePriceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,11 +78,19 @@ type DescribePriceRequest struct {
 // DescribePriceResponse is the response struct for api DescribePrice
 type DescribePriceResponse struct {
 	*responses.BaseResponse
-	ProductCode    string         `json:"ProductCode" xml:"ProductCode"`
-	OriginalPrice  float64        `json:"OriginalPrice" xml:"OriginalPrice"`
-	TradePrice     float64        `json:"TradePrice" xml:"TradePrice"`
-	DiscountPrice  float64        `json:"DiscountPrice" xml:"DiscountPrice"`
-	PromotionRules PromotionRules `json:"PromotionRules" xml:"PromotionRules"`
+	ExpressionCode    string         `json:"ExpressionCode" xml:"ExpressionCode"`
+	Cuxiao            bool           `json:"Cuxiao" xml:"Cuxiao"`
+	DiscountPrice     float64        `json:"DiscountPrice" xml:"DiscountPrice"`
+	Cycle             string         `json:"Cycle" xml:"Cycle"`
+	TradePrice        float64        `json:"TradePrice" xml:"TradePrice"`
+	OriginalPrice     float64        `json:"OriginalPrice" xml:"OriginalPrice"`
+	Duration          int            `json:"Duration" xml:"Duration"`
+	Currency          string         `json:"Currency" xml:"Currency"`
+	ExpressionMessage string         `json:"ExpressionMessage" xml:"ExpressionMessage"`
+	InfoTitle         string         `json:"InfoTitle" xml:"InfoTitle"`
+	ProductCode       string         `json:"ProductCode" xml:"ProductCode"`
+	PromotionRules    PromotionRules `json:"PromotionRules" xml:"PromotionRules"`
+	Coupons           Coupons        `json:"Coupons" xml:"Coupons"`
 }
 
 // CreateDescribePriceRequest creates a request to invoke DescribePrice API
@@ -95,7 +98,8 @@ func CreateDescribePriceRequest() (request *DescribePriceRequest) {
 	request = &DescribePriceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Market", "2015-11-01", "DescribePrice", "yunmarket", "openAPI")
+	request.InitWithApiInfo("Market", "2015-11-01", "DescribePrice", "", "")
+	request.Method = requests.POST
 	return
 }
 

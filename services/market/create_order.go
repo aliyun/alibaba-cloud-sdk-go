@@ -21,7 +21,6 @@ import (
 )
 
 // CreateOrder invokes the market.CreateOrder API synchronously
-// api document: https://help.aliyun.com/api/market/createorder.html
 func (client *Client) CreateOrder(request *CreateOrderRequest) (response *CreateOrderResponse, err error) {
 	response = CreateCreateOrderResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateOrder(request *CreateOrderRequest) (response *Create
 }
 
 // CreateOrderWithChan invokes the market.CreateOrder API asynchronously
-// api document: https://help.aliyun.com/api/market/createorder.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateOrderWithChan(request *CreateOrderRequest) (<-chan *CreateOrderResponse, <-chan error) {
 	responseChan := make(chan *CreateOrderResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateOrderWithChan(request *CreateOrderRequest) (<-chan *
 }
 
 // CreateOrderWithCallback invokes the market.CreateOrder API asynchronously
-// api document: https://help.aliyun.com/api/market/createorder.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateOrderWithCallback(request *CreateOrderRequest, callback func(response *CreateOrderResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -87,8 +82,8 @@ type CreateOrderRequest struct {
 // CreateOrderResponse is the response struct for api CreateOrder
 type CreateOrderResponse struct {
 	*responses.BaseResponse
-	RequestId   string                   `json:"RequestId" xml:"RequestId"`
 	OrderId     string                   `json:"OrderId" xml:"OrderId"`
+	RequestId   string                   `json:"RequestId" xml:"RequestId"`
 	InstanceIds InstanceIdsInCreateOrder `json:"InstanceIds" xml:"InstanceIds"`
 }
 
@@ -97,7 +92,8 @@ func CreateCreateOrderRequest() (request *CreateOrderRequest) {
 	request = &CreateOrderRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Market", "2015-11-01", "CreateOrder", "yunmarket", "openAPI")
+	request.InitWithApiInfo("Market", "2015-11-01", "CreateOrder", "", "")
+	request.Method = requests.POST
 	return
 }
 

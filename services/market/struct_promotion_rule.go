@@ -17,7 +17,7 @@ package market
 
 // PromotionRule is a nested struct in market response
 type PromotionRule struct {
-	RuleId string `json:"RuleId" xml:"RuleId"`
-	Name   string `json:"Name" xml:"Name"`
 	Title  string `json:"Title" xml:"Title"`
+	Name   string `json:"Name" xml:"Name"`
+	RuleId string `json:"RuleId" xml:"RuleId"`
 }

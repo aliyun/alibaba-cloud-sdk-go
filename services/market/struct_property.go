@@ -17,9 +17,9 @@ package market
 
 // Property is a nested struct in market response
 type Property struct {
-	Name           string                          `json:"Name" xml:"Name"`
-	Key            string                          `json:"Key" xml:"Key"`
-	ShowType       string                          `json:"ShowType" xml:"ShowType"`
-	DisplayUnit    string                          `json:"DisplayUnit" xml:"DisplayUnit"`
-	PropertyValues PropertyValuesInDescribeProduct `json:"PropertyValues" xml:"PropertyValues"`
+	Key            string                           `json:"Key" xml:"Key"`
+	Name           string                           `json:"Name" xml:"Name"`
+	ShowType       string                           `json:"ShowType" xml:"ShowType"`
+	DisplayUnit    string                           `json:"DisplayUnit" xml:"DisplayUnit"`
+	PropertyValues PropertyValuesInDescribeInstance `json:"PropertyValues" xml:"PropertyValues"`
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeInstance invokes the market.DescribeInstance API synchronously
-// api document: https://help.aliyun.com/api/market/describeinstance.html
 func (client *Client) DescribeInstance(request *DescribeInstanceRequest) (response *DescribeInstanceResponse, err error) {
 	response = CreateDescribeInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeInstance(request *DescribeInstanceRequest) (respon
 }
 
 // DescribeInstanceWithChan invokes the market.DescribeInstance API asynchronously
-// api document: https://help.aliyun.com/api/market/describeinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceWithChan(request *DescribeInstanceRequest) (<-chan *DescribeInstanceResponse, <-chan error) {
 	responseChan := make(chan *DescribeInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeInstanceWithChan(request *DescribeInstanceRequest)
 }
 
 // DescribeInstanceWithCallback invokes the market.DescribeInstance API asynchronously
-// api document: https://help.aliyun.com/api/market/describeinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceWithCallback(request *DescribeInstanceRequest, callback func(response *DescribeInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,22 +79,24 @@ type DescribeInstanceRequest struct {
 // DescribeInstanceResponse is the response struct for api DescribeInstance
 type DescribeInstanceResponse struct {
 	*responses.BaseResponse
-	InstanceId     int64                     `json:"InstanceId" xml:"InstanceId"`
-	OrderId        int64                     `json:"OrderId" xml:"OrderId"`
-	SupplierName   string                    `json:"SupplierName" xml:"SupplierName"`
-	ProductCode    string                    `json:"ProductCode" xml:"ProductCode"`
-	ProductSkuCode string                    `json:"ProductSkuCode" xml:"ProductSkuCode"`
-	ProductName    string                    `json:"ProductName" xml:"ProductName"`
-	ProductType    string                    `json:"ProductType" xml:"ProductType"`
 	Status         string                    `json:"Status" xml:"Status"`
-	BeganOn        int64                     `json:"BeganOn" xml:"BeganOn"`
-	EndOn          int64                     `json:"EndOn" xml:"EndOn"`
-	CreatedOn      int64                     `json:"CreatedOn" xml:"CreatedOn"`
-	ExtendJson     string                    `json:"ExtendJson" xml:"ExtendJson"`
-	HostJson       string                    `json:"HostJson" xml:"HostJson"`
 	AppJson        string                    `json:"AppJson" xml:"AppJson"`
+	ProductName    string                    `json:"ProductName" xml:"ProductName"`
+	InstanceId     int64                     `json:"InstanceId" xml:"InstanceId"`
+	ExtendJson     string                    `json:"ExtendJson" xml:"ExtendJson"`
+	IsTrial        bool                      `json:"IsTrial" xml:"IsTrial"`
+	BeganOn        int64                     `json:"BeganOn" xml:"BeganOn"`
 	ComponentJson  string                    `json:"ComponentJson" xml:"ComponentJson"`
 	Constraints    string                    `json:"Constraints" xml:"Constraints"`
+	ProductType    string                    `json:"ProductType" xml:"ProductType"`
+	HostJson       string                    `json:"HostJson" xml:"HostJson"`
+	ProductSkuCode string                    `json:"ProductSkuCode" xml:"ProductSkuCode"`
+	CreatedOn      int64                     `json:"CreatedOn" xml:"CreatedOn"`
+	EndOn          int64                     `json:"EndOn" xml:"EndOn"`
+	OrderId        int64                     `json:"OrderId" xml:"OrderId"`
+	ProductCode    string                    `json:"ProductCode" xml:"ProductCode"`
+	SupplierName   string                    `json:"SupplierName" xml:"SupplierName"`
+	AutoRenewal    string                    `json:"AutoRenewal" xml:"AutoRenewal"`
 	RelationalData RelationalData            `json:"RelationalData" xml:"RelationalData"`
 	Modules        ModulesInDescribeInstance `json:"Modules" xml:"Modules"`
 }
@@ -109,7 +106,8 @@ func CreateDescribeInstanceRequest() (request *DescribeInstanceRequest) {
 	request = &DescribeInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Market", "2015-11-01", "DescribeInstance", "yunmarket", "openAPI")
+	request.InitWithApiInfo("Market", "2015-11-01", "DescribeInstance", "", "")
+	request.Method = requests.POST
 	return
 }
 

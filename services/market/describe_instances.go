@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeInstances invokes the market.DescribeInstances API synchronously
-// api document: https://help.aliyun.com/api/market/describeinstances.html
 func (client *Client) DescribeInstances(request *DescribeInstancesRequest) (response *DescribeInstancesResponse, err error) {
 	response = CreateDescribeInstancesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeInstances(request *DescribeInstancesRequest) (resp
 }
 
 // DescribeInstancesWithChan invokes the market.DescribeInstances API asynchronously
-// api document: https://help.aliyun.com/api/market/describeinstances.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstancesWithChan(request *DescribeInstancesRequest) (<-chan *DescribeInstancesResponse, <-chan error) {
 	responseChan := make(chan *DescribeInstancesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeInstancesWithChan(request *DescribeInstancesReques
 }
 
 // DescribeInstancesWithCallback invokes the market.DescribeInstances API asynchronously
-// api document: https://help.aliyun.com/api/market/describeinstances.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstancesWithCallback(request *DescribeInstancesRequest, callback func(response *DescribeInstancesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,9 +71,11 @@ func (client *Client) DescribeInstancesWithCallback(request *DescribeInstancesRe
 // DescribeInstancesRequest is the request struct for api DescribeInstances
 type DescribeInstancesRequest struct {
 	*requests.RpcRequest
-	PageSize    requests.Integer `position:"Query" name:"PageSize"`
+	Codes       string           `position:"Query" name:"Codes"`
+	ExceptCodes string           `position:"Query" name:"ExceptCodes"`
 	PageNumber  requests.Integer `position:"Query" name:"PageNumber"`
 	ProductType string           `position:"Query" name:"ProductType"`
+	PageSize    requests.Integer `position:"Query" name:"PageSize"`
 }
 
 // DescribeInstancesResponse is the response struct for api DescribeInstances
@@ -96,7 +93,8 @@ func CreateDescribeInstancesRequest() (request *DescribeInstancesRequest) {
 	request = &DescribeInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Market", "2015-11-01", "DescribeInstances", "yunmarket", "openAPI")
+	request.InitWithApiInfo("Market", "2015-11-01", "DescribeInstances", "", "")
+	request.Method = requests.POST
 	return
 }
 

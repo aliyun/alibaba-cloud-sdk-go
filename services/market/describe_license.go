@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeLicense invokes the market.DescribeLicense API synchronously
-// api document: https://help.aliyun.com/api/market/describelicense.html
 func (client *Client) DescribeLicense(request *DescribeLicenseRequest) (response *DescribeLicenseResponse, err error) {
 	response = CreateDescribeLicenseResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeLicense(request *DescribeLicenseRequest) (response
 }
 
 // DescribeLicenseWithChan invokes the market.DescribeLicense API asynchronously
-// api document: https://help.aliyun.com/api/market/describelicense.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLicenseWithChan(request *DescribeLicenseRequest) (<-chan *DescribeLicenseResponse, <-chan error) {
 	responseChan := make(chan *DescribeLicenseResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeLicenseWithChan(request *DescribeLicenseRequest) (
 }
 
 // DescribeLicenseWithCallback invokes the market.DescribeLicense API asynchronously
-// api document: https://help.aliyun.com/api/market/describelicense.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLicenseWithCallback(request *DescribeLicenseRequest, callback func(response *DescribeLicenseResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -91,7 +86,8 @@ func CreateDescribeLicenseRequest() (request *DescribeLicenseRequest) {
 	request = &DescribeLicenseRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Market", "2015-11-01", "DescribeLicense", "yunmarket", "openAPI")
+	request.InitWithApiInfo("Market", "2015-11-01", "DescribeLicense", "", "")
+	request.Method = requests.POST
 	return
 }
 

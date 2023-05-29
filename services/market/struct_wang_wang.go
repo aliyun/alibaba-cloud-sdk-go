@@ -17,6 +17,6 @@ package market
 
 // WangWang is a nested struct in market response
 type WangWang struct {
-	UserName string `json:"UserName" xml:"UserName"`
 	Remark   string `json:"Remark" xml:"Remark"`
+	UserName string `json:"UserName" xml:"UserName"`
 }
