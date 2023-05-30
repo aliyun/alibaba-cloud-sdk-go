@@ -17,8 +17,9 @@ package cms
 
 // EventPattern is a nested struct in cms response
 type EventPattern struct {
-	Product    string                                `json:"Product" xml:"Product"`
-	LevelList  LevelListInDescribeEventRuleAttribute `json:"LevelList" xml:"LevelList"`
-	StatusList StatusList                            `json:"StatusList" xml:"StatusList"`
-	NameList   NameListInDescribeEventRuleAttribute  `json:"NameList" xml:"NameList"`
+	Product       string                                    `json:"Product" xml:"Product"`
+	LevelList     LevelListInDescribeEventRuleAttribute     `json:"LevelList" xml:"LevelList"`
+	StatusList    StatusList                                `json:"StatusList" xml:"StatusList"`
+	EventTypeList EventTypeListInDescribeEventRuleAttribute `json:"EventTypeList" xml:"EventTypeList"`
+	NameList      NameListInDescribeEventRuleAttribute      `json:"NameList" xml:"NameList"`
 }

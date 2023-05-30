@@ -76,6 +76,7 @@ type PutResourceMetricRulesRequest struct {
 
 // PutResourceMetricRulesRules is a repeated param struct in PutResourceMetricRulesRequest
 type PutResourceMetricRulesRules struct {
+	EscalationsInfoN                      string                               `name:"Escalations.Info.N"`
 	Webhook                               string                               `name:"Webhook"`
 	EscalationsWarnComparisonOperator     string                               `name:"Escalations.Warn.ComparisonOperator"`
 	DynamicAlertSensitivity               string                               `name:"DynamicAlertSensitivity"`
@@ -89,6 +90,7 @@ type PutResourceMetricRulesRules struct {
 	NoEffectiveInterval                   string                               `name:"NoEffectiveInterval"`
 	EmailSubject                          string                               `name:"EmailSubject"`
 	Options                               string                               `name:"Options"`
+	EscalationsCriticalN                  string                               `name:"Escalations.Critical.N"`
 	SilenceTime                           string                               `name:"SilenceTime"`
 	Prometheus                            string                               `name:"Prometheus"`
 	EscalationsInfoPreCondition           string                               `name:"Escalations.Info.PreCondition"`
@@ -108,6 +110,7 @@ type PutResourceMetricRulesRules struct {
 	EscalationsInfoThreshold              string                               `name:"Escalations.Info.Threshold"`
 	EscalationsWarnStatistics             string                               `name:"Escalations.Warn.Statistics"`
 	Namespace                             string                               `name:"Namespace"`
+	EscalationsWarnN                      string                               `name:"Escalations.Warn.N"`
 	Interval                              string                               `name:"Interval"`
 	RuleId                                string                               `name:"RuleId"`
 	EscalationsCriticalComparisonOperator string                               `name:"Escalations.Critical.ComparisonOperator"`

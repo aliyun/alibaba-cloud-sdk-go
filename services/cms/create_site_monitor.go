@@ -71,16 +71,18 @@ func (client *Client) CreateSiteMonitorWithCallback(request *CreateSiteMonitorRe
 // CreateSiteMonitorRequest is the request struct for api CreateSiteMonitor
 type CreateSiteMonitorRequest struct {
 	*requests.RpcRequest
-	ReportProject string           `position:"Query" name:"ReportProject"`
-	TaskName      string           `position:"Query" name:"TaskName"`
-	AlertIds      string           `position:"Query" name:"AlertIds"`
-	Address       string           `position:"Query" name:"Address"`
-	TaskType      string           `position:"Query" name:"TaskType"`
-	EndTime       requests.Integer `position:"Query" name:"EndTime"`
-	IspCities     string           `position:"Query" name:"IspCities"`
-	OptionsJson   string           `position:"Query" name:"OptionsJson"`
-	IntervalUnit  string           `position:"Query" name:"IntervalUnit"`
-	Interval      string           `position:"Query" name:"Interval"`
+	ReportProject   string           `position:"Query" name:"ReportProject"`
+	TaskName        string           `position:"Query" name:"TaskName"`
+	AlertIds        string           `position:"Query" name:"AlertIds"`
+	Address         string           `position:"Query" name:"Address"`
+	TaskType        string           `position:"Query" name:"TaskType"`
+	EndTime         requests.Integer `position:"Query" name:"EndTime"`
+	AgentGroup      string           `position:"Query" name:"AgentGroup"`
+	IspCities       string           `position:"Query" name:"IspCities"`
+	OptionsJson     string           `position:"Query" name:"OptionsJson"`
+	IspCityFailRate requests.Float   `position:"Query" name:"IspCityFailRate"`
+	IntervalUnit    string           `position:"Query" name:"IntervalUnit"`
+	Interval        string           `position:"Query" name:"Interval"`
 }
 
 // CreateSiteMonitorResponse is the response struct for api CreateSiteMonitor

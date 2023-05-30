@@ -26,5 +26,6 @@ type SiteMonitor struct {
 	TaskName    string      `json:"TaskName" xml:"TaskName"`
 	Address     string      `json:"Address" xml:"Address"`
 	TaskId      string      `json:"TaskId" xml:"TaskId"`
+	AgentGroup  string      `json:"AgentGroup" xml:"AgentGroup"`
 	OptionsJson OptionsJson `json:"OptionsJson" xml:"OptionsJson"`
 }

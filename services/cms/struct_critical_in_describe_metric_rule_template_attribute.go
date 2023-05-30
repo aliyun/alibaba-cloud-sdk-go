@@ -22,4 +22,5 @@ type CriticalInDescribeMetricRuleTemplateAttribute struct {
 	Threshold          string `json:"Threshold" xml:"Threshold"`
 	Statistics         string `json:"Statistics" xml:"Statistics"`
 	PreCondition       string `json:"PreCondition" xml:"PreCondition"`
+	N                  int    `json:"N" xml:"N"`
 }

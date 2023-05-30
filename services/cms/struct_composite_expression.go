@@ -18,6 +18,7 @@ package cms
 // CompositeExpression is a nested struct in cms response
 type CompositeExpression struct {
 	Times              int                                    `json:"Times" xml:"Times"`
+	N                  int                                    `json:"N" xml:"N"`
 	Level              string                                 `json:"Level" xml:"Level"`
 	ExpressionRaw      string                                 `json:"ExpressionRaw" xml:"ExpressionRaw"`
 	ExpressionListJoin string                                 `json:"ExpressionListJoin" xml:"ExpressionListJoin"`

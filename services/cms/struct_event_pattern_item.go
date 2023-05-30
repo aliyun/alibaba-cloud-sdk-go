@@ -17,11 +17,11 @@ package cms
 
 // EventPatternItem is a nested struct in cms response
 type EventPatternItem struct {
-	Product       string                           `json:"Product" xml:"Product"`
-	CustomFilters string                           `json:"CustomFilters" xml:"CustomFilters"`
-	SQLFilter     string                           `json:"SQLFilter" xml:"SQLFilter"`
-	LevelList     LevelListInDescribeEventRuleList `json:"LevelList" xml:"LevelList"`
-	EventTypeList EventTypeList                    `json:"EventTypeList" xml:"EventTypeList"`
-	NameList      NameListInDescribeEventRuleList  `json:"NameList" xml:"NameList"`
-	KeywordFilter KeywordFilter                    `json:"KeywordFilter" xml:"KeywordFilter"`
+	Product       string                               `json:"Product" xml:"Product"`
+	CustomFilters string                               `json:"CustomFilters" xml:"CustomFilters"`
+	SQLFilter     string                               `json:"SQLFilter" xml:"SQLFilter"`
+	LevelList     LevelListInDescribeEventRuleList     `json:"LevelList" xml:"LevelList"`
+	EventTypeList EventTypeListInDescribeEventRuleList `json:"EventTypeList" xml:"EventTypeList"`
+	NameList      NameListInDescribeEventRuleList      `json:"NameList" xml:"NameList"`
+	KeywordFilter KeywordFilter                        `json:"KeywordFilter" xml:"KeywordFilter"`
 }

@@ -18,51 +18,54 @@ package cms
 // Resource is a nested struct in cms response
 type Resource struct {
 	TemplateId                string                                              `json:"TemplateId" xml:"TemplateId"`
-	Name                      string                                              `json:"Name" xml:"Name"`
-	Category                  string                                              `json:"Category" xml:"Category"`
-	Unit                      string                                              `json:"Unit" xml:"Unit"`
-	SystemEventTemplates      string                                              `json:"SystemEventTemplates" xml:"SystemEventTemplates"`
-	Desc                      string                                              `json:"Desc" xml:"Desc"`
-	BindUrl                   string                                              `json:"BindUrl" xml:"BindUrl"`
 	Dimensions                string                                              `json:"Dimensions" xml:"Dimensions"`
-	GroupName                 string                                              `json:"GroupName" xml:"GroupName"`
-	ComparisonOperator        string                                              `json:"ComparisonOperator" xml:"ComparisonOperator"`
 	ServiceId                 string                                              `json:"ServiceId" xml:"ServiceId"`
 	RestVersion               string                                              `json:"RestVersion" xml:"RestVersion"`
-	RegionId                  string                                              `json:"RegionId" xml:"RegionId"`
-	Tag                       string                                              `json:"Tag" xml:"Tag"`
-	InstanceId                string                                              `json:"InstanceId" xml:"InstanceId"`
 	DynamicTagRuleId          string                                              `json:"DynamicTagRuleId" xml:"DynamicTagRuleId"`
-	Expression                string                                              `json:"Expression" xml:"Expression"`
 	NetworkType               string                                              `json:"NetworkType" xml:"NetworkType"`
-	Description               string                                              `json:"Description" xml:"Description"`
-	Periods                   string                                              `json:"Periods" xml:"Periods"`
 	Type                      string                                              `json:"Type" xml:"Type"`
 	Times                     int                                                 `json:"Times" xml:"Times"`
-	Level                     int                                                 `json:"Level" xml:"Level"`
 	InstanceName              string                                              `json:"InstanceName" xml:"InstanceName"`
-	Dimension                 string                                              `json:"Dimension" xml:"Dimension"`
 	PreCondition              string                                              `json:"PreCondition" xml:"PreCondition"`
 	HostAvailabilityTemplates string                                              `json:"HostAvailabilityTemplates" xml:"HostAvailabilityTemplates"`
 	Id                        int64                                               `json:"Id" xml:"Id"`
 	Threshold                 string                                              `json:"Threshold" xml:"Threshold"`
 	GroupFounderTagValue      string                                              `json:"GroupFounderTagValue" xml:"GroupFounderTagValue"`
 	GmtCreate                 int64                                               `json:"GmtCreate" xml:"GmtCreate"`
-	Namespace                 string                                              `json:"Namespace" xml:"Namespace"`
-	GroupId                   int64                                               `json:"GroupId" xml:"GroupId"`
+	GroupProcessId            string                                              `json:"GroupProcessId" xml:"GroupProcessId"`
 	GmtModified               int64                                               `json:"GmtModified" xml:"GmtModified"`
 	GroupFounderTagKey        string                                              `json:"GroupFounderTagKey" xml:"GroupFounderTagKey"`
+	ProcessMonitorTemplates   string                                              `json:"ProcessMonitorTemplates" xml:"ProcessMonitorTemplates"`
+	Statistics                string                                              `json:"Statistics" xml:"Statistics"`
+	Name                      string                                              `json:"Name" xml:"Name"`
+	Category                  string                                              `json:"Category" xml:"Category"`
+	Unit                      string                                              `json:"Unit" xml:"Unit"`
+	SystemEventTemplates      string                                              `json:"SystemEventTemplates" xml:"SystemEventTemplates"`
+	Desc                      string                                              `json:"Desc" xml:"Desc"`
+	BindUrl                   string                                              `json:"BindUrl" xml:"BindUrl"`
+	GroupName                 string                                              `json:"GroupName" xml:"GroupName"`
+	ComparisonOperator        string                                              `json:"ComparisonOperator" xml:"ComparisonOperator"`
+	RegionId                  string                                              `json:"RegionId" xml:"RegionId"`
+	ResourceGroupId           string                                              `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	Tag                       string                                              `json:"Tag" xml:"Tag"`
+	InstanceId                string                                              `json:"InstanceId" xml:"InstanceId"`
+	Expression                string                                              `json:"Expression" xml:"Expression"`
+	Description               string                                              `json:"Description" xml:"Description"`
+	Periods                   string                                              `json:"Periods" xml:"Periods"`
+	Level                     int                                                 `json:"Level" xml:"Level"`
+	Dimension                 string                                              `json:"Dimension" xml:"Dimension"`
+	Namespace                 string                                              `json:"Namespace" xml:"Namespace"`
+	GroupId                   int64                                               `json:"GroupId" xml:"GroupId"`
+	ExpressionRaw             string                                              `json:"ExpressionRaw" xml:"ExpressionRaw"`
 	ExpressionListJoin        string                                              `json:"ExpressionListJoin" xml:"ExpressionListJoin"`
 	MetricName                string                                              `json:"MetricName" xml:"MetricName"`
 	Labels                    string                                              `json:"Labels" xml:"Labels"`
-	ProcessMonitorTemplates   string                                              `json:"ProcessMonitorTemplates" xml:"ProcessMonitorTemplates"`
-	Statistics                string                                              `json:"Statistics" xml:"Statistics"`
 	TemplateIds               TemplateIds                                         `json:"TemplateIds" xml:"TemplateIds"`
-	Region                    Region                                              `json:"Region" xml:"Region"`
 	Vpc                       Vpc                                                 `json:"Vpc" xml:"Vpc"`
-	AlertTemplates            AlertTemplates                                      `json:"AlertTemplates" xml:"AlertTemplates"`
-	AlertResults              []Result                                            `json:"AlertResults" xml:"AlertResults"`
+	Region                    Region                                              `json:"Region" xml:"Region"`
 	Tags                      TagsInDescribeMonitorGroupInstanceAttribute         `json:"Tags" xml:"Tags"`
 	ContactGroups             ContactGroupsInDescribeMonitorGroups                `json:"ContactGroups" xml:"ContactGroups"`
+	AlertResults              []Result                                            `json:"AlertResults" xml:"AlertResults"`
+	AlertTemplates            AlertTemplates                                      `json:"AlertTemplates" xml:"AlertTemplates"`
 	ExpressionList            ExpressionListInDescribeAlertingMetricRuleResources `json:"ExpressionList" xml:"ExpressionList"`
 }

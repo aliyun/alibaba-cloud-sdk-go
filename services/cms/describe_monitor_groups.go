@@ -82,6 +82,7 @@ type DescribeMonitorGroupsRequest struct {
 	GroupFounderTagValue   string                      `position:"Query" name:"GroupFounderTagValue"`
 	Tag                    *[]DescribeMonitorGroupsTag `position:"Query" name:"Tag"  type:"Repeated"`
 	Keyword                string                      `position:"Query" name:"Keyword"`
+	Types                  string                      `position:"Query" name:"Types"`
 	GroupId                string                      `position:"Query" name:"GroupId"`
 	GroupName              string                      `position:"Query" name:"GroupName"`
 	InstanceId             string                      `position:"Query" name:"InstanceId"`

@@ -80,15 +80,24 @@ type CreateGroupMonitoringAgentProcessRequest struct {
 
 // CreateGroupMonitoringAgentProcessAlertConfig is a repeated param struct in CreateGroupMonitoringAgentProcessRequest
 type CreateGroupMonitoringAgentProcessAlertConfig struct {
-	Times               string `name:"Times"`
-	Webhook             string `name:"Webhook"`
-	NoEffectiveInterval string `name:"NoEffectiveInterval"`
-	SilenceTime         string `name:"SilenceTime"`
-	Threshold           string `name:"Threshold"`
-	ComparisonOperator  string `name:"ComparisonOperator"`
-	EffectiveInterval   string `name:"EffectiveInterval"`
-	EscalationsLevel    string `name:"EscalationsLevel"`
-	Statistics          string `name:"Statistics"`
+	Times               string                                                        `name:"Times"`
+	Webhook             string                                                        `name:"Webhook"`
+	NoEffectiveInterval string                                                        `name:"NoEffectiveInterval"`
+	TargetList          *[]CreateGroupMonitoringAgentProcessAlertConfigTargetListItem `name:"TargetList" type:"Repeated"`
+	SilenceTime         string                                                        `name:"SilenceTime"`
+	Threshold           string                                                        `name:"Threshold"`
+	ComparisonOperator  string                                                        `name:"ComparisonOperator"`
+	EffectiveInterval   string                                                        `name:"EffectiveInterval"`
+	EscalationsLevel    string                                                        `name:"EscalationsLevel"`
+	Statistics          string                                                        `name:"Statistics"`
+}
+
+// CreateGroupMonitoringAgentProcessAlertConfigTargetListItem is a repeated param struct in CreateGroupMonitoringAgentProcessRequest
+type CreateGroupMonitoringAgentProcessAlertConfigTargetListItem struct {
+	Level      string `name:"Level"`
+	Id         string `name:"Id"`
+	Arn        string `name:"Arn"`
+	JsonParams string `name:"JsonParams"`
 }
 
 // CreateGroupMonitoringAgentProcessMatchExpress is a repeated param struct in CreateGroupMonitoringAgentProcessRequest
@@ -101,10 +110,11 @@ type CreateGroupMonitoringAgentProcessMatchExpress struct {
 // CreateGroupMonitoringAgentProcessResponse is the response struct for api CreateGroupMonitoringAgentProcess
 type CreateGroupMonitoringAgentProcessResponse struct {
 	*responses.BaseResponse
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
+	Code      string   `json:"Code" xml:"Code"`
+	Message   string   `json:"Message" xml:"Message"`
+	RequestId string   `json:"RequestId" xml:"RequestId"`
+	Success   bool     `json:"Success" xml:"Success"`
+	Resource  Resource `json:"Resource" xml:"Resource"`
 }
 
 // CreateCreateGroupMonitoringAgentProcessRequest creates a request to invoke CreateGroupMonitoringAgentProcess API

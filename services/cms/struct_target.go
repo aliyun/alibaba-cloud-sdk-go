@@ -22,5 +22,6 @@ type Target struct {
 	Level      string `json:"Level" xml:"Level"`
 	Id         string `json:"Id" xml:"Id"`
 	RuleId     string `json:"RuleId" xml:"RuleId"`
+	JsonParmas string `json:"JsonParmas" xml:"JsonParmas"`
 	Result     Result `json:"Result" xml:"Result"`
 }

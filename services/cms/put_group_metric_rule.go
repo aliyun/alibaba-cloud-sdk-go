@@ -71,6 +71,7 @@ func (client *Client) PutGroupMetricRuleWithCallback(request *PutGroupMetricRule
 // PutGroupMetricRuleRequest is the request struct for api PutGroupMetricRule
 type PutGroupMetricRuleRequest struct {
 	*requests.RpcRequest
+	EscalationsInfoN                      requests.Integer                      `position:"Query" name:"Escalations.Info.N"`
 	Webhook                               string                                `position:"Query" name:"Webhook"`
 	EscalationsWarnComparisonOperator     string                                `position:"Query" name:"Escalations.Warn.ComparisonOperator"`
 	DynamicAlertSensitivity               string                                `position:"Query" name:"DynamicAlertSensitivity"`
@@ -79,6 +80,7 @@ type PutGroupMetricRuleRequest struct {
 	NoDataPolicy                          string                                `position:"Query" name:"NoDataPolicy"`
 	NoEffectiveInterval                   string                                `position:"Query" name:"NoEffectiveInterval"`
 	EmailSubject                          string                                `position:"Query" name:"EmailSubject"`
+	EscalationsCriticalN                  requests.Integer                      `position:"Query" name:"Escalations.Critical.N"`
 	EscalationsInfoPreCondition           string                                `position:"Query" name:"Escalations.Info.PreCondition"`
 	MetricName                            string                                `position:"Query" name:"MetricName"`
 	EscalationsWarnTimes                  requests.Integer                      `position:"Query" name:"Escalations.Warn.Times"`
@@ -90,6 +92,7 @@ type PutGroupMetricRuleRequest struct {
 	GroupId                               string                                `position:"Query" name:"GroupId"`
 	ExtraDimensionJson                    string                                `position:"Query" name:"ExtraDimensionJson"`
 	Labels                                *[]PutGroupMetricRuleLabels           `position:"Query" name:"Labels"  type:"Repeated"`
+	EscalationsWarnN                      requests.Integer                      `position:"Query" name:"Escalations.Warn.N"`
 	Interval                              string                                `position:"Query" name:"Interval"`
 	RuleId                                string                                `position:"Query" name:"RuleId"`
 	EscalationsCriticalThreshold          string                                `position:"Query" name:"Escalations.Critical.Threshold"`
@@ -123,6 +126,7 @@ type PutGroupMetricRuleCompositeExpression struct {
 	Level              string                                                     `name:"Level"`
 	ExpressionRaw      string                                                     `name:"ExpressionRaw"`
 	ExpressionListJoin string                                                     `name:"ExpressionListJoin"`
+	N                  string                                                     `name:"N"`
 }
 
 // PutGroupMetricRuleCompositeExpressionExpressionListItem is a repeated param struct in PutGroupMetricRuleRequest

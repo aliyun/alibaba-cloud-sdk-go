@@ -76,6 +76,7 @@ type CreateHostAvailabilityRequest struct {
 	AlertConfigEscalationList          *[]CreateHostAvailabilityAlertConfigEscalationList `position:"Query" name:"AlertConfigEscalationList"  type:"Repeated"`
 	TaskName                           string                                             `position:"Query" name:"TaskName"`
 	AlertConfigSilenceTime             requests.Integer                                   `position:"Query" name:"AlertConfig.SilenceTime"`
+	AlertConfigTargetList              *[]CreateHostAvailabilityAlertConfigTargetList     `position:"Query" name:"AlertConfigTargetList"  type:"Repeated"`
 	TaskOptionHttpResponseCharset      string                                             `position:"Query" name:"TaskOption.HttpResponseCharset"`
 	TaskOptionHttpNegative             requests.Boolean                                   `position:"Query" name:"TaskOption.HttpNegative"`
 	TaskOptionInterval                 requests.Integer                                   `position:"Query" name:"TaskOption.Interval"`
@@ -91,6 +92,14 @@ type CreateHostAvailabilityRequest struct {
 	TaskOptionHttpPostContent          string                                             `position:"Query" name:"TaskOption.HttpPostContent"`
 	AlertConfigStartTime               requests.Integer                                   `position:"Query" name:"AlertConfig.StartTime"`
 	AlertConfigWebHook                 string                                             `position:"Query" name:"AlertConfig.WebHook"`
+}
+
+// CreateHostAvailabilityAlertConfigTargetList is a repeated param struct in CreateHostAvailabilityRequest
+type CreateHostAvailabilityAlertConfigTargetList struct {
+	Level      string `name:"Level"`
+	Id         string `name:"Id"`
+	Arn        string `name:"Arn"`
+	JsonParams string `name:"JsonParams"`
 }
 
 // CreateHostAvailabilityAlertConfigEscalationList is a repeated param struct in CreateHostAvailabilityRequest

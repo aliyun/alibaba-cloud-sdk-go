@@ -74,6 +74,7 @@ type DescribeHybridMonitorTaskListRequest struct {
 	IncludeInstance   requests.Boolean `position:"Query" name:"IncludeInstance"`
 	PageNumber        requests.Integer `position:"Query" name:"PageNumber"`
 	ExtraInfo         string           `position:"Query" name:"ExtraInfo"`
+	TargetUserId      requests.Integer `position:"Query" name:"TargetUserId"`
 	CollectTargetType string           `position:"Query" name:"CollectTargetType"`
 	PageSize          requests.Integer `position:"Query" name:"PageSize"`
 	Keyword           string           `position:"Query" name:"Keyword"`

@@ -71,11 +71,12 @@ func (client *Client) DescribeSiteMonitorListWithCallback(request *DescribeSiteM
 // DescribeSiteMonitorListRequest is the request struct for api DescribeSiteMonitorList
 type DescribeSiteMonitorListRequest struct {
 	*requests.RpcRequest
-	TaskType string           `position:"Query" name:"TaskType"`
-	PageSize requests.Integer `position:"Query" name:"PageSize"`
-	Page     requests.Integer `position:"Query" name:"Page"`
-	Keyword  string           `position:"Query" name:"Keyword"`
-	TaskId   string           `position:"Query" name:"TaskId"`
+	TaskType  string           `position:"Query" name:"TaskType"`
+	TaskState string           `position:"Query" name:"TaskState"`
+	PageSize  requests.Integer `position:"Query" name:"PageSize"`
+	Page      requests.Integer `position:"Query" name:"Page"`
+	Keyword   string           `position:"Query" name:"Keyword"`
+	TaskId    string           `position:"Query" name:"TaskId"`
 }
 
 // DescribeSiteMonitorListResponse is the response struct for api DescribeSiteMonitorList

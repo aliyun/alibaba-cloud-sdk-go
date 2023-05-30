@@ -78,7 +78,10 @@ type DescribeMonitoringAgentHostsRequest struct {
 	PageSize         requests.Integer `position:"Query" name:"PageSize"`
 	AliyunHost       requests.Boolean `position:"Query" name:"AliyunHost"`
 	KeyWord          string           `position:"Query" name:"KeyWord"`
+	Order            string           `position:"Query" name:"Order"`
+	OrderBy          string           `position:"Query" name:"OrderBy"`
 	InstanceIds      string           `position:"Query" name:"InstanceIds"`
+	SysomStatus      string           `position:"Query" name:"SysomStatus"`
 	Status           string           `position:"Query" name:"Status"`
 }
 

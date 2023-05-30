@@ -17,13 +17,14 @@ package cms
 
 // AlertConfigItem is a nested struct in cms response
 type AlertConfigItem struct {
-	ComparisonOperator  string `json:"ComparisonOperator" xml:"ComparisonOperator"`
-	SilenceTime         string `json:"SilenceTime" xml:"SilenceTime"`
-	Webhook             string `json:"Webhook" xml:"Webhook"`
-	Times               string `json:"Times" xml:"Times"`
-	EscalationsLevel    string `json:"EscalationsLevel" xml:"EscalationsLevel"`
-	NoEffectiveInterval string `json:"NoEffectiveInterval" xml:"NoEffectiveInterval"`
-	EffectiveInterval   string `json:"EffectiveInterval" xml:"EffectiveInterval"`
-	Threshold           string `json:"Threshold" xml:"Threshold"`
-	Statistics          string `json:"Statistics" xml:"Statistics"`
+	ComparisonOperator  string                                          `json:"ComparisonOperator" xml:"ComparisonOperator"`
+	SilenceTime         string                                          `json:"SilenceTime" xml:"SilenceTime"`
+	Webhook             string                                          `json:"Webhook" xml:"Webhook"`
+	Times               string                                          `json:"Times" xml:"Times"`
+	EscalationsLevel    string                                          `json:"EscalationsLevel" xml:"EscalationsLevel"`
+	NoEffectiveInterval string                                          `json:"NoEffectiveInterval" xml:"NoEffectiveInterval"`
+	EffectiveInterval   string                                          `json:"EffectiveInterval" xml:"EffectiveInterval"`
+	Threshold           string                                          `json:"Threshold" xml:"Threshold"`
+	Statistics          string                                          `json:"Statistics" xml:"Statistics"`
+	TargetList          TargetListInDescribeGroupMonitoringAgentProcess `json:"TargetList" xml:"TargetList"`
 }

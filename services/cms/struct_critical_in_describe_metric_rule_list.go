@@ -22,4 +22,5 @@ type CriticalInDescribeMetricRuleList struct {
 	Times              int    `json:"Times" xml:"Times"`
 	Threshold          string `json:"Threshold" xml:"Threshold"`
 	Statistics         string `json:"Statistics" xml:"Statistics"`
+	N                  string `json:"N" xml:"N"`
 }

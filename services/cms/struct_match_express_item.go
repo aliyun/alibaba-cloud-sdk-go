@@ -22,4 +22,5 @@ type MatchExpressItem struct {
 	TagValueMatchFunction string `json:"TagValueMatchFunction" xml:"TagValueMatchFunction"`
 	Function              string `json:"Function" xml:"Function"`
 	TagValue              string `json:"TagValue" xml:"TagValue"`
+	TagKey                string `json:"TagKey" xml:"TagKey"`
 }

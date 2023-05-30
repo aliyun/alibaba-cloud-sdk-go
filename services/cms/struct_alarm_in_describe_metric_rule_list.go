@@ -41,6 +41,7 @@ type AlarmInDescribeMetricRuleList struct {
 	DynamicAlertSensitivity      string                         `json:"DynamicAlertSensitivity" xml:"DynamicAlertSensitivity"`
 	DynamicAlertHistoryDataRange string                         `json:"DynamicAlertHistoryDataRange" xml:"DynamicAlertHistoryDataRange"`
 	RuleType                     string                         `json:"RuleType" xml:"RuleType"`
+	ProductCategory              string                         `json:"ProductCategory" xml:"ProductCategory"`
 	Escalations                  Escalations                    `json:"Escalations" xml:"Escalations"`
 	CompositeExpression          CompositeExpression            `json:"CompositeExpression" xml:"CompositeExpression"`
 	Prometheus                   Prometheus                     `json:"Prometheus" xml:"Prometheus"`

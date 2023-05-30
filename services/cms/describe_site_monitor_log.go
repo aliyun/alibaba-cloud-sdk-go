@@ -80,6 +80,7 @@ type DescribeSiteMonitorLogRequest struct {
 	Length     requests.Integer `position:"Query" name:"Length"`
 	EndTime    string           `position:"Query" name:"EndTime"`
 	Filter     string           `position:"Query" name:"Filter"`
+	Namespace  string           `position:"Query" name:"Namespace"`
 	Dimensions string           `position:"Query" name:"Dimensions"`
 }
 

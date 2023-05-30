@@ -17,9 +17,5 @@ package cms
 
 // EscalationList is a nested struct in cms response
 type EscalationList struct {
-	Value      string `json:"Value" xml:"Value"`
-	Aggregate  string `json:"Aggregate" xml:"Aggregate"`
-	MetricName string `json:"MetricName" xml:"MetricName"`
-	Times      string `json:"Times" xml:"Times"`
-	Operator   string `json:"Operator" xml:"Operator"`
+	EscalationListItem []EscalationListItem `json:"escalationList" xml:"escalationList"`
 }

@@ -35,6 +35,7 @@ type AlarmInDescribeAlertLogList struct {
 	BlackListDetail     string            `json:"BlackListDetail" xml:"BlackListDetail"`
 	Level               string            `json:"Level" xml:"Level"`
 	SendStatus          string            `json:"SendStatus" xml:"SendStatus"`
+	LogId               string            `json:"LogId" xml:"LogId"`
 	DingdingWebhookList []string          `json:"DingdingWebhookList" xml:"DingdingWebhookList"`
 	ContactOnCallList   []string          `json:"ContactOnCallList" xml:"ContactOnCallList"`
 	ContactMailList     []string          `json:"ContactMailList" xml:"ContactMailList"`

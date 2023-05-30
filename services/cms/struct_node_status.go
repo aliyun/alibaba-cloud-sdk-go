@@ -17,7 +17,11 @@ package cms
 
 // NodeStatus is a nested struct in cms response
 type NodeStatus struct {
-	Status      string `json:"Status" xml:"Status"`
-	InstanceId  string `json:"InstanceId" xml:"InstanceId"`
-	AutoInstall bool   `json:"AutoInstall" xml:"AutoInstall"`
+	Status               string `json:"Status" xml:"Status"`
+	InstanceId           string `json:"InstanceId" xml:"InstanceId"`
+	AutoInstall          bool   `json:"AutoInstall" xml:"AutoInstall"`
+	OsMonitorStatus      string `json:"OsMonitorStatus" xml:"OsMonitorStatus"`
+	OsMonitorErrorCode   string `json:"OsMonitorErrorCode" xml:"OsMonitorErrorCode"`
+	OsMonitorErrorDetail string `json:"OsMonitorErrorDetail" xml:"OsMonitorErrorDetail"`
+	OsMonitorVersion     string `json:"OsMonitorVersion" xml:"OsMonitorVersion"`
 }
