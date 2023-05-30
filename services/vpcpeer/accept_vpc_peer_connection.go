@@ -73,6 +73,7 @@ type AcceptVpcPeerConnectionRequest struct {
 	*requests.RpcRequest
 	ClientToken          string           `position:"Body" name:"ClientToken"`
 	Channel              string           `position:"Body" name:"Channel"`
+	ResourceGroupId      string           `position:"Body" name:"ResourceGroupId"`
 	RequestContent       string           `position:"Body" name:"RequestContent"`
 	DryRun               requests.Boolean `position:"Body" name:"DryRun"`
 	ResourceOwnerAccount string           `position:"Body" name:"ResourceOwnerAccount"`

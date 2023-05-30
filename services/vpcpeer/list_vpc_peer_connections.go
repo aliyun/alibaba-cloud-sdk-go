@@ -71,13 +71,14 @@ func (client *Client) ListVpcPeerConnectionsWithCallback(request *ListVpcPeerCon
 // ListVpcPeerConnectionsRequest is the request struct for api ListVpcPeerConnections
 type ListVpcPeerConnectionsRequest struct {
 	*requests.RpcRequest
-	Channel    string                        `position:"Body" name:"Channel"`
-	NextToken  string                        `position:"Body" name:"NextToken"`
-	Tags       *[]ListVpcPeerConnectionsTags `position:"Query" name:"Tags"  type:"Repeated"`
-	InstanceId string                        `position:"Body" name:"InstanceId"`
-	VpcId      *[]string                     `position:"Body" name:"VpcId"  type:"Repeated"`
-	Name       string                        `position:"Body" name:"Name"`
-	MaxResults requests.Integer              `position:"Body" name:"MaxResults"`
+	Channel         string                        `position:"Body" name:"Channel"`
+	ResourceGroupId string                        `position:"Query" name:"ResourceGroupId"`
+	NextToken       string                        `position:"Body" name:"NextToken"`
+	Tags            *[]ListVpcPeerConnectionsTags `position:"Query" name:"Tags"  type:"Repeated"`
+	InstanceId      string                        `position:"Body" name:"InstanceId"`
+	VpcId           *[]string                     `position:"Body" name:"VpcId"  type:"Repeated"`
+	Name            string                        `position:"Body" name:"Name"`
+	MaxResults      requests.Integer              `position:"Body" name:"MaxResults"`
 }
 
 // ListVpcPeerConnectionsTags is a repeated param struct in ListVpcPeerConnectionsRequest

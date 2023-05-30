@@ -1,3 +1,9 @@
+2023-05-30 Version: v1.62.352
+- Generated 2022-01-01 for `VpcPeer`.
+- Adapt timeout.
+- Adapt rpc timeout.
+- VpcPeer Support ResourceGroup.
+
 2023-05-30 Version: v1.62.351
 - Generated 2019-01-01 for `Cms`.
 - Add batch create once task.

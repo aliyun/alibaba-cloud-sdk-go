@@ -75,6 +75,7 @@ type CreateVpcPeerConnectionRequest struct {
 	Channel           string           `position:"Body" name:"Channel"`
 	Description       string           `position:"Body" name:"Description"`
 	AcceptingAliUid   requests.Integer `position:"Body" name:"AcceptingAliUid"`
+	ResourceGroupId   string           `position:"Body" name:"ResourceGroupId"`
 	AcceptingRegionId string           `position:"Body" name:"AcceptingRegionId"`
 	DryRun            requests.Boolean `position:"Body" name:"DryRun"`
 	AcceptingVpcId    string           `position:"Body" name:"AcceptingVpcId"`
