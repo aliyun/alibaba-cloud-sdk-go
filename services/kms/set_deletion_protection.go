@@ -71,9 +71,9 @@ func (client *Client) SetDeletionProtectionWithCallback(request *SetDeletionProt
 // SetDeletionProtectionRequest is the request struct for api SetDeletionProtection
 type SetDeletionProtectionRequest struct {
 	*requests.RpcRequest
+	DeletionProtectionDescription string           `position:"Query" name:"DeletionProtectionDescription"`
 	EnableDeletionProtection      requests.Boolean `position:"Query" name:"EnableDeletionProtection"`
 	ProtectedResourceArn          string           `position:"Query" name:"ProtectedResourceArn"`
-	DeletionProtectionDescription string           `position:"Query" name:"DeletionProtectionDescription"`
 }
 
 // SetDeletionProtectionResponse is the response struct for api SetDeletionProtection

@@ -72,9 +72,9 @@ func (client *Client) ListSecretVersionIdsWithCallback(request *ListSecretVersio
 type ListSecretVersionIdsRequest struct {
 	*requests.RpcRequest
 	IncludeDeprecated string           `position:"Query" name:"IncludeDeprecated"`
+	PageNumber        requests.Integer `position:"Query" name:"PageNumber"`
 	PageSize          requests.Integer `position:"Query" name:"PageSize"`
 	SecretName        string           `position:"Query" name:"SecretName"`
-	PageNumber        requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 // ListSecretVersionIdsResponse is the response struct for api ListSecretVersionIds

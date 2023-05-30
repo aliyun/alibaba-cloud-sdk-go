@@ -71,13 +71,13 @@ func (client *Client) GetRandomPasswordWithCallback(request *GetRandomPasswordRe
 // GetRandomPasswordRequest is the request struct for api GetRandomPassword
 type GetRandomPasswordRequest struct {
 	*requests.RpcRequest
-	ExcludeLowercase        string `position:"Query" name:"ExcludeLowercase"`
 	ExcludeCharacters       string `position:"Query" name:"ExcludeCharacters"`
 	PasswordLength          string `position:"Query" name:"PasswordLength"`
 	ExcludePunctuation      string `position:"Query" name:"ExcludePunctuation"`
-	ExcludeUppercase        string `position:"Query" name:"ExcludeUppercase"`
 	RequireEachIncludedType string `position:"Query" name:"RequireEachIncludedType"`
 	ExcludeNumbers          string `position:"Query" name:"ExcludeNumbers"`
+	ExcludeLowercase        string `position:"Query" name:"ExcludeLowercase"`
+	ExcludeUppercase        string `position:"Query" name:"ExcludeUppercase"`
 }
 
 // GetRandomPasswordResponse is the response struct for api GetRandomPassword

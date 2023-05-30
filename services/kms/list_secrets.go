@@ -71,10 +71,10 @@ func (client *Client) ListSecretsWithCallback(request *ListSecretsRequest, callb
 // ListSecretsRequest is the request struct for api ListSecrets
 type ListSecretsRequest struct {
 	*requests.RpcRequest
-	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 	Filters    string           `position:"Query" name:"Filters"`
-	FetchTags  string           `position:"Query" name:"FetchTags"`
 	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize   requests.Integer `position:"Query" name:"PageSize"`
+	FetchTags  string           `position:"Query" name:"FetchTags"`
 }
 
 // ListSecretsResponse is the response struct for api ListSecrets

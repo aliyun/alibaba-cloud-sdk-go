@@ -73,8 +73,8 @@ type TagResourceRequest struct {
 	*requests.RpcRequest
 	CertificateId string `position:"Query" name:"CertificateId"`
 	KeyId         string `position:"Query" name:"KeyId"`
-	SecretName    string `position:"Query" name:"SecretName"`
 	Tags          string `position:"Query" name:"Tags"`
+	SecretName    string `position:"Query" name:"SecretName"`
 }
 
 // TagResourceResponse is the response struct for api TagResource

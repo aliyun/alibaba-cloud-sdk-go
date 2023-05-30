@@ -72,8 +72,8 @@ func (client *Client) AsymmetricVerifyWithCallback(request *AsymmetricVerifyRequ
 type AsymmetricVerifyRequest struct {
 	*requests.RpcRequest
 	KeyVersionId string `position:"Query" name:"KeyVersionId"`
-	Digest       string `position:"Query" name:"Digest"`
 	KeyId        string `position:"Query" name:"KeyId"`
+	Digest       string `position:"Query" name:"Digest"`
 	Value        string `position:"Query" name:"Value"`
 	Algorithm    string `position:"Query" name:"Algorithm"`
 }

@@ -71,10 +71,10 @@ func (client *Client) CertificatePublicKeyVerifyWithCallback(request *Certificat
 // CertificatePublicKeyVerifyRequest is the request struct for api CertificatePublicKeyVerify
 type CertificatePublicKeyVerifyRequest struct {
 	*requests.RpcRequest
-	SignatureValue string `position:"Query" name:"SignatureValue"`
 	MessageType    string `position:"Query" name:"MessageType"`
 	CertificateId  string `position:"Query" name:"CertificateId"`
 	Message        string `position:"Query" name:"Message"`
+	SignatureValue string `position:"Query" name:"SignatureValue"`
 	Algorithm      string `position:"Query" name:"Algorithm"`
 }
 

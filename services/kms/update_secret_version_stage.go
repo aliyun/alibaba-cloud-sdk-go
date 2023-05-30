@@ -71,8 +71,8 @@ func (client *Client) UpdateSecretVersionStageWithCallback(request *UpdateSecret
 // UpdateSecretVersionStageRequest is the request struct for api UpdateSecretVersionStage
 type UpdateSecretVersionStageRequest struct {
 	*requests.RpcRequest
-	RemoveFromVersion string `position:"Query" name:"RemoveFromVersion"`
 	MoveToVersion     string `position:"Query" name:"MoveToVersion"`
+	RemoveFromVersion string `position:"Query" name:"RemoveFromVersion"`
 	VersionStage      string `position:"Query" name:"VersionStage"`
 	SecretName        string `position:"Query" name:"SecretName"`
 }

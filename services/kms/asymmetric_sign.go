@@ -72,8 +72,8 @@ func (client *Client) AsymmetricSignWithCallback(request *AsymmetricSignRequest,
 type AsymmetricSignRequest struct {
 	*requests.RpcRequest
 	KeyVersionId string `position:"Query" name:"KeyVersionId"`
-	Digest       string `position:"Query" name:"Digest"`
 	KeyId        string `position:"Query" name:"KeyId"`
+	Digest       string `position:"Query" name:"Digest"`
 	Algorithm    string `position:"Query" name:"Algorithm"`
 }
 

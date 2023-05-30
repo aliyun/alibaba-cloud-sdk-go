@@ -72,8 +72,8 @@ func (client *Client) UntagResourceWithCallback(request *UntagResourceRequest, c
 type UntagResourceRequest struct {
 	*requests.RpcRequest
 	CertificateId string `position:"Query" name:"CertificateId"`
-	TagKeys       string `position:"Query" name:"TagKeys"`
 	KeyId         string `position:"Query" name:"KeyId"`
+	TagKeys       string `position:"Query" name:"TagKeys"`
 	SecretName    string `position:"Query" name:"SecretName"`
 }
 

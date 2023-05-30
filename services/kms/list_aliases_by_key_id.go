@@ -71,9 +71,9 @@ func (client *Client) ListAliasesByKeyIdWithCallback(request *ListAliasesByKeyId
 // ListAliasesByKeyIdRequest is the request struct for api ListAliasesByKeyId
 type ListAliasesByKeyIdRequest struct {
 	*requests.RpcRequest
-	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 	KeyId      string           `position:"Query" name:"KeyId"`
 	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 }
 
 // ListAliasesByKeyIdResponse is the response struct for api ListAliasesByKeyId

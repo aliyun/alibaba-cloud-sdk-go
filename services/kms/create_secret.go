@@ -72,17 +72,17 @@ func (client *Client) CreateSecretWithCallback(request *CreateSecretRequest, cal
 type CreateSecretRequest struct {
 	*requests.RpcRequest
 	SecretType              string           `position:"Query" name:"SecretType"`
+	Description             string           `position:"Query" name:"Description"`
+	RotationInterval        string           `position:"Query" name:"RotationInterval"`
+	EnableAutomaticRotation requests.Boolean `position:"Query" name:"EnableAutomaticRotation"`
+	EncryptionKeyId         string           `position:"Query" name:"EncryptionKeyId"`
+	Tags                    string           `position:"Query" name:"Tags"`
+	ExtendedConfig          string           `position:"Query" name:"ExtendedConfig"`
 	VersionId               string           `position:"Query" name:"VersionId"`
 	DKMSInstanceId          string           `position:"Query" name:"DKMSInstanceId"`
 	SecretData              string           `position:"Query" name:"SecretData"`
-	Description             string           `position:"Query" name:"Description"`
-	RotationInterval        string           `position:"Query" name:"RotationInterval"`
 	SecretName              string           `position:"Query" name:"SecretName"`
-	EnableAutomaticRotation requests.Boolean `position:"Query" name:"EnableAutomaticRotation"`
-	EncryptionKeyId         string           `position:"Query" name:"EncryptionKeyId"`
 	SecretDataType          string           `position:"Query" name:"SecretDataType"`
-	Tags                    string           `position:"Query" name:"Tags"`
-	ExtendedConfig          string           `position:"Query" name:"ExtendedConfig"`
 }
 
 // CreateSecretResponse is the response struct for api CreateSecret

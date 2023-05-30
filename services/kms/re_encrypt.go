@@ -72,10 +72,10 @@ func (client *Client) ReEncryptWithCallback(request *ReEncryptRequest, callback 
 type ReEncryptRequest struct {
 	*requests.RpcRequest
 	DestinationEncryptionContext string `position:"Query" name:"DestinationEncryptionContext"`
+	SourceKeyId                  string `position:"Query" name:"SourceKeyId"`
 	SourceEncryptionAlgorithm    string `position:"Query" name:"SourceEncryptionAlgorithm"`
 	SourceKeyVersionId           string `position:"Query" name:"SourceKeyVersionId"`
 	DestinationKeyId             string `position:"Query" name:"DestinationKeyId"`
-	SourceKeyId                  string `position:"Query" name:"SourceKeyId"`
 	SourceEncryptionContext      string `position:"Query" name:"SourceEncryptionContext"`
 	CiphertextBlob               string `position:"Query" name:"CiphertextBlob"`
 }

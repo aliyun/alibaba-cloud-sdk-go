@@ -71,12 +71,12 @@ func (client *Client) GenerateAndExportDataKeyWithCallback(request *GenerateAndE
 // GenerateAndExportDataKeyRequest is the request struct for api GenerateAndExportDataKey
 type GenerateAndExportDataKeyRequest struct {
 	*requests.RpcRequest
-	EncryptionContext string           `position:"Query" name:"EncryptionContext"`
 	KeyId             string           `position:"Query" name:"KeyId"`
 	KeySpec           string           `position:"Query" name:"KeySpec"`
 	NumberOfBytes     requests.Integer `position:"Query" name:"NumberOfBytes"`
-	WrappingAlgorithm string           `position:"Query" name:"WrappingAlgorithm"`
 	PublicKeyBlob     string           `position:"Query" name:"PublicKeyBlob"`
+	EncryptionContext string           `position:"Query" name:"EncryptionContext"`
+	WrappingAlgorithm string           `position:"Query" name:"WrappingAlgorithm"`
 	WrappingKeySpec   string           `position:"Query" name:"WrappingKeySpec"`
 }
 

@@ -71,10 +71,10 @@ func (client *Client) GenerateDataKeyWithoutPlaintextWithCallback(request *Gener
 // GenerateDataKeyWithoutPlaintextRequest is the request struct for api GenerateDataKeyWithoutPlaintext
 type GenerateDataKeyWithoutPlaintextRequest struct {
 	*requests.RpcRequest
-	EncryptionContext string           `position:"Query" name:"EncryptionContext"`
 	KeyId             string           `position:"Query" name:"KeyId"`
 	KeySpec           string           `position:"Query" name:"KeySpec"`
 	NumberOfBytes     requests.Integer `position:"Query" name:"NumberOfBytes"`
+	EncryptionContext string           `position:"Query" name:"EncryptionContext"`
 }
 
 // GenerateDataKeyWithoutPlaintextResponse is the response struct for api GenerateDataKeyWithoutPlaintext

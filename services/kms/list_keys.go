@@ -71,9 +71,9 @@ func (client *Client) ListKeysWithCallback(request *ListKeysRequest, callback fu
 // ListKeysRequest is the request struct for api ListKeys
 type ListKeysRequest struct {
 	*requests.RpcRequest
-	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 	Filters    string           `position:"Query" name:"Filters"`
 	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 }
 
 // ListKeysResponse is the response struct for api ListKeys
