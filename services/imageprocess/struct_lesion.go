@@ -17,12 +17,26 @@ package imageprocess
 
 // Lesion is a nested struct in imageprocess response
 type Lesion struct {
-	EcVolume      string   `json:"EcVolume" xml:"EcVolume"`
-	Mask          string   `json:"Mask" xml:"Mask"`
-	BenignVolume  string   `json:"BenignVolume" xml:"BenignVolume"`
-	PdacVol       string   `json:"PdacVol" xml:"PdacVol"`
-	EsoVolume     string   `json:"EsoVolume" xml:"EsoVolume"`
-	PancVol       string   `json:"PancVol" xml:"PancVol"`
-	NonPdacVol    string   `json:"NonPdacVol" xml:"NonPdacVol"`
-	Possibilities []string `json:"Possibilities" xml:"Possibilities"`
+	GCVolume           string             `json:"GCVolume" xml:"GCVolume"`
+	Stage2Volume       string             `json:"Stage2Volume" xml:"Stage2Volume"`
+	LiverVolume        float64            `json:"LiverVolume" xml:"LiverVolume"`
+	Probabilities      string             `json:"Probabilities" xml:"Probabilities"`
+	NonGCVolume        string             `json:"NonGCVolume" xml:"NonGCVolume"`
+	NonCRCVolumel      string             `json:"NonCRCVolumel" xml:"NonCRCVolumel"`
+	ColorectumVolume   string             `json:"ColorectumVolume" xml:"ColorectumVolume"`
+	EcVolume           string             `json:"EcVolume" xml:"EcVolume"`
+	StomachVolume      string             `json:"StomachVolume" xml:"StomachVolume"`
+	Mask               string             `json:"Mask" xml:"Mask"`
+	BenignVolume       string             `json:"BenignVolume" xml:"BenignVolume"`
+	PdacVol            string             `json:"PdacVol" xml:"PdacVol"`
+	CRCVolume          string             `json:"CRCVolume" xml:"CRCVolume"`
+	CVDProbability     float64            `json:"CVDProbability" xml:"CVDProbability"`
+	EsoVolume          string             `json:"EsoVolume" xml:"EsoVolume"`
+	PancVol            string             `json:"PancVol" xml:"PancVol"`
+	NonPdacVol         string             `json:"NonPdacVol" xml:"NonPdacVol"`
+	Possibilities      []string           `json:"Possibilities" xml:"Possibilities"`
+	ResultURL          []string           `json:"ResultURL" xml:"ResultURL"`
+	PatientLevelResult PatientLevelResult `json:"PatientLevelResult" xml:"PatientLevelResult"`
+	FeatureScore       FeatureScore       `json:"FeatureScore" xml:"FeatureScore"`
+	LesionList         []LesionListItem   `json:"LesionList" xml:"LesionList"`
 }

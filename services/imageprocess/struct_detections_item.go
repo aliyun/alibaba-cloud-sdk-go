@@ -17,21 +17,40 @@ package imageprocess
 
 // DetectionsItem is a nested struct in imageprocess response
 type DetectionsItem struct {
-	CalciumScore       float64 `json:"CalciumScore" xml:"CalciumScore"`
-	VertCategory       float64 `json:"VertCategory" xml:"VertCategory"`
-	CalciumId          int64   `json:"CalciumId" xml:"CalciumId"`
-	CalciumVolume      float64 `json:"CalciumVolume" xml:"CalciumVolume"`
-	VertTScore         float64 `json:"VertTScore" xml:"VertTScore"`
-	FractureSegment    int64   `json:"FractureSegment" xml:"FractureSegment"`
-	VertBMD            float64 `json:"VertBMD" xml:"VertBMD"`
-	FractureLocation   string  `json:"FractureLocation" xml:"FractureLocation"`
-	FracSOPInstanceUID string  `json:"FracSOPInstanceUID" xml:"FracSOPInstanceUID"`
-	FractureConfidence float64 `json:"FractureConfidence" xml:"FractureConfidence"`
-	FractureCategory   string  `json:"FractureCategory" xml:"FractureCategory"`
-	FractureId         int     `json:"FractureId" xml:"FractureId"`
-	VertId             string  `json:"VertId" xml:"VertId"`
-	VertZScore         float64 `json:"VertZScore" xml:"VertZScore"`
-	CalciumCenter      []int64 `json:"CalciumCenter" xml:"CalciumCenter"`
-	Coordinates        []int   `json:"Coordinates" xml:"Coordinates"`
-	CoordinateImage    []int   `json:"CoordinateImage" xml:"CoordinateImage"`
+	VertCategory          float64 `json:"VertCategory" xml:"VertCategory"`
+	LiverVolume           float64 `json:"LiverVolume" xml:"LiverVolume"`
+	CalciumId             int64   `json:"CalciumId" xml:"CalciumId"`
+	CalciumVolume         float64 `json:"CalciumVolume" xml:"CalciumVolume"`
+	Probability           float64 `json:"Probability" xml:"Probability"`
+	LiverROI3             float64 `json:"LiverROI3" xml:"LiverROI3"`
+	VertBMD               float64 `json:"VertBMD" xml:"VertBMD"`
+	LiverSpleenDifference float64 `json:"LiverSpleenDifference" xml:"LiverSpleenDifference"`
+	VertId                string  `json:"VertId" xml:"VertId"`
+	SpleenHU              float64 `json:"SpleenHU" xml:"SpleenHU"`
+	CalciumScore          float64 `json:"CalciumScore" xml:"CalciumScore"`
+	SpleenVolume          float64 `json:"SpleenVolume" xml:"SpleenVolume"`
+	LiverSlice            float64 `json:"LiverSlice" xml:"LiverSlice"`
+	Prediction            string  `json:"Prediction" xml:"Prediction"`
+	VertTScore            float64 `json:"VertTScore" xml:"VertTScore"`
+	LiverROI2             float64 `json:"LiverROI2" xml:"LiverROI2"`
+	FractureSegment       int64   `json:"FractureSegment" xml:"FractureSegment"`
+	Radius                int64   `json:"Radius" xml:"Radius"`
+	FractureLocation      string  `json:"FractureLocation" xml:"FractureLocation"`
+	FracSOPInstanceUID    string  `json:"FracSOPInstanceUID" xml:"FracSOPInstanceUID"`
+	SpleenROI             float64 `json:"SpleenROI" xml:"SpleenROI"`
+	LiverHU               float64 `json:"LiverHU" xml:"LiverHU"`
+	LiverROI1             float64 `json:"LiverROI1" xml:"LiverROI1"`
+	FractureConfidence    float64 `json:"FractureConfidence" xml:"FractureConfidence"`
+	FractureCategory      string  `json:"FractureCategory" xml:"FractureCategory"`
+	SpleenSlice           float64 `json:"SpleenSlice" xml:"SpleenSlice"`
+	LiverSpleenRatio      float64 `json:"LiverSpleenRatio" xml:"LiverSpleenRatio"`
+	FractureId            int     `json:"FractureId" xml:"FractureId"`
+	VertZScore            float64 `json:"VertZScore" xml:"VertZScore"`
+	CalciumCenter         []int64 `json:"CalciumCenter" xml:"CalciumCenter"`
+	ROI2Center            []int64 `json:"ROI2Center" xml:"ROI2Center"`
+	SpleenCenter          []int64 `json:"SpleenCenter" xml:"SpleenCenter"`
+	Coordinates           []int   `json:"Coordinates" xml:"Coordinates"`
+	ROI3Center            []int64 `json:"ROI3Center" xml:"ROI3Center"`
+	CoordinateImage       []int   `json:"CoordinateImage" xml:"CoordinateImage"`
+	ROI1Center            []int64 `json:"ROI1Center" xml:"ROI1Center"`
 }
