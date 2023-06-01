@@ -1,3 +1,7 @@
+2023-06-01 Version: v1.62.354
+- Generated 2019-08-08 for `ARMS`.
+- Api update.
+
 2023-05-31 Version: v1.62.353
 - Generated 2020-03-20 for `imageprocess`.
 - Release ScreenGC.

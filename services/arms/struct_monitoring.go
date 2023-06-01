@@ -17,6 +17,7 @@ package arms
 
 // Monitoring is a nested struct in arms response
 type Monitoring struct {
+	ClusterId      string `json:"ClusterId" xml:"ClusterId"`
 	MonitoringName string `json:"MonitoringName" xml:"MonitoringName"`
 	Type           string `json:"Type" xml:"Type"`
 	ConfigYaml     string `json:"ConfigYaml" xml:"ConfigYaml"`
