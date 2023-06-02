@@ -81,6 +81,7 @@ type CreateLoadBalancerTCPListenerRequest struct {
 	FailoverStrategy               string                                    `position:"Query" name:"FailoverStrategy"`
 	PersistenceTimeout             requests.Integer                          `position:"Query" name:"PersistenceTimeout"`
 	VpcIds                         string                                    `position:"Query" name:"VpcIds"`
+	Tag                            *[]CreateLoadBalancerTCPListenerTag       `position:"Query" name:"Tag"  type:"Repeated"`
 	MasterSlaveModeEnabled         requests.Boolean                          `position:"Query" name:"MasterSlaveModeEnabled"`
 	VServerGroupId                 string                                    `position:"Query" name:"VServerGroupId"`
 	AclId                          string                                    `position:"Query" name:"AclId"`
@@ -114,6 +115,12 @@ type CreateLoadBalancerTCPListenerRequest struct {
 	ConnectionDrainTimeout         requests.Integer                          `position:"Query" name:"ConnectionDrainTimeout"`
 	HealthCheckConnectPort         requests.Integer                          `position:"Query" name:"HealthCheckConnectPort"`
 	HealthCheckHttpCode            string                                    `position:"Query" name:"HealthCheckHttpCode"`
+}
+
+// CreateLoadBalancerTCPListenerTag is a repeated param struct in CreateLoadBalancerTCPListenerRequest
+type CreateLoadBalancerTCPListenerTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // CreateLoadBalancerTCPListenerPortRange is a repeated param struct in CreateLoadBalancerTCPListenerRequest

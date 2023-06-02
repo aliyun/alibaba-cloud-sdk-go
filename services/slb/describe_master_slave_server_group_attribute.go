@@ -89,6 +89,7 @@ type DescribeMasterSlaveServerGroupAttributeResponse struct {
 	MasterSlaveServerGroupName string                                                             `json:"MasterSlaveServerGroupName" xml:"MasterSlaveServerGroupName"`
 	MasterSlaveServerGroupId   string                                                             `json:"MasterSlaveServerGroupId" xml:"MasterSlaveServerGroupId"`
 	CreateTime                 string                                                             `json:"CreateTime" xml:"CreateTime"`
+	Tags                       TagsInDescribeMasterSlaveServerGroupAttribute                      `json:"Tags" xml:"Tags"`
 	MasterSlaveBackendServers  MasterSlaveBackendServersInDescribeMasterSlaveServerGroupAttribute `json:"MasterSlaveBackendServers" xml:"MasterSlaveBackendServers"`
 }
 

@@ -36,4 +36,5 @@ type ListenerInDescribeLoadBalancerListeners struct {
 	TCPListenerConfig   TCPListenerConfig   `json:"TCPListenerConfig" xml:"TCPListenerConfig"`
 	TCPSListenerConfig  TCPSListenerConfig  `json:"TCPSListenerConfig" xml:"TCPSListenerConfig"`
 	UDPListenerConfig   UDPListenerConfig   `json:"UDPListenerConfig" xml:"UDPListenerConfig"`
+	Tags                []Tag               `json:"Tags" xml:"Tags"`
 }

@@ -90,6 +90,7 @@ type DescribeVServerGroupAttributeResponse struct {
 	LoadBalancerId     string                                        `json:"LoadBalancerId" xml:"LoadBalancerId"`
 	CreateTime         string                                        `json:"CreateTime" xml:"CreateTime"`
 	BackendServers     BackendServersInDescribeVServerGroupAttribute `json:"BackendServers" xml:"BackendServers"`
+	Tags               TagsInDescribeVServerGroupAttribute           `json:"Tags" xml:"Tags"`
 }
 
 // CreateDescribeVServerGroupAttributeRequest creates a request to invoke DescribeVServerGroupAttribute API

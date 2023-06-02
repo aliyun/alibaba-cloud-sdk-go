@@ -142,6 +142,7 @@ type DescribeLoadBalancerHTTPSListenerAttributeResponse struct {
 	Rules                                    RulesInDescribeLoadBalancerHTTPSListenerAttribute              `json:"Rules" xml:"Rules"`
 	DomainExtensions                         DomainExtensionsInDescribeLoadBalancerHTTPSListenerAttribute   `json:"DomainExtensions" xml:"DomainExtensions"`
 	ServerCertificates                       ServerCertificatesInDescribeLoadBalancerHTTPSListenerAttribute `json:"ServerCertificates" xml:"ServerCertificates"`
+	Tags                                     TagsInDescribeLoadBalancerHTTPSListenerAttribute               `json:"Tags" xml:"Tags"`
 }
 
 // CreateDescribeLoadBalancerHTTPSListenerAttributeRequest creates a request to invoke DescribeLoadBalancerHTTPSListenerAttribute API

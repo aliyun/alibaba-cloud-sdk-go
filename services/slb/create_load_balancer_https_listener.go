@@ -81,6 +81,7 @@ type CreateLoadBalancerHTTPSListenerRequest struct {
 	AclType                                  string                                              `position:"Query" name:"AclType"`
 	HealthCheck                              string                                              `position:"Query" name:"HealthCheck"`
 	VpcIds                                   string                                              `position:"Query" name:"VpcIds"`
+	Tag                                      *[]CreateLoadBalancerHTTPSListenerTag               `position:"Query" name:"Tag"  type:"Repeated"`
 	VServerGroupId                           string                                              `position:"Query" name:"VServerGroupId"`
 	AclId                                    string                                              `position:"Query" name:"AclId"`
 	XForwardedForClientCertClientVerify      string                                              `position:"Query" name:"XForwardedFor_ClientCertClientVerify"`
@@ -135,6 +136,12 @@ type CreateLoadBalancerHTTPSListenerServerCertificate struct {
 	BindingType   string `name:"BindingType"`
 	CertificateId string `name:"CertificateId"`
 	StandardType  string `name:"StandardType"`
+}
+
+// CreateLoadBalancerHTTPSListenerTag is a repeated param struct in CreateLoadBalancerHTTPSListenerRequest
+type CreateLoadBalancerHTTPSListenerTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // CreateLoadBalancerHTTPSListenerResponse is the response struct for api CreateLoadBalancerHTTPSListener

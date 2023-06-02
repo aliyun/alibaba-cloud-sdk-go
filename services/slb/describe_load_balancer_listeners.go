@@ -71,14 +71,21 @@ func (client *Client) DescribeLoadBalancerListenersWithCallback(request *Describ
 // DescribeLoadBalancerListenersRequest is the request struct for api DescribeLoadBalancerListeners
 type DescribeLoadBalancerListenersRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	NextToken            string           `position:"Query" name:"NextToken"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ListenerProtocol     string           `position:"Query" name:"ListenerProtocol"`
-	LoadBalancerId       *[]string        `position:"Query" name:"LoadBalancerId"  type:"Repeated"`
-	MaxResults           requests.Integer `position:"Query" name:"MaxResults"`
+	ResourceOwnerId      requests.Integer                    `position:"Query" name:"ResourceOwnerId"`
+	NextToken            string                              `position:"Query" name:"NextToken"`
+	Tag                  *[]DescribeLoadBalancerListenersTag `position:"Query" name:"Tag"  type:"Repeated"`
+	ResourceOwnerAccount string                              `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string                              `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer                    `position:"Query" name:"OwnerId"`
+	ListenerProtocol     string                              `position:"Query" name:"ListenerProtocol"`
+	LoadBalancerId       *[]string                           `position:"Query" name:"LoadBalancerId"  type:"Repeated"`
+	MaxResults           requests.Integer                    `position:"Query" name:"MaxResults"`
+}
+
+// DescribeLoadBalancerListenersTag is a repeated param struct in DescribeLoadBalancerListenersRequest
+type DescribeLoadBalancerListenersTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // DescribeLoadBalancerListenersResponse is the response struct for api DescribeLoadBalancerListeners

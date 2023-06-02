@@ -86,16 +86,17 @@ type DescribeAccessControlListAttributeRequest struct {
 // DescribeAccessControlListAttributeResponse is the response struct for api DescribeAccessControlListAttribute
 type DescribeAccessControlListAttributeResponse struct {
 	*responses.BaseResponse
-	ServiceManagedMode string           `json:"ServiceManagedMode" xml:"ServiceManagedMode"`
-	AclId              string           `json:"AclId" xml:"AclId"`
-	AddressIPVersion   string           `json:"AddressIPVersion" xml:"AddressIPVersion"`
-	RequestId          string           `json:"RequestId" xml:"RequestId"`
-	ResourceGroupId    string           `json:"ResourceGroupId" xml:"ResourceGroupId"`
-	AclName            string           `json:"AclName" xml:"AclName"`
-	CreateTime         string           `json:"CreateTime" xml:"CreateTime"`
-	TotalAclEntry      int              `json:"TotalAclEntry" xml:"TotalAclEntry"`
-	AclEntrys          AclEntrys        `json:"AclEntrys" xml:"AclEntrys"`
-	RelatedListeners   RelatedListeners `json:"RelatedListeners" xml:"RelatedListeners"`
+	ServiceManagedMode string                                   `json:"ServiceManagedMode" xml:"ServiceManagedMode"`
+	AclId              string                                   `json:"AclId" xml:"AclId"`
+	AddressIPVersion   string                                   `json:"AddressIPVersion" xml:"AddressIPVersion"`
+	RequestId          string                                   `json:"RequestId" xml:"RequestId"`
+	ResourceGroupId    string                                   `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	AclName            string                                   `json:"AclName" xml:"AclName"`
+	CreateTime         string                                   `json:"CreateTime" xml:"CreateTime"`
+	TotalAclEntry      int                                      `json:"TotalAclEntry" xml:"TotalAclEntry"`
+	Tags               TagsInDescribeAccessControlListAttribute `json:"Tags" xml:"Tags"`
+	AclEntrys          AclEntrys                                `json:"AclEntrys" xml:"AclEntrys"`
+	RelatedListeners   RelatedListeners                         `json:"RelatedListeners" xml:"RelatedListeners"`
 }
 
 // CreateDescribeAccessControlListAttributeRequest creates a request to invoke DescribeAccessControlListAttribute API

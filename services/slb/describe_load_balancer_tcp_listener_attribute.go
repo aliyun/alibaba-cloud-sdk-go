@@ -127,6 +127,7 @@ type DescribeLoadBalancerTCPListenerAttributeResponse struct {
 	LoadBalancerId                 string                                               `json:"LoadBalancerId" xml:"LoadBalancerId"`
 	AclIds                         AclIdsInDescribeLoadBalancerTCPListenerAttribute     `json:"AclIds" xml:"AclIds"`
 	PortRanges                     PortRangesInDescribeLoadBalancerTCPListenerAttribute `json:"PortRanges" xml:"PortRanges"`
+	Tags                           TagsInDescribeLoadBalancerTCPListenerAttribute       `json:"Tags" xml:"Tags"`
 }
 
 // CreateDescribeLoadBalancerTCPListenerAttributeRequest creates a request to invoke DescribeLoadBalancerTCPListenerAttribute API

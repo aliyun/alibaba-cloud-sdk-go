@@ -38,4 +38,5 @@ type Listener struct {
 	HTTPSListenerConfig HTTPSListenerConfig                   `json:"HTTPSListenerConfig" xml:"HTTPSListenerConfig"`
 	TCPSListenerConfig  TCPSListenerConfig                    `json:"TCPSListenerConfig" xml:"TCPSListenerConfig"`
 	UDPListenerConfig   UDPListenerConfig                     `json:"UDPListenerConfig" xml:"UDPListenerConfig"`
+	Tags                []Tag                                 `json:"Tags" xml:"Tags"`
 }

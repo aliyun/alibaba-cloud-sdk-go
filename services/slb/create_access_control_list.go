@@ -71,15 +71,22 @@ func (client *Client) CreateAccessControlListWithCallback(request *CreateAccessC
 // CreateAccessControlListRequest is the request struct for api CreateAccessControlList
 type CreateAccessControlListRequest struct {
 	*requests.RpcRequest
-	AccessKeyId          string           `position:"Query" name:"access_key_id"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	AclName              string           `position:"Query" name:"AclName"`
-	AddressIPVersion     string           `position:"Query" name:"AddressIPVersion"`
-	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	Tags                 string           `position:"Query" name:"Tags"`
+	AccessKeyId          string                        `position:"Query" name:"access_key_id"`
+	ResourceOwnerId      requests.Integer              `position:"Query" name:"ResourceOwnerId"`
+	AclName              string                        `position:"Query" name:"AclName"`
+	AddressIPVersion     string                        `position:"Query" name:"AddressIPVersion"`
+	ResourceGroupId      string                        `position:"Query" name:"ResourceGroupId"`
+	Tag                  *[]CreateAccessControlListTag `position:"Query" name:"Tag"  type:"Repeated"`
+	ResourceOwnerAccount string                        `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string                        `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer              `position:"Query" name:"OwnerId"`
+	Tags                 string                        `position:"Query" name:"Tags"`
+}
+
+// CreateAccessControlListTag is a repeated param struct in CreateAccessControlListRequest
+type CreateAccessControlListTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // CreateAccessControlListResponse is the response struct for api CreateAccessControlList

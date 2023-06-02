@@ -128,6 +128,7 @@ type DescribeLoadBalancerUDPListenerAttributeResponse struct {
 	LoadBalancerId            string                                               `json:"LoadBalancerId" xml:"LoadBalancerId"`
 	AclIds                    AclIdsInDescribeLoadBalancerUDPListenerAttribute     `json:"AclIds" xml:"AclIds"`
 	PortRanges                PortRangesInDescribeLoadBalancerUDPListenerAttribute `json:"PortRanges" xml:"PortRanges"`
+	Tags                      TagsInDescribeLoadBalancerUDPListenerAttribute       `json:"Tags" xml:"Tags"`
 }
 
 // CreateDescribeLoadBalancerUDPListenerAttributeRequest creates a request to invoke DescribeLoadBalancerUDPListenerAttribute API

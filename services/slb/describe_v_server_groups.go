@@ -71,15 +71,22 @@ func (client *Client) DescribeVServerGroupsWithCallback(request *DescribeVServer
 // DescribeVServerGroupsRequest is the request struct for api DescribeVServerGroups
 type DescribeVServerGroupsRequest struct {
 	*requests.RpcRequest
-	AccessKeyId          string           `position:"Query" name:"access_key_id"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	IncludeListener      requests.Boolean `position:"Query" name:"IncludeListener"`
-	IncludeRule          requests.Boolean `position:"Query" name:"IncludeRule"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	Tags                 string           `position:"Query" name:"Tags"`
-	LoadBalancerId       string           `position:"Query" name:"LoadBalancerId"`
+	AccessKeyId          string                      `position:"Query" name:"access_key_id"`
+	ResourceOwnerId      requests.Integer            `position:"Query" name:"ResourceOwnerId"`
+	IncludeListener      requests.Boolean            `position:"Query" name:"IncludeListener"`
+	IncludeRule          requests.Boolean            `position:"Query" name:"IncludeRule"`
+	Tag                  *[]DescribeVServerGroupsTag `position:"Query" name:"Tag"  type:"Repeated"`
+	ResourceOwnerAccount string                      `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string                      `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer            `position:"Query" name:"OwnerId"`
+	Tags                 string                      `position:"Query" name:"Tags"`
+	LoadBalancerId       string                      `position:"Query" name:"LoadBalancerId"`
+}
+
+// DescribeVServerGroupsTag is a repeated param struct in DescribeVServerGroupsRequest
+type DescribeVServerGroupsTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // DescribeVServerGroupsResponse is the response struct for api DescribeVServerGroups

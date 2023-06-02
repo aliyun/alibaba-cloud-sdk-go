@@ -71,15 +71,22 @@ func (client *Client) CreateVServerGroupWithCallback(request *CreateVServerGroup
 // CreateVServerGroupRequest is the request struct for api CreateVServerGroup
 type CreateVServerGroupRequest struct {
 	*requests.RpcRequest
-	AccessKeyId          string           `position:"Query" name:"access_key_id"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	BackendServers       string           `position:"Query" name:"BackendServers"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	Tags                 string           `position:"Query" name:"Tags"`
-	VServerGroupName     string           `position:"Query" name:"VServerGroupName"`
-	LoadBalancerId       string           `position:"Query" name:"LoadBalancerId"`
+	AccessKeyId          string                   `position:"Query" name:"access_key_id"`
+	ResourceOwnerId      requests.Integer         `position:"Query" name:"ResourceOwnerId"`
+	BackendServers       string                   `position:"Query" name:"BackendServers"`
+	Tag                  *[]CreateVServerGroupTag `position:"Query" name:"Tag"  type:"Repeated"`
+	ResourceOwnerAccount string                   `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string                   `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer         `position:"Query" name:"OwnerId"`
+	Tags                 string                   `position:"Query" name:"Tags"`
+	VServerGroupName     string                   `position:"Query" name:"VServerGroupName"`
+	LoadBalancerId       string                   `position:"Query" name:"LoadBalancerId"`
+}
+
+// CreateVServerGroupTag is a repeated param struct in CreateVServerGroupRequest
+type CreateVServerGroupTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // CreateVServerGroupResponse is the response struct for api CreateVServerGroup

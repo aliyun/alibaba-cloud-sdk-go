@@ -134,6 +134,7 @@ type DescribeLoadBalancerAttributeResponse struct {
 	InstanceChargeType             string                                        `json:"InstanceChargeType" xml:"InstanceChargeType"`
 	Labels                         Labels                                        `json:"Labels" xml:"Labels"`
 	ListenerPorts                  ListenerPorts                                 `json:"ListenerPorts" xml:"ListenerPorts"`
+	Tags                           TagsInDescribeLoadBalancerAttribute           `json:"Tags" xml:"Tags"`
 	ListenerPortsAndProtocal       ListenerPortsAndProtocal                      `json:"ListenerPortsAndProtocal" xml:"ListenerPortsAndProtocal"`
 	ListenerPortsAndProtocol       ListenerPortsAndProtocol                      `json:"ListenerPortsAndProtocol" xml:"ListenerPortsAndProtocol"`
 	BackendServers                 BackendServersInDescribeLoadBalancerAttribute `json:"BackendServers" xml:"BackendServers"`

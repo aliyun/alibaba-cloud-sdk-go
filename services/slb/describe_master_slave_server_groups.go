@@ -71,14 +71,21 @@ func (client *Client) DescribeMasterSlaveServerGroupsWithCallback(request *Descr
 // DescribeMasterSlaveServerGroupsRequest is the request struct for api DescribeMasterSlaveServerGroups
 type DescribeMasterSlaveServerGroupsRequest struct {
 	*requests.RpcRequest
-	AccessKeyId          string           `position:"Query" name:"access_key_id"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	IncludeListener      requests.Boolean `position:"Query" name:"IncludeListener"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	Tags                 string           `position:"Query" name:"Tags"`
-	LoadBalancerId       string           `position:"Query" name:"LoadBalancerId"`
+	AccessKeyId          string                                `position:"Query" name:"access_key_id"`
+	ResourceOwnerId      requests.Integer                      `position:"Query" name:"ResourceOwnerId"`
+	IncludeListener      requests.Boolean                      `position:"Query" name:"IncludeListener"`
+	Tag                  *[]DescribeMasterSlaveServerGroupsTag `position:"Query" name:"Tag"  type:"Repeated"`
+	ResourceOwnerAccount string                                `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string                                `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer                      `position:"Query" name:"OwnerId"`
+	Tags                 string                                `position:"Query" name:"Tags"`
+	LoadBalancerId       string                                `position:"Query" name:"LoadBalancerId"`
+}
+
+// DescribeMasterSlaveServerGroupsTag is a repeated param struct in DescribeMasterSlaveServerGroupsRequest
+type DescribeMasterSlaveServerGroupsTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // DescribeMasterSlaveServerGroupsResponse is the response struct for api DescribeMasterSlaveServerGroups
