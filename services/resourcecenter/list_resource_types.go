@@ -73,6 +73,7 @@ type ListResourceTypesRequest struct {
 	*requests.RpcRequest
 	Query          *[]string `position:"Query" name:"Query"  type:"Repeated"`
 	ResourceType   string    `position:"Query" name:"ResourceType"`
+	Scene          string    `position:"Query" name:"Scene"`
 	AcceptLanguage string    `position:"Query" name:"AcceptLanguage"`
 }
 
