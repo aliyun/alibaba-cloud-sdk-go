@@ -78,14 +78,12 @@ type GetBaselineRequest struct {
 // GetBaselineResponse is the response struct for api GetBaseline
 type GetBaselineResponse struct {
 	*responses.BaseResponse
-	Success             bool   `json:"Success" xml:"Success"`
-	ErrorCode           string `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMessage        string `json:"ErrorMessage" xml:"ErrorMessage"`
-	HttpStatusCode      int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	RequestId           string `json:"RequestId" xml:"RequestId"`
-	DynamicErrorCode    string `json:"DynamicErrorCode" xml:"DynamicErrorCode"`
-	DynamicErrorMessage string `json:"DynamicErrorMessage" xml:"DynamicErrorMessage"`
-	Data                Data   `json:"Data" xml:"Data"`
+	Success        bool   `json:"Success" xml:"Success"`
+	ErrorCode      string `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage   string `json:"ErrorMessage" xml:"ErrorMessage"`
+	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	Data           Data   `json:"Data" xml:"Data"`
 }
 
 // CreateGetBaselineRequest creates a request to invoke GetBaseline API

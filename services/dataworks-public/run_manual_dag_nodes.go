@@ -73,6 +73,8 @@ type RunManualDagNodesRequest struct {
 	*requests.RpcRequest
 	ProjectEnv     string           `position:"Body" name:"ProjectEnv"`
 	ProjectName    string           `position:"Body" name:"ProjectName"`
+	StartBizDate   string           `position:"Body" name:"StartBizDate"`
+	EndBizDate     string           `position:"Body" name:"EndBizDate"`
 	DagParameters  string           `position:"Body" name:"DagParameters"`
 	IncludeNodeIds string           `position:"Body" name:"IncludeNodeIds"`
 	BizDate        string           `position:"Body" name:"BizDate"`

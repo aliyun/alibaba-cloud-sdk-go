@@ -17,5 +17,5 @@ package dataworks_public
 
 // DataSourcesInListDataSources is a nested struct in dataworks_public response
 type DataSourcesInListDataSources struct {
-	DataSourcesItem []DataSourcesItem `json:"DataSources" xml:"DataSources"`
+	DataSourcesItem []DataSourcesItemInListDataSources `json:"DataSources" xml:"DataSources"`
 }

@@ -71,35 +71,36 @@ func (client *Client) UpdateFileWithCallback(request *UpdateFileRequest, callbac
 // UpdateFileRequest is the request struct for api UpdateFile
 type UpdateFileRequest struct {
 	*requests.RpcRequest
-	OutputList              string           `position:"Body" name:"OutputList"`
-	DependentNodeIdList     string           `position:"Body" name:"DependentNodeIdList"`
-	Content                 string           `position:"Body" name:"Content"`
-	ProjectIdentifier       string           `position:"Body" name:"ProjectIdentifier"`
-	StartImmediately        requests.Boolean `position:"Body" name:"StartImmediately"`
-	ProjectId               requests.Integer `position:"Body" name:"ProjectId"`
-	AdvancedSettings        string           `position:"Body" name:"AdvancedSettings"`
-	StartEffectDate         requests.Integer `position:"Body" name:"StartEffectDate"`
-	CycleType               string           `position:"Body" name:"CycleType"`
-	FileId                  requests.Integer `position:"Body" name:"FileId"`
-	AutoRerunIntervalMillis requests.Integer `position:"Body" name:"AutoRerunIntervalMillis"`
-	Owner                   string           `position:"Body" name:"Owner"`
-	InputList               string           `position:"Body" name:"InputList"`
-	RerunMode               string           `position:"Body" name:"RerunMode"`
-	ConnectionName          string           `position:"Body" name:"ConnectionName"`
-	OutputParameters        string           `position:"Body" name:"OutputParameters"`
-	ParaValue               string           `position:"Body" name:"ParaValue"`
-	ResourceGroupIdentifier string           `position:"Body" name:"ResourceGroupIdentifier"`
-	AutoRerunTimes          requests.Integer `position:"Body" name:"AutoRerunTimes"`
-	CronExpress             string           `position:"Body" name:"CronExpress"`
-	EndEffectDate           requests.Integer `position:"Body" name:"EndEffectDate"`
-	FileName                string           `position:"Body" name:"FileName"`
-	InputParameters         string           `position:"Body" name:"InputParameters"`
-	Stop                    requests.Boolean `position:"Body" name:"Stop"`
-	DependentType           string           `position:"Body" name:"DependentType"`
-	FileFolderPath          string           `position:"Body" name:"FileFolderPath"`
-	FileDescription         string           `position:"Body" name:"FileDescription"`
-	AutoParsing             requests.Boolean `position:"Body" name:"AutoParsing"`
-	SchedulerType           string           `position:"Body" name:"SchedulerType"`
+	OutputList                      string           `position:"Body" name:"OutputList"`
+	DependentNodeIdList             string           `position:"Body" name:"DependentNodeIdList"`
+	Content                         string           `position:"Body" name:"Content"`
+	ProjectIdentifier               string           `position:"Body" name:"ProjectIdentifier"`
+	StartImmediately                requests.Boolean `position:"Body" name:"StartImmediately"`
+	ProjectId                       requests.Integer `position:"Body" name:"ProjectId"`
+	AdvancedSettings                string           `position:"Body" name:"AdvancedSettings"`
+	StartEffectDate                 requests.Integer `position:"Body" name:"StartEffectDate"`
+	CycleType                       string           `position:"Body" name:"CycleType"`
+	FileId                          requests.Integer `position:"Body" name:"FileId"`
+	AutoRerunIntervalMillis         requests.Integer `position:"Body" name:"AutoRerunIntervalMillis"`
+	Owner                           string           `position:"Body" name:"Owner"`
+	InputList                       string           `position:"Body" name:"InputList"`
+	RerunMode                       string           `position:"Body" name:"RerunMode"`
+	ConnectionName                  string           `position:"Body" name:"ConnectionName"`
+	OutputParameters                string           `position:"Body" name:"OutputParameters"`
+	ParaValue                       string           `position:"Body" name:"ParaValue"`
+	ResourceGroupIdentifier         string           `position:"Body" name:"ResourceGroupIdentifier"`
+	AutoRerunTimes                  requests.Integer `position:"Body" name:"AutoRerunTimes"`
+	CronExpress                     string           `position:"Body" name:"CronExpress"`
+	IgnoreParentSkipRunningProperty requests.Boolean `position:"Body" name:"IgnoreParentSkipRunningProperty"`
+	EndEffectDate                   requests.Integer `position:"Body" name:"EndEffectDate"`
+	FileName                        string           `position:"Body" name:"FileName"`
+	InputParameters                 string           `position:"Body" name:"InputParameters"`
+	Stop                            requests.Boolean `position:"Body" name:"Stop"`
+	DependentType                   string           `position:"Body" name:"DependentType"`
+	FileFolderPath                  string           `position:"Body" name:"FileFolderPath"`
+	FileDescription                 string           `position:"Body" name:"FileDescription"`
+	AutoParsing                     requests.Boolean `position:"Body" name:"AutoParsing"`
+	SchedulerType                   string           `position:"Body" name:"SchedulerType"`
 }
 
 // UpdateFileResponse is the response struct for api UpdateFile

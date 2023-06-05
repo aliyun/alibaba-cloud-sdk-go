@@ -84,14 +84,12 @@ type ListBaselinesRequest struct {
 // ListBaselinesResponse is the response struct for api ListBaselines
 type ListBaselinesResponse struct {
 	*responses.BaseResponse
-	Success             bool                `json:"Success" xml:"Success"`
-	ErrorCode           string              `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMessage        string              `json:"ErrorMessage" xml:"ErrorMessage"`
-	HttpStatusCode      int                 `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	RequestId           string              `json:"RequestId" xml:"RequestId"`
-	DynamicErrorCode    string              `json:"DynamicErrorCode" xml:"DynamicErrorCode"`
-	DynamicErrorMessage string              `json:"DynamicErrorMessage" xml:"DynamicErrorMessage"`
-	Data                DataInListBaselines `json:"Data" xml:"Data"`
+	Success        bool                `json:"Success" xml:"Success"`
+	ErrorCode      string              `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage   string              `json:"ErrorMessage" xml:"ErrorMessage"`
+	HttpStatusCode int                 `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	RequestId      string              `json:"RequestId" xml:"RequestId"`
+	Data           DataInListBaselines `json:"Data" xml:"Data"`
 }
 
 // CreateListBaselinesRequest creates a request to invoke ListBaselines API

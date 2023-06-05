@@ -117,14 +117,12 @@ type UpdateBaselineAlertSettingsDingRobotsItem struct {
 // UpdateBaselineResponse is the response struct for api UpdateBaseline
 type UpdateBaselineResponse struct {
 	*responses.BaseResponse
-	Success             bool   `json:"Success" xml:"Success"`
-	ErrorCode           string `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMessage        string `json:"ErrorMessage" xml:"ErrorMessage"`
-	HttpStatusCode      int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	Data                bool   `json:"Data" xml:"Data"`
-	RequestId           string `json:"RequestId" xml:"RequestId"`
-	DynamicErrorCode    string `json:"DynamicErrorCode" xml:"DynamicErrorCode"`
-	DynamicErrorMessage string `json:"DynamicErrorMessage" xml:"DynamicErrorMessage"`
+	Success        bool   `json:"Success" xml:"Success"`
+	ErrorCode      string `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage   string `json:"ErrorMessage" xml:"ErrorMessage"`
+	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Data           bool   `json:"Data" xml:"Data"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateUpdateBaselineRequest creates a request to invoke UpdateBaseline API

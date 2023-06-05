@@ -190,7 +190,7 @@ type Data struct {
 	ProjectId            int64                  `json:"ProjectId" xml:"ProjectId"`
 	SlaHour              int                    `json:"SlaHour" xml:"SlaHour"`
 	Webhooks             []string               `json:"Webhooks" xml:"Webhooks"`
-	TaskIds              []int64                `json:"TaskIds" xml:"TaskIds"`
+	NodeIds              []int64                `json:"NodeIds" xml:"NodeIds"`
 	AlertMethods         []string               `json:"AlertMethods" xml:"AlertMethods"`
 	AlertTargets         []string               `json:"AlertTargets" xml:"AlertTargets"`
 	Deployment           Deployment             `json:"Deployment" xml:"Deployment"`
