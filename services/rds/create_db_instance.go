@@ -114,10 +114,12 @@ type CreateDBInstanceRequest struct {
 	CreateStrategy                 string                           `position:"Query" name:"CreateStrategy"`
 	DBInstanceNetType              string                           `position:"Query" name:"DBInstanceNetType"`
 	Amount                         requests.Integer                 `position:"Query" name:"Amount"`
+	AutoPay                        requests.Boolean                 `position:"Query" name:"AutoPay"`
 	ServerlessConfig               CreateDBInstanceServerlessConfig `position:"Query" name:"ServerlessConfig"  type:"Struct"`
 	ResourceOwnerAccount           string                           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount                   string                           `position:"Query" name:"OwnerAccount"`
 	UsedTime                       string                           `position:"Query" name:"UsedTime"`
+	BurstingEnabled                requests.Boolean                 `position:"Query" name:"BurstingEnabled"`
 	TargetMinorVersion             string                           `position:"Query" name:"TargetMinorVersion"`
 	UserBackupId                   string                           `position:"Query" name:"UserBackupId"`
 	StorageUpperBound              requests.Integer                 `position:"Query" name:"StorageUpperBound"`
@@ -125,6 +127,7 @@ type CreateDBInstanceRequest struct {
 	VPCId                          string                           `position:"Query" name:"VPCId"`
 	Category                       string                           `position:"Query" name:"Category"`
 	PayType                        string                           `position:"Query" name:"PayType"`
+	BpeEnabled                     string                           `position:"Query" name:"BpeEnabled"`
 }
 
 // CreateDBInstanceTag is a repeated param struct in CreateDBInstanceRequest

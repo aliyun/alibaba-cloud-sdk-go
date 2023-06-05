@@ -23,6 +23,7 @@ type DBInstanceAttribute struct {
 	TempUpgradeRecoveryTime           string                                             `json:"TempUpgradeRecoveryTime" xml:"TempUpgradeRecoveryTime"`
 	TempUpgradeRecoveryMaxIOPS        string                                             `json:"TempUpgradeRecoveryMaxIOPS" xml:"TempUpgradeRecoveryMaxIOPS"`
 	DBInstanceDiskUsed                string                                             `json:"DBInstanceDiskUsed" xml:"DBInstanceDiskUsed"`
+	BpeEnabled                        string                                             `json:"BpeEnabled" xml:"BpeEnabled"`
 	AdvancedFeatures                  string                                             `json:"AdvancedFeatures" xml:"AdvancedFeatures"`
 	VpcCloudInstanceId                string                                             `json:"VpcCloudInstanceId" xml:"VpcCloudInstanceId"`
 	DBInstanceNetType                 string                                             `json:"DBInstanceNetType" xml:"DBInstanceNetType"`
@@ -50,6 +51,7 @@ type DBInstanceAttribute struct {
 	EngineVersion                     string                                             `json:"EngineVersion" xml:"EngineVersion"`
 	InstructionSetArch                string                                             `json:"InstructionSetArch" xml:"InstructionSetArch"`
 	PayType                           string                                             `json:"PayType" xml:"PayType"`
+	BurstingEnabled                   bool                                               `json:"BurstingEnabled" xml:"BurstingEnabled"`
 	Tips                              string                                             `json:"Tips" xml:"Tips"`
 	DBInstanceStorage                 int                                                `json:"DBInstanceStorage" xml:"DBInstanceStorage"`
 	KindCode                          string                                             `json:"kindCode" xml:"kindCode"`

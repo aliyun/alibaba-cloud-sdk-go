@@ -85,6 +85,7 @@ type DescribeParametersResponse struct {
 	RequestId         string            `json:"RequestId" xml:"RequestId"`
 	Engine            string            `json:"Engine" xml:"Engine"`
 	EngineVersion     string            `json:"EngineVersion" xml:"EngineVersion"`
+	ParamGroupInfo    ParamGroupInfo    `json:"ParamGroupInfo" xml:"ParamGroupInfo"`
 	ConfigParameters  ConfigParameters  `json:"ConfigParameters" xml:"ConfigParameters"`
 	RunningParameters RunningParameters `json:"RunningParameters" xml:"RunningParameters"`
 }

@@ -73,33 +73,36 @@ type CreateReadOnlyDBInstanceRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId                requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	DBInstanceStorage              requests.Integer `position:"Query" name:"DBInstanceStorage"`
-	ClientToken                    string           `position:"Query" name:"ClientToken"`
-	InstructionSetArch             string           `position:"Query" name:"InstructionSetArch"`
 	EngineVersion                  string           `position:"Query" name:"EngineVersion"`
 	DeletionProtection             requests.Boolean `position:"Query" name:"DeletionProtection"`
 	ResourceGroupId                string           `position:"Query" name:"ResourceGroupId"`
-	TddlRegionConfig               string           `position:"Query" name:"TddlRegionConfig"`
 	TargetDedicatedHostIdForMaster string           `position:"Query" name:"TargetDedicatedHostIdForMaster"`
-	DBInstanceId                   string           `position:"Query" name:"DBInstanceId"`
 	DBInstanceDescription          string           `position:"Query" name:"DBInstanceDescription"`
 	GdnInstanceName                string           `position:"Query" name:"GdnInstanceName"`
-	DBInstanceStorageType          string           `position:"Query" name:"DBInstanceStorageType"`
-	DedicatedHostGroupId           string           `position:"Query" name:"DedicatedHostGroupId"`
 	TddlBizType                    string           `position:"Query" name:"TddlBizType"`
 	Period                         string           `position:"Query" name:"Period"`
-	ResourceOwnerAccount           string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount                   string           `position:"Query" name:"OwnerAccount"`
 	OwnerId                        requests.Integer `position:"Query" name:"OwnerId"`
-	UsedTime                       string           `position:"Query" name:"UsedTime"`
 	DBInstanceClass                string           `position:"Query" name:"DBInstanceClass"`
 	VSwitchId                      string           `position:"Query" name:"VSwitchId"`
 	PrivateIpAddress               string           `position:"Query" name:"PrivateIpAddress"`
 	AutoRenew                      string           `position:"Query" name:"AutoRenew"`
-	VPCId                          string           `position:"Query" name:"VPCId"`
 	ZoneId                         string           `position:"Query" name:"ZoneId"`
+	InstanceNetworkType            string           `position:"Query" name:"InstanceNetworkType"`
+	ClientToken                    string           `position:"Query" name:"ClientToken"`
+	InstructionSetArch             string           `position:"Query" name:"InstructionSetArch"`
+	TddlRegionConfig               string           `position:"Query" name:"TddlRegionConfig"`
+	DBInstanceId                   string           `position:"Query" name:"DBInstanceId"`
+	DBInstanceStorageType          string           `position:"Query" name:"DBInstanceStorageType"`
+	DedicatedHostGroupId           string           `position:"Query" name:"DedicatedHostGroupId"`
+	AutoPay                        requests.Boolean `position:"Query" name:"AutoPay"`
+	ResourceOwnerAccount           string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount                   string           `position:"Query" name:"OwnerAccount"`
+	UsedTime                       string           `position:"Query" name:"UsedTime"`
+	BurstingEnabled                requests.Boolean `position:"Query" name:"BurstingEnabled"`
+	VPCId                          string           `position:"Query" name:"VPCId"`
 	Category                       string           `position:"Query" name:"Category"`
 	PayType                        string           `position:"Query" name:"PayType"`
-	InstanceNetworkType            string           `position:"Query" name:"InstanceNetworkType"`
+	BpeEnabled                     string           `position:"Query" name:"BpeEnabled"`
 }
 
 // CreateReadOnlyDBInstanceResponse is the response struct for api CreateReadOnlyDBInstance

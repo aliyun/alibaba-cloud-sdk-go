@@ -17,16 +17,17 @@ package rds
 
 // VSwitch is a nested struct in rds response
 type VSwitch struct {
-	AliUid      string `json:"AliUid" xml:"AliUid"`
-	Bid         string `json:"Bid" xml:"Bid"`
-	CidrBlock   string `json:"CidrBlock" xml:"CidrBlock"`
-	Description string `json:"Description" xml:"Description"`
-	GmtCreate   string `json:"GmtCreate" xml:"GmtCreate"`
-	GmtModified string `json:"GmtModified" xml:"GmtModified"`
-	IsDefault   bool   `json:"IsDefault" xml:"IsDefault"`
-	IzNo        string `json:"IzNo" xml:"IzNo"`
-	RegionNo    string `json:"RegionNo" xml:"RegionNo"`
-	Status      string `json:"Status" xml:"Status"`
-	VSwitchId   string `json:"VSwitchId" xml:"VSwitchId"`
-	VSwitchName string `json:"VSwitchName" xml:"VSwitchName"`
+	AliUid                  string `json:"AliUid" xml:"AliUid"`
+	Bid                     string `json:"Bid" xml:"Bid"`
+	CidrBlock               string `json:"CidrBlock" xml:"CidrBlock"`
+	Description             string `json:"Description" xml:"Description"`
+	GmtCreate               string `json:"GmtCreate" xml:"GmtCreate"`
+	GmtModified             string `json:"GmtModified" xml:"GmtModified"`
+	IsDefault               bool   `json:"IsDefault" xml:"IsDefault"`
+	IzNo                    string `json:"IzNo" xml:"IzNo"`
+	RegionNo                string `json:"RegionNo" xml:"RegionNo"`
+	Status                  string `json:"Status" xml:"Status"`
+	VSwitchId               string `json:"VSwitchId" xml:"VSwitchId"`
+	VSwitchName             string `json:"VSwitchName" xml:"VSwitchName"`
+	AvailableIpAddressCount string `json:"AvailableIpAddressCount" xml:"AvailableIpAddressCount"`
 }

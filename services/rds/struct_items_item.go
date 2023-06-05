@@ -23,6 +23,8 @@ type ItemsItem struct {
 	TaskTypeEn            string                `json:"TaskTypeEn" xml:"TaskTypeEn"`
 	Impact                string                `json:"Impact" xml:"Impact"`
 	InsComment            string                `json:"InsComment" xml:"InsComment"`
+	InstanceType          string                `json:"InstanceType" xml:"InstanceType"`
+	ReasonCode            string                `json:"ReasonCode" xml:"ReasonCode"`
 	Deadline              string                `json:"Deadline" xml:"Deadline"`
 	ImpactZh              string                `json:"ImpactZh" xml:"ImpactZh"`
 	DbType                string                `json:"DbType" xml:"DbType"`
@@ -30,17 +32,31 @@ type ItemsItem struct {
 	DbVersion             string                `json:"DbVersion" xml:"DbVersion"`
 	AllowCancel           string                `json:"AllowCancel" xml:"AllowCancel"`
 	CreatedTime           string                `json:"CreatedTime" xml:"CreatedTime"`
+	TaskId                string                `json:"TaskId" xml:"TaskId"`
+	RegionId              string                `json:"RegionId" xml:"RegionId"`
+	InstanceId            string                `json:"InstanceId" xml:"InstanceId"`
 	SwitchTime            string                `json:"SwitchTime" xml:"SwitchTime"`
+	Progress              float64               `json:"Progress" xml:"Progress"`
 	DBInstanceId          string                `json:"DBInstanceId" xml:"DBInstanceId"`
 	AllowChange           string                `json:"AllowChange" xml:"AllowChange"`
+	TaskDetail            string                `json:"TaskDetail" xml:"TaskDetail"`
 	ChangeLevel           string                `json:"ChangeLevel" xml:"ChangeLevel"`
+	Uid                   string                `json:"Uid" xml:"Uid"`
 	Id                    int                   `json:"Id" xml:"Id"`
+	CallerSource          string                `json:"CallerSource" xml:"CallerSource"`
 	Status                int                   `json:"Status" xml:"Status"`
+	Product               string                `json:"Product" xml:"Product"`
+	CallerUid             string                `json:"CallerUid" xml:"CallerUid"`
+	InstanceName          string                `json:"InstanceName" xml:"InstanceName"`
+	ActionInfo            string                `json:"ActionInfo" xml:"ActionInfo"`
 	ImpactEn              string                `json:"ImpactEn" xml:"ImpactEn"`
 	ChangeLevelEn         string                `json:"ChangeLevelEn" xml:"ChangeLevelEn"`
 	PrepareInterval       string                `json:"PrepareInterval" xml:"PrepareInterval"`
 	CurrentAVZ            string                `json:"CurrentAVZ" xml:"CurrentAVZ"`
 	StartTime             string                `json:"StartTime" xml:"StartTime"`
+	EndTime               string                `json:"EndTime" xml:"EndTime"`
+	RemainTime            int                   `json:"RemainTime" xml:"RemainTime"`
+	CurrentStepName       string                `json:"CurrentStepName" xml:"CurrentStepName"`
 	ChangeLevelZh         string                `json:"ChangeLevelZh" xml:"ChangeLevelZh"`
 	TaskType              string                `json:"TaskType" xml:"TaskType"`
 	TaskTypeZh            string                `json:"TaskTypeZh" xml:"TaskTypeZh"`

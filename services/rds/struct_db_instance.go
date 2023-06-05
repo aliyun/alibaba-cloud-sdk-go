@@ -19,6 +19,7 @@ package rds
 type DBInstance struct {
 	Engine                       string                                     `json:"Engine" xml:"Engine"`
 	VpcName                      string                                     `json:"VpcName" xml:"VpcName"`
+	BpeEnabled                   string                                     `json:"BpeEnabled" xml:"BpeEnabled"`
 	VpcCloudInstanceId           string                                     `json:"VpcCloudInstanceId" xml:"VpcCloudInstanceId"`
 	DBInstanceNetType            string                                     `json:"DBInstanceNetType" xml:"DBInstanceNetType"`
 	DBInstanceClass              string                                     `json:"DBInstanceClass" xml:"DBInstanceClass"`
@@ -33,6 +34,7 @@ type DBInstance struct {
 	TipsLevel                    int                                        `json:"TipsLevel" xml:"TipsLevel"`
 	EngineVersion                string                                     `json:"EngineVersion" xml:"EngineVersion"`
 	PayType                      string                                     `json:"PayType" xml:"PayType"`
+	BurstingEnabled              bool                                       `json:"BurstingEnabled" xml:"BurstingEnabled"`
 	Tips                         string                                     `json:"Tips" xml:"Tips"`
 	DedicatedHostZoneIdForSlave  string                                     `json:"DedicatedHostZoneIdForSlave" xml:"DedicatedHostZoneIdForSlave"`
 	TempDBInstanceId             string                                     `json:"TempDBInstanceId" xml:"TempDBInstanceId"`

@@ -93,15 +93,18 @@ type CloneDBInstanceRequest struct {
 	DBInstanceStorageType string                          `position:"Query" name:"DBInstanceStorageType"`
 	DedicatedHostGroupId  string                          `position:"Query" name:"DedicatedHostGroupId"`
 	RestoreTime           string                          `position:"Query" name:"RestoreTime"`
+	AutoPay               requests.Boolean                `position:"Query" name:"AutoPay"`
 	ServerlessConfig      CloneDBInstanceServerlessConfig `position:"Query" name:"ServerlessConfig"  type:"Struct"`
 	ResourceOwnerAccount  string                          `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount          string                          `position:"Query" name:"OwnerAccount"`
 	RestoreTable          string                          `position:"Query" name:"RestoreTable"`
 	UsedTime              requests.Integer                `position:"Query" name:"UsedTime"`
+	BurstingEnabled       requests.Boolean                `position:"Query" name:"BurstingEnabled"`
 	DbNames               string                          `position:"Query" name:"DbNames"`
 	VPCId                 string                          `position:"Query" name:"VPCId"`
 	Category              string                          `position:"Query" name:"Category"`
 	PayType               string                          `position:"Query" name:"PayType"`
+	BpeEnabled            string                          `position:"Query" name:"BpeEnabled"`
 }
 
 // CloneDBInstanceServerlessConfig is a repeated param struct in CloneDBInstanceRequest

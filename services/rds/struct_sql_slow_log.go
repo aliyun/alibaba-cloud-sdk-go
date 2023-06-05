@@ -36,6 +36,7 @@ type SQLSlowLog struct {
 	SQLServerTotalExecutionCounts int64  `json:"SQLServerTotalExecutionCounts" xml:"SQLServerTotalExecutionCounts"`
 	ReturnTotalRowCounts          int64  `json:"ReturnTotalRowCounts" xml:"ReturnTotalRowCounts"`
 	MaxLockTime                   int64  `json:"MaxLockTime" xml:"MaxLockTime"`
+	MaxLockTimeMS                 int64  `json:"MaxLockTimeMS" xml:"MaxLockTimeMS"`
 	DBName                        string `json:"DBName" xml:"DBName"`
 	MinRowsAffectedCounts         int64  `json:"MinRowsAffectedCounts" xml:"MinRowsAffectedCounts"`
 	TotalLogicalReadCounts        int64  `json:"TotalLogicalReadCounts" xml:"TotalLogicalReadCounts"`
@@ -49,6 +50,7 @@ type SQLSlowLog struct {
 	MinPhysicalReadCounts         int64  `json:"MinPhysicalReadCounts" xml:"MinPhysicalReadCounts"`
 	SlowLogId                     int64  `json:"SlowLogId" xml:"SlowLogId"`
 	MaxExecutionTime              int64  `json:"MaxExecutionTime" xml:"MaxExecutionTime"`
+	MaxExecutionTimeMS            int64  `json:"MaxExecutionTimeMS" xml:"MaxExecutionTimeMS"`
 	AvgExecutionTime              int64  `json:"AvgExecutionTime" xml:"AvgExecutionTime"`
 	SQLServerAvgExecutionTime     int64  `json:"SQLServerAvgExecutionTime" xml:"SQLServerAvgExecutionTime"`
 	MaxIOWriteCounts              int64  `json:"MaxIOWriteCounts" xml:"MaxIOWriteCounts"`
