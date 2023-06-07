@@ -72,6 +72,7 @@ func (client *Client) ListGroupsWithCallback(request *ListGroupsRequest, callbac
 type ListGroupsRequest struct {
 	*requests.RpcRequest
 	NamespaceSource string `position:"Query" name:"NamespaceSource"`
+	AppGroupName    string `position:"Query" name:"AppGroupName"`
 	Namespace       string `position:"Query" name:"Namespace"`
 }
 
@@ -91,7 +92,7 @@ func CreateListGroupsRequest() (request *ListGroupsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("schedulerx2", "2019-04-30", "ListGroups", "", "")
-	request.Method = requests.GET
+	request.Method = requests.POST
 	return
 }
 

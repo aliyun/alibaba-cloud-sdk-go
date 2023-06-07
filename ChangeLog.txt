@@ -1,3 +1,8 @@
+2023-06-07 Version: v1.62.359
+- Generated 2019-04-30 for `schedulerx2`.
+- Add Overview Query API.
+- Support Update Job With XAttrs.
+
 2023-06-05 Version: v1.62.358
 - Generated 2020-05-18 for `dataworks-public`.
 

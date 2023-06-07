@@ -88,6 +88,7 @@ type UpdateJobRequest struct {
 	Name                string                  `position:"Body" name:"Name"`
 	TimeType            requests.Integer        `position:"Body" name:"TimeType"`
 	Parameters          string                  `position:"Body" name:"Parameters"`
+	Template            string                  `position:"Body" name:"Template"`
 	NamespaceSource     string                  `position:"Body" name:"NamespaceSource"`
 	Timezone            string                  `position:"Body" name:"Timezone"`
 	Description         string                  `position:"Body" name:"Description"`
@@ -105,6 +106,7 @@ type UpdateJobRequest struct {
 	QueueSize           requests.Integer        `position:"Body" name:"QueueSize"`
 	ClassName           string                  `position:"Body" name:"ClassName"`
 	Namespace           string                  `position:"Body" name:"Namespace"`
+	XAttrs              string                  `position:"Body" name:"XAttrs"`
 	MaxConcurrency      requests.Integer        `position:"Body" name:"MaxConcurrency"`
 }
 
