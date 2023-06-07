@@ -1,3 +1,7 @@
+2023-06-07 Version: v1.62.360
+- Generated 2020-06-01 for `SWAS-OPEN`.
+- Add new apis.
+
 2023-06-07 Version: v1.62.359
 - Generated 2019-04-30 for `schedulerx2`.
 - Add Overview Query API.

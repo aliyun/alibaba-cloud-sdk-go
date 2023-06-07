@@ -26,4 +26,6 @@ type Snapshot struct {
 	SnapshotId     string `json:"SnapshotId" xml:"SnapshotId"`
 	SourceDiskType string `json:"SourceDiskType" xml:"SourceDiskType"`
 	RegionId       string `json:"RegionId" xml:"RegionId"`
+	InstanceId     string `json:"InstanceId" xml:"InstanceId"`
+	RollbackTime   string `json:"RollbackTime" xml:"RollbackTime"`
 }

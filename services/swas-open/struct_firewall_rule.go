@@ -21,4 +21,6 @@ type FirewallRule struct {
 	Port         string `json:"Port" xml:"Port"`
 	RuleId       string `json:"RuleId" xml:"RuleId"`
 	RuleProtocol string `json:"RuleProtocol" xml:"RuleProtocol"`
+	Policy       string `json:"Policy" xml:"Policy"`
+	SourceCidrIp string `json:"SourceCidrIp" xml:"SourceCidrIp"`
 }

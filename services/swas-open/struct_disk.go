@@ -28,4 +28,6 @@ type Disk struct {
 	DiskId         string `json:"DiskId" xml:"DiskId"`
 	InstanceId     string `json:"InstanceId" xml:"InstanceId"`
 	RegionId       string `json:"RegionId" xml:"RegionId"`
+	Remark         string `json:"Remark" xml:"Remark"`
+	InstanceName   string `json:"InstanceName" xml:"InstanceName"`
 }

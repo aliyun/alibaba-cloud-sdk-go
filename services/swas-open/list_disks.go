@@ -71,6 +71,7 @@ func (client *Client) ListDisksWithCallback(request *ListDisksRequest, callback 
 // ListDisksRequest is the request struct for api ListDisks
 type ListDisksRequest struct {
 	*requests.RpcRequest
+	DiskType   string           `position:"Query" name:"DiskType"`
 	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
 	InstanceId string           `position:"Query" name:"InstanceId"`
 	PageSize   requests.Integer `position:"Query" name:"PageSize"`
