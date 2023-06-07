@@ -32,4 +32,12 @@ func TestRoleArnCredential(t *testing.T) {
 	assert.Equal(t, "test", p.Policy)
 	assert.Equal(t, "roleSessionName", p.RoleSessionName)
 	assert.Equal(t, 3600, p.RoleSessionExpiration)
+	e := NewRamRoleArnWithPolicyAndExternalIdCredential("accessKeyId", "accessKeySecret", "roleArn", "roleSessionName", "test", "externalId", 3600)
+	assert.Equal(t, "accessKeyId", e.AccessKeyId)
+	assert.Equal(t, "accessKeySecret", e.AccessKeySecret)
+	assert.Equal(t, "roleArn", e.RoleArn)
+	assert.Equal(t, "test", e.Policy)
+	assert.Equal(t, "roleSessionName", e.RoleSessionName)
+	assert.Equal(t, 3600, e.RoleSessionExpiration)
+	assert.Equal(t, "externalId", e.ExternalId)
 }
