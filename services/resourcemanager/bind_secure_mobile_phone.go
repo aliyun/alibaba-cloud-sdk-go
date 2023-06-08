@@ -71,10 +71,9 @@ func (client *Client) BindSecureMobilePhoneWithCallback(request *BindSecureMobil
 // BindSecureMobilePhoneRequest is the request struct for api BindSecureMobilePhone
 type BindSecureMobilePhoneRequest struct {
 	*requests.RpcRequest
-	InheritSecureMobilePhoneFrom string `position:"Query" name:"InheritSecureMobilePhoneFrom"`
-	SecureMobilePhone            string `position:"Query" name:"SecureMobilePhone"`
-	AccountId                    string `position:"Query" name:"AccountId"`
-	VerificationCode             string `position:"Query" name:"VerificationCode"`
+	SecureMobilePhone string `position:"Query" name:"SecureMobilePhone"`
+	AccountId         string `position:"Query" name:"AccountId"`
+	VerificationCode  string `position:"Query" name:"VerificationCode"`
 }
 
 // BindSecureMobilePhoneResponse is the response struct for api BindSecureMobilePhone
@@ -88,7 +87,7 @@ func CreateBindSecureMobilePhoneRequest() (request *BindSecureMobilePhoneRequest
 	request = &BindSecureMobilePhoneRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ResourceManager", "2020-03-31", "BindSecureMobilePhone", "", "")
+	request.InitWithApiInfo("ResourceManager", "2020-03-31", "BindSecureMobilePhone", "resourcemanager", "openAPI")
 	request.Method = requests.POST
 	return
 }

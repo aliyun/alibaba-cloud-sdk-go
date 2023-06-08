@@ -85,7 +85,7 @@ func CreateInitResourceDirectoryRequest() (request *InitResourceDirectoryRequest
 	request = &InitResourceDirectoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ResourceManager", "2020-03-31", "InitResourceDirectory", "", "")
+	request.InitWithApiInfo("ResourceManager", "2020-03-31", "InitResourceDirectory", "resourcemanager", "openAPI")
 	request.Method = requests.POST
 	return
 }

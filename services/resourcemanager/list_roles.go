@@ -91,7 +91,7 @@ func CreateListRolesRequest() (request *ListRolesRequest) {
 	request = &ListRolesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ResourceManager", "2020-03-31", "ListRoles", "", "")
+	request.InitWithApiInfo("ResourceManager", "2020-03-31", "ListRoles", "resourcemanager", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -89,7 +89,7 @@ func CreateUpdateRoleRequest() (request *UpdateRoleRequest) {
 	request = &UpdateRoleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ResourceManager", "2020-03-31", "UpdateRole", "", "")
+	request.InitWithApiInfo("ResourceManager", "2020-03-31", "UpdateRole", "resourcemanager", "openAPI")
 	request.Method = requests.POST
 	return
 }

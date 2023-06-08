@@ -95,7 +95,7 @@ func CreateMoveResourcesRequest() (request *MoveResourcesRequest) {
 	request = &MoveResourcesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ResourceManager", "2020-03-31", "MoveResources", "", "")
+	request.InitWithApiInfo("ResourceManager", "2020-03-31", "MoveResources", "resourcemanager", "openAPI")
 	request.Method = requests.POST
 	return
 }

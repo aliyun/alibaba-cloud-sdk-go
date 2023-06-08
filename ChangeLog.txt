@@ -1,3 +1,7 @@
+2023-06-08 Version: v1.62.362
+- Generated 2020-03-31 for `ResourceManager`.
+- Modify endpoint for resourcemanager.
+
 2023-06-08 Version: v1.62.361
 - Generated 2019-09-01 for `OceanBasePro`.
 - Update SDK.

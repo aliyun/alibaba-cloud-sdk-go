@@ -85,7 +85,7 @@ func CreateGetControlPolicyEnablementStatusRequest() (request *GetControlPolicyE
 	request = &GetControlPolicyEnablementStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ResourceManager", "2020-03-31", "GetControlPolicyEnablementStatus", "", "")
+	request.InitWithApiInfo("ResourceManager", "2020-03-31", "GetControlPolicyEnablementStatus", "resourcemanager", "openAPI")
 	request.Method = requests.POST
 	return
 }

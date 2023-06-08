@@ -87,7 +87,7 @@ func CreateUpdateFolderRequest() (request *UpdateFolderRequest) {
 	request = &UpdateFolderRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ResourceManager", "2020-03-31", "UpdateFolder", "", "")
+	request.InitWithApiInfo("ResourceManager", "2020-03-31", "UpdateFolder", "resourcemanager", "openAPI")
 	request.Method = requests.POST
 	return
 }

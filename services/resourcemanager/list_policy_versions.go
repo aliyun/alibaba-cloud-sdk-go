@@ -87,7 +87,7 @@ func CreateListPolicyVersionsRequest() (request *ListPolicyVersionsRequest) {
 	request = &ListPolicyVersionsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ResourceManager", "2020-03-31", "ListPolicyVersions", "", "")
+	request.InitWithApiInfo("ResourceManager", "2020-03-31", "ListPolicyVersions", "resourcemanager", "openAPI")
 	request.Method = requests.POST
 	return
 }

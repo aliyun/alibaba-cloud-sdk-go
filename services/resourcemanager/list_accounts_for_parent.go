@@ -100,7 +100,7 @@ func CreateListAccountsForParentRequest() (request *ListAccountsForParentRequest
 	request = &ListAccountsForParentRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ResourceManager", "2020-03-31", "ListAccountsForParent", "", "")
+	request.InitWithApiInfo("ResourceManager", "2020-03-31", "ListAccountsForParent", "resourcemanager", "openAPI")
 	request.Method = requests.POST
 	return
 }

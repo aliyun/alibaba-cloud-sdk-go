@@ -71,15 +71,12 @@ func (client *Client) CreateResourceAccountWithCallback(request *CreateResourceA
 // CreateResourceAccountRequest is the request struct for api CreateResourceAccount
 type CreateResourceAccountRequest struct {
 	*requests.RpcRequest
-	Tag                          *[]CreateResourceAccountTag `position:"Query" name:"Tag"  type:"Repeated"`
-	VerificationCode             string                      `position:"Query" name:"VerificationCode"`
-	AccountNamePrefix            string                      `position:"Query" name:"AccountNamePrefix"`
-	InheritSecureMobilePhoneFrom string                      `position:"Query" name:"InheritSecureMobilePhoneFrom"`
-	SecureMobilePhone            string                      `position:"Query" name:"SecureMobilePhone"`
-	ResellAccountType            string                      `position:"Query" name:"ResellAccountType"`
-	ParentFolderId               string                      `position:"Query" name:"ParentFolderId"`
-	DisplayName                  string                      `position:"Query" name:"DisplayName"`
-	PayerAccountId               string                      `position:"Query" name:"PayerAccountId"`
+	Tag               *[]CreateResourceAccountTag `position:"Query" name:"Tag"  type:"Repeated"`
+	AccountNamePrefix string                      `position:"Query" name:"AccountNamePrefix"`
+	ResellAccountType string                      `position:"Query" name:"ResellAccountType"`
+	ParentFolderId    string                      `position:"Query" name:"ParentFolderId"`
+	DisplayName       string                      `position:"Query" name:"DisplayName"`
+	PayerAccountId    string                      `position:"Query" name:"PayerAccountId"`
 }
 
 // CreateResourceAccountTag is a repeated param struct in CreateResourceAccountRequest
@@ -100,7 +97,7 @@ func CreateCreateResourceAccountRequest() (request *CreateResourceAccountRequest
 	request = &CreateResourceAccountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ResourceManager", "2020-03-31", "CreateResourceAccount", "", "")
+	request.InitWithApiInfo("ResourceManager", "2020-03-31", "CreateResourceAccount", "resourcemanager", "openAPI")
 	request.Method = requests.POST
 	return
 }

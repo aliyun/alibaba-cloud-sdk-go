@@ -86,7 +86,7 @@ func CreateListAncestorsRequest() (request *ListAncestorsRequest) {
 	request = &ListAncestorsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ResourceManager", "2020-03-31", "ListAncestors", "", "")
+	request.InitWithApiInfo("ResourceManager", "2020-03-31", "ListAncestors", "resourcemanager", "openAPI")
 	request.Method = requests.POST
 	return
 }

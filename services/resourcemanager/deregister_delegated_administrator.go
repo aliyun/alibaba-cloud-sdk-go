@@ -86,7 +86,7 @@ func CreateDeregisterDelegatedAdministratorRequest() (request *DeregisterDelegat
 	request = &DeregisterDelegatedAdministratorRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ResourceManager", "2020-03-31", "DeregisterDelegatedAdministrator", "", "")
+	request.InitWithApiInfo("ResourceManager", "2020-03-31", "DeregisterDelegatedAdministrator", "resourcemanager", "openAPI")
 	request.Method = requests.POST
 	return
 }

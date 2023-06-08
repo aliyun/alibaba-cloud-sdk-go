@@ -104,7 +104,7 @@ func CreateListResourceGroupsRequest() (request *ListResourceGroupsRequest) {
 	request = &ListResourceGroupsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ResourceManager", "2020-03-31", "ListResourceGroups", "", "")
+	request.InitWithApiInfo("ResourceManager", "2020-03-31", "ListResourceGroups", "resourcemanager", "openAPI")
 	request.Method = requests.POST
 	return
 }
