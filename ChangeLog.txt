@@ -1,3 +1,7 @@
+2023-06-08 Version: v1.62.361
+- Generated 2019-09-01 for `OceanBasePro`.
+- Update SDK.
+
 2023-06-07 Version: v1.62.360
 - Generated 2020-06-01 for `SWAS-OPEN`.
 - Add new apis.

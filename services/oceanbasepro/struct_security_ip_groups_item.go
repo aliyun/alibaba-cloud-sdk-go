@@ -17,6 +17,8 @@ package oceanbasepro
 
 // SecurityIpGroupsItem is a nested struct in oceanbasepro response
 type SecurityIpGroupsItem struct {
-	SecurityIps         string `json:"SecurityIps" xml:"SecurityIps"`
 	SecurityIpGroupName string `json:"SecurityIpGroupName" xml:"SecurityIpGroupName"`
+	SecurityIps         string `json:"SecurityIps" xml:"SecurityIps"`
+	SecurityIpGroupType string `json:"SecurityIpGroupType" xml:"SecurityIpGroupType"`
+	TenantId            string `json:"TenantId" xml:"TenantId"`
 }

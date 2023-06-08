@@ -36,6 +36,7 @@ type Data struct {
 	DeployMode             string             `json:"DeployMode" xml:"DeployMode"`
 	NodeIp                 string             `json:"NodeIp" xml:"NodeIp"`
 	OutlineData            string             `json:"OutlineData" xml:"OutlineData"`
+	Message                string             `json:"Message" xml:"Message"`
 	QuerySQL               string             `json:"QuerySQL" xml:"QuerySQL"`
 	ProjectOwner           string             `json:"ProjectOwner" xml:"ProjectOwner"`
 	PayType                string             `json:"PayType" xml:"PayType"`
@@ -99,6 +100,7 @@ type Data struct {
 	LogicalRead            int64              `json:"LogicalRead" xml:"LogicalRead"`
 	SQLText                string             `json:"SQLText" xml:"SQLText"`
 	UserType               string             `json:"UserType" xml:"UserType"`
+	Success                bool               `json:"Success" xml:"Success"`
 	Suggestion             string             `json:"Suggestion" xml:"Suggestion"`
 	DataSize               string             `json:"DataSize" xml:"DataSize"`
 	AffectedRows           int64              `json:"AffectedRows" xml:"AffectedRows"`

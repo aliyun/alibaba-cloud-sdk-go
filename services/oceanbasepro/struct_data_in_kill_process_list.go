@@ -17,5 +17,5 @@ package oceanbasepro
 
 // DataInKillProcessList is a nested struct in oceanbasepro response
 type DataInKillProcessList struct {
-	DataItem []DataItem `json:"Data" xml:"Data"`
+	DataItem []DataItemInKillProcessList `json:"Data" xml:"Data"`
 }

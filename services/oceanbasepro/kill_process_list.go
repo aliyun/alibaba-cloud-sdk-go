@@ -79,8 +79,8 @@ type KillProcessListRequest struct {
 // KillProcessListResponse is the response struct for api KillProcessList
 type KillProcessListResponse struct {
 	*responses.BaseResponse
-	RequestId string     `json:"RequestId" xml:"RequestId"`
-	Data      []DataItem `json:"Data" xml:"Data"`
+	RequestId string                      `json:"RequestId" xml:"RequestId"`
+	Data      []DataItemInKillProcessList `json:"Data" xml:"Data"`
 }
 
 // CreateKillProcessListRequest creates a request to invoke KillProcessList API
