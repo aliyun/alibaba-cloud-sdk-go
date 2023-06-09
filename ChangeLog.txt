@@ -1,3 +1,7 @@
+2023-06-09 Version: v1.62.367
+- Generated 2022-12-01 for `ResourceCenter`.
+- Supported GetResourceCounts API.
+
 2023-06-09 Version: v1.62.366
 - Generated 2020-04-01 for `eventbridge`.
 - Add listTargets api.
