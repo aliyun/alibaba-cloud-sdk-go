@@ -1,3 +1,16 @@
+2023-06-09 Version: v1.62.363
+- Generated 2016-04-28 for `Vpc`.
+- RegionId Field is required.
+- Supported Zone for AllocateEipSegmentAddress.
+- Supported ReservationData for DescribeIpv6Addresses.
+- Add ErrorCode.
+- Supported ClientIp Ram check For AddPublicIpAddressPoolCidrBlock.
+- Supported InstanceId and IpAddress For AllocateEipAddress.
+- Support error code for the port range of SSL VPN server.
+- Modify api timeout.
+- Support Ha Vpn.
+- Add error code.
+
 2023-06-08 Version: v1.62.362
 - Generated 2020-03-31 for `ResourceManager`.
 - Modify endpoint for resourcemanager.
