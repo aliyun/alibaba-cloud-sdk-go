@@ -90,6 +90,8 @@ type SubmitTextTo2DAvatarVideoTaskVideoInfo struct {
 	IsAlpha            string `name:"IsAlpha"`
 	BackgroundImageUrl string `name:"BackgroundImageUrl"`
 	IsSubtitles        string `name:"IsSubtitles"`
+	Resolution         string `name:"Resolution"`
+	AlphaFormat        string `name:"AlphaFormat"`
 }
 
 // SubmitTextTo2DAvatarVideoTaskAudioInfo is a repeated param struct in SubmitTextTo2DAvatarVideoTaskRequest

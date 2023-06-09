@@ -17,20 +17,32 @@ package avatar
 
 // Data is a nested struct in avatar response
 type Data struct {
-	GrabType   string     `json:"GrabType" xml:"GrabType"`
-	Token      string     `json:"Token" xml:"Token"`
-	TaskUuid   string     `json:"TaskUuid" xml:"TaskUuid"`
-	TenantId   int64      `json:"TenantId" xml:"TenantId"`
-	IsCancel   bool       `json:"IsCancel" xml:"IsCancel"`
-	Process    string     `json:"Process" xml:"Process"`
-	SessionId  string     `json:"SessionId" xml:"SessionId"`
-	FailReason string     `json:"FailReason" xml:"FailReason"`
-	ActionType string     `json:"ActionType" xml:"ActionType"`
-	InstanceId string     `json:"InstanceId" xml:"InstanceId"`
-	RequestId  string     `json:"RequestId" xml:"RequestId"`
-	OutputText string     `json:"OutputText" xml:"OutputText"`
-	Status     string     `json:"Status" xml:"Status"`
-	Type       string     `json:"Type" xml:"Type"`
-	TaskResult TaskResult `json:"TaskResult" xml:"TaskResult"`
-	Channel    Channel    `json:"Channel" xml:"Channel"`
+	Name                 string               `json:"Name" xml:"Name"`
+	TotalPage            int                  `json:"TotalPage" xml:"TotalPage"`
+	TaskUuid             string               `json:"TaskUuid" xml:"TaskUuid"`
+	TenantId             int64                `json:"TenantId" xml:"TenantId"`
+	Process              string               `json:"Process" xml:"Process"`
+	SessionId            string               `json:"SessionId" xml:"SessionId"`
+	FailReason           string               `json:"FailReason" xml:"FailReason"`
+	PageSize             int                  `json:"PageSize" xml:"PageSize"`
+	PageNo               int                  `json:"PageNo" xml:"PageNo"`
+	InstanceId           string               `json:"InstanceId" xml:"InstanceId"`
+	TotalCount           int                  `json:"TotalCount" xml:"TotalCount"`
+	Description          string               `json:"Description" xml:"Description"`
+	Type                 string               `json:"Type" xml:"Type"`
+	GrabType             string               `json:"GrabType" xml:"GrabType"`
+	Token                string               `json:"Token" xml:"Token"`
+	ModelType            string               `json:"ModelType" xml:"ModelType"`
+	IsCancel             bool                 `json:"IsCancel" xml:"IsCancel"`
+	Image                string               `json:"Image" xml:"Image"`
+	AvatarType           string               `json:"AvatarType" xml:"AvatarType"`
+	ActionType           string               `json:"ActionType" xml:"ActionType"`
+	RequestId            string               `json:"RequestId" xml:"RequestId"`
+	OutputText           string               `json:"OutputText" xml:"OutputText"`
+	Portrait             string               `json:"Portrait" xml:"Portrait"`
+	Status               string               `json:"Status" xml:"Status"`
+	TaskResult           TaskResult           `json:"TaskResult" xml:"TaskResult"`
+	SupportedResolutions SupportedResolutions `json:"SupportedResolutions" xml:"SupportedResolutions"`
+	Channel              Channel              `json:"Channel" xml:"Channel"`
+	List                 []ListItem           `json:"List" xml:"List"`
 }

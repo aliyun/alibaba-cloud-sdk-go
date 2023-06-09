@@ -1,3 +1,7 @@
+2023-06-09 Version: v1.62.364
+- Generated 2022-01-30 for `avatar`.
+- SubmitAudioTo3DAvatarVideoTask
+
 2023-06-09 Version: v1.62.363
 - Generated 2016-04-28 for `Vpc`.
 - RegionId Field is required.
