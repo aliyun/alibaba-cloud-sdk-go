@@ -18,7 +18,9 @@ package eventbridge
 // TargetsItem is a nested struct in eventbridge response
 type TargetsItem struct {
 	Endpoint          string                 `json:"Endpoint" xml:"Endpoint"`
+	EventBusName      string                 `json:"EventBusName" xml:"EventBusName"`
 	PushSelector      string                 `json:"PushSelector" xml:"PushSelector"`
+	RuleName          string                 `json:"RuleName" xml:"RuleName"`
 	DetailMap         map[string]interface{} `json:"DetailMap" xml:"DetailMap"`
 	Id                string                 `json:"Id" xml:"Id"`
 	PushRetryStrategy string                 `json:"PushRetryStrategy" xml:"PushRetryStrategy"`

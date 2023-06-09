@@ -71,7 +71,9 @@ func (client *Client) ListEventStreamingsWithCallback(request *ListEventStreamin
 // ListEventStreamingsRequest is the request struct for api ListEventStreamings
 type ListEventStreamingsRequest struct {
 	*requests.RpcRequest
+	SourceArn  string           `position:"Body" name:"SourceArn"`
 	SinkType   string           `position:"Body" name:"SinkType"`
+	SinkArn    string           `position:"Body" name:"SinkArn"`
 	NextToken  string           `position:"Body" name:"NextToken"`
 	Limit      requests.Integer `position:"Body" name:"Limit"`
 	SourceType string           `position:"Body" name:"SourceType"`
