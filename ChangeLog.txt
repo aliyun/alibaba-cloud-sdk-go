@@ -1,3 +1,7 @@
+2023-06-10 Version: v1.62.368
+- Generated 2015-11-01 for `Market`.
+- Add DistributionProducts API.
+
 2023-06-09 Version: v1.62.367
 - Generated 2022-12-01 for `ResourceCenter`.
 - Supported GetResourceCounts API.
