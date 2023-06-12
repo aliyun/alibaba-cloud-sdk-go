@@ -17,17 +17,19 @@ package polardb
 
 // Backup is a nested struct in polardb response
 type Backup struct {
-	IsAvail         string `json:"IsAvail" xml:"IsAvail"`
-	BackupMode      string `json:"BackupMode" xml:"BackupMode"`
-	BackupSetSize   string `json:"BackupSetSize" xml:"BackupSetSize"`
-	BackupEndTime   string `json:"BackupEndTime" xml:"BackupEndTime"`
-	BackupMethod    string `json:"BackupMethod" xml:"BackupMethod"`
-	BackupType      string `json:"BackupType" xml:"BackupType"`
-	DBClusterId     string `json:"DBClusterId" xml:"DBClusterId"`
-	StoreStatus     string `json:"StoreStatus" xml:"StoreStatus"`
-	BackupStatus    string `json:"BackupStatus" xml:"BackupStatus"`
-	BackupStartTime string `json:"BackupStartTime" xml:"BackupStartTime"`
-	ConsistentTime  string `json:"ConsistentTime" xml:"ConsistentTime"`
-	BackupsLevel    string `json:"BackupsLevel" xml:"BackupsLevel"`
-	BackupId        string `json:"BackupId" xml:"BackupId"`
+	ExpectExpireTime string `json:"ExpectExpireTime" xml:"ExpectExpireTime"`
+	IsAvail          string `json:"IsAvail" xml:"IsAvail"`
+	BackupMode       string `json:"BackupMode" xml:"BackupMode"`
+	BackupSetSize    string `json:"BackupSetSize" xml:"BackupSetSize"`
+	BackupEndTime    string `json:"BackupEndTime" xml:"BackupEndTime"`
+	BackupMethod     string `json:"BackupMethod" xml:"BackupMethod"`
+	BackupType       string `json:"BackupType" xml:"BackupType"`
+	DBClusterId      string `json:"DBClusterId" xml:"DBClusterId"`
+	ExpectExpireType string `json:"ExpectExpireType" xml:"ExpectExpireType"`
+	StoreStatus      string `json:"StoreStatus" xml:"StoreStatus"`
+	BackupStatus     string `json:"BackupStatus" xml:"BackupStatus"`
+	BackupStartTime  string `json:"BackupStartTime" xml:"BackupStartTime"`
+	ConsistentTime   string `json:"ConsistentTime" xml:"ConsistentTime"`
+	BackupsLevel     string `json:"BackupsLevel" xml:"BackupsLevel"`
+	BackupId         string `json:"BackupId" xml:"BackupId"`
 }

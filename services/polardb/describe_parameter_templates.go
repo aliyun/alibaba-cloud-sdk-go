@@ -83,12 +83,12 @@ type DescribeParameterTemplatesRequest struct {
 // DescribeParameterTemplatesResponse is the response struct for api DescribeParameterTemplates
 type DescribeParameterTemplatesResponse struct {
 	*responses.BaseResponse
-	ParameterCount string     `json:"ParameterCount" xml:"ParameterCount"`
-	DBVersion      string     `json:"DBVersion" xml:"DBVersion"`
-	RequestId      string     `json:"RequestId" xml:"RequestId"`
-	DBType         string     `json:"DBType" xml:"DBType"`
-	Engine         string     `json:"Engine" xml:"Engine"`
-	Parameters     Parameters `json:"Parameters" xml:"Parameters"`
+	ParameterCount string                                 `json:"ParameterCount" xml:"ParameterCount"`
+	DBVersion      string                                 `json:"DBVersion" xml:"DBVersion"`
+	RequestId      string                                 `json:"RequestId" xml:"RequestId"`
+	DBType         string                                 `json:"DBType" xml:"DBType"`
+	Engine         string                                 `json:"Engine" xml:"Engine"`
+	Parameters     ParametersInDescribeParameterTemplates `json:"Parameters" xml:"Parameters"`
 }
 
 // CreateDescribeParameterTemplatesRequest creates a request to invoke DescribeParameterTemplates API
