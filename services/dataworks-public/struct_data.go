@@ -217,12 +217,12 @@ type Data struct {
 	Projects             []ProjectsItem         `json:"Projects" xml:"Projects"`
 	EntityList           []EntityListItem       `json:"EntityList" xml:"EntityList"`
 	Folders              []FoldersItem          `json:"Folders" xml:"Folders"`
+	DataEntityList       []DataEntityListItem   `json:"DataEntityList" xml:"DataEntityList"`
 	ApiAuthorizedList    []ApiAuthorized        `json:"ApiAuthorizedList" xml:"ApiAuthorizedList"`
 	Dags                 []Dag                  `json:"Dags" xml:"Dags"`
 	ApiAuthorizationList []ApiAuthorization     `json:"ApiAuthorizationList" xml:"ApiAuthorizationList"`
 	OverTimeSettings     []OverTimeSetting      `json:"OverTimeSettings" xml:"OverTimeSettings"`
 	Robots               []RobotsItem           `json:"Robots" xml:"Robots"`
-	DataEntityList       []DataEntityListItem   `json:"DataEntityList" xml:"DataEntityList"`
 	AlertSettings        []AlertSetting         `json:"AlertSettings" xml:"AlertSettings"`
 	BizProcesses         []BizProcessesItem     `json:"BizProcesses" xml:"BizProcesses"`
 	Influences           []InfluencesItem       `json:"Influences" xml:"Influences"`
