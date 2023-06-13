@@ -71,11 +71,19 @@ func (client *Client) SendMessageWithCallback(request *SendMessageRequest, callb
 // SendMessageRequest is the request struct for api SendMessage
 type SendMessageRequest struct {
 	*requests.RpcRequest
-	Feedback    requests.Boolean       `position:"Query" name:"Feedback"`
-	TextRequest string                 `position:"Query" name:"TextRequest"`
-	TenantId    requests.Integer       `position:"Query" name:"TenantId"`
-	VAMLRequest SendMessageVAMLRequest `position:"Query" name:"VAMLRequest"  type:"Struct"`
-	SessionId   string                 `position:"Query" name:"SessionId"`
+	Feedback        requests.Boolean           `position:"Query" name:"Feedback"`
+	StreamExtension SendMessageStreamExtension `position:"Query" name:"StreamExtension"  type:"Struct"`
+	TextRequest     string                     `position:"Query" name:"TextRequest"`
+	TenantId        requests.Integer           `position:"Query" name:"TenantId"`
+	VAMLRequest     SendMessageVAMLRequest     `position:"Query" name:"VAMLRequest"  type:"Struct"`
+	SessionId       string                     `position:"Query" name:"SessionId"`
+}
+
+// SendMessageStreamExtension is a repeated param struct in SendMessageRequest
+type SendMessageStreamExtension struct {
+	IsStream string `name:"IsStream"`
+	Index    string `name:"Index"`
+	Position string `name:"Position"`
 }
 
 // SendMessageVAMLRequest is a repeated param struct in SendMessageRequest
