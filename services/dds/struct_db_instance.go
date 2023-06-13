@@ -29,6 +29,7 @@ type DBInstance struct {
 	DBInstanceId                string                                        `json:"DBInstanceId" xml:"DBInstanceId"`
 	NetworkType                 string                                        `json:"NetworkType" xml:"NetworkType"`
 	ReplicationFactor           string                                        `json:"ReplicationFactor" xml:"ReplicationFactor"`
+	EncryptionKey               string                                        `json:"EncryptionKey" xml:"EncryptionKey"`
 	MaxIOPS                     int                                           `json:"MaxIOPS" xml:"MaxIOPS"`
 	DBInstanceReleaseProtection bool                                          `json:"DBInstanceReleaseProtection" xml:"DBInstanceReleaseProtection"`
 	ReplacateId                 string                                        `json:"ReplacateId" xml:"ReplacateId"`
@@ -38,6 +39,7 @@ type DBInstance struct {
 	MaintainStartTime           string                                        `json:"MaintainStartTime" xml:"MaintainStartTime"`
 	DBInstanceStorage           int                                           `json:"DBInstanceStorage" xml:"DBInstanceStorage"`
 	SecondaryZoneId             string                                        `json:"SecondaryZoneId" xml:"SecondaryZoneId"`
+	Encrypted                   bool                                          `json:"Encrypted" xml:"Encrypted"`
 	CurrentKernelVersion        string                                        `json:"CurrentKernelVersion" xml:"CurrentKernelVersion"`
 	StorageType                 string                                        `json:"StorageType" xml:"StorageType"`
 	ZoneId                      string                                        `json:"ZoneId" xml:"ZoneId"`

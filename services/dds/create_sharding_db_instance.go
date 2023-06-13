@@ -82,6 +82,7 @@ type CreateShardingDBInstanceRequest struct {
 	DBInstanceDescription  string                                  `position:"Query" name:"DBInstanceDescription"`
 	GlobalSecurityGroupIds string                                  `position:"Query" name:"GlobalSecurityGroupIds"`
 	Period                 requests.Integer                        `position:"Query" name:"Period"`
+	EncryptionKey          string                                  `position:"Query" name:"EncryptionKey"`
 	ConfigServer           *[]CreateShardingDBInstanceConfigServer `position:"Query" name:"ConfigServer"  type:"Repeated"`
 	OwnerId                requests.Integer                        `position:"Query" name:"OwnerId"`
 	SecurityIPList         string                                  `position:"Query" name:"SecurityIPList"`
@@ -98,6 +99,7 @@ type CreateShardingDBInstanceRequest struct {
 	SrcDBInstanceId        string                                  `position:"Query" name:"SrcDBInstanceId"`
 	OwnerAccount           string                                  `position:"Query" name:"OwnerAccount"`
 	AccountPassword        string                                  `position:"Query" name:"AccountPassword"`
+	Encrypted              requests.Boolean                        `position:"Query" name:"Encrypted"`
 	VpcId                  string                                  `position:"Query" name:"VpcId"`
 	ProtocolType           string                                  `position:"Query" name:"ProtocolType"`
 	ChargeType             string                                  `position:"Query" name:"ChargeType"`
