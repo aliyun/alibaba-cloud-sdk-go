@@ -1,3 +1,7 @@
+2023-06-13 Version: v1.62.375
+- Generated 2014-05-26 for `Ecs`.
+- CreateAutoProvisioningGroup support NetworkInterface.
+
 2023-06-13 Version: v1.62.374
 - Generated 2014-08-15 for `Rds`.
 - Support More Open Api.
