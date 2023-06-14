@@ -1,3 +1,7 @@
+2023-06-14 Version: v1.62.376
+- Generated 2017-08-01 for `polardb`.
+- Support new feature.
+
 2023-06-13 Version: v1.62.375
 - Generated 2014-05-26 for `Ecs`.
 - CreateAutoProvisioningGroup support NetworkInterface.
