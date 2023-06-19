@@ -22,6 +22,7 @@ type NetLink struct {
 	Name        string   `json:"Name" xml:"Name"`
 	Description string   `json:"Description" xml:"Description"`
 	Status      string   `json:"Status" xml:"Status"`
+	Type        string   `json:"Type" xml:"Type"`
 	APN         string   `json:"APN" xml:"APN"`
 	ISP         string   `json:"ISP" xml:"ISP"`
 	VpcId       string   `json:"VpcId" xml:"VpcId"`

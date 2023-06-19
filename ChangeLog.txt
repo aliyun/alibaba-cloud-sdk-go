@@ -1,3 +1,7 @@
+2023-06-19 Version: v1.62.378
+- Generated 2022-03-14 for `CC5G`.
+- Cc5g.
+
 2023-06-14 Version: v1.62.377
 - Generated 2018-08-28 for `Tag`.
 - Add EnablePolicy APIs.
