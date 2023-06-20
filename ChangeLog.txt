@@ -1,3 +1,8 @@
+2023-06-20 Version: v1.62.381
+- Generated 2022-01-01 for `quickbi-public`.
+- Add QueryCubePerformance, QueryComponentPerformance, QueryCubeOptimization, and QueryReportPerformance APIs.
+- Update error code description.
+
 2023-06-20 Version: v1.62.380
 - Generated 2021-09-31 for `BPStudio`.
 - Fix bug asyncExecute Error.
