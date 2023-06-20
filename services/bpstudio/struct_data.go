@@ -24,7 +24,6 @@ type Data struct {
 	Message         string `json:"Message" xml:"Message"`
 	SnapshotBucket  string `json:"SnapshotBucket" xml:"SnapshotBucket"`
 	CreateTime      string `json:"CreateTime" xml:"CreateTime"`
-	TopoURL         string `json:"TopoURL" xml:"TopoURL"`
 	AccessKeyId     string `json:"AccessKeyId" xml:"AccessKeyId"`
 	Arguments       string `json:"Arguments" xml:"Arguments"`
 	OperationId     string `json:"OperationId" xml:"OperationId"`

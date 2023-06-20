@@ -21,11 +21,11 @@ type Item struct {
 	Name            string  `json:"Name" xml:"Name"`
 	TemplateId      string  `json:"TemplateId" xml:"TemplateId"`
 	ApplicationId   string  `json:"ApplicationId" xml:"ApplicationId"`
+	TradePrice      float64 `json:"TradePrice" xml:"TradePrice"`
 	ChargeType      string  `json:"ChargeType" xml:"ChargeType"`
 	PriceUnit       string  `json:"PriceUnit" xml:"PriceUnit"`
 	OriginalPrice   float64 `json:"OriginalPrice" xml:"OriginalPrice"`
 	CreateTime      string  `json:"CreateTime" xml:"CreateTime"`
-	TopoURL         string  `json:"TopoURL" xml:"TopoURL"`
 	Attribute       string  `json:"Attribute" xml:"Attribute"`
 	DataType        string  `json:"DataType" xml:"DataType"`
 	TagName         string  `json:"TagName" xml:"TagName"`
@@ -34,12 +34,17 @@ type Item struct {
 	ImageURL        string  `json:"ImageURL" xml:"ImageURL"`
 	Variable        string  `json:"Variable" xml:"Variable"`
 	TagKey          string  `json:"TagKey" xml:"TagKey"`
+	NodeType        string  `json:"NodeType" xml:"NodeType"`
+	DiscountAmount  float64 `json:"DiscountAmount" xml:"DiscountAmount"`
+	Type            string  `json:"Type" xml:"Type"`
 	ResourceId      string  `json:"ResourceId" xml:"ResourceId"`
+	Error           string  `json:"Error" xml:"Error"`
 	Remark          string  `json:"Remark" xml:"Remark"`
 	Result          string  `json:"Result" xml:"Result"`
 	InstanceName    string  `json:"InstanceName" xml:"InstanceName"`
 	Price           float64 `json:"Price" xml:"Price"`
 	Period          float64 `json:"Period" xml:"Period"`
+	PromotionName   string  `json:"PromotionName" xml:"PromotionName"`
 	DefaultValue    string  `json:"DefaultValue" xml:"DefaultValue"`
 	TagId           int     `json:"TagId" xml:"TagId"`
 	ResourceCode    string  `json:"ResourceCode" xml:"ResourceCode"`
