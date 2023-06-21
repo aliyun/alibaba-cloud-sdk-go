@@ -74,6 +74,7 @@ type DeleteDBNodesRequest struct {
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	DBNodeId             *[]string        `position:"Query" name:"DBNodeId"  type:"Repeated"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
+	DBNodeType           string           `position:"Query" name:"DBNodeType"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	DBClusterId          string           `position:"Query" name:"DBClusterId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`

@@ -106,6 +106,7 @@ type CreateDBClusterRequest struct {
 	GDNId                                  string                `position:"Query" name:"GDNId"`
 	LooseXEngine                           string                `position:"Query" name:"LooseXEngine"`
 	LoosePolarLogBin                       string                `position:"Query" name:"LoosePolarLogBin"`
+	Architecture                           string                `position:"Query" name:"Architecture"`
 	ResourceOwnerAccount                   string                `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount                           string                `position:"Query" name:"OwnerAccount"`
 	LooseXEngineUseMemoryPct               string                `position:"Query" name:"LooseXEngineUseMemoryPct"`
