@@ -72,9 +72,10 @@ func (client *Client) DescribePhoneNumberAnalysisWithCallback(request *DescribeP
 type DescribePhoneNumberAnalysisRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ExtendFunction       string           `position:"Query" name:"ExtendFunction"`
 	Rate                 requests.Integer `position:"Query" name:"Rate"`
+	RouteName            string           `position:"Query" name:"RouteName"`
 	Mask                 string           `position:"Query" name:"Mask"`
-	OfferType            string           `position:"Query" name:"OfferType"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	NumberType           requests.Integer `position:"Query" name:"NumberType"`
@@ -85,10 +86,10 @@ type DescribePhoneNumberAnalysisRequest struct {
 // DescribePhoneNumberAnalysisResponse is the response struct for api DescribePhoneNumberAnalysis
 type DescribePhoneNumberAnalysisResponse struct {
 	*responses.BaseResponse
-	RequestId string     `json:"RequestId" xml:"RequestId"`
-	Code      string     `json:"Code" xml:"Code"`
-	Message   string     `json:"Message" xml:"Message"`
-	Data      []DataList `json:"Data" xml:"Data"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Message   string `json:"Message" xml:"Message"`
+	Code      string `json:"Code" xml:"Code"`
+	Data      Data   `json:"Data" xml:"Data"`
 }
 
 // CreateDescribePhoneNumberAnalysisRequest creates a request to invoke DescribePhoneNumberAnalysis API

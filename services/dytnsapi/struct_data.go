@@ -17,16 +17,17 @@ package dytnsapi
 
 // Data is a nested struct in dytnsapi response
 type Data struct {
-	IsNumberPortability bool   `json:"IsNumberPortability" xml:"IsNumberPortability"`
 	NumberSegment       int64  `json:"NumberSegment" xml:"NumberSegment"`
 	IsConsistent        int    `json:"IsConsistent" xml:"IsConsistent"`
+	Code                string `json:"Code" xml:"Code"`
 	CarrierCode         string `json:"CarrierCode" xml:"CarrierCode"`
 	Carrier             string `json:"Carrier" xml:"Carrier"`
 	VerifyResult        string `json:"VerifyResult" xml:"VerifyResult"`
-	BasicCarrier        string `json:"BasicCarrier" xml:"BasicCarrier"`
 	IsPrivacyNumber     bool   `json:"IsPrivacyNumber" xml:"IsPrivacyNumber"`
-	Status              string `json:"Status" xml:"Status"`
 	City                string `json:"City" xml:"City"`
 	Number              string `json:"Number" xml:"Number"`
 	Province            string `json:"Province" xml:"Province"`
+	IsNumberPortability bool   `json:"IsNumberPortability" xml:"IsNumberPortability"`
+	BasicCarrier        string `json:"BasicCarrier" xml:"BasicCarrier"`
+	Status              string `json:"Status" xml:"Status"`
 }

@@ -1,3 +1,16 @@
+2023-06-25 Version: v1.62.383
+- Generated 2020-02-17 for `Dytnsapi`.
+- Support better trace logging for error locating.
+- Improve API definition.
+- Better logging.
+- Log response data.
+- Blacklist certain user.
+- Publish document.
+- Optimize RAM authentication.
+- Fix billing pop service.
+- Regular RAM error message.
+- Improve RAM authentication.
+
 2023-06-21 Version: v1.62.382
 - Generated 2017-08-01 for `polardb`.
 - Support new feature.
