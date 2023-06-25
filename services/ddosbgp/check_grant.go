@@ -21,7 +21,6 @@ import (
 )
 
 // CheckGrant invokes the ddosbgp.CheckGrant API synchronously
-// api document: https://help.aliyun.com/api/ddosbgp/checkgrant.html
 func (client *Client) CheckGrant(request *CheckGrantRequest) (response *CheckGrantResponse, err error) {
 	response = CreateCheckGrantResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CheckGrant(request *CheckGrantRequest) (response *CheckGra
 }
 
 // CheckGrantWithChan invokes the ddosbgp.CheckGrant API asynchronously
-// api document: https://help.aliyun.com/api/ddosbgp/checkgrant.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckGrantWithChan(request *CheckGrantRequest) (<-chan *CheckGrantResponse, <-chan error) {
 	responseChan := make(chan *CheckGrantResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CheckGrantWithChan(request *CheckGrantRequest) (<-chan *Ch
 }
 
 // CheckGrantWithCallback invokes the ddosbgp.CheckGrant API asynchronously
-// api document: https://help.aliyun.com/api/ddosbgp/checkgrant.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckGrantWithCallback(request *CheckGrantRequest, callback func(response *CheckGrantResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,8 +78,8 @@ type CheckGrantRequest struct {
 // CheckGrantResponse is the response struct for api CheckGrant
 type CheckGrantResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Status    int    `json:"Status" xml:"Status"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCheckGrantRequest creates a request to invoke CheckGrant API
@@ -92,7 +87,8 @@ func CreateCheckGrantRequest() (request *CheckGrantRequest) {
 	request = &CheckGrantRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddosbgp", "2018-07-20", "CheckGrant", "ddosbgp", "openAPI")
+	request.InitWithApiInfo("ddosbgp", "2018-07-20", "CheckGrant", "", "")
+	request.Method = requests.GET
 	return
 }
 

@@ -17,10 +17,10 @@ package ddosbgp
 
 // OpEntity is a nested struct in ddosbgp response
 type OpEntity struct {
-	EntityObject string `json:"EntityObject" xml:"EntityObject"`
 	EntityType   int    `json:"EntityType" xml:"EntityType"`
-	OpDesc       string `json:"OpDesc" xml:"OpDesc"`
-	OpAccount    string `json:"OpAccount" xml:"OpAccount"`
+	EntityObject string `json:"EntityObject" xml:"EntityObject"`
 	OpAction     int    `json:"OpAction" xml:"OpAction"`
 	GmtCreate    int64  `json:"GmtCreate" xml:"GmtCreate"`
+	OpAccount    string `json:"OpAccount" xml:"OpAccount"`
+	OpDesc       string `json:"OpDesc" xml:"OpDesc"`
 }

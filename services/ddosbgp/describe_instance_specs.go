@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeInstanceSpecs invokes the ddosbgp.DescribeInstanceSpecs API synchronously
-// api document: https://help.aliyun.com/api/ddosbgp/describeinstancespecs.html
 func (client *Client) DescribeInstanceSpecs(request *DescribeInstanceSpecsRequest) (response *DescribeInstanceSpecsResponse, err error) {
 	response = CreateDescribeInstanceSpecsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeInstanceSpecs(request *DescribeInstanceSpecsReques
 }
 
 // DescribeInstanceSpecsWithChan invokes the ddosbgp.DescribeInstanceSpecs API asynchronously
-// api document: https://help.aliyun.com/api/ddosbgp/describeinstancespecs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceSpecsWithChan(request *DescribeInstanceSpecsRequest) (<-chan *DescribeInstanceSpecsResponse, <-chan error) {
 	responseChan := make(chan *DescribeInstanceSpecsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeInstanceSpecsWithChan(request *DescribeInstanceSpe
 }
 
 // DescribeInstanceSpecsWithCallback invokes the ddosbgp.DescribeInstanceSpecs API asynchronously
-// api document: https://help.aliyun.com/api/ddosbgp/describeinstancespecs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceSpecsWithCallback(request *DescribeInstanceSpecsRequest, callback func(response *DescribeInstanceSpecsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,7 +74,6 @@ type DescribeInstanceSpecsRequest struct {
 	ResourceGroupId string `position:"Query" name:"ResourceGroupId"`
 	SourceIp        string `position:"Query" name:"SourceIp"`
 	InstanceIdList  string `position:"Query" name:"InstanceIdList"`
-	DdosRegionId    string `position:"Query" name:"DdosRegionId"`
 	Lang            string `position:"Query" name:"Lang"`
 }
 
@@ -95,7 +89,8 @@ func CreateDescribeInstanceSpecsRequest() (request *DescribeInstanceSpecsRequest
 	request = &DescribeInstanceSpecsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddosbgp", "2018-07-20", "DescribeInstanceSpecs", "ddosbgp", "openAPI")
+	request.InitWithApiInfo("ddosbgp", "2018-07-20", "DescribeInstanceSpecs", "", "")
+	request.Method = requests.POST
 	return
 }
 

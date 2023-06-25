@@ -17,10 +17,10 @@ package ddosbgp
 
 // Event is a nested struct in ddosbgp response
 type Event struct {
-	StartTime int    `json:"StartTime" xml:"StartTime"`
 	EndTime   int    `json:"EndTime" xml:"EndTime"`
-	Pps       int    `json:"Pps" xml:"Pps"`
 	Ip        string `json:"Ip" xml:"Ip"`
-	Mbps      int    `json:"Mbps" xml:"Mbps"`
+	StartTime int    `json:"StartTime" xml:"StartTime"`
 	Status    string `json:"Status" xml:"Status"`
+	Mbps      int    `json:"Mbps" xml:"Mbps"`
+	Pps       int    `json:"Pps" xml:"Pps"`
 }

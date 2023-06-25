@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeTraffic invokes the ddosbgp.DescribeTraffic API synchronously
-// api document: https://help.aliyun.com/api/ddosbgp/describetraffic.html
 func (client *Client) DescribeTraffic(request *DescribeTrafficRequest) (response *DescribeTrafficResponse, err error) {
 	response = CreateDescribeTrafficResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeTraffic(request *DescribeTrafficRequest) (response
 }
 
 // DescribeTrafficWithChan invokes the ddosbgp.DescribeTraffic API asynchronously
-// api document: https://help.aliyun.com/api/ddosbgp/describetraffic.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeTrafficWithChan(request *DescribeTrafficRequest) (<-chan *DescribeTrafficResponse, <-chan error) {
 	responseChan := make(chan *DescribeTrafficResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeTrafficWithChan(request *DescribeTrafficRequest) (
 }
 
 // DescribeTrafficWithCallback invokes the ddosbgp.DescribeTraffic API asynchronously
-// api document: https://help.aliyun.com/api/ddosbgp/describetraffic.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeTrafficWithCallback(request *DescribeTrafficRequest, callback func(response *DescribeTrafficResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +76,8 @@ type DescribeTrafficRequest struct {
 	SourceIp        string           `position:"Query" name:"SourceIp"`
 	Ip              string           `position:"Query" name:"Ip"`
 	EndTime         requests.Integer `position:"Query" name:"EndTime"`
+	Ipnet           string           `position:"Query" name:"Ipnet"`
+	FlowType        string           `position:"Query" name:"FlowType"`
 	InstanceId      string           `position:"Query" name:"InstanceId"`
 	Interval        requests.Integer `position:"Query" name:"Interval"`
 }
@@ -97,7 +94,8 @@ func CreateDescribeTrafficRequest() (request *DescribeTrafficRequest) {
 	request = &DescribeTrafficRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddosbgp", "2018-07-20", "DescribeTraffic", "ddosbgp", "openAPI")
+	request.InitWithApiInfo("ddosbgp", "2018-07-20", "DescribeTraffic", "", "")
+	request.Method = requests.POST
 	return
 }
 

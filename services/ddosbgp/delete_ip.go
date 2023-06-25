@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteIp invokes the ddosbgp.DeleteIp API synchronously
-// api document: https://help.aliyun.com/api/ddosbgp/deleteip.html
 func (client *Client) DeleteIp(request *DeleteIpRequest) (response *DeleteIpResponse, err error) {
 	response = CreateDeleteIpResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteIp(request *DeleteIpRequest) (response *DeleteIpResp
 }
 
 // DeleteIpWithChan invokes the ddosbgp.DeleteIp API asynchronously
-// api document: https://help.aliyun.com/api/ddosbgp/deleteip.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteIpWithChan(request *DeleteIpRequest) (<-chan *DeleteIpResponse, <-chan error) {
 	responseChan := make(chan *DeleteIpResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteIpWithChan(request *DeleteIpRequest) (<-chan *Delete
 }
 
 // DeleteIpWithCallback invokes the ddosbgp.DeleteIp API asynchronously
-// api document: https://help.aliyun.com/api/ddosbgp/deleteip.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteIpWithCallback(request *DeleteIpRequest, callback func(response *DeleteIpResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,11 +71,10 @@ func (client *Client) DeleteIpWithCallback(request *DeleteIpRequest, callback fu
 // DeleteIpRequest is the request struct for api DeleteIp
 type DeleteIpRequest struct {
 	*requests.RpcRequest
-	IpList           string `position:"Query" name:"IpList"`
-	ResourceGroupId  string `position:"Query" name:"ResourceGroupId"`
-	InstanceId       string `position:"Query" name:"InstanceId"`
-	SourceIp         string `position:"Query" name:"SourceIp"`
-	ResourceRegionId string `position:"Query" name:"ResourceRegionId"`
+	IpList          string `position:"Query" name:"IpList"`
+	ResourceGroupId string `position:"Query" name:"ResourceGroupId"`
+	InstanceId      string `position:"Query" name:"InstanceId"`
+	SourceIp        string `position:"Query" name:"SourceIp"`
 }
 
 // DeleteIpResponse is the response struct for api DeleteIp
@@ -94,7 +88,8 @@ func CreateDeleteIpRequest() (request *DeleteIpRequest) {
 	request = &DeleteIpRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddosbgp", "2018-07-20", "DeleteIp", "ddosbgp", "openAPI")
+	request.InitWithApiInfo("ddosbgp", "2018-07-20", "DeleteIp", "", "")
+	request.Method = requests.POST
 	return
 }
 

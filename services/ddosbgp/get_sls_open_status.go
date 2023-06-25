@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// AddIp invokes the ddosbgp.AddIp API synchronously
-func (client *Client) AddIp(request *AddIpRequest) (response *AddIpResponse, err error) {
-	response = CreateAddIpResponse()
+// GetSlsOpenStatus invokes the ddosbgp.GetSlsOpenStatus API synchronously
+func (client *Client) GetSlsOpenStatus(request *GetSlsOpenStatusRequest) (response *GetSlsOpenStatusResponse, err error) {
+	response = CreateGetSlsOpenStatusResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// AddIpWithChan invokes the ddosbgp.AddIp API asynchronously
-func (client *Client) AddIpWithChan(request *AddIpRequest) (<-chan *AddIpResponse, <-chan error) {
-	responseChan := make(chan *AddIpResponse, 1)
+// GetSlsOpenStatusWithChan invokes the ddosbgp.GetSlsOpenStatus API asynchronously
+func (client *Client) GetSlsOpenStatusWithChan(request *GetSlsOpenStatusRequest) (<-chan *GetSlsOpenStatusResponse, <-chan error) {
+	responseChan := make(chan *GetSlsOpenStatusResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.AddIp(request)
+		response, err := client.GetSlsOpenStatus(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) AddIpWithChan(request *AddIpRequest) (<-chan *AddIpRespons
 	return responseChan, errChan
 }
 
-// AddIpWithCallback invokes the ddosbgp.AddIp API asynchronously
-func (client *Client) AddIpWithCallback(request *AddIpRequest, callback func(response *AddIpResponse, err error)) <-chan int {
+// GetSlsOpenStatusWithCallback invokes the ddosbgp.GetSlsOpenStatus API asynchronously
+func (client *Client) GetSlsOpenStatusWithCallback(request *GetSlsOpenStatusRequest, callback func(response *GetSlsOpenStatusResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *AddIpResponse
+		var response *GetSlsOpenStatusResponse
 		var err error
 		defer close(result)
-		response, err = client.AddIp(request)
+		response, err = client.GetSlsOpenStatus(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,34 +68,33 @@ func (client *Client) AddIpWithCallback(request *AddIpRequest, callback func(res
 	return result
 }
 
-// AddIpRequest is the request struct for api AddIp
-type AddIpRequest struct {
+// GetSlsOpenStatusRequest is the request struct for api GetSlsOpenStatus
+type GetSlsOpenStatusRequest struct {
 	*requests.RpcRequest
-	IpList          string `position:"Query" name:"IpList"`
 	ResourceGroupId string `position:"Query" name:"ResourceGroupId"`
-	InstanceId      string `position:"Query" name:"InstanceId"`
 	SourceIp        string `position:"Query" name:"SourceIp"`
 }
 
-// AddIpResponse is the response struct for api AddIp
-type AddIpResponse struct {
+// GetSlsOpenStatusResponse is the response struct for api GetSlsOpenStatus
+type GetSlsOpenStatusResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	SlsOpenStatus bool   `json:"SlsOpenStatus" xml:"SlsOpenStatus"`
+	RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateAddIpRequest creates a request to invoke AddIp API
-func CreateAddIpRequest() (request *AddIpRequest) {
-	request = &AddIpRequest{
+// CreateGetSlsOpenStatusRequest creates a request to invoke GetSlsOpenStatus API
+func CreateGetSlsOpenStatusRequest() (request *GetSlsOpenStatusRequest) {
+	request = &GetSlsOpenStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddosbgp", "2018-07-20", "AddIp", "", "")
+	request.InitWithApiInfo("ddosbgp", "2018-07-20", "GetSlsOpenStatus", "", "")
 	request.Method = requests.POST
 	return
 }
 
-// CreateAddIpResponse creates a response to parse from AddIp response
-func CreateAddIpResponse() (response *AddIpResponse) {
-	response = &AddIpResponse{
+// CreateGetSlsOpenStatusResponse creates a response to parse from GetSlsOpenStatus response
+func CreateGetSlsOpenStatusResponse() (response *GetSlsOpenStatusResponse) {
+	response = &GetSlsOpenStatusResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

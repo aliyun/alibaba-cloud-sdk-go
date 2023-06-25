@@ -21,7 +21,6 @@ import (
 )
 
 // DescribePackIpList invokes the ddosbgp.DescribePackIpList API synchronously
-// api document: https://help.aliyun.com/api/ddosbgp/describepackiplist.html
 func (client *Client) DescribePackIpList(request *DescribePackIpListRequest) (response *DescribePackIpListResponse, err error) {
 	response = CreateDescribePackIpListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribePackIpList(request *DescribePackIpListRequest) (re
 }
 
 // DescribePackIpListWithChan invokes the ddosbgp.DescribePackIpList API asynchronously
-// api document: https://help.aliyun.com/api/ddosbgp/describepackiplist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribePackIpListWithChan(request *DescribePackIpListRequest) (<-chan *DescribePackIpListResponse, <-chan error) {
 	responseChan := make(chan *DescribePackIpListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribePackIpListWithChan(request *DescribePackIpListRequ
 }
 
 // DescribePackIpListWithCallback invokes the ddosbgp.DescribePackIpList API asynchronously
-// api document: https://help.aliyun.com/api/ddosbgp/describepackiplist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribePackIpListWithCallback(request *DescribePackIpListRequest, callback func(response *DescribePackIpListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,7 +74,6 @@ type DescribePackIpListRequest struct {
 	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
 	SourceIp        string           `position:"Query" name:"SourceIp"`
 	PageSize        requests.Integer `position:"Query" name:"PageSize"`
-	DdosRegionId    string           `position:"Query" name:"DdosRegionId"`
 	ProductName     string           `position:"Query" name:"ProductName"`
 	Ip              string           `position:"Query" name:"Ip"`
 	InstanceId      string           `position:"Query" name:"InstanceId"`
@@ -89,10 +83,10 @@ type DescribePackIpListRequest struct {
 // DescribePackIpListResponse is the response struct for api DescribePackIpList
 type DescribePackIpListResponse struct {
 	*responses.BaseResponse
-	RequestId string   `json:"RequestId" xml:"RequestId"`
-	Success   bool     `json:"Success" xml:"Success"`
 	Code      string   `json:"Code" xml:"Code"`
+	RequestId string   `json:"RequestId" xml:"RequestId"`
 	Total     int      `json:"Total" xml:"Total"`
+	Success   bool     `json:"Success" xml:"Success"`
 	IpList    []Ipitem `json:"IpList" xml:"IpList"`
 }
 
@@ -101,7 +95,8 @@ func CreateDescribePackIpListRequest() (request *DescribePackIpListRequest) {
 	request = &DescribePackIpListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddosbgp", "2018-07-20", "DescribePackIpList", "ddosbgp", "openAPI")
+	request.InitWithApiInfo("ddosbgp", "2018-07-20", "DescribePackIpList", "", "")
+	request.Method = requests.POST
 	return
 }
 

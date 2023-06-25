@@ -1,3 +1,7 @@
+2023-06-25 Version: v1.62.385
+- Generated 2018-07-20 for `ddosbgp`.
+- Update sdk.
+
 2023-06-25 Version: v1.62.384
 - Generated 2018-06-20 for `DFS`.
 - DFS openApi for go sdk.

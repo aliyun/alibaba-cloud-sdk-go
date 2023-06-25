@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeInstanceList invokes the ddosbgp.DescribeInstanceList API synchronously
-// api document: https://help.aliyun.com/api/ddosbgp/describeinstancelist.html
 func (client *Client) DescribeInstanceList(request *DescribeInstanceListRequest) (response *DescribeInstanceListResponse, err error) {
 	response = CreateDescribeInstanceListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeInstanceList(request *DescribeInstanceListRequest)
 }
 
 // DescribeInstanceListWithChan invokes the ddosbgp.DescribeInstanceList API asynchronously
-// api document: https://help.aliyun.com/api/ddosbgp/describeinstancelist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceListWithChan(request *DescribeInstanceListRequest) (<-chan *DescribeInstanceListResponse, <-chan error) {
 	responseChan := make(chan *DescribeInstanceListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeInstanceListWithChan(request *DescribeInstanceList
 }
 
 // DescribeInstanceListWithCallback invokes the ddosbgp.DescribeInstanceList API asynchronously
-// api document: https://help.aliyun.com/api/ddosbgp/describeinstancelist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceListWithCallback(request *DescribeInstanceListRequest, callback func(response *DescribeInstanceListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,19 +71,19 @@ func (client *Client) DescribeInstanceListWithCallback(request *DescribeInstance
 // DescribeInstanceListRequest is the request struct for api DescribeInstanceList
 type DescribeInstanceListRequest struct {
 	*requests.RpcRequest
-	Remark          string                     `position:"Query" name:"Remark"`
-	ResourceGroupId string                     `position:"Query" name:"ResourceGroupId"`
-	SourceIp        string                     `position:"Query" name:"SourceIp"`
-	PageSize        requests.Integer           `position:"Query" name:"PageSize"`
-	DdosRegionId    string                     `position:"Query" name:"DdosRegionId"`
-	InstanceType    string                     `position:"Query" name:"InstanceType"`
-	IpVersion       string                     `position:"Query" name:"IpVersion"`
-	Tag             *[]DescribeInstanceListTag `position:"Query" name:"Tag"  type:"Repeated"`
-	Ip              string                     `position:"Query" name:"Ip"`
-	Orderby         string                     `position:"Query" name:"Orderby"`
-	InstanceIdList  string                     `position:"Query" name:"InstanceIdList"`
-	PageNo          requests.Integer           `position:"Query" name:"PageNo"`
-	Orderdire       string                     `position:"Query" name:"Orderdire"`
+	Remark           string                     `position:"Query" name:"Remark"`
+	ResourceGroupId  string                     `position:"Query" name:"ResourceGroupId"`
+	SourceIp         string                     `position:"Query" name:"SourceIp"`
+	PageSize         requests.Integer           `position:"Query" name:"PageSize"`
+	InstanceType     string                     `position:"Query" name:"InstanceType"`
+	IpVersion        string                     `position:"Query" name:"IpVersion"`
+	Tag              *[]DescribeInstanceListTag `position:"Query" name:"Tag"  type:"Repeated"`
+	Ip               string                     `position:"Query" name:"Ip"`
+	Orderby          string                     `position:"Query" name:"Orderby"`
+	InstanceIdList   string                     `position:"Query" name:"InstanceIdList"`
+	PageNo           requests.Integer           `position:"Query" name:"PageNo"`
+	Orderdire        string                     `position:"Query" name:"Orderdire"`
+	InstanceTypeList *[]string                  `position:"Query" name:"InstanceTypeList"  type:"Repeated"`
 }
 
 // DescribeInstanceListTag is a repeated param struct in DescribeInstanceListRequest
@@ -100,8 +95,8 @@ type DescribeInstanceListTag struct {
 // DescribeInstanceListResponse is the response struct for api DescribeInstanceList
 type DescribeInstanceListResponse struct {
 	*responses.BaseResponse
-	RequestId    string     `json:"RequestId" xml:"RequestId"`
 	Total        int64      `json:"Total" xml:"Total"`
+	RequestId    string     `json:"RequestId" xml:"RequestId"`
 	InstanceList []Instance `json:"InstanceList" xml:"InstanceList"`
 }
 
@@ -110,7 +105,8 @@ func CreateDescribeInstanceListRequest() (request *DescribeInstanceListRequest) 
 	request = &DescribeInstanceListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddosbgp", "2018-07-20", "DescribeInstanceList", "ddosbgp", "openAPI")
+	request.InitWithApiInfo("ddosbgp", "2018-07-20", "DescribeInstanceList", "", "")
+	request.Method = requests.POST
 	return
 }
 

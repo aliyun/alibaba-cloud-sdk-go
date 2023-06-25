@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeRegions invokes the ddosbgp.DescribeRegions API synchronously
-// api document: https://help.aliyun.com/api/ddosbgp/describeregions.html
 func (client *Client) DescribeRegions(request *DescribeRegionsRequest) (response *DescribeRegionsResponse, err error) {
 	response = CreateDescribeRegionsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeRegions(request *DescribeRegionsRequest) (response
 }
 
 // DescribeRegionsWithChan invokes the ddosbgp.DescribeRegions API asynchronously
-// api document: https://help.aliyun.com/api/ddosbgp/describeregions.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRegionsWithChan(request *DescribeRegionsRequest) (<-chan *DescribeRegionsResponse, <-chan error) {
 	responseChan := make(chan *DescribeRegionsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeRegionsWithChan(request *DescribeRegionsRequest) (
 }
 
 // DescribeRegionsWithCallback invokes the ddosbgp.DescribeRegions API asynchronously
-// api document: https://help.aliyun.com/api/ddosbgp/describeregions.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRegionsWithCallback(request *DescribeRegionsRequest, callback func(response *DescribeRegionsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,9 +78,9 @@ type DescribeRegionsRequest struct {
 // DescribeRegionsResponse is the response struct for api DescribeRegions
 type DescribeRegionsResponse struct {
 	*responses.BaseResponse
+	Code      string   `json:"Code" xml:"Code"`
 	RequestId string   `json:"RequestId" xml:"RequestId"`
 	Success   bool     `json:"Success" xml:"Success"`
-	Code      string   `json:"Code" xml:"Code"`
 	Regions   []Region `json:"Regions" xml:"Regions"`
 }
 
@@ -94,7 +89,8 @@ func CreateDescribeRegionsRequest() (request *DescribeRegionsRequest) {
 	request = &DescribeRegionsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddosbgp", "2018-07-20", "DescribeRegions", "ddosbgp", "openAPI")
+	request.InitWithApiInfo("ddosbgp", "2018-07-20", "DescribeRegions", "", "")
+	request.Method = requests.POST
 	return
 }
 

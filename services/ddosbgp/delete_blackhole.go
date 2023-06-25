@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteBlackhole invokes the ddosbgp.DeleteBlackhole API synchronously
-// api document: https://help.aliyun.com/api/ddosbgp/deleteblackhole.html
 func (client *Client) DeleteBlackhole(request *DeleteBlackholeRequest) (response *DeleteBlackholeResponse, err error) {
 	response = CreateDeleteBlackholeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteBlackhole(request *DeleteBlackholeRequest) (response
 }
 
 // DeleteBlackholeWithChan invokes the ddosbgp.DeleteBlackhole API asynchronously
-// api document: https://help.aliyun.com/api/ddosbgp/deleteblackhole.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteBlackholeWithChan(request *DeleteBlackholeRequest) (<-chan *DeleteBlackholeResponse, <-chan error) {
 	responseChan := make(chan *DeleteBlackholeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteBlackholeWithChan(request *DeleteBlackholeRequest) (
 }
 
 // DeleteBlackholeWithCallback invokes the ddosbgp.DeleteBlackhole API asynchronously
-// api document: https://help.aliyun.com/api/ddosbgp/deleteblackhole.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteBlackholeWithCallback(request *DeleteBlackholeRequest, callback func(response *DeleteBlackholeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,11 +71,10 @@ func (client *Client) DeleteBlackholeWithCallback(request *DeleteBlackholeReques
 // DeleteBlackholeRequest is the request struct for api DeleteBlackhole
 type DeleteBlackholeRequest struct {
 	*requests.RpcRequest
-	Ip               string `position:"Query" name:"Ip"`
-	ResourceGroupId  string `position:"Query" name:"ResourceGroupId"`
-	InstanceId       string `position:"Query" name:"InstanceId"`
-	SourceIp         string `position:"Query" name:"SourceIp"`
-	ResourceRegionId string `position:"Query" name:"ResourceRegionId"`
+	Ip              string `position:"Query" name:"Ip"`
+	ResourceGroupId string `position:"Query" name:"ResourceGroupId"`
+	InstanceId      string `position:"Query" name:"InstanceId"`
+	SourceIp        string `position:"Query" name:"SourceIp"`
 }
 
 // DeleteBlackholeResponse is the response struct for api DeleteBlackhole
@@ -94,7 +88,8 @@ func CreateDeleteBlackholeRequest() (request *DeleteBlackholeRequest) {
 	request = &DeleteBlackholeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddosbgp", "2018-07-20", "DeleteBlackhole", "ddosbgp", "openAPI")
+	request.InitWithApiInfo("ddosbgp", "2018-07-20", "DeleteBlackhole", "", "")
+	request.Method = requests.POST
 	return
 }
 

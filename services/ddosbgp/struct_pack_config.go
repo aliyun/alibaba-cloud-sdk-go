@@ -17,10 +17,12 @@ package ddosbgp
 
 // PackConfig is a nested struct in ddosbgp response
 type PackConfig struct {
-	PackAdvThre   int `json:"PackAdvThre" xml:"PackAdvThre"`
-	IpAdvanceThre int `json:"IpAdvanceThre" xml:"IpAdvanceThre"`
-	IpBasicThre   int `json:"IpBasicThre" xml:"IpBasicThre"`
-	PackBasicThre int `json:"PackBasicThre" xml:"PackBasicThre"`
-	IpSpec        int `json:"IpSpec" xml:"IpSpec"`
-	BindIpCount   int `json:"BindIpCount" xml:"BindIpCount"`
+	PackBasicThre   int   `json:"PackBasicThre" xml:"PackBasicThre"`
+	BindIpCount     int   `json:"BindIpCount" xml:"BindIpCount"`
+	PackAdvThre     int   `json:"PackAdvThre" xml:"PackAdvThre"`
+	NormalBandwidth int   `json:"NormalBandwidth" xml:"NormalBandwidth"`
+	IpBasicThre     int   `json:"IpBasicThre" xml:"IpBasicThre"`
+	IpAdvanceThre   int   `json:"IpAdvanceThre" xml:"IpAdvanceThre"`
+	IpSpec          int   `json:"IpSpec" xml:"IpSpec"`
+	Bandwidth       int64 `json:"Bandwidth" xml:"Bandwidth"`
 }

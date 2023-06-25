@@ -17,7 +17,10 @@ package ddosbgp
 
 // InstanceSpec is a nested struct in ddosbgp response
 type InstanceSpec struct {
+	IsFullDefenseMode             int        `json:"IsFullDefenseMode" xml:"IsFullDefenseMode"`
 	Region                        string     `json:"Region" xml:"Region"`
+	AvailableDefenseTimes         int        `json:"AvailableDefenseTimes" xml:"AvailableDefenseTimes"`
+	TotalDefenseTimes             int        `json:"TotalDefenseTimes" xml:"TotalDefenseTimes"`
 	AvailableDeleteBlackholeCount string     `json:"AvailableDeleteBlackholeCount" xml:"AvailableDeleteBlackholeCount"`
 	InstanceId                    string     `json:"InstanceId" xml:"InstanceId"`
 	PackConfig                    PackConfig `json:"PackConfig" xml:"PackConfig"`

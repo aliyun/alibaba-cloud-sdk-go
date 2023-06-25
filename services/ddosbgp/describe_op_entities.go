@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeOpEntities invokes the ddosbgp.DescribeOpEntities API synchronously
-// api document: https://help.aliyun.com/api/ddosbgp/describeopentities.html
 func (client *Client) DescribeOpEntities(request *DescribeOpEntitiesRequest) (response *DescribeOpEntitiesResponse, err error) {
 	response = CreateDescribeOpEntitiesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeOpEntities(request *DescribeOpEntitiesRequest) (re
 }
 
 // DescribeOpEntitiesWithChan invokes the ddosbgp.DescribeOpEntities API asynchronously
-// api document: https://help.aliyun.com/api/ddosbgp/describeopentities.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeOpEntitiesWithChan(request *DescribeOpEntitiesRequest) (<-chan *DescribeOpEntitiesResponse, <-chan error) {
 	responseChan := make(chan *DescribeOpEntitiesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeOpEntitiesWithChan(request *DescribeOpEntitiesRequ
 }
 
 // DescribeOpEntitiesWithCallback invokes the ddosbgp.DescribeOpEntities API asynchronously
-// api document: https://help.aliyun.com/api/ddosbgp/describeopentities.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeOpEntitiesWithCallback(request *DescribeOpEntitiesRequest, callback func(response *DescribeOpEntitiesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,24 +71,23 @@ func (client *Client) DescribeOpEntitiesWithCallback(request *DescribeOpEntities
 // DescribeOpEntitiesRequest is the request struct for api DescribeOpEntities
 type DescribeOpEntitiesRequest struct {
 	*requests.RpcRequest
-	StartTime        requests.Integer `position:"Query" name:"StartTime"`
-	ResourceGroupId  string           `position:"Query" name:"ResourceGroupId"`
-	SourceIp         string           `position:"Query" name:"SourceIp"`
-	PageSize         requests.Integer `position:"Query" name:"PageSize"`
-	Lang             string           `position:"Query" name:"Lang"`
-	ResourceRegionId string           `position:"Query" name:"ResourceRegionId"`
-	EndTime          requests.Integer `position:"Query" name:"EndTime"`
-	OrderBy          string           `position:"Query" name:"OrderBy"`
-	CurrentPage      requests.Integer `position:"Query" name:"CurrentPage"`
-	OrderDir         string           `position:"Query" name:"OrderDir"`
-	InstanceId       string           `position:"Query" name:"InstanceId"`
+	StartTime       requests.Integer `position:"Query" name:"StartTime"`
+	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
+	SourceIp        string           `position:"Query" name:"SourceIp"`
+	PageSize        requests.Integer `position:"Query" name:"PageSize"`
+	Lang            string           `position:"Query" name:"Lang"`
+	EndTime         requests.Integer `position:"Query" name:"EndTime"`
+	OrderBy         string           `position:"Query" name:"OrderBy"`
+	CurrentPage     requests.Integer `position:"Query" name:"CurrentPage"`
+	OrderDir        string           `position:"Query" name:"OrderDir"`
+	InstanceId      string           `position:"Query" name:"InstanceId"`
 }
 
 // DescribeOpEntitiesResponse is the response struct for api DescribeOpEntities
 type DescribeOpEntitiesResponse struct {
 	*responses.BaseResponse
-	RequestId  string     `json:"RequestId" xml:"RequestId"`
 	TotalCount int        `json:"TotalCount" xml:"TotalCount"`
+	RequestId  string     `json:"RequestId" xml:"RequestId"`
 	OpEntities []OpEntity `json:"OpEntities" xml:"OpEntities"`
 }
 
@@ -102,7 +96,8 @@ func CreateDescribeOpEntitiesRequest() (request *DescribeOpEntitiesRequest) {
 	request = &DescribeOpEntitiesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddosbgp", "2018-07-20", "DescribeOpEntities", "ddosbgp", "openAPI")
+	request.InitWithApiInfo("ddosbgp", "2018-07-20", "DescribeOpEntities", "", "")
+	request.Method = requests.POST
 	return
 }
 

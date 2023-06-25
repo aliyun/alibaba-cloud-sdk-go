@@ -17,9 +17,11 @@ package ddosbgp
 
 // Flow is a nested struct in ddosbgp response
 type Flow struct {
-	Pps      int    `json:"Pps" xml:"Pps"`
-	FlowType string `json:"FlowType" xml:"FlowType"`
-	Kbps     int    `json:"Kbps" xml:"Kbps"`
-	Name     string `json:"Name" xml:"Name"`
-	Time     int    `json:"Time" xml:"Time"`
+	Time      int    `json:"Time" xml:"Time"`
+	FlowType  string `json:"FlowType" xml:"FlowType"`
+	AttackPps int64  `json:"AttackPps" xml:"AttackPps"`
+	Name      string `json:"Name" xml:"Name"`
+	Pps       int    `json:"Pps" xml:"Pps"`
+	Kbps      int    `json:"Kbps" xml:"Kbps"`
+	AttackBps int64  `json:"AttackBps" xml:"AttackBps"`
 }

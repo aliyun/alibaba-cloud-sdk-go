@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeExcpetionCount invokes the ddosbgp.DescribeExcpetionCount API synchronously
-// api document: https://help.aliyun.com/api/ddosbgp/describeexcpetioncount.html
 func (client *Client) DescribeExcpetionCount(request *DescribeExcpetionCountRequest) (response *DescribeExcpetionCountResponse, err error) {
 	response = CreateDescribeExcpetionCountResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeExcpetionCount(request *DescribeExcpetionCountRequ
 }
 
 // DescribeExcpetionCountWithChan invokes the ddosbgp.DescribeExcpetionCount API asynchronously
-// api document: https://help.aliyun.com/api/ddosbgp/describeexcpetioncount.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeExcpetionCountWithChan(request *DescribeExcpetionCountRequest) (<-chan *DescribeExcpetionCountResponse, <-chan error) {
 	responseChan := make(chan *DescribeExcpetionCountResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeExcpetionCountWithChan(request *DescribeExcpetionC
 }
 
 // DescribeExcpetionCountWithCallback invokes the ddosbgp.DescribeExcpetionCount API asynchronously
-// api document: https://help.aliyun.com/api/ddosbgp/describeexcpetioncount.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeExcpetionCountWithCallback(request *DescribeExcpetionCountRequest, callback func(response *DescribeExcpetionCountResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,15 +73,14 @@ type DescribeExcpetionCountRequest struct {
 	*requests.RpcRequest
 	ResourceGroupId string `position:"Query" name:"ResourceGroupId"`
 	SourceIp        string `position:"Query" name:"SourceIp"`
-	DdosRegionId    string `position:"Query" name:"DdosRegionId"`
 }
 
 // DescribeExcpetionCountResponse is the response struct for api DescribeExcpetionCount
 type DescribeExcpetionCountResponse struct {
 	*responses.BaseResponse
-	RequestId        string `json:"RequestId" xml:"RequestId"`
 	ExceptionIpCount int    `json:"ExceptionIpCount" xml:"ExceptionIpCount"`
 	ExpireTimeCount  int    `json:"ExpireTimeCount" xml:"ExpireTimeCount"`
+	RequestId        string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDescribeExcpetionCountRequest creates a request to invoke DescribeExcpetionCount API
@@ -94,7 +88,8 @@ func CreateDescribeExcpetionCountRequest() (request *DescribeExcpetionCountReque
 	request = &DescribeExcpetionCountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddosbgp", "2018-07-20", "DescribeExcpetionCount", "ddosbgp", "openAPI")
+	request.InitWithApiInfo("ddosbgp", "2018-07-20", "DescribeExcpetionCount", "", "")
+	request.Method = requests.POST
 	return
 }
 

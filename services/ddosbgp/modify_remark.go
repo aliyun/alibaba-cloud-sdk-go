@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyRemark invokes the ddosbgp.ModifyRemark API synchronously
-// api document: https://help.aliyun.com/api/ddosbgp/modifyremark.html
 func (client *Client) ModifyRemark(request *ModifyRemarkRequest) (response *ModifyRemarkResponse, err error) {
 	response = CreateModifyRemarkResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyRemark(request *ModifyRemarkRequest) (response *Modi
 }
 
 // ModifyRemarkWithChan invokes the ddosbgp.ModifyRemark API asynchronously
-// api document: https://help.aliyun.com/api/ddosbgp/modifyremark.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyRemarkWithChan(request *ModifyRemarkRequest) (<-chan *ModifyRemarkResponse, <-chan error) {
 	responseChan := make(chan *ModifyRemarkResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyRemarkWithChan(request *ModifyRemarkRequest) (<-chan
 }
 
 // ModifyRemarkWithCallback invokes the ddosbgp.ModifyRemark API asynchronously
-// api document: https://help.aliyun.com/api/ddosbgp/modifyremark.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyRemarkWithCallback(request *ModifyRemarkRequest, callback func(response *ModifyRemarkResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,12 +71,11 @@ func (client *Client) ModifyRemarkWithCallback(request *ModifyRemarkRequest, cal
 // ModifyRemarkRequest is the request struct for api ModifyRemark
 type ModifyRemarkRequest struct {
 	*requests.RpcRequest
-	Remark           string `position:"Query" name:"Remark"`
-	ResourceGroupId  string `position:"Query" name:"ResourceGroupId"`
-	InstanceId       string `position:"Query" name:"InstanceId"`
-	SourceIp         string `position:"Query" name:"SourceIp"`
-	Lang             string `position:"Query" name:"Lang"`
-	ResourceRegionId string `position:"Query" name:"ResourceRegionId"`
+	Remark          string `position:"Query" name:"Remark"`
+	ResourceGroupId string `position:"Query" name:"ResourceGroupId"`
+	InstanceId      string `position:"Query" name:"InstanceId"`
+	SourceIp        string `position:"Query" name:"SourceIp"`
+	Lang            string `position:"Query" name:"Lang"`
 }
 
 // ModifyRemarkResponse is the response struct for api ModifyRemark
@@ -95,7 +89,8 @@ func CreateModifyRemarkRequest() (request *ModifyRemarkRequest) {
 	request = &ModifyRemarkRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddosbgp", "2018-07-20", "ModifyRemark", "ddosbgp", "openAPI")
+	request.InitWithApiInfo("ddosbgp", "2018-07-20", "ModifyRemark", "", "")
+	request.Method = requests.POST
 	return
 }
 

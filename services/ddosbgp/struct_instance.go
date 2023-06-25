@@ -17,14 +17,21 @@ package ddosbgp
 
 // Instance is a nested struct in ddosbgp response
 type Instance struct {
-	ExpireTime        int64  `json:"ExpireTime" xml:"ExpireTime"`
-	InstanceId        string `json:"InstanceId" xml:"InstanceId"`
+	Declared          string `json:"Declared" xml:"Declared"`
 	Product           string `json:"Product" xml:"Product"`
+	Desc              string `json:"Desc" xml:"Desc"`
 	Remark            string `json:"Remark" xml:"Remark"`
-	Status            string `json:"Status" xml:"Status"`
-	IpType            string `json:"IpType" xml:"IpType"`
-	AutoRenewal       bool   `json:"AutoRenewal" xml:"AutoRenewal"`
-	BlackholdingCount string `json:"BlackholdingCount" xml:"BlackholdingCount"`
-	GmtCreate         int64  `json:"GmtCreate" xml:"GmtCreate"`
 	InstanceType      string `json:"InstanceType" xml:"InstanceType"`
+	CoverageType      int    `json:"CoverageType" xml:"CoverageType"`
+	Net               string `json:"Net" xml:"Net"`
+	IpType            string `json:"IpType" xml:"IpType"`
+	Mode              string `json:"Mode" xml:"Mode"`
+	GmtCreate         int64  `json:"GmtCreate" xml:"GmtCreate"`
+	AutoRenewal       bool   `json:"AutoRenewal" xml:"AutoRenewal"`
+	InstanceId        string `json:"InstanceId" xml:"InstanceId"`
+	UserId            string `json:"UserId" xml:"UserId"`
+	ExpireTime        int64  `json:"ExpireTime" xml:"ExpireTime"`
+	Status            string `json:"Status" xml:"Status"`
+	BlackholdingCount string `json:"BlackholdingCount" xml:"BlackholdingCount"`
+	RegistedAs        string `json:"RegistedAs" xml:"RegistedAs"`
 }

@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DescribeDdosEvent invokes the ddosbgp.DescribeDdosEvent API synchronously
-func (client *Client) DescribeDdosEvent(request *DescribeDdosEventRequest) (response *DescribeDdosEventResponse, err error) {
-	response = CreateDescribeDdosEventResponse()
+// DescribeOnDemandDdosEvent invokes the ddosbgp.DescribeOnDemandDdosEvent API synchronously
+func (client *Client) DescribeOnDemandDdosEvent(request *DescribeOnDemandDdosEventRequest) (response *DescribeOnDemandDdosEventResponse, err error) {
+	response = CreateDescribeOnDemandDdosEventResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DescribeDdosEventWithChan invokes the ddosbgp.DescribeDdosEvent API asynchronously
-func (client *Client) DescribeDdosEventWithChan(request *DescribeDdosEventRequest) (<-chan *DescribeDdosEventResponse, <-chan error) {
-	responseChan := make(chan *DescribeDdosEventResponse, 1)
+// DescribeOnDemandDdosEventWithChan invokes the ddosbgp.DescribeOnDemandDdosEvent API asynchronously
+func (client *Client) DescribeOnDemandDdosEventWithChan(request *DescribeOnDemandDdosEventRequest) (<-chan *DescribeOnDemandDdosEventResponse, <-chan error) {
+	responseChan := make(chan *DescribeOnDemandDdosEventResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DescribeDdosEvent(request)
+		response, err := client.DescribeOnDemandDdosEvent(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) DescribeDdosEventWithChan(request *DescribeDdosEventReques
 	return responseChan, errChan
 }
 
-// DescribeDdosEventWithCallback invokes the ddosbgp.DescribeDdosEvent API asynchronously
-func (client *Client) DescribeDdosEventWithCallback(request *DescribeDdosEventRequest, callback func(response *DescribeDdosEventResponse, err error)) <-chan int {
+// DescribeOnDemandDdosEventWithCallback invokes the ddosbgp.DescribeOnDemandDdosEvent API asynchronously
+func (client *Client) DescribeOnDemandDdosEventWithCallback(request *DescribeOnDemandDdosEventRequest, callback func(response *DescribeOnDemandDdosEventResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DescribeDdosEventResponse
+		var response *DescribeOnDemandDdosEventResponse
 		var err error
 		defer close(result)
-		response, err = client.DescribeDdosEvent(request)
+		response, err = client.DescribeOnDemandDdosEvent(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,8 +68,8 @@ func (client *Client) DescribeDdosEventWithCallback(request *DescribeDdosEventRe
 	return result
 }
 
-// DescribeDdosEventRequest is the request struct for api DescribeDdosEvent
-type DescribeDdosEventRequest struct {
+// DescribeOnDemandDdosEventRequest is the request struct for api DescribeOnDemandDdosEvent
+type DescribeOnDemandDdosEventRequest struct {
 	*requests.RpcRequest
 	StartTime       requests.Integer `position:"Query" name:"StartTime"`
 	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
@@ -81,27 +81,27 @@ type DescribeDdosEventRequest struct {
 	PageNo          requests.Integer `position:"Query" name:"PageNo"`
 }
 
-// DescribeDdosEventResponse is the response struct for api DescribeDdosEvent
-type DescribeDdosEventResponse struct {
+// DescribeOnDemandDdosEventResponse is the response struct for api DescribeOnDemandDdosEvent
+type DescribeOnDemandDdosEventResponse struct {
 	*responses.BaseResponse
 	Total     int64   `json:"Total" xml:"Total"`
 	RequestId string  `json:"RequestId" xml:"RequestId"`
 	Events    []Event `json:"Events" xml:"Events"`
 }
 
-// CreateDescribeDdosEventRequest creates a request to invoke DescribeDdosEvent API
-func CreateDescribeDdosEventRequest() (request *DescribeDdosEventRequest) {
-	request = &DescribeDdosEventRequest{
+// CreateDescribeOnDemandDdosEventRequest creates a request to invoke DescribeOnDemandDdosEvent API
+func CreateDescribeOnDemandDdosEventRequest() (request *DescribeOnDemandDdosEventRequest) {
+	request = &DescribeOnDemandDdosEventRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddosbgp", "2018-07-20", "DescribeDdosEvent", "", "")
+	request.InitWithApiInfo("ddosbgp", "2018-07-20", "DescribeOnDemandDdosEvent", "", "")
 	request.Method = requests.POST
 	return
 }
 
-// CreateDescribeDdosEventResponse creates a response to parse from DescribeDdosEvent response
-func CreateDescribeDdosEventResponse() (response *DescribeDdosEventResponse) {
-	response = &DescribeDdosEventResponse{
+// CreateDescribeOnDemandDdosEventResponse creates a response to parse from DescribeOnDemandDdosEvent response
+func CreateDescribeOnDemandDdosEventResponse() (response *DescribeOnDemandDdosEventResponse) {
+	response = &DescribeOnDemandDdosEventResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return
