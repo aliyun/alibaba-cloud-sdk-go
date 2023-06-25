@@ -1,3 +1,8 @@
+2023-06-25 Version: v1.62.384
+- Generated 2018-06-20 for `DFS`.
+- DFS openApi for go sdk.
+- Contain vsc openApi
+
 2023-06-25 Version: v1.62.383
 - Generated 2020-02-17 for `Dytnsapi`.
 - Support better trace logging for error locating.
