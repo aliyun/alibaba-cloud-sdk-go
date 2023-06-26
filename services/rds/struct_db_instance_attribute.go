@@ -46,7 +46,6 @@ type DBInstanceAttribute struct {
 	SupportUpgradeAccountType         string                                             `json:"SupportUpgradeAccountType" xml:"SupportUpgradeAccountType"`
 	MaxIOPS                           int                                                `json:"MaxIOPS" xml:"MaxIOPS"`
 	TipsLevel                         int                                                `json:"TipsLevel" xml:"TipsLevel"`
-	Tags                              string                                             `json:"Tags" xml:"Tags"`
 	MaintainTime                      string                                             `json:"MaintainTime" xml:"MaintainTime"`
 	EngineVersion                     string                                             `json:"EngineVersion" xml:"EngineVersion"`
 	InstructionSetArch                string                                             `json:"InstructionSetArch" xml:"InstructionSetArch"`
@@ -106,5 +105,5 @@ type DBInstanceAttribute struct {
 	BabelfishConfig                   BabelfishConfig                                    `json:"BabelfishConfig" xml:"BabelfishConfig"`
 	DBClusterNodes                    DBClusterNodes                                     `json:"DBClusterNodes" xml:"DBClusterNodes"`
 	ReadOnlyDBInstanceIds             ReadOnlyDBInstanceIdsInDescribeDBInstanceAttribute `json:"ReadOnlyDBInstanceIds" xml:"ReadOnlyDBInstanceIds"`
-	SlaveZones                        SlaveZones                                         `json:"SlaveZones" xml:"SlaveZones"`
+	SlaveZones                        SlaveZonesInDescribeDBInstanceAttribute            `json:"SlaveZones" xml:"SlaveZones"`
 }

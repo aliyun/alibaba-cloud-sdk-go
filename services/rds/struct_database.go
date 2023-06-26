@@ -32,5 +32,8 @@ type Database struct {
 	DBInstanceId     string                      `json:"DBInstanceId" xml:"DBInstanceId"`
 	DBDescription    string                      `json:"DBDescription" xml:"DBDescription"`
 	Collate          string                      `json:"Collate" xml:"Collate"`
+	BasicInfo        BasicInfo                   `json:"BasicInfo" xml:"BasicInfo"`
+	RuntimeInfo      RuntimeInfo                 `json:"RuntimeInfo" xml:"RuntimeInfo"`
+	AdvancedInfo     AdvancedInfo                `json:"AdvancedInfo" xml:"AdvancedInfo"`
 	Accounts         AccountsInDescribeDatabases `json:"Accounts" xml:"Accounts"`
 }
