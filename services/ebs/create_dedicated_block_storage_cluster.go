@@ -74,6 +74,7 @@ type CreateDedicatedBlockStorageClusterRequest struct {
 	Type            string                                   `position:"Query" name:"Type"`
 	Capacity        requests.Integer                         `position:"Query" name:"Capacity"`
 	ResourceGroupId string                                   `position:"Query" name:"ResourceGroupId"`
+	DbscId          string                                   `position:"Query" name:"DbscId"`
 	Tag             *[]CreateDedicatedBlockStorageClusterTag `position:"Query" name:"Tag"  type:"Repeated"`
 	Azone           string                                   `position:"Query" name:"Azone"`
 	Period          requests.Integer                         `position:"Query" name:"Period"`
