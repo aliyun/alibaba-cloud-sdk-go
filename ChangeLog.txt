@@ -1,3 +1,7 @@
+2023-06-27 Version: v1.62.390
+- Generated 2020-04-07 for `cas`.
+- Fix some bugs.
+
 2023-06-26 Version: v1.62.389
 - Generated 2021-07-30 for `ebs`.
 - Sdk update.
