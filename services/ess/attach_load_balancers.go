@@ -71,13 +71,20 @@ func (client *Client) AttachLoadBalancersWithCallback(request *AttachLoadBalance
 // AttachLoadBalancersRequest is the request struct for api AttachLoadBalancers
 type AttachLoadBalancersRequest struct {
 	*requests.RpcRequest
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	ScalingGroupId       string           `position:"Query" name:"ScalingGroupId"`
-	ForceAttach          requests.Boolean `position:"Query" name:"ForceAttach"`
-	LoadBalancer         *[]string        `position:"Query" name:"LoadBalancer"  type:"Repeated"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	Async                requests.Boolean `position:"Query" name:"Async"`
+	ClientToken          string                                   `position:"Query" name:"ClientToken"`
+	ScalingGroupId       string                                   `position:"Query" name:"ScalingGroupId"`
+	ForceAttach          requests.Boolean                         `position:"Query" name:"ForceAttach"`
+	LoadBalancerConfig   *[]AttachLoadBalancersLoadBalancerConfig `position:"Query" name:"LoadBalancerConfig"  type:"Repeated"`
+	LoadBalancer         *[]string                                `position:"Query" name:"LoadBalancer"  type:"Repeated"`
+	ResourceOwnerAccount string                                   `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerId              requests.Integer                         `position:"Query" name:"OwnerId"`
+	Async                requests.Boolean                         `position:"Query" name:"Async"`
+}
+
+// AttachLoadBalancersLoadBalancerConfig is a repeated param struct in AttachLoadBalancersRequest
+type AttachLoadBalancersLoadBalancerConfig struct {
+	LoadBalancerId string `name:"LoadBalancerId"`
+	Weight         string `name:"Weight"`
 }
 
 // AttachLoadBalancersResponse is the response struct for api AttachLoadBalancers

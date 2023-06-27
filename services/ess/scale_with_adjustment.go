@@ -71,16 +71,17 @@ func (client *Client) ScaleWithAdjustmentWithCallback(request *ScaleWithAdjustme
 // ScaleWithAdjustmentRequest is the request struct for api ScaleWithAdjustment
 type ScaleWithAdjustmentRequest struct {
 	*requests.RpcRequest
-	AdjustmentValue        requests.Integer `position:"Query" name:"AdjustmentValue"`
 	ClientToken            string           `position:"Query" name:"ClientToken"`
-	ResourceOwnerAccount   string           `position:"Query" name:"ResourceOwnerAccount"`
 	ScalingGroupId         string           `position:"Query" name:"ScalingGroupId"`
+	InstanceType           *[]string        `position:"Query" name:"InstanceType"  type:"Repeated"`
+	SyncActivity           requests.Boolean `position:"Query" name:"SyncActivity"`
+	AdjustmentValue        requests.Integer `position:"Query" name:"AdjustmentValue"`
+	ResourceOwnerAccount   string           `position:"Query" name:"ResourceOwnerAccount"`
 	AdjustmentType         string           `position:"Query" name:"AdjustmentType"`
 	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
 	SpotStrategy           string           `position:"Query" name:"SpotStrategy"`
+	VSwitchId              *[]string        `position:"Query" name:"VSwitchId"  type:"Repeated"`
 	MinAdjustmentMagnitude requests.Integer `position:"Query" name:"MinAdjustmentMagnitude"`
-	InstanceType           *[]string        `position:"Query" name:"InstanceType"  type:"Repeated"`
-	SyncActivity           requests.Boolean `position:"Query" name:"SyncActivity"`
 }
 
 // ScaleWithAdjustmentResponse is the response struct for api ScaleWithAdjustment

@@ -41,4 +41,5 @@ type ScalingRule struct {
 	ScalingRuleId            string          `json:"ScalingRuleId" xml:"ScalingRuleId"`
 	Alarms                   Alarms          `json:"Alarms" xml:"Alarms"`
 	StepAdjustments          StepAdjustments `json:"StepAdjustments" xml:"StepAdjustments"`
+	AlarmDimensions          AlarmDimensions `json:"AlarmDimensions" xml:"AlarmDimensions"`
 }

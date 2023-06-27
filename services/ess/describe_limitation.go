@@ -82,6 +82,7 @@ type DescribeLimitationResponse struct {
 	MaxNumberOfLoadBalancers              int    `json:"MaxNumberOfLoadBalancers" xml:"MaxNumberOfLoadBalancers"`
 	MaxNumberOfMaxSize                    int    `json:"MaxNumberOfMaxSize" xml:"MaxNumberOfMaxSize"`
 	MaxNumberOfAlbServerGroup             int    `json:"MaxNumberOfAlbServerGroup" xml:"MaxNumberOfAlbServerGroup"`
+	MaxNumberOfNlbServerGroup             int    `json:"MaxNumberOfNlbServerGroup" xml:"MaxNumberOfNlbServerGroup"`
 	MaxNumberOfDBInstances                int    `json:"MaxNumberOfDBInstances" xml:"MaxNumberOfDBInstances"`
 	MaxNumberOfScalingConfigurations      int    `json:"MaxNumberOfScalingConfigurations" xml:"MaxNumberOfScalingConfigurations"`
 	MaxNumberOfMinSize                    int    `json:"MaxNumberOfMinSize" xml:"MaxNumberOfMinSize"`

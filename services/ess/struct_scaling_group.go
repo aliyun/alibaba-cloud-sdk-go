@@ -65,6 +65,7 @@ type ScalingGroup struct {
 	CustomPolicyARN                     string                  `json:"CustomPolicyARN" xml:"CustomPolicyARN"`
 	InitCapacity                        int                     `json:"InitCapacity" xml:"InitCapacity"`
 	ResourceGroupId                     string                  `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	EnableDesiredCapacity               bool                    `json:"EnableDesiredCapacity" xml:"EnableDesiredCapacity"`
 	RemovalPolicies                     RemovalPolicies         `json:"RemovalPolicies" xml:"RemovalPolicies"`
 	DBInstanceIds                       DBInstanceIds           `json:"DBInstanceIds" xml:"DBInstanceIds"`
 	LoadBalancerIds                     LoadBalancerIds         `json:"LoadBalancerIds" xml:"LoadBalancerIds"`
@@ -73,4 +74,6 @@ type ScalingGroup struct {
 	VServerGroups                       VServerGroups           `json:"VServerGroups" xml:"VServerGroups"`
 	LaunchTemplateOverrides             LaunchTemplateOverrides `json:"LaunchTemplateOverrides" xml:"LaunchTemplateOverrides"`
 	AlbServerGroups                     AlbServerGroups         `json:"AlbServerGroups" xml:"AlbServerGroups"`
+	ServerGroups                        ServerGroups            `json:"ServerGroups" xml:"ServerGroups"`
+	LoadBalancerConfigs                 LoadBalancerConfigs     `json:"LoadBalancerConfigs" xml:"LoadBalancerConfigs"`
 }

@@ -72,6 +72,7 @@ func (client *Client) ModifyScalingRuleWithCallback(request *ModifyScalingRuleRe
 type ModifyScalingRuleRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId          requests.Integer                   `position:"Query" name:"ResourceOwnerId"`
+	AlarmDimension           *[]ModifyScalingRuleAlarmDimension `position:"Query" name:"AlarmDimension"  type:"Repeated"`
 	StepAdjustment           *[]ModifyScalingRuleStepAdjustment `position:"Query" name:"StepAdjustment"  type:"Repeated"`
 	DisableScaleIn           requests.Boolean                   `position:"Query" name:"DisableScaleIn"`
 	ScalingRuleId            string                             `position:"Query" name:"ScalingRuleId"`
@@ -93,6 +94,12 @@ type ModifyScalingRuleRequest struct {
 	ScaleOutEvaluationCount  requests.Integer                   `position:"Query" name:"ScaleOutEvaluationCount"`
 	MinAdjustmentMagnitude   requests.Integer                   `position:"Query" name:"MinAdjustmentMagnitude"`
 	TargetValue              requests.Float                     `position:"Query" name:"TargetValue"`
+}
+
+// ModifyScalingRuleAlarmDimension is a repeated param struct in ModifyScalingRuleRequest
+type ModifyScalingRuleAlarmDimension struct {
+	DimensionValue string `name:"DimensionValue"`
+	DimensionKey   string `name:"DimensionKey"`
 }
 
 // ModifyScalingRuleStepAdjustment is a repeated param struct in ModifyScalingRuleRequest
