@@ -1,3 +1,18 @@
+2023-06-27 Version: v1.62.391
+- Generated 2016-04-28 for `Vpc`.
+- Add error code.
+- Add ErrorCode.
+- Add errorCode for ListPublicIpAddressPoolsForCommonBuy.
+- Add new errorcode.
+- Modify parameter type.
+- Change parameter instanceId  of DeleteVSwitchCidrReservation to requeired, add error code, and add tags in DescribeCommonBandwidthPackages response.
+- Update traffic mirror service api.
+- Add error code for MoveResourceGroup and AllocateVpcIpv6Cidr.
+- Api tag.
+- Support tag when create resources.
+- Add errorCode.
+- Change API RAM meta.
+
 2023-06-27 Version: v1.62.390
 - Generated 2020-04-07 for `cas`.
 - Fix some bugs.
