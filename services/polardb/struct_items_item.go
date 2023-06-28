@@ -29,6 +29,7 @@ type ItemsItem struct {
 	ModifiedTime       string `json:"ModifiedTime" xml:"ModifiedTime"`
 	CreatedTime        string `json:"CreatedTime" xml:"CreatedTime"`
 	SwitchTime         string `json:"SwitchTime" xml:"SwitchTime"`
+	ReferenceExtPrice  string `json:"ReferenceExtPrice" xml:"ReferenceExtPrice"`
 	ClassTypeLevel     string `json:"ClassTypeLevel" xml:"ClassTypeLevel"`
 	Id                 int    `json:"Id" xml:"Id"`
 	Status             int    `json:"Status" xml:"Status"`

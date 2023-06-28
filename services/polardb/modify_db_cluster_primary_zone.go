@@ -79,6 +79,7 @@ type ModifyDBClusterPrimaryZoneRequest struct {
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	VSwitchId            string           `position:"Query" name:"VSwitchId"`
 	PlannedStartTime     string           `position:"Query" name:"PlannedStartTime"`
+	VPCId                string           `position:"Query" name:"VPCId"`
 	ZoneId               string           `position:"Query" name:"ZoneId"`
 	FromTimeService      requests.Boolean `position:"Query" name:"FromTimeService"`
 }

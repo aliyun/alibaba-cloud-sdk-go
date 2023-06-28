@@ -77,6 +77,7 @@ type DescribeClassListRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	CommodityCode        string           `position:"Query" name:"CommodityCode"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	MasterHa             string           `position:"Query" name:"MasterHa"`
 	OrderType            string           `position:"Query" name:"OrderType"`
 }
 
