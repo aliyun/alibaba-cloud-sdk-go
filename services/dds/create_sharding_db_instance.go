@@ -80,6 +80,7 @@ type CreateShardingDBInstanceRequest struct {
 	ResourceGroupId        string                                  `position:"Query" name:"ResourceGroupId"`
 	SecurityToken          string                                  `position:"Query" name:"SecurityToken"`
 	DBInstanceDescription  string                                  `position:"Query" name:"DBInstanceDescription"`
+	Tag                    *[]CreateShardingDBInstanceTag          `position:"Query" name:"Tag"  type:"Repeated"`
 	GlobalSecurityGroupIds string                                  `position:"Query" name:"GlobalSecurityGroupIds"`
 	Period                 requests.Integer                        `position:"Query" name:"Period"`
 	EncryptionKey          string                                  `position:"Query" name:"EncryptionKey"`
@@ -110,6 +111,12 @@ type CreateShardingDBInstanceReplicaSet struct {
 	ReadonlyReplicas string `name:"ReadonlyReplicas"`
 	Storage          string `name:"Storage"`
 	Class            string `name:"Class"`
+}
+
+// CreateShardingDBInstanceTag is a repeated param struct in CreateShardingDBInstanceRequest
+type CreateShardingDBInstanceTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // CreateShardingDBInstanceConfigServer is a repeated param struct in CreateShardingDBInstanceRequest

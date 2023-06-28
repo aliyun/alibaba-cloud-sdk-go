@@ -82,6 +82,7 @@ type ModifyDBInstanceNetworkTypeRequest struct {
 	VSwitchId            string           `position:"Query" name:"VSwitchId"`
 	RetainClassic        string           `position:"Query" name:"RetainClassic"`
 	VpcId                string           `position:"Query" name:"VpcId"`
+	ZoneId               string           `position:"Query" name:"ZoneId"`
 }
 
 // ModifyDBInstanceNetworkTypeResponse is the response struct for api ModifyDBInstanceNetworkType

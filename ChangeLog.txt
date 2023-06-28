@@ -1,3 +1,7 @@
+2023-06-28 Version: v1.62.393
+- Generated 2015-12-01 for `Dds`.
+- Update by SDK platform.
+
 2023-06-27 Version: v1.62.392
 - Generated 2014-08-28 for `Ess`.
 - add enableDesiredCapacity.
