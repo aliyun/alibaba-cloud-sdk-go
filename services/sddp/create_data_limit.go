@@ -71,24 +71,26 @@ func (client *Client) CreateDataLimitWithCallback(request *CreateDataLimitReques
 // CreateDataLimitRequest is the request struct for api CreateDataLimit
 type CreateDataLimitRequest struct {
 	*requests.RpcRequest
-	OcrStatus       requests.Integer `position:"Query" name:"OcrStatus"`
-	ParentId        string           `position:"Query" name:"ParentId"`
-	Password        string           `position:"Query" name:"Password"`
-	BatchCreate     requests.Boolean `position:"Query" name:"BatchCreate"`
-	SourceIp        string           `position:"Query" name:"SourceIp"`
-	Enable          requests.Integer `position:"Query" name:"Enable"`
-	DataLimitList   string           `position:"Query" name:"DataLimitList"`
-	Lang            string           `position:"Query" name:"Lang"`
-	ServiceRegionId string           `position:"Query" name:"ServiceRegionId"`
-	EngineType      string           `position:"Query" name:"EngineType"`
-	AuditStatus     requests.Integer `position:"Query" name:"AuditStatus"`
-	AutoScan        requests.Integer `position:"Query" name:"AutoScan"`
-	LogStoreDay     requests.Integer `position:"Query" name:"LogStoreDay"`
-	ResourceType    requests.Integer `position:"Query" name:"ResourceType"`
-	Connector       string           `position:"Query" name:"Connector"`
-	Port            requests.Integer `position:"Query" name:"Port"`
-	EventStatus     requests.Integer `position:"Query" name:"EventStatus"`
-	UserName        string           `position:"Query" name:"UserName"`
+	OcrStatus             requests.Integer `position:"Query" name:"OcrStatus"`
+	SamplingSize          requests.Integer `position:"Query" name:"SamplingSize"`
+	ParentId              string           `position:"Query" name:"ParentId"`
+	Password              string           `position:"Query" name:"Password"`
+	BatchCreate           requests.Boolean `position:"Query" name:"BatchCreate"`
+	SourceIp              string           `position:"Query" name:"SourceIp"`
+	Enable                requests.Integer `position:"Query" name:"Enable"`
+	DataLimitList         string           `position:"Query" name:"DataLimitList"`
+	Lang                  string           `position:"Query" name:"Lang"`
+	ServiceRegionId       string           `position:"Query" name:"ServiceRegionId"`
+	EngineType            string           `position:"Query" name:"EngineType"`
+	AuditStatus           requests.Integer `position:"Query" name:"AuditStatus"`
+	AutoScan              requests.Integer `position:"Query" name:"AutoScan"`
+	LogStoreDay           requests.Integer `position:"Query" name:"LogStoreDay"`
+	CertificatePermission string           `position:"Query" name:"CertificatePermission"`
+	ResourceType          requests.Integer `position:"Query" name:"ResourceType"`
+	Connector             string           `position:"Query" name:"Connector"`
+	Port                  requests.Integer `position:"Query" name:"Port"`
+	EventStatus           requests.Integer `position:"Query" name:"EventStatus"`
+	UserName              string           `position:"Query" name:"UserName"`
 }
 
 // CreateDataLimitResponse is the response struct for api CreateDataLimit

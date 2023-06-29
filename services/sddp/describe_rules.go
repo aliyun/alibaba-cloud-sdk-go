@@ -77,6 +77,7 @@ type DescribeRulesRequest struct {
 	RiskLevelId       requests.Integer `position:"Query" name:"RiskLevelId"`
 	SourceIp          string           `position:"Query" name:"SourceIp"`
 	PageSize          requests.Integer `position:"Query" name:"PageSize"`
+	MatchType         requests.Integer `position:"Query" name:"MatchType"`
 	Lang              string           `position:"Query" name:"Lang"`
 	KeywordCompatible requests.Boolean `position:"Query" name:"KeywordCompatible"`
 	RuleType          requests.Integer `position:"Query" name:"RuleType"`
@@ -92,11 +93,11 @@ type DescribeRulesRequest struct {
 // DescribeRulesResponse is the response struct for api DescribeRules
 type DescribeRulesResponse struct {
 	*responses.BaseResponse
-	CurrentPage int    `json:"CurrentPage" xml:"CurrentPage"`
-	RequestId   string `json:"RequestId" xml:"RequestId"`
-	PageSize    int    `json:"PageSize" xml:"PageSize"`
-	TotalCount  int    `json:"TotalCount" xml:"TotalCount"`
-	Items       []Rule `json:"Items" xml:"Items"`
+	CurrentPage int                   `json:"CurrentPage" xml:"CurrentPage"`
+	RequestId   string                `json:"RequestId" xml:"RequestId"`
+	PageSize    int                   `json:"PageSize" xml:"PageSize"`
+	TotalCount  int                   `json:"TotalCount" xml:"TotalCount"`
+	Items       []RuleInDescribeRules `json:"Items" xml:"Items"`
 }
 
 // CreateDescribeRulesRequest creates a request to invoke DescribeRules API

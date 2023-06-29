@@ -57,4 +57,11 @@ type UserStatus struct {
 	AssetScanned         bool   `json:"AssetScanned" xml:"AssetScanned"`
 	AlarmCount           int64  `json:"AlarmCount" xml:"AlarmCount"`
 	DisplayTime          string `json:"DisplayTime" xml:"DisplayTime"`
+	DataManagerRole      int    `json:"DataManagerRole" xml:"DataManagerRole"`
+	ReleaseDays          int    `json:"ReleaseDays" xml:"ReleaseDays"`
+	AuditClosable        bool   `json:"AuditClosable" xml:"AuditClosable"`
+	AuditReleasable      bool   `json:"AuditReleasable" xml:"AuditReleasable"`
+	ReleaseTime          int64  `json:"ReleaseTime" xml:"ReleaseTime"`
+	InstanceTotalCount   int64  `json:"InstanceTotalCount" xml:"InstanceTotalCount"`
+	OssTotalSize         int64  `json:"OssTotalSize" xml:"OssTotalSize"`
 }

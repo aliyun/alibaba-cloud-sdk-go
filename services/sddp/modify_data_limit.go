@@ -71,20 +71,24 @@ func (client *Client) ModifyDataLimitWithCallback(request *ModifyDataLimitReques
 // ModifyDataLimitRequest is the request struct for api ModifyDataLimit
 type ModifyDataLimitRequest struct {
 	*requests.RpcRequest
-	ModifyPassword  requests.Boolean `position:"Query" name:"ModifyPassword"`
-	Password        string           `position:"Query" name:"Password"`
-	SourceIp        string           `position:"Query" name:"SourceIp"`
-	Id              requests.Integer `position:"Query" name:"Id"`
-	Lang            string           `position:"Query" name:"Lang"`
-	ServiceRegionId string           `position:"Query" name:"ServiceRegionId"`
-	EngineType      string           `position:"Query" name:"EngineType"`
-	AuditStatus     requests.Integer `position:"Query" name:"AuditStatus"`
-	AutoScan        requests.Integer `position:"Query" name:"AutoScan"`
-	LogStoreDay     requests.Integer `position:"Query" name:"LogStoreDay"`
-	ResourceType    requests.Integer `position:"Query" name:"ResourceType"`
-	Connector       string           `position:"Query" name:"Connector"`
-	Port            requests.Integer `position:"Query" name:"Port"`
-	UserName        string           `position:"Query" name:"UserName"`
+	ModifyPassword      requests.Boolean `position:"Query" name:"ModifyPassword"`
+	VSwitchIdList       *[]string        `position:"Query" name:"VSwitchIdList"  type:"Repeated"`
+	SamplingSize        requests.Integer `position:"Query" name:"SamplingSize"`
+	Password            string           `position:"Query" name:"Password"`
+	SourceIp            string           `position:"Query" name:"SourceIp"`
+	Id                  requests.Integer `position:"Query" name:"Id"`
+	Lang                string           `position:"Query" name:"Lang"`
+	ServiceRegionId     string           `position:"Query" name:"ServiceRegionId"`
+	EngineType          string           `position:"Query" name:"EngineType"`
+	AuditStatus         requests.Integer `position:"Query" name:"AuditStatus"`
+	AutoScan            requests.Integer `position:"Query" name:"AutoScan"`
+	SecurityGroupIdList *[]string        `position:"Query" name:"SecurityGroupIdList"  type:"Repeated"`
+	LogStoreDay         requests.Integer `position:"Query" name:"LogStoreDay"`
+	ResourceType        requests.Integer `position:"Query" name:"ResourceType"`
+	Connector           string           `position:"Query" name:"Connector"`
+	Port                requests.Integer `position:"Query" name:"Port"`
+	VpcId               string           `position:"Query" name:"VpcId"`
+	UserName            string           `position:"Query" name:"UserName"`
 }
 
 // ModifyDataLimitResponse is the response struct for api ModifyDataLimit

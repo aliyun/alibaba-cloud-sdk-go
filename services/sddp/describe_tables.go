@@ -71,9 +71,7 @@ func (client *Client) DescribeTablesWithCallback(request *DescribeTablesRequest,
 // DescribeTablesRequest is the request struct for api DescribeTables
 type DescribeTablesRequest struct {
 	*requests.RpcRequest
-	ProductCode         string           `position:"Query" name:"ProductCode"`
 	ProductId           requests.Integer `position:"Query" name:"ProductId"`
-	RiskLevels          string           `position:"Query" name:"RiskLevels"`
 	NeedRiskCount       requests.Boolean `position:"Query" name:"NeedRiskCount"`
 	PackageId           requests.Integer `position:"Query" name:"PackageId"`
 	RuleName            string           `position:"Query" name:"RuleName"`
@@ -82,22 +80,25 @@ type DescribeTablesRequest struct {
 	StartTime           requests.Integer `position:"Query" name:"StartTime"`
 	LastScanTimeEnd     requests.Integer `position:"Query" name:"LastScanTimeEnd"`
 	LastScanTimeStart   requests.Integer `position:"Query" name:"LastScanTimeStart"`
-	SensLevelName       string           `position:"Query" name:"SensLevelName"`
 	SourceIp            string           `position:"Query" name:"SourceIp"`
-	PageSize            requests.Integer `position:"Query" name:"PageSize"`
 	InstanceDescription string           `position:"Query" name:"InstanceDescription"`
-	Lang                string           `position:"Query" name:"Lang"`
-	QueryType           requests.Integer `position:"Query" name:"QueryType"`
 	ServiceRegionId     string           `position:"Query" name:"ServiceRegionId"`
 	FeatureType         requests.Integer `position:"Query" name:"FeatureType"`
 	OrderBy             string           `position:"Query" name:"OrderBy"`
-	EndTime             requests.Integer `position:"Query" name:"EndTime"`
-	CurrentPage         requests.Integer `position:"Query" name:"CurrentPage"`
-	RuleIds             string           `position:"Query" name:"RuleIds"`
+	TemplateId          requests.Integer `position:"Query" name:"TemplateId"`
 	InstanceId          requests.Integer `position:"Query" name:"InstanceId"`
 	InstanceName        string           `position:"Query" name:"InstanceName"`
 	Name                string           `position:"Query" name:"Name"`
 	RuleId              requests.Integer `position:"Query" name:"RuleId"`
+	ProductCode         string           `position:"Query" name:"ProductCode"`
+	RiskLevels          string           `position:"Query" name:"RiskLevels"`
+	SensLevelName       string           `position:"Query" name:"SensLevelName"`
+	PageSize            requests.Integer `position:"Query" name:"PageSize"`
+	Lang                string           `position:"Query" name:"Lang"`
+	QueryType           requests.Integer `position:"Query" name:"QueryType"`
+	EndTime             requests.Integer `position:"Query" name:"EndTime"`
+	CurrentPage         requests.Integer `position:"Query" name:"CurrentPage"`
+	RuleIds             string           `position:"Query" name:"RuleIds"`
 }
 
 // DescribeTablesResponse is the response struct for api DescribeTables

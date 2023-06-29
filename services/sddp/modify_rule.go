@@ -78,8 +78,10 @@ type ModifyRuleRequest struct {
 	RiskLevelId     requests.Integer `position:"Query" name:"RiskLevelId"`
 	Content         string           `position:"Query" name:"Content"`
 	SourceIp        string           `position:"Query" name:"SourceIp"`
+	MatchType       requests.Integer `position:"Query" name:"MatchType"`
 	Id              requests.Integer `position:"Query" name:"Id"`
 	Lang            string           `position:"Query" name:"Lang"`
+	SupportForm     requests.Integer `position:"Query" name:"SupportForm"`
 	FeatureType     requests.Integer `position:"Query" name:"FeatureType"`
 	RuleType        requests.Integer `position:"Query" name:"RuleType"`
 	StatExpress     string           `position:"Query" name:"StatExpress"`

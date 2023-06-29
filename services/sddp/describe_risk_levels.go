@@ -71,9 +71,10 @@ func (client *Client) DescribeRiskLevelsWithCallback(request *DescribeRiskLevels
 // DescribeRiskLevelsRequest is the request struct for api DescribeRiskLevels
 type DescribeRiskLevelsRequest struct {
 	*requests.RpcRequest
-	CustomType requests.Integer `position:"Query" name:"CustomType"`
 	SourceIp   string           `position:"Query" name:"SourceIp"`
 	Lang       string           `position:"Query" name:"Lang"`
+	CustomType requests.Integer `position:"Query" name:"CustomType"`
+	TemplateId requests.Integer `position:"Query" name:"TemplateId"`
 }
 
 // DescribeRiskLevelsResponse is the response struct for api DescribeRiskLevels
