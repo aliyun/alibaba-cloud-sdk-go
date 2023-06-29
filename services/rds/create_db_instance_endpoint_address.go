@@ -74,6 +74,7 @@ type CreateDBInstanceEndpointAddressRequest struct {
 	ConnectionStringPrefix string           `position:"Query" name:"ConnectionStringPrefix"`
 	ResourceOwnerId        requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ClientToken            string           `position:"Query" name:"ClientToken"`
+	ResourceGroupId        string           `position:"Query" name:"ResourceGroupId"`
 	DBInstanceId           string           `position:"Query" name:"DBInstanceId"`
 	IpType                 string           `position:"Query" name:"IpType"`
 	DBInstanceEndpointId   string           `position:"Query" name:"DBInstanceEndpointId"`

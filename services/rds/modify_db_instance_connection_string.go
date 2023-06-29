@@ -73,6 +73,7 @@ type ModifyDBInstanceConnectionStringRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId         requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ConnectionStringPrefix  string           `position:"Query" name:"ConnectionStringPrefix"`
+	PGBouncerPort           string           `position:"Query" name:"PGBouncerPort"`
 	GeneralGroupName        string           `position:"Query" name:"GeneralGroupName"`
 	DBInstanceId            string           `position:"Query" name:"DBInstanceId"`
 	ResourceOwnerAccount    string           `position:"Query" name:"ResourceOwnerAccount"`

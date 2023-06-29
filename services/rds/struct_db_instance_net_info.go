@@ -27,6 +27,7 @@ type DBInstanceNetInfo struct {
 	Availability         string                                       `json:"Availability" xml:"Availability"`
 	Upgradeable          string                                       `json:"Upgradeable" xml:"Upgradeable"`
 	ConnectionString     string                                       `json:"ConnectionString" xml:"ConnectionString"`
+	PGBouncerPort        string                                       `json:"PGBouncerPort" xml:"PGBouncerPort"`
 	MaxDelayTime         string                                       `json:"MaxDelayTime" xml:"MaxDelayTime"`
 	IPType               string                                       `json:"IPType" xml:"IPType"`
 	ConnectionStringType string                                       `json:"ConnectionStringType" xml:"ConnectionStringType"`

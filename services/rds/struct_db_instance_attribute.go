@@ -21,6 +21,7 @@ type DBInstanceAttribute struct {
 	Engine                            string                                             `json:"Engine" xml:"Engine"`
 	TempUpgradeTimeStart              string                                             `json:"TempUpgradeTimeStart" xml:"TempUpgradeTimeStart"`
 	TempUpgradeRecoveryTime           string                                             `json:"TempUpgradeRecoveryTime" xml:"TempUpgradeRecoveryTime"`
+	PGBouncerEnabled                  string                                             `json:"PGBouncerEnabled" xml:"PGBouncerEnabled"`
 	TempUpgradeRecoveryMaxIOPS        string                                             `json:"TempUpgradeRecoveryMaxIOPS" xml:"TempUpgradeRecoveryMaxIOPS"`
 	DBInstanceDiskUsed                string                                             `json:"DBInstanceDiskUsed" xml:"DBInstanceDiskUsed"`
 	BpeEnabled                        string                                             `json:"BpeEnabled" xml:"BpeEnabled"`
