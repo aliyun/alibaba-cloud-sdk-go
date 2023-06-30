@@ -1,3 +1,13 @@
+2023-06-30 Version: v1.62.403
+- Generated 2016-04-28 for `Vpc`.
+- Support HA VPN.
+- Api Type tag.
+- Api Type Tag.
+- Add ErrorCode.
+- Support HA-VPN.
+- Disuse some nat64 interface.
+- Optimize CreateNatGateway.
+
 2023-06-30 Version: v1.62.402
 - Generated 2018-11-01 for `dms-enterprise`.
 - Modify ListTaskFlowsByPage API. Add output parameter: DagOwnerId.
