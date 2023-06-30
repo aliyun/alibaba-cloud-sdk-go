@@ -1,3 +1,8 @@
+2023-06-30 Version: v1.62.399
+- Generated 2019-01-03 for `Sddp`.
+- Add DescribeCategoryTemplateList api.
+- Modify some api directory.
+
 2023-06-30 Version: v1.62.398
 - Generated 2014-08-15 for `Rds`.
 - ModifyBackupPolicy API support parameter BackupPriority.
