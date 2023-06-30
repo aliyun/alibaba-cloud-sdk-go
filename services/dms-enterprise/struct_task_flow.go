@@ -21,6 +21,7 @@ type TaskFlow struct {
 	LatestInstanceStatus int    `json:"LatestInstanceStatus" xml:"LatestInstanceStatus"`
 	ScheduleParam        string `json:"ScheduleParam" xml:"ScheduleParam"`
 	CronEndDate          string `json:"CronEndDate" xml:"CronEndDate"`
+	DagOwnerId           string `json:"DagOwnerId" xml:"DagOwnerId"`
 	Id                   int64  `json:"Id" xml:"Id"`
 	CreatorNickName      string `json:"CreatorNickName" xml:"CreatorNickName"`
 	CronBeginDate        string `json:"CronBeginDate" xml:"CronBeginDate"`
