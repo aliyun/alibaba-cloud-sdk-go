@@ -17,6 +17,8 @@ package nlb
 
 // Tag is a nested struct in nlb response
 type Tag struct {
-	Key   string `json:"Key" xml:"Key"`
-	Value string `json:"Value" xml:"Value"`
+	Key      string `json:"Key" xml:"Key"`
+	Value    string `json:"Value" xml:"Value"`
+	TagValue string `json:"TagValue" xml:"TagValue"`
+	TagKey   string `json:"TagKey" xml:"TagKey"`
 }

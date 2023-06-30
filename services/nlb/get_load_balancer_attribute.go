@@ -111,6 +111,7 @@ type GetLoadBalancerAttributeResponse struct {
 	ModificationProtectionConfig ModificationProtectionConfig `json:"ModificationProtectionConfig" xml:"ModificationProtectionConfig"`
 	OperationLocks               []OperationLock              `json:"OperationLocks" xml:"OperationLocks"`
 	ZoneMappings                 []ZoneMapping                `json:"ZoneMappings" xml:"ZoneMappings"`
+	Tags                         []Tag                        `json:"Tags" xml:"Tags"`
 }
 
 // CreateGetLoadBalancerAttributeRequest creates a request to invoke GetLoadBalancerAttribute API

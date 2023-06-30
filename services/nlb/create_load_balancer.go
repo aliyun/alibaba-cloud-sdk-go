@@ -80,6 +80,7 @@ type CreateLoadBalancerRequest struct {
 	ResourceGroupId              string                                         `position:"Body" name:"ResourceGroupId"`
 	LoadBalancerName             string                                         `position:"Body" name:"LoadBalancerName"`
 	AddressType                  string                                         `position:"Body" name:"AddressType"`
+	Tag                          *[]CreateLoadBalancerTag                       `position:"Body" name:"Tag"  type:"Repeated"`
 	BandwidthPackageId           string                                         `position:"Body" name:"BandwidthPackageId"`
 	DryRun                       requests.Boolean                               `position:"Body" name:"DryRun"`
 	ZoneMappings                 *[]CreateLoadBalancerZoneMappings              `position:"Body" name:"ZoneMappings"  type:"Repeated"`
@@ -111,6 +112,12 @@ type CreateLoadBalancerLoadBalancerBillingConfig struct {
 type CreateLoadBalancerDeletionProtectionConfig struct {
 	Enabled string `name:"Enabled"`
 	Reason  string `name:"Reason"`
+}
+
+// CreateLoadBalancerTag is a repeated param struct in CreateLoadBalancerRequest
+type CreateLoadBalancerTag struct {
+	Key   string `name:"Key"`
+	Value string `name:"Value"`
 }
 
 // CreateLoadBalancerResponse is the response struct for api CreateLoadBalancer

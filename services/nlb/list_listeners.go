@@ -71,11 +71,18 @@ func (client *Client) ListListenersWithCallback(request *ListListenersRequest, c
 // ListListenersRequest is the request struct for api ListListeners
 type ListListenersRequest struct {
 	*requests.RpcRequest
-	LoadBalancerIds  *[]string        `position:"Query" name:"LoadBalancerIds"  type:"Repeated"`
-	NextToken        string           `position:"Query" name:"NextToken"`
-	ListenerProtocol string           `position:"Query" name:"ListenerProtocol"`
-	ListenerIds      *[]string        `position:"Query" name:"ListenerIds"  type:"Repeated"`
-	MaxResults       requests.Integer `position:"Query" name:"MaxResults"`
+	LoadBalancerIds  *[]string           `position:"Query" name:"LoadBalancerIds"  type:"Repeated"`
+	NextToken        string              `position:"Query" name:"NextToken"`
+	Tag              *[]ListListenersTag `position:"Query" name:"Tag"  type:"Repeated"`
+	ListenerProtocol string              `position:"Query" name:"ListenerProtocol"`
+	ListenerIds      *[]string           `position:"Query" name:"ListenerIds"  type:"Repeated"`
+	MaxResults       requests.Integer    `position:"Query" name:"MaxResults"`
+}
+
+// ListListenersTag is a repeated param struct in ListListenersRequest
+type ListListenersTag struct {
+	Key   string `name:"Key"`
+	Value string `name:"Value"`
 }
 
 // ListListenersResponse is the response struct for api ListListeners

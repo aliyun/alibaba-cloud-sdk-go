@@ -17,25 +17,26 @@ package nlb
 
 // ListenerInfo is a nested struct in nlb response
 type ListenerInfo struct {
-	LoadBalancerId       string   `json:"LoadBalancerId" xml:"LoadBalancerId"`
-	ListenerId           string   `json:"ListenerId" xml:"ListenerId"`
-	ListenerProtocol     string   `json:"ListenerProtocol" xml:"ListenerProtocol"`
-	ListenerPort         int      `json:"ListenerPort" xml:"ListenerPort"`
-	StartPort            string   `json:"StartPort" xml:"StartPort"`
-	EndPort              string   `json:"EndPort" xml:"EndPort"`
-	ListenerDescription  string   `json:"ListenerDescription" xml:"ListenerDescription"`
-	ServerGroupId        string   `json:"ServerGroupId" xml:"ServerGroupId"`
-	IdleTimeout          int      `json:"IdleTimeout" xml:"IdleTimeout"`
-	SecurityPolicyId     string   `json:"SecurityPolicyId" xml:"SecurityPolicyId"`
-	CaEnabled            bool     `json:"CaEnabled" xml:"CaEnabled"`
-	ListenerStatus       string   `json:"ListenerStatus" xml:"ListenerStatus"`
-	RegionId             string   `json:"RegionId" xml:"RegionId"`
-	AlpnEnabled          bool     `json:"AlpnEnabled" xml:"AlpnEnabled"`
-	AlpnPolicy           string   `json:"AlpnPolicy" xml:"AlpnPolicy"`
-	SecSensorEnabled     bool     `json:"SecSensorEnabled" xml:"SecSensorEnabled"`
-	ProxyProtocolEnabled bool     `json:"ProxyProtocolEnabled" xml:"ProxyProtocolEnabled"`
-	Cps                  int      `json:"Cps" xml:"Cps"`
-	Mss                  int      `json:"Mss" xml:"Mss"`
-	CertificateIds       []string `json:"CertificateIds" xml:"CertificateIds"`
-	CaCertificateIds     []string `json:"CaCertificateIds" xml:"CaCertificateIds"`
+	LoadBalancerId       string      `json:"LoadBalancerId" xml:"LoadBalancerId"`
+	ListenerId           string      `json:"ListenerId" xml:"ListenerId"`
+	ListenerProtocol     string      `json:"ListenerProtocol" xml:"ListenerProtocol"`
+	ListenerPort         int         `json:"ListenerPort" xml:"ListenerPort"`
+	StartPort            string      `json:"StartPort" xml:"StartPort"`
+	EndPort              string      `json:"EndPort" xml:"EndPort"`
+	ListenerDescription  string      `json:"ListenerDescription" xml:"ListenerDescription"`
+	ServerGroupId        string      `json:"ServerGroupId" xml:"ServerGroupId"`
+	IdleTimeout          int         `json:"IdleTimeout" xml:"IdleTimeout"`
+	SecurityPolicyId     string      `json:"SecurityPolicyId" xml:"SecurityPolicyId"`
+	CaEnabled            bool        `json:"CaEnabled" xml:"CaEnabled"`
+	ListenerStatus       string      `json:"ListenerStatus" xml:"ListenerStatus"`
+	RegionId             string      `json:"RegionId" xml:"RegionId"`
+	AlpnEnabled          bool        `json:"AlpnEnabled" xml:"AlpnEnabled"`
+	AlpnPolicy           string      `json:"AlpnPolicy" xml:"AlpnPolicy"`
+	SecSensorEnabled     bool        `json:"SecSensorEnabled" xml:"SecSensorEnabled"`
+	ProxyProtocolEnabled bool        `json:"ProxyProtocolEnabled" xml:"ProxyProtocolEnabled"`
+	Cps                  int         `json:"Cps" xml:"Cps"`
+	Mss                  int         `json:"Mss" xml:"Mss"`
+	CertificateIds       []string    `json:"CertificateIds" xml:"CertificateIds"`
+	CaCertificateIds     []string    `json:"CaCertificateIds" xml:"CaCertificateIds"`
+	Tags                 []TagModels `json:"Tags" xml:"Tags"`
 }

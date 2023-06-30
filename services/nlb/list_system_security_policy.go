@@ -71,13 +71,6 @@ func (client *Client) ListSystemSecurityPolicyWithCallback(request *ListSystemSe
 // ListSystemSecurityPolicyRequest is the request struct for api ListSystemSecurityPolicy
 type ListSystemSecurityPolicyRequest struct {
 	*requests.RpcRequest
-	Channel              string `position:"Body" name:"Channel"`
-	OwnerIdLoginEmail    string `position:"Body" name:"OwnerIdLoginEmail"`
-	CallerBidLoginEmail  string `position:"Body" name:"CallerBidLoginEmail"`
-	CallerUidLoginEmail  string `position:"Body" name:"CallerUidLoginEmail"`
-	RequestContent       string `position:"Body" name:"RequestContent"`
-	ResourceOwnerAccount string `position:"Body" name:"ResourceOwnerAccount"`
-	OwnerAccount         string `position:"Body" name:"OwnerAccount"`
 }
 
 // ListSystemSecurityPolicyResponse is the response struct for api ListSystemSecurityPolicy

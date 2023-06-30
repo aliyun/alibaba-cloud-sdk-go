@@ -71,12 +71,19 @@ func (client *Client) CreateSecurityPolicyWithCallback(request *CreateSecurityPo
 // CreateSecurityPolicyRequest is the request struct for api CreateSecurityPolicy
 type CreateSecurityPolicyRequest struct {
 	*requests.RpcRequest
-	ClientToken        string           `position:"Body" name:"ClientToken"`
-	ResourceGroupId    string           `position:"Body" name:"ResourceGroupId"`
-	Ciphers            *[]string        `position:"Body" name:"Ciphers"  type:"Repeated"`
-	TlsVersions        *[]string        `position:"Body" name:"TlsVersions"  type:"Repeated"`
-	SecurityPolicyName string           `position:"Body" name:"SecurityPolicyName"`
-	DryRun             requests.Boolean `position:"Body" name:"DryRun"`
+	ClientToken        string                     `position:"Body" name:"ClientToken"`
+	ResourceGroupId    string                     `position:"Body" name:"ResourceGroupId"`
+	Ciphers            *[]string                  `position:"Body" name:"Ciphers"  type:"Repeated"`
+	Tag                *[]CreateSecurityPolicyTag `position:"Body" name:"Tag"  type:"Repeated"`
+	TlsVersions        *[]string                  `position:"Body" name:"TlsVersions"  type:"Repeated"`
+	SecurityPolicyName string                     `position:"Body" name:"SecurityPolicyName"`
+	DryRun             requests.Boolean           `position:"Body" name:"DryRun"`
+}
+
+// CreateSecurityPolicyTag is a repeated param struct in CreateSecurityPolicyRequest
+type CreateSecurityPolicyTag struct {
+	Key   string `name:"Key"`
+	Value string `name:"Value"`
 }
 
 // CreateSecurityPolicyResponse is the response struct for api CreateSecurityPolicy

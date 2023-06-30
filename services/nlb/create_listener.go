@@ -71,26 +71,33 @@ func (client *Client) CreateListenerWithCallback(request *CreateListenerRequest,
 // CreateListenerRequest is the request struct for api CreateListener
 type CreateListenerRequest struct {
 	*requests.RpcRequest
-	CaCertificateIds     *[]string        `position:"Body" name:"CaCertificateIds"  type:"Repeated"`
-	StartPort            requests.Integer `position:"Body" name:"StartPort"`
-	ClientToken          string           `position:"Body" name:"ClientToken"`
-	SecSensorEnabled     requests.Boolean `position:"Body" name:"SecSensorEnabled"`
-	AlpnPolicy           string           `position:"Body" name:"AlpnPolicy"`
-	Mss                  requests.Integer `position:"Body" name:"Mss"`
-	ServerGroupId        string           `position:"Body" name:"ServerGroupId"`
-	CertificateIds       *[]string        `position:"Body" name:"CertificateIds"  type:"Repeated"`
-	AlpnEnabled          requests.Boolean `position:"Body" name:"AlpnEnabled"`
-	EndPort              requests.Integer `position:"Body" name:"EndPort"`
-	ListenerPort         requests.Integer `position:"Body" name:"ListenerPort"`
-	DryRun               requests.Boolean `position:"Body" name:"DryRun"`
-	ProxyProtocolEnabled requests.Boolean `position:"Body" name:"ProxyProtocolEnabled"`
-	Cps                  requests.Integer `position:"Body" name:"Cps"`
-	ListenerProtocol     string           `position:"Body" name:"ListenerProtocol"`
-	SecurityPolicyId     string           `position:"Body" name:"SecurityPolicyId"`
-	IdleTimeout          requests.Integer `position:"Body" name:"IdleTimeout"`
-	LoadBalancerId       string           `position:"Body" name:"LoadBalancerId"`
-	ListenerDescription  string           `position:"Body" name:"ListenerDescription"`
-	CaEnabled            requests.Boolean `position:"Body" name:"CaEnabled"`
+	CaCertificateIds     *[]string            `position:"Body" name:"CaCertificateIds"  type:"Repeated"`
+	StartPort            requests.Integer     `position:"Body" name:"StartPort"`
+	ClientToken          string               `position:"Body" name:"ClientToken"`
+	SecSensorEnabled     requests.Boolean     `position:"Body" name:"SecSensorEnabled"`
+	AlpnPolicy           string               `position:"Body" name:"AlpnPolicy"`
+	Mss                  requests.Integer     `position:"Body" name:"Mss"`
+	ServerGroupId        string               `position:"Body" name:"ServerGroupId"`
+	CertificateIds       *[]string            `position:"Body" name:"CertificateIds"  type:"Repeated"`
+	Tag                  *[]CreateListenerTag `position:"Body" name:"Tag"  type:"Repeated"`
+	AlpnEnabled          requests.Boolean     `position:"Body" name:"AlpnEnabled"`
+	EndPort              requests.Integer     `position:"Body" name:"EndPort"`
+	ListenerPort         requests.Integer     `position:"Body" name:"ListenerPort"`
+	DryRun               requests.Boolean     `position:"Body" name:"DryRun"`
+	ProxyProtocolEnabled requests.Boolean     `position:"Body" name:"ProxyProtocolEnabled"`
+	Cps                  requests.Integer     `position:"Body" name:"Cps"`
+	ListenerProtocol     string               `position:"Body" name:"ListenerProtocol"`
+	SecurityPolicyId     string               `position:"Body" name:"SecurityPolicyId"`
+	IdleTimeout          requests.Integer     `position:"Body" name:"IdleTimeout"`
+	LoadBalancerId       string               `position:"Body" name:"LoadBalancerId"`
+	ListenerDescription  string               `position:"Body" name:"ListenerDescription"`
+	CaEnabled            requests.Boolean     `position:"Body" name:"CaEnabled"`
+}
+
+// CreateListenerTag is a repeated param struct in CreateListenerRequest
+type CreateListenerTag struct {
+	Key   string `name:"Key"`
+	Value string `name:"Value"`
 }
 
 // CreateListenerResponse is the response struct for api CreateListener

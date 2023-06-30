@@ -72,6 +72,7 @@ func (client *Client) UpdateListenerAttributeWithCallback(request *UpdateListene
 type UpdateListenerAttributeRequest struct {
 	*requests.RpcRequest
 	CaCertificateIds     *[]string        `position:"Body" name:"CaCertificateIds"  type:"Repeated"`
+	StartPort            requests.Integer `position:"Body" name:"StartPort"`
 	ClientToken          string           `position:"Body" name:"ClientToken"`
 	SecSensorEnabled     requests.Boolean `position:"Body" name:"SecSensorEnabled"`
 	AlpnPolicy           string           `position:"Body" name:"AlpnPolicy"`
@@ -80,6 +81,7 @@ type UpdateListenerAttributeRequest struct {
 	ListenerId           string           `position:"Body" name:"ListenerId"`
 	CertificateIds       *[]string        `position:"Body" name:"CertificateIds"  type:"Repeated"`
 	AlpnEnabled          requests.Boolean `position:"Body" name:"AlpnEnabled"`
+	EndPort              requests.Integer `position:"Body" name:"EndPort"`
 	DryRun               requests.Boolean `position:"Body" name:"DryRun"`
 	ProxyProtocolEnabled requests.Boolean `position:"Body" name:"ProxyProtocolEnabled"`
 	Cps                  requests.Integer `position:"Body" name:"Cps"`

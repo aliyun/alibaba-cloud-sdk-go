@@ -86,7 +86,6 @@ type DisableLoadBalancerIpv6InternetResponse struct {
 	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	DynamicCode    string `json:"DynamicCode" xml:"DynamicCode"`
 	DynamicMessage string `json:"DynamicMessage" xml:"DynamicMessage"`
-	JobId          string `json:"JobId" xml:"JobId"`
 }
 
 // CreateDisableLoadBalancerIpv6InternetRequest creates a request to invoke DisableLoadBalancerIpv6Internet API

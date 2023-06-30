@@ -81,6 +81,7 @@ type CreateServerGroupRequest struct {
 	Protocol                string                             `position:"Body" name:"Protocol"`
 	PersistenceEnabled      requests.Boolean                   `position:"Body" name:"PersistenceEnabled"`
 	PersistenceTimeout      requests.Integer                   `position:"Body" name:"PersistenceTimeout"`
+	Tag                     *[]CreateServerGroupTag            `position:"Body" name:"Tag"  type:"Repeated"`
 	DryRun                  requests.Boolean                   `position:"Body" name:"DryRun"`
 	ConnectionDrainEnabled  requests.Boolean                   `position:"Body" name:"ConnectionDrainEnabled"`
 	ConnectionDrainTimeout  requests.Integer                   `position:"Body" name:"ConnectionDrainTimeout"`
@@ -102,6 +103,12 @@ type CreateServerGroupHealthCheckConfig struct {
 	HealthCheckUrl            string    `name:"HealthCheckUrl"`
 	HealthCheckHttpCode       *[]string `name:"HealthCheckHttpCode" type:"Repeated"`
 	HttpCheckMethod           string    `name:"HttpCheckMethod"`
+}
+
+// CreateServerGroupTag is a repeated param struct in CreateServerGroupRequest
+type CreateServerGroupTag struct {
+	Key   string `name:"Key"`
+	Value string `name:"Value"`
 }
 
 // CreateServerGroupResponse is the response struct for api CreateServerGroup

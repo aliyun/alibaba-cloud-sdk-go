@@ -107,6 +107,7 @@ type GetListenerAttributeResponse struct {
 	Mss                  int      `json:"Mss" xml:"Mss"`
 	CertificateIds       []string `json:"CertificateIds" xml:"CertificateIds"`
 	CaCertificateIds     []string `json:"CaCertificateIds" xml:"CaCertificateIds"`
+	Tags                 []Tag    `json:"Tags" xml:"Tags"`
 }
 
 // CreateGetListenerAttributeRequest creates a request to invoke GetListenerAttribute API

@@ -72,26 +72,26 @@ func (client *Client) ListListenerCertificatesWithCallback(request *ListListener
 type ListListenerCertificatesRequest struct {
 	*requests.RpcRequest
 	ListenerId string           `position:"Body" name:"ListenerId"`
+	CertType   string           `position:"Body" name:"CertType"`
 	NextToken  string           `position:"Body" name:"NextToken"`
-	PageSize   requests.Integer `position:"Body" name:"PageSize"`
 	MaxResults requests.Integer `position:"Body" name:"MaxResults"`
-	Page       requests.Integer `position:"Body" name:"Page"`
 }
 
 // ListListenerCertificatesResponse is the response struct for api ListListenerCertificates
 type ListListenerCertificatesResponse struct {
 	*responses.BaseResponse
-	RequestId      string   `json:"RequestId" xml:"RequestId"`
-	Success        bool     `json:"Success" xml:"Success"`
-	Code           string   `json:"Code" xml:"Code"`
-	Message        string   `json:"Message" xml:"Message"`
-	HttpStatusCode int      `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	DynamicCode    string   `json:"DynamicCode" xml:"DynamicCode"`
-	DynamicMessage string   `json:"DynamicMessage" xml:"DynamicMessage"`
-	TotalCount     int      `json:"TotalCount" xml:"TotalCount"`
-	NextToken      string   `json:"NextToken" xml:"NextToken"`
-	MaxResults     int      `json:"MaxResults" xml:"MaxResults"`
-	CertificateIds []string `json:"CertificateIds" xml:"CertificateIds"`
+	RequestId      string        `json:"RequestId" xml:"RequestId"`
+	Success        bool          `json:"Success" xml:"Success"`
+	Code           string        `json:"Code" xml:"Code"`
+	Message        string        `json:"Message" xml:"Message"`
+	HttpStatusCode int           `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	DynamicCode    string        `json:"DynamicCode" xml:"DynamicCode"`
+	DynamicMessage string        `json:"DynamicMessage" xml:"DynamicMessage"`
+	TotalCount     int           `json:"TotalCount" xml:"TotalCount"`
+	NextToken      string        `json:"NextToken" xml:"NextToken"`
+	MaxResults     int           `json:"MaxResults" xml:"MaxResults"`
+	CertificateIds []string      `json:"CertificateIds" xml:"CertificateIds"`
+	Certificates   []Certificate `json:"Certificates" xml:"Certificates"`
 }
 
 // CreateListListenerCertificatesRequest creates a request to invoke ListListenerCertificates API

@@ -17,9 +17,11 @@ package nlb
 
 // LoadBalancerAddress is a nested struct in nlb response
 type LoadBalancerAddress struct {
-	EniId              string `json:"EniId" xml:"EniId"`
-	AllocationId       string `json:"AllocationId" xml:"AllocationId"`
-	PrivateIPv4Address string `json:"PrivateIPv4Address" xml:"PrivateIPv4Address"`
-	PublicIPv4Address  string `json:"PublicIPv4Address" xml:"PublicIPv4Address"`
-	Ipv6Address        string `json:"Ipv6Address" xml:"Ipv6Address"`
+	EniId               string `json:"EniId" xml:"EniId"`
+	PrivateIPv6HcStatus string `json:"PrivateIPv6HcStatus" xml:"PrivateIPv6HcStatus"`
+	AllocationId        string `json:"AllocationId" xml:"AllocationId"`
+	PrivateIPv4Address  string `json:"PrivateIPv4Address" xml:"PrivateIPv4Address"`
+	PrivateIPv4HcStatus string `json:"PrivateIPv4HcStatus" xml:"PrivateIPv4HcStatus"`
+	PublicIPv4Address   string `json:"PublicIPv4Address" xml:"PublicIPv4Address"`
+	Ipv6Address         string `json:"Ipv6Address" xml:"Ipv6Address"`
 }
