@@ -17,15 +17,18 @@ package dfs
 
 // MountPoint is a nested struct in dfs response
 type MountPoint struct {
-	AccessGroupId    string `json:"AccessGroupId" xml:"AccessGroupId"`
-	FileSystemId     string `json:"FileSystemId" xml:"FileSystemId"`
-	RegionId         string `json:"RegionId" xml:"RegionId"`
-	VSwitchId        string `json:"VSwitchId" xml:"VSwitchId"`
-	CreateTime       string `json:"CreateTime" xml:"CreateTime"`
-	Status           string `json:"Status" xml:"Status"`
-	VpcId            string `json:"VpcId" xml:"VpcId"`
-	NetworkType      string `json:"NetworkType" xml:"NetworkType"`
-	MountPointId     string `json:"MountPointId" xml:"MountPointId"`
-	Description      string `json:"Description" xml:"Description"`
-	MountPointDomain string `json:"MountPointDomain" xml:"MountPointDomain"`
+	FileSystemId       string     `json:"FileSystemId" xml:"FileSystemId"`
+	VSwitchId          string     `json:"VSwitchId" xml:"VSwitchId"`
+	CreateTime         string     `json:"CreateTime" xml:"CreateTime"`
+	MountPointAlias    string     `json:"MountPointAlias" xml:"MountPointAlias"`
+	InstanceTotalCount int        `json:"InstanceTotalCount" xml:"InstanceTotalCount"`
+	AccessGroupId      string     `json:"AccessGroupId" xml:"AccessGroupId"`
+	RegionId           string     `json:"RegionId" xml:"RegionId"`
+	Status             string     `json:"Status" xml:"Status"`
+	VpcId              string     `json:"VpcId" xml:"VpcId"`
+	NetworkType        string     `json:"NetworkType" xml:"NetworkType"`
+	MountPointId       string     `json:"MountPointId" xml:"MountPointId"`
+	Description        string     `json:"Description" xml:"Description"`
+	MountPointDomain   string     `json:"MountPointDomain" xml:"MountPointDomain"`
+	Instances          []Instance `json:"Instances" xml:"Instances"`
 }
