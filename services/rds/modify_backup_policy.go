@@ -73,6 +73,7 @@ type ModifyBackupPolicyRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId               requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	LocalLogRetentionHours        string           `position:"Query" name:"LocalLogRetentionHours"`
+	BackupPriority                requests.Integer `position:"Query" name:"BackupPriority"`
 	LogBackupFrequency            string           `position:"Query" name:"LogBackupFrequency"`
 	ArchiveBackupKeepCount        requests.Integer `position:"Query" name:"ArchiveBackupKeepCount"`
 	BackupLog                     string           `position:"Query" name:"BackupLog"`

@@ -1,3 +1,8 @@
+2023-06-30 Version: v1.62.398
+- Generated 2014-08-15 for `Rds`.
+- ModifyBackupPolicy API support parameter BackupPriority.
+- DescribeBackupPolicy API add return parameters: BackupPriority and SupportModifyBackupPriority.
+
 2023-06-29 Version: v1.62.397
 - Generated 2019-01-03 for `Sddp`.
 - Add some public api.
