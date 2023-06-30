@@ -100,7 +100,7 @@ func CreateTransformDBInstancePayTypeRequest() (request *TransformDBInstancePayT
 	request = &TransformDBInstancePayTypeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "TransformDBInstancePayType", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "TransformDBInstancePayType", "", "")
 	request.Method = requests.POST
 	return
 }

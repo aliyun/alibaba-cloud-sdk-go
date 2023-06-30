@@ -90,7 +90,7 @@ func CreateCopyDatabaseRequest() (request *CopyDatabaseRequest) {
 	request = &CopyDatabaseRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "CopyDatabase", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "CopyDatabase", "", "")
 	request.Method = requests.POST
 	return
 }

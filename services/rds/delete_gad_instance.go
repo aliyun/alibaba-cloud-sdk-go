@@ -85,7 +85,7 @@ func CreateDeleteGadInstanceRequest() (request *DeleteGadInstanceRequest) {
 	request = &DeleteGadInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DeleteGadInstance", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DeleteGadInstance", "", "")
 	request.Method = requests.POST
 	return
 }

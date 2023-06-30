@@ -97,7 +97,7 @@ func CreateDescribePGHbaConfigRequest() (request *DescribePGHbaConfigRequest) {
 	request = &DescribePGHbaConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribePGHbaConfig", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribePGHbaConfig", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -89,7 +89,7 @@ func CreateDescribeHADiagnoseConfigRequest() (request *DescribeHADiagnoseConfigR
 	request = &DescribeHADiagnoseConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeHADiagnoseConfig", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeHADiagnoseConfig", "", "")
 	request.Method = requests.POST
 	return
 }

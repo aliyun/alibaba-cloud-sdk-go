@@ -91,7 +91,7 @@ func CreateModifyDBInstanceHAConfigRequest() (request *ModifyDBInstanceHAConfigR
 	request = &ModifyDBInstanceHAConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDBInstanceHAConfig", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDBInstanceHAConfig", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -88,7 +88,7 @@ func CreateGetDBInstanceTopologyRequest() (request *GetDBInstanceTopologyRequest
 	request = &GetDBInstanceTopologyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "GetDBInstanceTopology", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "GetDBInstanceTopology", "", "")
 	request.Method = requests.POST
 	return
 }

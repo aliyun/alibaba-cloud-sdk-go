@@ -86,7 +86,7 @@ func CreateConfirmNotifyRequest() (request *ConfirmNotifyRequest) {
 	request = &ConfirmNotifyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ConfirmNotify", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "ConfirmNotify", "", "")
 	request.Method = requests.POST
 	return
 }

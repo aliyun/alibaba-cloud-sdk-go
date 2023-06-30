@@ -90,7 +90,7 @@ func CreateCheckServiceLinkedRoleRequest() (request *CheckServiceLinkedRoleReque
 	request = &CheckServiceLinkedRoleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "CheckServiceLinkedRole", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "CheckServiceLinkedRole", "", "")
 	request.Method = requests.POST
 	return
 }

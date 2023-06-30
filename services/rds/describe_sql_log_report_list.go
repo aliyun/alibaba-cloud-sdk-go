@@ -97,7 +97,7 @@ func CreateDescribeSQLLogReportListRequest() (request *DescribeSQLLogReportListR
 	request = &DescribeSQLLogReportListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeSQLLogReportList", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeSQLLogReportList", "", "")
 	request.Method = requests.POST
 	return
 }

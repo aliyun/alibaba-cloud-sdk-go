@@ -99,7 +99,7 @@ func CreateCreateSecretRequest() (request *CreateSecretRequest) {
 	request = &CreateSecretRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "CreateSecret", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "CreateSecret", "", "")
 	request.Method = requests.POST
 	return
 }

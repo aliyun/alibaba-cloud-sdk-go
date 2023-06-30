@@ -95,7 +95,7 @@ func CreateActivateMigrationTargetInstanceRequest() (request *ActivateMigrationT
 	request = &ActivateMigrationTargetInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ActivateMigrationTargetInstance", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "ActivateMigrationTargetInstance", "", "")
 	request.Method = requests.POST
 	return
 }

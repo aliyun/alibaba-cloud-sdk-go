@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// CreateDatabase invokes the rds.CreateDatabase API synchronously
-func (client *Client) CreateDatabase(request *CreateDatabaseRequest) (response *CreateDatabaseResponse, err error) {
-	response = CreateCreateDatabaseResponse()
+// ModifyDBInstanceConfig invokes the rds.ModifyDBInstanceConfig API synchronously
+func (client *Client) ModifyDBInstanceConfig(request *ModifyDBInstanceConfigRequest) (response *ModifyDBInstanceConfigResponse, err error) {
+	response = CreateModifyDBInstanceConfigResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// CreateDatabaseWithChan invokes the rds.CreateDatabase API asynchronously
-func (client *Client) CreateDatabaseWithChan(request *CreateDatabaseRequest) (<-chan *CreateDatabaseResponse, <-chan error) {
-	responseChan := make(chan *CreateDatabaseResponse, 1)
+// ModifyDBInstanceConfigWithChan invokes the rds.ModifyDBInstanceConfig API asynchronously
+func (client *Client) ModifyDBInstanceConfigWithChan(request *ModifyDBInstanceConfigRequest) (<-chan *ModifyDBInstanceConfigResponse, <-chan error) {
+	responseChan := make(chan *ModifyDBInstanceConfigResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.CreateDatabase(request)
+		response, err := client.ModifyDBInstanceConfig(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) CreateDatabaseWithChan(request *CreateDatabaseRequest) (<-
 	return responseChan, errChan
 }
 
-// CreateDatabaseWithCallback invokes the rds.CreateDatabase API asynchronously
-func (client *Client) CreateDatabaseWithCallback(request *CreateDatabaseRequest, callback func(response *CreateDatabaseResponse, err error)) <-chan int {
+// ModifyDBInstanceConfigWithCallback invokes the rds.ModifyDBInstanceConfig API asynchronously
+func (client *Client) ModifyDBInstanceConfigWithCallback(request *ModifyDBInstanceConfigRequest, callback func(response *ModifyDBInstanceConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *CreateDatabaseResponse
+		var response *ModifyDBInstanceConfigResponse
 		var err error
 		defer close(result)
-		response, err = client.CreateDatabase(request)
+		response, err = client.ModifyDBInstanceConfig(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,39 +68,39 @@ func (client *Client) CreateDatabaseWithCallback(request *CreateDatabaseRequest,
 	return result
 }
 
-// CreateDatabaseRequest is the request struct for api CreateDatabase
-type CreateDatabaseRequest struct {
+// ModifyDBInstanceConfigRequest is the request struct for api ModifyDBInstanceConfig
+type ModifyDBInstanceConfigRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
 	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
+	ConfigName           string           `position:"Query" name:"ConfigName"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	DBDescription        string           `position:"Query" name:"DBDescription"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	ConfigValue          string           `position:"Query" name:"ConfigValue"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	DBName               string           `position:"Query" name:"DBName"`
-	CharacterSetName     string           `position:"Query" name:"CharacterSetName"`
 }
 
-// CreateDatabaseResponse is the response struct for api CreateDatabase
-type CreateDatabaseResponse struct {
+// ModifyDBInstanceConfigResponse is the response struct for api ModifyDBInstanceConfig
+type ModifyDBInstanceConfigResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateCreateDatabaseRequest creates a request to invoke CreateDatabase API
-func CreateCreateDatabaseRequest() (request *CreateDatabaseRequest) {
-	request = &CreateDatabaseRequest{
+// CreateModifyDBInstanceConfigRequest creates a request to invoke ModifyDBInstanceConfig API
+func CreateModifyDBInstanceConfigRequest() (request *ModifyDBInstanceConfigRequest) {
+	request = &ModifyDBInstanceConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "CreateDatabase", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDBInstanceConfig", "", "")
 	request.Method = requests.POST
 	return
 }
 
-// CreateCreateDatabaseResponse creates a response to parse from CreateDatabase response
-func CreateCreateDatabaseResponse() (response *CreateDatabaseResponse) {
-	response = &CreateDatabaseResponse{
+// CreateModifyDBInstanceConfigResponse creates a response to parse from ModifyDBInstanceConfig response
+func CreateModifyDBInstanceConfigResponse() (response *ModifyDBInstanceConfigResponse) {
+	response = &ModifyDBInstanceConfigResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

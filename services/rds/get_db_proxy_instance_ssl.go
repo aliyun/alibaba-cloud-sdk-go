@@ -87,7 +87,7 @@ func CreateGetDbProxyInstanceSslRequest() (request *GetDbProxyInstanceSslRequest
 	request = &GetDbProxyInstanceSslRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "GetDbProxyInstanceSsl", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "GetDbProxyInstanceSsl", "", "")
 	request.Method = requests.POST
 	return
 }

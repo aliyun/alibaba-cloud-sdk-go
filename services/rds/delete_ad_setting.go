@@ -89,7 +89,7 @@ func CreateDeleteADSettingRequest() (request *DeleteADSettingRequest) {
 	request = &DeleteADSettingRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DeleteADSetting", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DeleteADSetting", "", "")
 	request.Method = requests.POST
 	return
 }

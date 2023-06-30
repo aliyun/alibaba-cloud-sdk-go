@@ -91,7 +91,7 @@ func CreateCheckDBNameAvailableRequest() (request *CheckDBNameAvailableRequest) 
 	request = &CheckDBNameAvailableRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "CheckDBNameAvailable", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "CheckDBNameAvailable", "", "")
 	request.Method = requests.POST
 	return
 }

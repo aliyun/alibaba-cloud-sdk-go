@@ -126,7 +126,7 @@ func CreateCreateDdrInstanceRequest() (request *CreateDdrInstanceRequest) {
 	request = &CreateDdrInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "CreateDdrInstance", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "CreateDdrInstance", "", "")
 	request.Method = requests.POST
 	return
 }

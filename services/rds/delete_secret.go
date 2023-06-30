@@ -95,7 +95,7 @@ func CreateDeleteSecretRequest() (request *DeleteSecretRequest) {
 	request = &DeleteSecretRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DeleteSecret", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DeleteSecret", "", "")
 	request.Method = requests.POST
 	return
 }

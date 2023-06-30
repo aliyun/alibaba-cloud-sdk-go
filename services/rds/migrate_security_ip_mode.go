@@ -90,7 +90,7 @@ func CreateMigrateSecurityIPModeRequest() (request *MigrateSecurityIPModeRequest
 	request = &MigrateSecurityIPModeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "MigrateSecurityIPMode", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "MigrateSecurityIPMode", "", "")
 	request.Method = requests.POST
 	return
 }
