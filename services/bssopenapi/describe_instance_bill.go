@@ -89,11 +89,11 @@ type DescribeInstanceBillRequest struct {
 // DescribeInstanceBillResponse is the response struct for api DescribeInstanceBill
 type DescribeInstanceBillResponse struct {
 	*responses.BaseResponse
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
-	Data      Data   `json:"Data" xml:"Data"`
+	Code      string                     `json:"Code" xml:"Code"`
+	Message   string                     `json:"Message" xml:"Message"`
+	RequestId string                     `json:"RequestId" xml:"RequestId"`
+	Success   bool                       `json:"Success" xml:"Success"`
+	Data      DataInDescribeInstanceBill `json:"Data" xml:"Data"`
 }
 
 // CreateDescribeInstanceBillRequest creates a request to invoke DescribeInstanceBill API
