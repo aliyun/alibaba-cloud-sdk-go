@@ -1,3 +1,14 @@
+2023-07-03 Version: v1.62.409
+- Generated 2019-12-30 for `ocr`.
+- Update TrimDocument.
+- Update RecognizeTakeoutOrder.
+- Update RecognizePassportMRZ.
+- Update RecognizeChinapassport.
+- Update DetectCardScreenshot.
+- Update RecognizeVerificationcode.
+- Update RecognizePoiName.
+- Update RecognizeAccountPage.
+
 2023-07-03 Version: v1.62.408
 - Fix: resolve DescribeInstanceBill response struct for BssOpenApi.
 

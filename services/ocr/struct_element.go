@@ -17,13 +17,10 @@ package ocr
 
 // Element is a nested struct in ocr response
 type Element struct {
-	Name           string          `json:"Name" xml:"Name"`
-	Value          string          `json:"Value" xml:"Value"`
 	TaskId         string          `json:"TaskId" xml:"TaskId"`
 	Text           string          `json:"Text" xml:"Text"`
 	Score          float64         `json:"Score" xml:"Score"`
 	ImageURL       string          `json:"ImageURL" xml:"ImageURL"`
-	Boxes          []int           `json:"Boxes" xml:"Boxes"`
 	TextRectangles []TextRectangle `json:"TextRectangles" xml:"TextRectangles"`
 	Results        []Result        `json:"Results" xml:"Results"`
 }
