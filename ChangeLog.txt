@@ -1,3 +1,6 @@
+2023-07-03 Version: v1.62.408
+- Fix: resolve DescribeInstanceBill response struct for BssOpenApi.
+
 2023-07-03 Version: v1.62.407
 - Generated 2019-11-11 for `nlp-automl`.
 - Add The billingCount return value to the RunPreTrainService Api.
