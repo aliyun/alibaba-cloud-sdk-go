@@ -71,35 +71,44 @@ func (client *Client) DescribePriceWithCallback(request *DescribePriceRequest, c
 // DescribePriceRequest is the request struct for api DescribePrice
 type DescribePriceRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	DBInstanceStorage     requests.Integer `position:"Query" name:"DBInstanceStorage"`
-	ClientToken           string           `position:"Query" name:"ClientToken"`
-	EngineVersion         string           `position:"Query" name:"EngineVersion"`
-	Engine                string           `position:"Query" name:"Engine"`
-	DBInstanceId          string           `position:"Query" name:"DBInstanceId"`
-	DBInstanceStorageType string           `position:"Query" name:"DBInstanceStorageType"`
-	Quantity              requests.Integer `position:"Query" name:"Quantity"`
-	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
-	CommodityCode         string           `position:"Query" name:"CommodityCode"`
-	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
-	UsedTime              requests.Integer `position:"Query" name:"UsedTime"`
-	DBInstanceClass       string           `position:"Query" name:"DBInstanceClass"`
-	InstanceUsedType      requests.Integer `position:"Query" name:"InstanceUsedType"`
-	ZoneId                string           `position:"Query" name:"ZoneId"`
-	TimeType              string           `position:"Query" name:"TimeType"`
-	PayType               string           `position:"Query" name:"PayType"`
-	DBNode                string           `position:"Query" name:"DBNode"`
-	OrderType             string           `position:"Query" name:"OrderType"`
+	ResourceOwnerId       requests.Integer              `position:"Query" name:"ResourceOwnerId"`
+	DBInstanceStorage     requests.Integer              `position:"Query" name:"DBInstanceStorage"`
+	ClientToken           string                        `position:"Query" name:"ClientToken"`
+	EngineVersion         string                        `position:"Query" name:"EngineVersion"`
+	Engine                string                        `position:"Query" name:"Engine"`
+	DBInstanceId          string                        `position:"Query" name:"DBInstanceId"`
+	DBInstanceStorageType string                        `position:"Query" name:"DBInstanceStorageType"`
+	Quantity              requests.Integer              `position:"Query" name:"Quantity"`
+	ServerlessConfig      DescribePriceServerlessConfig `position:"Query" name:"ServerlessConfig"  type:"Struct"`
+	ResourceOwnerAccount  string                        `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount          string                        `position:"Query" name:"OwnerAccount"`
+	CommodityCode         string                        `position:"Query" name:"CommodityCode"`
+	OwnerId               requests.Integer              `position:"Query" name:"OwnerId"`
+	UsedTime              requests.Integer              `position:"Query" name:"UsedTime"`
+	DBInstanceClass       string                        `position:"Query" name:"DBInstanceClass"`
+	InstanceUsedType      requests.Integer              `position:"Query" name:"InstanceUsedType"`
+	ZoneId                string                        `position:"Query" name:"ZoneId"`
+	TimeType              string                        `position:"Query" name:"TimeType"`
+	PayType               string                        `position:"Query" name:"PayType"`
+	DBNode                string                        `position:"Query" name:"DBNode"`
+	OrderType             string                        `position:"Query" name:"OrderType"`
+}
+
+// DescribePriceServerlessConfig is a repeated param struct in DescribePriceRequest
+type DescribePriceServerlessConfig struct {
+	MinCapacity string `name:"MinCapacity"`
+	MaxCapacity string `name:"MaxCapacity"`
 }
 
 // DescribePriceResponse is the response struct for api DescribePrice
 type DescribePriceResponse struct {
 	*responses.BaseResponse
-	RequestId    string               `json:"RequestId" xml:"RequestId"`
-	ShowDiscount bool                 `json:"ShowDiscount" xml:"ShowDiscount"`
-	PriceInfo    PriceInfo            `json:"PriceInfo" xml:"PriceInfo"`
-	Rules        RulesInDescribePrice `json:"Rules" xml:"Rules"`
+	RequestId         string               `json:"RequestId" xml:"RequestId"`
+	ShowDiscount      bool                 `json:"ShowDiscount" xml:"ShowDiscount"`
+	TradeMaxRCUAmount float64              `json:"TradeMaxRCUAmount" xml:"TradeMaxRCUAmount"`
+	TradeMinRCUAmount float64              `json:"TradeMinRCUAmount" xml:"TradeMinRCUAmount"`
+	PriceInfo         PriceInfo            `json:"PriceInfo" xml:"PriceInfo"`
+	Rules             RulesInDescribePrice `json:"Rules" xml:"Rules"`
 }
 
 // CreateDescribePriceRequest creates a request to invoke DescribePrice API
