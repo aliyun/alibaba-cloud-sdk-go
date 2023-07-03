@@ -1,3 +1,7 @@
+2023-07-03 Version: v1.62.407
+- Generated 2019-11-11 for `nlp-automl`.
+- Add The billingCount return value to the RunPreTrainService Api.
+
 2023-07-02 Version: v1.62.406
 - Generated 2014-08-15 for `Rds`.
 - Fixed bugs for lack of regionId.
