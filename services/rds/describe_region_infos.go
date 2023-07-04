@@ -89,7 +89,7 @@ func CreateDescribeRegionInfosRequest() (request *DescribeRegionInfosRequest) {
 	request = &DescribeRegionInfosRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeRegionInfos", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeRegionInfos", "rds", "openAPI")
 	request.Method = requests.POST
 	return
 }

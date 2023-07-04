@@ -92,7 +92,7 @@ func CreateDescribeDBInstancesAsCsvRequest() (request *DescribeDBInstancesAsCsvR
 	request = &DescribeDBInstancesAsCsvRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstancesAsCsv", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstancesAsCsv", "rds", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -105,7 +105,7 @@ func CreateListUserBackupFilesRequest() (request *ListUserBackupFilesRequest) {
 	request = &ListUserBackupFilesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ListUserBackupFiles", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "ListUserBackupFiles", "rds", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -94,7 +94,7 @@ func CreateUpgradeDBInstanceKernelVersionRequest() (request *UpgradeDBInstanceKe
 	request = &UpgradeDBInstanceKernelVersionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "UpgradeDBInstanceKernelVersion", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "UpgradeDBInstanceKernelVersion", "rds", "openAPI")
 	request.Method = requests.POST
 	return
 }

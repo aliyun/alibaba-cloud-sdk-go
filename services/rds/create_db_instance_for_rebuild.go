@@ -108,7 +108,7 @@ func CreateCreateDBInstanceForRebuildRequest() (request *CreateDBInstanceForRebu
 	request = &CreateDBInstanceForRebuildRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "CreateDBInstanceForRebuild", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "CreateDBInstanceForRebuild", "rds", "openAPI")
 	request.Method = requests.POST
 	return
 }

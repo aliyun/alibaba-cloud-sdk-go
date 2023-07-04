@@ -115,7 +115,7 @@ func CreateUpgradeDBInstanceMajorVersionRequest() (request *UpgradeDBInstanceMaj
 	request = &UpgradeDBInstanceMajorVersionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "UpgradeDBInstanceMajorVersion", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "UpgradeDBInstanceMajorVersion", "rds", "openAPI")
 	request.Method = requests.POST
 	return
 }

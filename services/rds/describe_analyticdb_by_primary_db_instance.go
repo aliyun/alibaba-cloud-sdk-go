@@ -89,7 +89,7 @@ func CreateDescribeAnalyticdbByPrimaryDBInstanceRequest() (request *DescribeAnal
 	request = &DescribeAnalyticdbByPrimaryDBInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeAnalyticdbByPrimaryDBInstance", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeAnalyticdbByPrimaryDBInstance", "rds", "openAPI")
 	request.Method = requests.POST
 	return
 }

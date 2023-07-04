@@ -92,7 +92,7 @@ func CreateDescribeSQLCollectorRetentionRequest() (request *DescribeSQLCollector
 	request = &DescribeSQLCollectorRetentionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeSQLCollectorRetention", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeSQLCollectorRetention", "rds", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -95,7 +95,7 @@ func CreateCreateDBNodesRequest() (request *CreateDBNodesRequest) {
 	request = &CreateDBNodesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "CreateDBNodes", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "CreateDBNodes", "rds", "openAPI")
 	request.Method = requests.POST
 	return
 }
