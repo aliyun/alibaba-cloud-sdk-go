@@ -1,3 +1,7 @@
+2023-07-04 Version: v1.62.412
+- Generated 2019-11-11 for `nlp-automl`.
+- 新增模型预测高性能版本
+
 2023-07-03 Version: v1.62.411
 - Generated 2014-08-15 for `Rds`.
 - Fix bugs for  DescribeDedicatedHosts.
