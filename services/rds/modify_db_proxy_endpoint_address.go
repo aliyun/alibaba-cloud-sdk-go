@@ -93,7 +93,7 @@ func CreateModifyDBProxyEndpointAddressRequest() (request *ModifyDBProxyEndpoint
 	request = &ModifyDBProxyEndpointAddressRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDBProxyEndpointAddress", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDBProxyEndpointAddress", "", "")
 	request.Method = requests.POST
 	return
 }

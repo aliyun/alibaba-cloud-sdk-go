@@ -96,7 +96,7 @@ func CreateDescribeDBInstancePromoteActivityRequest() (request *DescribeDBInstan
 	request = &DescribeDBInstancePromoteActivityRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstancePromoteActivity", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstancePromoteActivity", "", "")
 	request.Method = requests.POST
 	return
 }

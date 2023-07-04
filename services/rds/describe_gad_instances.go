@@ -87,7 +87,7 @@ func CreateDescribeGadInstancesRequest() (request *DescribeGadInstancesRequest) 
 	request = &DescribeGadInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeGadInstances", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeGadInstances", "", "")
 	request.Method = requests.POST
 	return
 }

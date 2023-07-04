@@ -89,7 +89,7 @@ func CreateTerminateMigrateTaskRequest() (request *TerminateMigrateTaskRequest) 
 	request = &TerminateMigrateTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "TerminateMigrateTask", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "TerminateMigrateTask", "", "")
 	request.Method = requests.POST
 	return
 }

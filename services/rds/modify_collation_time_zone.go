@@ -94,7 +94,7 @@ func CreateModifyCollationTimeZoneRequest() (request *ModifyCollationTimeZoneReq
 	request = &ModifyCollationTimeZoneRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyCollationTimeZone", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyCollationTimeZone", "", "")
 	request.Method = requests.POST
 	return
 }

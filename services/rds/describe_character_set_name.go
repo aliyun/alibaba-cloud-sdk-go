@@ -91,7 +91,7 @@ func CreateDescribeCharacterSetNameRequest() (request *DescribeCharacterSetNameR
 	request = &DescribeCharacterSetNameRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeCharacterSetName", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeCharacterSetName", "", "")
 	request.Method = requests.POST
 	return
 }

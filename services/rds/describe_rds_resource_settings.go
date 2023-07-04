@@ -89,7 +89,7 @@ func CreateDescribeRdsResourceSettingsRequest() (request *DescribeRdsResourceSet
 	request = &DescribeRdsResourceSettingsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeRdsResourceSettings", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeRdsResourceSettings", "", "")
 	request.Method = requests.POST
 	return
 }

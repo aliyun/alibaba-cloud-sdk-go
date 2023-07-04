@@ -91,7 +91,7 @@ func CreateDescribeInstanceKeywordsRequest() (request *DescribeInstanceKeywordsR
 	request = &DescribeInstanceKeywordsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeInstanceKeywords", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeInstanceKeywords", "", "")
 	request.Method = requests.POST
 	return
 }

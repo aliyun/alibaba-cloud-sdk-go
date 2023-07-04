@@ -88,7 +88,7 @@ func CreateDeleteDBProxyEndpointAddressRequest() (request *DeleteDBProxyEndpoint
 	request = &DeleteDBProxyEndpointAddressRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DeleteDBProxyEndpointAddress", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DeleteDBProxyEndpointAddress", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -91,7 +91,7 @@ func CreateModifyDBInstanceEndpointRequest() (request *ModifyDBInstanceEndpointR
 	request = &ModifyDBInstanceEndpointRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDBInstanceEndpoint", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDBInstanceEndpoint", "", "")
 	request.Method = requests.POST
 	return
 }

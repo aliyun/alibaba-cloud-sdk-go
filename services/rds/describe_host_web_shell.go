@@ -92,7 +92,7 @@ func CreateDescribeHostWebShellRequest() (request *DescribeHostWebShellRequest) 
 	request = &DescribeHostWebShellRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeHostWebShell", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeHostWebShell", "", "")
 	request.Method = requests.POST
 	return
 }

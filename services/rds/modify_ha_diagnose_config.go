@@ -89,7 +89,7 @@ func CreateModifyHADiagnoseConfigRequest() (request *ModifyHADiagnoseConfigReque
 	request = &ModifyHADiagnoseConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyHADiagnoseConfig", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyHADiagnoseConfig", "", "")
 	request.Method = requests.POST
 	return
 }
