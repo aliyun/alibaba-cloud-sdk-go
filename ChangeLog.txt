@@ -1,3 +1,8 @@
+2023-07-05 Version: v1.62.418
+- Generated 2014-08-15 for `Rds`.
+- Add AutoUseCoupon field.
+- Api Offline.
+
 2023-07-05 Version: v1.62.417
 - Generated 2020-04-15 for `Privatelink`.
 - Add latest update.

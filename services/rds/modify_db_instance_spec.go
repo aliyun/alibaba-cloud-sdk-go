@@ -75,6 +75,7 @@ type ModifyDBInstanceSpecRequest struct {
 	DBInstanceStorage       requests.Integer                            `position:"Query" name:"DBInstanceStorage"`
 	ClientToken             string                                      `position:"Query" name:"ClientToken"`
 	EngineVersion           string                                      `position:"Query" name:"EngineVersion"`
+	AutoUseCoupon           requests.Boolean                            `position:"Query" name:"AutoUseCoupon"`
 	ResourceGroupId         string                                      `position:"Query" name:"ResourceGroupId"`
 	ServerlessConfiguration ModifyDBInstanceSpecServerlessConfiguration `position:"Query" name:"ServerlessConfiguration"  type:"Struct"`
 	EffectiveTime           string                                      `position:"Query" name:"EffectiveTime"`
