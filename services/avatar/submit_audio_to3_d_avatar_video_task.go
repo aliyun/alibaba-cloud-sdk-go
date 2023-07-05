@@ -71,17 +71,30 @@ func (client *Client) SubmitAudioTo3DAvatarVideoTaskWithCallback(request *Submit
 // SubmitAudioTo3DAvatarVideoTaskRequest is the request struct for api SubmitAudioTo3DAvatarVideoTask
 type SubmitAudioTo3DAvatarVideoTaskRequest struct {
 	*requests.RpcRequest
-	App        SubmitAudioTo3DAvatarVideoTaskApp        `position:"Query" name:"App"  type:"Struct"`
-	VideoInfo  SubmitAudioTo3DAvatarVideoTaskVideoInfo  `position:"Query" name:"VideoInfo"  type:"Struct"`
-	AvatarInfo SubmitAudioTo3DAvatarVideoTaskAvatarInfo `position:"Query" name:"AvatarInfo"  type:"Struct"`
-	TenantId   requests.Integer                         `position:"Query" name:"TenantId"`
-	Title      string                                   `position:"Query" name:"Title"`
-	Url        string                                   `position:"Query" name:"Url"`
+	App               SubmitAudioTo3DAvatarVideoTaskApp        `position:"Query" name:"App"  type:"Struct"`
+	AvatarInfo        SubmitAudioTo3DAvatarVideoTaskAvatarInfo `position:"Query" name:"AvatarInfo"  type:"Struct"`
+	Title             string                                   `position:"Query" name:"Title"`
+	ExtParams         string                                   `position:"Query" name:"ExtParams"`
+	Url               string                                   `position:"Query" name:"Url"`
+	VideoInfo         SubmitAudioTo3DAvatarVideoTaskVideoInfo  `position:"Query" name:"VideoInfo"  type:"Struct"`
+	CallbackParams    string                                   `position:"Query" name:"CallbackParams"`
+	TenantId          requests.Integer                         `position:"Query" name:"TenantId"`
+	Callback          requests.Boolean                         `position:"Query" name:"Callback"`
+	ExtParamsCLS      string                                   `position:"Query" name:"ExtParams_CLS"`
+	CallbackParamsCLS string                                   `position:"Query" name:"CallbackParams_CLS"`
 }
 
 // SubmitAudioTo3DAvatarVideoTaskApp is a repeated param struct in SubmitAudioTo3DAvatarVideoTaskRequest
 type SubmitAudioTo3DAvatarVideoTaskApp struct {
 	AppId string `name:"AppId"`
+}
+
+// SubmitAudioTo3DAvatarVideoTaskAvatarInfo is a repeated param struct in SubmitAudioTo3DAvatarVideoTaskRequest
+type SubmitAudioTo3DAvatarVideoTaskAvatarInfo struct {
+	Code         string `name:"Code"`
+	Locate       string `name:"Locate"`
+	Angle        string `name:"Angle"`
+	IndustryCode string `name:"IndustryCode"`
 }
 
 // SubmitAudioTo3DAvatarVideoTaskVideoInfo is a repeated param struct in SubmitAudioTo3DAvatarVideoTaskRequest
@@ -90,13 +103,6 @@ type SubmitAudioTo3DAvatarVideoTaskVideoInfo struct {
 	BackgroundImageUrl string `name:"BackgroundImageUrl"`
 	Resolution         string `name:"Resolution"`
 	AlphaFormat        string `name:"AlphaFormat"`
-}
-
-// SubmitAudioTo3DAvatarVideoTaskAvatarInfo is a repeated param struct in SubmitAudioTo3DAvatarVideoTaskRequest
-type SubmitAudioTo3DAvatarVideoTaskAvatarInfo struct {
-	Code   string `name:"Code"`
-	Locate string `name:"Locate"`
-	Angle  string `name:"Angle"`
 }
 
 // SubmitAudioTo3DAvatarVideoTaskResponse is the response struct for api SubmitAudioTo3DAvatarVideoTask

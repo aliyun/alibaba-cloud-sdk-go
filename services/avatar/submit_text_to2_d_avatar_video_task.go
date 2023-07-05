@@ -71,27 +71,23 @@ func (client *Client) SubmitTextTo2DAvatarVideoTaskWithCallback(request *SubmitT
 // SubmitTextTo2DAvatarVideoTaskRequest is the request struct for api SubmitTextTo2DAvatarVideoTask
 type SubmitTextTo2DAvatarVideoTaskRequest struct {
 	*requests.RpcRequest
-	App        SubmitTextTo2DAvatarVideoTaskApp        `position:"Query" name:"App"  type:"Struct"`
-	VideoInfo  SubmitTextTo2DAvatarVideoTaskVideoInfo  `position:"Query" name:"VideoInfo"  type:"Struct"`
-	AudioInfo  SubmitTextTo2DAvatarVideoTaskAudioInfo  `position:"Query" name:"AudioInfo"  type:"Struct"`
-	AvatarInfo SubmitTextTo2DAvatarVideoTaskAvatarInfo `position:"Query" name:"AvatarInfo"  type:"Struct"`
-	TenantId   requests.Integer                        `position:"Query" name:"TenantId"`
-	Text       string                                  `position:"Query" name:"Text"`
-	Title      string                                  `position:"Query" name:"Title"`
+	App               SubmitTextTo2DAvatarVideoTaskApp        `position:"Query" name:"App"  type:"Struct"`
+	AudioInfo         SubmitTextTo2DAvatarVideoTaskAudioInfo  `position:"Query" name:"AudioInfo"  type:"Struct"`
+	AvatarInfo        SubmitTextTo2DAvatarVideoTaskAvatarInfo `position:"Query" name:"AvatarInfo"  type:"Struct"`
+	Title             string                                  `position:"Query" name:"Title"`
+	ExtParams         string                                  `position:"Query" name:"ExtParams"`
+	VideoInfo         SubmitTextTo2DAvatarVideoTaskVideoInfo  `position:"Query" name:"VideoInfo"  type:"Struct"`
+	CallbackParams    string                                  `position:"Query" name:"CallbackParams"`
+	TenantId          requests.Integer                        `position:"Query" name:"TenantId"`
+	Callback          requests.Boolean                        `position:"Query" name:"Callback"`
+	ExtParamsCLS      string                                  `position:"Query" name:"ExtParams_CLS"`
+	Text              string                                  `position:"Query" name:"Text"`
+	CallbackParamsCLS string                                  `position:"Query" name:"CallbackParams_CLS"`
 }
 
 // SubmitTextTo2DAvatarVideoTaskApp is a repeated param struct in SubmitTextTo2DAvatarVideoTaskRequest
 type SubmitTextTo2DAvatarVideoTaskApp struct {
 	AppId string `name:"AppId"`
-}
-
-// SubmitTextTo2DAvatarVideoTaskVideoInfo is a repeated param struct in SubmitTextTo2DAvatarVideoTaskRequest
-type SubmitTextTo2DAvatarVideoTaskVideoInfo struct {
-	IsAlpha            string `name:"IsAlpha"`
-	BackgroundImageUrl string `name:"BackgroundImageUrl"`
-	IsSubtitles        string `name:"IsSubtitles"`
-	Resolution         string `name:"Resolution"`
-	AlphaFormat        string `name:"AlphaFormat"`
 }
 
 // SubmitTextTo2DAvatarVideoTaskAudioInfo is a repeated param struct in SubmitTextTo2DAvatarVideoTaskRequest
@@ -105,6 +101,15 @@ type SubmitTextTo2DAvatarVideoTaskAudioInfo struct {
 // SubmitTextTo2DAvatarVideoTaskAvatarInfo is a repeated param struct in SubmitTextTo2DAvatarVideoTaskRequest
 type SubmitTextTo2DAvatarVideoTaskAvatarInfo struct {
 	Code string `name:"Code"`
+}
+
+// SubmitTextTo2DAvatarVideoTaskVideoInfo is a repeated param struct in SubmitTextTo2DAvatarVideoTaskRequest
+type SubmitTextTo2DAvatarVideoTaskVideoInfo struct {
+	IsAlpha            string `name:"IsAlpha"`
+	BackgroundImageUrl string `name:"BackgroundImageUrl"`
+	IsSubtitles        string `name:"IsSubtitles"`
+	Resolution         string `name:"Resolution"`
+	AlphaFormat        string `name:"AlphaFormat"`
 }
 
 // SubmitTextTo2DAvatarVideoTaskResponse is the response struct for api SubmitTextTo2DAvatarVideoTask

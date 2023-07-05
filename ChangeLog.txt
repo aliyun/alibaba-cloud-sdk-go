@@ -1,3 +1,7 @@
+2023-07-05 Version: v1.62.416
+- Generated 2022-01-30 for `avatar`.
+-offline add voice and industrycode
+
 2023-07-04 Version: v1.62.415
 - Generated 2014-08-15 for `Rds`.
 - Fix bugs for  DescribeDedicatedHosts.
