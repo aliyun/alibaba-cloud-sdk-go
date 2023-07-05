@@ -1,3 +1,7 @@
+2023-07-05 Version: v1.62.417
+- Generated 2020-04-15 for `Privatelink`.
+- Add latest update.
+
 2023-07-05 Version: v1.62.416
 - Generated 2022-01-30 for `avatar`.
 -offline add voice and industrycode

@@ -92,6 +92,7 @@ type ListVpcEndpointServicesByEndUserResponse struct {
 	NextToken  string    `json:"NextToken" xml:"NextToken"`
 	RequestId  string    `json:"RequestId" xml:"RequestId"`
 	MaxResults int       `json:"MaxResults" xml:"MaxResults"`
+	TotalCount string    `json:"TotalCount" xml:"TotalCount"`
 	Services   []Service `json:"Services" xml:"Services"`
 }
 

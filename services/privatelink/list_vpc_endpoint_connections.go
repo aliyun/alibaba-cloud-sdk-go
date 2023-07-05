@@ -91,6 +91,7 @@ type ListVpcEndpointConnectionsResponse struct {
 	NextToken   string       `json:"NextToken" xml:"NextToken"`
 	RequestId   string       `json:"RequestId" xml:"RequestId"`
 	MaxResults  int          `json:"MaxResults" xml:"MaxResults"`
+	TotalCount  string       `json:"TotalCount" xml:"TotalCount"`
 	Connections []Connection `json:"Connections" xml:"Connections"`
 }
 

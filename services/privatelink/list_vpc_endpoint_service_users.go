@@ -84,6 +84,7 @@ type ListVpcEndpointServiceUsersResponse struct {
 	NextToken  string    `json:"NextToken" xml:"NextToken"`
 	RequestId  string    `json:"RequestId" xml:"RequestId"`
 	MaxResults int       `json:"MaxResults" xml:"MaxResults"`
+	TotalCount string    `json:"TotalCount" xml:"TotalCount"`
 	Users      []User    `json:"Users" xml:"Users"`
 	UserARNs   []UserARN `json:"UserARNs" xml:"UserARNs"`
 }
