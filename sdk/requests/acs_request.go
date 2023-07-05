@@ -492,6 +492,17 @@ func handleStruct(request AcsRequest, dataValue reflect.Value, prefix, name, fie
 					if err != nil {
 						return
 					}
+				} else if elementValue.Type().Kind().String() == "map" {
+					iter := elementValue.MapRange()
+					for iter.Next() {
+						k := iter.Key()
+						v := iter.Value()
+						key = fmt.Sprintf("%s%s.%s.#%d#%s", prefix, name, fieldName, k.Len(), k.String())
+						err = handleParam(request, v, prefix, key, fieldPosition)
+						if err != nil {
+							return
+						}
+					}
 				} else if !elementValue.IsNil() {
 					repeatedFieldValue := elementValue.Elem()
 					if repeatedFieldValue.IsValid() && !repeatedFieldValue.IsNil() {
