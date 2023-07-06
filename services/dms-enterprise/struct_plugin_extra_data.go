@@ -17,11 +17,12 @@ package dms_enterprise
 
 // PluginExtraData is a nested struct in dms_enterprise response
 type PluginExtraData struct {
-	InstanceTotal      int64              `json:"InstanceTotal" xml:"InstanceTotal"`
-	PageIndex          int64              `json:"PageIndex" xml:"PageIndex"`
-	PageSize           int64              `json:"PageSize" xml:"PageSize"`
-	DagInfo            DagInfo            `json:"DagInfo" xml:"DagInfo"`
-	DbBaseInfo         DbBaseInfo         `json:"DbBaseInfo" xml:"DbBaseInfo"`
-	NextFireTimeResult NextFireTimeResult `json:"NextFireTimeResult" xml:"NextFireTimeResult"`
-	Instances          []InstancesItem    `json:"Instances" xml:"Instances"`
+	InstanceTotal      int64                  `json:"InstanceTotal" xml:"InstanceTotal"`
+	PageIndex          int64                  `json:"PageIndex" xml:"PageIndex"`
+	PageSize           int64                  `json:"PageSize" xml:"PageSize"`
+	TempTableNameMap   map[string]interface{} `json:"TempTableNameMap" xml:"TempTableNameMap"`
+	DagInfo            DagInfo                `json:"DagInfo" xml:"DagInfo"`
+	DbBaseInfo         DbBaseInfo             `json:"DbBaseInfo" xml:"DbBaseInfo"`
+	NextFireTimeResult NextFireTimeResult     `json:"NextFireTimeResult" xml:"NextFireTimeResult"`
+	Instances          []InstancesItem        `json:"Instances" xml:"Instances"`
 }

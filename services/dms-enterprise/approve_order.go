@@ -74,7 +74,11 @@ type ApproveOrderRequest struct {
 	Tid                requests.Integer `position:"Query" name:"Tid"`
 	WorkflowInstanceId requests.Integer `position:"Query" name:"WorkflowInstanceId"`
 	ApprovalType       string           `position:"Query" name:"ApprovalType"`
+	NewApprover        requests.Integer `position:"Query" name:"NewApprover"`
+	ApprovalNodeId     requests.Integer `position:"Query" name:"ApprovalNodeId"`
+	OldApprover        requests.Integer `position:"Query" name:"OldApprover"`
 	Comment            string           `position:"Query" name:"Comment"`
+	ApprovalNodePos    string           `position:"Query" name:"ApprovalNodePos"`
 }
 
 // ApproveOrderResponse is the response struct for api ApproveOrder

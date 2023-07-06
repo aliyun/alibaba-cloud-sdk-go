@@ -1,3 +1,7 @@
+2023-07-06 Version: v1.62.419
+- Generated 2018-11-01 for `dms-enterprise`.
+- Modify GetDataArchiveOrderDetail API. Add output parameter: TempTableNameMap.
+
 2023-07-05 Version: v1.62.418
 - Generated 2014-08-15 for `Rds`.
 - Add AutoUseCoupon field.
