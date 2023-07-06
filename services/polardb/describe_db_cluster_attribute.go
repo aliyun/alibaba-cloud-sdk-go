@@ -72,6 +72,7 @@ func (client *Client) DescribeDBClusterAttributeWithCallback(request *DescribeDB
 type DescribeDBClusterAttributeRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DescribeType         string           `position:"Query" name:"DescribeType"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	DBClusterId          string           `position:"Query" name:"DBClusterId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
@@ -89,6 +90,9 @@ type DescribeDBClusterAttributeResponse struct {
 	DBType                    string            `json:"DBType" xml:"DBType"`
 	DBClusterNetworkType      string            `json:"DBClusterNetworkType" xml:"DBClusterNetworkType"`
 	IsLatestVersion           bool              `json:"IsLatestVersion" xml:"IsLatestVersion"`
+	HasCompleteStandbyRes     bool              `json:"HasCompleteStandbyRes" xml:"HasCompleteStandbyRes"`
+	DataSyncMode              string            `json:"DataSyncMode" xml:"DataSyncMode"`
+	StandbyHAMode             string            `json:"StandbyHAMode" xml:"StandbyHAMode"`
 	StorageMax                int64             `json:"StorageMax" xml:"StorageMax"`
 	DBVersion                 string            `json:"DBVersion" xml:"DBVersion"`
 	ZoneIds                   string            `json:"ZoneIds" xml:"ZoneIds"`
@@ -115,6 +119,7 @@ type DescribeDBClusterAttributeResponse struct {
 	RegionId                  string            `json:"RegionId" xml:"RegionId"`
 	ExpireTime                string            `json:"ExpireTime" xml:"ExpireTime"`
 	SubCategory               string            `json:"SubCategory" xml:"SubCategory"`
+	DeployUnit                string            `json:"DeployUnit" xml:"DeployUnit"`
 	IsProxyLatestVersion      bool              `json:"IsProxyLatestVersion" xml:"IsProxyLatestVersion"`
 	StorageType               string            `json:"StorageType" xml:"StorageType"`
 	ServerlessType            string            `json:"ServerlessType" xml:"ServerlessType"`
@@ -125,6 +130,7 @@ type DescribeDBClusterAttributeResponse struct {
 	ProxyStatus               string            `json:"ProxyStatus" xml:"ProxyStatus"`
 	FeatureHTAPSupported      string            `json:"FeatureHTAPSupported" xml:"FeatureHTAPSupported"`
 	ProxyServerlessType       string            `json:"ProxyServerlessType" xml:"ProxyServerlessType"`
+	AiType                    string            `json:"AiType" xml:"AiType"`
 	RelatedAPInstance         RelatedAPInstance `json:"RelatedAPInstance" xml:"RelatedAPInstance"`
 	DBNodes                   []DBNode          `json:"DBNodes" xml:"DBNodes"`
 	Tags                      []Tag             `json:"Tags" xml:"Tags"`

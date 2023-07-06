@@ -1,3 +1,7 @@
+2023-07-06 Version: v1.62.422
+- Generated 2017-08-01 for `polardb`.
+- DescribeDBClusterAttribute support new feature.
+
 2023-07-06 Version: v1.62.421
 - Generated 2021-09-31 for `BPStudio`.
 - Fix bug asyncExecute Error.
