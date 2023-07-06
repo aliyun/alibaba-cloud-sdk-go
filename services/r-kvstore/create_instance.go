@@ -72,6 +72,7 @@ func (client *Client) CreateInstanceWithCallback(request *CreateInstanceRequest,
 type CreateInstanceRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId        requests.Integer     `position:"Query" name:"ResourceOwnerId"`
+	ConnectionStringPrefix string               `position:"Query" name:"ConnectionStringPrefix"`
 	SecondaryZoneId        string               `position:"Query" name:"SecondaryZoneId"`
 	CouponNo               string               `position:"Query" name:"CouponNo"`
 	NetworkType            string               `position:"Query" name:"NetworkType"`
@@ -109,6 +110,7 @@ type CreateInstanceRequest struct {
 	GlobalInstance         requests.Boolean     `position:"Query" name:"GlobalInstance"`
 	Token                  string               `position:"Query" name:"Token"`
 	GlobalInstanceId       string               `position:"Query" name:"GlobalInstanceId"`
+	ParamGroupId           string               `position:"Query" name:"ParamGroupId"`
 	VpcId                  string               `position:"Query" name:"VpcId"`
 	DeletePhysicalInstance requests.Boolean     `position:"Query" name:"DeletePhysicalInstance"`
 	ReadOnlyCount          requests.Integer     `position:"Query" name:"ReadOnlyCount"`

@@ -17,18 +17,34 @@ package r_kvstore
 
 // ItemsItem is a nested struct in r_kvstore response
 type ItemsItem struct {
-	Status          int    `json:"Status" xml:"Status"`
-	Deadline        string `json:"Deadline" xml:"Deadline"`
-	PrepareInterval string `json:"PrepareInterval" xml:"PrepareInterval"`
-	TaskParams      string `json:"TaskParams" xml:"TaskParams"`
-	TaskType        string `json:"TaskType" xml:"TaskType"`
-	StartTime       string `json:"StartTime" xml:"StartTime"`
-	ModifiedTime    string `json:"ModifiedTime" xml:"ModifiedTime"`
-	InsName         string `json:"InsName" xml:"InsName"`
-	DbType          string `json:"DbType" xml:"DbType"`
-	Region          string `json:"Region" xml:"Region"`
-	ResultInfo      string `json:"ResultInfo" xml:"ResultInfo"`
-	CreatedTime     string `json:"CreatedTime" xml:"CreatedTime"`
-	Id              int    `json:"Id" xml:"Id"`
-	SwitchTime      string `json:"SwitchTime" xml:"SwitchTime"`
+	Region          string  `json:"Region" xml:"Region"`
+	ResultInfo      string  `json:"ResultInfo" xml:"ResultInfo"`
+	InsName         string  `json:"InsName" xml:"InsName"`
+	TaskParams      string  `json:"TaskParams" xml:"TaskParams"`
+	InstanceType    string  `json:"InstanceType" xml:"InstanceType"`
+	ReasonCode      string  `json:"ReasonCode" xml:"ReasonCode"`
+	Deadline        string  `json:"Deadline" xml:"Deadline"`
+	DbType          string  `json:"DbType" xml:"DbType"`
+	ModifiedTime    string  `json:"ModifiedTime" xml:"ModifiedTime"`
+	CreatedTime     string  `json:"CreatedTime" xml:"CreatedTime"`
+	TaskId          string  `json:"TaskId" xml:"TaskId"`
+	RegionId        string  `json:"RegionId" xml:"RegionId"`
+	InstanceId      string  `json:"InstanceId" xml:"InstanceId"`
+	SwitchTime      string  `json:"SwitchTime" xml:"SwitchTime"`
+	Progress        float64 `json:"Progress" xml:"Progress"`
+	TaskDetail      string  `json:"TaskDetail" xml:"TaskDetail"`
+	Uid             string  `json:"Uid" xml:"Uid"`
+	Id              int     `json:"Id" xml:"Id"`
+	CallerSource    string  `json:"CallerSource" xml:"CallerSource"`
+	Status          int     `json:"Status" xml:"Status"`
+	Product         string  `json:"Product" xml:"Product"`
+	CallerUid       string  `json:"CallerUid" xml:"CallerUid"`
+	InstanceName    string  `json:"InstanceName" xml:"InstanceName"`
+	ActionInfo      string  `json:"ActionInfo" xml:"ActionInfo"`
+	PrepareInterval string  `json:"PrepareInterval" xml:"PrepareInterval"`
+	StartTime       string  `json:"StartTime" xml:"StartTime"`
+	EndTime         string  `json:"EndTime" xml:"EndTime"`
+	RemainTime      int     `json:"RemainTime" xml:"RemainTime"`
+	CurrentStepName string  `json:"CurrentStepName" xml:"CurrentStepName"`
+	TaskType        string  `json:"TaskType" xml:"TaskType"`
 }

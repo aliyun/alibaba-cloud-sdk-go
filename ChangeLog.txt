@@ -1,3 +1,8 @@
+2023-07-06 Version: v1.62.420
+- Generated 2015-01-01 for `R-kvstore`.
+- Update Sdk.
+- Add ForceTrans parameters to ModifyInstanceSpec, ModifyInstanceCapacity, DeleteShardingNode,AddShardingNode.
+
 2023-07-06 Version: v1.62.419
 - Generated 2018-11-01 for `dms-enterprise`.
 - Modify GetDataArchiveOrderDetail API. Add output parameter: TempTableNameMap.

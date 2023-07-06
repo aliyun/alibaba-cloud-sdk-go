@@ -86,6 +86,7 @@ type EnableAdditionalBandwidthRequest struct {
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
 	AutoRenew            requests.Boolean `position:"Query" name:"AutoRenew"`
+	ChargeType           string           `position:"Query" name:"ChargeType"`
 	Category             string           `position:"Query" name:"Category"`
 }
 

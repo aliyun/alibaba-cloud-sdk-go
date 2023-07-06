@@ -105,6 +105,7 @@ type CreateTairInstanceRequest struct {
 	SrcDBInstanceId        string                   `position:"Query" name:"SrcDBInstanceId"`
 	OwnerAccount           string                   `position:"Query" name:"OwnerAccount"`
 	GlobalInstanceId       string                   `position:"Query" name:"GlobalInstanceId"`
+	ParamGroupId           string                   `position:"Query" name:"ParamGroupId"`
 	VpcId                  string                   `position:"Query" name:"VpcId"`
 	ReadOnlyCount          requests.Integer         `position:"Query" name:"ReadOnlyCount"`
 	ChargeType             string                   `position:"Query" name:"ChargeType"`

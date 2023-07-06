@@ -86,6 +86,7 @@ type ModifyInstanceSpecRequest struct {
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ForceTrans           requests.Boolean `position:"Query" name:"ForceTrans"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
 	ReadOnlyCount        requests.Integer `position:"Query" name:"ReadOnlyCount"`
 	ForceUpgrade         requests.Boolean `position:"Query" name:"ForceUpgrade"`
