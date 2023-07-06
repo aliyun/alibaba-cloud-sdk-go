@@ -1,3 +1,8 @@
+2023-07-06 Version: v1.62.423
+- Generated 2014-08-15 for `Rds`.
+- Add AutoUseCoupon field.
+- Api Offline.
+
 2023-07-06 Version: v1.62.422
 - Generated 2017-08-01 for `polardb`.
 - DescribeDBClusterAttribute support new feature.
