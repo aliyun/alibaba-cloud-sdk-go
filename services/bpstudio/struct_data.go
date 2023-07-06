@@ -37,6 +37,6 @@ type Data struct {
 	SecurityToken   string `json:"SecurityToken" xml:"SecurityToken"`
 	ResourceList    []Item `json:"ResourceList" xml:"ResourceList"`
 	Checklist       []Item `json:"Checklist" xml:"Checklist"`
-	Variables       []Item `json:"Variables" xml:"Variables"`
 	PriceList       []Item `json:"PriceList" xml:"PriceList"`
+	Variables       []Item `json:"Variables" xml:"Variables"`
 }
