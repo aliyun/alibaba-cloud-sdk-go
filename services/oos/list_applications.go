@@ -71,11 +71,12 @@ func (client *Client) ListApplicationsWithCallback(request *ListApplicationsRequ
 // ListApplicationsRequest is the request struct for api ListApplications
 type ListApplicationsRequest struct {
 	*requests.RpcRequest
-	NextToken  string           `position:"Query" name:"NextToken"`
-	Tags       string           `position:"Query" name:"Tags"`
-	Names      string           `position:"Query" name:"Names"`
-	Name       string           `position:"Query" name:"Name"`
-	MaxResults requests.Integer `position:"Query" name:"MaxResults"`
+	NextToken       string           `position:"Query" name:"NextToken"`
+	Tags            string           `position:"Query" name:"Tags"`
+	Names           string           `position:"Query" name:"Names"`
+	Name            string           `position:"Query" name:"Name"`
+	MaxResults      requests.Integer `position:"Query" name:"MaxResults"`
+	ApplicationType string           `position:"Query" name:"ApplicationType"`
 }
 
 // ListApplicationsResponse is the response struct for api ListApplications

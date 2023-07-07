@@ -74,7 +74,6 @@ type ListApplicationGroupsRequest struct {
 	ResourceProduct string           `position:"Query" name:"ResourceProduct"`
 	NextToken       string           `position:"Query" name:"NextToken"`
 	ResourceId      string           `position:"Query" name:"ResourceId"`
-	Product         string           `position:"Query" name:"Product"`
 	DeployRegionId  string           `position:"Query" name:"DeployRegionId"`
 	ResourceType    string           `position:"Query" name:"ResourceType"`
 	ApplicationName string           `position:"Query" name:"ApplicationName"`

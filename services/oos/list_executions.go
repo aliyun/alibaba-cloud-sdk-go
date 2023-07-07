@@ -73,6 +73,7 @@ type ListExecutionsRequest struct {
 	*requests.RpcRequest
 	ExecutedBy            string                 `position:"Query" name:"ExecutedBy"`
 	IncludeChildExecution requests.Boolean       `position:"Query" name:"IncludeChildExecution"`
+	Description           string                 `position:"Query" name:"Description"`
 	Mode                  string                 `position:"Query" name:"Mode"`
 	ExecutionId           string                 `position:"Query" name:"ExecutionId"`
 	ResourceGroupId       string                 `position:"Query" name:"ResourceGroupId"`
@@ -81,11 +82,13 @@ type ListExecutionsRequest struct {
 	TemplateName          string                 `position:"Query" name:"TemplateName"`
 	EndDateBefore         string                 `position:"Query" name:"EndDateBefore"`
 	SortOrder             string                 `position:"Query" name:"SortOrder"`
+	Categories            string                 `position:"Query" name:"Categories"`
 	ResourceId            string                 `position:"Query" name:"ResourceId"`
 	StartDateAfter        string                 `position:"Query" name:"StartDateAfter"`
 	StartDateBefore       string                 `position:"Query" name:"StartDateBefore"`
 	Tags                  map[string]interface{} `position:"Query" name:"Tags"`
 	ParentExecutionId     string                 `position:"Query" name:"ParentExecutionId"`
+	Depth                 string                 `position:"Query" name:"Depth"`
 	EndDateAfter          string                 `position:"Query" name:"EndDateAfter"`
 	MaxResults            requests.Integer       `position:"Query" name:"MaxResults"`
 	SortField             string                 `position:"Query" name:"SortField"`

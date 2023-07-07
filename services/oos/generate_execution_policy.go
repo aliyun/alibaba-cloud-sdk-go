@@ -72,14 +72,16 @@ func (client *Client) GenerateExecutionPolicyWithCallback(request *GenerateExecu
 type GenerateExecutionPolicyRequest struct {
 	*requests.RpcRequest
 	TemplateVersion string `position:"Query" name:"TemplateVersion"`
+	RamRole         string `position:"Query" name:"RamRole"`
 	TemplateName    string `position:"Query" name:"TemplateName"`
 }
 
 // GenerateExecutionPolicyResponse is the response struct for api GenerateExecutionPolicy
 type GenerateExecutionPolicyResponse struct {
 	*responses.BaseResponse
-	Policy    string `json:"Policy" xml:"Policy"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	Policy        string `json:"Policy" xml:"Policy"`
+	RequestId     string `json:"RequestId" xml:"RequestId"`
+	MissingPolicy string `json:"MissingPolicy" xml:"MissingPolicy"`
 }
 
 // CreateGenerateExecutionPolicyRequest creates a request to invoke GenerateExecutionPolicy API

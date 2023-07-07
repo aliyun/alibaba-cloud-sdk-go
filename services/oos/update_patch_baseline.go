@@ -71,10 +71,12 @@ func (client *Client) UpdatePatchBaselineWithCallback(request *UpdatePatchBaseli
 // UpdatePatchBaselineRequest is the request struct for api UpdatePatchBaseline
 type UpdatePatchBaselineRequest struct {
 	*requests.RpcRequest
-	ClientToken   string `position:"Query" name:"ClientToken"`
-	ApprovalRules string `position:"Query" name:"ApprovalRules"`
-	Description   string `position:"Query" name:"Description"`
-	Name          string `position:"Query" name:"Name"`
+	ClientToken           string    `position:"Query" name:"ClientToken"`
+	ApprovalRules         string    `position:"Query" name:"ApprovalRules"`
+	Description           string    `position:"Query" name:"Description"`
+	RejectedPatches       *[]string `position:"Query" name:"RejectedPatches"  type:"Json"`
+	RejectedPatchesAction string    `position:"Query" name:"RejectedPatchesAction"`
+	Name                  string    `position:"Query" name:"Name"`
 }
 
 // UpdatePatchBaselineResponse is the response struct for api UpdatePatchBaseline

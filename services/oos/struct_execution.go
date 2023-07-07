@@ -38,12 +38,14 @@ type Execution struct {
 	Tags                      map[string]interface{} `json:"Tags" xml:"Tags"`
 	EndDate                   string                 `json:"EndDate" xml:"EndDate"`
 	LastSuccessfulTriggerTime string                 `json:"LastSuccessfulTriggerTime" xml:"LastSuccessfulTriggerTime"`
+	LastTriggerStatusMessage  string                 `json:"LastTriggerStatusMessage" xml:"LastTriggerStatusMessage"`
 	RamRole                   string                 `json:"RamRole" xml:"RamRole"`
 	Targets                   string                 `json:"Targets" xml:"Targets"`
 	StartDate                 string                 `json:"StartDate" xml:"StartDate"`
 	StatusReason              string                 `json:"StatusReason" xml:"StatusReason"`
 	ResourceStatus            string                 `json:"ResourceStatus" xml:"ResourceStatus"`
 	CreateDate                string                 `json:"CreateDate" xml:"CreateDate"`
+	LastTriggerOutputs        string                 `json:"LastTriggerOutputs" xml:"LastTriggerOutputs"`
 	LastTriggerStatus         string                 `json:"LastTriggerStatus" xml:"LastTriggerStatus"`
 	ExecutionId               string                 `json:"ExecutionId" xml:"ExecutionId"`
 	Status                    string                 `json:"Status" xml:"Status"`

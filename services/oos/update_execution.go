@@ -72,6 +72,7 @@ func (client *Client) UpdateExecutionWithCallback(request *UpdateExecutionReques
 type UpdateExecutionRequest struct {
 	*requests.RpcRequest
 	ClientToken string `position:"Query" name:"ClientToken"`
+	Description string `position:"Query" name:"Description"`
 	ExecutionId string `position:"Query" name:"ExecutionId"`
 	Parameters  string `position:"Query" name:"Parameters"`
 }

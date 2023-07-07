@@ -71,11 +71,13 @@ func (client *Client) CreatePatchBaselineWithCallback(request *CreatePatchBaseli
 // CreatePatchBaselineRequest is the request struct for api CreatePatchBaseline
 type CreatePatchBaselineRequest struct {
 	*requests.RpcRequest
-	ClientToken     string `position:"Query" name:"ClientToken"`
-	ApprovalRules   string `position:"Query" name:"ApprovalRules"`
-	Description     string `position:"Query" name:"Description"`
-	OperationSystem string `position:"Query" name:"OperationSystem"`
-	Name            string `position:"Query" name:"Name"`
+	ClientToken           string    `position:"Query" name:"ClientToken"`
+	ApprovalRules         string    `position:"Query" name:"ApprovalRules"`
+	Description           string    `position:"Query" name:"Description"`
+	OperationSystem       string    `position:"Query" name:"OperationSystem"`
+	RejectedPatches       *[]string `position:"Query" name:"RejectedPatches"  type:"Json"`
+	RejectedPatchesAction string    `position:"Query" name:"RejectedPatchesAction"`
+	Name                  string    `position:"Query" name:"Name"`
 }
 
 // CreatePatchBaselineResponse is the response struct for api CreatePatchBaseline

@@ -22,6 +22,7 @@ type Application struct {
 	ResourceGroupId string                 `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	UpdateDate      string                 `json:"UpdateDate" xml:"UpdateDate"`
 	CreatedDate     string                 `json:"CreatedDate" xml:"CreatedDate"`
+	ApplicationType string                 `json:"ApplicationType" xml:"ApplicationType"`
 	Description     string                 `json:"Description" xml:"Description"`
 	Tags            map[string]interface{} `json:"Tags" xml:"Tags"`
 	UpdatedDate     string                 `json:"UpdatedDate" xml:"UpdatedDate"`

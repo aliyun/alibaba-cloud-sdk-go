@@ -77,6 +77,7 @@ type ListParametersRequest struct {
 	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
 	NextToken       string           `position:"Query" name:"NextToken"`
 	SortOrder       string           `position:"Query" name:"SortOrder"`
+	ShareType       string           `position:"Query" name:"ShareType"`
 	Tags            string           `position:"Query" name:"Tags"`
 	Name            string           `position:"Query" name:"Name"`
 	MaxResults      requests.Integer `position:"Query" name:"MaxResults"`
