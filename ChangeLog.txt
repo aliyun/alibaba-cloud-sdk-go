@@ -1,3 +1,8 @@
+2023-07-07 Version: v1.62.426
+- Generated 2014-08-15 for `Rds`.
+- Add AutoUseCoupon field.
+- Api Offline.
+
 2023-07-07 Version: v1.62.425
 - Generated 2019-06-01 for `oos`.
 - ListApplicationGroups rename parameter Product to ResourceProduct
