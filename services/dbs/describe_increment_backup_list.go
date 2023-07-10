@@ -74,11 +74,11 @@ type DescribeIncrementBackupListRequest struct {
 	ClientToken     string           `position:"Query" name:"ClientToken"`
 	BackupPlanId    string           `position:"Query" name:"BackupPlanId"`
 	PageNum         requests.Integer `position:"Query" name:"PageNum"`
-	OwnerId         string           `position:"Query" name:"OwnerId"`
 	StartTimestamp  requests.Integer `position:"Query" name:"StartTimestamp"`
 	EndTimestamp    requests.Integer `position:"Query" name:"EndTimestamp"`
 	ShowStorageType requests.Boolean `position:"Query" name:"ShowStorageType"`
 	PageSize        requests.Integer `position:"Query" name:"PageSize"`
+	OwnerId         string           `position:"Query" name:"OwnerId"`
 }
 
 // DescribeIncrementBackupListResponse is the response struct for api DescribeIncrementBackupList

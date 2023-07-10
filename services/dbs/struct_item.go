@@ -30,7 +30,6 @@ type Item struct {
 	IsFreeBytesUnlimited bool   `json:"IsFreeBytesUnlimited" xml:"IsFreeBytesUnlimited"`
 	BuyChargeType        string `json:"BuyChargeType" xml:"BuyChargeType"`
 	UsedIncrementBytes   int64  `json:"UsedIncrementBytes" xml:"UsedIncrementBytes"`
-	ResourceGroupId      string `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	JobState             string `json:"JobState" xml:"JobState"`
 	FullStorageSize      int64  `json:"FullStorageSize" xml:"FullStorageSize"`
 	PaiedBytes           int64  `json:"PaiedBytes" xml:"PaiedBytes"`

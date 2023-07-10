@@ -53,4 +53,5 @@ type BackupPlanDetail struct {
 	BackupSetDownloadIncrementDataFormat string `json:"BackupSetDownloadIncrementDataFormat" xml:"BackupSetDownloadIncrementDataFormat"`
 	EnableBackupLog                      bool   `json:"EnableBackupLog" xml:"EnableBackupLog"`
 	ResourceGroupId                      string `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	DatabaseType                         string `json:"DatabaseType" xml:"DatabaseType"`
 }

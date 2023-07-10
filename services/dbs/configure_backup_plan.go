@@ -71,36 +71,36 @@ func (client *Client) ConfigureBackupPlanWithCallback(request *ConfigureBackupPl
 // ConfigureBackupPlanRequest is the request struct for api ConfigureBackupPlan
 type ConfigureBackupPlanRequest struct {
 	*requests.RpcRequest
-	SourceEndpointRegion              string           `position:"Query" name:"SourceEndpointRegion"`
 	BackupGatewayId                   requests.Integer `position:"Query" name:"BackupGatewayId"`
-	SourceEndpointInstanceID          string           `position:"Query" name:"SourceEndpointInstanceID"`
 	SourceEndpointUserName            string           `position:"Query" name:"SourceEndpointUserName"`
-	ClientToken                       string           `position:"Query" name:"ClientToken"`
-	BackupPlanId                      string           `position:"Query" name:"BackupPlanId"`
-	SourceEndpointDatabaseName        string           `position:"Query" name:"SourceEndpointDatabaseName"`
-	DuplicationInfrequentAccessPeriod requests.Integer `position:"Query" name:"DuplicationInfrequentAccessPeriod"`
 	ResourceGroupId                   string           `position:"Query" name:"ResourceGroupId"`
 	BackupStartTime                   string           `position:"Query" name:"BackupStartTime"`
 	SourceEndpointIP                  string           `position:"Query" name:"SourceEndpointIP"`
 	CrossRoleName                     string           `position:"Query" name:"CrossRoleName"`
-	EnableBackupLog                   requests.Boolean `position:"Query" name:"EnableBackupLog"`
 	BackupStorageType                 string           `position:"Query" name:"BackupStorageType"`
 	DuplicationArchivePeriod          requests.Integer `position:"Query" name:"DuplicationArchivePeriod"`
 	BackupLogIntervalSeconds          requests.Integer `position:"Query" name:"BackupLogIntervalSeconds"`
-	CrossAliyunId                     string           `position:"Query" name:"CrossAliyunId"`
 	AutoStartBackup                   requests.Boolean `position:"Query" name:"AutoStartBackup"`
 	SourceEndpointPassword            string           `position:"Query" name:"SourceEndpointPassword"`
-	BackupObjects                     string           `position:"Query" name:"BackupObjects"`
-	BackupRateLimit                   requests.Integer `position:"Query" name:"BackupRateLimit"`
 	OwnerId                           string           `position:"Query" name:"OwnerId"`
-	SourceEndpointPort                requests.Integer `position:"Query" name:"SourceEndpointPort"`
 	BackupRetentionPeriod             requests.Integer `position:"Query" name:"BackupRetentionPeriod"`
 	BackupPeriod                      string           `position:"Query" name:"BackupPeriod"`
 	BackupSpeedLimit                  requests.Integer `position:"Query" name:"BackupSpeedLimit"`
 	SourceEndpointInstanceType        string           `position:"Query" name:"SourceEndpointInstanceType"`
 	BackupPlanName                    string           `position:"Query" name:"BackupPlanName"`
-	SourceEndpointOracleSID           string           `position:"Query" name:"SourceEndpointOracleSID"`
 	OSSBucketName                     string           `position:"Query" name:"OSSBucketName"`
+	SourceEndpointRegion              string           `position:"Query" name:"SourceEndpointRegion"`
+	SourceEndpointInstanceID          string           `position:"Query" name:"SourceEndpointInstanceID"`
+	ClientToken                       string           `position:"Query" name:"ClientToken"`
+	BackupPlanId                      string           `position:"Query" name:"BackupPlanId"`
+	SourceEndpointDatabaseName        string           `position:"Query" name:"SourceEndpointDatabaseName"`
+	DuplicationInfrequentAccessPeriod requests.Integer `position:"Query" name:"DuplicationInfrequentAccessPeriod"`
+	EnableBackupLog                   requests.Boolean `position:"Query" name:"EnableBackupLog"`
+	CrossAliyunId                     string           `position:"Query" name:"CrossAliyunId"`
+	BackupObjects                     string           `position:"Query" name:"BackupObjects"`
+	BackupRateLimit                   requests.Integer `position:"Query" name:"BackupRateLimit"`
+	SourceEndpointPort                requests.Integer `position:"Query" name:"SourceEndpointPort"`
+	SourceEndpointOracleSID           string           `position:"Query" name:"SourceEndpointOracleSID"`
 	BackupStrategyType                string           `position:"Query" name:"BackupStrategyType"`
 }
 

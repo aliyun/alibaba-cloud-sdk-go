@@ -75,9 +75,9 @@ type CreateGetDBListFromAgentTaskRequest struct {
 	BackupGatewayId      requests.Integer `position:"Query" name:"BackupGatewayId"`
 	DatabaseType         string           `position:"Query" name:"DatabaseType"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
+	SourceEndpointIP     string           `position:"Query" name:"SourceEndpointIP"`
 	OwnerId              string           `position:"Query" name:"OwnerId"`
 	SourceEndpointPort   requests.Integer `position:"Query" name:"SourceEndpointPort"`
-	SourceEndpointIP     string           `position:"Query" name:"SourceEndpointIP"`
 }
 
 // CreateGetDBListFromAgentTaskResponse is the response struct for api CreateGetDBListFromAgentTask

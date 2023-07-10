@@ -72,11 +72,11 @@ func (client *Client) DescribeRestoreRangeInfoWithCallback(request *DescribeRest
 type DescribeRestoreRangeInfoRequest struct {
 	*requests.RpcRequest
 	BeginTimestampForRestore requests.Integer `position:"Query" name:"BeginTimestampForRestore"`
-	EndTimestampForRestore   requests.Integer `position:"Query" name:"EndTimestampForRestore"`
 	ClientToken              string           `position:"Query" name:"ClientToken"`
 	BackupPlanId             string           `position:"Query" name:"BackupPlanId"`
-	OwnerId                  string           `position:"Query" name:"OwnerId"`
 	RecentlyRestore          requests.Boolean `position:"Query" name:"RecentlyRestore"`
+	EndTimestampForRestore   requests.Integer `position:"Query" name:"EndTimestampForRestore"`
+	OwnerId                  string           `position:"Query" name:"OwnerId"`
 }
 
 // DescribeRestoreRangeInfoResponse is the response struct for api DescribeRestoreRangeInfo

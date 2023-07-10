@@ -71,9 +71,9 @@ func (client *Client) RenewBackupPlanWithCallback(request *RenewBackupPlanReques
 // RenewBackupPlanRequest is the request struct for api RenewBackupPlan
 type RenewBackupPlanRequest struct {
 	*requests.RpcRequest
-	Period       string           `position:"Query" name:"Period"`
 	ClientToken  string           `position:"Query" name:"ClientToken"`
 	BackupPlanId string           `position:"Query" name:"BackupPlanId"`
+	Period       string           `position:"Query" name:"Period"`
 	OwnerId      string           `position:"Query" name:"OwnerId"`
 	UsedTime     requests.Integer `position:"Query" name:"UsedTime"`
 }

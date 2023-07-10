@@ -73,8 +73,8 @@ type DescribePreCheckProgressListRequest struct {
 	*requests.RpcRequest
 	ClientToken   string `position:"Query" name:"ClientToken"`
 	BackupPlanId  string `position:"Query" name:"BackupPlanId"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
 	RestoreTaskId string `position:"Query" name:"RestoreTaskId"`
+	OwnerId       string `position:"Query" name:"OwnerId"`
 }
 
 // DescribePreCheckProgressListResponse is the response struct for api DescribePreCheckProgressList

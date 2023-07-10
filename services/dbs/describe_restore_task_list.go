@@ -74,11 +74,11 @@ type DescribeRestoreTaskListRequest struct {
 	ClientToken    string           `position:"Query" name:"ClientToken"`
 	BackupPlanId   string           `position:"Query" name:"BackupPlanId"`
 	PageNum        requests.Integer `position:"Query" name:"PageNum"`
-	OwnerId        string           `position:"Query" name:"OwnerId"`
 	StartTimestamp requests.Integer `position:"Query" name:"StartTimestamp"`
 	EndTimestamp   requests.Integer `position:"Query" name:"EndTimestamp"`
 	RestoreTaskId  string           `position:"Query" name:"RestoreTaskId"`
 	PageSize       requests.Integer `position:"Query" name:"PageSize"`
+	OwnerId        string           `position:"Query" name:"OwnerId"`
 }
 
 // DescribeRestoreTaskListResponse is the response struct for api DescribeRestoreTaskList

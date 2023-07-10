@@ -73,8 +73,8 @@ type UpgradeBackupPlanRequest struct {
 	*requests.RpcRequest
 	ClientToken   string `position:"Query" name:"ClientToken"`
 	BackupPlanId  string `position:"Query" name:"BackupPlanId"`
-	OwnerId       string `position:"Query" name:"OwnerId"`
 	InstanceClass string `position:"Query" name:"InstanceClass"`
+	OwnerId       string `position:"Query" name:"OwnerId"`
 }
 
 // UpgradeBackupPlanResponse is the response struct for api UpgradeBackupPlan

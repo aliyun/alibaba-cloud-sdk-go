@@ -73,8 +73,8 @@ type DescribeBackupPlanBillingRequest struct {
 	*requests.RpcRequest
 	ClientToken     string           `position:"Query" name:"ClientToken"`
 	BackupPlanId    string           `position:"Query" name:"BackupPlanId"`
-	OwnerId         string           `position:"Query" name:"OwnerId"`
 	ShowStorageType requests.Boolean `position:"Query" name:"ShowStorageType"`
+	OwnerId         string           `position:"Query" name:"OwnerId"`
 }
 
 // DescribeBackupPlanBillingResponse is the response struct for api DescribeBackupPlanBilling

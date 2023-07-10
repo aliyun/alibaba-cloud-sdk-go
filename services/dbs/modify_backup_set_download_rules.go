@@ -76,11 +76,11 @@ type ModifyBackupSetDownloadRulesRequest struct {
 	ClientToken                         string           `position:"Query" name:"ClientToken"`
 	BackupSetDownloadTargetType         string           `position:"Query" name:"BackupSetDownloadTargetType"`
 	BackupPlanId                        string           `position:"Query" name:"BackupPlanId"`
+	BackupSetDownloadTargetTypeLocation string           `position:"Query" name:"BackupSetDownloadTargetTypeLocation"`
+	BackupSetDownloadDir                string           `position:"Query" name:"BackupSetDownloadDir"`
 	OwnerId                             string           `position:"Query" name:"OwnerId"`
 	OpenAutoDownload                    requests.Boolean `position:"Query" name:"OpenAutoDownload"`
 	IncrementDataFormat                 string           `position:"Query" name:"IncrementDataFormat"`
-	BackupSetDownloadTargetTypeLocation string           `position:"Query" name:"BackupSetDownloadTargetTypeLocation"`
-	BackupSetDownloadDir                string           `position:"Query" name:"BackupSetDownloadDir"`
 }
 
 // ModifyBackupSetDownloadRulesResponse is the response struct for api ModifyBackupSetDownloadRules

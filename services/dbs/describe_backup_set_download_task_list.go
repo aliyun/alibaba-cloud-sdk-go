@@ -72,11 +72,11 @@ func (client *Client) DescribeBackupSetDownloadTaskListWithCallback(request *Des
 type DescribeBackupSetDownloadTaskListRequest struct {
 	*requests.RpcRequest
 	ClientToken             string           `position:"Query" name:"ClientToken"`
-	BackupSetDownloadTaskId string           `position:"Query" name:"BackupSetDownloadTaskId"`
 	BackupPlanId            string           `position:"Query" name:"BackupPlanId"`
 	PageNum                 requests.Integer `position:"Query" name:"PageNum"`
-	OwnerId                 string           `position:"Query" name:"OwnerId"`
 	PageSize                requests.Integer `position:"Query" name:"PageSize"`
+	BackupSetDownloadTaskId string           `position:"Query" name:"BackupSetDownloadTaskId"`
+	OwnerId                 string           `position:"Query" name:"OwnerId"`
 }
 
 // DescribeBackupSetDownloadTaskListResponse is the response struct for api DescribeBackupSetDownloadTaskList

@@ -74,8 +74,8 @@ type GetDBListFromAgentRequest struct {
 	SourceEndpointRegion string           `position:"Query" name:"SourceEndpointRegion"`
 	BackupGatewayId      requests.Integer `position:"Query" name:"BackupGatewayId"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
-	OwnerId              string           `position:"Query" name:"OwnerId"`
 	TaskId               requests.Integer `position:"Query" name:"TaskId"`
+	OwnerId              string           `position:"Query" name:"OwnerId"`
 }
 
 // GetDBListFromAgentResponse is the response struct for api GetDBListFromAgent

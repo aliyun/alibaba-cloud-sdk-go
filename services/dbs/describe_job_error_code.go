@@ -73,8 +73,8 @@ type DescribeJobErrorCodeRequest struct {
 	*requests.RpcRequest
 	ClientToken string `position:"Query" name:"ClientToken"`
 	Language    string `position:"Query" name:"Language"`
-	OwnerId     string `position:"Query" name:"OwnerId"`
 	TaskId      string `position:"Query" name:"TaskId"`
+	OwnerId     string `position:"Query" name:"OwnerId"`
 }
 
 // DescribeJobErrorCodeResponse is the response struct for api DescribeJobErrorCode

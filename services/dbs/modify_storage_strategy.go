@@ -71,12 +71,12 @@ func (client *Client) ModifyStorageStrategyWithCallback(request *ModifyStorageSt
 // ModifyStorageStrategyRequest is the request struct for api ModifyStorageStrategy
 type ModifyStorageStrategyRequest struct {
 	*requests.RpcRequest
-	DuplicationArchivePeriod          requests.Integer `position:"Query" name:"DuplicationArchivePeriod"`
 	ClientToken                       string           `position:"Query" name:"ClientToken"`
 	BackupPlanId                      string           `position:"Query" name:"BackupPlanId"`
+	DuplicationInfrequentAccessPeriod requests.Integer `position:"Query" name:"DuplicationInfrequentAccessPeriod"`
+	DuplicationArchivePeriod          requests.Integer `position:"Query" name:"DuplicationArchivePeriod"`
 	OwnerId                           string           `position:"Query" name:"OwnerId"`
 	BackupRetentionPeriod             requests.Integer `position:"Query" name:"BackupRetentionPeriod"`
-	DuplicationInfrequentAccessPeriod requests.Integer `position:"Query" name:"DuplicationInfrequentAccessPeriod"`
 }
 
 // ModifyStorageStrategyResponse is the response struct for api ModifyStorageStrategy

@@ -72,10 +72,10 @@ func (client *Client) CreateIncrementBackupSetDownloadWithCallback(request *Crea
 type CreateIncrementBackupSetDownloadRequest struct {
 	*requests.RpcRequest
 	ClientToken         string `position:"Query" name:"ClientToken"`
+	BackupSetDataFormat string `position:"Query" name:"BackupSetDataFormat"`
 	BackupSetName       string `position:"Query" name:"BackupSetName"`
 	BackupSetId         string `position:"Query" name:"BackupSetId"`
 	OwnerId             string `position:"Query" name:"OwnerId"`
-	BackupSetDataFormat string `position:"Query" name:"BackupSetDataFormat"`
 }
 
 // CreateIncrementBackupSetDownloadResponse is the response struct for api CreateIncrementBackupSetDownload

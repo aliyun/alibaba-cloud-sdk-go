@@ -74,11 +74,11 @@ type DescribeBackupPlanListRequest struct {
 	ClientToken      string           `position:"Query" name:"ClientToken"`
 	BackupPlanId     string           `position:"Query" name:"BackupPlanId"`
 	PageNum          requests.Integer `position:"Query" name:"PageNum"`
-	OwnerId          string           `position:"Query" name:"OwnerId"`
 	ResourceGroupId  string           `position:"Query" name:"ResourceGroupId"`
 	BackupPlanStatus string           `position:"Query" name:"BackupPlanStatus"`
-	BackupPlanName   string           `position:"Query" name:"BackupPlanName"`
 	PageSize         requests.Integer `position:"Query" name:"PageSize"`
+	OwnerId          string           `position:"Query" name:"OwnerId"`
+	BackupPlanName   string           `position:"Query" name:"BackupPlanName"`
 	Region           string           `position:"Query" name:"Region"`
 }
 
