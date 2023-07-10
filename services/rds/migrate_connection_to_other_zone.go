@@ -89,7 +89,7 @@ func CreateMigrateConnectionToOtherZoneRequest() (request *MigrateConnectionToOt
 	request = &MigrateConnectionToOtherZoneRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "MigrateConnectionToOtherZone", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "MigrateConnectionToOtherZone", "rds", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -98,7 +98,7 @@ func CreateDescribeDBInstancesByExpireTimeRequest() (request *DescribeDBInstance
 	request = &DescribeDBInstancesByExpireTimeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstancesByExpireTime", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstancesByExpireTime", "rds", "openAPI")
 	request.Method = requests.POST
 	return
 }

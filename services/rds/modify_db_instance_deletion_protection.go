@@ -91,7 +91,7 @@ func CreateModifyDBInstanceDeletionProtectionRequest() (request *ModifyDBInstanc
 	request = &ModifyDBInstanceDeletionProtectionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDBInstanceDeletionProtection", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDBInstanceDeletionProtection", "rds", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -92,7 +92,7 @@ func CreateDeleteBackupFileRequest() (request *DeleteBackupFileRequest) {
 	request = &DeleteBackupFileRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DeleteBackupFile", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DeleteBackupFile", "rds", "openAPI")
 	request.Method = requests.POST
 	return
 }

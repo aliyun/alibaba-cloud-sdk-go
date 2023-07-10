@@ -92,7 +92,7 @@ func CreateDescribeAvailableMetricsRequest() (request *DescribeAvailableMetricsR
 	request = &DescribeAvailableMetricsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeAvailableMetrics", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeAvailableMetrics", "rds", "openAPI")
 	request.Method = requests.POST
 	return
 }

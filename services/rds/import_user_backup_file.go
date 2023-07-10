@@ -96,7 +96,7 @@ func CreateImportUserBackupFileRequest() (request *ImportUserBackupFileRequest) 
 	request = &ImportUserBackupFileRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ImportUserBackupFile", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "ImportUserBackupFile", "rds", "openAPI")
 	request.Method = requests.POST
 	return
 }

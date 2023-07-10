@@ -90,7 +90,7 @@ func CreateDescribeDedicatedHostGroupsRequest() (request *DescribeDedicatedHostG
 	request = &DescribeDedicatedHostGroupsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDedicatedHostGroups", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDedicatedHostGroups", "rds", "openAPI")
 	request.Method = requests.POST
 	return
 }

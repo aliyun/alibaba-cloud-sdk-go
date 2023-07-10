@@ -99,7 +99,7 @@ func CreateModifyDBInstanceNetworkTypeRequest() (request *ModifyDBInstanceNetwor
 	request = &ModifyDBInstanceNetworkTypeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDBInstanceNetworkType", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDBInstanceNetworkType", "rds", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -1,3 +1,7 @@
+2023-07-10 Version: v1.62.429
+- Generated 2014-08-15 for `Rds`.
+- Add DescribeClassDetails Api.
+
 2023-07-09 Version: v1.62.428
 - Generated 2014-08-15 for `Rds`.
 - Add AutoUseCoupon field.

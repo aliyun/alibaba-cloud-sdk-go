@@ -98,7 +98,7 @@ func CreateDescribeCloudMigrationResultRequest() (request *DescribeCloudMigratio
 	request = &DescribeCloudMigrationResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeCloudMigrationResult", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeCloudMigrationResult", "rds", "openAPI")
 	request.Method = requests.POST
 	return
 }

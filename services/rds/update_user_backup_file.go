@@ -92,7 +92,7 @@ func CreateUpdateUserBackupFileRequest() (request *UpdateUserBackupFileRequest) 
 	request = &UpdateUserBackupFileRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "UpdateUserBackupFile", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "UpdateUserBackupFile", "rds", "openAPI")
 	request.Method = requests.POST
 	return
 }

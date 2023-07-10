@@ -108,7 +108,7 @@ func CreateRecoveryDBInstanceRequest() (request *RecoveryDBInstanceRequest) {
 	request = &RecoveryDBInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "RecoveryDBInstance", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "RecoveryDBInstance", "rds", "openAPI")
 	request.Method = requests.POST
 	return
 }

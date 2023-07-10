@@ -97,7 +97,7 @@ func CreateCreateCloudMigrationPrecheckTaskRequest() (request *CreateCloudMigrat
 	request = &CreateCloudMigrationPrecheckTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "CreateCloudMigrationPrecheckTask", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "CreateCloudMigrationPrecheckTask", "rds", "openAPI")
 	request.Method = requests.POST
 	return
 }
