@@ -97,7 +97,7 @@ func CreateDescribeUpgradeMajorVersionTasksRequest() (request *DescribeUpgradeMa
 	request = &DescribeUpgradeMajorVersionTasksRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeUpgradeMajorVersionTasks", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeUpgradeMajorVersionTasks", "", "")
 	request.Method = requests.POST
 	return
 }

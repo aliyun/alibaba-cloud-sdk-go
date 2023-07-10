@@ -92,7 +92,7 @@ func CreateModifyDasInstanceConfigRequest() (request *ModifyDasInstanceConfigReq
 	request = &ModifyDasInstanceConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDasInstanceConfig", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDasInstanceConfig", "", "")
 	request.Method = requests.POST
 	return
 }

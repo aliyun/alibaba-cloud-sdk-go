@@ -97,7 +97,7 @@ func CreateDescribeSecretsRequest() (request *DescribeSecretsRequest) {
 	request = &DescribeSecretsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeSecrets", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeSecrets", "", "")
 	request.Method = requests.POST
 	return
 }

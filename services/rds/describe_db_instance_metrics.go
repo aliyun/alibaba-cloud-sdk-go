@@ -92,7 +92,7 @@ func CreateDescribeDBInstanceMetricsRequest() (request *DescribeDBInstanceMetric
 	request = &DescribeDBInstanceMetricsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstanceMetrics", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstanceMetrics", "", "")
 	request.Method = requests.POST
 	return
 }

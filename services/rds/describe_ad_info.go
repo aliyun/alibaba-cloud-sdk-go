@@ -94,7 +94,7 @@ func CreateDescribeADInfoRequest() (request *DescribeADInfoRequest) {
 	request = &DescribeADInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeADInfo", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeADInfo", "", "")
 	request.Method = requests.POST
 	return
 }

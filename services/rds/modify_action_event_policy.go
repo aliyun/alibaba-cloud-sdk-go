@@ -90,7 +90,7 @@ func CreateModifyActionEventPolicyRequest() (request *ModifyActionEventPolicyReq
 	request = &ModifyActionEventPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyActionEventPolicy", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyActionEventPolicy", "", "")
 	request.Method = requests.POST
 	return
 }

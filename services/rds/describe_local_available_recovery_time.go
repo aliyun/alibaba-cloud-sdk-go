@@ -93,7 +93,7 @@ func CreateDescribeLocalAvailableRecoveryTimeRequest() (request *DescribeLocalAv
 	request = &DescribeLocalAvailableRecoveryTimeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeLocalAvailableRecoveryTime", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeLocalAvailableRecoveryTime", "", "")
 	request.Method = requests.POST
 	return
 }

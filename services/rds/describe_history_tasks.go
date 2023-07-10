@@ -104,7 +104,7 @@ func CreateDescribeHistoryTasksRequest() (request *DescribeHistoryTasksRequest) 
 	request = &DescribeHistoryTasksRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeHistoryTasks", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeHistoryTasks", "", "")
 	request.Method = requests.POST
 	return
 }

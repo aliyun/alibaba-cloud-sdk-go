@@ -101,7 +101,7 @@ func CreateRestoreDdrTableRequest() (request *RestoreDdrTableRequest) {
 	request = &RestoreDdrTableRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "RestoreDdrTable", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "RestoreDdrTable", "", "")
 	request.Method = requests.POST
 	return
 }

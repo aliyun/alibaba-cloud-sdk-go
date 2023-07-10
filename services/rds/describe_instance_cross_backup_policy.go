@@ -109,7 +109,7 @@ func CreateDescribeInstanceCrossBackupPolicyRequest() (request *DescribeInstance
 	request = &DescribeInstanceCrossBackupPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeInstanceCrossBackupPolicy", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeInstanceCrossBackupPolicy", "", "")
 	request.Method = requests.POST
 	return
 }

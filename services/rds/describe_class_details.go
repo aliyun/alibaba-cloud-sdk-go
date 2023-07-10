@@ -103,7 +103,7 @@ func CreateDescribeClassDetailsRequest() (request *DescribeClassDetailsRequest) 
 	request = &DescribeClassDetailsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeClassDetails", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeClassDetails", "", "")
 	request.Method = requests.POST
 	return
 }

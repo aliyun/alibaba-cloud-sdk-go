@@ -92,7 +92,7 @@ func CreateDescribeSlotsRequest() (request *DescribeSlotsRequest) {
 	request = &DescribeSlotsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeSlots", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeSlots", "", "")
 	request.Method = requests.POST
 	return
 }

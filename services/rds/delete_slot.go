@@ -94,7 +94,7 @@ func CreateDeleteSlotRequest() (request *DeleteSlotRequest) {
 	request = &DeleteSlotRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DeleteSlot", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DeleteSlot", "", "")
 	request.Method = requests.POST
 	return
 }

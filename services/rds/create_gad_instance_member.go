@@ -111,7 +111,7 @@ func CreateCreateGadInstanceMemberRequest() (request *CreateGadInstanceMemberReq
 	request = &CreateGadInstanceMemberRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "CreateGadInstanceMember", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "CreateGadInstanceMember", "", "")
 	request.Method = requests.POST
 	return
 }
