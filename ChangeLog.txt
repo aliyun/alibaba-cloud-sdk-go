@@ -1,3 +1,7 @@
+2023-07-11 Version: v1.62.433
+- Generated 2022-01-30 for `avatar`.
+-offline add voice and industrycode
+
 2023-07-11 Version: v1.62.432
 - Generated 2017-08-01 for `polardb`.
 - Support new feature.

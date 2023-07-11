@@ -29,6 +29,7 @@ type Data struct {
 	InstanceId           string               `json:"InstanceId" xml:"InstanceId"`
 	TotalCount           int                  `json:"TotalCount" xml:"TotalCount"`
 	Description          string               `json:"Description" xml:"Description"`
+	UniqueCode           string               `json:"UniqueCode" xml:"UniqueCode"`
 	Type                 string               `json:"Type" xml:"Type"`
 	GrabType             string               `json:"GrabType" xml:"GrabType"`
 	Token                string               `json:"Token" xml:"Token"`
