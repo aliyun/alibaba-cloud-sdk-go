@@ -71,17 +71,18 @@ func (client *Client) ModifyDBClusterPrimaryZoneWithCallback(request *ModifyDBCl
 // ModifyDBClusterPrimaryZoneRequest is the request struct for api ModifyDBClusterPrimaryZone
 type ModifyDBClusterPrimaryZoneRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	PlannedEndTime       string           `position:"Query" name:"PlannedEndTime"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	DBClusterId          string           `position:"Query" name:"DBClusterId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	VSwitchId            string           `position:"Query" name:"VSwitchId"`
-	PlannedStartTime     string           `position:"Query" name:"PlannedStartTime"`
-	VPCId                string           `position:"Query" name:"VPCId"`
-	ZoneId               string           `position:"Query" name:"ZoneId"`
-	FromTimeService      requests.Boolean `position:"Query" name:"FromTimeService"`
+	ResourceOwnerId         requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	PlannedEndTime          string           `position:"Query" name:"PlannedEndTime"`
+	ResourceOwnerAccount    string           `position:"Query" name:"ResourceOwnerAccount"`
+	DBClusterId             string           `position:"Query" name:"DBClusterId"`
+	OwnerAccount            string           `position:"Query" name:"OwnerAccount"`
+	OwnerId                 requests.Integer `position:"Query" name:"OwnerId"`
+	IsSwitchOverForDisaster string           `position:"Query" name:"IsSwitchOverForDisaster"`
+	VSwitchId               string           `position:"Query" name:"VSwitchId"`
+	PlannedStartTime        string           `position:"Query" name:"PlannedStartTime"`
+	VPCId                   string           `position:"Query" name:"VPCId"`
+	ZoneId                  string           `position:"Query" name:"ZoneId"`
+	FromTimeService         requests.Boolean `position:"Query" name:"FromTimeService"`
 }
 
 // ModifyDBClusterPrimaryZoneResponse is the response struct for api ModifyDBClusterPrimaryZone

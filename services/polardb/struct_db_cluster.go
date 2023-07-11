@@ -25,11 +25,13 @@ type DBCluster struct {
 	CreateTime           string                      `json:"CreateTime" xml:"CreateTime"`
 	DBClusterNetworkType string                      `json:"DBClusterNetworkType" xml:"DBClusterNetworkType"`
 	ServerlessType       string                      `json:"ServerlessType" xml:"ServerlessType"`
+	AiType               string                      `json:"AiType" xml:"AiType"`
 	RegionId             string                      `json:"RegionId" xml:"RegionId"`
 	DeletedTime          string                      `json:"DeletedTime" xml:"DeletedTime"`
 	DBNodeNumber         int                         `json:"DBNodeNumber" xml:"DBNodeNumber"`
 	ResourceGroupId      string                      `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	Role                 string                      `json:"Role" xml:"Role"`
+	VswitchId            string                      `json:"VswitchId" xml:"VswitchId"`
 	ExpireTime           string                      `json:"ExpireTime" xml:"ExpireTime"`
 	VpcId                string                      `json:"VpcId" xml:"VpcId"`
 	Expired              string                      `json:"Expired" xml:"Expired"`
