@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// CreateEai invokes the eais.CreateEai API synchronously
-func (client *Client) CreateEai(request *CreateEaiRequest) (response *CreateEaiResponse, err error) {
-	response = CreateCreateEaiResponse()
+// CreateEaisEi invokes the eais.CreateEaisEi API synchronously
+func (client *Client) CreateEaisEi(request *CreateEaisEiRequest) (response *CreateEaisEiResponse, err error) {
+	response = CreateCreateEaisEiResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// CreateEaiWithChan invokes the eais.CreateEai API asynchronously
-func (client *Client) CreateEaiWithChan(request *CreateEaiRequest) (<-chan *CreateEaiResponse, <-chan error) {
-	responseChan := make(chan *CreateEaiResponse, 1)
+// CreateEaisEiWithChan invokes the eais.CreateEaisEi API asynchronously
+func (client *Client) CreateEaisEiWithChan(request *CreateEaisEiRequest) (<-chan *CreateEaisEiResponse, <-chan error) {
+	responseChan := make(chan *CreateEaisEiResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.CreateEai(request)
+		response, err := client.CreateEaisEi(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) CreateEaiWithChan(request *CreateEaiRequest) (<-chan *Crea
 	return responseChan, errChan
 }
 
-// CreateEaiWithCallback invokes the eais.CreateEai API asynchronously
-func (client *Client) CreateEaiWithCallback(request *CreateEaiRequest, callback func(response *CreateEaiResponse, err error)) <-chan int {
+// CreateEaisEiWithCallback invokes the eais.CreateEaisEi API asynchronously
+func (client *Client) CreateEaisEiWithCallback(request *CreateEaisEiRequest, callback func(response *CreateEaisEiResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *CreateEaiResponse
+		var response *CreateEaisEiResponse
 		var err error
 		defer close(result)
-		response, err = client.CreateEai(request)
+		response, err = client.CreateEaisEi(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,10 +68,9 @@ func (client *Client) CreateEaiWithCallback(request *CreateEaiRequest, callback 
 	return result
 }
 
-// CreateEaiRequest is the request struct for api CreateEai
-type CreateEaiRequest struct {
+// CreateEaisEiRequest is the request struct for api CreateEaisEi
+type CreateEaisEiRequest struct {
 	*requests.RpcRequest
-	Image           string `position:"Query" name:"Image"`
 	ClientToken     string `position:"Query" name:"ClientToken"`
 	SecurityGroupId string `position:"Query" name:"SecurityGroupId"`
 	VSwitchId       string `position:"Query" name:"VSwitchId"`
@@ -80,26 +79,26 @@ type CreateEaiRequest struct {
 	InstanceType    string `position:"Query" name:"InstanceType"`
 }
 
-// CreateEaiResponse is the response struct for api CreateEai
-type CreateEaiResponse struct {
+// CreateEaisEiResponse is the response struct for api CreateEaisEi
+type CreateEaisEiResponse struct {
 	*responses.BaseResponse
-	ElasticAcceleratedInstanceId string `json:"ElasticAcceleratedInstanceId" xml:"ElasticAcceleratedInstanceId"`
-	RequestId                    string `json:"RequestId" xml:"RequestId"`
+	RequestId    string `json:"RequestId" xml:"RequestId"`
+	EiInstanceId string `json:"EiInstanceId" xml:"EiInstanceId"`
 }
 
-// CreateCreateEaiRequest creates a request to invoke CreateEai API
-func CreateCreateEaiRequest() (request *CreateEaiRequest) {
-	request = &CreateEaiRequest{
+// CreateCreateEaisEiRequest creates a request to invoke CreateEaisEi API
+func CreateCreateEaisEiRequest() (request *CreateEaisEiRequest) {
+	request = &CreateEaisEiRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("eais", "2019-06-24", "CreateEai", "eais", "openAPI")
+	request.InitWithApiInfo("eais", "2019-06-24", "CreateEaisEi", "eais", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateCreateEaiResponse creates a response to parse from CreateEai response
-func CreateCreateEaiResponse() (response *CreateEaiResponse) {
-	response = &CreateEaiResponse{
+// CreateCreateEaisEiResponse creates a response to parse from CreateEaisEi response
+func CreateCreateEaisEiResponse() (response *CreateEaisEiResponse) {
+	response = &CreateEaisEiResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

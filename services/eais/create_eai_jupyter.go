@@ -77,6 +77,7 @@ type CreateEaiJupyterRequest struct {
 	VSwitchId       string                            `position:"Query" name:"VSwitchId"`
 	ResourceGroupId string                            `position:"Query" name:"ResourceGroupId"`
 	EnvironmentVar  *[]CreateEaiJupyterEnvironmentVar `position:"Query" name:"EnvironmentVar"  type:"Json"`
+	EaisName        string                            `position:"Query" name:"EaisName"`
 }
 
 // CreateEaiJupyterEnvironmentVar is a repeated param struct in CreateEaiJupyterRequest
