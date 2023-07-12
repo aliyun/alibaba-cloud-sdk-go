@@ -22,11 +22,13 @@ type Item struct {
 	Message          string `json:"Message" xml:"Message"`
 	ProductKey       string `json:"ProductKey" xml:"ProductKey"`
 	DeviceStatus     string `json:"DeviceStatus" xml:"DeviceStatus"`
+	FailReason       string `json:"FailReason" xml:"FailReason"`
 	GmtCreate        int64  `json:"GmtCreate" xml:"GmtCreate"`
 	DeviceName       string `json:"DeviceName" xml:"DeviceName"`
 	ExpiryTime       int64  `json:"ExpiryTime" xml:"ExpiryTime"`
 	InSpecifiedGroup bool   `json:"InSpecifiedGroup" xml:"InSpecifiedGroup"`
 	IotId            string `json:"IotId" xml:"IotId"`
+	FailCode         int    `json:"FailCode" xml:"FailCode"`
 	LicenseStatus    string `json:"LicenseStatus" xml:"LicenseStatus"`
 	Status           string `json:"Status" xml:"Status"`
 	Code             int    `json:"Code" xml:"Code"`

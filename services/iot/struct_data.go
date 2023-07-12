@@ -177,6 +177,7 @@ type Data struct {
 	DeviceSecret              string                                           `json:"DeviceSecret" xml:"DeviceSecret"`
 	AsyncExecute              bool                                             `json:"AsyncExecute" xml:"AsyncExecute"`
 	GmtModified               string                                           `json:"GmtModified" xml:"GmtModified"`
+	AuditResult               int                                              `json:"AuditResult" xml:"AuditResult"`
 	ModifiedTime              int64                                            `json:"ModifiedTime" xml:"ModifiedTime"`
 	VersionState              string                                           `json:"VersionState" xml:"VersionState"`
 	Argument                  string                                           `json:"Argument" xml:"Argument"`
@@ -206,6 +207,7 @@ type Data struct {
 	InvalidDetailList         []InvalidDetailListItem                          `json:"InvalidDetailList" xml:"InvalidDetailList"`
 	List                      ListInGetThingTopo                               `json:"List" xml:"List"`
 	DynamicRegClientIds       []DynamicRegClientId                             `json:"DynamicRegClientIds" xml:"DynamicRegClientIds"`
+	FailDeviceSimpleInfoList  FailDeviceSimpleInfoList                         `json:"FailDeviceSimpleInfoList" xml:"FailDeviceSimpleInfoList"`
 	ModelVersions             []ModelVersion                                   `json:"ModelVersions" xml:"ModelVersions"`
 	Details                   Details                                          `json:"Details" xml:"Details"`
 }
