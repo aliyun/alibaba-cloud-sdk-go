@@ -17,20 +17,24 @@ package cbn
 
 // TransitRouterRouteEntry is a nested struct in cbn response
 type TransitRouterRouteEntry struct {
-	TransitRouterRouteEntryId                   string `json:"TransitRouterRouteEntryId" xml:"TransitRouterRouteEntryId"`
-	TransitRouterRouteEntryDestinationCidrBlock string `json:"TransitRouterRouteEntryDestinationCidrBlock" xml:"TransitRouterRouteEntryDestinationCidrBlock"`
-	TransitRouterRouteEntryType                 string `json:"TransitRouterRouteEntryType" xml:"TransitRouterRouteEntryType"`
-	CreateTime                                  string `json:"CreateTime" xml:"CreateTime"`
-	TransitRouterRouteEntryName                 string `json:"TransitRouterRouteEntryName" xml:"TransitRouterRouteEntryName"`
-	TransitRouterRouteEntryStatus               string `json:"TransitRouterRouteEntryStatus" xml:"TransitRouterRouteEntryStatus"`
-	TransitRouterRouteEntryNextHopType          string `json:"TransitRouterRouteEntryNextHopType" xml:"TransitRouterRouteEntryNextHopType"`
-	TransitRouterRouteEntryNextHopId            string `json:"TransitRouterRouteEntryNextHopId" xml:"TransitRouterRouteEntryNextHopId"`
-	TransitRouterRouteEntryDescription          string `json:"TransitRouterRouteEntryDescription" xml:"TransitRouterRouteEntryDescription"`
-	OperationalMode                             bool   `json:"OperationalMode" xml:"OperationalMode"`
-	Tag                                         string `json:"Tag" xml:"Tag"`
-	TransitRouterRouteEntryNextHopResourceId    string `json:"TransitRouterRouteEntryNextHopResourceId" xml:"TransitRouterRouteEntryNextHopResourceId"`
-	TransitRouterRouteEntryNextHopResourceType  string `json:"TransitRouterRouteEntryNextHopResourceType" xml:"TransitRouterRouteEntryNextHopResourceType"`
-	TransitRouterRouteEntryOriginResourceType   string `json:"TransitRouterRouteEntryOriginResourceType" xml:"TransitRouterRouteEntryOriginResourceType"`
-	TransitRouterRouteEntryOriginResourceId     string `json:"TransitRouterRouteEntryOriginResourceId" xml:"TransitRouterRouteEntryOriginResourceId"`
-	PrefixListId                                string `json:"PrefixListId" xml:"PrefixListId"`
+	TransitRouterRouteEntryId                   string         `json:"TransitRouterRouteEntryId" xml:"TransitRouterRouteEntryId"`
+	TransitRouterRouteEntryDestinationCidrBlock string         `json:"TransitRouterRouteEntryDestinationCidrBlock" xml:"TransitRouterRouteEntryDestinationCidrBlock"`
+	TransitRouterRouteEntryType                 string         `json:"TransitRouterRouteEntryType" xml:"TransitRouterRouteEntryType"`
+	CreateTime                                  string         `json:"CreateTime" xml:"CreateTime"`
+	TransitRouterRouteEntryName                 string         `json:"TransitRouterRouteEntryName" xml:"TransitRouterRouteEntryName"`
+	TransitRouterRouteEntryStatus               string         `json:"TransitRouterRouteEntryStatus" xml:"TransitRouterRouteEntryStatus"`
+	TransitRouterRouteEntryNextHopType          string         `json:"TransitRouterRouteEntryNextHopType" xml:"TransitRouterRouteEntryNextHopType"`
+	TransitRouterRouteEntryNextHopId            string         `json:"TransitRouterRouteEntryNextHopId" xml:"TransitRouterRouteEntryNextHopId"`
+	TransitRouterRouteEntryDescription          string         `json:"TransitRouterRouteEntryDescription" xml:"TransitRouterRouteEntryDescription"`
+	OperationalMode                             bool           `json:"OperationalMode" xml:"OperationalMode"`
+	Tag                                         string         `json:"Tag" xml:"Tag"`
+	TransitRouterRouteEntryNextHopResourceId    string         `json:"TransitRouterRouteEntryNextHopResourceId" xml:"TransitRouterRouteEntryNextHopResourceId"`
+	TransitRouterRouteEntryNextHopResourceType  string         `json:"TransitRouterRouteEntryNextHopResourceType" xml:"TransitRouterRouteEntryNextHopResourceType"`
+	TransitRouterRouteEntryOriginResourceType   string         `json:"TransitRouterRouteEntryOriginResourceType" xml:"TransitRouterRouteEntryOriginResourceType"`
+	TransitRouterRouteEntryOriginResourceId     string         `json:"TransitRouterRouteEntryOriginResourceId" xml:"TransitRouterRouteEntryOriginResourceId"`
+	PrefixListId                                string         `json:"PrefixListId" xml:"PrefixListId"`
+	Preference                                  int            `json:"Preference" xml:"Preference"`
+	Communities                                 []string       `json:"Communities" xml:"Communities"`
+	AsPaths                                     []string       `json:"AsPaths" xml:"AsPaths"`
+	PathAttributes                              PathAttributes `json:"PathAttributes" xml:"PathAttributes"`
 }

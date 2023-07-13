@@ -74,6 +74,7 @@ type DescribeCenInterRegionBandwidthLimitsRequest struct {
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	CenId                string           `position:"Query" name:"CenId"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	TrRegionId           string           `position:"Query" name:"TrRegionId"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
