@@ -73,21 +73,19 @@ type QueryGovernanceKubernetesClusterRequest struct {
 	*requests.RpcRequest
 	MseSessionId   string           `position:"Query" name:"MseSessionId"`
 	ClusterName    string           `position:"Query" name:"ClusterName"`
-	ClusterId      string           `position:"Query" name:"ClusterId"`
 	PageNumber     requests.Integer `position:"Query" name:"PageNumber"`
 	PageSize       requests.Integer `position:"Query" name:"PageSize"`
+	ClusterId      string           `position:"Query" name:"ClusterId"`
 	AcceptLanguage string           `position:"Query" name:"AcceptLanguage"`
 }
 
 // QueryGovernanceKubernetesClusterResponse is the response struct for api QueryGovernanceKubernetesCluster
 type QueryGovernanceKubernetesClusterResponse struct {
 	*responses.BaseResponse
-	HttpStatusCode int                                    `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	Message        string                                 `json:"Message" xml:"Message"`
-	RequestId      string                                 `json:"RequestId" xml:"RequestId"`
-	Code           int                                    `json:"Code" xml:"Code"`
-	Success        bool                                   `json:"Success" xml:"Success"`
-	Data           DataInQueryGovernanceKubernetesCluster `json:"Data" xml:"Data"`
+	Message   string                                 `json:"Message" xml:"Message"`
+	RequestId string                                 `json:"RequestId" xml:"RequestId"`
+	Success   bool                                   `json:"Success" xml:"Success"`
+	Data      DataInQueryGovernanceKubernetesCluster `json:"Data" xml:"Data"`
 }
 
 // CreateQueryGovernanceKubernetesClusterRequest creates a request to invoke QueryGovernanceKubernetesCluster API

@@ -72,9 +72,9 @@ func (client *Client) DeleteZnodeWithCallback(request *DeleteZnodeRequest, callb
 type DeleteZnodeRequest struct {
 	*requests.RpcRequest
 	MseSessionId   string `position:"Query" name:"MseSessionId"`
-	ClusterId      string `position:"Query" name:"ClusterId"`
 	Path           string `position:"Query" name:"Path"`
 	RequestPars    string `position:"Query" name:"RequestPars"`
+	ClusterId      string `position:"Query" name:"ClusterId"`
 	AcceptLanguage string `position:"Query" name:"AcceptLanguage"`
 }
 

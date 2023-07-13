@@ -73,12 +73,18 @@ type GetTagsBySwimmingLaneGroupIdRequest struct {
 	*requests.RpcRequest
 	MseSessionId   string           `position:"Query" name:"MseSessionId"`
 	GroupId        requests.Integer `position:"Query" name:"GroupId"`
+	Namespace      string           `position:"Query" name:"Namespace"`
 	AcceptLanguage string           `position:"Query" name:"AcceptLanguage"`
 }
 
 // GetTagsBySwimmingLaneGroupIdResponse is the response struct for api GetTagsBySwimmingLaneGroupId
 type GetTagsBySwimmingLaneGroupIdResponse struct {
 	*responses.BaseResponse
+	RequestId string   `json:"RequestId" xml:"RequestId"`
+	Success   bool     `json:"Success" xml:"Success"`
+	ErrorCode string   `json:"ErrorCode" xml:"ErrorCode"`
+	Message   string   `json:"Message" xml:"Message"`
+	Data      []string `json:"Data" xml:"Data"`
 }
 
 // CreateGetTagsBySwimmingLaneGroupIdRequest creates a request to invoke GetTagsBySwimmingLaneGroupId API

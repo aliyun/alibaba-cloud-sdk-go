@@ -72,12 +72,12 @@ func (client *Client) GetNacosConfigWithCallback(request *GetNacosConfigRequest,
 type GetNacosConfigRequest struct {
 	*requests.RpcRequest
 	MseSessionId   string           `position:"Query" name:"MseSessionId"`
-	InstanceId     string           `position:"Query" name:"InstanceId"`
-	DataId         string           `position:"Query" name:"DataId"`
 	NamespaceId    string           `position:"Query" name:"NamespaceId"`
-	AcceptLanguage string           `position:"Query" name:"AcceptLanguage"`
 	Beta           requests.Boolean `position:"Query" name:"Beta"`
 	Group          string           `position:"Query" name:"Group"`
+	InstanceId     string           `position:"Query" name:"InstanceId"`
+	DataId         string           `position:"Query" name:"DataId"`
+	AcceptLanguage string           `position:"Query" name:"AcceptLanguage"`
 }
 
 // GetNacosConfigResponse is the response struct for api GetNacosConfig

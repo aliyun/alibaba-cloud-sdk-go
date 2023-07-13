@@ -72,11 +72,11 @@ func (client *Client) DeleteNacosServiceWithCallback(request *DeleteNacosService
 type DeleteNacosServiceRequest struct {
 	*requests.RpcRequest
 	MseSessionId   string `position:"Query" name:"MseSessionId"`
+	NamespaceId    string `position:"Query" name:"NamespaceId"`
+	ServiceName    string `position:"Query" name:"ServiceName"`
 	GroupName      string `position:"Query" name:"GroupName"`
 	InstanceId     string `position:"Query" name:"InstanceId"`
-	NamespaceId    string `position:"Query" name:"NamespaceId"`
 	AcceptLanguage string `position:"Query" name:"AcceptLanguage"`
-	ServiceName    string `position:"Query" name:"ServiceName"`
 }
 
 // DeleteNacosServiceResponse is the response struct for api DeleteNacosService

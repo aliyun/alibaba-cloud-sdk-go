@@ -76,6 +76,7 @@ type UpdateClusterSpecRequest struct {
 	InstanceCount        requests.Integer `position:"Query" name:"InstanceCount"`
 	ClusterId            string           `position:"Query" name:"ClusterId"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
+	MseVersion           string           `position:"Query" name:"MseVersion"`
 	AcceptLanguage       string           `position:"Query" name:"AcceptLanguage"`
 }
 
@@ -88,6 +89,7 @@ type UpdateClusterSpecResponse struct {
 	Code           int    `json:"Code" xml:"Code"`
 	Success        bool   `json:"Success" xml:"Success"`
 	Data           string `json:"Data" xml:"Data"`
+	ErrorCode      string `json:"ErrorCode" xml:"ErrorCode"`
 }
 
 // CreateUpdateClusterSpecRequest creates a request to invoke UpdateClusterSpec API

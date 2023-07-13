@@ -71,10 +71,10 @@ func (client *Client) UpgradeClusterWithCallback(request *UpgradeClusterRequest,
 // UpgradeClusterRequest is the request struct for api UpgradeCluster
 type UpgradeClusterRequest struct {
 	*requests.RpcRequest
-	UpgradeVersion string `position:"Query" name:"UpgradeVersion"`
 	MseSessionId   string `position:"Query" name:"MseSessionId"`
-	InstanceId     string `position:"Query" name:"InstanceId"`
 	RequestPars    string `position:"Query" name:"RequestPars"`
+	UpgradeVersion string `position:"Query" name:"UpgradeVersion"`
+	InstanceId     string `position:"Query" name:"InstanceId"`
 	AcceptLanguage string `position:"Query" name:"AcceptLanguage"`
 }
 

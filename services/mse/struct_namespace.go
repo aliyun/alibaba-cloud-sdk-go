@@ -24,4 +24,5 @@ type Namespace struct {
 	NamespaceDesc     string `json:"NamespaceDesc" xml:"NamespaceDesc"`
 	ConfigCount       int    `json:"ConfigCount" xml:"ConfigCount"`
 	ServiceCount      string `json:"ServiceCount" xml:"ServiceCount"`
+	SourceType        string `json:"SourceType" xml:"SourceType"`
 }

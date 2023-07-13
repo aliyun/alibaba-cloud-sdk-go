@@ -72,13 +72,14 @@ func (client *Client) ExportNacosConfigWithCallback(request *ExportNacosConfigRe
 type ExportNacosConfigRequest struct {
 	*requests.RpcRequest
 	MseSessionId   string `position:"Query" name:"MseSessionId"`
-	InstanceId     string `position:"Query" name:"InstanceId"`
-	DataId         string `position:"Query" name:"DataId"`
+	DataIds        string `position:"Query" name:"DataIds"`
 	AppName        string `position:"Query" name:"AppName"`
 	NamespaceId    string `position:"Query" name:"NamespaceId"`
+	Group          string `position:"Query" name:"Group"`
+	InstanceId     string `position:"Query" name:"InstanceId"`
+	DataId         string `position:"Query" name:"DataId"`
 	AcceptLanguage string `position:"Query" name:"AcceptLanguage"`
 	Ids            string `position:"Query" name:"Ids"`
-	Group          string `position:"Query" name:"Group"`
 }
 
 // ExportNacosConfigResponse is the response struct for api ExportNacosConfig

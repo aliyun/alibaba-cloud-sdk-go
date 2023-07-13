@@ -52,5 +52,6 @@ type DataInQueryClusterInfo struct {
 	MseVersion           string                 `json:"MseVersion" xml:"MseVersion"`
 	ChargeType           string                 `json:"ChargeType" xml:"ChargeType"`
 	Tags                 map[string]interface{} `json:"Tags" xml:"Tags"`
+	ExpectZones          []string               `json:"ExpectZones" xml:"ExpectZones"`
 	InstanceModels       []InstanceModel        `json:"InstanceModels" xml:"InstanceModels"`
 }

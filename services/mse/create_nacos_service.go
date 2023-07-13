@@ -73,12 +73,12 @@ type CreateNacosServiceRequest struct {
 	*requests.RpcRequest
 	MseSessionId     string           `position:"Query" name:"MseSessionId"`
 	Ephemeral        requests.Boolean `position:"Query" name:"Ephemeral"`
+	NamespaceId      string           `position:"Query" name:"NamespaceId"`
+	ServiceName      string           `position:"Query" name:"ServiceName"`
 	ClusterId        string           `position:"Query" name:"ClusterId"`
 	GroupName        string           `position:"Query" name:"GroupName"`
 	InstanceId       string           `position:"Query" name:"InstanceId"`
-	NamespaceId      string           `position:"Query" name:"NamespaceId"`
 	AcceptLanguage   string           `position:"Query" name:"AcceptLanguage"`
-	ServiceName      string           `position:"Query" name:"ServiceName"`
 	ProtectThreshold string           `position:"Query" name:"ProtectThreshold"`
 }
 

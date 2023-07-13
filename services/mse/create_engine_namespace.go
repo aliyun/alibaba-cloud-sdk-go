@@ -72,12 +72,12 @@ func (client *Client) CreateEngineNamespaceWithCallback(request *CreateEngineNam
 type CreateEngineNamespaceRequest struct {
 	*requests.RpcRequest
 	MseSessionId   string           `position:"Query" name:"MseSessionId"`
+	ServiceCount   requests.Integer `position:"Query" name:"ServiceCount"`
+	Id             string           `position:"Query" name:"Id"`
 	ClusterId      string           `position:"Query" name:"ClusterId"`
 	InstanceId     string           `position:"Query" name:"InstanceId"`
-	ServiceCount   requests.Integer `position:"Query" name:"ServiceCount"`
 	Name           string           `position:"Query" name:"Name"`
 	AcceptLanguage string           `position:"Query" name:"AcceptLanguage"`
-	Id             string           `position:"Query" name:"Id"`
 	Desc           string           `position:"Query" name:"Desc"`
 }
 

@@ -72,28 +72,29 @@ func (client *Client) CreateOrUpdateSwimmingLaneGroupWithCallback(request *Creat
 type CreateOrUpdateSwimmingLaneGroupRequest struct {
 	*requests.RpcRequest
 	MseSessionId           string           `position:"Query" name:"MseSessionId"`
-	Source                 string           `position:"Query" name:"Source"`
-	GmtModified            string           `position:"Query" name:"GmtModified"`
-	UserId                 string           `position:"Query" name:"UserId"`
-	LicenseKey             string           `position:"Query" name:"LicenseKey"`
 	AppIds                 string           `position:"Query" name:"AppIds"`
-	MessageQueueGrayEnable requests.Boolean `position:"Query" name:"MessageQueueGrayEnable"`
 	DbGrayEnable           requests.Boolean `position:"Query" name:"DbGrayEnable"`
 	Enable                 requests.Boolean `position:"Query" name:"Enable"`
-	EntryApp               string           `position:"Query" name:"EntryApp"`
 	Id                     requests.Integer `position:"Query" name:"Id"`
-	GmtCreate              string           `position:"Query" name:"GmtCreate"`
 	Name                   string           `position:"Query" name:"Name"`
 	MessageQueueFilterSide string           `position:"Query" name:"MessageQueueFilterSide"`
-	Namespace              string           `position:"Query" name:"Namespace"`
-	AcceptLanguage         string           `position:"Query" name:"AcceptLanguage"`
 	Region                 string           `position:"Query" name:"Region"`
 	Status                 requests.Integer `position:"Query" name:"Status"`
+	MessageQueueGrayEnable requests.Boolean `position:"Query" name:"MessageQueueGrayEnable"`
+	EntryApp               string           `position:"Query" name:"EntryApp"`
+	RecordCanaryDetail     requests.Boolean `position:"Query" name:"RecordCanaryDetail"`
+	Namespace              string           `position:"Query" name:"Namespace"`
+	AcceptLanguage         string           `position:"Query" name:"AcceptLanguage"`
 }
 
 // CreateOrUpdateSwimmingLaneGroupResponse is the response struct for api CreateOrUpdateSwimmingLaneGroup
 type CreateOrUpdateSwimmingLaneGroupResponse struct {
 	*responses.BaseResponse
+	RequestId string                                `json:"RequestId" xml:"RequestId"`
+	Success   bool                                  `json:"Success" xml:"Success"`
+	ErrorCode string                                `json:"ErrorCode" xml:"ErrorCode"`
+	Message   string                                `json:"Message" xml:"Message"`
+	Data      DataInCreateOrUpdateSwimmingLaneGroup `json:"Data" xml:"Data"`
 }
 
 // CreateCreateOrUpdateSwimmingLaneGroupRequest creates a request to invoke CreateOrUpdateSwimmingLaneGroup API

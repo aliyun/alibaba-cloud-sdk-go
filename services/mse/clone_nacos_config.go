@@ -73,11 +73,11 @@ type CloneNacosConfigRequest struct {
 	*requests.RpcRequest
 	MseSessionId      string `position:"Query" name:"MseSessionId"`
 	TargetNamespaceId string `position:"Query" name:"TargetNamespaceId"`
+	OriginNamespaceId string `position:"Query" name:"OriginNamespaceId"`
+	Policy            string `position:"Query" name:"Policy"`
 	InstanceId        string `position:"Query" name:"InstanceId"`
 	AcceptLanguage    string `position:"Query" name:"AcceptLanguage"`
 	Ids               string `position:"Query" name:"Ids"`
-	OriginNamespaceId string `position:"Query" name:"OriginNamespaceId"`
-	Policy            string `position:"Query" name:"Policy"`
 }
 
 // CloneNacosConfigResponse is the response struct for api CloneNacosConfig

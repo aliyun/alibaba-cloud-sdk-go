@@ -72,7 +72,9 @@ func (client *Client) GetAppMessageQueueRouteWithCallback(request *GetAppMessage
 type GetAppMessageQueueRouteRequest struct {
 	*requests.RpcRequest
 	MseSessionId   string `position:"Query" name:"MseSessionId"`
+	AppName        string `position:"Query" name:"AppName"`
 	AppId          string `position:"Query" name:"AppId"`
+	Namespace      string `position:"Query" name:"Namespace"`
 	AcceptLanguage string `position:"Query" name:"AcceptLanguage"`
 	Region         string `position:"Query" name:"Region"`
 }

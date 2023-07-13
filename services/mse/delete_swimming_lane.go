@@ -73,6 +73,7 @@ type DeleteSwimmingLaneRequest struct {
 	*requests.RpcRequest
 	MseSessionId   string           `position:"Query" name:"MseSessionId"`
 	LaneId         requests.Integer `position:"Query" name:"LaneId"`
+	Namespace      string           `position:"Query" name:"Namespace"`
 	AcceptLanguage string           `position:"Query" name:"AcceptLanguage"`
 }
 

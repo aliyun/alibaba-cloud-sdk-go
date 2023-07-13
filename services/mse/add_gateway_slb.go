@@ -71,16 +71,25 @@ func (client *Client) AddGatewaySlbWithCallback(request *AddGatewaySlbRequest, c
 // AddGatewaySlbRequest is the request struct for api AddGatewaySlb
 type AddGatewaySlbRequest struct {
 	*requests.RpcRequest
-	MseSessionId        string           `position:"Query" name:"MseSessionId"`
-	SlbId               string           `position:"Query" name:"SlbId"`
-	GatewayUniqueId     string           `position:"Query" name:"GatewayUniqueId"`
-	Type                string           `position:"Query" name:"Type"`
-	HttpPort            requests.Integer `position:"Query" name:"HttpPort"`
-	ServiceWeight       requests.Integer `position:"Query" name:"ServiceWeight"`
-	VServerGroupId      string           `position:"Query" name:"VServerGroupId"`
-	HttpsVServerGroupId string           `position:"Query" name:"HttpsVServerGroupId"`
-	AcceptLanguage      string           `position:"Query" name:"AcceptLanguage"`
-	HttpsPort           requests.Integer `position:"Query" name:"HttpsPort"`
+	MseSessionId        string                       `position:"Query" name:"MseSessionId"`
+	SlbId               string                       `position:"Query" name:"SlbId"`
+	GatewayUniqueId     string                       `position:"Query" name:"GatewayUniqueId"`
+	Type                string                       `position:"Query" name:"Type"`
+	HttpPort            requests.Integer             `position:"Query" name:"HttpPort"`
+	ServiceWeight       requests.Integer             `position:"Query" name:"ServiceWeight"`
+	VServerGroupId      string                       `position:"Query" name:"VServerGroupId"`
+	VServiceList        *[]AddGatewaySlbVServiceList `position:"Query" name:"VServiceList"  type:"Json"`
+	HttpsVServerGroupId string                       `position:"Query" name:"HttpsVServerGroupId"`
+	AcceptLanguage      string                       `position:"Query" name:"AcceptLanguage"`
+	HttpsPort           requests.Integer             `position:"Query" name:"HttpsPort"`
+}
+
+// AddGatewaySlbVServiceList is a repeated param struct in AddGatewaySlbRequest
+type AddGatewaySlbVServiceList struct {
+	VServerGroupId   string `name:"VServerGroupId"`
+	Protocol         string `name:"Protocol"`
+	Port             string `name:"Port"`
+	VServerGroupName string `name:"VServerGroupName"`
 }
 
 // AddGatewaySlbResponse is the response struct for api AddGatewaySlb

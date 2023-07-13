@@ -79,6 +79,14 @@ type QueryAllSwimmingLaneGroupRequest struct {
 // QueryAllSwimmingLaneGroupResponse is the response struct for api QueryAllSwimmingLaneGroup
 type QueryAllSwimmingLaneGroupResponse struct {
 	*responses.BaseResponse
+	RequestId      string              `json:"RequestId" xml:"RequestId"`
+	Success        bool                `json:"Success" xml:"Success"`
+	Code           int                 `json:"Code" xml:"Code"`
+	ErrorCode      string              `json:"ErrorCode" xml:"ErrorCode"`
+	HttpStatusCode int                 `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Message        string              `json:"Message" xml:"Message"`
+	DynamicMessage string              `json:"DynamicMessage" xml:"DynamicMessage"`
+	Data           []SwimmingLaneGroup `json:"Data" xml:"Data"`
 }
 
 // CreateQueryAllSwimmingLaneGroupRequest creates a request to invoke QueryAllSwimmingLaneGroup API

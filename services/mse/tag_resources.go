@@ -72,10 +72,10 @@ func (client *Client) TagResourcesWithCallback(request *TagResourcesRequest, cal
 type TagResourcesRequest struct {
 	*requests.RpcRequest
 	MseSessionId   string             `position:"Query" name:"MseSessionId"`
+	Tag            *[]TagResourcesTag `position:"Query" name:"Tag"  type:"Repeated"`
 	ResourceId     *[]string          `position:"Query" name:"ResourceId"  type:"Repeated"`
 	ResourceType   string             `position:"Query" name:"ResourceType"`
 	AcceptLanguage string             `position:"Query" name:"AcceptLanguage"`
-	Tag            *[]TagResourcesTag `position:"Query" name:"Tag"  type:"Repeated"`
 }
 
 // TagResourcesTag is a repeated param struct in TagResourcesRequest

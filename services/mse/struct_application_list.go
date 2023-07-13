@@ -17,18 +17,29 @@ package mse
 
 // ApplicationList is a nested struct in mse response
 type ApplicationList struct {
-	LicenseKey      string           `json:"LicenseKey" xml:"LicenseKey"`
-	Status          int64            `json:"Status" xml:"Status"`
+	Aligned         bool             `json:"Aligned" xml:"Aligned"`
 	Language        string           `json:"Language" xml:"Language"`
-	RouteStatus     int64            `json:"RouteStatus" xml:"RouteStatus"`
+	Notice          bool             `json:"Notice" xml:"Notice"`
 	Source          string           `json:"Source" xml:"Source"`
 	ExtraInfo       string           `json:"ExtraInfo" xml:"ExtraInfo"`
-	AppId           string           `json:"AppId" xml:"AppId"`
 	RegionId        string           `json:"RegionId" xml:"RegionId"`
-	Namespace       string           `json:"Namespace" xml:"Namespace"`
+	FuncType        int              `json:"FuncType" xml:"FuncType"`
 	UserId          string           `json:"UserId" xml:"UserId"`
-	AppName         string           `json:"AppName" xml:"AppName"`
+	LossLessDetail  bool             `json:"LossLessDetail" xml:"LossLessDetail"`
 	InstancesNumber int              `json:"InstancesNumber" xml:"InstancesNumber"`
+	AppType         int              `json:"AppType" xml:"AppType"`
+	Count           int              `json:"Count" xml:"Count"`
+	LicenseKey      string           `json:"LicenseKey" xml:"LicenseKey"`
+	Status          int64            `json:"Status" xml:"Status"`
+	RouteStatus     int64            `json:"RouteStatus" xml:"RouteStatus"`
+	WarmupTime      int              `json:"WarmupTime" xml:"WarmupTime"`
+	AppId           string           `json:"AppId" xml:"AppId"`
+	TagCount        int64            `json:"TagCount" xml:"TagCount"`
+	Namespace       string           `json:"Namespace" xml:"Namespace"`
+	DelayTime       int              `json:"DelayTime" xml:"DelayTime"`
+	Enable          bool             `json:"Enable" xml:"Enable"`
+	Related         bool             `json:"Related" xml:"Related"`
+	AppName         string           `json:"AppName" xml:"AppName"`
 	Tags            []string         `json:"Tags" xml:"Tags"`
 	CurMetricsFm    CurMetricsFm     `json:"CurMetricsFm" xml:"CurMetricsFm"`
 	RouteRules      []RouteRule      `json:"RouteRules" xml:"RouteRules"`

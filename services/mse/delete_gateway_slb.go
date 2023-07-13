@@ -73,6 +73,7 @@ type DeleteGatewaySlbRequest struct {
 	*requests.RpcRequest
 	DeleteSlb       requests.Boolean `position:"Query" name:"DeleteSlb"`
 	MseSessionId    string           `position:"Query" name:"MseSessionId"`
+	SlbId           string           `position:"Query" name:"SlbId"`
 	GatewayUniqueId string           `position:"Query" name:"GatewayUniqueId"`
 	Id              string           `position:"Query" name:"Id"`
 	AcceptLanguage  string           `position:"Query" name:"AcceptLanguage"`

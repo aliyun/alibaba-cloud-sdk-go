@@ -73,11 +73,11 @@ type GetNacosHistoryConfigRequest struct {
 	*requests.RpcRequest
 	MseSessionId   string `position:"Query" name:"MseSessionId"`
 	Nid            string `position:"Query" name:"Nid"`
+	NamespaceId    string `position:"Query" name:"NamespaceId"`
+	Group          string `position:"Query" name:"Group"`
 	InstanceId     string `position:"Query" name:"InstanceId"`
 	DataId         string `position:"Query" name:"DataId"`
-	NamespaceId    string `position:"Query" name:"NamespaceId"`
 	AcceptLanguage string `position:"Query" name:"AcceptLanguage"`
-	Group          string `position:"Query" name:"Group"`
 }
 
 // GetNacosHistoryConfigResponse is the response struct for api GetNacosHistoryConfig

@@ -71,26 +71,28 @@ func (client *Client) UpdateConfigWithCallback(request *UpdateConfigRequest, cal
 // UpdateConfigRequest is the request struct for api UpdateConfig
 type UpdateConfigRequest struct {
 	*requests.RpcRequest
-	OpenSuperAcl             string           `position:"Body" name:"OpenSuperAcl"`
 	MseSessionId             string           `position:"Query" name:"MseSessionId"`
 	ConfigAuthEnabled        requests.Boolean `position:"Query" name:"ConfigAuthEnabled"`
 	PassWord                 string           `position:"Query" name:"PassWord"`
-	SnapshotCount            string           `position:"Query" name:"SnapshotCount"`
-	MinSessionTimeout        string           `position:"Query" name:"MinSessionTimeout"`
 	MaxClientCnxns           string           `position:"Query" name:"MaxClientCnxns"`
 	RequestPars              string           `position:"Query" name:"RequestPars"`
-	JuteMaxbuffer            string           `position:"Query" name:"JuteMaxbuffer"`
 	NamingAuthEnabled        requests.Boolean `position:"Query" name:"NamingAuthEnabled"`
-	ConfigType               string           `position:"Query" name:"ConfigType"`
 	ExtendedTypesEnable      string           `position:"Query" name:"ExtendedTypesEnable"`
 	AutopurgeSnapRetainCount string           `position:"Query" name:"AutopurgeSnapRetainCount"`
-	MaxSessionTimeout        string           `position:"Query" name:"MaxSessionTimeout"`
 	ConfigSecretEnabled      requests.Boolean `position:"Query" name:"ConfigSecretEnabled"`
 	MCPEnabled               requests.Boolean `position:"Query" name:"MCPEnabled"`
-	TickTime                 string           `position:"Query" name:"TickTime"`
-	ClusterId                string           `position:"Query" name:"ClusterId"`
 	SyncLimit                string           `position:"Query" name:"SyncLimit"`
 	InstanceId               string           `position:"Query" name:"InstanceId"`
+	TLSEnabled               requests.Boolean `position:"Query" name:"TLSEnabled"`
+	OpenSuperAcl             string           `position:"Body" name:"OpenSuperAcl"`
+	EurekaSupported          requests.Boolean `position:"Query" name:"EurekaSupported"`
+	SnapshotCount            string           `position:"Query" name:"SnapshotCount"`
+	MinSessionTimeout        string           `position:"Query" name:"MinSessionTimeout"`
+	JuteMaxbuffer            string           `position:"Query" name:"JuteMaxbuffer"`
+	ConfigType               string           `position:"Query" name:"ConfigType"`
+	MaxSessionTimeout        string           `position:"Query" name:"MaxSessionTimeout"`
+	TickTime                 string           `position:"Query" name:"TickTime"`
+	ClusterId                string           `position:"Query" name:"ClusterId"`
 	AutopurgePurgeInterval   string           `position:"Query" name:"AutopurgePurgeInterval"`
 	AcceptLanguage           string           `position:"Query" name:"AcceptLanguage"`
 	InitLimit                string           `position:"Query" name:"InitLimit"`

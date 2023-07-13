@@ -72,9 +72,9 @@ func (client *Client) ImportZookeeperDataWithCallback(request *ImportZookeeperDa
 type ImportZookeeperDataRequest struct {
 	*requests.RpcRequest
 	MseSessionId   string `position:"Query" name:"MseSessionId"`
+	RequestPars    string `position:"Query" name:"RequestPars"`
 	InstanceId     string `position:"Query" name:"InstanceId"`
 	FileName       string `position:"Query" name:"FileName"`
-	RequestPars    string `position:"Query" name:"RequestPars"`
 	AcceptLanguage string `position:"Query" name:"AcceptLanguage"`
 	FileUrl        string `position:"Query" name:"FileUrl"`
 }

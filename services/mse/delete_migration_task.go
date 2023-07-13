@@ -73,8 +73,8 @@ type DeleteMigrationTaskRequest struct {
 	*requests.RpcRequest
 	MseSessionId   string `position:"Query" name:"MseSessionId"`
 	RequestPars    string `position:"Query" name:"RequestPars"`
-	AcceptLanguage string `position:"Query" name:"AcceptLanguage"`
 	Id             string `position:"Query" name:"Id"`
+	AcceptLanguage string `position:"Query" name:"AcceptLanguage"`
 }
 
 // DeleteMigrationTaskResponse is the response struct for api DeleteMigrationTask

@@ -72,9 +72,9 @@ func (client *Client) ListInstanceCountWithCallback(request *ListInstanceCountRe
 type ListInstanceCountRequest struct {
 	*requests.RpcRequest
 	MseSessionId   string `position:"Query" name:"MseSessionId"`
+	RequestPars    string `position:"Query" name:"RequestPars"`
 	ClusterType    string `position:"Query" name:"ClusterType"`
 	MseVersion     string `position:"Query" name:"MseVersion"`
-	RequestPars    string `position:"Query" name:"RequestPars"`
 	AcceptLanguage string `position:"Query" name:"AcceptLanguage"`
 }
 

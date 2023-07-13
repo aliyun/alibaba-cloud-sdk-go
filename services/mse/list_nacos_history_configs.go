@@ -73,13 +73,13 @@ type ListNacosHistoryConfigsRequest struct {
 	*requests.RpcRequest
 	MseSessionId   string           `position:"Query" name:"MseSessionId"`
 	PageNum        requests.Integer `position:"Query" name:"PageNum"`
-	InstanceId     string           `position:"Query" name:"InstanceId"`
-	DataId         string           `position:"Query" name:"DataId"`
 	NamespaceId    string           `position:"Query" name:"NamespaceId"`
 	RequestPars    string           `position:"Query" name:"RequestPars"`
 	PageSize       requests.Integer `position:"Query" name:"PageSize"`
-	AcceptLanguage string           `position:"Query" name:"AcceptLanguage"`
 	Group          string           `position:"Query" name:"Group"`
+	InstanceId     string           `position:"Query" name:"InstanceId"`
+	DataId         string           `position:"Query" name:"DataId"`
+	AcceptLanguage string           `position:"Query" name:"AcceptLanguage"`
 }
 
 // ListNacosHistoryConfigsResponse is the response struct for api ListNacosHistoryConfigs

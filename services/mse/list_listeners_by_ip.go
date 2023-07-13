@@ -72,10 +72,10 @@ func (client *Client) ListListenersByIpWithCallback(request *ListListenersByIpRe
 type ListListenersByIpRequest struct {
 	*requests.RpcRequest
 	MseSessionId   string `position:"Query" name:"MseSessionId"`
-	Ip             string `position:"Query" name:"Ip"`
-	InstanceId     string `position:"Query" name:"InstanceId"`
 	NamespaceId    string `position:"Query" name:"NamespaceId"`
 	RequestPars    string `position:"Query" name:"RequestPars"`
+	Ip             string `position:"Query" name:"Ip"`
+	InstanceId     string `position:"Query" name:"InstanceId"`
 	AcceptLanguage string `position:"Query" name:"AcceptLanguage"`
 }
 

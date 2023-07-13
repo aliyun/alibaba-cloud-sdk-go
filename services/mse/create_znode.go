@@ -73,8 +73,8 @@ type CreateZnodeRequest struct {
 	*requests.RpcRequest
 	MseSessionId   string `position:"Query" name:"MseSessionId"`
 	Data           string `position:"Query" name:"Data"`
-	ClusterId      string `position:"Query" name:"ClusterId"`
 	Path           string `position:"Query" name:"Path"`
+	ClusterId      string `position:"Query" name:"ClusterId"`
 	AcceptLanguage string `position:"Query" name:"AcceptLanguage"`
 }
 

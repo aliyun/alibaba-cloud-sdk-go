@@ -71,8 +71,8 @@ func (client *Client) QueryClusterDetailWithCallback(request *QueryClusterDetail
 // QueryClusterDetailRequest is the request struct for api QueryClusterDetail
 type QueryClusterDetailRequest struct {
 	*requests.RpcRequest
-	AclSwitch      requests.Boolean `position:"Query" name:"AclSwitch"`
 	MseSessionId   string           `position:"Query" name:"MseSessionId"`
+	AclSwitch      requests.Boolean `position:"Query" name:"AclSwitch"`
 	OrderId        string           `position:"Query" name:"OrderId"`
 	ClusterId      string           `position:"Query" name:"ClusterId"`
 	InstanceId     string           `position:"Query" name:"InstanceId"`

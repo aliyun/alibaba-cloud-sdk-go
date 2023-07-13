@@ -73,8 +73,8 @@ type DeleteAuthResourceRequest struct {
 	*requests.RpcRequest
 	MseSessionId    string           `position:"Query" name:"MseSessionId"`
 	GatewayUniqueId string           `position:"Query" name:"GatewayUniqueId"`
-	AcceptLanguage  string           `position:"Query" name:"AcceptLanguage"`
 	Id              requests.Integer `position:"Query" name:"Id"`
+	AcceptLanguage  string           `position:"Query" name:"AcceptLanguage"`
 }
 
 // DeleteAuthResourceResponse is the response struct for api DeleteAuthResource

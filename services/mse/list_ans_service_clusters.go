@@ -75,7 +75,6 @@ type ListAnsServiceClustersRequest struct {
 	ClusterName    string           `position:"Query" name:"ClusterName"`
 	PageNum        requests.Integer `position:"Query" name:"PageNum"`
 	NamespaceId    string           `position:"Query" name:"NamespaceId"`
-	RequestPars    string           `position:"Query" name:"RequestPars"`
 	PageSize       requests.Integer `position:"Query" name:"PageSize"`
 	ServiceName    string           `position:"Query" name:"ServiceName"`
 	ClusterId      string           `position:"Query" name:"ClusterId"`
@@ -91,6 +90,7 @@ type ListAnsServiceClustersResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
 	Success   bool   `json:"Success" xml:"Success"`
+	HttpCode  string `json:"HttpCode" xml:"HttpCode"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 
@@ -100,7 +100,7 @@ func CreateListAnsServiceClustersRequest() (request *ListAnsServiceClustersReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("mse", "2019-05-31", "ListAnsServiceClusters", "mse", "openAPI")
-	request.Method = requests.GET
+	request.Method = requests.POST
 	return
 }
 

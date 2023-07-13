@@ -72,9 +72,10 @@ func (client *Client) ListAppBySwimmingLaneGroupTagWithCallback(request *ListApp
 type ListAppBySwimmingLaneGroupTagRequest struct {
 	*requests.RpcRequest
 	MseSessionId   string           `position:"Query" name:"MseSessionId"`
-	GroupId        requests.Integer `position:"Query" name:"GroupId"`
-	AcceptLanguage string           `position:"Query" name:"AcceptLanguage"`
 	Tag            string           `position:"Query" name:"Tag"`
+	GroupId        requests.Integer `position:"Query" name:"GroupId"`
+	Namespace      string           `position:"Query" name:"Namespace"`
+	AcceptLanguage string           `position:"Query" name:"AcceptLanguage"`
 }
 
 // ListAppBySwimmingLaneGroupTagResponse is the response struct for api ListAppBySwimmingLaneGroupTag

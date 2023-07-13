@@ -25,5 +25,6 @@ type InstanceModels struct {
 	CreationTimestamp string `json:"CreationTimestamp" xml:"CreationTimestamp"`
 	Ip                string `json:"Ip" xml:"Ip"`
 	HealthStatus      string `json:"HealthStatus" xml:"HealthStatus"`
+	ZoneDistributed   bool   `json:"ZoneDistributed" xml:"ZoneDistributed"`
 	ClientPort        string `json:"ClientPort" xml:"ClientPort"`
 }

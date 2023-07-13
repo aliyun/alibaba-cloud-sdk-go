@@ -75,13 +75,13 @@ type GetServiceListenersRequest struct {
 	ClusterName    string           `position:"Query" name:"ClusterName"`
 	PageNum        requests.Integer `position:"Query" name:"PageNum"`
 	NamespaceId    string           `position:"Query" name:"NamespaceId"`
-	PageSize       requests.Integer `position:"Query" name:"PageSize"`
 	RequestPars    string           `position:"Query" name:"RequestPars"`
+	GroupName      string           `position:"Query" name:"GroupName"`
+	InstanceId     string           `position:"Query" name:"InstanceId"`
+	PageSize       requests.Integer `position:"Query" name:"PageSize"`
 	ServiceName    string           `position:"Query" name:"ServiceName"`
 	ClusterId      string           `position:"Query" name:"ClusterId"`
-	GroupName      string           `position:"Query" name:"GroupName"`
 	HasIpCount     string           `position:"Query" name:"HasIpCount"`
-	InstanceId     string           `position:"Query" name:"InstanceId"`
 	AcceptLanguage string           `position:"Query" name:"AcceptLanguage"`
 }
 

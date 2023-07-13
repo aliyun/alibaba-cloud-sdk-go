@@ -35,6 +35,7 @@ type DataInGetGatewayRouteDetail struct {
 	EnableWaf          bool                   `json:"EnableWaf" xml:"EnableWaf"`
 	AhasStatus         int                    `json:"AhasStatus" xml:"AhasStatus"`
 	Fallback           bool                   `json:"Fallback" xml:"Fallback"`
+	Policies           string                 `json:"Policies" xml:"Policies"`
 	DomainIdList       []int64                `json:"DomainIdList" xml:"DomainIdList"`
 	DomainNameList     []string               `json:"DomainNameList" xml:"DomainNameList"`
 	RoutePredicates    RoutePredicates        `json:"RoutePredicates" xml:"RoutePredicates"`

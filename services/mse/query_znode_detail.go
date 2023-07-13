@@ -72,10 +72,10 @@ func (client *Client) QueryZnodeDetailWithCallback(request *QueryZnodeDetailRequ
 type QueryZnodeDetailRequest struct {
 	*requests.RpcRequest
 	MseSessionId   string `position:"Query" name:"MseSessionId"`
-	ClusterId      string `position:"Query" name:"ClusterId"`
 	Path           string `position:"Query" name:"Path"`
-	InstanceId     string `position:"Query" name:"InstanceId"`
 	RequestPars    string `position:"Query" name:"RequestPars"`
+	ClusterId      string `position:"Query" name:"ClusterId"`
+	InstanceId     string `position:"Query" name:"InstanceId"`
 	AcceptLanguage string `position:"Query" name:"AcceptLanguage"`
 }
 

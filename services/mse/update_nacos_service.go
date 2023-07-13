@@ -72,12 +72,12 @@ func (client *Client) UpdateNacosServiceWithCallback(request *UpdateNacosService
 type UpdateNacosServiceRequest struct {
 	*requests.RpcRequest
 	MseSessionId     string `position:"Query" name:"MseSessionId"`
+	NamespaceId      string `position:"Query" name:"NamespaceId"`
+	ServiceName      string `position:"Query" name:"ServiceName"`
 	ClusterId        string `position:"Query" name:"ClusterId"`
 	GroupName        string `position:"Query" name:"GroupName"`
 	InstanceId       string `position:"Query" name:"InstanceId"`
-	NamespaceId      string `position:"Query" name:"NamespaceId"`
 	AcceptLanguage   string `position:"Query" name:"AcceptLanguage"`
-	ServiceName      string `position:"Query" name:"ServiceName"`
 	ProtectThreshold string `position:"Query" name:"ProtectThreshold"`
 }
 

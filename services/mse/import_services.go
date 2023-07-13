@@ -76,6 +76,8 @@ type ImportServicesRequest struct {
 	ServiceList     *[]ImportServicesServiceList `position:"Query" name:"ServiceList"  type:"Json"`
 	TlsSetting      string                       `position:"Query" name:"TlsSetting"`
 	SourceType      string                       `position:"Query" name:"SourceType"`
+	FcServiceName   string                       `position:"Query" name:"FcServiceName"`
+	FcVersion       string                       `position:"Query" name:"FcVersion"`
 	AcceptLanguage  string                       `position:"Query" name:"AcceptLanguage"`
 }
 

@@ -73,7 +73,10 @@ type DeleteSwimmingLaneGroupRequest struct {
 	*requests.RpcRequest
 	MseSessionId   string           `position:"Query" name:"MseSessionId"`
 	GroupId        requests.Integer `position:"Query" name:"GroupId"`
+	Namespace      string           `position:"Query" name:"Namespace"`
+	Name           string           `position:"Query" name:"Name"`
 	AcceptLanguage string           `position:"Query" name:"AcceptLanguage"`
+	Region         string           `position:"Query" name:"Region"`
 }
 
 // DeleteSwimmingLaneGroupResponse is the response struct for api DeleteSwimmingLaneGroup

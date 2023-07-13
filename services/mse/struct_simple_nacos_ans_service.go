@@ -22,4 +22,5 @@ type SimpleNacosAnsService struct {
 	IpCount              int    `json:"IpCount" xml:"IpCount"`
 	Name                 string `json:"Name" xml:"Name"`
 	ClusterCount         int    `json:"ClusterCount" xml:"ClusterCount"`
+	Source               string `json:"Source" xml:"Source"`
 }

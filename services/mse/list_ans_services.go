@@ -72,15 +72,16 @@ func (client *Client) ListAnsServicesWithCallback(request *ListAnsServicesReques
 type ListAnsServicesRequest struct {
 	*requests.RpcRequest
 	MseSessionId   string           `position:"Query" name:"MseSessionId"`
+	ClusterName    string           `position:"Query" name:"ClusterName"`
 	PageNum        requests.Integer `position:"Query" name:"PageNum"`
 	NamespaceId    string           `position:"Query" name:"NamespaceId"`
 	RequestPars    string           `position:"Query" name:"RequestPars"`
+	GroupName      string           `position:"Query" name:"GroupName"`
+	InstanceId     string           `position:"Query" name:"InstanceId"`
 	PageSize       requests.Integer `position:"Query" name:"PageSize"`
 	ServiceName    string           `position:"Query" name:"ServiceName"`
 	ClusterId      string           `position:"Query" name:"ClusterId"`
-	GroupName      string           `position:"Query" name:"GroupName"`
 	HasIpCount     string           `position:"Query" name:"HasIpCount"`
-	InstanceId     string           `position:"Query" name:"InstanceId"`
 	AcceptLanguage string           `position:"Query" name:"AcceptLanguage"`
 }
 
@@ -104,7 +105,7 @@ func CreateListAnsServicesRequest() (request *ListAnsServicesRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("mse", "2019-05-31", "ListAnsServices", "mse", "openAPI")
-	request.Method = requests.GET
+	request.Method = requests.POST
 	return
 }
 

@@ -73,25 +73,26 @@ type CreateClusterRequest struct {
 	*requests.RpcRequest
 	ClusterSpecification    string              `position:"Query" name:"ClusterSpecification"`
 	MseSessionId            string              `position:"Query" name:"MseSessionId"`
-	PubSlbSpecification     string              `position:"Query" name:"PubSlbSpecification"`
-	PrivateSlbSpecification string              `position:"Query" name:"PrivateSlbSpecification"`
 	ResourceGroupId         string              `position:"Query" name:"ResourceGroupId"`
-	InstanceCount           requests.Integer    `position:"Query" name:"InstanceCount"`
 	RequestPars             string              `position:"Query" name:"RequestPars"`
 	Tag                     *[]CreateClusterTag `position:"Query" name:"Tag"  type:"Repeated"`
+	VSwitchId               string              `position:"Query" name:"VSwitchId"`
+	ClusterType             string              `position:"Query" name:"ClusterType"`
+	InstanceName            string              `position:"Query" name:"InstanceName"`
+	NetType                 string              `position:"Query" name:"NetType"`
+	MseVersion              string              `position:"Query" name:"MseVersion"`
+	Region                  string              `position:"Query" name:"Region"`
+	PubSlbSpecification     string              `position:"Query" name:"PubSlbSpecification"`
+	PrivateSlbSpecification string              `position:"Query" name:"PrivateSlbSpecification"`
+	InstanceCount           requests.Integer    `position:"Query" name:"InstanceCount"`
 	ConnectionType          string              `position:"Query" name:"ConnectionType"`
 	ClusterVersion          string              `position:"Query" name:"ClusterVersion"`
 	DiskCapacity            requests.Integer    `position:"Query" name:"DiskCapacity"`
 	DiskType                string              `position:"Query" name:"DiskType"`
-	VSwitchId               string              `position:"Query" name:"VSwitchId"`
-	ClusterType             string              `position:"Query" name:"ClusterType"`
-	InstanceName            string              `position:"Query" name:"InstanceName"`
 	PubNetworkFlow          string              `position:"Query" name:"PubNetworkFlow"`
 	VpcId                   string              `position:"Query" name:"VpcId"`
-	NetType                 string              `position:"Query" name:"NetType"`
-	MseVersion              string              `position:"Query" name:"MseVersion"`
 	AcceptLanguage          string              `position:"Query" name:"AcceptLanguage"`
-	Region                  string              `position:"Query" name:"Region"`
+	ChargeType              string              `position:"Query" name:"ChargeType"`
 }
 
 // CreateClusterTag is a repeated param struct in CreateClusterRequest

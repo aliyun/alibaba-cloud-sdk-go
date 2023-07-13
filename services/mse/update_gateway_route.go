@@ -72,21 +72,34 @@ func (client *Client) UpdateGatewayRouteWithCallback(request *UpdateGatewayRoute
 type UpdateGatewayRouteRequest struct {
 	*requests.RpcRequest
 	MseSessionId       string                                `position:"Query" name:"MseSessionId"`
-	GatewayUniqueId    string                                `position:"Query" name:"GatewayUniqueId"`
-	DestinationType    string                                `position:"Query" name:"DestinationType"`
 	DomainIdListJSON   string                                `position:"Query" name:"DomainIdListJSON"`
 	Id                 requests.Integer                      `position:"Query" name:"Id"`
 	GatewayId          requests.Integer                      `position:"Query" name:"GatewayId"`
-	RouteOrder         requests.Integer                      `position:"Query" name:"RouteOrder"`
 	EnableWaf          requests.Boolean                      `position:"Query" name:"EnableWaf"`
-	Services           *[]UpdateGatewayRouteServices         `position:"Query" name:"Services"  type:"Json"`
 	Predicates         UpdateGatewayRoutePredicates          `position:"Query" name:"Predicates"  type:"Struct"`
-	RedirectJSON       UpdateGatewayRouteRedirectJSON        `position:"Query" name:"RedirectJSON"  type:"Struct"`
 	DirectResponseJSON UpdateGatewayRouteDirectResponseJSON  `position:"Query" name:"DirectResponseJSON"  type:"Struct"`
 	Name               string                                `position:"Query" name:"Name"`
-	AcceptLanguage     string                                `position:"Query" name:"AcceptLanguage"`
 	FallbackServices   *[]UpdateGatewayRouteFallbackServices `position:"Query" name:"FallbackServices"  type:"Json"`
 	Fallback           requests.Boolean                      `position:"Query" name:"Fallback"`
+	GatewayUniqueId    string                                `position:"Query" name:"GatewayUniqueId"`
+	DestinationType    string                                `position:"Query" name:"DestinationType"`
+	RouteOrder         requests.Integer                      `position:"Query" name:"RouteOrder"`
+	Services           *[]UpdateGatewayRouteServices         `position:"Query" name:"Services"  type:"Json"`
+	RedirectJSON       UpdateGatewayRouteRedirectJSON        `position:"Query" name:"RedirectJSON"  type:"Struct"`
+	AcceptLanguage     string                                `position:"Query" name:"AcceptLanguage"`
+}
+
+// UpdateGatewayRouteFallbackServices is a repeated param struct in UpdateGatewayRouteRequest
+type UpdateGatewayRouteFallbackServices struct {
+	AgreementType string `name:"AgreementType"`
+	Name          string `name:"Name"`
+	Namespace     string `name:"Namespace"`
+	SourceType    string `name:"SourceType"`
+	ServiceId     string `name:"ServiceId"`
+	Percent       string `name:"Percent"`
+	Version       string `name:"Version"`
+	GroupName     string `name:"GroupName"`
+	ServicePort   string `name:"ServicePort"`
 }
 
 // UpdateGatewayRouteServices is a repeated param struct in UpdateGatewayRouteRequest
@@ -101,19 +114,6 @@ type UpdateGatewayRouteServices struct {
 	Version             string                                        `name:"Version"`
 	GroupName           string                                        `name:"GroupName"`
 	ServicePort         string                                        `name:"ServicePort"`
-}
-
-// UpdateGatewayRouteFallbackServices is a repeated param struct in UpdateGatewayRouteRequest
-type UpdateGatewayRouteFallbackServices struct {
-	AgreementType string `name:"AgreementType"`
-	Name          string `name:"Name"`
-	Namespace     string `name:"Namespace"`
-	SourceType    string `name:"SourceType"`
-	ServiceId     string `name:"ServiceId"`
-	Percent       string `name:"Percent"`
-	Version       string `name:"Version"`
-	GroupName     string `name:"GroupName"`
-	ServicePort   string `name:"ServicePort"`
 }
 
 // UpdateGatewayRouteServicesHttpDubboTranscoder is a repeated param struct in UpdateGatewayRouteRequest
@@ -149,17 +149,17 @@ type UpdateGatewayRoutePredicates struct {
 	QueryPredicates  *[]UpdateGatewayRoutePredicatesQueryPredicatesItem  `name:"QueryPredicates" type:"Repeated"`
 }
 
+// UpdateGatewayRouteDirectResponseJSON is a repeated param struct in UpdateGatewayRouteRequest
+type UpdateGatewayRouteDirectResponseJSON struct {
+	Code string `name:"Code"`
+	Body string `name:"Body"`
+}
+
 // UpdateGatewayRouteRedirectJSON is a repeated param struct in UpdateGatewayRouteRequest
 type UpdateGatewayRouteRedirectJSON struct {
 	Path string `name:"Path"`
 	Code string `name:"Code"`
 	Host string `name:"Host"`
-}
-
-// UpdateGatewayRouteDirectResponseJSON is a repeated param struct in UpdateGatewayRouteRequest
-type UpdateGatewayRouteDirectResponseJSON struct {
-	Code string `name:"Code"`
-	Body string `name:"Body"`
 }
 
 // UpdateGatewayRoutePredicatesPathPredicates is a repeated param struct in UpdateGatewayRouteRequest
@@ -192,6 +192,7 @@ type UpdateGatewayRouteResponse struct {
 	Code           int    `json:"Code" xml:"Code"`
 	Success        bool   `json:"Success" xml:"Success"`
 	Data           int64  `json:"Data" xml:"Data"`
+	ErrorCode      string `json:"ErrorCode" xml:"ErrorCode"`
 }
 
 // CreateUpdateGatewayRouteRequest creates a request to invoke UpdateGatewayRoute API

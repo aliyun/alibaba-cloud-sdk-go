@@ -75,14 +75,14 @@ type UpdateNacosInstanceRequest struct {
 	Metadata       string           `position:"Body" name:"Metadata"`
 	ClusterName    string           `position:"Query" name:"ClusterName"`
 	Ephemeral      requests.Boolean `position:"Query" name:"Ephemeral"`
-	Enabled        requests.Boolean `position:"Query" name:"Enabled"`
 	NamespaceId    string           `position:"Query" name:"NamespaceId"`
-	ServiceName    string           `position:"Query" name:"ServiceName"`
 	Ip             string           `position:"Query" name:"Ip"`
 	Weight         string           `position:"Query" name:"Weight"`
 	GroupName      string           `position:"Query" name:"GroupName"`
 	InstanceId     string           `position:"Query" name:"InstanceId"`
 	Port           requests.Integer `position:"Query" name:"Port"`
+	Enabled        requests.Boolean `position:"Query" name:"Enabled"`
+	ServiceName    string           `position:"Query" name:"ServiceName"`
 	AcceptLanguage string           `position:"Query" name:"AcceptLanguage"`
 }
 

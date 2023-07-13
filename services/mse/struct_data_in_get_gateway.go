@@ -37,6 +37,11 @@ type DataInGetGateway struct {
 	StatusDesc       string           `json:"StatusDesc" xml:"StatusDesc"`
 	MseTag           string           `json:"MseTag" xml:"MseTag"`
 	ResourceGroupId  string           `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	TotalReplica     int              `json:"TotalReplica" xml:"TotalReplica"`
+	Elastic          bool             `json:"Elastic" xml:"Elastic"`
+	ElasticReplica   int              `json:"ElasticReplica" xml:"ElasticReplica"`
+	ElasticType      string           `json:"ElasticType" xml:"ElasticType"`
 	XtraceDetails    XtraceDetails    `json:"XtraceDetails" xml:"XtraceDetails"`
 	LogConfigDetails LogConfigDetails `json:"LogConfigDetails" xml:"LogConfigDetails"`
+	ElasticPolicy    ElasticPolicy    `json:"ElasticPolicy" xml:"ElasticPolicy"`
 }

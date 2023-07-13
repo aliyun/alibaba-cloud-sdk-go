@@ -72,10 +72,10 @@ func (client *Client) UpdateClusterWithCallback(request *UpdateClusterRequest, c
 type UpdateClusterRequest struct {
 	*requests.RpcRequest
 	MseSessionId     string `position:"Query" name:"MseSessionId"`
+	RequestPars      string `position:"Query" name:"RequestPars"`
 	ClusterAliasName string `position:"Query" name:"ClusterAliasName"`
 	ClusterId        string `position:"Query" name:"ClusterId"`
 	InstanceId       string `position:"Query" name:"InstanceId"`
-	RequestPars      string `position:"Query" name:"RequestPars"`
 	AcceptLanguage   string `position:"Query" name:"AcceptLanguage"`
 }
 

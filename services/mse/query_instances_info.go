@@ -72,10 +72,10 @@ func (client *Client) QueryInstancesInfoWithCallback(request *QueryInstancesInfo
 type QueryInstancesInfoRequest struct {
 	*requests.RpcRequest
 	MseSessionId   string `position:"Query" name:"MseSessionId"`
+	RequestPars    string `position:"Query" name:"RequestPars"`
 	OrderId        string `position:"Query" name:"OrderId"`
 	ClusterId      string `position:"Query" name:"ClusterId"`
 	InstanceId     string `position:"Query" name:"InstanceId"`
-	RequestPars    string `position:"Query" name:"RequestPars"`
 	AcceptLanguage string `position:"Query" name:"AcceptLanguage"`
 }
 

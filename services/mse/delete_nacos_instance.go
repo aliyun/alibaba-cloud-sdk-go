@@ -73,14 +73,14 @@ type DeleteNacosInstanceRequest struct {
 	*requests.RpcRequest
 	MseSessionId   string           `position:"Query" name:"MseSessionId"`
 	ClusterName    string           `position:"Query" name:"ClusterName"`
-	Ip             string           `position:"Query" name:"Ip"`
 	Ephemeral      requests.Boolean `position:"Query" name:"Ephemeral"`
+	NamespaceId    string           `position:"Query" name:"NamespaceId"`
+	ServiceName    string           `position:"Query" name:"ServiceName"`
+	Ip             string           `position:"Query" name:"Ip"`
 	GroupName      string           `position:"Query" name:"GroupName"`
 	InstanceId     string           `position:"Query" name:"InstanceId"`
-	NamespaceId    string           `position:"Query" name:"NamespaceId"`
 	Port           requests.Integer `position:"Query" name:"Port"`
 	AcceptLanguage string           `position:"Query" name:"AcceptLanguage"`
-	ServiceName    string           `position:"Query" name:"ServiceName"`
 }
 
 // DeleteNacosInstanceResponse is the response struct for api DeleteNacosInstance

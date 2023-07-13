@@ -73,12 +73,18 @@ type QueryAllSwimmingLaneRequest struct {
 	*requests.RpcRequest
 	MseSessionId   string           `position:"Query" name:"MseSessionId"`
 	GroupId        requests.Integer `position:"Query" name:"GroupId"`
+	Namespace      string           `position:"Query" name:"Namespace"`
 	AcceptLanguage string           `position:"Query" name:"AcceptLanguage"`
 }
 
 // QueryAllSwimmingLaneResponse is the response struct for api QueryAllSwimmingLane
 type QueryAllSwimmingLaneResponse struct {
 	*responses.BaseResponse
+	RequestId string              `json:"RequestId" xml:"RequestId"`
+	Success   bool                `json:"Success" xml:"Success"`
+	ErrorCode string              `json:"ErrorCode" xml:"ErrorCode"`
+	Message   string              `json:"Message" xml:"Message"`
+	Data      []SwimmingLaneGroup `json:"Data" xml:"Data"`
 }
 
 // CreateQueryAllSwimmingLaneRequest creates a request to invoke QueryAllSwimmingLane API

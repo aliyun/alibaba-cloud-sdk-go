@@ -71,12 +71,12 @@ func (client *Client) QueryClusterInfoWithCallback(request *QueryClusterInfoRequ
 // QueryClusterInfoRequest is the request struct for api QueryClusterInfo
 type QueryClusterInfoRequest struct {
 	*requests.RpcRequest
-	AclSwitch      requests.Boolean `position:"Query" name:"AclSwitch"`
 	MseSessionId   string           `position:"Query" name:"MseSessionId"`
+	RequestPars    string           `position:"Query" name:"RequestPars"`
+	AclSwitch      requests.Boolean `position:"Query" name:"AclSwitch"`
 	OrderId        string           `position:"Query" name:"OrderId"`
 	ClusterId      string           `position:"Query" name:"ClusterId"`
 	InstanceId     string           `position:"Query" name:"InstanceId"`
-	RequestPars    string           `position:"Query" name:"RequestPars"`
 	AcceptLanguage string           `position:"Query" name:"AcceptLanguage"`
 }
 

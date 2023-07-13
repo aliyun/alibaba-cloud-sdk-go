@@ -76,12 +76,12 @@ type ListConfigTrackRequest struct {
 	PageNum        requests.Integer `position:"Query" name:"PageNum"`
 	NamespaceId    string           `position:"Query" name:"NamespaceId"`
 	RequestPars    string           `position:"Query" name:"RequestPars"`
-	EndTs          requests.Integer `position:"Query" name:"EndTs"`
-	PageSize       requests.Integer `position:"Query" name:"PageSize"`
 	Group          string           `position:"Query" name:"Group"`
 	Ip             string           `position:"Query" name:"Ip"`
-	Reverse        requests.Boolean `position:"Query" name:"Reverse"`
 	InstanceId     string           `position:"Query" name:"InstanceId"`
+	EndTs          requests.Integer `position:"Query" name:"EndTs"`
+	PageSize       requests.Integer `position:"Query" name:"PageSize"`
+	Reverse        requests.Boolean `position:"Query" name:"Reverse"`
 	DataId         string           `position:"Query" name:"DataId"`
 	AcceptLanguage string           `position:"Query" name:"AcceptLanguage"`
 }
@@ -106,7 +106,7 @@ func CreateListConfigTrackRequest() (request *ListConfigTrackRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("mse", "2019-05-31", "ListConfigTrack", "mse", "openAPI")
-	request.Method = requests.GET
+	request.Method = requests.POST
 	return
 }
 

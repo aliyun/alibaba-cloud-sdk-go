@@ -74,9 +74,11 @@ type ApplyTagPoliciesRequest struct {
 	MseSessionId   string           `position:"Query" name:"MseSessionId"`
 	Rules          string           `position:"Query" name:"Rules"`
 	Source         string           `position:"Query" name:"Source"`
+	AppName        string           `position:"Query" name:"AppName"`
 	NamespaceId    string           `position:"Query" name:"NamespaceId"`
 	Enable         requests.Boolean `position:"Query" name:"Enable"`
 	AppId          string           `position:"Query" name:"AppId"`
+	Namespace      string           `position:"Query" name:"Namespace"`
 	AcceptLanguage string           `position:"Query" name:"AcceptLanguage"`
 	Region         string           `position:"Query" name:"Region"`
 }

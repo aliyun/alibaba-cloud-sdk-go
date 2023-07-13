@@ -72,9 +72,9 @@ func (client *Client) GetImportFileUrlWithCallback(request *GetImportFileUrlRequ
 type GetImportFileUrlRequest struct {
 	*requests.RpcRequest
 	MseSessionId   string `position:"Query" name:"MseSessionId"`
+	NamespaceId    string `position:"Query" name:"NamespaceId"`
 	ContentType    string `position:"Query" name:"ContentType"`
 	InstanceId     string `position:"Query" name:"InstanceId"`
-	NamespaceId    string `position:"Query" name:"NamespaceId"`
 	AcceptLanguage string `position:"Query" name:"AcceptLanguage"`
 }
 

@@ -71,31 +71,24 @@ func (client *Client) ModifyLosslessRuleWithCallback(request *ModifyLosslessRule
 // ModifyLosslessRuleRequest is the request struct for api ModifyLosslessRule
 type ModifyLosslessRuleRequest struct {
 	*requests.RpcRequest
-	MseSessionId        string           `position:"Query" name:"MseSessionId"`
-	DelayTime           requests.Integer `position:"Query" name:"DelayTime"`
-	Source              string           `position:"Query" name:"Source"`
-	WarmupTime          requests.Integer `position:"Query" name:"WarmupTime"`
-	AppName             string           `position:"Query" name:"AppName"`
-	Related             requests.Boolean `position:"Query" name:"Related"`
-	Enable              requests.Boolean `position:"Query" name:"Enable"`
-	Aligned             requests.Boolean `position:"Query" name:"Aligned"`
-	ShutdownWaitSeconds requests.Integer `position:"Query" name:"ShutdownWaitSeconds"`
-	Notice              requests.Boolean `position:"Query" name:"Notice"`
-	LossLessDetail      requests.Boolean `position:"Query" name:"LossLessDetail"`
-	FuncType            requests.Integer `position:"Query" name:"FuncType"`
-	AppId               string           `position:"Query" name:"AppId"`
-	Namespace           string           `position:"Query" name:"Namespace"`
-	AcceptLanguage      string           `position:"Query" name:"AcceptLanguage"`
+	MseSessionId   string           `position:"Query" name:"MseSessionId"`
+	AppName        string           `position:"Query" name:"AppName"`
+	Enable         requests.Boolean `position:"Query" name:"Enable"`
+	Aligned        requests.Boolean `position:"Query" name:"Aligned"`
+	FuncType       requests.Integer `position:"Query" name:"FuncType"`
+	DelayTime      requests.Integer `position:"Query" name:"DelayTime"`
+	WarmupTime     requests.Integer `position:"Query" name:"WarmupTime"`
+	Related        requests.Boolean `position:"Query" name:"Related"`
+	Notice         requests.Boolean `position:"Query" name:"Notice"`
+	LossLessDetail requests.Boolean `position:"Query" name:"LossLessDetail"`
+	AppId          string           `position:"Query" name:"AppId"`
+	Namespace      string           `position:"Query" name:"Namespace"`
+	AcceptLanguage string           `position:"Query" name:"AcceptLanguage"`
 }
 
 // ModifyLosslessRuleResponse is the response struct for api ModifyLosslessRule
 type ModifyLosslessRuleResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
-	HttpCode  string `json:"HttpCode" xml:"HttpCode"`
-	Message   string `json:"Message" xml:"Message"`
-	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateModifyLosslessRuleRequest creates a request to invoke ModifyLosslessRule API

@@ -17,9 +17,15 @@ package mse
 
 // Data is a nested struct in mse response
 type Data struct {
+	EurekaSupported              bool                   `json:"EurekaSupported" xml:"EurekaSupported"`
+	Aligned                      bool                   `json:"Aligned" xml:"Aligned"`
 	CurrentVersionFullShowName   string                 `json:"CurrentVersionFullShowName" xml:"CurrentVersionFullShowName"`
+	Notice                       bool                   `json:"Notice" xml:"Notice"`
 	Source                       string                 `json:"Source" xml:"Source"`
 	Ephemeral                    bool                   `json:"Ephemeral" xml:"Ephemeral"`
+	FuncType                     int                    `json:"FuncType" xml:"FuncType"`
+	LossLessDetail               bool                   `json:"LossLessDetail" xml:"LossLessDetail"`
+	TLSEnabled                   bool                   `json:"TLSEnabled" xml:"TLSEnabled"`
 	FilterSide                   string                 `json:"FilterSide" xml:"FilterSide"`
 	LicenseKey                   string                 `json:"LicenseKey" xml:"LicenseKey"`
 	SyncLimit                    string                 `json:"SyncLimit" xml:"SyncLimit"`
@@ -42,6 +48,7 @@ type Data struct {
 	PassWord                     string                 `json:"PassWord" xml:"PassWord"`
 	Min                          int                    `json:"Min" xml:"Min"`
 	ClusterType                  string                 `json:"ClusterType" xml:"ClusterType"`
+	Count                        int                    `json:"Count" xml:"Count"`
 	Version                      string                 `json:"Version" xml:"Version"`
 	AutopurgeSnapRetainCount     string                 `json:"AutopurgeSnapRetainCount" xml:"AutopurgeSnapRetainCount"`
 	TickTime                     string                 `json:"TickTime" xml:"TickTime"`
@@ -71,10 +78,12 @@ type Data struct {
 	MCPSupported                 bool                   `json:"MCPSupported" xml:"MCPSupported"`
 	EnableWaf                    bool                   `json:"EnableWaf" xml:"EnableWaf"`
 	JvmFlagsCustom               string                 `json:"JvmFlagsCustom" xml:"JvmFlagsCustom"`
+	WarmupTime                   int                    `json:"WarmupTime" xml:"WarmupTime"`
 	AppId                        string                 `json:"AppId" xml:"AppId"`
 	Metadata                     map[string]interface{} `json:"Metadata" xml:"Metadata"`
 	ServiceCount                 int                    `json:"ServiceCount" xml:"ServiceCount"`
 	Enable                       bool                   `json:"Enable" xml:"Enable"`
+	Related                      bool                   `json:"Related" xml:"Related"`
 	Type                         int                    `json:"Type" xml:"Type"`
 	Region                       string                 `json:"Region" xml:"Region"`
 	MinSessionTimeout            string                 `json:"MinSessionTimeout" xml:"MinSessionTimeout"`
@@ -103,12 +112,15 @@ type Data struct {
 	OriginInstanceNamespace      string                 `json:"OriginInstanceNamespace" xml:"OriginInstanceNamespace"`
 	RestartFlag                  bool                   `json:"RestartFlag" xml:"RestartFlag"`
 	Namespace                    string                 `json:"Namespace" xml:"Namespace"`
+	DelayTime                    int                    `json:"DelayTime" xml:"DelayTime"`
 	UserName                     string                 `json:"UserName" xml:"UserName"`
 	Tags                         []string               `json:"Tags" xml:"Tags"`
 	TraceDetails                 TraceDetails           `json:"TraceDetails" xml:"TraceDetails"`
 	NacosRunningEnv              NacosRunningEnv        `json:"NacosRunningEnv" xml:"NacosRunningEnv"`
+	AppDetail                    AppDetail              `json:"AppDetail" xml:"AppDetail"`
 	LogConfigDetails             LogConfigDetails       `json:"LogConfigDetails" xml:"LogConfigDetails"`
 	Result                       []ApplicationList      `json:"Result" xml:"Result"`
+	Results                      []ApplicationList      `json:"Results" xml:"Results"`
 	FailData                     []FailDataItem         `json:"FailData" xml:"FailData"`
 	SkipData                     []SkipDataItem         `json:"SkipData" xml:"SkipData"`
 	Clusters                     []NacosAnsCluster      `json:"Clusters" xml:"Clusters"`

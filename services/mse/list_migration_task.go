@@ -75,8 +75,8 @@ type ListMigrationTaskRequest struct {
 	PageNum            requests.Integer `position:"Query" name:"PageNum"`
 	RequestPars        string           `position:"Query" name:"RequestPars"`
 	PageSize           requests.Integer `position:"Query" name:"PageSize"`
-	AcceptLanguage     string           `position:"Query" name:"AcceptLanguage"`
 	OriginInstanceName string           `position:"Query" name:"OriginInstanceName"`
+	AcceptLanguage     string           `position:"Query" name:"AcceptLanguage"`
 }
 
 // ListMigrationTaskResponse is the response struct for api ListMigrationTask

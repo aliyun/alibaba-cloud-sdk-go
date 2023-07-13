@@ -72,11 +72,11 @@ func (client *Client) OrderClusterHealthCheckRiskNoticeWithCallback(request *Ord
 type OrderClusterHealthCheckRiskNoticeRequest struct {
 	*requests.RpcRequest
 	MseSessionId   string           `position:"Query" name:"MseSessionId"`
+	RequestPars    string           `position:"Query" name:"RequestPars"`
 	Mute           requests.Boolean `position:"Query" name:"Mute"`
 	InstanceId     string           `position:"Query" name:"InstanceId"`
 	NoticeType     string           `position:"Query" name:"NoticeType"`
 	RiskCode       string           `position:"Query" name:"RiskCode"`
-	RequestPars    string           `position:"Query" name:"RequestPars"`
 	AcceptLanguage string           `position:"Query" name:"AcceptLanguage"`
 }
 

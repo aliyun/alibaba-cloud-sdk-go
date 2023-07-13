@@ -71,24 +71,33 @@ func (client *Client) AddGatewayWithCallback(request *AddGatewayRequest, callbac
 // AddGatewayRequest is the request struct for api AddGateway
 type AddGatewayRequest struct {
 	*requests.RpcRequest
-	MseSessionId               string           `position:"Query" name:"MseSessionId"`
-	InternetSlbSpec            string           `position:"Query" name:"InternetSlbSpec"`
-	EnableXtrace               requests.Boolean `position:"Query" name:"EnableXtrace"`
-	XtraceRatio                string           `position:"Query" name:"XtraceRatio"`
-	Replica                    requests.Integer `position:"Query" name:"Replica"`
-	VSwitchId2                 string           `position:"Query" name:"VSwitchId2"`
-	EnableHardwareAcceleration requests.Boolean `position:"Query" name:"EnableHardwareAcceleration"`
-	EnableSls                  requests.Boolean `position:"Query" name:"EnableSls"`
-	Spec                       string           `position:"Query" name:"Spec"`
-	ResourceGroupId            string           `position:"Query" name:"ResourceGroupId"`
-	EnterpriseSecurityGroup    requests.Boolean `position:"Query" name:"EnterpriseSecurityGroup"`
-	Tag                        *[]AddGatewayTag `position:"Query" name:"Tag"  type:"Repeated"`
-	Vpc                        string           `position:"Query" name:"Vpc"`
-	VSwitchId                  string           `position:"Query" name:"VSwitchId"`
-	SlbSpec                    string           `position:"Query" name:"SlbSpec"`
-	Name                       string           `position:"Query" name:"Name"`
-	AcceptLanguage             string           `position:"Query" name:"AcceptLanguage"`
-	Region                     string           `position:"Query" name:"Region"`
+	MseSessionId               string                `position:"Query" name:"MseSessionId"`
+	InternetSlbSpec            string                `position:"Query" name:"InternetSlbSpec"`
+	EnableXtrace               requests.Boolean      `position:"Query" name:"EnableXtrace"`
+	Replica                    requests.Integer      `position:"Query" name:"Replica"`
+	EnableHardwareAcceleration requests.Boolean      `position:"Query" name:"EnableHardwareAcceleration"`
+	EnableSls                  requests.Boolean      `position:"Query" name:"EnableSls"`
+	Spec                       string                `position:"Query" name:"Spec"`
+	ResourceGroupId            string                `position:"Query" name:"ResourceGroupId"`
+	RequestPars                string                `position:"Query" name:"RequestPars"`
+	EnterpriseSecurityGroup    requests.Boolean      `position:"Query" name:"EnterpriseSecurityGroup"`
+	Tag                        *[]AddGatewayTag      `position:"Query" name:"Tag"  type:"Repeated"`
+	VSwitchId                  string                `position:"Query" name:"VSwitchId"`
+	SlbSpec                    string                `position:"Query" name:"SlbSpec"`
+	Name                       string                `position:"Query" name:"Name"`
+	Region                     string                `position:"Query" name:"Region"`
+	ZoneInfo                   *[]AddGatewayZoneInfo `position:"Query" name:"ZoneInfo"  type:"Json"`
+	XtraceRatio                string                `position:"Query" name:"XtraceRatio"`
+	VSwitchId2                 string                `position:"Query" name:"VSwitchId2"`
+	Vpc                        string                `position:"Query" name:"Vpc"`
+	AcceptLanguage             string                `position:"Query" name:"AcceptLanguage"`
+	ChargeType                 string                `position:"Query" name:"ChargeType"`
+}
+
+// AddGatewayZoneInfo is a repeated param struct in AddGatewayRequest
+type AddGatewayZoneInfo struct {
+	VSwitchId string `name:"VSwitchId"`
+	ZoneId    string `name:"ZoneId"`
 }
 
 // AddGatewayTag is a repeated param struct in AddGatewayRequest

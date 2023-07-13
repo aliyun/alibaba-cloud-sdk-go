@@ -73,17 +73,17 @@ type AddMockRuleRequest struct {
 	*requests.RpcRequest
 	MseSessionId    string           `position:"Query" name:"MseSessionId"`
 	ExtraJson       string           `position:"Query" name:"ExtraJson"`
-	ProviderAppId   string           `position:"Query" name:"ProviderAppId"`
 	Source          string           `position:"Query" name:"Source"`
 	Enable          requests.Boolean `position:"Query" name:"Enable"`
 	ScMockItems     string           `position:"Query" name:"ScMockItems"`
+	Name            string           `position:"Query" name:"Name"`
+	Region          string           `position:"Query" name:"Region"`
+	ProviderAppId   string           `position:"Query" name:"ProviderAppId"`
 	ProviderAppName string           `position:"Query" name:"ProviderAppName"`
 	ConsumerAppIds  string           `position:"Query" name:"ConsumerAppIds"`
 	DubboMockItems  string           `position:"Query" name:"DubboMockItems"`
-	Name            string           `position:"Query" name:"Name"`
 	AcceptLanguage  string           `position:"Query" name:"AcceptLanguage"`
 	MockType        requests.Integer `position:"Query" name:"MockType"`
-	Region          string           `position:"Query" name:"Region"`
 }
 
 // AddMockRuleResponse is the response struct for api AddMockRule

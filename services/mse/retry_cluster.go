@@ -72,9 +72,9 @@ func (client *Client) RetryClusterWithCallback(request *RetryClusterRequest, cal
 type RetryClusterRequest struct {
 	*requests.RpcRequest
 	MseSessionId   string `position:"Query" name:"MseSessionId"`
+	RequestPars    string `position:"Query" name:"RequestPars"`
 	ClusterId      string `position:"Query" name:"ClusterId"`
 	InstanceId     string `position:"Query" name:"InstanceId"`
-	RequestPars    string `position:"Query" name:"RequestPars"`
 	AcceptLanguage string `position:"Query" name:"AcceptLanguage"`
 }
 

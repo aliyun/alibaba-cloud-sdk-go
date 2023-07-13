@@ -76,13 +76,13 @@ type ListNamingTrackRequest struct {
 	PageNum        requests.Integer `position:"Query" name:"PageNum"`
 	NamespaceId    string           `position:"Query" name:"NamespaceId"`
 	RequestPars    string           `position:"Query" name:"RequestPars"`
+	Group          string           `position:"Query" name:"Group"`
+	Ip             string           `position:"Query" name:"Ip"`
+	InstanceId     string           `position:"Query" name:"InstanceId"`
 	EndTs          requests.Integer `position:"Query" name:"EndTs"`
 	PageSize       requests.Integer `position:"Query" name:"PageSize"`
 	ServiceName    string           `position:"Query" name:"ServiceName"`
-	Group          string           `position:"Query" name:"Group"`
-	Ip             string           `position:"Query" name:"Ip"`
 	Reverse        requests.Boolean `position:"Query" name:"Reverse"`
-	InstanceId     string           `position:"Query" name:"InstanceId"`
 	AcceptLanguage string           `position:"Query" name:"AcceptLanguage"`
 }
 

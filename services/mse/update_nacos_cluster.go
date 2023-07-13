@@ -74,12 +74,12 @@ type UpdateNacosClusterRequest struct {
 	MseSessionId            string           `position:"Query" name:"MseSessionId"`
 	ClusterName             string           `position:"Query" name:"ClusterName"`
 	CheckPort               requests.Integer `position:"Query" name:"CheckPort"`
+	NamespaceId             string           `position:"Query" name:"NamespaceId"`
+	ServiceName             string           `position:"Query" name:"ServiceName"`
 	GroupName               string           `position:"Query" name:"GroupName"`
 	InstanceId              string           `position:"Query" name:"InstanceId"`
-	NamespaceId             string           `position:"Query" name:"NamespaceId"`
 	HealthChecker           string           `position:"Query" name:"HealthChecker"`
 	AcceptLanguage          string           `position:"Query" name:"AcceptLanguage"`
-	ServiceName             string           `position:"Query" name:"ServiceName"`
 	UseInstancePortForCheck requests.Boolean `position:"Query" name:"UseInstancePortForCheck"`
 }
 

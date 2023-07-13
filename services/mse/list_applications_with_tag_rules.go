@@ -75,8 +75,9 @@ type ListApplicationsWithTagRulesRequest struct {
 	Source         string           `position:"Query" name:"Source"`
 	PageNumber     requests.Integer `position:"Query" name:"PageNumber"`
 	AppName        string           `position:"Query" name:"AppName"`
-	AppId          string           `position:"Query" name:"AppId"`
 	PageSize       requests.Integer `position:"Query" name:"PageSize"`
+	AppId          string           `position:"Query" name:"AppId"`
+	Namespace      string           `position:"Query" name:"Namespace"`
 	AcceptLanguage string           `position:"Query" name:"AcceptLanguage"`
 	Region         string           `position:"Query" name:"Region"`
 }
@@ -87,7 +88,6 @@ type ListApplicationsWithTagRulesResponse struct {
 	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	Message        string `json:"Message" xml:"Message"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
-	Code           int    `json:"Code" xml:"Code"`
 	Success        bool   `json:"Success" xml:"Success"`
 	Data           Data   `json:"Data" xml:"Data"`
 }

@@ -73,9 +73,9 @@ type ListClusterHealthCheckTaskRequest struct {
 	*requests.RpcRequest
 	MseSessionId   string           `position:"Query" name:"MseSessionId"`
 	PageNum        requests.Integer `position:"Query" name:"PageNum"`
-	InstanceId     string           `position:"Query" name:"InstanceId"`
 	PageSize       requests.Integer `position:"Query" name:"PageSize"`
 	RequestPars    string           `position:"Query" name:"RequestPars"`
+	InstanceId     string           `position:"Query" name:"InstanceId"`
 	AcceptLanguage string           `position:"Query" name:"AcceptLanguage"`
 }
 

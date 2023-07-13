@@ -72,8 +72,8 @@ func (client *Client) ListZnodeChildrenWithCallback(request *ListZnodeChildrenRe
 type ListZnodeChildrenRequest struct {
 	*requests.RpcRequest
 	MseSessionId   string `position:"Query" name:"MseSessionId"`
-	ClusterId      string `position:"Query" name:"ClusterId"`
 	Path           string `position:"Query" name:"Path"`
+	ClusterId      string `position:"Query" name:"ClusterId"`
 	AcceptLanguage string `position:"Query" name:"AcceptLanguage"`
 }
 
@@ -93,7 +93,7 @@ func CreateListZnodeChildrenRequest() (request *ListZnodeChildrenRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("mse", "2019-05-31", "ListZnodeChildren", "mse", "openAPI")
-	request.Method = requests.GET
+	request.Method = requests.POST
 	return
 }
 

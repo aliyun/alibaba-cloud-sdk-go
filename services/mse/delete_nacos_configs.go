@@ -72,8 +72,8 @@ func (client *Client) DeleteNacosConfigsWithCallback(request *DeleteNacosConfigs
 type DeleteNacosConfigsRequest struct {
 	*requests.RpcRequest
 	MseSessionId   string `position:"Query" name:"MseSessionId"`
-	InstanceId     string `position:"Query" name:"InstanceId"`
 	NamespaceId    string `position:"Query" name:"NamespaceId"`
+	InstanceId     string `position:"Query" name:"InstanceId"`
 	AcceptLanguage string `position:"Query" name:"AcceptLanguage"`
 	Ids            string `position:"Query" name:"Ids"`
 }

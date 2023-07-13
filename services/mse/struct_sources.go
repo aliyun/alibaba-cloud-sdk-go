@@ -17,21 +17,23 @@ package mse
 
 // Sources is a nested struct in mse response
 type Sources struct {
-	GatewaySlbMode      string `json:"GatewaySlbMode" xml:"GatewaySlbMode"`
-	GatewayId           string `json:"GatewayId" xml:"GatewayId"`
-	HttpsPort           int    `json:"HttpsPort" xml:"HttpsPort"`
-	HttpPort            int    `json:"HttpPort" xml:"HttpPort"`
-	HttpsVServerGroupId string `json:"HttpsVServerGroupId" xml:"HttpsVServerGroupId"`
-	ServiceWeight       int    `json:"ServiceWeight" xml:"ServiceWeight"`
-	SlbName             string `json:"SlbName" xml:"SlbName"`
-	VServerGroupId      string `json:"VServerGroupId" xml:"VServerGroupId"`
-	GmtCreate           string `json:"GmtCreate" xml:"GmtCreate"`
-	SlbPort             string `json:"SlbPort" xml:"SlbPort"`
-	GatewaySlbStatus    string `json:"GatewaySlbStatus" xml:"GatewaySlbStatus"`
-	EditEnable          bool   `json:"EditEnable" xml:"EditEnable"`
-	Id                  string `json:"Id" xml:"Id"`
-	StatusDesc          string `json:"StatusDesc" xml:"StatusDesc"`
-	SlbId               string `json:"SlbId" xml:"SlbId"`
-	SlbIp               string `json:"SlbIp" xml:"SlbIp"`
-	Type                string `json:"Type" xml:"Type"`
+	VsMetaInfo          string    `json:"VsMetaInfo" xml:"VsMetaInfo"`
+	GatewaySlbMode      string    `json:"GatewaySlbMode" xml:"GatewaySlbMode"`
+	GatewayId           string    `json:"GatewayId" xml:"GatewayId"`
+	HttpsPort           int       `json:"HttpsPort" xml:"HttpsPort"`
+	HttpPort            int       `json:"HttpPort" xml:"HttpPort"`
+	HttpsVServerGroupId string    `json:"HttpsVServerGroupId" xml:"HttpsVServerGroupId"`
+	ServiceWeight       int       `json:"ServiceWeight" xml:"ServiceWeight"`
+	SlbName             string    `json:"SlbName" xml:"SlbName"`
+	VServerGroupId      string    `json:"VServerGroupId" xml:"VServerGroupId"`
+	GmtCreate           string    `json:"GmtCreate" xml:"GmtCreate"`
+	SlbPort             string    `json:"SlbPort" xml:"SlbPort"`
+	GatewaySlbStatus    string    `json:"GatewaySlbStatus" xml:"GatewaySlbStatus"`
+	EditEnable          bool      `json:"EditEnable" xml:"EditEnable"`
+	Id                  string    `json:"Id" xml:"Id"`
+	StatusDesc          string    `json:"StatusDesc" xml:"StatusDesc"`
+	SlbId               string    `json:"SlbId" xml:"SlbId"`
+	SlbIp               string    `json:"SlbIp" xml:"SlbIp"`
+	Type                string    `json:"Type" xml:"Type"`
+	VServiceList        []Service `json:"VServiceList" xml:"VServiceList"`
 }

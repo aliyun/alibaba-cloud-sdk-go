@@ -71,9 +71,9 @@ func (client *Client) DeleteServiceSourceWithCallback(request *DeleteServiceSour
 // DeleteServiceSourceRequest is the request struct for api DeleteServiceSource
 type DeleteServiceSourceRequest struct {
 	*requests.RpcRequest
-	SourceId        requests.Integer `position:"Query" name:"SourceId"`
 	MseSessionId    string           `position:"Query" name:"MseSessionId"`
 	GatewayUniqueId string           `position:"Query" name:"GatewayUniqueId"`
+	SourceId        requests.Integer `position:"Query" name:"SourceId"`
 	AcceptLanguage  string           `position:"Query" name:"AcceptLanguage"`
 }
 

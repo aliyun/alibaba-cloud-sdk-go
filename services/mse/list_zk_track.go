@@ -104,7 +104,7 @@ func CreateListZkTrackRequest() (request *ListZkTrackRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("mse", "2019-05-31", "ListZkTrack", "mse", "openAPI")
-	request.Method = requests.GET
+	request.Method = requests.POST
 	return
 }
 

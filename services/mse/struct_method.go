@@ -17,10 +17,17 @@ package mse
 
 // Method is a nested struct in mse response
 type Method struct {
-	Name             string   `json:"Name" xml:"Name"`
-	MethodController string   `json:"MethodController" xml:"MethodController"`
-	ReturnType       string   `json:"ReturnType" xml:"ReturnType"`
-	Paths            []string `json:"Paths" xml:"Paths"`
-	ParameterTypes   []string `json:"ParameterTypes" xml:"ParameterTypes"`
-	RequestMethods   []string `json:"RequestMethods" xml:"RequestMethods"`
+	Name                 string                `json:"Name" xml:"Name"`
+	Group                string                `json:"Group" xml:"Group"`
+	Version              string                `json:"Version" xml:"Version"`
+	ReturnDetails        string                `json:"ReturnDetails" xml:"ReturnDetails"`
+	ReturnType           string                `json:"ReturnType" xml:"ReturnType"`
+	MethodController     string                `json:"MethodController" xml:"MethodController"`
+	NameDetail           string                `json:"NameDetail" xml:"NameDetail"`
+	ServiceName          string                `json:"ServiceName" xml:"ServiceName"`
+	ParameterTypes       []string              `json:"ParameterTypes" xml:"ParameterTypes"`
+	Paths                []string              `json:"Paths" xml:"Paths"`
+	ParameterDetails     []string              `json:"ParameterDetails" xml:"ParameterDetails"`
+	RequestMethods       []string              `json:"RequestMethods" xml:"RequestMethods"`
+	ParameterDefinitions []ParameterDefinition `json:"ParameterDefinitions" xml:"ParameterDefinitions"`
 }

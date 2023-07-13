@@ -72,12 +72,12 @@ func (client *Client) ListListenersByConfigWithCallback(request *ListListenersBy
 type ListListenersByConfigRequest struct {
 	*requests.RpcRequest
 	MseSessionId   string `position:"Query" name:"MseSessionId"`
-	InstanceId     string `position:"Query" name:"InstanceId"`
-	DataId         string `position:"Query" name:"DataId"`
 	NamespaceId    string `position:"Query" name:"NamespaceId"`
 	RequestPars    string `position:"Query" name:"RequestPars"`
-	AcceptLanguage string `position:"Query" name:"AcceptLanguage"`
 	Group          string `position:"Query" name:"Group"`
+	InstanceId     string `position:"Query" name:"InstanceId"`
+	DataId         string `position:"Query" name:"DataId"`
+	AcceptLanguage string `position:"Query" name:"AcceptLanguage"`
 }
 
 // ListListenersByConfigResponse is the response struct for api ListListenersByConfig

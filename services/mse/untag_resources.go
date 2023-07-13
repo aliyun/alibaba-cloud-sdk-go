@@ -71,8 +71,8 @@ func (client *Client) UntagResourcesWithCallback(request *UntagResourcesRequest,
 // UntagResourcesRequest is the request struct for api UntagResources
 type UntagResourcesRequest struct {
 	*requests.RpcRequest
-	All            requests.Boolean `position:"Query" name:"All"`
 	MseSessionId   string           `position:"Query" name:"MseSessionId"`
+	All            requests.Boolean `position:"Query" name:"All"`
 	ResourceId     *[]string        `position:"Query" name:"ResourceId"  type:"Repeated"`
 	ResourceType   string           `position:"Query" name:"ResourceType"`
 	AcceptLanguage string           `position:"Query" name:"AcceptLanguage"`

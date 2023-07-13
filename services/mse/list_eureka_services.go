@@ -72,10 +72,10 @@ func (client *Client) ListEurekaServicesWithCallback(request *ListEurekaServices
 type ListEurekaServicesRequest struct {
 	*requests.RpcRequest
 	MseSessionId   string           `position:"Query" name:"MseSessionId"`
-	ClusterId      string           `position:"Query" name:"ClusterId"`
 	PageNum        requests.Integer `position:"Query" name:"PageNum"`
 	RequestPars    string           `position:"Query" name:"RequestPars"`
 	PageSize       requests.Integer `position:"Query" name:"PageSize"`
+	ClusterId      string           `position:"Query" name:"ClusterId"`
 	AcceptLanguage string           `position:"Query" name:"AcceptLanguage"`
 }
 

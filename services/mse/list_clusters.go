@@ -72,13 +72,13 @@ func (client *Client) ListClustersWithCallback(request *ListClustersRequest, cal
 type ListClustersRequest struct {
 	*requests.RpcRequest
 	MseSessionId     string             `position:"Query" name:"MseSessionId"`
-	ClusterAliasName string             `position:"Query" name:"ClusterAliasName"`
 	PageNum          requests.Integer   `position:"Query" name:"PageNum"`
 	ResourceGroupId  string             `position:"Query" name:"ResourceGroupId"`
 	RequestPars      string             `position:"Query" name:"RequestPars"`
 	PageSize         requests.Integer   `position:"Query" name:"PageSize"`
-	AcceptLanguage   string             `position:"Query" name:"AcceptLanguage"`
 	Tag              *[]ListClustersTag `position:"Query" name:"Tag"  type:"Repeated"`
+	ClusterAliasName string             `position:"Query" name:"ClusterAliasName"`
+	AcceptLanguage   string             `position:"Query" name:"AcceptLanguage"`
 }
 
 // ListClustersTag is a repeated param struct in ListClustersRequest
@@ -107,7 +107,7 @@ func CreateListClustersRequest() (request *ListClustersRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("mse", "2019-05-31", "ListClusters", "mse", "openAPI")
-	request.Method = requests.GET
+	request.Method = requests.POST
 	return
 }
 
