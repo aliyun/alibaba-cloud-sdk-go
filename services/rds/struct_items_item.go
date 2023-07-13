@@ -22,6 +22,7 @@ type ItemsItem struct {
 	InsName               string                `json:"InsName" xml:"InsName"`
 	TaskTypeEn            string                `json:"TaskTypeEn" xml:"TaskTypeEn"`
 	Impact                string                `json:"Impact" xml:"Impact"`
+	TaskParams            string                `json:"TaskParams" xml:"TaskParams"`
 	InsComment            string                `json:"InsComment" xml:"InsComment"`
 	InstanceType          string                `json:"InstanceType" xml:"InstanceType"`
 	ReasonCode            string                `json:"ReasonCode" xml:"ReasonCode"`
