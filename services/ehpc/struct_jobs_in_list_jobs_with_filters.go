@@ -17,5 +17,5 @@ package ehpc
 
 // JobsInListJobsWithFilters is a nested struct in ehpc response
 type JobsInListJobsWithFilters struct {
-	JobInfo []JobInfo `json:"JobInfo" xml:"JobInfo"`
+	JobInfo []JobInfoInListJobsWithFilters `json:"JobInfo" xml:"JobInfo"`
 }

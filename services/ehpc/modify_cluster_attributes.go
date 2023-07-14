@@ -71,14 +71,24 @@ func (client *Client) ModifyClusterAttributesWithCallback(request *ModifyCluster
 // ModifyClusterAttributesRequest is the request struct for api ModifyClusterAttributes
 type ModifyClusterAttributesRequest struct {
 	*requests.RpcRequest
-	ImageId         string    `position:"Query" name:"ImageId"`
-	Description     string    `position:"Query" name:"Description"`
-	RamRoleName     string    `position:"Query" name:"RamRoleName"`
-	ClusterId       string    `position:"Query" name:"ClusterId"`
-	ImageOwnerAlias string    `position:"Query" name:"ImageOwnerAlias"`
-	RamNodeTypes    *[]string `position:"Query" name:"RamNodeTypes"  type:"Repeated"`
-	Password        string    `position:"Query" name:"Password"`
-	Name            string    `position:"Query" name:"Name"`
+	ImageId         string                          `position:"Query" name:"ImageId"`
+	Description     string                          `position:"Query" name:"Description"`
+	RamRoleName     string                          `position:"Query" name:"RamRoleName"`
+	ClusterId       string                          `position:"Query" name:"ClusterId"`
+	ImageOwnerAlias string                          `position:"Query" name:"ImageOwnerAlias"`
+	RamNodeTypes    *[]string                       `position:"Query" name:"RamNodeTypes"  type:"Repeated"`
+	Password        string                          `position:"Query" name:"Password"`
+	WinAdPar        ModifyClusterAttributesWinAdPar `position:"Query" name:"WinAdPar"  type:"Struct"`
+	Name            string                          `position:"Query" name:"Name"`
+}
+
+// ModifyClusterAttributesWinAdPar is a repeated param struct in ModifyClusterAttributesRequest
+type ModifyClusterAttributesWinAdPar struct {
+	AdUser          string `name:"AdUser"`
+	AdUserPasswd    string `name:"AdUserPasswd"`
+	AdIp            string `name:"AdIp"`
+	FallbackHomeDir string `name:"FallbackHomeDir"`
+	AdDc            string `name:"AdDc"`
 }
 
 // ModifyClusterAttributesResponse is the response struct for api ModifyClusterAttributes

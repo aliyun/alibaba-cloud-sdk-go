@@ -71,8 +71,10 @@ func (client *Client) AddQueueWithCallback(request *AddQueueRequest, callback fu
 // AddQueueRequest is the request struct for api AddQueue
 type AddQueueRequest struct {
 	*requests.RpcRequest
-	QueueName string `position:"Query" name:"QueueName"`
-	ClusterId string `position:"Query" name:"ClusterId"`
+	DeploymentSetId             string `position:"Query" name:"DeploymentSetId"`
+	QueueName                   string `position:"Query" name:"QueueName"`
+	ClusterId                   string `position:"Query" name:"ClusterId"`
+	NetworkInterfaceTrafficMode string `position:"Query" name:"NetworkInterfaceTrafficMode"`
 }
 
 // AddQueueResponse is the response struct for api AddQueue

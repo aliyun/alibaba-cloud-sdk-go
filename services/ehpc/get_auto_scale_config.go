@@ -94,6 +94,8 @@ type GetAutoScaleConfigResponse struct {
 	GrowRatio               int                        `json:"GrowRatio" xml:"GrowRatio"`
 	ClusterId               string                     `json:"ClusterId" xml:"ClusterId"`
 	Uid                     string                     `json:"Uid" xml:"Uid"`
+	ComputeEnableHt         bool                       `json:"ComputeEnableHt" xml:"ComputeEnableHt"`
+	DnsConfig               string                     `json:"DnsConfig" xml:"DnsConfig"`
 	Queues                  QueuesInGetAutoScaleConfig `json:"Queues" xml:"Queues"`
 }
 

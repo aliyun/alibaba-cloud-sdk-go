@@ -72,6 +72,7 @@ func (client *Client) SetAutoScaleConfigWithCallback(request *SetAutoScaleConfig
 type SetAutoScaleConfigRequest struct {
 	*requests.RpcRequest
 	ImageId                 string                      `position:"Query" name:"ImageId"`
+	DnsConfig               string                      `position:"Query" name:"DnsConfig"`
 	SpotPriceLimit          requests.Float              `position:"Query" name:"SpotPriceLimit"`
 	ExcludeNodes            string                      `position:"Query" name:"ExcludeNodes"`
 	ExtraNodesGrowRatio     requests.Integer            `position:"Query" name:"ExtraNodesGrowRatio"`
@@ -82,6 +83,7 @@ type SetAutoScaleConfigRequest struct {
 	EnableAutoShrink        requests.Boolean            `position:"Query" name:"EnableAutoShrink"`
 	SpotStrategy            string                      `position:"Query" name:"SpotStrategy"`
 	MaxNodesInCluster       requests.Integer            `position:"Query" name:"MaxNodesInCluster"`
+	ComputeEnableHt         requests.Boolean            `position:"Query" name:"ComputeEnableHt"`
 	ShrinkIntervalInMinutes requests.Integer            `position:"Query" name:"ShrinkIntervalInMinutes"`
 	Queues                  *[]SetAutoScaleConfigQueues `position:"Query" name:"Queues"  type:"Repeated"`
 	GrowIntervalInMinutes   requests.Integer            `position:"Query" name:"GrowIntervalInMinutes"`
@@ -92,6 +94,7 @@ type SetAutoScaleConfigRequest struct {
 type SetAutoScaleConfigQueues struct {
 	QueueName          string                                   `name:"QueueName"`
 	SystemDiskLevel    string                                   `name:"SystemDiskLevel"`
+	SortedByInventory  string                                   `name:"SortedByInventory"`
 	InstanceTypes      *[]SetAutoScaleConfigQueuesInstanceTypes `name:"InstanceTypes" type:"Repeated"`
 	EnableAutoGrow     string                                   `name:"EnableAutoGrow"`
 	HostNameSuffix     string                                   `name:"HostNameSuffix"`

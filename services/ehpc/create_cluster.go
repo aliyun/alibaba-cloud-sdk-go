@@ -72,9 +72,11 @@ func (client *Client) CreateClusterWithCallback(request *CreateClusterRequest, c
 type CreateClusterRequest struct {
 	*requests.RpcRequest
 	AdditionalVolumes           *[]CreateClusterAdditionalVolumes `position:"Query" name:"AdditionalVolumes"  type:"Repeated"`
+	AddOns                      *[]CreateClusterAddOns            `position:"Query" name:"AddOns"  type:"Repeated"`
 	EcsOrderManagerInstanceType string                            `position:"Query" name:"EcsOrder.Manager.InstanceType"`
 	KeyPairName                 string                            `position:"Query" name:"KeyPairName"`
 	SecurityGroupName           string                            `position:"Query" name:"SecurityGroupName"`
+	WithoutNas                  requests.Boolean                  `position:"Query" name:"WithoutNas"`
 	ImageOwnerAlias             string                            `position:"Query" name:"ImageOwnerAlias"`
 	DeployMode                  string                            `position:"Query" name:"DeployMode"`
 	EcsOrderManagerCount        requests.Integer                  `position:"Query" name:"EcsOrder.Manager.Count"`
@@ -114,6 +116,7 @@ type CreateClusterRequest struct {
 	JobQueue                    string                            `position:"Query" name:"JobQueue"`
 	VolumeType                  string                            `position:"Query" name:"VolumeType"`
 	SystemDiskType              string                            `position:"Query" name:"SystemDiskType"`
+	DeploymentSetId             string                            `position:"Query" name:"DeploymentSetId"`
 	VolumeProtocol              string                            `position:"Query" name:"VolumeProtocol"`
 	ClientVersion               string                            `position:"Query" name:"ClientVersion"`
 	OsTag                       string                            `position:"Query" name:"OsTag"`
@@ -145,6 +148,17 @@ type CreateClusterAdditionalVolumes struct {
 	VolumeMountpoint  string                                 `name:"VolumeMountpoint"`
 	Location          string                                 `name:"Location"`
 	JobQueue          string                                 `name:"JobQueue"`
+}
+
+// CreateClusterAddOns is a repeated param struct in CreateClusterRequest
+type CreateClusterAddOns struct {
+	DeployMode   string `name:"DeployMode"`
+	Port         string `name:"Port"`
+	ConfigFile   string `name:"ConfigFile"`
+	DefaultStart string `name:"DefaultStart"`
+	Name         string `name:"Name"`
+	DBType       string `name:"DBType"`
+	Version      string `name:"Version"`
 }
 
 // CreateClusterTag is a repeated param struct in CreateClusterRequest

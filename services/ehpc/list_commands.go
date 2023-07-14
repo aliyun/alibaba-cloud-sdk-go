@@ -80,11 +80,11 @@ type ListCommandsRequest struct {
 // ListCommandsResponse is the response struct for api ListCommands
 type ListCommandsResponse struct {
 	*responses.BaseResponse
-	PageSize   int      `json:"PageSize" xml:"PageSize"`
-	RequestId  string   `json:"RequestId" xml:"RequestId"`
-	PageNumber int      `json:"PageNumber" xml:"PageNumber"`
-	TotalCount int      `json:"TotalCount" xml:"TotalCount"`
-	Commands   Commands `json:"Commands" xml:"Commands"`
+	PageSize   int                    `json:"PageSize" xml:"PageSize"`
+	RequestId  string                 `json:"RequestId" xml:"RequestId"`
+	PageNumber int                    `json:"PageNumber" xml:"PageNumber"`
+	TotalCount int                    `json:"TotalCount" xml:"TotalCount"`
+	Commands   CommandsInListCommands `json:"Commands" xml:"Commands"`
 }
 
 // CreateListCommandsRequest creates a request to invoke ListCommands API

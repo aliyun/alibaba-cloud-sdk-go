@@ -17,22 +17,17 @@ package ehpc
 
 // JobInfo is a nested struct in ehpc response
 type JobInfo struct {
-	Name           string    `json:"Name" xml:"Name"`
-	ArrayRequest   string    `json:"ArrayRequest" xml:"ArrayRequest"`
-	ShellPath      string    `json:"ShellPath" xml:"ShellPath"`
-	VariableList   string    `json:"VariableList" xml:"VariableList"`
-	LastModifyTime string    `json:"LastModifyTime" xml:"LastModifyTime"`
-	Owner          string    `json:"Owner" xml:"Owner"`
-	Priority       string    `json:"Priority" xml:"Priority"`
-	Stdout         string    `json:"Stdout" xml:"Stdout"`
-	Comment        string    `json:"Comment" xml:"Comment"`
-	State          string    `json:"State" xml:"State"`
-	StartTime      string    `json:"StartTime" xml:"StartTime"`
-	Queue          string    `json:"Queue" xml:"Queue"`
-	NodeList       string    `json:"NodeList" xml:"NodeList"`
-	SubmitTime     string    `json:"SubmitTime" xml:"SubmitTime"`
-	Id             string    `json:"Id" xml:"Id"`
-	Rerunable      bool      `json:"Rerunable" xml:"Rerunable"`
-	Stderr         string    `json:"Stderr" xml:"Stderr"`
-	Resources      Resources `json:"Resources" xml:"Resources"`
+	LastModifyTime  int64            `json:"LastModifyTime" xml:"LastModifyTime"`
+	Name            string           `json:"Name" xml:"Name"`
+	Owner           string           `json:"Owner" xml:"Owner"`
+	EndTime         int64            `json:"EndTime" xml:"EndTime"`
+	StartTime       int64            `json:"StartTime" xml:"StartTime"`
+	SubmitTime      int64            `json:"SubmitTime" xml:"SubmitTime"`
+	Queue           string           `json:"Queue" xml:"Queue"`
+	State           string           `json:"State" xml:"State"`
+	IsArrayJob      bool             `json:"IsArrayJob" xml:"IsArrayJob"`
+	Priority        int64            `json:"Priority" xml:"Priority"`
+	Id              string           `json:"Id" xml:"Id"`
+	ArrayProperties ArrayProperties  `json:"ArrayProperties" xml:"ArrayProperties"`
+	ContainerGroups []ContainerGroup `json:"ContainerGroups" xml:"ContainerGroups"`
 }

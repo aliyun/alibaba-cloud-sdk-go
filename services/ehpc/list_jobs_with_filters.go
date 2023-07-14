@@ -90,12 +90,12 @@ type ListJobsWithFiltersRequest struct {
 // ListJobsWithFiltersResponse is the response struct for api ListJobsWithFilters
 type ListJobsWithFiltersResponse struct {
 	*responses.BaseResponse
-	TotalCount int       `json:"TotalCount" xml:"TotalCount"`
-	RequestId  string    `json:"RequestId" xml:"RequestId"`
-	PageSize   int64     `json:"PageSize" xml:"PageSize"`
-	PageNumber int64     `json:"PageNumber" xml:"PageNumber"`
-	Success    bool      `json:"Success" xml:"Success"`
-	Jobs       []JobInfo `json:"Jobs" xml:"Jobs"`
+	TotalCount int                            `json:"TotalCount" xml:"TotalCount"`
+	RequestId  string                         `json:"RequestId" xml:"RequestId"`
+	PageSize   int64                          `json:"PageSize" xml:"PageSize"`
+	PageNumber int64                          `json:"PageNumber" xml:"PageNumber"`
+	Success    bool                           `json:"Success" xml:"Success"`
+	Jobs       []JobInfoInListJobsWithFilters `json:"Jobs" xml:"Jobs"`
 }
 
 // CreateListJobsWithFiltersRequest creates a request to invoke ListJobsWithFilters API

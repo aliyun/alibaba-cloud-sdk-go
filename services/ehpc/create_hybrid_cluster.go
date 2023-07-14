@@ -79,6 +79,7 @@ type CreateHybridClusterRequest struct {
 	ImageOwnerAlias             string                                  `position:"Query" name:"ImageOwnerAlias"`
 	ResourceGroupId             string                                  `position:"Query" name:"ResourceGroupId"`
 	Password                    string                                  `position:"Query" name:"Password"`
+	HybridClusterOpMode         string                                  `position:"Query" name:"HybridClusterOpMode"`
 	WinAdPar                    CreateHybridClusterWinAdPar             `position:"Query" name:"WinAdPar"  type:"Struct"`
 	ComputeSpotPriceLimit       requests.Float                          `position:"Query" name:"ComputeSpotPriceLimit"`
 	OnPremiseVolumeLocalPath    string                                  `position:"Query" name:"OnPremiseVolumeLocalPath"`
@@ -129,8 +130,9 @@ type CreateHybridClusterPostInstallScript struct {
 
 // CreateHybridClusterOpenldapPar is a repeated param struct in CreateHybridClusterRequest
 type CreateHybridClusterOpenldapPar struct {
-	BaseDn       string `name:"BaseDn"`
-	LdapServerIp string `name:"LdapServerIp"`
+	FallbackHomeDir string `name:"FallbackHomeDir"`
+	BaseDn          string `name:"BaseDn"`
+	LdapServerIp    string `name:"LdapServerIp"`
 }
 
 // CreateHybridClusterNodes is a repeated param struct in CreateHybridClusterRequest
