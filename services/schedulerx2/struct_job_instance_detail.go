@@ -30,4 +30,7 @@ type JobInstanceDetail struct {
 	ScheduleTime string `json:"ScheduleTime" xml:"ScheduleTime"`
 	DataTime     string `json:"DataTime" xml:"DataTime"`
 	WorkAddr     string `json:"WorkAddr" xml:"WorkAddr"`
+	Parameters   string `json:"Parameters" xml:"Parameters"`
+	JobName      string `json:"JobName" xml:"JobName"`
+	TraceId      string `json:"TraceId" xml:"TraceId"`
 }
