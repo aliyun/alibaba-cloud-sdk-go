@@ -37,8 +37,8 @@ type Data struct {
 	AppGroupId           int64                    `json:"AppGroupId" xml:"AppGroupId"`
 	AppName              string                   `json:"AppName" xml:"AppName"`
 	Logs                 []string                 `json:"Logs" xml:"Logs"`
-	WfInstanceDag        WfInstanceDag            `json:"WfInstanceDag" xml:"WfInstanceDag"`
 	JobInstanceDetail    JobInstanceDetail        `json:"JobInstanceDetail" xml:"JobInstanceDetail"`
+	WfInstanceDag        WfInstanceDag            `json:"WfInstanceDag" xml:"WfInstanceDag"`
 	WorkFlowInfo         WorkFlowInfo             `json:"WorkFlowInfo" xml:"WorkFlowInfo"`
 	JobConfigInfo        JobConfigInfo            `json:"JobConfigInfo" xml:"JobConfigInfo"`
 	WorkFlowNodeInfo     WorkFlowNodeInfo         `json:"WorkFlowNodeInfo" xml:"WorkFlowNodeInfo"`
