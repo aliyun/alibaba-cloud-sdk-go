@@ -71,16 +71,20 @@ func (client *Client) ListFilesWithCallback(request *ListFilesRequest, callback 
 // ListFilesRequest is the request struct for api ListFiles
 type ListFilesRequest struct {
 	*requests.RpcRequest
-	Owner             string           `position:"Body" name:"Owner"`
-	FileTypes         string           `position:"Body" name:"FileTypes"`
-	ProjectIdentifier string           `position:"Body" name:"ProjectIdentifier"`
-	PageNumber        requests.Integer `position:"Body" name:"PageNumber"`
-	FileFolderPath    string           `position:"Body" name:"FileFolderPath"`
-	PageSize          requests.Integer `position:"Body" name:"PageSize"`
-	Keyword           string           `position:"Body" name:"Keyword"`
-	ProjectId         requests.Integer `position:"Body" name:"ProjectId"`
-	UseType           string           `position:"Body" name:"UseType"`
-	NodeId            requests.Integer `position:"Body" name:"NodeId"`
+	Owner                  string           `position:"Body" name:"Owner"`
+	FileTypes              string           `position:"Body" name:"FileTypes"`
+	NeedContent            requests.Boolean `position:"Body" name:"NeedContent"`
+	NeedAbsoluteFolderPath requests.Boolean `position:"Body" name:"NeedAbsoluteFolderPath"`
+	ProjectIdentifier      string           `position:"Body" name:"ProjectIdentifier"`
+	PageNumber             requests.Integer `position:"Body" name:"PageNumber"`
+	FileIdIn               string           `position:"Body" name:"FileIdIn"`
+	FileFolderPath         string           `position:"Body" name:"FileFolderPath"`
+	PageSize               requests.Integer `position:"Body" name:"PageSize"`
+	ExactFileName          string           `position:"Body" name:"ExactFileName"`
+	Keyword                string           `position:"Body" name:"Keyword"`
+	ProjectId              requests.Integer `position:"Body" name:"ProjectId"`
+	UseType                string           `position:"Body" name:"UseType"`
+	NodeId                 requests.Integer `position:"Body" name:"NodeId"`
 }
 
 // ListFilesResponse is the response struct for api ListFiles

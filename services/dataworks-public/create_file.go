@@ -84,6 +84,7 @@ type CreateFileRequest struct {
 	Owner                           string           `position:"Body" name:"Owner"`
 	AutoRerunIntervalMillis         requests.Integer `position:"Body" name:"AutoRerunIntervalMillis"`
 	InputList                       string           `position:"Body" name:"InputList"`
+	CreateFolderIfNotExists         requests.Boolean `position:"Body" name:"CreateFolderIfNotExists"`
 	RerunMode                       string           `position:"Body" name:"RerunMode"`
 	ConnectionName                  string           `position:"Body" name:"ConnectionName"`
 	OutputParameters                string           `position:"Body" name:"OutputParameters"`

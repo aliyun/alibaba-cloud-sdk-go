@@ -17,27 +17,28 @@ package dataworks_public
 
 // File is a nested struct in dataworks_public response
 type File struct {
-	AutoParsing      bool   `json:"AutoParsing" xml:"AutoParsing"`
-	LastEditTime     int64  `json:"LastEditTime" xml:"LastEditTime"`
-	Owner            string `json:"Owner" xml:"Owner"`
-	ConnectionName   string `json:"ConnectionName" xml:"ConnectionName"`
-	CreateTime       int64  `json:"CreateTime" xml:"CreateTime"`
-	FileFolderId     string `json:"FileFolderId" xml:"FileFolderId"`
-	DeletedStatus    string `json:"DeletedStatus" xml:"DeletedStatus"`
-	FileDescription  string `json:"FileDescription" xml:"FileDescription"`
-	FileId           int64  `json:"FileId" xml:"FileId"`
-	CurrentVersion   int    `json:"CurrentVersion" xml:"CurrentVersion"`
-	BizId            int64  `json:"BizId" xml:"BizId"`
-	AdvancedSettings string `json:"AdvancedSettings" xml:"AdvancedSettings"`
-	FileType         int    `json:"FileType" xml:"FileType"`
-	Content          string `json:"Content" xml:"Content"`
-	NodeId           int64  `json:"NodeId" xml:"NodeId"`
-	CreateUser       string `json:"CreateUser" xml:"CreateUser"`
-	BusinessId       int64  `json:"BusinessId" xml:"BusinessId"`
-	LastEditUser     string `json:"LastEditUser" xml:"LastEditUser"`
-	FileName         string `json:"FileName" xml:"FileName"`
-	UseType          string `json:"UseType" xml:"UseType"`
-	CommitStatus     int    `json:"CommitStatus" xml:"CommitStatus"`
-	ParentId         int64  `json:"ParentId" xml:"ParentId"`
-	IsMaxCompute     bool   `json:"IsMaxCompute" xml:"IsMaxCompute"`
+	AutoParsing        bool   `json:"AutoParsing" xml:"AutoParsing"`
+	LastEditTime       int64  `json:"LastEditTime" xml:"LastEditTime"`
+	Owner              string `json:"Owner" xml:"Owner"`
+	ConnectionName     string `json:"ConnectionName" xml:"ConnectionName"`
+	CreateTime         int64  `json:"CreateTime" xml:"CreateTime"`
+	FileFolderId       string `json:"FileFolderId" xml:"FileFolderId"`
+	DeletedStatus      string `json:"DeletedStatus" xml:"DeletedStatus"`
+	FileDescription    string `json:"FileDescription" xml:"FileDescription"`
+	FileId             int64  `json:"FileId" xml:"FileId"`
+	CurrentVersion     int    `json:"CurrentVersion" xml:"CurrentVersion"`
+	BizId              int64  `json:"BizId" xml:"BizId"`
+	AdvancedSettings   string `json:"AdvancedSettings" xml:"AdvancedSettings"`
+	FileType           int    `json:"FileType" xml:"FileType"`
+	Content            string `json:"Content" xml:"Content"`
+	NodeId             int64  `json:"NodeId" xml:"NodeId"`
+	AbsoluteFolderPath string `json:"AbsoluteFolderPath" xml:"AbsoluteFolderPath"`
+	CreateUser         string `json:"CreateUser" xml:"CreateUser"`
+	BusinessId         int64  `json:"BusinessId" xml:"BusinessId"`
+	LastEditUser       string `json:"LastEditUser" xml:"LastEditUser"`
+	FileName           string `json:"FileName" xml:"FileName"`
+	UseType            string `json:"UseType" xml:"UseType"`
+	CommitStatus       int    `json:"CommitStatus" xml:"CommitStatus"`
+	ParentId           int64  `json:"ParentId" xml:"ParentId"`
+	IsMaxCompute       bool   `json:"IsMaxCompute" xml:"IsMaxCompute"`
 }

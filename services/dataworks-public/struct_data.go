@@ -207,7 +207,6 @@ type Data struct {
 	DataSources          []DataSourcesItem      `json:"DataSources" xml:"DataSources"`
 	Nodes                []NodesItem            `json:"Nodes" xml:"Nodes"`
 	FileVersions         []FileVersion          `json:"FileVersions" xml:"FileVersions"`
-	Files                []File                 `json:"Files" xml:"Files"`
 	Baselines            []BaselinesItem        `json:"Baselines" xml:"Baselines"`
 	Applications         []Application          `json:"Applications" xml:"Applications"`
 	Connections          []ConnectionsItem      `json:"Connections" xml:"Connections"`
@@ -217,6 +216,7 @@ type Data struct {
 	Projects             []ProjectsItem         `json:"Projects" xml:"Projects"`
 	EntityList           []EntityListItem       `json:"EntityList" xml:"EntityList"`
 	Folders              []FoldersItem          `json:"Folders" xml:"Folders"`
+	Files                []File                 `json:"Files" xml:"Files"`
 	DataEntityList       []DataEntityListItem   `json:"DataEntityList" xml:"DataEntityList"`
 	ApiAuthorizedList    []ApiAuthorized        `json:"ApiAuthorizedList" xml:"ApiAuthorizedList"`
 	Dags                 []Dag                  `json:"Dags" xml:"Dags"`
