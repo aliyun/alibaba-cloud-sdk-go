@@ -17,12 +17,9 @@ package dts
 
 // DataSynchronizationStatus is a nested struct in dts response
 type DataSynchronizationStatus struct {
-	Progress     string `json:"Progress" xml:"Progress"`
 	Delay        string `json:"Delay" xml:"Delay"`
 	Checkpoint   string `json:"Checkpoint" xml:"Checkpoint"`
 	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
 	Status       string `json:"Status" xml:"Status"`
 	Percent      string `json:"Percent" xml:"Percent"`
-	NeedUpgrade  bool   `json:"NeedUpgrade" xml:"NeedUpgrade"`
-	DelayMillis  int64  `json:"DelayMillis" xml:"DelayMillis"`
 }

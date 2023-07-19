@@ -74,7 +74,6 @@ type DescribeSynchronizationJobAlertRequest struct {
 	ClientToken              string `position:"Query" name:"ClientToken"`
 	OwnerId                  string `position:"Query" name:"OwnerId"`
 	SynchronizationJobId     string `position:"Query" name:"SynchronizationJobId"`
-	AccountId                string `position:"Query" name:"AccountId"`
 	SynchronizationDirection string `position:"Query" name:"SynchronizationDirection"`
 }
 
@@ -100,7 +99,7 @@ func CreateDescribeSynchronizationJobAlertRequest() (request *DescribeSynchroniz
 	request = &DescribeSynchronizationJobAlertRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dts", "2020-01-01", "DescribeSynchronizationJobAlert", "dts", "openAPI")
+	request.InitWithApiInfo("Dts", "2019-09-01", "DescribeSynchronizationJobAlert", "", "")
 	request.Method = requests.POST
 	return
 }

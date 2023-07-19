@@ -73,7 +73,6 @@ type StartSynchronizationJobRequest struct {
 	*requests.RpcRequest
 	OwnerId                  string `position:"Query" name:"OwnerId"`
 	SynchronizationJobId     string `position:"Query" name:"SynchronizationJobId"`
-	AccountId                string `position:"Query" name:"AccountId"`
 	SynchronizationDirection string `position:"Query" name:"SynchronizationDirection"`
 }
 
@@ -91,7 +90,7 @@ func CreateStartSynchronizationJobRequest() (request *StartSynchronizationJobReq
 	request = &StartSynchronizationJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dts", "2020-01-01", "StartSynchronizationJob", "dts", "openAPI")
+	request.InitWithApiInfo("Dts", "2019-09-01", "StartSynchronizationJob", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -17,8 +17,7 @@ package dts
 
 // PrecheckStatus is a nested struct in dts response
 type PrecheckStatus struct {
-	ErrorMessage string       `json:"ErrorMessage" xml:"ErrorMessage"`
-	Status       string       `json:"Status" xml:"Status"`
-	Percent      string       `json:"Percent" xml:"Percent"`
-	Detail       []DetailItem `json:"Detail" xml:"Detail"`
+	Status  string      `json:"Status" xml:"Status"`
+	Percent string      `json:"Percent" xml:"Percent"`
+	Detail  []CheckItem `json:"Detail" xml:"Detail"`
 }
