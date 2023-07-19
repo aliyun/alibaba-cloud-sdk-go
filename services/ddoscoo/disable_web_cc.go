@@ -87,7 +87,7 @@ func CreateDisableWebCCRequest() (request *DisableWebCCRequest) {
 	request = &DisableWebCCRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DisableWebCC", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DisableWebCC", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

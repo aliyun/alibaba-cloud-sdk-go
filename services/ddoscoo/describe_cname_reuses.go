@@ -88,7 +88,7 @@ func CreateDescribeCnameReusesRequest() (request *DescribeCnameReusesRequest) {
 	request = &DescribeCnameReusesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeCnameReuses", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeCnameReuses", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -94,7 +94,7 @@ func CreateCreateWebCCRuleRequest() (request *CreateWebCCRuleRequest) {
 	request = &CreateWebCCRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "CreateWebCCRule", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "CreateWebCCRule", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

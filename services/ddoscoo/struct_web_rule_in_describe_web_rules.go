@@ -34,6 +34,7 @@ type WebRuleInDescribeWebRules struct {
 	Cname            string        `json:"Cname" xml:"Cname"`
 	Http2Enable      bool          `json:"Http2Enable" xml:"Http2Enable"`
 	Https2HttpEnable bool          `json:"Https2HttpEnable" xml:"Https2HttpEnable"`
+	CertRegion       string        `json:"CertRegion" xml:"CertRegion"`
 	WhiteList        []string      `json:"WhiteList" xml:"WhiteList"`
 	BlackList        []string      `json:"BlackList" xml:"BlackList"`
 	CustomCiphers    []string      `json:"CustomCiphers" xml:"CustomCiphers"`

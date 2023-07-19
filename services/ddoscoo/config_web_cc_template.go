@@ -88,7 +88,7 @@ func CreateConfigWebCCTemplateRequest() (request *ConfigWebCCTemplateRequest) {
 	request = &ConfigWebCCTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ConfigWebCCTemplate", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ConfigWebCCTemplate", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -92,7 +92,7 @@ func CreateDescribePortConnsListRequest() (request *DescribePortConnsListRequest
 	request = &DescribePortConnsListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribePortConnsList", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribePortConnsList", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

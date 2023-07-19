@@ -88,7 +88,7 @@ func CreateModifyWebIpSetSwitchRequest() (request *ModifyWebIpSetSwitchRequest) 
 	request = &ModifyWebIpSetSwitchRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ModifyWebIpSetSwitch", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ModifyWebIpSetSwitch", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

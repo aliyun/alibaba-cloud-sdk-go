@@ -92,7 +92,7 @@ func CreateDescribeDomainStatusCodeListRequest() (request *DescribeDomainStatusC
 	request = &DescribeDomainStatusCodeListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeDomainStatusCodeList", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeDomainStatusCodeList", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

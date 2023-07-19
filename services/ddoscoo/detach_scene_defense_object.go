@@ -89,7 +89,7 @@ func CreateDetachSceneDefenseObjectRequest() (request *DetachSceneDefenseObjectR
 	request = &DetachSceneDefenseObjectRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DetachSceneDefenseObject", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DetachSceneDefenseObject", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

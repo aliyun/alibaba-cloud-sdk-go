@@ -88,7 +88,7 @@ func CreateDescribeWebAccessLogEmptyCountRequest() (request *DescribeWebAccessLo
 	request = &DescribeWebAccessLogEmptyCountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeWebAccessLogEmptyCount", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeWebAccessLogEmptyCount", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

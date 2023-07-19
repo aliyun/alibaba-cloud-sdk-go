@@ -90,7 +90,7 @@ func CreateDescribeDomainViewSourceCountriesRequest() (request *DescribeDomainVi
 	request = &DescribeDomainViewSourceCountriesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeDomainViewSourceCountries", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeDomainViewSourceCountries", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

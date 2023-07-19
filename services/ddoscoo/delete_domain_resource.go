@@ -86,7 +86,7 @@ func CreateDeleteDomainResourceRequest() (request *DeleteDomainResourceRequest) 
 	request = &DeleteDomainResourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DeleteDomainResource", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DeleteDomainResource", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -89,7 +89,7 @@ func CreateDescribeUnBlockCountRequest() (request *DescribeUnBlockCountRequest) 
 	request = &DescribeUnBlockCountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeUnBlockCount", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeUnBlockCount", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

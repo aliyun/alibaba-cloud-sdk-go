@@ -88,7 +88,7 @@ func CreateDescribeWebCacheConfigsRequest() (request *DescribeWebCacheConfigsReq
 	request = &DescribeWebCacheConfigsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeWebCacheConfigs", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeWebCacheConfigs", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

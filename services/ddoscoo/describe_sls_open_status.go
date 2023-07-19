@@ -88,7 +88,7 @@ func CreateDescribeSlsOpenStatusRequest() (request *DescribeSlsOpenStatusRequest
 	request = &DescribeSlsOpenStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeSlsOpenStatus", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeSlsOpenStatus", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -86,7 +86,7 @@ func CreateConfigLayer4RemarkRequest() (request *ConfigLayer4RemarkRequest) {
 	request = &ConfigLayer4RemarkRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ConfigLayer4Remark", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ConfigLayer4Remark", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

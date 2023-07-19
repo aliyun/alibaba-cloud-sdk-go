@@ -88,7 +88,7 @@ func CreateDescribeWebInstanceRelationsRequest() (request *DescribeWebInstanceRe
 	request = &DescribeWebInstanceRelationsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeWebInstanceRelations", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeWebInstanceRelations", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

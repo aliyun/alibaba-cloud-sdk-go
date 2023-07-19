@@ -88,7 +88,7 @@ func CreateModifyWebPreciseAccessSwitchRequest() (request *ModifyWebPreciseAcces
 	request = &ModifyWebPreciseAccessSwitchRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ModifyWebPreciseAccessSwitch", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ModifyWebPreciseAccessSwitch", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

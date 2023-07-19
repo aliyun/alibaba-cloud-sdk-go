@@ -89,7 +89,7 @@ func CreateConfigWebIpSetRequest() (request *ConfigWebIpSetRequest) {
 	request = &ConfigWebIpSetRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ConfigWebIpSet", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ConfigWebIpSet", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

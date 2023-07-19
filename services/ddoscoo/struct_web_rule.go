@@ -21,24 +21,25 @@ type WebRule struct {
 	Cname            string        `json:"Cname" xml:"Cname"`
 	CertName         string        `json:"CertName" xml:"CertName"`
 	PunishReason     int           `json:"PunishReason" xml:"PunishReason"`
-	SslCiphers       string        `json:"SslCiphers" xml:"SslCiphers"`
-	SslProtocols     string        `json:"SslProtocols" xml:"SslProtocols"`
-	Ssl13Enabled     bool          `json:"Ssl13Enabled" xml:"Ssl13Enabled"`
 	PunishStatus     bool          `json:"PunishStatus" xml:"PunishStatus"`
 	Http2HttpsEnable bool          `json:"Http2HttpsEnable" xml:"Http2HttpsEnable"`
 	HttpsExt         string        `json:"HttpsExt" xml:"HttpsExt"`
 	ProxyEnabled     bool          `json:"ProxyEnabled" xml:"ProxyEnabled"`
-	RsType           int           `json:"RsType" xml:"RsType"`
-	CcTemplate       string        `json:"CcTemplate" xml:"CcTemplate"`
 	CcRuleEnabled    bool          `json:"CcRuleEnabled" xml:"CcRuleEnabled"`
 	PolicyMode       string        `json:"PolicyMode" xml:"PolicyMode"`
 	CcEnabled        bool          `json:"CcEnabled" xml:"CcEnabled"`
+	SslCiphers       string        `json:"SslCiphers" xml:"SslCiphers"`
+	SslProtocols     string        `json:"SslProtocols" xml:"SslProtocols"`
+	Ssl13Enabled     bool          `json:"Ssl13Enabled" xml:"Ssl13Enabled"`
+	RsType           int           `json:"RsType" xml:"RsType"`
+	CcTemplate       string        `json:"CcTemplate" xml:"CcTemplate"`
+	OcspEnabled      bool          `json:"OcspEnabled" xml:"OcspEnabled"`
 	Https2HttpEnable bool          `json:"Https2HttpEnable" xml:"Https2HttpEnable"`
 	Http2Enable      bool          `json:"Http2Enable" xml:"Http2Enable"`
+	WhiteList        []string      `json:"WhiteList" xml:"WhiteList"`
+	RealServers      []string      `json:"RealServers" xml:"RealServers"`
 	InstanceIds      []string      `json:"InstanceIds" xml:"InstanceIds"`
 	BlackList        []string      `json:"BlackList" xml:"BlackList"`
-	WhiteList        []string      `json:"WhiteList" xml:"WhiteList"`
 	CustomCiphers    []string      `json:"CustomCiphers" xml:"CustomCiphers"`
-	RealServers      []string      `json:"RealServers" xml:"RealServers"`
 	ProxyTypes       []ProxyConfig `json:"ProxyTypes" xml:"ProxyTypes"`
 }

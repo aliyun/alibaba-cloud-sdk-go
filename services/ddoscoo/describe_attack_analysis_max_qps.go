@@ -88,7 +88,7 @@ func CreateDescribeAttackAnalysisMaxQpsRequest() (request *DescribeAttackAnalysi
 	request = &DescribeAttackAnalysisMaxQpsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeAttackAnalysisMaxQps", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeAttackAnalysisMaxQps", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

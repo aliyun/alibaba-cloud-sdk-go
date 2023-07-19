@@ -92,7 +92,7 @@ func CreateModifyWebRuleRequest() (request *ModifyWebRuleRequest) {
 	request = &ModifyWebRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ModifyWebRule", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ModifyWebRule", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

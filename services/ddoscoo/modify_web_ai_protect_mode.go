@@ -88,7 +88,7 @@ func CreateModifyWebAIProtectModeRequest() (request *ModifyWebAIProtectModeReque
 	request = &ModifyWebAIProtectModeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ModifyWebAIProtectMode", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ModifyWebAIProtectMode", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

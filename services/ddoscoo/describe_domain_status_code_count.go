@@ -101,7 +101,7 @@ func CreateDescribeDomainStatusCodeCountRequest() (request *DescribeDomainStatus
 	request = &DescribeDomainStatusCodeCountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeDomainStatusCodeCount", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeDomainStatusCodeCount", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

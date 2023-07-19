@@ -87,7 +87,7 @@ func CreateDescribeNetworkRegionBlockRequest() (request *DescribeNetworkRegionBl
 	request = &DescribeNetworkRegionBlockRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeNetworkRegionBlock", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeNetworkRegionBlock", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

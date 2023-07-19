@@ -87,7 +87,7 @@ func CreateDescribeWebAccessModeRequest() (request *DescribeWebAccessModeRequest
 	request = &DescribeWebAccessModeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeWebAccessMode", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeWebAccessMode", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

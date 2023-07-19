@@ -88,7 +88,7 @@ func CreateDescribeWebAreaBlockConfigsRequest() (request *DescribeWebAreaBlockCo
 	request = &DescribeWebAreaBlockConfigsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeWebAreaBlockConfigs", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeWebAreaBlockConfigs", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

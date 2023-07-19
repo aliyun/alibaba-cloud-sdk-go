@@ -87,7 +87,7 @@ func CreateDescribeNetworkRuleAttributesRequest() (request *DescribeNetworkRuleA
 	request = &DescribeNetworkRuleAttributesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeNetworkRuleAttributes", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeNetworkRuleAttributes", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

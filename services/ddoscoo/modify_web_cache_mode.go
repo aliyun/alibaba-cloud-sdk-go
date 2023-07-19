@@ -88,7 +88,7 @@ func CreateModifyWebCacheModeRequest() (request *ModifyWebCacheModeRequest) {
 	request = &ModifyWebCacheModeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ModifyWebCacheMode", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ModifyWebCacheMode", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

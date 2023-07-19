@@ -90,7 +90,7 @@ func CreateDescribePortViewSourceProvincesRequest() (request *DescribePortViewSo
 	request = &DescribePortViewSourceProvincesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribePortViewSourceProvinces", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribePortViewSourceProvinces", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

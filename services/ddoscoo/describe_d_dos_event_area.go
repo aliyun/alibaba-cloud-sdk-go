@@ -89,7 +89,7 @@ func CreateDescribeDDosEventAreaRequest() (request *DescribeDDosEventAreaRequest
 	request = &DescribeDDosEventAreaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeDDosEventArea", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeDDosEventArea", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

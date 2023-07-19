@@ -88,7 +88,7 @@ func CreateModifyWebAIProtectSwitchRequest() (request *ModifyWebAIProtectSwitchR
 	request = &ModifyWebAIProtectSwitchRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ModifyWebAIProtectSwitch", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ModifyWebAIProtectSwitch", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

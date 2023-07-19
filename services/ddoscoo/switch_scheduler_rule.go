@@ -88,7 +88,7 @@ func CreateSwitchSchedulerRuleRequest() (request *SwitchSchedulerRuleRequest) {
 	request = &SwitchSchedulerRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "SwitchSchedulerRule", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "SwitchSchedulerRule", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

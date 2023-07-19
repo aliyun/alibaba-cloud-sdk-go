@@ -74,6 +74,7 @@ type DescribeBackSourceCidrRequest struct {
 	Line            string `position:"Query" name:"Line"`
 	ResourceGroupId string `position:"Query" name:"ResourceGroupId"`
 	SourceIp        string `position:"Query" name:"SourceIp"`
+	IpVersion       string `position:"Query" name:"IpVersion"`
 }
 
 // DescribeBackSourceCidrResponse is the response struct for api DescribeBackSourceCidr
@@ -88,7 +89,7 @@ func CreateDescribeBackSourceCidrRequest() (request *DescribeBackSourceCidrReque
 	request = &DescribeBackSourceCidrRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeBackSourceCidr", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeBackSourceCidr", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

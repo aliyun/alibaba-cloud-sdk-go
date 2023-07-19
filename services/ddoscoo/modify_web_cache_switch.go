@@ -88,7 +88,7 @@ func CreateModifyWebCacheSwitchRequest() (request *ModifyWebCacheSwitchRequest) 
 	request = &ModifyWebCacheSwitchRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ModifyWebCacheSwitch", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ModifyWebCacheSwitch", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

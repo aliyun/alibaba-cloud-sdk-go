@@ -88,7 +88,7 @@ func CreateDeleteWebCacheCustomRuleRequest() (request *DeleteWebCacheCustomRuleR
 	request = &DeleteWebCacheCustomRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DeleteWebCacheCustomRule", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DeleteWebCacheCustomRule", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

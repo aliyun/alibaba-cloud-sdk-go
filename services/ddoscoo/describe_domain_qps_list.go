@@ -91,7 +91,7 @@ func CreateDescribeDomainQPSListRequest() (request *DescribeDomainQPSListRequest
 	request = &DescribeDomainQPSListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeDomainQPSList", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeDomainQPSList", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -94,7 +94,7 @@ func CreateDescribeWebRulesRequest() (request *DescribeWebRulesRequest) {
 	request = &DescribeWebRulesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeWebRules", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeWebRules", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

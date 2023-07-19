@@ -93,7 +93,7 @@ func CreateDescribeWebCCRulesRequest() (request *DescribeWebCCRulesRequest) {
 	request = &DescribeWebCCRulesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeWebCCRules", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeWebCCRules", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

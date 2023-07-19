@@ -89,7 +89,7 @@ func CreateModifyCnameReuseRequest() (request *ModifyCnameReuseRequest) {
 	request = &ModifyCnameReuseRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ModifyCnameReuse", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ModifyCnameReuse", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

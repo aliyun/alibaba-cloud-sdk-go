@@ -17,13 +17,21 @@ package ddoscoo
 
 // PortFlow is a nested struct in ddoscoo response
 type PortFlow struct {
-	Index     int64  `json:"Index" xml:"Index"`
-	Time      int64  `json:"Time" xml:"Time"`
-	InPps     int64  `json:"InPps" xml:"InPps"`
-	InBps     int64  `json:"InBps" xml:"InBps"`
-	Region    string `json:"Region" xml:"Region"`
-	OutPps    int64  `json:"OutPps" xml:"OutPps"`
-	AttackPps int64  `json:"AttackPps" xml:"AttackPps"`
-	OutBps    int64  `json:"OutBps" xml:"OutBps"`
-	AttackBps int64  `json:"AttackBps" xml:"AttackBps"`
+	Index          int64  `json:"Index" xml:"Index"`
+	Time           int64  `json:"Time" xml:"Time"`
+	InPps          int64  `json:"InPps" xml:"InPps"`
+	InBps          int64  `json:"InBps" xml:"InBps"`
+	Region         string `json:"Region" xml:"Region"`
+	OutPps         int64  `json:"OutPps" xml:"OutPps"`
+	AttackPps      int64  `json:"AttackPps" xml:"AttackPps"`
+	OutBps         int64  `json:"OutBps" xml:"OutBps"`
+	AttackBps      int64  `json:"AttackBps" xml:"AttackBps"`
+	SlaBpsDropBps  int64  `json:"SlaBpsDropBps" xml:"SlaBpsDropBps"`
+	SlaPpsDropBps  int64  `json:"SlaPpsDropBps" xml:"SlaPpsDropBps"`
+	SlaCpsDropBps  int64  `json:"SlaCpsDropBps" xml:"SlaCpsDropBps"`
+	SlaConnDropBps int64  `json:"SlaConnDropBps" xml:"SlaConnDropBps"`
+	SlaBpsDropPps  int64  `json:"SlaBpsDropPps" xml:"SlaBpsDropPps"`
+	SlaPpsDropPps  int64  `json:"SlaPpsDropPps" xml:"SlaPpsDropPps"`
+	SlaCpsDropPps  int64  `json:"SlaCpsDropPps" xml:"SlaCpsDropPps"`
+	SlaConnDropPps int64  `json:"SlaConnDropPps" xml:"SlaConnDropPps"`
 }

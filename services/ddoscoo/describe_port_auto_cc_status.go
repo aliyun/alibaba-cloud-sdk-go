@@ -87,7 +87,7 @@ func CreateDescribePortAutoCcStatusRequest() (request *DescribePortAutoCcStatusR
 	request = &DescribePortAutoCcStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribePortAutoCcStatus", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribePortAutoCcStatus", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

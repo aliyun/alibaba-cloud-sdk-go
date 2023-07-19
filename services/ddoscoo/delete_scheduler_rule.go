@@ -87,7 +87,7 @@ func CreateDeleteSchedulerRuleRequest() (request *DeleteSchedulerRuleRequest) {
 	request = &DeleteSchedulerRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DeleteSchedulerRule", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DeleteSchedulerRule", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

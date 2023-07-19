@@ -87,7 +87,7 @@ func CreateConfigLayer4RuleBakModeRequest() (request *ConfigLayer4RuleBakModeReq
 	request = &ConfigLayer4RuleBakModeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ConfigLayer4RuleBakMode", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ConfigLayer4RuleBakMode", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

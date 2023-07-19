@@ -87,7 +87,7 @@ func CreateDescribeInstanceStatisticsRequest() (request *DescribeInstanceStatist
 	request = &DescribeInstanceStatisticsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeInstanceStatistics", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeInstanceStatistics", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -88,7 +88,7 @@ func CreateDeleteWebPreciseAccessRuleRequest() (request *DeleteWebPreciseAccessR
 	request = &DeleteWebPreciseAccessRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DeleteWebPreciseAccessRule", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DeleteWebPreciseAccessRule", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

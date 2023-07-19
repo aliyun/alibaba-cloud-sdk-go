@@ -89,7 +89,7 @@ func CreateModifyPortAutoCcStatusRequest() (request *ModifyPortAutoCcStatusReque
 	request = &ModifyPortAutoCcStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ModifyPortAutoCcStatus", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ModifyPortAutoCcStatus", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

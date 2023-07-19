@@ -93,7 +93,7 @@ func CreateDescribeSystemLogRequest() (request *DescribeSystemLogRequest) {
 	request = &DescribeSystemLogRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeSystemLog", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeSystemLog", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

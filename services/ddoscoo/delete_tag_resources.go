@@ -90,7 +90,7 @@ func CreateDeleteTagResourcesRequest() (request *DeleteTagResourcesRequest) {
 	request = &DeleteTagResourcesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DeleteTagResources", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DeleteTagResources", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

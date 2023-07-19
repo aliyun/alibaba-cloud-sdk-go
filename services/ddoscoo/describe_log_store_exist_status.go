@@ -88,7 +88,7 @@ func CreateDescribeLogStoreExistStatusRequest() (request *DescribeLogStoreExistS
 	request = &DescribeLogStoreExistStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeLogStoreExistStatus", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeLogStoreExistStatus", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

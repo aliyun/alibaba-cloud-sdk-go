@@ -89,7 +89,7 @@ func CreateDescribeDomainTopAttackListRequest() (request *DescribeDomainTopAttac
 	request = &DescribeDomainTopAttackListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeDomainTopAttackList", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeDomainTopAttackList", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

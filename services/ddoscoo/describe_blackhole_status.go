@@ -87,7 +87,7 @@ func CreateDescribeBlackholeStatusRequest() (request *DescribeBlackholeStatusReq
 	request = &DescribeBlackholeStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeBlackholeStatus", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeBlackholeStatus", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

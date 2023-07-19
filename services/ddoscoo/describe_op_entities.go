@@ -94,7 +94,7 @@ func CreateDescribeOpEntitiesRequest() (request *DescribeOpEntitiesRequest) {
 	request = &DescribeOpEntitiesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeOpEntities", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeOpEntities", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

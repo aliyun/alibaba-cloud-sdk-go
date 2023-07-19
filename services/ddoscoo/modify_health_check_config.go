@@ -89,7 +89,7 @@ func CreateModifyHealthCheckConfigRequest() (request *ModifyHealthCheckConfigReq
 	request = &ModifyHealthCheckConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ModifyHealthCheckConfig", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ModifyHealthCheckConfig", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -87,7 +87,7 @@ func CreateDescribeInstanceDetailsRequest() (request *DescribeInstanceDetailsReq
 	request = &DescribeInstanceDetailsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeInstanceDetails", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeInstanceDetails", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

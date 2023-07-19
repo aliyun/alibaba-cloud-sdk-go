@@ -94,7 +94,7 @@ func CreateDescribeLayer4RulePolicyRequest() (request *DescribeLayer4RulePolicyR
 	request = &DescribeLayer4RulePolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeLayer4RulePolicy", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeLayer4RulePolicy", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

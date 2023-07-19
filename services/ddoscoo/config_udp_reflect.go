@@ -87,7 +87,7 @@ func CreateConfigUdpReflectRequest() (request *ConfigUdpReflectRequest) {
 	request = &ConfigUdpReflectRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ConfigUdpReflect", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ConfigUdpReflect", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

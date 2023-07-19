@@ -75,8 +75,8 @@ type ModifyDomainResourceRequest struct {
 	SourceIp    string                            `position:"Query" name:"SourceIp"`
 	RsType      requests.Integer                  `position:"Query" name:"RsType"`
 	RealServers *[]string                         `position:"Query" name:"RealServers"  type:"Repeated"`
-	ProxyTypes  *[]ModifyDomainResourceProxyTypes `position:"Query" name:"ProxyTypes"  type:"Repeated"`
 	InstanceIds *[]string                         `position:"Query" name:"InstanceIds"  type:"Repeated"`
+	ProxyTypes  *[]ModifyDomainResourceProxyTypes `position:"Query" name:"ProxyTypes"  type:"Repeated"`
 	Domain      string                            `position:"Query" name:"Domain"`
 }
 
@@ -97,7 +97,7 @@ func CreateModifyDomainResourceRequest() (request *ModifyDomainResourceRequest) 
 	request = &ModifyDomainResourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ModifyDomainResource", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ModifyDomainResource", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

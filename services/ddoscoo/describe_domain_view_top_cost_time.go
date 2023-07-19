@@ -91,7 +91,7 @@ func CreateDescribeDomainViewTopCostTimeRequest() (request *DescribeDomainViewTo
 	request = &DescribeDomainViewTopCostTimeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeDomainViewTopCostTime", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeDomainViewTopCostTime", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

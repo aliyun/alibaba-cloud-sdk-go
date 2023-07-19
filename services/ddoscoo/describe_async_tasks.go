@@ -91,7 +91,7 @@ func CreateDescribeAsyncTasksRequest() (request *DescribeAsyncTasksRequest) {
 	request = &DescribeAsyncTasksRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeAsyncTasks", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeAsyncTasks", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

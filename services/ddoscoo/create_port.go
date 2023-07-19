@@ -90,7 +90,7 @@ func CreateCreatePortRequest() (request *CreatePortRequest) {
 	request = &CreatePortRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "CreatePort", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "CreatePort", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

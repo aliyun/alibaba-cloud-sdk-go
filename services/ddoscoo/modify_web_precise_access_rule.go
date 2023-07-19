@@ -89,7 +89,7 @@ func CreateModifyWebPreciseAccessRuleRequest() (request *ModifyWebPreciseAccessR
 	request = &ModifyWebPreciseAccessRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ModifyWebPreciseAccessRule", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ModifyWebPreciseAccessRule", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

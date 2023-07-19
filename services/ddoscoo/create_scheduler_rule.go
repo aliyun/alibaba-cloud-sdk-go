@@ -92,7 +92,7 @@ func CreateCreateSchedulerRuleRequest() (request *CreateSchedulerRuleRequest) {
 	request = &CreateSchedulerRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "CreateSchedulerRule", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "CreateSchedulerRule", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

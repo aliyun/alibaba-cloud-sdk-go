@@ -91,7 +91,7 @@ func CreateDescribeAutoCcBlacklistRequest() (request *DescribeAutoCcBlacklistReq
 	request = &DescribeAutoCcBlacklistRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeAutoCcBlacklist", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeAutoCcBlacklist", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

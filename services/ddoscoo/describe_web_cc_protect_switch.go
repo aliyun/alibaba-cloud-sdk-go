@@ -88,7 +88,7 @@ func CreateDescribeWebCcProtectSwitchRequest() (request *DescribeWebCcProtectSwi
 	request = &DescribeWebCcProtectSwitchRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeWebCcProtectSwitch", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeWebCcProtectSwitch", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

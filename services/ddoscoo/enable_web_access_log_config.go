@@ -88,7 +88,7 @@ func CreateEnableWebAccessLogConfigRequest() (request *EnableWebAccessLogConfigR
 	request = &EnableWebAccessLogConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "EnableWebAccessLogConfig", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "EnableWebAccessLogConfig", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

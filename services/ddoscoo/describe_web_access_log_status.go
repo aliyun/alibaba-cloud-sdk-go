@@ -91,7 +91,7 @@ func CreateDescribeWebAccessLogStatusRequest() (request *DescribeWebAccessLogSta
 	request = &DescribeWebAccessLogStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeWebAccessLogStatus", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeWebAccessLogStatus", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

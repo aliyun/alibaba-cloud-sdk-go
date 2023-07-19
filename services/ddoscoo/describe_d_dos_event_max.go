@@ -90,7 +90,7 @@ func CreateDescribeDDosEventMaxRequest() (request *DescribeDDosEventMaxRequest) 
 	request = &DescribeDDosEventMaxRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeDDosEventMax", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeDDosEventMax", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

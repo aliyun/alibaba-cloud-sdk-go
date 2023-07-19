@@ -91,7 +91,7 @@ func CreateDescribeDomainViewTopUrlRequest() (request *DescribeDomainViewTopUrlR
 	request = &DescribeDomainViewTopUrlRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeDomainViewTopUrl", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeDomainViewTopUrl", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -88,7 +88,7 @@ func CreateDescribeCertsRequest() (request *DescribeCertsRequest) {
 	request = &DescribeCertsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeCerts", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeCerts", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

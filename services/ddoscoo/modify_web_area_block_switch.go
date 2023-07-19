@@ -88,7 +88,7 @@ func CreateModifyWebAreaBlockSwitchRequest() (request *ModifyWebAreaBlockSwitchR
 	request = &ModifyWebAreaBlockSwitchRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ModifyWebAreaBlockSwitch", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ModifyWebAreaBlockSwitch", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

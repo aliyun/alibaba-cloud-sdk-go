@@ -90,7 +90,7 @@ func CreateDescribeSceneDefensePoliciesRequest() (request *DescribeSceneDefenseP
 	request = &DescribeSceneDefensePoliciesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeSceneDefensePolicies", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeSceneDefensePolicies", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

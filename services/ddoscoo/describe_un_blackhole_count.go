@@ -88,7 +88,7 @@ func CreateDescribeUnBlackholeCountRequest() (request *DescribeUnBlackholeCountR
 	request = &DescribeUnBlackholeCountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeUnBlackholeCount", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeUnBlackholeCount", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

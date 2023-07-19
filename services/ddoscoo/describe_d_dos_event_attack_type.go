@@ -89,7 +89,7 @@ func CreateDescribeDDosEventAttackTypeRequest() (request *DescribeDDosEventAttac
 	request = &DescribeDDosEventAttackTypeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeDDosEventAttackType", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeDDosEventAttackType", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -88,7 +88,7 @@ func CreateModifyWebCacheCustomRuleRequest() (request *ModifyWebCacheCustomRuleR
 	request = &ModifyWebCacheCustomRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ModifyWebCacheCustomRule", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ModifyWebCacheCustomRule", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

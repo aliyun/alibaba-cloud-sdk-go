@@ -90,7 +90,7 @@ func CreateDescribeL7RsPolicyRequest() (request *DescribeL7RsPolicyRequest) {
 	request = &DescribeL7RsPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeL7RsPolicy", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeL7RsPolicy", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

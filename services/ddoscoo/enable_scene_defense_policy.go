@@ -87,7 +87,7 @@ func CreateEnableSceneDefensePolicyRequest() (request *EnableSceneDefensePolicyR
 	request = &EnableSceneDefensePolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "EnableSceneDefensePolicy", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "EnableSceneDefensePolicy", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

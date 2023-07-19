@@ -89,7 +89,7 @@ func CreateDescribeBlockStatusRequest() (request *DescribeBlockStatusRequest) {
 	request = &DescribeBlockStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeBlockStatus", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeBlockStatus", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

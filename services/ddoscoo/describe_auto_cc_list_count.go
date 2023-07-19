@@ -89,7 +89,7 @@ func CreateDescribeAutoCcListCountRequest() (request *DescribeAutoCcListCountReq
 	request = &DescribeAutoCcListCountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeAutoCcListCount", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeAutoCcListCount", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

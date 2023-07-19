@@ -86,7 +86,7 @@ func CreateDeleteNetworkRuleRequest() (request *DeleteNetworkRuleRequest) {
 	request = &DeleteNetworkRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DeleteNetworkRule", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DeleteNetworkRule", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

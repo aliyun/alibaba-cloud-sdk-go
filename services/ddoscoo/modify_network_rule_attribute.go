@@ -89,7 +89,7 @@ func CreateModifyNetworkRuleAttributeRequest() (request *ModifyNetworkRuleAttrib
 	request = &ModifyNetworkRuleAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ModifyNetworkRuleAttribute", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ModifyNetworkRuleAttribute", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

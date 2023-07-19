@@ -98,7 +98,7 @@ func CreateDescribeTagResourcesRequest() (request *DescribeTagResourcesRequest) 
 	request = &DescribeTagResourcesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeTagResources", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeTagResources", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -87,7 +87,7 @@ func CreateDeleteWebRuleRequest() (request *DeleteWebRuleRequest) {
 	request = &DeleteWebRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DeleteWebRule", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DeleteWebRule", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

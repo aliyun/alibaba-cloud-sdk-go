@@ -87,7 +87,7 @@ func CreateDeleteAutoCcWhitelistRequest() (request *DeleteAutoCcWhitelistRequest
 	request = &DeleteAutoCcWhitelistRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DeleteAutoCcWhitelist", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DeleteAutoCcWhitelist", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

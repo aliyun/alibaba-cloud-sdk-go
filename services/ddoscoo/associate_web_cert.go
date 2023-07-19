@@ -76,7 +76,9 @@ type AssociateWebCertRequest struct {
 	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
 	SourceIp        string           `position:"Query" name:"SourceIp"`
 	Key             string           `position:"Query" name:"Key"`
+	CertRegion      string           `position:"Query" name:"CertRegion"`
 	CertName        string           `position:"Query" name:"CertName"`
+	CertIdentifier  string           `position:"Query" name:"CertIdentifier"`
 	Domain          string           `position:"Query" name:"Domain"`
 }
 
@@ -91,7 +93,7 @@ func CreateAssociateWebCertRequest() (request *AssociateWebCertRequest) {
 	request = &AssociateWebCertRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "AssociateWebCert", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "AssociateWebCert", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

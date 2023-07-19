@@ -97,7 +97,7 @@ func CreateCreateDomainResourceRequest() (request *CreateDomainResourceRequest) 
 	request = &CreateDomainResourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "CreateDomainResource", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "CreateDomainResource", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

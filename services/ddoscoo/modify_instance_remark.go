@@ -87,7 +87,7 @@ func CreateModifyInstanceRemarkRequest() (request *ModifyInstanceRemarkRequest) 
 	request = &ModifyInstanceRemarkRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ModifyInstanceRemark", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ModifyInstanceRemark", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

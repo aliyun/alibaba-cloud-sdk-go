@@ -88,7 +88,7 @@ func CreateModifyFullLogTtlRequest() (request *ModifyFullLogTtlRequest) {
 	request = &ModifyFullLogTtlRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ModifyFullLogTtl", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ModifyFullLogTtl", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

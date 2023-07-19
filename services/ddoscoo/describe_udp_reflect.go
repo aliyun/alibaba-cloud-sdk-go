@@ -87,7 +87,7 @@ func CreateDescribeUdpReflectRequest() (request *DescribeUdpReflectRequest) {
 	request = &DescribeUdpReflectRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeUdpReflect", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeUdpReflect", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

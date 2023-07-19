@@ -17,5 +17,5 @@ package ddoscoo
 
 // RealServersInDescribeDomainResource is a nested struct in ddoscoo response
 type RealServersInDescribeDomainResource struct {
-	RealServers []string `json:"RealServers" xml:"RealServers"`
+	RealServer []string `json:"RealServer" xml:"RealServer"`
 }

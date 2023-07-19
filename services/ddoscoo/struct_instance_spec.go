@@ -28,4 +28,10 @@ type InstanceSpec struct {
 	FunctionVersion  string `json:"FunctionVersion" xml:"FunctionVersion"`
 	InstanceId       string `json:"InstanceId" xml:"InstanceId"`
 	DomainLimit      int    `json:"DomainLimit" xml:"DomainLimit"`
+	ElasticBwModel   string `json:"ElasticBwModel" xml:"ElasticBwModel"`
+	CpsLimit         int64  `json:"CpsLimit" xml:"CpsLimit"`
+	ConnLimit        int64  `json:"ConnLimit" xml:"ConnLimit"`
+	RealLimitBw      int64  `json:"RealLimitBw" xml:"RealLimitBw"`
+	ElasticQpsMode   string `json:"ElasticQpsMode" xml:"ElasticQpsMode"`
+	ElasticQps       int64  `json:"ElasticQps" xml:"ElasticQps"`
 }

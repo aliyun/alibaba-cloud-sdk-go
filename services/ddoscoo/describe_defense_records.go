@@ -94,7 +94,7 @@ func CreateDescribeDefenseRecordsRequest() (request *DescribeDefenseRecordsReque
 	request = &DescribeDefenseRecordsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeDefenseRecords", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeDefenseRecords", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

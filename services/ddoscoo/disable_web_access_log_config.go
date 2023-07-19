@@ -88,7 +88,7 @@ func CreateDisableWebAccessLogConfigRequest() (request *DisableWebAccessLogConfi
 	request = &DisableWebAccessLogConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DisableWebAccessLogConfig", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DisableWebAccessLogConfig", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

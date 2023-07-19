@@ -93,7 +93,7 @@ func CreateDescribeDDoSEventsRequest() (request *DescribeDDoSEventsRequest) {
 	request = &DescribeDDoSEventsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeDDoSEvents", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeDDoSEvents", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

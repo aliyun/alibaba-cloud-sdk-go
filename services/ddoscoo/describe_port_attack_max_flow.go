@@ -91,7 +91,7 @@ func CreateDescribePortAttackMaxFlowRequest() (request *DescribePortAttackMaxFlo
 	request = &DescribePortAttackMaxFlowRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribePortAttackMaxFlow", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribePortAttackMaxFlow", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

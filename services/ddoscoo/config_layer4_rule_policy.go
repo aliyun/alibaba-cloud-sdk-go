@@ -86,7 +86,7 @@ func CreateConfigLayer4RulePolicyRequest() (request *ConfigLayer4RulePolicyReque
 	request = &ConfigLayer4RulePolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ConfigLayer4RulePolicy", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ConfigLayer4RulePolicy", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

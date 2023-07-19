@@ -17,16 +17,18 @@ package ddoscoo
 
 // Data is a nested struct in ddoscoo response
 type Data struct {
-	StartTime int64  `json:"StartTime" xml:"StartTime"`
-	Region    string `json:"Region" xml:"Region"`
-	Domain    string `json:"Domain" xml:"Domain"`
-	EventType string `json:"EventType" xml:"EventType"`
-	Bps       int64  `json:"Bps" xml:"Bps"`
-	Port      string `json:"Port" xml:"Port"`
-	Ip        string `json:"Ip" xml:"Ip"`
-	Pps       int64  `json:"Pps" xml:"Pps"`
-	MaxQps    int64  `json:"MaxQps" xml:"MaxQps"`
-	Count     int64  `json:"Count" xml:"Count"`
-	EndTime   int64  `json:"EndTime" xml:"EndTime"`
-	Attack    int64  `json:"Attack" xml:"Attack"`
+	Region       string `json:"Region" xml:"Region"`
+	Domain       string `json:"Domain" xml:"Domain"`
+	Port         string `json:"Port" xml:"Port"`
+	Ip           string `json:"Ip" xml:"Ip"`
+	GlobalEnable bool   `json:"GlobalEnable" xml:"GlobalEnable"`
+	EndTime      int64  `json:"EndTime" xml:"EndTime"`
+	GlobalMode   string `json:"GlobalMode" xml:"GlobalMode"`
+	StartTime    int64  `json:"StartTime" xml:"StartTime"`
+	EventType    string `json:"EventType" xml:"EventType"`
+	Bps          int64  `json:"Bps" xml:"Bps"`
+	Pps          int64  `json:"Pps" xml:"Pps"`
+	MaxQps       int64  `json:"MaxQps" xml:"MaxQps"`
+	Count        int64  `json:"Count" xml:"Count"`
+	Attack       int64  `json:"Attack" xml:"Attack"`
 }

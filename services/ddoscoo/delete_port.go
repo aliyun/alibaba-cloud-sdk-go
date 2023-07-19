@@ -90,7 +90,7 @@ func CreateDeletePortRequest() (request *DeletePortRequest) {
 	request = &DeletePortRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DeletePort", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DeletePort", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }

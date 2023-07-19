@@ -88,7 +88,7 @@ func CreateModifyHttp2EnableRequest() (request *ModifyHttp2EnableRequest) {
 	request = &ModifyHttp2EnableRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ModifyHttp2Enable", "", "")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ModifyHttp2Enable", "ddoscoo", "openAPI")
 	request.Method = requests.POST
 	return
 }
