@@ -17,15 +17,25 @@ package rds
 
 // Data is a nested struct in rds response
 type Data struct {
-	ConnectionString     string               `json:"ConnectionString" xml:"ConnectionString"`
-	PageNumber           int                  `json:"PageNumber" xml:"PageNumber"`
+	InsName              string               `json:"InsName" xml:"InsName"`
+	CurrPageNumbers      int                  `json:"CurrPageNumbers" xml:"CurrPageNumbers"`
 	DBInstanceName       string               `json:"DBInstanceName" xml:"DBInstanceName"`
 	IpVersion            string               `json:"IpVersion" xml:"IpVersion"`
 	PageSize             int                  `json:"PageSize" xml:"PageSize"`
-	TotalRecordCount     int                  `json:"TotalRecordCount" xml:"TotalRecordCount"`
+	HasNext              bool                 `json:"HasNext" xml:"HasNext"`
+	TotalPageNumbers     int                  `json:"TotalPageNumbers" xml:"TotalPageNumbers"`
 	DBInstanceEndpointId string               `json:"DBInstanceEndpointId" xml:"DBInstanceEndpointId"`
+	TotalRecords         int                  `json:"TotalRecords" xml:"TotalRecords"`
+	HasPrev              bool                 `json:"HasPrev" xml:"HasPrev"`
+	ConnectionString     string               `json:"ConnectionString" xml:"ConnectionString"`
+	MaxRecordsPerPage    int                  `json:"MaxRecordsPerPage" xml:"MaxRecordsPerPage"`
+	PageNumber           int                  `json:"PageNumber" xml:"PageNumber"`
+	Status               string               `json:"Status" xml:"Status"`
+	TotalRecordCount     int                  `json:"TotalRecordCount" xml:"TotalRecordCount"`
+	Template             Template             `json:"Template" xml:"Template"`
 	Nodes                []Node               `json:"Nodes" xml:"Nodes"`
-	Connections          []Connection         `json:"Connections" xml:"Connections"`
 	NotifyItemList       []NotifyItemListItem `json:"NotifyItemList" xml:"NotifyItemList"`
+	Templates            []Template           `json:"Templates" xml:"Templates"`
+	Connections          []Connection         `json:"Connections" xml:"Connections"`
 	DBInstanceEndpoints  DBInstanceEndpoints  `json:"DBInstanceEndpoints" xml:"DBInstanceEndpoints"`
 }

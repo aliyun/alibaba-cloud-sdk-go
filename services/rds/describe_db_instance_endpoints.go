@@ -80,8 +80,8 @@ type DescribeDBInstanceEndpointsRequest struct {
 // DescribeDBInstanceEndpointsResponse is the response struct for api DescribeDBInstanceEndpoints
 type DescribeDBInstanceEndpointsResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Data      Data   `json:"Data" xml:"Data"`
+	RequestId string                            `json:"RequestId" xml:"RequestId"`
+	Data      DataInDescribeDBInstanceEndpoints `json:"Data" xml:"Data"`
 }
 
 // CreateDescribeDBInstanceEndpointsRequest creates a request to invoke DescribeDBInstanceEndpoints API
