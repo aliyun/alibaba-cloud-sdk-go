@@ -73,6 +73,7 @@ type DescribeEndpointSwitchStatusRequest struct {
 	*requests.RpcRequest
 	ClientToken string `position:"Query" name:"ClientToken"`
 	OwnerId     string `position:"Query" name:"OwnerId"`
+	AccountId   string `position:"Query" name:"AccountId"`
 	TaskId      string `position:"Query" name:"TaskId"`
 }
 
@@ -80,8 +81,11 @@ type DescribeEndpointSwitchStatusRequest struct {
 type DescribeEndpointSwitchStatusResponse struct {
 	*responses.BaseResponse
 	Status       string `json:"Status" xml:"Status"`
-	RequestId    string `json:"RequestId" xml:"RequestId"`
 	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
+	RequestId    string `json:"RequestId" xml:"RequestId"`
+	ErrCode      string `json:"ErrCode" xml:"ErrCode"`
+	Success      string `json:"Success" xml:"Success"`
+	ErrMessage   string `json:"ErrMessage" xml:"ErrMessage"`
 }
 
 // CreateDescribeEndpointSwitchStatusRequest creates a request to invoke DescribeEndpointSwitchStatus API
@@ -89,7 +93,7 @@ func CreateDescribeEndpointSwitchStatusRequest() (request *DescribeEndpointSwitc
 	request = &DescribeEndpointSwitchStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dts", "2019-09-01", "DescribeEndpointSwitchStatus", "", "")
+	request.InitWithApiInfo("Dts", "2020-01-01", "DescribeEndpointSwitchStatus", "dts", "openAPI")
 	request.Method = requests.POST
 	return
 }

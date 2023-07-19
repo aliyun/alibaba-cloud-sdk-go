@@ -71,18 +71,27 @@ func (client *Client) DescribeSynchronizationJobsWithCallback(request *DescribeS
 // DescribeSynchronizationJobsRequest is the request struct for api DescribeSynchronizationJobs
 type DescribeSynchronizationJobsRequest struct {
 	*requests.RpcRequest
-	ClientToken            string           `position:"Query" name:"ClientToken"`
-	PageNum                requests.Integer `position:"Query" name:"PageNum"`
-	OwnerId                string           `position:"Query" name:"OwnerId"`
-	SynchronizationJobName string           `position:"Query" name:"SynchronizationJobName"`
-	PageSize               requests.Integer `position:"Query" name:"PageSize"`
+	ClientToken            string                            `position:"Query" name:"ClientToken"`
+	PageNum                requests.Integer                  `position:"Query" name:"PageNum"`
+	SynchronizationJobName string                            `position:"Query" name:"SynchronizationJobName"`
+	AccountId              string                            `position:"Query" name:"AccountId"`
+	PageSize               requests.Integer                  `position:"Query" name:"PageSize"`
+	Tag                    *[]DescribeSynchronizationJobsTag `position:"Query" name:"Tag"  type:"Repeated"`
+	InstFilterRegion       string                            `position:"Query" name:"InstFilterRegion"`
+	OwnerId                string                            `position:"Query" name:"OwnerId"`
+}
+
+// DescribeSynchronizationJobsTag is a repeated param struct in DescribeSynchronizationJobsRequest
+type DescribeSynchronizationJobsTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // DescribeSynchronizationJobsResponse is the response struct for api DescribeSynchronizationJobs
 type DescribeSynchronizationJobsResponse struct {
 	*responses.BaseResponse
-	RequestId                string                    `json:"RequestId" xml:"RequestId"`
 	PageNumber               int                       `json:"PageNumber" xml:"PageNumber"`
+	RequestId                string                    `json:"RequestId" xml:"RequestId"`
 	PageRecordCount          int                       `json:"PageRecordCount" xml:"PageRecordCount"`
 	TotalRecordCount         int64                     `json:"TotalRecordCount" xml:"TotalRecordCount"`
 	SynchronizationInstances []SynchronizationInstance `json:"SynchronizationInstances" xml:"SynchronizationInstances"`
@@ -93,7 +102,7 @@ func CreateDescribeSynchronizationJobsRequest() (request *DescribeSynchronizatio
 	request = &DescribeSynchronizationJobsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dts", "2019-09-01", "DescribeSynchronizationJobs", "", "")
+	request.InitWithApiInfo("Dts", "2020-01-01", "DescribeSynchronizationJobs", "dts", "openAPI")
 	request.Method = requests.POST
 	return
 }

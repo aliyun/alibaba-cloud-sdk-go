@@ -71,12 +71,13 @@ func (client *Client) ConfigureSynchronizationJobAlertWithCallback(request *Conf
 // ConfigureSynchronizationJobAlertRequest is the request struct for api ConfigureSynchronizationJobAlert
 type ConfigureSynchronizationJobAlertRequest struct {
 	*requests.RpcRequest
+	SynchronizationJobId     string `position:"Query" name:"SynchronizationJobId"`
+	AccountId                string `position:"Query" name:"AccountId"`
+	DelayAlertPhone          string `position:"Query" name:"DelayAlertPhone"`
 	DelayOverSeconds         string `position:"Query" name:"DelayOverSeconds"`
 	DelayAlertStatus         string `position:"Query" name:"DelayAlertStatus"`
 	OwnerId                  string `position:"Query" name:"OwnerId"`
-	SynchronizationJobId     string `position:"Query" name:"SynchronizationJobId"`
 	ErrorAlertPhone          string `position:"Query" name:"ErrorAlertPhone"`
-	DelayAlertPhone          string `position:"Query" name:"DelayAlertPhone"`
 	ErrorAlertStatus         string `position:"Query" name:"ErrorAlertStatus"`
 	SynchronizationDirection string `position:"Query" name:"SynchronizationDirection"`
 }
@@ -95,7 +96,7 @@ func CreateConfigureSynchronizationJobAlertRequest() (request *ConfigureSynchron
 	request = &ConfigureSynchronizationJobAlertRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dts", "2019-09-01", "ConfigureSynchronizationJobAlert", "", "")
+	request.InitWithApiInfo("Dts", "2020-01-01", "ConfigureSynchronizationJobAlert", "dts", "openAPI")
 	request.Method = requests.POST
 	return
 }

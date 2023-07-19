@@ -73,6 +73,7 @@ type SuspendSynchronizationJobRequest struct {
 	*requests.RpcRequest
 	OwnerId                  string `position:"Query" name:"OwnerId"`
 	SynchronizationJobId     string `position:"Query" name:"SynchronizationJobId"`
+	AccountId                string `position:"Query" name:"AccountId"`
 	SynchronizationDirection string `position:"Query" name:"SynchronizationDirection"`
 }
 
@@ -90,7 +91,7 @@ func CreateSuspendSynchronizationJobRequest() (request *SuspendSynchronizationJo
 	request = &SuspendSynchronizationJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dts", "2019-09-01", "SuspendSynchronizationJob", "", "")
+	request.InitWithApiInfo("Dts", "2020-01-01", "SuspendSynchronizationJob", "dts", "openAPI")
 	request.Method = requests.POST
 	return
 }

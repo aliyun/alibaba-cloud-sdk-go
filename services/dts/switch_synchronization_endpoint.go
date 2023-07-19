@@ -71,12 +71,15 @@ func (client *Client) SwitchSynchronizationEndpointWithCallback(request *SwitchS
 // SwitchSynchronizationEndpointRequest is the request struct for api SwitchSynchronizationEndpoint
 type SwitchSynchronizationEndpointRequest struct {
 	*requests.RpcRequest
-	EndpointInstanceType     string `position:"Query" name:"Endpoint.InstanceType"`
-	EndpointIP               string `position:"Query" name:"Endpoint.IP"`
-	OwnerId                  string `position:"Query" name:"OwnerId"`
 	SynchronizationJobId     string `position:"Query" name:"SynchronizationJobId"`
 	EndpointType             string `position:"Query" name:"Endpoint.Type"`
+	AccountId                string `position:"Query" name:"AccountId"`
 	EndpointPort             string `position:"Query" name:"Endpoint.Port"`
+	EndpointInstanceType     string `position:"Query" name:"Endpoint.InstanceType"`
+	SourceEndpointOwnerID    string `position:"Query" name:"SourceEndpoint.OwnerID"`
+	SourceEndpointRole       string `position:"Query" name:"SourceEndpoint.Role"`
+	EndpointIP               string `position:"Query" name:"Endpoint.IP"`
+	OwnerId                  string `position:"Query" name:"OwnerId"`
 	EndpointInstanceId       string `position:"Query" name:"Endpoint.InstanceId"`
 	SynchronizationDirection string `position:"Query" name:"SynchronizationDirection"`
 }
@@ -96,7 +99,7 @@ func CreateSwitchSynchronizationEndpointRequest() (request *SwitchSynchronizatio
 	request = &SwitchSynchronizationEndpointRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dts", "2019-09-01", "SwitchSynchronizationEndpoint", "", "")
+	request.InitWithApiInfo("Dts", "2020-01-01", "SwitchSynchronizationEndpoint", "dts", "openAPI")
 	request.Method = requests.POST
 	return
 }
