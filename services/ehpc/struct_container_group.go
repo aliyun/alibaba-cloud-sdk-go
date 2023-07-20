@@ -19,27 +19,27 @@ package ehpc
 type ContainerGroup struct {
 	ContainerGroupId      string             `json:"ContainerGroupId" xml:"ContainerGroupId"`
 	ContainerGroupName    string             `json:"ContainerGroupName" xml:"ContainerGroupName"`
+	Status                string             `json:"Status" xml:"Status"`
+	InstanceType          string             `json:"InstanceType" xml:"InstanceType"`
+	SpotStrategy          string             `json:"SpotStrategy" xml:"SpotStrategy"`
+	SpotPriceLimit        float64            `json:"SpotPriceLimit" xml:"SpotPriceLimit"`
 	Cpu                   float64            `json:"Cpu" xml:"Cpu"`
+	Memory                float64            `json:"Memory" xml:"Memory"`
 	CreationTime          string             `json:"CreationTime" xml:"CreationTime"`
+	SucceededTime         string             `json:"SucceededTime" xml:"SucceededTime"`
+	ExpiredTime           string             `json:"ExpiredTime" xml:"ExpiredTime"`
+	FailedTime            string             `json:"FailedTime" xml:"FailedTime"`
 	Discount              int64              `json:"Discount" xml:"Discount"`
 	EniInstanceId         string             `json:"EniInstanceId" xml:"EniInstanceId"`
 	EphemeralStorage      int64              `json:"EphemeralStorage" xml:"EphemeralStorage"`
-	ExpiredTime           string             `json:"ExpiredTime" xml:"ExpiredTime"`
-	FailedTime            string             `json:"FailedTime" xml:"FailedTime"`
-	InstanceType          string             `json:"InstanceType" xml:"InstanceType"`
 	InternetIp            string             `json:"InternetIp" xml:"InternetIp"`
 	IntranetIp            string             `json:"IntranetIp" xml:"IntranetIp"`
 	Ipv6Address           string             `json:"Ipv6Address" xml:"Ipv6Address"`
-	Memory                float64            `json:"Memory" xml:"Memory"`
 	RamRoleName           string             `json:"RamRoleName" xml:"RamRoleName"`
 	RegionId              string             `json:"RegionId" xml:"RegionId"`
 	ResourceGroupId       string             `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	RestartPolicy         string             `json:"RestartPolicy" xml:"RestartPolicy"`
 	SecurityGroupId       string             `json:"SecurityGroupId" xml:"SecurityGroupId"`
-	SpotPriceLimit        float64            `json:"SpotPriceLimit" xml:"SpotPriceLimit"`
-	SpotStrategy          string             `json:"SpotStrategy" xml:"SpotStrategy"`
-	Status                string             `json:"Status" xml:"Status"`
-	SucceededTime         string             `json:"SucceededTime" xml:"SucceededTime"`
 	TenantEniInstanceId   string             `json:"TenantEniInstanceId" xml:"TenantEniInstanceId"`
 	TenantEniIp           string             `json:"TenantEniIp" xml:"TenantEniIp"`
 	TenantSecurityGroupId string             `json:"TenantSecurityGroupId" xml:"TenantSecurityGroupId"`
@@ -50,9 +50,9 @@ type ContainerGroup struct {
 	DnsConfig             DnsConfig          `json:"DnsConfig" xml:"DnsConfig"`
 	EciSecurityContext    EciSecurityContext `json:"EciSecurityContext" xml:"EciSecurityContext"`
 	Containers            []Container        `json:"Containers" xml:"Containers"`
+	Volumes               []Volume           `json:"Volumes" xml:"Volumes"`
 	Events                []Event            `json:"Events" xml:"Events"`
 	HostAliases           []HostAlias        `json:"HostAliases" xml:"HostAliases"`
 	InitContainers        []InitContainer    `json:"InitContainers" xml:"InitContainers"`
 	Tags                  []Tag              `json:"Tags" xml:"Tags"`
-	Volumes               []Volume           `json:"Volumes" xml:"Volumes"`
 }

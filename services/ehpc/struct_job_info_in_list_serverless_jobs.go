@@ -17,14 +17,14 @@ package ehpc
 
 // JobInfoInListServerlessJobs is a nested struct in ehpc response
 type JobInfoInListServerlessJobs struct {
-	Id         string `json:"Id" xml:"Id"`
-	Name       string `json:"Name" xml:"Name"`
-	Owner      string `json:"Owner" xml:"Owner"`
-	IsArrayJob bool   `json:"IsArrayJob" xml:"IsArrayJob"`
+	JobId      string `json:"JobId" xml:"JobId"`
+	JobName    string `json:"JobName" xml:"JobName"`
 	State      string `json:"State" xml:"State"`
+	Priority   string `json:"Priority" xml:"Priority"`
+	Queue      string `json:"Queue" xml:"Queue"`
+	User       string `json:"User" xml:"User"`
 	SubmitTime string `json:"SubmitTime" xml:"SubmitTime"`
 	StartTime  string `json:"StartTime" xml:"StartTime"`
 	EndTime    string `json:"EndTime" xml:"EndTime"`
-	Priority   string `json:"Priority" xml:"Priority"`
-	Queue      string `json:"Queue" xml:"Queue"`
+	IsArrayJob bool   `json:"IsArrayJob" xml:"IsArrayJob"`
 }
