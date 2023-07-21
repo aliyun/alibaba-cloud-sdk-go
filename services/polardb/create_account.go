@@ -83,6 +83,7 @@ type CreateAccountRequest struct {
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	AccountPassword      string           `position:"Query" name:"AccountPassword"`
 	DBName               string           `position:"Query" name:"DBName"`
+	PrivForAllDB         string           `position:"Query" name:"PrivForAllDB"`
 }
 
 // CreateAccountResponse is the response struct for api CreateAccount

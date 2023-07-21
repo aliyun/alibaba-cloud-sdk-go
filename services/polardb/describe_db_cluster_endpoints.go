@@ -73,6 +73,7 @@ type DescribeDBClusterEndpointsRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	DBEndpointId         string           `position:"Query" name:"DBEndpointId"`
+	DescribeType         string           `position:"Query" name:"DescribeType"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	DBClusterId          string           `position:"Query" name:"DBClusterId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`

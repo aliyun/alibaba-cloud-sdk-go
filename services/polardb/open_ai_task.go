@@ -72,6 +72,7 @@ func (client *Client) OpenAITaskWithCallback(request *OpenAITaskRequest, callbac
 type OpenAITaskRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	NodeType             string           `position:"Query" name:"NodeType"`
 	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	Password             string           `position:"Query" name:"Password"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
