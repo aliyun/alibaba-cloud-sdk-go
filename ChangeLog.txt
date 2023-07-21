@@ -1,3 +1,21 @@
+2023-07-21 Version: v1.62.463
+- Generated 2016-04-28 for `Vpc`.
+- Add error code.
+- Add Deliver Param.
+- Add errorcode.
+- Support tags for CreateTrafficMirrorSession and CreatePublicIpAddressPool.
+- VBR and RI support resource group and tags.
+- Api Type Tag.
+- Add Error Code.
+- Update doc required of Tag API.
+- Supported Coip.
+- Add reeor code.
+- Add ErrorCode.
+- Increased errorCode NotSupportLinkrole for API ActivateRouterInterface.
+- Fixed IncorrectStatus bug for APIs, ActivateRouterInterface, ConnectRouterInterface and DeactivateRouterInterface.
+- Add new errorcode.
+- Support source ip ram for GetVpcRouteEntrySummary.
+
 2023-07-21 Version: v1.62.462
 - Generated 2017-08-01 for `polardb`.
 - Support new feature.
