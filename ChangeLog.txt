@@ -1,3 +1,9 @@
+2023-07-24 Version: v1.62.469
+- Generated 2020-03-09 for `Eipanycast`.
+- Fix client token.
+- Fix MaxResults for ListTagResources.
+- Support resource group for anycast eip.
+
 2023-07-24 Version: v1.62.468
 - Generated 2020-06-16 for `Alb`.
 - Support Latest APIs.

@@ -31,6 +31,7 @@ type Anycast struct {
 	BusinessStatus         string               `json:"BusinessStatus" xml:"BusinessStatus"`
 	Name                   string               `json:"Name" xml:"Name"`
 	ServiceManaged         int                  `json:"ServiceManaged" xml:"ServiceManaged"`
+	ResourceGroupId        string               `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	AnycastEipBindInfoList []AnycastEipBindInfo `json:"AnycastEipBindInfoList" xml:"AnycastEipBindInfoList"`
 	Tags                   []Tag                `json:"Tags" xml:"Tags"`
 }

@@ -93,6 +93,7 @@ type DescribeAnycastEipAddressResponse struct {
 	IpAddress              string               `json:"IpAddress" xml:"IpAddress"`
 	Bid                    string               `json:"Bid" xml:"Bid"`
 	AliUid                 int64                `json:"AliUid" xml:"AliUid"`
+	ResourceGroupId        string               `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	AnycastEipBindInfoList []AnycastEipBindInfo `json:"AnycastEipBindInfoList" xml:"AnycastEipBindInfoList"`
 	Tags                   []Tag                `json:"Tags" xml:"Tags"`
 }

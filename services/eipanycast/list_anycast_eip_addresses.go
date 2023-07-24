@@ -71,6 +71,7 @@ func (client *Client) ListAnycastEipAddressesWithCallback(request *ListAnycastEi
 // ListAnycastEipAddressesRequest is the request struct for api ListAnycastEipAddresses
 type ListAnycastEipAddressesRequest struct {
 	*requests.RpcRequest
+	ResourceGroupId    string                         `position:"Query" name:"ResourceGroupId"`
 	NextToken          string                         `position:"Query" name:"NextToken"`
 	InstanceChargeType string                         `position:"Query" name:"InstanceChargeType"`
 	BusinessStatus     string                         `position:"Query" name:"BusinessStatus"`

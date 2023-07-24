@@ -75,6 +75,7 @@ type AllocateAnycastEipAddressRequest struct {
 	ServiceLocation    string `position:"Query" name:"ServiceLocation"`
 	ClientToken        string `position:"Query" name:"ClientToken"`
 	Description        string `position:"Query" name:"Description"`
+	ResourceGroupId    string `position:"Query" name:"ResourceGroupId"`
 	InternetChargeType string `position:"Query" name:"InternetChargeType"`
 	Name               string `position:"Query" name:"Name"`
 	InstanceChargeType string `position:"Query" name:"InstanceChargeType"`
@@ -83,9 +84,10 @@ type AllocateAnycastEipAddressRequest struct {
 // AllocateAnycastEipAddressResponse is the response struct for api AllocateAnycastEipAddress
 type AllocateAnycastEipAddressResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	AnycastId string `json:"AnycastId" xml:"AnycastId"`
-	OrderId   string `json:"OrderId" xml:"OrderId"`
+	RequestId       string `json:"RequestId" xml:"RequestId"`
+	AnycastId       string `json:"AnycastId" xml:"AnycastId"`
+	ResourceGroupId string `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	OrderId         string `json:"OrderId" xml:"OrderId"`
 }
 
 // CreateAllocateAnycastEipAddressRequest creates a request to invoke AllocateAnycastEipAddress API
