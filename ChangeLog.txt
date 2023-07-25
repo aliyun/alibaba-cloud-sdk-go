@@ -1,3 +1,7 @@
+2023-07-25 Version: v1.62.473
+- Generated 2019-06-01 for `oos`.
+- PatchBaseline Support Tags.
+
 2023-07-25 Version: v1.62.472
 - Generated 2022-01-01 for `VpcPeer`.
 - Add move resource group api.

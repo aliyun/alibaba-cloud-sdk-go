@@ -17,17 +17,21 @@ package oos
 
 // PatchBaseline is a nested struct in oos response
 type PatchBaseline struct {
-	Name                  string   `json:"Name" xml:"Name"`
-	OperationSystem       string   `json:"OperationSystem" xml:"OperationSystem"`
-	CreatedBy             string   `json:"CreatedBy" xml:"CreatedBy"`
-	UpdatedBy             string   `json:"UpdatedBy" xml:"UpdatedBy"`
-	IsDefault             bool     `json:"IsDefault" xml:"IsDefault"`
-	ApprovalRules         string   `json:"ApprovalRules" xml:"ApprovalRules"`
-	CreatedDate           string   `json:"CreatedDate" xml:"CreatedDate"`
-	RejectedPatchesAction string   `json:"RejectedPatchesAction" xml:"RejectedPatchesAction"`
-	Id                    string   `json:"Id" xml:"Id"`
-	Description           string   `json:"Description" xml:"Description"`
-	UpdatedDate           string   `json:"UpdatedDate" xml:"UpdatedDate"`
-	ShareType             string   `json:"ShareType" xml:"ShareType"`
-	RejectedPatches       []string `json:"RejectedPatches" xml:"RejectedPatches"`
+	Name                             string     `json:"Name" xml:"Name"`
+	OperationSystem                  string     `json:"OperationSystem" xml:"OperationSystem"`
+	ApprovedPatchesEnableNonSecurity bool       `json:"ApprovedPatchesEnableNonSecurity" xml:"ApprovedPatchesEnableNonSecurity"`
+	CreatedBy                        string     `json:"CreatedBy" xml:"CreatedBy"`
+	UpdatedBy                        string     `json:"UpdatedBy" xml:"UpdatedBy"`
+	IsDefault                        bool       `json:"IsDefault" xml:"IsDefault"`
+	ApprovalRules                    string     `json:"ApprovalRules" xml:"ApprovalRules"`
+	CreatedDate                      string     `json:"CreatedDate" xml:"CreatedDate"`
+	RejectedPatchesAction            string     `json:"RejectedPatchesAction" xml:"RejectedPatchesAction"`
+	Id                               string     `json:"Id" xml:"Id"`
+	Description                      string     `json:"Description" xml:"Description"`
+	UpdatedDate                      string     `json:"UpdatedDate" xml:"UpdatedDate"`
+	ShareType                        string     `json:"ShareType" xml:"ShareType"`
+	Sources                          []string   `json:"Sources" xml:"Sources"`
+	RejectedPatches                  []string   `json:"RejectedPatches" xml:"RejectedPatches"`
+	ApprovedPatches                  []string   `json:"ApprovedPatches" xml:"ApprovedPatches"`
+	Tags                             []TagsItem `json:"Tags" xml:"Tags"`
 }

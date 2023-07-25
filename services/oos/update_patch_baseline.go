@@ -71,12 +71,22 @@ func (client *Client) UpdatePatchBaselineWithCallback(request *UpdatePatchBaseli
 // UpdatePatchBaselineRequest is the request struct for api UpdatePatchBaseline
 type UpdatePatchBaselineRequest struct {
 	*requests.RpcRequest
-	ClientToken           string    `position:"Query" name:"ClientToken"`
-	ApprovalRules         string    `position:"Query" name:"ApprovalRules"`
-	Description           string    `position:"Query" name:"Description"`
-	RejectedPatches       *[]string `position:"Query" name:"RejectedPatches"  type:"Json"`
-	RejectedPatchesAction string    `position:"Query" name:"RejectedPatchesAction"`
-	Name                  string    `position:"Query" name:"Name"`
+	Sources                          *[]string                  `position:"Query" name:"Sources"  type:"Json"`
+	ClientToken                      string                     `position:"Query" name:"ClientToken"`
+	ApprovalRules                    string                     `position:"Query" name:"ApprovalRules"`
+	Description                      string                     `position:"Query" name:"Description"`
+	RejectedPatchesAction            string                     `position:"Query" name:"RejectedPatchesAction"`
+	ApprovedPatchesEnableNonSecurity requests.Boolean           `position:"Query" name:"ApprovedPatchesEnableNonSecurity"`
+	Tags                             *[]UpdatePatchBaselineTags `position:"Query" name:"Tags"  type:"Json"`
+	RejectedPatches                  *[]string                  `position:"Query" name:"RejectedPatches"  type:"Json"`
+	Name                             string                     `position:"Query" name:"Name"`
+	ApprovedPatches                  *[]string                  `position:"Query" name:"ApprovedPatches"  type:"Json"`
+}
+
+// UpdatePatchBaselineTags is a repeated param struct in UpdatePatchBaselineRequest
+type UpdatePatchBaselineTags struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // UpdatePatchBaselineResponse is the response struct for api UpdatePatchBaseline

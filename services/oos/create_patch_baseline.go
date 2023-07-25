@@ -71,13 +71,23 @@ func (client *Client) CreatePatchBaselineWithCallback(request *CreatePatchBaseli
 // CreatePatchBaselineRequest is the request struct for api CreatePatchBaseline
 type CreatePatchBaselineRequest struct {
 	*requests.RpcRequest
-	ClientToken           string    `position:"Query" name:"ClientToken"`
-	ApprovalRules         string    `position:"Query" name:"ApprovalRules"`
-	Description           string    `position:"Query" name:"Description"`
-	OperationSystem       string    `position:"Query" name:"OperationSystem"`
-	RejectedPatches       *[]string `position:"Query" name:"RejectedPatches"  type:"Json"`
-	RejectedPatchesAction string    `position:"Query" name:"RejectedPatchesAction"`
-	Name                  string    `position:"Query" name:"Name"`
+	Sources                          *[]string                  `position:"Query" name:"Sources"  type:"Json"`
+	ClientToken                      string                     `position:"Query" name:"ClientToken"`
+	ApprovalRules                    string                     `position:"Query" name:"ApprovalRules"`
+	Description                      string                     `position:"Query" name:"Description"`
+	RejectedPatchesAction            string                     `position:"Query" name:"RejectedPatchesAction"`
+	ApprovedPatchesEnableNonSecurity requests.Boolean           `position:"Query" name:"ApprovedPatchesEnableNonSecurity"`
+	Tags                             *[]CreatePatchBaselineTags `position:"Query" name:"Tags"  type:"Json"`
+	OperationSystem                  string                     `position:"Query" name:"OperationSystem"`
+	RejectedPatches                  *[]string                  `position:"Query" name:"RejectedPatches"  type:"Json"`
+	Name                             string                     `position:"Query" name:"Name"`
+	ApprovedPatches                  *[]string                  `position:"Query" name:"ApprovedPatches"  type:"Json"`
+}
+
+// CreatePatchBaselineTags is a repeated param struct in CreatePatchBaselineRequest
+type CreatePatchBaselineTags struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // CreatePatchBaselineResponse is the response struct for api CreatePatchBaseline

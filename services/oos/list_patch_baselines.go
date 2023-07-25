@@ -71,11 +71,21 @@ func (client *Client) ListPatchBaselinesWithCallback(request *ListPatchBaselines
 // ListPatchBaselinesRequest is the request struct for api ListPatchBaselines
 type ListPatchBaselinesRequest struct {
 	*requests.RpcRequest
-	OperationSystem string           `position:"Query" name:"OperationSystem"`
-	NextToken       string           `position:"Query" name:"NextToken"`
-	Name            string           `position:"Query" name:"Name"`
-	MaxResults      requests.Integer `position:"Query" name:"MaxResults"`
-	ShareType       string           `position:"Query" name:"ShareType"`
+	Sources                          *[]string                 `position:"Query" name:"Sources"  type:"Json"`
+	NextToken                        string                    `position:"Query" name:"NextToken"`
+	ShareType                        string                    `position:"Query" name:"ShareType"`
+	ApprovedPatchesEnableNonSecurity requests.Boolean          `position:"Query" name:"ApprovedPatchesEnableNonSecurity"`
+	Tags                             *[]ListPatchBaselinesTags `position:"Query" name:"Tags"  type:"Json"`
+	OperationSystem                  string                    `position:"Query" name:"OperationSystem"`
+	Name                             string                    `position:"Query" name:"Name"`
+	MaxResults                       requests.Integer          `position:"Query" name:"MaxResults"`
+	ApprovedPatches                  *[]string                 `position:"Query" name:"ApprovedPatches"  type:"Json"`
+}
+
+// ListPatchBaselinesTags is a repeated param struct in ListPatchBaselinesRequest
+type ListPatchBaselinesTags struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // ListPatchBaselinesResponse is the response struct for api ListPatchBaselines
