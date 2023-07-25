@@ -71,6 +71,7 @@ func (client *Client) DeleteGadInstanceWithCallback(request *DeleteGadInstanceRe
 // DeleteGadInstanceRequest is the request struct for api DeleteGadInstance
 type DeleteGadInstanceRequest struct {
 	*requests.RpcRequest
+	ResourceGroupId string `position:"Query" name:"ResourceGroupId"`
 	GadInstanceName string `position:"Query" name:"GadInstanceName"`
 }
 

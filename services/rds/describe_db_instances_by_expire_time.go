@@ -73,6 +73,7 @@ type DescribeDBInstancesByExpireTimeRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	Expired              requests.Boolean `position:"Query" name:"Expired"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	ExpirePeriod         requests.Integer `position:"Query" name:"ExpirePeriod"`

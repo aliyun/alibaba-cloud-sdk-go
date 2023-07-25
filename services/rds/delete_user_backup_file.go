@@ -72,11 +72,12 @@ func (client *Client) DeleteUserBackupFileWithCallback(request *DeleteUserBackup
 type DeleteUserBackupFileRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
+	Engine               string           `position:"Query" name:"Engine"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	BackupId             string           `position:"Query" name:"BackupId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	OpsServiceVersion    string           `position:"Query" name:"OpsServiceVersion"`
-	Engine               string           `position:"Query" name:"Engine"`
 }
 
 // DeleteUserBackupFileResponse is the response struct for api DeleteUserBackupFile

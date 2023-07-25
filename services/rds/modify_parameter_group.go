@@ -72,6 +72,7 @@ func (client *Client) ModifyParameterGroupWithCallback(request *ModifyParameterG
 type ModifyParameterGroupRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	ParameterGroupId     string           `position:"Query" name:"ParameterGroupId"`
 	ModifyMode           string           `position:"Query" name:"ModifyMode"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`

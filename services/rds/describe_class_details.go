@@ -74,6 +74,7 @@ type DescribeClassDetailsRequest struct {
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
 	EngineVersion        string           `position:"Query" name:"EngineVersion"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	Engine               string           `position:"Query" name:"Engine"`
 	ClassCode            string           `position:"Query" name:"ClassCode"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`

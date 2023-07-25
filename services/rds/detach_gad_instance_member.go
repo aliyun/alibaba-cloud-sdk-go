@@ -71,6 +71,7 @@ func (client *Client) DetachGadInstanceMemberWithCallback(request *DetachGadInst
 // DetachGadInstanceMemberRequest is the request struct for api DetachGadInstanceMember
 type DetachGadInstanceMemberRequest struct {
 	*requests.RpcRequest
+	ResourceGroupId    string `position:"Query" name:"ResourceGroupId"`
 	MemberInstanceName string `position:"Query" name:"MemberInstanceName"`
 	GadInstanceName    string `position:"Query" name:"GadInstanceName"`
 }

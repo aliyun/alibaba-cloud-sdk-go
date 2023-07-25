@@ -77,6 +77,7 @@ type RemoveTagsFromResourceRequest struct {
 	ClientToken          string           `position:"Query" name:"ClientToken"`
 	Tag3Key              string           `position:"Query" name:"Tag.3.key"`
 	Tag1Value            string           `position:"Query" name:"Tag.1.value"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	Tag3Value            string           `position:"Query" name:"Tag.3.value"`
 	ProxyId              string           `position:"Query" name:"proxyId"`

@@ -72,10 +72,11 @@ func (client *Client) ModifyReadonlyInstanceDelayReplicationTimeWithCallback(req
 type ModifyReadonlyInstanceDelayReplicationTimeRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId        requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceGroupId        string           `position:"Query" name:"ResourceGroupId"`
+	DBInstanceId           string           `position:"Query" name:"DBInstanceId"`
 	ResourceOwnerAccount   string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
 	ReadSQLReplicationTime string           `position:"Query" name:"ReadSQLReplicationTime"`
-	DBInstanceId           string           `position:"Query" name:"DBInstanceId"`
 }
 
 // ModifyReadonlyInstanceDelayReplicationTimeResponse is the response struct for api ModifyReadonlyInstanceDelayReplicationTime

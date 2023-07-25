@@ -76,6 +76,7 @@ type ListUserBackupFilesRequest struct {
 	Tag2Key              string           `position:"Query" name:"Tag.2.key"`
 	Tag3Key              string           `position:"Query" name:"Tag.3.key"`
 	Tag1Value            string           `position:"Query" name:"Tag.1.value"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	Engine               string           `position:"Query" name:"Engine"`
 	Tag3Value            string           `position:"Query" name:"Tag.3.value"`
 	Tag5Key              string           `position:"Query" name:"Tag.5.key"`

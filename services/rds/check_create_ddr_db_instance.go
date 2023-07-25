@@ -78,6 +78,7 @@ type CheckCreateDdrDBInstanceRequest struct {
 	BinlogRole           string           `position:"Query" name:"BinlogRole"`
 	EngineVersion        string           `position:"Query" name:"EngineVersion"`
 	UserBakSetURL        string           `position:"Query" name:"UserBakSetURL"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	Engine               string           `position:"Query" name:"Engine"`
 	BackupSetRegion      string           `position:"Query" name:"BackupSetRegion"`
 	BackupSetType        string           `position:"Query" name:"BackupSetType"`

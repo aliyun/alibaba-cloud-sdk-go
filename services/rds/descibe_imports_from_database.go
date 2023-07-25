@@ -75,6 +75,7 @@ type DescibeImportsFromDatabaseRequest struct {
 	ClientToken          string           `position:"Query" name:"ClientToken"`
 	StartTime            string           `position:"Query" name:"StartTime"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	ImportId             requests.Integer `position:"Query" name:"ImportId"`
 	Engine               string           `position:"Query" name:"Engine"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`

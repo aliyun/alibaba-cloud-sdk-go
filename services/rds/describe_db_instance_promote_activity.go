@@ -73,10 +73,10 @@ type DescribeDBInstancePromoteActivityRequest struct {
 	*requests.RpcRequest
 	DbInstanceName       string           `position:"Query" name:"DbInstanceName"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	AliUid               string           `position:"Query" name:"AliUid"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeDBInstancePromoteActivityResponse is the response struct for api DescribeDBInstancePromoteActivity
