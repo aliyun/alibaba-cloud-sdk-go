@@ -109,11 +109,11 @@ type SubmitServerlessJobAcrRegistryInfo struct {
 
 // SubmitServerlessJobVolume is a repeated param struct in SubmitServerlessJobRequest
 type SubmitServerlessJobVolume struct {
-	FlexVolumeOptions string `name:"FlexVolume.Options"`
-	NFSVolumeServer   string `name:"NFSVolume.Server"`
-	NFSVolumePath     string `name:"NFSVolume.Path"`
-	NFSVolumeReadOnly string `name:"NFSVolume.ReadOnly"`
-	FlexVolumeDriver  string `name:"FlexVolume.Driver"`
+	FlexVolumeDriver  string `name:"FlexVolumeDriver"`
+	NFSVolumePath     string `name:"NFSVolumePath"`
+	FlexVolumeOptions string `name:"FlexVolumeOptions"`
+	NFSVolumeReadOnly string `name:"NFSVolumeReadOnly"`
+	NFSVolumeServer   string `name:"NFSVolumeServer"`
 }
 
 // SubmitServerlessJobContainer is a repeated param struct in SubmitServerlessJobRequest
@@ -144,16 +144,16 @@ type SubmitServerlessJobArrayProperties struct {
 
 // SubmitServerlessJobContainerVolumeMountItem is a repeated param struct in SubmitServerlessJobRequest
 type SubmitServerlessJobContainerVolumeMountItem struct {
-	FlexVolumeOptions string `name:"FlexVolume.Options"`
-	NFSVolumeServer   string `name:"NFSVolume.Server"`
+	FlexVolumeDriver  string `name:"FlexVolumeDriver"`
 	MountPath         string `name:"MountPath"`
 	ReadOnly          string `name:"ReadOnly"`
 	MountPropagation  string `name:"MountPropagation"`
 	SubPath           string `name:"SubPath"`
-	NFSVolumePath     string `name:"NFSVolume.Path"`
+	NFSVolumePath     string `name:"NFSVolumePath"`
 	Type              string `name:"Type"`
-	NFSVolumeReadOnly string `name:"NFSVolume.ReadOnly"`
-	FlexVolumeDriver  string `name:"FlexVolume.Driver"`
+	FlexVolumeOptions string `name:"FlexVolumeOptions"`
+	NFSVolumeReadOnly string `name:"NFSVolumeReadOnly"`
+	NFSVolumeServer   string `name:"NFSVolumeServer"`
 }
 
 // SubmitServerlessJobContainerPortItem is a repeated param struct in SubmitServerlessJobRequest
@@ -164,8 +164,8 @@ type SubmitServerlessJobContainerPortItem struct {
 
 // SubmitServerlessJobContainerEnvironmentVarItem is a repeated param struct in SubmitServerlessJobRequest
 type SubmitServerlessJobContainerEnvironmentVarItem struct {
-	Name  string `name:"Name"`
 	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // SubmitServerlessJobRetryStrategyEvaluateOnExitItem is a repeated param struct in SubmitServerlessJobRequest
