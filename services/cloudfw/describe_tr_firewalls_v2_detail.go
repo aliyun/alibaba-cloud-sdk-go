@@ -79,19 +79,23 @@ type DescribeTrFirewallsV2DetailRequest struct {
 // DescribeTrFirewallsV2DetailResponse is the response struct for api DescribeTrFirewallsV2Detail
 type DescribeTrFirewallsV2DetailResponse struct {
 	*responses.BaseResponse
-	FirewallName         string `json:"FirewallName" xml:"FirewallName"`
-	RequestId            string `json:"RequestId" xml:"RequestId"`
-	FirewallId           string `json:"FirewallId" xml:"FirewallId"`
-	FirewallStatus       string `json:"FirewallStatus" xml:"FirewallStatus"`
-	CenId                string `json:"CenId" xml:"CenId"`
-	TransitRouterId      string `json:"TransitRouterId" xml:"TransitRouterId"`
-	RegionNo             string `json:"RegionNo" xml:"RegionNo"`
-	FirewallEniId        string `json:"FirewallEniId" xml:"FirewallEniId"`
-	FirewallEniVpcId     string `json:"FirewallEniVpcId" xml:"FirewallEniVpcId"`
-	FirewallEniVswitchId string `json:"FirewallEniVswitchId" xml:"FirewallEniVswitchId"`
-	FirewallDescription  string `json:"FirewallDescription" xml:"FirewallDescription"`
-	RouteMode            string `json:"RouteMode" xml:"RouteMode"`
-	FirewallSwitchStatus string `json:"FirewallSwitchStatus" xml:"FirewallSwitchStatus"`
+	FirewallName           string `json:"FirewallName" xml:"FirewallName"`
+	RequestId              string `json:"RequestId" xml:"RequestId"`
+	FirewallId             string `json:"FirewallId" xml:"FirewallId"`
+	FirewallStatus         string `json:"FirewallStatus" xml:"FirewallStatus"`
+	CenId                  string `json:"CenId" xml:"CenId"`
+	TransitRouterId        string `json:"TransitRouterId" xml:"TransitRouterId"`
+	RegionNo               string `json:"RegionNo" xml:"RegionNo"`
+	FirewallEniId          string `json:"FirewallEniId" xml:"FirewallEniId"`
+	FirewallEniVpcId       string `json:"FirewallEniVpcId" xml:"FirewallEniVpcId"`
+	FirewallEniVswitchId   string `json:"FirewallEniVswitchId" xml:"FirewallEniVswitchId"`
+	FirewallDescription    string `json:"FirewallDescription" xml:"FirewallDescription"`
+	RouteMode              string `json:"RouteMode" xml:"RouteMode"`
+	FirewallSwitchStatus   string `json:"FirewallSwitchStatus" xml:"FirewallSwitchStatus"`
+	FirewallVpcCidr        string `json:"FirewallVpcCidr" xml:"FirewallVpcCidr"`
+	FirewallSubnetCidr     string `json:"FirewallSubnetCidr" xml:"FirewallSubnetCidr"`
+	TrAttachmentMasterCidr string `json:"TrAttachmentMasterCidr" xml:"TrAttachmentMasterCidr"`
+	TrAttachmentSlaveCidr  string `json:"TrAttachmentSlaveCidr" xml:"TrAttachmentSlaveCidr"`
 }
 
 // CreateDescribeTrFirewallsV2DetailRequest creates a request to invoke DescribeTrFirewallsV2Detail API

@@ -71,6 +71,7 @@ func (client *Client) ModifyVpcFirewallControlPolicyPositionWithCallback(request
 // ModifyVpcFirewallControlPolicyPositionRequest is the request struct for api ModifyVpcFirewallControlPolicyPosition
 type ModifyVpcFirewallControlPolicyPositionRequest struct {
 	*requests.RpcRequest
+	AclUuid       string `position:"Query" name:"AclUuid"`
 	SourceIp      string `position:"Query" name:"SourceIp"`
 	NewOrder      string `position:"Query" name:"NewOrder"`
 	Lang          string `position:"Query" name:"Lang"`

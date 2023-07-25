@@ -1,3 +1,7 @@
+2023-07-25 Version: v1.62.471
+- Generated 2017-12-07 for `Cloudfw`.
+- Support NAT ACL interfaces.
+
 2023-07-24 Version: v1.62.470
 - Generated 2014-08-15 for `Rds`.
 - Add error code.
