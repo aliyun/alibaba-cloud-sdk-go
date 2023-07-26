@@ -84,9 +84,10 @@ type DescribeBackupTasksRequest struct {
 // DescribeBackupTasksResponse is the response struct for api DescribeBackupTasks
 type DescribeBackupTasksResponse struct {
 	*responses.BaseResponse
-	InstanceId string      `json:"InstanceId" xml:"InstanceId"`
-	RequestId  string      `json:"RequestId" xml:"RequestId"`
-	BackupJobs []BackupJob `json:"BackupJobs" xml:"BackupJobs"`
+	InstanceId         string             `json:"InstanceId" xml:"InstanceId"`
+	RequestId          string             `json:"RequestId" xml:"RequestId"`
+	AccessDeniedDetail AccessDeniedDetail `json:"AccessDeniedDetail" xml:"AccessDeniedDetail"`
+	BackupJobs         []BackupJob        `json:"BackupJobs" xml:"BackupJobs"`
 }
 
 // CreateDescribeBackupTasksRequest creates a request to invoke DescribeBackupTasks API

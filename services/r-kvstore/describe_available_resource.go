@@ -85,6 +85,7 @@ type DescribeAvailableResourceRequest struct {
 	InstanceId           string           `position:"Query" name:"InstanceId"`
 	AcceptLanguage       string           `position:"Query" name:"AcceptLanguage"`
 	ZoneId               string           `position:"Query" name:"ZoneId"`
+	InstanceScene        string           `position:"Query" name:"InstanceScene"`
 	OrderType            string           `position:"Query" name:"OrderType"`
 }
 
