@@ -73,6 +73,7 @@ type OpenAITaskRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	NodeType             string           `position:"Query" name:"NodeType"`
+	DescribeType         string           `position:"Query" name:"DescribeType"`
 	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	Password             string           `position:"Query" name:"Password"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`

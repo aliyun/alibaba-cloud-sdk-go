@@ -72,6 +72,7 @@ func (client *Client) DescribeDBClusterVersionWithCallback(request *DescribeDBCl
 type DescribeDBClusterVersionRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DescribeType         string           `position:"Query" name:"DescribeType"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	DBClusterId          string           `position:"Query" name:"DBClusterId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
@@ -81,18 +82,19 @@ type DescribeDBClusterVersionRequest struct {
 // DescribeDBClusterVersionResponse is the response struct for api DescribeDBClusterVersion
 type DescribeDBClusterVersionResponse struct {
 	*responses.BaseResponse
-	IsLatestVersion      string `json:"IsLatestVersion" xml:"IsLatestVersion"`
-	IsProxyLatestVersion string `json:"IsProxyLatestVersion" xml:"IsProxyLatestVersion"`
-	DBVersion            string `json:"DBVersion" xml:"DBVersion"`
-	DBRevisionVersion    string `json:"DBRevisionVersion" xml:"DBRevisionVersion"`
-	RequestId            string `json:"RequestId" xml:"RequestId"`
-	DBVersionStatus      string `json:"DBVersionStatus" xml:"DBVersionStatus"`
-	DBClusterId          string `json:"DBClusterId" xml:"DBClusterId"`
-	DBMinorVersion       string `json:"DBMinorVersion" xml:"DBMinorVersion"`
-	ProxyRevisionVersion string `json:"ProxyRevisionVersion" xml:"ProxyRevisionVersion"`
-	ProxyVersionStatus   string `json:"ProxyVersionStatus" xml:"ProxyVersionStatus"`
-	ProxyLatestVersion   string `json:"ProxyLatestVersion" xml:"ProxyLatestVersion"`
-	DBLatestVersion      string `json:"DBLatestVersion" xml:"DBLatestVersion"`
+	IsLatestVersion       string                      `json:"IsLatestVersion" xml:"IsLatestVersion"`
+	IsProxyLatestVersion  string                      `json:"IsProxyLatestVersion" xml:"IsProxyLatestVersion"`
+	DBVersion             string                      `json:"DBVersion" xml:"DBVersion"`
+	DBRevisionVersion     string                      `json:"DBRevisionVersion" xml:"DBRevisionVersion"`
+	RequestId             string                      `json:"RequestId" xml:"RequestId"`
+	DBVersionStatus       string                      `json:"DBVersionStatus" xml:"DBVersionStatus"`
+	DBClusterId           string                      `json:"DBClusterId" xml:"DBClusterId"`
+	DBMinorVersion        string                      `json:"DBMinorVersion" xml:"DBMinorVersion"`
+	ProxyRevisionVersion  string                      `json:"ProxyRevisionVersion" xml:"ProxyRevisionVersion"`
+	ProxyVersionStatus    string                      `json:"ProxyVersionStatus" xml:"ProxyVersionStatus"`
+	ProxyLatestVersion    string                      `json:"ProxyLatestVersion" xml:"ProxyLatestVersion"`
+	DBLatestVersion       string                      `json:"DBLatestVersion" xml:"DBLatestVersion"`
+	DBRevisionVersionList []DBRevisionVersionListItem `json:"DBRevisionVersionList" xml:"DBRevisionVersionList"`
 }
 
 // CreateDescribeDBClusterVersionRequest creates a request to invoke DescribeDBClusterVersion API
