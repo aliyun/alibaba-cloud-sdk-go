@@ -86,7 +86,7 @@ func CreateGetHandshakeRequest() (request *GetHandshakeRequest) {
 	request = &GetHandshakeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ResourceManager", "2020-03-31", "GetHandshake", "resourcemanager", "openAPI")
+	request.InitWithApiInfo("ResourceManager", "2020-03-31", "GetHandshake", "", "")
 	request.Method = requests.POST
 	return
 }

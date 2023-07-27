@@ -85,7 +85,7 @@ func CreateRetryChangeAccountEmailRequest() (request *RetryChangeAccountEmailReq
 	request = &RetryChangeAccountEmailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ResourceManager", "2020-03-31", "RetryChangeAccountEmail", "resourcemanager", "openAPI")
+	request.InitWithApiInfo("ResourceManager", "2020-03-31", "RetryChangeAccountEmail", "", "")
 	request.Method = requests.POST
 	return
 }

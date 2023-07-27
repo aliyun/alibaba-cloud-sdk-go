@@ -86,7 +86,7 @@ func CreateAttachControlPolicyRequest() (request *AttachControlPolicyRequest) {
 	request = &AttachControlPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ResourceManager", "2020-03-31", "AttachControlPolicy", "resourcemanager", "openAPI")
+	request.InitWithApiInfo("ResourceManager", "2020-03-31", "AttachControlPolicy", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -89,7 +89,7 @@ func CreateDetachPolicyRequest() (request *DetachPolicyRequest) {
 	request = &DetachPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ResourceManager", "2020-03-31", "DetachPolicy", "resourcemanager", "openAPI")
+	request.InitWithApiInfo("ResourceManager", "2020-03-31", "DetachPolicy", "", "")
 	request.Method = requests.POST
 	return
 }

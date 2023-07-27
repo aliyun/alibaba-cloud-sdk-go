@@ -87,7 +87,7 @@ func CreateDeleteAccountRequest() (request *DeleteAccountRequest) {
 	request = &DeleteAccountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ResourceManager", "2020-03-31", "DeleteAccount", "resourcemanager", "openAPI")
+	request.InitWithApiInfo("ResourceManager", "2020-03-31", "DeleteAccount", "", "")
 	request.Method = requests.POST
 	return
 }

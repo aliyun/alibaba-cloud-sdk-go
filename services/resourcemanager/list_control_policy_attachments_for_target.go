@@ -87,7 +87,7 @@ func CreateListControlPolicyAttachmentsForTargetRequest() (request *ListControlP
 	request = &ListControlPolicyAttachmentsForTargetRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ResourceManager", "2020-03-31", "ListControlPolicyAttachmentsForTarget", "resourcemanager", "openAPI")
+	request.InitWithApiInfo("ResourceManager", "2020-03-31", "ListControlPolicyAttachmentsForTarget", "", "")
 	request.Method = requests.POST
 	return
 }

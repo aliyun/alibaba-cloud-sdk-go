@@ -87,7 +87,7 @@ func CreateGetPayerForAccountRequest() (request *GetPayerForAccountRequest) {
 	request = &GetPayerForAccountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ResourceManager", "2020-03-31", "GetPayerForAccount", "resourcemanager", "openAPI")
+	request.InitWithApiInfo("ResourceManager", "2020-03-31", "GetPayerForAccount", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -86,7 +86,7 @@ func CreateDeclineHandshakeRequest() (request *DeclineHandshakeRequest) {
 	request = &DeclineHandshakeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ResourceManager", "2020-03-31", "DeclineHandshake", "resourcemanager", "openAPI")
+	request.InitWithApiInfo("ResourceManager", "2020-03-31", "DeclineHandshake", "", "")
 	request.Method = requests.POST
 	return
 }

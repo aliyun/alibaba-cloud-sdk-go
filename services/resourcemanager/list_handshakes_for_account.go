@@ -90,7 +90,7 @@ func CreateListHandshakesForAccountRequest() (request *ListHandshakesForAccountR
 	request = &ListHandshakesForAccountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ResourceManager", "2020-03-31", "ListHandshakesForAccount", "resourcemanager", "openAPI")
+	request.InitWithApiInfo("ResourceManager", "2020-03-31", "ListHandshakesForAccount", "", "")
 	request.Method = requests.POST
 	return
 }

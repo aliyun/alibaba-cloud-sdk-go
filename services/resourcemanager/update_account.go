@@ -88,7 +88,7 @@ func CreateUpdateAccountRequest() (request *UpdateAccountRequest) {
 	request = &UpdateAccountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ResourceManager", "2020-03-31", "UpdateAccount", "resourcemanager", "openAPI")
+	request.InitWithApiInfo("ResourceManager", "2020-03-31", "UpdateAccount", "", "")
 	request.Method = requests.POST
 	return
 }

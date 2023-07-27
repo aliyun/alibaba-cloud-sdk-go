@@ -87,7 +87,7 @@ func CreateUpdateResourceGroupRequest() (request *UpdateResourceGroupRequest) {
 	request = &UpdateResourceGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ResourceManager", "2020-03-31", "UpdateResourceGroup", "resourcemanager", "openAPI")
+	request.InitWithApiInfo("ResourceManager", "2020-03-31", "UpdateResourceGroup", "", "")
 	request.Method = requests.POST
 	return
 }

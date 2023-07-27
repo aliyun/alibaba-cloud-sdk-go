@@ -85,7 +85,7 @@ func CreateSendVerificationCodeForEnableRDRequest() (request *SendVerificationCo
 	request = &SendVerificationCodeForEnableRDRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ResourceManager", "2020-03-31", "SendVerificationCodeForEnableRD", "resourcemanager", "openAPI")
+	request.InitWithApiInfo("ResourceManager", "2020-03-31", "SendVerificationCodeForEnableRD", "", "")
 	request.Method = requests.POST
 	return
 }

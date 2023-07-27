@@ -91,7 +91,7 @@ func CreateListDelegatedAdministratorsRequest() (request *ListDelegatedAdministr
 	request = &ListDelegatedAdministratorsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ResourceManager", "2020-03-31", "ListDelegatedAdministrators", "resourcemanager", "openAPI")
+	request.InitWithApiInfo("ResourceManager", "2020-03-31", "ListDelegatedAdministrators", "", "")
 	request.Method = requests.POST
 	return
 }

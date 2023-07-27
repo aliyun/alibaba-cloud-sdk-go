@@ -86,7 +86,7 @@ func CreateResendPromoteResourceAccountEmailRequest() (request *ResendPromoteRes
 	request = &ResendPromoteResourceAccountEmailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ResourceManager", "2020-03-31", "ResendPromoteResourceAccountEmail", "resourcemanager", "openAPI")
+	request.InitWithApiInfo("ResourceManager", "2020-03-31", "ResendPromoteResourceAccountEmail", "", "")
 	request.Method = requests.POST
 	return
 }

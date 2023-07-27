@@ -85,7 +85,7 @@ func CreateDeleteControlPolicyRequest() (request *DeleteControlPolicyRequest) {
 	request = &DeleteControlPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ResourceManager", "2020-03-31", "DeleteControlPolicy", "resourcemanager", "openAPI")
+	request.InitWithApiInfo("ResourceManager", "2020-03-31", "DeleteControlPolicy", "", "")
 	request.Method = requests.POST
 	return
 }

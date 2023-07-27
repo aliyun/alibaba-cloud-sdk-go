@@ -86,7 +86,7 @@ func CreateRegisterDelegatedAdministratorRequest() (request *RegisterDelegatedAd
 	request = &RegisterDelegatedAdministratorRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ResourceManager", "2020-03-31", "RegisterDelegatedAdministrator", "resourcemanager", "openAPI")
+	request.InitWithApiInfo("ResourceManager", "2020-03-31", "RegisterDelegatedAdministrator", "", "")
 	request.Method = requests.POST
 	return
 }

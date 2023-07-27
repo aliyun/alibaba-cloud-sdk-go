@@ -85,7 +85,7 @@ func CreateDeleteFolderRequest() (request *DeleteFolderRequest) {
 	request = &DeleteFolderRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ResourceManager", "2020-03-31", "DeleteFolder", "resourcemanager", "openAPI")
+	request.InitWithApiInfo("ResourceManager", "2020-03-31", "DeleteFolder", "", "")
 	request.Method = requests.POST
 	return
 }

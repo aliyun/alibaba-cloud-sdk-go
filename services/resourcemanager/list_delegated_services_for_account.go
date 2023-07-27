@@ -86,7 +86,7 @@ func CreateListDelegatedServicesForAccountRequest() (request *ListDelegatedServi
 	request = &ListDelegatedServicesForAccountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ResourceManager", "2020-03-31", "ListDelegatedServicesForAccount", "resourcemanager", "openAPI")
+	request.InitWithApiInfo("ResourceManager", "2020-03-31", "ListDelegatedServicesForAccount", "", "")
 	request.Method = requests.POST
 	return
 }

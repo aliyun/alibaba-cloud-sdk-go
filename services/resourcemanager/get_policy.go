@@ -88,7 +88,7 @@ func CreateGetPolicyRequest() (request *GetPolicyRequest) {
 	request = &GetPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ResourceManager", "2020-03-31", "GetPolicy", "resourcemanager", "openAPI")
+	request.InitWithApiInfo("ResourceManager", "2020-03-31", "GetPolicy", "", "")
 	request.Method = requests.POST
 	return
 }

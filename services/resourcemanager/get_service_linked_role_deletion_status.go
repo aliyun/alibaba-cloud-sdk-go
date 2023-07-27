@@ -87,7 +87,7 @@ func CreateGetServiceLinkedRoleDeletionStatusRequest() (request *GetServiceLinke
 	request = &GetServiceLinkedRoleDeletionStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ResourceManager", "2020-03-31", "GetServiceLinkedRoleDeletionStatus", "resourcemanager", "openAPI")
+	request.InitWithApiInfo("ResourceManager", "2020-03-31", "GetServiceLinkedRoleDeletionStatus", "", "")
 	request.Method = requests.POST
 	return
 }

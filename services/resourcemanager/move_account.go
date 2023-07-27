@@ -86,7 +86,7 @@ func CreateMoveAccountRequest() (request *MoveAccountRequest) {
 	request = &MoveAccountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ResourceManager", "2020-03-31", "MoveAccount", "resourcemanager", "openAPI")
+	request.InitWithApiInfo("ResourceManager", "2020-03-31", "MoveAccount", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -87,7 +87,7 @@ func CreateSendVerificationCodeForBindSecureMobilePhoneRequest() (request *SendV
 	request = &SendVerificationCodeForBindSecureMobilePhoneRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ResourceManager", "2020-03-31", "SendVerificationCodeForBindSecureMobilePhone", "resourcemanager", "openAPI")
+	request.InitWithApiInfo("ResourceManager", "2020-03-31", "SendVerificationCodeForBindSecureMobilePhone", "", "")
 	request.Method = requests.POST
 	return
 }

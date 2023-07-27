@@ -90,7 +90,7 @@ func CreateListHandshakesForResourceDirectoryRequest() (request *ListHandshakesF
 	request = &ListHandshakesForResourceDirectoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ResourceManager", "2020-03-31", "ListHandshakesForResourceDirectory", "resourcemanager", "openAPI")
+	request.InitWithApiInfo("ResourceManager", "2020-03-31", "ListHandshakesForResourceDirectory", "", "")
 	request.Method = requests.POST
 	return
 }

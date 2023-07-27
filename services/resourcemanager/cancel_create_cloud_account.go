@@ -85,7 +85,7 @@ func CreateCancelCreateCloudAccountRequest() (request *CancelCreateCloudAccountR
 	request = &CancelCreateCloudAccountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ResourceManager", "2020-03-31", "CancelCreateCloudAccount", "resourcemanager", "openAPI")
+	request.InitWithApiInfo("ResourceManager", "2020-03-31", "CancelCreateCloudAccount", "", "")
 	request.Method = requests.POST
 	return
 }

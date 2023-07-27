@@ -87,7 +87,7 @@ func CreatePromoteResourceAccountRequest() (request *PromoteResourceAccountReque
 	request = &PromoteResourceAccountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ResourceManager", "2020-03-31", "PromoteResourceAccount", "resourcemanager", "openAPI")
+	request.InitWithApiInfo("ResourceManager", "2020-03-31", "PromoteResourceAccount", "", "")
 	request.Method = requests.POST
 	return
 }

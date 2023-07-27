@@ -86,7 +86,7 @@ func CreateChangeAccountEmailRequest() (request *ChangeAccountEmailRequest) {
 	request = &ChangeAccountEmailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ResourceManager", "2020-03-31", "ChangeAccountEmail", "resourcemanager", "openAPI")
+	request.InitWithApiInfo("ResourceManager", "2020-03-31", "ChangeAccountEmail", "", "")
 	request.Method = requests.POST
 	return
 }

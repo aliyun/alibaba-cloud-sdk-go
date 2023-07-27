@@ -86,7 +86,7 @@ func CreateDeleteServiceLinkedRoleRequest() (request *DeleteServiceLinkedRoleReq
 	request = &DeleteServiceLinkedRoleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ResourceManager", "2020-03-31", "DeleteServiceLinkedRole", "resourcemanager", "openAPI")
+	request.InitWithApiInfo("ResourceManager", "2020-03-31", "DeleteServiceLinkedRole", "", "")
 	request.Method = requests.POST
 	return
 }

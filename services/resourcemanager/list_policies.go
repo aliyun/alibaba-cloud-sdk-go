@@ -92,7 +92,7 @@ func CreateListPoliciesRequest() (request *ListPoliciesRequest) {
 	request = &ListPoliciesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ResourceManager", "2020-03-31", "ListPolicies", "resourcemanager", "openAPI")
+	request.InitWithApiInfo("ResourceManager", "2020-03-31", "ListPolicies", "", "")
 	request.Method = requests.POST
 	return
 }

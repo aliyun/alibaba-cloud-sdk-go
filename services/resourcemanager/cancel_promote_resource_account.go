@@ -85,7 +85,7 @@ func CreateCancelPromoteResourceAccountRequest() (request *CancelPromoteResource
 	request = &CancelPromoteResourceAccountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ResourceManager", "2020-03-31", "CancelPromoteResourceAccount", "resourcemanager", "openAPI")
+	request.InitWithApiInfo("ResourceManager", "2020-03-31", "CancelPromoteResourceAccount", "", "")
 	request.Method = requests.POST
 	return
 }
