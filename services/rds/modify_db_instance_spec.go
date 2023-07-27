@@ -91,6 +91,7 @@ type ModifyDBInstanceSpecRequest struct {
 	OwnerId                 requests.Integer                            `position:"Query" name:"OwnerId"`
 	UsedTime                requests.Integer                            `position:"Query" name:"UsedTime"`
 	BurstingEnabled         requests.Boolean                            `position:"Query" name:"BurstingEnabled"`
+	TargetMinorVersion      string                                      `position:"Query" name:"TargetMinorVersion"`
 	DBInstanceClass         string                                      `position:"Query" name:"DBInstanceClass"`
 	ZoneId                  string                                      `position:"Query" name:"ZoneId"`
 	Category                string                                      `position:"Query" name:"Category"`
