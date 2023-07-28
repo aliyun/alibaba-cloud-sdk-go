@@ -17,9 +17,9 @@ package dts
 
 // DataSynchronizationDetail is a nested struct in dts response
 type DataSynchronizationDetail struct {
+	Status                 string `json:"Status" xml:"Status"`
 	SourceOwnerDBName      string `json:"SourceOwnerDBName" xml:"SourceOwnerDBName"`
+	TableName              string `json:"TableName" xml:"TableName"`
 	ErrorMessage           string `json:"ErrorMessage" xml:"ErrorMessage"`
 	DestinationOwnerDBName string `json:"DestinationOwnerDBName" xml:"DestinationOwnerDBName"`
-	Status                 string `json:"Status" xml:"Status"`
-	TableName              string `json:"TableName" xml:"TableName"`
 }

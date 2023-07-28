@@ -17,8 +17,8 @@ package dts
 
 // CheckItem is a nested struct in dts response
 type CheckItem struct {
-	RepairMethod string `json:"RepairMethod" xml:"RepairMethod"`
-	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
 	CheckStatus  string `json:"CheckStatus" xml:"CheckStatus"`
+	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
 	ItemName     string `json:"ItemName" xml:"ItemName"`
+	RepairMethod string `json:"RepairMethod" xml:"RepairMethod"`
 }

@@ -17,7 +17,7 @@ package dts
 
 // SynchronousObject is a nested struct in dts response
 type SynchronousObject struct {
-	WholeDatabase string                           `json:"WholeDatabase" xml:"WholeDatabase"`
-	DatabaseName  string                           `json:"DatabaseName" xml:"DatabaseName"`
-	TableList     TableListInDescirbeMigrationJobs `json:"TableList" xml:"TableList"`
+	DatabaseName  string    `json:"DatabaseName" xml:"DatabaseName"`
+	WholeDatabase string    `json:"WholeDatabase" xml:"WholeDatabase"`
+	TableList     TableList `json:"TableList" xml:"TableList"`
 }

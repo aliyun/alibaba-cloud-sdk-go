@@ -17,8 +17,8 @@ package dts
 
 // StructureInitializationStatus is a nested struct in dts response
 type StructureInitializationStatus struct {
-	Progress     string `json:"Progress" xml:"Progress"`
-	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
 	Status       string `json:"Status" xml:"Status"`
 	Percent      string `json:"Percent" xml:"Percent"`
+	Progress     string `json:"Progress" xml:"Progress"`
+	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
 }

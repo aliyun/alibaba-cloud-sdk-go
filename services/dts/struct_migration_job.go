@@ -17,17 +17,17 @@ package dts
 
 // MigrationJob is a nested struct in dts response
 type MigrationJob struct {
-	PayType                 string                                 `json:"PayType" xml:"PayType"`
-	MigrationJobID          string                                 `json:"MigrationJobID" xml:"MigrationJobID"`
-	MigrationJobName        string                                 `json:"MigrationJobName" xml:"MigrationJobName"`
-	MigrationJobClass       string                                 `json:"MigrationJobClass" xml:"MigrationJobClass"`
-	MigrationJobStatus      string                                 `json:"MigrationJobStatus" xml:"MigrationJobStatus"`
-	MigrationMode           MigrationMode                          `json:"MigrationMode" xml:"MigrationMode"`
-	Precheck                Precheck                               `json:"Precheck" xml:"Precheck"`
-	DataInitialization      DataInitialization                     `json:"DataInitialization" xml:"DataInitialization"`
-	SourceEndpoint          SourceEndpoint                         `json:"SourceEndpoint" xml:"SourceEndpoint"`
-	DestinationEndpoint     DestinationEndpoint                    `json:"DestinationEndpoint" xml:"DestinationEndpoint"`
-	StructureInitialization StructureInitialization                `json:"StructureInitialization" xml:"StructureInitialization"`
-	DataSynchronization     DataSynchronization                    `json:"DataSynchronization" xml:"DataSynchronization"`
-	MigrationObject         MigrationObjectInDescirbeMigrationJobs `json:"MigrationObject" xml:"MigrationObject"`
+	MigrationJobName        string                  `json:"MigrationJobName" xml:"MigrationJobName"`
+	MigrationJobStatus      string                  `json:"MigrationJobStatus" xml:"MigrationJobStatus"`
+	MigrationJobClass       string                  `json:"MigrationJobClass" xml:"MigrationJobClass"`
+	MigrationJobID          string                  `json:"MigrationJobID" xml:"MigrationJobID"`
+	PayType                 string                  `json:"PayType" xml:"PayType"`
+	SourceEndpoint          SourceEndpoint          `json:"SourceEndpoint" xml:"SourceEndpoint"`
+	DestinationEndpoint     DestinationEndpoint     `json:"DestinationEndpoint" xml:"DestinationEndpoint"`
+	MigrationMode           MigrationMode           `json:"MigrationMode" xml:"MigrationMode"`
+	Precheck                Precheck                `json:"Precheck" xml:"Precheck"`
+	StructureInitialization StructureInitialization `json:"StructureInitialization" xml:"StructureInitialization"`
+	DataInitialization      DataInitialization      `json:"DataInitialization" xml:"DataInitialization"`
+	DataSynchronization     DataSynchronization     `json:"DataSynchronization" xml:"DataSynchronization"`
+	MigrationObject         MigrationObject         `json:"MigrationObject" xml:"MigrationObject"`
 }

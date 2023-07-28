@@ -74,7 +74,6 @@ type ModifyMigrationObjectRequest struct {
 	MigrationObject string `position:"Query" name:"MigrationObject"`
 	ClientToken     string `position:"Query" name:"ClientToken"`
 	MigrationJobId  string `position:"Query" name:"MigrationJobId"`
-	OwnerId         string `position:"Query" name:"OwnerId"`
 }
 
 // ModifyMigrationObjectResponse is the response struct for api ModifyMigrationObject
@@ -91,7 +90,7 @@ func CreateModifyMigrationObjectRequest() (request *ModifyMigrationObjectRequest
 	request = &ModifyMigrationObjectRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dts", "2016-08-01", "ModifyMigrationObject", "dts", "openAPI")
+	request.InitWithApiInfo("Dts", "2017-06-01", "ModifyMigrationObject", "dts", "openAPI")
 	request.Method = requests.POST
 	return
 }

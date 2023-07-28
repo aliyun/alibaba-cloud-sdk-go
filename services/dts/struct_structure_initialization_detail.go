@@ -17,13 +17,12 @@ package dts
 
 // StructureInitializationDetail is a nested struct in dts response
 type StructureInitializationDetail struct {
-	SourceOwnerDBName      string                          `json:"SourceOwnerDBName" xml:"SourceOwnerDBName"`
-	ObjectName             string                          `json:"ObjectName" xml:"ObjectName"`
-	ErrorMessage           string                          `json:"ErrorMessage" xml:"ErrorMessage"`
-	ObjectType             string                          `json:"ObjectType" xml:"ObjectType"`
-	DestinationOwnerDBName string                          `json:"DestinationOwnerDBName" xml:"DestinationOwnerDBName"`
-	Status                 string                          `json:"Status" xml:"Status"`
-	ObjectDefinition       string                          `json:"ObjectDefinition" xml:"ObjectDefinition"`
-	ConstraintList         ConstraintList                  `json:"ConstraintList" xml:"ConstraintList"`
-	Constraints            []StructureInitializationDetail `json:"Constraints" xml:"Constraints"`
+	SourceOwnerDBName      string         `json:"SourceOwnerDBName" xml:"SourceOwnerDBName"`
+	ObjectName             string         `json:"ObjectName" xml:"ObjectName"`
+	ErrorMessage           string         `json:"ErrorMessage" xml:"ErrorMessage"`
+	ObjectType             string         `json:"ObjectType" xml:"ObjectType"`
+	DestinationOwnerDBName string         `json:"DestinationOwnerDBName" xml:"DestinationOwnerDBName"`
+	Status                 string         `json:"Status" xml:"Status"`
+	ObjectDefinition       string         `json:"ObjectDefinition" xml:"ObjectDefinition"`
+	ConstraintList         ConstraintList `json:"ConstraintList" xml:"ConstraintList"`
 }

@@ -17,5 +17,5 @@ package dts
 
 // StructureInitializationDetailList is a nested struct in dts response
 type StructureInitializationDetailList struct {
-	StructureInitializationDetail []StructureInitializationDetailInDescribeMigrationJobDetail `json:"StructureInitializationDetail" xml:"StructureInitializationDetail"`
+	StructureInitializationDetail []StructureInitializationDetail `json:"StructureInitializationDetail" xml:"StructureInitializationDetail"`
 }

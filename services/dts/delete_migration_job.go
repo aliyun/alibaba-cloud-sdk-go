@@ -72,7 +72,6 @@ func (client *Client) DeleteMigrationJobWithCallback(request *DeleteMigrationJob
 type DeleteMigrationJobRequest struct {
 	*requests.RpcRequest
 	MigrationJobId string `position:"Query" name:"MigrationJobId"`
-	OwnerId        string `position:"Query" name:"OwnerId"`
 }
 
 // DeleteMigrationJobResponse is the response struct for api DeleteMigrationJob
@@ -89,7 +88,7 @@ func CreateDeleteMigrationJobRequest() (request *DeleteMigrationJobRequest) {
 	request = &DeleteMigrationJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dts", "2016-08-01", "DeleteMigrationJob", "dts", "openAPI")
+	request.InitWithApiInfo("Dts", "2017-06-01", "DeleteMigrationJob", "dts", "openAPI")
 	request.Method = requests.POST
 	return
 }

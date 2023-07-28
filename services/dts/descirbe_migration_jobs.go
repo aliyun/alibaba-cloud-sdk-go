@@ -71,19 +71,18 @@ func (client *Client) DescirbeMigrationJobsWithCallback(request *DescirbeMigrati
 // DescirbeMigrationJobsRequest is the request struct for api DescirbeMigrationJobs
 type DescirbeMigrationJobsRequest struct {
 	*requests.RpcRequest
-	PageNum          requests.Integer `position:"Query" name:"PageNum"`
-	OwnerId          string           `position:"Query" name:"OwnerId"`
 	PageSize         requests.Integer `position:"Query" name:"PageSize"`
 	MigrationJobName string           `position:"Query" name:"MigrationJobName"`
+	PageNum          requests.Integer `position:"Query" name:"PageNum"`
 }
 
 // DescirbeMigrationJobsResponse is the response struct for api DescirbeMigrationJobs
 type DescirbeMigrationJobsResponse struct {
 	*responses.BaseResponse
-	PageNumber       int                                  `json:"PageNumber" xml:"PageNumber"`
-	PageRecordCount  int                                  `json:"PageRecordCount" xml:"PageRecordCount"`
-	TotalRecordCount int64                                `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	MigrationJobs    MigrationJobsInDescirbeMigrationJobs `json:"MigrationJobs" xml:"MigrationJobs"`
+	PageNumber       int           `json:"PageNumber" xml:"PageNumber"`
+	PageRecordCount  int           `json:"PageRecordCount" xml:"PageRecordCount"`
+	TotalRecordCount int64         `json:"TotalRecordCount" xml:"TotalRecordCount"`
+	MigrationJobs    MigrationJobs `json:"MigrationJobs" xml:"MigrationJobs"`
 }
 
 // CreateDescirbeMigrationJobsRequest creates a request to invoke DescirbeMigrationJobs API
@@ -91,7 +90,7 @@ func CreateDescirbeMigrationJobsRequest() (request *DescirbeMigrationJobsRequest
 	request = &DescirbeMigrationJobsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dts", "2016-08-01", "DescirbeMigrationJobs", "dts", "openAPI")
+	request.InitWithApiInfo("Dts", "2017-06-01", "DescirbeMigrationJobs", "dts", "openAPI")
 	request.Method = requests.POST
 	return
 }

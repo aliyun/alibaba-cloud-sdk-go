@@ -75,7 +75,6 @@ type DescribeMigrationJobDetailRequest struct {
 	MigrationModeDataInitialization      requests.Boolean `position:"Query" name:"MigrationMode.DataInitialization"`
 	MigrationJobId                       string           `position:"Query" name:"MigrationJobId"`
 	PageNum                              requests.Integer `position:"Query" name:"PageNum"`
-	OwnerId                              string           `position:"Query" name:"OwnerId"`
 	MigrationModeStructureInitialization requests.Boolean `position:"Query" name:"MigrationMode.StructureInitialization"`
 	MigrationModeDataSynchronization     requests.Boolean `position:"Query" name:"MigrationMode.DataSynchronization"`
 	PageSize                             requests.Integer `position:"Query" name:"PageSize"`
@@ -97,7 +96,7 @@ func CreateDescribeMigrationJobDetailRequest() (request *DescribeMigrationJobDet
 	request = &DescribeMigrationJobDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dts", "2016-08-01", "DescribeMigrationJobDetail", "dts", "openAPI")
+	request.InitWithApiInfo("Dts", "2017-06-01", "DescribeMigrationJobDetail", "dts", "openAPI")
 	request.Method = requests.POST
 	return
 }

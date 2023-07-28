@@ -72,7 +72,6 @@ func (client *Client) ConfigureMigrationJobWithCallback(request *ConfigureMigrat
 type ConfigureMigrationJobRequest struct {
 	*requests.RpcRequest
 	SourceEndpointInstanceID            string           `position:"Query" name:"SourceEndpoint.InstanceID"`
-	Checkpoint                          string           `position:"Query" name:"Checkpoint"`
 	SourceEndpointEngineName            string           `position:"Query" name:"SourceEndpoint.EngineName"`
 	SourceEndpointOracleSID             string           `position:"Query" name:"SourceEndpoint.OracleSID"`
 	DestinationEndpointInstanceID       string           `position:"Query" name:"DestinationEndpoint.InstanceID"`
@@ -94,7 +93,6 @@ type ConfigureMigrationJobRequest struct {
 	DestinationEndpointPort             string           `position:"Query" name:"DestinationEndpoint.Port"`
 	SourceEndpointRegion                string           `position:"Query" name:"SourceEndpoint.Region"`
 	SourceEndpointRole                  string           `position:"Query" name:"SourceEndpoint.Role"`
-	OwnerId                             string           `position:"Query" name:"OwnerId"`
 	DestinationEndpointDataBaseName     string           `position:"Query" name:"DestinationEndpoint.DataBaseName"`
 	SourceEndpointPassword              string           `position:"Query" name:"SourceEndpoint.Password"`
 	MigrationReserved                   string           `position:"Query" name:"MigrationReserved"`
@@ -117,7 +115,7 @@ func CreateConfigureMigrationJobRequest() (request *ConfigureMigrationJobRequest
 	request = &ConfigureMigrationJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dts", "2016-08-01", "ConfigureMigrationJob", "dts", "openAPI")
+	request.InitWithApiInfo("Dts", "2017-06-01", "ConfigureMigrationJob", "dts", "openAPI")
 	request.Method = requests.POST
 	return
 }
