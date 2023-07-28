@@ -71,9 +71,18 @@ func (client *Client) UpdateApplicationWithCallback(request *UpdateApplicationRe
 // UpdateApplicationRequest is the request struct for api UpdateApplication
 type UpdateApplicationRequest struct {
 	*requests.RpcRequest
-	Description string            `position:"Query" name:"Description"`
-	Tags        map[string]string `position:"Query" name:"Tags"  type:"Map"`
-	Name        string            `position:"Query" name:"Name"`
+	Description                  string                       `position:"Query" name:"Description"`
+	AlarmConfig                  UpdateApplicationAlarmConfig `position:"Query" name:"AlarmConfig"  type:"Struct"`
+	DeleteAlarmRulesBeforeUpdate requests.Boolean             `position:"Query" name:"DeleteAlarmRulesBeforeUpdate"`
+	Tags                         map[string]string            `position:"Query" name:"Tags"  type:"Map"`
+	Name                         string                       `position:"Query" name:"Name"`
+}
+
+// UpdateApplicationAlarmConfig is a repeated param struct in UpdateApplicationRequest
+type UpdateApplicationAlarmConfig struct {
+	TemplateIds    *[]string `name:"TemplateIds" type:"Repeated"`
+	ContactGroups  *[]string `name:"ContactGroups" type:"Repeated"`
+	HealthCheckUrl string    `name:"HealthCheckUrl"`
 }
 
 // UpdateApplicationResponse is the response struct for api UpdateApplication

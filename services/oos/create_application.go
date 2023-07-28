@@ -71,11 +71,19 @@ func (client *Client) CreateApplicationWithCallback(request *CreateApplicationRe
 // CreateApplicationRequest is the request struct for api CreateApplication
 type CreateApplicationRequest struct {
 	*requests.RpcRequest
-	ClientToken     string `position:"Query" name:"ClientToken"`
-	Description     string `position:"Query" name:"Description"`
-	ResourceGroupId string `position:"Query" name:"ResourceGroupId"`
-	Tags            string `position:"Query" name:"Tags"`
-	Name            string `position:"Query" name:"Name"`
+	ClientToken     string                       `position:"Query" name:"ClientToken"`
+	Description     string                       `position:"Query" name:"Description"`
+	AlarmConfig     CreateApplicationAlarmConfig `position:"Query" name:"AlarmConfig"  type:"Struct"`
+	ResourceGroupId string                       `position:"Query" name:"ResourceGroupId"`
+	Tags            string                       `position:"Query" name:"Tags"`
+	Name            string                       `position:"Query" name:"Name"`
+}
+
+// CreateApplicationAlarmConfig is a repeated param struct in CreateApplicationRequest
+type CreateApplicationAlarmConfig struct {
+	TemplateIds    *[]string `name:"TemplateIds" type:"Repeated"`
+	ContactGroups  *[]string `name:"ContactGroups" type:"Repeated"`
+	HealthCheckUrl string    `name:"HealthCheckUrl"`
 }
 
 // CreateApplicationResponse is the response struct for api CreateApplication

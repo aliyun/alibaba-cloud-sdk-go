@@ -26,4 +26,5 @@ type Application struct {
 	Description     string                 `json:"Description" xml:"Description"`
 	Tags            map[string]interface{} `json:"Tags" xml:"Tags"`
 	UpdatedDate     string                 `json:"UpdatedDate" xml:"UpdatedDate"`
+	AlarmConfig     AlarmConfig            `json:"AlarmConfig" xml:"AlarmConfig"`
 }
