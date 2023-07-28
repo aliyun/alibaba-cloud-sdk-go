@@ -73,7 +73,6 @@ type DeleteSubscriptionInstanceRequest struct {
 	*requests.RpcRequest
 	SubscriptionInstanceId string `position:"Query" name:"SubscriptionInstanceId"`
 	OwnerId                string `position:"Query" name:"OwnerId"`
-	AccountId              string `position:"Query" name:"AccountId"`
 }
 
 // DeleteSubscriptionInstanceResponse is the response struct for api DeleteSubscriptionInstance
@@ -90,7 +89,7 @@ func CreateDeleteSubscriptionInstanceRequest() (request *DeleteSubscriptionInsta
 	request = &DeleteSubscriptionInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dts", "2020-01-01", "DeleteSubscriptionInstance", "dts", "openAPI")
+	request.InitWithApiInfo("Dts", "2016-08-01", "DeleteSubscriptionInstance", "dts", "openAPI")
 	request.Method = requests.POST
 	return
 }

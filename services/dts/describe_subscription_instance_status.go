@@ -73,30 +73,22 @@ type DescribeSubscriptionInstanceStatusRequest struct {
 	*requests.RpcRequest
 	SubscriptionInstanceId string `position:"Query" name:"SubscriptionInstanceId"`
 	OwnerId                string `position:"Query" name:"OwnerId"`
-	AccountId              string `position:"Query" name:"AccountId"`
 }
 
 // DescribeSubscriptionInstanceStatusResponse is the response struct for api DescribeSubscriptionInstanceStatus
 type DescribeSubscriptionInstanceStatusResponse struct {
 	*responses.BaseResponse
 	Status                   string                                                 `json:"Status" xml:"Status"`
+	BeginTimestamp           string                                                 `json:"BeginTimestamp" xml:"BeginTimestamp"`
 	ErrorMessage             string                                                 `json:"ErrorMessage" xml:"ErrorMessage"`
-	ErrCode                  string                                                 `json:"ErrCode" xml:"ErrCode"`
-	Success                  string                                                 `json:"Success" xml:"Success"`
-	ErrMessage               string                                                 `json:"ErrMessage" xml:"ErrMessage"`
 	PayType                  string                                                 `json:"PayType" xml:"PayType"`
 	ConsumptionClient        string                                                 `json:"ConsumptionClient" xml:"ConsumptionClient"`
-	ConsumptionCheckpoint    string                                                 `json:"ConsumptionCheckpoint" xml:"ConsumptionCheckpoint"`
-	EndTimestamp             string                                                 `json:"EndTimestamp" xml:"EndTimestamp"`
-	BeginTimestamp           string                                                 `json:"BeginTimestamp" xml:"BeginTimestamp"`
-	RequestId                string                                                 `json:"RequestId" xml:"RequestId"`
-	SubscribeTopic           string                                                 `json:"SubscribeTopic" xml:"SubscribeTopic"`
 	SubscriptionInstanceName string                                                 `json:"SubscriptionInstanceName" xml:"SubscriptionInstanceName"`
 	SubscriptionInstanceID   string                                                 `json:"SubscriptionInstanceID" xml:"SubscriptionInstanceID"`
-	TaskId                   string                                                 `json:"TaskId" xml:"TaskId"`
+	EndTimestamp             string                                                 `json:"EndTimestamp" xml:"EndTimestamp"`
+	ConsumptionCheckpoint    string                                                 `json:"ConsumptionCheckpoint" xml:"ConsumptionCheckpoint"`
 	SourceEndpoint           SourceEndpoint                                         `json:"SourceEndpoint" xml:"SourceEndpoint"`
 	SubscriptionDataType     SubscriptionDataType                                   `json:"SubscriptionDataType" xml:"SubscriptionDataType"`
-	SubscriptionHost         SubscriptionHost                                       `json:"SubscriptionHost" xml:"SubscriptionHost"`
 	SubscriptionObject       SubscriptionObjectInDescribeSubscriptionInstanceStatus `json:"SubscriptionObject" xml:"SubscriptionObject"`
 }
 
@@ -105,7 +97,7 @@ func CreateDescribeSubscriptionInstanceStatusRequest() (request *DescribeSubscri
 	request = &DescribeSubscriptionInstanceStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dts", "2020-01-01", "DescribeSubscriptionInstanceStatus", "dts", "openAPI")
+	request.InitWithApiInfo("Dts", "2016-08-01", "DescribeSubscriptionInstanceStatus", "dts", "openAPI")
 	request.Method = requests.POST
 	return
 }

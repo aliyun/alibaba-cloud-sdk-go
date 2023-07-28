@@ -75,33 +75,29 @@ type ConfigureSynchronizationJobRequest struct {
 	Checkpoint                      string           `position:"Query" name:"Checkpoint"`
 	DestinationEndpointInstanceId   string           `position:"Query" name:"DestinationEndpoint.InstanceId"`
 	SourceEndpointIP                string           `position:"Query" name:"SourceEndpoint.IP"`
-	SynchronizationObjects          string           `position:"Body" name:"SynchronizationObjects"`
+	SynchronizationObjects          string           `position:"Query" name:"SynchronizationObjects"`
 	DestinationEndpointPassword     string           `position:"Query" name:"DestinationEndpoint.Password"`
+	DataInitialization              requests.Boolean `position:"Query" name:"DataInitialization"`
+	StructureInitialization         requests.Boolean `position:"Query" name:"StructureInitialization"`
 	PartitionKeyModifyTimeMinute    requests.Boolean `position:"Query" name:"PartitionKey.ModifyTime_Minute"`
 	PartitionKeyModifyTimeDay       requests.Boolean `position:"Query" name:"PartitionKey.ModifyTime_Day"`
+	SourceEndpointInstanceType      string           `position:"Query" name:"SourceEndpoint.InstanceType"`
 	SynchronizationJobId            string           `position:"Query" name:"SynchronizationJobId"`
 	SynchronizationJobName          string           `position:"Query" name:"SynchronizationJobName"`
-	AccountId                       string           `position:"Query" name:"AccountId"`
 	SourceEndpointUserName          string           `position:"Query" name:"SourceEndpoint.UserName"`
-	SourceEndpointDatabaseName      string           `position:"Query" name:"SourceEndpoint.DatabaseName"`
+	PartitionKeyModifyTimeMonth     requests.Boolean `position:"Query" name:"PartitionKey.ModifyTime_Month"`
 	SourceEndpointPort              string           `position:"Query" name:"SourceEndpoint.Port"`
 	SourceEndpointOwnerID           string           `position:"Query" name:"SourceEndpoint.OwnerID"`
+	DestinationEndpointUserName     string           `position:"Query" name:"DestinationEndpoint.UserName"`
 	DestinationEndpointPort         string           `position:"Query" name:"DestinationEndpoint.Port"`
 	PartitionKeyModifyTimeYear      requests.Boolean `position:"Query" name:"PartitionKey.ModifyTime_Year"`
 	SourceEndpointRole              string           `position:"Query" name:"SourceEndpoint.Role"`
 	OwnerId                         string           `position:"Query" name:"OwnerId"`
+	PartitionKeyModifyTimeHour      requests.Boolean `position:"Query" name:"PartitionKey.ModifyTime_Hour"`
 	SourceEndpointPassword          string           `position:"Query" name:"SourceEndpoint.Password"`
+	MigrationReserved               string           `position:"Query" name:"MigrationReserved"`
 	DestinationEndpointIP           string           `position:"Query" name:"DestinationEndpoint.IP"`
 	DestinationEndpointInstanceType string           `position:"Query" name:"DestinationEndpoint.InstanceType"`
-	SynchronizationDirection        string           `position:"Query" name:"SynchronizationDirection"`
-	DataInitialization              requests.Boolean `position:"Query" name:"DataInitialization"`
-	StructureInitialization         requests.Boolean `position:"Query" name:"StructureInitialization"`
-	SourceEndpointInstanceType      string           `position:"Query" name:"SourceEndpoint.InstanceType"`
-	PartitionKeyModifyTimeMonth     requests.Boolean `position:"Query" name:"PartitionKey.ModifyTime_Month"`
-	DestinationEndpointUserName     string           `position:"Query" name:"DestinationEndpoint.UserName"`
-	PartitionKeyModifyTimeHour      requests.Boolean `position:"Query" name:"PartitionKey.ModifyTime_Hour"`
-	DestinationEndpointDataBaseName string           `position:"Query" name:"DestinationEndpoint.DataBaseName"`
-	MigrationReserved               string           `position:"Query" name:"MigrationReserved"`
 }
 
 // ConfigureSynchronizationJobResponse is the response struct for api ConfigureSynchronizationJob
@@ -118,7 +114,7 @@ func CreateConfigureSynchronizationJobRequest() (request *ConfigureSynchronizati
 	request = &ConfigureSynchronizationJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dts", "2020-01-01", "ConfigureSynchronizationJob", "dts", "openAPI")
+	request.InitWithApiInfo("Dts", "2016-08-01", "ConfigureSynchronizationJob", "dts", "openAPI")
 	request.Method = requests.POST
 	return
 }

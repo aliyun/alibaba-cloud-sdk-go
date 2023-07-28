@@ -71,32 +71,19 @@ func (client *Client) DescribeSubscriptionInstancesWithCallback(request *Describ
 // DescribeSubscriptionInstancesRequest is the request struct for api DescribeSubscriptionInstances
 type DescribeSubscriptionInstancesRequest struct {
 	*requests.RpcRequest
-	ClientToken              string                              `position:"Query" name:"ClientToken"`
-	PageNum                  requests.Integer                    `position:"Query" name:"PageNum"`
-	AccountId                string                              `position:"Query" name:"AccountId"`
-	PageSize                 requests.Integer                    `position:"Query" name:"PageSize"`
-	Tag                      *[]DescribeSubscriptionInstancesTag `position:"Query" name:"Tag"  type:"Repeated"`
-	InstFilterRegion         string                              `position:"Query" name:"InstFilterRegion"`
-	OwnerId                  string                              `position:"Query" name:"OwnerId"`
-	SubscriptionInstanceName string                              `position:"Query" name:"SubscriptionInstanceName"`
-}
-
-// DescribeSubscriptionInstancesTag is a repeated param struct in DescribeSubscriptionInstancesRequest
-type DescribeSubscriptionInstancesTag struct {
-	Value string `name:"Value"`
-	Key   string `name:"Key"`
+	ClientToken              string           `position:"Query" name:"ClientToken"`
+	PageNum                  requests.Integer `position:"Query" name:"PageNum"`
+	OwnerId                  string           `position:"Query" name:"OwnerId"`
+	PageSize                 requests.Integer `position:"Query" name:"PageSize"`
+	SubscriptionInstanceName string           `position:"Query" name:"SubscriptionInstanceName"`
 }
 
 // DescribeSubscriptionInstancesResponse is the response struct for api DescribeSubscriptionInstances
 type DescribeSubscriptionInstancesResponse struct {
 	*responses.BaseResponse
-	RequestId             string                `json:"RequestId" xml:"RequestId"`
-	ErrCode               string                `json:"ErrCode" xml:"ErrCode"`
-	PageRecordCount       int                   `json:"PageRecordCount" xml:"PageRecordCount"`
-	Success               string                `json:"Success" xml:"Success"`
-	TotalRecordCount      int64                 `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	ErrMessage            string                `json:"ErrMessage" xml:"ErrMessage"`
 	PageNumber            int                   `json:"PageNumber" xml:"PageNumber"`
+	PageRecordCount       int                   `json:"PageRecordCount" xml:"PageRecordCount"`
+	TotalRecordCount      int64                 `json:"TotalRecordCount" xml:"TotalRecordCount"`
 	SubscriptionInstances SubscriptionInstances `json:"SubscriptionInstances" xml:"SubscriptionInstances"`
 }
 
@@ -105,7 +92,7 @@ func CreateDescribeSubscriptionInstancesRequest() (request *DescribeSubscription
 	request = &DescribeSubscriptionInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dts", "2020-01-01", "DescribeSubscriptionInstances", "dts", "openAPI")
+	request.InitWithApiInfo("Dts", "2016-08-01", "DescribeSubscriptionInstances", "dts", "openAPI")
 	request.Method = requests.POST
 	return
 }

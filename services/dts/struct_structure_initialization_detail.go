@@ -24,6 +24,6 @@ type StructureInitializationDetail struct {
 	DestinationOwnerDBName string                          `json:"DestinationOwnerDBName" xml:"DestinationOwnerDBName"`
 	Status                 string                          `json:"Status" xml:"Status"`
 	ObjectDefinition       string                          `json:"ObjectDefinition" xml:"ObjectDefinition"`
-	Constraints            []StructureInitializationDetail `json:"Constraints" xml:"Constraints"`
 	ConstraintList         ConstraintList                  `json:"ConstraintList" xml:"ConstraintList"`
+	Constraints            []StructureInitializationDetail `json:"Constraints" xml:"Constraints"`
 }

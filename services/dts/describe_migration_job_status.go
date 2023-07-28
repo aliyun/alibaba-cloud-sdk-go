@@ -74,30 +74,24 @@ type DescribeMigrationJobStatusRequest struct {
 	ClientToken    string `position:"Query" name:"ClientToken"`
 	MigrationJobId string `position:"Query" name:"MigrationJobId"`
 	OwnerId        string `position:"Query" name:"OwnerId"`
-	AccountId      string `position:"Query" name:"AccountId"`
 }
 
 // DescribeMigrationJobStatusResponse is the response struct for api DescribeMigrationJobStatus
 type DescribeMigrationJobStatusResponse struct {
 	*responses.BaseResponse
-	RequestId                     string                                     `json:"RequestId" xml:"RequestId"`
 	MigrationJobName              string                                     `json:"MigrationJobName" xml:"MigrationJobName"`
 	MigrationJobStatus            string                                     `json:"MigrationJobStatus" xml:"MigrationJobStatus"`
-	ErrCode                       string                                     `json:"ErrCode" xml:"ErrCode"`
-	Success                       string                                     `json:"Success" xml:"Success"`
 	PayType                       string                                     `json:"PayType" xml:"PayType"`
-	ErrMessage                    string                                     `json:"ErrMessage" xml:"ErrMessage"`
-	MigrationObject               string                                     `json:"MigrationObject" xml:"MigrationObject"`
 	MigrationJobId                string                                     `json:"MigrationJobId" xml:"MigrationJobId"`
-	TaskId                        string                                     `json:"TaskId" xml:"TaskId"`
+	MigrationObject               string                                     `json:"MigrationObject" xml:"MigrationObject"`
 	MigrationJobClass             string                                     `json:"MigrationJobClass" xml:"MigrationJobClass"`
-	DataInitializationStatus      DataInitializationStatus                   `json:"DataInitializationStatus" xml:"DataInitializationStatus"`
-	DataSynchronizationStatus     DataSynchronizationStatus                  `json:"DataSynchronizationStatus" xml:"DataSynchronizationStatus"`
+	SourceEndpoint                SourceEndpoint                             `json:"SourceEndpoint" xml:"SourceEndpoint"`
 	DestinationEndpoint           DestinationEndpoint                        `json:"DestinationEndpoint" xml:"DestinationEndpoint"`
 	MigrationMode                 MigrationMode                              `json:"MigrationMode" xml:"MigrationMode"`
 	PrecheckStatus                PrecheckStatusInDescribeMigrationJobStatus `json:"PrecheckStatus" xml:"PrecheckStatus"`
-	SourceEndpoint                SourceEndpoint                             `json:"SourceEndpoint" xml:"SourceEndpoint"`
 	StructureInitializationStatus StructureInitializationStatus              `json:"StructureInitializationStatus" xml:"StructureInitializationStatus"`
+	DataInitializationStatus      DataInitializationStatus                   `json:"DataInitializationStatus" xml:"DataInitializationStatus"`
+	DataSynchronizationStatus     DataSynchronizationStatus                  `json:"DataSynchronizationStatus" xml:"DataSynchronizationStatus"`
 }
 
 // CreateDescribeMigrationJobStatusRequest creates a request to invoke DescribeMigrationJobStatus API
@@ -105,7 +99,7 @@ func CreateDescribeMigrationJobStatusRequest() (request *DescribeMigrationJobSta
 	request = &DescribeMigrationJobStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dts", "2020-01-01", "DescribeMigrationJobStatus", "dts", "openAPI")
+	request.InitWithApiInfo("Dts", "2016-08-01", "DescribeMigrationJobStatus", "dts", "openAPI")
 	request.Method = requests.POST
 	return
 }

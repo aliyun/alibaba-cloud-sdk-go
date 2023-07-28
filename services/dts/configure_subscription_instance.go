@@ -71,26 +71,16 @@ func (client *Client) ConfigureSubscriptionInstanceWithCallback(request *Configu
 // ConfigureSubscriptionInstanceRequest is the request struct for api ConfigureSubscriptionInstance
 type ConfigureSubscriptionInstanceRequest struct {
 	*requests.RpcRequest
-	SourceEndpointInstanceID        string           `position:"Query" name:"SourceEndpoint.InstanceID"`
-	SourceEndpointOracleSID         string           `position:"Query" name:"SourceEndpoint.OracleSID"`
-	SourceEndpointIP                string           `position:"Query" name:"SourceEndpoint.IP"`
-	SubscriptionDataTypeDML         requests.Boolean `position:"Query" name:"SubscriptionDataType.DML"`
-	SourceEndpointInstanceType      string           `position:"Query" name:"SourceEndpoint.InstanceType"`
-	AccountId                       string           `position:"Query" name:"AccountId"`
-	SubscriptionObject              string           `position:"Body" name:"SubscriptionObject"`
-	SubscriptionInstanceVSwitchId   string           `position:"Query" name:"SubscriptionInstance.VSwitchId"`
-	SourceEndpointUserName          string           `position:"Query" name:"SourceEndpoint.UserName"`
-	SourceEndpointDatabaseName      string           `position:"Query" name:"SourceEndpoint.DatabaseName"`
-	SourceEndpointPort              string           `position:"Query" name:"SourceEndpoint.Port"`
-	SourceEndpointOwnerID           string           `position:"Query" name:"SourceEndpoint.OwnerID"`
-	SubscriptionInstanceVPCId       string           `position:"Query" name:"SubscriptionInstance.VPCId"`
-	SubscriptionInstanceNetworkType string           `position:"Query" name:"SubscriptionInstanceNetworkType"`
-	SubscriptionInstanceId          string           `position:"Query" name:"SubscriptionInstanceId"`
-	SourceEndpointRole              string           `position:"Query" name:"SourceEndpoint.Role"`
-	OwnerId                         string           `position:"Query" name:"OwnerId"`
-	SubscriptionDataTypeDDL         requests.Boolean `position:"Query" name:"SubscriptionDataType.DDL"`
-	SourceEndpointPassword          string           `position:"Query" name:"SourceEndpoint.Password"`
-	SubscriptionInstanceName        string           `position:"Query" name:"SubscriptionInstanceName"`
+	SourceEndpointInstanceID   string           `position:"Query" name:"SourceEndpoint.InstanceID"`
+	SourceEndpointOwnerID      string           `position:"Query" name:"SourceEndpoint.OwnerID"`
+	SubscriptionDataTypeDML    requests.Boolean `position:"Query" name:"SubscriptionDataType.DML"`
+	SubscriptionInstanceId     string           `position:"Query" name:"SubscriptionInstanceId"`
+	SourceEndpointRole         string           `position:"Query" name:"SourceEndpoint.Role"`
+	OwnerId                    string           `position:"Query" name:"OwnerId"`
+	SourceEndpointInstanceType string           `position:"Query" name:"SourceEndpoint.InstanceType"`
+	SubscriptionDataTypeDDL    requests.Boolean `position:"Query" name:"SubscriptionDataType.DDL"`
+	SubscriptionObject         string           `position:"Query" name:"SubscriptionObject"`
+	SubscriptionInstanceName   string           `position:"Query" name:"SubscriptionInstanceName"`
 }
 
 // ConfigureSubscriptionInstanceResponse is the response struct for api ConfigureSubscriptionInstance
@@ -107,7 +97,7 @@ func CreateConfigureSubscriptionInstanceRequest() (request *ConfigureSubscriptio
 	request = &ConfigureSubscriptionInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dts", "2020-01-01", "ConfigureSubscriptionInstance", "dts", "openAPI")
+	request.InitWithApiInfo("Dts", "2016-08-01", "ConfigureSubscriptionInstance", "dts", "openAPI")
 	request.Method = requests.POST
 	return
 }

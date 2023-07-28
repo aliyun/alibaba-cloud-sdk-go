@@ -71,17 +71,14 @@ func (client *Client) CreateSynchronizationJobWithCallback(request *CreateSynchr
 // CreateSynchronizationJobRequest is the request struct for api CreateSynchronizationJob
 type CreateSynchronizationJobRequest struct {
 	*requests.RpcRequest
-	ClientToken                     string           `position:"Query" name:"ClientToken"`
-	NetworkType                     string           `position:"Query" name:"networkType"`
-	SourceEndpointInstanceType      string           `position:"Query" name:"SourceEndpoint.InstanceType"`
-	AccountId                       string           `position:"Query" name:"AccountId"`
-	SynchronizationJobClass         string           `position:"Query" name:"SynchronizationJobClass"`
 	Period                          string           `position:"Query" name:"Period"`
 	DestRegion                      string           `position:"Query" name:"DestRegion"`
-	Topology                        string           `position:"Query" name:"Topology"`
+	ClientToken                     string           `position:"Query" name:"ClientToken"`
+	NetworkType                     string           `position:"Query" name:"networkType"`
 	OwnerId                         string           `position:"Query" name:"OwnerId"`
 	UsedTime                        requests.Integer `position:"Query" name:"UsedTime"`
-	DBInstanceCount                 requests.Integer `position:"Query" name:"DBInstanceCount"`
+	SourceEndpointInstanceType      string           `position:"Query" name:"SourceEndpoint.InstanceType"`
+	SynchronizationJobClass         string           `position:"Query" name:"SynchronizationJobClass"`
 	SourceRegion                    string           `position:"Query" name:"SourceRegion"`
 	PayType                         string           `position:"Query" name:"PayType"`
 	DestinationEndpointInstanceType string           `position:"Query" name:"DestinationEndpoint.InstanceType"`
@@ -102,7 +99,7 @@ func CreateCreateSynchronizationJobRequest() (request *CreateSynchronizationJobR
 	request = &CreateSynchronizationJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dts", "2020-01-01", "CreateSynchronizationJob", "dts", "openAPI")
+	request.InitWithApiInfo("Dts", "2016-08-01", "CreateSynchronizationJob", "dts", "openAPI")
 	request.Method = requests.POST
 	return
 }

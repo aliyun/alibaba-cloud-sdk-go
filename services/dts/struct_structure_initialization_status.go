@@ -21,5 +21,4 @@ type StructureInitializationStatus struct {
 	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
 	Status       string `json:"Status" xml:"Status"`
 	Percent      string `json:"Percent" xml:"Percent"`
-	NeedUpgrade  bool   `json:"NeedUpgrade" xml:"NeedUpgrade"`
 }

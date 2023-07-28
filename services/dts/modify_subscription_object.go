@@ -71,10 +71,9 @@ func (client *Client) ModifySubscriptionObjectWithCallback(request *ModifySubscr
 // ModifySubscriptionObjectRequest is the request struct for api ModifySubscriptionObject
 type ModifySubscriptionObjectRequest struct {
 	*requests.RpcRequest
+	SubscriptionObject     string `position:"Query" name:"SubscriptionObject"`
 	SubscriptionInstanceId string `position:"Query" name:"SubscriptionInstanceId"`
 	OwnerId                string `position:"Query" name:"OwnerId"`
-	AccountId              string `position:"Query" name:"AccountId"`
-	SubscriptionObject     string `position:"Query" name:"SubscriptionObject"`
 }
 
 // ModifySubscriptionObjectResponse is the response struct for api ModifySubscriptionObject
@@ -91,7 +90,7 @@ func CreateModifySubscriptionObjectRequest() (request *ModifySubscriptionObjectR
 	request = &ModifySubscriptionObjectRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dts", "2020-01-01", "ModifySubscriptionObject", "dts", "openAPI")
+	request.InitWithApiInfo("Dts", "2016-08-01", "ModifySubscriptionObject", "dts", "openAPI")
 	request.Method = requests.POST
 	return
 }

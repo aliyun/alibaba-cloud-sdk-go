@@ -71,10 +71,8 @@ func (client *Client) StartSynchronizationJobWithCallback(request *StartSynchron
 // StartSynchronizationJobRequest is the request struct for api StartSynchronizationJob
 type StartSynchronizationJobRequest struct {
 	*requests.RpcRequest
-	OwnerId                  string `position:"Query" name:"OwnerId"`
-	SynchronizationJobId     string `position:"Query" name:"SynchronizationJobId"`
-	AccountId                string `position:"Query" name:"AccountId"`
-	SynchronizationDirection string `position:"Query" name:"SynchronizationDirection"`
+	SynchronizationJobId string `position:"Query" name:"SynchronizationJobId"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
 }
 
 // StartSynchronizationJobResponse is the response struct for api StartSynchronizationJob
@@ -91,7 +89,7 @@ func CreateStartSynchronizationJobRequest() (request *StartSynchronizationJobReq
 	request = &StartSynchronizationJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dts", "2020-01-01", "StartSynchronizationJob", "dts", "openAPI")
+	request.InitWithApiInfo("Dts", "2016-08-01", "StartSynchronizationJob", "dts", "openAPI")
 	request.Method = requests.POST
 	return
 }

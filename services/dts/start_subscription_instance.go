@@ -73,7 +73,6 @@ type StartSubscriptionInstanceRequest struct {
 	*requests.RpcRequest
 	SubscriptionInstanceId string `position:"Query" name:"SubscriptionInstanceId"`
 	OwnerId                string `position:"Query" name:"OwnerId"`
-	AccountId              string `position:"Query" name:"AccountId"`
 }
 
 // StartSubscriptionInstanceResponse is the response struct for api StartSubscriptionInstance
@@ -91,7 +90,7 @@ func CreateStartSubscriptionInstanceRequest() (request *StartSubscriptionInstanc
 	request = &StartSubscriptionInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dts", "2020-01-01", "StartSubscriptionInstance", "dts", "openAPI")
+	request.InitWithApiInfo("Dts", "2016-08-01", "StartSubscriptionInstance", "dts", "openAPI")
 	request.Method = requests.POST
 	return
 }

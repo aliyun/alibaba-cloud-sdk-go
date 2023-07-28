@@ -74,20 +74,15 @@ type DescribeInitializationStatusRequest struct {
 	PageNum              requests.Integer `position:"Query" name:"PageNum"`
 	OwnerId              string           `position:"Query" name:"OwnerId"`
 	SynchronizationJobId string           `position:"Query" name:"SynchronizationJobId"`
-	AccountId            string           `position:"Query" name:"AccountId"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 }
 
 // DescribeInitializationStatusResponse is the response struct for api DescribeInitializationStatus
 type DescribeInitializationStatusResponse struct {
 	*responses.BaseResponse
-	RequestId                      string                          `json:"RequestId" xml:"RequestId"`
-	ErrCode                        string                          `json:"ErrCode" xml:"ErrCode"`
-	Success                        string                          `json:"Success" xml:"Success"`
-	ErrMessage                     string                          `json:"ErrMessage" xml:"ErrMessage"`
+	StructureInitializationDetails []StructureInitializationDetail `json:"StructureInitializationDetails" xml:"StructureInitializationDetails"`
 	DataInitializationDetails      []DataInitializationDetail      `json:"DataInitializationDetails" xml:"DataInitializationDetails"`
 	DataSynchronizationDetails     []DataSynchronizationDetail     `json:"DataSynchronizationDetails" xml:"DataSynchronizationDetails"`
-	StructureInitializationDetails []StructureInitializationDetail `json:"StructureInitializationDetails" xml:"StructureInitializationDetails"`
 }
 
 // CreateDescribeInitializationStatusRequest creates a request to invoke DescribeInitializationStatus API
@@ -95,7 +90,7 @@ func CreateDescribeInitializationStatusRequest() (request *DescribeInitializatio
 	request = &DescribeInitializationStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dts", "2020-01-01", "DescribeInitializationStatus", "dts", "openAPI")
+	request.InitWithApiInfo("Dts", "2016-08-01", "DescribeInitializationStatus", "dts", "openAPI")
 	request.Method = requests.POST
 	return
 }

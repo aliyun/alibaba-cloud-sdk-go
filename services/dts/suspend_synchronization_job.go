@@ -71,10 +71,8 @@ func (client *Client) SuspendSynchronizationJobWithCallback(request *SuspendSync
 // SuspendSynchronizationJobRequest is the request struct for api SuspendSynchronizationJob
 type SuspendSynchronizationJobRequest struct {
 	*requests.RpcRequest
-	OwnerId                  string `position:"Query" name:"OwnerId"`
-	SynchronizationJobId     string `position:"Query" name:"SynchronizationJobId"`
-	AccountId                string `position:"Query" name:"AccountId"`
-	SynchronizationDirection string `position:"Query" name:"SynchronizationDirection"`
+	SynchronizationJobId string `position:"Query" name:"SynchronizationJobId"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
 }
 
 // SuspendSynchronizationJobResponse is the response struct for api SuspendSynchronizationJob
@@ -91,7 +89,7 @@ func CreateSuspendSynchronizationJobRequest() (request *SuspendSynchronizationJo
 	request = &SuspendSynchronizationJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dts", "2020-01-01", "SuspendSynchronizationJob", "dts", "openAPI")
+	request.InitWithApiInfo("Dts", "2016-08-01", "SuspendSynchronizationJob", "dts", "openAPI")
 	request.Method = requests.POST
 	return
 }

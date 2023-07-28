@@ -19,5 +19,5 @@ package dts
 type SynchronousObject struct {
 	WholeDatabase string                           `json:"WholeDatabase" xml:"WholeDatabase"`
 	DatabaseName  string                           `json:"DatabaseName" xml:"DatabaseName"`
-	TableList     TableListInDescribeMigrationJobs `json:"TableList" xml:"TableList"`
+	TableList     TableListInDescirbeMigrationJobs `json:"TableList" xml:"TableList"`
 }

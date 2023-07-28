@@ -74,7 +74,6 @@ type ModifyConsumptionTimestampRequest struct {
 	SubscriptionInstanceId string `position:"Query" name:"SubscriptionInstanceId"`
 	ConsumptionTimestamp   string `position:"Query" name:"ConsumptionTimestamp"`
 	OwnerId                string `position:"Query" name:"OwnerId"`
-	AccountId              string `position:"Query" name:"AccountId"`
 }
 
 // ModifyConsumptionTimestampResponse is the response struct for api ModifyConsumptionTimestamp
@@ -91,7 +90,7 @@ func CreateModifyConsumptionTimestampRequest() (request *ModifyConsumptionTimest
 	request = &ModifyConsumptionTimestampRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dts", "2020-01-01", "ModifyConsumptionTimestamp", "dts", "openAPI")
+	request.InitWithApiInfo("Dts", "2016-08-01", "ModifyConsumptionTimestamp", "dts", "openAPI")
 	request.Method = requests.POST
 	return
 }

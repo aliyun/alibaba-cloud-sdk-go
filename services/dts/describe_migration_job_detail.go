@@ -75,26 +75,21 @@ type DescribeMigrationJobDetailRequest struct {
 	MigrationModeDataInitialization      requests.Boolean `position:"Query" name:"MigrationMode.DataInitialization"`
 	MigrationJobId                       string           `position:"Query" name:"MigrationJobId"`
 	PageNum                              requests.Integer `position:"Query" name:"PageNum"`
-	AccountId                            string           `position:"Query" name:"AccountId"`
-	MigrationModeDataSynchronization     requests.Boolean `position:"Query" name:"MigrationMode.DataSynchronization"`
-	PageSize                             requests.Integer `position:"Query" name:"PageSize"`
 	OwnerId                              string           `position:"Query" name:"OwnerId"`
 	MigrationModeStructureInitialization requests.Boolean `position:"Query" name:"MigrationMode.StructureInitialization"`
+	MigrationModeDataSynchronization     requests.Boolean `position:"Query" name:"MigrationMode.DataSynchronization"`
+	PageSize                             requests.Integer `position:"Query" name:"PageSize"`
 }
 
 // DescribeMigrationJobDetailResponse is the response struct for api DescribeMigrationJobDetail
 type DescribeMigrationJobDetailResponse struct {
 	*responses.BaseResponse
-	RequestId                         string                            `json:"RequestId" xml:"RequestId"`
-	ErrCode                           string                            `json:"ErrCode" xml:"ErrCode"`
-	PageRecordCount                   int                               `json:"PageRecordCount" xml:"PageRecordCount"`
-	Success                           string                            `json:"Success" xml:"Success"`
-	TotalRecordCount                  int64                             `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	ErrMessage                        string                            `json:"ErrMessage" xml:"ErrMessage"`
 	PageNumber                        int                               `json:"PageNumber" xml:"PageNumber"`
+	PageRecordCount                   int                               `json:"PageRecordCount" xml:"PageRecordCount"`
+	TotalRecordCount                  int64                             `json:"TotalRecordCount" xml:"TotalRecordCount"`
+	StructureInitializationDetailList StructureInitializationDetailList `json:"StructureInitializationDetailList" xml:"StructureInitializationDetailList"`
 	DataInitializationDetailList      DataInitializationDetailList      `json:"DataInitializationDetailList" xml:"DataInitializationDetailList"`
 	DataSynchronizationDetailList     DataSynchronizationDetailList     `json:"DataSynchronizationDetailList" xml:"DataSynchronizationDetailList"`
-	StructureInitializationDetailList StructureInitializationDetailList `json:"StructureInitializationDetailList" xml:"StructureInitializationDetailList"`
 }
 
 // CreateDescribeMigrationJobDetailRequest creates a request to invoke DescribeMigrationJobDetail API
@@ -102,7 +97,7 @@ func CreateDescribeMigrationJobDetailRequest() (request *DescribeMigrationJobDet
 	request = &DescribeMigrationJobDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dts", "2020-01-01", "DescribeMigrationJobDetail", "dts", "openAPI")
+	request.InitWithApiInfo("Dts", "2016-08-01", "DescribeMigrationJobDetail", "dts", "openAPI")
 	request.Method = requests.POST
 	return
 }

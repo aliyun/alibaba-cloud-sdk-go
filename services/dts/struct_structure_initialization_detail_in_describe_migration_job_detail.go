@@ -17,8 +17,8 @@ package dts
 
 // StructureInitializationDetailInDescribeMigrationJobDetail is a nested struct in dts response
 type StructureInitializationDetailInDescribeMigrationJobDetail struct {
-	Status                 string         `json:"Status" xml:"Status"`
 	SourceOwnerDBName      string         `json:"SourceOwnerDBName" xml:"SourceOwnerDBName"`
+	Status                 string         `json:"Status" xml:"Status"`
 	ObjectDefinition       string         `json:"ObjectDefinition" xml:"ObjectDefinition"`
 	ObjectType             string         `json:"ObjectType" xml:"ObjectType"`
 	ErrorMessage           string         `json:"ErrorMessage" xml:"ErrorMessage"`

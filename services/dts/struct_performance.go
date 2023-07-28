@@ -17,8 +17,6 @@ package dts
 
 // Performance is a nested struct in dts response
 type Performance struct {
-	Flow string `json:"Flow" xml:"Flow"`
-	Rps  string `json:"Rps" xml:"Rps"`
 	RPS  string `json:"RPS" xml:"RPS"`
 	FLOW string `json:"FLOW" xml:"FLOW"`
 }

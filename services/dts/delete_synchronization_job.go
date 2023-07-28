@@ -71,9 +71,8 @@ func (client *Client) DeleteSynchronizationJobWithCallback(request *DeleteSynchr
 // DeleteSynchronizationJobRequest is the request struct for api DeleteSynchronizationJob
 type DeleteSynchronizationJobRequest struct {
 	*requests.RpcRequest
-	OwnerId              string `position:"Query" name:"OwnerId"`
 	SynchronizationJobId string `position:"Query" name:"SynchronizationJobId"`
-	AccountId            string `position:"Query" name:"AccountId"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
 }
 
 // DeleteSynchronizationJobResponse is the response struct for api DeleteSynchronizationJob
@@ -90,7 +89,7 @@ func CreateDeleteSynchronizationJobRequest() (request *DeleteSynchronizationJobR
 	request = &DeleteSynchronizationJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dts", "2020-01-01", "DeleteSynchronizationJob", "dts", "openAPI")
+	request.InitWithApiInfo("Dts", "2016-08-01", "DeleteSynchronizationJob", "dts", "openAPI")
 	request.Method = requests.POST
 	return
 }

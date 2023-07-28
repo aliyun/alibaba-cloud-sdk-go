@@ -73,23 +73,19 @@ type DescribeSynchronizationObjectModifyStatusRequest struct {
 	*requests.RpcRequest
 	ClientToken string `position:"Query" name:"ClientToken"`
 	OwnerId     string `position:"Query" name:"OwnerId"`
-	AccountId   string `position:"Query" name:"AccountId"`
 	TaskId      string `position:"Query" name:"TaskId"`
 }
 
 // DescribeSynchronizationObjectModifyStatusResponse is the response struct for api DescribeSynchronizationObjectModifyStatus
 type DescribeSynchronizationObjectModifyStatusResponse struct {
 	*responses.BaseResponse
-	Status                        string                                                    `json:"Status" xml:"Status"`
-	ErrorMessage                  string                                                    `json:"ErrorMessage" xml:"ErrorMessage"`
-	RequestId                     string                                                    `json:"RequestId" xml:"RequestId"`
-	ErrCode                       string                                                    `json:"ErrCode" xml:"ErrCode"`
-	Success                       string                                                    `json:"Success" xml:"Success"`
-	ErrMessage                    string                                                    `json:"ErrMessage" xml:"ErrMessage"`
-	DataInitializationStatus      DataInitializationStatus                                  `json:"DataInitializationStatus" xml:"DataInitializationStatus"`
-	DataSynchronizationStatus     DataSynchronizationStatus                                 `json:"DataSynchronizationStatus" xml:"DataSynchronizationStatus"`
-	PrecheckStatus                PrecheckStatusInDescribeSynchronizationObjectModifyStatus `json:"PrecheckStatus" xml:"PrecheckStatus"`
-	StructureInitializationStatus StructureInitializationStatus                             `json:"StructureInitializationStatus" xml:"StructureInitializationStatus"`
+	Status                        string                        `json:"Status" xml:"Status"`
+	RequestId                     string                        `json:"RequestId" xml:"RequestId"`
+	ErrorMessage                  string                        `json:"ErrorMessage" xml:"ErrorMessage"`
+	PrecheckStatus                PrecheckStatus                `json:"PrecheckStatus" xml:"PrecheckStatus"`
+	StructureInitializationStatus StructureInitializationStatus `json:"StructureInitializationStatus" xml:"StructureInitializationStatus"`
+	DataInitializationStatus      DataInitializationStatus      `json:"DataInitializationStatus" xml:"DataInitializationStatus"`
+	DataSynchronizationStatus     DataSynchronizationStatus     `json:"DataSynchronizationStatus" xml:"DataSynchronizationStatus"`
 }
 
 // CreateDescribeSynchronizationObjectModifyStatusRequest creates a request to invoke DescribeSynchronizationObjectModifyStatus API
@@ -97,7 +93,7 @@ func CreateDescribeSynchronizationObjectModifyStatusRequest() (request *Describe
 	request = &DescribeSynchronizationObjectModifyStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dts", "2020-01-01", "DescribeSynchronizationObjectModifyStatus", "dts", "openAPI")
+	request.InitWithApiInfo("Dts", "2016-08-01", "DescribeSynchronizationObjectModifyStatus", "dts", "openAPI")
 	request.Method = requests.POST
 	return
 }

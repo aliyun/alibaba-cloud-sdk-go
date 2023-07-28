@@ -73,11 +73,16 @@ type ConfigureMigrationJobRequest struct {
 	*requests.RpcRequest
 	SourceEndpointInstanceID            string           `position:"Query" name:"SourceEndpoint.InstanceID"`
 	Checkpoint                          string           `position:"Query" name:"Checkpoint"`
+	SourceEndpointEngineName            string           `position:"Query" name:"SourceEndpoint.EngineName"`
+	SourceEndpointOracleSID             string           `position:"Query" name:"SourceEndpoint.OracleSID"`
 	DestinationEndpointInstanceID       string           `position:"Query" name:"DestinationEndpoint.InstanceID"`
 	SourceEndpointIP                    string           `position:"Query" name:"SourceEndpoint.IP"`
 	DestinationEndpointPassword         string           `position:"Query" name:"DestinationEndpoint.Password"`
+	MigrationObject                     string           `position:"Query" name:"MigrationObject"`
 	MigrationModeDataIntialization      requests.Boolean `position:"Query" name:"MigrationMode.DataIntialization"`
-	AccountId                           string           `position:"Query" name:"AccountId"`
+	MigrationJobId                      string           `position:"Query" name:"MigrationJobId"`
+	SourceEndpointInstanceType          string           `position:"Query" name:"SourceEndpoint.InstanceType"`
+	DestinationEndpointEngineName       string           `position:"Query" name:"DestinationEndpoint.EngineName"`
 	MigrationModeStructureIntialization requests.Boolean `position:"Query" name:"MigrationMode.StructureIntialization"`
 	MigrationModeDataSynchronization    requests.Boolean `position:"Query" name:"MigrationMode.DataSynchronization"`
 	DestinationEndpointRegion           string           `position:"Query" name:"DestinationEndpoint.Region"`
@@ -85,24 +90,17 @@ type ConfigureMigrationJobRequest struct {
 	SourceEndpointDatabaseName          string           `position:"Query" name:"SourceEndpoint.DatabaseName"`
 	SourceEndpointPort                  string           `position:"Query" name:"SourceEndpoint.Port"`
 	SourceEndpointOwnerID               string           `position:"Query" name:"SourceEndpoint.OwnerID"`
+	DestinationEndpointUserName         string           `position:"Query" name:"DestinationEndpoint.UserName"`
 	DestinationEndpointPort             string           `position:"Query" name:"DestinationEndpoint.Port"`
+	SourceEndpointRegion                string           `position:"Query" name:"SourceEndpoint.Region"`
 	SourceEndpointRole                  string           `position:"Query" name:"SourceEndpoint.Role"`
 	OwnerId                             string           `position:"Query" name:"OwnerId"`
+	DestinationEndpointDataBaseName     string           `position:"Query" name:"DestinationEndpoint.DataBaseName"`
 	SourceEndpointPassword              string           `position:"Query" name:"SourceEndpoint.Password"`
+	MigrationReserved                   string           `position:"Query" name:"MigrationReserved"`
 	DestinationEndpointIP               string           `position:"Query" name:"DestinationEndpoint.IP"`
 	MigrationJobName                    string           `position:"Query" name:"MigrationJobName"`
 	DestinationEndpointInstanceType     string           `position:"Query" name:"DestinationEndpoint.InstanceType"`
-	SourceEndpointEngineName            string           `position:"Query" name:"SourceEndpoint.EngineName"`
-	SourceEndpointOracleSID             string           `position:"Query" name:"SourceEndpoint.OracleSID"`
-	MigrationObject                     string           `position:"Body" name:"MigrationObject"`
-	MigrationJobId                      string           `position:"Query" name:"MigrationJobId"`
-	SourceEndpointInstanceType          string           `position:"Query" name:"SourceEndpoint.InstanceType"`
-	DestinationEndpointEngineName       string           `position:"Query" name:"DestinationEndpoint.EngineName"`
-	DestinationEndpointUserName         string           `position:"Query" name:"DestinationEndpoint.UserName"`
-	DestinationEndpointOracleSID        string           `position:"Query" name:"DestinationEndpoint.OracleSID"`
-	SourceEndpointRegion                string           `position:"Query" name:"SourceEndpoint.Region"`
-	DestinationEndpointDataBaseName     string           `position:"Query" name:"DestinationEndpoint.DataBaseName"`
-	MigrationReserved                   string           `position:"Query" name:"MigrationReserved"`
 }
 
 // ConfigureMigrationJobResponse is the response struct for api ConfigureMigrationJob
@@ -119,7 +117,7 @@ func CreateConfigureMigrationJobRequest() (request *ConfigureMigrationJobRequest
 	request = &ConfigureMigrationJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dts", "2020-01-01", "ConfigureMigrationJob", "dts", "openAPI")
+	request.InitWithApiInfo("Dts", "2016-08-01", "ConfigureMigrationJob", "dts", "openAPI")
 	request.Method = requests.POST
 	return
 }

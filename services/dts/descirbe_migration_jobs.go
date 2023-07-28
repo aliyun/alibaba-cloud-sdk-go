@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DescribeMigrationJobs invokes the dts.DescribeMigrationJobs API synchronously
-func (client *Client) DescribeMigrationJobs(request *DescribeMigrationJobsRequest) (response *DescribeMigrationJobsResponse, err error) {
-	response = CreateDescribeMigrationJobsResponse()
+// DescirbeMigrationJobs invokes the dts.DescirbeMigrationJobs API synchronously
+func (client *Client) DescirbeMigrationJobs(request *DescirbeMigrationJobsRequest) (response *DescirbeMigrationJobsResponse, err error) {
+	response = CreateDescirbeMigrationJobsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DescribeMigrationJobsWithChan invokes the dts.DescribeMigrationJobs API asynchronously
-func (client *Client) DescribeMigrationJobsWithChan(request *DescribeMigrationJobsRequest) (<-chan *DescribeMigrationJobsResponse, <-chan error) {
-	responseChan := make(chan *DescribeMigrationJobsResponse, 1)
+// DescirbeMigrationJobsWithChan invokes the dts.DescirbeMigrationJobs API asynchronously
+func (client *Client) DescirbeMigrationJobsWithChan(request *DescirbeMigrationJobsRequest) (<-chan *DescirbeMigrationJobsResponse, <-chan error) {
+	responseChan := make(chan *DescirbeMigrationJobsResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DescribeMigrationJobs(request)
+		response, err := client.DescirbeMigrationJobs(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) DescribeMigrationJobsWithChan(request *DescribeMigrationJo
 	return responseChan, errChan
 }
 
-// DescribeMigrationJobsWithCallback invokes the dts.DescribeMigrationJobs API asynchronously
-func (client *Client) DescribeMigrationJobsWithCallback(request *DescribeMigrationJobsRequest, callback func(response *DescribeMigrationJobsResponse, err error)) <-chan int {
+// DescirbeMigrationJobsWithCallback invokes the dts.DescirbeMigrationJobs API asynchronously
+func (client *Client) DescirbeMigrationJobsWithCallback(request *DescirbeMigrationJobsRequest, callback func(response *DescirbeMigrationJobsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DescribeMigrationJobsResponse
+		var response *DescirbeMigrationJobsResponse
 		var err error
 		defer close(result)
-		response, err = client.DescribeMigrationJobs(request)
+		response, err = client.DescirbeMigrationJobs(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,8 +68,8 @@ func (client *Client) DescribeMigrationJobsWithCallback(request *DescribeMigrati
 	return result
 }
 
-// DescribeMigrationJobsRequest is the request struct for api DescribeMigrationJobs
-type DescribeMigrationJobsRequest struct {
+// DescirbeMigrationJobsRequest is the request struct for api DescirbeMigrationJobs
+type DescirbeMigrationJobsRequest struct {
 	*requests.RpcRequest
 	PageNum          requests.Integer `position:"Query" name:"PageNum"`
 	OwnerId          string           `position:"Query" name:"OwnerId"`
@@ -77,28 +77,28 @@ type DescribeMigrationJobsRequest struct {
 	MigrationJobName string           `position:"Query" name:"MigrationJobName"`
 }
 
-// DescribeMigrationJobsResponse is the response struct for api DescribeMigrationJobs
-type DescribeMigrationJobsResponse struct {
+// DescirbeMigrationJobsResponse is the response struct for api DescirbeMigrationJobs
+type DescirbeMigrationJobsResponse struct {
 	*responses.BaseResponse
 	PageNumber       int                                  `json:"PageNumber" xml:"PageNumber"`
 	PageRecordCount  int                                  `json:"PageRecordCount" xml:"PageRecordCount"`
 	TotalRecordCount int64                                `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	MigrationJobs    MigrationJobsInDescribeMigrationJobs `json:"MigrationJobs" xml:"MigrationJobs"`
+	MigrationJobs    MigrationJobsInDescirbeMigrationJobs `json:"MigrationJobs" xml:"MigrationJobs"`
 }
 
-// CreateDescribeMigrationJobsRequest creates a request to invoke DescribeMigrationJobs API
-func CreateDescribeMigrationJobsRequest() (request *DescribeMigrationJobsRequest) {
-	request = &DescribeMigrationJobsRequest{
+// CreateDescirbeMigrationJobsRequest creates a request to invoke DescirbeMigrationJobs API
+func CreateDescirbeMigrationJobsRequest() (request *DescirbeMigrationJobsRequest) {
+	request = &DescirbeMigrationJobsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dts", "2016-08-01", "DescribeMigrationJobs", "dts", "openAPI")
+	request.InitWithApiInfo("Dts", "2016-08-01", "DescirbeMigrationJobs", "dts", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateDescribeMigrationJobsResponse creates a response to parse from DescribeMigrationJobs response
-func CreateDescribeMigrationJobsResponse() (response *DescribeMigrationJobsResponse) {
-	response = &DescribeMigrationJobsResponse{
+// CreateDescirbeMigrationJobsResponse creates a response to parse from DescirbeMigrationJobs response
+func CreateDescirbeMigrationJobsResponse() (response *DescirbeMigrationJobsResponse) {
+	response = &DescirbeMigrationJobsResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

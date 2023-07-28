@@ -17,19 +17,13 @@ package dts
 
 // DestinationEndpoint is a nested struct in dts response
 type DestinationEndpoint struct {
-	Region            string `json:"Region" xml:"Region"`
-	SslSolutionEnum   string `json:"SslSolutionEnum" xml:"SslSolutionEnum"`
-	Port              string `json:"Port" xml:"Port"`
-	Ip                string `json:"Ip" xml:"Ip"`
-	CanModifyPassword bool   `json:"CanModifyPassword" xml:"CanModifyPassword"`
-	IP                string `json:"IP" xml:"IP"`
-	OracleSID         string `json:"OracleSID" xml:"OracleSID"`
-	InstanceType      string `json:"InstanceType" xml:"InstanceType"`
-	RoleName          string `json:"RoleName" xml:"RoleName"`
-	EngineName        string `json:"EngineName" xml:"EngineName"`
-	InstanceID        string `json:"InstanceID" xml:"InstanceID"`
-	InstanceId        string `json:"InstanceId" xml:"InstanceId"`
-	AliyunUid         string `json:"AliyunUid" xml:"AliyunUid"`
-	UserName          string `json:"UserName" xml:"UserName"`
-	DatabaseName      string `json:"DatabaseName" xml:"DatabaseName"`
+	EngineName   string `json:"EngineName" xml:"EngineName"`
+	Port         string `json:"Port" xml:"Port"`
+	InstanceID   string `json:"InstanceID" xml:"InstanceID"`
+	IP           string `json:"IP" xml:"IP"`
+	InstanceId   string `json:"InstanceId" xml:"InstanceId"`
+	OracleSID    string `json:"OracleSID" xml:"OracleSID"`
+	UserName     string `json:"UserName" xml:"UserName"`
+	InstanceType string `json:"InstanceType" xml:"InstanceType"`
+	DatabaseName string `json:"DatabaseName" xml:"DatabaseName"`
 }

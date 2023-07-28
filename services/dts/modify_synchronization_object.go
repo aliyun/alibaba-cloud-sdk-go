@@ -71,11 +71,9 @@ func (client *Client) ModifySynchronizationObjectWithCallback(request *ModifySyn
 // ModifySynchronizationObjectRequest is the request struct for api ModifySynchronizationObject
 type ModifySynchronizationObjectRequest struct {
 	*requests.RpcRequest
-	SynchronizationObjects   string `position:"Body" name:"SynchronizationObjects"`
-	OwnerId                  string `position:"Query" name:"OwnerId"`
-	SynchronizationJobId     string `position:"Query" name:"SynchronizationJobId"`
-	AccountId                string `position:"Query" name:"AccountId"`
-	SynchronizationDirection string `position:"Query" name:"SynchronizationDirection"`
+	SynchronizationJobId   string `position:"Query" name:"SynchronizationJobId"`
+	SynchronizationObjects string `position:"Query" name:"SynchronizationObjects"`
+	OwnerId                string `position:"Query" name:"OwnerId"`
 }
 
 // ModifySynchronizationObjectResponse is the response struct for api ModifySynchronizationObject
@@ -93,7 +91,7 @@ func CreateModifySynchronizationObjectRequest() (request *ModifySynchronizationO
 	request = &ModifySynchronizationObjectRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dts", "2020-01-01", "ModifySynchronizationObject", "dts", "openAPI")
+	request.InitWithApiInfo("Dts", "2016-08-01", "ModifySynchronizationObject", "dts", "openAPI")
 	request.Method = requests.POST
 	return
 }

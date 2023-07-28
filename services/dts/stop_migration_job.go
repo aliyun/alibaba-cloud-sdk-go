@@ -74,7 +74,6 @@ type StopMigrationJobRequest struct {
 	ClientToken    string `position:"Query" name:"ClientToken"`
 	MigrationJobId string `position:"Query" name:"MigrationJobId"`
 	OwnerId        string `position:"Query" name:"OwnerId"`
-	AccountId      string `position:"Query" name:"AccountId"`
 }
 
 // StopMigrationJobResponse is the response struct for api StopMigrationJob
@@ -91,7 +90,7 @@ func CreateStopMigrationJobRequest() (request *StopMigrationJobRequest) {
 	request = &StopMigrationJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dts", "2020-01-01", "StopMigrationJob", "dts", "openAPI")
+	request.InitWithApiInfo("Dts", "2016-08-01", "StopMigrationJob", "dts", "openAPI")
 	request.Method = requests.POST
 	return
 }

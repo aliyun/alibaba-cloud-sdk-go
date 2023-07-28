@@ -71,14 +71,12 @@ func (client *Client) CreateSubscriptionInstanceWithCallback(request *CreateSubs
 // CreateSubscriptionInstanceRequest is the request struct for api CreateSubscriptionInstance
 type CreateSubscriptionInstanceRequest struct {
 	*requests.RpcRequest
-	ClientToken                string           `position:"Query" name:"ClientToken"`
-	SourceEndpointInstanceType string           `position:"Query" name:"SourceEndpoint.InstanceType"`
-	AccountId                  string           `position:"Query" name:"AccountId"`
-	Period                     string           `position:"Query" name:"Period"`
-	OwnerId                    string           `position:"Query" name:"OwnerId"`
-	UsedTime                   requests.Integer `position:"Query" name:"UsedTime"`
-	Region                     string           `position:"Query" name:"Region"`
-	PayType                    string           `position:"Query" name:"PayType"`
+	Period      string           `position:"Query" name:"Period"`
+	ClientToken string           `position:"Query" name:"ClientToken"`
+	OwnerId     string           `position:"Query" name:"OwnerId"`
+	UsedTime    requests.Integer `position:"Query" name:"UsedTime"`
+	Region      string           `position:"Query" name:"Region"`
+	PayType     string           `position:"Query" name:"PayType"`
 }
 
 // CreateSubscriptionInstanceResponse is the response struct for api CreateSubscriptionInstance
@@ -96,7 +94,7 @@ func CreateCreateSubscriptionInstanceRequest() (request *CreateSubscriptionInsta
 	request = &CreateSubscriptionInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dts", "2020-01-01", "CreateSubscriptionInstance", "dts", "openAPI")
+	request.InitWithApiInfo("Dts", "2016-08-01", "CreateSubscriptionInstance", "dts", "openAPI")
 	request.Method = requests.POST
 	return
 }
