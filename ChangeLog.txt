@@ -1,3 +1,16 @@
+2023-07-28 Version: v1.62.485
+- Generated 2019-03-15 for `adb`.
+- Add ErrorCode.
+- Support DescribeResubmitConfig and ModifyResubmitConfig.
+- Support DescribeSQAConfig and ModifySQAConfig.
+- Set default value.
+- Support Api TagList.
+- Modify parameters and response for ResubmitConfig API.
+- Update CancelActiveOperationTasks.
+- DescribeActiveOperationTasks Response add field TaskParams.
+- Add patameters for DescribeVswitches and DescribeVpcs.
+- Add regionId.
+
 2023-07-28 Version: v1.62.484
 - Generated 2019-06-01 for `oos`.
 - PatchBaseline Support Tags.
