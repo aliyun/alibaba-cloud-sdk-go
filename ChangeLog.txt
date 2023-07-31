@@ -1,3 +1,9 @@
+2023-07-31 Version: v1.62.490
+- Generated 2014-08-15 for `Rds`.
+- Fix bug ram.
+- Add minor version error.
+- Support to select the minor version of the kernel when the modify instance error reports that the kernel version does not support it.
+
 2023-07-31 Version: v1.62.489
 - Generated 2022-01-30 for `avatar`.
 -2d create
