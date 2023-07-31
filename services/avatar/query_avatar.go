@@ -71,8 +71,10 @@ func (client *Client) QueryAvatarWithCallback(request *QueryAvatarRequest, callb
 // QueryAvatarRequest is the request struct for api QueryAvatar
 type QueryAvatarRequest struct {
 	*requests.RpcRequest
-	Code     string           `position:"Query" name:"Code"`
-	TenantId requests.Integer `position:"Query" name:"TenantId"`
+	Code         string           `position:"Query" name:"Code"`
+	TenantId     requests.Integer `position:"Query" name:"TenantId"`
+	ExtParamsCLS string           `position:"Query" name:"ExtParams_CLS"`
+	ExtParams    string           `position:"Query" name:"ExtParams"`
 }
 
 // QueryAvatarResponse is the response struct for api QueryAvatar
@@ -91,7 +93,7 @@ func CreateQueryAvatarRequest() (request *QueryAvatarRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("avatar", "2022-01-30", "QueryAvatar", "", "")
-	request.Method = requests.GET
+	request.Method = requests.POST
 	return
 }
 

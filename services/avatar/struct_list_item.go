@@ -24,5 +24,7 @@ type ListItem struct {
 	Description          string               `json:"Description" xml:"Description"`
 	AvatarType           string               `json:"AvatarType" xml:"AvatarType"`
 	ModelType            string               `json:"ModelType" xml:"ModelType"`
+	MakeStatus           string               `json:"MakeStatus" xml:"MakeStatus"`
+	MakeFailReason       string               `json:"MakeFailReason" xml:"MakeFailReason"`
 	SupportedResolutions SupportedResolutions `json:"SupportedResolutions" xml:"SupportedResolutions"`
 }

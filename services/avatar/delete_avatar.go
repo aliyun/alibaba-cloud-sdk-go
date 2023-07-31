@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// QueryAvatarList invokes the avatar.QueryAvatarList API synchronously
-func (client *Client) QueryAvatarList(request *QueryAvatarListRequest) (response *QueryAvatarListResponse, err error) {
-	response = CreateQueryAvatarListResponse()
+// DeleteAvatar invokes the avatar.DeleteAvatar API synchronously
+func (client *Client) DeleteAvatar(request *DeleteAvatarRequest) (response *DeleteAvatarResponse, err error) {
+	response = CreateDeleteAvatarResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// QueryAvatarListWithChan invokes the avatar.QueryAvatarList API asynchronously
-func (client *Client) QueryAvatarListWithChan(request *QueryAvatarListRequest) (<-chan *QueryAvatarListResponse, <-chan error) {
-	responseChan := make(chan *QueryAvatarListResponse, 1)
+// DeleteAvatarWithChan invokes the avatar.DeleteAvatar API asynchronously
+func (client *Client) DeleteAvatarWithChan(request *DeleteAvatarRequest) (<-chan *DeleteAvatarResponse, <-chan error) {
+	responseChan := make(chan *DeleteAvatarResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.QueryAvatarList(request)
+		response, err := client.DeleteAvatar(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) QueryAvatarListWithChan(request *QueryAvatarListRequest) (
 	return responseChan, errChan
 }
 
-// QueryAvatarListWithCallback invokes the avatar.QueryAvatarList API asynchronously
-func (client *Client) QueryAvatarListWithCallback(request *QueryAvatarListRequest, callback func(response *QueryAvatarListResponse, err error)) <-chan int {
+// DeleteAvatarWithCallback invokes the avatar.DeleteAvatar API asynchronously
+func (client *Client) DeleteAvatarWithCallback(request *DeleteAvatarRequest, callback func(response *DeleteAvatarResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *QueryAvatarListResponse
+		var response *DeleteAvatarResponse
 		var err error
 		defer close(result)
-		response, err = client.QueryAvatarList(request)
+		response, err = client.DeleteAvatar(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,40 +68,37 @@ func (client *Client) QueryAvatarListWithCallback(request *QueryAvatarListReques
 	return result
 }
 
-// QueryAvatarListRequest is the request struct for api QueryAvatarList
-type QueryAvatarListRequest struct {
+// DeleteAvatarRequest is the request struct for api DeleteAvatar
+type DeleteAvatarRequest struct {
 	*requests.RpcRequest
-	ModelType    string           `position:"Query" name:"ModelType"`
-	PageNo       requests.Integer `position:"Query" name:"PageNo"`
+	Code         string           `position:"Query" name:"Code"`
 	TenantId     requests.Integer `position:"Query" name:"TenantId"`
-	PageSize     requests.Integer `position:"Query" name:"PageSize"`
 	ExtParamsCLS string           `position:"Query" name:"ExtParams_CLS"`
 	ExtParams    string           `position:"Query" name:"ExtParams"`
 }
 
-// QueryAvatarListResponse is the response struct for api QueryAvatarList
-type QueryAvatarListResponse struct {
+// DeleteAvatarResponse is the response struct for api DeleteAvatar
+type DeleteAvatarResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
 	Success   bool   `json:"Success" xml:"Success"`
-	Data      Data   `json:"Data" xml:"Data"`
 }
 
-// CreateQueryAvatarListRequest creates a request to invoke QueryAvatarList API
-func CreateQueryAvatarListRequest() (request *QueryAvatarListRequest) {
-	request = &QueryAvatarListRequest{
+// CreateDeleteAvatarRequest creates a request to invoke DeleteAvatar API
+func CreateDeleteAvatarRequest() (request *DeleteAvatarRequest) {
+	request = &DeleteAvatarRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("avatar", "2022-01-30", "QueryAvatarList", "", "")
+	request.InitWithApiInfo("avatar", "2022-01-30", "DeleteAvatar", "", "")
 	request.Method = requests.POST
 	return
 }
 
-// CreateQueryAvatarListResponse creates a response to parse from QueryAvatarList response
-func CreateQueryAvatarListResponse() (response *QueryAvatarListResponse) {
-	response = &QueryAvatarListResponse{
+// CreateDeleteAvatarResponse creates a response to parse from DeleteAvatar response
+func CreateDeleteAvatarResponse() (response *DeleteAvatarResponse) {
+	response = &DeleteAvatarResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

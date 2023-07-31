@@ -26,6 +26,7 @@ type Data struct {
 	FailReason           string               `json:"FailReason" xml:"FailReason"`
 	PageSize             int                  `json:"PageSize" xml:"PageSize"`
 	PageNo               int                  `json:"PageNo" xml:"PageNo"`
+	MakeStatus           string               `json:"MakeStatus" xml:"MakeStatus"`
 	InstanceId           string               `json:"InstanceId" xml:"InstanceId"`
 	TotalCount           int                  `json:"TotalCount" xml:"TotalCount"`
 	Description          string               `json:"Description" xml:"Description"`
@@ -34,6 +35,8 @@ type Data struct {
 	GrabType             string               `json:"GrabType" xml:"GrabType"`
 	Token                string               `json:"Token" xml:"Token"`
 	ModelType            string               `json:"ModelType" xml:"ModelType"`
+	Code                 string               `json:"Code" xml:"Code"`
+	MakeFailReason       string               `json:"MakeFailReason" xml:"MakeFailReason"`
 	IsCancel             bool                 `json:"IsCancel" xml:"IsCancel"`
 	Image                string               `json:"Image" xml:"Image"`
 	AvatarType           string               `json:"AvatarType" xml:"AvatarType"`
