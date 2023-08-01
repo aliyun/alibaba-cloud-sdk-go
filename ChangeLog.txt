@@ -1,3 +1,8 @@
+2023-08-01 Version: v1.62.496
+- Generated 2019-03-15 for `adb`.
+- Support resoruce group id.
+- Support resource group id.
+
 2023-08-01 Version: v1.62.495
 - Generated 2014-05-26 for `Ecs`.
 - CreateLaunchTemplate, CreateLaunchTemplateVersion, DescribeLaunchTemplateVersions support DeletionProtection.
