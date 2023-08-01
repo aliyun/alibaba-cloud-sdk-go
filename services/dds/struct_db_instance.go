@@ -55,6 +55,7 @@ type DBInstance struct {
 	CloudType                   string                                        `json:"CloudType" xml:"CloudType"`
 	MaintainEndTime             string                                        `json:"MaintainEndTime" xml:"MaintainEndTime"`
 	ExpireTime                  string                                        `json:"ExpireTime" xml:"ExpireTime"`
+	SyncPercent                 string                                        `json:"SyncPercent" xml:"SyncPercent"`
 	VSwitchId                   string                                        `json:"VSwitchId" xml:"VSwitchId"`
 	CreationTime                string                                        `json:"CreationTime" xml:"CreationTime"`
 	StorageEngine               string                                        `json:"StorageEngine" xml:"StorageEngine"`
