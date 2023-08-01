@@ -1,3 +1,7 @@
+2023-08-01 Version: v1.62.492
+- Generated 2019-03-15 for `adb`.
+- Support resource group id.
+
 2023-08-01 Version: v1.62.491
 - Generated 2019-03-15 for `adb`.
 - Support resourcegroup id.
