@@ -72,6 +72,7 @@ func (client *Client) ModifyLogBackupPolicyWithCallback(request *ModifyLogBackup
 type ModifyLogBackupPolicyRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId          requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceGroupId          string           `position:"Query" name:"ResourceGroupId"`
 	EnableBackupLog          string           `position:"Query" name:"EnableBackupLog"`
 	ResourceOwnerAccount     string           `position:"Query" name:"ResourceOwnerAccount"`
 	DBClusterId              string           `position:"Query" name:"DBClusterId"`
