@@ -1,3 +1,7 @@
+2023-08-01 Version: v1.62.495
+- Generated 2014-05-26 for `Ecs`.
+- CreateLaunchTemplate, CreateLaunchTemplateVersion, DescribeLaunchTemplateVersions support DeletionProtection.
+
 2023-08-01 Version: v1.62.494
 - Generated 2022-06-06 for `grace`.
 - Initialize SDK.
