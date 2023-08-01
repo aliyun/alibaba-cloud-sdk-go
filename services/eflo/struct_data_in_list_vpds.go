@@ -17,5 +17,5 @@ package eflo
 
 // DataInListVpds is a nested struct in eflo response
 type DataInListVpds struct {
-	DataItem []DataItemInListVpds `json:"Data" xml:"Data"`
+	DataItem []DataItem `json:"Data" xml:"Data"`
 }

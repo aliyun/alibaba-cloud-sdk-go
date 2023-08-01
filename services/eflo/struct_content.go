@@ -33,12 +33,14 @@ type Content struct {
 	CommodityCode             string                         `json:"CommodityCode" xml:"CommodityCode"`
 	Type                      string                         `json:"Type" xml:"Type"`
 	ReceptionInstanceName     string                         `json:"ReceptionInstanceName" xml:"ReceptionInstanceName"`
+	InstanceId2               string                         `json:"InstanceId2" xml:"InstanceId2"`
 	Message                   string                         `json:"Message" xml:"Message"`
 	IpAddressMac              string                         `json:"IpAddressMac" xml:"IpAddressMac"`
 	ErAttachmentId            string                         `json:"ErAttachmentId" xml:"ErAttachmentId"`
 	Action                    string                         `json:"Action" xml:"Action"`
 	PayType                   string                         `json:"PayType" xml:"PayType"`
 	InstanceName              string                         `json:"InstanceName" xml:"InstanceName"`
+	CenOwnerId                string                         `json:"CenOwnerId" xml:"CenOwnerId"`
 	IpName                    string                         `json:"IpName" xml:"IpName"`
 	LineOperator              string                         `json:"LineOperator" xml:"LineOperator"`
 	Spec                      string                         `json:"Spec" xml:"Spec"`
@@ -46,13 +48,16 @@ type Content struct {
 	ExpirationDate            string                         `json:"ExpirationDate" xml:"ExpirationDate"`
 	ZoneId                    string                         `json:"ZoneId" xml:"ZoneId"`
 	TransmissionInstanceType  string                         `json:"TransmissionInstanceType" xml:"TransmissionInstanceType"`
+	SourceInstanceId          string                         `json:"SourceInstanceId" xml:"SourceInstanceId"`
 	Status                    string                         `json:"Status" xml:"Status"`
+	PrivateIpCount            int64                          `json:"PrivateIpCount" xml:"PrivateIpCount"`
 	GrantRuleId               string                         `json:"GrantRuleId" xml:"GrantRuleId"`
 	NextHopType               string                         `json:"NextHopType" xml:"NextHopType"`
 	ReceptionInstanceType     string                         `json:"ReceptionInstanceType" xml:"ReceptionInstanceType"`
 	TransmissionInstanceOwner string                         `json:"TransmissionInstanceOwner" xml:"TransmissionInstanceOwner"`
 	CreateTime                string                         `json:"CreateTime" xml:"CreateTime"`
 	GmtCreate                 string                         `json:"GmtCreate" xml:"GmtCreate"`
+	MaxNcd                    int                            `json:"MaxNcd" xml:"MaxNcd"`
 	SubnetId                  string                         `json:"SubnetId" xml:"SubnetId"`
 	InstanceId                string                         `json:"InstanceId" xml:"InstanceId"`
 	RouteMapNum               int                            `json:"RouteMapNum" xml:"RouteMapNum"`
@@ -65,12 +70,15 @@ type Content struct {
 	Quota                     int                            `json:"Quota" xml:"Quota"`
 	CenId                     string                         `json:"CenId" xml:"CenId"`
 	ConnectionType            string                         `json:"ConnectionType" xml:"ConnectionType"`
+	NcCount                   int                            `json:"NcCount" xml:"NcCount"`
 	CurrentNode               string                         `json:"CurrentNode" xml:"CurrentNode"`
 	GrantTenantId             string                         `json:"GrantTenantId" xml:"GrantTenantId"`
 	TransmissionInstanceId    string                         `json:"TransmissionInstanceId" xml:"TransmissionInstanceId"`
 	ServiceMac                string                         `json:"ServiceMac" xml:"ServiceMac"`
+	InstanceId1               string                         `json:"InstanceId1" xml:"InstanceId1"`
 	DestinationCidrBlock      string                         `json:"DestinationCidrBlock" xml:"DestinationCidrBlock"`
 	Total                     int64                          `json:"Total" xml:"Total"`
+	NetworkInterfaceCount     int                            `json:"NetworkInterfaceCount" xml:"NetworkInterfaceCount"`
 	Across                    bool                           `json:"Across" xml:"Across"`
 	MasterZoneId              string                         `json:"MasterZoneId" xml:"MasterZoneId"`
 	ErRouteMapName            string                         `json:"ErRouteMapName" xml:"ErRouteMapName"`
@@ -80,7 +88,6 @@ type Content struct {
 	VpdId                     string                         `json:"VpdId" xml:"VpdId"`
 	VccRouteEntryId           string                         `json:"VccRouteEntryId" xml:"VccRouteEntryId"`
 	ReceptionInstanceOwner    string                         `json:"ReceptionInstanceOwner" xml:"ReceptionInstanceOwner"`
-	NcCount                   int64                          `json:"NcCount" xml:"NcCount"`
 	Duration                  string                         `json:"Duration" xml:"Duration"`
 	ErName                    string                         `json:"ErName" xml:"ErName"`
 	InternetChargeType        string                         `json:"InternetChargeType" xml:"InternetChargeType"`
@@ -88,6 +95,7 @@ type Content struct {
 	ErRouteMapId              string                         `json:"ErRouteMapId" xml:"ErRouteMapId"`
 	LbCount                   int64                          `json:"LbCount" xml:"LbCount"`
 	PrivateIpAddress          string                         `json:"PrivateIpAddress" xml:"PrivateIpAddress"`
+	Ncd                       int                            `json:"Ncd" xml:"Ncd"`
 	PortType                  string                         `json:"PortType" xml:"PortType"`
 	NodeId                    string                         `json:"NodeId" xml:"NodeId"`
 	RegionId                  string                         `json:"RegionId" xml:"RegionId"`
@@ -107,6 +115,7 @@ type Content struct {
 	RouteType                 string                         `json:"RouteType" xml:"RouteType"`
 	NetworkInterfaceId        string                         `json:"NetworkInterfaceId" xml:"NetworkInterfaceId"`
 	PricingCycle              string                         `json:"PricingCycle" xml:"PricingCycle"`
+	SecondaryCidrBlocks       []string                       `json:"SecondaryCidrBlocks" xml:"SecondaryCidrBlocks"`
 	SubnetIds                 []string                       `json:"SubnetIds" xml:"SubnetIds"`
 	Ethernet                  []string                       `json:"Ethernet" xml:"Ethernet"`
 	VpdBaseInfo               VpdBaseInfo                    `json:"VpdBaseInfo" xml:"VpdBaseInfo"`
@@ -115,9 +124,11 @@ type Content struct {
 	ErInfos                   []ErInfo                       `json:"ErInfos" xml:"ErInfos"`
 	Data                      []DataItem                     `json:"Data" xml:"Data"`
 	ErRouteMaps               []ErRouteMap                   `json:"ErRouteMaps" xml:"ErRouteMaps"`
-	PrivateIpAddressMacGroup  []PrivateIpAddressMacGroupItem `json:"PrivateIpAddressMacGroup" xml:"PrivateIpAddressMacGroup"`
 	Tags                      []Tag                          `json:"Tags" xml:"Tags"`
 	AliyunRouterInfo          []AliyunRouterInfoItem         `json:"AliyunRouterInfo" xml:"AliyunRouterInfo"`
+	PrivateIpAddressMacGroup  []PrivateIpAddressMacGroupItem `json:"PrivateIpAddressMacGroup" xml:"PrivateIpAddressMacGroup"`
 	ErRouteEntrys             []ErRouteEntry                 `json:"ErRouteEntrys" xml:"ErRouteEntrys"`
+	InstanceInfos             []InstanceInfo                 `json:"InstanceInfos" xml:"InstanceInfos"`
+	TopoInfo                  []Layer                        `json:"TopoInfo" xml:"TopoInfo"`
 	CisRouterInfo             []CisRouterInfoItem            `json:"CisRouterInfo" xml:"CisRouterInfo"`
 }

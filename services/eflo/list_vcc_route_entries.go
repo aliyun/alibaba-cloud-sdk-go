@@ -71,16 +71,17 @@ func (client *Client) ListVccRouteEntriesWithCallback(request *ListVccRouteEntri
 // ListVccRouteEntriesRequest is the request struct for api ListVccRouteEntries
 type ListVccRouteEntriesRequest struct {
 	*requests.RpcRequest
-	PageNumber           requests.Integer `position:"Body" name:"PageNumber"`
-	RouteType            string           `position:"Body" name:"RouteType"`
-	PageSize             requests.Integer `position:"Body" name:"PageSize"`
-	NextHopId            string           `position:"Body" name:"NextHopId"`
-	VccId                string           `position:"Body" name:"VccId"`
-	NextHopType          string           `position:"Body" name:"NextHopType"`
-	VpdRouteEntryId      string           `position:"Body" name:"VpdRouteEntryId"`
-	DestinationCidrBlock string           `position:"Body" name:"DestinationCidrBlock"`
-	EnablePage           requests.Boolean `position:"Body" name:"EnablePage"`
-	Status               string           `position:"Body" name:"Status"`
+	IgnoreDetailedRouteEntry requests.Boolean `position:"Body" name:"IgnoreDetailedRouteEntry"`
+	PageNumber               requests.Integer `position:"Body" name:"PageNumber"`
+	RouteType                string           `position:"Body" name:"RouteType"`
+	PageSize                 requests.Integer `position:"Body" name:"PageSize"`
+	NextHopId                string           `position:"Body" name:"NextHopId"`
+	VccId                    string           `position:"Body" name:"VccId"`
+	NextHopType              string           `position:"Body" name:"NextHopType"`
+	VpdRouteEntryId          string           `position:"Body" name:"VpdRouteEntryId"`
+	DestinationCidrBlock     string           `position:"Body" name:"DestinationCidrBlock"`
+	EnablePage               requests.Boolean `position:"Body" name:"EnablePage"`
+	Status                   string           `position:"Body" name:"Status"`
 }
 
 // ListVccRouteEntriesResponse is the response struct for api ListVccRouteEntries

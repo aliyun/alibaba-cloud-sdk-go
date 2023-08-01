@@ -19,6 +19,7 @@ package eflo
 type DataItem struct {
 	ErId                      string                         `json:"ErId" xml:"ErId"`
 	RouteMaps                 int64                          `json:"RouteMaps" xml:"RouteMaps"`
+	NetworkInterfaceCount     int                            `json:"NetworkInterfaceCount" xml:"NetworkInterfaceCount"`
 	AccessPointId             string                         `json:"AccessPointId" xml:"AccessPointId"`
 	ReceptionInstanceId       string                         `json:"ReceptionInstanceId" xml:"ReceptionInstanceId"`
 	NcType                    string                         `json:"NcType" xml:"NcType"`
@@ -30,6 +31,7 @@ type DataItem struct {
 	NextHopId                 string                         `json:"NextHopId" xml:"NextHopId"`
 	VccName                   string                         `json:"VccName" xml:"VccName"`
 	TaskId                    string                         `json:"TaskId" xml:"TaskId"`
+	ServiceCidr               string                         `json:"ServiceCidr" xml:"ServiceCidr"`
 	Gateway                   string                         `json:"Gateway" xml:"Gateway"`
 	CommodityCode             string                         `json:"CommodityCode" xml:"CommodityCode"`
 	VpcId                     string                         `json:"VpcId" xml:"VpcId"`
@@ -44,7 +46,7 @@ type DataItem struct {
 	InstanceName              string                         `json:"InstanceName" xml:"InstanceName"`
 	ReceptionInstanceOwner    string                         `json:"ReceptionInstanceOwner" xml:"ReceptionInstanceOwner"`
 	VccRouteEntryId           string                         `json:"VccRouteEntryId" xml:"VccRouteEntryId"`
-	NcCount                   int64                          `json:"NcCount" xml:"NcCount"`
+	CenOwnerId                string                         `json:"CenOwnerId" xml:"CenOwnerId"`
 	IpName                    string                         `json:"IpName" xml:"IpName"`
 	LineOperator              string                         `json:"LineOperator" xml:"LineOperator"`
 	Spec                      string                         `json:"Spec" xml:"Spec"`
@@ -63,6 +65,7 @@ type DataItem struct {
 	GrantRuleId               string                         `json:"GrantRuleId" xml:"GrantRuleId"`
 	TransmissionInstanceOwner string                         `json:"TransmissionInstanceOwner" xml:"TransmissionInstanceOwner"`
 	CreateTime                string                         `json:"CreateTime" xml:"CreateTime"`
+	SubnetCount               int                            `json:"SubnetCount" xml:"SubnetCount"`
 	PortType                  string                         `json:"PortType" xml:"PortType"`
 	GmtCreate                 string                         `json:"GmtCreate" xml:"GmtCreate"`
 	NodeId                    string                         `json:"NodeId" xml:"NodeId"`
@@ -77,8 +80,10 @@ type DataItem struct {
 	TenantId                  string                         `json:"TenantId" xml:"TenantId"`
 	ErAttachmentName          string                         `json:"ErAttachmentName" xml:"ErAttachmentName"`
 	Connections               int64                          `json:"Connections" xml:"Connections"`
+	VpdName                   string                         `json:"VpdName" xml:"VpdName"`
 	Product                   string                         `json:"Product" xml:"Product"`
 	VpdRouteEntryId           string                         `json:"VpdRouteEntryId" xml:"VpdRouteEntryId"`
+	Dependence                map[string]interface{}         `json:"Dependence" xml:"Dependence"`
 	Ip                        string                         `json:"Ip" xml:"Ip"`
 	GmtModified               string                         `json:"GmtModified" xml:"GmtModified"`
 	Quota                     int                            `json:"Quota" xml:"Quota"`
@@ -86,6 +91,7 @@ type DataItem struct {
 	BandwidthStr              string                         `json:"BandwidthStr" xml:"BandwidthStr"`
 	CenId                     string                         `json:"CenId" xml:"CenId"`
 	ConnectionType            string                         `json:"ConnectionType" xml:"ConnectionType"`
+	NcCount                   int                            `json:"NcCount" xml:"NcCount"`
 	CurrentNode               string                         `json:"CurrentNode" xml:"CurrentNode"`
 	TransmissionInstanceName  string                         `json:"TransmissionInstanceName" xml:"TransmissionInstanceName"`
 	VccId                     string                         `json:"VccId" xml:"VccId"`
@@ -95,10 +101,11 @@ type DataItem struct {
 	TransmissionInstanceId    string                         `json:"TransmissionInstanceId" xml:"TransmissionInstanceId"`
 	ServiceMac                string                         `json:"ServiceMac" xml:"ServiceMac"`
 	DestinationCidrBlock      string                         `json:"DestinationCidrBlock" xml:"DestinationCidrBlock"`
+	SecondaryCidrBlocks       []string                       `json:"SecondaryCidrBlocks" xml:"SecondaryCidrBlocks"`
 	Ethernet                  []string                       `json:"Ethernet" xml:"Ethernet"`
 	VpdBaseInfo               VpdBaseInfo                    `json:"VpdBaseInfo" xml:"VpdBaseInfo"`
 	SubnetBaseInfo            SubnetBaseInfo                 `json:"SubnetBaseInfo" xml:"SubnetBaseInfo"`
 	ErInfos                   []ErInfo                       `json:"ErInfos" xml:"ErInfos"`
-	PrivateIpAddressMacGroup  []PrivateIpAddressMacGroupItem `json:"PrivateIpAddressMacGroup" xml:"PrivateIpAddressMacGroup"`
 	Tags                      []Tag                          `json:"Tags" xml:"Tags"`
+	PrivateIpAddressMacGroup  []PrivateIpAddressMacGroupItem `json:"PrivateIpAddressMacGroup" xml:"PrivateIpAddressMacGroup"`
 }

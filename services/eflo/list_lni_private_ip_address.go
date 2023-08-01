@@ -71,6 +71,7 @@ func (client *Client) ListLniPrivateIpAddressWithCallback(request *ListLniPrivat
 // ListLniPrivateIpAddressRequest is the request struct for api ListLniPrivateIpAddress
 type ListLniPrivateIpAddressRequest struct {
 	*requests.RpcRequest
+	Description        string           `position:"Body" name:"Description"`
 	PageNumber         requests.Integer `position:"Body" name:"PageNumber"`
 	PageSize           requests.Integer `position:"Body" name:"PageSize"`
 	Ip                 string           `position:"Body" name:"Ip"`
