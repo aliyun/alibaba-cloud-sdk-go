@@ -71,35 +71,42 @@ func (client *Client) CreateDBClusterWithCallback(request *CreateDBClusterReques
 // CreateDBClusterRequest is the request struct for api CreateDBCluster
 type CreateDBClusterRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	DBClusterDescription string           `position:"Query" name:"DBClusterDescription"`
-	StorageType          string           `position:"Query" name:"StorageType"`
-	Mode                 string           `position:"Query" name:"Mode"`
-	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
-	Period               string           `position:"Query" name:"Period"`
-	BackupSetID          string           `position:"Query" name:"BackupSetID"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	DBNodeGroupCount     string           `position:"Query" name:"DBNodeGroupCount"`
-	VSwitchId            string           `position:"Query" name:"VSwitchId"`
-	ZoneId               string           `position:"Query" name:"ZoneId"`
-	ComputeResource      string           `position:"Query" name:"ComputeResource"`
-	ElasticIOResource    string           `position:"Query" name:"ElasticIOResource"`
-	SourceDBInstanceName string           `position:"Query" name:"SourceDBInstanceName"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	StorageResource      string           `position:"Query" name:"StorageResource"`
-	DBClusterCategory    string           `position:"Query" name:"DBClusterCategory"`
-	DBClusterNetworkType string           `position:"Query" name:"DBClusterNetworkType"`
-	RestoreTime          string           `position:"Query" name:"RestoreTime"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	DBClusterVersion     string           `position:"Query" name:"DBClusterVersion"`
-	DBClusterClass       string           `position:"Query" name:"DBClusterClass"`
-	UsedTime             string           `position:"Query" name:"UsedTime"`
-	RestoreType          string           `position:"Query" name:"RestoreType"`
-	DBNodeStorage        string           `position:"Query" name:"DBNodeStorage"`
-	ExecutorCount        string           `position:"Query" name:"ExecutorCount"`
-	VPCId                string           `position:"Query" name:"VPCId"`
-	PayType              string           `position:"Query" name:"PayType"`
+	ResourceOwnerId      requests.Integer      `position:"Query" name:"ResourceOwnerId"`
+	DBClusterDescription string                `position:"Query" name:"DBClusterDescription"`
+	StorageType          string                `position:"Query" name:"StorageType"`
+	Mode                 string                `position:"Query" name:"Mode"`
+	ResourceGroupId      string                `position:"Query" name:"ResourceGroupId"`
+	Tag                  *[]CreateDBClusterTag `position:"Query" name:"Tag"  type:"Repeated"`
+	Period               string                `position:"Query" name:"Period"`
+	BackupSetID          string                `position:"Query" name:"BackupSetID"`
+	OwnerId              requests.Integer      `position:"Query" name:"OwnerId"`
+	DBNodeGroupCount     string                `position:"Query" name:"DBNodeGroupCount"`
+	VSwitchId            string                `position:"Query" name:"VSwitchId"`
+	ZoneId               string                `position:"Query" name:"ZoneId"`
+	ComputeResource      string                `position:"Query" name:"ComputeResource"`
+	ElasticIOResource    string                `position:"Query" name:"ElasticIOResource"`
+	SourceDBInstanceName string                `position:"Query" name:"SourceDBInstanceName"`
+	ClientToken          string                `position:"Query" name:"ClientToken"`
+	StorageResource      string                `position:"Query" name:"StorageResource"`
+	DBClusterCategory    string                `position:"Query" name:"DBClusterCategory"`
+	DBClusterNetworkType string                `position:"Query" name:"DBClusterNetworkType"`
+	RestoreTime          string                `position:"Query" name:"RestoreTime"`
+	ResourceOwnerAccount string                `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string                `position:"Query" name:"OwnerAccount"`
+	DBClusterVersion     string                `position:"Query" name:"DBClusterVersion"`
+	DBClusterClass       string                `position:"Query" name:"DBClusterClass"`
+	UsedTime             string                `position:"Query" name:"UsedTime"`
+	RestoreType          string                `position:"Query" name:"RestoreType"`
+	DBNodeStorage        string                `position:"Query" name:"DBNodeStorage"`
+	ExecutorCount        string                `position:"Query" name:"ExecutorCount"`
+	VPCId                string                `position:"Query" name:"VPCId"`
+	PayType              string                `position:"Query" name:"PayType"`
+}
+
+// CreateDBClusterTag is a repeated param struct in CreateDBClusterRequest
+type CreateDBClusterTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // CreateDBClusterResponse is the response struct for api CreateDBCluster
