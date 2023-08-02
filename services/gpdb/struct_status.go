@@ -29,4 +29,7 @@ type Status struct {
 	NodeSegmentConnectionStatus     Node_segment_connection_status       `json:"node_segment_connection_status" xml:"node_segment_connection_status"`
 	AdbpgMasterStatus               Adbpg_master_status                  `json:"adbpg_master_status" xml:"adbpg_master_status"`
 	AdbpgSegmentStatus              Adbpg_segment_status                 `json:"adbpg_segment_status" xml:"adbpg_segment_status"`
+	AdbpgInstanceTotalDataGb        Adbpg_instance_total_data_gb         `json:"adbpg_instance_total_data_gb" xml:"adbpg_instance_total_data_gb"`
+	AdbpgInstanceHotDataGb          Adbpg_instance_hot_data_gb           `json:"adbpg_instance_hot_data_gb" xml:"adbpg_instance_hot_data_gb"`
+	AdbpgInstanceColdDataGb         Adbpg_instance_cold_data_gb          `json:"adbpg_instance_cold_data_gb" xml:"adbpg_instance_cold_data_gb"`
 }

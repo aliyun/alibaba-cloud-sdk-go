@@ -17,65 +17,65 @@ package gpdb
 
 // DBInstanceAttribute is a nested struct in gpdb response
 type DBInstanceAttribute struct {
-	SegNodeNum                int                               `json:"SegNodeNum" xml:"SegNodeNum"`
-	Engine                    string                            `json:"Engine" xml:"Engine"`
-	DBInstanceNetType         string                            `json:"DBInstanceNetType" xml:"DBInstanceNetType"`
-	DBInstanceClass           string                            `json:"DBInstanceClass" xml:"DBInstanceClass"`
-	StorageUnit               string                            `json:"StorageUnit" xml:"StorageUnit"`
-	DBInstanceStorage         int64                             `json:"DBInstanceStorage" xml:"DBInstanceStorage"`
-	MasterNodeNum             int                               `json:"MasterNodeNum" xml:"MasterNodeNum"`
-	MemoryUnit                string                            `json:"MemoryUnit" xml:"MemoryUnit"`
-	MaxConnections            int                               `json:"MaxConnections" xml:"MaxConnections"`
-	IdleTime                  int                               `json:"IdleTime" xml:"IdleTime"`
-	InstanceNetworkType       string                            `json:"InstanceNetworkType" xml:"InstanceNetworkType"`
-	DBInstanceDiskMBPS        int64                             `json:"DBInstanceDiskMBPS" xml:"DBInstanceDiskMBPS"`
-	MinorVersion              string                            `json:"MinorVersion" xml:"MinorVersion"`
-	DBInstanceId              string                            `json:"DBInstanceId" xml:"DBInstanceId"`
 	VpcId                     string                            `json:"VpcId" xml:"VpcId"`
-	DBInstanceMemory          int64                             `json:"DBInstanceMemory" xml:"DBInstanceMemory"`
-	SecurityIPList            string                            `json:"SecurityIPList" xml:"SecurityIPList"`
-	SegDiskPerformanceLevel   string                            `json:"SegDiskPerformanceLevel" xml:"SegDiskPerformanceLevel"`
-	EncryptionKey             string                            `json:"EncryptionKey" xml:"EncryptionKey"`
-	EngineVersion             string                            `json:"EngineVersion" xml:"EngineVersion"`
-	PayType                   string                            `json:"PayType" xml:"PayType"`
-	MaintainStartTime         string                            `json:"MaintainStartTime" xml:"MaintainStartTime"`
-	StorageSize               int64                             `json:"StorageSize" xml:"StorageSize"`
-	CpuCores                  int                               `json:"CpuCores" xml:"CpuCores"`
-	SupportRestore            bool                              `json:"SupportRestore" xml:"SupportRestore"`
-	StorageType               string                            `json:"StorageType" xml:"StorageType"`
-	StartTime                 string                            `json:"StartTime" xml:"StartTime"`
-	ZoneId                    string                            `json:"ZoneId" xml:"ZoneId"`
+	CreationTime              string                            `json:"CreationTime" xml:"CreationTime"`
+	DBInstanceCpuCores        int                               `json:"DBInstanceCpuCores" xml:"DBInstanceCpuCores"`
+	SegmentCounts             int                               `json:"SegmentCounts" xml:"SegmentCounts"`
 	StoragePerNode            int                               `json:"StoragePerNode" xml:"StoragePerNode"`
-	ServerlessMode            string                            `json:"ServerlessMode" xml:"ServerlessMode"`
+	DBInstanceMemory          int64                             `json:"DBInstanceMemory" xml:"DBInstanceMemory"`
+	HostType                  string                            `json:"HostType" xml:"HostType"`
+	PayType                   string                            `json:"PayType" xml:"PayType"`
+	StorageType               string                            `json:"StorageType" xml:"StorageType"`
+	AvailabilityValue         string                            `json:"AvailabilityValue" xml:"AvailabilityValue"`
+	ReadDelayTime             string                            `json:"ReadDelayTime" xml:"ReadDelayTime"`
 	CpuCoresPerNode           int                               `json:"CpuCoresPerNode" xml:"CpuCoresPerNode"`
+	Port                      string                            `json:"Port" xml:"Port"`
 	ConnectionMode            string                            `json:"ConnectionMode" xml:"ConnectionMode"`
 	LockMode                  string                            `json:"LockMode" xml:"LockMode"`
-	EncryptionType            string                            `json:"EncryptionType" xml:"EncryptionType"`
-	LockReason                string                            `json:"LockReason" xml:"LockReason"`
-	DBInstanceDescription     string                            `json:"DBInstanceDescription" xml:"DBInstanceDescription"`
-	VectorConfigurationStatus string                            `json:"VectorConfigurationStatus" xml:"VectorConfigurationStatus"`
-	DBInstanceCategory        string                            `json:"DBInstanceCategory" xml:"DBInstanceCategory"`
-	DBInstanceGroupCount      string                            `json:"DBInstanceGroupCount" xml:"DBInstanceGroupCount"`
-	MemorySize                int64                             `json:"MemorySize" xml:"MemorySize"`
-	RegionId                  string                            `json:"RegionId" xml:"RegionId"`
-	ResourceGroupId           string                            `json:"ResourceGroupId" xml:"ResourceGroupId"`
-	MaintainEndTime           string                            `json:"MaintainEndTime" xml:"MaintainEndTime"`
-	ExpireTime                string                            `json:"ExpireTime" xml:"ExpireTime"`
-	SegmentCounts             int                               `json:"SegmentCounts" xml:"SegmentCounts"`
-	DBInstanceMode            string                            `json:"DBInstanceMode" xml:"DBInstanceMode"`
-	Port                      string                            `json:"Port" xml:"Port"`
-	VSwitchId                 string                            `json:"VSwitchId" xml:"VSwitchId"`
-	CreationTime              string                            `json:"CreationTime" xml:"CreationTime"`
+	EngineVersion             string                            `json:"EngineVersion" xml:"EngineVersion"`
+	StorageUnit               string                            `json:"StorageUnit" xml:"StorageUnit"`
 	MemoryPerNode             int                               `json:"MemoryPerNode" xml:"MemoryPerNode"`
-	DBInstanceCpuCores        int                               `json:"DBInstanceCpuCores" xml:"DBInstanceCpuCores"`
-	DBInstanceClassType       string                            `json:"DBInstanceClassType" xml:"DBInstanceClassType"`
-	ReadDelayTime             string                            `json:"ReadDelayTime" xml:"ReadDelayTime"`
-	HostType                  string                            `json:"HostType" xml:"HostType"`
-	DBInstanceStatus          string                            `json:"DBInstanceStatus" xml:"DBInstanceStatus"`
-	RunningTime               string                            `json:"RunningTime" xml:"RunningTime"`
-	CoreVersion               string                            `json:"CoreVersion" xml:"CoreVersion"`
 	ConnectionString          string                            `json:"ConnectionString" xml:"ConnectionString"`
-	AvailabilityValue         string                            `json:"AvailabilityValue" xml:"AvailabilityValue"`
+	InstanceNetworkType       string                            `json:"InstanceNetworkType" xml:"InstanceNetworkType"`
+	SecurityIPList            string                            `json:"SecurityIPList" xml:"SecurityIPList"`
+	MemoryUnit                string                            `json:"MemoryUnit" xml:"MemoryUnit"`
+	DBInstanceClassType       string                            `json:"DBInstanceClassType" xml:"DBInstanceClassType"`
+	DBInstanceDescription     string                            `json:"DBInstanceDescription" xml:"DBInstanceDescription"`
+	DBInstanceGroupCount      string                            `json:"DBInstanceGroupCount" xml:"DBInstanceGroupCount"`
+	ExpireTime                string                            `json:"ExpireTime" xml:"ExpireTime"`
+	DBInstanceNetType         string                            `json:"DBInstanceNetType" xml:"DBInstanceNetType"`
+	MaintainStartTime         string                            `json:"MaintainStartTime" xml:"MaintainStartTime"`
+	MaintainEndTime           string                            `json:"MaintainEndTime" xml:"MaintainEndTime"`
+	LockReason                string                            `json:"LockReason" xml:"LockReason"`
+	DBInstanceStatus          string                            `json:"DBInstanceStatus" xml:"DBInstanceStatus"`
+	RegionId                  string                            `json:"RegionId" xml:"RegionId"`
+	DBInstanceDiskMBPS        int64                             `json:"DBInstanceDiskMBPS" xml:"DBInstanceDiskMBPS"`
+	DBInstanceStorage         int64                             `json:"DBInstanceStorage" xml:"DBInstanceStorage"`
+	ZoneId                    string                            `json:"ZoneId" xml:"ZoneId"`
+	MaxConnections            int                               `json:"MaxConnections" xml:"MaxConnections"`
+	DBInstanceId              string                            `json:"DBInstanceId" xml:"DBInstanceId"`
+	DBInstanceClass           string                            `json:"DBInstanceClass" xml:"DBInstanceClass"`
+	Engine                    string                            `json:"Engine" xml:"Engine"`
+	DBInstanceCategory        string                            `json:"DBInstanceCategory" xml:"DBInstanceCategory"`
+	CpuCores                  int                               `json:"CpuCores" xml:"CpuCores"`
+	MemorySize                int64                             `json:"MemorySize" xml:"MemorySize"`
+	StorageSize               int64                             `json:"StorageSize" xml:"StorageSize"`
+	SegNodeNum                int                               `json:"SegNodeNum" xml:"SegNodeNum"`
+	MasterNodeNum             int                               `json:"MasterNodeNum" xml:"MasterNodeNum"`
+	DBInstanceMode            string                            `json:"DBInstanceMode" xml:"DBInstanceMode"`
+	MinorVersion              string                            `json:"MinorVersion" xml:"MinorVersion"`
+	SupportRestore            bool                              `json:"SupportRestore" xml:"SupportRestore"`
+	VSwitchId                 string                            `json:"VSwitchId" xml:"VSwitchId"`
+	EncryptionKey             string                            `json:"EncryptionKey" xml:"EncryptionKey"`
+	EncryptionType            string                            `json:"EncryptionType" xml:"EncryptionType"`
+	CoreVersion               string                            `json:"CoreVersion" xml:"CoreVersion"`
+	RunningTime               string                            `json:"RunningTime" xml:"RunningTime"`
+	StartTime                 string                            `json:"StartTime" xml:"StartTime"`
+	ResourceGroupId           string                            `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	ServerlessResource        int                               `json:"ServerlessResource" xml:"ServerlessResource"`
+	IdleTime                  int                               `json:"IdleTime" xml:"IdleTime"`
+	ServerlessMode            string                            `json:"ServerlessMode" xml:"ServerlessMode"`
+	SegDiskPerformanceLevel   string                            `json:"SegDiskPerformanceLevel" xml:"SegDiskPerformanceLevel"`
+	VectorConfigurationStatus string                            `json:"VectorConfigurationStatus" xml:"VectorConfigurationStatus"`
 	Tags                      TagsInDescribeDBInstanceAttribute `json:"Tags" xml:"Tags"`
 }

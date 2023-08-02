@@ -71,7 +71,8 @@ func (client *Client) DescribeDBInstanceNetInfoWithCallback(request *DescribeDBI
 // DescribeDBInstanceNetInfoRequest is the request struct for api DescribeDBInstanceNetInfo
 type DescribeDBInstanceNetInfoRequest struct {
 	*requests.RpcRequest
-	DBInstanceId string `position:"Query" name:"DBInstanceId"`
+	ConnectionString string `position:"Query" name:"ConnectionString"`
+	DBInstanceId     string `position:"Query" name:"DBInstanceId"`
 }
 
 // DescribeDBInstanceNetInfoResponse is the response struct for api DescribeDBInstanceNetInfo

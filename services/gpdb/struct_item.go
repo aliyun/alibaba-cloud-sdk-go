@@ -20,14 +20,12 @@ type Item struct {
 	Name                  string                            `json:"Name" xml:"Name"`
 	User                  string                            `json:"User" xml:"User"`
 	BlockedBySQLStmt      string                            `json:"BlockedBySQLStmt" xml:"BlockedBySQLStmt"`
-	SQLPlan               string                            `json:"SQLPlan" xml:"SQLPlan"`
 	SourcePort            int                               `json:"SourcePort" xml:"SourcePort"`
 	NotGrantLocks         string                            `json:"NotGrantLocks" xml:"NotGrantLocks"`
 	DownloadUrl           string                            `json:"DownloadUrl" xml:"DownloadUrl"`
 	OperationClass        string                            `json:"OperationClass" xml:"OperationClass"`
 	BlockedByPID          string                            `json:"BlockedByPID" xml:"BlockedByPID"`
 	SQLStmt               string                            `json:"SQLStmt" xml:"SQLStmt"`
-	QueryId               string                            `json:"QueryId" xml:"QueryId"`
 	StartTime             int64                             `json:"StartTime" xml:"StartTime"`
 	SQLTruncatedThreshold int                               `json:"SQLTruncatedThreshold" xml:"SQLTruncatedThreshold"`
 	Duration              int                               `json:"Duration" xml:"Duration"`
