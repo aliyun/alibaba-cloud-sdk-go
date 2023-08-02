@@ -92,6 +92,7 @@ type CreateDBClusterRequest struct {
 	DBMinorVersion                         string                `position:"Query" name:"DBMinorVersion"`
 	AutoRenew                              requests.Boolean      `position:"Query" name:"AutoRenew"`
 	HotStandbyCluster                      string                `position:"Query" name:"HotStandbyCluster"`
+	StoragePayType                         string                `position:"Query" name:"StoragePayType"`
 	ZoneId                                 string                `position:"Query" name:"ZoneId"`
 	TDEStatus                              requests.Boolean      `position:"Query" name:"TDEStatus"`
 	AllowShutDown                          string                `position:"Query" name:"AllowShutDown"`
