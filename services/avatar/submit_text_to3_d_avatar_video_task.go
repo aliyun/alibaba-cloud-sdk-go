@@ -111,6 +111,7 @@ type SubmitTextTo3DAvatarVideoTaskVideoInfo struct {
 	IsAlpha            string `name:"IsAlpha"`
 	BackgroundImageUrl string `name:"BackgroundImageUrl"`
 	IsSubtitles        string `name:"IsSubtitles"`
+	SubtitleEmbedded   string `name:"SubtitleEmbedded"`
 	Resolution         string `name:"Resolution"`
 	AlphaFormat        string `name:"AlphaFormat"`
 }
@@ -119,9 +120,9 @@ type SubmitTextTo3DAvatarVideoTaskVideoInfo struct {
 type SubmitTextTo3DAvatarVideoTaskResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
-	Success   bool   `json:"Success" xml:"Success"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 

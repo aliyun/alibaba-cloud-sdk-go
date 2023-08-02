@@ -45,8 +45,8 @@ type Data struct {
 	OutputText           string               `json:"OutputText" xml:"OutputText"`
 	Portrait             string               `json:"Portrait" xml:"Portrait"`
 	Status               string               `json:"Status" xml:"Status"`
-	TaskResult           TaskResult           `json:"TaskResult" xml:"TaskResult"`
 	SupportedResolutions SupportedResolutions `json:"SupportedResolutions" xml:"SupportedResolutions"`
 	Channel              Channel              `json:"Channel" xml:"Channel"`
+	TaskResult           TaskResult           `json:"TaskResult" xml:"TaskResult"`
 	List                 []ListItem           `json:"List" xml:"List"`
 }

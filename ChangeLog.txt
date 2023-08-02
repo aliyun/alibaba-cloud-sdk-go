@@ -1,3 +1,9 @@
+2023-08-02 Version: v1.62.500
+- Generated 2022-01-30 for `avatar`.
+-Fix return message field type
+-Support subtitleEmbeded
+-Support mp4 alphaUrl
+
 2023-08-02 Version: v1.62.499
 - Generated 2017-08-01 for `polardb`.
 - Support new feature.

@@ -23,4 +23,5 @@ type TaskResult struct {
 	FailReason       string `json:"FailReason" xml:"FailReason"`
 	FailCode         string `json:"FailCode" xml:"FailCode"`
 	VideoDuration    int    `json:"VideoDuration" xml:"VideoDuration"`
+	AlphaUrl         string `json:"AlphaUrl" xml:"AlphaUrl"`
 }
