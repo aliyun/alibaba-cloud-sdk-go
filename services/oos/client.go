@@ -42,6 +42,13 @@ func SetEndpointDataToClient(client *Client) {
 	SetClientProperty(client, "EndpointType", GetEndpointType())
 }
 
+func NewClientV3() (*Client, error) {
+	client := &Client{}
+	err := client.Init()
+	SetEndpointDataToClient(client)
+	return client, err
+}
+
 // NewClient creates a sdk client with environment variables
 func NewClient() (client *Client, err error) {
 	client = &Client{}
