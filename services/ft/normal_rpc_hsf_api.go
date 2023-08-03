@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// FtFlowSpecial invokes the ft.FtFlowSpecial API synchronously
-func (client *Client) FtFlowSpecial(request *FtFlowSpecialRequest) (response *FtFlowSpecialResponse, err error) {
-	response = CreateFtFlowSpecialResponse()
+// NormalRpcHsfApi invokes the ft.NormalRpcHsfApi API synchronously
+func (client *Client) NormalRpcHsfApi(request *NormalRpcHsfApiRequest) (response *NormalRpcHsfApiResponse, err error) {
+	response = CreateNormalRpcHsfApiResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// FtFlowSpecialWithChan invokes the ft.FtFlowSpecial API asynchronously
-func (client *Client) FtFlowSpecialWithChan(request *FtFlowSpecialRequest) (<-chan *FtFlowSpecialResponse, <-chan error) {
-	responseChan := make(chan *FtFlowSpecialResponse, 1)
+// NormalRpcHsfApiWithChan invokes the ft.NormalRpcHsfApi API asynchronously
+func (client *Client) NormalRpcHsfApiWithChan(request *NormalRpcHsfApiRequest) (<-chan *NormalRpcHsfApiResponse, <-chan error) {
+	responseChan := make(chan *NormalRpcHsfApiResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.FtFlowSpecial(request)
+		response, err := client.NormalRpcHsfApi(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) FtFlowSpecialWithChan(request *FtFlowSpecialRequest) (<-ch
 	return responseChan, errChan
 }
 
-// FtFlowSpecialWithCallback invokes the ft.FtFlowSpecial API asynchronously
-func (client *Client) FtFlowSpecialWithCallback(request *FtFlowSpecialRequest, callback func(response *FtFlowSpecialResponse, err error)) <-chan int {
+// NormalRpcHsfApiWithCallback invokes the ft.NormalRpcHsfApi API asynchronously
+func (client *Client) NormalRpcHsfApiWithCallback(request *NormalRpcHsfApiRequest, callback func(response *NormalRpcHsfApiResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *FtFlowSpecialResponse
+		var response *NormalRpcHsfApiResponse
 		var err error
 		defer close(result)
-		response, err = client.FtFlowSpecial(request)
+		response, err = client.NormalRpcHsfApi(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,32 +68,30 @@ func (client *Client) FtFlowSpecialWithCallback(request *FtFlowSpecialRequest, c
 	return result
 }
 
-// FtFlowSpecialRequest is the request struct for api FtFlowSpecial
-type FtFlowSpecialRequest struct {
+// NormalRpcHsfApiRequest is the request struct for api NormalRpcHsfApi
+type NormalRpcHsfApiRequest struct {
 	*requests.RpcRequest
-	Name string `position:"Query" name:"Name"`
 }
 
-// FtFlowSpecialResponse is the response struct for api FtFlowSpecial
-type FtFlowSpecialResponse struct {
+// NormalRpcHsfApiResponse is the response struct for api NormalRpcHsfApi
+type NormalRpcHsfApiResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Name      string `json:"Name" xml:"Name"`
 }
 
-// CreateFtFlowSpecialRequest creates a request to invoke FtFlowSpecial API
-func CreateFtFlowSpecialRequest() (request *FtFlowSpecialRequest) {
-	request = &FtFlowSpecialRequest{
+// CreateNormalRpcHsfApiRequest creates a request to invoke NormalRpcHsfApi API
+func CreateNormalRpcHsfApiRequest() (request *NormalRpcHsfApiRequest) {
+	request = &NormalRpcHsfApiRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ft", "2018-07-13", "FtFlowSpecial", "", "")
-	request.Method = requests.POST
+	request.InitWithApiInfo("Ft", "2021-01-01", "NormalRpcHsfApi", "", "")
+	request.Method = requests.GET
 	return
 }
 
-// CreateFtFlowSpecialResponse creates a response to parse from FtFlowSpecial response
-func CreateFtFlowSpecialResponse() (response *FtFlowSpecialResponse) {
-	response = &FtFlowSpecialResponse{
+// CreateNormalRpcHsfApiResponse creates a response to parse from NormalRpcHsfApi response
+func CreateNormalRpcHsfApiResponse() (response *NormalRpcHsfApiResponse) {
+	response = &NormalRpcHsfApiResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

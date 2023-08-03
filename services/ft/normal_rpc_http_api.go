@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// FTApiAliasApi invokes the ft.FTApiAliasApi API synchronously
-func (client *Client) FTApiAliasApi(request *FTApiAliasApiRequest) (response *FTApiAliasApiResponse, err error) {
-	response = CreateFTApiAliasApiResponse()
+// NormalRpcHttpApi invokes the ft.NormalRpcHttpApi API synchronously
+func (client *Client) NormalRpcHttpApi(request *NormalRpcHttpApiRequest) (response *NormalRpcHttpApiResponse, err error) {
+	response = CreateNormalRpcHttpApiResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// FTApiAliasApiWithChan invokes the ft.FTApiAliasApi API asynchronously
-func (client *Client) FTApiAliasApiWithChan(request *FTApiAliasApiRequest) (<-chan *FTApiAliasApiResponse, <-chan error) {
-	responseChan := make(chan *FTApiAliasApiResponse, 1)
+// NormalRpcHttpApiWithChan invokes the ft.NormalRpcHttpApi API asynchronously
+func (client *Client) NormalRpcHttpApiWithChan(request *NormalRpcHttpApiRequest) (<-chan *NormalRpcHttpApiResponse, <-chan error) {
+	responseChan := make(chan *NormalRpcHttpApiResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.FTApiAliasApi(request)
+		response, err := client.NormalRpcHttpApi(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) FTApiAliasApiWithChan(request *FTApiAliasApiRequest) (<-ch
 	return responseChan, errChan
 }
 
-// FTApiAliasApiWithCallback invokes the ft.FTApiAliasApi API asynchronously
-func (client *Client) FTApiAliasApiWithCallback(request *FTApiAliasApiRequest, callback func(response *FTApiAliasApiResponse, err error)) <-chan int {
+// NormalRpcHttpApiWithCallback invokes the ft.NormalRpcHttpApi API asynchronously
+func (client *Client) NormalRpcHttpApiWithCallback(request *NormalRpcHttpApiRequest, callback func(response *NormalRpcHttpApiResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *FTApiAliasApiResponse
+		var response *NormalRpcHttpApiResponse
 		var err error
 		defer close(result)
-		response, err = client.FTApiAliasApi(request)
+		response, err = client.NormalRpcHttpApi(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,32 +68,30 @@ func (client *Client) FTApiAliasApiWithCallback(request *FTApiAliasApiRequest, c
 	return result
 }
 
-// FTApiAliasApiRequest is the request struct for api FTApiAliasApi
-type FTApiAliasApiRequest struct {
+// NormalRpcHttpApiRequest is the request struct for api NormalRpcHttpApi
+type NormalRpcHttpApiRequest struct {
 	*requests.RpcRequest
-	Name string `position:"Query" name:"Name"`
 }
 
-// FTApiAliasApiResponse is the response struct for api FTApiAliasApi
-type FTApiAliasApiResponse struct {
+// NormalRpcHttpApiResponse is the response struct for api NormalRpcHttpApi
+type NormalRpcHttpApiResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Name      string `json:"Name" xml:"Name"`
 }
 
-// CreateFTApiAliasApiRequest creates a request to invoke FTApiAliasApi API
-func CreateFTApiAliasApiRequest() (request *FTApiAliasApiRequest) {
-	request = &FTApiAliasApiRequest{
+// CreateNormalRpcHttpApiRequest creates a request to invoke NormalRpcHttpApi API
+func CreateNormalRpcHttpApiRequest() (request *NormalRpcHttpApiRequest) {
+	request = &NormalRpcHttpApiRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ft", "2018-07-13", "FTApiAliasApi", "", "")
-	request.Method = requests.POST
+	request.InitWithApiInfo("Ft", "2021-01-01", "NormalRpcHttpApi", "", "")
+	request.Method = requests.GET
 	return
 }
 
-// CreateFTApiAliasApiResponse creates a response to parse from FTApiAliasApi response
-func CreateFTApiAliasApiResponse() (response *FTApiAliasApiResponse) {
-	response = &FTApiAliasApiResponse{
+// CreateNormalRpcHttpApiResponse creates a response to parse from NormalRpcHttpApi response
+func CreateNormalRpcHttpApiResponse() (response *NormalRpcHttpApiResponse) {
+	response = &NormalRpcHttpApiResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

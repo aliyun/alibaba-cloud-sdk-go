@@ -1,3 +1,7 @@
+2023-08-03 Version: v1.62.506
+- Generated 2021-01-01 for `Ft`.
+undefined
+
 2023-08-03 Version: v1.62.505
 - Generated 2019-03-15 for `adb`.
 - Support region id.
