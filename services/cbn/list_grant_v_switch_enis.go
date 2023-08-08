@@ -74,13 +74,18 @@ type ListGrantVSwitchEnisRequest struct {
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	CenId                string           `position:"Query" name:"CenId"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	NextToken            string           `position:"Query" name:"NextToken"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	NetworkInterfaceName string           `position:"Query" name:"NetworkInterfaceName"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	Version              string           `position:"Query" name:"Version"`
 	VSwitchId            string           `position:"Query" name:"VSwitchId"`
 	VpcId                string           `position:"Query" name:"VpcId"`
+	MaxResults           requests.Integer `position:"Query" name:"MaxResults"`
+	PrimaryIpAddress     string           `position:"Query" name:"PrimaryIpAddress"`
+	NetworkInterfaceId   *[]string        `position:"Query" name:"NetworkInterfaceId"  type:"Repeated"`
 }
 
 // ListGrantVSwitchEnisResponse is the response struct for api ListGrantVSwitchEnis
@@ -88,6 +93,8 @@ type ListGrantVSwitchEnisResponse struct {
 	*responses.BaseResponse
 	RequestId        string            `json:"RequestId" xml:"RequestId"`
 	TotalCount       string            `json:"TotalCount" xml:"TotalCount"`
+	NextToken        string            `json:"NextToken" xml:"NextToken"`
+	MaxResults       int64             `json:"MaxResults" xml:"MaxResults"`
 	GrantVSwitchEnis []GrantVSwitchEni `json:"GrantVSwitchEnis" xml:"GrantVSwitchEnis"`
 }
 

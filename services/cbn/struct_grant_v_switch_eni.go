@@ -17,9 +17,11 @@ package cbn
 
 // GrantVSwitchEni is a nested struct in cbn response
 type GrantVSwitchEni struct {
-	VpcId              string `json:"VpcId" xml:"VpcId"`
-	VSwitchId          string `json:"VSwitchId" xml:"VSwitchId"`
-	NetworkInterfaceId string `json:"NetworkInterfaceId" xml:"NetworkInterfaceId"`
-	Description        string `json:"Description" xml:"Description"`
-	TransitRouterFlag  bool   `json:"TransitRouterFlag" xml:"TransitRouterFlag"`
+	VpcId                string `json:"VpcId" xml:"VpcId"`
+	VSwitchId            string `json:"VSwitchId" xml:"VSwitchId"`
+	NetworkInterfaceId   string `json:"NetworkInterfaceId" xml:"NetworkInterfaceId"`
+	Description          string `json:"Description" xml:"Description"`
+	TransitRouterFlag    bool   `json:"TransitRouterFlag" xml:"TransitRouterFlag"`
+	NetworkInterfaceName string `json:"NetworkInterfaceName" xml:"NetworkInterfaceName"`
+	PrimaryIpAddress     string `json:"PrimaryIpAddress" xml:"PrimaryIpAddress"`
 }
