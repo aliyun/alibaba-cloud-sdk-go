@@ -72,6 +72,7 @@ func (client *Client) AddLiveAppRecordConfigWithCallback(request *AddLiveAppReco
 type AddLiveAppRecordConfigRequest struct {
 	*requests.RpcRequest
 	OssEndpoint           string                                         `position:"Query" name:"OssEndpoint"`
+	DelayTime             requests.Integer                               `position:"Query" name:"DelayTime"`
 	TranscodeTemplates    *[]string                                      `position:"Query" name:"TranscodeTemplates"  type:"Repeated"`
 	StartTime             string                                         `position:"Query" name:"StartTime"`
 	AppName               string                                         `position:"Query" name:"AppName"`

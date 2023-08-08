@@ -17,8 +17,10 @@ package live
 
 // LiveRecordVodConfig is a nested struct in live response
 type LiveRecordVodConfig struct {
+	StorageLocation            string `json:"StorageLocation" xml:"StorageLocation"`
 	AppName                    string `json:"AppName" xml:"AppName"`
 	AutoCompose                string `json:"AutoCompose" xml:"AutoCompose"`
+	OnDemand                   int    `json:"OnDemand" xml:"OnDemand"`
 	StreamName                 string `json:"StreamName" xml:"StreamName"`
 	CreateTime                 string `json:"CreateTime" xml:"CreateTime"`
 	VodTranscodeGroupId        string `json:"VodTranscodeGroupId" xml:"VodTranscodeGroupId"`

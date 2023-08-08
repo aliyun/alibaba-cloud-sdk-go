@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// AddLiveRecordVodConfig invokes the live.AddLiveRecordVodConfig API synchronously
-func (client *Client) AddLiveRecordVodConfig(request *AddLiveRecordVodConfigRequest) (response *AddLiveRecordVodConfigResponse, err error) {
-	response = CreateAddLiveRecordVodConfigResponse()
+// UpdateLiveRecordVodConfig invokes the live.UpdateLiveRecordVodConfig API synchronously
+func (client *Client) UpdateLiveRecordVodConfig(request *UpdateLiveRecordVodConfigRequest) (response *UpdateLiveRecordVodConfigResponse, err error) {
+	response = CreateUpdateLiveRecordVodConfigResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// AddLiveRecordVodConfigWithChan invokes the live.AddLiveRecordVodConfig API asynchronously
-func (client *Client) AddLiveRecordVodConfigWithChan(request *AddLiveRecordVodConfigRequest) (<-chan *AddLiveRecordVodConfigResponse, <-chan error) {
-	responseChan := make(chan *AddLiveRecordVodConfigResponse, 1)
+// UpdateLiveRecordVodConfigWithChan invokes the live.UpdateLiveRecordVodConfig API asynchronously
+func (client *Client) UpdateLiveRecordVodConfigWithChan(request *UpdateLiveRecordVodConfigRequest) (<-chan *UpdateLiveRecordVodConfigResponse, <-chan error) {
+	responseChan := make(chan *UpdateLiveRecordVodConfigResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.AddLiveRecordVodConfig(request)
+		response, err := client.UpdateLiveRecordVodConfig(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) AddLiveRecordVodConfigWithChan(request *AddLiveRecordVodCo
 	return responseChan, errChan
 }
 
-// AddLiveRecordVodConfigWithCallback invokes the live.AddLiveRecordVodConfig API asynchronously
-func (client *Client) AddLiveRecordVodConfigWithCallback(request *AddLiveRecordVodConfigRequest, callback func(response *AddLiveRecordVodConfigResponse, err error)) <-chan int {
+// UpdateLiveRecordVodConfigWithCallback invokes the live.UpdateLiveRecordVodConfig API asynchronously
+func (client *Client) UpdateLiveRecordVodConfigWithCallback(request *UpdateLiveRecordVodConfigRequest, callback func(response *UpdateLiveRecordVodConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *AddLiveRecordVodConfigResponse
+		var response *UpdateLiveRecordVodConfigResponse
 		var err error
 		defer close(result)
-		response, err = client.AddLiveRecordVodConfig(request)
+		response, err = client.UpdateLiveRecordVodConfig(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,8 +68,8 @@ func (client *Client) AddLiveRecordVodConfigWithCallback(request *AddLiveRecordV
 	return result
 }
 
-// AddLiveRecordVodConfigRequest is the request struct for api AddLiveRecordVodConfig
-type AddLiveRecordVodConfigRequest struct {
+// UpdateLiveRecordVodConfigRequest is the request struct for api UpdateLiveRecordVodConfig
+type UpdateLiveRecordVodConfigRequest struct {
 	*requests.RpcRequest
 	AutoCompose                string           `position:"Query" name:"AutoCompose"`
 	ComposeVodTranscodeGroupId string           `position:"Query" name:"ComposeVodTranscodeGroupId"`
@@ -83,25 +83,25 @@ type AddLiveRecordVodConfigRequest struct {
 	OwnerId                    requests.Integer `position:"Query" name:"OwnerId"`
 }
 
-// AddLiveRecordVodConfigResponse is the response struct for api AddLiveRecordVodConfig
-type AddLiveRecordVodConfigResponse struct {
+// UpdateLiveRecordVodConfigResponse is the response struct for api UpdateLiveRecordVodConfig
+type UpdateLiveRecordVodConfigResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateAddLiveRecordVodConfigRequest creates a request to invoke AddLiveRecordVodConfig API
-func CreateAddLiveRecordVodConfigRequest() (request *AddLiveRecordVodConfigRequest) {
-	request = &AddLiveRecordVodConfigRequest{
+// CreateUpdateLiveRecordVodConfigRequest creates a request to invoke UpdateLiveRecordVodConfig API
+func CreateUpdateLiveRecordVodConfigRequest() (request *UpdateLiveRecordVodConfigRequest) {
+	request = &UpdateLiveRecordVodConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "AddLiveRecordVodConfig", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "UpdateLiveRecordVodConfig", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateAddLiveRecordVodConfigResponse creates a response to parse from AddLiveRecordVodConfig response
-func CreateAddLiveRecordVodConfigResponse() (response *AddLiveRecordVodConfigResponse) {
-	response = &AddLiveRecordVodConfigResponse{
+// CreateUpdateLiveRecordVodConfigResponse creates a response to parse from UpdateLiveRecordVodConfig response
+func CreateUpdateLiveRecordVodConfigResponse() (response *UpdateLiveRecordVodConfigResponse) {
+	response = &UpdateLiveRecordVodConfigResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

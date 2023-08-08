@@ -71,24 +71,28 @@ func (client *Client) AddCustomLiveStreamTranscodeWithCallback(request *AddCusto
 // AddCustomLiveStreamTranscodeRequest is the request struct for api AddCustomLiveStreamTranscode
 type AddCustomLiveStreamTranscodeRequest struct {
 	*requests.RpcRequest
-	Template             string           `position:"Query" name:"Template"`
-	Lazy                 string           `position:"Query" name:"Lazy"`
+	ResWithSource        string           `position:"Query" name:"ResWithSource"`
 	Gop                  string           `position:"Query" name:"Gop"`
-	KmsKeyExpireInterval string           `position:"Query" name:"KmsKeyExpireInterval"`
 	AudioCodec           string           `position:"Query" name:"AudioCodec"`
 	KmsUID               string           `position:"Query" name:"KmsUID"`
-	TemplateType         string           `position:"Query" name:"TemplateType"`
-	AudioProfile         string           `position:"Query" name:"AudioProfile"`
 	Height               requests.Integer `position:"Query" name:"Height"`
 	App                  string           `position:"Query" name:"App"`
+	Profile              requests.Integer `position:"Query" name:"Profile"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ExtWithSource        string           `position:"Query" name:"ExtWithSource"`
+	BitrateWithSource    string           `position:"Query" name:"BitrateWithSource"`
+	Domain               string           `position:"Query" name:"Domain"`
+	Template             string           `position:"Query" name:"Template"`
+	Lazy                 string           `position:"Query" name:"Lazy"`
+	KmsKeyExpireInterval string           `position:"Query" name:"KmsKeyExpireInterval"`
+	TemplateType         string           `position:"Query" name:"TemplateType"`
+	AudioProfile         string           `position:"Query" name:"AudioProfile"`
 	EncryptParameters    string           `position:"Query" name:"EncryptParameters"`
 	AudioChannelNum      requests.Integer `position:"Query" name:"AudioChannelNum"`
-	Profile              requests.Integer `position:"Query" name:"Profile"`
 	FPS                  requests.Integer `position:"Query" name:"FPS"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	AudioRate            requests.Integer `position:"Query" name:"AudioRate"`
+	FpsWithSource        string           `position:"Query" name:"FpsWithSource"`
 	AudioBitrate         requests.Integer `position:"Query" name:"AudioBitrate"`
-	Domain               string           `position:"Query" name:"Domain"`
 	Width                requests.Integer `position:"Query" name:"Width"`
 	VideoBitrate         requests.Integer `position:"Query" name:"VideoBitrate"`
 	KmsKeyID             string           `position:"Query" name:"KmsKeyID"`

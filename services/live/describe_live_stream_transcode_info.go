@@ -71,6 +71,7 @@ func (client *Client) DescribeLiveStreamTranscodeInfoWithCallback(request *Descr
 // DescribeLiveStreamTranscodeInfoRequest is the request struct for api DescribeLiveStreamTranscodeInfo
 type DescribeLiveStreamTranscodeInfoRequest struct {
 	*requests.RpcRequest
+	AppName             string           `position:"Query" name:"AppName"`
 	OwnerId             requests.Integer `position:"Query" name:"OwnerId"`
 	DomainTranscodeName string           `position:"Query" name:"DomainTranscodeName"`
 }

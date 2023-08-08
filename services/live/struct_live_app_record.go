@@ -27,6 +27,7 @@ type LiveAppRecord struct {
 	EndTime                   string                    `json:"EndTime" xml:"EndTime"`
 	Always                    string                    `json:"Always" xml:"Always"`
 	OnDemond                  int                       `json:"OnDemond" xml:"OnDemond"`
+	DelayTime                 int                       `json:"DelayTime" xml:"DelayTime"`
 	OssEndpoint               string                    `json:"OssEndpoint" xml:"OssEndpoint"`
 	AppName                   string                    `json:"AppName" xml:"AppName"`
 	TranscodeTemplates        TranscodeTemplates        `json:"TranscodeTemplates" xml:"TranscodeTemplates"`

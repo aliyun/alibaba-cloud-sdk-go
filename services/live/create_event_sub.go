@@ -71,13 +71,14 @@ func (client *Client) CreateEventSubWithCallback(request *CreateEventSubRequest,
 // CreateEventSubRequest is the request struct for api CreateEventSub
 type CreateEventSubRequest struct {
 	*requests.RpcRequest
-	Role        requests.Integer `position:"Query" name:"Role"`
-	ClientToken string           `position:"Query" name:"ClientToken"`
-	Users       *[]string        `position:"Query" name:"Users"  type:"Repeated"`
-	AppId       string           `position:"Query" name:"AppId"`
-	CallbackUrl string           `position:"Query" name:"CallbackUrl"`
-	ChannelId   string           `position:"Query" name:"ChannelId"`
-	Events      *[]string        `position:"Query" name:"Events"  type:"Repeated"`
+	Role                      requests.Integer `position:"Query" name:"Role"`
+	ClientToken               string           `position:"Query" name:"ClientToken"`
+	NeedCallbackAuthorization requests.Boolean `position:"Query" name:"NeedCallbackAuthorization"`
+	Users                     *[]string        `position:"Query" name:"Users"  type:"Repeated"`
+	AppId                     string           `position:"Query" name:"AppId"`
+	CallbackUrl               string           `position:"Query" name:"CallbackUrl"`
+	ChannelId                 string           `position:"Query" name:"ChannelId"`
+	Events                    *[]string        `position:"Query" name:"Events"  type:"Repeated"`
 }
 
 // CreateEventSubResponse is the response struct for api CreateEventSub
