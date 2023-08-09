@@ -17,8 +17,8 @@ package config
 
 // ConfigRules is a nested struct in config response
 type ConfigRules struct {
+	TotalCount     int64        `json:"TotalCount" xml:"TotalCount"`
 	PageNumber     int          `json:"PageNumber" xml:"PageNumber"`
 	PageSize       int          `json:"PageSize" xml:"PageSize"`
-	TotalCount     int64        `json:"TotalCount" xml:"TotalCount"`
 	ConfigRuleList []ConfigRule `json:"ConfigRuleList" xml:"ConfigRuleList"`
 }

@@ -17,8 +17,8 @@ package config
 
 // Source is a nested struct in config response
 type Source struct {
-	Owner            string                 `json:"Owner" xml:"Owner"`
-	Identifier       string                 `json:"Identifier" xml:"Identifier"`
-	SourceDetails    []SourceDetailsItem    `json:"SourceDetails" xml:"SourceDetails"`
-	SourceConditions []SourceConditionsItem `json:"SourceConditions" xml:"SourceConditions"`
+	Identifier       string                   `json:"Identifier" xml:"Identifier"`
+	Owner            string                   `json:"Owner" xml:"Owner"`
+	SourceConditions []map[string]interface{} `json:"SourceConditions" xml:"SourceConditions"`
+	SourceDetails    []SourceDetailsItem      `json:"SourceDetails" xml:"SourceDetails"`
 }

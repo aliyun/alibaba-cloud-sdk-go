@@ -71,14 +71,19 @@ func (client *Client) ListRemediationTemplatesWithCallback(request *ListRemediat
 // ListRemediationTemplatesRequest is the request struct for api ListRemediationTemplates
 type ListRemediationTemplatesRequest struct {
 	*requests.RpcRequest
-	ManagedRuleIdentifier string `position:"Query" name:"ManagedRuleIdentifier"`
-	RemediationType       string `position:"Query" name:"RemediationType"`
+	ManagedRuleIdentifier string           `position:"Query" name:"ManagedRuleIdentifier"`
+	RemediationType       string           `position:"Query" name:"RemediationType"`
+	PageNumber            requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize              requests.Integer `position:"Query" name:"PageSize"`
 }
 
 // ListRemediationTemplatesResponse is the response struct for api ListRemediationTemplates
 type ListRemediationTemplatesResponse struct {
 	*responses.BaseResponse
 	RequestId            string                `json:"RequestId" xml:"RequestId"`
+	PageNumber           int64                 `json:"PageNumber" xml:"PageNumber"`
+	PageSize             int64                 `json:"PageSize" xml:"PageSize"`
+	TotalCount           string                `json:"TotalCount" xml:"TotalCount"`
 	RemediationTemplates []RemediationTemplate `json:"RemediationTemplates" xml:"RemediationTemplates"`
 }
 
@@ -87,7 +92,7 @@ func CreateListRemediationTemplatesRequest() (request *ListRemediationTemplatesR
 	request = &ListRemediationTemplatesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Config", "2019-01-08", "ListRemediationTemplates", "", "")
+	request.InitWithApiInfo("Config", "2020-09-07", "ListRemediationTemplates", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -17,9 +17,11 @@ package config
 
 // RemediationTemplate is a nested struct in config response
 type RemediationTemplate struct {
-	CompulsoryParameters string `json:"CompulsoryParameters" xml:"CompulsoryParameters"`
-	RemediationType      string `json:"RemediationType" xml:"RemediationType"`
-	TemplateIdentifier   string `json:"TemplateIdentifier" xml:"TemplateIdentifier"`
-	TemplateName         string `json:"TemplateName" xml:"TemplateName"`
-	TemplateDefinition   string `json:"TemplateDefinition" xml:"TemplateDefinition"`
+	CompulsoryParameters  string `json:"CompulsoryParameters" xml:"CompulsoryParameters"`
+	TemplateDefinition    string `json:"TemplateDefinition" xml:"TemplateDefinition"`
+	TemplateName          string `json:"TemplateName" xml:"TemplateName"`
+	RemediationType       string `json:"RemediationType" xml:"RemediationType"`
+	ManagedRuleIdentifier string `json:"ManagedRuleIdentifier" xml:"ManagedRuleIdentifier"`
+	TemplateDescription   string `json:"TemplateDescription" xml:"TemplateDescription"`
+	TemplateIdentifier    string `json:"TemplateIdentifier" xml:"TemplateIdentifier"`
 }
