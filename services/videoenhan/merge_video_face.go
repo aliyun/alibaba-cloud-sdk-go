@@ -75,6 +75,7 @@ type MergeVideoFaceRequest struct {
 	PostURL      string           `position:"Body" name:"PostURL"`
 	Async        requests.Boolean `position:"Body" name:"Async"`
 	VideoURL     string           `position:"Body" name:"VideoURL"`
+	AddWatermark requests.Boolean `position:"Body" name:"AddWatermark"`
 }
 
 // MergeVideoFaceResponse is the response struct for api MergeVideoFace

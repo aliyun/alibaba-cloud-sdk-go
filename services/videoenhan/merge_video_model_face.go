@@ -76,6 +76,7 @@ type MergeVideoModelFaceRequest struct {
 	UserId       string                           `position:"Body" name:"UserId"`
 	TemplateId   string                           `position:"Body" name:"TemplateId"`
 	Async        string                           `position:"Body" name:"Async"`
+	AddWatermark requests.Boolean                 `position:"Body" name:"AddWatermark"`
 }
 
 // MergeVideoModelFaceMergeInfos is a repeated param struct in MergeVideoModelFaceRequest
