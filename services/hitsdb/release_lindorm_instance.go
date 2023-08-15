@@ -72,6 +72,7 @@ func (client *Client) ReleaseLindormInstanceWithCallback(request *ReleaseLindorm
 type ReleaseLindormInstanceRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Immediately          requests.Boolean `position:"Query" name:"Immediately"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`

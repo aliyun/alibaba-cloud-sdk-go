@@ -89,6 +89,7 @@ type GetLindormInstanceResponse struct {
 	NetworkType          string   `json:"NetworkType" xml:"NetworkType"`
 	ServiceType          string   `json:"ServiceType" xml:"ServiceType"`
 	EnableKms            bool     `json:"EnableKms" xml:"EnableKms"`
+	EnableML             bool     `json:"EnableML" xml:"EnableML"`
 	DiskUsage            string   `json:"DiskUsage" xml:"DiskUsage"`
 	DiskCategory         string   `json:"DiskCategory" xml:"DiskCategory"`
 	RequestId            string   `json:"RequestId" xml:"RequestId"`
@@ -112,9 +113,12 @@ type GetLindormInstanceResponse struct {
 	InstanceStatus       string   `json:"InstanceStatus" xml:"InstanceStatus"`
 	EnableCompute        bool     `json:"EnableCompute" xml:"EnableCompute"`
 	EnableSSL            bool     `json:"EnableSSL" xml:"EnableSSL"`
+	EnableMLCtrl         bool     `json:"EnableMLCtrl" xml:"EnableMLCtrl"`
 	EnableCdc            bool     `json:"EnableCdc" xml:"EnableCdc"`
 	EnableStream         bool     `json:"EnableStream" xml:"EnableStream"`
+	EnableLTS            bool     `json:"EnableLTS" xml:"EnableLTS"`
 	EnableShs            bool     `json:"EnableShs" xml:"EnableShs"`
+	EnableBlob           bool     `json:"EnableBlob" xml:"EnableBlob"`
 	MaintainStartTime    string   `json:"MaintainStartTime" xml:"MaintainStartTime"`
 	MaintainEndTime      string   `json:"MaintainEndTime" xml:"MaintainEndTime"`
 	ResourceGroupId      string   `json:"ResourceGroupId" xml:"ResourceGroupId"`
@@ -135,6 +139,7 @@ type GetLindormInstanceResponse struct {
 	LogSpec              string   `json:"LogSpec" xml:"LogSpec"`
 	LogNum               int      `json:"LogNum" xml:"LogNum"`
 	LogSingleStorage     int      `json:"LogSingleStorage" xml:"LogSingleStorage"`
+	ArchVersion          string   `json:"ArchVersion" xml:"ArchVersion"`
 	EngineList           []Engine `json:"EngineList" xml:"EngineList"`
 }
 

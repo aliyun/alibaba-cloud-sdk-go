@@ -83,6 +83,7 @@ type CreateLindormInstanceRequest struct {
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	LindormNum           requests.Integer `position:"Query" name:"LindormNum"`
 	VSwitchId            string           `position:"Query" name:"VSwitchId"`
+	StreamNum            requests.Integer `position:"Query" name:"StreamNum"`
 	LogSingleStorage     requests.Integer `position:"Query" name:"LogSingleStorage"`
 	ZoneId               string           `position:"Query" name:"ZoneId"`
 	ArbiterZoneId        string           `position:"Query" name:"ArbiterZoneId"`
@@ -106,6 +107,7 @@ type CreateLindormInstanceRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	InstanceAlias        string           `position:"Query" name:"InstanceAlias"`
 	FilestoreNum         requests.Integer `position:"Query" name:"FilestoreNum"`
+	StreamSpec           string           `position:"Query" name:"StreamSpec"`
 	CoreSpec             string           `position:"Query" name:"CoreSpec"`
 	VPCId                string           `position:"Query" name:"VPCId"`
 	PayType              string           `position:"Query" name:"PayType"`
