@@ -39,6 +39,8 @@ func Test_CommonResponse(t *testing.T) {
 
 func Test_CommonResponse_parseFromHttpResponse(t *testing.T) {
 	r := NewCommonResponse()
+	assert.Equal(t, "\n", r.String())
+
 	res := makeHTTPResponse(200, "")
 	res.Header.Add("Server", "GitHub.com")
 	r.parseFromHttpResponse(res)
