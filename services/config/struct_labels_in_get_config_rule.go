@@ -17,5 +17,5 @@ package config
 
 // LabelsInGetConfigRule is a nested struct in config response
 type LabelsInGetConfigRule struct {
-	Labels []string `json:"Labels" xml:"Labels"`
+	Labels []string `json:"labels" xml:"labels"`
 }

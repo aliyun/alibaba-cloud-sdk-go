@@ -45,9 +45,9 @@ type ConfigRule struct {
 	ResourceTypesScope         string                     `json:"ResourceTypesScope" xml:"ResourceTypesScope"`
 	CreateBy                   CreateBy                   `json:"CreateBy" xml:"CreateBy"`
 	ConfigRuleEvaluationStatus ConfigRuleEvaluationStatus `json:"ConfigRuleEvaluationStatus" xml:"ConfigRuleEvaluationStatus"`
-	Source                     Source                     `json:"Source" xml:"Source"`
-	Compliance                 Compliance                 `json:"Compliance" xml:"Compliance"`
 	Scope                      Scope                      `json:"Scope" xml:"Scope"`
-	ManagedRule                ManagedRule                `json:"ManagedRule" xml:"ManagedRule"`
+	ManagedRule                ManagedRuleInGetConfigRule `json:"ManagedRule" xml:"ManagedRule"`
+	Compliance                 Compliance                 `json:"Compliance" xml:"Compliance"`
+	Source                     SourceInGetConfigRule      `json:"Source" xml:"Source"`
 	Tags                       []Tag                      `json:"Tags" xml:"Tags"`
 }

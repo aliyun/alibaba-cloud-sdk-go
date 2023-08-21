@@ -17,5 +17,5 @@ package config
 
 // SourceDetailsInGetConfigRule is a nested struct in config response
 type SourceDetailsInGetConfigRule struct {
-	SourceDetailsItem []SourceDetailsItem `json:"SourceDetails" xml:"SourceDetails"`
+	SourceDetailsItem []SourceDetailsItem `json:"sourceDetails" xml:"sourceDetails"`
 }

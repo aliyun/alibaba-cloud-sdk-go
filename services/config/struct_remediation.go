@@ -28,7 +28,7 @@ type Remediation struct {
 	AccountId                    int64  `json:"AccountId" xml:"AccountId"`
 	LastSuccessfulInvocationId   string `json:"LastSuccessfulInvocationId" xml:"LastSuccessfulInvocationId"`
 	RemediationSourceType        string `json:"RemediationSourceType" xml:"RemediationSourceType"`
-	RemediationDynamicParams     string `json:"RemediationDynamicParams" xml:"RemediationDynamicParams"`
 	LastSuccessfulInvocationType string `json:"LastSuccessfulInvocationType" xml:"LastSuccessfulInvocationType"`
+	RemediationDynamicParams     string `json:"RemediationDynamicParams" xml:"RemediationDynamicParams"`
 	RemediationOriginParams      string `json:"RemediationOriginParams" xml:"RemediationOriginParams"`
 }

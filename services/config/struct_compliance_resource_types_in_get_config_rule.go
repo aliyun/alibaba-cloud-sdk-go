@@ -17,5 +17,5 @@ package config
 
 // ComplianceResourceTypesInGetConfigRule is a nested struct in config response
 type ComplianceResourceTypesInGetConfigRule struct {
-	ComplianceResourceTypes []string `json:"ComplianceResourceTypes" xml:"ComplianceResourceTypes"`
+	ComplianceResourceTypes []string `json:"complianceResourceTypes" xml:"complianceResourceTypes"`
 }

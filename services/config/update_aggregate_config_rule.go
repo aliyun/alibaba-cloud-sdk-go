@@ -90,6 +90,7 @@ type UpdateAggregateConfigRuleRequest struct {
 	MaximumExecutionFrequency string           `position:"Body" name:"MaximumExecutionFrequency"`
 	FolderIdsScope            string           `position:"Body" name:"FolderIdsScope"`
 	ExcludeResourceIdsScope   string           `position:"Body" name:"ExcludeResourceIdsScope"`
+	Conditions                string           `position:"Body" name:"Conditions"`
 }
 
 // UpdateAggregateConfigRuleResponse is the response struct for api UpdateAggregateConfigRule

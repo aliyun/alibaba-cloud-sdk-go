@@ -17,5 +17,5 @@ package config
 
 // SourceConditionsInGetConfigRule is a nested struct in config response
 type SourceConditionsInGetConfigRule struct {
-	SourceConditions []map[string]interface{} `json:"SourceConditions" xml:"SourceConditions"`
+	SourceConditions []map[string]interface{} `json:"sourceConditions" xml:"sourceConditions"`
 }

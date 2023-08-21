@@ -87,6 +87,7 @@ type CreateConfigRuleRequest struct {
 	TagKeyLogicScope          string           `position:"Body" name:"TagKeyLogicScope"`
 	MaximumExecutionFrequency string           `position:"Body" name:"MaximumExecutionFrequency"`
 	ExcludeResourceIdsScope   string           `position:"Body" name:"ExcludeResourceIdsScope"`
+	Conditions                string           `position:"Body" name:"Conditions"`
 }
 
 // CreateConfigRuleResponse is the response struct for api CreateConfigRule

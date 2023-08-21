@@ -91,6 +91,7 @@ type CreateAggregateConfigRuleRequest struct {
 	MaximumExecutionFrequency string           `position:"Body" name:"MaximumExecutionFrequency"`
 	FolderIdsScope            string           `position:"Body" name:"FolderIdsScope"`
 	ExcludeResourceIdsScope   string           `position:"Body" name:"ExcludeResourceIdsScope"`
+	Conditions                string           `position:"Body" name:"Conditions"`
 }
 
 // CreateAggregateConfigRuleResponse is the response struct for api CreateAggregateConfigRule

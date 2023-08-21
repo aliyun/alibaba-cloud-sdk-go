@@ -86,6 +86,7 @@ type UpdateConfigRuleRequest struct {
 	TagKeyLogicScope          string           `position:"Body" name:"TagKeyLogicScope"`
 	MaximumExecutionFrequency string           `position:"Body" name:"MaximumExecutionFrequency"`
 	ExcludeResourceIdsScope   string           `position:"Body" name:"ExcludeResourceIdsScope"`
+	Conditions                string           `position:"Body" name:"Conditions"`
 }
 
 // UpdateConfigRuleResponse is the response struct for api UpdateConfigRule
