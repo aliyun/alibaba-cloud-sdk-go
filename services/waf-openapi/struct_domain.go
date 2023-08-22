@@ -33,6 +33,10 @@ type Domain struct {
 	ResourceGroupId      string                     `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	Cname                string                     `json:"Cname" xml:"Cname"`
 	ConnectionTime       int                        `json:"ConnectionTime" xml:"ConnectionTime"`
+	Retry                bool                       `json:"Retry" xml:"Retry"`
+	Keepalive            bool                       `json:"Keepalive" xml:"Keepalive"`
+	KeepaliveRequests    int                        `json:"KeepaliveRequests" xml:"KeepaliveRequests"`
+	KeepaliveTimeout     int                        `json:"KeepaliveTimeout" xml:"KeepaliveTimeout"`
 	HttpPort             []string                   `json:"HttpPort" xml:"HttpPort"`
 	Http2Port            []string                   `json:"Http2Port" xml:"Http2Port"`
 	SourceIps            []string                   `json:"SourceIps" xml:"SourceIps"`

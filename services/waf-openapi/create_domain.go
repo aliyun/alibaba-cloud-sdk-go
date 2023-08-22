@@ -72,28 +72,32 @@ func (client *Client) CreateDomainWithCallback(request *CreateDomainRequest, cal
 type CreateDomainRequest struct {
 	*requests.RpcRequest
 	IpFollowStatus       requests.Integer `position:"Query" name:"IpFollowStatus"`
+	Keepalive            requests.Boolean `position:"Query" name:"Keepalive"`
 	SniHost              string           `position:"Query" name:"SniHost"`
 	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	SourceIp             string           `position:"Query" name:"SourceIp"`
 	HttpPort             string           `position:"Query" name:"HttpPort"`
 	Http2Port            string           `position:"Query" name:"Http2Port"`
 	WriteTime            requests.Integer `position:"Query" name:"WriteTime"`
-	SniStatus            requests.Integer `position:"Query" name:"SniStatus"`
-	Lang                 string           `position:"Query" name:"Lang"`
 	AccessHeaderMode     requests.Integer `position:"Query" name:"AccessHeaderMode"`
-	AccessType           string           `position:"Query" name:"AccessType"`
-	LogHeaders           string           `position:"Query" name:"LogHeaders"`
 	AccessHeaders        string           `position:"Query" name:"AccessHeaders"`
-	ConnectionTime       requests.Integer `position:"Query" name:"ConnectionTime"`
+	KeepaliveTimeout     requests.Integer `position:"Query" name:"KeepaliveTimeout"`
 	ClusterType          requests.Integer `position:"Query" name:"ClusterType"`
-	CloudNativeInstances string           `position:"Query" name:"CloudNativeInstances"`
 	HttpsRedirect        requests.Integer `position:"Query" name:"HttpsRedirect"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
-	SourceIps            string           `position:"Query" name:"SourceIps"`
 	Domain               string           `position:"Query" name:"Domain"`
-	IsAccessProduct      requests.Integer `position:"Query" name:"IsAccessProduct"`
 	ReadTime             requests.Integer `position:"Query" name:"ReadTime"`
 	HttpsPort            string           `position:"Query" name:"HttpsPort"`
+	SniStatus            requests.Integer `position:"Query" name:"SniStatus"`
+	Lang                 string           `position:"Query" name:"Lang"`
+	Retry                requests.Boolean `position:"Query" name:"Retry"`
+	KeepaliveRequests    requests.Integer `position:"Query" name:"KeepaliveRequests"`
+	AccessType           string           `position:"Query" name:"AccessType"`
+	LogHeaders           string           `position:"Query" name:"LogHeaders"`
+	ConnectionTime       requests.Integer `position:"Query" name:"ConnectionTime"`
+	CloudNativeInstances string           `position:"Query" name:"CloudNativeInstances"`
+	SourceIps            string           `position:"Query" name:"SourceIps"`
+	IsAccessProduct      requests.Integer `position:"Query" name:"IsAccessProduct"`
 	LoadBalancing        requests.Integer `position:"Query" name:"LoadBalancing"`
 	HttpToUserIp         requests.Integer `position:"Query" name:"HttpToUserIp"`
 }

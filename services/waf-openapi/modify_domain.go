@@ -72,29 +72,33 @@ func (client *Client) ModifyDomainWithCallback(request *ModifyDomainRequest, cal
 type ModifyDomainRequest struct {
 	*requests.RpcRequest
 	IpFollowStatus       requests.Integer `position:"Query" name:"IpFollowStatus"`
+	Keepalive            requests.Boolean `position:"Query" name:"Keepalive"`
 	SniHost              string           `position:"Query" name:"SniHost"`
 	HybridCloudType      requests.Integer `position:"Query" name:"HybridCloudType"`
 	SourceIp             string           `position:"Query" name:"SourceIp"`
 	HttpPort             string           `position:"Query" name:"HttpPort"`
 	Http2Port            string           `position:"Query" name:"Http2Port"`
 	WriteTime            requests.Integer `position:"Query" name:"WriteTime"`
+	AccessHeaderMode     requests.Integer `position:"Query" name:"AccessHeaderMode"`
+	AccessHeaders        string           `position:"Query" name:"AccessHeaders"`
+	KeepaliveTimeout     requests.Integer `position:"Query" name:"KeepaliveTimeout"`
+	ClusterType          requests.Integer `position:"Query" name:"ClusterType"`
+	HttpsRedirect        requests.Integer `position:"Query" name:"HttpsRedirect"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
+	Domain               string           `position:"Query" name:"Domain"`
+	ReadTime             requests.Integer `position:"Query" name:"ReadTime"`
+	HttpsPort            string           `position:"Query" name:"HttpsPort"`
 	SniStatus            requests.Integer `position:"Query" name:"SniStatus"`
 	Lang                 string           `position:"Query" name:"Lang"`
-	AccessHeaderMode     requests.Integer `position:"Query" name:"AccessHeaderMode"`
+	Retry                requests.Boolean `position:"Query" name:"Retry"`
+	KeepaliveRequests    requests.Integer `position:"Query" name:"KeepaliveRequests"`
 	AccessType           string           `position:"Query" name:"AccessType"`
 	BindingIpv6          requests.Integer `position:"Query" name:"BindingIpv6"`
 	LogHeaders           string           `position:"Query" name:"LogHeaders"`
-	AccessHeaders        string           `position:"Query" name:"AccessHeaders"`
 	ConnectionTime       requests.Integer `position:"Query" name:"ConnectionTime"`
-	ClusterType          requests.Integer `position:"Query" name:"ClusterType"`
 	CloudNativeInstances string           `position:"Query" name:"CloudNativeInstances"`
-	HttpsRedirect        requests.Integer `position:"Query" name:"HttpsRedirect"`
-	InstanceId           string           `position:"Query" name:"InstanceId"`
 	SourceIps            string           `position:"Query" name:"SourceIps"`
-	Domain               string           `position:"Query" name:"Domain"`
 	IsAccessProduct      requests.Integer `position:"Query" name:"IsAccessProduct"`
-	ReadTime             requests.Integer `position:"Query" name:"ReadTime"`
-	HttpsPort            string           `position:"Query" name:"HttpsPort"`
 	LoadBalancing        requests.Integer `position:"Query" name:"LoadBalancing"`
 	HttpToUserIp         requests.Integer `position:"Query" name:"HttpToUserIp"`
 }

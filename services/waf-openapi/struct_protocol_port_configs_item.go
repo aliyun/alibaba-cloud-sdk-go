@@ -17,6 +17,6 @@ package waf_openapi
 
 // ProtocolPortConfigsItem is a nested struct in waf_openapi response
 type ProtocolPortConfigsItem struct {
-	Ports    string `json:"Ports" xml:"Ports"`
 	Protocol string `json:"Protocol" xml:"Protocol"`
+	Ports    []int  `json:"Ports" xml:"Ports"`
 }
