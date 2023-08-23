@@ -73,10 +73,12 @@ type DescribeComputeResourceRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	DBClusterId          string           `position:"Query" name:"DBClusterId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	DBClusterVersion     string           `position:"Query" name:"DBClusterVersion"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ZoneId               string           `position:"Query" name:"ZoneId"`
+	Migrate              requests.Boolean `position:"Query" name:"Migrate"`
 }
 
 // DescribeComputeResourceResponse is the response struct for api DescribeComputeResource
