@@ -71,12 +71,12 @@ func (client *Client) CreatePrivateAccessApplicationWithCallback(request *Create
 // CreatePrivateAccessApplicationRequest is the request struct for api CreatePrivateAccessApplication
 type CreatePrivateAccessApplicationRequest struct {
 	*requests.RpcRequest
-	Addresses   *[]string                                   `position:"Body" name:"Addresses"  type:"Json"`
+	Addresses   *[]string                                   `position:"Body" name:"Addresses"  type:"Repeated"`
 	Description string                                      `position:"Body" name:"Description"`
 	Protocol    string                                      `position:"Body" name:"Protocol"`
 	SourceIp    string                                      `position:"Query" name:"SourceIp"`
-	TagIds      *[]string                                   `position:"Body" name:"TagIds"  type:"Json"`
-	PortRanges  *[]CreatePrivateAccessApplicationPortRanges `position:"Body" name:"PortRanges"  type:"Json"`
+	TagIds      *[]string                                   `position:"Body" name:"TagIds"  type:"Repeated"`
+	PortRanges  *[]CreatePrivateAccessApplicationPortRanges `position:"Body" name:"PortRanges"  type:"Repeated"`
 	Name        string                                      `position:"Body" name:"Name"`
 	Status      string                                      `position:"Body" name:"Status"`
 }

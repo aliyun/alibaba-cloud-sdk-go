@@ -73,12 +73,12 @@ type CreatePrivateAccessPolicyRequest struct {
 	*requests.RpcRequest
 	Description          string                                           `position:"Body" name:"Description"`
 	SourceIp             string                                           `position:"Query" name:"SourceIp"`
-	CustomUserAttributes *[]CreatePrivateAccessPolicyCustomUserAttributes `position:"Body" name:"CustomUserAttributes"  type:"Json"`
-	TagIds               *[]string                                        `position:"Body" name:"TagIds"  type:"Json"`
-	UserGroupIds         *[]string                                        `position:"Body" name:"UserGroupIds"  type:"Json"`
+	CustomUserAttributes *[]CreatePrivateAccessPolicyCustomUserAttributes `position:"Body" name:"CustomUserAttributes"  type:"Repeated"`
+	TagIds               *[]string                                        `position:"Body" name:"TagIds"  type:"Repeated"`
+	UserGroupIds         *[]string                                        `position:"Body" name:"UserGroupIds"  type:"Repeated"`
 	PolicyAction         string                                           `position:"Body" name:"PolicyAction"`
 	Priority             requests.Integer                                 `position:"Body" name:"Priority"`
-	ApplicationIds       *[]string                                        `position:"Body" name:"ApplicationIds"  type:"Json"`
+	ApplicationIds       *[]string                                        `position:"Body" name:"ApplicationIds"  type:"Repeated"`
 	UserGroupMode        string                                           `position:"Body" name:"UserGroupMode"`
 	Name                 string                                           `position:"Body" name:"Name"`
 	ApplicationType      string                                           `position:"Body" name:"ApplicationType"`

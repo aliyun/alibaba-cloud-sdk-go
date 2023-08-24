@@ -74,12 +74,12 @@ type UpdatePrivateAccessPolicyRequest struct {
 	Description          string                                           `position:"Body" name:"Description"`
 	SourceIp             string                                           `position:"Query" name:"SourceIp"`
 	PolicyId             string                                           `position:"Body" name:"PolicyId"`
-	CustomUserAttributes *[]UpdatePrivateAccessPolicyCustomUserAttributes `position:"Body" name:"CustomUserAttributes"  type:"Json"`
-	TagIds               *[]string                                        `position:"Body" name:"TagIds"  type:"Json"`
-	UserGroupIds         *[]string                                        `position:"Body" name:"UserGroupIds"  type:"Json"`
+	CustomUserAttributes *[]UpdatePrivateAccessPolicyCustomUserAttributes `position:"Body" name:"CustomUserAttributes"  type:"Repeated"`
+	TagIds               *[]string                                        `position:"Body" name:"TagIds"  type:"Repeated"`
+	UserGroupIds         *[]string                                        `position:"Body" name:"UserGroupIds"  type:"Repeated"`
 	PolicyAction         string                                           `position:"Body" name:"PolicyAction"`
 	Priority             requests.Integer                                 `position:"Body" name:"Priority"`
-	ApplicationIds       *[]string                                        `position:"Body" name:"ApplicationIds"  type:"Json"`
+	ApplicationIds       *[]string                                        `position:"Body" name:"ApplicationIds"  type:"Repeated"`
 	UserGroupMode        string                                           `position:"Body" name:"UserGroupMode"`
 	ModifyType           string                                           `position:"Body" name:"ModifyType"`
 	ApplicationType      string                                           `position:"Body" name:"ApplicationType"`

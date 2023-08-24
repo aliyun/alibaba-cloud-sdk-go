@@ -71,13 +71,13 @@ func (client *Client) UpdatePrivateAccessApplicationWithCallback(request *Update
 // UpdatePrivateAccessApplicationRequest is the request struct for api UpdatePrivateAccessApplication
 type UpdatePrivateAccessApplicationRequest struct {
 	*requests.RpcRequest
-	Addresses     *[]string                                   `position:"Body" name:"Addresses"  type:"Json"`
+	Addresses     *[]string                                   `position:"Body" name:"Addresses"  type:"Repeated"`
 	Description   string                                      `position:"Body" name:"Description"`
 	Protocol      string                                      `position:"Body" name:"Protocol"`
 	SourceIp      string                                      `position:"Query" name:"SourceIp"`
 	ApplicationId string                                      `position:"Body" name:"ApplicationId"`
-	TagIds        *[]string                                   `position:"Body" name:"TagIds"  type:"Json"`
-	PortRanges    *[]UpdatePrivateAccessApplicationPortRanges `position:"Body" name:"PortRanges"  type:"Json"`
+	TagIds        *[]string                                   `position:"Body" name:"TagIds"  type:"Repeated"`
+	PortRanges    *[]UpdatePrivateAccessApplicationPortRanges `position:"Body" name:"PortRanges"  type:"Repeated"`
 	ModifyType    string                                      `position:"Body" name:"ModifyType"`
 	Status        string                                      `position:"Body" name:"Status"`
 }
