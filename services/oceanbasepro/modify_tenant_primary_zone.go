@@ -74,10 +74,9 @@ type ModifyTenantPrimaryZoneRequest struct {
 	UserVSwitchId             string `position:"Body" name:"UserVSwitchId"`
 	MasterIntranetAddressZone string `position:"Body" name:"MasterIntranetAddressZone"`
 	TenantId                  string `position:"Body" name:"TenantId"`
+	TenantEndpointId          string `position:"Body" name:"TenantEndpointId"`
 	InstanceId                string `position:"Body" name:"InstanceId"`
 	PrimaryZone               string `position:"Body" name:"PrimaryZone"`
-	ModifyType                string `position:"Body" name:"ModifyType"`
-	PrimaryZoneDeployType     string `position:"Body" name:"PrimaryZoneDeployType"`
 }
 
 // ModifyTenantPrimaryZoneResponse is the response struct for api ModifyTenantPrimaryZone

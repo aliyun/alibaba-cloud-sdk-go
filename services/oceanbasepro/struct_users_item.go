@@ -17,7 +17,8 @@ package oceanbasepro
 
 // UsersItem is a nested struct in oceanbasepro response
 type UsersItem struct {
-	UserType string `json:"UserType" xml:"UserType"`
-	Role     string `json:"Role" xml:"Role"`
-	UserName string `json:"UserName" xml:"UserName"`
+	UserType   string `json:"UserType" xml:"UserType"`
+	Role       string `json:"Role" xml:"Role"`
+	UserName   string `json:"UserName" xml:"UserName"`
+	Privileges string `json:"Privileges" xml:"Privileges"`
 }

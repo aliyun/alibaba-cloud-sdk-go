@@ -71,13 +71,14 @@ func (client *Client) DescribeOasSQLPlansWithCallback(request *DescribeOasSQLPla
 // DescribeOasSQLPlansRequest is the request struct for api DescribeOasSQLPlans
 type DescribeOasSQLPlansRequest struct {
 	*requests.RpcRequest
-	StartTime      string `position:"Body" name:"StartTime"`
-	TenantId       string `position:"Body" name:"TenantId"`
-	SqlId          string `position:"Body" name:"SqlId"`
-	EndTime        string `position:"Body" name:"EndTime"`
-	InstanceId     string `position:"Body" name:"InstanceId"`
-	DbName         string `position:"Body" name:"DbName"`
-	AcceptLanguage string `position:"Body" name:"AcceptLanguage"`
+	StartTime      string           `position:"Body" name:"StartTime"`
+	DynamicSql     requests.Boolean `position:"Body" name:"DynamicSql"`
+	TenantId       string           `position:"Body" name:"TenantId"`
+	SqlId          string           `position:"Body" name:"SqlId"`
+	EndTime        string           `position:"Body" name:"EndTime"`
+	InstanceId     string           `position:"Body" name:"InstanceId"`
+	DbName         string           `position:"Body" name:"DbName"`
+	AcceptLanguage string           `position:"Body" name:"AcceptLanguage"`
 }
 
 // DescribeOasSQLPlansResponse is the response struct for api DescribeOasSQLPlans

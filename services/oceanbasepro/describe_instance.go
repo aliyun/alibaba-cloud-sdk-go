@@ -73,7 +73,6 @@ type DescribeInstanceRequest struct {
 	*requests.RpcRequest
 	PageNumber requests.Integer `position:"Body" name:"PageNumber"`
 	InstanceId string           `position:"Body" name:"InstanceId"`
-	PageSize   requests.Integer `position:"Body" name:"PageSize"`
 }
 
 // DescribeInstanceResponse is the response struct for api DescribeInstance

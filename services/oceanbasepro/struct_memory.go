@@ -17,7 +17,8 @@ package oceanbasepro
 
 // Memory is a nested struct in oceanbasepro response
 type Memory struct {
-	UsedMemory  int64 `json:"UsedMemory" xml:"UsedMemory"`
-	UnitMemory  int64 `json:"UnitMemory" xml:"UnitMemory"`
-	TotalMemory int64 `json:"TotalMemory" xml:"TotalMemory"`
+	UsedMemory          int64 `json:"UsedMemory" xml:"UsedMemory"`
+	UnitMemory          int64 `json:"UnitMemory" xml:"UnitMemory"`
+	OriginalTotalMemory int64 `json:"OriginalTotalMemory" xml:"OriginalTotalMemory"`
+	TotalMemory         int64 `json:"TotalMemory" xml:"TotalMemory"`
 }

@@ -71,8 +71,10 @@ func (client *Client) CreateTenantReadOnlyConnectionWithCallback(request *Create
 // CreateTenantReadOnlyConnectionRequest is the request struct for api CreateTenantReadOnlyConnection
 type CreateTenantReadOnlyConnectionRequest struct {
 	*requests.RpcRequest
-	InstanceId string `position:"Body" name:"InstanceId"`
 	TenantId   string `position:"Body" name:"TenantId"`
+	VSwitchId  string `position:"Body" name:"VSwitchId"`
+	InstanceId string `position:"Body" name:"InstanceId"`
+	VpcId      string `position:"Body" name:"VpcId"`
 	ZoneId     string `position:"Body" name:"ZoneId"`
 }
 

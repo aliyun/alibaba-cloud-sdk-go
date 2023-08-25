@@ -39,7 +39,10 @@ type Tenant struct {
 	Series                       string                  `json:"Series" xml:"Series"`
 	DiskType                     string                  `json:"DiskType" xml:"DiskType"`
 	EnableReadWriteSplit         bool                    `json:"EnableReadWriteSplit" xml:"EnableReadWriteSplit"`
+	EnableParallelQuery          bool                    `json:"EnableParallelQuery" xml:"EnableParallelQuery"`
+	MaxParallelQueryDegree       int64                   `json:"MaxParallelQueryDegree" xml:"MaxParallelQueryDegree"`
 	EnableBinlogService          bool                    `json:"EnableBinlogService" xml:"EnableBinlogService"`
+	TimeZone                     string                  `json:"TimeZone" xml:"TimeZone"`
 	AvailableZones               []string                `json:"AvailableZones" xml:"AvailableZones"`
 	TenantResource               TenantResource          `json:"TenantResource" xml:"TenantResource"`
 	TenantConnections            []TenantConnectionsItem `json:"TenantConnections" xml:"TenantConnections"`

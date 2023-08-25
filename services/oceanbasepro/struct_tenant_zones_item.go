@@ -17,14 +17,13 @@ package oceanbasepro
 
 // TenantZonesItem is a nested struct in oceanbasepro response
 type TenantZonesItem struct {
-	Region                  string      `json:"Region" xml:"Region"`
-	IsElectable             bool        `json:"IsElectable" xml:"IsElectable"`
-	TenantZoneRole          string      `json:"TenantZoneRole" xml:"TenantZoneRole"`
-	Zone                    string      `json:"Zone" xml:"Zone"`
-	IsReadOnlyAddressMaster bool        `json:"IsReadOnlyAddressMaster" xml:"IsReadOnlyAddressMaster"`
-	TenantZoneId            string      `json:"TenantZoneId" xml:"TenantZoneId"`
-	IsPrimaryTenantZone     string      `json:"IsPrimaryTenantZone" xml:"IsPrimaryTenantZone"`
-	IsPrimary               bool        `json:"IsPrimary" xml:"IsPrimary"`
-	IsReadable              string      `json:"IsReadable" xml:"IsReadable"`
-	Units                   []UnitsItem `json:"Units" xml:"Units"`
+	Region              string      `json:"Region" xml:"Region"`
+	IsElectable         bool        `json:"IsElectable" xml:"IsElectable"`
+	TenantZoneRole      string      `json:"TenantZoneRole" xml:"TenantZoneRole"`
+	Zone                string      `json:"Zone" xml:"Zone"`
+	TenantZoneId        string      `json:"TenantZoneId" xml:"TenantZoneId"`
+	IsPrimaryTenantZone string      `json:"IsPrimaryTenantZone" xml:"IsPrimaryTenantZone"`
+	IsPrimary           bool        `json:"IsPrimary" xml:"IsPrimary"`
+	IsReadable          string      `json:"IsReadable" xml:"IsReadable"`
+	Units               []UnitsItem `json:"Units" xml:"Units"`
 }

@@ -17,8 +17,9 @@ package oceanbasepro
 
 // TenantResource is a nested struct in oceanbasepro response
 type TenantResource struct {
-	UnitNum  int                      `json:"UnitNum" xml:"UnitNum"`
-	Cpu      CpuInDescribeTenant      `json:"Cpu" xml:"Cpu"`
-	Memory   MemoryInDescribeTenant   `json:"Memory" xml:"Memory"`
-	DiskSize DiskSizeInDescribeTenant `json:"DiskSize" xml:"DiskSize"`
+	UnitNum      int                      `json:"UnitNum" xml:"UnitNum"`
+	Cpu          CpuInDescribeTenant      `json:"Cpu" xml:"Cpu"`
+	Memory       MemoryInDescribeTenant   `json:"Memory" xml:"Memory"`
+	DiskSize     DiskSizeInDescribeTenant `json:"DiskSize" xml:"DiskSize"`
+	CapacityUnit CapacityUnit             `json:"CapacityUnit" xml:"CapacityUnit"`
 }

@@ -17,7 +17,8 @@ package oceanbasepro
 
 // DatabasesItem is a nested struct in oceanbasepro response
 type DatabasesItem struct {
-	Database string `json:"Database" xml:"Database"`
-	Role     string `json:"Role" xml:"Role"`
-	Table    string `json:"Table" xml:"Table"`
+	Database   string `json:"Database" xml:"Database"`
+	Role       string `json:"Role" xml:"Role"`
+	Table      string `json:"Table" xml:"Table"`
+	Privileges string `json:"Privileges" xml:"Privileges"`
 }

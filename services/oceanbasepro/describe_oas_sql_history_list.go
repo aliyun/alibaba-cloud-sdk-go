@@ -71,14 +71,15 @@ func (client *Client) DescribeOasSQLHistoryListWithCallback(request *DescribeOas
 // DescribeOasSQLHistoryListRequest is the request struct for api DescribeOasSQLHistoryList
 type DescribeOasSQLHistoryListRequest struct {
 	*requests.RpcRequest
-	StartTime      string `position:"Body" name:"StartTime"`
-	TenantId       string `position:"Body" name:"TenantId"`
-	SqlId          string `position:"Body" name:"SqlId"`
-	EndTime        string `position:"Body" name:"EndTime"`
-	NodeIp         string `position:"Body" name:"NodeIp"`
-	InstanceId     string `position:"Body" name:"InstanceId"`
-	DbName         string `position:"Body" name:"DbName"`
-	AcceptLanguage string `position:"Body" name:"AcceptLanguage"`
+	StartTime      string           `position:"Body" name:"StartTime"`
+	DynamicSql     requests.Boolean `position:"Body" name:"DynamicSql"`
+	TenantId       string           `position:"Body" name:"TenantId"`
+	SqlId          string           `position:"Body" name:"SqlId"`
+	EndTime        string           `position:"Body" name:"EndTime"`
+	NodeIp         string           `position:"Body" name:"NodeIp"`
+	InstanceId     string           `position:"Body" name:"InstanceId"`
+	DbName         string           `position:"Body" name:"DbName"`
+	AcceptLanguage string           `position:"Body" name:"AcceptLanguage"`
 }
 
 // DescribeOasSQLHistoryListResponse is the response struct for api DescribeOasSQLHistoryList

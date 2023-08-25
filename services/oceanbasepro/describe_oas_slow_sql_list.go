@@ -73,6 +73,8 @@ type DescribeOasSlowSQLListRequest struct {
 	*requests.RpcRequest
 	StartTime       string           `position:"Body" name:"StartTime"`
 	SearchRule      string           `position:"Body" name:"SearchRule"`
+	MergeDynamicSql requests.Boolean `position:"Body" name:"MergeDynamicSql"`
+	DynamicSql      requests.Boolean `position:"Body" name:"DynamicSql"`
 	SqlTextLength   requests.Integer `position:"Body" name:"SqlTextLength"`
 	TenantId        string           `position:"Body" name:"TenantId"`
 	SearchValue     string           `position:"Body" name:"SearchValue"`

@@ -17,10 +17,12 @@ package oceanbasepro
 
 // DiskSize is a nested struct in oceanbasepro response
 type DiskSize struct {
-	TotalDiskSize       int64    `json:"TotalDiskSize" xml:"TotalDiskSize"`
-	UsedDiskSize        int64    `json:"UsedDiskSize" xml:"UsedDiskSize"`
-	UnitDiskSize        int64    `json:"UnitDiskSize" xml:"UnitDiskSize"`
-	DataUsedSize        string   `json:"DataUsedSize" xml:"DataUsedSize"`
-	MaxDiskUsedPercent  string   `json:"MaxDiskUsedPercent" xml:"MaxDiskUsedPercent"`
-	MaxDiskUsedObServer []string `json:"MaxDiskUsedObServer" xml:"MaxDiskUsedObServer"`
+	OriginalTotalDiskSize int64    `json:"OriginalTotalDiskSize" xml:"OriginalTotalDiskSize"`
+	MaxDiskSize           string   `json:"MaxDiskSize" xml:"MaxDiskSize"`
+	TotalDiskSize         int64    `json:"TotalDiskSize" xml:"TotalDiskSize"`
+	UsedDiskSize          int64    `json:"UsedDiskSize" xml:"UsedDiskSize"`
+	UnitDiskSize          int64    `json:"UnitDiskSize" xml:"UnitDiskSize"`
+	DataUsedSize          string   `json:"DataUsedSize" xml:"DataUsedSize"`
+	MaxDiskUsedPercent    string   `json:"MaxDiskUsedPercent" xml:"MaxDiskUsedPercent"`
+	MaxDiskUsedObServer   []string `json:"MaxDiskUsedObServer" xml:"MaxDiskUsedObServer"`
 }

@@ -72,6 +72,7 @@ func (client *Client) DescribeCharsetWithCallback(request *DescribeCharsetReques
 type DescribeCharsetRequest struct {
 	*requests.RpcRequest
 	TenantMode string `position:"Body" name:"TenantMode"`
+	InstanceId string `position:"Body" name:"InstanceId"`
 	Series     string `position:"Body" name:"Series"`
 }
 

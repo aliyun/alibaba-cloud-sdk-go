@@ -72,12 +72,12 @@ func (client *Client) CreateTenantUserWithCallback(request *CreateTenantUserRequ
 type CreateTenantUserRequest struct {
 	*requests.RpcRequest
 	Roles          string `position:"Body" name:"Roles"`
-	UserType       string `position:"Body" name:"UserType"`
 	Description    string `position:"Body" name:"Description"`
 	UserPassword   string `position:"Body" name:"UserPassword"`
-	InstanceId     string `position:"Body" name:"InstanceId"`
 	TenantId       string `position:"Body" name:"TenantId"`
 	EncryptionType string `position:"Body" name:"EncryptionType"`
+	UserType       string `position:"Body" name:"UserType"`
+	InstanceId     string `position:"Body" name:"InstanceId"`
 	UserName       string `position:"Body" name:"UserName"`
 }
 

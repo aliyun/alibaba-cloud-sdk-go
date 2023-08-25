@@ -17,7 +17,8 @@ package oceanbasepro
 
 // Cpu is a nested struct in oceanbasepro response
 type Cpu struct {
-	UsedCpu  int64 `json:"UsedCpu" xml:"UsedCpu"`
-	UnitCpu  int64 `json:"UnitCpu" xml:"UnitCpu"`
-	TotalCpu int64 `json:"TotalCpu" xml:"TotalCpu"`
+	UsedCpu          int64 `json:"UsedCpu" xml:"UsedCpu"`
+	OriginalTotalCpu int64 `json:"OriginalTotalCpu" xml:"OriginalTotalCpu"`
+	UnitCpu          int64 `json:"UnitCpu" xml:"UnitCpu"`
+	TotalCpu         int64 `json:"TotalCpu" xml:"TotalCpu"`
 }

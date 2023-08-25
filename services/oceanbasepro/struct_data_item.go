@@ -22,6 +22,7 @@ type DataItem struct {
 	LastExecutedTime          string                 `json:"LastExecutedTime" xml:"LastExecutedTime"`
 	Inner                     bool                   `json:"Inner" xml:"Inner"`
 	BlockCacheHit             string                 `json:"BlockCacheHit" xml:"BlockCacheHit"`
+	AvgDbTime                 string                 `json:"AvgDbTime" xml:"AvgDbTime"`
 	BlockIndexCacheHit        string                 `json:"BlockIndexCacheHit" xml:"BlockIndexCacheHit"`
 	CpuTime                   string                 `json:"CpuTime" xml:"CpuTime"`
 	ElapsedTime               string                 `json:"ElapsedTime" xml:"ElapsedTime"`
@@ -55,6 +56,7 @@ type DataItem struct {
 	Suggestion                string                 `json:"Suggestion" xml:"Suggestion"`
 	Statement                 string                 `json:"Statement" xml:"Statement"`
 	ObServerId                string                 `json:"ObServerId" xml:"ObServerId"`
+	SumDbTime                 string                 `json:"SumDbTime" xml:"SumDbTime"`
 	EstimatedRemainingSeconds int64                  `json:"EstimatedRemainingSeconds" xml:"EstimatedRemainingSeconds"`
 	BusinessName              string                 `json:"BusinessName" xml:"BusinessName"`
 	ApplicationWaitTime       string                 `json:"ApplicationWaitTime" xml:"ApplicationWaitTime"`
@@ -72,6 +74,7 @@ type DataItem struct {
 	MinCpu                    int64                  `json:"MinCpu" xml:"MinCpu"`
 	ClientPort                string                 `json:"ClientPort" xml:"ClientPort"`
 	ScheduleTime              string                 `json:"ScheduleTime" xml:"ScheduleTime"`
+	DynamicSql                bool                   `json:"DynamicSql" xml:"DynamicSql"`
 	WaitEvent                 string                 `json:"WaitEvent" xml:"WaitEvent"`
 	GetPlanTime               string                 `json:"GetPlanTime" xml:"GetPlanTime"`
 	WaitCount                 string                 `json:"WaitCount" xml:"WaitCount"`
@@ -107,4 +110,5 @@ type DataItem struct {
 	DataPoints                []DataPoint            `json:"DataPoints" xml:"DataPoints"`
 	Steps                     []Step                 `json:"Steps" xml:"Steps"`
 	Labels                    []Label                `json:"Labels" xml:"Labels"`
+	SqlList                   []SqlListItem          `json:"SqlList" xml:"SqlList"`
 }

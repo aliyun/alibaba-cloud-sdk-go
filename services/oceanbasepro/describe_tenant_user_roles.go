@@ -71,6 +71,7 @@ func (client *Client) DescribeTenantUserRolesWithCallback(request *DescribeTenan
 // DescribeTenantUserRolesRequest is the request struct for api DescribeTenantUserRoles
 type DescribeTenantUserRolesRequest struct {
 	*requests.RpcRequest
+	TenantId string `position:"Body" name:"TenantId"`
 }
 
 // DescribeTenantUserRolesResponse is the response struct for api DescribeTenantUserRoles

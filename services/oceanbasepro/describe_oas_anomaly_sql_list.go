@@ -73,7 +73,9 @@ type DescribeOasAnomalySQLListRequest struct {
 	*requests.RpcRequest
 	StartTime       string           `position:"Body" name:"StartTime"`
 	SearchRule      string           `position:"Body" name:"SearchRule"`
+	MergeDynamicSql requests.Boolean `position:"Body" name:"MergeDynamicSql"`
 	Current         requests.Integer `position:"Body" name:"Current"`
+	DynamicSql      requests.Boolean `position:"Body" name:"DynamicSql"`
 	SqlTextLength   requests.Integer `position:"Body" name:"SqlTextLength"`
 	TenantId        string           `position:"Body" name:"TenantId"`
 	PageSize        requests.Integer `position:"Body" name:"PageSize"`

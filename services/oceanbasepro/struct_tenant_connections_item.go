@@ -17,7 +17,6 @@ package oceanbasepro
 
 // TenantConnectionsItem is a nested struct in oceanbasepro response
 type TenantConnectionsItem struct {
-	ConnectionRole              string   `json:"ConnectionRole" xml:"ConnectionRole"`
 	IntranetAddress             string   `json:"IntranetAddress" xml:"IntranetAddress"`
 	IntranetPort                int      `json:"IntranetPort" xml:"IntranetPort"`
 	InternetAddress             string   `json:"InternetAddress" xml:"InternetAddress"`
@@ -30,5 +29,8 @@ type TenantConnectionsItem struct {
 	InternetAddressStatus       string   `json:"InternetAddressStatus" xml:"InternetAddressStatus"`
 	TransactionSplit            bool     `json:"TransactionSplit" xml:"TransactionSplit"`
 	AddressType                 string   `json:"AddressType" xml:"AddressType"`
+	EnableTransactionSplit      bool     `json:"EnableTransactionSplit" xml:"EnableTransactionSplit"`
+	ParallelQueryDegree         int64    `json:"ParallelQueryDegree" xml:"ParallelQueryDegree"`
+	TenantEndpointId            string   `json:"TenantEndpointId" xml:"TenantEndpointId"`
 	ConnectionZones             []string `json:"ConnectionZones" xml:"ConnectionZones"`
 }

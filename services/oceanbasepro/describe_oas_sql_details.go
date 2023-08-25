@@ -71,12 +71,13 @@ func (client *Client) DescribeOasSQLDetailsWithCallback(request *DescribeOasSQLD
 // DescribeOasSQLDetailsRequest is the request struct for api DescribeOasSQLDetails
 type DescribeOasSQLDetailsRequest struct {
 	*requests.RpcRequest
-	SqlId      string `position:"Body" name:"SqlId"`
-	EndTime    string `position:"Body" name:"EndTime"`
-	StartTime  string `position:"Body" name:"StartTime"`
-	InstanceId string `position:"Body" name:"InstanceId"`
-	DbName     string `position:"Body" name:"DbName"`
-	TenantId   string `position:"Body" name:"TenantId"`
+	StartTime  string           `position:"Body" name:"StartTime"`
+	DynamicSql requests.Boolean `position:"Body" name:"DynamicSql"`
+	TenantId   string           `position:"Body" name:"TenantId"`
+	SqlId      string           `position:"Body" name:"SqlId"`
+	EndTime    string           `position:"Body" name:"EndTime"`
+	InstanceId string           `position:"Body" name:"InstanceId"`
+	DbName     string           `position:"Body" name:"DbName"`
 }
 
 // DescribeOasSQLDetailsResponse is the response struct for api DescribeOasSQLDetails

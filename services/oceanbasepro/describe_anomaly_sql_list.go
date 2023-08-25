@@ -83,6 +83,7 @@ type DescribeAnomalySQLListRequest struct {
 	FilterCondition string           `position:"Body" name:"FilterCondition"`
 	EndTime         string           `position:"Body" name:"EndTime"`
 	NodeIp          string           `position:"Body" name:"NodeIp"`
+	InstanceId      string           `position:"Body" name:"InstanceId"`
 	DbName          string           `position:"Body" name:"DbName"`
 	SearchKeyWord   string           `position:"Body" name:"SearchKeyWord"`
 	SortColumn      string           `position:"Body" name:"SortColumn"`

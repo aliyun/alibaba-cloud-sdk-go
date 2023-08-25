@@ -71,12 +71,12 @@ func (client *Client) DescribeSlowSQLHistoryListWithCallback(request *DescribeSl
 // DescribeSlowSQLHistoryListRequest is the request struct for api DescribeSlowSQLHistoryList
 type DescribeSlowSQLHistoryListRequest struct {
 	*requests.RpcRequest
-	SQLId      string           `position:"Body" name:"SQLId"`
-	EndTime    string           `position:"Body" name:"EndTime"`
 	StartTime  string           `position:"Body" name:"StartTime"`
 	PageNumber requests.Integer `position:"Body" name:"PageNumber"`
 	TenantId   string           `position:"Body" name:"TenantId"`
 	PageSize   requests.Integer `position:"Body" name:"PageSize"`
+	SQLId      string           `position:"Body" name:"SQLId"`
+	EndTime    string           `position:"Body" name:"EndTime"`
 }
 
 // DescribeSlowSQLHistoryListResponse is the response struct for api DescribeSlowSQLHistoryList

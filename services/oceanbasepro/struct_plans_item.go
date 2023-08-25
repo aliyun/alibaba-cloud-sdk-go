@@ -51,4 +51,5 @@ type PlansItem struct {
 	TimeoutPercentage           string `json:"TimeoutPercentage" xml:"TimeoutPercentage"`
 	TableScan                   bool   `json:"TableScan" xml:"TableScan"`
 	PlanUnionHash               string `json:"PlanUnionHash" xml:"PlanUnionHash"`
+	SqlId                       string `json:"SqlId" xml:"SqlId"`
 }
