@@ -17,14 +17,20 @@ package avatar
 
 // ListItem is a nested struct in avatar response
 type ListItem struct {
-	Code                 string               `json:"Code" xml:"Code"`
 	Name                 string               `json:"Name" xml:"Name"`
+	Status               int                  `json:"Status" xml:"Status"`
+	ModelType            string               `json:"ModelType" xml:"ModelType"`
+	Code                 string               `json:"Code" xml:"Code"`
+	Title                string               `json:"Title" xml:"Title"`
+	MakeFailReason       string               `json:"MakeFailReason" xml:"MakeFailReason"`
+	TaskUuid             string               `json:"TaskUuid" xml:"TaskUuid"`
 	Image                string               `json:"Image" xml:"Image"`
+	AvatarType           string               `json:"AvatarType" xml:"AvatarType"`
+	MakeStage            string               `json:"MakeStage" xml:"MakeStage"`
+	MakeStatus           string               `json:"MakeStatus" xml:"MakeStatus"`
 	Portrait             string               `json:"Portrait" xml:"Portrait"`
 	Description          string               `json:"Description" xml:"Description"`
-	AvatarType           string               `json:"AvatarType" xml:"AvatarType"`
-	ModelType            string               `json:"ModelType" xml:"ModelType"`
-	MakeStatus           string               `json:"MakeStatus" xml:"MakeStatus"`
-	MakeFailReason       string               `json:"MakeFailReason" xml:"MakeFailReason"`
+	Type                 int                  `json:"Type" xml:"Type"`
 	SupportedResolutions SupportedResolutions `json:"SupportedResolutions" xml:"SupportedResolutions"`
+	TaskResult           TaskResult           `json:"TaskResult" xml:"TaskResult"`
 }
