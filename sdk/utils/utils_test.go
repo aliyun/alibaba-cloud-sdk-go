@@ -26,11 +26,8 @@ func TestInitStructWithDefaultTag(t *testing.T) {
 }
 
 func TestGetUUID(t *testing.T) {
-	uuid := NewUUID()
-	assert.Equal(t, 16, len(uuid))
-	assert.Equal(t, 36, len(uuid.String()))
-	uuidString := GetUUID()
-	assert.Equal(t, 32, len(uuidString))
+	assert.Equal(t, 32, len(GetUUID()))
+	assert.NotEqual(t, GetUUID(), GetUUID())
 }
 
 func TestGetMD5Base64(t *testing.T) {
