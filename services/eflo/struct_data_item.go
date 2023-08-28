@@ -23,6 +23,7 @@ type DataItem struct {
 	AccessPointId             string                         `json:"AccessPointId" xml:"AccessPointId"`
 	ReceptionInstanceId       string                         `json:"ReceptionInstanceId" xml:"ReceptionInstanceId"`
 	NcType                    string                         `json:"NcType" xml:"NcType"`
+	Mac                       string                         `json:"Mac" xml:"Mac"`
 	Across                    bool                           `json:"Across" xml:"Across"`
 	MasterZoneId              string                         `json:"MasterZoneId" xml:"MasterZoneId"`
 	Used                      bool                           `json:"Used" xml:"Used"`
@@ -32,6 +33,7 @@ type DataItem struct {
 	VccName                   string                         `json:"VccName" xml:"VccName"`
 	TaskId                    string                         `json:"TaskId" xml:"TaskId"`
 	ServiceCidr               string                         `json:"ServiceCidr" xml:"ServiceCidr"`
+	ElasticNetworkInterfaceId string                         `json:"ElasticNetworkInterfaceId" xml:"ElasticNetworkInterfaceId"`
 	Gateway                   string                         `json:"Gateway" xml:"Gateway"`
 	CommodityCode             string                         `json:"CommodityCode" xml:"CommodityCode"`
 	VpcId                     string                         `json:"VpcId" xml:"VpcId"`
@@ -72,6 +74,7 @@ type DataItem struct {
 	RegionId                  string                         `json:"RegionId" xml:"RegionId"`
 	SubnetName                string                         `json:"SubnetName" xml:"SubnetName"`
 	ResourceGroupId           string                         `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	Mask                      string                         `json:"Mask" xml:"Mask"`
 	InstanceId                string                         `json:"InstanceId" xml:"InstanceId"`
 	SubnetId                  string                         `json:"SubnetId" xml:"SubnetId"`
 	RouteMapNum               int                            `json:"RouteMapNum" xml:"RouteMapNum"`
@@ -85,6 +88,7 @@ type DataItem struct {
 	VpdRouteEntryId           string                         `json:"VpdRouteEntryId" xml:"VpdRouteEntryId"`
 	Dependence                map[string]interface{}         `json:"Dependence" xml:"Dependence"`
 	Ip                        string                         `json:"Ip" xml:"Ip"`
+	VSwitchId                 string                         `json:"VSwitchId" xml:"VSwitchId"`
 	GmtModified               string                         `json:"GmtModified" xml:"GmtModified"`
 	Quota                     int                            `json:"Quota" xml:"Quota"`
 	BgpCidr                   string                         `json:"BgpCidr" xml:"BgpCidr"`

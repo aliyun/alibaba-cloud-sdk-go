@@ -29,6 +29,7 @@ type Content struct {
 	NextHopId                 string                         `json:"NextHopId" xml:"NextHopId"`
 	VccName                   string                         `json:"VccName" xml:"VccName"`
 	ServiceCidr               string                         `json:"ServiceCidr" xml:"ServiceCidr"`
+	ElasticNetworkInterfaceId string                         `json:"ElasticNetworkInterfaceId" xml:"ElasticNetworkInterfaceId"`
 	Gateway                   string                         `json:"Gateway" xml:"Gateway"`
 	CommodityCode             string                         `json:"CommodityCode" xml:"CommodityCode"`
 	Type                      string                         `json:"Type" xml:"Type"`
@@ -59,6 +60,7 @@ type Content struct {
 	GmtCreate                 string                         `json:"GmtCreate" xml:"GmtCreate"`
 	MaxNcd                    int                            `json:"MaxNcd" xml:"MaxNcd"`
 	SubnetId                  string                         `json:"SubnetId" xml:"SubnetId"`
+	Mask                      string                         `json:"Mask" xml:"Mask"`
 	InstanceId                string                         `json:"InstanceId" xml:"InstanceId"`
 	RouteMapNum               int                            `json:"RouteMapNum" xml:"RouteMapNum"`
 	TenantId                  string                         `json:"TenantId" xml:"TenantId"`
@@ -79,6 +81,7 @@ type Content struct {
 	DestinationCidrBlock      string                         `json:"DestinationCidrBlock" xml:"DestinationCidrBlock"`
 	Total                     int64                          `json:"Total" xml:"Total"`
 	NetworkInterfaceCount     int                            `json:"NetworkInterfaceCount" xml:"NetworkInterfaceCount"`
+	Mac                       string                         `json:"Mac" xml:"Mac"`
 	Across                    bool                           `json:"Across" xml:"Across"`
 	MasterZoneId              string                         `json:"MasterZoneId" xml:"MasterZoneId"`
 	ErRouteMapName            string                         `json:"ErRouteMapName" xml:"ErRouteMapName"`
