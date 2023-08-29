@@ -80,6 +80,7 @@ type DescribeRulesRequest struct {
 	MatchType         requests.Integer `position:"Query" name:"MatchType"`
 	Lang              string           `position:"Query" name:"Lang"`
 	KeywordCompatible requests.Boolean `position:"Query" name:"KeywordCompatible"`
+	SupportForm       requests.Integer `position:"Query" name:"SupportForm"`
 	RuleType          requests.Integer `position:"Query" name:"RuleType"`
 	GroupId           string           `position:"Query" name:"GroupId"`
 	ContentCategory   requests.Integer `position:"Query" name:"ContentCategory"`

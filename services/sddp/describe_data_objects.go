@@ -71,6 +71,7 @@ func (client *Client) DescribeDataObjectsWithCallback(request *DescribeDataObjec
 // DescribeDataObjectsRequest is the request struct for api DescribeDataObjects
 type DescribeDataObjectsRequest struct {
 	*requests.RpcRequest
+	FileType          requests.Integer `position:"Query" name:"FileType"`
 	RiskLevels        string           `position:"Query" name:"RiskLevels"`
 	QueryName         string           `position:"Query" name:"QueryName"`
 	DomainId          requests.Integer `position:"Query" name:"DomainId"`
@@ -83,6 +84,8 @@ type DescribeDataObjectsRequest struct {
 	ModelTagIds       string           `position:"Query" name:"ModelTagIds"`
 	CurrentPage       requests.Integer `position:"Query" name:"CurrentPage"`
 	TemplateId        requests.Integer `position:"Query" name:"TemplateId"`
+	InstanceId        string           `position:"Query" name:"InstanceId"`
+	ModelIds          string           `position:"Query" name:"ModelIds"`
 }
 
 // DescribeDataObjectsResponse is the response struct for api DescribeDataObjects
