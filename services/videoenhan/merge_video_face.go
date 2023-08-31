@@ -72,6 +72,7 @@ func (client *Client) MergeVideoFaceWithCallback(request *MergeVideoFaceRequest,
 type MergeVideoFaceRequest struct {
 	*requests.RpcRequest
 	ReferenceURL string           `position:"Body" name:"ReferenceURL"`
+	Enhance      requests.Boolean `position:"Body" name:"Enhance"`
 	PostURL      string           `position:"Body" name:"PostURL"`
 	Async        requests.Boolean `position:"Body" name:"Async"`
 	VideoURL     string           `position:"Body" name:"VideoURL"`

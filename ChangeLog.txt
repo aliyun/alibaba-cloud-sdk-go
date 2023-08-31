@@ -1,3 +1,7 @@
+2023-08-31 Version: v1.62.533
+- Generated 2020-03-20 for `videoenhan`.
+- Update MergeVideoFace.
+
 2023-08-31 Version: v1.62.532
 - Generated 2014-08-28 for `Ess`.
 - ScalingConfiguration support DeletionProtection.
