@@ -1,3 +1,7 @@
+2023-08-31 Version: v1.62.531
+- Generated 2023-01-20 for `csas`.
+- Supported connector visualization manage.
+
 2023-08-30 Version: v1.62.530
 - Generated 2020-06-01 for `SWAS-OPEN`.
 - Add new apis.

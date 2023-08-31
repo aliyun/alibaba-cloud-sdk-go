@@ -17,12 +17,13 @@ package csas
 
 // Connector is a nested struct in csas response
 type Connector struct {
-	ConnectorId  string        `json:"ConnectorId" xml:"ConnectorId"`
-	Name         string        `json:"Name" xml:"Name"`
-	RegionId     string        `json:"RegionId" xml:"RegionId"`
-	SwitchStatus string        `json:"SwitchStatus" xml:"SwitchStatus"`
-	Status       string        `json:"Status" xml:"Status"`
-	CreateTime   string        `json:"CreateTime" xml:"CreateTime"`
-	UpgradeTime  UpgradeTime   `json:"UpgradeTime" xml:"UpgradeTime"`
-	Applications []Application `json:"Applications" xml:"Applications"`
+	ConnectorId      string            `json:"ConnectorId" xml:"ConnectorId"`
+	Name             string            `json:"Name" xml:"Name"`
+	RegionId         string            `json:"RegionId" xml:"RegionId"`
+	SwitchStatus     string            `json:"SwitchStatus" xml:"SwitchStatus"`
+	Status           string            `json:"Status" xml:"Status"`
+	CreateTime       string            `json:"CreateTime" xml:"CreateTime"`
+	UpgradeTime      UpgradeTime       `json:"UpgradeTime" xml:"UpgradeTime"`
+	Applications     []Application     `json:"Applications" xml:"Applications"`
+	ConnectorClients []ConnectorClient `json:"ConnectorClients" xml:"ConnectorClients"`
 }

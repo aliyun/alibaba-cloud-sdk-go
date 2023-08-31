@@ -76,6 +76,7 @@ type ListPrivateAccessApplicationsRequest struct {
 	PageSize       requests.Integer `position:"Query" name:"PageSize"`
 	Address        string           `position:"Query" name:"Address"`
 	TagId          string           `position:"Query" name:"TagId"`
+	ConnectorId    string           `position:"Query" name:"ConnectorId"`
 	CurrentPage    requests.Integer `position:"Query" name:"CurrentPage"`
 	ApplicationIds *[]string        `position:"Query" name:"ApplicationIds"  type:"Repeated"`
 	Name           string           `position:"Query" name:"Name"`
