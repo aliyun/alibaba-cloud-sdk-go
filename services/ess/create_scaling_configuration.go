@@ -75,6 +75,7 @@ type CreateScalingConfigurationRequest struct {
 	SecurityEnhancementStrategy     string                                            `position:"Query" name:"SecurityEnhancementStrategy"`
 	KeyPairName                     string                                            `position:"Query" name:"KeyPairName"`
 	SpotPriceLimit                  *[]CreateScalingConfigurationSpotPriceLimit       `position:"Query" name:"SpotPriceLimit"  type:"Repeated"`
+	DeletionProtection              requests.Boolean                                  `position:"Query" name:"DeletionProtection"`
 	ResourceGroupId                 string                                            `position:"Query" name:"ResourceGroupId"`
 	PrivatePoolOptionsMatchCriteria string                                            `position:"Query" name:"PrivatePoolOptions.MatchCriteria"`
 	HostName                        string                                            `position:"Query" name:"HostName"`

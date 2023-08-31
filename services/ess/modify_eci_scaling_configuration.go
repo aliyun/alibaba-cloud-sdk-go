@@ -175,6 +175,7 @@ type ModifyEciScalingConfigurationTag struct {
 // ModifyEciScalingConfigurationVolume is a repeated param struct in ModifyEciScalingConfigurationRequest
 type ModifyEciScalingConfigurationVolume struct {
 	DiskVolumeFsType                 string                                                                 `name:"DiskVolume.FsType"`
+	EmptyDirVolumeSizeLimit          string                                                                 `name:"EmptyDirVolume.SizeLimit"`
 	NFSVolumePath                    string                                                                 `name:"NFSVolume.Path"`
 	DiskVolumeDiskId                 string                                                                 `name:"DiskVolume.DiskId"`
 	FlexVolumeFsType                 string                                                                 `name:"FlexVolume.FsType"`

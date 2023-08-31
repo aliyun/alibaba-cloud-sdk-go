@@ -70,6 +70,7 @@ type ScalingConfigurationInDescribeScalingConfigurations struct {
 	SystemDiskProvisionedIops       int64                               `json:"SystemDisk.ProvisionedIops" xml:"SystemDisk.ProvisionedIops"`
 	SystemDiskBurstingEnabled       bool                                `json:"SystemDisk.BurstingEnabled" xml:"SystemDisk.BurstingEnabled"`
 	ImageOptionsLoginAsNonRoot      bool                                `json:"ImageOptions.LoginAsNonRoot" xml:"ImageOptions.LoginAsNonRoot"`
+	DeletionProtection              bool                                `json:"DeletionProtection" xml:"DeletionProtection"`
 	SystemDiskCategories            SystemDiskCategories                `json:"SystemDiskCategories" xml:"SystemDiskCategories"`
 	WeightedCapacities              WeightedCapacities                  `json:"WeightedCapacities" xml:"WeightedCapacities"`
 	InstanceTypes                   InstanceTypes                       `json:"InstanceTypes" xml:"InstanceTypes"`

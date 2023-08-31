@@ -74,6 +74,7 @@ type ModifyScalingConfigurationRequest struct {
 	HpcClusterId                    string                                            `position:"Query" name:"HpcClusterId"`
 	KeyPairName                     string                                            `position:"Query" name:"KeyPairName"`
 	SpotPriceLimit                  *[]ModifyScalingConfigurationSpotPriceLimit       `position:"Query" name:"SpotPriceLimit"  type:"Repeated"`
+	DeletionProtection              requests.Boolean                                  `position:"Query" name:"DeletionProtection"`
 	ResourceGroupId                 string                                            `position:"Query" name:"ResourceGroupId"`
 	PrivatePoolOptionsMatchCriteria string                                            `position:"Query" name:"PrivatePoolOptions.MatchCriteria"`
 	HostName                        string                                            `position:"Query" name:"HostName"`

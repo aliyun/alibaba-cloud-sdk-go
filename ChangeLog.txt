@@ -1,3 +1,7 @@
+2023-08-31 Version: v1.62.532
+- Generated 2014-08-28 for `Ess`.
+- ScalingConfiguration support DeletionProtection.
+
 2023-08-31 Version: v1.62.531
 - Generated 2023-01-20 for `csas`.
 - Supported connector visualization manage.

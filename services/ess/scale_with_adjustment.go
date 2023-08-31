@@ -78,6 +78,7 @@ type ScaleWithAdjustmentRequest struct {
 	AdjustmentValue        requests.Integer `position:"Query" name:"AdjustmentValue"`
 	ResourceOwnerAccount   string           `position:"Query" name:"ResourceOwnerAccount"`
 	AdjustmentType         string           `position:"Query" name:"AdjustmentType"`
+	ParallelTask           requests.Boolean `position:"Query" name:"ParallelTask"`
 	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
 	SpotStrategy           string           `position:"Query" name:"SpotStrategy"`
 	VSwitchId              *[]string        `position:"Query" name:"VSwitchId"  type:"Repeated"`

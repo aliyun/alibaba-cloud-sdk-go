@@ -30,5 +30,6 @@ type Volume struct {
 	FlexVolumeOptions                 string                             `json:"FlexVolumeOptions" xml:"FlexVolumeOptions"`
 	NFSVolumeServer                   string                             `json:"NFSVolumeServer" xml:"NFSVolumeServer"`
 	Name                              string                             `json:"Name" xml:"Name"`
+	EmptyDirVolumeSizeLimit           string                             `json:"EmptyDirVolumeSizeLimit" xml:"EmptyDirVolumeSizeLimit"`
 	ConfigFileVolumeConfigFileToPaths []ConfigFileVolumeConfigFileToPath `json:"ConfigFileVolumeConfigFileToPaths" xml:"ConfigFileVolumeConfigFileToPaths"`
 }
