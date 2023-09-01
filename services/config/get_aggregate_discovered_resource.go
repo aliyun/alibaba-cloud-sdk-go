@@ -71,11 +71,12 @@ func (client *Client) GetAggregateDiscoveredResourceWithCallback(request *GetAgg
 // GetAggregateDiscoveredResourceRequest is the request struct for api GetAggregateDiscoveredResource
 type GetAggregateDiscoveredResourceRequest struct {
 	*requests.RpcRequest
-	ResourceId      string           `position:"Query" name:"ResourceId"`
-	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	AggregatorId    string           `position:"Query" name:"AggregatorId"`
-	ResourceType    string           `position:"Query" name:"ResourceType"`
-	Region          string           `position:"Query" name:"Region"`
+	ResourceId        string           `position:"Query" name:"ResourceId"`
+	ResourceOwnerId   requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	AggregatorId      string           `position:"Query" name:"AggregatorId"`
+	ResourceType      string           `position:"Query" name:"ResourceType"`
+	ResourceAccountId requests.Integer `position:"Query" name:"ResourceAccountId"`
+	Region            string           `position:"Query" name:"Region"`
 }
 
 // GetAggregateDiscoveredResourceResponse is the response struct for api GetAggregateDiscoveredResource
@@ -90,7 +91,7 @@ func CreateGetAggregateDiscoveredResourceRequest() (request *GetAggregateDiscove
 	request = &GetAggregateDiscoveredResourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Config", "2019-01-08", "GetAggregateDiscoveredResource", "", "")
+	request.InitWithApiInfo("Config", "2020-09-07", "GetAggregateDiscoveredResource", "", "")
 	request.Method = requests.GET
 	return
 }

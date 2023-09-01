@@ -72,14 +72,11 @@ func (client *Client) ListDiscoveredResourcesWithCallback(request *ListDiscovere
 type ListDiscoveredResourcesRequest struct {
 	*requests.RpcRequest
 	ResourceDeleted requests.Integer `position:"Query" name:"ResourceDeleted"`
-	MultiAccount    requests.Boolean `position:"Query" name:"MultiAccount"`
-	Regions         string           `position:"Query" name:"Regions"`
-	PageNumber      requests.Integer `position:"Query" name:"PageNumber"`
-	PageSize        requests.Integer `position:"Query" name:"PageSize"`
-	ComplianceType  string           `position:"Query" name:"ComplianceType"`
 	ResourceId      string           `position:"Query" name:"ResourceId"`
+	Regions         string           `position:"Query" name:"Regions"`
 	ResourceTypes   string           `position:"Query" name:"ResourceTypes"`
-	MemberId        requests.Integer `position:"Query" name:"MemberId"`
+	NextToken       string           `position:"Query" name:"NextToken"`
+	MaxResults      requests.Integer `position:"Query" name:"MaxResults"`
 }
 
 // ListDiscoveredResourcesResponse is the response struct for api ListDiscoveredResources
@@ -94,7 +91,7 @@ func CreateListDiscoveredResourcesRequest() (request *ListDiscoveredResourcesReq
 	request = &ListDiscoveredResourcesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Config", "2019-01-08", "ListDiscoveredResources", "", "")
+	request.InitWithApiInfo("Config", "2020-09-07", "ListDiscoveredResources", "", "")
 	request.Method = requests.POST
 	return
 }

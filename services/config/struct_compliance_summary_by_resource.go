@@ -17,8 +17,8 @@ package config
 
 // ComplianceSummaryByResource is a nested struct in config response
 type ComplianceSummaryByResource struct {
-	CompliantCount             int   `json:"CompliantCount" xml:"CompliantCount"`
-	NonCompliantCount          int   `json:"NonCompliantCount" xml:"NonCompliantCount"`
-	ComplianceSummaryTimestamp int64 `json:"ComplianceSummaryTimestamp" xml:"ComplianceSummaryTimestamp"`
 	TotalCount                 int64 `json:"TotalCount" xml:"TotalCount"`
+	CompliantCount             int   `json:"CompliantCount" xml:"CompliantCount"`
+	ComplianceSummaryTimestamp int64 `json:"ComplianceSummaryTimestamp" xml:"ComplianceSummaryTimestamp"`
+	NonCompliantCount          int   `json:"NonCompliantCount" xml:"NonCompliantCount"`
 }
