@@ -17,6 +17,9 @@ package config
 
 // ConfigurationRecorder is a nested struct in config response
 type ConfigurationRecorder struct {
+	AccountId                   int64    `json:"AccountId" xml:"AccountId"`
 	ConfigurationRecorderStatus string   `json:"ConfigurationRecorderStatus" xml:"ConfigurationRecorderStatus"`
+	OrganizationEnableStatus    string   `json:"OrganizationEnableStatus" xml:"OrganizationEnableStatus"`
+	OrganizationMasterId        int64    `json:"OrganizationMasterId" xml:"OrganizationMasterId"`
 	ResourceTypes               []string `json:"ResourceTypes" xml:"ResourceTypes"`
 }

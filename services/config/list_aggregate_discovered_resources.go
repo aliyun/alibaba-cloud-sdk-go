@@ -71,16 +71,16 @@ func (client *Client) ListAggregateDiscoveredResourcesWithCallback(request *List
 // ListAggregateDiscoveredResourcesRequest is the request struct for api ListAggregateDiscoveredResources
 type ListAggregateDiscoveredResourcesRequest struct {
 	*requests.RpcRequest
-	ResourceDeleted   requests.Integer `position:"Query" name:"ResourceDeleted"`
-	ResourceOwnerId   requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Regions           string           `position:"Query" name:"Regions"`
-	AggregatorId      string           `position:"Query" name:"AggregatorId"`
-	FolderId          string           `position:"Query" name:"FolderId"`
-	ResourceAccountId requests.Integer `position:"Query" name:"ResourceAccountId"`
-	NextToken         string           `position:"Query" name:"NextToken"`
-	ResourceId        string           `position:"Query" name:"ResourceId"`
-	ResourceTypes     string           `position:"Query" name:"ResourceTypes"`
-	MaxResults        requests.Integer `position:"Query" name:"MaxResults"`
+	ResourceDeleted requests.Integer `position:"Query" name:"ResourceDeleted"`
+	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Regions         string           `position:"Query" name:"Regions"`
+	AggregatorId    string           `position:"Query" name:"AggregatorId"`
+	PageNumber      requests.Integer `position:"Query" name:"PageNumber"`
+	FolderId        string           `position:"Query" name:"FolderId"`
+	PageSize        requests.Integer `position:"Query" name:"PageSize"`
+	ComplianceType  string           `position:"Query" name:"ComplianceType"`
+	ResourceId      string           `position:"Query" name:"ResourceId"`
+	ResourceTypes   string           `position:"Query" name:"ResourceTypes"`
 }
 
 // ListAggregateDiscoveredResourcesResponse is the response struct for api ListAggregateDiscoveredResources
@@ -95,7 +95,7 @@ func CreateListAggregateDiscoveredResourcesRequest() (request *ListAggregateDisc
 	request = &ListAggregateDiscoveredResourcesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Config", "2020-09-07", "ListAggregateDiscoveredResources", "", "")
+	request.InitWithApiInfo("Config", "2019-01-08", "ListAggregateDiscoveredResources", "", "")
 	request.Method = requests.POST
 	return
 }

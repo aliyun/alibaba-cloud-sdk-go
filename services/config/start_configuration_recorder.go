@@ -71,6 +71,7 @@ func (client *Client) StartConfigurationRecorderWithCallback(request *StartConfi
 // StartConfigurationRecorderRequest is the request struct for api StartConfigurationRecorder
 type StartConfigurationRecorderRequest struct {
 	*requests.RpcRequest
+	EnterpriseEdition requests.Boolean `position:"Body" name:"EnterpriseEdition"`
 }
 
 // StartConfigurationRecorderResponse is the response struct for api StartConfigurationRecorder
@@ -85,7 +86,7 @@ func CreateStartConfigurationRecorderRequest() (request *StartConfigurationRecor
 	request = &StartConfigurationRecorderRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Config", "2020-09-07", "StartConfigurationRecorder", "", "")
+	request.InitWithApiInfo("Config", "2019-01-08", "StartConfigurationRecorder", "", "")
 	request.Method = requests.POST
 	return
 }

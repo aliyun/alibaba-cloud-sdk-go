@@ -88,7 +88,7 @@ func CreatePutEvaluationsRequest() (request *PutEvaluationsRequest) {
 	request = &PutEvaluationsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Config", "2020-09-07", "PutEvaluations", "", "")
+	request.InitWithApiInfo("Config", "2019-01-08", "PutEvaluations", "", "")
 	request.Method = requests.POST
 	return
 }

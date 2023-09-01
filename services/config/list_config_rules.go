@@ -71,18 +71,26 @@ func (client *Client) ListConfigRulesWithCallback(request *ListConfigRulesReques
 // ListConfigRulesRequest is the request struct for api ListConfigRules
 type ListConfigRulesRequest struct {
 	*requests.RpcRequest
-	FilterInCompliancePack           requests.Boolean `position:"Query" name:"FilterInCompliancePack"`
-	ConfigRuleState                  string           `position:"Query" name:"ConfigRuleState"`
-	FilterInCompliancePackExcludeIds string           `position:"Query" name:"FilterInCompliancePackExcludeIds"`
-	PageNumber                       requests.Integer `position:"Query" name:"PageNumber"`
-	PageSize                         requests.Integer `position:"Query" name:"PageSize"`
-	CompliancePackId                 string           `position:"Query" name:"CompliancePackId"`
-	Keyword                          string           `position:"Query" name:"Keyword"`
-	ComplianceType                   string           `position:"Query" name:"ComplianceType"`
-	ResourceTypes                    string           `position:"Query" name:"ResourceTypes"`
-	RiskLevel                        requests.Integer `position:"Query" name:"RiskLevel"`
-	ConfigRuleName                   string           `position:"Query" name:"ConfigRuleName"`
-	ServiceChannel                   string           `position:"Query" name:"ServiceChannel"`
+	MultiAccount                     requests.Boolean   `position:"Query" name:"MultiAccount"`
+	FilterInCompliancePack           requests.Boolean   `position:"Query" name:"FilterInCompliancePack"`
+	MessageType                      string             `position:"Query" name:"MessageType"`
+	ConfigRuleState                  string             `position:"Query" name:"ConfigRuleState"`
+	FilterInCompliancePackExcludeIds string             `position:"Query" name:"FilterInCompliancePackExcludeIds"`
+	PageNumber                       requests.Integer   `position:"Query" name:"PageNumber"`
+	PageSize                         requests.Integer   `position:"Query" name:"PageSize"`
+	CompliancePackId                 string             `position:"Query" name:"CompliancePackId"`
+	Tag                              ListConfigRulesTag `position:"Query" name:"Tag"  type:"Struct"`
+	ComplianceType                   string             `position:"Query" name:"ComplianceType"`
+	ConfigRuleSceneId                string             `position:"Query" name:"ConfigRuleSceneId"`
+	RiskLevel                        requests.Integer   `position:"Query" name:"RiskLevel"`
+	ConfigRuleName                   string             `position:"Query" name:"ConfigRuleName"`
+	MemberId                         requests.Integer   `position:"Query" name:"MemberId"`
+}
+
+// ListConfigRulesTag is a repeated param struct in ListConfigRulesRequest
+type ListConfigRulesTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // ListConfigRulesResponse is the response struct for api ListConfigRules
@@ -97,7 +105,7 @@ func CreateListConfigRulesRequest() (request *ListConfigRulesRequest) {
 	request = &ListConfigRulesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Config", "2020-09-07", "ListConfigRules", "", "")
+	request.InitWithApiInfo("Config", "2019-01-08", "ListConfigRules", "", "")
 	request.Method = requests.POST
 	return
 }
