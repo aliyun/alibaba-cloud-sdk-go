@@ -80,6 +80,7 @@ type ListFeatureViewsRequest struct {
 	Order       string           `position:"Query" name:"Order"`
 	Owner       string           `position:"Query" name:"Owner"`
 	InstanceId  string           `position:"Path" name:"InstanceId"`
+	Name        string           `position:"Query" name:"Name"`
 	SortBy      string           `position:"Query" name:"SortBy"`
 }
 
