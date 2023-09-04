@@ -22,6 +22,7 @@ type Content struct {
 	SubnetCount               int64                          `json:"SubnetCount" xml:"SubnetCount"`
 	ReceptionInstanceId       string                         `json:"ReceptionInstanceId" xml:"ReceptionInstanceId"`
 	NcType                    string                         `json:"NcType" xml:"NcType"`
+	LeniQuota                 int                            `json:"LeniQuota" xml:"LeniQuota"`
 	Used                      bool                           `json:"Used" xml:"Used"`
 	InstanceType              string                         `json:"InstanceType" xml:"InstanceType"`
 	RoleName                  string                         `json:"RoleName" xml:"RoleName"`
@@ -86,7 +87,9 @@ type Content struct {
 	MasterZoneId              string                         `json:"MasterZoneId" xml:"MasterZoneId"`
 	ErRouteMapName            string                         `json:"ErRouteMapName" xml:"ErRouteMapName"`
 	NetworkInterfaceName      string                         `json:"NetworkInterfaceName" xml:"NetworkInterfaceName"`
+	LniSipQuota               int                            `json:"LniSipQuota" xml:"LniSipQuota"`
 	VpcId                     string                         `json:"VpcId" xml:"VpcId"`
+	ClusterId                 string                         `json:"ClusterId" xml:"ClusterId"`
 	Cidr                      string                         `json:"Cidr" xml:"Cidr"`
 	VpdId                     string                         `json:"VpdId" xml:"VpdId"`
 	VccRouteEntryId           string                         `json:"VccRouteEntryId" xml:"VccRouteEntryId"`
@@ -120,6 +123,7 @@ type Content struct {
 	PricingCycle              string                         `json:"PricingCycle" xml:"PricingCycle"`
 	SecondaryCidrBlocks       []string                       `json:"SecondaryCidrBlocks" xml:"SecondaryCidrBlocks"`
 	SubnetIds                 []string                       `json:"SubnetIds" xml:"SubnetIds"`
+	VSwitches                 []string                       `json:"VSwitches" xml:"VSwitches"`
 	Ethernet                  []string                       `json:"Ethernet" xml:"Ethernet"`
 	VpdBaseInfo               VpdBaseInfo                    `json:"VpdBaseInfo" xml:"VpdBaseInfo"`
 	SubnetBaseInfo            SubnetBaseInfo                 `json:"SubnetBaseInfo" xml:"SubnetBaseInfo"`
