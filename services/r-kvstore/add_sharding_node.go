@@ -82,6 +82,7 @@ type AddShardingNodeRequest struct {
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	VSwitchId            string           `position:"Query" name:"VSwitchId"`
 	ForceTrans           requests.Boolean `position:"Query" name:"ForceTrans"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
 }

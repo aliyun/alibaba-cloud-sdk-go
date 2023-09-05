@@ -88,6 +88,7 @@ type DescribeBackupPolicyResponse struct {
 	PreferredNextBackupTime string             `json:"PreferredNextBackupTime" xml:"PreferredNextBackupTime"`
 	PreferredBackupTime     string             `json:"PreferredBackupTime" xml:"PreferredBackupTime"`
 	EnableBackupLog         int                `json:"EnableBackupLog" xml:"EnableBackupLog"`
+	DbsInstance             string             `json:"DbsInstance" xml:"DbsInstance"`
 	AccessDeniedDetail      AccessDeniedDetail `json:"AccessDeniedDetail" xml:"AccessDeniedDetail"`
 }
 

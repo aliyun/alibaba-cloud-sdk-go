@@ -17,9 +17,10 @@ package r_kvstore
 
 // NodeInfo is a nested struct in r_kvstore response
 type NodeInfo struct {
-	NodeId     string `json:"NodeId" xml:"NodeId"`
-	Connection string `json:"Connection" xml:"Connection"`
-	Bandwidth  string `json:"Bandwidth" xml:"Bandwidth"`
-	Capacity   string `json:"Capacity" xml:"Capacity"`
-	NodeType   string `json:"NodeType" xml:"NodeType"`
+	NodeId          string `json:"NodeId" xml:"NodeId"`
+	Connection      string `json:"Connection" xml:"Connection"`
+	SubInstanceType string `json:"SubInstanceType" xml:"SubInstanceType"`
+	Bandwidth       string `json:"Bandwidth" xml:"Bandwidth"`
+	Capacity        string `json:"Capacity" xml:"Capacity"`
+	NodeType        string `json:"NodeType" xml:"NodeType"`
 }
