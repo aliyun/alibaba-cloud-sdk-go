@@ -78,7 +78,7 @@ type SubmitServerlessJobRequest struct {
 	JobQueue         string                                `position:"Query" name:"JobQueue"`
 	Timeout          requests.Integer                      `position:"Query" name:"Timeout"`
 	JobUser          string                                `position:"Query" name:"JobUser"`
-	InstanceType     *[]string                             `position:"Query" name:"InstanceType"  type:"Repeated"`
+	InstanceType     *[]string                             `position:"Query" name:"InstanceType"  type:"Json"`
 	JobName          string                                `position:"Query" name:"JobName"`
 	JobPriority      requests.Integer                      `position:"Query" name:"JobPriority"`
 	Cpu              requests.Float                        `position:"Query" name:"Cpu"`
@@ -86,7 +86,7 @@ type SubmitServerlessJobRequest struct {
 	AcrRegistryInfo  *[]SubmitServerlessJobAcrRegistryInfo `position:"Query" name:"AcrRegistryInfo"  type:"Json"`
 	ClusterId        string                                `position:"Query" name:"ClusterId"`
 	SpotStrategy     string                                `position:"Query" name:"SpotStrategy"`
-	VSwitchId        *[]string                             `position:"Query" name:"VSwitchId"  type:"Repeated"`
+	VSwitchId        *[]string                             `position:"Query" name:"VSwitchId"  type:"Json"`
 	Volume           *[]SubmitServerlessJobVolume          `position:"Query" name:"Volume"  type:"Json"`
 	RetryStrategy    SubmitServerlessJobRetryStrategy      `position:"Query" name:"RetryStrategy"  type:"Struct"`
 	EphemeralStorage requests.Integer                      `position:"Query" name:"EphemeralStorage"`

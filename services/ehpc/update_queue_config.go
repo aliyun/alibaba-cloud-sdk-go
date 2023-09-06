@@ -71,11 +71,12 @@ func (client *Client) UpdateQueueConfigWithCallback(request *UpdateQueueConfigRe
 // UpdateQueueConfigRequest is the request struct for api UpdateQueueConfig
 type UpdateQueueConfigRequest struct {
 	*requests.RpcRequest
-	DeploymentSetId     string `position:"Query" name:"DeploymentSetId"`
-	QueueName           string `position:"Query" name:"QueueName"`
-	ClusterId           string `position:"Query" name:"ClusterId"`
-	ResourceGroupId     string `position:"Query" name:"ResourceGroupId"`
-	ComputeInstanceType string `position:"Query" name:"ComputeInstanceType"`
+	DeploymentSetId             string `position:"Query" name:"DeploymentSetId"`
+	QueueName                   string `position:"Query" name:"QueueName"`
+	ClusterId                   string `position:"Query" name:"ClusterId"`
+	NetworkInterfaceTrafficMode string `position:"Query" name:"NetworkInterfaceTrafficMode"`
+	ResourceGroupId             string `position:"Query" name:"ResourceGroupId"`
+	ComputeInstanceType         string `position:"Query" name:"ComputeInstanceType"`
 }
 
 // UpdateQueueConfigResponse is the response struct for api UpdateQueueConfig
