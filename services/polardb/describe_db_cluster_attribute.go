@@ -93,6 +93,7 @@ type DescribeDBClusterAttributeResponse struct {
 	HasCompleteStandbyRes     bool              `json:"HasCompleteStandbyRes" xml:"HasCompleteStandbyRes"`
 	DataSyncMode              string            `json:"DataSyncMode" xml:"DataSyncMode"`
 	StandbyHAMode             string            `json:"StandbyHAMode" xml:"StandbyHAMode"`
+	CompressStorageMode       string            `json:"CompressStorageMode" xml:"CompressStorageMode"`
 	StorageMax                int64             `json:"StorageMax" xml:"StorageMax"`
 	DBVersion                 string            `json:"DBVersion" xml:"DBVersion"`
 	ZoneIds                   string            `json:"ZoneIds" xml:"ZoneIds"`
@@ -108,6 +109,7 @@ type DescribeDBClusterAttributeResponse struct {
 	StoragePayType            string            `json:"StoragePayType" xml:"StoragePayType"`
 	LockMode                  string            `json:"LockMode" xml:"LockMode"`
 	StorageUsed               int64             `json:"StorageUsed" xml:"StorageUsed"`
+	CompressStorageUsed       int64             `json:"CompressStorageUsed" xml:"CompressStorageUsed"`
 	StorageSpace              int64             `json:"StorageSpace" xml:"StorageSpace"`
 	DBVersionStatus           string            `json:"DBVersionStatus" xml:"DBVersionStatus"`
 	CreationTime              string            `json:"CreationTime" xml:"CreationTime"`

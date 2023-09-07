@@ -17,8 +17,10 @@ package polardb
 
 // RelatedAPInstance is a nested struct in polardb response
 type RelatedAPInstance struct {
-	Name           string `json:"Name" xml:"Name"`
-	ClassCode      string `json:"ClassCode" xml:"ClassCode"`
-	OssStorageUsed string `json:"OssStorageUsed" xml:"OssStorageUsed"`
-	TotalAPNodes   string `json:"TotalAPNodes" xml:"TotalAPNodes"`
+	Name           string  `json:"Name" xml:"Name"`
+	ClassCode      string  `json:"ClassCode" xml:"ClassCode"`
+	OssStorageUsed string  `json:"OssStorageUsed" xml:"OssStorageUsed"`
+	TotalAPNodes   string  `json:"TotalAPNodes" xml:"TotalAPNodes"`
+	StorageUsedMB  float64 `json:"StorageUsedMB" xml:"StorageUsedMB"`
+	APNodeStatus   string  `json:"APNodeStatus" xml:"APNodeStatus"`
 }

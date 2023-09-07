@@ -39,6 +39,7 @@ type DBCluster struct {
 	DBVersion            string                      `json:"DBVersion" xml:"DBVersion"`
 	PayType              string                      `json:"PayType" xml:"PayType"`
 	DBClusterId          string                      `json:"DBClusterId" xml:"DBClusterId"`
+	CompressStorageUsed  int64                       `json:"CompressStorageUsed" xml:"CompressStorageUsed"`
 	DBClusterStatus      string                      `json:"DBClusterStatus" xml:"DBClusterStatus"`
 	StrictConsistency    string                      `json:"StrictConsistency" xml:"StrictConsistency"`
 	ZoneId               string                      `json:"ZoneId" xml:"ZoneId"`

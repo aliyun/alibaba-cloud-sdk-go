@@ -78,6 +78,9 @@ type ModifyDBClusterRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	FaultSimulateMode    string           `position:"Query" name:"FaultSimulateMode"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	CompressStorage      string           `position:"Query" name:"CompressStorage"`
+	StorageUpperBound    requests.Integer `position:"Query" name:"StorageUpperBound"`
+	StorageAutoScale     string           `position:"Query" name:"StorageAutoScale"`
 	DataSyncMode         string           `position:"Query" name:"DataSyncMode"`
 }
 
