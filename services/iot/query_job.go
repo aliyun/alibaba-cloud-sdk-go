@@ -71,10 +71,12 @@ func (client *Client) QueryJobWithCallback(request *QueryJobRequest, callback fu
 // QueryJobRequest is the request struct for api QueryJob
 type QueryJobRequest struct {
 	*requests.RpcRequest
-	JobId         string `position:"Query" name:"JobId"`
-	IotInstanceId string `position:"Query" name:"IotInstanceId"`
-	ApiProduct    string `position:"Body" name:"ApiProduct"`
-	ApiRevision   string `position:"Body" name:"ApiRevision"`
+	RealTenantId      string `position:"Query" name:"RealTenantId"`
+	RealTripartiteKey string `position:"Query" name:"RealTripartiteKey"`
+	JobId             string `position:"Query" name:"JobId"`
+	IotInstanceId     string `position:"Query" name:"IotInstanceId"`
+	ApiProduct        string `position:"Body" name:"ApiProduct"`
+	ApiRevision       string `position:"Body" name:"ApiRevision"`
 }
 
 // QueryJobResponse is the response struct for api QueryJob

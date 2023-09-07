@@ -71,11 +71,13 @@ func (client *Client) ListOTAModuleByProductWithCallback(request *ListOTAModuleB
 // ListOTAModuleByProductRequest is the request struct for api ListOTAModuleByProduct
 type ListOTAModuleByProductRequest struct {
 	*requests.RpcRequest
-	AuthConfig    string `position:"Query" name:"AuthConfig"`
-	IotInstanceId string `position:"Query" name:"IotInstanceId"`
-	ProductKey    string `position:"Query" name:"ProductKey"`
-	ApiProduct    string `position:"Body" name:"ApiProduct"`
-	ApiRevision   string `position:"Body" name:"ApiRevision"`
+	AuthConfig        string `position:"Query" name:"AuthConfig"`
+	RealTenantId      string `position:"Query" name:"RealTenantId"`
+	RealTripartiteKey string `position:"Query" name:"RealTripartiteKey"`
+	IotInstanceId     string `position:"Query" name:"IotInstanceId"`
+	ProductKey        string `position:"Query" name:"ProductKey"`
+	ApiProduct        string `position:"Body" name:"ApiProduct"`
+	ApiRevision       string `position:"Body" name:"ApiRevision"`
 }
 
 // ListOTAModuleByProductResponse is the response struct for api ListOTAModuleByProduct

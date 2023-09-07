@@ -71,11 +71,13 @@ func (client *Client) QueryDeviceSubTopicWithCallback(request *QueryDeviceSubTop
 // QueryDeviceSubTopicRequest is the request struct for api QueryDeviceSubTopic
 type QueryDeviceSubTopicRequest struct {
 	*requests.RpcRequest
-	IotInstanceId string `position:"Query" name:"IotInstanceId"`
-	ProductKey    string `position:"Query" name:"ProductKey"`
-	ApiProduct    string `position:"Body" name:"ApiProduct"`
-	ApiRevision   string `position:"Body" name:"ApiRevision"`
-	DeviceName    string `position:"Query" name:"DeviceName"`
+	RealTenantId      string `position:"Query" name:"RealTenantId"`
+	RealTripartiteKey string `position:"Query" name:"RealTripartiteKey"`
+	IotInstanceId     string `position:"Query" name:"IotInstanceId"`
+	ProductKey        string `position:"Query" name:"ProductKey"`
+	ApiProduct        string `position:"Body" name:"ApiProduct"`
+	ApiRevision       string `position:"Body" name:"ApiRevision"`
+	DeviceName        string `position:"Query" name:"DeviceName"`
 }
 
 // QueryDeviceSubTopicResponse is the response struct for api QueryDeviceSubTopic

@@ -71,17 +71,19 @@ func (client *Client) ListDeviceDistributeJobWithCallback(request *ListDeviceDis
 // ListDeviceDistributeJobRequest is the request struct for api ListDeviceDistributeJob
 type ListDeviceDistributeJobRequest struct {
 	*requests.RpcRequest
-	JobId        string           `position:"Body" name:"JobId"`
-	NextToken    string           `position:"Query" name:"NextToken"`
-	PageSize     requests.Integer `position:"Query" name:"PageSize"`
-	CurrentPage  requests.Integer `position:"Query" name:"CurrentPage"`
-	ProductKey   string           `position:"Query" name:"ProductKey"`
-	JobType      string           `position:"Query" name:"JobType"`
-	ApiProduct   string           `position:"Body" name:"ApiProduct"`
-	ApiRevision  string           `position:"Body" name:"ApiRevision"`
-	TargetUid    string           `position:"Query" name:"TargetUid"`
-	SourceRegion string           `position:"Query" name:"SourceRegion"`
-	Status       requests.Integer `position:"Query" name:"Status"`
+	RealTenantId      string           `position:"Body" name:"RealTenantId"`
+	RealTripartiteKey string           `position:"Body" name:"RealTripartiteKey"`
+	JobId             string           `position:"Body" name:"JobId"`
+	NextToken         string           `position:"Query" name:"NextToken"`
+	PageSize          requests.Integer `position:"Query" name:"PageSize"`
+	CurrentPage       requests.Integer `position:"Query" name:"CurrentPage"`
+	ProductKey        string           `position:"Query" name:"ProductKey"`
+	JobType           string           `position:"Query" name:"JobType"`
+	ApiProduct        string           `position:"Body" name:"ApiProduct"`
+	ApiRevision       string           `position:"Body" name:"ApiRevision"`
+	TargetUid         string           `position:"Query" name:"TargetUid"`
+	SourceRegion      string           `position:"Query" name:"SourceRegion"`
+	Status            requests.Integer `position:"Query" name:"Status"`
 }
 
 // ListDeviceDistributeJobResponse is the response struct for api ListDeviceDistributeJob

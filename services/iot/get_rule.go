@@ -71,10 +71,12 @@ func (client *Client) GetRuleWithCallback(request *GetRuleRequest, callback func
 // GetRuleRequest is the request struct for api GetRule
 type GetRuleRequest struct {
 	*requests.RpcRequest
-	IotInstanceId string           `position:"Query" name:"IotInstanceId"`
-	ApiProduct    string           `position:"Body" name:"ApiProduct"`
-	ApiRevision   string           `position:"Body" name:"ApiRevision"`
-	RuleId        requests.Integer `position:"Query" name:"RuleId"`
+	RealTenantId      string           `position:"Query" name:"RealTenantId"`
+	RealTripartiteKey string           `position:"Query" name:"RealTripartiteKey"`
+	IotInstanceId     string           `position:"Query" name:"IotInstanceId"`
+	ApiProduct        string           `position:"Body" name:"ApiProduct"`
+	ApiRevision       string           `position:"Body" name:"ApiRevision"`
+	RuleId            requests.Integer `position:"Query" name:"RuleId"`
 }
 
 // GetRuleResponse is the response struct for api GetRule

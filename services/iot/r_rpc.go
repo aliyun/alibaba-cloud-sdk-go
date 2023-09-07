@@ -73,7 +73,7 @@ type RRpcRequest struct {
 	*requests.RpcRequest
 	Timeout           requests.Integer `position:"Query" name:"Timeout"`
 	IotInstanceId     string           `position:"Query" name:"IotInstanceId"`
-	RequestBase64Byte string           `position:"Query" name:"RequestBase64Byte"`
+	RequestBase64Byte string           `position:"Body" name:"RequestBase64Byte"`
 	ProductKey        string           `position:"Query" name:"ProductKey"`
 	ContentType       string           `position:"Query" name:"ContentType"`
 	ApiProduct        string           `position:"Body" name:"ApiProduct"`

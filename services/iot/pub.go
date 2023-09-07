@@ -78,6 +78,7 @@ type PubRequest struct {
 	IotInstanceId          string           `position:"Query" name:"IotInstanceId"`
 	MessageExpiryInterval  requests.Integer `position:"Query" name:"MessageExpiryInterval"`
 	ResponseTopic          string           `position:"Query" name:"ResponseTopic"`
+	TopicAlias             requests.Integer `position:"Query" name:"TopicAlias"`
 	TopicFullName          string           `position:"Query" name:"TopicFullName"`
 	PayloadFormatIndicator requests.Integer `position:"Query" name:"PayloadFormatIndicator"`
 	ProductKey             string           `position:"Query" name:"ProductKey"`

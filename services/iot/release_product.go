@@ -72,7 +72,9 @@ func (client *Client) ReleaseProductWithCallback(request *ReleaseProductRequest,
 type ReleaseProductRequest struct {
 	*requests.RpcRequest
 	Template           requests.Integer `position:"Query" name:"Template"`
+	RealTenantId       string           `position:"Query" name:"RealTenantId"`
 	CategoryKey        string           `position:"Query" name:"CategoryKey"`
+	RealTripartiteKey  string           `position:"Query" name:"RealTripartiteKey"`
 	TemplateIdentifier string           `position:"Query" name:"TemplateIdentifier"`
 	IotInstanceId      string           `position:"Query" name:"IotInstanceId"`
 	TemplateName       string           `position:"Query" name:"TemplateName"`

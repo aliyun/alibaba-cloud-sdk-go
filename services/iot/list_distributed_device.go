@@ -71,15 +71,17 @@ func (client *Client) ListDistributedDeviceWithCallback(request *ListDistributed
 // ListDistributedDeviceRequest is the request struct for api ListDistributedDevice
 type ListDistributedDeviceRequest struct {
 	*requests.RpcRequest
-	PageSize         requests.Integer `position:"Query" name:"PageSize"`
-	SourceInstanceId string           `position:"Query" name:"SourceInstanceId"`
-	CurrentPage      requests.Integer `position:"Query" name:"CurrentPage"`
-	ProductKey       string           `position:"Query" name:"ProductKey"`
-	TargetInstanceId string           `position:"Query" name:"TargetInstanceId"`
-	ApiProduct       string           `position:"Body" name:"ApiProduct"`
-	ApiRevision      string           `position:"Body" name:"ApiRevision"`
-	DeviceName       string           `position:"Query" name:"DeviceName"`
-	TargetUid        string           `position:"Query" name:"TargetUid"`
+	RealTenantId      string           `position:"Body" name:"RealTenantId"`
+	RealTripartiteKey string           `position:"Body" name:"RealTripartiteKey"`
+	PageSize          requests.Integer `position:"Query" name:"PageSize"`
+	SourceInstanceId  string           `position:"Query" name:"SourceInstanceId"`
+	CurrentPage       requests.Integer `position:"Query" name:"CurrentPage"`
+	ProductKey        string           `position:"Query" name:"ProductKey"`
+	TargetInstanceId  string           `position:"Query" name:"TargetInstanceId"`
+	ApiProduct        string           `position:"Body" name:"ApiProduct"`
+	ApiRevision       string           `position:"Body" name:"ApiRevision"`
+	DeviceName        string           `position:"Query" name:"DeviceName"`
+	TargetUid         string           `position:"Query" name:"TargetUid"`
 }
 
 // ListDistributedDeviceResponse is the response struct for api ListDistributedDevice

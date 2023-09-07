@@ -71,13 +71,15 @@ func (client *Client) ListDestinationWithCallback(request *ListDestinationReques
 // ListDestinationRequest is the request struct for api ListDestination
 type ListDestinationRequest struct {
 	*requests.RpcRequest
-	SearchName    string           `position:"Query" name:"SearchName"`
-	IotInstanceId string           `position:"Query" name:"IotInstanceId"`
-	PageSize      requests.Integer `position:"Query" name:"PageSize"`
-	Types         *[]string        `position:"Query" name:"Types"  type:"Repeated"`
-	ApiProduct    string           `position:"Body" name:"ApiProduct"`
-	ApiRevision   string           `position:"Body" name:"ApiRevision"`
-	Page          requests.Integer `position:"Query" name:"Page"`
+	SearchName        string           `position:"Query" name:"SearchName"`
+	RealTenantId      string           `position:"Query" name:"RealTenantId"`
+	RealTripartiteKey string           `position:"Query" name:"RealTripartiteKey"`
+	IotInstanceId     string           `position:"Query" name:"IotInstanceId"`
+	PageSize          requests.Integer `position:"Query" name:"PageSize"`
+	Types             *[]string        `position:"Query" name:"Types"  type:"Repeated"`
+	ApiProduct        string           `position:"Body" name:"ApiProduct"`
+	ApiRevision       string           `position:"Body" name:"ApiRevision"`
+	Page              requests.Integer `position:"Query" name:"Page"`
 }
 
 // ListDestinationResponse is the response struct for api ListDestination

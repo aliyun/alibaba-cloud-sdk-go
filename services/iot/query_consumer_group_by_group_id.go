@@ -71,10 +71,12 @@ func (client *Client) QueryConsumerGroupByGroupIdWithCallback(request *QueryCons
 // QueryConsumerGroupByGroupIdRequest is the request struct for api QueryConsumerGroupByGroupId
 type QueryConsumerGroupByGroupIdRequest struct {
 	*requests.RpcRequest
-	IotInstanceId string `position:"Query" name:"IotInstanceId"`
-	GroupId       string `position:"Query" name:"GroupId"`
-	ApiProduct    string `position:"Body" name:"ApiProduct"`
-	ApiRevision   string `position:"Body" name:"ApiRevision"`
+	RealTenantId      string `position:"Query" name:"RealTenantId"`
+	RealTripartiteKey string `position:"Query" name:"RealTripartiteKey"`
+	IotInstanceId     string `position:"Query" name:"IotInstanceId"`
+	GroupId           string `position:"Query" name:"GroupId"`
+	ApiProduct        string `position:"Body" name:"ApiProduct"`
+	ApiRevision       string `position:"Body" name:"ApiRevision"`
 }
 
 // QueryConsumerGroupByGroupIdResponse is the response struct for api QueryConsumerGroupByGroupId

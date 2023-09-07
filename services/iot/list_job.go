@@ -71,12 +71,14 @@ func (client *Client) ListJobWithCallback(request *ListJobRequest, callback func
 // ListJobRequest is the request struct for api ListJob
 type ListJobRequest struct {
 	*requests.RpcRequest
-	IotInstanceId string           `position:"Query" name:"IotInstanceId"`
-	PageSize      requests.Integer `position:"Query" name:"PageSize"`
-	CurrentPage   requests.Integer `position:"Query" name:"CurrentPage"`
-	ApiProduct    string           `position:"Body" name:"ApiProduct"`
-	ApiRevision   string           `position:"Body" name:"ApiRevision"`
-	Status        string           `position:"Query" name:"Status"`
+	RealTenantId      string           `position:"Query" name:"RealTenantId"`
+	RealTripartiteKey string           `position:"Query" name:"RealTripartiteKey"`
+	IotInstanceId     string           `position:"Query" name:"IotInstanceId"`
+	PageSize          requests.Integer `position:"Query" name:"PageSize"`
+	CurrentPage       requests.Integer `position:"Query" name:"CurrentPage"`
+	ApiProduct        string           `position:"Body" name:"ApiProduct"`
+	ApiRevision       string           `position:"Body" name:"ApiRevision"`
+	Status            string           `position:"Query" name:"Status"`
 }
 
 // ListJobResponse is the response struct for api ListJob

@@ -81,11 +81,10 @@ type BatchAddDataForApiSourceRequest struct {
 // BatchAddDataForApiSourceResponse is the response struct for api BatchAddDataForApiSource
 type BatchAddDataForApiSourceResponse struct {
 	*responses.BaseResponse
-	RequestId    string                 `json:"RequestId" xml:"RequestId"`
-	Success      bool                   `json:"Success" xml:"Success"`
-	Code         string                 `json:"Code" xml:"Code"`
-	ErrorMessage string                 `json:"ErrorMessage" xml:"ErrorMessage"`
-	Data         map[string]interface{} `json:"Data" xml:"Data"`
+	RequestId    string `json:"RequestId" xml:"RequestId"`
+	Success      bool   `json:"Success" xml:"Success"`
+	Code         string `json:"Code" xml:"Code"`
+	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
 }
 
 // CreateBatchAddDataForApiSourceRequest creates a request to invoke BatchAddDataForApiSource API

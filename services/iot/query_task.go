@@ -71,10 +71,12 @@ func (client *Client) QueryTaskWithCallback(request *QueryTaskRequest, callback 
 // QueryTaskRequest is the request struct for api QueryTask
 type QueryTaskRequest struct {
 	*requests.RpcRequest
-	IotInstanceId string `position:"Query" name:"IotInstanceId"`
-	TaskId        string `position:"Query" name:"TaskId"`
-	ApiProduct    string `position:"Body" name:"ApiProduct"`
-	ApiRevision   string `position:"Body" name:"ApiRevision"`
+	RealTenantId      string `position:"Query" name:"RealTenantId"`
+	RealTripartiteKey string `position:"Query" name:"RealTripartiteKey"`
+	IotInstanceId     string `position:"Query" name:"IotInstanceId"`
+	TaskId            string `position:"Query" name:"TaskId"`
+	ApiProduct        string `position:"Body" name:"ApiProduct"`
+	ApiRevision       string `position:"Body" name:"ApiRevision"`
 }
 
 // QueryTaskResponse is the response struct for api QueryTask

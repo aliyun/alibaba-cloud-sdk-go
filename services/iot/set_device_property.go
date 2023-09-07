@@ -71,15 +71,16 @@ func (client *Client) SetDevicePropertyWithCallback(request *SetDevicePropertyRe
 // SetDevicePropertyRequest is the request struct for api SetDeviceProperty
 type SetDevicePropertyRequest struct {
 	*requests.RpcRequest
-	RealTenantId      string `position:"Query" name:"RealTenantId"`
-	RealTripartiteKey string `position:"Query" name:"RealTripartiteKey"`
-	IotId             string `position:"Query" name:"IotId"`
-	IotInstanceId     string `position:"Query" name:"IotInstanceId"`
-	ProductKey        string `position:"Query" name:"ProductKey"`
-	ApiProduct        string `position:"Body" name:"ApiProduct"`
-	ApiRevision       string `position:"Body" name:"ApiRevision"`
-	DeviceName        string `position:"Query" name:"DeviceName"`
-	Items             string `position:"Query" name:"Items"`
+	RealTenantId      string           `position:"Query" name:"RealTenantId"`
+	RealTripartiteKey string           `position:"Query" name:"RealTripartiteKey"`
+	IotId             string           `position:"Query" name:"IotId"`
+	Qos               requests.Integer `position:"Query" name:"Qos"`
+	IotInstanceId     string           `position:"Query" name:"IotInstanceId"`
+	ProductKey        string           `position:"Query" name:"ProductKey"`
+	ApiProduct        string           `position:"Body" name:"ApiProduct"`
+	ApiRevision       string           `position:"Body" name:"ApiRevision"`
+	DeviceName        string           `position:"Query" name:"DeviceName"`
+	Items             string           `position:"Query" name:"Items"`
 }
 
 // SetDevicePropertyResponse is the response struct for api SetDeviceProperty
