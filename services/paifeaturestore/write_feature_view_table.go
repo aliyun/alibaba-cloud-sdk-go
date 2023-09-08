@@ -80,6 +80,7 @@ type WriteFeatureViewTableRequest struct {
 type WriteFeatureViewTableResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	TaskId    string `json:"TaskId" xml:"TaskId"`
 }
 
 // CreateWriteFeatureViewTableRequest creates a request to invoke WriteFeatureViewTable API

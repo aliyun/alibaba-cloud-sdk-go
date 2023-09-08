@@ -71,14 +71,14 @@ func (client *Client) ListModelFeaturesWithCallback(request *ListModelFeaturesRe
 // ListModelFeaturesRequest is the request struct for api ListModelFeatures
 type ListModelFeaturesRequest struct {
 	*requests.RoaRequest
-	Owner      string `position:"Query" name:"Owner"`
-	PageNumber string `position:"Query" name:"PageNumber"`
-	InstanceId string `position:"Path" name:"InstanceId"`
-	PageSize   string `position:"Query" name:"PageSize"`
-	Name       string `position:"Query" name:"Name"`
-	SortBy     string `position:"Query" name:"SortBy"`
-	ProjectId  string `position:"Query" name:"ProjectId"`
-	Order      string `position:"Query" name:"Order"`
+	Owner      string           `position:"Query" name:"Owner"`
+	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
+	InstanceId string           `position:"Path" name:"InstanceId"`
+	PageSize   requests.Integer `position:"Query" name:"PageSize"`
+	Name       string           `position:"Query" name:"Name"`
+	SortBy     string           `position:"Query" name:"SortBy"`
+	ProjectId  string           `position:"Query" name:"ProjectId"`
+	Order      string           `position:"Query" name:"Order"`
 }
 
 // ListModelFeaturesResponse is the response struct for api ListModelFeatures

@@ -80,6 +80,7 @@ type PublishFeatureViewTableRequest struct {
 type PublishFeatureViewTableResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	TaskId    string `json:"TaskId" xml:"TaskId"`
 }
 
 // CreatePublishFeatureViewTableRequest creates a request to invoke PublishFeatureViewTable API
