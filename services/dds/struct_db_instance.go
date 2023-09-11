@@ -19,6 +19,7 @@ package dds
 type DBInstance struct {
 	ReplicaSetName              string                                        `json:"ReplicaSetName" xml:"ReplicaSetName"`
 	Engine                      string                                        `json:"Engine" xml:"Engine"`
+	ProvisionedIops             int64                                         `json:"ProvisionedIops" xml:"ProvisionedIops"`
 	DBInstanceOrderStatus       string                                        `json:"DBInstanceOrderStatus" xml:"DBInstanceOrderStatus"`
 	DBInstanceClass             string                                        `json:"DBInstanceClass" xml:"DBInstanceClass"`
 	VpcAuthMode                 string                                        `json:"VpcAuthMode" xml:"VpcAuthMode"`
@@ -35,6 +36,7 @@ type DBInstance struct {
 	ReplacateId                 string                                        `json:"ReplacateId" xml:"ReplacateId"`
 	EngineVersion               string                                        `json:"EngineVersion" xml:"EngineVersion"`
 	VPCId                       string                                        `json:"VPCId" xml:"VPCId"`
+	BurstingEnabled             bool                                          `json:"BurstingEnabled" xml:"BurstingEnabled"`
 	VPCCloudInstanceIds         string                                        `json:"VPCCloudInstanceIds" xml:"VPCCloudInstanceIds"`
 	MaintainStartTime           string                                        `json:"MaintainStartTime" xml:"MaintainStartTime"`
 	DBInstanceStorage           int                                           `json:"DBInstanceStorage" xml:"DBInstanceStorage"`

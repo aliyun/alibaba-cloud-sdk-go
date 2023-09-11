@@ -84,6 +84,7 @@ type TransformInstanceChargeTypeRequest struct {
 	InstanceId           string           `position:"Query" name:"InstanceId"`
 	AutoRenew            string           `position:"Query" name:"AutoRenew"`
 	ChargeType           string           `position:"Query" name:"ChargeType"`
+	PricingCycle         string           `position:"Query" name:"PricingCycle"`
 }
 
 // TransformInstanceChargeTypeResponse is the response struct for api TransformInstanceChargeType

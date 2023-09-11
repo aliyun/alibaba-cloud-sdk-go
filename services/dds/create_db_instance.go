@@ -91,6 +91,7 @@ type CreateDBInstanceRequest struct {
 	DBInstanceClass        string                 `position:"Query" name:"DBInstanceClass"`
 	SecurityIPList         string                 `position:"Query" name:"SecurityIPList"`
 	VSwitchId              string                 `position:"Query" name:"VSwitchId"`
+	ProvisionedIops        requests.Integer       `position:"Query" name:"ProvisionedIops"`
 	AutoRenew              string                 `position:"Query" name:"AutoRenew"`
 	ZoneId                 string                 `position:"Query" name:"ZoneId"`
 	ClientToken            string                 `position:"Query" name:"ClientToken"`

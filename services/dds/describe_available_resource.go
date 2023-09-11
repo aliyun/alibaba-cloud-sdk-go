@@ -72,6 +72,7 @@ func (client *Client) DescribeAvailableResourceWithCallback(request *DescribeAva
 type DescribeAvailableResourceRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	StorageType          string           `position:"Query" name:"StorageType"`
 	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	InstanceChargeType   string           `position:"Query" name:"InstanceChargeType"`

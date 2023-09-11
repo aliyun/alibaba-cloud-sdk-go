@@ -89,6 +89,7 @@ type CreateShardingDBInstanceRequest struct {
 	SecurityIPList         string                                  `position:"Query" name:"SecurityIPList"`
 	VSwitchId              string                                  `position:"Query" name:"VSwitchId"`
 	Mongos                 *[]CreateShardingDBInstanceMongos       `position:"Query" name:"Mongos"  type:"Repeated"`
+	ProvisionedIops        requests.Integer                        `position:"Query" name:"ProvisionedIops"`
 	AutoRenew              string                                  `position:"Query" name:"AutoRenew"`
 	ZoneId                 string                                  `position:"Query" name:"ZoneId"`
 	ClientToken            string                                  `position:"Query" name:"ClientToken"`
