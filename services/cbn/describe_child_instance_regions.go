@@ -78,6 +78,7 @@ type DescribeChildInstanceRegionsRequest struct {
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	Version              string           `position:"Query" name:"Version"`
 	ChildInstanceOwnerId requests.Integer `position:"Query" name:"ChildInstanceOwnerId"`
+	AcceptLanguage       string           `position:"Query" name:"AcceptLanguage"`
 }
 
 // DescribeChildInstanceRegionsResponse is the response struct for api DescribeChildInstanceRegions
