@@ -22,8 +22,8 @@ type VpcPeerConnectsItem struct {
 	GmtModified       string       `json:"GmtModified" xml:"GmtModified"`
 	Name              string       `json:"Name" xml:"Name"`
 	Description       string       `json:"Description" xml:"Description"`
-	OwnerId           int          `json:"OwnerId" xml:"OwnerId"`
-	AcceptingOwnerUid int          `json:"AcceptingOwnerUid" xml:"AcceptingOwnerUid"`
+	OwnerId           int64        `json:"OwnerId" xml:"OwnerId"`
+	AcceptingOwnerUid int64        `json:"AcceptingOwnerUid" xml:"AcceptingOwnerUid"`
 	RegionId          string       `json:"RegionId" xml:"RegionId"`
 	AcceptingRegionId string       `json:"AcceptingRegionId" xml:"AcceptingRegionId"`
 	Bandwidth         int          `json:"Bandwidth" xml:"Bandwidth"`

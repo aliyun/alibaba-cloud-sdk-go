@@ -1,3 +1,7 @@
+2023-09-13 Version: v1.62.551
+- Generated 2022-01-01 for `VpcPeer`.
+- Fix ListVpcPeerConnections paramer.
+
 2023-09-13 Version: v1.62.550
 - Generated 2023-06-21 for `PaiFeatureStore`.
 - Add value, values, startValue, endValue in ExportModelFeatureTrainingSetTable.
