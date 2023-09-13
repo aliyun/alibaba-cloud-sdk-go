@@ -80,6 +80,7 @@ type ExportModelFeatureTrainingSetTableRequest struct {
 type ExportModelFeatureTrainingSetTableResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	TaskId    string `json:"TaskId" xml:"TaskId"`
 }
 
 // CreateExportModelFeatureTrainingSetTableRequest creates a request to invoke ExportModelFeatureTrainingSetTable API
