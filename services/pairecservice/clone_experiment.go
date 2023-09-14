@@ -72,7 +72,7 @@ func (client *Client) CloneExperimentWithCallback(request *CloneExperimentReques
 type CloneExperimentRequest struct {
 	*requests.RoaRequest
 	Body         string `position:"Body" name:"body"`
-	ExperimentId string `position:"Query" name:"ExperimentId"`
+	ExperimentId string `position:"Path" name:"ExperimentId"`
 }
 
 // CloneExperimentResponse is the response struct for api CloneExperiment
