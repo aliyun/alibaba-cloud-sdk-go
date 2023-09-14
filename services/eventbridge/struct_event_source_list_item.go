@@ -17,20 +17,22 @@ package eventbridge
 
 // EventSourceListItem is a nested struct in eventbridge response
 type EventSourceListItem struct {
-	Name                      string                                                `json:"Name" xml:"Name"`
-	Ctime                     float64                                               `json:"Ctime" xml:"Ctime"`
-	ExternalSourceConfig      map[string]interface{}                                `json:"ExternalSourceConfig" xml:"ExternalSourceConfig"`
-	FullName                  string                                                `json:"FullName" xml:"FullName"`
-	EventBusName              string                                                `json:"EventBusName" xml:"EventBusName"`
-	ExternalSourceType        string                                                `json:"ExternalSourceType" xml:"ExternalSourceType"`
-	Arn                       string                                                `json:"Arn" xml:"Arn"`
-	Status                    string                                                `json:"Status" xml:"Status"`
-	Description               string                                                `json:"Description" xml:"Description"`
-	Type                      string                                                `json:"Type" xml:"Type"`
-	SourceHttpEventParameters SourceHttpEventParameters                             `json:"SourceHttpEventParameters" xml:"SourceHttpEventParameters"`
-	SourceRabbitMQParameters  SourceRabbitMQParameters                              `json:"SourceRabbitMQParameters" xml:"SourceRabbitMQParameters"`
-	SourceMNSParameters       SourceMNSParameters                                   `json:"SourceMNSParameters" xml:"SourceMNSParameters"`
-	SourceRocketMQParameters  SourceRocketMQParametersInListUserDefinedEventSources `json:"SourceRocketMQParameters" xml:"SourceRocketMQParameters"`
-	SourceSLSParameters       SourceSLSParameters                                   `json:"SourceSLSParameters" xml:"SourceSLSParameters"`
-	EventTypes                []EventTypesItem                                      `json:"EventTypes" xml:"EventTypes"`
+	Name                           string                                                `json:"Name" xml:"Name"`
+	Ctime                          float64                                               `json:"Ctime" xml:"Ctime"`
+	ExternalSourceConfig           map[string]interface{}                                `json:"ExternalSourceConfig" xml:"ExternalSourceConfig"`
+	FullName                       string                                                `json:"FullName" xml:"FullName"`
+	EventBusName                   string                                                `json:"EventBusName" xml:"EventBusName"`
+	ExternalSourceType             string                                                `json:"ExternalSourceType" xml:"ExternalSourceType"`
+	Arn                            string                                                `json:"Arn" xml:"Arn"`
+	Status                         string                                                `json:"Status" xml:"Status"`
+	Description                    string                                                `json:"Description" xml:"Description"`
+	Type                           string                                                `json:"Type" xml:"Type"`
+	SourceScheduledEventParameters SourceScheduledEventParameters                        `json:"SourceScheduledEventParameters" xml:"SourceScheduledEventParameters"`
+	SourceRabbitMQParameters       SourceRabbitMQParameters                              `json:"SourceRabbitMQParameters" xml:"SourceRabbitMQParameters"`
+	SourceMNSParameters            SourceMNSParameters                                   `json:"SourceMNSParameters" xml:"SourceMNSParameters"`
+	SourceKafkaParameters          SourceKafkaParameters                                 `json:"SourceKafkaParameters" xml:"SourceKafkaParameters"`
+	SourceHttpEventParameters      SourceHttpEventParameters                             `json:"SourceHttpEventParameters" xml:"SourceHttpEventParameters"`
+	SourceSLSParameters            SourceSLSParameters                                   `json:"SourceSLSParameters" xml:"SourceSLSParameters"`
+	SourceRocketMQParameters       SourceRocketMQParametersInListUserDefinedEventSources `json:"SourceRocketMQParameters" xml:"SourceRocketMQParameters"`
+	EventTypes                     []EventTypesItem                                      `json:"EventTypes" xml:"EventTypes"`
 }

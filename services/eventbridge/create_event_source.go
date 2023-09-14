@@ -103,14 +103,18 @@ type CreateEventSourceSourceRabbitMQParameters struct {
 
 // CreateEventSourceSourceRocketMQParameters is a repeated param struct in CreateEventSourceRequest
 type CreateEventSourceSourceRocketMQParameters struct {
+	InstanceSecurityGroupId string `name:"InstanceSecurityGroupId"`
+	Offset                  string `name:"Offset"`
+	GroupID                 string `name:"GroupID"`
+	InstanceUsername        string `name:"InstanceUsername"`
+	AuthType                string `name:"AuthType"`
+	InstancePassword        string `name:"InstancePassword"`
 	InstanceNetwork         string `name:"InstanceNetwork"`
 	InstanceVSwitchIds      string `name:"InstanceVSwitchIds"`
-	InstanceSecurityGroupId string `name:"InstanceSecurityGroupId"`
 	InstanceId              string `name:"InstanceId"`
-	Offset                  string `name:"Offset"`
 	InstanceVpcId           string `name:"InstanceVpcId"`
+	InstanceEndpoint        string `name:"InstanceEndpoint"`
 	RegionId                string `name:"RegionId"`
-	GroupID                 string `name:"GroupID"`
 	Topic                   string `name:"Topic"`
 	InstanceType            string `name:"InstanceType"`
 	Tag                     string `name:"Tag"`
@@ -127,8 +131,9 @@ type CreateEventSourceSourceSLSParameters struct {
 
 // CreateEventSourceSourceScheduledEventParameters is a repeated param struct in CreateEventSourceRequest
 type CreateEventSourceSourceScheduledEventParameters struct {
-	Schedule string `name:"Schedule"`
-	TimeZone string `name:"TimeZone"`
+	Schedule string            `name:"Schedule"`
+	UserData map[string]string `name:"UserData" type:"Map"`
+	TimeZone string            `name:"TimeZone"`
 }
 
 // CreateEventSourceSourceKafkaParameters is a repeated param struct in CreateEventSourceRequest

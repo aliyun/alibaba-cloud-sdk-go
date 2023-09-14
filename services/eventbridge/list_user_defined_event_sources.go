@@ -71,10 +71,11 @@ func (client *Client) ListUserDefinedEventSourcesWithCallback(request *ListUserD
 // ListUserDefinedEventSourcesRequest is the request struct for api ListUserDefinedEventSources
 type ListUserDefinedEventSourcesRequest struct {
 	*requests.RpcRequest
-	Type       string           `position:"Query" name:"Type"`
-	NextToken  string           `position:"Query" name:"NextToken"`
-	Limit      requests.Integer `position:"Query" name:"Limit"`
-	NamePrefix string           `position:"Query" name:"NamePrefix"`
+	Type         string           `position:"Query" name:"Type"`
+	EventBusName string           `position:"Query" name:"EventBusName"`
+	NextToken    string           `position:"Query" name:"NextToken"`
+	Limit        requests.Integer `position:"Query" name:"Limit"`
+	NamePrefix   string           `position:"Query" name:"NamePrefix"`
 }
 
 // ListUserDefinedEventSourcesResponse is the response struct for api ListUserDefinedEventSources

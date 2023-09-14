@@ -86,6 +86,7 @@ type CreateEventStreamingSink struct {
 	SinkMNSParameters      CreateEventStreamingSinkSinkMNSParameters      `name:"SinkMNSParameters" type:"Struct"`
 	SinkDataHubParameters  CreateEventStreamingSinkSinkDataHubParameters  `name:"SinkDataHubParameters" type:"Struct"`
 	SinkKafkaParameters    CreateEventStreamingSinkSinkKafkaParameters    `name:"SinkKafkaParameters" type:"Struct"`
+	SinkFnfParameters      CreateEventStreamingSinkSinkFnfParameters      `name:"SinkFnfParameters" type:"Struct"`
 	SinkFcParameters       CreateEventStreamingSinkSinkFcParameters       `name:"SinkFcParameters" type:"Struct"`
 	SinkSLSParameters      CreateEventStreamingSinkSinkSLSParameters      `name:"SinkSLSParameters" type:"Struct"`
 	SinkRocketMQParameters CreateEventStreamingSinkSinkRocketMQParameters `name:"SinkRocketMQParameters" type:"Struct"`
@@ -149,6 +150,14 @@ type CreateEventStreamingSinkSinkKafkaParameters struct {
 	SaslUser   CreateEventStreamingSinkSinkKafkaParametersSaslUser   `name:"SaslUser" type:"Struct"`
 	Value      CreateEventStreamingSinkSinkKafkaParametersValue      `name:"Value" type:"Struct"`
 	Key        CreateEventStreamingSinkSinkKafkaParametersKey        `name:"Key" type:"Struct"`
+}
+
+// CreateEventStreamingSinkSinkFnfParameters is a repeated param struct in CreateEventStreamingRequest
+type CreateEventStreamingSinkSinkFnfParameters struct {
+	Input         CreateEventStreamingSinkSinkFnfParametersInput         `name:"Input" type:"Struct"`
+	ExecutionName CreateEventStreamingSinkSinkFnfParametersExecutionName `name:"ExecutionName" type:"Struct"`
+	RoleName      CreateEventStreamingSinkSinkFnfParametersRoleName      `name:"RoleName" type:"Struct"`
+	FlowName      CreateEventStreamingSinkSinkFnfParametersFlowName      `name:"FlowName" type:"Struct"`
 }
 
 // CreateEventStreamingSinkSinkFcParameters is a repeated param struct in CreateEventStreamingRequest
@@ -449,6 +458,34 @@ type CreateEventStreamingSinkSinkKafkaParametersValue struct {
 
 // CreateEventStreamingSinkSinkKafkaParametersKey is a repeated param struct in CreateEventStreamingRequest
 type CreateEventStreamingSinkSinkKafkaParametersKey struct {
+	Template string `name:"Template"`
+	Form     string `name:"Form"`
+	Value    string `name:"Value"`
+}
+
+// CreateEventStreamingSinkSinkFnfParametersInput is a repeated param struct in CreateEventStreamingRequest
+type CreateEventStreamingSinkSinkFnfParametersInput struct {
+	Template string `name:"Template"`
+	Form     string `name:"Form"`
+	Value    string `name:"Value"`
+}
+
+// CreateEventStreamingSinkSinkFnfParametersExecutionName is a repeated param struct in CreateEventStreamingRequest
+type CreateEventStreamingSinkSinkFnfParametersExecutionName struct {
+	Template string `name:"Template"`
+	Form     string `name:"Form"`
+	Value    string `name:"Value"`
+}
+
+// CreateEventStreamingSinkSinkFnfParametersRoleName is a repeated param struct in CreateEventStreamingRequest
+type CreateEventStreamingSinkSinkFnfParametersRoleName struct {
+	Template string `name:"Template"`
+	Form     string `name:"Form"`
+	Value    string `name:"Value"`
+}
+
+// CreateEventStreamingSinkSinkFnfParametersFlowName is a repeated param struct in CreateEventStreamingRequest
+type CreateEventStreamingSinkSinkFnfParametersFlowName struct {
 	Template string `name:"Template"`
 	Form     string `name:"Form"`
 	Value    string `name:"Value"`

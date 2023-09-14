@@ -80,6 +80,7 @@ type GetConnectionResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Message   string `json:"Message" xml:"Message"`
 	Code      string `json:"Code" xml:"Code"`
+	HttpCode  int    `json:"HttpCode" xml:"HttpCode"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 

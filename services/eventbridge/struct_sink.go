@@ -19,6 +19,7 @@ package eventbridge
 type Sink struct {
 	SinkSLSParameters      SinkSLSParameters      `json:"SinkSLSParameters" xml:"SinkSLSParameters"`
 	SinkFcParameters       SinkFcParameters       `json:"SinkFcParameters" xml:"SinkFcParameters"`
+	SinkFnfParameters      SinkFnfParameters      `json:"SinkFnfParameters" xml:"SinkFnfParameters"`
 	SinkRabbitMQParameters SinkRabbitMQParameters `json:"SinkRabbitMQParameters" xml:"SinkRabbitMQParameters"`
 	SinkRocketMQParameters SinkRocketMQParameters `json:"SinkRocketMQParameters" xml:"SinkRocketMQParameters"`
 	SinkKafkaParameters    SinkKafkaParameters    `json:"SinkKafkaParameters" xml:"SinkKafkaParameters"`

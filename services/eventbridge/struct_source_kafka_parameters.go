@@ -22,6 +22,7 @@ type SourceKafkaParameters struct {
 	ConsumerGroup   string `json:"ConsumerGroup" xml:"ConsumerGroup"`
 	OffsetReset     string `json:"OffsetReset" xml:"OffsetReset"`
 	InstanceId      string `json:"InstanceId" xml:"InstanceId"`
+	MaximumTasks    int    `json:"MaximumTasks" xml:"MaximumTasks"`
 	Network         string `json:"Network" xml:"Network"`
 	VpcId           string `json:"VpcId" xml:"VpcId"`
 	Topic           string `json:"Topic" xml:"Topic"`

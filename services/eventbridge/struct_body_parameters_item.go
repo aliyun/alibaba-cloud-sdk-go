@@ -20,5 +20,4 @@ type BodyParametersItem struct {
 	Key           string `json:"Key" xml:"Key"`
 	Value         string `json:"Value" xml:"Value"`
 	IsValueSecret string `json:"IsValueSecret" xml:"IsValueSecret"`
-	ValuValuee    string `json:"ValuValuee" xml:"ValuValuee"`
 }

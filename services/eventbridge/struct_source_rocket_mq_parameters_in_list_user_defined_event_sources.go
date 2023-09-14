@@ -17,11 +17,20 @@ package eventbridge
 
 // SourceRocketMQParametersInListUserDefinedEventSources is a nested struct in eventbridge response
 type SourceRocketMQParametersInListUserDefinedEventSources struct {
-	RegionId   string  `json:"RegionId" xml:"RegionId"`
-	InstanceId string  `json:"InstanceId" xml:"InstanceId"`
-	Topic      string  `json:"Topic" xml:"Topic"`
-	Tag        string  `json:"Tag" xml:"Tag"`
-	Offset     string  `json:"Offset" xml:"Offset"`
-	Timestamp  float64 `json:"Timestamp" xml:"Timestamp"`
-	GroupId    string  `json:"GroupId" xml:"GroupId"`
+	RegionId                string  `json:"RegionId" xml:"RegionId"`
+	InstanceId              string  `json:"InstanceId" xml:"InstanceId"`
+	Topic                   string  `json:"Topic" xml:"Topic"`
+	Tag                     string  `json:"Tag" xml:"Tag"`
+	Offset                  string  `json:"Offset" xml:"Offset"`
+	Timestamp               float64 `json:"Timestamp" xml:"Timestamp"`
+	GroupId                 string  `json:"GroupId" xml:"GroupId"`
+	InstanceType            string  `json:"InstanceType" xml:"InstanceType"`
+	InstanceNetwork         string  `json:"InstanceNetwork" xml:"InstanceNetwork"`
+	InstanceVpcId           string  `json:"InstanceVpcId" xml:"InstanceVpcId"`
+	InstanceVSwitchIds      string  `json:"InstanceVSwitchIds" xml:"InstanceVSwitchIds"`
+	InstanceSecurityGroupId string  `json:"InstanceSecurityGroupId" xml:"InstanceSecurityGroupId"`
+	AuthType                string  `json:"AuthType" xml:"AuthType"`
+	InstanceEndpoint        string  `json:"InstanceEndpoint" xml:"InstanceEndpoint"`
+	InstanceUsername        string  `json:"InstanceUsername" xml:"InstanceUsername"`
+	InstancePassword        string  `json:"InstancePassword" xml:"InstancePassword"`
 }
