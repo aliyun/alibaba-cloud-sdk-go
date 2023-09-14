@@ -81,7 +81,8 @@ type PutEnableFwSwitchRequest struct {
 // PutEnableFwSwitchResponse is the response struct for api PutEnableFwSwitch
 type PutEnableFwSwitchResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	RequestId                  string             `json:"RequestId" xml:"RequestId"`
+	AbnormalResourceStatusList []AbnormalResource `json:"AbnormalResourceStatusList" xml:"AbnormalResourceStatusList"`
 }
 
 // CreatePutEnableFwSwitchRequest creates a request to invoke PutEnableFwSwitch API

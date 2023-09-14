@@ -71,23 +71,24 @@ func (client *Client) CreateVpcFirewallControlPolicyWithCallback(request *Create
 // CreateVpcFirewallControlPolicyRequest is the request struct for api CreateVpcFirewallControlPolicy
 type CreateVpcFirewallControlPolicyRequest struct {
 	*requests.RpcRequest
-	DestPortType    string `position:"Query" name:"DestPortType"`
-	Release         string `position:"Query" name:"Release"`
-	Destination     string `position:"Query" name:"Destination"`
-	DestinationType string `position:"Query" name:"DestinationType"`
-	DestPortGroup   string `position:"Query" name:"DestPortGroup"`
-	Description     string `position:"Query" name:"Description"`
-	Source          string `position:"Query" name:"Source"`
-	AclAction       string `position:"Query" name:"AclAction"`
-	SourceIp        string `position:"Query" name:"SourceIp"`
-	NewOrder        string `position:"Query" name:"NewOrder"`
-	SourceType      string `position:"Query" name:"SourceType"`
-	Lang            string `position:"Query" name:"Lang"`
-	VpcFirewallId   string `position:"Query" name:"VpcFirewallId"`
-	ApplicationName string `position:"Query" name:"ApplicationName"`
-	MemberUid       string `position:"Query" name:"MemberUid"`
-	Proto           string `position:"Query" name:"Proto"`
-	DestPort        string `position:"Query" name:"DestPort"`
+	DestPortType        string    `position:"Query" name:"DestPortType"`
+	Release             string    `position:"Query" name:"Release"`
+	Destination         string    `position:"Query" name:"Destination"`
+	DestinationType     string    `position:"Query" name:"DestinationType"`
+	DestPortGroup       string    `position:"Query" name:"DestPortGroup"`
+	ApplicationNameList *[]string `position:"Query" name:"ApplicationNameList"  type:"Repeated"`
+	Description         string    `position:"Query" name:"Description"`
+	Source              string    `position:"Query" name:"Source"`
+	AclAction           string    `position:"Query" name:"AclAction"`
+	SourceIp            string    `position:"Query" name:"SourceIp"`
+	NewOrder            string    `position:"Query" name:"NewOrder"`
+	SourceType          string    `position:"Query" name:"SourceType"`
+	Lang                string    `position:"Query" name:"Lang"`
+	VpcFirewallId       string    `position:"Query" name:"VpcFirewallId"`
+	ApplicationName     string    `position:"Query" name:"ApplicationName"`
+	MemberUid           string    `position:"Query" name:"MemberUid"`
+	Proto               string    `position:"Query" name:"Proto"`
+	DestPort            string    `position:"Query" name:"DestPort"`
 }
 
 // CreateVpcFirewallControlPolicyResponse is the response struct for api CreateVpcFirewallControlPolicy

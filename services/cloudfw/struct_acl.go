@@ -26,6 +26,7 @@ type Acl struct {
 	GroupType        string        `json:"GroupType" xml:"GroupType"`
 	TagRelation      string        `json:"TagRelation" xml:"TagRelation"`
 	Global           int           `json:"Global" xml:"Global"`
+	AddressType      string        `json:"AddressType" xml:"AddressType"`
 	AddressList      []string      `json:"AddressList" xml:"AddressList"`
 	TagList          []TagListItem `json:"TagList" xml:"TagList"`
 }

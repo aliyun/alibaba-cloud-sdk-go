@@ -34,6 +34,7 @@ type DataItem struct {
 	Description           string   `json:"Description" xml:"Description"`
 	ApplicationName       string   `json:"ApplicationName" xml:"ApplicationName"`
 	Proto                 string   `json:"Proto" xml:"Proto"`
+	MemberUid             string   `json:"MemberUid" xml:"MemberUid"`
 	Order                 int      `json:"Order" xml:"Order"`
 	Destination           string   `json:"Destination" xml:"Destination"`
 	IpVersion             int      `json:"IpVersion" xml:"IpVersion"`

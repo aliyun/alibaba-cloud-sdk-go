@@ -20,8 +20,10 @@ type Data struct {
 	Domain                string                      `json:"Domain" xml:"Domain"`
 	AclCoverage           string                      `json:"AclCoverage" xml:"AclCoverage"`
 	OutBps                int64                       `json:"OutBps" xml:"OutBps"`
+	RiskLevel             int                         `json:"RiskLevel" xml:"RiskLevel"`
 	CategoryClassId       string                      `json:"CategoryClassId" xml:"CategoryClassId"`
 	SessionCount          int64                       `json:"SessionCount" xml:"SessionCount"`
+	AssetsType            string                      `json:"AssetsType" xml:"AssetsType"`
 	RuleId                string                      `json:"RuleId" xml:"RuleId"`
 	InBytes               int64                       `json:"InBytes" xml:"InBytes"`
 	Organization          string                      `json:"Organization" xml:"Organization"`
@@ -37,26 +39,34 @@ type Data struct {
 	RuleSource            int                         `json:"RuleSource" xml:"RuleSource"`
 	AclStatus             string                      `json:"AclStatus" xml:"AclStatus"`
 	LastEventTime         int                         `json:"LastEventTime" xml:"LastEventTime"`
+	RiskReason            string                      `json:"RiskReason" xml:"RiskReason"`
 	MemberDesc            string                      `json:"MemberDesc" xml:"MemberDesc"`
 	ResourceType          string                      `json:"ResourceType" xml:"ResourceType"`
 	CreateTime            int                         `json:"CreateTime" xml:"CreateTime"`
 	HasAclRecommend       bool                        `json:"HasAclRecommend" xml:"HasAclRecommend"`
 	OutPps                int64                       `json:"OutPps" xml:"OutPps"`
 	AddressGroupName      string                      `json:"AddressGroupName" xml:"AddressGroupName"`
+	PublicIp              string                      `json:"PublicIp" xml:"PublicIp"`
 	SrcIPTag              string                      `json:"SrcIPTag" xml:"SrcIPTag"`
 	RuleName              string                      `json:"RuleName" xml:"RuleName"`
 	VulLevel              int                         `json:"VulLevel" xml:"VulLevel"`
 	AttackApp             string                      `json:"AttackApp" xml:"AttackApp"`
 	GroupName             string                      `json:"GroupName" xml:"GroupName"`
+	AssetsName            string                      `json:"AssetsName" xml:"AssetsName"`
 	MemberStatus          string                      `json:"MemberStatus" xml:"MemberStatus"`
 	InPps                 int64                       `json:"InPps" xml:"InPps"`
 	SecuritySuggest       string                      `json:"SecuritySuggest" xml:"SecuritySuggest"`
+	DetailNum             int                         `json:"DetailNum" xml:"DetailNum"`
 	MemberDisplayName     string                      `json:"MemberDisplayName" xml:"MemberDisplayName"`
+	RegionNo              string                      `json:"RegionNo" xml:"RegionNo"`
 	Tag                   string                      `json:"Tag" xml:"Tag"`
 	InBps                 int64                       `json:"InBps" xml:"InBps"`
+	TrafficPercent1Day    string                      `json:"TrafficPercent1Day" xml:"TrafficPercent1Day"`
 	AclRecommendDetail    string                      `json:"AclRecommendDetail" xml:"AclRecommendDetail"`
+	TrafficPercent7Day    string                      `json:"TrafficPercent7Day" xml:"TrafficPercent7Day"`
 	Description           string                      `json:"Description" xml:"Description"`
 	DstIP                 string                      `json:"DstIP" xml:"DstIP"`
+	TrafficPercent30Day   string                      `json:"TrafficPercent30Day" xml:"TrafficPercent30Day"`
 	Business              string                      `json:"Business" xml:"Business"`
 	EventCount            int                         `json:"EventCount" xml:"EventCount"`
 	HasAcl                string                      `json:"HasAcl" xml:"HasAcl"`
@@ -65,10 +75,13 @@ type Data struct {
 	Time                  int                         `json:"Time" xml:"Time"`
 	SrcIP                 string                      `json:"SrcIP" xml:"SrcIP"`
 	EventName             string                      `json:"EventName" xml:"EventName"`
+	AssetsInstanceId      string                      `json:"AssetsInstanceId" xml:"AssetsInstanceId"`
 	RuleResult            int                         `json:"RuleResult" xml:"RuleResult"`
 	EventId               string                      `json:"EventId" xml:"EventId"`
 	OutBytes              int64                       `json:"OutBytes" xml:"OutBytes"`
 	AddressGroupUUID      string                      `json:"AddressGroupUUID" xml:"AddressGroupUUID"`
+	PortList              []string                    `json:"PortList" xml:"PortList"`
+	ServiceNameList       []string                    `json:"ServiceNameList" xml:"ServiceNameList"`
 	SrcPrivateIPList      []string                    `json:"SrcPrivateIPList" xml:"SrcPrivateIPList"`
 	IPLocationInfo        IPLocationInfo              `json:"IPLocationInfo" xml:"IPLocationInfo"`
 	VpcDstInfo            VpcDstInfo                  `json:"VpcDstInfo" xml:"VpcDstInfo"`

@@ -89,9 +89,9 @@ type DescribeVpcFirewallControlPolicyRequest struct {
 // DescribeVpcFirewallControlPolicyResponse is the response struct for api DescribeVpcFirewallControlPolicy
 type DescribeVpcFirewallControlPolicyResponse struct {
 	*responses.BaseResponse
-	TotalCount string                                       `json:"TotalCount" xml:"TotalCount"`
-	RequestId  string                                       `json:"RequestId" xml:"RequestId"`
-	Policys    []DataItemInDescribeVpcFirewallControlPolicy `json:"Policys" xml:"Policys"`
+	TotalCount string     `json:"TotalCount" xml:"TotalCount"`
+	RequestId  string     `json:"RequestId" xml:"RequestId"`
+	Policys    []DataItem `json:"Policys" xml:"Policys"`
 }
 
 // CreateDescribeVpcFirewallControlPolicyRequest creates a request to invoke DescribeVpcFirewallControlPolicy API

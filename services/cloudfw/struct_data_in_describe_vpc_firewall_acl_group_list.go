@@ -20,4 +20,5 @@ type DataInDescribeVpcFirewallAclGroupList struct {
 	AclGroupId   string `json:"AclGroupId" xml:"AclGroupId"`
 	AclGroupName string `json:"AclGroupName" xml:"AclGroupName"`
 	MemberUid    string `json:"MemberUid" xml:"MemberUid"`
+	AclRuleCount int    `json:"AclRuleCount" xml:"AclRuleCount"`
 }

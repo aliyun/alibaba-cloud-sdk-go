@@ -71,22 +71,23 @@ func (client *Client) ModifyVpcFirewallControlPolicyWithCallback(request *Modify
 // ModifyVpcFirewallControlPolicyRequest is the request struct for api ModifyVpcFirewallControlPolicy
 type ModifyVpcFirewallControlPolicyRequest struct {
 	*requests.RpcRequest
-	DestPortType    string `position:"Query" name:"DestPortType"`
-	Release         string `position:"Query" name:"Release"`
-	Destination     string `position:"Query" name:"Destination"`
-	DestinationType string `position:"Query" name:"DestinationType"`
-	DestPortGroup   string `position:"Query" name:"DestPortGroup"`
-	Description     string `position:"Query" name:"Description"`
-	Source          string `position:"Query" name:"Source"`
-	AclUuid         string `position:"Query" name:"AclUuid"`
-	AclAction       string `position:"Query" name:"AclAction"`
-	SourceIp        string `position:"Query" name:"SourceIp"`
-	SourceType      string `position:"Query" name:"SourceType"`
-	Lang            string `position:"Query" name:"Lang"`
-	VpcFirewallId   string `position:"Query" name:"VpcFirewallId"`
-	ApplicationName string `position:"Query" name:"ApplicationName"`
-	Proto           string `position:"Query" name:"Proto"`
-	DestPort        string `position:"Query" name:"DestPort"`
+	DestPortType        string    `position:"Query" name:"DestPortType"`
+	Release             string    `position:"Query" name:"Release"`
+	Destination         string    `position:"Query" name:"Destination"`
+	DestinationType     string    `position:"Query" name:"DestinationType"`
+	DestPortGroup       string    `position:"Query" name:"DestPortGroup"`
+	ApplicationNameList *[]string `position:"Query" name:"ApplicationNameList"  type:"Repeated"`
+	Description         string    `position:"Query" name:"Description"`
+	Source              string    `position:"Query" name:"Source"`
+	AclUuid             string    `position:"Query" name:"AclUuid"`
+	AclAction           string    `position:"Query" name:"AclAction"`
+	SourceIp            string    `position:"Query" name:"SourceIp"`
+	SourceType          string    `position:"Query" name:"SourceType"`
+	Lang                string    `position:"Query" name:"Lang"`
+	VpcFirewallId       string    `position:"Query" name:"VpcFirewallId"`
+	ApplicationName     string    `position:"Query" name:"ApplicationName"`
+	Proto               string    `position:"Query" name:"Proto"`
+	DestPort            string    `position:"Query" name:"DestPort"`
 }
 
 // ModifyVpcFirewallControlPolicyResponse is the response struct for api ModifyVpcFirewallControlPolicy
