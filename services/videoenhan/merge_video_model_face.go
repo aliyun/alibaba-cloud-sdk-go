@@ -74,6 +74,7 @@ type MergeVideoModelFaceRequest struct {
 	FaceImageURL string                           `position:"Body" name:"FaceImageURL"`
 	MergeInfos   *[]MergeVideoModelFaceMergeInfos `position:"Body" name:"MergeInfos"  type:"Repeated"`
 	UserId       string                           `position:"Body" name:"UserId"`
+	Enhance      requests.Boolean                 `position:"Body" name:"Enhance"`
 	TemplateId   string                           `position:"Body" name:"TemplateId"`
 	Async        string                           `position:"Body" name:"Async"`
 	AddWatermark requests.Boolean                 `position:"Body" name:"AddWatermark"`
