@@ -1,3 +1,10 @@
+2023-09-15 Version: v1.62.559
+- Generated 2019-06-24 for `eais`.
+- Add openapi TagResources.
+- Add openapi UntagResources.
+- Add openapi ListTagResources.
+- Modify openapi DescribeEais.
+
 2023-09-15 Version: v1.62.558
 - Generated 2015-01-01 for `R-kvstore`.
 - Update us-east-1 us-west-1 endpoint.
