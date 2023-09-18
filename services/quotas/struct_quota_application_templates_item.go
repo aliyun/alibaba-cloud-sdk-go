@@ -31,4 +31,5 @@ type QuotaApplicationTemplatesItem struct {
 	ExpireTime       string                 `json:"ExpireTime" xml:"ExpireTime"`
 	QuotaCategory    string                 `json:"QuotaCategory" xml:"QuotaCategory"`
 	ApplicableRange  []float64              `json:"ApplicableRange" xml:"ApplicableRange"`
+	Period           Period                 `json:"Period" xml:"Period"`
 }

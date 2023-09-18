@@ -31,6 +31,7 @@ type QuotaAlarm struct {
 	ThresholdPercent float64                `json:"ThresholdPercent" xml:"ThresholdPercent"`
 	WebHook          string                 `json:"WebHook" xml:"WebHook"`
 	QuotaDimensions  map[string]interface{} `json:"QuotaDimensions" xml:"QuotaDimensions"`
+	Webhook          string                 `json:"Webhook" xml:"Webhook"`
 	QuotaDimension   map[string]interface{} `json:"QuotaDimension" xml:"QuotaDimension"`
 	NotifyChannels   []string               `json:"NotifyChannels" xml:"NotifyChannels"`
 }
