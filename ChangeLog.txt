@@ -1,3 +1,7 @@
+2023-09-18 Version: v1.62.562
+- Generated 2022-01-30 for `avatar`.
+- add client SDK api
+
 2023-09-18 Version: v1.62.561
 - Generated 2020-05-10 for `quotas`.
 Support QuotaApplications For Template.

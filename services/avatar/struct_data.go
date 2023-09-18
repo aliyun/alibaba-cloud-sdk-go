@@ -30,6 +30,7 @@ type Data struct {
 	MakeStatus           string                 `json:"MakeStatus" xml:"MakeStatus"`
 	InstanceId           string                 `json:"InstanceId" xml:"InstanceId"`
 	TotalCount           int                    `json:"TotalCount" xml:"TotalCount"`
+	ImToken              string                 `json:"ImToken" xml:"ImToken"`
 	Description          string                 `json:"Description" xml:"Description"`
 	UniqueCode           string                 `json:"UniqueCode" xml:"UniqueCode"`
 	Type                 string                 `json:"Type" xml:"Type"`
@@ -47,6 +48,7 @@ type Data struct {
 	OutputText           string                 `json:"OutputText" xml:"OutputText"`
 	Portrait             string                 `json:"Portrait" xml:"Portrait"`
 	Status               string                 `json:"Status" xml:"Status"`
+	RenderData           string                 `json:"RenderData" xml:"RenderData"`
 	TaskResult           TaskResult             `json:"TaskResult" xml:"TaskResult"`
 	SupportedResolutions SupportedResolutions   `json:"SupportedResolutions" xml:"SupportedResolutions"`
 	Channel              Channel                `json:"Channel" xml:"Channel"`
