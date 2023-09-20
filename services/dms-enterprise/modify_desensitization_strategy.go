@@ -73,6 +73,7 @@ type ModifyDesensitizationStrategyRequest struct {
 	*requests.RpcRequest
 	IsReset    requests.Boolean `position:"Query" name:"IsReset"`
 	Tid        requests.Integer `position:"Query" name:"Tid"`
+	IsDefault  requests.Boolean `position:"Query" name:"IsDefault"`
 	TableName  string           `position:"Query" name:"TableName"`
 	SchemaName string           `position:"Query" name:"SchemaName"`
 	IsLogic    requests.Boolean `position:"Query" name:"IsLogic"`
