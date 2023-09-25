@@ -75,8 +75,9 @@ type CreateCustomImageRequest struct {
 	DataSnapshotId   string `position:"Query" name:"DataSnapshotId"`
 	ClientToken      string `position:"Query" name:"ClientToken"`
 	Description      string `position:"Query" name:"Description"`
-	InstanceId       string `position:"Query" name:"InstanceId"`
+	Platform         string `position:"Query" name:"Platform"`
 	ImageName        string `position:"Query" name:"ImageName"`
+	InstanceId       string `position:"Query" name:"InstanceId"`
 }
 
 // CreateCustomImageResponse is the response struct for api CreateCustomImage

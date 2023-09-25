@@ -72,8 +72,8 @@ func (client *Client) ModifyFirewallRuleWithCallback(request *ModifyFirewallRule
 type ModifyFirewallRuleRequest struct {
 	*requests.RpcRequest
 	ClientToken  string `position:"Query" name:"ClientToken"`
-	SourceCidrIp string `position:"Query" name:"SourceCidrIp"`
 	Remark       string `position:"Query" name:"Remark"`
+	SourceCidrIp string `position:"Query" name:"SourceCidrIp"`
 	InstanceId   string `position:"Query" name:"InstanceId"`
 	RuleProtocol string `position:"Query" name:"RuleProtocol"`
 	Port         string `position:"Query" name:"Port"`
