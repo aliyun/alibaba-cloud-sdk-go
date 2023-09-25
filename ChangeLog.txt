@@ -1,3 +1,7 @@
+2023-09-25 Version: v1.62.565
+- Generated 2018-01-20 for `Iot`.
+- Add Api ResetDeviceTimeline.
+
 2023-09-20 Version: v1.62.564
 - Generated 2018-11-01 for `dms-enterprise`.
 - Support CreateProcCorrectAPI.
