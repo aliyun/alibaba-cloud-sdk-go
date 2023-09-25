@@ -1,3 +1,7 @@
+2023-09-25 Version: v1.62.566
+- Generated 2020-05-18 for `dataworks-public`.
+- Support DIJob and DIAlarmRule related APIs.
+
 2023-09-25 Version: v1.62.565
 - Generated 2018-01-20 for `Iot`.
 - Add Api ResetDeviceTimeline.

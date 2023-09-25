@@ -72,6 +72,7 @@ func (client *Client) AddMetaCollectionEntityWithCallback(request *AddMetaCollec
 type AddMetaCollectionEntityRequest struct {
 	*requests.RpcRequest
 	EntityQualifiedName     string `position:"Query" name:"EntityQualifiedName"`
+	Remark                  string `position:"Query" name:"Remark"`
 	CollectionQualifiedName string `position:"Query" name:"CollectionQualifiedName"`
 }
 

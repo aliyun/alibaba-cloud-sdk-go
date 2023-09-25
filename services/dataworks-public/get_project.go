@@ -71,7 +71,8 @@ func (client *Client) GetProjectWithCallback(request *GetProjectRequest, callbac
 // GetProjectRequest is the request struct for api GetProject
 type GetProjectRequest struct {
 	*requests.RpcRequest
-	ProjectId requests.Integer `position:"Query" name:"ProjectId"`
+	ProjectIdentifier string           `position:"Query" name:"ProjectIdentifier"`
+	ProjectId         requests.Integer `position:"Query" name:"ProjectId"`
 }
 
 // GetProjectResponse is the response struct for api GetProject

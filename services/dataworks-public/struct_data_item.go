@@ -34,8 +34,10 @@ type DataItem struct {
 	TaskName   string       `json:"TaskName" xml:"TaskName"`
 	TestId     int64        `json:"TestId" xml:"TestId"`
 	RetCode    int64        `json:"RetCode" xml:"RetCode"`
+	TagValue   string       `json:"TagValue" xml:"TagValue"`
 	ProjectId  int64        `json:"ProjectId" xml:"ProjectId"`
 	Status     string       `json:"Status" xml:"Status"`
+	TagKey     string       `json:"TagKey" xml:"TagKey"`
 	Bizdate    int64        `json:"Bizdate" xml:"Bizdate"`
 	Runs       []RunsItem   `json:"Runs" xml:"Runs"`
 	Topics     []TopicsItem `json:"Topics" xml:"Topics"`
