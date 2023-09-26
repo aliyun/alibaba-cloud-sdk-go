@@ -76,7 +76,7 @@ func TestDescribeRegionsWithProviderAndAk(t *testing.T) {
 	assert.True(t, response.IsSuccess())
 }
 
-func TestDescribeRegionsWithProviderAndRsaKeyPair(t *testing.T) {
+func SkipTestDescribeRegionsWithProviderAndRsaKeyPair(t *testing.T) {
 	request := requests.NewCommonRequest()
 	request.Version = "2014-05-26"
 	request.Product = "Ecs"

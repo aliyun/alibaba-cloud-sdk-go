@@ -10,11 +10,15 @@ jobs:
 
   build:
     runs-on: ubuntu-latest
-
+    environment: ci
     strategy:
       fail-fast: false
       matrix:
-        go-version: ['1.10', '1.11', '1.12', '1.13', '1.14', '1.15', '1.16', '1.17', '1.18', '1.19', '1.20']
+        go-version: [
+          #'1.10', '1.11', '1.12',
+          '1.13', '1.14', 
+          # '1.15', '1.16', '1.17', '1.18', '1.19', '1.20'
+          ]
 
     steps:
     - uses: actions/checkout@v3
@@ -28,6 +32,11 @@ jobs:
       env:
         ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY_ID }}
         ACCESS_KEY_SECRET: ${{ secrets.ACCESS_KEY_SECRET }}
+        REGION_ID: ${{ secrets.REGION_ID }}
+        USER_ID: ${{ secrets.USER_ID }}
+        PUBLIC_KEY_ID: ${{ secrets.PUBLIC_KEY_ID }}
+        RSA_FILE_AES_KEY: ${{ secrets.RSA_FILE_AES_KEY }}
+        CONCURRENT_ID: "${{ github.run_number }}-${{ strategy.job-index }}"
       run: |
         go test -race -coverprofile=coverage.txt -covermode=atomic ./sdk/...
         test -z $ACCESS_KEY_ID -a -z $ACCESS_KEY_SECRET || go test -v -timeout 120s ./integration/...

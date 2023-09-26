@@ -51,6 +51,7 @@ func Test_DescribeRegionsWithTimeout(t *testing.T) {
 	request.Scheme = "https"
 	request.SetDomain("ecs.aliyuncs.com")
 	client, err := ecs.NewClientWithOptions(os.Getenv("REGION_ID"), config, credentail)
+	assert.Nil(t, err)
 	response, err := client.DescribeRegions(request)
 	assert.Equal(t, 0, response.GetHttpStatus())
 	assert.Contains(t, err.Error(), "https://ecs.aliyuncs.com")

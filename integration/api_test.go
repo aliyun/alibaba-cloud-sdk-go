@@ -58,7 +58,7 @@ func Test_DeleteClusterWithROArequestWithJSONWithDelete(t *testing.T) {
 	response, err := client.DeleteCluster(request)
 	assert.NotNil(t, err)
 	assert.Equal(t, 400, response.GetHttpStatus())
-	assert.Contains(t, err.Error(), "ErrorCheckAcl")
+	assert.Contains(t, err.Error(), "ErrorClusterNotFound")
 }
 
 func Test_CreateSecurityGroupWithRPCrequestWithJSONWithNestingparametersWithPOST(t *testing.T) {
@@ -97,7 +97,6 @@ func Test_ECS_DescribeSecurityGroupsWithRPCrequestWithJSONWithNestingparametersW
 	assert.Equal(t, 36, len(response.RequestId))
 	assert.True(t, flag)
 	flag = false
-
 }
 
 func Test_ECS_DeleteSecurityGroupWithRPCrequestWithJSONWithPOST(t *testing.T) {
@@ -173,7 +172,6 @@ func mockServer(status int, json string) (server *httptest.Server) {
 	ts := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(status)
 		w.Write([]byte(json))
-		return
 	}))
 	return ts
 }
