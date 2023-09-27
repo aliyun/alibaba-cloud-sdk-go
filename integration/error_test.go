@@ -18,7 +18,7 @@ func Test_AddTagsWithParameterError(t *testing.T) {
 	request.Version = "2014-05-26"
 	request.Product = "Ecs"
 	request.ApiName = "AddTags"
-	request.SetDomain("ecs.aliyuncs.com")
+	request.SetDomain(ecsEndpoint)
 	request.TransToAcsRequest()
 	client, err := sdk.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
 	assert.Nil(t, err)
@@ -49,12 +49,12 @@ func Test_DescribeRegionsWithTimeout(t *testing.T) {
 	}
 	request := ecs.CreateDescribeRegionsRequest()
 	request.Scheme = "https"
-	request.SetDomain("ecs.aliyuncs.com")
+	request.SetDomain(ecsEndpoint)
 	client, err := ecs.NewClientWithOptions(os.Getenv("REGION_ID"), config, credentail)
 	assert.Nil(t, err)
 	response, err := client.DescribeRegions(request)
 	assert.Equal(t, 0, response.GetHttpStatus())
-	assert.Contains(t, err.Error(), "https://ecs.aliyuncs.com")
+	assert.Contains(t, err.Error(), "https://"+ecsEndpoint)
 	assert.Contains(t, err.Error(), "Client.Timeout exceeded while awaiting headers")
 }
 

@@ -30,6 +30,8 @@ var (
 	rolearn  = fmt.Sprintf("acs:ram::%s:role/%s", os.Getenv("USER_ID"), rolename)
 )
 
+var ecsEndpoint = "ecs." + os.Getenv("REGION_ID") + ".aliyuncs.com"
+
 func createRole(userid string) (name string, arn string, err error) {
 	listRequest := ram.CreateListRolesRequest()
 	listRequest.Scheme = "HTTPS"

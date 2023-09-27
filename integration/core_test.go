@@ -26,7 +26,7 @@ func Test_DescribeRegionsWithCommonRequestWithRPC(t *testing.T) {
 	request.Version = "2014-05-26"
 	request.Product = "Ecs"
 	request.ApiName = "DescribeRegions"
-	request.SetDomain("ecs.aliyuncs.com")
+	request.SetDomain(ecsEndpoint)
 	request.TransToAcsRequest()
 	client, err := sdk.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
 	assert.Nil(t, err)
@@ -43,7 +43,7 @@ func Test_DescribeRegionsWithCommonRequestWithSTStoken(t *testing.T) {
 	request.Version = "2014-05-26"
 	request.Product = "Ecs"
 	request.ApiName = "DescribeRegions"
-	request.SetDomain("ecs.aliyuncs.com")
+	request.SetDomain(ecsEndpoint)
 	request.TransToAcsRequest()
 	client, err := sdk.NewClientWithStsToken(os.Getenv("REGION_ID"), credential.AccessKeyId, credential.AccessKeySecret, credential.SecurityToken)
 	assert.Nil(t, err)
@@ -57,7 +57,7 @@ func Test_DescribeRegionsWithCommonRequestWithHTTPS(t *testing.T) {
 	request.Version = "2014-05-26"
 	request.Product = "Ecs"
 	request.ApiName = "DescribeRegions"
-	request.SetDomain("ecs.aliyuncs.com")
+	request.SetDomain(ecsEndpoint)
 	request.TransToAcsRequest()
 	request.SetScheme("HTTPS")
 	client, err := sdk.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
@@ -72,7 +72,7 @@ func Test_DescribeRegionsWithCommonRequestWithUnicodeSpecificParams(t *testing.T
 	request.Version = "2014-05-26"
 	request.Product = "Ecs"
 	request.ApiName = "DescribeRegions"
-	request.SetDomain("ecs.aliyuncs.com")
+	request.SetDomain(ecsEndpoint)
 	request.TransToAcsRequest()
 	request.SetContent([]byte("sdk&-杭&&&州-test"))
 	client, err := sdk.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
@@ -87,7 +87,7 @@ func Test_AddTagsWithCommonRequestWithError(t *testing.T) {
 	request.Version = "2014-05-26"
 	request.Product = "Ecs"
 	request.ApiName = "AddTags"
-	request.SetDomain("ecs.aliyuncs.com")
+	request.SetDomain(ecsEndpoint)
 	request.TransToAcsRequest()
 	client, err := sdk.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
 	assert.Nil(t, err)
@@ -104,7 +104,7 @@ func SkipTest_DescribeRegionsWithCommonRequestWithIncompleteSignature(t *testing
 	request.SetScheme("https")
 	request.Method = "POST"
 	request.ApiName = "DescribeRegions"
-	request.SetDomain("ecs.aliyuncs.com")
+	request.SetDomain(ecsEndpoint)
 	request.TransToAcsRequest()
 	client, err := sdk.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), strings.ToUpper(os.Getenv("ACCESS_KEY_SECRET")))
 	assert.Nil(t, err)
@@ -226,7 +226,7 @@ func Test_CreateInstanceWithCommonRequestWithPolicy(t *testing.T) {
 	request := requests.NewCommonRequest()
 	request.Method = "POST"
 	request.Product = "Ecs"
-	request.Domain = "ecs.aliyuncs.com"
+	request.Domain = "ecs." + os.Getenv("REGION_ID") + ".aliyuncs.com"
 	request.Version = "2014-05-26"
 	request.SetScheme("HTTPS")
 	request.ApiName = "CreateInstance"
