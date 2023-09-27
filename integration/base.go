@@ -10,15 +10,17 @@ import (
 )
 
 var role_doc = `{
-		"Statement": [{
-			"Action": "sts:AssumeRole",
-			"Effect": "Allow",
-			"Principal": {
-				"RAM": [
-					"acs:ram::%s:root"
-				]
+		"Statement": [
+			{
+				"Action": "sts:AssumeRole",
+				"Effect": "Allow",
+				"Principal": {
+					"RAM": [
+						"acs:ram::%s:root"
+					]
+				}
 			}
-		}],
+		],
 		"Version": "1"
 	}`
 
@@ -181,21 +183,21 @@ func createAccessKey() (id string, secret string, err error) {
 func createAssumeRole() (response *sts.AssumeRoleResponse, err error) {
 	err = createUser()
 	if err != nil {
-		return nil, err
+		return
 	}
 
 	subaccesskeyid, subaccesskeysecret, err := createAccessKey()
 	if err != nil {
-		return nil, err
+		return
 	}
 
 	_, _, err = createRole(os.Getenv("USER_ID"))
 	if err != nil {
-		return nil, err
+		return
 	}
 	err = createAttachPolicyToUser()
 	if err != nil {
-		return nil, err
+		return
 	}
 	request := sts.CreateAssumeRoleRequest()
 	request.RoleArn = rolearn
@@ -203,7 +205,7 @@ func createAssumeRole() (response *sts.AssumeRoleResponse, err error) {
 	request.Scheme = "HTTPS"
 	client, err := sts.NewClientWithAccessKey(os.Getenv("REGION_ID"), subaccesskeyid, subaccesskeysecret)
 	if err != nil {
-		return nil, err
+		return
 	}
 	response, err = client.AssumeRole(request)
 	return

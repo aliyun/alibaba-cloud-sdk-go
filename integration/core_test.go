@@ -152,6 +152,10 @@ func Test_DescribeClustersWithCommonRequestWithSignatureDostNotMatch(t *testing.
 func Test_DescribeClustersWithCommonRequestWithROAWithSTStoken(t *testing.T) {
 	assumeresponse, err := createAssumeRole()
 	assert.Nil(t, err)
+
+	err = createAttachPolicyToRole()
+	assert.Nil(t, err)
+
 	credential := assumeresponse.Credentials
 	client, err := sdk.NewClientWithStsToken(os.Getenv("REGION_ID"), credential.AccessKeyId, credential.AccessKeySecret, credential.SecurityToken)
 	assert.Nil(t, err)
