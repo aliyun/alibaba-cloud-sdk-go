@@ -31,4 +31,5 @@ type WorkflowNode struct {
 	WorkflowInsCode    string          `json:"WorkflowInsCode" xml:"WorkflowInsCode"`
 	AuditUserIdList    AuditUserIdList `json:"AuditUserIdList" xml:"AuditUserIdList"`
 	AuditUsers         AuditUsers      `json:"AuditUsers" xml:"AuditUsers"`
+	AuditUserList      AuditUserList   `json:"AuditUserList" xml:"AuditUserList"`
 }
