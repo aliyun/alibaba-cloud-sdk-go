@@ -24,7 +24,7 @@ This document introduces how to obtain and call [Alibaba Cloud SDK for Go][SDK].
 
 ## Requirements
 
-- It's necessary for you to make sure your system meet the [Requirements][Requirements], such as installing a Go environment which is new than 1.10.x.
+- It's necessary for you to make sure your system meet the [Requirements][Requirements], such as installing a Go environment which is new than 1.13.x.
 
 ## Installation
 
