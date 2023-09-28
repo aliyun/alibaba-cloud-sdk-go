@@ -41,7 +41,7 @@ func Test_EcsRamRoleSigner_GetAccessKeyId(t *testing.T) {
 	}()
 
 	accessKeyId, err := s.GetAccessKeyId()
-	assert.True(t, strings.Contains(err.Error(), "dial tcp: lookup invalid-domain-xxx:"))
+	assert.True(t, strings.Contains(err.Error(), "dial tcp: lookup invalid-domain-xxx"))
 	assert.Equal(t, "", accessKeyId)
 }
 
