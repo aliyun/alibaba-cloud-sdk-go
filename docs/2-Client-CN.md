@@ -10,7 +10,6 @@
 
 ```go
 client, err := sdk.NewClientWithAccessKey("regionId", "accessKeyId", "accessKeySecret")
-
 ```
 
 ### STS 客户端
@@ -19,7 +18,6 @@ client, err := sdk.NewClientWithAccessKey("regionId", "accessKeyId", "accessKeyS
 ```go
 client, err := sdk.NewClientWithStsToken("regionId", "subaccessKeyId", "subaccessKeySecret", "stsToken")
 ```
-
 
 ### RamRoleArn 客户端
 通过指定[RAM角色][RAM Role]，让客户端在发起请求前自动申请维护 STS Token，自动转变为一个有时限性的STS客户端。您也可以自行申请维护 STS Token，再创建 `STS客户端`。  
@@ -34,29 +32,27 @@ client, err := sdk.NewClientWithRamRoleArn("regionId", "subaccessKeyId", "subacc
 client, err := sdk.NewClientWithRamRoleArnAndPolicy("regionId", "subaccessKeyId", "subaccessKeySecret", "roleArn", "roleSession", "policy")
 ```
 
-
 ### EcsRamRole 客户端
-通过指定角色名称，让客户端在发起请求前自动申请维护 STS Token，自动转变为一个有时限性的STS客户端。您也可以自行申请维护 STS Token，再创建 `STS客户端`。  
+通过指定角色名称，让客户端在发起请求前自动申请维护 STS Token，自动转变为一个有时限性的STS客户端。您也可以自行申请维护 STS Token，再创建 `STS客户端`。
+
 > 示例代码：创建一个 EcsRamRole 方式认证的客户端。
 
 ```go
 client, err := NewClientWithEcsRamRole("regionid", "roleName")
 ```
 
-
 ### Bearer Token 客户端
-如呼叫中心(CCC)需用此类认证方式的客户端，请自行申请维护 Bearer Token。  
+如呼叫中心(CCC)需用此类认证方式的客户端，请自行申请维护 Bearer Token。
 > 示例代码：创建一个 Bearer Token 方式认证的客户端。
 
 ```go
 client, err := NewClientWithBearerToken("regionId", "bearerToken")
 ```
 
-
 ### RsaKeyPair 客户端
-通过指定公钥ID和私钥文件，让客户端在发起请求前自动申请维护 AccessKey，自动转变成为一个有时限性的AccessKey客户端，仅支持日本站。  
-> 示例代码：创建一个 RsaKeyPair 方式认证的客户端。
+通过指定公钥ID和私钥文件，让客户端在发起请求前自动申请维护 AccessKey，自动转变成为一个有时限性的AccessKey客户端，仅支持日本站。
 
+> 示例代码：创建一个 RsaKeyPair 方式认证的客户端。
 
 ```go
 client, err := NewClientWithRsaKeyPair("regionid", "publicKey", "privateKey", 3600)
