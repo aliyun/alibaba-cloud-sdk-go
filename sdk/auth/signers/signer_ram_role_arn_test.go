@@ -33,7 +33,7 @@ func Test_NewRamRoleArnSigner(t *testing.T) {
 	assert.Equal(t, 3600, signer.credentialExpiration)
 
 	c = credentials.NewRamRoleArnCredential("accessKeyId", "accessKeySecret", "roleArn", "", 100)
-	signer, err = NewRamRoleArnSigner(c, nil)
+	_, err = NewRamRoleArnSigner(c, nil)
 	assert.NotNil(t, err)
 	assert.Equal(t, "[SDK.InvalidParam] Assume Role session duration should be in the range of 15min - 1Hr", err.Error())
 }

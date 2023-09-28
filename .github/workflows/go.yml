@@ -28,7 +28,7 @@ jobs:
       env:
         ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY_ID }}
         ACCESS_KEY_SECRET: ${{ secrets.ACCESS_KEY_SECRET }}
-        REGION_ID: ${{ secrets.REGION_ID }}
+        REGION_ID: ${{ vars.REGION_ID }}
         USER_ID: ${{ secrets.USER_ID }}
         PUBLIC_KEY_ID: ${{ secrets.PUBLIC_KEY_ID }}
         RSA_FILE_AES_KEY: ${{ secrets.RSA_FILE_AES_KEY }}
