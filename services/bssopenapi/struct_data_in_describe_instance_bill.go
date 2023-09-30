@@ -17,11 +17,11 @@ package bssopenapi
 
 // DataInDescribeInstanceBill is a nested struct in bssopenapi response
 type DataInDescribeInstanceBill struct {
-	BillingCycle string                        `json:"BillingCycle" xml:"BillingCycle"`
-	AccountID    string                        `json:"AccountID" xml:"AccountID"`
-	AccountName  string                        `json:"AccountName" xml:"AccountName"`
-	TotalCount   int                           `json:"TotalCount" xml:"TotalCount"`
-	NextToken    string                        `json:"NextToken" xml:"NextToken"`
-	MaxResults   int                           `json:"MaxResults" xml:"MaxResults"`
-	Items        []ItemsInDescribeInstanceBill `json:"Items" xml:"Items"`
+	BillingCycle string `json:"BillingCycle" xml:"BillingCycle"`
+	AccountID    string `json:"AccountID" xml:"AccountID"`
+	AccountName  string `json:"AccountName" xml:"AccountName"`
+	TotalCount   int    `json:"TotalCount" xml:"TotalCount"`
+	NextToken    string `json:"NextToken" xml:"NextToken"`
+	MaxResults   int    `json:"MaxResults" xml:"MaxResults"`
+	Items        []Item `json:"Items" xml:"Items"`
 }
