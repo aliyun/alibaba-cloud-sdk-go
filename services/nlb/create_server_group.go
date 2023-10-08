@@ -71,6 +71,7 @@ func (client *Client) CreateServerGroupWithCallback(request *CreateServerGroupRe
 // CreateServerGroupRequest is the request struct for api CreateServerGroup
 type CreateServerGroupRequest struct {
 	*requests.RpcRequest
+	QuicVersion             string                             `position:"Body" name:"QuicVersion"`
 	ServerGroupName         string                             `position:"Body" name:"ServerGroupName"`
 	ClientToken             string                             `position:"Body" name:"ClientToken"`
 	PreserveClientIpEnabled requests.Boolean                   `position:"Body" name:"PreserveClientIpEnabled"`

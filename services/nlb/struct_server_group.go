@@ -35,6 +35,7 @@ type ServerGroup struct {
 	ServerGroupStatus       string      `json:"ServerGroupStatus" xml:"ServerGroupStatus"`
 	AliUid                  int64       `json:"AliUid" xml:"AliUid"`
 	ServerCount             int         `json:"ServerCount" xml:"ServerCount"`
+	QuicVersion             string      `json:"QuicVersion" xml:"QuicVersion"`
 	RelatedLoadBalancerIds  []string    `json:"RelatedLoadBalancerIds" xml:"RelatedLoadBalancerIds"`
 	HealthCheck             HealthCheck `json:"HealthCheck" xml:"HealthCheck"`
 	Tags                    []Tag       `json:"Tags" xml:"Tags"`
