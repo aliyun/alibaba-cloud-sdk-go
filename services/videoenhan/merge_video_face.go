@@ -71,12 +71,13 @@ func (client *Client) MergeVideoFaceWithCallback(request *MergeVideoFaceRequest,
 // MergeVideoFaceRequest is the request struct for api MergeVideoFace
 type MergeVideoFaceRequest struct {
 	*requests.RpcRequest
-	ReferenceURL string           `position:"Body" name:"ReferenceURL"`
-	Enhance      requests.Boolean `position:"Body" name:"Enhance"`
-	PostURL      string           `position:"Body" name:"PostURL"`
-	Async        requests.Boolean `position:"Body" name:"Async"`
-	VideoURL     string           `position:"Body" name:"VideoURL"`
-	AddWatermark requests.Boolean `position:"Body" name:"AddWatermark"`
+	ReferenceURL  string           `position:"Body" name:"ReferenceURL"`
+	WatermarkType string           `position:"Body" name:"WatermarkType"`
+	Enhance       requests.Boolean `position:"Body" name:"Enhance"`
+	PostURL       string           `position:"Body" name:"PostURL"`
+	Async         requests.Boolean `position:"Body" name:"Async"`
+	VideoURL      string           `position:"Body" name:"VideoURL"`
+	AddWatermark  requests.Boolean `position:"Body" name:"AddWatermark"`
 }
 
 // MergeVideoFaceResponse is the response struct for api MergeVideoFace

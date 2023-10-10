@@ -71,13 +71,14 @@ func (client *Client) MergeVideoModelFaceWithCallback(request *MergeVideoModelFa
 // MergeVideoModelFaceRequest is the request struct for api MergeVideoModelFace
 type MergeVideoModelFaceRequest struct {
 	*requests.RpcRequest
-	FaceImageURL string                           `position:"Body" name:"FaceImageURL"`
-	MergeInfos   *[]MergeVideoModelFaceMergeInfos `position:"Body" name:"MergeInfos"  type:"Repeated"`
-	UserId       string                           `position:"Body" name:"UserId"`
-	Enhance      requests.Boolean                 `position:"Body" name:"Enhance"`
-	TemplateId   string                           `position:"Body" name:"TemplateId"`
-	Async        string                           `position:"Body" name:"Async"`
-	AddWatermark requests.Boolean                 `position:"Body" name:"AddWatermark"`
+	FaceImageURL  string                           `position:"Body" name:"FaceImageURL"`
+	MergeInfos    *[]MergeVideoModelFaceMergeInfos `position:"Body" name:"MergeInfos"  type:"Repeated"`
+	UserId        string                           `position:"Body" name:"UserId"`
+	WatermarkType string                           `position:"Body" name:"WatermarkType"`
+	Enhance       requests.Boolean                 `position:"Body" name:"Enhance"`
+	TemplateId    string                           `position:"Body" name:"TemplateId"`
+	Async         string                           `position:"Body" name:"Async"`
+	AddWatermark  requests.Boolean                 `position:"Body" name:"AddWatermark"`
 }
 
 // MergeVideoModelFaceMergeInfos is a repeated param struct in MergeVideoModelFaceRequest

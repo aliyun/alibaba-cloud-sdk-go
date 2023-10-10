@@ -1,3 +1,7 @@
+2023-10-10 Version: v1.62.570
+- Generated 2020-03-20 for `videoenhan`.
+- Update MergeVideoModelFace MergeVideoFace.
+
 2023-10-08 Version: v1.62.569
 - Generated 2022-04-30 for `Nlb`.
 undefined
