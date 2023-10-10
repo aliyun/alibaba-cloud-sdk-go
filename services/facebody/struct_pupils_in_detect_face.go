@@ -17,5 +17,5 @@ package facebody
 
 // PupilsInDetectFace is a nested struct in facebody response
 type PupilsInDetectFace struct {
-	Pupil []float64 `json:"Pupil" xml:"Pupil"`
+	Pupil []string `json:"Pupil" xml:"Pupil"`
 }

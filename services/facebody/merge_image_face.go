@@ -74,6 +74,7 @@ type MergeImageFaceRequest struct {
 	FormatResultToJson requests.Boolean            `position:"Query" name:"FormatResultToJson"`
 	MergeInfos         *[]MergeImageFaceMergeInfos `position:"Body" name:"MergeInfos"  type:"Repeated"`
 	UserId             string                      `position:"Body" name:"UserId"`
+	WatermarkType      string                      `position:"Body" name:"WatermarkType"`
 	OssFile            string                      `position:"Query" name:"OssFile"`
 	TemplateId         string                      `position:"Body" name:"TemplateId"`
 	RequestProxyBy     string                      `position:"Query" name:"RequestProxyBy"`

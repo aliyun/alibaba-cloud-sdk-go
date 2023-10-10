@@ -90,10 +90,10 @@ type RecognizeFaceRequest struct {
 // RecognizeFaceResponse is the response struct for api RecognizeFace
 type RecognizeFaceResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	Data      Data   `json:"Data" xml:"Data"`
+	RequestId string              `json:"RequestId" xml:"RequestId"`
+	Code      string              `json:"Code" xml:"Code"`
+	Message   string              `json:"Message" xml:"Message"`
+	Data      DataInRecognizeFace `json:"Data" xml:"Data"`
 }
 
 // CreateRecognizeFaceRequest creates a request to invoke RecognizeFace API
