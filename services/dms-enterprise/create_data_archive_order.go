@@ -81,16 +81,24 @@ type CreateDataArchiveOrderRequest struct {
 
 // CreateDataArchiveOrderParam is a repeated param struct in CreateDataArchiveOrderRequest
 type CreateDataArchiveOrderParam struct {
-	Variables        *[]string                                       `name:"Variables" type:"Repeated"`
-	TargetInstanceId string                                          `name:"TargetInstanceId"`
-	TableMapping     *[]string                                       `name:"TableMapping" type:"Repeated"`
-	OrderAfter       *[]string                                       `name:"OrderAfter" type:"Repeated"`
-	SourceDatabaseId string                                          `name:"SourceDatabaseId"`
-	DbSchema         string                                          `name:"DbSchema"`
-	RunMethod        string                                          `name:"RunMethod"`
-	Logic            string                                          `name:"Logic"`
-	ArchiveMethod    string                                          `name:"ArchiveMethod"`
-	TableIncludes    *[]CreateDataArchiveOrderParamTableIncludesItem `name:"TableIncludes" type:"Repeated"`
+	Variables          *[]CreateDataArchiveOrderParamVariablesItem     `name:"Variables" type:"Repeated"`
+	SourceInstanceName string                                          `name:"SourceInstanceName"`
+	CronStr            string                                          `name:"CronStr"`
+	TableMapping       *[]string                                       `name:"TableMapping" type:"Repeated"`
+	OrderAfter         *[]string                                       `name:"OrderAfter" type:"Repeated"`
+	SourceCatalogName  string                                          `name:"SourceCatalogName"`
+	RunMethod          string                                          `name:"RunMethod"`
+	TargetInstanceHost string                                          `name:"TargetInstanceHost"`
+	Logic              string                                          `name:"Logic"`
+	SourceSchemaName   string                                          `name:"SourceSchemaName"`
+	ArchiveMethod      string                                          `name:"ArchiveMethod"`
+	TableIncludes      *[]CreateDataArchiveOrderParamTableIncludesItem `name:"TableIncludes" type:"Repeated"`
+}
+
+// CreateDataArchiveOrderParamVariablesItem is a repeated param struct in CreateDataArchiveOrderRequest
+type CreateDataArchiveOrderParamVariablesItem struct {
+	Name    string `name:"Name"`
+	Pattern string `name:"Pattern"`
 }
 
 // CreateDataArchiveOrderParamTableIncludesItem is a repeated param struct in CreateDataArchiveOrderRequest
