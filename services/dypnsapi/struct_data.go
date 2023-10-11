@@ -22,6 +22,7 @@ type Data struct {
 	TotalSuccess       int64                  `json:"TotalSuccess" xml:"TotalSuccess"`
 	StsAccessKeyId     string                 `json:"StsAccessKeyId" xml:"StsAccessKeyId"`
 	TotalUnknown       int64                  `json:"TotalUnknown" xml:"TotalUnknown"`
+	Mobile             string                 `json:"Mobile" xml:"Mobile"`
 	ExpireTime         int64                  `json:"ExpireTime" xml:"ExpireTime"`
 	AuthorizationUrl   string                 `json:"AuthorizationUrl" xml:"AuthorizationUrl"`
 	StsAccessKeySecret string                 `json:"StsAccessKeySecret" xml:"StsAccessKeySecret"`

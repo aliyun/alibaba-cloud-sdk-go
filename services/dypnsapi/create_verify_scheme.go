@@ -72,22 +72,35 @@ func (client *Client) CreateVerifySchemeWithCallback(request *CreateVerifyScheme
 type CreateVerifySchemeRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Origin               string           `position:"Query" name:"Origin"`
 	BundleId             string           `position:"Query" name:"BundleId"`
+	AuthType             string           `position:"Query" name:"AuthType"`
 	AppName              string           `position:"Query" name:"AppName"`
+	IpWhiteList          string           `position:"Query" name:"IpWhiteList"`
+	RouteName            string           `position:"Query" name:"RouteName"`
+	Email                string           `position:"Query" name:"Email"`
 	PackSign             string           `position:"Query" name:"PackSign"`
 	PackName             string           `position:"Query" name:"PackName"`
+	CuApiCode            requests.Integer `position:"Query" name:"CuApiCode"`
+	SceneType            string           `position:"Query" name:"SceneType"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	CtApiCode            requests.Integer `position:"Query" name:"CtApiCode"`
 	OsType               string           `position:"Query" name:"OsType"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Url                  string           `position:"Query" name:"Url"`
+	CmApiCode            requests.Integer `position:"Query" name:"CmApiCode"`
 	SchemeName           string           `position:"Query" name:"SchemeName"`
+	SmsSignName          string           `position:"Query" name:"SmsSignName"`
 }
 
 // CreateVerifySchemeResponse is the response struct for api CreateVerifyScheme
 type CreateVerifySchemeResponse struct {
 	*responses.BaseResponse
-	Code                string              `json:"Code" xml:"Code"`
 	Message             string              `json:"Message" xml:"Message"`
 	RequestId           string              `json:"RequestId" xml:"RequestId"`
+	HttpStatusCode      int64               `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Code                string              `json:"Code" xml:"Code"`
+	Success             bool                `json:"Success" xml:"Success"`
 	GateVerifySchemeDTO GateVerifySchemeDTO `json:"GateVerifySchemeDTO" xml:"GateVerifySchemeDTO"`
 }
 

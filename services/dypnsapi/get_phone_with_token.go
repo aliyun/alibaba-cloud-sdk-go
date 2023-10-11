@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// GetCertifyResult invokes the dypnsapi.GetCertifyResult API synchronously
-func (client *Client) GetCertifyResult(request *GetCertifyResultRequest) (response *GetCertifyResultResponse, err error) {
-	response = CreateGetCertifyResultResponse()
+// GetPhoneWithToken invokes the dypnsapi.GetPhoneWithToken API synchronously
+func (client *Client) GetPhoneWithToken(request *GetPhoneWithTokenRequest) (response *GetPhoneWithTokenResponse, err error) {
+	response = CreateGetPhoneWithTokenResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// GetCertifyResultWithChan invokes the dypnsapi.GetCertifyResult API asynchronously
-func (client *Client) GetCertifyResultWithChan(request *GetCertifyResultRequest) (<-chan *GetCertifyResultResponse, <-chan error) {
-	responseChan := make(chan *GetCertifyResultResponse, 1)
+// GetPhoneWithTokenWithChan invokes the dypnsapi.GetPhoneWithToken API asynchronously
+func (client *Client) GetPhoneWithTokenWithChan(request *GetPhoneWithTokenRequest) (<-chan *GetPhoneWithTokenResponse, <-chan error) {
+	responseChan := make(chan *GetPhoneWithTokenResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.GetCertifyResult(request)
+		response, err := client.GetPhoneWithToken(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) GetCertifyResultWithChan(request *GetCertifyResultRequest)
 	return responseChan, errChan
 }
 
-// GetCertifyResultWithCallback invokes the dypnsapi.GetCertifyResult API asynchronously
-func (client *Client) GetCertifyResultWithCallback(request *GetCertifyResultRequest, callback func(response *GetCertifyResultResponse, err error)) <-chan int {
+// GetPhoneWithTokenWithCallback invokes the dypnsapi.GetPhoneWithToken API asynchronously
+func (client *Client) GetPhoneWithTokenWithCallback(request *GetPhoneWithTokenRequest, callback func(response *GetPhoneWithTokenResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *GetCertifyResultResponse
+		var response *GetPhoneWithTokenResponse
 		var err error
 		defer close(result)
-		response, err = client.GetCertifyResult(request)
+		response, err = client.GetPhoneWithToken(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,38 +68,38 @@ func (client *Client) GetCertifyResultWithCallback(request *GetCertifyResultRequ
 	return result
 }
 
-// GetCertifyResultRequest is the request struct for api GetCertifyResult
-type GetCertifyResultRequest struct {
+// GetPhoneWithTokenRequest is the request struct for api GetPhoneWithToken
+type GetPhoneWithTokenRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ProductCode          string           `position:"Query" name:"ProductCode"`
+	SpToken              string           `position:"Query" name:"SpToken"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	Token                string           `position:"Query" name:"Token"`
 }
 
-// GetCertifyResultResponse is the response struct for api GetCertifyResult
-type GetCertifyResultResponse struct {
+// GetPhoneWithTokenResponse is the response struct for api GetPhoneWithToken
+type GetPhoneWithTokenResponse struct {
 	*responses.BaseResponse
-	Code      string     `json:"Code" xml:"Code"`
-	Message   string     `json:"Message" xml:"Message"`
-	RequestId string     `json:"RequestId" xml:"RequestId"`
-	Data      []DataItem `json:"Data" xml:"Data"`
+	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Data      Data   `json:"Data" xml:"Data"`
 }
 
-// CreateGetCertifyResultRequest creates a request to invoke GetCertifyResult API
-func CreateGetCertifyResultRequest() (request *GetCertifyResultRequest) {
-	request = &GetCertifyResultRequest{
+// CreateGetPhoneWithTokenRequest creates a request to invoke GetPhoneWithToken API
+func CreateGetPhoneWithTokenRequest() (request *GetPhoneWithTokenRequest) {
+	request = &GetPhoneWithTokenRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dypnsapi", "2017-05-25", "GetCertifyResult", "", "")
+	request.InitWithApiInfo("Dypnsapi", "2017-05-25", "GetPhoneWithToken", "", "")
 	request.Method = requests.POST
 	return
 }
 
-// CreateGetCertifyResultResponse creates a response to parse from GetCertifyResult response
-func CreateGetCertifyResultResponse() (response *GetCertifyResultResponse) {
-	response = &GetCertifyResultResponse{
+// CreateGetPhoneWithTokenResponse creates a response to parse from GetPhoneWithToken response
+func CreateGetPhoneWithTokenResponse() (response *GetPhoneWithTokenResponse) {
+	response = &GetPhoneWithTokenResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return
