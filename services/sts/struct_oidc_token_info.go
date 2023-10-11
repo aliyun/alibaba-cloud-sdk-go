@@ -17,7 +17,10 @@ package sts
 
 // OIDCTokenInfo is a nested struct in sts response
 type OIDCTokenInfo struct {
-	Subject   string `json:"Subject" xml:"Subject"`
-	Issuer    string `json:"Issuer" xml:"Issuer"`
-	ClientIds string `json:"ClientIds" xml:"ClientIds"`
+	Subject          string `json:"Subject" xml:"Subject"`
+	Issuer           string `json:"Issuer" xml:"Issuer"`
+	ClientIds        string `json:"ClientIds" xml:"ClientIds"`
+	ExpirationTime   string `json:"ExpirationTime" xml:"ExpirationTime"`
+	IssuanceTime     string `json:"IssuanceTime" xml:"IssuanceTime"`
+	VerificationInfo string `json:"VerificationInfo" xml:"VerificationInfo"`
 }
