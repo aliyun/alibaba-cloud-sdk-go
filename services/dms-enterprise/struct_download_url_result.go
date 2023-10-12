@@ -17,7 +17,7 @@ package dms_enterprise
 
 // DownloadURLResult is a nested struct in dms_enterprise response
 type DownloadURLResult struct {
-	HasResult  bool   `json:"HasResult" xml:"HasResult"`
 	TipMessage string `json:"TipMessage" xml:"TipMessage"`
+	HasResult  bool   `json:"HasResult" xml:"HasResult"`
 	URL        string `json:"URL" xml:"URL"`
 }

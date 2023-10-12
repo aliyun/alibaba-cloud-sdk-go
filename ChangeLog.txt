@@ -1,3 +1,7 @@
+2023-10-12 Version: v1.62.578
+- Generated 2018-11-01 for `dms-enterprise`.
+- Support GetOrderBaseInfo to response AttachmentKey and OriginAttachmentName information.
+
 2023-10-12 Version: v1.62.577
 - Generated 2019-09-01 for `OceanBasePro`.
 undefined
