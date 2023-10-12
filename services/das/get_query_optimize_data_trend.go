@@ -77,6 +77,7 @@ type GetQueryOptimizeDataTrendRequest struct {
 	Engine         string `position:"Query" name:"Engine"`
 	InstanceIds    string `position:"Query" name:"InstanceIds"`
 	End            string `position:"Query" name:"End"`
+	Region         string `position:"Query" name:"Region"`
 }
 
 // GetQueryOptimizeDataTrendResponse is the response struct for api GetQueryOptimizeDataTrend

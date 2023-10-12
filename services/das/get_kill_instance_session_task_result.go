@@ -79,11 +79,11 @@ type GetKillInstanceSessionTaskResultRequest struct {
 // GetKillInstanceSessionTaskResultResponse is the response struct for api GetKillInstanceSessionTaskResult
 type GetKillInstanceSessionTaskResultResponse struct {
 	*responses.BaseResponse
-	Code      int64  `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
-	Data      Data   `json:"Data" xml:"Data"`
+	Code      int64                                  `json:"Code" xml:"Code"`
+	Message   string                                 `json:"Message" xml:"Message"`
+	RequestId string                                 `json:"RequestId" xml:"RequestId"`
+	Success   bool                                   `json:"Success" xml:"Success"`
+	Data      DataInGetKillInstanceSessionTaskResult `json:"Data" xml:"Data"`
 }
 
 // CreateGetKillInstanceSessionTaskResultRequest creates a request to invoke GetKillInstanceSessionTaskResult API

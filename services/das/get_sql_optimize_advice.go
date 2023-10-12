@@ -76,6 +76,7 @@ type GetSqlOptimizeAdviceRequest struct {
 	Engine         string `position:"Query" name:"Engine"`
 	InstanceIds    string `position:"Query" name:"InstanceIds"`
 	StartDt        string `position:"Query" name:"StartDt"`
+	Region         string `position:"Query" name:"Region"`
 }
 
 // GetSqlOptimizeAdviceResponse is the response struct for api GetSqlOptimizeAdvice

@@ -86,6 +86,8 @@ type GetQueryOptimizeDataStatsRequest struct {
 	InstanceIds      string `position:"Query" name:"InstanceIds"`
 	PageNo           string `position:"Query" name:"PageNo"`
 	Time             string `position:"Query" name:"Time"`
+	Region           string `position:"Query" name:"Region"`
+	User             string `position:"Query" name:"User"`
 }
 
 // GetQueryOptimizeDataStatsResponse is the response struct for api GetQueryOptimizeDataStats

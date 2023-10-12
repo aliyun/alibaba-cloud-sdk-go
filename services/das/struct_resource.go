@@ -17,9 +17,9 @@ package das
 
 // Resource is a nested struct in das response
 type Resource struct {
-	Enable                         bool   `json:"Enable" xml:"Enable"`
-	CpuUsageUpperThreshold         int    `json:"CpuUsageUpperThreshold" xml:"CpuUsageUpperThreshold"`
 	CpuStep                        int    `json:"CpuStep" xml:"CpuStep"`
-	UpgradeObservationWindowSize   string `json:"UpgradeObservationWindowSize" xml:"UpgradeObservationWindowSize"`
+	CpuUsageUpperThreshold         int    `json:"CpuUsageUpperThreshold" xml:"CpuUsageUpperThreshold"`
+	Enable                         bool   `json:"Enable" xml:"Enable"`
 	DowngradeObservationWindowSize string `json:"DowngradeObservationWindowSize" xml:"DowngradeObservationWindowSize"`
+	UpgradeObservationWindowSize   string `json:"UpgradeObservationWindowSize" xml:"UpgradeObservationWindowSize"`
 }

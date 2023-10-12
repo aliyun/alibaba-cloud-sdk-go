@@ -17,12 +17,12 @@ package das
 
 // Shard is a nested struct in das response
 type Shard struct {
-	Upgrade                        bool   `json:"Upgrade" xml:"Upgrade"`
 	MemUsageUpperThreshold         int    `json:"MemUsageUpperThreshold" xml:"MemUsageUpperThreshold"`
 	MaxShards                      int    `json:"MaxShards" xml:"MaxShards"`
-	UpgradeObservationWindowSize   string `json:"UpgradeObservationWindowSize" xml:"UpgradeObservationWindowSize"`
-	Downgrade                      bool   `json:"Downgrade" xml:"Downgrade"`
-	MemUsageLowerThreshold         int    `json:"MemUsageLowerThreshold" xml:"MemUsageLowerThreshold"`
 	MinShards                      int    `json:"MinShards" xml:"MinShards"`
+	Downgrade                      bool   `json:"Downgrade" xml:"Downgrade"`
 	DowngradeObservationWindowSize string `json:"DowngradeObservationWindowSize" xml:"DowngradeObservationWindowSize"`
+	Upgrade                        bool   `json:"Upgrade" xml:"Upgrade"`
+	UpgradeObservationWindowSize   string `json:"UpgradeObservationWindowSize" xml:"UpgradeObservationWindowSize"`
+	MemUsageLowerThreshold         int    `json:"MemUsageLowerThreshold" xml:"MemUsageLowerThreshold"`
 }

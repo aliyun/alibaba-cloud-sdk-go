@@ -17,17 +17,15 @@ package das
 
 // ResultItem is a nested struct in das response
 type ResultItem struct {
-	User       string `json:"User" xml:"User"`
-	Time       int64  `json:"Time" xml:"Time"`
-	Info       string `json:"Info" xml:"Info"`
-	Active     bool   `json:"Active" xml:"Active"`
-	Id         int64  `json:"Id" xml:"Id"`
-	Db         string `json:"Db" xml:"Db"`
-	InstanceId string `json:"instanceId" xml:"instanceId"`
-	Command    string `json:"Command" xml:"Command"`
-	Reason     string `json:"Reason" xml:"Reason"`
-	Host       string `json:"Host" xml:"Host"`
-	State      string `json:"State" xml:"State"`
-	TaskId     string `json:"TaskId" xml:"TaskId"`
-	SqlId      string `json:"sqlId" xml:"sqlId"`
+	Id      int64  `json:"Id" xml:"Id"`
+	User    string `json:"User" xml:"User"`
+	Host    string `json:"Host" xml:"Host"`
+	Db      string `json:"Db" xml:"Db"`
+	Command string `json:"Command" xml:"Command"`
+	Time    int64  `json:"Time" xml:"Time"`
+	State   string `json:"State" xml:"State"`
+	Info    string `json:"Info" xml:"Info"`
+	Active  bool   `json:"Active" xml:"Active"`
+	TaskId  string `json:"TaskId" xml:"TaskId"`
+	Reason  string `json:"Reason" xml:"Reason"`
 }

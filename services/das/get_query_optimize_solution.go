@@ -74,6 +74,7 @@ type GetQueryOptimizeSolutionRequest struct {
 	SqlId          string `position:"Query" name:"SqlId"`
 	ConsoleContext string `position:"Query" name:"ConsoleContext"`
 	RuleIds        string `position:"Query" name:"RuleIds"`
+	InstanceId     string `position:"Query" name:"InstanceId"`
 	Engine         string `position:"Query" name:"Engine"`
 }
 

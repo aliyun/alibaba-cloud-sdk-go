@@ -17,7 +17,7 @@ package das
 
 // Storage is a nested struct in das response
 type Storage struct {
-	Upgrade                 bool `json:"Upgrade" xml:"Upgrade"`
 	DiskUsageUpperThreshold int  `json:"DiskUsageUpperThreshold" xml:"DiskUsageUpperThreshold"`
+	Upgrade                 bool `json:"Upgrade" xml:"Upgrade"`
 	MaxStorage              int  `json:"MaxStorage" xml:"MaxStorage"`
 }

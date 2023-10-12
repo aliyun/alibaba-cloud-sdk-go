@@ -74,6 +74,7 @@ type CreateCacheAnalysisJobRequest struct {
 	BackupSetId string `position:"Query" name:"BackupSetId"`
 	InstanceId  string `position:"Query" name:"InstanceId"`
 	NodeId      string `position:"Query" name:"NodeId"`
+	Separators  string `position:"Query" name:"Separators"`
 }
 
 // CreateCacheAnalysisJobResponse is the response struct for api CreateCacheAnalysisJob

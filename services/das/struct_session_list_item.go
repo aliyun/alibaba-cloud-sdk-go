@@ -28,4 +28,5 @@ type SessionListItem struct {
 	UserClientAlias string `json:"UserClientAlias" xml:"UserClientAlias"`
 	TrxId           string `json:"TrxId" xml:"TrxId"`
 	TrxDuration     int64  `json:"TrxDuration" xml:"TrxDuration"`
+	SqlTemplateId   string `json:"SqlTemplateId" xml:"SqlTemplateId"`
 }

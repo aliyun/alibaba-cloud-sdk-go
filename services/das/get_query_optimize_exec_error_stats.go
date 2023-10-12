@@ -82,6 +82,7 @@ type GetQueryOptimizeExecErrorStatsRequest struct {
 	InstanceIds     string `position:"Query" name:"InstanceIds"`
 	PageNo          string `position:"Query" name:"PageNo"`
 	Time            string `position:"Query" name:"Time"`
+	Region          string `position:"Query" name:"Region"`
 }
 
 // GetQueryOptimizeExecErrorStatsResponse is the response struct for api GetQueryOptimizeExecErrorStats

@@ -77,6 +77,7 @@ type GetQueryOptimizeDataTopRequest struct {
 	Engine         string `position:"Query" name:"Engine"`
 	InstanceIds    string `position:"Query" name:"InstanceIds"`
 	Time           string `position:"Query" name:"Time"`
+	Region         string `position:"Query" name:"Region"`
 }
 
 // GetQueryOptimizeDataTopResponse is the response struct for api GetQueryOptimizeDataTop

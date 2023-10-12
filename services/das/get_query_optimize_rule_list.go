@@ -75,6 +75,7 @@ type GetQueryOptimizeRuleListRequest struct {
 	ConsoleContext string `position:"Query" name:"ConsoleContext"`
 	Engine         string `position:"Query" name:"Engine"`
 	InstanceIds    string `position:"Query" name:"InstanceIds"`
+	Region         string `position:"Query" name:"Region"`
 }
 
 // GetQueryOptimizeRuleListResponse is the response struct for api GetQueryOptimizeRuleList

@@ -17,11 +17,14 @@ package das
 
 // DataInDescribeCacheAnalysisJob is a nested struct in das response
 type DataInDescribeCacheAnalysisJob struct {
-	TaskState   string                            `json:"TaskState" xml:"TaskState"`
-	JobId       string                            `json:"JobId" xml:"JobId"`
-	Message     string                            `json:"Message" xml:"Message"`
-	InstanceId  string                            `json:"InstanceId" xml:"InstanceId"`
-	NodeId      string                            `json:"NodeId" xml:"NodeId"`
-	KeyPrefixes KeyPrefixes                       `json:"KeyPrefixes" xml:"KeyPrefixes"`
-	BigKeys     BigKeysInDescribeCacheAnalysisJob `json:"BigKeys" xml:"BigKeys"`
+	TaskState          string                            `json:"TaskState" xml:"TaskState"`
+	JobId              string                            `json:"JobId" xml:"JobId"`
+	Message            string                            `json:"Message" xml:"Message"`
+	InstanceId         string                            `json:"InstanceId" xml:"InstanceId"`
+	NodeId             string                            `json:"NodeId" xml:"NodeId"`
+	BigKeys            BigKeysInDescribeCacheAnalysisJob `json:"BigKeys" xml:"BigKeys"`
+	KeyPrefixes        KeyPrefixes                       `json:"KeyPrefixes" xml:"KeyPrefixes"`
+	BigKeysOfNum       BigKeysOfNum                      `json:"BigKeysOfNum" xml:"BigKeysOfNum"`
+	UnexBigKeysOfBytes UnexBigKeysOfBytes                `json:"UnexBigKeysOfBytes" xml:"UnexBigKeysOfBytes"`
+	UnexBigKeysOfNum   UnexBigKeysOfNum                  `json:"UnexBigKeysOfNum" xml:"UnexBigKeysOfNum"`
 }

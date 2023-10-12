@@ -1,3 +1,7 @@
+2023-10-12 Version: v1.62.580
+- Generated 2020-01-16 for `DAS`.
+- Add GetMongoDBCurrentOp API.
+
 2023-10-12 Version: v1.62.579
 - Generated 2016-08-01 for `Push`.
 - Supported AndroidTargetUserType. AndroidHonorTargetUserType for Push and MassPush.

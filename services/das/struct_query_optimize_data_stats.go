@@ -34,5 +34,6 @@ type QueryOptimizeDataStats struct {
 	AvgRowsSent     string  `json:"AvgRowsSent" xml:"AvgRowsSent"`
 	MaxRowsAffected int64   `json:"MaxRowsAffected" xml:"MaxRowsAffected"`
 	AvgRowsAffected string  `json:"AvgRowsAffected" xml:"AvgRowsAffected"`
+	User            string  `json:"User" xml:"User"`
 	RuleList        []Rules `json:"RuleList" xml:"RuleList"`
 }

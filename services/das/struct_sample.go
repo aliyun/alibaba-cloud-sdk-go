@@ -17,13 +17,41 @@ package das
 
 // Sample is a nested struct in das response
 type Sample struct {
-	SqlId      string   `json:"sqlId" xml:"sqlId"`
-	Database   string   `json:"database" xml:"database"`
-	OriginHost string   `json:"originHost" xml:"originHost"`
-	InstanceId string   `json:"instanceId" xml:"instanceId"`
-	ErrorCode  string   `json:"errorCode" xml:"errorCode"`
-	User       string   `json:"user" xml:"user"`
-	Sql        string   `json:"sql" xml:"sql"`
-	Timestamp  int64    `json:"timestamp" xml:"timestamp"`
-	Tables     []string `json:"tables" xml:"tables"`
+	EndEventId          int      `json:"EndEventId" xml:"EndEventId"`
+	Warnings            int      `json:"Warnings" xml:"Warnings"`
+	ErrorCode           string   `json:"errorCode" xml:"errorCode"`
+	ThreadId            int      `json:"ThreadId" xml:"ThreadId"`
+	Errors              int      `json:"Errors" xml:"Errors"`
+	Timestamp           int64    `json:"timestamp" xml:"timestamp"`
+	CreateTmpTables     int      `json:"CreateTmpTables" xml:"CreateTmpTables"`
+	SelectRangeCheck    int      `json:"SelectRangeCheck" xml:"SelectRangeCheck"`
+	SelectRange         int      `json:"SelectRange" xml:"SelectRange"`
+	SortScan            int      `json:"SortScan" xml:"SortScan"`
+	Database            string   `json:"database" xml:"database"`
+	Db                  string   `json:"Db" xml:"Db"`
+	SelectFullRangeJoin int      `json:"SelectFullRangeJoin" xml:"SelectFullRangeJoin"`
+	SortMergePasses     int      `json:"SortMergePasses" xml:"SortMergePasses"`
+	SelectFullJoin      int      `json:"SelectFullJoin" xml:"SelectFullJoin"`
+	NodeId              string   `json:"NodeId" xml:"NodeId"`
+	UserId              string   `json:"UserId" xml:"UserId"`
+	InstanceId          string   `json:"InstanceId" xml:"InstanceId"`
+	RowsSent            int      `json:"RowsSent" xml:"RowsSent"`
+	OriginHost          string   `json:"originHost" xml:"originHost"`
+	EventId             int      `json:"EventId" xml:"EventId"`
+	User                string   `json:"user" xml:"user"`
+	Sql                 string   `json:"sql" xml:"sql"`
+	LockLatency         string   `json:"LockLatency" xml:"LockLatency"`
+	RowsAffected        int      `json:"RowsAffected" xml:"RowsAffected"`
+	NoIndexUsed         int      `json:"NoIndexUsed" xml:"NoIndexUsed"`
+	Latency             string   `json:"Latency" xml:"Latency"`
+	RowsExamined        int      `json:"RowsExamined" xml:"RowsExamined"`
+	SortRange           int      `json:"SortRange" xml:"SortRange"`
+	SortRows            int      `json:"SortRows" xml:"SortRows"`
+	SqlId               string   `json:"SqlId" xml:"SqlId"`
+	EventName           string   `json:"EventName" xml:"EventName"`
+	SelectScan          int      `json:"SelectScan" xml:"SelectScan"`
+	NoGoodIndexUsed     int      `json:"NoGoodIndexUsed" xml:"NoGoodIndexUsed"`
+	LogicId             string   `json:"LogicId" xml:"LogicId"`
+	CreateTmpDiskTables int      `json:"CreateTmpDiskTables" xml:"CreateTmpDiskTables"`
+	Tables              []string `json:"tables" xml:"tables"`
 }

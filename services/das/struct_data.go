@@ -39,6 +39,7 @@ type Data struct {
 	Message                                                 string                                     `json:"Message" xml:"Message"`
 	CallerUid                                               string                                     `json:"CallerUid" xml:"CallerUid"`
 	ErrorMsg                                                string                                     `json:"ErrorMsg" xml:"ErrorMsg"`
+	Success                                                 bool                                       `json:"success" xml:"success"`
 	TableSchema                                             string                                     `json:"TableSchema" xml:"TableSchema"`
 	DtsJobClass                                             string                                     `json:"DtsJobClass" xml:"DtsJobClass"`
 	EnableAutoResourceOptimizeCount                         int64                                      `json:"EnableAutoResourceOptimizeCount" xml:"EnableAutoResourceOptimizeCount"`
@@ -85,7 +86,6 @@ type Data struct {
 	ParseFilePath                                           string                                     `json:"ParseFilePath" xml:"ParseFilePath"`
 	ClientType                                              string                                     `json:"ClientType" xml:"ClientType"`
 	ClientGatewayId                                         string                                     `json:"ClientGatewayId" xml:"ClientGatewayId"`
-	Success                                                 string                                     `json:"Success" xml:"Success"`
 	ParseCmd                                                string                                     `json:"ParseCmd" xml:"ParseCmd"`
 	OwnerId                                                 string                                     `json:"OwnerId" xml:"OwnerId"`
 	MetaFilePath                                            string                                     `json:"MetaFilePath" xml:"MetaFilePath"`
@@ -95,12 +95,12 @@ type Data struct {
 	ExpireTime                                              int64                                      `json:"expireTime" xml:"expireTime"`
 	EventContext                                            string                                     `json:"eventContext" xml:"eventContext"`
 	TotalAutoThrottleRulesCount                             int64                                      `json:"TotalAutoThrottleRulesCount" xml:"TotalAutoThrottleRulesCount"`
-	KillSuccessCount                                        int64                                      `json:"KillSuccessCount" xml:"KillSuccessCount"`
 	IsFinish                                                bool                                       `json:"IsFinish" xml:"IsFinish"`
 	SqlRetention                                            string                                     `json:"sqlRetention" xml:"sqlRetention"`
 	StorageFreeQuotaInMB                                    string                                     `json:"storageFreeQuotaInMB" xml:"storageFreeQuotaInMB"`
 	DtsJobStatus                                            string                                     `json:"DtsJobStatus" xml:"DtsJobStatus"`
 	ContactName                                             string                                     `json:"contactName" xml:"contactName"`
+	ConnCheckErrorCode                                      string                                     `json:"connCheckErrorCode" xml:"connCheckErrorCode"`
 	EnableAutoThrottleCount                                 int64                                      `json:"EnableAutoThrottleCount" xml:"EnableAutoThrottleCount"`
 	DstType                                                 string                                     `json:"DstType" xml:"DstType"`
 	Engine                                                  string                                     `json:"engine" xml:"engine"`
@@ -111,9 +111,10 @@ type Data struct {
 	ContactGroupName                                        string                                     `json:"contactGroupName" xml:"contactGroupName"`
 	Token                                                   string                                     `json:"Token" xml:"Token"`
 	DstInstanceUuid                                         string                                     `json:"DstInstanceUuid" xml:"DstInstanceUuid"`
+	Tags                                                    string                                     `json:"Tags" xml:"Tags"`
 	DbLinkId                                                int64                                      `json:"DbLinkId" xml:"DbLinkId"`
 	ConfigSuccessInstanceCount                              int64                                      `json:"ConfigSuccessInstanceCount" xml:"ConfigSuccessInstanceCount"`
-	IgnoredUserSessionCount                                 int64                                      `json:"IgnoredUserSessionCount" xml:"IgnoredUserSessionCount"`
+	SqlId                                                   string                                     `json:"SqlId" xml:"SqlId"`
 	SrcInstanceUuid                                         string                                     `json:"SrcInstanceUuid" xml:"SrcInstanceUuid"`
 	ArchiveFolder                                           string                                     `json:"ArchiveFolder" xml:"ArchiveFolder"`
 	TurnOffAutoThrottleCount                                int64                                      `json:"TurnOffAutoThrottleCount" xml:"TurnOffAutoThrottleCount"`
@@ -122,8 +123,9 @@ type Data struct {
 	StartTime                                               int64                                      `json:"startTime" xml:"startTime"`
 	HasEnableRuleButNotDasProCount                          int64                                      `json:"HasEnableRuleButNotDasProCount" xml:"HasEnableRuleButNotDasProCount"`
 	MetaFileOnOss                                           string                                     `json:"MetaFileOnOss" xml:"MetaFileOnOss"`
+	FailType                                                string                                     `json:"failType" xml:"failType"`
 	BackupId                                                string                                     `json:"BackupId" xml:"BackupId"`
-	KillFailCount                                           int64                                      `json:"KillFailCount" xml:"KillFailCount"`
+	Comments                                                string                                     `json:"Comments" xml:"Comments"`
 	ErrorMessage                                            string                                     `json:"ErrorMessage" xml:"ErrorMessage"`
 	Uuid                                                    string                                     `json:"Uuid" xml:"Uuid"`
 	NodeId                                                  string                                     `json:"NodeId" xml:"NodeId"`
@@ -135,6 +137,7 @@ type Data struct {
 	Description                                             string                                     `json:"Description" xml:"Description"`
 	ErrorCode                                               string                                     `json:"ErrorCode" xml:"ErrorCode"`
 	BenchStepStatus                                         string                                     `json:"BenchStepStatus" xml:"BenchStepStatus"`
+	ConnCheckErrorMessage                                   string                                     `json:"connCheckErrorMessage" xml:"connCheckErrorMessage"`
 	SmartPressureTime                                       int                                        `json:"SmartPressureTime" xml:"SmartPressureTime"`
 	GmtCreate                                               int64                                      `json:"gmtCreate" xml:"gmtCreate"`
 	Results                                                 string                                     `json:"Results" xml:"Results"`
@@ -142,19 +145,20 @@ type Data struct {
 	SyncStatus                                              string                                     `json:"SyncStatus" xml:"SyncStatus"`
 	DstPort                                                 int                                        `json:"DstPort" xml:"DstPort"`
 	TotalAutoResourceOptimizeRulesCount                     int64                                      `json:"TotalAutoResourceOptimizeRulesCount" xml:"TotalAutoResourceOptimizeRulesCount"`
+	MigrationPredictRemainingTime                           int64                                      `json:"migrationPredictRemainingTime" xml:"migrationPredictRemainingTime"`
 	Region                                                  string                                     `json:"region" xml:"region"`
 	LoadCmd                                                 string                                     `json:"LoadCmd" xml:"LoadCmd"`
 	EventSendGroup                                          []string                                   `json:"eventSendGroup" xml:"eventSendGroup"`
 	NeverEnableAutoThrottleOrReleasedInstanceIdList         []string                                   `json:"NeverEnableAutoThrottleOrReleasedInstanceIdList" xml:"NeverEnableAutoThrottleOrReleasedInstanceIdList"`
 	NeverEnableAutoResourceOptimizeOrReleasedInstanceIdList []string                                   `json:"NeverEnableAutoResourceOptimizeOrReleasedInstanceIdList" xml:"NeverEnableAutoResourceOptimizeOrReleasedInstanceIdList"`
-	Sessions                                                []int64                                    `json:"Sessions" xml:"Sessions"`
-	Storage                                                 Storage                                    `json:"Storage" xml:"Storage"`
 	SessionData                                             SessionData                                `json:"SessionData" xml:"SessionData"`
+	Storage                                                 Storage                                    `json:"Storage" xml:"Storage"`
 	Resource                                                Resource                                   `json:"Resource" xml:"Resource"`
 	Shard                                                   Shard                                      `json:"Shard" xml:"Shard"`
 	Spec                                                    Spec                                       `json:"Spec" xml:"Spec"`
 	Bandwidth                                               Bandwidth                                  `json:"Bandwidth" xml:"Bandwidth"`
 	ConfigResponse                                          ConfigResponse                             `json:"ConfigResponse" xml:"ConfigResponse"`
+	SourceStats                                             []SourceStatsItem                          `json:"SourceStats" xml:"SourceStats"`
 	SubResults                                              SubResultsInGetHDMAliyunResourceSyncResult `json:"SubResults" xml:"SubResults"`
 	KeyPrefixes                                             KeyPrefixes                                `json:"KeyPrefixes" xml:"KeyPrefixes"`
 	ConfigFailInstanceList                                  []ConfigFailInstanceListItem               `json:"ConfigFailInstanceList" xml:"ConfigFailInstanceList"`
@@ -162,11 +166,15 @@ type Data struct {
 	ConfigSuccessInstanceList                               []ConfigSuccessInstanceListItem            `json:"ConfigSuccessInstanceList" xml:"ConfigSuccessInstanceList"`
 	HasEnableRuleButNotDasProList                           []HasEnableRuleButNotDasProListItem        `json:"HasEnableRuleButNotDasProList" xml:"HasEnableRuleButNotDasProList"`
 	List                                                    ListInDescribeCacheAnalysisJobs            `json:"List" xml:"List"`
+	BigKeysOfNum                                            BigKeysOfNum                               `json:"BigKeysOfNum" xml:"BigKeysOfNum"`
 	EnableAutoThrottleList                                  []EnableAutoThrottleListItem               `json:"EnableAutoThrottleList" xml:"EnableAutoThrottleList"`
 	TurnOffAutoThrottleList                                 []TurnOffAutoThrottleListItem              `json:"TurnOffAutoThrottleList" xml:"TurnOffAutoThrottleList"`
 	BigKeys                                                 BigKeysInCreateCacheAnalysisJob            `json:"BigKeys" xml:"BigKeys"`
 	ContactGroups                                           []ContactGroupsItem                        `json:"contactGroups" xml:"contactGroups"`
-	Result                                                  []ResultItem                               `json:"result" xml:"result"`
+	UnexBigKeysOfBytes                                      UnexBigKeysOfBytes                         `json:"UnexBigKeysOfBytes" xml:"UnexBigKeysOfBytes"`
+	Result                                                  []List                                     `json:"result" xml:"result"`
+	Sessions                                                []SessionsItem                             `json:"Sessions" xml:"Sessions"`
+	UnexBigKeysOfNum                                        UnexBigKeysOfNum                           `json:"UnexBigKeysOfNum" xml:"UnexBigKeysOfNum"`
 	EnableAutoResourceOptimizeList                          []EnableAutoResourceOptimizeListItem       `json:"EnableAutoResourceOptimizeList" xml:"EnableAutoResourceOptimizeList"`
 	Contacts                                                []ContactsItem                             `json:"contacts" xml:"contacts"`
 }
