@@ -72,6 +72,7 @@ func (client *Client) PushNoticeToAndroidWithCallback(request *PushNoticeToAndro
 type PushNoticeToAndroidRequest struct {
 	*requests.RpcRequest
 	ExtParameters string           `position:"Query" name:"ExtParameters"`
+	StoreOffline  requests.Boolean `position:"Query" name:"StoreOffline"`
 	Title         string           `position:"Query" name:"Title"`
 	Body          string           `position:"Query" name:"Body"`
 	JobKey        string           `position:"Query" name:"JobKey"`

@@ -71,12 +71,13 @@ func (client *Client) PushMessageToAndroidWithCallback(request *PushMessageToAnd
 // PushMessageToAndroidRequest is the request struct for api PushMessageToAndroid
 type PushMessageToAndroidRequest struct {
 	*requests.RpcRequest
-	Title       string           `position:"Query" name:"Title"`
-	Body        string           `position:"Query" name:"Body"`
-	JobKey      string           `position:"Query" name:"JobKey"`
-	Target      string           `position:"Query" name:"Target"`
-	AppKey      requests.Integer `position:"Query" name:"AppKey"`
-	TargetValue string           `position:"Query" name:"TargetValue"`
+	StoreOffline requests.Boolean `position:"Query" name:"StoreOffline"`
+	Title        string           `position:"Query" name:"Title"`
+	Body         string           `position:"Query" name:"Body"`
+	JobKey       string           `position:"Query" name:"JobKey"`
+	Target       string           `position:"Query" name:"Target"`
+	AppKey       requests.Integer `position:"Query" name:"AppKey"`
+	TargetValue  string           `position:"Query" name:"TargetValue"`
 }
 
 // PushMessageToAndroidResponse is the response struct for api PushMessageToAndroid

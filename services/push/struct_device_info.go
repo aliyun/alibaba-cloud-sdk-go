@@ -27,4 +27,6 @@ type DeviceInfo struct {
 	Tags           string `json:"Tags" xml:"Tags"`
 	DeviceToken    string `json:"DeviceToken" xml:"DeviceToken"`
 	Alias          string `json:"Alias" xml:"Alias"`
+	Brand          string `json:"Brand" xml:"Brand"`
+	Model          string `json:"Model" xml:"Model"`
 }

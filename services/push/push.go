@@ -91,6 +91,7 @@ type PushRequest struct {
 	AndroidNotificationBarPriority   requests.Integer `position:"Query" name:"AndroidNotificationBarPriority"`
 	ExpireTime                       string           `position:"Query" name:"ExpireTime"`
 	AndroidImageUrl                  string           `position:"Query" name:"AndroidImageUrl"`
+	AndroidHonorTargetUserType       requests.Integer `position:"Query" name:"AndroidHonorTargetUserType"`
 	AndroidNotificationVivoChannel   string           `position:"Query" name:"AndroidNotificationVivoChannel"`
 	IOSNotificationCategory          string           `position:"Query" name:"iOSNotificationCategory"`
 	AndroidNotificationXiaomiChannel string           `position:"Query" name:"AndroidNotificationXiaomiChannel"`
@@ -124,6 +125,7 @@ type PushRequest struct {
 	AndroidHuaweiReceiptId           string           `position:"Query" name:"AndroidHuaweiReceiptId"`
 	AndroidNotificationHonorChannel  string           `position:"Query" name:"AndroidNotificationHonorChannel"`
 	AndroidXiaomiImageUrl            string           `position:"Query" name:"AndroidXiaomiImageUrl"`
+	AndroidTargetUserType            requests.Integer `position:"Query" name:"AndroidTargetUserType"`
 	SmsTemplateName                  string           `position:"Query" name:"SmsTemplateName"`
 	AndroidPopupBody                 string           `position:"Query" name:"AndroidPopupBody"`
 	AndroidBigPictureUrl             string           `position:"Query" name:"AndroidBigPictureUrl"`

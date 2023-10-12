@@ -96,6 +96,7 @@ type MassPushPushTask struct {
 	AndroidNotificationBarPriority   string `name:"AndroidNotificationBarPriority"`
 	ExpireTime                       string `name:"ExpireTime"`
 	AndroidImageUrl                  string `name:"AndroidImageUrl"`
+	AndroidHonorTargetUserType       string `name:"AndroidHonorTargetUserType"`
 	AndroidNotificationVivoChannel   string `name:"AndroidNotificationVivoChannel"`
 	IOSNotificationCategory          string `name:"iOSNotificationCategory"`
 	AndroidNotificationXiaomiChannel string `name:"AndroidNotificationXiaomiChannel"`
@@ -127,6 +128,7 @@ type MassPushPushTask struct {
 	AndroidHuaweiReceiptId           string `name:"AndroidHuaweiReceiptId"`
 	AndroidNotificationHonorChannel  string `name:"AndroidNotificationHonorChannel"`
 	AndroidXiaomiImageUrl            string `name:"AndroidXiaomiImageUrl"`
+	AndroidTargetUserType            string `name:"AndroidTargetUserType"`
 	AndroidPopupBody                 string `name:"AndroidPopupBody"`
 	AndroidBigPictureUrl             string `name:"AndroidBigPictureUrl"`
 	IOSSilentNotification            string `name:"iOSSilentNotification"`
