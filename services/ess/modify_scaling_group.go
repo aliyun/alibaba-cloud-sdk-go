@@ -92,6 +92,7 @@ type ModifyScalingGroupRequest struct {
 	OnDemandBaseCapacity                requests.Integer                            `position:"Query" name:"OnDemandBaseCapacity"`
 	OnDemandPercentageAboveBaseCapacity requests.Integer                            `position:"Query" name:"OnDemandPercentageAboveBaseCapacity"`
 	SpotAllocationStrategy              string                                      `position:"Query" name:"SpotAllocationStrategy"`
+	DisableDesiredCapacity              requests.Boolean                            `position:"Query" name:"DisableDesiredCapacity"`
 	RemovalPolicy1                      string                                      `position:"Query" name:"RemovalPolicy.1"`
 	RemovalPolicy2                      string                                      `position:"Query" name:"RemovalPolicy.2"`
 	RemovalPolicy3                      string                                      `position:"Query" name:"RemovalPolicy.3"`

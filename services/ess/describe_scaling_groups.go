@@ -71,36 +71,43 @@ func (client *Client) DescribeScalingGroupsWithCallback(request *DescribeScaling
 // DescribeScalingGroupsRequest is the request struct for api DescribeScalingGroups
 type DescribeScalingGroupsRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
-	GroupType            string           `position:"Query" name:"GroupType"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ScalingGroupId       *[]string        `position:"Query" name:"ScalingGroupId"  type:"Repeated"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	ScalingGroupName20   string           `position:"Query" name:"ScalingGroupName.20"`
-	ScalingGroupName19   string           `position:"Query" name:"ScalingGroupName.19"`
-	ScalingGroupName18   string           `position:"Query" name:"ScalingGroupName.18"`
-	ScalingGroupName17   string           `position:"Query" name:"ScalingGroupName.17"`
-	ScalingGroupName16   string           `position:"Query" name:"ScalingGroupName.16"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ScalingGroupName     string           `position:"Query" name:"ScalingGroupName"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	ScalingGroupName1    string           `position:"Query" name:"ScalingGroupName.1"`
-	ScalingGroupName2    string           `position:"Query" name:"ScalingGroupName.2"`
-	ScalingGroupName7    string           `position:"Query" name:"ScalingGroupName.7"`
-	ScalingGroupName11   string           `position:"Query" name:"ScalingGroupName.11"`
-	ScalingGroupName8    string           `position:"Query" name:"ScalingGroupName.8"`
-	ScalingGroupName10   string           `position:"Query" name:"ScalingGroupName.10"`
-	ScalingGroupName9    string           `position:"Query" name:"ScalingGroupName.9"`
-	ScalingGroupName3    string           `position:"Query" name:"ScalingGroupName.3"`
-	ScalingGroupName15   string           `position:"Query" name:"ScalingGroupName.15"`
-	ScalingGroupName4    string           `position:"Query" name:"ScalingGroupName.4"`
-	ScalingGroupName14   string           `position:"Query" name:"ScalingGroupName.14"`
-	ScalingGroupName5    string           `position:"Query" name:"ScalingGroupName.5"`
-	ScalingGroupName13   string           `position:"Query" name:"ScalingGroupName.13"`
-	ScalingGroupName6    string           `position:"Query" name:"ScalingGroupName.6"`
-	ScalingGroupName12   string           `position:"Query" name:"ScalingGroupName.12"`
+	ResourceOwnerId      requests.Integer            `position:"Query" name:"ResourceOwnerId"`
+	ResourceGroupId      string                      `position:"Query" name:"ResourceGroupId"`
+	GroupType            string                      `position:"Query" name:"GroupType"`
+	Tag                  *[]DescribeScalingGroupsTag `position:"Query" name:"Tag"  type:"Repeated"`
+	OwnerId              requests.Integer            `position:"Query" name:"OwnerId"`
+	ScalingGroupId       *[]string                   `position:"Query" name:"ScalingGroupId"  type:"Repeated"`
+	PageNumber           requests.Integer            `position:"Query" name:"PageNumber"`
+	PageSize             requests.Integer            `position:"Query" name:"PageSize"`
+	ScalingGroupName20   string                      `position:"Query" name:"ScalingGroupName.20"`
+	ScalingGroupName19   string                      `position:"Query" name:"ScalingGroupName.19"`
+	ScalingGroupName18   string                      `position:"Query" name:"ScalingGroupName.18"`
+	ScalingGroupName17   string                      `position:"Query" name:"ScalingGroupName.17"`
+	ScalingGroupName16   string                      `position:"Query" name:"ScalingGroupName.16"`
+	ResourceOwnerAccount string                      `position:"Query" name:"ResourceOwnerAccount"`
+	ScalingGroupName     string                      `position:"Query" name:"ScalingGroupName"`
+	OwnerAccount         string                      `position:"Query" name:"OwnerAccount"`
+	ScalingGroupName1    string                      `position:"Query" name:"ScalingGroupName.1"`
+	ScalingGroupName2    string                      `position:"Query" name:"ScalingGroupName.2"`
+	ScalingGroupName7    string                      `position:"Query" name:"ScalingGroupName.7"`
+	ScalingGroupName11   string                      `position:"Query" name:"ScalingGroupName.11"`
+	ScalingGroupName8    string                      `position:"Query" name:"ScalingGroupName.8"`
+	ScalingGroupName10   string                      `position:"Query" name:"ScalingGroupName.10"`
+	ScalingGroupName9    string                      `position:"Query" name:"ScalingGroupName.9"`
+	ScalingGroupName3    string                      `position:"Query" name:"ScalingGroupName.3"`
+	ScalingGroupName15   string                      `position:"Query" name:"ScalingGroupName.15"`
+	ScalingGroupName4    string                      `position:"Query" name:"ScalingGroupName.4"`
+	ScalingGroupName14   string                      `position:"Query" name:"ScalingGroupName.14"`
+	ScalingGroupName5    string                      `position:"Query" name:"ScalingGroupName.5"`
+	ScalingGroupName13   string                      `position:"Query" name:"ScalingGroupName.13"`
+	ScalingGroupName6    string                      `position:"Query" name:"ScalingGroupName.6"`
+	ScalingGroupName12   string                      `position:"Query" name:"ScalingGroupName.12"`
+}
+
+// DescribeScalingGroupsTag is a repeated param struct in DescribeScalingGroupsRequest
+type DescribeScalingGroupsTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // DescribeScalingGroupsResponse is the response struct for api DescribeScalingGroups

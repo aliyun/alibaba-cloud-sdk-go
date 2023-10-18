@@ -72,6 +72,7 @@ func (client *Client) RemoveInstancesWithCallback(request *RemoveInstancesReques
 type RemoveInstancesRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId         requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken             string           `position:"Query" name:"ClientToken"`
 	ScalingGroupId          string           `position:"Query" name:"ScalingGroupId"`
 	DecreaseDesiredCapacity requests.Boolean `position:"Query" name:"DecreaseDesiredCapacity"`
 	RemovePolicy            string           `position:"Query" name:"RemovePolicy"`

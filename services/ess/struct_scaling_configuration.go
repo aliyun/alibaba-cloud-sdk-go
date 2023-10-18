@@ -52,6 +52,7 @@ type ScalingConfiguration struct {
 	Cpu                           float64                   `json:"Cpu" xml:"Cpu"`
 	ImageSnapshotId               string                    `json:"ImageSnapshotId" xml:"ImageSnapshotId"`
 	DnsConfigNameServers          []string                  `json:"DnsConfigNameServers" xml:"DnsConfigNameServers"`
+	InstanceTypes                 []string                  `json:"InstanceTypes" xml:"InstanceTypes"`
 	DnsConfigSearches             []string                  `json:"DnsConfigSearches" xml:"DnsConfigSearches"`
 	NtpServers                    []string                  `json:"NtpServers" xml:"NtpServers"`
 	Containers                    []Container               `json:"Containers" xml:"Containers"`

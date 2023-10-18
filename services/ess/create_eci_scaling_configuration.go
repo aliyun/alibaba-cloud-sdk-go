@@ -104,6 +104,7 @@ type CreateEciScalingConfigurationRequest struct {
 	SecurityContextSysctl         *[]CreateEciScalingConfigurationSecurityContextSysctl   `position:"Query" name:"SecurityContextSysctl"  type:"Repeated"`
 	DnsConfigNameServer           *[]string                                               `position:"Query" name:"DnsConfigNameServer"  type:"Repeated"`
 	InitContainer                 *[]CreateEciScalingConfigurationInitContainer           `position:"Query" name:"InitContainer"  type:"Repeated"`
+	InstanceType                  *[]string                                               `position:"Query" name:"InstanceType"  type:"Repeated"`
 	TerminationGracePeriodSeconds requests.Integer                                        `position:"Query" name:"TerminationGracePeriodSeconds"`
 	ImageRegistryCredential       *[]CreateEciScalingConfigurationImageRegistryCredential `position:"Query" name:"ImageRegistryCredential"  type:"Repeated"`
 	ResourceOwnerAccount          string                                                  `position:"Query" name:"ResourceOwnerAccount"`

@@ -72,6 +72,7 @@ func (client *Client) DetachInstancesWithCallback(request *DetachInstancesReques
 type DetachInstancesRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId         requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken             string           `position:"Query" name:"ClientToken"`
 	ScalingGroupId          string           `position:"Query" name:"ScalingGroupId"`
 	DecreaseDesiredCapacity requests.Boolean `position:"Query" name:"DecreaseDesiredCapacity"`
 	ResourceOwnerAccount    string           `position:"Query" name:"ResourceOwnerAccount"`
