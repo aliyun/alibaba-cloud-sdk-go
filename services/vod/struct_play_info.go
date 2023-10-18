@@ -37,9 +37,11 @@ type PlayInfo struct {
 	Height           int64  `json:"Height" xml:"Height"`
 	Complexity       string `json:"Complexity" xml:"Complexity"`
 	Duration         string `json:"Duration" xml:"Duration"`
+	JobExt           string `json:"JobExt" xml:"JobExt"`
 	HDRType          string `json:"HDRType" xml:"HDRType"`
 	Width            int64  `json:"Width" xml:"Width"`
 	Status           string `json:"Status" xml:"Status"`
 	Specification    string `json:"Specification" xml:"Specification"`
 	PlayURL          string `json:"PlayURL" xml:"PlayURL"`
+	JobType          int    `json:"JobType" xml:"JobType"`
 }

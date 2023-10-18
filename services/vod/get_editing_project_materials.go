@@ -83,8 +83,8 @@ type GetEditingProjectMaterialsRequest struct {
 // GetEditingProjectMaterialsResponse is the response struct for api GetEditingProjectMaterials
 type GetEditingProjectMaterialsResponse struct {
 	*responses.BaseResponse
-	RequestId    string       `json:"RequestId" xml:"RequestId"`
-	MaterialList MaterialList `json:"MaterialList" xml:"MaterialList"`
+	RequestId    string                                   `json:"RequestId" xml:"RequestId"`
+	MaterialList MaterialListInGetEditingProjectMaterials `json:"MaterialList" xml:"MaterialList"`
 }
 
 // CreateGetEditingProjectMaterialsRequest creates a request to invoke GetEditingProjectMaterials API

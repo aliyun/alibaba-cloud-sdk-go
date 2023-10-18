@@ -71,20 +71,22 @@ func (client *Client) GetPlayInfoWithCallback(request *GetPlayInfoRequest, callb
 // GetPlayInfoRequest is the request struct for api GetPlayInfo
 type GetPlayInfoRequest struct {
 	*requests.RpcRequest
-	Formats       string           `position:"Query" name:"Formats"`
-	Channel       string           `position:"Query" name:"Channel"`
-	PlayerVersion string           `position:"Query" name:"PlayerVersion"`
-	Rand          string           `position:"Query" name:"Rand"`
-	ReAuthInfo    string           `position:"Query" name:"ReAuthInfo"`
-	PlayConfig    string           `position:"Query" name:"PlayConfig"`
-	OutputType    string           `position:"Query" name:"OutputType"`
-	Definition    string           `position:"Query" name:"Definition"`
-	AuthTimeout   requests.Integer `position:"Query" name:"AuthTimeout"`
-	StreamType    string           `position:"Query" name:"StreamType"`
-	VideoId       string           `position:"Query" name:"VideoId"`
-	ResultType    string           `position:"Query" name:"ResultType"`
-	AdditionType  string           `position:"Query" name:"AdditionType"`
-	AuthInfo      string           `position:"Query" name:"AuthInfo"`
+	Formats              string           `position:"Query" name:"Formats"`
+	Channel              string           `position:"Query" name:"Channel"`
+	DigitalWatermarkType string           `position:"Query" name:"DigitalWatermarkType"`
+	PlayerVersion        string           `position:"Query" name:"PlayerVersion"`
+	Rand                 string           `position:"Query" name:"Rand"`
+	Trace                string           `position:"Query" name:"Trace"`
+	ReAuthInfo           string           `position:"Query" name:"ReAuthInfo"`
+	PlayConfig           string           `position:"Query" name:"PlayConfig"`
+	OutputType           string           `position:"Query" name:"OutputType"`
+	Definition           string           `position:"Query" name:"Definition"`
+	AuthTimeout          requests.Integer `position:"Query" name:"AuthTimeout"`
+	StreamType           string           `position:"Query" name:"StreamType"`
+	VideoId              string           `position:"Query" name:"VideoId"`
+	ResultType           string           `position:"Query" name:"ResultType"`
+	AdditionType         string           `position:"Query" name:"AdditionType"`
+	AuthInfo             string           `position:"Query" name:"AuthInfo"`
 }
 
 // GetPlayInfoResponse is the response struct for api GetPlayInfo

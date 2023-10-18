@@ -35,5 +35,7 @@ type TranscodeTemplate struct {
 	SubtitleList         string   `json:"SubtitleList" xml:"SubtitleList"`
 	MuxConfig            string   `json:"MuxConfig" xml:"MuxConfig"`
 	TailSlateList        string   `json:"TailSlateList" xml:"TailSlateList"`
+	TraceMark            string   `json:"TraceMark" xml:"TraceMark"`
+	CopyrightMark        string   `json:"CopyrightMark" xml:"CopyrightMark"`
 	WatermarkIds         []string `json:"WatermarkIds" xml:"WatermarkIds"`
 }

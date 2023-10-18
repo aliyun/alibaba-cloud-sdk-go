@@ -72,6 +72,7 @@ func (client *Client) UploadMediaByURLWithCallback(request *UploadMediaByURLRequ
 type UploadMediaByURLRequest struct {
 	*requests.RpcRequest
 	MessageCallback string `position:"Query" name:"MessageCallback"`
+	SessionId       string `position:"Query" name:"SessionId"`
 	StorageLocation string `position:"Query" name:"StorageLocation"`
 	UserData        string `position:"Query" name:"UserData"`
 	WorkflowId      string `position:"Query" name:"WorkflowId"`

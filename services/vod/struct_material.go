@@ -17,21 +17,24 @@ package vod
 
 // Material is a nested struct in vod response
 type Material struct {
-	Status       string                                `json:"Status" xml:"Status"`
-	CreationTime string                                `json:"CreationTime" xml:"CreationTime"`
-	CateId       int                                   `json:"CateId" xml:"CateId"`
-	MaterialType string                                `json:"MaterialType" xml:"MaterialType"`
-	Tags         string                                `json:"Tags" xml:"Tags"`
-	SpriteConfig string                                `json:"SpriteConfig" xml:"SpriteConfig"`
-	Source       string                                `json:"Source" xml:"Source"`
-	CateName     string                                `json:"CateName" xml:"CateName"`
-	ModifiedTime string                                `json:"ModifiedTime" xml:"ModifiedTime"`
-	Description  string                                `json:"Description" xml:"Description"`
-	MaterialId   string                                `json:"MaterialId" xml:"MaterialId"`
-	Size         int64                                 `json:"Size" xml:"Size"`
-	CoverURL     string                                `json:"CoverURL" xml:"CoverURL"`
-	Duration     float64                               `json:"Duration" xml:"Duration"`
-	Title        string                                `json:"Title" xml:"Title"`
-	Sprites      Sprites                               `json:"Sprites" xml:"Sprites"`
-	Snapshots    SnapshotsInGetEditingProjectMaterials `json:"Snapshots" xml:"Snapshots"`
+	Tags         string   `json:"Tags" xml:"Tags"`
+	ModifyTime   string   `json:"ModifyTime" xml:"ModifyTime"`
+	Title        string   `json:"Title" xml:"Title"`
+	CreateTime   string   `json:"CreateTime" xml:"CreateTime"`
+	CreationTime string   `json:"CreationTime" xml:"CreationTime"`
+	CateId       int      `json:"CateId" xml:"CateId"`
+	Source       string   `json:"Source" xml:"Source"`
+	CoverURL     string   `json:"CoverURL" xml:"CoverURL"`
+	ModifiedTime string   `json:"ModifiedTime" xml:"ModifiedTime"`
+	MaterialType string   `json:"MaterialType" xml:"MaterialType"`
+	Duration     float64  `json:"Duration" xml:"Duration"`
+	MaterialId   string   `json:"MaterialId" xml:"MaterialId"`
+	CateName     string   `json:"CateName" xml:"CateName"`
+	Size         int64    `json:"Size" xml:"Size"`
+	Status       string   `json:"Status" xml:"Status"`
+	SpriteConfig string   `json:"SpriteConfig" xml:"SpriteConfig"`
+	Description  string   `json:"Description" xml:"Description"`
+	CustomerId   int64    `json:"CustomerId" xml:"CustomerId"`
+	Sprites      []string `json:"Sprites" xml:"Sprites"`
+	Snapshots    []string `json:"Snapshots" xml:"Snapshots"`
 }
