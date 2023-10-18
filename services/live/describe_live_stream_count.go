@@ -78,8 +78,8 @@ type DescribeLiveStreamCountRequest struct {
 // DescribeLiveStreamCountResponse is the response struct for api DescribeLiveStreamCount
 type DescribeLiveStreamCountResponse struct {
 	*responses.BaseResponse
-	RequestId        string           `json:"RequestId" xml:"RequestId"`
-	StreamCountInfos StreamCountInfos `json:"StreamCountInfos" xml:"StreamCountInfos"`
+	RequestId        string                                    `json:"RequestId" xml:"RequestId"`
+	StreamCountInfos StreamCountInfosInDescribeLiveStreamCount `json:"StreamCountInfos" xml:"StreamCountInfos"`
 }
 
 // CreateDescribeLiveStreamCountRequest creates a request to invoke DescribeLiveStreamCount API

@@ -80,6 +80,7 @@ type SetLiveLazyPullStreamInfoConfigRequest struct {
 	PullDomainName     string           `position:"Query" name:"PullDomainName"`
 	OwnerId            requests.Integer `position:"Query" name:"OwnerId"`
 	PullAppName        string           `position:"Query" name:"PullAppName"`
+	TranscodeLazy      string           `position:"Query" name:"TranscodeLazy"`
 	PullProtocol       string           `position:"Query" name:"PullProtocol"`
 }
 

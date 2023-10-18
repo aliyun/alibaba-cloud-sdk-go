@@ -17,16 +17,18 @@ package live
 
 // LiveStreamMonitorInfo is a nested struct in live response
 type LiveStreamMonitorInfo struct {
-	Status         int           `json:"Status" xml:"Status"`
-	MonitorConfig  string        `json:"MonitorConfig" xml:"MonitorConfig"`
-	StartTime      string        `json:"StartTime" xml:"StartTime"`
-	MonitorId      string        `json:"MonitorId" xml:"MonitorId"`
-	Domain         string        `json:"Domain" xml:"Domain"`
-	OutputTemplate string        `json:"OutputTemplate" xml:"OutputTemplate"`
-	Region         string        `json:"Region" xml:"Region"`
-	AudioFrom      int           `json:"AudioFrom" xml:"AudioFrom"`
-	MonitorName    string        `json:"MonitorName" xml:"MonitorName"`
-	StopTime       string        `json:"StopTime" xml:"StopTime"`
-	OutputUrls     OutputUrls    `json:"OutputUrls" xml:"OutputUrls"`
-	InputList      []InputConfig `json:"InputList" xml:"InputList"`
+	MonitorConfig      string        `json:"MonitorConfig" xml:"MonitorConfig"`
+	Status             int           `json:"Status" xml:"Status"`
+	MonitorId          string        `json:"MonitorId" xml:"MonitorId"`
+	Domain             string        `json:"Domain" xml:"Domain"`
+	CallbackUrl        string        `json:"CallbackUrl" xml:"CallbackUrl"`
+	AudioFrom          int           `json:"AudioFrom" xml:"AudioFrom"`
+	DingTalkWebHookUrl string        `json:"DingTalkWebHookUrl" xml:"DingTalkWebHookUrl"`
+	MonitorName        string        `json:"MonitorName" xml:"MonitorName"`
+	StopTime           string        `json:"StopTime" xml:"StopTime"`
+	StartTime          string        `json:"StartTime" xml:"StartTime"`
+	OutputTemplate     string        `json:"OutputTemplate" xml:"OutputTemplate"`
+	Region             string        `json:"Region" xml:"Region"`
+	OutputUrls         OutputUrls    `json:"OutputUrls" xml:"OutputUrls"`
+	InputList          []InputConfig `json:"InputList" xml:"InputList"`
 }

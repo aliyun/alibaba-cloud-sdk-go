@@ -71,6 +71,7 @@ func (client *Client) DescribeLiveDomainStreamTranscodeDataWithCallback(request 
 // DescribeLiveDomainStreamTranscodeDataRequest is the request struct for api DescribeLiveDomainStreamTranscodeData
 type DescribeLiveDomainStreamTranscodeDataRequest struct {
 	*requests.RpcRequest
+	Precision  string           `position:"Query" name:"Precision"`
 	StartTime  string           `position:"Query" name:"StartTime"`
 	Split      string           `position:"Query" name:"Split"`
 	DomainName string           `position:"Query" name:"DomainName"`

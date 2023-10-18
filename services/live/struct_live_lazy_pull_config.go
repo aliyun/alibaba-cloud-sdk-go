@@ -25,4 +25,5 @@ type LiveLazyPullConfig struct {
 	PullDomainName string `json:"PullDomainName" xml:"PullDomainName"`
 	DomainName     string `json:"DomainName" xml:"DomainName"`
 	PullAuthType   string `json:"PullAuthType" xml:"PullAuthType"`
+	TranscodeLazy  string `json:"TranscodeLazy" xml:"TranscodeLazy"`
 }

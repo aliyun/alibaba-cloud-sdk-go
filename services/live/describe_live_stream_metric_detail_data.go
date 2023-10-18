@@ -84,13 +84,13 @@ type DescribeLiveStreamMetricDetailDataRequest struct {
 // DescribeLiveStreamMetricDetailDataResponse is the response struct for api DescribeLiveStreamMetricDetailData
 type DescribeLiveStreamMetricDetailDataResponse struct {
 	*responses.BaseResponse
-	EndTime          string           `json:"EndTime" xml:"EndTime"`
-	StartTime        string           `json:"StartTime" xml:"StartTime"`
-	RequestId        string           `json:"RequestId" xml:"RequestId"`
-	NextPageToken    string           `json:"NextPageToken" xml:"NextPageToken"`
-	PageSize         int              `json:"PageSize" xml:"PageSize"`
-	DomainName       string           `json:"DomainName" xml:"DomainName"`
-	StreamDetailData StreamDetailData `json:"StreamDetailData" xml:"StreamDetailData"`
+	EndTime          string                                               `json:"EndTime" xml:"EndTime"`
+	StartTime        string                                               `json:"StartTime" xml:"StartTime"`
+	RequestId        string                                               `json:"RequestId" xml:"RequestId"`
+	NextPageToken    string                                               `json:"NextPageToken" xml:"NextPageToken"`
+	PageSize         int                                                  `json:"PageSize" xml:"PageSize"`
+	DomainName       string                                               `json:"DomainName" xml:"DomainName"`
+	StreamDetailData StreamDetailDataInDescribeLiveStreamMetricDetailData `json:"StreamDetailData" xml:"StreamDetailData"`
 }
 
 // CreateDescribeLiveStreamMetricDetailDataRequest creates a request to invoke DescribeLiveStreamMetricDetailData API

@@ -71,15 +71,17 @@ func (client *Client) UpdateLiveStreamMonitorWithCallback(request *UpdateLiveStr
 // UpdateLiveStreamMonitorRequest is the request struct for api UpdateLiveStreamMonitor
 type UpdateLiveStreamMonitorRequest struct {
 	*requests.RpcRequest
-	MonitorId      string           `position:"Query" name:"MonitorId"`
-	MonitorConfig  string           `position:"Query" name:"MonitorConfig"`
-	MonitorName    string           `position:"Query" name:"MonitorName"`
-	Stream         string           `position:"Query" name:"Stream"`
-	OutputTemplate string           `position:"Query" name:"OutputTemplate"`
-	App            string           `position:"Query" name:"App"`
-	InputList      string           `position:"Query" name:"InputList"`
-	OwnerId        requests.Integer `position:"Query" name:"OwnerId"`
-	Domain         string           `position:"Query" name:"Domain"`
+	MonitorId          string           `position:"Query" name:"MonitorId"`
+	MonitorConfig      string           `position:"Query" name:"MonitorConfig"`
+	MonitorName        string           `position:"Query" name:"MonitorName"`
+	Stream             string           `position:"Query" name:"Stream"`
+	OutputTemplate     string           `position:"Query" name:"OutputTemplate"`
+	App                string           `position:"Query" name:"App"`
+	InputList          string           `position:"Query" name:"InputList"`
+	DingTalkWebHookUrl string           `position:"Query" name:"DingTalkWebHookUrl"`
+	OwnerId            requests.Integer `position:"Query" name:"OwnerId"`
+	Domain             string           `position:"Query" name:"Domain"`
+	CallbackUrl        string           `position:"Query" name:"CallbackUrl"`
 }
 
 // UpdateLiveStreamMonitorResponse is the response struct for api UpdateLiveStreamMonitor

@@ -71,14 +71,16 @@ func (client *Client) CreateLiveStreamMonitorWithCallback(request *CreateLiveStr
 // CreateLiveStreamMonitorRequest is the request struct for api CreateLiveStreamMonitor
 type CreateLiveStreamMonitorRequest struct {
 	*requests.RpcRequest
-	MonitorConfig  string           `position:"Query" name:"MonitorConfig"`
-	MonitorName    string           `position:"Query" name:"MonitorName"`
-	Stream         string           `position:"Query" name:"Stream"`
-	OutputTemplate string           `position:"Query" name:"OutputTemplate"`
-	App            string           `position:"Query" name:"App"`
-	InputList      string           `position:"Query" name:"InputList"`
-	OwnerId        requests.Integer `position:"Query" name:"OwnerId"`
-	Domain         string           `position:"Query" name:"Domain"`
+	MonitorConfig      string           `position:"Query" name:"MonitorConfig"`
+	MonitorName        string           `position:"Query" name:"MonitorName"`
+	Stream             string           `position:"Query" name:"Stream"`
+	OutputTemplate     string           `position:"Query" name:"OutputTemplate"`
+	App                string           `position:"Query" name:"App"`
+	InputList          string           `position:"Query" name:"InputList"`
+	DingTalkWebHookUrl string           `position:"Query" name:"DingTalkWebHookUrl"`
+	OwnerId            requests.Integer `position:"Query" name:"OwnerId"`
+	Domain             string           `position:"Query" name:"Domain"`
+	CallbackUrl        string           `position:"Query" name:"CallbackUrl"`
 }
 
 // CreateLiveStreamMonitorResponse is the response struct for api CreateLiveStreamMonitor
