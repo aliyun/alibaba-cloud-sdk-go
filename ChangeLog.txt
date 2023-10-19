@@ -1,3 +1,7 @@
+2023-10-19 Version: v1.62.585
+- Generated 2018-11-01 for `dms-enterprise`.
+- Support CreateAuthorityTemplate, UpdateAuthorityTemplate, GetAuthorityTemplateItem, GetAuthorityTemplate return TenantId information.
+
 2023-10-18 Version: v1.62.584
 - Generated 2016-11-01 for `live`.
 - Update to support new apis.

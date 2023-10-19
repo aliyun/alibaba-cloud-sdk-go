@@ -82,6 +82,7 @@ type GetAuthorityTemplateItemResponse struct {
 	ErrorCode                 string                                              `json:"ErrorCode" xml:"ErrorCode"`
 	ErrorMessage              string                                              `json:"ErrorMessage" xml:"ErrorMessage"`
 	Success                   bool                                                `json:"Success" xml:"Success"`
+	Tid                       int64                                               `json:"Tid" xml:"Tid"`
 	AuthorityTemplateItemList AuthorityTemplateItemListInGetAuthorityTemplateItem `json:"AuthorityTemplateItemList" xml:"AuthorityTemplateItemList"`
 }
 
