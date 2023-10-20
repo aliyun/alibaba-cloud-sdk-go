@@ -72,6 +72,7 @@ func (client *Client) UnAssignPrivateIpAddressWithCallback(request *UnAssignPriv
 type UnAssignPrivateIpAddressRequest struct {
 	*requests.RpcRequest
 	SubnetId           string `position:"Body" name:"SubnetId"`
+	ClientToken        string `position:"Body" name:"ClientToken"`
 	PrivateIpAddress   string `position:"Body" name:"PrivateIpAddress"`
 	IpName             string `position:"Body" name:"IpName"`
 	NetworkInterfaceId string `position:"Body" name:"NetworkInterfaceId"`

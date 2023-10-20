@@ -71,6 +71,7 @@ func (client *Client) AssignPrivateIpAddressWithCallback(request *AssignPrivateI
 // AssignPrivateIpAddressRequest is the request struct for api AssignPrivateIpAddress
 type AssignPrivateIpAddressRequest struct {
 	*requests.RpcRequest
+	ClientToken        string           `position:"Body" name:"ClientToken"`
 	Description        string           `position:"Body" name:"Description"`
 	AssignMac          requests.Boolean `position:"Body" name:"AssignMac"`
 	SubnetId           string           `position:"Body" name:"SubnetId"`

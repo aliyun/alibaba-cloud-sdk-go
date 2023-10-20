@@ -72,6 +72,7 @@ func (client *Client) ListNodeInfosForPodWithCallback(request *ListNodeInfosForP
 type ListNodeInfosForPodRequest struct {
 	*requests.RpcRequest
 	ClusterId string `position:"Body" name:"ClusterId"`
+	ZoneId    string `position:"Body" name:"ZoneId"`
 	NodeId    string `position:"Body" name:"NodeId"`
 }
 

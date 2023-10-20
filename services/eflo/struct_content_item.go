@@ -18,6 +18,7 @@ package eflo
 // ContentItem is a nested struct in eflo response
 type ContentItem struct {
 	RegionId    string   `json:"RegionId" xml:"RegionId"`
+	ZoneId      string   `json:"ZoneId" xml:"ZoneId"`
 	ClusterId   string   `json:"ClusterId" xml:"ClusterId"`
 	VpcId       string   `json:"VpcId" xml:"VpcId"`
 	NodeId      string   `json:"NodeId" xml:"NodeId"`

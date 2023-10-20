@@ -71,6 +71,7 @@ func (client *Client) DeleteElasticNetworkInterfaceWithCallback(request *DeleteE
 // DeleteElasticNetworkInterfaceRequest is the request struct for api DeleteElasticNetworkInterface
 type DeleteElasticNetworkInterfaceRequest struct {
 	*requests.RpcRequest
+	ClientToken               string `position:"Body" name:"ClientToken"`
 	ElasticNetworkInterfaceId string `position:"Body" name:"ElasticNetworkInterfaceId"`
 }
 

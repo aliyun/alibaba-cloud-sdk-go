@@ -71,6 +71,7 @@ func (client *Client) UpdateElasticNetworkInterfaceWithCallback(request *UpdateE
 // UpdateElasticNetworkInterfaceRequest is the request struct for api UpdateElasticNetworkInterface
 type UpdateElasticNetworkInterfaceRequest struct {
 	*requests.RpcRequest
+	ClientToken               string `position:"Body" name:"ClientToken"`
 	Description               string `position:"Body" name:"Description"`
 	ElasticNetworkInterfaceId string `position:"Body" name:"ElasticNetworkInterfaceId"`
 }
