@@ -79,6 +79,7 @@ type ModifyDBInstanceNetExpireTimeRequest struct {
 	ResourceOwnerAccount     string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount             string           `position:"Query" name:"OwnerAccount"`
 	OwnerId                  requests.Integer `position:"Query" name:"OwnerId"`
+	Category                 string           `position:"Query" name:"Category"`
 }
 
 // ModifyDBInstanceNetExpireTimeResponse is the response struct for api ModifyDBInstanceNetExpireTime

@@ -27,6 +27,7 @@ type DBInstance struct {
 	MaxConnections              int                                           `json:"MaxConnections" xml:"MaxConnections"`
 	HiddenZoneId                string                                        `json:"HiddenZoneId" xml:"HiddenZoneId"`
 	DBInstanceType              string                                        `json:"DBInstanceType" xml:"DBInstanceType"`
+	UseClusterBackup            bool                                          `json:"UseClusterBackup" xml:"UseClusterBackup"`
 	DBInstanceId                string                                        `json:"DBInstanceId" xml:"DBInstanceId"`
 	NetworkType                 string                                        `json:"NetworkType" xml:"NetworkType"`
 	ReplicationFactor           string                                        `json:"ReplicationFactor" xml:"ReplicationFactor"`
