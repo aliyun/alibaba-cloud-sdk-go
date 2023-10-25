@@ -93,7 +93,7 @@ func CreateGetAuthorizationUrlRequest() (request *GetAuthorizationUrlRequest) {
 	request = &GetAuthorizationUrlRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dypnsapi", "2017-05-25", "GetAuthorizationUrl", "", "")
+	request.InitWithApiInfo("Dypnsapi", "2017-05-25", "GetAuthorizationUrl", "dypnsapi", "openAPI")
 	request.Method = requests.POST
 	return
 }

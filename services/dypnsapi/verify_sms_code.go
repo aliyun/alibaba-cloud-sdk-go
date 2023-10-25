@@ -94,7 +94,7 @@ func CreateVerifySmsCodeRequest() (request *VerifySmsCodeRequest) {
 	request = &VerifySmsCodeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dypnsapi", "2017-05-25", "VerifySmsCode", "", "")
+	request.InitWithApiInfo("Dypnsapi", "2017-05-25", "VerifySmsCode", "dypnsapi", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -94,7 +94,7 @@ func CreateVerifyWithFusionAuthTokenRequest() (request *VerifyWithFusionAuthToke
 	request = &VerifyWithFusionAuthTokenRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dypnsapi", "2017-05-25", "VerifyWithFusionAuthToken", "", "")
+	request.InitWithApiInfo("Dypnsapi", "2017-05-25", "VerifyWithFusionAuthToken", "dypnsapi", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -93,7 +93,7 @@ func CreateVerifyMobileRequest() (request *VerifyMobileRequest) {
 	request = &VerifyMobileRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dypnsapi", "2017-05-25", "VerifyMobile", "", "")
+	request.InitWithApiInfo("Dypnsapi", "2017-05-25", "VerifyMobile", "dypnsapi", "openAPI")
 	request.Method = requests.POST
 	return
 }

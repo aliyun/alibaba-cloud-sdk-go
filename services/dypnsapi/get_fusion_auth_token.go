@@ -98,7 +98,7 @@ func CreateGetFusionAuthTokenRequest() (request *GetFusionAuthTokenRequest) {
 	request = &GetFusionAuthTokenRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dypnsapi", "2017-05-25", "GetFusionAuthToken", "", "")
+	request.InitWithApiInfo("Dypnsapi", "2017-05-25", "GetFusionAuthToken", "dypnsapi", "openAPI")
 	request.Method = requests.POST
 	return
 }

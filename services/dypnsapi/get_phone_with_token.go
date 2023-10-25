@@ -92,7 +92,7 @@ func CreateGetPhoneWithTokenRequest() (request *GetPhoneWithTokenRequest) {
 	request = &GetPhoneWithTokenRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dypnsapi", "2017-05-25", "GetPhoneWithToken", "", "")
+	request.InitWithApiInfo("Dypnsapi", "2017-05-25", "GetPhoneWithToken", "dypnsapi", "openAPI")
 	request.Method = requests.POST
 	return
 }

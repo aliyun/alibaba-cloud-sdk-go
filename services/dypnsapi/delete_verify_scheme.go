@@ -92,7 +92,7 @@ func CreateDeleteVerifySchemeRequest() (request *DeleteVerifySchemeRequest) {
 	request = &DeleteVerifySchemeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dypnsapi", "2017-05-25", "DeleteVerifyScheme", "", "")
+	request.InitWithApiInfo("Dypnsapi", "2017-05-25", "DeleteVerifyScheme", "dypnsapi", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -92,7 +92,7 @@ func CreateGetAuthTokenRequest() (request *GetAuthTokenRequest) {
 	request = &GetAuthTokenRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dypnsapi", "2017-05-25", "GetAuthToken", "", "")
+	request.InitWithApiInfo("Dypnsapi", "2017-05-25", "GetAuthToken", "dypnsapi", "openAPI")
 	request.Method = requests.POST
 	return
 }

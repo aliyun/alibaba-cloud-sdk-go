@@ -99,7 +99,7 @@ func CreateGetSmsAuthTokensRequest() (request *GetSmsAuthTokensRequest) {
 	request = &GetSmsAuthTokensRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dypnsapi", "2017-05-25", "GetSmsAuthTokens", "", "")
+	request.InitWithApiInfo("Dypnsapi", "2017-05-25", "GetSmsAuthTokens", "dypnsapi", "openAPI")
 	request.Method = requests.POST
 	return
 }

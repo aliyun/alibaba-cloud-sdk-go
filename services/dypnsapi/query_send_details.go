@@ -99,7 +99,7 @@ func CreateQuerySendDetailsRequest() (request *QuerySendDetailsRequest) {
 	request = &QuerySendDetailsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dypnsapi", "2017-05-25", "QuerySendDetails", "", "")
+	request.InitWithApiInfo("Dypnsapi", "2017-05-25", "QuerySendDetails", "dypnsapi", "openAPI")
 	request.Method = requests.POST
 	return
 }
