@@ -71,18 +71,20 @@ func (client *Client) DescribeAppAttributesWithCallback(request *DescribeAppAttr
 // DescribeAppAttributesRequest is the request struct for api DescribeAppAttributes
 type DescribeAppAttributesRequest struct {
 	*requests.RpcRequest
-	StageName     string                      `position:"Query" name:"StageName"`
-	PageNumber    requests.Integer            `position:"Query" name:"PageNumber"`
-	AppName       string                      `position:"Query" name:"AppName"`
-	SecurityToken string                      `position:"Query" name:"SecurityToken"`
-	ExcludeApiId  string                      `position:"Query" name:"ExcludeApiId"`
-	PageSize      requests.Integer            `position:"Query" name:"PageSize"`
-	Tag           *[]DescribeAppAttributesTag `position:"Query" name:"Tag"  type:"Repeated"`
-	Sort          string                      `position:"Query" name:"Sort"`
-	EnableTagAuth requests.Boolean            `position:"Query" name:"EnableTagAuth"`
-	AppId         requests.Integer            `position:"Query" name:"AppId"`
-	AppCode       string                      `position:"Query" name:"AppCode"`
-	AppKey        string                      `position:"Query" name:"AppKey"`
+	StageName           string                      `position:"Query" name:"StageName"`
+	PageNumber          requests.Integer            `position:"Query" name:"PageNumber"`
+	AppName             string                      `position:"Query" name:"AppName"`
+	SecurityToken       string                      `position:"Query" name:"SecurityToken"`
+	ExcludeApiId        string                      `position:"Query" name:"ExcludeApiId"`
+	PageSize            requests.Integer            `position:"Query" name:"PageSize"`
+	Tag                 *[]DescribeAppAttributesTag `position:"Query" name:"Tag"  type:"Repeated"`
+	Sort                string                      `position:"Query" name:"Sort"`
+	EnableTagAuth       requests.Boolean            `position:"Query" name:"EnableTagAuth"`
+	Extend              string                      `position:"Query" name:"Extend"`
+	ExcludeApiProductId string                      `position:"Query" name:"ExcludeApiProductId"`
+	AppId               requests.Integer            `position:"Query" name:"AppId"`
+	AppCode             string                      `position:"Query" name:"AppCode"`
+	AppKey              string                      `position:"Query" name:"AppKey"`
 }
 
 // DescribeAppAttributesTag is a repeated param struct in DescribeAppAttributesRequest

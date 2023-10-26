@@ -73,6 +73,7 @@ type ResetAppSecretRequest struct {
 	*requests.RpcRequest
 	NewAppSecret  string `position:"Query" name:"NewAppSecret"`
 	SecurityToken string `position:"Query" name:"SecurityToken"`
+	NewAppKey     string `position:"Query" name:"NewAppKey"`
 	AppKey        string `position:"Query" name:"AppKey"`
 }
 

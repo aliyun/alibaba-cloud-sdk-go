@@ -72,29 +72,29 @@ func (client *Client) CreateApiWithCallback(request *CreateApiRequest, callback 
 type CreateApiRequest struct {
 	*requests.RpcRequest
 	WebSocketApiType     string           `position:"Query" name:"WebSocketApiType"`
-	ErrorCodeSamples     string           `position:"Query" name:"ErrorCodeSamples"`
+	ErrorCodeSamples     string           `position:"Body" name:"ErrorCodeSamples"`
 	AppCodeAuthType      string           `position:"Query" name:"AppCodeAuthType"`
 	Description          string           `position:"Query" name:"Description"`
 	DisableInternet      requests.Boolean `position:"Query" name:"DisableInternet"`
 	BackendId            string           `position:"Query" name:"BackendId"`
-	ConstantParameters   string           `position:"Query" name:"ConstantParameters"`
+	ConstantParameters   string           `position:"Body" name:"ConstantParameters"`
 	AuthType             string           `position:"Query" name:"AuthType"`
 	AllowSignatureMethod string           `position:"Query" name:"AllowSignatureMethod"`
-	ServiceParameters    string           `position:"Query" name:"ServiceParameters"`
-	FailResultSample     string           `position:"Query" name:"FailResultSample"`
+	ServiceParameters    string           `position:"Body" name:"ServiceParameters"`
+	FailResultSample     string           `position:"Body" name:"FailResultSample"`
 	ResourceOwnerToken   string           `position:"Query" name:"ResourceOwnerToken"`
-	SystemParameters     string           `position:"Query" name:"SystemParameters"`
-	ServiceParametersMap string           `position:"Query" name:"ServiceParametersMap"`
+	SystemParameters     string           `position:"Body" name:"SystemParameters"`
+	ServiceParametersMap string           `position:"Body" name:"ServiceParametersMap"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	OpenIdConnectConfig  string           `position:"Query" name:"OpenIdConnectConfig"`
-	RequestParameters    string           `position:"Query" name:"RequestParameters"`
-	ResultDescriptions   string           `position:"Query" name:"ResultDescriptions"`
+	RequestParameters    string           `position:"Body" name:"RequestParameters"`
+	ResultDescriptions   string           `position:"Body" name:"ResultDescriptions"`
 	Visibility           string           `position:"Query" name:"Visibility"`
 	GroupId              string           `position:"Query" name:"GroupId"`
 	ServiceConfig        string           `position:"Query" name:"ServiceConfig"`
 	ResultType           string           `position:"Query" name:"ResultType"`
 	ApiName              string           `position:"Query" name:"ApiName"`
-	ResultSample         string           `position:"Query" name:"ResultSample"`
+	ResultSample         string           `position:"Body" name:"ResultSample"`
 	BackendEnable        requests.Boolean `position:"Query" name:"BackendEnable"`
 	ForceNonceCheck      requests.Boolean `position:"Query" name:"ForceNonceCheck"`
 	RequestConfig        string           `position:"Query" name:"RequestConfig"`

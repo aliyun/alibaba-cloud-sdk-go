@@ -85,11 +85,11 @@ type DescribeApisByAppRequest struct {
 // DescribeApisByAppResponse is the response struct for api DescribeApisByApp
 type DescribeApisByAppResponse struct {
 	*responses.BaseResponse
-	PageNumber          int                 `json:"PageNumber" xml:"PageNumber"`
-	RequestId           string              `json:"RequestId" xml:"RequestId"`
-	PageSize            int                 `json:"PageSize" xml:"PageSize"`
-	TotalCount          int                 `json:"TotalCount" xml:"TotalCount"`
-	AppApiRelationInfos AppApiRelationInfos `json:"AppApiRelationInfos" xml:"AppApiRelationInfos"`
+	PageNumber          int                                    `json:"PageNumber" xml:"PageNumber"`
+	RequestId           string                                 `json:"RequestId" xml:"RequestId"`
+	PageSize            int                                    `json:"PageSize" xml:"PageSize"`
+	TotalCount          int                                    `json:"TotalCount" xml:"TotalCount"`
+	AppApiRelationInfos AppApiRelationInfosInDescribeApisByApp `json:"AppApiRelationInfos" xml:"AppApiRelationInfos"`
 }
 
 // CreateDescribeApisByAppRequest creates a request to invoke DescribeApisByApp API

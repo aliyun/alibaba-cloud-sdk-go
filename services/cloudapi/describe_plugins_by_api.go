@@ -71,10 +71,12 @@ func (client *Client) DescribePluginsByApiWithCallback(request *DescribePluginsB
 // DescribePluginsByApiRequest is the request struct for api DescribePluginsByApi
 type DescribePluginsByApiRequest struct {
 	*requests.RpcRequest
-	StageName     string `position:"Query" name:"StageName"`
-	GroupId       string `position:"Query" name:"GroupId"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
-	ApiId         string `position:"Query" name:"ApiId"`
+	StageName     string           `position:"Query" name:"StageName"`
+	GroupId       string           `position:"Query" name:"GroupId"`
+	PageNumber    requests.Integer `position:"Query" name:"PageNumber"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	PageSize      requests.Integer `position:"Query" name:"PageSize"`
+	ApiId         string           `position:"Query" name:"ApiId"`
 }
 
 // DescribePluginsByApiResponse is the response struct for api DescribePluginsByApi

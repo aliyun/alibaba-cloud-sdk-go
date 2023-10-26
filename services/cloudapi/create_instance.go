@@ -71,22 +71,34 @@ func (client *Client) CreateInstanceWithCallback(request *CreateInstanceRequest,
 // CreateInstanceRequest is the request struct for api CreateInstance
 type CreateInstanceRequest struct {
 	*requests.RpcRequest
-	InstanceSpec string               `position:"Query" name:"InstanceSpec"`
-	HttpsPolicy  string               `position:"Query" name:"HttpsPolicy"`
-	Duration     requests.Integer     `position:"Query" name:"Duration"`
-	Tag          *[]CreateInstanceTag `position:"Query" name:"Tag"  type:"Repeated"`
-	AutoPay      requests.Boolean     `position:"Query" name:"AutoPay"`
-	Token        string               `position:"Query" name:"Token"`
-	InstanceName string               `position:"Query" name:"InstanceName"`
-	ZoneId       string               `position:"Query" name:"ZoneId"`
-	ChargeType   string               `position:"Query" name:"ChargeType"`
-	PricingCycle string               `position:"Query" name:"PricingCycle"`
+	InstanceSpec             string                                    `position:"Query" name:"InstanceSpec"`
+	InstanceCidr             string                                    `position:"Query" name:"InstanceCidr"`
+	HttpsPolicy              string                                    `position:"Query" name:"HttpsPolicy"`
+	Duration                 requests.Integer                          `position:"Query" name:"Duration"`
+	InstanceType             string                                    `position:"Query" name:"InstanceType"`
+	Tag                      *[]CreateInstanceTag                      `position:"Query" name:"Tag"  type:"Repeated"`
+	AutoPay                  requests.Boolean                          `position:"Query" name:"AutoPay"`
+	UserVpcId                string                                    `position:"Query" name:"UserVpcId"`
+	Token                    string                                    `position:"Query" name:"Token"`
+	ZoneVSwitchSecurityGroup *[]CreateInstanceZoneVSwitchSecurityGroup `position:"Query" name:"ZoneVSwitchSecurityGroup"  type:"Repeated"`
+	InstanceName             string                                    `position:"Query" name:"InstanceName"`
+	ZoneId                   string                                    `position:"Query" name:"ZoneId"`
+	ChargeType               string                                    `position:"Query" name:"ChargeType"`
+	PricingCycle             string                                    `position:"Query" name:"PricingCycle"`
 }
 
 // CreateInstanceTag is a repeated param struct in CreateInstanceRequest
 type CreateInstanceTag struct {
 	Value string `name:"Value"`
 	Key   string `name:"Key"`
+}
+
+// CreateInstanceZoneVSwitchSecurityGroup is a repeated param struct in CreateInstanceRequest
+type CreateInstanceZoneVSwitchSecurityGroup struct {
+	VSwitchId       string `name:"VSwitchId"`
+	CidrBlock       string `name:"CidrBlock"`
+	SecurityGroupId string `name:"SecurityGroupId"`
+	ZoneId          string `name:"ZoneId"`
 }
 
 // CreateInstanceResponse is the response struct for api CreateInstance

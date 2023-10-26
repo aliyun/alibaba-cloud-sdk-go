@@ -84,6 +84,7 @@ type ModifyApiGroupRequest struct {
 	PassthroughHeaders string               `position:"Query" name:"PassthroughHeaders"`
 	CompatibleFlags    string               `position:"Query" name:"CompatibleFlags"`
 	CustomTraceConfig  string               `position:"Query" name:"CustomTraceConfig"`
+	SupportSSE         string               `position:"Query" name:"SupportSSE"`
 }
 
 // ModifyApiGroupTag is a repeated param struct in ModifyApiGroupRequest

@@ -81,11 +81,11 @@ type DescribeApisByBackendRequest struct {
 // DescribeApisByBackendResponse is the response struct for api DescribeApisByBackend
 type DescribeApisByBackendResponse struct {
 	*responses.BaseResponse
-	PageNumber  int         `json:"PageNumber" xml:"PageNumber"`
-	RequestId   string      `json:"RequestId" xml:"RequestId"`
-	PageSize    int         `json:"PageSize" xml:"PageSize"`
-	TotalCount  int         `json:"TotalCount" xml:"TotalCount"`
-	ApiInfoList ApiInfoList `json:"ApiInfoList" xml:"ApiInfoList"`
+	PageNumber  int                                `json:"PageNumber" xml:"PageNumber"`
+	RequestId   string                             `json:"RequestId" xml:"RequestId"`
+	PageSize    int                                `json:"PageSize" xml:"PageSize"`
+	TotalCount  int                                `json:"TotalCount" xml:"TotalCount"`
+	ApiInfoList ApiInfoListInDescribeApisByBackend `json:"ApiInfoList" xml:"ApiInfoList"`
 }
 
 // CreateDescribeApisByBackendRequest creates a request to invoke DescribeApisByBackend API

@@ -25,8 +25,10 @@ type DomainItem struct {
 	DomainLegalStatus      string `json:"DomainLegalStatus" xml:"DomainLegalStatus"`
 	IsHttpRedirectToHttps  bool   `json:"IsHttpRedirectToHttps" xml:"IsHttpRedirectToHttps"`
 	DomainBindingStatus    string `json:"DomainBindingStatus" xml:"DomainBindingStatus"`
+	CertificateValidStart  int64  `json:"CertificateValidStart" xml:"CertificateValidStart"`
 	DomainRemark           string `json:"DomainRemark" xml:"DomainRemark"`
 	DomainCNAMEStatus      string `json:"DomainCNAMEStatus" xml:"DomainCNAMEStatus"`
+	CertificateValidEnd    int64  `json:"CertificateValidEnd" xml:"CertificateValidEnd"`
 	CertificateId          string `json:"CertificateId" xml:"CertificateId"`
 	BindStageName          string `json:"BindStageName" xml:"BindStageName"`
 	CertificateName        string `json:"CertificateName" xml:"CertificateName"`

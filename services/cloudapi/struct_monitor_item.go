@@ -19,4 +19,5 @@ package cloudapi
 type MonitorItem struct {
 	ItemTime  string `json:"ItemTime" xml:"ItemTime"`
 	ItemValue string `json:"ItemValue" xml:"ItemValue"`
+	Item      string `json:"Item" xml:"Item"`
 }

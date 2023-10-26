@@ -18,10 +18,13 @@ package cloudapi
 // BackendConfigInDescribeBackendInfo is a nested struct in cloudapi response
 type BackendConfigInDescribeBackendInfo struct {
 	ServiceAddress        string                         `json:"ServiceAddress" xml:"ServiceAddress"`
+	HttpTargetHostName    string                         `json:"HttpTargetHostName" xml:"HttpTargetHostName"`
 	Type                  string                         `json:"Type" xml:"Type"`
+	ServiceTimeout        int                            `json:"ServiceTimeout" xml:"ServiceTimeout"`
 	VpcConfig             VpcConfigInDescribeBackendInfo `json:"VpcConfig" xml:"VpcConfig"`
 	FunctionComputeConfig FunctionComputeConfig          `json:"FunctionComputeConfig" xml:"FunctionComputeConfig"`
 	OssConfig             OssConfig                      `json:"OssConfig" xml:"OssConfig"`
 	EventBridgeConfig     EventBridgeConfig              `json:"EventBridgeConfig" xml:"EventBridgeConfig"`
 	MockConfig            MockConfig                     `json:"MockConfig" xml:"MockConfig"`
+	DiscoveryConfig       DiscoveryConfig                `json:"DiscoveryConfig" xml:"DiscoveryConfig"`
 }

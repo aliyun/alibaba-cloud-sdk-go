@@ -17,17 +17,18 @@ package cloudapi
 
 // AppApiRelationInfo is a nested struct in cloudapi response
 type AppApiRelationInfo struct {
-	ApiId               string `json:"ApiId" xml:"ApiId"`
-	AuthorizationSource string `json:"AuthorizationSource" xml:"AuthorizationSource"`
-	AuthVaildTime       string `json:"AuthVaildTime" xml:"AuthVaildTime"`
-	Description         string `json:"Description" xml:"Description"`
-	GroupName           string `json:"GroupName" xml:"GroupName"`
-	GroupId             string `json:"GroupId" xml:"GroupId"`
-	Operator            string `json:"Operator" xml:"Operator"`
-	StageName           string `json:"StageName" xml:"StageName"`
-	CreatedTime         string `json:"CreatedTime" xml:"CreatedTime"`
-	ApiName             string `json:"ApiName" xml:"ApiName"`
-	RegionId            string `json:"RegionId" xml:"RegionId"`
-	Path                string `json:"Path" xml:"Path"`
-	Method              string `json:"Method" xml:"Method"`
+	StageNameAndAuth    map[string]interface{} `json:"StageNameAndAuth" xml:"StageNameAndAuth"`
+	Path                string                 `json:"Path" xml:"Path"`
+	GroupName           string                 `json:"GroupName" xml:"GroupName"`
+	Operator            string                 `json:"Operator" xml:"Operator"`
+	ApiId               string                 `json:"ApiId" xml:"ApiId"`
+	CreatedTime         string                 `json:"CreatedTime" xml:"CreatedTime"`
+	RegionId            string                 `json:"RegionId" xml:"RegionId"`
+	AuthVaildTime       string                 `json:"AuthVaildTime" xml:"AuthVaildTime"`
+	AuthorizationSource string                 `json:"AuthorizationSource" xml:"AuthorizationSource"`
+	Method              string                 `json:"Method" xml:"Method"`
+	GroupId             string                 `json:"GroupId" xml:"GroupId"`
+	ApiName             string                 `json:"ApiName" xml:"ApiName"`
+	StageName           string                 `json:"StageName" xml:"StageName"`
+	Description         string                 `json:"Description" xml:"Description"`
 }

@@ -29,4 +29,5 @@ type ApiSummary struct {
 	ApiPath       string                      `json:"ApiPath" xml:"ApiPath"`
 	ApiMethod     string                      `json:"ApiMethod" xml:"ApiMethod"`
 	DeployedInfos DeployedInfosInDescribeApis `json:"DeployedInfos" xml:"DeployedInfos"`
+	TagList       TagList                     `json:"TagList" xml:"TagList"`
 }

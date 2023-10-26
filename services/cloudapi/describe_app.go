@@ -84,6 +84,7 @@ type DescribeAppResponse struct {
 	Description  string `json:"Description" xml:"Description"`
 	AppId        int64  `json:"AppId" xml:"AppId"`
 	CreatedTime  string `json:"CreatedTime" xml:"CreatedTime"`
+	Extend       string `json:"Extend" xml:"Extend"`
 }
 
 // CreateDescribeAppRequest creates a request to invoke DescribeApp API

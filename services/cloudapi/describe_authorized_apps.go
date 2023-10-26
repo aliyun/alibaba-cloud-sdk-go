@@ -85,11 +85,11 @@ type DescribeAuthorizedAppsRequest struct {
 // DescribeAuthorizedAppsResponse is the response struct for api DescribeAuthorizedApps
 type DescribeAuthorizedAppsResponse struct {
 	*responses.BaseResponse
-	PageNumber     int            `json:"PageNumber" xml:"PageNumber"`
-	RequestId      string         `json:"RequestId" xml:"RequestId"`
-	PageSize       int            `json:"PageSize" xml:"PageSize"`
-	TotalCount     int            `json:"TotalCount" xml:"TotalCount"`
-	AuthorizedApps AuthorizedApps `json:"AuthorizedApps" xml:"AuthorizedApps"`
+	PageNumber     int                                    `json:"PageNumber" xml:"PageNumber"`
+	RequestId      string                                 `json:"RequestId" xml:"RequestId"`
+	PageSize       int                                    `json:"PageSize" xml:"PageSize"`
+	TotalCount     int                                    `json:"TotalCount" xml:"TotalCount"`
+	AuthorizedApps AuthorizedAppsInDescribeAuthorizedApps `json:"AuthorizedApps" xml:"AuthorizedApps"`
 }
 
 // CreateDescribeAuthorizedAppsRequest creates a request to invoke DescribeAuthorizedApps API

@@ -72,6 +72,7 @@ func (client *Client) ModifyAppWithCallback(request *ModifyAppRequest, callback 
 type ModifyAppRequest struct {
 	*requests.RpcRequest
 	Description   string           `position:"Query" name:"Description"`
+	Extend        string           `position:"Query" name:"Extend"`
 	AppName       string           `position:"Query" name:"AppName"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	AppId         requests.Integer `position:"Query" name:"AppId"`

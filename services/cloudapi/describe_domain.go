@@ -92,6 +92,8 @@ type DescribeDomainResponse struct {
 	CertificateBody       string `json:"CertificateBody" xml:"CertificateBody"`
 	SubDomain             string `json:"SubDomain" xml:"SubDomain"`
 	DomainCNAMEStatus     string `json:"DomainCNAMEStatus" xml:"DomainCNAMEStatus"`
+	CertificateValidStart int64  `json:"CertificateValidStart" xml:"CertificateValidStart"`
+	CertificateValidEnd   int64  `json:"CertificateValidEnd" xml:"CertificateValidEnd"`
 }
 
 // CreateDescribeDomainRequest creates a request to invoke DescribeDomain API

@@ -85,38 +85,42 @@ type DescribeApiGroupTag struct {
 // DescribeApiGroupResponse is the response struct for api DescribeApiGroup
 type DescribeApiGroupResponse struct {
 	*responses.BaseResponse
-	Status               string        `json:"Status" xml:"Status"`
-	CompatibleFlags      string        `json:"CompatibleFlags" xml:"CompatibleFlags"`
-	BasePath             string        `json:"BasePath" xml:"BasePath"`
-	Ipv6Status           string        `json:"Ipv6Status" xml:"Ipv6Status"`
-	UserLogConfig        string        `json:"UserLogConfig" xml:"UserLogConfig"`
-	CustomerConfigs      string        `json:"CustomerConfigs" xml:"CustomerConfigs"`
-	RequestId            string        `json:"RequestId" xml:"RequestId"`
-	Description          string        `json:"Description" xml:"Description"`
-	HttpsPolicy          string        `json:"HttpsPolicy" xml:"HttpsPolicy"`
-	SubDomain            string        `json:"SubDomain" xml:"SubDomain"`
-	CreatedTime          string        `json:"CreatedTime" xml:"CreatedTime"`
-	RpcPattern           string        `json:"RpcPattern" xml:"RpcPattern"`
-	DefaultDomain        string        `json:"DefaultDomain" xml:"DefaultDomain"`
-	CmsMonitorGroup      string        `json:"CmsMonitorGroup" xml:"CmsMonitorGroup"`
-	BillingStatus        string        `json:"BillingStatus" xml:"BillingStatus"`
-	TrafficLimit         int           `json:"TrafficLimit" xml:"TrafficLimit"`
-	PassthroughHeaders   string        `json:"PassthroughHeaders" xml:"PassthroughHeaders"`
-	InstanceId           string        `json:"InstanceId" xml:"InstanceId"`
-	VpcDomain            string        `json:"VpcDomain" xml:"VpcDomain"`
-	InstanceType         string        `json:"InstanceType" xml:"InstanceType"`
-	CustomTraceConfig    string        `json:"CustomTraceConfig" xml:"CustomTraceConfig"`
-	RegionId             string        `json:"RegionId" xml:"RegionId"`
-	ModifiedTime         string        `json:"ModifiedTime" xml:"ModifiedTime"`
-	GroupId              string        `json:"GroupId" xml:"GroupId"`
-	GroupName            string        `json:"GroupName" xml:"GroupName"`
-	ClassicVpcSubDomain  string        `json:"ClassicVpcSubDomain" xml:"ClassicVpcSubDomain"`
-	IllegalStatus        string        `json:"IllegalStatus" xml:"IllegalStatus"`
-	InstanceVipList      string        `json:"InstanceVipList" xml:"InstanceVipList"`
-	VpcSlbIntranetDomain string        `json:"VpcSlbIntranetDomain" xml:"VpcSlbIntranetDomain"`
-	CloudMarketCommodity bool          `json:"CloudMarketCommodity" xml:"CloudMarketCommodity"`
-	CustomDomains        CustomDomains `json:"CustomDomains" xml:"CustomDomains"`
-	StageItems           StageItems    `json:"StageItems" xml:"StageItems"`
+	Status                string        `json:"Status" xml:"Status"`
+	CompatibleFlags       string        `json:"CompatibleFlags" xml:"CompatibleFlags"`
+	BasePath              string        `json:"BasePath" xml:"BasePath"`
+	Ipv6Status            string        `json:"Ipv6Status" xml:"Ipv6Status"`
+	UserLogConfig         string        `json:"UserLogConfig" xml:"UserLogConfig"`
+	CustomerConfigs       string        `json:"CustomerConfigs" xml:"CustomerConfigs"`
+	RequestId             string        `json:"RequestId" xml:"RequestId"`
+	Description           string        `json:"Description" xml:"Description"`
+	HttpsPolicy           string        `json:"HttpsPolicy" xml:"HttpsPolicy"`
+	SubDomain             string        `json:"SubDomain" xml:"SubDomain"`
+	CreatedTime           string        `json:"CreatedTime" xml:"CreatedTime"`
+	RpcPattern            string        `json:"RpcPattern" xml:"RpcPattern"`
+	DefaultDomain         string        `json:"DefaultDomain" xml:"DefaultDomain"`
+	CmsMonitorGroup       string        `json:"CmsMonitorGroup" xml:"CmsMonitorGroup"`
+	BillingStatus         string        `json:"BillingStatus" xml:"BillingStatus"`
+	TrafficLimit          int           `json:"TrafficLimit" xml:"TrafficLimit"`
+	PassthroughHeaders    string        `json:"PassthroughHeaders" xml:"PassthroughHeaders"`
+	InstanceId            string        `json:"InstanceId" xml:"InstanceId"`
+	VpcDomain             string        `json:"VpcDomain" xml:"VpcDomain"`
+	InstanceType          string        `json:"InstanceType" xml:"InstanceType"`
+	CustomTraceConfig     string        `json:"CustomTraceConfig" xml:"CustomTraceConfig"`
+	RegionId              string        `json:"RegionId" xml:"RegionId"`
+	ModifiedTime          string        `json:"ModifiedTime" xml:"ModifiedTime"`
+	GroupId               string        `json:"GroupId" xml:"GroupId"`
+	GroupName             string        `json:"GroupName" xml:"GroupName"`
+	ClassicVpcSubDomain   string        `json:"ClassicVpcSubDomain" xml:"ClassicVpcSubDomain"`
+	IllegalStatus         string        `json:"IllegalStatus" xml:"IllegalStatus"`
+	InstanceVipList       string        `json:"InstanceVipList" xml:"InstanceVipList"`
+	VpcSlbIntranetDomain  string        `json:"VpcSlbIntranetDomain" xml:"VpcSlbIntranetDomain"`
+	CloudMarketCommodity  bool          `json:"CloudMarketCommodity" xml:"CloudMarketCommodity"`
+	DedicatedInstanceType string        `json:"DedicatedInstanceType" xml:"DedicatedInstanceType"`
+	MigrationStatus       string        `json:"MigrationStatus" xml:"MigrationStatus"`
+	MigrationError        string        `json:"MigrationError" xml:"MigrationError"`
+	DisableInnerDomain    bool          `json:"DisableInnerDomain" xml:"DisableInnerDomain"`
+	CustomDomains         CustomDomains `json:"CustomDomains" xml:"CustomDomains"`
+	StageItems            StageItems    `json:"StageItems" xml:"StageItems"`
 }
 
 // CreateDescribeApiGroupRequest creates a request to invoke DescribeApiGroup API

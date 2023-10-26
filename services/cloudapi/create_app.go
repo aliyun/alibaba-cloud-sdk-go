@@ -74,6 +74,7 @@ type CreateAppRequest struct {
 	Description    string           `position:"Query" name:"Description"`
 	AppOwnerUserId requests.Integer `position:"Query" name:"AppOwnerUserId"`
 	Source         string           `position:"Query" name:"Source"`
+	Extend         string           `position:"Query" name:"Extend"`
 	AppName        string           `position:"Query" name:"AppName"`
 	SecurityToken  string           `position:"Query" name:"SecurityToken"`
 	AppSecret      string           `position:"Query" name:"AppSecret"`
