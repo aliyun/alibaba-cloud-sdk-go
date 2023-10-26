@@ -17,10 +17,10 @@ package fnf
 
 // EventsItem is a nested struct in fnf response
 type EventsItem struct {
-	StepName        string `json:"StepName" xml:"StepName"`
 	Type            string `json:"Type" xml:"Type"`
 	EventId         int64  `json:"EventId" xml:"EventId"`
+	Time            string `json:"Time" xml:"Time"`
 	ScheduleEventId int64  `json:"ScheduleEventId" xml:"ScheduleEventId"`
 	EventDetail     string `json:"EventDetail" xml:"EventDetail"`
-	Time            string `json:"Time" xml:"Time"`
+	StepName        string `json:"StepName" xml:"StepName"`
 }

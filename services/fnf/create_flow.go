@@ -78,21 +78,23 @@ type CreateFlowRequest struct {
 	Name                    string `position:"Body" name:"Name"`
 	Definition              string `position:"Body" name:"Definition"`
 	ExternalStorageLocation string `position:"Body" name:"ExternalStorageLocation"`
+	ExecutionMode           string `position:"Body" name:"ExecutionMode"`
 }
 
 // CreateFlowResponse is the response struct for api CreateFlow
 type CreateFlowResponse struct {
 	*responses.BaseResponse
-	RequestId               string `json:"RequestId" xml:"RequestId"`
-	Name                    string `json:"Name" xml:"Name"`
-	Description             string `json:"Description" xml:"Description"`
-	Definition              string `json:"Definition" xml:"Definition"`
-	Id                      string `json:"Id" xml:"Id"`
 	Type                    string `json:"Type" xml:"Type"`
+	Definition              string `json:"Definition" xml:"Definition"`
 	RoleArn                 string `json:"RoleArn" xml:"RoleArn"`
+	RequestId               string `json:"RequestId" xml:"RequestId"`
+	Description             string `json:"Description" xml:"Description"`
+	ExternalStorageLocation string `json:"ExternalStorageLocation" xml:"ExternalStorageLocation"`
+	Name                    string `json:"Name" xml:"Name"`
 	CreatedTime             string `json:"CreatedTime" xml:"CreatedTime"`
 	LastModifiedTime        string `json:"LastModifiedTime" xml:"LastModifiedTime"`
-	ExternalStorageLocation string `json:"ExternalStorageLocation" xml:"ExternalStorageLocation"`
+	Id                      string `json:"Id" xml:"Id"`
+	ExecutionMode           string `json:"ExecutionMode" xml:"ExecutionMode"`
 }
 
 // CreateCreateFlowRequest creates a request to invoke CreateFlow API

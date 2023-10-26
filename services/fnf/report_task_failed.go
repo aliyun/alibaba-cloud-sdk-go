@@ -80,8 +80,8 @@ type ReportTaskFailedRequest struct {
 // ReportTaskFailedResponse is the response struct for api ReportTaskFailed
 type ReportTaskFailedResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	EventId   int64  `json:"EventId" xml:"EventId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateReportTaskFailedRequest creates a request to invoke ReportTaskFailed API

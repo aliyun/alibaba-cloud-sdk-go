@@ -81,8 +81,8 @@ type GetExecutionHistoryRequest struct {
 // GetExecutionHistoryResponse is the response struct for api GetExecutionHistory
 type GetExecutionHistoryResponse struct {
 	*responses.BaseResponse
-	RequestId string       `json:"RequestId" xml:"RequestId"`
 	NextToken string       `json:"NextToken" xml:"NextToken"`
+	RequestId string       `json:"RequestId" xml:"RequestId"`
 	Events    []EventsItem `json:"Events" xml:"Events"`
 }
 

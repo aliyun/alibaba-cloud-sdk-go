@@ -79,8 +79,8 @@ type ReportTaskSucceededRequest struct {
 // ReportTaskSucceededResponse is the response struct for api ReportTaskSucceeded
 type ReportTaskSucceededResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	EventId   int64  `json:"EventId" xml:"EventId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateReportTaskSucceededRequest creates a request to invoke ReportTaskSucceeded API

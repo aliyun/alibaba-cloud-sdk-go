@@ -83,16 +83,16 @@ type UpdateFlowRequest struct {
 // UpdateFlowResponse is the response struct for api UpdateFlow
 type UpdateFlowResponse struct {
 	*responses.BaseResponse
-	RequestId               string `json:"RequestId" xml:"RequestId"`
-	Name                    string `json:"Name" xml:"Name"`
-	Description             string `json:"Description" xml:"Description"`
-	Definition              string `json:"Definition" xml:"Definition"`
-	Id                      string `json:"Id" xml:"Id"`
 	Type                    string `json:"Type" xml:"Type"`
+	Definition              string `json:"Definition" xml:"Definition"`
 	RoleArn                 string `json:"RoleArn" xml:"RoleArn"`
+	RequestId               string `json:"RequestId" xml:"RequestId"`
+	Description             string `json:"Description" xml:"Description"`
+	ExternalStorageLocation string `json:"ExternalStorageLocation" xml:"ExternalStorageLocation"`
+	Name                    string `json:"Name" xml:"Name"`
 	CreatedTime             string `json:"CreatedTime" xml:"CreatedTime"`
 	LastModifiedTime        string `json:"LastModifiedTime" xml:"LastModifiedTime"`
-	ExternalStorageLocation string `json:"ExternalStorageLocation" xml:"ExternalStorageLocation"`
+	Id                      string `json:"Id" xml:"Id"`
 }
 
 // CreateUpdateFlowRequest creates a request to invoke UpdateFlow API

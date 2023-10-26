@@ -80,8 +80,8 @@ type ListSchedulesRequest struct {
 // ListSchedulesResponse is the response struct for api ListSchedules
 type ListSchedulesResponse struct {
 	*responses.BaseResponse
-	RequestId string          `json:"RequestId" xml:"RequestId"`
 	NextToken string          `json:"NextToken" xml:"NextToken"`
+	RequestId string          `json:"RequestId" xml:"RequestId"`
 	Schedules []SchedulesItem `json:"Schedules" xml:"Schedules"`
 }
 

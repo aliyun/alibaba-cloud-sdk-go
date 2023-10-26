@@ -84,14 +84,14 @@ type UpdateScheduleRequest struct {
 type UpdateScheduleResponse struct {
 	*responses.BaseResponse
 	RequestId        string `json:"RequestId" xml:"RequestId"`
-	ScheduleName     string `json:"ScheduleName" xml:"ScheduleName"`
 	Description      string `json:"Description" xml:"Description"`
 	ScheduleId       string `json:"ScheduleId" xml:"ScheduleId"`
 	Payload          string `json:"Payload" xml:"Payload"`
-	CronExpression   string `json:"CronExpression" xml:"CronExpression"`
-	Enable           bool   `json:"Enable" xml:"Enable"`
+	ScheduleName     string `json:"ScheduleName" xml:"ScheduleName"`
 	CreatedTime      string `json:"CreatedTime" xml:"CreatedTime"`
 	LastModifiedTime string `json:"LastModifiedTime" xml:"LastModifiedTime"`
+	CronExpression   string `json:"CronExpression" xml:"CronExpression"`
+	Enable           bool   `json:"Enable" xml:"Enable"`
 }
 
 // CreateUpdateScheduleRequest creates a request to invoke UpdateSchedule API

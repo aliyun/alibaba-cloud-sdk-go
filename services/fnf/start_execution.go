@@ -81,17 +81,17 @@ type StartExecutionRequest struct {
 // StartExecutionResponse is the response struct for api StartExecution
 type StartExecutionResponse struct {
 	*responses.BaseResponse
-	RequestId         string `json:"RequestId" xml:"RequestId"`
-	Name              string `json:"Name" xml:"Name"`
-	FlowName          string `json:"FlowName" xml:"FlowName"`
-	FlowDefinition    string `json:"FlowDefinition" xml:"FlowDefinition"`
-	Input             string `json:"Input" xml:"Input"`
-	Output            string `json:"Output" xml:"Output"`
 	Status            string `json:"Status" xml:"Status"`
-	StartedTime       string `json:"StartedTime" xml:"StartedTime"`
 	StoppedTime       string `json:"StoppedTime" xml:"StoppedTime"`
+	RequestId         string `json:"RequestId" xml:"RequestId"`
+	StartedTime       string `json:"StartedTime" xml:"StartedTime"`
+	FlowDefinition    string `json:"FlowDefinition" xml:"FlowDefinition"`
 	ExternalInputUri  string `json:"ExternalInputUri" xml:"ExternalInputUri"`
+	Output            string `json:"Output" xml:"Output"`
+	FlowName          string `json:"FlowName" xml:"FlowName"`
 	ExternalOutputUri string `json:"ExternalOutputUri" xml:"ExternalOutputUri"`
+	Name              string `json:"Name" xml:"Name"`
+	Input             string `json:"Input" xml:"Input"`
 }
 
 // CreateStartExecutionRequest creates a request to invoke StartExecution API

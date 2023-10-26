@@ -84,8 +84,8 @@ type ListExecutionsRequest struct {
 // ListExecutionsResponse is the response struct for api ListExecutions
 type ListExecutionsResponse struct {
 	*responses.BaseResponse
-	RequestId  string           `json:"RequestId" xml:"RequestId"`
 	NextToken  string           `json:"NextToken" xml:"NextToken"`
+	RequestId  string           `json:"RequestId" xml:"RequestId"`
 	Executions []ExecutionsItem `json:"Executions" xml:"Executions"`
 }
 

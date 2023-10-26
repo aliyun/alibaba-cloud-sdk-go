@@ -79,8 +79,8 @@ type ListFlowsRequest struct {
 // ListFlowsResponse is the response struct for api ListFlows
 type ListFlowsResponse struct {
 	*responses.BaseResponse
-	RequestId string      `json:"RequestId" xml:"RequestId"`
 	NextToken string      `json:"NextToken" xml:"NextToken"`
+	RequestId string      `json:"RequestId" xml:"RequestId"`
 	Flows     []FlowsItem `json:"Flows" xml:"Flows"`
 }
 
