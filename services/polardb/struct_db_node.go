@@ -23,6 +23,7 @@ type DBNode struct {
 	DBNodeRole       string `json:"DBNodeRole" xml:"DBNodeRole"`
 	DBNodeStatus     string `json:"DBNodeStatus" xml:"DBNodeStatus"`
 	MasterId         string `json:"MasterId" xml:"MasterId"`
+	CpuCores         string `json:"CpuCores" xml:"CpuCores"`
 	CreationTime     string `json:"CreationTime" xml:"CreationTime"`
 	HotReplicaMode   string `json:"HotReplicaMode" xml:"HotReplicaMode"`
 	ServerlessType   string `json:"ServerlessType" xml:"ServerlessType"`
@@ -32,6 +33,7 @@ type DBNode struct {
 	RegionId         string `json:"RegionId" xml:"RegionId"`
 	ZoneId           string `json:"ZoneId" xml:"ZoneId"`
 	ServerWeight     string `json:"ServerWeight" xml:"ServerWeight"`
+	MemorySize       string `json:"MemorySize" xml:"MemorySize"`
 	DBNodeId         string `json:"DBNodeId" xml:"DBNodeId"`
 	SccMode          string `json:"SccMode" xml:"SccMode"`
 	ImciSwitch       string `json:"ImciSwitch" xml:"ImciSwitch"`

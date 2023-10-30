@@ -91,6 +91,7 @@ type DescribeDBClusterAttributeResponse struct {
 	DBClusterNetworkType      string            `json:"DBClusterNetworkType" xml:"DBClusterNetworkType"`
 	IsLatestVersion           bool              `json:"IsLatestVersion" xml:"IsLatestVersion"`
 	HasCompleteStandbyRes     bool              `json:"HasCompleteStandbyRes" xml:"HasCompleteStandbyRes"`
+	HotStandbyClusterStatus   string            `json:"HotStandbyClusterStatus" xml:"HotStandbyClusterStatus"`
 	HotStandbyCluster         string            `json:"HotStandbyCluster" xml:"HotStandbyCluster"`
 	DataSyncMode              string            `json:"DataSyncMode" xml:"DataSyncMode"`
 	StandbyHAMode             string            `json:"StandbyHAMode" xml:"StandbyHAMode"`
@@ -135,6 +136,7 @@ type DescribeDBClusterAttributeResponse struct {
 	ProxyServerlessType       string            `json:"ProxyServerlessType" xml:"ProxyServerlessType"`
 	Architecture              string            `json:"Architecture" xml:"Architecture"`
 	AiType                    string            `json:"AiType" xml:"AiType"`
+	ProvisionedIops           string            `json:"ProvisionedIops" xml:"ProvisionedIops"`
 	RelatedAPInstance         RelatedAPInstance `json:"RelatedAPInstance" xml:"RelatedAPInstance"`
 	DBNodes                   []DBNode          `json:"DBNodes" xml:"DBNodes"`
 	Tags                      []Tag             `json:"Tags" xml:"Tags"`

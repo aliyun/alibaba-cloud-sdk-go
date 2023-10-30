@@ -90,6 +90,7 @@ type CreateDBClusterRequest struct {
 	VSwitchId                              string                `position:"Query" name:"VSwitchId"`
 	SecurityIPList                         string                `position:"Query" name:"SecurityIPList"`
 	DBMinorVersion                         string                `position:"Query" name:"DBMinorVersion"`
+	ProvisionedIops                        requests.Integer      `position:"Query" name:"ProvisionedIops"`
 	AutoRenew                              requests.Boolean      `position:"Query" name:"AutoRenew"`
 	HotStandbyCluster                      string                `position:"Query" name:"HotStandbyCluster"`
 	StoragePayType                         string                `position:"Query" name:"StoragePayType"`

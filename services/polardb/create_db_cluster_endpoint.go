@@ -82,7 +82,9 @@ type CreateDBClusterEndpointRequest struct {
 	EndpointConfig        string           `position:"Query" name:"EndpointConfig"`
 	DBEndpointDescription string           `position:"Query" name:"DBEndpointDescription"`
 	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
+	VSwitchId             string           `position:"Query" name:"VSwitchId"`
 	Nodes                 string           `position:"Query" name:"Nodes"`
+	VPCId                 string           `position:"Query" name:"VPCId"`
 }
 
 // CreateDBClusterEndpointResponse is the response struct for api CreateDBClusterEndpoint

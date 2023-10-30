@@ -72,6 +72,7 @@ func (client *Client) DescribeMetaListWithCallback(request *DescribeMetaListRequ
 type DescribeMetaListRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	RegionCode           string           `position:"Query" name:"RegionCode"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`

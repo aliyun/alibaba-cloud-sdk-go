@@ -1,3 +1,7 @@
+2023-10-30 Version: v1.62.593
+- Generated 2017-08-01 for `polardb`.
+- Support new feature.
+
 2023-10-30 Version: v1.62.592
 - Generated 2016-11-01 for `live`.
 - Update to support new apis.

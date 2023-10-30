@@ -80,8 +80,10 @@ type ModifyDBEndpointAddressRequest struct {
 	DBClusterId              string           `position:"Query" name:"DBClusterId"`
 	OwnerAccount             string           `position:"Query" name:"OwnerAccount"`
 	OwnerId                  requests.Integer `position:"Query" name:"OwnerId"`
+	VSwitchId                string           `position:"Query" name:"VSwitchId"`
 	Port                     string           `position:"Query" name:"Port"`
 	NetType                  string           `position:"Query" name:"NetType"`
+	VPCId                    string           `position:"Query" name:"VPCId"`
 }
 
 // ModifyDBEndpointAddressResponse is the response struct for api ModifyDBEndpointAddress

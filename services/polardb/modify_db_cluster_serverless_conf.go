@@ -75,6 +75,7 @@ type ModifyDBClusterServerlessConfRequest struct {
 	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ScaleApRoNumMax       string           `position:"Query" name:"ScaleApRoNumMax"`
 	ScaleMax              string           `position:"Query" name:"ScaleMax"`
+	PlannedEndTime        string           `position:"Query" name:"PlannedEndTime"`
 	SecondsUntilAutoPause string           `position:"Query" name:"SecondsUntilAutoPause"`
 	ScaleApRoNumMin       string           `position:"Query" name:"ScaleApRoNumMin"`
 	ScaleMin              string           `position:"Query" name:"ScaleMin"`
@@ -82,8 +83,10 @@ type ModifyDBClusterServerlessConfRequest struct {
 	DBClusterId           string           `position:"Query" name:"DBClusterId"`
 	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
 	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
+	PlannedStartTime      string           `position:"Query" name:"PlannedStartTime"`
 	ScaleRoNumMin         string           `position:"Query" name:"ScaleRoNumMin"`
 	AllowShutDown         string           `position:"Query" name:"AllowShutDown"`
+	FromTimeService       requests.Boolean `position:"Query" name:"FromTimeService"`
 }
 
 // ModifyDBClusterServerlessConfResponse is the response struct for api ModifyDBClusterServerlessConf
