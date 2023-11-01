@@ -31,6 +31,6 @@ type ListItem struct {
 	Portrait             string               `json:"Portrait" xml:"Portrait"`
 	Description          string               `json:"Description" xml:"Description"`
 	Type                 int                  `json:"Type" xml:"Type"`
-	SupportedResolutions SupportedResolutions `json:"SupportedResolutions" xml:"SupportedResolutions"`
 	TaskResult           TaskResult           `json:"TaskResult" xml:"TaskResult"`
+	SupportedResolutions SupportedResolutions `json:"SupportedResolutions" xml:"SupportedResolutions"`
 }

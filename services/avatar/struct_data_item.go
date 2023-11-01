@@ -18,6 +18,7 @@ package avatar
 // DataItem is a nested struct in avatar response
 type DataItem struct {
 	SessionId string  `json:"SessionId" xml:"SessionId"`
+	Token     string  `json:"Token" xml:"Token"`
 	Channel   Channel `json:"Channel" xml:"Channel"`
 	User      User    `json:"User" xml:"User"`
 }

@@ -22,6 +22,7 @@ type TaskResult struct {
 	FailCode         string `json:"FailCode" xml:"FailCode"`
 	PreviewPic       string `json:"PreviewPic" xml:"PreviewPic"`
 	WordSubtitlesUrl string `json:"WordSubtitlesUrl" xml:"WordSubtitlesUrl"`
+	AttachmentUrl    string `json:"AttachmentUrl" xml:"AttachmentUrl"`
 	SubtitlesUrl     string `json:"SubtitlesUrl" xml:"SubtitlesUrl"`
 	VideoUrl         string `json:"VideoUrl" xml:"VideoUrl"`
 	FailReason       string `json:"FailReason" xml:"FailReason"`
