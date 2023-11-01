@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// SendMessage invokes the cloud_siem.SendMessage API synchronously
-func (client *Client) SendMessage(request *SendMessageRequest) (response *SendMessageResponse, err error) {
-	response = CreateSendMessageResponse()
+// GetHistograms invokes the cloud_siem.GetHistograms API synchronously
+func (client *Client) GetHistograms(request *GetHistogramsRequest) (response *GetHistogramsResponse, err error) {
+	response = CreateGetHistogramsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// SendMessageWithChan invokes the cloud_siem.SendMessage API asynchronously
-func (client *Client) SendMessageWithChan(request *SendMessageRequest) (<-chan *SendMessageResponse, <-chan error) {
-	responseChan := make(chan *SendMessageResponse, 1)
+// GetHistogramsWithChan invokes the cloud_siem.GetHistograms API asynchronously
+func (client *Client) GetHistogramsWithChan(request *GetHistogramsRequest) (<-chan *GetHistogramsResponse, <-chan error) {
+	responseChan := make(chan *GetHistogramsResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.SendMessage(request)
+		response, err := client.GetHistograms(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) SendMessageWithChan(request *SendMessageRequest) (<-chan *
 	return responseChan, errChan
 }
 
-// SendMessageWithCallback invokes the cloud_siem.SendMessage API asynchronously
-func (client *Client) SendMessageWithCallback(request *SendMessageRequest, callback func(response *SendMessageResponse, err error)) <-chan int {
+// GetHistogramsWithCallback invokes the cloud_siem.GetHistograms API asynchronously
+func (client *Client) GetHistogramsWithCallback(request *GetHistogramsRequest, callback func(response *GetHistogramsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *SendMessageResponse
+		var response *GetHistogramsResponse
 		var err error
 		defer close(result)
-		response, err = client.SendMessage(request)
+		response, err = client.GetHistograms(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,37 +68,40 @@ func (client *Client) SendMessageWithCallback(request *SendMessageRequest, callb
 	return result
 }
 
-// SendMessageRequest is the request struct for api SendMessage
-type SendMessageRequest struct {
+// GetHistogramsRequest is the request struct for api GetHistograms
+type GetHistogramsRequest struct {
 	*requests.RpcRequest
-	ChannelType requests.Integer `position:"Body" name:"ChannelType"`
-	ReceiveUid  requests.Integer `position:"Body" name:"ReceiveUid"`
+	From  requests.Integer `position:"Body" name:"From"`
+	Query string           `position:"Body" name:"Query"`
+	To    requests.Integer `position:"Body" name:"To"`
 }
 
-// SendMessageResponse is the response struct for api SendMessage
-type SendMessageResponse struct {
+// GetHistogramsResponse is the response struct for api GetHistograms
+type GetHistogramsResponse struct {
 	*responses.BaseResponse
-	Data      bool   `json:"Data" xml:"Data"`
 	Success   bool   `json:"Success" xml:"Success"`
 	Code      int    `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
 	ErrCode   string `json:"ErrCode" xml:"ErrCode"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	DyCode    string `json:"DyCode" xml:"DyCode"`
+	DyMessage string `json:"DyMessage" xml:"DyMessage"`
+	Data      Data   `json:"Data" xml:"Data"`
 }
 
-// CreateSendMessageRequest creates a request to invoke SendMessage API
-func CreateSendMessageRequest() (request *SendMessageRequest) {
-	request = &SendMessageRequest{
+// CreateGetHistogramsRequest creates a request to invoke GetHistograms API
+func CreateGetHistogramsRequest() (request *GetHistogramsRequest) {
+	request = &GetHistogramsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cloud-siem", "2022-06-16", "SendMessage", "cloud-siem", "openAPI")
+	request.InitWithApiInfo("cloud-siem", "2022-06-16", "GetHistograms", "cloud-siem", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateSendMessageResponse creates a response to parse from SendMessage response
-func CreateSendMessageResponse() (response *SendMessageResponse) {
-	response = &SendMessageResponse{
+// CreateGetHistogramsResponse creates a response to parse from GetHistograms response
+func CreateGetHistogramsResponse() (response *GetHistogramsResponse) {
+	response = &GetHistogramsResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return
