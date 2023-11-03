@@ -35,4 +35,5 @@ type ScalingInstance struct {
 	CreatedTime            string `json:"CreatedTime" xml:"CreatedTime"`
 	ScalingActivityId      string `json:"ScalingActivityId" xml:"ScalingActivityId"`
 	InstanceType           string `json:"InstanceType" xml:"InstanceType"`
+	ScalingInstanceId      string `json:"ScalingInstanceId" xml:"ScalingInstanceId"`
 }
