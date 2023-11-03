@@ -1,3 +1,7 @@
+2023-11-03 Version: v1.62.600
+- Generated 2022-05-30 for `eflo`.
+- Support manage Leni private ip  for Idemoptent.
+
 2023-11-03 Version: v1.62.599
 - Generated 2014-08-28 for `Ess`.
 - DescribeScalingInstances response add ScalingInstanceId field.
