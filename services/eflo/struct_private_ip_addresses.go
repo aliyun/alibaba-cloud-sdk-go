@@ -17,5 +17,5 @@ package eflo
 
 // PrivateIpAddresses is a nested struct in eflo response
 type PrivateIpAddresses struct {
-	PrivateIpAddresse []PrivateIpAddresse `json:"PrivateIpAddresse" xml:"PrivateIpAddresse"`
+	PrivateIpAddress []PrivateIpAddress `json:"PrivateIpAddress" xml:"PrivateIpAddress"`
 }

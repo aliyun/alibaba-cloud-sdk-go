@@ -131,11 +131,11 @@ type Content struct {
 	ErInfos                   []ErInfo                       `json:"ErInfos" xml:"ErInfos"`
 	Data                      []DataItem                     `json:"Data" xml:"Data"`
 	ErRouteMaps               []ErRouteMap                   `json:"ErRouteMaps" xml:"ErRouteMaps"`
+	PrivateIpAddresses        []PrivateIpAddress             `json:"PrivateIpAddresses" xml:"PrivateIpAddresses"`
 	Tags                      []Tag                          `json:"Tags" xml:"Tags"`
 	AliyunRouterInfo          []AliyunRouterInfoItem         `json:"AliyunRouterInfo" xml:"AliyunRouterInfo"`
 	PrivateIpAddressMacGroup  []PrivateIpAddressMacGroupItem `json:"PrivateIpAddressMacGroup" xml:"PrivateIpAddressMacGroup"`
 	ErRouteEntrys             []ErRouteEntry                 `json:"ErRouteEntrys" xml:"ErRouteEntrys"`
-	PrivateIpAddresses        []PrivateIpAddresse            `json:"PrivateIpAddresses" xml:"PrivateIpAddresses"`
 	InstanceInfos             []InstanceInfo                 `json:"InstanceInfos" xml:"InstanceInfos"`
 	TopoInfo                  []Layer                        `json:"TopoInfo" xml:"TopoInfo"`
 	CisRouterInfo             []CisRouterInfoItem            `json:"CisRouterInfo" xml:"CisRouterInfo"`
