@@ -83,7 +83,7 @@ type PutEventRuleRequest struct {
 // PutEventRuleEventPattern is a repeated param struct in PutEventRuleRequest
 type PutEventRuleEventPattern struct {
 	LevelList     *[]string                             `name:"LevelList" type:"Repeated"`
-	KeywordFilter PutEventRuleEventPatternKeywordFilter `name:"KeywordFilter" type:"Struct"`
+	KeywordFilter PutEventRuleEventPatternKeywordFilter `name:"KeywordFilter" type:"Json"`
 	Product       string                                `name:"Product"`
 	StatusList    *[]string                             `name:"StatusList" type:"Repeated"`
 	NameList      *[]string                             `name:"NameList" type:"Repeated"`
