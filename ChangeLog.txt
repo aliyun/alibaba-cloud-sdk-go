@@ -1,3 +1,7 @@
+2023-11-07 Version: v1.62.601
+- Generated 2017-08-01 for `polardb`.
+- Support new feature.
+
 2023-11-03 Version: v1.62.600
 - Generated 2022-05-30 for `eflo`.
 - Support manage Leni private ip  for Idemoptent.
