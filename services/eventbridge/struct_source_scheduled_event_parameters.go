@@ -19,4 +19,5 @@ package eventbridge
 type SourceScheduledEventParameters struct {
 	Schedule string `json:"Schedule" xml:"Schedule"`
 	TimeZone string `json:"TimeZone" xml:"TimeZone"`
+	UserData string `json:"UserData" xml:"UserData"`
 }

@@ -132,6 +132,7 @@ type UpdateEventSourceSourceSLSParameters struct {
 // UpdateEventSourceSourceScheduledEventParameters is a repeated param struct in UpdateEventSourceRequest
 type UpdateEventSourceSourceScheduledEventParameters struct {
 	Schedule string `name:"Schedule"`
+	UserData string `name:"UserData"`
 	TimeZone string `name:"TimeZone"`
 }
 

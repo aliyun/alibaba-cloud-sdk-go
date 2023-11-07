@@ -187,13 +187,22 @@ type UpdateEventStreamingSourceSourceMQTTParameters struct {
 
 // UpdateEventStreamingSourceSourceRocketMQParameters is a repeated param struct in UpdateEventStreamingRequest
 type UpdateEventStreamingSourceSourceRocketMQParameters struct {
-	InstanceId string `name:"InstanceId"`
-	Offset     string `name:"Offset"`
-	RegionId   string `name:"RegionId"`
-	GroupID    string `name:"GroupID"`
-	Topic      string `name:"Topic"`
-	Tag        string `name:"Tag"`
-	Timestamp  string `name:"Timestamp"`
+	InstanceSecurityGroupId string `name:"InstanceSecurityGroupId"`
+	Offset                  string `name:"Offset"`
+	GroupID                 string `name:"GroupID"`
+	InstanceUsername        string `name:"InstanceUsername"`
+	AuthType                string `name:"AuthType"`
+	InstancePassword        string `name:"InstancePassword"`
+	InstanceVSwitchIds      string `name:"InstanceVSwitchIds"`
+	InstanceNetwork         string `name:"InstanceNetwork"`
+	InstanceId              string `name:"InstanceId"`
+	InstanceEndpoint        string `name:"InstanceEndpoint"`
+	InstanceVpcId           string `name:"InstanceVpcId"`
+	RegionId                string `name:"RegionId"`
+	Topic                   string `name:"Topic"`
+	InstanceType            string `name:"InstanceType"`
+	Tag                     string `name:"Tag"`
+	Timestamp               string `name:"Timestamp"`
 }
 
 // UpdateEventStreamingSourceSourceSLSParameters is a repeated param struct in UpdateEventStreamingRequest

@@ -27,11 +27,11 @@ type EventSourceListItem struct {
 	Status                         string                                                `json:"Status" xml:"Status"`
 	Description                    string                                                `json:"Description" xml:"Description"`
 	Type                           string                                                `json:"Type" xml:"Type"`
-	SourceScheduledEventParameters SourceScheduledEventParameters                        `json:"SourceScheduledEventParameters" xml:"SourceScheduledEventParameters"`
 	SourceRabbitMQParameters       SourceRabbitMQParameters                              `json:"SourceRabbitMQParameters" xml:"SourceRabbitMQParameters"`
 	SourceMNSParameters            SourceMNSParameters                                   `json:"SourceMNSParameters" xml:"SourceMNSParameters"`
 	SourceKafkaParameters          SourceKafkaParameters                                 `json:"SourceKafkaParameters" xml:"SourceKafkaParameters"`
 	SourceHttpEventParameters      SourceHttpEventParameters                             `json:"SourceHttpEventParameters" xml:"SourceHttpEventParameters"`
+	SourceScheduledEventParameters SourceScheduledEventParameters                        `json:"SourceScheduledEventParameters" xml:"SourceScheduledEventParameters"`
 	SourceSLSParameters            SourceSLSParameters                                   `json:"SourceSLSParameters" xml:"SourceSLSParameters"`
 	SourceRocketMQParameters       SourceRocketMQParametersInListUserDefinedEventSources `json:"SourceRocketMQParameters" xml:"SourceRocketMQParameters"`
 	EventTypes                     []EventTypesItem                                      `json:"EventTypes" xml:"EventTypes"`

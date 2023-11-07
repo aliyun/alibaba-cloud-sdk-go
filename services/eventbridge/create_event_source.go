@@ -131,9 +131,9 @@ type CreateEventSourceSourceSLSParameters struct {
 
 // CreateEventSourceSourceScheduledEventParameters is a repeated param struct in CreateEventSourceRequest
 type CreateEventSourceSourceScheduledEventParameters struct {
-	Schedule string            `name:"Schedule"`
-	UserData map[string]string `name:"UserData" type:"Map"`
-	TimeZone string            `name:"TimeZone"`
+	Schedule string `name:"Schedule"`
+	UserData string `name:"UserData"`
+	TimeZone string `name:"TimeZone"`
 }
 
 // CreateEventSourceSourceKafkaParameters is a repeated param struct in CreateEventSourceRequest

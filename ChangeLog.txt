@@ -1,3 +1,7 @@
+2023-11-07 Version: v1.62.602
+- Generated 2020-04-01 for `eventbridge`.
+- Update param.
+
 2023-11-07 Version: v1.62.601
 - Generated 2017-08-01 for `polardb`.
 - Support new feature.
