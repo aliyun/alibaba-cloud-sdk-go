@@ -21,7 +21,6 @@ import (
 )
 
 // CreateQueue invokes the amqp_open.CreateQueue API synchronously
-// api document: https://help.aliyun.com/api/amqp-open/createqueue.html
 func (client *Client) CreateQueue(request *CreateQueueRequest) (response *CreateQueueResponse, err error) {
 	response = CreateCreateQueueResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateQueue(request *CreateQueueRequest) (response *Create
 }
 
 // CreateQueueWithChan invokes the amqp_open.CreateQueue API asynchronously
-// api document: https://help.aliyun.com/api/amqp-open/createqueue.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateQueueWithChan(request *CreateQueueRequest) (<-chan *CreateQueueResponse, <-chan error) {
 	responseChan := make(chan *CreateQueueResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateQueueWithChan(request *CreateQueueRequest) (<-chan *
 }
 
 // CreateQueueWithCallback invokes the amqp_open.CreateQueue API asynchronously
-// api document: https://help.aliyun.com/api/amqp-open/createqueue.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateQueueWithCallback(request *CreateQueueRequest, callback func(response *CreateQueueResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

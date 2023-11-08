@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteQueue invokes the amqp_open.DeleteQueue API synchronously
-// api document: https://help.aliyun.com/api/amqp-open/deletequeue.html
 func (client *Client) DeleteQueue(request *DeleteQueueRequest) (response *DeleteQueueResponse, err error) {
 	response = CreateDeleteQueueResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteQueue(request *DeleteQueueRequest) (response *Delete
 }
 
 // DeleteQueueWithChan invokes the amqp_open.DeleteQueue API asynchronously
-// api document: https://help.aliyun.com/api/amqp-open/deletequeue.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteQueueWithChan(request *DeleteQueueRequest) (<-chan *DeleteQueueResponse, <-chan error) {
 	responseChan := make(chan *DeleteQueueResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteQueueWithChan(request *DeleteQueueRequest) (<-chan *
 }
 
 // DeleteQueueWithCallback invokes the amqp_open.DeleteQueue API asynchronously
-// api document: https://help.aliyun.com/api/amqp-open/deletequeue.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteQueueWithCallback(request *DeleteQueueRequest, callback func(response *DeleteQueueResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

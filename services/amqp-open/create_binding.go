@@ -21,7 +21,6 @@ import (
 )
 
 // CreateBinding invokes the amqp_open.CreateBinding API synchronously
-// api document: https://help.aliyun.com/api/amqp-open/createbinding.html
 func (client *Client) CreateBinding(request *CreateBindingRequest) (response *CreateBindingResponse, err error) {
 	response = CreateCreateBindingResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateBinding(request *CreateBindingRequest) (response *Cr
 }
 
 // CreateBindingWithChan invokes the amqp_open.CreateBinding API asynchronously
-// api document: https://help.aliyun.com/api/amqp-open/createbinding.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateBindingWithChan(request *CreateBindingRequest) (<-chan *CreateBindingResponse, <-chan error) {
 	responseChan := make(chan *CreateBindingResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateBindingWithChan(request *CreateBindingRequest) (<-ch
 }
 
 // CreateBindingWithCallback invokes the amqp_open.CreateBinding API asynchronously
-// api document: https://help.aliyun.com/api/amqp-open/createbinding.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateBindingWithCallback(request *CreateBindingRequest, callback func(response *CreateBindingResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

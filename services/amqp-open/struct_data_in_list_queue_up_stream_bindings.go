@@ -17,7 +17,7 @@ package amqp_open
 
 // DataInListQueueUpStreamBindings is a nested struct in amqp_open response
 type DataInListQueueUpStreamBindings struct {
-	NextToken  string      `json:"NextToken" xml:"NextToken"`
 	MaxResults string      `json:"MaxResults" xml:"MaxResults"`
+	NextToken  string      `json:"NextToken" xml:"NextToken"`
 	Bindings   []BindingVO `json:"Bindings" xml:"Bindings"`
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // GetMetadataAmount invokes the amqp_open.GetMetadataAmount API synchronously
-// api document: https://help.aliyun.com/api/amqp-open/getmetadataamount.html
 func (client *Client) GetMetadataAmount(request *GetMetadataAmountRequest) (response *GetMetadataAmountResponse, err error) {
 	response = CreateGetMetadataAmountResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetMetadataAmount(request *GetMetadataAmountRequest) (resp
 }
 
 // GetMetadataAmountWithChan invokes the amqp_open.GetMetadataAmount API asynchronously
-// api document: https://help.aliyun.com/api/amqp-open/getmetadataamount.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetMetadataAmountWithChan(request *GetMetadataAmountRequest) (<-chan *GetMetadataAmountResponse, <-chan error) {
 	responseChan := make(chan *GetMetadataAmountResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetMetadataAmountWithChan(request *GetMetadataAmountReques
 }
 
 // GetMetadataAmountWithCallback invokes the amqp_open.GetMetadataAmount API asynchronously
-// api document: https://help.aliyun.com/api/amqp-open/getmetadataamount.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetMetadataAmountWithCallback(request *GetMetadataAmountRequest, callback func(response *GetMetadataAmountResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

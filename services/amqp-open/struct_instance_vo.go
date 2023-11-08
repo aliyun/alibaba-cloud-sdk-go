@@ -17,15 +17,22 @@ package amqp_open
 
 // InstanceVO is a nested struct in amqp_open response
 type InstanceVO struct {
-	InstanceId        string `json:"InstanceId" xml:"InstanceId"`
-	InstanceName      string `json:"InstanceName" xml:"InstanceName"`
-	InstanceType      string `json:"InstanceType" xml:"InstanceType"`
-	Status            string `json:"Status" xml:"Status"`
-	OrderType         string `json:"OrderType" xml:"OrderType"`
-	OrderCreateTime   int64  `json:"OrderCreateTime" xml:"OrderCreateTime"`
-	ExpireTime        int64  `json:"ExpireTime" xml:"ExpireTime"`
-	AutoRenewInstance bool   `json:"AutoRenewInstance" xml:"AutoRenewInstance"`
-	SupportEIP        bool   `json:"SupportEIP" xml:"SupportEIP"`
-	PrivateEndpoint   string `json:"PrivateEndpoint" xml:"PrivateEndpoint"`
-	PublicEndpoint    string `json:"PublicEndpoint" xml:"PublicEndpoint"`
+	Status            string     `json:"Status" xml:"Status"`
+	SupportEIP        bool       `json:"SupportEIP" xml:"SupportEIP"`
+	ExpireTime        int64      `json:"ExpireTime" xml:"ExpireTime"`
+	OrderCreateTime   int64      `json:"OrderCreateTime" xml:"OrderCreateTime"`
+	PrivateEndpoint   string     `json:"PrivateEndpoint" xml:"PrivateEndpoint"`
+	StorageSize       int        `json:"StorageSize" xml:"StorageSize"`
+	MaxEipTps         int        `json:"MaxEipTps" xml:"MaxEipTps"`
+	InstanceId        string     `json:"InstanceId" xml:"InstanceId"`
+	InstanceType      string     `json:"InstanceType" xml:"InstanceType"`
+	PublicEndpoint    string     `json:"PublicEndpoint" xml:"PublicEndpoint"`
+	ClassicEndpoint   string     `json:"ClassicEndpoint" xml:"ClassicEndpoint"`
+	MaxVhost          int        `json:"MaxVhost" xml:"MaxVhost"`
+	MaxTps            int        `json:"MaxTps" xml:"MaxTps"`
+	AutoRenewInstance bool       `json:"AutoRenewInstance" xml:"AutoRenewInstance"`
+	InstanceName      string     `json:"InstanceName" xml:"InstanceName"`
+	MaxQueue          int        `json:"MaxQueue" xml:"MaxQueue"`
+	OrderType         string     `json:"OrderType" xml:"OrderType"`
+	Tags              []TagsItem `json:"Tags" xml:"Tags"`
 }

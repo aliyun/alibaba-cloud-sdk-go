@@ -21,7 +21,6 @@ import (
 )
 
 // ListExchangeUpStreamBindings invokes the amqp_open.ListExchangeUpStreamBindings API synchronously
-// api document: https://help.aliyun.com/api/amqp-open/listexchangeupstreambindings.html
 func (client *Client) ListExchangeUpStreamBindings(request *ListExchangeUpStreamBindingsRequest) (response *ListExchangeUpStreamBindingsResponse, err error) {
 	response = CreateListExchangeUpStreamBindingsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListExchangeUpStreamBindings(request *ListExchangeUpStream
 }
 
 // ListExchangeUpStreamBindingsWithChan invokes the amqp_open.ListExchangeUpStreamBindings API asynchronously
-// api document: https://help.aliyun.com/api/amqp-open/listexchangeupstreambindings.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListExchangeUpStreamBindingsWithChan(request *ListExchangeUpStreamBindingsRequest) (<-chan *ListExchangeUpStreamBindingsResponse, <-chan error) {
 	responseChan := make(chan *ListExchangeUpStreamBindingsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListExchangeUpStreamBindingsWithChan(request *ListExchange
 }
 
 // ListExchangeUpStreamBindingsWithCallback invokes the amqp_open.ListExchangeUpStreamBindings API asynchronously
-// api document: https://help.aliyun.com/api/amqp-open/listexchangeupstreambindings.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListExchangeUpStreamBindingsWithCallback(request *ListExchangeUpStreamBindingsRequest, callback func(response *ListExchangeUpStreamBindingsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -86,9 +81,9 @@ type ListExchangeUpStreamBindingsRequest struct {
 // ListExchangeUpStreamBindingsResponse is the response struct for api ListExchangeUpStreamBindings
 type ListExchangeUpStreamBindingsResponse struct {
 	*responses.BaseResponse
-	RequestId string                             `json:"RequestId" xml:"RequestId"`
 	Code      int                                `json:"Code" xml:"Code"`
 	Message   string                             `json:"Message" xml:"Message"`
+	RequestId string                             `json:"RequestId" xml:"RequestId"`
 	Success   bool                               `json:"Success" xml:"Success"`
 	Data      DataInListExchangeUpStreamBindings `json:"Data" xml:"Data"`
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteVirtualHost invokes the amqp_open.DeleteVirtualHost API synchronously
-// api document: https://help.aliyun.com/api/amqp-open/deletevirtualhost.html
 func (client *Client) DeleteVirtualHost(request *DeleteVirtualHostRequest) (response *DeleteVirtualHostResponse, err error) {
 	response = CreateDeleteVirtualHostResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteVirtualHost(request *DeleteVirtualHostRequest) (resp
 }
 
 // DeleteVirtualHostWithChan invokes the amqp_open.DeleteVirtualHost API asynchronously
-// api document: https://help.aliyun.com/api/amqp-open/deletevirtualhost.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteVirtualHostWithChan(request *DeleteVirtualHostRequest) (<-chan *DeleteVirtualHostResponse, <-chan error) {
 	responseChan := make(chan *DeleteVirtualHostResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteVirtualHostWithChan(request *DeleteVirtualHostReques
 }
 
 // DeleteVirtualHostWithCallback invokes the amqp_open.DeleteVirtualHost API asynchronously
-// api document: https://help.aliyun.com/api/amqp-open/deletevirtualhost.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteVirtualHostWithCallback(request *DeleteVirtualHostRequest, callback func(response *DeleteVirtualHostResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

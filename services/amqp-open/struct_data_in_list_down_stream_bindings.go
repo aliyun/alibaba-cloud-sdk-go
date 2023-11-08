@@ -17,7 +17,7 @@ package amqp_open
 
 // DataInListDownStreamBindings is a nested struct in amqp_open response
 type DataInListDownStreamBindings struct {
-	NextToken  string      `json:"NextToken" xml:"NextToken"`
 	MaxResults int         `json:"MaxResults" xml:"MaxResults"`
+	NextToken  string      `json:"NextToken" xml:"NextToken"`
 	Bindings   []BindingVO `json:"Bindings" xml:"Bindings"`
 }

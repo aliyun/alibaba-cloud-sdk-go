@@ -21,7 +21,6 @@ import (
 )
 
 // ListQueueConsumers invokes the amqp_open.ListQueueConsumers API synchronously
-// api document: https://help.aliyun.com/api/amqp-open/listqueueconsumers.html
 func (client *Client) ListQueueConsumers(request *ListQueueConsumersRequest) (response *ListQueueConsumersResponse, err error) {
 	response = CreateListQueueConsumersResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListQueueConsumers(request *ListQueueConsumersRequest) (re
 }
 
 // ListQueueConsumersWithChan invokes the amqp_open.ListQueueConsumers API asynchronously
-// api document: https://help.aliyun.com/api/amqp-open/listqueueconsumers.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListQueueConsumersWithChan(request *ListQueueConsumersRequest) (<-chan *ListQueueConsumersResponse, <-chan error) {
 	responseChan := make(chan *ListQueueConsumersResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListQueueConsumersWithChan(request *ListQueueConsumersRequ
 }
 
 // ListQueueConsumersWithCallback invokes the amqp_open.ListQueueConsumers API asynchronously
-// api document: https://help.aliyun.com/api/amqp-open/listqueueconsumers.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListQueueConsumersWithCallback(request *ListQueueConsumersRequest, callback func(response *ListQueueConsumersResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

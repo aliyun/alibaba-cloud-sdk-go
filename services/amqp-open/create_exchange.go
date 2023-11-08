@@ -21,7 +21,6 @@ import (
 )
 
 // CreateExchange invokes the amqp_open.CreateExchange API synchronously
-// api document: https://help.aliyun.com/api/amqp-open/createexchange.html
 func (client *Client) CreateExchange(request *CreateExchangeRequest) (response *CreateExchangeResponse, err error) {
 	response = CreateCreateExchangeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateExchange(request *CreateExchangeRequest) (response *
 }
 
 // CreateExchangeWithChan invokes the amqp_open.CreateExchange API asynchronously
-// api document: https://help.aliyun.com/api/amqp-open/createexchange.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateExchangeWithChan(request *CreateExchangeRequest) (<-chan *CreateExchangeResponse, <-chan error) {
 	responseChan := make(chan *CreateExchangeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateExchangeWithChan(request *CreateExchangeRequest) (<-
 }
 
 // CreateExchangeWithCallback invokes the amqp_open.CreateExchange API asynchronously
-// api document: https://help.aliyun.com/api/amqp-open/createexchange.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateExchangeWithCallback(request *CreateExchangeRequest, callback func(response *CreateExchangeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

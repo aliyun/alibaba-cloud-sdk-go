@@ -17,10 +17,10 @@ package amqp_open
 
 // ExchangeVO is a nested struct in amqp_open response
 type ExchangeVO struct {
-	Name            string                 `json:"Name" xml:"Name"`
-	VHostName       string                 `json:"VHostName" xml:"VHostName"`
-	ExchangeType    string                 `json:"ExchangeType" xml:"ExchangeType"`
 	AutoDeleteState bool                   `json:"AutoDeleteState" xml:"AutoDeleteState"`
-	Attributes      map[string]interface{} `json:"Attributes" xml:"Attributes"`
 	CreateTime      int64                  `json:"CreateTime" xml:"CreateTime"`
+	Attributes      map[string]interface{} `json:"Attributes" xml:"Attributes"`
+	VHostName       string                 `json:"VHostName" xml:"VHostName"`
+	Name            string                 `json:"Name" xml:"Name"`
+	ExchangeType    string                 `json:"ExchangeType" xml:"ExchangeType"`
 }

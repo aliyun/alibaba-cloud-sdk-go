@@ -21,7 +21,6 @@ import (
 )
 
 // ListExchanges invokes the amqp_open.ListExchanges API synchronously
-// api document: https://help.aliyun.com/api/amqp-open/listexchanges.html
 func (client *Client) ListExchanges(request *ListExchangesRequest) (response *ListExchangesResponse, err error) {
 	response = CreateListExchangesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListExchanges(request *ListExchangesRequest) (response *Li
 }
 
 // ListExchangesWithChan invokes the amqp_open.ListExchanges API asynchronously
-// api document: https://help.aliyun.com/api/amqp-open/listexchanges.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListExchangesWithChan(request *ListExchangesRequest) (<-chan *ListExchangesResponse, <-chan error) {
 	responseChan := make(chan *ListExchangesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListExchangesWithChan(request *ListExchangesRequest) (<-ch
 }
 
 // ListExchangesWithCallback invokes the amqp_open.ListExchanges API asynchronously
-// api document: https://help.aliyun.com/api/amqp-open/listexchanges.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListExchangesWithCallback(request *ListExchangesRequest, callback func(response *ListExchangesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // ListVirtualHosts invokes the amqp_open.ListVirtualHosts API synchronously
-// api document: https://help.aliyun.com/api/amqp-open/listvirtualhosts.html
 func (client *Client) ListVirtualHosts(request *ListVirtualHostsRequest) (response *ListVirtualHostsResponse, err error) {
 	response = CreateListVirtualHostsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListVirtualHosts(request *ListVirtualHostsRequest) (respon
 }
 
 // ListVirtualHostsWithChan invokes the amqp_open.ListVirtualHosts API asynchronously
-// api document: https://help.aliyun.com/api/amqp-open/listvirtualhosts.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListVirtualHostsWithChan(request *ListVirtualHostsRequest) (<-chan *ListVirtualHostsResponse, <-chan error) {
 	responseChan := make(chan *ListVirtualHostsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListVirtualHostsWithChan(request *ListVirtualHostsRequest)
 }
 
 // ListVirtualHostsWithCallback invokes the amqp_open.ListVirtualHosts API asynchronously
-// api document: https://help.aliyun.com/api/amqp-open/listvirtualhosts.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListVirtualHostsWithCallback(request *ListVirtualHostsRequest, callback func(response *ListVirtualHostsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

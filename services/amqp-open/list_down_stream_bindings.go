@@ -21,7 +21,6 @@ import (
 )
 
 // ListDownStreamBindings invokes the amqp_open.ListDownStreamBindings API synchronously
-// api document: https://help.aliyun.com/api/amqp-open/listdownstreambindings.html
 func (client *Client) ListDownStreamBindings(request *ListDownStreamBindingsRequest) (response *ListDownStreamBindingsResponse, err error) {
 	response = CreateListDownStreamBindingsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListDownStreamBindings(request *ListDownStreamBindingsRequ
 }
 
 // ListDownStreamBindingsWithChan invokes the amqp_open.ListDownStreamBindings API asynchronously
-// api document: https://help.aliyun.com/api/amqp-open/listdownstreambindings.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListDownStreamBindingsWithChan(request *ListDownStreamBindingsRequest) (<-chan *ListDownStreamBindingsResponse, <-chan error) {
 	responseChan := make(chan *ListDownStreamBindingsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListDownStreamBindingsWithChan(request *ListDownStreamBind
 }
 
 // ListDownStreamBindingsWithCallback invokes the amqp_open.ListDownStreamBindings API asynchronously
-// api document: https://help.aliyun.com/api/amqp-open/listdownstreambindings.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListDownStreamBindingsWithCallback(request *ListDownStreamBindingsRequest, callback func(response *ListDownStreamBindingsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -86,9 +81,9 @@ type ListDownStreamBindingsRequest struct {
 // ListDownStreamBindingsResponse is the response struct for api ListDownStreamBindings
 type ListDownStreamBindingsResponse struct {
 	*responses.BaseResponse
-	RequestId string                       `json:"RequestId" xml:"RequestId"`
 	Code      int                          `json:"Code" xml:"Code"`
 	Message   string                       `json:"Message" xml:"Message"`
+	RequestId string                       `json:"RequestId" xml:"RequestId"`
 	Success   bool                         `json:"Success" xml:"Success"`
 	Data      DataInListDownStreamBindings `json:"Data" xml:"Data"`
 }

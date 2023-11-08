@@ -18,8 +18,8 @@ package amqp_open
 // BindingDO is a nested struct in amqp_open response
 type BindingDO struct {
 	SourceExchange  string `json:"SourceExchange" xml:"SourceExchange"`
-	DestinationName string `json:"DestinationName" xml:"DestinationName"`
-	BindingType     string `json:"BindingType" xml:"BindingType"`
-	BindingKey      string `json:"BindingKey" xml:"BindingKey"`
 	Argument        string `json:"Argument" xml:"Argument"`
+	BindingKey      string `json:"BindingKey" xml:"BindingKey"`
+	BindingType     string `json:"BindingType" xml:"BindingType"`
+	DestinationName string `json:"DestinationName" xml:"DestinationName"`
 }

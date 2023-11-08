@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteBinding invokes the amqp_open.DeleteBinding API synchronously
-// api document: https://help.aliyun.com/api/amqp-open/deletebinding.html
 func (client *Client) DeleteBinding(request *DeleteBindingRequest) (response *DeleteBindingResponse, err error) {
 	response = CreateDeleteBindingResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteBinding(request *DeleteBindingRequest) (response *De
 }
 
 // DeleteBindingWithChan invokes the amqp_open.DeleteBinding API asynchronously
-// api document: https://help.aliyun.com/api/amqp-open/deletebinding.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteBindingWithChan(request *DeleteBindingRequest) (<-chan *DeleteBindingResponse, <-chan error) {
 	responseChan := make(chan *DeleteBindingResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteBindingWithChan(request *DeleteBindingRequest) (<-ch
 }
 
 // DeleteBindingWithCallback invokes the amqp_open.DeleteBinding API asynchronously
-// api document: https://help.aliyun.com/api/amqp-open/deletebinding.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteBindingWithCallback(request *DeleteBindingRequest, callback func(response *DeleteBindingResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

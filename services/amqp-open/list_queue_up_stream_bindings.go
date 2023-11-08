@@ -21,7 +21,6 @@ import (
 )
 
 // ListQueueUpStreamBindings invokes the amqp_open.ListQueueUpStreamBindings API synchronously
-// api document: https://help.aliyun.com/api/amqp-open/listqueueupstreambindings.html
 func (client *Client) ListQueueUpStreamBindings(request *ListQueueUpStreamBindingsRequest) (response *ListQueueUpStreamBindingsResponse, err error) {
 	response = CreateListQueueUpStreamBindingsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListQueueUpStreamBindings(request *ListQueueUpStreamBindin
 }
 
 // ListQueueUpStreamBindingsWithChan invokes the amqp_open.ListQueueUpStreamBindings API asynchronously
-// api document: https://help.aliyun.com/api/amqp-open/listqueueupstreambindings.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListQueueUpStreamBindingsWithChan(request *ListQueueUpStreamBindingsRequest) (<-chan *ListQueueUpStreamBindingsResponse, <-chan error) {
 	responseChan := make(chan *ListQueueUpStreamBindingsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListQueueUpStreamBindingsWithChan(request *ListQueueUpStre
 }
 
 // ListQueueUpStreamBindingsWithCallback invokes the amqp_open.ListQueueUpStreamBindings API asynchronously
-// api document: https://help.aliyun.com/api/amqp-open/listqueueupstreambindings.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListQueueUpStreamBindingsWithCallback(request *ListQueueUpStreamBindingsRequest, callback func(response *ListQueueUpStreamBindingsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

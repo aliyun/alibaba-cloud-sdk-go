@@ -21,7 +21,6 @@ import (
 )
 
 // ListBindings invokes the amqp_open.ListBindings API synchronously
-// api document: https://help.aliyun.com/api/amqp-open/listbindings.html
 func (client *Client) ListBindings(request *ListBindingsRequest) (response *ListBindingsResponse, err error) {
 	response = CreateListBindingsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListBindings(request *ListBindingsRequest) (response *List
 }
 
 // ListBindingsWithChan invokes the amqp_open.ListBindings API asynchronously
-// api document: https://help.aliyun.com/api/amqp-open/listbindings.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListBindingsWithChan(request *ListBindingsRequest) (<-chan *ListBindingsResponse, <-chan error) {
 	responseChan := make(chan *ListBindingsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListBindingsWithChan(request *ListBindingsRequest) (<-chan
 }
 
 // ListBindingsWithCallback invokes the amqp_open.ListBindings API asynchronously
-// api document: https://help.aliyun.com/api/amqp-open/listbindings.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListBindingsWithCallback(request *ListBindingsRequest, callback func(response *ListBindingsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
