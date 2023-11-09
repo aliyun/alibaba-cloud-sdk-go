@@ -1,3 +1,7 @@
+2023-11-09 Version: v1.62.605
+- Generated 2022-01-30 for `avatar`.
+undefined
+
 2023-11-08 Version: v1.62.604
 - Generated 2019-12-12 for `amqp-open`.
 - Support CreateInstance API.

@@ -73,6 +73,7 @@ type StartInstanceRequest struct {
 	*requests.RpcRequest
 	App            string                      `position:"Query" name:"App"`
 	TenantId       requests.Integer            `position:"Query" name:"TenantId"`
+	BizId          string                      `position:"Query" name:"BizId"`
 	Channel        StartInstanceChannel        `position:"Query" name:"Channel"  type:"Struct"`
 	CommandRequest StartInstanceCommandRequest `position:"Query" name:"CommandRequest"  type:"Struct"`
 	User           string                      `position:"Query" name:"User"`
