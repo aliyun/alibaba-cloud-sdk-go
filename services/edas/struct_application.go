@@ -18,12 +18,14 @@ package edas
 // Application is a nested struct in edas response
 type Application struct {
 	Name                 string `json:"Name" xml:"Name"`
+	WorkloadType         string `json:"WorkloadType" xml:"WorkloadType"`
 	CreateTime           int64  `json:"CreateTime" xml:"CreateTime"`
 	Dockerize            bool   `json:"Dockerize" xml:"Dockerize"`
 	SlbInfo              string `json:"SlbInfo" xml:"SlbInfo"`
 	AppPhase             string `json:"AppPhase" xml:"AppPhase"`
 	RegionId             string `json:"RegionId" xml:"RegionId"`
 	SlbPort              int    `json:"SlbPort" xml:"SlbPort"`
+	ResourceGroupId      string `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	UserId               string `json:"UserId" xml:"UserId"`
 	ApplicationType      string `json:"ApplicationType" xml:"ApplicationType"`
 	Description          string `json:"Description" xml:"Description"`
@@ -43,6 +45,7 @@ type Application struct {
 	AppId                string `json:"AppId" xml:"AppId"`
 	EnableUrlCheck       bool   `json:"EnableUrlCheck" xml:"EnableUrlCheck"`
 	InstanceCount        int    `json:"InstanceCount" xml:"InstanceCount"`
+	HaveManageAccess     string `json:"HaveManageAccess" xml:"HaveManageAccess"`
 	HealthCheckUrl       string `json:"HealthCheckUrl" xml:"HealthCheckUrl"`
 	SlbId                string `json:"SlbId" xml:"SlbId"`
 	Cpu                  int    `json:"Cpu" xml:"Cpu"`

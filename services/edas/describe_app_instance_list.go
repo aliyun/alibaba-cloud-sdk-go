@@ -71,8 +71,8 @@ func (client *Client) DescribeAppInstanceListWithCallback(request *DescribeAppIn
 // DescribeAppInstanceListRequest is the request struct for api DescribeAppInstanceList
 type DescribeAppInstanceListRequest struct {
 	*requests.RoaRequest
-	AppId        string `position:"Query" name:"AppId"`
-	WithNodeInfo string `position:"Query" name:"WithNodeInfo"`
+	AppId        string           `position:"Query" name:"AppId"`
+	WithNodeInfo requests.Boolean `position:"Query" name:"WithNodeInfo"`
 }
 
 // DescribeAppInstanceListResponse is the response struct for api DescribeAppInstanceList

@@ -71,10 +71,10 @@ func (client *Client) QuerySlsLogStoreListWithCallback(request *QuerySlsLogStore
 // QuerySlsLogStoreListRequest is the request struct for api QuerySlsLogStoreList
 type QuerySlsLogStoreListRequest struct {
 	*requests.RoaRequest
-	AppId       string `position:"Query" name:"AppId"`
-	PageSize    string `position:"Query" name:"PageSize"`
-	CurrentPage string `position:"Query" name:"CurrentPage"`
-	Type        string `position:"Query" name:"Type"`
+	AppId       string           `position:"Query" name:"AppId"`
+	PageSize    requests.Integer `position:"Query" name:"PageSize"`
+	CurrentPage requests.Integer `position:"Query" name:"CurrentPage"`
+	Type        string           `position:"Query" name:"Type"`
 }
 
 // QuerySlsLogStoreListResponse is the response struct for api QuerySlsLogStoreList

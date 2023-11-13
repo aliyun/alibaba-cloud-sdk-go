@@ -71,7 +71,7 @@ func (client *Client) ListSwimmingLaneWithCallback(request *ListSwimmingLaneRequ
 // ListSwimmingLaneRequest is the request struct for api ListSwimmingLane
 type ListSwimmingLaneRequest struct {
 	*requests.RoaRequest
-	GroupId string `position:"Query" name:"GroupId"`
+	GroupId requests.Integer `position:"Query" name:"GroupId"`
 }
 
 // ListSwimmingLaneResponse is the response struct for api ListSwimmingLane

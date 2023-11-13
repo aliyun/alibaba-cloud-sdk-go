@@ -71,7 +71,7 @@ func (client *Client) DeleteRoleWithCallback(request *DeleteRoleRequest, callbac
 // DeleteRoleRequest is the request struct for api DeleteRole
 type DeleteRoleRequest struct {
 	*requests.RoaRequest
-	RoleId string `position:"Query" name:"RoleId"`
+	RoleId requests.Integer `position:"Query" name:"RoleId"`
 }
 
 // DeleteRoleResponse is the response struct for api DeleteRole

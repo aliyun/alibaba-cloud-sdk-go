@@ -71,10 +71,10 @@ func (client *Client) UpdateSwimmingLaneGroupWithCallback(request *UpdateSwimmin
 // UpdateSwimmingLaneGroupRequest is the request struct for api UpdateSwimmingLaneGroup
 type UpdateSwimmingLaneGroupRequest struct {
 	*requests.RoaRequest
-	AppIds   string `position:"Query" name:"AppIds"`
-	GroupId  string `position:"Query" name:"GroupId"`
-	Name     string `position:"Query" name:"Name"`
-	EntryApp string `position:"Query" name:"EntryApp"`
+	AppIds   string           `position:"Query" name:"AppIds"`
+	GroupId  requests.Integer `position:"Query" name:"GroupId"`
+	Name     string           `position:"Query" name:"Name"`
+	EntryApp string           `position:"Query" name:"EntryApp"`
 }
 
 // UpdateSwimmingLaneGroupResponse is the response struct for api UpdateSwimmingLaneGroup

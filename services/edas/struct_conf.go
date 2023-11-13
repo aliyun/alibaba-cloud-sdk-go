@@ -34,4 +34,5 @@ type Conf struct {
 	K8sVolumeInfo      string `json:"K8sVolumeInfo" xml:"K8sVolumeInfo"`
 	Affinity           string `json:"Affinity" xml:"Affinity"`
 	Tolerations        string `json:"Tolerations" xml:"Tolerations"`
+	UserBaseImageUrl   string `json:"UserBaseImageUrl" xml:"UserBaseImageUrl"`
 }

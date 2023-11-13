@@ -71,28 +71,29 @@ func (client *Client) StartK8sAppPrecheckWithCallback(request *StartK8sAppPreche
 // StartK8sAppPrecheckRequest is the request struct for api StartK8sAppPrecheck
 type StartK8sAppPrecheckRequest struct {
 	*requests.RoaRequest
-	Replicas                 string `position:"Query" name:"Replicas"`
-	RequestsEphemeralStorage string `position:"Query" name:"RequestsEphemeralStorage"`
-	Envs                     string `position:"Query" name:"Envs"`
-	Annotations              string `position:"Query" name:"Annotations"`
-	ClusterId                string `position:"Query" name:"ClusterId"`
-	RequestsMem              string `position:"Query" name:"RequestsMem"`
-	LocalVolume              string `position:"Query" name:"LocalVolume"`
-	EnvFroms                 string `position:"Query" name:"EnvFroms"`
-	Labels                   string `position:"Query" name:"Labels"`
-	LimitMem                 string `position:"Query" name:"LimitMem"`
-	LimitEphemeralStorage    string `position:"Query" name:"LimitEphemeralStorage"`
-	LimitmCpu                string `position:"Query" name:"LimitmCpu"`
-	ConfigMountDescs         string `position:"Query" name:"ConfigMountDescs"`
-	AppName                  string `position:"Query" name:"AppName"`
-	PackageUrl               string `position:"Query" name:"PackageUrl"`
-	AppId                    string `position:"Query" name:"AppId"`
-	EmptyDirs                string `position:"Query" name:"EmptyDirs"`
-	PvcMountDescs            string `position:"Query" name:"PvcMountDescs"`
-	ImageUrl                 string `position:"Query" name:"ImageUrl"`
-	Namespace                string `position:"Query" name:"Namespace"`
-	RequestsmCpu             string `position:"Query" name:"RequestsmCpu"`
-	JavaStartUpConfig        string `position:"Query" name:"JavaStartUpConfig"`
+	ComponentIds             string           `position:"Query" name:"ComponentIds"`
+	Replicas                 requests.Integer `position:"Query" name:"Replicas"`
+	RequestsEphemeralStorage requests.Integer `position:"Query" name:"RequestsEphemeralStorage"`
+	Envs                     string           `position:"Query" name:"Envs"`
+	Annotations              string           `position:"Query" name:"Annotations"`
+	ClusterId                string           `position:"Query" name:"ClusterId"`
+	RequestsMem              requests.Integer `position:"Query" name:"RequestsMem"`
+	LocalVolume              string           `position:"Query" name:"LocalVolume"`
+	EnvFroms                 string           `position:"Query" name:"EnvFroms"`
+	Labels                   string           `position:"Query" name:"Labels"`
+	LimitMem                 requests.Integer `position:"Query" name:"LimitMem"`
+	LimitEphemeralStorage    requests.Integer `position:"Query" name:"LimitEphemeralStorage"`
+	LimitmCpu                requests.Integer `position:"Query" name:"LimitmCpu"`
+	ConfigMountDescs         string           `position:"Query" name:"ConfigMountDescs"`
+	AppName                  string           `position:"Query" name:"AppName"`
+	PackageUrl               string           `position:"Query" name:"PackageUrl"`
+	AppId                    string           `position:"Query" name:"AppId"`
+	EmptyDirs                string           `position:"Query" name:"EmptyDirs"`
+	PvcMountDescs            string           `position:"Query" name:"PvcMountDescs"`
+	ImageUrl                 string           `position:"Query" name:"ImageUrl"`
+	Namespace                string           `position:"Query" name:"Namespace"`
+	RequestsmCpu             requests.Integer `position:"Query" name:"RequestsmCpu"`
+	JavaStartUpConfig        string           `position:"Query" name:"JavaStartUpConfig"`
 }
 
 // StartK8sAppPrecheckResponse is the response struct for api StartK8sAppPrecheck

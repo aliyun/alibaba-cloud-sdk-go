@@ -71,7 +71,7 @@ func (client *Client) DeleteConfigTemplateWithCallback(request *DeleteConfigTemp
 // DeleteConfigTemplateRequest is the request struct for api DeleteConfigTemplate
 type DeleteConfigTemplateRequest struct {
 	*requests.RoaRequest
-	Id string `position:"Query" name:"Id"`
+	Id requests.Integer `position:"Query" name:"Id"`
 }
 
 // DeleteConfigTemplateResponse is the response struct for api DeleteConfigTemplate

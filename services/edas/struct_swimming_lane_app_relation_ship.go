@@ -21,4 +21,5 @@ type SwimmingLaneAppRelationShip struct {
 	Rules   string `json:"Rules" xml:"Rules"`
 	LaneId  int64  `json:"LaneId" xml:"LaneId"`
 	AppName string `json:"AppName" xml:"AppName"`
+	Extra   string `json:"Extra" xml:"Extra"`
 }

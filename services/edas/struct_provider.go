@@ -21,6 +21,7 @@ type Provider struct {
 	EdassAppId    string `json:"EdassAppId" xml:"EdassAppId"`
 	Port          string `json:"Port" xml:"Port"`
 	Ip            string `json:"Ip" xml:"Ip"`
+	Iannotations  string `json:"Iannotations" xml:"Iannotations"`
 	EdasAppName   string `json:"EdasAppName" xml:"EdasAppName"`
 	SerializeType string `json:"SerializeType" xml:"SerializeType"`
 }

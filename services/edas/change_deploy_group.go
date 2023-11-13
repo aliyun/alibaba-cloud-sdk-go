@@ -71,10 +71,10 @@ func (client *Client) ChangeDeployGroupWithCallback(request *ChangeDeployGroupRe
 // ChangeDeployGroupRequest is the request struct for api ChangeDeployGroup
 type ChangeDeployGroupRequest struct {
 	*requests.RoaRequest
-	ForceStatus string `position:"Query" name:"ForceStatus"`
-	AppId       string `position:"Query" name:"AppId"`
-	EccInfo     string `position:"Query" name:"EccInfo"`
-	GroupName   string `position:"Query" name:"GroupName"`
+	ForceStatus requests.Boolean `position:"Query" name:"ForceStatus"`
+	AppId       string           `position:"Query" name:"AppId"`
+	EccInfo     string           `position:"Query" name:"EccInfo"`
+	GroupName   string           `position:"Query" name:"GroupName"`
 }
 
 // ChangeDeployGroupResponse is the response struct for api ChangeDeployGroup

@@ -17,8 +17,8 @@ package edas
 
 // DataInListConfigTemplates is a nested struct in edas response
 type DataInListConfigTemplates struct {
-	CurrentPage int      `json:"CurrentPage" xml:"CurrentPage"`
-	PageSize    int      `json:"PageSize" xml:"PageSize"`
-	TotalSize   int64    `json:"TotalSize" xml:"TotalSize"`
-	Result      []Result `json:"Result" xml:"Result"`
+	CurrentPage int          `json:"CurrentPage" xml:"CurrentPage"`
+	PageSize    int          `json:"PageSize" xml:"PageSize"`
+	TotalSize   int64        `json:"TotalSize" xml:"TotalSize"`
+	Result      []ResultItem `json:"Result" xml:"Result"`
 }

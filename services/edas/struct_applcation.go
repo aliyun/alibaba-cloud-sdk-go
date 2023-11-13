@@ -18,12 +18,14 @@ package edas
 // Applcation is a nested struct in edas response
 type Applcation struct {
 	Name                 string        `json:"Name" xml:"Name"`
+	WorkloadType         string        `json:"WorkloadType" xml:"WorkloadType"`
 	CreateTime           int64         `json:"CreateTime" xml:"CreateTime"`
 	Dockerize            bool          `json:"Dockerize" xml:"Dockerize"`
 	SlbInfo              string        `json:"SlbInfo" xml:"SlbInfo"`
 	AppPhase             string        `json:"AppPhase" xml:"AppPhase"`
 	RegionId             string        `json:"RegionId" xml:"RegionId"`
 	SlbPort              int           `json:"SlbPort" xml:"SlbPort"`
+	ResourceGroupId      string        `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	UserId               string        `json:"UserId" xml:"UserId"`
 	ApplicationType      string        `json:"ApplicationType" xml:"ApplicationType"`
 	Description          string        `json:"Description" xml:"Description"`
@@ -42,6 +44,7 @@ type Applcation struct {
 	AppId                string        `json:"AppId" xml:"AppId"`
 	EnableUrlCheck       bool          `json:"EnableUrlCheck" xml:"EnableUrlCheck"`
 	InstanceCount        int           `json:"InstanceCount" xml:"InstanceCount"`
+	HaveManageAccess     bool          `json:"HaveManageAccess" xml:"HaveManageAccess"`
 	HealthCheckUrl       string        `json:"HealthCheckUrl" xml:"HealthCheckUrl"`
 	SlbId                string        `json:"SlbId" xml:"SlbId"`
 	Cpu                  int           `json:"Cpu" xml:"Cpu"`
@@ -49,8 +52,8 @@ type Applcation struct {
 	RunningInstanceCount int           `json:"RunningInstanceCount" xml:"RunningInstanceCount"`
 	SlbIp                string        `json:"SlbIp" xml:"SlbIp"`
 	Conf                 Conf          `json:"Conf" xml:"Conf"`
-	ImageInfo            ImageInfo     `json:"ImageInfo" xml:"ImageInfo"`
 	App                  App           `json:"App" xml:"App"`
+	ImageInfo            ImageInfo     `json:"ImageInfo" xml:"ImageInfo"`
 	LatestVersion        LatestVersion `json:"LatestVersion" xml:"LatestVersion"`
 	DeployGroups         DeployGroups  `json:"DeployGroups" xml:"DeployGroups"`
 }

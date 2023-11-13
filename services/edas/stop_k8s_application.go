@@ -71,8 +71,8 @@ func (client *Client) StopK8sApplicationWithCallback(request *StopK8sApplication
 // StopK8sApplicationRequest is the request struct for api StopK8sApplication
 type StopK8sApplicationRequest struct {
 	*requests.RoaRequest
-	AppId   string `position:"Query" name:"AppId"`
-	Timeout string `position:"Query" name:"Timeout"`
+	AppId   string           `position:"Query" name:"AppId"`
+	Timeout requests.Integer `position:"Query" name:"Timeout"`
 }
 
 // StopK8sApplicationResponse is the response struct for api StopK8sApplication

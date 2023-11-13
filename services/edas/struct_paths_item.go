@@ -22,5 +22,6 @@ type PathsItem struct {
 	AppName     string  `json:"AppName" xml:"AppName"`
 	AppId       string  `json:"AppId" xml:"AppId"`
 	CollectRate int     `json:"CollectRate" xml:"CollectRate"`
+	PathType    string  `json:"PathType" xml:"PathType"`
 	Backend     Backend `json:"Backend" xml:"Backend"`
 }

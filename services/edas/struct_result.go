@@ -17,14 +17,7 @@ package edas
 
 // Result is a nested struct in edas response
 type Result struct {
-	Name        string           `json:"Name" xml:"Name"`
-	GmtCreate   int64            `json:"GmtCreate" xml:"GmtCreate"`
-	Format      string           `json:"Format" xml:"Format"`
-	Content     string           `json:"Content" xml:"Content"`
-	Total       int              `json:"Total" xml:"Total"`
-	GmtModified int64            `json:"GmtModified" xml:"GmtModified"`
-	Id          string           `json:"Id" xml:"Id"`
-	Description string           `json:"Description" xml:"Description"`
-	ConfigMaps  []ConfigMapsItem `json:"ConfigMaps" xml:"ConfigMaps"`
-	Secrets     []SecretsItem    `json:"Secrets" xml:"Secrets"`
+	Total      int              `json:"Total" xml:"Total"`
+	ConfigMaps []ConfigMapsItem `json:"ConfigMaps" xml:"ConfigMaps"`
+	Secrets    []SecretsItem    `json:"Secrets" xml:"Secrets"`
 }

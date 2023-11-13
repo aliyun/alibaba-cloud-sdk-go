@@ -71,8 +71,8 @@ func (client *Client) DeleteK8sApplicationWithCallback(request *DeleteK8sApplica
 // DeleteK8sApplicationRequest is the request struct for api DeleteK8sApplication
 type DeleteK8sApplicationRequest struct {
 	*requests.RoaRequest
-	AppId string `position:"Query" name:"AppId"`
-	Force string `position:"Query" name:"Force"`
+	AppId string           `position:"Query" name:"AppId"`
+	Force requests.Boolean `position:"Query" name:"Force"`
 }
 
 // DeleteK8sApplicationResponse is the response struct for api DeleteK8sApplication

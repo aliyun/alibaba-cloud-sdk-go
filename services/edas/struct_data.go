@@ -59,8 +59,8 @@ type Data struct {
 	EntryApplication                EntryApplication                         `json:"EntryApplication" xml:"EntryApplication"`
 	Result                          []Method                                 `json:"Result" xml:"Result"`
 	SwimmingLaneAppRelationShipList []SwimmingLaneAppRelationShip            `json:"SwimmingLaneAppRelationShipList" xml:"SwimmingLaneAppRelationShipList"`
-	Content                         []Provider                               `json:"Content" xml:"Content"`
 	ApplicationList                 ApplicationListInInsertSwimmingLaneGroup `json:"ApplicationList" xml:"ApplicationList"`
+	Content                         []Provider                               `json:"Content" xml:"Content"`
 	JobResults                      []JobResultsItem                         `json:"JobResults" xml:"JobResults"`
 	RuleList                        RuleList                                 `json:"RuleList" xml:"RuleList"`
 	Methods                         []Method                                 `json:"Methods" xml:"Methods"`

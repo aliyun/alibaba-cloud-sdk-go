@@ -71,13 +71,13 @@ func (client *Client) InsertSwimmingLaneWithCallback(request *InsertSwimmingLane
 // InsertSwimmingLaneRequest is the request struct for api InsertSwimmingLane
 type InsertSwimmingLaneRequest struct {
 	*requests.RoaRequest
-	AppInfos        string `position:"Query" name:"AppInfos"`
-	EntryRules      string `position:"Query" name:"EntryRules"`
-	LogicalRegionId string `position:"Query" name:"LogicalRegionId"`
-	EnableRules     string `position:"Query" name:"EnableRules"`
-	GroupId         string `position:"Query" name:"GroupId"`
-	Name            string `position:"Query" name:"Name"`
-	Tag             string `position:"Query" name:"Tag"`
+	AppInfos        string           `position:"Query" name:"AppInfos"`
+	EntryRules      string           `position:"Query" name:"EntryRules"`
+	LogicalRegionId string           `position:"Query" name:"LogicalRegionId"`
+	EnableRules     requests.Boolean `position:"Query" name:"EnableRules"`
+	GroupId         requests.Integer `position:"Query" name:"GroupId"`
+	Name            string           `position:"Query" name:"Name"`
+	Tag             string           `position:"Query" name:"Tag"`
 }
 
 // InsertSwimmingLaneResponse is the response struct for api InsertSwimmingLane

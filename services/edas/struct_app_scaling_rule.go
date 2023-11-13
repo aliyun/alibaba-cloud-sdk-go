@@ -17,15 +17,16 @@ package edas
 
 // AppScalingRule is a nested struct in edas response
 type AppScalingRule struct {
-	AppId            string  `json:"AppId" xml:"AppId"`
-	ScaleRuleType    string  `json:"ScaleRuleType" xml:"ScaleRuleType"`
-	MinReplicas      int     `json:"MinReplicas" xml:"MinReplicas"`
-	LastDisableTime  int64   `json:"LastDisableTime" xml:"LastDisableTime"`
-	ScaleRuleEnabled bool    `json:"ScaleRuleEnabled" xml:"ScaleRuleEnabled"`
-	UpdateTime       int64   `json:"UpdateTime" xml:"UpdateTime"`
-	MaxReplicas      int     `json:"MaxReplicas" xml:"MaxReplicas"`
-	ScaleRuleName    string  `json:"ScaleRuleName" xml:"ScaleRuleName"`
-	CreateTime       int64   `json:"CreateTime" xml:"CreateTime"`
-	Trigger          Trigger `json:"Trigger" xml:"Trigger"`
-	Metric           Metric  `json:"Metric" xml:"Metric"`
+	AppId            string    `json:"AppId" xml:"AppId"`
+	ScaleRuleType    string    `json:"ScaleRuleType" xml:"ScaleRuleType"`
+	MinReplicas      int       `json:"MinReplicas" xml:"MinReplicas"`
+	LastDisableTime  int64     `json:"LastDisableTime" xml:"LastDisableTime"`
+	ScaleRuleEnabled bool      `json:"ScaleRuleEnabled" xml:"ScaleRuleEnabled"`
+	UpdateTime       int64     `json:"UpdateTime" xml:"UpdateTime"`
+	MaxReplicas      int       `json:"MaxReplicas" xml:"MaxReplicas"`
+	ScaleRuleName    string    `json:"ScaleRuleName" xml:"ScaleRuleName"`
+	CreateTime       int64     `json:"CreateTime" xml:"CreateTime"`
+	Trigger          Trigger   `json:"Trigger" xml:"Trigger"`
+	Metric           Metric    `json:"Metric" xml:"Metric"`
+	Behaviour        Behaviour `json:"Behaviour" xml:"Behaviour"`
 }

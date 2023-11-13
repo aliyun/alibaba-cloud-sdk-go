@@ -41,6 +41,15 @@ type App struct {
 	Labels                  string  `json:"Labels" xml:"Labels"`
 	LimitEphemeralStorage   string  `json:"LimitEphemeralStorage" xml:"LimitEphemeralStorage"`
 	RequestEphemeralStorage string  `json:"RequestEphemeralStorage" xml:"RequestEphemeralStorage"`
+	EnableEmptyPushReject   bool    `json:"EnableEmptyPushReject" xml:"EnableEmptyPushReject"`
+	EnableLosslessRule      bool    `json:"EnableLosslessRule" xml:"EnableLosslessRule"`
+	LosslessRuleAligned     bool    `json:"LosslessRuleAligned" xml:"LosslessRuleAligned"`
+	LosslessRuleDelayTime   int     `json:"LosslessRuleDelayTime" xml:"LosslessRuleDelayTime"`
+	LosslessRuleFuncType    int     `json:"LosslessRuleFuncType" xml:"LosslessRuleFuncType"`
+	LosslessRuleRelated     bool    `json:"LosslessRuleRelated" xml:"LosslessRuleRelated"`
+	LosslessRuleWarmupTime  int     `json:"LosslessRuleWarmupTime" xml:"LosslessRuleWarmupTime"`
+	FeatureAnnotations      string  `json:"FeatureAnnotations" xml:"FeatureAnnotations"`
+	WorkloadType            string  `json:"WorkloadType" xml:"WorkloadType"`
 	CmdArgs                 CmdArgs `json:"CmdArgs" xml:"CmdArgs"`
 	EnvList                 EnvList `json:"EnvList" xml:"EnvList"`
 }

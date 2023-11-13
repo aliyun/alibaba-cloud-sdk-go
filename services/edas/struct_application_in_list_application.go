@@ -35,4 +35,6 @@ type ApplicationInListApplication struct {
 	RunningInstanceCount int    `json:"RunningInstanceCount" xml:"RunningInstanceCount"`
 	ClusterId            string `json:"ClusterId" xml:"ClusterId"`
 	ResourceGroupId      string `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	K8sNamespace         string `json:"K8sNamespace" xml:"K8sNamespace"`
+	NamespaceId          string `json:"NamespaceId" xml:"NamespaceId"`
 }

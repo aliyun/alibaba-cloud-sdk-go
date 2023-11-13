@@ -71,21 +71,21 @@ func (client *Client) DeployApplicationWithCallback(request *DeployApplicationRe
 // DeployApplicationRequest is the request struct for api DeployApplication
 type DeployApplicationRequest struct {
 	*requests.RoaRequest
-	BuildPackId            string `position:"Query" name:"BuildPackId"`
-	ComponentIds           string `position:"Query" name:"ComponentIds"`
-	GroupId                string `position:"Query" name:"GroupId"`
-	BatchWaitTime          string `position:"Query" name:"BatchWaitTime"`
-	ReleaseType            string `position:"Query" name:"ReleaseType"`
-	Batch                  string `position:"Query" name:"Batch"`
-	AppEnv                 string `position:"Query" name:"AppEnv"`
-	PackageVersion         string `position:"Query" name:"PackageVersion"`
-	Gray                   string `position:"Query" name:"Gray"`
-	AppId                  string `position:"Query" name:"AppId"`
-	ImageUrl               string `position:"Query" name:"ImageUrl"`
-	WarUrl                 string `position:"Query" name:"WarUrl"`
-	TrafficControlStrategy string `position:"Query" name:"TrafficControlStrategy"`
-	Desc                   string `position:"Query" name:"Desc"`
-	DeployType             string `position:"Query" name:"DeployType"`
+	BuildPackId            requests.Integer `position:"Query" name:"BuildPackId"`
+	ComponentIds           string           `position:"Query" name:"ComponentIds"`
+	GroupId                string           `position:"Query" name:"GroupId"`
+	BatchWaitTime          requests.Integer `position:"Query" name:"BatchWaitTime"`
+	ReleaseType            requests.Integer `position:"Query" name:"ReleaseType"`
+	Batch                  requests.Integer `position:"Query" name:"Batch"`
+	AppEnv                 string           `position:"Query" name:"AppEnv"`
+	PackageVersion         string           `position:"Query" name:"PackageVersion"`
+	Gray                   requests.Boolean `position:"Query" name:"Gray"`
+	AppId                  string           `position:"Query" name:"AppId"`
+	ImageUrl               string           `position:"Query" name:"ImageUrl"`
+	WarUrl                 string           `position:"Query" name:"WarUrl"`
+	TrafficControlStrategy string           `position:"Query" name:"TrafficControlStrategy"`
+	Desc                   string           `position:"Query" name:"Desc"`
+	DeployType             string           `position:"Query" name:"DeployType"`
 }
 
 // DeployApplicationResponse is the response struct for api DeployApplication
