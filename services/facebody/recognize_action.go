@@ -89,8 +89,8 @@ type RecognizeActionURLList struct {
 // RecognizeActionResponse is the response struct for api RecognizeAction
 type RecognizeActionResponse struct {
 	*responses.BaseResponse
-	RequestId string                `json:"RequestId" xml:"RequestId"`
-	Data      DataInRecognizeAction `json:"Data" xml:"Data"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Data      Data   `json:"Data" xml:"Data"`
 }
 
 // CreateRecognizeActionRequest creates a request to invoke RecognizeAction API

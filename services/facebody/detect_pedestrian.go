@@ -80,8 +80,8 @@ type DetectPedestrianRequest struct {
 // DetectPedestrianResponse is the response struct for api DetectPedestrian
 type DetectPedestrianResponse struct {
 	*responses.BaseResponse
-	RequestId string                 `json:"RequestId" xml:"RequestId"`
-	Data      DataInDetectPedestrian `json:"Data" xml:"Data"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Data      Data   `json:"Data" xml:"Data"`
 }
 
 // CreateDetectPedestrianRequest creates a request to invoke DetectPedestrian API

@@ -18,8 +18,9 @@ package facebody
 // Result is a nested struct in facebody response
 type Result struct {
 	Rate        float64     `json:"Rate" xml:"Rate"`
-	Suggestion  string      `json:"Suggestion" xml:"Suggestion"`
 	Label       string      `json:"Label" xml:"Label"`
+	Suggestion  string      `json:"Suggestion" xml:"Suggestion"`
+	Confidence  float64     `json:"Confidence" xml:"Confidence"`
 	MessageTips string      `json:"MessageTips" xml:"MessageTips"`
 	Rect        Rect        `json:"Rect" xml:"Rect"`
 	Hands       Hands       `json:"Hands" xml:"Hands"`

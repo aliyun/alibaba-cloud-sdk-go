@@ -86,8 +86,8 @@ type RecognizePublicFaceTask struct {
 // RecognizePublicFaceResponse is the response struct for api RecognizePublicFace
 type RecognizePublicFaceResponse struct {
 	*responses.BaseResponse
-	RequestId string                    `json:"RequestId" xml:"RequestId"`
-	Data      DataInRecognizePublicFace `json:"Data" xml:"Data"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Data      Data   `json:"Data" xml:"Data"`
 }
 
 // CreateRecognizePublicFaceRequest creates a request to invoke RecognizePublicFace API

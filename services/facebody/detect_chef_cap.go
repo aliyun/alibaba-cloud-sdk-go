@@ -80,8 +80,8 @@ type DetectChefCapRequest struct {
 // DetectChefCapResponse is the response struct for api DetectChefCap
 type DetectChefCapResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Data      Data   `json:"Data" xml:"Data"`
+	RequestId string              `json:"RequestId" xml:"RequestId"`
+	Data      DataInDetectChefCap `json:"Data" xml:"Data"`
 }
 
 // CreateDetectChefCapRequest creates a request to invoke DetectChefCap API

@@ -80,8 +80,8 @@ type RecognizeExpressionRequest struct {
 // RecognizeExpressionResponse is the response struct for api RecognizeExpression
 type RecognizeExpressionResponse struct {
 	*responses.BaseResponse
-	RequestId string                    `json:"RequestId" xml:"RequestId"`
-	Data      DataInRecognizeExpression `json:"Data" xml:"Data"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Data      Data   `json:"Data" xml:"Data"`
 }
 
 // CreateRecognizeExpressionRequest creates a request to invoke RecognizeExpression API

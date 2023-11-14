@@ -41,12 +41,10 @@ type Data struct {
 	EntityId             string                `json:"EntityId" xml:"EntityId"`
 	Gender               string                `json:"Gender" xml:"Gender"`
 	XFlowURL             string                `json:"XFlowURL" xml:"XFlowURL"`
-	ImageHeight          int64                 `json:"ImageHeight" xml:"ImageHeight"`
 	LowerType            string                `json:"LowerType" xml:"LowerType"`
 	Width                int                   `json:"Width" xml:"Width"`
 	Passed               bool                  `json:"Passed" xml:"Passed"`
 	UpperColorScore      float64               `json:"UpperColorScore" xml:"UpperColorScore"`
-	ImageWidth           int64                 `json:"ImageWidth" xml:"ImageWidth"`
 	Hair                 string                `json:"Hair" xml:"Hair"`
 	MessageTips          string                `json:"MessageTips" xml:"MessageTips"`
 	Threshold            float64               `json:"Threshold" xml:"Threshold"`
@@ -89,7 +87,7 @@ type Data struct {
 	FaceInfo             FaceInfo              `json:"FaceInfo" xml:"FaceInfo"`
 	MetaObject           MetaObject            `json:"MetaObject" xml:"MetaObject"`
 	FaceInfos            []FaceInfosItem       `json:"FaceInfos" xml:"FaceInfos"`
-	Elements             []ElementsItem        `json:"Elements" xml:"Elements"`
+	Elements             []Element             `json:"Elements" xml:"Elements"`
 	Faces                []Face                `json:"Faces" xml:"Faces"`
 	FailedFaces          []FailedFacesItem     `json:"FailedFaces" xml:"FailedFaces"`
 	Outputs              []Output              `json:"Outputs" xml:"Outputs"`

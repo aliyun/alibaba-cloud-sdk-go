@@ -80,8 +80,8 @@ type DetectVideoLivingFaceRequest struct {
 // DetectVideoLivingFaceResponse is the response struct for api DetectVideoLivingFace
 type DetectVideoLivingFaceResponse struct {
 	*responses.BaseResponse
-	RequestId string                      `json:"RequestId" xml:"RequestId"`
-	Data      DataInDetectVideoLivingFace `json:"Data" xml:"Data"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Data      Data   `json:"Data" xml:"Data"`
 }
 
 // CreateDetectVideoLivingFaceRequest creates a request to invoke DetectVideoLivingFace API

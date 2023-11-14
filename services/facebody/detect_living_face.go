@@ -86,8 +86,8 @@ type DetectLivingFaceTasks struct {
 // DetectLivingFaceResponse is the response struct for api DetectLivingFace
 type DetectLivingFaceResponse struct {
 	*responses.BaseResponse
-	RequestId string                 `json:"RequestId" xml:"RequestId"`
-	Data      DataInDetectLivingFace `json:"Data" xml:"Data"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Data      Data   `json:"Data" xml:"Data"`
 }
 
 // CreateDetectLivingFaceRequest creates a request to invoke DetectLivingFace API
