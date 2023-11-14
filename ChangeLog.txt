@@ -1,3 +1,7 @@
+2023-11-14 Version: v1.62.608
+- Generated 2014-08-28 for `Ess`.
+- ECIScalingConfiguration add data cache fields.
+
 2023-11-14 Version: v1.62.607
 - Generated 2019-12-30 for `facebody`.
 - Release DeepfakeFace.

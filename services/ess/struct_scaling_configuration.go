@@ -20,35 +20,39 @@ type ScalingConfiguration struct {
 	RestartPolicy                 string                    `json:"RestartPolicy" xml:"RestartPolicy"`
 	CpuOptionsThreadsPerCore      int                       `json:"CpuOptionsThreadsPerCore" xml:"CpuOptionsThreadsPerCore"`
 	ScalingConfigurationId        string                    `json:"ScalingConfigurationId" xml:"ScalingConfigurationId"`
-	ContainerGroupName            string                    `json:"ContainerGroupName" xml:"ContainerGroupName"`
-	SecurityGroupId               string                    `json:"SecurityGroupId" xml:"SecurityGroupId"`
-	SpotPriceLimit                float64                   `json:"SpotPriceLimit" xml:"SpotPriceLimit"`
-	TerminationGracePeriodSeconds int                       `json:"TerminationGracePeriodSeconds" xml:"TerminationGracePeriodSeconds"`
+	DataCachePL                   string                    `json:"DataCachePL" xml:"DataCachePL"`
+	DataCacheProvisionedIops      int                       `json:"DataCacheProvisionedIops" xml:"DataCacheProvisionedIops"`
 	ScalingConfigurationName      string                    `json:"ScalingConfigurationName" xml:"ScalingConfigurationName"`
+	DataCacheBucket               string                    `json:"DataCacheBucket" xml:"DataCacheBucket"`
 	AutoMatchImageCache           bool                      `json:"AutoMatchImageCache" xml:"AutoMatchImageCache"`
-	RegionId                      string                    `json:"RegionId" xml:"RegionId"`
-	ResourceGroupId               string                    `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	InstanceFamilyLevel           string                    `json:"InstanceFamilyLevel" xml:"InstanceFamilyLevel"`
 	ActiveDeadlineSeconds         int                       `json:"ActiveDeadlineSeconds" xml:"ActiveDeadlineSeconds"`
-	CpuOptionsCore                int                       `json:"CpuOptionsCore" xml:"CpuOptionsCore"`
-	Description                   string                    `json:"Description" xml:"Description"`
-	DnsPolicy                     string                    `json:"DnsPolicy" xml:"DnsPolicy"`
 	CostOptimization              bool                      `json:"CostOptimization" xml:"CostOptimization"`
 	EgressBandwidth               int64                     `json:"EgressBandwidth" xml:"EgressBandwidth"`
 	AutoCreateEip                 bool                      `json:"AutoCreateEip" xml:"AutoCreateEip"`
 	Memory                        float64                   `json:"Memory" xml:"Memory"`
 	LifecycleState                string                    `json:"LifecycleState" xml:"LifecycleState"`
 	EphemeralStorage              int                       `json:"EphemeralStorage" xml:"EphemeralStorage"`
-	CreationTime                  string                    `json:"CreationTime" xml:"CreationTime"`
-	EipBandwidth                  int                       `json:"EipBandwidth" xml:"EipBandwidth"`
 	RamRoleName                   string                    `json:"RamRoleName" xml:"RamRoleName"`
-	SlsEnable                     bool                      `json:"SlsEnable" xml:"SlsEnable"`
 	Ipv6AddressCount              int                       `json:"Ipv6AddressCount" xml:"Ipv6AddressCount"`
-	IngressBandwidth              int64                     `json:"IngressBandwidth" xml:"IngressBandwidth"`
 	HostName                      string                    `json:"HostName" xml:"HostName"`
-	SpotStrategy                  string                    `json:"SpotStrategy" xml:"SpotStrategy"`
 	ScalingGroupId                string                    `json:"ScalingGroupId" xml:"ScalingGroupId"`
 	LoadBalancerWeight            int                       `json:"LoadBalancerWeight" xml:"LoadBalancerWeight"`
+	ContainerGroupName            string                    `json:"ContainerGroupName" xml:"ContainerGroupName"`
+	SecurityGroupId               string                    `json:"SecurityGroupId" xml:"SecurityGroupId"`
+	SpotPriceLimit                float64                   `json:"SpotPriceLimit" xml:"SpotPriceLimit"`
+	TerminationGracePeriodSeconds int                       `json:"TerminationGracePeriodSeconds" xml:"TerminationGracePeriodSeconds"`
+	RegionId                      string                    `json:"RegionId" xml:"RegionId"`
+	ResourceGroupId               string                    `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	CpuOptionsCore                int                       `json:"CpuOptionsCore" xml:"CpuOptionsCore"`
+	Description                   string                    `json:"Description" xml:"Description"`
+	DnsPolicy                     string                    `json:"DnsPolicy" xml:"DnsPolicy"`
+	CreationTime                  string                    `json:"CreationTime" xml:"CreationTime"`
+	EipBandwidth                  int                       `json:"EipBandwidth" xml:"EipBandwidth"`
+	SlsEnable                     bool                      `json:"SlsEnable" xml:"SlsEnable"`
+	DataCacheBurstingEnabled      bool                      `json:"DataCacheBurstingEnabled" xml:"DataCacheBurstingEnabled"`
+	IngressBandwidth              int64                     `json:"IngressBandwidth" xml:"IngressBandwidth"`
+	SpotStrategy                  string                    `json:"SpotStrategy" xml:"SpotStrategy"`
 	Cpu                           float64                   `json:"Cpu" xml:"Cpu"`
 	ImageSnapshotId               string                    `json:"ImageSnapshotId" xml:"ImageSnapshotId"`
 	DnsConfigNameServers          []string                  `json:"DnsConfigNameServers" xml:"DnsConfigNameServers"`
@@ -56,12 +60,12 @@ type ScalingConfiguration struct {
 	DnsConfigSearches             []string                  `json:"DnsConfigSearches" xml:"DnsConfigSearches"`
 	NtpServers                    []string                  `json:"NtpServers" xml:"NtpServers"`
 	Containers                    []Container               `json:"Containers" xml:"Containers"`
-	Volumes                       []Volume                  `json:"Volumes" xml:"Volumes"`
-	SecurityContextSysCtls        []SecurityContextSysCtl   `json:"SecurityContextSysCtls" xml:"SecurityContextSysCtls"`
 	Tags                          []Tag                     `json:"Tags" xml:"Tags"`
 	DnsConfigOptions              []DnsConfigOption         `json:"DnsConfigOptions" xml:"DnsConfigOptions"`
 	HostAliases                   []HostAlias               `json:"HostAliases" xml:"HostAliases"`
 	ImageRegistryCredentials      []ImageRegistryCredential `json:"ImageRegistryCredentials" xml:"ImageRegistryCredentials"`
-	InitContainers                []InitContainer           `json:"InitContainers" xml:"InitContainers"`
 	AcrRegistryInfos              []AcrRegistryInfo         `json:"AcrRegistryInfos" xml:"AcrRegistryInfos"`
+	Volumes                       []Volume                  `json:"Volumes" xml:"Volumes"`
+	SecurityContextSysCtls        []SecurityContextSysCtl   `json:"SecurityContextSysCtls" xml:"SecurityContextSysCtls"`
+	InitContainers                []InitContainer           `json:"InitContainers" xml:"InitContainers"`
 }

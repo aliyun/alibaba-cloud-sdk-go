@@ -84,6 +84,7 @@ type CreateEciScalingConfigurationRequest struct {
 	ImageSnapshotId               string                                                  `position:"Query" name:"ImageSnapshotId"`
 	Tag                           *[]CreateEciScalingConfigurationTag                     `position:"Query" name:"Tag"  type:"Repeated"`
 	CpuOptionsThreadsPerCore      requests.Integer                                        `position:"Query" name:"CpuOptionsThreadsPerCore"`
+	DataCachePL                   string                                                  `position:"Query" name:"DataCachePL"`
 	Ipv6AddressCount              requests.Integer                                        `position:"Query" name:"Ipv6AddressCount"`
 	Cpu                           requests.Float                                          `position:"Query" name:"Cpu"`
 	OwnerId                       requests.Integer                                        `position:"Query" name:"OwnerId"`
@@ -93,8 +94,10 @@ type CreateEciScalingConfigurationRequest struct {
 	InstanceFamilyLevel           string                                                  `position:"Query" name:"InstanceFamilyLevel"`
 	DnsConfigOption               *[]CreateEciScalingConfigurationDnsConfigOption         `position:"Query" name:"DnsConfigOption"  type:"Repeated"`
 	EphemeralStorage              requests.Integer                                        `position:"Query" name:"EphemeralStorage"`
+	DataCacheProvisionedIops      requests.Integer                                        `position:"Query" name:"DataCacheProvisionedIops"`
 	EipBandwidth                  requests.Integer                                        `position:"Query" name:"EipBandwidth"`
 	CostOptimization              requests.Boolean                                        `position:"Query" name:"CostOptimization"`
+	DataCacheBurstingEnabled      requests.Boolean                                        `position:"Query" name:"DataCacheBurstingEnabled"`
 	Memory                        requests.Float                                          `position:"Query" name:"Memory"`
 	ScalingGroupId                string                                                  `position:"Query" name:"ScalingGroupId"`
 	SecurityGroupId               string                                                  `position:"Query" name:"SecurityGroupId"`
@@ -102,6 +105,7 @@ type CreateEciScalingConfigurationRequest struct {
 	IngressBandwidth              requests.Integer                                        `position:"Query" name:"IngressBandwidth"`
 	DnsPolicy                     string                                                  `position:"Query" name:"DnsPolicy"`
 	SecurityContextSysctl         *[]CreateEciScalingConfigurationSecurityContextSysctl   `position:"Query" name:"SecurityContextSysctl"  type:"Repeated"`
+	DataCacheBucket               string                                                  `position:"Query" name:"DataCacheBucket"`
 	DnsConfigNameServer           *[]string                                               `position:"Query" name:"DnsConfigNameServer"  type:"Repeated"`
 	InitContainer                 *[]CreateEciScalingConfigurationInitContainer           `position:"Query" name:"InitContainer"  type:"Repeated"`
 	InstanceType                  *[]string                                               `position:"Query" name:"InstanceType"  type:"Repeated"`

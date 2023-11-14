@@ -17,8 +17,9 @@ package ess
 
 // Tag is a nested struct in ess response
 type Tag struct {
-	Key      string `json:"Key" xml:"Key"`
-	Value    string `json:"Value" xml:"Value"`
-	TagValue string `json:"TagValue" xml:"TagValue"`
-	TagKey   string `json:"TagKey" xml:"TagKey"`
+	Key       string `json:"Key" xml:"Key"`
+	Value     string `json:"Value" xml:"Value"`
+	Propagate bool   `json:"Propagate" xml:"Propagate"`
+	TagValue  string `json:"TagValue" xml:"TagValue"`
+	TagKey    string `json:"TagKey" xml:"TagKey"`
 }
