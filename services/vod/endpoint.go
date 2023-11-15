@@ -23,17 +23,13 @@ func GetEndpointMap() map[string]string {
 			"cn-hongkong-finance-pop":     "vod.aliyuncs.com",
 			"cn-qingdao-nebula":           "vod.aliyuncs.com",
 			"cn-shanghai-finance-1":       "vod.aliyuncs.com",
-			"cn-hongkong":                 "vod.aliyuncs.com",
 			"cn-beijing-finance-pop":      "vod.aliyuncs.com",
 			"cn-wuhan":                    "vod.aliyuncs.com",
-			"cn-zhangjiakou":              "vod.aliyuncs.com",
-			"us-west-1":                   "vod.aliyuncs.com",
 			"cn-zhangbei":                 "vod.aliyuncs.com",
 			"cn-zhengzhou-nebula-1":       "vod.aliyuncs.com",
 			"rus-west-1-pop":              "vod.aliyuncs.com",
 			"cn-shanghai-et15-b01":        "vod.aliyuncs.com",
 			"cn-hangzhou-bj-b01":          "vod.aliyuncs.com",
-			"eu-west-1":                   "vod.aliyuncs.com",
 			"cn-hangzhou-internal-test-1": "vod.aliyuncs.com",
 			"eu-west-1-oxs":               "vod.aliyuncs.com",
 			"cn-zhangbei-na61-b01":        "vod.aliyuncs.com",
@@ -57,7 +53,7 @@ func GetEndpointMap() map[string]string {
 			"ap-northeast-2-pop":          "vod.aliyuncs.com",
 			"cn-shenzhen-inner":           "vod.aliyuncs.com",
 			"cn-zhangjiakou-na62-a01":     "vod.aliyuncs.com",
-			"cn-hangzhou":                 "vod.aliyuncs.com",
+			"cn-hangzhou":                 "vod.cn-shanghai.aliyuncs.com",
 		}
 	}
 	return EndpointMap

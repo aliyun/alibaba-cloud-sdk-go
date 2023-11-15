@@ -81,6 +81,7 @@ type ProduceEditingProjectVideoRequest struct {
 	MediaMetadata        string           `position:"Query" name:"MediaMetadata"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	AppId                string           `position:"Query" name:"AppId"`
 	Timeline             string           `position:"Query" name:"Timeline"`
 }
 
