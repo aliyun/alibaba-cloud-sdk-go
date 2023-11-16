@@ -17,22 +17,18 @@ package csas
 
 // Policy is a nested struct in csas response
 type Policy struct {
-	Name                 string                `json:"Name" xml:"Name"`
-	Priority             int                   `json:"Priority" xml:"Priority"`
-	PolicyType           string                `json:"PolicyType" xml:"PolicyType"`
-	CreateTime           string                `json:"CreateTime" xml:"CreateTime"`
-	PolicyAction         string                `json:"PolicyAction" xml:"PolicyAction"`
-	PolicyId             string                `json:"PolicyId" xml:"PolicyId"`
-	UserGroupType        string                `json:"UserGroupType" xml:"UserGroupType"`
-	UserGroupMode        string                `json:"UserGroupMode" xml:"UserGroupMode"`
-	Status               string                `json:"Status" xml:"Status"`
-	ApplicationType      string                `json:"ApplicationType" xml:"ApplicationType"`
-	Description          string                `json:"Description" xml:"Description"`
-	UserGroupIds         []string              `json:"UserGroupIds" xml:"UserGroupIds"`
-	ApplicationIds       []string              `json:"ApplicationIds" xml:"ApplicationIds"`
-	TagIds               []string              `json:"TagIds" xml:"TagIds"`
-	Tags                 []Tag                 `json:"Tags" xml:"Tags"`
-	CustomUserAttributes []CustomUserAttribute `json:"CustomUserAttributes" xml:"CustomUserAttributes"`
-	UserGroups           []UserGroup           `json:"UserGroups" xml:"UserGroups"`
-	Applications         []Application         `json:"Applications" xml:"Applications"`
+	Name         string            `json:"Name" xml:"Name"`
+	PolicyType   string            `json:"PolicyType" xml:"PolicyType"`
+	CreateTime   string            `json:"CreateTime" xml:"CreateTime"`
+	MatchMode    string            `json:"MatchMode" xml:"MatchMode"`
+	Priority     string            `json:"Priority" xml:"Priority"`
+	PolicyId     string            `json:"PolicyId" xml:"PolicyId"`
+	Status       string            `json:"Status" xml:"Status"`
+	Description  string            `json:"Description" xml:"Description"`
+	Whitelist    []string          `json:"Whitelist" xml:"Whitelist"`
+	UserGroupIds []string          `json:"UserGroupIds" xml:"UserGroupIds"`
+	Tags         []Tag             `json:"Tags" xml:"Tags"`
+	LimitDetail  []LimitDetailItem `json:"LimitDetail" xml:"LimitDetail"`
+	UserGroups   []UserGroup       `json:"UserGroups" xml:"UserGroups"`
+	Applications []Application     `json:"Applications" xml:"Applications"`
 }

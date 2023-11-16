@@ -75,6 +75,7 @@ type ListPrivateAccessTagsRequest struct {
 	PolicyId      string           `position:"Query" name:"PolicyId"`
 	PageSize      requests.Integer `position:"Query" name:"PageSize"`
 	ApplicationId string           `position:"Query" name:"ApplicationId"`
+	SimpleMode    requests.Boolean `position:"Query" name:"SimpleMode"`
 	TagIds        *[]string        `position:"Query" name:"TagIds"  type:"Repeated"`
 	CurrentPage   requests.Integer `position:"Query" name:"CurrentPage"`
 	Name          string           `position:"Query" name:"Name"`

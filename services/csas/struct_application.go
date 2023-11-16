@@ -17,18 +17,18 @@ package csas
 
 // Application is a nested struct in csas response
 type Application struct {
-	Name            string      `json:"Name" xml:"Name"`
-	ApplicationId   string      `json:"ApplicationId" xml:"ApplicationId"`
-	Protocol        string      `json:"Protocol" xml:"Protocol"`
-	ApplicationName string      `json:"ApplicationName" xml:"ApplicationName"`
-	CreateTime      string      `json:"CreateTime" xml:"CreateTime"`
-	Status          string      `json:"Status" xml:"Status"`
-	Description     string      `json:"Description" xml:"Description"`
-	Addresses       []string    `json:"Addresses" xml:"Addresses"`
-	ConnectorIds    []string    `json:"ConnectorIds" xml:"ConnectorIds"`
-	PolicyIds       []string    `json:"PolicyIds" xml:"PolicyIds"`
-	TagIds          []string    `json:"TagIds" xml:"TagIds"`
-	Tags            []Tag       `json:"Tags" xml:"Tags"`
-	PortRanges      []PortRange `json:"PortRanges" xml:"PortRanges"`
-	Policies        []Policy    `json:"Policies" xml:"Policies"`
+	Name            string                                           `json:"Name" xml:"Name"`
+	ApplicationId   string                                           `json:"ApplicationId" xml:"ApplicationId"`
+	Protocol        string                                           `json:"Protocol" xml:"Protocol"`
+	ApplicationName string                                           `json:"ApplicationName" xml:"ApplicationName"`
+	CreateTime      string                                           `json:"CreateTime" xml:"CreateTime"`
+	Status          string                                           `json:"Status" xml:"Status"`
+	Description     string                                           `json:"Description" xml:"Description"`
+	Addresses       []string                                         `json:"Addresses" xml:"Addresses"`
+	ConnectorIds    []string                                         `json:"ConnectorIds" xml:"ConnectorIds"`
+	PolicyIds       []string                                         `json:"PolicyIds" xml:"PolicyIds"`
+	TagIds          []string                                         `json:"TagIds" xml:"TagIds"`
+	Tags            []Tag                                            `json:"Tags" xml:"Tags"`
+	PortRanges      []PortRange                                      `json:"PortRanges" xml:"PortRanges"`
+	Policies        []PolicyInListPolicesForPrivateAccessApplication `json:"Policies" xml:"Policies"`
 }

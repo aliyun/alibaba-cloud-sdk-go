@@ -17,5 +17,5 @@ package csas
 
 // PolicesInListPrivateAccessPolices is a nested struct in csas response
 type PolicesInListPrivateAccessPolices struct {
-	Policy []Policy `json:"policy" xml:"policy"`
+	Policy []PolicyInListPrivateAccessPolices `json:"policy" xml:"policy"`
 }

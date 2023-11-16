@@ -17,13 +17,13 @@ package csas
 
 // Tag is a nested struct in csas response
 type Tag struct {
-	Name           string        `json:"Name" xml:"Name"`
-	CreateTime     string        `json:"CreateTime" xml:"CreateTime"`
-	TagId          string        `json:"TagId" xml:"TagId"`
-	Description    string        `json:"Description" xml:"Description"`
-	TagType        string        `json:"TagType" xml:"TagType"`
-	ApplicationIds []string      `json:"ApplicationIds" xml:"ApplicationIds"`
-	PolicyIds      []string      `json:"PolicyIds" xml:"PolicyIds"`
-	Polices        []Policy      `json:"Polices" xml:"Polices"`
-	Applications   []Application `json:"Applications" xml:"Applications"`
+	Name           string                                   `json:"Name" xml:"Name"`
+	CreateTime     string                                   `json:"CreateTime" xml:"CreateTime"`
+	TagId          string                                   `json:"TagId" xml:"TagId"`
+	Description    string                                   `json:"Description" xml:"Description"`
+	TagType        string                                   `json:"TagType" xml:"TagType"`
+	ApplicationIds []string                                 `json:"ApplicationIds" xml:"ApplicationIds"`
+	PolicyIds      []string                                 `json:"PolicyIds" xml:"PolicyIds"`
+	Polices        []PolicyInListPolicesForPrivateAccessTag `json:"Polices" xml:"Polices"`
+	Applications   []Application                            `json:"Applications" xml:"Applications"`
 }

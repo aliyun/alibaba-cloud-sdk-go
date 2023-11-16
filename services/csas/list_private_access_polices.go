@@ -86,9 +86,9 @@ type ListPrivateAccessPolicesRequest struct {
 // ListPrivateAccessPolicesResponse is the response struct for api ListPrivateAccessPolices
 type ListPrivateAccessPolicesResponse struct {
 	*responses.BaseResponse
-	RequestId string   `json:"RequestId" xml:"RequestId"`
-	TotalNum  int      `json:"TotalNum" xml:"TotalNum"`
-	Polices   []Policy `json:"Polices" xml:"Polices"`
+	RequestId string                             `json:"RequestId" xml:"RequestId"`
+	TotalNum  int                                `json:"TotalNum" xml:"TotalNum"`
+	Polices   []PolicyInListPrivateAccessPolices `json:"Polices" xml:"Polices"`
 }
 
 // CreateListPrivateAccessPolicesRequest creates a request to invoke ListPrivateAccessPolices API

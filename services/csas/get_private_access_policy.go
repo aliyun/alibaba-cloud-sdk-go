@@ -78,8 +78,8 @@ type GetPrivateAccessPolicyRequest struct {
 // GetPrivateAccessPolicyResponse is the response struct for api GetPrivateAccessPolicy
 type GetPrivateAccessPolicyResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Policy    Policy `json:"Policy" xml:"Policy"`
+	RequestId string                         `json:"RequestId" xml:"RequestId"`
+	Policy    PolicyInGetPrivateAccessPolicy `json:"Policy" xml:"Policy"`
 }
 
 // CreateGetPrivateAccessPolicyRequest creates a request to invoke GetPrivateAccessPolicy API
