@@ -71,12 +71,18 @@ func (client *Client) DescribeNetworkInterfacesWithCallback(request *DescribeNet
 // DescribeNetworkInterfacesRequest is the request struct for api DescribeNetworkInterfaces
 type DescribeNetworkInterfacesRequest struct {
 	*requests.RpcRequest
-	PageNumber       string `position:"Query" name:"PageNumber"`
-	EnsRegionId      string `position:"Query" name:"EnsRegionId"`
-	PageSize         string `position:"Query" name:"PageSize"`
-	VSwitchId        string `position:"Query" name:"VSwitchId"`
-	InstanceId       string `position:"Query" name:"InstanceId"`
-	PrimaryIpAddress string `position:"Query" name:"PrimaryIpAddress"`
+	Type                 string `position:"Query" name:"Type"`
+	EnsRegionId          string `position:"Query" name:"EnsRegionId"`
+	NetworkInterfaceName string `position:"Query" name:"NetworkInterfaceName"`
+	VSwitchId            string `position:"Query" name:"VSwitchId"`
+	InstanceId           string `position:"Query" name:"InstanceId"`
+	NetworkId            string `position:"Query" name:"NetworkId"`
+	Status               string `position:"Query" name:"Status"`
+	SecurityGroupId      string `position:"Query" name:"SecurityGroupId"`
+	PageNumber           string `position:"Query" name:"PageNumber"`
+	PageSize             string `position:"Query" name:"PageSize"`
+	PrimaryIpAddress     string `position:"Query" name:"PrimaryIpAddress"`
+	NetworkInterfaceId   string `position:"Query" name:"NetworkInterfaceId"`
 }
 
 // DescribeNetworkInterfacesResponse is the response struct for api DescribeNetworkInterfaces
@@ -84,8 +90,8 @@ type DescribeNetworkInterfacesResponse struct {
 	*responses.BaseResponse
 	PageNumber           int                  `json:"PageNumber" xml:"PageNumber"`
 	PageSize             int                  `json:"PageSize" xml:"PageSize"`
-	RequestId            string               `json:"RequestId" xml:"RequestId"`
 	TotalCount           int                  `json:"TotalCount" xml:"TotalCount"`
+	RequestId            string               `json:"RequestId" xml:"RequestId"`
 	NetworkInterfaceSets NetworkInterfaceSets `json:"NetworkInterfaceSets" xml:"NetworkInterfaceSets"`
 }
 

@@ -71,17 +71,25 @@ func (client *Client) DescribeAICImagesWithCallback(request *DescribeAICImagesRe
 // DescribeAICImagesRequest is the request struct for api DescribeAICImages
 type DescribeAICImagesRequest struct {
 	*requests.RpcRequest
-	ImageId    string `position:"Query" name:"ImageId"`
-	PageNumber string `position:"Query" name:"PageNumber"`
-	PageSize   string `position:"Query" name:"PageSize"`
-	ImageUrl   string `position:"Query" name:"ImageUrl"`
+	ImageType   string `position:"Query" name:"ImageType"`
+	Status      string `position:"Query" name:"Status"`
+	ImageId     string `position:"Query" name:"ImageId"`
+	MaxDate     string `position:"Query" name:"MaxDate"`
+	Description string `position:"Query" name:"Description"`
+	PageNumber  string `position:"Query" name:"PageNumber"`
+	PageSize    string `position:"Query" name:"PageSize"`
+	MinDate     string `position:"Query" name:"MinDate"`
+	ImageUrl    string `position:"Query" name:"ImageUrl"`
 }
 
 // DescribeAICImagesResponse is the response struct for api DescribeAICImages
 type DescribeAICImagesResponse struct {
 	*responses.BaseResponse
-	RequestId string       `json:"RequestId" xml:"RequestId"`
-	Images    []ImagesItem `json:"Images" xml:"Images"`
+	RequestId  string       `json:"RequestId" xml:"RequestId"`
+	PageNumber int          `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int          `json:"PageSize" xml:"PageSize"`
+	TotalCount int          `json:"TotalCount" xml:"TotalCount"`
+	Images     []ImagesItem `json:"Images" xml:"Images"`
 }
 
 // CreateDescribeAICImagesRequest creates a request to invoke DescribeAICImages API

@@ -37,7 +37,7 @@ type Instance struct {
 	Disk                    int                                  `json:"Disk" xml:"Disk"`
 	HostName                string                               `json:"HostName" xml:"HostName"`
 	Status                  string                               `json:"Status" xml:"Status"`
-	SecurityGroupIds        SecurityGroupIds                     `json:"SecurityGroupIds" xml:"SecurityGroupIds"`
+	SecurityGroupIds        SecurityGroupIdsInDescribeInstances  `json:"SecurityGroupIds" xml:"SecurityGroupIds"`
 	InnerIpAddress          InnerIpAddress                       `json:"InnerIpAddress" xml:"InnerIpAddress"`
 	PublicIpAddress         PublicIpAddressInDescribeInstances   `json:"PublicIpAddress" xml:"PublicIpAddress"`
 	SystemDisk              SystemDisk                           `json:"SystemDisk" xml:"SystemDisk"`

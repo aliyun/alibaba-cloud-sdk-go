@@ -75,6 +75,7 @@ type DescribeEnsEipAddressesRequest struct {
 	EipAddress             string           `position:"Query" name:"EipAddress"`
 	EnsRegionId            string           `position:"Query" name:"EnsRegionId"`
 	Status                 string           `position:"Query" name:"Status"`
+	Standby                string           `position:"Query" name:"Standby"`
 	AllocationId           string           `position:"Query" name:"AllocationId"`
 	PageNumber             requests.Integer `position:"Query" name:"PageNumber"`
 	AssociatedInstanceType string           `position:"Query" name:"AssociatedInstanceType"`

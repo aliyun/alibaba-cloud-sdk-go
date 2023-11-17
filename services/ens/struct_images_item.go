@@ -22,4 +22,5 @@ type ImagesItem struct {
 	User         string `json:"User" xml:"User"`
 	Status       string `json:"Status" xml:"Status"`
 	CreationTime string `json:"CreationTime" xml:"CreationTime"`
+	Description  string `json:"Description" xml:"Description"`
 }

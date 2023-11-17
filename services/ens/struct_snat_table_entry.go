@@ -17,10 +17,16 @@ package ens
 
 // SnatTableEntry is a nested struct in ens response
 type SnatTableEntry struct {
-	NatGatewayId  string `json:"NatGatewayId" xml:"NatGatewayId"`
-	SnatEntryId   string `json:"SnatEntryId" xml:"SnatEntryId"`
-	SnatIp        string `json:"SnatIp" xml:"SnatIp"`
-	SourceCIDR    string `json:"SourceCIDR" xml:"SourceCIDR"`
-	SnatEntryName string `json:"SnatEntryName" xml:"SnatEntryName"`
-	Status        string `json:"Status" xml:"Status"`
+	NatGatewayId  string   `json:"NatGatewayId" xml:"NatGatewayId"`
+	SnatEntryId   string   `json:"SnatEntryId" xml:"SnatEntryId"`
+	SnatIp        string   `json:"SnatIp" xml:"SnatIp"`
+	SourceCIDR    string   `json:"SourceCIDR" xml:"SourceCIDR"`
+	SnatEntryName string   `json:"SnatEntryName" xml:"SnatEntryName"`
+	Status        string   `json:"Status" xml:"Status"`
+	StandbySnatIp string   `json:"StandbySnatIp" xml:"StandbySnatIp"`
+	StandbyStatus string   `json:"StandbyStatus" xml:"StandbyStatus"`
+	Type          string   `json:"Type" xml:"Type"`
+	IdleTimeout   int      `json:"IdleTimeout" xml:"IdleTimeout"`
+	DestCIDR      string   `json:"DestCIDR" xml:"DestCIDR"`
+	SnatIps       []SnatIp `json:"SnatIps" xml:"SnatIps"`
 }

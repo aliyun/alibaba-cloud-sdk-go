@@ -17,14 +17,19 @@ package ens
 
 // ForwardTableEntry is a nested struct in ens response
 type ForwardTableEntry struct {
-	NatGatewayId     string `json:"NatGatewayId" xml:"NatGatewayId"`
-	ForwardEntryId   string `json:"ForwardEntryId" xml:"ForwardEntryId"`
-	ExternalIp       string `json:"ExternalIp" xml:"ExternalIp"`
-	ExternalPort     string `json:"ExternalPort" xml:"ExternalPort"`
-	InternalIp       string `json:"InternalIp" xml:"InternalIp"`
-	InternalPort     string `json:"InternalPort" xml:"InternalPort"`
-	ForwardEntryName string `json:"ForwardEntryName" xml:"ForwardEntryName"`
-	Status           string `json:"Status" xml:"Status"`
-	IpProtocol       string `json:"IpProtocol" xml:"IpProtocol"`
-	HealthCheckPort  string `json:"HealthCheckPort" xml:"HealthCheckPort"`
+	NatGatewayId         string `json:"NatGatewayId" xml:"NatGatewayId"`
+	ForwardEntryId       string `json:"ForwardEntryId" xml:"ForwardEntryId"`
+	ExternalIp           string `json:"ExternalIp" xml:"ExternalIp"`
+	ExternalPort         string `json:"ExternalPort" xml:"ExternalPort"`
+	InternalIp           string `json:"InternalIp" xml:"InternalIp"`
+	InternalPort         string `json:"InternalPort" xml:"InternalPort"`
+	ForwardEntryName     string `json:"ForwardEntryName" xml:"ForwardEntryName"`
+	Status               string `json:"Status" xml:"Status"`
+	IpProtocol           string `json:"IpProtocol" xml:"IpProtocol"`
+	HealthCheckPort      string `json:"HealthCheckPort" xml:"HealthCheckPort"`
+	StandbyExternalIp    string `json:"StandbyExternalIp" xml:"StandbyExternalIp"`
+	StandbyStatus        string `json:"StandbyStatus" xml:"StandbyStatus"`
+	ExternalIpIsp        string `json:"ExternalIpIsp" xml:"ExternalIpIsp"`
+	StandbyExternalIpIsp string `json:"StandbyExternalIpIsp" xml:"StandbyExternalIpIsp"`
+	StandbyEnsRegionId   string `json:"StandbyEnsRegionId" xml:"StandbyEnsRegionId"`
 }

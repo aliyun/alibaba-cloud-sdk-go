@@ -71,18 +71,21 @@ func (client *Client) CreateARMServerInstancesWithCallback(request *CreateARMSer
 // CreateARMServerInstancesRequest is the request struct for api CreateARMServerInstances
 type CreateARMServerInstancesRequest struct {
 	*requests.RpcRequest
-	KeyPairName  string           `position:"Query" name:"KeyPairName"`
-	Resolution   string           `position:"Query" name:"Resolution"`
-	Frequency    requests.Integer `position:"Query" name:"Frequency"`
-	EnsRegionId  string           `position:"Query" name:"EnsRegionId"`
-	Period       requests.Integer `position:"Query" name:"Period"`
-	PeriodUnit   string           `position:"Query" name:"PeriodUnit"`
-	AutoRenew    requests.Boolean `position:"Query" name:"AutoRenew"`
-	ImageId      string           `position:"Query" name:"ImageId"`
-	ServerType   string           `position:"Query" name:"ServerType"`
-	InstanceType string           `position:"Query" name:"InstanceType"`
-	Amount       requests.Integer `position:"Query" name:"Amount"`
-	PayType      string           `position:"Query" name:"PayType"`
+	KeyPairName   string           `position:"Query" name:"KeyPairName"`
+	Resolution    string           `position:"Query" name:"Resolution"`
+	Frequency     requests.Integer `position:"Query" name:"Frequency"`
+	EnsRegionId   string           `position:"Query" name:"EnsRegionId"`
+	Period        requests.Integer `position:"Query" name:"Period"`
+	PeriodUnit    string           `position:"Query" name:"PeriodUnit"`
+	AutoRenew     requests.Boolean `position:"Query" name:"AutoRenew"`
+	ImageId       string           `position:"Query" name:"ImageId"`
+	ServerType    string           `position:"Query" name:"ServerType"`
+	AutoUseCoupon requests.Boolean `position:"Query" name:"AutoUseCoupon"`
+	InstanceType  string           `position:"Query" name:"InstanceType"`
+	Amount        requests.Integer `position:"Query" name:"Amount"`
+	NameSpace     string           `position:"Query" name:"NameSpace"`
+	ServerName    string           `position:"Query" name:"ServerName"`
+	PayType       string           `position:"Query" name:"PayType"`
 }
 
 // CreateARMServerInstancesResponse is the response struct for api CreateARMServerInstances

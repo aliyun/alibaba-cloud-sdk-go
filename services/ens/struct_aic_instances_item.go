@@ -24,5 +24,8 @@ type AICInstancesItem struct {
 	Spec              string            `json:"Spec" xml:"Spec"`
 	State             string            `json:"State" xml:"State"`
 	Status            string            `json:"Status" xml:"Status"`
+	Name              string            `json:"Name" xml:"Name"`
+	LatestAction      string            `json:"LatestAction" xml:"LatestAction"`
 	NetworkAttributes NetworkAttributes `json:"NetworkAttributes" xml:"NetworkAttributes"`
+	SdgDeployInfo     SdgDeployInfo     `json:"SdgDeployInfo" xml:"SdgDeployInfo"`
 }

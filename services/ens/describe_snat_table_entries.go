@@ -75,6 +75,7 @@ type DescribeSnatTableEntriesRequest struct {
 	SnatEntryId   string           `position:"Query" name:"SnatEntryId"`
 	SourceCIDR    string           `position:"Query" name:"SourceCIDR"`
 	PageNumber    requests.Integer `position:"Query" name:"PageNumber"`
+	ShowDetail    requests.Boolean `position:"Query" name:"ShowDetail"`
 	PageSize      requests.Integer `position:"Query" name:"PageSize"`
 	NatGatewayId  string           `position:"Query" name:"NatGatewayId"`
 	SnatEntryName string           `position:"Query" name:"SnatEntryName"`

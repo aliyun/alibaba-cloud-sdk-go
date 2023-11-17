@@ -24,5 +24,9 @@ type ServersItem struct {
 	SpecName     string             `json:"SpecName" xml:"SpecName"`
 	State        string             `json:"State" xml:"State"`
 	Status       string             `json:"Status" xml:"Status"`
+	Namespace    string             `json:"Namespace" xml:"Namespace"`
+	Name         string             `json:"Name" xml:"Name"`
+	PayType      string             `json:"PayType" xml:"PayType"`
+	LatestAction string             `json:"LatestAction" xml:"LatestAction"`
 	AICInstances []AICInstancesItem `json:"AICInstances" xml:"AICInstances"`
 }

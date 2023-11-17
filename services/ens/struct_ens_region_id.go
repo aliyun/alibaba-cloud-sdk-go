@@ -22,4 +22,5 @@ type EnsRegionId struct {
 	Area        string `json:"Area" xml:"Area"`
 	Name        string `json:"Name" xml:"Name"`
 	Province    string `json:"Province" xml:"Province"`
+	Isp         string `json:"Isp" xml:"Isp"`
 }

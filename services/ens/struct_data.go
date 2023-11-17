@@ -17,7 +17,10 @@ package ens
 
 // Data is a nested struct in ens response
 type Data struct {
+	Message    string           `json:"Message" xml:"Message"`
+	Success    bool             `json:"Success" xml:"Success"`
 	ExpireTime string           `json:"ExpireTime" xml:"ExpireTime"`
 	Url        string           `json:"Url" xml:"Url"`
+	Result     Result           `json:"Result" xml:"Result"`
 	ServerList []ServerListItem `json:"ServerList" xml:"ServerList"`
 }

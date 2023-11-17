@@ -73,6 +73,7 @@ type RunInstancesRequest struct {
 	*requests.RpcRequest
 	ScheduleAreaLevel       string                  `position:"Query" name:"ScheduleAreaLevel"`
 	UniqueSuffix            requests.Boolean        `position:"Query" name:"UniqueSuffix"`
+	InstanceChargeStrategy  string                  `position:"Query" name:"InstanceChargeStrategy"`
 	SecurityId              string                  `position:"Query" name:"SecurityId"`
 	KeyPairName             string                  `position:"Query" name:"KeyPairName"`
 	Password                string                  `position:"Query" name:"Password"`
@@ -82,6 +83,7 @@ type RunInstancesRequest struct {
 	EnsRegionId             string                  `position:"Query" name:"EnsRegionId"`
 	Period                  requests.Integer        `position:"Query" name:"Period"`
 	PublicIpIdentification  requests.Boolean        `position:"Query" name:"PublicIpIdentification"`
+	BillingCycle            string                  `position:"Query" name:"BillingCycle"`
 	VSwitchId               string                  `position:"Query" name:"VSwitchId"`
 	PrivateIpAddress        string                  `position:"Query" name:"PrivateIpAddress"`
 	PeriodUnit              string                  `position:"Query" name:"PeriodUnit"`
@@ -92,11 +94,13 @@ type RunInstancesRequest struct {
 	SchedulingPriceStrategy string                  `position:"Query" name:"SchedulingPriceStrategy"`
 	ImageId                 string                  `position:"Query" name:"ImageId"`
 	InternetMaxBandwidthOut requests.Integer        `position:"Query" name:"InternetMaxBandwidthOut"`
+	AutoUseCoupon           string                  `position:"Query" name:"AutoUseCoupon"`
 	UserData                string                  `position:"Query" name:"UserData"`
 	PasswordInherit         requests.Boolean        `position:"Query" name:"PasswordInherit"`
 	InstanceType            string                  `position:"Query" name:"InstanceType"`
 	InstanceChargeType      string                  `position:"Query" name:"InstanceChargeType"`
 	Amount                  requests.Integer        `position:"Query" name:"Amount"`
+	IpType                  string                  `position:"Query" name:"IpType"`
 	DataDisk                *[]RunInstancesDataDisk `position:"Query" name:"DataDisk"  type:"Json"`
 	SchedulingStrategy      string                  `position:"Query" name:"SchedulingStrategy"`
 	Carrier                 string                  `position:"Query" name:"Carrier"`
@@ -104,13 +108,16 @@ type RunInstancesRequest struct {
 
 // RunInstancesDataDisk is a repeated param struct in RunInstancesRequest
 type RunInstancesDataDisk struct {
-	Size     string `name:"Size"`
-	Category string `name:"Category"`
+	Size      string `name:"Size"`
+	Encrypted string `name:"Encrypted"`
+	Category  string `name:"Category"`
+	KMSKeyId  string `name:"KMSKeyId"`
 }
 
 // RunInstancesSystemDisk is a repeated param struct in RunInstancesRequest
 type RunInstancesSystemDisk struct {
-	Size string `name:"Size"`
+	Size     string `name:"Size"`
+	Category string `name:"Category"`
 }
 
 // RunInstancesResponse is the response struct for api RunInstances

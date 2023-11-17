@@ -18,8 +18,10 @@ package ens
 // EipAddress is a nested struct in ens response
 type EipAddress struct {
 	Name                 string `json:"Name" xml:"Name"`
+	IpStatus             string `json:"IpStatus" xml:"IpStatus"`
 	InstanceIdInternetIp string `json:"InstanceIdInternetIp" xml:"InstanceIdInternetIp"`
 	IpAddress            string `json:"IpAddress" xml:"IpAddress"`
+	Standby              bool   `json:"Standby" xml:"Standby"`
 	ChargeType           string `json:"ChargeType" xml:"ChargeType"`
 	AllocationTime       string `json:"AllocationTime" xml:"AllocationTime"`
 	EnsRegionId          string `json:"EnsRegionId" xml:"EnsRegionId"`

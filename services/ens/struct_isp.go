@@ -17,6 +17,6 @@ package ens
 
 // Isp is a nested struct in ens response
 type Isp struct {
-	Code string `json:"Code" xml:"Code"`
 	Name string `json:"Name" xml:"Name"`
+	Code string `json:"Code" xml:"Code"`
 }

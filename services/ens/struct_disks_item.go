@@ -30,4 +30,7 @@ type DisksItem struct {
 	Type           string `json:"Type" xml:"Type"`
 	Portable       bool   `json:"Portable" xml:"Portable"`
 	SnapshotId     string `json:"SnapshotId" xml:"SnapshotId"`
+	SerialId       string `json:"SerialId" xml:"SerialId"`
+	Encrypted      bool   `json:"Encrypted" xml:"Encrypted"`
+	EncryptedKeyId string `json:"EncryptedKeyId" xml:"EncryptedKeyId"`
 }

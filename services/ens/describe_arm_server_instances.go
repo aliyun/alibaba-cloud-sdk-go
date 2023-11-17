@@ -71,10 +71,19 @@ func (client *Client) DescribeARMServerInstancesWithCallback(request *DescribeAR
 // DescribeARMServerInstancesRequest is the request struct for api DescribeARMServerInstances
 type DescribeARMServerInstancesRequest struct {
 	*requests.RpcRequest
-	PageNumber   requests.Integer `position:"Query" name:"PageNumber"`
-	PageSize     requests.Integer `position:"Query" name:"PageSize"`
-	EnsRegionIds *[]string        `position:"Query" name:"EnsRegionIds"  type:"Json"`
-	ServerIds    *[]string        `position:"Query" name:"ServerIds"  type:"Json"`
+	AICSpecs             *[]string        `position:"Query" name:"AICSpecs"  type:"Json"`
+	OrderByParams        string           `position:"Query" name:"OrderByParams"`
+	DescribeAICInstances requests.Boolean `position:"Query" name:"DescribeAICInstances"`
+	ServerIds            *[]string        `position:"Query" name:"ServerIds"  type:"Json"`
+	Name                 string           `position:"Query" name:"Name"`
+	MaxDate              string           `position:"Query" name:"MaxDate"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	States               *[]string        `position:"Query" name:"States"  type:"Json"`
+	ServerSpecs          *[]string        `position:"Query" name:"ServerSpecs"  type:"Json"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	EnsRegionIds         *[]string        `position:"Query" name:"EnsRegionIds"  type:"Json"`
+	MinDate              string           `position:"Query" name:"MinDate"`
+	Namespace            string           `position:"Query" name:"Namespace"`
 }
 
 // DescribeARMServerInstancesResponse is the response struct for api DescribeARMServerInstances
