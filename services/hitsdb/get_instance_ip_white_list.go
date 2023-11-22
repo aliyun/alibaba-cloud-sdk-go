@@ -83,9 +83,10 @@ type GetInstanceIpWhiteListRequest struct {
 // GetInstanceIpWhiteListResponse is the response struct for api GetInstanceIpWhiteList
 type GetInstanceIpWhiteListResponse struct {
 	*responses.BaseResponse
-	InstanceId string   `json:"InstanceId" xml:"InstanceId"`
-	RequestId  string   `json:"RequestId" xml:"RequestId"`
-	IpList     []string `json:"IpList" xml:"IpList"`
+	InstanceId string          `json:"InstanceId" xml:"InstanceId"`
+	RequestId  string          `json:"RequestId" xml:"RequestId"`
+	IpList     []string        `json:"IpList" xml:"IpList"`
+	GroupList  []GroupListItem `json:"GroupList" xml:"GroupList"`
 }
 
 // CreateGetInstanceIpWhiteListRequest creates a request to invoke GetInstanceIpWhiteList API

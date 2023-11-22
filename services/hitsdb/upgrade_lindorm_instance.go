@@ -72,7 +72,6 @@ func (client *Client) UpgradeLindormInstanceWithCallback(request *UpgradeLindorm
 type UpgradeLindormInstanceRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	PhoenixCoreNum       requests.Integer `position:"Query" name:"PhoenixCoreNum"`
 	LogSpec              string           `position:"Query" name:"LogSpec"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	TsdbNum              requests.Integer `position:"Query" name:"TsdbNum"`
@@ -85,7 +84,6 @@ type UpgradeLindormInstanceRequest struct {
 	StreamNum            requests.Integer `position:"Query" name:"StreamNum"`
 	LogSingleStorage     requests.Integer `position:"Query" name:"LogSingleStorage"`
 	ZoneId               string           `position:"Query" name:"ZoneId"`
-	PhoenixCoreSpec      string           `position:"Query" name:"PhoenixCoreSpec"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
 	UpgradeType          string           `position:"Query" name:"UpgradeType"`
 	TsdbSpec             string           `position:"Query" name:"TsdbSpec"`

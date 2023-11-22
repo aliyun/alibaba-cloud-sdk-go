@@ -72,6 +72,7 @@ func (client *Client) UpdateInstanceIpWhiteListWithCallback(request *UpdateInsta
 type UpdateInstanceIpWhiteListRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Delete               requests.Boolean `position:"Query" name:"Delete"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`

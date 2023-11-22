@@ -140,6 +140,7 @@ type GetLindormInstanceResponse struct {
 	LogNum               int      `json:"LogNum" xml:"LogNum"`
 	LogSingleStorage     int      `json:"LogSingleStorage" xml:"LogSingleStorage"`
 	ArchVersion          string   `json:"ArchVersion" xml:"ArchVersion"`
+	EnableLsqlVersionV3  bool     `json:"EnableLsqlVersionV3" xml:"EnableLsqlVersionV3"`
 	EngineList           []Engine `json:"EngineList" xml:"EngineList"`
 }
 
