@@ -78,16 +78,17 @@ type GetLabelTableRequest struct {
 // GetLabelTableResponse is the response struct for api GetLabelTable
 type GetLabelTableResponse struct {
 	*responses.BaseResponse
-	RequestId       string  `json:"RequestId" xml:"RequestId"`
-	ProjectId       string  `json:"ProjectId" xml:"ProjectId"`
-	ProjectName     string  `json:"ProjectName" xml:"ProjectName"`
-	DatasourceId    string  `json:"DatasourceId" xml:"DatasourceId"`
-	Name            string  `json:"Name" xml:"Name"`
-	DatasourceName  string  `json:"DatasourceName" xml:"DatasourceName"`
-	Owner           string  `json:"Owner" xml:"Owner"`
-	GmtCreateTime   string  `json:"GmtCreateTime" xml:"GmtCreateTime"`
-	GmtModifiedTime string  `json:"GmtModifiedTime" xml:"GmtModifiedTime"`
-	Fields          []Field `json:"Fields" xml:"Fields"`
+	RequestId            string   `json:"RequestId" xml:"RequestId"`
+	ProjectId            string   `json:"ProjectId" xml:"ProjectId"`
+	ProjectName          string   `json:"ProjectName" xml:"ProjectName"`
+	DatasourceId         string   `json:"DatasourceId" xml:"DatasourceId"`
+	Name                 string   `json:"Name" xml:"Name"`
+	DatasourceName       string   `json:"DatasourceName" xml:"DatasourceName"`
+	Owner                string   `json:"Owner" xml:"Owner"`
+	GmtCreateTime        string   `json:"GmtCreateTime" xml:"GmtCreateTime"`
+	GmtModifiedTime      string   `json:"GmtModifiedTime" xml:"GmtModifiedTime"`
+	RelatedModelFeatures []string `json:"RelatedModelFeatures" xml:"RelatedModelFeatures"`
+	Fields               []Field  `json:"Fields" xml:"Fields"`
 }
 
 // CreateGetLabelTableRequest creates a request to invoke GetLabelTable API
