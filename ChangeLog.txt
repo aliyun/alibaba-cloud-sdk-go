@@ -1,3 +1,7 @@
+2023-11-23 Version: v1.62.617
+- Generated 2020-06-15 for `hitsdb`.
+undefined
+
 2023-11-23 Version: v1.62.616
 - Generated 2023-06-21 for `PaiFeatureStore`.
 - Add RelatedModelFeatures in GetLabelTable.
