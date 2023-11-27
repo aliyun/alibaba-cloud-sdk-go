@@ -71,8 +71,9 @@ func (client *Client) DeploySDGWithCallback(request *DeploySDGRequest, callback 
 // DeploySDGRequest is the request struct for api DeploySDG
 type DeploySDGRequest struct {
 	*requests.RpcRequest
-	SDGId       string    `position:"Query" name:"SDGId"`
-	InstanceIds *[]string `position:"Query" name:"InstanceIds"  type:"Json"`
+	DeploymentType string    `position:"Query" name:"DeploymentType"`
+	SDGId          string    `position:"Query" name:"SDGId"`
+	InstanceIds    *[]string `position:"Query" name:"InstanceIds"  type:"Json"`
 }
 
 // DeploySDGResponse is the response struct for api DeploySDG

@@ -71,6 +71,7 @@ func (client *Client) CreateDiskWithCallback(request *CreateDiskRequest, callbac
 // CreateDiskRequest is the request struct for api CreateDisk
 type CreateDiskRequest struct {
 	*requests.RpcRequest
+	DiskName           string           `position:"Query" name:"DiskName"`
 	EnsRegionId        string           `position:"Query" name:"EnsRegionId"`
 	Size               string           `position:"Query" name:"Size"`
 	SnapshotId         string           `position:"Query" name:"SnapshotId"`
