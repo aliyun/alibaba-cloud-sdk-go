@@ -71,6 +71,8 @@ type ScalingConfigurationInDescribeScalingConfigurations struct {
 	SystemDiskBurstingEnabled       bool                                         `json:"SystemDisk.BurstingEnabled" xml:"SystemDisk.BurstingEnabled"`
 	ImageOptionsLoginAsNonRoot      bool                                         `json:"ImageOptions.LoginAsNonRoot" xml:"ImageOptions.LoginAsNonRoot"`
 	DeletionProtection              bool                                         `json:"DeletionProtection" xml:"DeletionProtection"`
+	StorageSetId                    string                                       `json:"StorageSetId" xml:"StorageSetId"`
+	StorageSetPartitionNumber       int                                          `json:"StorageSetPartitionNumber" xml:"StorageSetPartitionNumber"`
 	SystemDiskCategories            SystemDiskCategories                         `json:"SystemDiskCategories" xml:"SystemDiskCategories"`
 	WeightedCapacities              WeightedCapacities                           `json:"WeightedCapacities" xml:"WeightedCapacities"`
 	InstanceTypes                   InstanceTypesInDescribeScalingConfigurations `json:"InstanceTypes" xml:"InstanceTypes"`

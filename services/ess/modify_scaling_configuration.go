@@ -80,6 +80,7 @@ type ModifyScalingConfigurationRequest struct {
 	HostName                        string                                            `position:"Query" name:"HostName"`
 	Password                        string                                            `position:"Query" name:"Password"`
 	InstanceDescription             string                                            `position:"Query" name:"InstanceDescription"`
+	StorageSetPartitionNumber       requests.Integer                                  `position:"Query" name:"StorageSetPartitionNumber"`
 	SystemDiskAutoSnapshotPolicyId  string                                            `position:"Query" name:"SystemDisk.AutoSnapshotPolicyId"`
 	PrivatePoolOptionsId            string                                            `position:"Query" name:"PrivatePoolOptions.Id"`
 	ImageOptionsLoginAsNonRoot      requests.Boolean                                  `position:"Query" name:"ImageOptions.LoginAsNonRoot"`
@@ -127,6 +128,7 @@ type ModifyScalingConfigurationRequest struct {
 	InstanceTypeOverride            *[]ModifyScalingConfigurationInstanceTypeOverride `position:"Query" name:"InstanceTypeOverride"  type:"Repeated"`
 	SystemDiskProvisionedIops       requests.Integer                                  `position:"Query" name:"SystemDisk.ProvisionedIops"`
 	LoadBalancerWeight              requests.Integer                                  `position:"Query" name:"LoadBalancerWeight"`
+	StorageSetId                    string                                            `position:"Query" name:"StorageSetId"`
 	SystemDiskSize                  requests.Integer                                  `position:"Query" name:"SystemDisk.Size"`
 	ImageFamily                     string                                            `position:"Query" name:"ImageFamily"`
 	SystemDiskDescription           string                                            `position:"Query" name:"SystemDisk.Description"`
