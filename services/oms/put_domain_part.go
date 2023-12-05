@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// GetDomainFields invokes the oms.GetDomainFields API synchronously
-func (client *Client) GetDomainFields(request *GetDomainFieldsRequest) (response *GetDomainFieldsResponse, err error) {
-	response = CreateGetDomainFieldsResponse()
+// PutDomainPart invokes the oms.PutDomainPart API synchronously
+func (client *Client) PutDomainPart(request *PutDomainPartRequest) (response *PutDomainPartResponse, err error) {
+	response = CreatePutDomainPartResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// GetDomainFieldsWithChan invokes the oms.GetDomainFields API asynchronously
-func (client *Client) GetDomainFieldsWithChan(request *GetDomainFieldsRequest) (<-chan *GetDomainFieldsResponse, <-chan error) {
-	responseChan := make(chan *GetDomainFieldsResponse, 1)
+// PutDomainPartWithChan invokes the oms.PutDomainPart API asynchronously
+func (client *Client) PutDomainPartWithChan(request *PutDomainPartRequest) (<-chan *PutDomainPartResponse, <-chan error) {
+	responseChan := make(chan *PutDomainPartResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.GetDomainFields(request)
+		response, err := client.PutDomainPart(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) GetDomainFieldsWithChan(request *GetDomainFieldsRequest) (
 	return responseChan, errChan
 }
 
-// GetDomainFieldsWithCallback invokes the oms.GetDomainFields API asynchronously
-func (client *Client) GetDomainFieldsWithCallback(request *GetDomainFieldsRequest, callback func(response *GetDomainFieldsResponse, err error)) <-chan int {
+// PutDomainPartWithCallback invokes the oms.PutDomainPart API asynchronously
+func (client *Client) PutDomainPartWithCallback(request *PutDomainPartRequest, callback func(response *PutDomainPartResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *GetDomainFieldsResponse
+		var response *PutDomainPartResponse
 		var err error
 		defer close(result)
-		response, err = client.GetDomainFields(request)
+		response, err = client.PutDomainPart(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,34 +68,36 @@ func (client *Client) GetDomainFieldsWithCallback(request *GetDomainFieldsReques
 	return result
 }
 
-// GetDomainFieldsRequest is the request struct for api GetDomainFields
-type GetDomainFieldsRequest struct {
+// PutDomainPartRequest is the request struct for api PutDomainPart
+type PutDomainPartRequest struct {
 	*requests.RpcRequest
 	DomainCode string           `position:"Query" name:"DomainCode"`
-	UseCache   requests.Boolean `position:"Query" name:"UseCache"`
+	Data       string           `position:"Query" name:"Data"`
+	DataType   string           `position:"Query" name:"DataType"`
+	Compressed requests.Boolean `position:"Query" name:"Compressed"`
 }
 
-// GetDomainFieldsResponse is the response struct for api GetDomainFields
-type GetDomainFieldsResponse struct {
+// PutDomainPartResponse is the response struct for api PutDomainPart
+type PutDomainPartResponse struct {
 	*responses.BaseResponse
-	Data       string `json:"Data" xml:"Data"`
+	DataType   string `json:"DataType" xml:"DataType"`
 	RequestId  string `json:"RequestId" xml:"RequestId"`
 	DomainCode string `json:"DomainCode" xml:"DomainCode"`
 }
 
-// CreateGetDomainFieldsRequest creates a request to invoke GetDomainFields API
-func CreateGetDomainFieldsRequest() (request *GetDomainFieldsRequest) {
-	request = &GetDomainFieldsRequest{
+// CreatePutDomainPartRequest creates a request to invoke PutDomainPart API
+func CreatePutDomainPartRequest() (request *PutDomainPartRequest) {
+	request = &PutDomainPartRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Oms", "2019-05-27", "GetDomainFields", "", "")
-	request.Method = requests.GET
+	request.InitWithApiInfo("Oms", "2016-06-15", "PutDomainPart", "", "")
+	request.Method = requests.POST
 	return
 }
 
-// CreateGetDomainFieldsResponse creates a response to parse from GetDomainFields response
-func CreateGetDomainFieldsResponse() (response *GetDomainFieldsResponse) {
-	response = &GetDomainFieldsResponse{
+// CreatePutDomainPartResponse creates a response to parse from PutDomainPart response
+func CreatePutDomainPartResponse() (response *PutDomainPartResponse) {
+	response = &PutDomainPartResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

@@ -1,3 +1,7 @@
+2023-12-05 Version: v1.62.621
+- Generated 2016-06-15 for `Oms`.
+- Add DeleteMeasureData
+
 2023-12-04 Version: v1.62.620
 - Generated 2014-08-28 for `Ess`.
 - ScalingConfiguration support StorageSet.
