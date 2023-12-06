@@ -19,10 +19,7 @@ package ocr
 type ResultsItem struct {
 	Index          int64                `json:"Index" xml:"Index"`
 	Type           string               `json:"Type" xml:"Type"`
-	Roi            Roi                  `json:"Roi" xml:"Roi"`
 	Content        Content              `json:"Content" xml:"Content"`
-	Text           Text                 `json:"Text" xml:"Text"`
 	KeyValueInfos  []KeyValueInfosItem  `json:"KeyValueInfos" xml:"KeyValueInfos"`
-	GeneralText    []GeneralTextItem    `json:"GeneralText" xml:"GeneralText"`
 	SliceRectangle []SliceRectangleItem `json:"SliceRectangle" xml:"SliceRectangle"`
 }

@@ -17,12 +17,8 @@ package ocr
 
 // Roi is a nested struct in ocr response
 type Roi struct {
-	H      int `json:"H" xml:"H"`
-	X      int `json:"X" xml:"X"`
-	W      int `json:"W" xml:"W"`
-	Y      int `json:"Y" xml:"Y"`
-	Width  int `json:"Width" xml:"Width"`
-	Height int `json:"Height" xml:"Height"`
-	Top    int `json:"Top" xml:"Top"`
-	Left   int `json:"Left" xml:"Left"`
+	W int `json:"W" xml:"W"`
+	H int `json:"H" xml:"H"`
+	Y int `json:"Y" xml:"Y"`
+	X int `json:"X" xml:"X"`
 }
