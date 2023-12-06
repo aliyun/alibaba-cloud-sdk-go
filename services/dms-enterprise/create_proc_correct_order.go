@@ -85,6 +85,7 @@ type CreateProcCorrectOrderParam struct {
 	RollbackSqlType        string                                       `name:"RollbackSqlType"`
 	DbItemList             *[]CreateProcCorrectOrderParamDbItemListItem `name:"DbItemList" type:"Repeated"`
 	ExecSQL                string                                       `name:"ExecSQL"`
+	ExecMode               string                                       `name:"ExecMode"`
 	RollbackAttachmentName string                                       `name:"RollbackAttachmentName"`
 }
 

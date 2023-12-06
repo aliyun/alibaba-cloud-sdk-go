@@ -72,30 +72,31 @@ func (client *Client) RegisterInstanceWithCallback(request *RegisterInstanceRequ
 type RegisterInstanceRequest struct {
 	*requests.RpcRequest
 	EcsRegion        string           `position:"Query" name:"EcsRegion"`
-	DdlOnline        requests.Integer `position:"Query" name:"DdlOnline"`
-	UseDsql          requests.Integer `position:"Query" name:"UseDsql"`
 	NetworkType      string           `position:"Query" name:"NetworkType"`
 	Tid              requests.Integer `position:"Query" name:"Tid"`
-	Sid              string           `position:"Query" name:"Sid"`
 	EnableSellSitd   string           `position:"Query" name:"EnableSellSitd"`
-	DataLinkName     string           `position:"Query" name:"DataLinkName"`
-	TemplateType     string           `position:"Query" name:"TemplateType"`
 	InstanceSource   string           `position:"Query" name:"InstanceSource"`
 	EnvType          string           `position:"Query" name:"EnvType"`
 	Host             string           `position:"Query" name:"Host"`
-	InstanceType     string           `position:"Query" name:"InstanceType"`
 	QueryTimeout     requests.Integer `position:"Query" name:"QueryTimeout"`
+	DbaUidByString   string           `position:"Query" name:"DbaUidByString"`
 	EcsInstanceId    string           `position:"Query" name:"EcsInstanceId"`
 	ExportTimeout    requests.Integer `position:"Query" name:"ExportTimeout"`
+	TemplateId       requests.Integer `position:"Query" name:"TemplateId"`
+	Port             requests.Integer `position:"Query" name:"Port"`
+	SafeRule         string           `position:"Query" name:"SafeRule"`
+	DdlOnline        requests.Integer `position:"Query" name:"DdlOnline"`
+	UseDsql          requests.Integer `position:"Query" name:"UseDsql"`
+	Sid              string           `position:"Query" name:"Sid"`
+	DataLinkName     string           `position:"Query" name:"DataLinkName"`
+	TemplateType     string           `position:"Query" name:"TemplateType"`
+	InstanceType     string           `position:"Query" name:"InstanceType"`
 	DatabasePassword string           `position:"Query" name:"DatabasePassword"`
 	InstanceAlias    string           `position:"Query" name:"InstanceAlias"`
-	TemplateId       requests.Integer `position:"Query" name:"TemplateId"`
 	DatabaseUser     string           `position:"Query" name:"DatabaseUser"`
-	Port             requests.Integer `position:"Query" name:"Port"`
 	VpcId            string           `position:"Query" name:"VpcId"`
 	DbaUid           requests.Integer `position:"Query" name:"DbaUid"`
 	SkipTest         requests.Boolean `position:"Query" name:"SkipTest"`
-	SafeRule         string           `position:"Query" name:"SafeRule"`
 }
 
 // RegisterInstanceResponse is the response struct for api RegisterInstance
