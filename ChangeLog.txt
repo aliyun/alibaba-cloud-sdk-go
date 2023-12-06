@@ -1,3 +1,7 @@
+2023-12-06 Version: v1.62.624
+- Generated 2014-08-28 for `Ess`.
+- ScaleWithAdjustment supports ECI overrides.
+
 2023-12-06 Version: v1.62.623
 - Generated 2019-12-30 for `imageseg`.
 - Update SegmentCloth.

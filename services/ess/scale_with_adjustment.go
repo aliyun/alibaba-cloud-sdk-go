@@ -71,18 +71,42 @@ func (client *Client) ScaleWithAdjustmentWithCallback(request *ScaleWithAdjustme
 // ScaleWithAdjustmentRequest is the request struct for api ScaleWithAdjustment
 type ScaleWithAdjustmentRequest struct {
 	*requests.RpcRequest
-	ClientToken            string           `position:"Query" name:"ClientToken"`
-	ScalingGroupId         string           `position:"Query" name:"ScalingGroupId"`
-	InstanceType           *[]string        `position:"Query" name:"InstanceType"  type:"Repeated"`
-	SyncActivity           requests.Boolean `position:"Query" name:"SyncActivity"`
-	AdjustmentValue        requests.Integer `position:"Query" name:"AdjustmentValue"`
-	ResourceOwnerAccount   string           `position:"Query" name:"ResourceOwnerAccount"`
-	AdjustmentType         string           `position:"Query" name:"AdjustmentType"`
-	ParallelTask           requests.Boolean `position:"Query" name:"ParallelTask"`
-	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
-	SpotStrategy           string           `position:"Query" name:"SpotStrategy"`
-	VSwitchId              *[]string        `position:"Query" name:"VSwitchId"  type:"Repeated"`
-	MinAdjustmentMagnitude requests.Integer `position:"Query" name:"MinAdjustmentMagnitude"`
+	ClientToken            string                       `position:"Query" name:"ClientToken"`
+	ScalingGroupId         string                       `position:"Query" name:"ScalingGroupId"`
+	InstanceType           *[]string                    `position:"Query" name:"InstanceType"  type:"Repeated"`
+	SyncActivity           requests.Boolean             `position:"Query" name:"SyncActivity"`
+	AdjustmentValue        requests.Integer             `position:"Query" name:"AdjustmentValue"`
+	ResourceOwnerAccount   string                       `position:"Query" name:"ResourceOwnerAccount"`
+	AdjustmentType         string                       `position:"Query" name:"AdjustmentType"`
+	ParallelTask           requests.Boolean             `position:"Query" name:"ParallelTask"`
+	Overrides              ScaleWithAdjustmentOverrides `position:"Query" name:"Overrides"  type:"Struct"`
+	OwnerId                requests.Integer             `position:"Query" name:"OwnerId"`
+	SpotStrategy           string                       `position:"Query" name:"SpotStrategy"`
+	VSwitchId              *[]string                    `position:"Query" name:"VSwitchId"  type:"Repeated"`
+	MinAdjustmentMagnitude requests.Integer             `position:"Query" name:"MinAdjustmentMagnitude"`
+}
+
+// ScaleWithAdjustmentOverrides is a repeated param struct in ScaleWithAdjustmentRequest
+type ScaleWithAdjustmentOverrides struct {
+	Memory            string                                               `name:"Memory"`
+	ContainerOverride *[]ScaleWithAdjustmentOverridesContainerOverrideItem `name:"ContainerOverride" type:"Repeated"`
+	Cpu               string                                               `name:"Cpu"`
+}
+
+// ScaleWithAdjustmentOverridesContainerOverrideItem is a repeated param struct in ScaleWithAdjustmentRequest
+type ScaleWithAdjustmentOverridesContainerOverrideItem struct {
+	Memory         string                                                                 `name:"Memory"`
+	Arg            *[]string                                                              `name:"Arg" type:"Repeated"`
+	EnvironmentVar *[]ScaleWithAdjustmentOverridesContainerOverrideItemEnvironmentVarItem `name:"EnvironmentVar" type:"Repeated"`
+	Name           string                                                                 `name:"Name"`
+	Cpu            string                                                                 `name:"Cpu"`
+	Command        *[]string                                                              `name:"Command" type:"Repeated"`
+}
+
+// ScaleWithAdjustmentOverridesContainerOverrideItemEnvironmentVarItem is a repeated param struct in ScaleWithAdjustmentRequest
+type ScaleWithAdjustmentOverridesContainerOverrideItemEnvironmentVarItem struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // ScaleWithAdjustmentResponse is the response struct for api ScaleWithAdjustment
