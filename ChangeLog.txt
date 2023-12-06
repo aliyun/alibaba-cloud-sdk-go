@@ -1,3 +1,7 @@
+2023-12-06 Version: v1.62.623
+- Generated 2019-12-30 for `imageseg`.
+- Update SegmentCloth.
+
 2023-12-06 Version: v1.62.622
 - Generated 2019-12-30 for `ocr`.
 - Update RecognizeIdentityCard.

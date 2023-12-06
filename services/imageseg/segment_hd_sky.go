@@ -88,7 +88,7 @@ func CreateSegmentHDSkyRequest() (request *SegmentHDSkyRequest) {
 	request = &SegmentHDSkyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imageseg", "2019-12-30", "SegmentHDSky", "", "")
+	request.InitWithApiInfo("imageseg", "2019-12-30", "SegmentHDSky", "imageseg", "openAPI")
 	request.Method = requests.POST
 	return
 }

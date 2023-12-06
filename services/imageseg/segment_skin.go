@@ -88,7 +88,7 @@ func CreateSegmentSkinRequest() (request *SegmentSkinRequest) {
 	request = &SegmentSkinRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imageseg", "2019-12-30", "SegmentSkin", "", "")
+	request.InitWithApiInfo("imageseg", "2019-12-30", "SegmentSkin", "imageseg", "openAPI")
 	request.Method = requests.POST
 	return
 }

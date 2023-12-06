@@ -88,7 +88,7 @@ func CreateSegmentSceneRequest() (request *SegmentSceneRequest) {
 	request = &SegmentSceneRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imageseg", "2019-12-30", "SegmentScene", "", "")
+	request.InitWithApiInfo("imageseg", "2019-12-30", "SegmentScene", "imageseg", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -89,7 +89,7 @@ func CreateGetAsyncJobResultRequest() (request *GetAsyncJobResultRequest) {
 	request = &GetAsyncJobResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imageseg", "2019-12-30", "GetAsyncJobResult", "", "")
+	request.InitWithApiInfo("imageseg", "2019-12-30", "GetAsyncJobResult", "imageseg", "openAPI")
 	request.Method = requests.POST
 	return
 }

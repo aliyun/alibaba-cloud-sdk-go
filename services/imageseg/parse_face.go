@@ -88,7 +88,7 @@ func CreateParseFaceRequest() (request *ParseFaceRequest) {
 	request = &ParseFaceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imageseg", "2019-12-30", "ParseFace", "", "")
+	request.InitWithApiInfo("imageseg", "2019-12-30", "ParseFace", "imageseg", "openAPI")
 	request.Method = requests.POST
 	return
 }

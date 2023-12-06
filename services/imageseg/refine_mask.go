@@ -89,7 +89,7 @@ func CreateRefineMaskRequest() (request *RefineMaskRequest) {
 	request = &RefineMaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imageseg", "2019-12-30", "RefineMask", "", "")
+	request.InitWithApiInfo("imageseg", "2019-12-30", "RefineMask", "imageseg", "openAPI")
 	request.Method = requests.POST
 	return
 }

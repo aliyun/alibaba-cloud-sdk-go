@@ -88,7 +88,7 @@ func CreateSegmentHairRequest() (request *SegmentHairRequest) {
 	request = &SegmentHairRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imageseg", "2019-12-30", "SegmentHair", "", "")
+	request.InitWithApiInfo("imageseg", "2019-12-30", "SegmentHair", "imageseg", "openAPI")
 	request.Method = requests.POST
 	return
 }

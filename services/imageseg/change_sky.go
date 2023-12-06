@@ -89,7 +89,7 @@ func CreateChangeSkyRequest() (request *ChangeSkyRequest) {
 	request = &ChangeSkyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imageseg", "2019-12-30", "ChangeSky", "", "")
+	request.InitWithApiInfo("imageseg", "2019-12-30", "ChangeSky", "imageseg", "openAPI")
 	request.Method = requests.POST
 	return
 }

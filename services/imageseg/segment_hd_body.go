@@ -88,7 +88,7 @@ func CreateSegmentHDBodyRequest() (request *SegmentHDBodyRequest) {
 	request = &SegmentHDBodyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imageseg", "2019-12-30", "SegmentHDBody", "", "")
+	request.InitWithApiInfo("imageseg", "2019-12-30", "SegmentHDBody", "imageseg", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -89,7 +89,7 @@ func CreateSegmentCommonImageRequest() (request *SegmentCommonImageRequest) {
 	request = &SegmentCommonImageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imageseg", "2019-12-30", "SegmentCommonImage", "", "")
+	request.InitWithApiInfo("imageseg", "2019-12-30", "SegmentCommonImage", "imageseg", "openAPI")
 	request.Method = requests.POST
 	return
 }

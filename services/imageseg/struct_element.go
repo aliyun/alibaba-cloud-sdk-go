@@ -17,11 +17,11 @@ package imageseg
 
 // Element is a nested struct in imageseg response
 type Element struct {
-	Name           string `json:"Name" xml:"Name"`
-	X              int    `json:"X" xml:"X"`
-	ImageURL       string `json:"ImageURL" xml:"ImageURL"`
-	Y              int    `json:"Y" xml:"Y"`
-	Width          int    `json:"Width" xml:"Width"`
-	Height         int    `json:"Height" xml:"Height"`
-	OriginImageURL string `json:"OriginImageURL" xml:"OriginImageURL"`
+	Name     string                 `json:"Name" xml:"Name"`
+	X        int                    `json:"X" xml:"X"`
+	ClassUrl map[string]interface{} `json:"ClassUrl" xml:"ClassUrl"`
+	ImageURL string                 `json:"ImageURL" xml:"ImageURL"`
+	Y        int                    `json:"Y" xml:"Y"`
+	Width    int                    `json:"Width" xml:"Width"`
+	Height   int                    `json:"Height" xml:"Height"`
 }
