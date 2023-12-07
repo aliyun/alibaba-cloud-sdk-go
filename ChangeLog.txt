@@ -1,3 +1,7 @@
+2023-12-07 Version: v1.62.626
+- Generated 2014-05-26 for `Ecs`.
+- ECS SDK publish full package.
+
 2023-12-06 Version: v1.62.625
 - Generated 2018-11-01 for `dms-enterprise`.
 - Support CreateProcCorrectOrder request param of ExecMode.
