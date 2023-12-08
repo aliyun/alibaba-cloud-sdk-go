@@ -1,3 +1,7 @@
+2023-12-08 Version: v1.62.627
+- Generated 2023-07-01 for `DdosDiversion`.
+- Sdk version release.
+
 2023-12-07 Version: v1.62.626
 - Generated 2014-05-26 for `Ecs`.
 - ECS SDK publish full package.
