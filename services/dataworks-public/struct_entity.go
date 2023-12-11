@@ -17,9 +17,6 @@ package dataworks_public
 
 // Entity is a nested struct in dataworks_public response
 type Entity struct {
-	EntityContent map[string]interface{} `json:"EntityContent" xml:"EntityContent"`
-	QualifiedName string                 `json:"QualifiedName" xml:"QualifiedName"`
-	TenantId      int64                  `json:"TenantId" xml:"TenantId"`
-	Theme         []ThemeItem            `json:"Theme" xml:"Theme"`
-	Level         []LevelItem            `json:"Level" xml:"Level"`
+	Theme []ThemeItem `json:"Theme" xml:"Theme"`
+	Level []LevelItem `json:"Level" xml:"Level"`
 }

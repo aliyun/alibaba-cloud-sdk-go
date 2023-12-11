@@ -17,5 +17,5 @@ package dataworks_public
 
 // DataInListEntityTags is a nested struct in dataworks_public response
 type DataInListEntityTags struct {
-	DataItem []DataItem `json:"data" xml:"data"`
+	Data []string `json:"data" xml:"data"`
 }

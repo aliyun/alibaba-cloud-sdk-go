@@ -206,7 +206,9 @@ type Data struct {
 	Webhooks                      []string                       `json:"Webhooks" xml:"Webhooks"`
 	NodeIds                       []int64                        `json:"NodeIds" xml:"NodeIds"`
 	AlertMethods                  []string                       `json:"AlertMethods" xml:"AlertMethods"`
+	CollectionList                []string                       `json:"CollectionList" xml:"CollectionList"`
 	AlertTargets                  []string                       `json:"AlertTargets" xml:"AlertTargets"`
+	EntityList                    []string                       `json:"EntityList" xml:"EntityList"`
 	Deployment                    Deployment                     `json:"Deployment" xml:"Deployment"`
 	SolutionInfo                  SolutionInfo                   `json:"SolutionInfo" xml:"SolutionInfo"`
 	File                          File                           `json:"File" xml:"File"`
@@ -219,7 +221,6 @@ type Data struct {
 	ColumnList                    []ColumnListItem               `json:"ColumnList" xml:"ColumnList"`
 	Apis                          []Api                          `json:"Apis" xml:"Apis"`
 	SourceDataSourceSettings      []SourceDataSourceSetting      `json:"SourceDataSourceSettings" xml:"SourceDataSourceSettings"`
-	CollectionList                []CollectionListItem           `json:"CollectionList" xml:"CollectionList"`
 	ProjectMemberList             []ProjectMember                `json:"ProjectMemberList" xml:"ProjectMemberList"`
 	DataSources                   []DataSourcesItem              `json:"DataSources" xml:"DataSources"`
 	TransformationRules           []TransformationRule           `json:"TransformationRules" xml:"TransformationRules"`
@@ -231,12 +232,11 @@ type Data struct {
 	Connections                   []ConnectionsItem              `json:"Connections" xml:"Connections"`
 	DISyncTasks                   []DISyncTasksItem              `json:"DISyncTasks" xml:"DISyncTasks"`
 	Instances                     []Instance                     `json:"Instances" xml:"Instances"`
+	DataEntityList                []DataEntityListItem           `json:"DataEntityList" xml:"DataEntityList"`
 	BaselineStatuses              []BaselineStatusesItem         `json:"BaselineStatuses" xml:"BaselineStatuses"`
 	Projects                      []ProjectsItem                 `json:"Projects" xml:"Projects"`
-	EntityList                    []EntityListItem               `json:"EntityList" xml:"EntityList"`
 	Folders                       []FoldersItem                  `json:"Folders" xml:"Folders"`
 	Files                         []File                         `json:"Files" xml:"Files"`
-	DataEntityList                []DataEntityListItem           `json:"DataEntityList" xml:"DataEntityList"`
 	ApiAuthorizedList             []ApiAuthorized                `json:"ApiAuthorizedList" xml:"ApiAuthorizedList"`
 	TableMappings                 []TableMapping                 `json:"TableMappings" xml:"TableMappings"`
 	Dags                          []Dag                          `json:"Dags" xml:"Dags"`

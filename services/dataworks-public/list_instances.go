@@ -75,6 +75,7 @@ type ListInstancesRequest struct {
 	Owner        string           `position:"Body" name:"Owner"`
 	BizName      string           `position:"Body" name:"BizName"`
 	BeginBizdate string           `position:"Body" name:"BeginBizdate"`
+	OrderBy      string           `position:"Body" name:"OrderBy"`
 	EndBizdate   string           `position:"Body" name:"EndBizdate"`
 	DagId        requests.Integer `position:"Body" name:"DagId"`
 	PageNumber   requests.Integer `position:"Body" name:"PageNumber"`

@@ -71,6 +71,7 @@ func (client *Client) UpdateQualityRuleWithCallback(request *UpdateQualityRuleRe
 // UpdateQualityRuleRequest is the request struct for api UpdateQualityRule
 type UpdateQualityRuleRequest struct {
 	*requests.RpcRequest
+	TaskSetting       string           `position:"Body" name:"TaskSetting"`
 	Trend             string           `position:"Body" name:"Trend"`
 	BlockType         requests.Integer `position:"Body" name:"BlockType"`
 	PropertyType      string           `position:"Body" name:"PropertyType"`

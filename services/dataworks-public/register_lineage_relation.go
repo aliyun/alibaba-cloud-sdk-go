@@ -71,36 +71,7 @@ func (client *Client) RegisterLineageRelationWithCallback(request *RegisterLinea
 // RegisterLineageRelationRequest is the request struct for api RegisterLineageRelation
 type RegisterLineageRelationRequest struct {
 	*requests.RpcRequest
-	LineageRelationRegisterVO RegisterLineageRelationLineageRelationRegisterVO `position:"Body" name:"LineageRelationRegisterVO"  type:"Struct"`
-}
-
-// RegisterLineageRelationLineageRelationRegisterVO is a repeated param struct in RegisterLineageRelationRequest
-type RegisterLineageRelationLineageRelationRegisterVO struct {
-	DestEntity      RegisterLineageRelationLineageRelationRegisterVODestEntity   `name:"DestEntity" type:"Struct"`
-	CreateTimestamp string                                                       `name:"CreateTimestamp"`
-	Relationship    RegisterLineageRelationLineageRelationRegisterVORelationship `name:"Relationship" type:"Struct"`
-	SrcEntity       RegisterLineageRelationLineageRelationRegisterVOSrcEntity    `name:"SrcEntity" type:"Struct"`
-}
-
-// RegisterLineageRelationLineageRelationRegisterVODestEntity is a repeated param struct in RegisterLineageRelationRequest
-type RegisterLineageRelationLineageRelationRegisterVODestEntity struct {
-	ParentName    string `name:"ParentName"`
-	QualifiedName string `name:"QualifiedName"`
-	Name          string `name:"Name"`
-	DetailUrl     string `name:"DetailUrl"`
-}
-
-// RegisterLineageRelationLineageRelationRegisterVORelationship is a repeated param struct in RegisterLineageRelationRequest
-type RegisterLineageRelationLineageRelationRegisterVORelationship struct {
-	Type string `name:"Type"`
-}
-
-// RegisterLineageRelationLineageRelationRegisterVOSrcEntity is a repeated param struct in RegisterLineageRelationRequest
-type RegisterLineageRelationLineageRelationRegisterVOSrcEntity struct {
-	ParentName    string `name:"ParentName"`
-	QualifiedName string `name:"QualifiedName"`
-	Name          string `name:"Name"`
-	DetailUrl     string `name:"DetailUrl"`
+	LineageRelationRegisterVO string `position:"Body" name:"LineageRelationRegisterVO"`
 }
 
 // RegisterLineageRelationResponse is the response struct for api RegisterLineageRelation

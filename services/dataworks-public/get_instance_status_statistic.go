@@ -71,11 +71,12 @@ func (client *Client) GetInstanceStatusStatisticWithCallback(request *GetInstanc
 // GetInstanceStatusStatisticRequest is the request struct for api GetInstanceStatusStatistic
 type GetInstanceStatusStatisticRequest struct {
 	*requests.RpcRequest
-	ProjectEnv    string           `position:"Body" name:"ProjectEnv"`
-	DagType       string           `position:"Body" name:"DagType"`
-	BizDate       string           `position:"Body" name:"BizDate"`
-	SchedulerType string           `position:"Body" name:"SchedulerType"`
-	ProjectId     requests.Integer `position:"Body" name:"ProjectId"`
+	ProjectEnv      string           `position:"Body" name:"ProjectEnv"`
+	SchedulerPeriod string           `position:"Body" name:"SchedulerPeriod"`
+	DagType         string           `position:"Body" name:"DagType"`
+	BizDate         string           `position:"Body" name:"BizDate"`
+	SchedulerType   string           `position:"Body" name:"SchedulerType"`
+	ProjectId       requests.Integer `position:"Body" name:"ProjectId"`
 }
 
 // GetInstanceStatusStatisticResponse is the response struct for api GetInstanceStatusStatistic

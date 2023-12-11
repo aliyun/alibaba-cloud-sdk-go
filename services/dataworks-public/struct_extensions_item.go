@@ -17,13 +17,11 @@ package dataworks_public
 
 // ExtensionsItem is a nested struct in dataworks_public response
 type ExtensionsItem struct {
-	GmtCreate        int64               `json:"GmtCreate" xml:"GmtCreate"`
 	ParameterSetting string              `json:"ParameterSetting" xml:"ParameterSetting"`
 	Status           int                 `json:"Status" xml:"Status"`
 	ExtensionCode    string              `json:"ExtensionCode" xml:"ExtensionCode"`
 	ModifyUser       string              `json:"ModifyUser" xml:"ModifyUser"`
 	ExtensionDesc    string              `json:"ExtensionDesc" xml:"ExtensionDesc"`
-	GmtModified      int64               `json:"GmtModified" xml:"GmtModified"`
 	TenantId         int64               `json:"TenantId" xml:"TenantId"`
 	CreateUser       string              `json:"CreateUser" xml:"CreateUser"`
 	Owner            string              `json:"Owner" xml:"Owner"`

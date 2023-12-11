@@ -71,6 +71,7 @@ func (client *Client) CreateQualityRuleWithCallback(request *CreateQualityRuleRe
 // CreateQualityRuleRequest is the request struct for api CreateQualityRule
 type CreateQualityRuleRequest struct {
 	*requests.RpcRequest
+	TaskSetting       string           `position:"Body" name:"TaskSetting"`
 	Trend             string           `position:"Body" name:"Trend"`
 	BlockType         requests.Integer `position:"Body" name:"BlockType"`
 	PropertyType      string           `position:"Body" name:"PropertyType"`
