@@ -73,8 +73,10 @@ type CreateLindormInstanceRequest struct {
 	*requests.RpcRequest
 	ArchVersion          string           `position:"Query" name:"ArchVersion"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	AutoRenewDuration    string           `position:"Query" name:"AutoRenewDuration"`
 	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	LogSpec              string           `position:"Query" name:"LogSpec"`
+	AutoRenewal          requests.Boolean `position:"Query" name:"AutoRenewal"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	TsdbNum              requests.Integer `position:"Query" name:"TsdbNum"`
 	PrimaryVSwitchId     string           `position:"Query" name:"PrimaryVSwitchId"`
