@@ -71,14 +71,17 @@ func (client *Client) SendLiveMessageGroupWithCallback(request *SendLiveMessageG
 // SendLiveMessageGroupRequest is the request struct for api SendLiveMessageGroup
 type SendLiveMessageGroupRequest struct {
 	*requests.RpcRequest
-	GroupId        string           `position:"Query" name:"GroupId"`
-	SenderMetaInfo string           `position:"Query" name:"SenderMetaInfo"`
-	DataCenter     string           `position:"Query" name:"DataCenter"`
-	MsgTid         string           `position:"Query" name:"MsgTid"`
-	Body           string           `position:"Query" name:"Body"`
-	SenderId       string           `position:"Query" name:"SenderId"`
-	AppId          string           `position:"Query" name:"AppId"`
-	MsgType        requests.Integer `position:"Query" name:"MsgType"`
+	SenderMetaInfo  string           `position:"Query" name:"SenderMetaInfo"`
+	Body            string           `position:"Query" name:"Body"`
+	StaticsIncrease requests.Integer `position:"Query" name:"StaticsIncrease"`
+	MsgType         requests.Integer `position:"Query" name:"MsgType"`
+	NoStorage       requests.Boolean `position:"Query" name:"NoStorage"`
+	GroupId         string           `position:"Query" name:"GroupId"`
+	Weight          requests.Integer `position:"Query" name:"Weight"`
+	DataCenter      string           `position:"Query" name:"DataCenter"`
+	MsgTid          string           `position:"Query" name:"MsgTid"`
+	SenderId        string           `position:"Query" name:"SenderId"`
+	AppId           string           `position:"Query" name:"AppId"`
 }
 
 // SendLiveMessageGroupResponse is the response struct for api SendLiveMessageGroup
