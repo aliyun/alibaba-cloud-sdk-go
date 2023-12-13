@@ -71,10 +71,11 @@ func (client *Client) UpdateMediaStorageClassWithCallback(request *UpdateMediaSt
 // UpdateMediaStorageClassRequest is the request struct for api UpdateMediaStorageClass
 type UpdateMediaStorageClassRequest struct {
 	*requests.RpcRequest
-	RestoreTier  string `position:"Query" name:"RestoreTier"`
-	Scope        string `position:"Query" name:"Scope"`
-	MediaIds     string `position:"Query" name:"MediaIds"`
-	StorageClass string `position:"Query" name:"StorageClass"`
+	RestoreTier                 string           `position:"Query" name:"RestoreTier"`
+	Scope                       string           `position:"Query" name:"Scope"`
+	MediaIds                    string           `position:"Query" name:"MediaIds"`
+	StorageClass                string           `position:"Query" name:"StorageClass"`
+	AllowUpdateWithoutTimeLimit requests.Boolean `position:"Query" name:"AllowUpdateWithoutTimeLimit"`
 }
 
 // UpdateMediaStorageClassResponse is the response struct for api UpdateMediaStorageClass

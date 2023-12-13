@@ -1,3 +1,7 @@
+2023-12-13 Version: v1.62.632
+- Generated 2017-03-21 for `vod`.
+- Support Media StorageClass.
+
 2023-12-12 Version: v1.62.631
 - Generated 2023-07-01 for `DdosDiversion`.
 -sdk release.

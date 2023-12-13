@@ -27,5 +27,6 @@ type VideoBase struct {
 	Title         string                     `json:"Title" xml:"Title"`
 	MediaType     string                     `json:"MediaType" xml:"MediaType"`
 	DanMuURL      string                     `json:"DanMuURL" xml:"DanMuURL"`
+	StorageClass  string                     `json:"StorageClass" xml:"StorageClass"`
 	ThumbnailList ThumbnailListInGetPlayInfo `json:"ThumbnailList" xml:"ThumbnailList"`
 }
