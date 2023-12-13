@@ -17,46 +17,65 @@ package cloud_siem
 
 // ResponseDataItem is a nested struct in cloud_siem response
 type ResponseDataItem struct {
+	AlertDetail         string                 `json:"AlertDetail" xml:"AlertDetail"`
 	PlaybookUuid        string                 `json:"PlaybookUuid" xml:"PlaybookUuid"`
 	LogTypeMds          string                 `json:"LogTypeMds" xml:"LogTypeMds"`
 	RuleDescMds         string                 `json:"RuleDescMds" xml:"RuleDescMds"`
+	AlertTypeId         string                 `json:"AlertTypeId" xml:"AlertTypeId"`
+	LogTime             string                 `json:"LogTime" xml:"LogTime"`
+	IsDefend            string                 `json:"IsDefend" xml:"IsDefend"`
 	Source              string                 `json:"Source" xml:"Source"`
+	AlertTitleEn        string                 `json:"AlertTitleEn" xml:"AlertTitleEn"`
+	AlertTitle          string                 `json:"AlertTitle" xml:"AlertTitle"`
 	LogSource           string                 `json:"LogSource" xml:"LogSource"`
+	AlertTypeEn         string                 `json:"AlertTypeEn" xml:"AlertTypeEn"`
 	AlertNum            int                    `json:"AlertNum" xml:"AlertNum"`
+	AlertDescEn         string                 `json:"AlertDescEn" xml:"AlertDescEn"`
 	RuleType            string                 `json:"RuleType" xml:"RuleType"`
 	Remark              string                 `json:"Remark" xml:"Remark"`
+	AlertNameId         string                 `json:"AlertNameId" xml:"AlertNameId"`
 	Aliuid              int64                  `json:"Aliuid" xml:"Aliuid"`
+	AlertDesc           string                 `json:"AlertDesc" xml:"AlertDesc"`
 	Id                  int64                  `json:"Id" xml:"Id"`
+	AlertNameEn         string                 `json:"AlertNameEn" xml:"AlertNameEn"`
 	AssetId             string                 `json:"AssetId" xml:"AssetId"`
 	FinishTime          string                 `json:"FinishTime" xml:"FinishTime"`
 	ActionType          string                 `json:"ActionType" xml:"ActionType"`
+	OccurTime           string                 `json:"OccurTime" xml:"OccurTime"`
 	PlaybookName        string                 `json:"PlaybookName" xml:"PlaybookName"`
 	DescriptionEn       string                 `json:"DescriptionEn" xml:"DescriptionEn"`
 	Dispose             string                 `json:"Dispose" xml:"Dispose"`
 	ExecutionCondition  string                 `json:"ExecutionCondition" xml:"ExecutionCondition"`
+	StartTime           string                 `json:"StartTime" xml:"StartTime"`
+	EndTime             string                 `json:"EndTime" xml:"EndTime"`
 	EventTransferType   string                 `json:"EventTransferType" xml:"EventTransferType"`
 	AlertTypeMds        string                 `json:"AlertTypeMds" xml:"AlertTypeMds"`
 	LogSourceMds        string                 `json:"LogSourceMds" xml:"LogSourceMds"`
 	IncidentName        string                 `json:"IncidentName" xml:"IncidentName"`
+	AlertDescCode       string                 `json:"AlertDescCode" xml:"AlertDescCode"`
 	AutoResponseType    string                 `json:"AutoResponseType" xml:"AutoResponseType"`
 	RuleName            string                 `json:"RuleName" xml:"RuleName"`
+	AssetList           string                 `json:"AssetList" xml:"AssetList"`
 	RuleGroup           string                 `json:"RuleGroup" xml:"RuleGroup"`
 	ErrorMessage        string                 `json:"ErrorMessage" xml:"ErrorMessage"`
 	SubUserId           int64                  `json:"SubUserId" xml:"SubUserId"`
 	RuleDesc            string                 `json:"RuleDesc" xml:"RuleDesc"`
 	CloudCode           string                 `json:"CloudCode" xml:"CloudCode"`
 	EffectiveStatus     int                    `json:"EffectiveStatus" xml:"EffectiveStatus"`
+	AlertNameCode       string                 `json:"AlertNameCode" xml:"AlertNameCode"`
 	IncidentUuid        string                 `json:"IncidentUuid" xml:"IncidentUuid"`
 	AlertUuid           string                 `json:"AlertUuid" xml:"AlertUuid"`
 	TaskParam           string                 `json:"TaskParam" xml:"TaskParam"`
 	RuleThreshold       string                 `json:"RuleThreshold" xml:"RuleThreshold"`
 	GmtCreate           string                 `json:"GmtCreate" xml:"GmtCreate"`
 	OpcodeMap           map[string]interface{} `json:"OpcodeMap" xml:"OpcodeMap"`
-	ActionConfig        string                 `json:"ActionConfig" xml:"ActionConfig"`
 	SubAliuid           int64                  `json:"SubAliuid" xml:"SubAliuid"`
+	ActionConfig        string                 `json:"ActionConfig" xml:"ActionConfig"`
 	RuleCondition       string                 `json:"RuleCondition" xml:"RuleCondition"`
 	ExtContent          string                 `json:"ExtContent" xml:"ExtContent"`
 	AssetType           string                 `json:"AssetType" xml:"AssetType"`
+	AttCk               string                 `json:"AttCk" xml:"AttCk"`
+	MainUserId          int64                  `json:"MainUserId" xml:"MainUserId"`
 	AlertType           string                 `json:"AlertType" xml:"AlertType"`
 	AssetNum            int                    `json:"AssetNum" xml:"AssetNum"`
 	Description         string                 `json:"Description" xml:"Description"`
@@ -64,23 +83,31 @@ type ResponseDataItem struct {
 	ThreatScore         float64                `json:"ThreatScore" xml:"ThreatScore"`
 	EntityInfo          map[string]interface{} `json:"EntityInfo" xml:"EntityInfo"`
 	LogType             string                 `json:"LogType" xml:"LogType"`
+	AlertName           string                 `json:"AlertName" xml:"AlertName"`
 	AssetName           string                 `json:"AssetName" xml:"AssetName"`
 	Status              int                    `json:"Status" xml:"Status"`
+	AlertLevel          string                 `json:"AlertLevel" xml:"AlertLevel"`
 	GmtModified         string                 `json:"GmtModified" xml:"GmtModified"`
 	EventTransferExt    string                 `json:"EventTransferExt" xml:"EventTransferExt"`
 	IncidentNameEn      string                 `json:"IncidentNameEn" xml:"IncidentNameEn"`
 	PlaybookType        string                 `json:"PlaybookType" xml:"PlaybookType"`
+	AlertSrcProdModule  string                 `json:"AlertSrcProdModule" xml:"AlertSrcProdModule"`
+	LogUuid             string                 `json:"LogUuid" xml:"LogUuid"`
 	EntityId            int64                  `json:"EntityId" xml:"EntityId"`
 	QueryCycle          string                 `json:"QueryCycle" xml:"QueryCycle"`
 	EntityType          string                 `json:"EntityType" xml:"EntityType"`
+	AlertTypeCode       string                 `json:"AlertTypeCode" xml:"AlertTypeCode"`
 	SophonTaskId        string                 `json:"SophonTaskId" xml:"SophonTaskId"`
 	EventTransferSwitch int                    `json:"EventTransferSwitch" xml:"EventTransferSwitch"`
 	RuleNameMds         string                 `json:"RuleNameMds" xml:"RuleNameMds"`
+	AlertSrcProd        string                 `json:"AlertSrcProd" xml:"AlertSrcProd"`
 	DataSources         []string               `json:"DataSources" xml:"DataSources"`
 	Scope               []string               `json:"Scope" xml:"Scope"`
 	OpcodeSet           []string               `json:"OpcodeSet" xml:"OpcodeSet"`
 	Entity              []string               `json:"Entity" xml:"Entity"`
 	AttCkLabels         []string               `json:"AttCkLabels" xml:"AttCkLabels"`
+	Expression          Expression             `json:"Expression" xml:"Expression"`
 	PlaybookList        []PlaybookListItem     `json:"PlaybookList" xml:"PlaybookList"`
 	AssetInfo           []AssetInfoItem        `json:"AssetInfo" xml:"AssetInfo"`
+	AlertInfoList       []AlertInfoListItem    `json:"AlertInfoList" xml:"AlertInfoList"`
 }

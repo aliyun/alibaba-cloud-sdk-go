@@ -17,8 +17,8 @@ package cloud_siem
 
 // Target is a nested struct in cloud_siem response
 type Target struct {
-	Type   string   `json:"Type" xml:"Type"`
 	Name   string   `json:"Name" xml:"Name"`
 	Value  string   `json:"Value" xml:"Value"`
+	Type   string   `json:"Type" xml:"Type"`
 	Values []string `json:"Values" xml:"Values"`
 }

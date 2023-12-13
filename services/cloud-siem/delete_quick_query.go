@@ -78,13 +78,7 @@ type DeleteQuickQueryRequest struct {
 type DeleteQuickQueryResponse struct {
 	*responses.BaseResponse
 	Data      bool   `json:"Data" xml:"Data"`
-	Success   bool   `json:"Success" xml:"Success"`
-	Code      int    `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	ErrCode   string `json:"ErrCode" xml:"ErrCode"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	DyCode    string `json:"DyCode" xml:"DyCode"`
-	DyMessage string `json:"DyMessage" xml:"DyMessage"`
 }
 
 // CreateDeleteQuickQueryRequest creates a request to invoke DeleteQuickQuery API

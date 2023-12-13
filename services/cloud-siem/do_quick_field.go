@@ -82,13 +82,7 @@ type DoQuickFieldRequest struct {
 // DoQuickFieldResponse is the response struct for api DoQuickField
 type DoQuickFieldResponse struct {
 	*responses.BaseResponse
-	Success   bool   `json:"Success" xml:"Success"`
-	Code      int    `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	ErrCode   string `json:"ErrCode" xml:"ErrCode"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	DyCode    string `json:"DyCode" xml:"DyCode"`
-	DyMessage string `json:"DyMessage" xml:"DyMessage"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 
