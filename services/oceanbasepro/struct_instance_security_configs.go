@@ -19,5 +19,8 @@ package oceanbasepro
 type InstanceSecurityConfigs struct {
 	TotalCheckCount int                   `json:"TotalCheckCount" xml:"TotalCheckCount"`
 	TotalRiskCount  int                   `json:"TotalRiskCount" xml:"TotalRiskCount"`
+	CheckTime       string                `json:"CheckTime" xml:"CheckTime"`
+	InstanceId      string                `json:"InstanceId" xml:"InstanceId"`
+	CheckId         string                `json:"CheckId" xml:"CheckId"`
 	SecurityConfigs []SecurityConfigsItem `json:"SecurityConfigs" xml:"SecurityConfigs"`
 }

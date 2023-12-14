@@ -72,6 +72,7 @@ func (client *Client) DescribeInstanceSecurityConfigsWithCallback(request *Descr
 type DescribeInstanceSecurityConfigsRequest struct {
 	*requests.RpcRequest
 	InstanceId string `position:"Body" name:"InstanceId"`
+	CheckId    string `position:"Body" name:"CheckId"`
 }
 
 // DescribeInstanceSecurityConfigsResponse is the response struct for api DescribeInstanceSecurityConfigs

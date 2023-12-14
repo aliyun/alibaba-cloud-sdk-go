@@ -71,14 +71,16 @@ func (client *Client) DeleteInstancesWithCallback(request *DeleteInstancesReques
 // DeleteInstancesRequest is the request struct for api DeleteInstances
 type DeleteInstancesRequest struct {
 	*requests.RpcRequest
-	BackupRetainMode string `position:"Body" name:"BackupRetainMode"`
-	InstanceIds      string `position:"Body" name:"InstanceIds"`
+	BackupRetainMode string           `position:"Body" name:"BackupRetainMode"`
+	DryRun           requests.Boolean `position:"Body" name:"DryRun"`
+	InstanceIds      string           `position:"Body" name:"InstanceIds"`
 }
 
 // DeleteInstancesResponse is the response struct for api DeleteInstances
 type DeleteInstancesResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Data      Data   `json:"Data" xml:"Data"`
 }
 
 // CreateDeleteInstancesRequest creates a request to invoke DeleteInstances API

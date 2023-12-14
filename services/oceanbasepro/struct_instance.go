@@ -44,6 +44,10 @@ type Instance struct {
 	EnableIsolationOptimization bool                    `json:"EnableIsolationOptimization" xml:"EnableIsolationOptimization"`
 	InTempCapacityStatus        bool                    `json:"InTempCapacityStatus" xml:"InTempCapacityStatus"`
 	DataDiskAutoScale           bool                    `json:"DataDiskAutoScale" xml:"DataDiskAutoScale"`
+	EnableProxyService          bool                    `json:"EnableProxyService" xml:"EnableProxyService"`
+	ProxyServiceStatus          string                  `json:"ProxyServiceStatus" xml:"ProxyServiceStatus"`
+	ProxyClusterId              string                  `json:"ProxyClusterId" xml:"ProxyClusterId"`
+	CpuArchitecture             string                  `json:"CpuArchitecture" xml:"CpuArchitecture"`
 	AvailableZones              []string                `json:"AvailableZones" xml:"AvailableZones"`
 	Zones                       []string                `json:"Zones" xml:"Zones"`
 	Resource                    Resource                `json:"Resource" xml:"Resource"`

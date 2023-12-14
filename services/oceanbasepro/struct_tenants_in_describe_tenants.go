@@ -17,5 +17,5 @@ package oceanbasepro
 
 // TenantsInDescribeTenants is a nested struct in oceanbasepro response
 type TenantsInDescribeTenants struct {
-	Data []DataInDescribeTenants `json:"Data" xml:"Data"`
+	Data []Data `json:"Data" xml:"Data"`
 }

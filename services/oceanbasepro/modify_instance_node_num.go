@@ -71,8 +71,9 @@ func (client *Client) ModifyInstanceNodeNumWithCallback(request *ModifyInstanceN
 // ModifyInstanceNodeNumRequest is the request struct for api ModifyInstanceNodeNum
 type ModifyInstanceNodeNumRequest struct {
 	*requests.RpcRequest
-	NodeNum    string `position:"Body" name:"NodeNum"`
-	InstanceId string `position:"Body" name:"InstanceId"`
+	DryRun     requests.Boolean `position:"Body" name:"DryRun"`
+	NodeNum    string           `position:"Body" name:"NodeNum"`
+	InstanceId string           `position:"Body" name:"InstanceId"`
 }
 
 // ModifyInstanceNodeNumResponse is the response struct for api ModifyInstanceNodeNum

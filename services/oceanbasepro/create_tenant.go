@@ -71,18 +71,20 @@ func (client *Client) CreateTenantWithCallback(request *CreateTenantRequest, cal
 // CreateTenantRequest is the request struct for api CreateTenant
 type CreateTenantRequest struct {
 	*requests.RpcRequest
-	Charset       string           `position:"Body" name:"Charset"`
-	TenantMode    string           `position:"Body" name:"TenantMode"`
-	Memory        requests.Integer `position:"Body" name:"Memory"`
-	TimeZone      string           `position:"Body" name:"TimeZone"`
-	Description   string           `position:"Body" name:"Description"`
-	UserVSwitchId string           `position:"Body" name:"UserVSwitchId"`
-	UserVpcId     string           `position:"Body" name:"UserVpcId"`
-	Cpu           requests.Integer `position:"Body" name:"Cpu"`
-	UnitNum       requests.Integer `position:"Body" name:"UnitNum"`
-	InstanceId    string           `position:"Body" name:"InstanceId"`
-	PrimaryZone   string           `position:"Body" name:"PrimaryZone"`
-	TenantName    string           `position:"Body" name:"TenantName"`
+	Charset          string           `position:"Body" name:"Charset"`
+	TenantMode       string           `position:"Body" name:"TenantMode"`
+	Memory           requests.Integer `position:"Body" name:"Memory"`
+	LogDisk          requests.Integer `position:"Body" name:"LogDisk"`
+	TimeZone         string           `position:"Body" name:"TimeZone"`
+	Description      string           `position:"Body" name:"Description"`
+	UserVSwitchId    string           `position:"Body" name:"UserVSwitchId"`
+	UserVpcId        string           `position:"Body" name:"UserVpcId"`
+	Cpu              requests.Integer `position:"Body" name:"Cpu"`
+	UnitNum          requests.Integer `position:"Body" name:"UnitNum"`
+	InstanceId       string           `position:"Body" name:"InstanceId"`
+	PrimaryZone      string           `position:"Body" name:"PrimaryZone"`
+	TenantName       string           `position:"Body" name:"TenantName"`
+	ReadOnlyZoneList string           `position:"Body" name:"ReadOnlyZoneList"`
 }
 
 // CreateTenantResponse is the response struct for api CreateTenant

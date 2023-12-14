@@ -17,5 +17,5 @@ package oceanbasepro
 
 // Instances is a nested struct in oceanbasepro response
 type Instances struct {
-	Data []Data `json:"Data" xml:"Data"`
+	Data []DataInDescribeInstances `json:"Data" xml:"Data"`
 }

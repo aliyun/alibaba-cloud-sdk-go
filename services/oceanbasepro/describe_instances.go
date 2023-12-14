@@ -82,9 +82,9 @@ type DescribeInstancesRequest struct {
 // DescribeInstancesResponse is the response struct for api DescribeInstances
 type DescribeInstancesResponse struct {
 	*responses.BaseResponse
-	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	Instances  []Data `json:"Instances" xml:"Instances"`
+	TotalCount int                       `json:"TotalCount" xml:"TotalCount"`
+	RequestId  string                    `json:"RequestId" xml:"RequestId"`
+	Instances  []DataInDescribeInstances `json:"Instances" xml:"Instances"`
 }
 
 // CreateDescribeInstancesRequest creates a request to invoke DescribeInstances API

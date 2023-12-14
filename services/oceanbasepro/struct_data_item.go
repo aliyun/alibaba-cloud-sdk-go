@@ -25,9 +25,10 @@ type DataItem struct {
 	AvgDbTime                 string                 `json:"AvgDbTime" xml:"AvgDbTime"`
 	BlockIndexCacheHit        string                 `json:"BlockIndexCacheHit" xml:"BlockIndexCacheHit"`
 	CpuTime                   string                 `json:"CpuTime" xml:"CpuTime"`
+	ExecutorRpc               bool                   `json:"ExecutorRpc" xml:"ExecutorRpc"`
 	ElapsedTime               string                 `json:"ElapsedTime" xml:"ElapsedTime"`
 	ExecuteTime               string                 `json:"ExecuteTime" xml:"ExecuteTime"`
-	ExecutorRpc               string                 `json:"ExecutorRpc" xml:"ExecutorRpc"`
+	FullSqlText               string                 `json:"FullSqlText" xml:"FullSqlText"`
 	ProjectName               string                 `json:"ProjectName" xml:"ProjectName"`
 	ProjectId                 string                 `json:"ProjectId" xml:"ProjectId"`
 	ConcurrencyWaitTime       string                 `json:"ConcurrencyWaitTime" xml:"ConcurrencyWaitTime"`
@@ -54,6 +55,7 @@ type DataItem struct {
 	StartTime                 string                 `json:"StartTime" xml:"StartTime"`
 	RetryCount                string                 `json:"RetryCount" xml:"RetryCount"`
 	Suggestion                string                 `json:"Suggestion" xml:"Suggestion"`
+	HitPlan                   bool                   `json:"HitPlan" xml:"HitPlan"`
 	Statement                 string                 `json:"Statement" xml:"Statement"`
 	ObServerId                string                 `json:"ObServerId" xml:"ObServerId"`
 	SumDbTime                 string                 `json:"SumDbTime" xml:"SumDbTime"`
@@ -64,6 +66,7 @@ type DataItem struct {
 	SumElapsedTime            string                 `json:"SumElapsedTime" xml:"SumElapsedTime"`
 	ClientIp                  string                 `json:"ClientIp" xml:"ClientIp"`
 	QueueTime                 string                 `json:"QueueTime" xml:"QueueTime"`
+	TableScan                 bool                   `json:"TableScan" xml:"TableScan"`
 	Diagnosis                 string                 `json:"Diagnosis" xml:"Diagnosis"`
 	Metric                    string                 `json:"Metric" xml:"Metric"`
 	Server                    string                 `json:"Server" xml:"Server"`
@@ -89,13 +92,11 @@ type DataItem struct {
 	PlanType                  string                 `json:"PlanType" xml:"PlanType"`
 	NetTime                   string                 `json:"NetTime" xml:"NetTime"`
 	UserIoWaitTime            string                 `json:"UserIoWaitTime" xml:"UserIoWaitTime"`
-	TableScan                 string                 `json:"TableScan" xml:"TableScan"`
 	StepOrder                 int                    `json:"StepOrder" xml:"StepOrder"`
 	UnitNum                   int64                  `json:"UnitNum" xml:"UnitNum"`
 	UsedWorkerCount           string                 `json:"UsedWorkerCount" xml:"UsedWorkerCount"`
 	ReturnRows                string                 `json:"ReturnRows" xml:"ReturnRows"`
 	RequestId                 string                 `json:"RequestId" xml:"RequestId"`
-	HitPlan                   string                 `json:"HitPlan" xml:"HitPlan"`
 	BloomFilterCacheHit       string                 `json:"BloomFilterCacheHit" xml:"BloomFilterCacheHit"`
 	RowCacheHit               string                 `json:"RowCacheHit" xml:"RowCacheHit"`
 	UserName                  string                 `json:"UserName" xml:"UserName"`

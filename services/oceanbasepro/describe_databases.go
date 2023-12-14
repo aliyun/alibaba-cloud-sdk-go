@@ -73,6 +73,7 @@ type DescribeDatabasesRequest struct {
 	*requests.RpcRequest
 	SearchKey    string           `position:"Body" name:"SearchKey"`
 	PageNumber   requests.Integer `position:"Body" name:"PageNumber"`
+	InstanceId   string           `position:"Body" name:"InstanceId"`
 	DatabaseName string           `position:"Body" name:"DatabaseName"`
 	WithTables   requests.Boolean `position:"Body" name:"WithTables"`
 	TenantId     string           `position:"Body" name:"TenantId"`

@@ -22,4 +22,5 @@ type TenantResource struct {
 	Memory       MemoryInDescribeTenant   `json:"Memory" xml:"Memory"`
 	DiskSize     DiskSizeInDescribeTenant `json:"DiskSize" xml:"DiskSize"`
 	CapacityUnit CapacityUnit             `json:"CapacityUnit" xml:"CapacityUnit"`
+	LogDiskSize  LogDiskSize              `json:"LogDiskSize" xml:"LogDiskSize"`
 }

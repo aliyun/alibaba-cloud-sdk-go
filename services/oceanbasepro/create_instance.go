@@ -71,20 +71,23 @@ func (client *Client) CreateInstanceWithCallback(request *CreateInstanceRequest,
 // CreateInstanceRequest is the request struct for api CreateInstance
 type CreateInstanceRequest struct {
 	*requests.RpcRequest
-	InstanceClass   string           `position:"Body" name:"InstanceClass"`
-	ResourceGroupId string           `position:"Body" name:"ResourceGroupId"`
-	AutoRenewPeriod requests.Integer `position:"Body" name:"AutoRenewPeriod"`
-	Period          requests.Integer `position:"Body" name:"Period"`
-	DiskSize        requests.Integer `position:"Body" name:"DiskSize"`
-	Zones           string           `position:"Body" name:"Zones"`
-	DiskType        string           `position:"Body" name:"DiskType"`
-	ObVersion       string           `position:"Body" name:"ObVersion"`
-	PeriodUnit      string           `position:"Body" name:"PeriodUnit"`
-	InstanceName    string           `position:"Body" name:"InstanceName"`
-	AutoRenew       requests.Boolean `position:"Body" name:"AutoRenew"`
-	Series          string           `position:"Body" name:"Series"`
-	ChargeType      string           `position:"Body" name:"ChargeType"`
-	Bid             string           `position:"Query" name:"Bid"`
+	IsolationOptimization string           `position:"Body" name:"IsolationOptimization"`
+	InstanceClass         string           `position:"Body" name:"InstanceClass"`
+	ResourceGroupId       string           `position:"Body" name:"ResourceGroupId"`
+	AutoRenewPeriod       requests.Integer `position:"Body" name:"AutoRenewPeriod"`
+	Period                requests.Integer `position:"Body" name:"Period"`
+	DryRun                requests.Boolean `position:"Body" name:"DryRun"`
+	DiskSize              requests.Integer `position:"Body" name:"DiskSize"`
+	Zones                 string           `position:"Body" name:"Zones"`
+	DiskType              string           `position:"Body" name:"DiskType"`
+	ObVersion             string           `position:"Body" name:"ObVersion"`
+	PeriodUnit            string           `position:"Body" name:"PeriodUnit"`
+	InstanceName          string           `position:"Body" name:"InstanceName"`
+	ReplicaMode           string           `position:"Body" name:"ReplicaMode"`
+	AutoRenew             requests.Boolean `position:"Body" name:"AutoRenew"`
+	Series                string           `position:"Body" name:"Series"`
+	ChargeType            string           `position:"Body" name:"ChargeType"`
+	Bid                   string           `position:"Query" name:"Bid"`
 }
 
 // CreateInstanceResponse is the response struct for api CreateInstance

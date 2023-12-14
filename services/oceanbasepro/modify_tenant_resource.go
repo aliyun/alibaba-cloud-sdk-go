@@ -71,10 +71,12 @@ func (client *Client) ModifyTenantResourceWithCallback(request *ModifyTenantReso
 // ModifyTenantResourceRequest is the request struct for api ModifyTenantResource
 type ModifyTenantResourceRequest struct {
 	*requests.RpcRequest
-	Memory     requests.Integer `position:"Body" name:"Memory"`
-	Cpu        requests.Integer `position:"Body" name:"Cpu"`
-	InstanceId string           `position:"Body" name:"InstanceId"`
-	TenantId   string           `position:"Body" name:"TenantId"`
+	Memory           requests.Integer `position:"Body" name:"Memory"`
+	LogDisk          requests.Integer `position:"Body" name:"LogDisk"`
+	Cpu              requests.Integer `position:"Body" name:"Cpu"`
+	InstanceId       string           `position:"Body" name:"InstanceId"`
+	TenantId         string           `position:"Body" name:"TenantId"`
+	ReadOnlyZoneList string           `position:"Body" name:"ReadOnlyZoneList"`
 }
 
 // ModifyTenantResourceResponse is the response struct for api ModifyTenantResource

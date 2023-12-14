@@ -73,6 +73,7 @@ type DescribeTenantSecurityConfigsRequest struct {
 	*requests.RpcRequest
 	InstanceId string `position:"Body" name:"InstanceId"`
 	TenantId   string `position:"Body" name:"TenantId"`
+	CheckId    string `position:"Body" name:"CheckId"`
 }
 
 // DescribeTenantSecurityConfigsResponse is the response struct for api DescribeTenantSecurityConfigs
