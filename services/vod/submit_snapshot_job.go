@@ -74,6 +74,7 @@ type SubmitSnapshotJobRequest struct {
 	UserData             string           `position:"Query" name:"UserData"`
 	SpecifiedOffsetTime  requests.Integer `position:"Query" name:"SpecifiedOffsetTime"`
 	SpriteSnapshotConfig string           `position:"Query" name:"SpriteSnapshotConfig"`
+	SpecifiedOffsetTimes *[]string        `position:"Query" name:"SpecifiedOffsetTimes"  type:"Json"`
 	SnapshotTemplateId   string           `position:"Query" name:"SnapshotTemplateId"`
 	Height               string           `position:"Query" name:"Height"`
 	Count                requests.Integer `position:"Query" name:"Count"`
