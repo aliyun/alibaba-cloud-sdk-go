@@ -68,7 +68,7 @@ func (p *InstanceCredentialsProvider) Resolve() (auth.Credential, error) {
 }
 
 func get(url string) (status int, content []byte, err error) {
-	httpClient := http.DefaultClient
+	httpClient := *http.DefaultClient
 	httpClient.Timeout = 1 * time.Second
 	resp, err := httpClient.Get(url)
 	if err != nil {
