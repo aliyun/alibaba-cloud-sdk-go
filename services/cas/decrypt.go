@@ -91,7 +91,7 @@ func CreateDecryptRequest() (request *DecryptRequest) {
 	request = &DecryptRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cas", "2020-04-07", "Decrypt", "", "")
+	request.InitWithApiInfo("cas", "2020-04-07", "Decrypt", "cas", "openAPI")
 	request.Method = requests.POST
 	return
 }

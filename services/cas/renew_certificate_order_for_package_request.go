@@ -88,7 +88,7 @@ func CreateRenewCertificateOrderForPackageRequestRequest() (request *RenewCertif
 	request = &RenewCertificateOrderForPackageRequestRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cas", "2020-04-07", "RenewCertificateOrderForPackageRequest", "", "")
+	request.InitWithApiInfo("cas", "2020-04-07", "RenewCertificateOrderForPackageRequest", "cas", "openAPI")
 	request.Method = requests.POST
 	return
 }

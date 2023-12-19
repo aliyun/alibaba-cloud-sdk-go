@@ -86,7 +86,7 @@ func CreateRevokeWHClientCertificateRequest() (request *RevokeWHClientCertificat
 	request = &RevokeWHClientCertificateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cas", "2020-04-07", "RevokeWHClientCertificate", "", "")
+	request.InitWithApiInfo("cas", "2020-04-07", "RevokeWHClientCertificate", "cas", "openAPI")
 	request.Method = requests.POST
 	return
 }

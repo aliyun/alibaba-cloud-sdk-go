@@ -94,7 +94,7 @@ func CreateUploadUserCertificateRequest() (request *UploadUserCertificateRequest
 	request = &UploadUserCertificateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cas", "2020-04-07", "UploadUserCertificate", "", "")
+	request.InitWithApiInfo("cas", "2020-04-07", "UploadUserCertificate", "cas", "openAPI")
 	request.Method = requests.POST
 	return
 }

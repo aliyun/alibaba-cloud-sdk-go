@@ -86,7 +86,7 @@ func CreateCancelCertificateForPackageRequestRequest() (request *CancelCertifica
 	request = &CancelCertificateForPackageRequestRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cas", "2020-04-07", "CancelCertificateForPackageRequest", "", "")
+	request.InitWithApiInfo("cas", "2020-04-07", "CancelCertificateForPackageRequest", "cas", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -107,7 +107,7 @@ func CreateCreateWHClientCertificateRequest() (request *CreateWHClientCertificat
 	request = &CreateWHClientCertificateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cas", "2020-04-07", "CreateWHClientCertificate", "", "")
+	request.InitWithApiInfo("cas", "2020-04-07", "CreateWHClientCertificate", "cas", "openAPI")
 	request.Method = requests.POST
 	return
 }

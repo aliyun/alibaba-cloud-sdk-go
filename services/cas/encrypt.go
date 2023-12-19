@@ -91,7 +91,7 @@ func CreateEncryptRequest() (request *EncryptRequest) {
 	request = &EncryptRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cas", "2020-04-07", "Encrypt", "", "")
+	request.InitWithApiInfo("cas", "2020-04-07", "Encrypt", "cas", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -1,3 +1,7 @@
+2023-12-19 Version: v1.62.639
+- Generated 2020-04-07 for `cas`.
+- Fix some bugs.
+
 2023-12-19 Version: v1.62.638
 - Generated 2016-08-01 for `Push`.
 - Supported AndroidVivoReceiptId for Push and MassPush.

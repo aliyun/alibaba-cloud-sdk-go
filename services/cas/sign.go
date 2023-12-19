@@ -90,7 +90,7 @@ func CreateSignRequest() (request *SignRequest) {
 	request = &SignRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cas", "2020-04-07", "Sign", "", "")
+	request.InitWithApiInfo("cas", "2020-04-07", "Sign", "cas", "openAPI")
 	request.Method = requests.POST
 	return
 }

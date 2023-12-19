@@ -86,7 +86,7 @@ func CreateDeletePCACertRequest() (request *DeletePCACertRequest) {
 	request = &DeletePCACertRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cas", "2020-04-07", "DeletePCACert", "", "")
+	request.InitWithApiInfo("cas", "2020-04-07", "DeletePCACert", "cas", "openAPI")
 	request.Method = requests.POST
 	return
 }

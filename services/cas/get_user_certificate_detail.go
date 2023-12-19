@@ -110,7 +110,7 @@ func CreateGetUserCertificateDetailRequest() (request *GetUserCertificateDetailR
 	request = &GetUserCertificateDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cas", "2020-04-07", "GetUserCertificateDetail", "", "")
+	request.InitWithApiInfo("cas", "2020-04-07", "GetUserCertificateDetail", "cas", "openAPI")
 	request.Method = requests.POST
 	return
 }

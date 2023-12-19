@@ -86,7 +86,7 @@ func CreateCancelOrderRequestRequest() (request *CancelOrderRequestRequest) {
 	request = &CancelOrderRequestRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cas", "2020-04-07", "CancelOrderRequest", "", "")
+	request.InitWithApiInfo("cas", "2020-04-07", "CancelOrderRequest", "cas", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -86,7 +86,7 @@ func CreateDeleteCertificateRequestRequest() (request *DeleteCertificateRequestR
 	request = &DeleteCertificateRequestRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cas", "2020-04-07", "DeleteCertificateRequest", "", "")
+	request.InitWithApiInfo("cas", "2020-04-07", "DeleteCertificateRequest", "cas", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -90,7 +90,7 @@ func CreateUploadPCACertRequest() (request *UploadPCACertRequest) {
 	request = &UploadPCACertRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cas", "2020-04-07", "UploadPCACert", "", "")
+	request.InitWithApiInfo("cas", "2020-04-07", "UploadPCACert", "cas", "openAPI")
 	request.Method = requests.POST
 	return
 }

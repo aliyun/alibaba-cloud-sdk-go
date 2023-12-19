@@ -92,7 +92,7 @@ func CreateCreateCertificateRequestRequest() (request *CreateCertificateRequestR
 	request = &CreateCertificateRequestRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cas", "2020-04-07", "CreateCertificateRequest", "", "")
+	request.InitWithApiInfo("cas", "2020-04-07", "CreateCertificateRequest", "cas", "openAPI")
 	request.Method = requests.POST
 	return
 }

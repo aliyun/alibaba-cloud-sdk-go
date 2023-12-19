@@ -87,7 +87,7 @@ func CreateGetCertWarehouseQuotaRequest() (request *GetCertWarehouseQuotaRequest
 	request = &GetCertWarehouseQuotaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cas", "2020-04-07", "GetCertWarehouseQuota", "", "")
+	request.InitWithApiInfo("cas", "2020-04-07", "GetCertWarehouseQuota", "cas", "openAPI")
 	request.Method = requests.POST
 	return
 }

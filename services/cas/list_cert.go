@@ -73,6 +73,7 @@ type ListCertRequest struct {
 	*requests.RpcRequest
 	SourceIp    string           `position:"Query" name:"SourceIp"`
 	WarehouseId requests.Integer `position:"Query" name:"WarehouseId"`
+	CertType    string           `position:"Query" name:"CertType"`
 	SourceType  string           `position:"Query" name:"SourceType"`
 	KeyWord     string           `position:"Query" name:"KeyWord"`
 	ShowSize    requests.Integer `position:"Query" name:"ShowSize"`
@@ -95,7 +96,7 @@ func CreateListCertRequest() (request *ListCertRequest) {
 	request = &ListCertRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cas", "2020-04-07", "ListCert", "", "")
+	request.InitWithApiInfo("cas", "2020-04-07", "ListCert", "cas", "openAPI")
 	request.Method = requests.POST
 	return
 }

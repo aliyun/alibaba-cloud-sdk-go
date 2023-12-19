@@ -94,7 +94,7 @@ func CreateCreateCertificateForPackageRequestRequest() (request *CreateCertifica
 	request = &CreateCertificateForPackageRequestRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cas", "2020-04-07", "CreateCertificateForPackageRequest", "", "")
+	request.InitWithApiInfo("cas", "2020-04-07", "CreateCertificateForPackageRequest", "cas", "openAPI")
 	request.Method = requests.POST
 	return
 }

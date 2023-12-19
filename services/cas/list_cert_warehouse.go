@@ -94,7 +94,7 @@ func CreateListCertWarehouseRequest() (request *ListCertWarehouseRequest) {
 	request = &ListCertWarehouseRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cas", "2020-04-07", "ListCertWarehouse", "", "")
+	request.InitWithApiInfo("cas", "2020-04-07", "ListCertWarehouse", "cas", "openAPI")
 	request.Method = requests.POST
 	return
 }

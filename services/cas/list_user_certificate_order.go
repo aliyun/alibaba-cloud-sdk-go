@@ -95,7 +95,7 @@ func CreateListUserCertificateOrderRequest() (request *ListUserCertificateOrderR
 	request = &ListUserCertificateOrderRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cas", "2020-04-07", "ListUserCertificateOrder", "", "")
+	request.InitWithApiInfo("cas", "2020-04-07", "ListUserCertificateOrder", "cas", "openAPI")
 	request.Method = requests.POST
 	return
 }

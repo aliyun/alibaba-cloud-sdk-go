@@ -22,6 +22,7 @@ type Cert struct {
 	WhInstanceId    string `json:"WhInstanceId" xml:"WhInstanceId"`
 	Status          string `json:"Status" xml:"Status"`
 	SourceType      string `json:"SourceType" xml:"SourceType"`
+	CertType        string `json:"CertType" xml:"CertType"`
 	CommonName      string `json:"CommonName" xml:"CommonName"`
 	BeforeDate      int64  `json:"BeforeDate" xml:"BeforeDate"`
 	Issuer          string `json:"Issuer" xml:"Issuer"`

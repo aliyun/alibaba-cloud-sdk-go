@@ -91,7 +91,7 @@ func CreateVerifyRequest() (request *VerifyRequest) {
 	request = &VerifyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cas", "2020-04-07", "Verify", "", "")
+	request.InitWithApiInfo("cas", "2020-04-07", "Verify", "cas", "openAPI")
 	request.Method = requests.POST
 	return
 }
