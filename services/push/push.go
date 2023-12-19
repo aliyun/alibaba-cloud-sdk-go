@@ -93,6 +93,7 @@ type PushRequest struct {
 	AndroidImageUrl                  string           `position:"Query" name:"AndroidImageUrl"`
 	AndroidHonorTargetUserType       requests.Integer `position:"Query" name:"AndroidHonorTargetUserType"`
 	AndroidNotificationVivoChannel   string           `position:"Query" name:"AndroidNotificationVivoChannel"`
+	AndroidVivoReceiptId             string           `position:"Query" name:"AndroidVivoReceiptId"`
 	IOSNotificationCategory          string           `position:"Query" name:"iOSNotificationCategory"`
 	AndroidNotificationXiaomiChannel string           `position:"Query" name:"AndroidNotificationXiaomiChannel"`
 	StoreOffline                     requests.Boolean `position:"Query" name:"StoreOffline"`

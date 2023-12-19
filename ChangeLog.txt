@@ -1,3 +1,7 @@
+2023-12-19 Version: v1.62.638
+- Generated 2016-08-01 for `Push`.
+- Supported AndroidVivoReceiptId for Push and MassPush.
+
 2023-12-15 Version: v1.62.637
 - Generated 2017-03-21 for `vod`.
 - SubmitSnapshotJob add parameter

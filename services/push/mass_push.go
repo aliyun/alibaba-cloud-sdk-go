@@ -98,6 +98,7 @@ type MassPushPushTask struct {
 	AndroidImageUrl                  string `name:"AndroidImageUrl"`
 	AndroidHonorTargetUserType       string `name:"AndroidHonorTargetUserType"`
 	AndroidNotificationVivoChannel   string `name:"AndroidNotificationVivoChannel"`
+	AndroidVivoReceiptId             string `name:"AndroidVivoReceiptId"`
 	IOSNotificationCategory          string `name:"iOSNotificationCategory"`
 	AndroidNotificationXiaomiChannel string `name:"AndroidNotificationXiaomiChannel"`
 	StoreOffline                     string `name:"StoreOffline"`
