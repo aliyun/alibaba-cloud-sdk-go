@@ -17,43 +17,44 @@ package ocr
 
 // Data is a nested struct in ocr response
 type Data struct {
-	BankName         string      `json:"BankName" xml:"BankName"`
-	Name             string      `json:"Name" xml:"Name"`
-	ErrorMessage     string      `json:"ErrorMessage" xml:"ErrorMessage"`
 	Date             string      `json:"Date" xml:"Date"`
-	Capital          string      `json:"Capital" xml:"Capital"`
 	Seat             string      `json:"Seat" xml:"Seat"`
 	EstablishDate    string      `json:"EstablishDate" xml:"EstablishDate"`
 	FileContent      string      `json:"FileContent" xml:"FileContent"`
-	CardNumber       string      `json:"CardNumber" xml:"CardNumber"`
 	ValidPeriod      string      `json:"ValidPeriod" xml:"ValidPeriod"`
+	Type             string      `json:"Type" xml:"Type"`
+	LegalPerson      string      `json:"LegalPerson" xml:"LegalPerson"`
+	RegisterNumber   string      `json:"RegisterNumber" xml:"RegisterNumber"`
+	Price            float64     `json:"Price" xml:"Price"`
+	Destination      string      `json:"Destination" xml:"Destination"`
+	CardType         string      `json:"CardType" xml:"CardType"`
+	Height           int64       `json:"Height" xml:"Height"`
+	DepartureStation string      `json:"DepartureStation" xml:"DepartureStation"`
+	Status           string      `json:"Status" xml:"Status"`
+	BankName         string      `json:"BankName" xml:"BankName"`
+	Name             string      `json:"Name" xml:"Name"`
+	ErrorMessage     string      `json:"ErrorMessage" xml:"ErrorMessage"`
+	Capital          string      `json:"Capital" xml:"Capital"`
+	CardNumber       string      `json:"CardNumber" xml:"CardNumber"`
 	VinCode          string      `json:"VinCode" xml:"VinCode"`
 	ErrorCode        string      `json:"ErrorCode" xml:"ErrorCode"`
-	Type             string      `json:"Type" xml:"Type"`
 	Business         string      `json:"Business" xml:"Business"`
 	Angle            float64     `json:"Angle" xml:"Angle"`
 	JobId            string      `json:"JobId" xml:"JobId"`
 	Result           string      `json:"Result" xml:"Result"`
-	LegalPerson      string      `json:"LegalPerson" xml:"LegalPerson"`
 	ValidDate        string      `json:"ValidDate" xml:"ValidDate"`
-	RegisterNumber   string      `json:"RegisterNumber" xml:"RegisterNumber"`
-	Price            float64     `json:"Price" xml:"Price"`
-	Destination      string      `json:"Destination" xml:"Destination"`
 	Level            string      `json:"Level" xml:"Level"`
 	Address          string      `json:"Address" xml:"Address"`
 	Number           string      `json:"Number" xml:"Number"`
-	Height           int64       `json:"Height" xml:"Height"`
-	DepartureStation string      `json:"DepartureStation" xml:"DepartureStation"`
 	InputFile        string      `json:"InputFile" xml:"InputFile"`
 	Width            int64       `json:"Width" xml:"Width"`
-	Status           string      `json:"Status" xml:"Status"`
 	BackResult       BackResult  `json:"BackResult" xml:"BackResult"`
-	Stamp            Stamp       `json:"Stamp" xml:"Stamp"`
-	FaceResult       FaceResult  `json:"FaceResult" xml:"FaceResult"`
-	Emblem           Emblem      `json:"Emblem" xml:"Emblem"`
-	FrontResult      FrontResult `json:"FrontResult" xml:"FrontResult"`
 	Box              Box         `json:"Box" xml:"Box"`
 	Content          Content     `json:"Content" xml:"Content"`
+	FaceResult       FaceResult  `json:"FaceResult" xml:"FaceResult"`
+	Stamp            Stamp       `json:"Stamp" xml:"Stamp"`
+	Emblem           Emblem      `json:"Emblem" xml:"Emblem"`
+	FrontResult      FrontResult `json:"FrontResult" xml:"FrontResult"`
 	Title            Title       `json:"Title" xml:"Title"`
 	QRCode           QRCode      `json:"QRCode" xml:"QRCode"`
 	Plates           []Plate     `json:"Plates" xml:"Plates"`

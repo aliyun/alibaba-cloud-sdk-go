@@ -1,3 +1,7 @@
+2023-12-20 Version: v1.62.641
+- Generated 2019-12-30 for `ocr`.
+- Update RecognizeBankCard.
+
 2023-12-19 Version: v1.62.640
 - Generated 2020-04-07 for `cas`.
 - Fix some bugs.

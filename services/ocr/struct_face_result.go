@@ -22,6 +22,7 @@ type FaceResult struct {
 	IssueUnit     string `json:"IssueUnit" xml:"IssueUnit"`
 	EngineNumber  string `json:"EngineNumber" xml:"EngineNumber"`
 	VehicleType   string `json:"VehicleType" xml:"VehicleType"`
+	Nationality   string `json:"Nationality" xml:"Nationality"`
 	PlateNumber   string `json:"PlateNumber" xml:"PlateNumber"`
 	Owner         string `json:"Owner" xml:"Owner"`
 	Vin           string `json:"Vin" xml:"Vin"`
@@ -33,4 +34,5 @@ type FaceResult struct {
 	Model         string `json:"Model" xml:"Model"`
 	RegisterDate  string `json:"RegisterDate" xml:"RegisterDate"`
 	IssueDate     string `json:"IssueDate" xml:"IssueDate"`
+	BirthDate     string `json:"BirthDate" xml:"BirthDate"`
 }
