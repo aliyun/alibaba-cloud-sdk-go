@@ -1,3 +1,7 @@
+2023-12-21 Version: v1.62.643
+- Generated 2022-12-13 for `PaiRecService`.
+- Add api about ABMetric, ABMetricGroup, CalculationJob.
+
 2023-12-20 Version: v1.62.642
 - Generated 2020-04-07 for `cas`.
 - Fix some bugs.
