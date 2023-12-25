@@ -97,7 +97,7 @@ func CreateDescribeAccountAuthorityRequest() (request *DescribeAccountAuthorityR
 	request = &DescribeAccountAuthorityRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("clickhouse", "2019-11-11", "DescribeAccountAuthority", "", "")
+	request.InitWithApiInfo("clickhouse", "2019-11-11", "DescribeAccountAuthority", "service", "openAPI")
 	request.Method = requests.POST
 	return
 }

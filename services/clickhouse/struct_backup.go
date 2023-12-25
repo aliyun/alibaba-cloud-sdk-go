@@ -26,4 +26,5 @@ type Backup struct {
 	BackupSetInfo   string `json:"BackupSetInfo" xml:"BackupSetInfo"`
 	BackupId        string `json:"BackupId" xml:"BackupId"`
 	BackupMethod    string `json:"BackupMethod" xml:"BackupMethod"`
+	ExpireDate      string `json:"ExpireDate" xml:"ExpireDate"`
 }

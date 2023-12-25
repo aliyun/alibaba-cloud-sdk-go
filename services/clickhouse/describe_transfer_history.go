@@ -90,7 +90,7 @@ func CreateDescribeTransferHistoryRequest() (request *DescribeTransferHistoryReq
 	request = &DescribeTransferHistoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("clickhouse", "2019-11-11", "DescribeTransferHistory", "", "")
+	request.InitWithApiInfo("clickhouse", "2019-11-11", "DescribeTransferHistory", "service", "openAPI")
 	request.Method = requests.POST
 	return
 }

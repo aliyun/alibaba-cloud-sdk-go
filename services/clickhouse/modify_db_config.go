@@ -90,7 +90,7 @@ func CreateModifyDBConfigRequest() (request *ModifyDBConfigRequest) {
 	request = &ModifyDBConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("clickhouse", "2019-11-11", "ModifyDBConfig", "", "")
+	request.InitWithApiInfo("clickhouse", "2019-11-11", "ModifyDBConfig", "service", "openAPI")
 	request.Method = requests.POST
 	return
 }

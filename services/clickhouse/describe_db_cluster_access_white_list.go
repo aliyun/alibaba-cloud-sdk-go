@@ -90,7 +90,7 @@ func CreateDescribeDBClusterAccessWhiteListRequest() (request *DescribeDBCluster
 	request = &DescribeDBClusterAccessWhiteListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("clickhouse", "2019-11-11", "DescribeDBClusterAccessWhiteList", "", "")
+	request.InitWithApiInfo("clickhouse", "2019-11-11", "DescribeDBClusterAccessWhiteList", "service", "openAPI")
 	request.Method = requests.POST
 	return
 }

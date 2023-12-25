@@ -86,6 +86,7 @@ type DescribeBackupPolicyResponse struct {
 	RequestId             string `json:"RequestId" xml:"RequestId"`
 	PreferredBackupTime   string `json:"PreferredBackupTime" xml:"PreferredBackupTime"`
 	BackupRetentionPeriod int    `json:"BackupRetentionPeriod" xml:"BackupRetentionPeriod"`
+	BackupSize            string `json:"BackupSize" xml:"BackupSize"`
 }
 
 // CreateDescribeBackupPolicyRequest creates a request to invoke DescribeBackupPolicy API
@@ -93,7 +94,7 @@ func CreateDescribeBackupPolicyRequest() (request *DescribeBackupPolicyRequest) 
 	request = &DescribeBackupPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("clickhouse", "2019-11-11", "DescribeBackupPolicy", "", "")
+	request.InitWithApiInfo("clickhouse", "2019-11-11", "DescribeBackupPolicy", "service", "openAPI")
 	request.Method = requests.POST
 	return
 }

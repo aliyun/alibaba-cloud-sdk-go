@@ -90,7 +90,7 @@ func CreateCreatePortsForClickHouseRequest() (request *CreatePortsForClickHouseR
 	request = &CreatePortsForClickHouseRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("clickhouse", "2019-11-11", "CreatePortsForClickHouse", "", "")
+	request.InitWithApiInfo("clickhouse", "2019-11-11", "CreatePortsForClickHouse", "service", "openAPI")
 	request.Method = requests.POST
 	return
 }

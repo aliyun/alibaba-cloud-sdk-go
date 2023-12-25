@@ -90,7 +90,7 @@ func CreateModifyDBClusterMaintainTimeRequest() (request *ModifyDBClusterMaintai
 	request = &ModifyDBClusterMaintainTimeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("clickhouse", "2019-11-11", "ModifyDBClusterMaintainTime", "", "")
+	request.InitWithApiInfo("clickhouse", "2019-11-11", "ModifyDBClusterMaintainTime", "service", "openAPI")
 	request.Method = requests.POST
 	return
 }

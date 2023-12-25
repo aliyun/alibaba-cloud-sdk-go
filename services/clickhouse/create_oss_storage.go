@@ -89,7 +89,7 @@ func CreateCreateOSSStorageRequest() (request *CreateOSSStorageRequest) {
 	request = &CreateOSSStorageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("clickhouse", "2019-11-11", "CreateOSSStorage", "", "")
+	request.InitWithApiInfo("clickhouse", "2019-11-11", "CreateOSSStorage", "service", "openAPI")
 	request.Method = requests.POST
 	return
 }

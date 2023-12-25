@@ -21,4 +21,5 @@ type Account struct {
 	AccountDescription string `json:"AccountDescription" xml:"AccountDescription"`
 	AccountType        string `json:"AccountType" xml:"AccountType"`
 	AccountName        string `json:"AccountName" xml:"AccountName"`
+	ConfigType         string `json:"ConfigType" xml:"ConfigType"`
 }

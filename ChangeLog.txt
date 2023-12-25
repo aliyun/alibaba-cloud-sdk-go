@@ -1,3 +1,7 @@
+2023-12-25 Version: v1.62.644
+- Generated 2019-11-11 for `clickhouse`.
+undefined
+
 2023-12-21 Version: v1.62.643
 - Generated 2022-12-13 for `PaiRecService`.
 - Add api about ABMetric, ABMetricGroup, CalculationJob.

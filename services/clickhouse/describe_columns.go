@@ -92,7 +92,7 @@ func CreateDescribeColumnsRequest() (request *DescribeColumnsRequest) {
 	request = &DescribeColumnsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("clickhouse", "2019-11-11", "DescribeColumns", "", "")
+	request.InitWithApiInfo("clickhouse", "2019-11-11", "DescribeColumns", "service", "openAPI")
 	request.Method = requests.POST
 	return
 }

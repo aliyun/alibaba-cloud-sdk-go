@@ -77,6 +77,7 @@ type RestartInstanceRequest struct {
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	DBClusterId          string           `position:"Query" name:"DBClusterId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	RestartTime          string           `position:"Query" name:"RestartTime"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
@@ -91,7 +92,7 @@ func CreateRestartInstanceRequest() (request *RestartInstanceRequest) {
 	request = &RestartInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("clickhouse", "2019-11-11", "RestartInstance", "", "")
+	request.InitWithApiInfo("clickhouse", "2019-11-11", "RestartInstance", "service", "openAPI")
 	request.Method = requests.POST
 	return
 }

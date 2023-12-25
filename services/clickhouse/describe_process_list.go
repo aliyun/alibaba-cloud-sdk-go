@@ -97,7 +97,7 @@ func CreateDescribeProcessListRequest() (request *DescribeProcessListRequest) {
 	request = &DescribeProcessListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("clickhouse", "2019-11-11", "DescribeProcessList", "", "")
+	request.InitWithApiInfo("clickhouse", "2019-11-11", "DescribeProcessList", "service", "openAPI")
 	request.Method = requests.POST
 	return
 }

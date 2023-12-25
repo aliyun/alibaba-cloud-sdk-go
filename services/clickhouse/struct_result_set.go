@@ -17,20 +17,16 @@ package clickhouse
 
 // ResultSet is a nested struct in clickhouse response
 type ResultSet struct {
-	Name               string `json:"Name" xml:"Name"`
-	InitialUser        string `json:"InitialUser" xml:"InitialUser"`
-	MaxQueryDurationMs string `json:"MaxQueryDurationMs" xml:"MaxQueryDurationMs"`
-	MinQueryDurationMs string `json:"MinQueryDurationMs" xml:"MinQueryDurationMs"`
-	QueryStartTime     string `json:"QueryStartTime" xml:"QueryStartTime"`
-	InitialAddress     string `json:"InitialAddress" xml:"InitialAddress"`
-	ReadRows           string `json:"ReadRows" xml:"ReadRows"`
-	MemoryUsage        string `json:"MemoryUsage" xml:"MemoryUsage"`
-	AvgQueryDurationMs string `json:"AvgQueryDurationMs" xml:"AvgQueryDurationMs"`
-	ResultBytes        string `json:"ResultBytes" xml:"ResultBytes"`
-	ReadBytes          string `json:"ReadBytes" xml:"ReadBytes"`
-	InitialQueryId     string `json:"InitialQueryId" xml:"InitialQueryId"`
-	Count              string `json:"Count" xml:"Count"`
-	QueryDurationMs    string `json:"QueryDurationMs" xml:"QueryDurationMs"`
-	Query              string `json:"Query" xml:"Query"`
-	Type               string `json:"Type" xml:"Type"`
+	Name            string `json:"Name" xml:"Name"`
+	InitialUser     string `json:"InitialUser" xml:"InitialUser"`
+	MemoryUsage     string `json:"MemoryUsage" xml:"MemoryUsage"`
+	ResultBytes     string `json:"ResultBytes" xml:"ResultBytes"`
+	QueryStartTime  string `json:"QueryStartTime" xml:"QueryStartTime"`
+	ReadBytes       string `json:"ReadBytes" xml:"ReadBytes"`
+	InitialAddress  string `json:"InitialAddress" xml:"InitialAddress"`
+	InitialQueryId  string `json:"InitialQueryId" xml:"InitialQueryId"`
+	ReadRows        string `json:"ReadRows" xml:"ReadRows"`
+	QueryDurationMs string `json:"QueryDurationMs" xml:"QueryDurationMs"`
+	Query           string `json:"Query" xml:"Query"`
+	Type            string `json:"Type" xml:"Type"`
 }

@@ -90,7 +90,7 @@ func CreateDeleteAccountRequest() (request *DeleteAccountRequest) {
 	request = &DeleteAccountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("clickhouse", "2019-11-11", "DeleteAccount", "", "")
+	request.InitWithApiInfo("clickhouse", "2019-11-11", "DeleteAccount", "service", "openAPI")
 	request.Method = requests.POST
 	return
 }

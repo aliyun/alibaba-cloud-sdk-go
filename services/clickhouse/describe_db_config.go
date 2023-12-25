@@ -90,7 +90,7 @@ func CreateDescribeDBConfigRequest() (request *DescribeDBConfigRequest) {
 	request = &DescribeDBConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("clickhouse", "2019-11-11", "DescribeDBConfig", "", "")
+	request.InitWithApiInfo("clickhouse", "2019-11-11", "DescribeDBConfig", "service", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -92,7 +92,7 @@ func CreateDescribeTablesRequest() (request *DescribeTablesRequest) {
 	request = &DescribeTablesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("clickhouse", "2019-11-11", "DescribeTables", "", "")
+	request.InitWithApiInfo("clickhouse", "2019-11-11", "DescribeTables", "service", "openAPI")
 	request.Method = requests.POST
 	return
 }

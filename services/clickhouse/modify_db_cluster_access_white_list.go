@@ -93,7 +93,7 @@ func CreateModifyDBClusterAccessWhiteListRequest() (request *ModifyDBClusterAcce
 	request = &ModifyDBClusterAccessWhiteListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("clickhouse", "2019-11-11", "ModifyDBClusterAccessWhiteList", "", "")
+	request.InitWithApiInfo("clickhouse", "2019-11-11", "ModifyDBClusterAccessWhiteList", "service", "openAPI")
 	request.Method = requests.POST
 	return
 }

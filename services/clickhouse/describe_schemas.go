@@ -92,7 +92,7 @@ func CreateDescribeSchemasRequest() (request *DescribeSchemasRequest) {
 	request = &DescribeSchemasRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("clickhouse", "2019-11-11", "DescribeSchemas", "", "")
+	request.InitWithApiInfo("clickhouse", "2019-11-11", "DescribeSchemas", "service", "openAPI")
 	request.Method = requests.POST
 	return
 }

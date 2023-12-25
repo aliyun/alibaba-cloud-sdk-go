@@ -72,6 +72,8 @@ func (client *Client) DescribeSynDbsWithCallback(request *DescribeSynDbsRequest,
 type DescribeSynDbsRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	DbClusterId          string           `position:"Query" name:"DbClusterId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
@@ -81,8 +83,11 @@ type DescribeSynDbsRequest struct {
 // DescribeSynDbsResponse is the response struct for api DescribeSynDbs
 type DescribeSynDbsResponse struct {
 	*responses.BaseResponse
-	RequestId string  `json:"RequestId" xml:"RequestId"`
-	SynDbs    []SynDb `json:"SynDbs" xml:"SynDbs"`
+	RequestId  string  `json:"RequestId" xml:"RequestId"`
+	TotalCount int     `json:"TotalCount" xml:"TotalCount"`
+	PageSize   int     `json:"PageSize" xml:"PageSize"`
+	PageNumber int     `json:"PageNumber" xml:"PageNumber"`
+	SynDbs     []SynDb `json:"SynDbs" xml:"SynDbs"`
 }
 
 // CreateDescribeSynDbsRequest creates a request to invoke DescribeSynDbs API
@@ -90,7 +95,7 @@ func CreateDescribeSynDbsRequest() (request *DescribeSynDbsRequest) {
 	request = &DescribeSynDbsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("clickhouse", "2019-11-11", "DescribeSynDbs", "", "")
+	request.InitWithApiInfo("clickhouse", "2019-11-11", "DescribeSynDbs", "service", "openAPI")
 	request.Method = requests.POST
 	return
 }

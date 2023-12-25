@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DeleteLorneTask invokes the clickhouse.DeleteLorneTask API synchronously
-func (client *Client) DeleteLorneTask(request *DeleteLorneTaskRequest) (response *DeleteLorneTaskResponse, err error) {
-	response = CreateDeleteLorneTaskResponse()
+// UpgradeMinorVersion invokes the clickhouse.UpgradeMinorVersion API synchronously
+func (client *Client) UpgradeMinorVersion(request *UpgradeMinorVersionRequest) (response *UpgradeMinorVersionResponse, err error) {
+	response = CreateUpgradeMinorVersionResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DeleteLorneTaskWithChan invokes the clickhouse.DeleteLorneTask API asynchronously
-func (client *Client) DeleteLorneTaskWithChan(request *DeleteLorneTaskRequest) (<-chan *DeleteLorneTaskResponse, <-chan error) {
-	responseChan := make(chan *DeleteLorneTaskResponse, 1)
+// UpgradeMinorVersionWithChan invokes the clickhouse.UpgradeMinorVersion API asynchronously
+func (client *Client) UpgradeMinorVersionWithChan(request *UpgradeMinorVersionRequest) (<-chan *UpgradeMinorVersionResponse, <-chan error) {
+	responseChan := make(chan *UpgradeMinorVersionResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DeleteLorneTask(request)
+		response, err := client.UpgradeMinorVersion(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) DeleteLorneTaskWithChan(request *DeleteLorneTaskRequest) (
 	return responseChan, errChan
 }
 
-// DeleteLorneTaskWithCallback invokes the clickhouse.DeleteLorneTask API asynchronously
-func (client *Client) DeleteLorneTaskWithCallback(request *DeleteLorneTaskRequest, callback func(response *DeleteLorneTaskResponse, err error)) <-chan int {
+// UpgradeMinorVersionWithCallback invokes the clickhouse.UpgradeMinorVersion API asynchronously
+func (client *Client) UpgradeMinorVersionWithCallback(request *UpgradeMinorVersionRequest, callback func(response *UpgradeMinorVersionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DeleteLorneTaskResponse
+		var response *UpgradeMinorVersionResponse
 		var err error
 		defer close(result)
-		response, err = client.DeleteLorneTask(request)
+		response, err = client.UpgradeMinorVersion(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,36 +68,38 @@ func (client *Client) DeleteLorneTaskWithCallback(request *DeleteLorneTaskReques
 	return result
 }
 
-// DeleteLorneTaskRequest is the request struct for api DeleteLorneTask
-type DeleteLorneTaskRequest struct {
+// UpgradeMinorVersionRequest is the request struct for api UpgradeMinorVersion
+type UpgradeMinorVersionRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	TaskId               string           `position:"Query" name:"TaskId"`
+	UpgradeImmediately   requests.Boolean `position:"Query" name:"UpgradeImmediately"`
+	UpgradeVersion       string           `position:"Query" name:"UpgradeVersion"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	DBClusterId          string           `position:"Query" name:"DBClusterId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	UpgradeTime          string           `position:"Query" name:"UpgradeTime"`
 }
 
-// DeleteLorneTaskResponse is the response struct for api DeleteLorneTask
-type DeleteLorneTaskResponse struct {
+// UpgradeMinorVersionResponse is the response struct for api UpgradeMinorVersion
+type UpgradeMinorVersionResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateDeleteLorneTaskRequest creates a request to invoke DeleteLorneTask API
-func CreateDeleteLorneTaskRequest() (request *DeleteLorneTaskRequest) {
-	request = &DeleteLorneTaskRequest{
+// CreateUpgradeMinorVersionRequest creates a request to invoke UpgradeMinorVersion API
+func CreateUpgradeMinorVersionRequest() (request *UpgradeMinorVersionRequest) {
+	request = &UpgradeMinorVersionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("clickhouse", "2019-11-11", "DeleteLorneTask", "", "")
+	request.InitWithApiInfo("clickhouse", "2019-11-11", "UpgradeMinorVersion", "service", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateDeleteLorneTaskResponse creates a response to parse from DeleteLorneTask response
-func CreateDeleteLorneTaskResponse() (response *DeleteLorneTaskResponse) {
-	response = &DeleteLorneTaskResponse{
+// CreateUpgradeMinorVersionResponse creates a response to parse from UpgradeMinorVersion response
+func CreateUpgradeMinorVersionResponse() (response *UpgradeMinorVersionResponse) {
+	response = &UpgradeMinorVersionResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

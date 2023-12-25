@@ -99,7 +99,7 @@ func CreateTransferVersionRequest() (request *TransferVersionRequest) {
 	request = &TransferVersionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("clickhouse", "2019-11-11", "TransferVersion", "", "")
+	request.InitWithApiInfo("clickhouse", "2019-11-11", "TransferVersion", "service", "openAPI")
 	request.Method = requests.POST
 	return
 }

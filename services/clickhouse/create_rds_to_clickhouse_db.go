@@ -104,7 +104,7 @@ func CreateCreateRDSToClickhouseDbRequest() (request *CreateRDSToClickhouseDbReq
 	request = &CreateRDSToClickhouseDbRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("clickhouse", "2019-11-11", "CreateRDSToClickhouseDb", "", "")
+	request.InitWithApiInfo("clickhouse", "2019-11-11", "CreateRDSToClickhouseDb", "service", "openAPI")
 	request.Method = requests.POST
 	return
 }

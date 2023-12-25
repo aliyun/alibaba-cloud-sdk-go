@@ -96,7 +96,7 @@ func CreateModifyAccountAuthorityRequest() (request *ModifyAccountAuthorityReque
 	request = &ModifyAccountAuthorityRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("clickhouse", "2019-11-11", "ModifyAccountAuthority", "", "")
+	request.InitWithApiInfo("clickhouse", "2019-11-11", "ModifyAccountAuthority", "service", "openAPI")
 	request.Method = requests.POST
 	return
 }

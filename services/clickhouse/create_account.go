@@ -92,7 +92,7 @@ func CreateCreateAccountRequest() (request *CreateAccountRequest) {
 	request = &CreateAccountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("clickhouse", "2019-11-11", "CreateAccount", "", "")
+	request.InitWithApiInfo("clickhouse", "2019-11-11", "CreateAccount", "service", "openAPI")
 	request.Method = requests.POST
 	return
 }

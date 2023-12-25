@@ -96,7 +96,7 @@ func CreateDescribeDBClusterPerformanceRequest() (request *DescribeDBClusterPerf
 	request = &DescribeDBClusterPerformanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("clickhouse", "2019-11-11", "DescribeDBClusterPerformance", "", "")
+	request.InitWithApiInfo("clickhouse", "2019-11-11", "DescribeDBClusterPerformance", "service", "openAPI")
 	request.Method = requests.POST
 	return
 }

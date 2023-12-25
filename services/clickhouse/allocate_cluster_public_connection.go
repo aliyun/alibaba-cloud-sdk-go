@@ -90,7 +90,7 @@ func CreateAllocateClusterPublicConnectionRequest() (request *AllocateClusterPub
 	request = &AllocateClusterPublicConnectionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("clickhouse", "2019-11-11", "AllocateClusterPublicConnection", "", "")
+	request.InitWithApiInfo("clickhouse", "2019-11-11", "AllocateClusterPublicConnection", "service", "openAPI")
 	request.Method = requests.POST
 	return
 }

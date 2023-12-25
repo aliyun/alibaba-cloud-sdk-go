@@ -92,7 +92,7 @@ func CreateModifyBackupPolicyRequest() (request *ModifyBackupPolicyRequest) {
 	request = &ModifyBackupPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("clickhouse", "2019-11-11", "ModifyBackupPolicy", "", "")
+	request.InitWithApiInfo("clickhouse", "2019-11-11", "ModifyBackupPolicy", "service", "openAPI")
 	request.Method = requests.POST
 	return
 }

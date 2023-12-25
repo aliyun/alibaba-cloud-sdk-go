@@ -89,7 +89,7 @@ func CreateDeleteDBClusterRequest() (request *DeleteDBClusterRequest) {
 	request = &DeleteDBClusterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("clickhouse", "2019-11-11", "DeleteDBCluster", "", "")
+	request.InitWithApiInfo("clickhouse", "2019-11-11", "DeleteDBCluster", "service", "openAPI")
 	request.Method = requests.POST
 	return
 }

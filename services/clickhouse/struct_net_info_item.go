@@ -24,4 +24,6 @@ type NetInfoItem struct {
 	NetType          string `json:"NetType" xml:"NetType"`
 	HttpPort         string `json:"HttpPort" xml:"HttpPort"`
 	IPAddress        string `json:"IPAddress" xml:"IPAddress"`
+	HttpsPort        string `json:"HttpsPort" xml:"HttpsPort"`
+	MySQLPort        string `json:"MySQLPort" xml:"MySQLPort"`
 }

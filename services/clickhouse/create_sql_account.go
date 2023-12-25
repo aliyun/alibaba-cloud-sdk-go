@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// OperateLorneTaskStatus invokes the clickhouse.OperateLorneTaskStatus API synchronously
-func (client *Client) OperateLorneTaskStatus(request *OperateLorneTaskStatusRequest) (response *OperateLorneTaskStatusResponse, err error) {
-	response = CreateOperateLorneTaskStatusResponse()
+// CreateSQLAccount invokes the clickhouse.CreateSQLAccount API synchronously
+func (client *Client) CreateSQLAccount(request *CreateSQLAccountRequest) (response *CreateSQLAccountResponse, err error) {
+	response = CreateCreateSQLAccountResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// OperateLorneTaskStatusWithChan invokes the clickhouse.OperateLorneTaskStatus API asynchronously
-func (client *Client) OperateLorneTaskStatusWithChan(request *OperateLorneTaskStatusRequest) (<-chan *OperateLorneTaskStatusResponse, <-chan error) {
-	responseChan := make(chan *OperateLorneTaskStatusResponse, 1)
+// CreateSQLAccountWithChan invokes the clickhouse.CreateSQLAccount API asynchronously
+func (client *Client) CreateSQLAccountWithChan(request *CreateSQLAccountRequest) (<-chan *CreateSQLAccountResponse, <-chan error) {
+	responseChan := make(chan *CreateSQLAccountResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.OperateLorneTaskStatus(request)
+		response, err := client.CreateSQLAccount(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) OperateLorneTaskStatusWithChan(request *OperateLorneTaskSt
 	return responseChan, errChan
 }
 
-// OperateLorneTaskStatusWithCallback invokes the clickhouse.OperateLorneTaskStatus API asynchronously
-func (client *Client) OperateLorneTaskStatusWithCallback(request *OperateLorneTaskStatusRequest, callback func(response *OperateLorneTaskStatusResponse, err error)) <-chan int {
+// CreateSQLAccountWithCallback invokes the clickhouse.CreateSQLAccount API asynchronously
+func (client *Client) CreateSQLAccountWithCallback(request *CreateSQLAccountRequest, callback func(response *CreateSQLAccountResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *OperateLorneTaskStatusResponse
+		var response *CreateSQLAccountResponse
 		var err error
 		defer close(result)
-		response, err = client.OperateLorneTaskStatus(request)
+		response, err = client.CreateSQLAccount(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,37 +68,39 @@ func (client *Client) OperateLorneTaskStatusWithCallback(request *OperateLorneTa
 	return result
 }
 
-// OperateLorneTaskStatusRequest is the request struct for api OperateLorneTaskStatus
-type OperateLorneTaskStatusRequest struct {
+// CreateSQLAccountRequest is the request struct for api CreateSQLAccount
+type CreateSQLAccountRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	LorneStatus          string           `position:"Query" name:"LorneStatus"`
-	TaskId               string           `position:"Query" name:"TaskId"`
+	AccountType          string           `position:"Query" name:"AccountType"`
+	AccountDescription   string           `position:"Query" name:"AccountDescription"`
+	AccountName          string           `position:"Query" name:"AccountName"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	DBClusterId          string           `position:"Query" name:"DBClusterId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	AccountPassword      string           `position:"Query" name:"AccountPassword"`
 }
 
-// OperateLorneTaskStatusResponse is the response struct for api OperateLorneTaskStatus
-type OperateLorneTaskStatusResponse struct {
+// CreateSQLAccountResponse is the response struct for api CreateSQLAccount
+type CreateSQLAccountResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateOperateLorneTaskStatusRequest creates a request to invoke OperateLorneTaskStatus API
-func CreateOperateLorneTaskStatusRequest() (request *OperateLorneTaskStatusRequest) {
-	request = &OperateLorneTaskStatusRequest{
+// CreateCreateSQLAccountRequest creates a request to invoke CreateSQLAccount API
+func CreateCreateSQLAccountRequest() (request *CreateSQLAccountRequest) {
+	request = &CreateSQLAccountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("clickhouse", "2019-11-11", "OperateLorneTaskStatus", "", "")
+	request.InitWithApiInfo("clickhouse", "2019-11-11", "CreateSQLAccount", "service", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateOperateLorneTaskStatusResponse creates a response to parse from OperateLorneTaskStatus response
-func CreateOperateLorneTaskStatusResponse() (response *OperateLorneTaskStatusResponse) {
-	response = &OperateLorneTaskStatusResponse{
+// CreateCreateSQLAccountResponse creates a response to parse from CreateSQLAccount response
+func CreateCreateSQLAccountResponse() (response *CreateSQLAccountResponse) {
+	response = &CreateSQLAccountResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

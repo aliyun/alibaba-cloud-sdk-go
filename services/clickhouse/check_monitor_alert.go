@@ -91,7 +91,7 @@ func CreateCheckMonitorAlertRequest() (request *CheckMonitorAlertRequest) {
 	request = &CheckMonitorAlertRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("clickhouse", "2019-11-11", "CheckMonitorAlert", "", "")
+	request.InitWithApiInfo("clickhouse", "2019-11-11", "CheckMonitorAlert", "service", "openAPI")
 	request.Method = requests.POST
 	return
 }

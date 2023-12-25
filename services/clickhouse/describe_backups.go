@@ -98,7 +98,7 @@ func CreateDescribeBackupsRequest() (request *DescribeBackupsRequest) {
 	request = &DescribeBackupsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("clickhouse", "2019-11-11", "DescribeBackups", "", "")
+	request.InitWithApiInfo("clickhouse", "2019-11-11", "DescribeBackups", "service", "openAPI")
 	request.Method = requests.POST
 	return
 }

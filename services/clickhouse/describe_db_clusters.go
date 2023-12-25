@@ -76,6 +76,7 @@ type DescribeDBClustersRequest struct {
 	DBClusterStatus      string                   `position:"Query" name:"DBClusterStatus"`
 	ControlVersion       string                   `position:"Query" name:"ControlVersion"`
 	PageNumber           requests.Integer         `position:"Query" name:"PageNumber"`
+	ResourceGroupId      string                   `position:"Query" name:"ResourceGroupId"`
 	PageSize             requests.Integer         `position:"Query" name:"PageSize"`
 	Tag                  *[]DescribeDBClustersTag `position:"Query" name:"Tag"  type:"Repeated"`
 	ResourceOwnerAccount string                   `position:"Query" name:"ResourceOwnerAccount"`
@@ -105,7 +106,7 @@ func CreateDescribeDBClustersRequest() (request *DescribeDBClustersRequest) {
 	request = &DescribeDBClustersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("clickhouse", "2019-11-11", "DescribeDBClusters", "", "")
+	request.InitWithApiInfo("clickhouse", "2019-11-11", "DescribeDBClusters", "service", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -98,7 +98,7 @@ func CreateCreateAccountAndAuthorityRequest() (request *CreateAccountAndAuthorit
 	request = &CreateAccountAndAuthorityRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("clickhouse", "2019-11-11", "CreateAccountAndAuthority", "", "")
+	request.InitWithApiInfo("clickhouse", "2019-11-11", "CreateAccountAndAuthority", "service", "openAPI")
 	request.Method = requests.POST
 	return
 }

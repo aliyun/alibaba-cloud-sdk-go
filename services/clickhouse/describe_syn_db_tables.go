@@ -91,7 +91,7 @@ func CreateDescribeSynDbTablesRequest() (request *DescribeSynDbTablesRequest) {
 	request = &DescribeSynDbTablesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("clickhouse", "2019-11-11", "DescribeSynDbTables", "", "")
+	request.InitWithApiInfo("clickhouse", "2019-11-11", "DescribeSynDbTables", "service", "openAPI")
 	request.Method = requests.POST
 	return
 }

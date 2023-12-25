@@ -90,7 +90,7 @@ func CreateKillProcessRequest() (request *KillProcessRequest) {
 	request = &KillProcessRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("clickhouse", "2019-11-11", "KillProcess", "", "")
+	request.InitWithApiInfo("clickhouse", "2019-11-11", "KillProcess", "service", "openAPI")
 	request.Method = requests.POST
 	return
 }

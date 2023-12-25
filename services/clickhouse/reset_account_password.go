@@ -91,7 +91,7 @@ func CreateResetAccountPasswordRequest() (request *ResetAccountPasswordRequest) 
 	request = &ResetAccountPasswordRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("clickhouse", "2019-11-11", "ResetAccountPassword", "", "")
+	request.InitWithApiInfo("clickhouse", "2019-11-11", "ResetAccountPassword", "service", "openAPI")
 	request.Method = requests.POST
 	return
 }

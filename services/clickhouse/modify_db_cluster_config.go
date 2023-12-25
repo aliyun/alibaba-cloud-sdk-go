@@ -71,6 +71,7 @@ func (client *Client) ModifyDBClusterConfigWithCallback(request *ModifyDBCluster
 // ModifyDBClusterConfigRequest is the request struct for api ModifyDBClusterConfig
 type ModifyDBClusterConfigRequest struct {
 	*requests.RpcRequest
+	Reason               string           `position:"Query" name:"Reason"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	DBClusterId          string           `position:"Query" name:"DBClusterId"`
@@ -90,7 +91,7 @@ func CreateModifyDBClusterConfigRequest() (request *ModifyDBClusterConfigRequest
 	request = &ModifyDBClusterConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("clickhouse", "2019-11-11", "ModifyDBClusterConfig", "", "")
+	request.InitWithApiInfo("clickhouse", "2019-11-11", "ModifyDBClusterConfig", "service", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -89,7 +89,7 @@ func CreateCreateMonitorDataReportRequest() (request *CreateMonitorDataReportReq
 	request = &CreateMonitorDataReportRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("clickhouse", "2019-11-11", "CreateMonitorDataReport", "", "")
+	request.InitWithApiInfo("clickhouse", "2019-11-11", "CreateMonitorDataReport", "service", "openAPI")
 	request.Method = requests.POST
 	return
 }

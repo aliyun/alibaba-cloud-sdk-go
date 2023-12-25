@@ -100,7 +100,7 @@ func CreateCheckClickhouseToRDSRequest() (request *CheckClickhouseToRDSRequest) 
 	request = &CheckClickhouseToRDSRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("clickhouse", "2019-11-11", "CheckClickhouseToRDS", "", "")
+	request.InitWithApiInfo("clickhouse", "2019-11-11", "CheckClickhouseToRDS", "service", "openAPI")
 	request.Method = requests.POST
 	return
 }

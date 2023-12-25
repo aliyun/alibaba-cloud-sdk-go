@@ -94,7 +94,7 @@ func CreateDescribeAllDataSourcesRequest() (request *DescribeAllDataSourcesReque
 	request = &DescribeAllDataSourcesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("clickhouse", "2019-11-11", "DescribeAllDataSources", "", "")
+	request.InitWithApiInfo("clickhouse", "2019-11-11", "DescribeAllDataSources", "service", "openAPI")
 	request.Method = requests.POST
 	return
 }

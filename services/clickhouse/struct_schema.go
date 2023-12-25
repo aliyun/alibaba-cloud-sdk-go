@@ -17,8 +17,6 @@ package clickhouse
 
 // Schema is a nested struct in clickhouse response
 type Schema struct {
-	SchemaName  string                  `json:"SchemaName" xml:"SchemaName"`
-	DbName      string                  `json:"DbName" xml:"DbName"`
-	DBClusterId string                  `json:"DBClusterId" xml:"DBClusterId"`
-	Tables      TablesInSearchRDSTables `json:"Tables" xml:"Tables"`
+	SchemaName  string `json:"SchemaName" xml:"SchemaName"`
+	DBClusterId string `json:"DBClusterId" xml:"DBClusterId"`
 }

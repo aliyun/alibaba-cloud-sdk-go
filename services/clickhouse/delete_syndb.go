@@ -93,7 +93,7 @@ func CreateDeleteSyndbRequest() (request *DeleteSyndbRequest) {
 	request = &DeleteSyndbRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("clickhouse", "2019-11-11", "DeleteSyndb", "", "")
+	request.InitWithApiInfo("clickhouse", "2019-11-11", "DeleteSyndb", "service", "openAPI")
 	request.Method = requests.POST
 	return
 }

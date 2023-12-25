@@ -83,6 +83,7 @@ type DescribeDBClusterNetInfoItemsResponse struct {
 	*responses.BaseResponse
 	ClusterNetworkType string       `json:"ClusterNetworkType" xml:"ClusterNetworkType"`
 	RequestId          string       `json:"RequestId" xml:"RequestId"`
+	EnableSLB          bool         `json:"EnableSLB" xml:"EnableSLB"`
 	NetInfoItems       NetInfoItems `json:"NetInfoItems" xml:"NetInfoItems"`
 }
 
@@ -91,7 +92,7 @@ func CreateDescribeDBClusterNetInfoItemsRequest() (request *DescribeDBClusterNet
 	request = &DescribeDBClusterNetInfoItemsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("clickhouse", "2019-11-11", "DescribeDBClusterNetInfoItems", "", "")
+	request.InitWithApiInfo("clickhouse", "2019-11-11", "DescribeDBClusterNetInfoItems", "service", "openAPI")
 	request.Method = requests.POST
 	return
 }

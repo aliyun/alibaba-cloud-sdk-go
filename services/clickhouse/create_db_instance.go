@@ -73,26 +73,31 @@ type CreateDBInstanceRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	DBClusterDescription string           `position:"Query" name:"DBClusterDescription"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
 	SourceDBClusterId    string           `position:"Query" name:"SourceDBClusterId"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
+	ZondIdBak2           string           `position:"Query" name:"ZondIdBak2"`
 	DbNodeStorageType    string           `position:"Query" name:"DbNodeStorageType"`
-	DBClusterCategory    string           `position:"Query" name:"DBClusterCategory"`
 	EncryptionType       string           `position:"Query" name:"EncryptionType"`
-	DBClusterNetworkType string           `position:"Query" name:"DBClusterNetworkType"`
+	ZoneIdBak            string           `position:"Query" name:"ZoneIdBak"`
 	Period               string           `position:"Query" name:"Period"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	DBClusterVersion     string           `position:"Query" name:"DBClusterVersion"`
-	DBClusterClass       string           `position:"Query" name:"DBClusterClass"`
 	BackupSetID          string           `position:"Query" name:"BackupSetID"`
 	EncryptionKey        string           `position:"Query" name:"EncryptionKey"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	DBNodeGroupCount     string           `position:"Query" name:"DBNodeGroupCount"`
-	UsedTime             string           `position:"Query" name:"UsedTime"`
 	VSwitchId            string           `position:"Query" name:"VSwitchId"`
+	ZoneId               string           `position:"Query" name:"ZoneId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	DBClusterCategory    string           `position:"Query" name:"DBClusterCategory"`
+	DBClusterNetworkType string           `position:"Query" name:"DBClusterNetworkType"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	DBClusterVersion     string           `position:"Query" name:"DBClusterVersion"`
+	DBClusterClass       string           `position:"Query" name:"DBClusterClass"`
+	VSwitchBak           string           `position:"Query" name:"VSwitchBak"`
+	UsedTime             string           `position:"Query" name:"UsedTime"`
+	VSwitchBak2          string           `position:"Query" name:"VSwitchBak2"`
 	DBNodeStorage        string           `position:"Query" name:"DBNodeStorage"`
 	VPCId                string           `position:"Query" name:"VPCId"`
-	ZoneId               string           `position:"Query" name:"ZoneId"`
 	PayType              string           `position:"Query" name:"PayType"`
 }
 
@@ -109,7 +114,7 @@ func CreateCreateDBInstanceRequest() (request *CreateDBInstanceRequest) {
 	request = &CreateDBInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("clickhouse", "2019-11-11", "CreateDBInstance", "", "")
+	request.InitWithApiInfo("clickhouse", "2019-11-11", "CreateDBInstance", "service", "openAPI")
 	request.Method = requests.POST
 	return
 }

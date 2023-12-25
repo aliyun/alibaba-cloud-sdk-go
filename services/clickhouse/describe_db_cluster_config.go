@@ -90,7 +90,7 @@ func CreateDescribeDBClusterConfigRequest() (request *DescribeDBClusterConfigReq
 	request = &DescribeDBClusterConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("clickhouse", "2019-11-11", "DescribeDBClusterConfig", "", "")
+	request.InitWithApiInfo("clickhouse", "2019-11-11", "DescribeDBClusterConfig", "service", "openAPI")
 	request.Method = requests.POST
 	return
 }

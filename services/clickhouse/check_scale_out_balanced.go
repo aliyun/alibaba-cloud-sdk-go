@@ -97,7 +97,7 @@ func CreateCheckScaleOutBalancedRequest() (request *CheckScaleOutBalancedRequest
 	request = &CheckScaleOutBalancedRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("clickhouse", "2019-11-11", "CheckScaleOutBalanced", "", "")
+	request.InitWithApiInfo("clickhouse", "2019-11-11", "CheckScaleOutBalanced", "service", "openAPI")
 	request.Method = requests.POST
 	return
 }

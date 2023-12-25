@@ -89,7 +89,7 @@ func CreateDescribeRegionsRequest() (request *DescribeRegionsRequest) {
 	request = &DescribeRegionsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("clickhouse", "2019-11-11", "DescribeRegions", "", "")
+	request.InitWithApiInfo("clickhouse", "2019-11-11", "DescribeRegions", "service", "openAPI")
 	request.Method = requests.POST
 	return
 }
