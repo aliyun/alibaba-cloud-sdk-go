@@ -98,6 +98,7 @@ type StartLiveMPUTaskSeiParams struct {
 // StartLiveMPUTaskTranscodeParams is a repeated param struct in StartLiveMPUTaskRequest
 type StartLiveMPUTaskTranscodeParams struct {
 	Layout       StartLiveMPUTaskTranscodeParamsLayout           `name:"Layout" type:"Struct"`
+	Background   StartLiveMPUTaskTranscodeParamsBackground       `name:"Background" type:"Struct"`
 	UserInfos    *[]StartLiveMPUTaskTranscodeParamsUserInfosItem `name:"UserInfos" type:"Repeated"`
 	EncodeParams StartLiveMPUTaskTranscodeParamsEncodeParams     `name:"EncodeParams" type:"Struct"`
 }
@@ -122,6 +123,12 @@ type StartLiveMPUTaskTranscodeParamsLayout struct {
 	UserPanes    *[]StartLiveMPUTaskTranscodeParamsLayoutUserPanesItem `name:"UserPanes" type:"Repeated"`
 	LayoutMode   string                                                `name:"LayoutMode"`
 	MaxVideoUser StartLiveMPUTaskTranscodeParamsLayoutMaxVideoUser     `name:"MaxVideoUser" type:"Struct"`
+}
+
+// StartLiveMPUTaskTranscodeParamsBackground is a repeated param struct in StartLiveMPUTaskRequest
+type StartLiveMPUTaskTranscodeParamsBackground struct {
+	URL        string `name:"URL"`
+	RenderMode string `name:"RenderMode"`
 }
 
 // StartLiveMPUTaskTranscodeParamsUserInfosItem is a repeated param struct in StartLiveMPUTaskRequest

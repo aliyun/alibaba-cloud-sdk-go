@@ -20,6 +20,7 @@ type StreamData struct {
 	Region        string  `json:"Region" xml:"Region"`
 	MediaProfile  string  `json:"MediaProfile" xml:"MediaProfile"`
 	RtsTraffic    int64   `json:"RtsTraffic" xml:"RtsTraffic"`
+	NewConns      string  `json:"NewConns" xml:"NewConns"`
 	Fps           string  `json:"Fps" xml:"Fps"`
 	RtmpTraffic   int64   `json:"RtmpTraffic" xml:"RtmpTraffic"`
 	HlsCount      int64   `json:"HlsCount" xml:"HlsCount"`

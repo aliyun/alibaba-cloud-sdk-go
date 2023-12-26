@@ -97,6 +97,7 @@ type UpdateLiveMPUTaskSeiParams struct {
 // UpdateLiveMPUTaskTranscodeParams is a repeated param struct in UpdateLiveMPUTaskRequest
 type UpdateLiveMPUTaskTranscodeParams struct {
 	Layout       UpdateLiveMPUTaskTranscodeParamsLayout           `name:"Layout" type:"Struct"`
+	Background   UpdateLiveMPUTaskTranscodeParamsBackground       `name:"Background" type:"Struct"`
 	UserInfos    *[]UpdateLiveMPUTaskTranscodeParamsUserInfosItem `name:"UserInfos" type:"Repeated"`
 	EncodeParams UpdateLiveMPUTaskTranscodeParamsEncodeParams     `name:"EncodeParams" type:"Struct"`
 }
@@ -121,6 +122,12 @@ type UpdateLiveMPUTaskTranscodeParamsLayout struct {
 	UserPanes    *[]UpdateLiveMPUTaskTranscodeParamsLayoutUserPanesItem `name:"UserPanes" type:"Repeated"`
 	LayoutMode   string                                                 `name:"LayoutMode"`
 	MaxVideoUser UpdateLiveMPUTaskTranscodeParamsLayoutMaxVideoUser     `name:"MaxVideoUser" type:"Struct"`
+}
+
+// UpdateLiveMPUTaskTranscodeParamsBackground is a repeated param struct in UpdateLiveMPUTaskRequest
+type UpdateLiveMPUTaskTranscodeParamsBackground struct {
+	URL        string `name:"URL"`
+	RenderMode string `name:"RenderMode"`
 }
 
 // UpdateLiveMPUTaskTranscodeParamsUserInfosItem is a repeated param struct in UpdateLiveMPUTaskRequest
