@@ -25,5 +25,6 @@ type DBAccount struct {
 	AccountLockState         string              `json:"AccountLockState" xml:"AccountLockState"`
 	AccountName              string              `json:"AccountName" xml:"AccountName"`
 	AccountPassword          string              `json:"AccountPassword" xml:"AccountPassword"`
+	TairPasswordSetted       string              `json:"TairPasswordSetted" xml:"TairPasswordSetted"`
 	DatabasePrivileges       []DatabasePrivilege `json:"DatabasePrivileges" xml:"DatabasePrivileges"`
 }

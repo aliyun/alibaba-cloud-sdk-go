@@ -76,6 +76,7 @@ type DescribeDBClustersRequest struct {
 	DBClusterStatus          string                   `position:"Query" name:"DBClusterStatus"`
 	ConnectionString         string                   `position:"Query" name:"ConnectionString"`
 	RecentExpirationInterval requests.Integer         `position:"Query" name:"RecentExpirationInterval"`
+	DescribeType             string                   `position:"Query" name:"DescribeType"`
 	PageNumber               requests.Integer         `position:"Query" name:"PageNumber"`
 	DBNodeIds                string                   `position:"Query" name:"DBNodeIds"`
 	ResourceGroupId          string                   `position:"Query" name:"ResourceGroupId"`

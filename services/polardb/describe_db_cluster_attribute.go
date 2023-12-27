@@ -137,6 +137,7 @@ type DescribeDBClusterAttributeResponse struct {
 	Architecture              string            `json:"Architecture" xml:"Architecture"`
 	AiType                    string            `json:"AiType" xml:"AiType"`
 	ProvisionedIops           string            `json:"ProvisionedIops" xml:"ProvisionedIops"`
+	HotStandbyHealthy         bool              `json:"HotStandbyHealthy" xml:"HotStandbyHealthy"`
 	RelatedAPInstance         RelatedAPInstance `json:"RelatedAPInstance" xml:"RelatedAPInstance"`
 	DBNodes                   []DBNode          `json:"DBNodes" xml:"DBNodes"`
 	Tags                      []Tag             `json:"Tags" xml:"Tags"`

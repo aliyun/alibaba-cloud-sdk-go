@@ -19,5 +19,6 @@ package polardb
 type RdsEndpoint struct {
 	DBEndpointId string    `json:"DBEndpointId" xml:"DBEndpointId"`
 	EndpointType string    `json:"EndpointType" xml:"EndpointType"`
+	CustinsType  string    `json:"CustinsType" xml:"CustinsType"`
 	AddressItems []Address `json:"AddressItems" xml:"AddressItems"`
 }

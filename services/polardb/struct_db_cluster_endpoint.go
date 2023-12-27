@@ -17,7 +17,8 @@ package polardb
 
 // DBClusterEndpoint is a nested struct in polardb response
 type DBClusterEndpoint struct {
-	DBEndpointId string    `json:"DBEndpointId" xml:"DBEndpointId"`
-	EndpointType string    `json:"EndpointType" xml:"EndpointType"`
-	AddressItems []Address `json:"AddressItems" xml:"AddressItems"`
+	DBEndpointId  string    `json:"DBEndpointId" xml:"DBEndpointId"`
+	EndpointType  string    `json:"EndpointType" xml:"EndpointType"`
+	ReadWriteMode string    `json:"ReadWriteMode" xml:"ReadWriteMode"`
+	AddressItems  []Address `json:"AddressItems" xml:"AddressItems"`
 }

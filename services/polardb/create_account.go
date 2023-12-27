@@ -77,6 +77,7 @@ type CreateAccountRequest struct {
 	AccountDescription   string           `position:"Query" name:"AccountDescription"`
 	AccountPrivilege     string           `position:"Query" name:"AccountPrivilege"`
 	AccountName          string           `position:"Query" name:"AccountName"`
+	TairAccountPassword  string           `position:"Query" name:"TairAccountPassword"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	DBClusterId          string           `position:"Query" name:"DBClusterId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
