@@ -1,3 +1,7 @@
+2023-12-28 Version: v1.62.647
+- Generated 2022-01-30 for `avatar`.
+undefined
+
 2023-12-27 Version: v1.62.646
 - Generated 2017-08-01 for `polardb`.
 - Support new feature.

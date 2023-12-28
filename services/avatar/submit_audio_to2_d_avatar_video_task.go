@@ -91,7 +91,11 @@ type SubmitAudioTo2DAvatarVideoTaskApp struct {
 
 // SubmitAudioTo2DAvatarVideoTaskAvatarInfo is a repeated param struct in SubmitAudioTo2DAvatarVideoTaskRequest
 type SubmitAudioTo2DAvatarVideoTaskAvatarInfo struct {
-	Code string `name:"Code"`
+	Code   string `name:"Code"`
+	X      string `name:"X"`
+	Width  string `name:"Width"`
+	Y      string `name:"Y"`
+	Height string `name:"Height"`
 }
 
 // SubmitAudioTo2DAvatarVideoTaskVideoInfo is a repeated param struct in SubmitAudioTo2DAvatarVideoTaskRequest
