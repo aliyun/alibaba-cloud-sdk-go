@@ -43,8 +43,10 @@ type Tenant struct {
 	MaxParallelQueryDegree       int64                   `json:"MaxParallelQueryDegree" xml:"MaxParallelQueryDegree"`
 	EnableBinlogService          bool                    `json:"EnableBinlogService" xml:"EnableBinlogService"`
 	TimeZone                     string                  `json:"TimeZone" xml:"TimeZone"`
+	DataMergeTime                string                  `json:"DataMergeTime" xml:"DataMergeTime"`
 	AvailableZones               []string                `json:"AvailableZones" xml:"AvailableZones"`
 	TenantResource               TenantResource          `json:"TenantResource" xml:"TenantResource"`
+	ReadOnlyResource             ReadOnlyResource        `json:"ReadOnlyResource" xml:"ReadOnlyResource"`
 	TenantConnections            []TenantConnectionsItem `json:"TenantConnections" xml:"TenantConnections"`
 	TenantZones                  []TenantZonesItem       `json:"TenantZones" xml:"TenantZones"`
 }

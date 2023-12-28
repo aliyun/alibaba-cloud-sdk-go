@@ -33,5 +33,6 @@ type TenantConnectionsItem struct {
 	ParallelQueryDegree         int64    `json:"ParallelQueryDegree" xml:"ParallelQueryDegree"`
 	TenantEndpointId            string   `json:"TenantEndpointId" xml:"TenantEndpointId"`
 	MaxConnectionNum            int64    `json:"MaxConnectionNum" xml:"MaxConnectionNum"`
+	ConnectionReplicaType       string   `json:"ConnectionReplicaType" xml:"ConnectionReplicaType"`
 	ConnectionZones             []string `json:"ConnectionZones" xml:"ConnectionZones"`
 }

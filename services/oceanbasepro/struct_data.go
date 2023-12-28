@@ -91,7 +91,6 @@ type Data struct {
 	SafeMem                 string                        `json:"SafeMem" xml:"SafeMem"`
 	LogicalRead             int64                         `json:"LogicalRead" xml:"LogicalRead"`
 	SQLText                 string                        `json:"SQLText" xml:"SQLText"`
-	UserType                string                        `json:"UserType" xml:"UserType"`
 	Success                 bool                          `json:"Success" xml:"Success"`
 	Suggestion              string                        `json:"Suggestion" xml:"Suggestion"`
 	DataSize                string                        `json:"DataSize" xml:"DataSize"`
@@ -113,7 +112,6 @@ type Data struct {
 	ResourceGroupId         string                        `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	ExecPerSecond           float64                       `json:"ExecPerSecond" xml:"ExecPerSecond"`
 	AvgExecutionMS          float64                       `json:"AvgExecutionMS" xml:"AvgExecutionMS"`
-	UserStatus              string                        `json:"UserStatus" xml:"UserStatus"`
 	QueueTime               float64                       `json:"QueueTime" xml:"QueueTime"`
 	PageNumber              int                           `json:"PageNumber" xml:"PageNumber"`
 	TotalWaitTime           float64                       `json:"TotalWaitTime" xml:"TotalWaitTime"`
@@ -139,8 +137,7 @@ type Data struct {
 	AvailableZones          []AvailableZonesItem          `json:"AvailableZones" xml:"AvailableZones"`
 	Labels                  []Label                       `json:"Labels" xml:"Labels"`
 	Parameters              []ParametersItem              `json:"Parameters" xml:"Parameters"`
-	Roles                   []RolesItem                   `json:"Roles" xml:"Roles"`
-	AvailableSpecifications []AvailableSpecificationsItem `json:"AvailableSpecifications" xml:"AvailableSpecifications"`
 	Steps                   []Step                        `json:"Steps" xml:"Steps"`
+	AvailableSpecifications []AvailableSpecificationsItem `json:"AvailableSpecifications" xml:"AvailableSpecifications"`
 	Users                   []UsersItem                   `json:"Users" xml:"Users"`
 }

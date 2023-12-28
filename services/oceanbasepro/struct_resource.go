@@ -19,8 +19,8 @@ package oceanbasepro
 type Resource struct {
 	UnitCount    int64                           `json:"UnitCount" xml:"UnitCount"`
 	Memory       Memory                          `json:"Memory" xml:"Memory"`
-	CapacityUnit CapacityUnitInDescribeInstances `json:"CapacityUnit" xml:"CapacityUnit"`
 	LogDiskSize  LogDiskSize                     `json:"LogDiskSize" xml:"LogDiskSize"`
+	CapacityUnit CapacityUnitInDescribeInstances `json:"CapacityUnit" xml:"CapacityUnit"`
 	DiskSize     DiskSize                        `json:"DiskSize" xml:"DiskSize"`
 	Cpu          Cpu                             `json:"Cpu" xml:"Cpu"`
 }

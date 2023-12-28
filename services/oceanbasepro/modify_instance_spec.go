@@ -75,6 +75,7 @@ type ModifyInstanceSpecRequest struct {
 	InstanceClass string           `position:"Body" name:"InstanceClass"`
 	DryRun        requests.Boolean `position:"Body" name:"DryRun"`
 	DiskSize      requests.Integer `position:"Body" name:"DiskSize"`
+	DiskType      string           `position:"Body" name:"DiskType"`
 	InstanceId    string           `position:"Body" name:"InstanceId"`
 	LogDiskSize   requests.Integer `position:"Body" name:"LogDiskSize"`
 }

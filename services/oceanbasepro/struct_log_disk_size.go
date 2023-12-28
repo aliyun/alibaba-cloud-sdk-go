@@ -21,6 +21,7 @@ type LogDiskSize struct {
 	UnitLogDisk            int      `json:"UnitLogDisk" xml:"UnitLogDisk"`
 	MaxLogAssignedPercent  string   `json:"MaxLogAssignedPercent" xml:"MaxLogAssignedPercent"`
 	TotalDiskSize          int64    `json:"TotalDiskSize" xml:"TotalDiskSize"`
+	OriginalTotalDiskSize  int      `json:"OriginalTotalDiskSize" xml:"OriginalTotalDiskSize"`
 	UnitDiskSize           int64    `json:"UnitDiskSize" xml:"UnitDiskSize"`
 	TotalLogDisk           int      `json:"TotalLogDisk" xml:"TotalLogDisk"`
 	MaxLogAssignedObServer []string `json:"MaxLogAssignedObServer" xml:"MaxLogAssignedObServer"`

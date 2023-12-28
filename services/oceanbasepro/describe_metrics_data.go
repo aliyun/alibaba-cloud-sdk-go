@@ -76,6 +76,7 @@ type DescribeMetricsDataRequest struct {
 	Limit         string `position:"Query" name:"Limit"`
 	SortOrder     string `position:"Query" name:"SortOrder"`
 	SortMetricKey string `position:"Query" name:"SortMetricKey"`
+	ReplicaType   string `position:"Body" name:"ReplicaType"`
 	EndTime       string `position:"Query" name:"EndTime"`
 	Labels        string `position:"Query" name:"Labels"`
 	InstanceId    string `position:"Query" name:"InstanceId"`

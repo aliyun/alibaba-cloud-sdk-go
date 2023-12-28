@@ -71,12 +71,14 @@ func (client *Client) ModifyTenantPrimaryZoneWithCallback(request *ModifyTenantP
 // ModifyTenantPrimaryZoneRequest is the request struct for api ModifyTenantPrimaryZone
 type ModifyTenantPrimaryZoneRequest struct {
 	*requests.RpcRequest
+	TenantEndpointDirectId    string `position:"Body" name:"TenantEndpointDirectId"`
 	UserVSwitchId             string `position:"Body" name:"UserVSwitchId"`
 	MasterIntranetAddressZone string `position:"Body" name:"MasterIntranetAddressZone"`
 	TenantId                  string `position:"Body" name:"TenantId"`
 	TenantEndpointId          string `position:"Body" name:"TenantEndpointId"`
 	InstanceId                string `position:"Body" name:"InstanceId"`
 	PrimaryZone               string `position:"Body" name:"PrimaryZone"`
+	UserDirectVSwitchId       string `position:"Body" name:"UserDirectVSwitchId"`
 }
 
 // ModifyTenantPrimaryZoneResponse is the response struct for api ModifyTenantPrimaryZone

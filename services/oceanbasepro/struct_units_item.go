@@ -26,4 +26,5 @@ type UnitsItem struct {
 	ManualMigrate           bool    `json:"ManualMigrate" xml:"ManualMigrate"`
 	EnableCancelMigrateUnit bool    `json:"EnableCancelMigrateUnit" xml:"EnableCancelMigrateUnit"`
 	UnitDataSize            int64   `json:"UnitDataSize" xml:"UnitDataSize"`
+	ReplicaType             string  `json:"ReplicaType" xml:"ReplicaType"`
 }

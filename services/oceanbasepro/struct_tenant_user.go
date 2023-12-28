@@ -17,9 +17,12 @@ package oceanbasepro
 
 // TenantUser is a nested struct in oceanbasepro response
 type TenantUser struct {
+	UserType     string         `json:"UserType" xml:"UserType"`
+	UserStatus   string         `json:"UserStatus" xml:"UserStatus"`
 	UserName     string         `json:"UserName" xml:"UserName"`
 	DatabaseName string         `json:"DatabaseName" xml:"DatabaseName"`
 	TenantId     string         `json:"TenantId" xml:"TenantId"`
 	UserRole     []UserRoleItem `json:"UserRole" xml:"UserRole"`
 	Users        []UserRole     `json:"Users" xml:"Users"`
+	Roles        []RolesItem    `json:"Roles" xml:"Roles"`
 }

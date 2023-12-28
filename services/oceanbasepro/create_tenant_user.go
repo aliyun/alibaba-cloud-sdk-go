@@ -84,8 +84,8 @@ type CreateTenantUserRequest struct {
 // CreateTenantUserResponse is the response struct for api CreateTenantUser
 type CreateTenantUserResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	TenantUser []Data `json:"TenantUser" xml:"TenantUser"`
+	RequestId  string     `json:"RequestId" xml:"RequestId"`
+	TenantUser TenantUser `json:"TenantUser" xml:"TenantUser"`
 }
 
 // CreateCreateTenantUserRequest creates a request to invoke CreateTenantUser API

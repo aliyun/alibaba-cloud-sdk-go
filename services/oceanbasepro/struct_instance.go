@@ -53,4 +53,5 @@ type Instance struct {
 	Resource                    Resource                `json:"Resource" xml:"Resource"`
 	TenantCreatable             TenantCreatable         `json:"TenantCreatable" xml:"TenantCreatable"`
 	DataDiskAutoScaleConfig     DataDiskAutoScaleConfig `json:"DataDiskAutoScaleConfig" xml:"DataDiskAutoScaleConfig"`
+	ReadOnlyResource            ReadOnlyResource        `json:"ReadOnlyResource" xml:"ReadOnlyResource"`
 }

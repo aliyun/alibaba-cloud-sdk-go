@@ -71,9 +71,10 @@ func (client *Client) ModifyInstanceTemporaryCapacityWithCallback(request *Modif
 // ModifyInstanceTemporaryCapacityRequest is the request struct for api ModifyInstanceTemporaryCapacity
 type ModifyInstanceTemporaryCapacityRequest struct {
 	*requests.RpcRequest
-	DiskSize   string `position:"Body" name:"DiskSize"`
-	Spec       string `position:"Body" name:"Spec"`
-	InstanceId string `position:"Body" name:"InstanceId"`
+	DiskSize       string `position:"Body" name:"DiskSize"`
+	Spec           string `position:"Body" name:"Spec"`
+	InstanceId     string `position:"Body" name:"InstanceId"`
+	AcceptLanguage string `position:"Body" name:"AcceptLanguage"`
 }
 
 // ModifyInstanceTemporaryCapacityResponse is the response struct for api ModifyInstanceTemporaryCapacity
