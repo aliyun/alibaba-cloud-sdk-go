@@ -72,8 +72,9 @@ func (client *Client) GetAuthTokenWithCallback(request *GetAuthTokenRequest, cal
 type GetAuthTokenRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	Origin               string           `position:"Query" name:"Origin"`
+	SceneCode            string           `position:"Query" name:"SceneCode"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	Url                  string           `position:"Query" name:"Url"`
 }

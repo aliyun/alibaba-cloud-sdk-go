@@ -18,7 +18,10 @@ package dypnsapi
 // Data is a nested struct in dypnsapi response
 type Data struct {
 	AmountSum          string                 `json:"AmountSum" xml:"AmountSum"`
+	CmAppId            string                 `json:"CmAppId" xml:"CmAppId"`
+	CmAppKey           string                 `json:"CmAppKey" xml:"CmAppKey"`
 	BizToken           string                 `json:"BizToken" xml:"BizToken"`
+	CtAppKey           string                 `json:"CtAppKey" xml:"CtAppKey"`
 	TotalSuccess       int64                  `json:"TotalSuccess" xml:"TotalSuccess"`
 	StsAccessKeyId     string                 `json:"StsAccessKeyId" xml:"StsAccessKeyId"`
 	TotalUnknown       int64                  `json:"TotalUnknown" xml:"TotalUnknown"`
@@ -29,6 +32,7 @@ type Data struct {
 	StsToken           string                 `json:"StsToken" xml:"StsToken"`
 	TotalFail          int64                  `json:"TotalFail" xml:"TotalFail"`
 	Total              int64                  `json:"Total" xml:"Total"`
+	CtAppId            string                 `json:"CtAppId" xml:"CtAppId"`
 	DayStatistic       []DayStatisticItem     `json:"DayStatistic" xml:"DayStatistic"`
 	SceneBillingList   []SceneBillingListItem `json:"SceneBillingList" xml:"SceneBillingList"`
 }
