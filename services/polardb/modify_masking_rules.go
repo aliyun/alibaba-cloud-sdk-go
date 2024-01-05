@@ -73,6 +73,7 @@ type ModifyMaskingRulesRequest struct {
 	*requests.RpcRequest
 	DBClusterId  string `position:"Query" name:"DBClusterId"`
 	RuleName     string `position:"Query" name:"RuleName"`
+	RuleVersion  string `position:"Query" name:"RuleVersion"`
 	RuleConfig   string `position:"Query" name:"RuleConfig"`
 	Enable       string `position:"Query" name:"Enable"`
 	RuleNameList string `position:"Query" name:"RuleNameList"`
