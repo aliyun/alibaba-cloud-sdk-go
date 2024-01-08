@@ -1,3 +1,8 @@
+2024-01-08 Version: v1.62.654
+- Generated 2020-01-10 for `ResourceSharing`.
+- Support share resource to service for RS.
+- Support display precheck information.
+
 2024-01-05 Version: v1.62.653
 - Generated 2017-08-01 for `polardb`.
 - Support new feature.
