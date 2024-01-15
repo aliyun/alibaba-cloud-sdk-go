@@ -93,7 +93,7 @@ func CreateQueryClientIdsRequest() (request *QueryClientIdsRequest) {
 	request = &QueryClientIdsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "QueryClientIds", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "QueryClientIds", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

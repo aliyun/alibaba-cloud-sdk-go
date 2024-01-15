@@ -95,7 +95,7 @@ func CreateModifyOTAFirmwareRequest() (request *ModifyOTAFirmwareRequest) {
 	request = &ModifyOTAFirmwareRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "ModifyOTAFirmware", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "ModifyOTAFirmware", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

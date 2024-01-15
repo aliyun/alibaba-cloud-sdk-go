@@ -91,7 +91,7 @@ func CreateGenerateDeviceNameListURLRequest() (request *GenerateDeviceNameListUR
 	request = &GenerateDeviceNameListURLRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "GenerateDeviceNameListURL", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "GenerateDeviceNameListURL", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

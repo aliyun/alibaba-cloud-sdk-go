@@ -95,7 +95,7 @@ func CreateListOTAModuleByProductRequest() (request *ListOTAModuleByProductReque
 	request = &ListOTAModuleByProductRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "ListOTAModuleByProduct", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "ListOTAModuleByProduct", "iot", "openAPI")
 	request.Method = requests.GET
 	return
 }

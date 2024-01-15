@@ -92,7 +92,7 @@ func CreateDeleteTopicConfigRequest() (request *DeleteTopicConfigRequest) {
 	request = &DeleteTopicConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "DeleteTopicConfig", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "DeleteTopicConfig", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

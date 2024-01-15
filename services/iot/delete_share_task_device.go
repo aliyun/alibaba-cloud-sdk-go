@@ -93,7 +93,7 @@ func CreateDeleteShareTaskDeviceRequest() (request *DeleteShareTaskDeviceRequest
 	request = &DeleteShareTaskDeviceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "DeleteShareTaskDevice", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "DeleteShareTaskDevice", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

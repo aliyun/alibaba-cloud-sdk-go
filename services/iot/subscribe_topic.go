@@ -93,7 +93,7 @@ func CreateSubscribeTopicRequest() (request *SubscribeTopicRequest) {
 	request = &SubscribeTopicRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "SubscribeTopic", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "SubscribeTopic", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

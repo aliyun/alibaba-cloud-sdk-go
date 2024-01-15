@@ -71,14 +71,15 @@ func (client *Client) ListOTAUnfinishedTaskByDeviceWithCallback(request *ListOTA
 // ListOTAUnfinishedTaskByDeviceRequest is the request struct for api ListOTAUnfinishedTaskByDevice
 type ListOTAUnfinishedTaskByDeviceRequest struct {
 	*requests.RpcRequest
-	TaskStatus    string `position:"Query" name:"TaskStatus"`
-	IotId         string `position:"Query" name:"IotId"`
-	IotInstanceId string `position:"Query" name:"IotInstanceId"`
-	ModuleName    string `position:"Query" name:"ModuleName"`
-	ProductKey    string `position:"Query" name:"ProductKey"`
-	ApiProduct    string `position:"Body" name:"ApiProduct"`
-	ApiRevision   string `position:"Body" name:"ApiRevision"`
-	DeviceName    string `position:"Query" name:"DeviceName"`
+	TaskStatusList *[]string `position:"Query" name:"TaskStatusList"  type:"Repeated"`
+	TaskStatus     string    `position:"Query" name:"TaskStatus"`
+	IotId          string    `position:"Query" name:"IotId"`
+	IotInstanceId  string    `position:"Query" name:"IotInstanceId"`
+	ModuleName     string    `position:"Query" name:"ModuleName"`
+	ProductKey     string    `position:"Query" name:"ProductKey"`
+	ApiProduct     string    `position:"Body" name:"ApiProduct"`
+	ApiRevision    string    `position:"Body" name:"ApiRevision"`
+	DeviceName     string    `position:"Query" name:"DeviceName"`
 }
 
 // ListOTAUnfinishedTaskByDeviceResponse is the response struct for api ListOTAUnfinishedTaskByDevice
@@ -96,7 +97,7 @@ func CreateListOTAUnfinishedTaskByDeviceRequest() (request *ListOTAUnfinishedTas
 	request = &ListOTAUnfinishedTaskByDeviceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "ListOTAUnfinishedTaskByDevice", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "ListOTAUnfinishedTaskByDevice", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

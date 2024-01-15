@@ -100,7 +100,7 @@ func CreateQueryDeviceOriginalServiceDataRequest() (request *QueryDeviceOriginal
 	request = &QueryDeviceOriginalServiceDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "QueryDeviceOriginalServiceData", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "QueryDeviceOriginalServiceData", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

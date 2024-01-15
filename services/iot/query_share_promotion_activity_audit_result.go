@@ -93,7 +93,7 @@ func CreateQuerySharePromotionActivityAuditResultRequest() (request *QueryShareP
 	request = &QuerySharePromotionActivityAuditResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "QuerySharePromotionActivityAuditResult", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "QuerySharePromotionActivityAuditResult", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

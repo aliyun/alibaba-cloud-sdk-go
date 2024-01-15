@@ -101,7 +101,7 @@ func CreateListDeviceDistributeJobRequest() (request *ListDeviceDistributeJobReq
 	request = &ListDeviceDistributeJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "ListDeviceDistributeJob", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "ListDeviceDistributeJob", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

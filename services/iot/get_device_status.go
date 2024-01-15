@@ -96,7 +96,7 @@ func CreateGetDeviceStatusRequest() (request *GetDeviceStatusRequest) {
 	request = &GetDeviceStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "GetDeviceStatus", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "GetDeviceStatus", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

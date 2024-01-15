@@ -93,7 +93,7 @@ func CreateGetShareSpeechModelAudioRequest() (request *GetShareSpeechModelAudioR
 	request = &GetShareSpeechModelAudioRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "GetShareSpeechModelAudio", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "GetShareSpeechModelAudio", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

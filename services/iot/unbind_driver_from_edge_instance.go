@@ -92,7 +92,7 @@ func CreateUnbindDriverFromEdgeInstanceRequest() (request *UnbindDriverFromEdgeI
 	request = &UnbindDriverFromEdgeInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "UnbindDriverFromEdgeInstance", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "UnbindDriverFromEdgeInstance", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

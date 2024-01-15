@@ -94,7 +94,7 @@ func CreateQueryTaskRequest() (request *QueryTaskRequest) {
 	request = &QueryTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "QueryTask", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "QueryTask", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

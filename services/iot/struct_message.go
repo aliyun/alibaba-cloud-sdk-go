@@ -17,9 +17,12 @@ package iot
 
 // Message is a nested struct in iot response
 type Message struct {
-	UniMsgId       string         `json:"UniMsgId" xml:"UniMsgId"`
-	TopicFullName  string         `json:"TopicFullName" xml:"TopicFullName"`
-	MessageContent string         `json:"MessageContent" xml:"MessageContent"`
-	GenerateTime   int64          `json:"GenerateTime" xml:"GenerateTime"`
-	UserProperties []UserProperty `json:"UserProperties" xml:"UserProperties"`
+	UniMsgId                  string         `json:"UniMsgId" xml:"UniMsgId"`
+	TopicFullName             string         `json:"TopicFullName" xml:"TopicFullName"`
+	MessageContent            string         `json:"MessageContent" xml:"MessageContent"`
+	GenerateTime              int64          `json:"GenerateTime" xml:"GenerateTime"`
+	TransformedMessageContent string         `json:"TransformedMessageContent" xml:"TransformedMessageContent"`
+	TransformedTopicFullName  string         `json:"TransformedTopicFullName" xml:"TransformedTopicFullName"`
+	UserProperties            []UserProperty `json:"UserProperties" xml:"UserProperties"`
+	MqttProperties            []MqttProperty `json:"MqttProperties" xml:"MqttProperties"`
 }

@@ -92,7 +92,7 @@ func CreateQueryTopicConfigRequest() (request *QueryTopicConfigRequest) {
 	request = &QueryTopicConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "QueryTopicConfig", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "QueryTopicConfig", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

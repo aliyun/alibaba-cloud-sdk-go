@@ -100,7 +100,7 @@ func CreateAddDeviceToSharePromotionRequest() (request *AddDeviceToSharePromotio
 	request = &AddDeviceToSharePromotionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "AddDeviceToSharePromotion", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "AddDeviceToSharePromotion", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

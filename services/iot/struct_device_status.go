@@ -21,6 +21,7 @@ type DeviceStatus struct {
 	IotId          string `json:"IotId" xml:"IotId"`
 	AsAddress      string `json:"AsAddress" xml:"AsAddress"`
 	LastOnlineTime string `json:"LastOnlineTime" xml:"LastOnlineTime"`
+	Timestamp      int64  `json:"Timestamp" xml:"Timestamp"`
 	InstanceId     string `json:"InstanceId" xml:"InstanceId"`
 	DeviceId       string `json:"DeviceId" xml:"DeviceId"`
 	Status         string `json:"Status" xml:"Status"`

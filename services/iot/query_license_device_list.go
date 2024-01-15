@@ -98,7 +98,7 @@ func CreateQueryLicenseDeviceListRequest() (request *QueryLicenseDeviceListReque
 	request = &QueryLicenseDeviceListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "QueryLicenseDeviceList", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "QueryLicenseDeviceList", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

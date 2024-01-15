@@ -91,7 +91,7 @@ func CreateQuerySpeechLicenseAvailableQuotaRequest() (request *QuerySpeechLicens
 	request = &QuerySpeechLicenseAvailableQuotaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "QuerySpeechLicenseAvailableQuota", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "QuerySpeechLicenseAvailableQuota", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

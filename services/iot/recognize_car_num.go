@@ -91,7 +91,7 @@ func CreateRecognizeCarNumRequest() (request *RecognizeCarNumRequest) {
 	request = &RecognizeCarNumRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "RecognizeCarNum", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "RecognizeCarNum", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

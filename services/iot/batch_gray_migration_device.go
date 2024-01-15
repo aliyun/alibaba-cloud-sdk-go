@@ -92,7 +92,7 @@ func CreateBatchGrayMigrationDeviceRequest() (request *BatchGrayMigrationDeviceR
 	request = &BatchGrayMigrationDeviceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "BatchGrayMigrationDevice", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "BatchGrayMigrationDevice", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

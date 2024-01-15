@@ -100,7 +100,7 @@ func CreateBatchImportDeviceRequest() (request *BatchImportDeviceRequest) {
 	request = &BatchImportDeviceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "BatchImportDevice", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "BatchImportDevice", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -94,7 +94,7 @@ func CreateResetDeviceTimelineRequest() (request *ResetDeviceTimelineRequest) {
 	request = &ResetDeviceTimelineRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "ResetDeviceTimeline", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "ResetDeviceTimeline", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

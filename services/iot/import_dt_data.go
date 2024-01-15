@@ -101,7 +101,7 @@ func CreateImportDTDataRequest() (request *ImportDTDataRequest) {
 	request = &ImportDTDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "ImportDTData", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "ImportDTData", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

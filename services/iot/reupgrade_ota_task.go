@@ -92,7 +92,7 @@ func CreateReupgradeOTATaskRequest() (request *ReupgradeOTATaskRequest) {
 	request = &ReupgradeOTATaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "ReupgradeOTATask", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "ReupgradeOTATask", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

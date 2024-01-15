@@ -92,7 +92,7 @@ func CreateDeleteDataSourceItemRequest() (request *DeleteDataSourceItemRequest) 
 	request = &DeleteDataSourceItemRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "DeleteDataSourceItem", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "DeleteDataSourceItem", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

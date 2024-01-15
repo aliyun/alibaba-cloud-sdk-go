@@ -105,7 +105,7 @@ func CreateListAnalyticsDataRequest() (request *ListAnalyticsDataRequest) {
 	request = &ListAnalyticsDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "ListAnalyticsData", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "ListAnalyticsData", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

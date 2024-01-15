@@ -99,7 +99,7 @@ func CreateRRpcRequest() (request *RRpcRequest) {
 	request = &RRpcRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "RRpc", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "RRpc", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

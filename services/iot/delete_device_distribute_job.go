@@ -90,7 +90,7 @@ func CreateDeleteDeviceDistributeJobRequest() (request *DeleteDeviceDistributeJo
 	request = &DeleteDeviceDistributeJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "DeleteDeviceDistributeJob", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "DeleteDeviceDistributeJob", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

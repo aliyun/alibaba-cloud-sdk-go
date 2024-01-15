@@ -99,7 +99,7 @@ func CreateBatchUnbindProjectDevicesRequest() (request *BatchUnbindProjectDevice
 	request = &BatchUnbindProjectDevicesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "BatchUnbindProjectDevices", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "BatchUnbindProjectDevices", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

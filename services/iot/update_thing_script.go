@@ -95,7 +95,7 @@ func CreateUpdateThingScriptRequest() (request *UpdateThingScriptRequest) {
 	request = &UpdateThingScriptRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "UpdateThingScript", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "UpdateThingScript", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

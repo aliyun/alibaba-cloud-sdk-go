@@ -93,7 +93,7 @@ func CreateTestSwitchRequest() (request *TestSwitchRequest) {
 	request = &TestSwitchRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "TestSwitch", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "TestSwitch", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

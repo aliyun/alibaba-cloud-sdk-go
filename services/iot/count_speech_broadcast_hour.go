@@ -93,7 +93,7 @@ func CreateCountSpeechBroadcastHourRequest() (request *CountSpeechBroadcastHourR
 	request = &CountSpeechBroadcastHourRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "CountSpeechBroadcastHour", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "CountSpeechBroadcastHour", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

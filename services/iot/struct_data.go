@@ -67,6 +67,7 @@ type Data struct {
 	ProtocolType              string                                           `json:"ProtocolType" xml:"ProtocolType"`
 	AuthType                  string                                           `json:"AuthType" xml:"AuthType"`
 	SourceAccessToken         string                                           `json:"SourceAccessToken" xml:"SourceAccessToken"`
+	OutTime                   int64                                            `json:"OutTime" xml:"OutTime"`
 	GmtCompleted              string                                           `json:"GmtCompleted" xml:"GmtCompleted"`
 	ProgressId                string                                           `json:"ProgressId" xml:"ProgressId"`
 	UtcCreate                 string                                           `json:"UtcCreate" xml:"UtcCreate"`
@@ -133,6 +134,7 @@ type Data struct {
 	SourceURI                 string                                           `json:"SourceURI" xml:"SourceURI"`
 	TotalSize                 int                                              `json:"TotalSize" xml:"TotalSize"`
 	DatasetId                 string                                           `json:"DatasetId" xml:"DatasetId"`
+	RbacTenantId              string                                           `json:"RbacTenantId" xml:"RbacTenantId"`
 	SpeechType                string                                           `json:"SpeechType" xml:"SpeechType"`
 	DownloadUrl               string                                           `json:"DownloadUrl" xml:"DownloadUrl"`
 	PageSize                  int                                              `json:"PageSize" xml:"PageSize"`
@@ -161,6 +163,7 @@ type Data struct {
 	DriverConfig              string                                           `json:"DriverConfig" xml:"DriverConfig"`
 	BizCode                   string                                           `json:"BizCode" xml:"BizCode"`
 	Token                     string                                           `json:"Token" xml:"Token"`
+	Info                      string                                           `json:"Info" xml:"Info"`
 	AuthMode                  int                                              `json:"AuthMode" xml:"AuthMode"`
 	UtcCreatedOn              string                                           `json:"UtcCreatedOn" xml:"UtcCreatedOn"`
 	AppId                     string                                           `json:"AppId" xml:"AppId"`
@@ -203,6 +206,7 @@ type Data struct {
 	SoundCodeConfig           SoundCodeConfig                                  `json:"SoundCodeConfig" xml:"SoundCodeConfig"`
 	Header                    []HeaderItem                                     `json:"Header" xml:"Header"`
 	TaskList                  []Task                                           `json:"TaskList" xml:"TaskList"`
+	DataList                  []DataList                                       `json:"DataList" xml:"DataList"`
 	Points                    []PointsItem                                     `json:"Points" xml:"Points"`
 	InvalidDetailList         []InvalidDetailListItem                          `json:"InvalidDetailList" xml:"InvalidDetailList"`
 	List                      ListInGetThingTopo                               `json:"List" xml:"List"`

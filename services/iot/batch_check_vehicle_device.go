@@ -80,6 +80,7 @@ type BatchCheckVehicleDeviceRequest struct {
 
 // BatchCheckVehicleDeviceDeviceList is a repeated param struct in BatchCheckVehicleDeviceRequest
 type BatchCheckVehicleDeviceDeviceList struct {
+	DeviceSecret string `name:"DeviceSecret"`
 	DeviceName   string `name:"DeviceName"`
 	DeviceId     string `name:"DeviceId"`
 	Manufacturer string `name:"Manufacturer"`
@@ -101,7 +102,7 @@ func CreateBatchCheckVehicleDeviceRequest() (request *BatchCheckVehicleDeviceReq
 	request = &BatchCheckVehicleDeviceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "BatchCheckVehicleDevice", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "BatchCheckVehicleDevice", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -71,14 +71,28 @@ func (client *Client) BatchPubWithCallback(request *BatchPubRequest, callback fu
 // BatchPubRequest is the request struct for api BatchPub
 type BatchPubRequest struct {
 	*requests.RpcRequest
-	MessageContent string           `position:"Query" name:"MessageContent"`
-	Qos            requests.Integer `position:"Query" name:"Qos"`
-	IotInstanceId  string           `position:"Query" name:"IotInstanceId"`
-	TopicShortName string           `position:"Query" name:"TopicShortName"`
-	ProductKey     string           `position:"Query" name:"ProductKey"`
-	ApiProduct     string           `position:"Body" name:"ApiProduct"`
-	ApiRevision    string           `position:"Body" name:"ApiRevision"`
-	DeviceName     *[]string        `position:"Query" name:"DeviceName"  type:"Repeated"`
+	UserProp                  *[]BatchPubUserProp `position:"Query" name:"UserProp"  type:"Repeated"`
+	ResponseTopicTemplateName string              `position:"Query" name:"ResponseTopicTemplateName"`
+	MessageContent            string              `position:"Query" name:"MessageContent"`
+	TopicTemplateName         string              `position:"Query" name:"TopicTemplateName"`
+	Qos                       requests.Integer    `position:"Query" name:"Qos"`
+	CorrelationData           string              `position:"Query" name:"CorrelationData"`
+	IotInstanceId             string              `position:"Query" name:"IotInstanceId"`
+	MessageExpiryInterval     requests.Integer    `position:"Query" name:"MessageExpiryInterval"`
+	TopicShortName            string              `position:"Query" name:"TopicShortName"`
+	PayloadFormatIndicator    requests.Integer    `position:"Query" name:"PayloadFormatIndicator"`
+	ProductKey                string              `position:"Query" name:"ProductKey"`
+	ContentType               string              `position:"Query" name:"ContentType"`
+	Retained                  requests.Boolean    `position:"Query" name:"Retained"`
+	ApiProduct                string              `position:"Body" name:"ApiProduct"`
+	ApiRevision               string              `position:"Body" name:"ApiRevision"`
+	DeviceName                *[]string           `position:"Query" name:"DeviceName"  type:"Repeated"`
+}
+
+// BatchPubUserProp is a repeated param struct in BatchPubRequest
+type BatchPubUserProp struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // BatchPubResponse is the response struct for api BatchPub
@@ -95,7 +109,7 @@ func CreateBatchPubRequest() (request *BatchPubRequest) {
 	request = &BatchPubRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "BatchPub", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "BatchPub", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

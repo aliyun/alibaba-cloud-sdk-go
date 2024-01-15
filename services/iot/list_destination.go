@@ -100,7 +100,7 @@ func CreateListDestinationRequest() (request *ListDestinationRequest) {
 	request = &ListDestinationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "ListDestination", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "ListDestination", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

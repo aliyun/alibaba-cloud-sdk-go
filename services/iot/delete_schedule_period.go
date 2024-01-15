@@ -91,7 +91,7 @@ func CreateDeleteSchedulePeriodRequest() (request *DeleteSchedulePeriodRequest) 
 	request = &DeleteSchedulePeriodRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "DeleteSchedulePeriod", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "DeleteSchedulePeriod", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

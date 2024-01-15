@@ -91,7 +91,7 @@ func CreateDeleteParserDataSourceRequest() (request *DeleteParserDataSourceReque
 	request = &DeleteParserDataSourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "DeleteParserDataSource", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "DeleteParserDataSource", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

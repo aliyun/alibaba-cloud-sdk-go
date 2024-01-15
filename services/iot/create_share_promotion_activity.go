@@ -94,7 +94,7 @@ func CreateCreateSharePromotionActivityRequest() (request *CreateSharePromotionA
 	request = &CreateSharePromotionActivityRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "CreateSharePromotionActivity", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "CreateSharePromotionActivity", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

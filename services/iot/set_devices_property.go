@@ -94,7 +94,7 @@ func CreateSetDevicesPropertyRequest() (request *SetDevicesPropertyRequest) {
 	request = &SetDevicesPropertyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "SetDevicesProperty", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "SetDevicesProperty", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

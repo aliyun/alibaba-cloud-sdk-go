@@ -92,7 +92,7 @@ func CreateQueryShareProductNameByProductKeyRequest() (request *QueryShareProduc
 	request = &QueryShareProductNameByProductKeyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "QueryShareProductNameByProductKey", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "QueryShareProductNameByProductKey", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

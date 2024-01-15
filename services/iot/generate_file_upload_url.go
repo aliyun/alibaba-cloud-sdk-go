@@ -94,7 +94,7 @@ func CreateGenerateFileUploadURLRequest() (request *GenerateFileUploadURLRequest
 	request = &GenerateFileUploadURLRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "GenerateFileUploadURL", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "GenerateFileUploadURL", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }

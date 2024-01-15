@@ -92,7 +92,7 @@ func CreateBatchAddDataForApiSourceRequest() (request *BatchAddDataForApiSourceR
 	request = &BatchAddDataForApiSourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "BatchAddDataForApiSource", "", "")
+	request.InitWithApiInfo("Iot", "2018-01-20", "BatchAddDataForApiSource", "iot", "openAPI")
 	request.Method = requests.POST
 	return
 }
