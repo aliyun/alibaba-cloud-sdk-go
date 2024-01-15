@@ -17,5 +17,5 @@ package qualitycheck
 
 // RuleListInListQualityCheckScheme is a nested struct in qualitycheck response
 type RuleListInListQualityCheckScheme struct {
-	RuleList []RuleList `json:"ruleList" xml:"ruleList"`
+	RuleListItem []RuleListItem `json:"ruleList" xml:"ruleList"`
 }

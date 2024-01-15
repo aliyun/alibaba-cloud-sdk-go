@@ -73,6 +73,7 @@ type SubmitPrecisionTaskRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	JsonStr         string           `position:"Query" name:"JsonStr"`
+	BaseMeAgentId   requests.Integer `position:"Query" name:"BaseMeAgentId"`
 }
 
 // SubmitPrecisionTaskResponse is the response struct for api SubmitPrecisionTask

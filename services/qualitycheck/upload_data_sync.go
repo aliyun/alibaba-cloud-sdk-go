@@ -73,6 +73,7 @@ type UploadDataSyncRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	JsonStr         string           `position:"Query" name:"JsonStr"`
+	BaseMeAgentId   requests.Integer `position:"Query" name:"BaseMeAgentId"`
 }
 
 // UploadDataSyncResponse is the response struct for api UploadDataSync

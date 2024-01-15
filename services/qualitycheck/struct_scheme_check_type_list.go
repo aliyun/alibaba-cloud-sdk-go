@@ -17,9 +17,5 @@ package qualitycheck
 
 // SchemeCheckTypeList is a nested struct in qualitycheck response
 type SchemeCheckTypeList struct {
-	Enable     int    `json:"Enable" xml:"Enable"`
-	Score      int    `json:"Score" xml:"Score"`
-	TargetType int    `json:"TargetType" xml:"TargetType"`
-	CheckType  int    `json:"CheckType" xml:"CheckType"`
-	CheckName  string `json:"CheckName" xml:"CheckName"`
+	SchemeCheckTypeListItem []SchemeCheckTypeListItem `json:"schemeCheckTypeList" xml:"schemeCheckTypeList"`
 }

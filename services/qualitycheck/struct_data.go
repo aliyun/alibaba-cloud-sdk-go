@@ -20,6 +20,7 @@ type Data struct {
 	SkillGroupFrom         int                              `json:"SkillGroupFrom" xml:"SkillGroupFrom"`
 	Vid                    string                           `json:"Vid" xml:"Vid"`
 	ModelName              string                           `json:"ModelName" xml:"ModelName"`
+	MaxNumber              int64                            `json:"MaxNumber" xml:"MaxNumber"`
 	TaskId                 string                           `json:"TaskId" xml:"TaskId"`
 	SkillGroupId           string                           `json:"SkillGroupId" xml:"SkillGroupId"`
 	ReviewNumber           int                              `json:"ReviewNumber" xml:"ReviewNumber"`
@@ -31,12 +32,14 @@ type Data struct {
 	AllRids                string                           `json:"AllRids" xml:"AllRids"`
 	VerifiedCount          int                              `json:"VerifiedCount" xml:"VerifiedCount"`
 	Id                     int64                            `json:"Id" xml:"Id"`
+	Level                  int64                            `json:"Level" xml:"Level"`
 	Precision              float64                          `json:"Precision" xml:"Precision"`
 	ModelId                int64                            `json:"ModelId" xml:"ModelId"`
 	Verified               bool                             `json:"Verified" xml:"Verified"`
 	AllContentQualityCheck int                              `json:"AllContentQualityCheck" xml:"AllContentQualityCheck"`
 	Rid                    string                           `json:"Rid" xml:"Rid"`
 	ScoreName              string                           `json:"ScoreName" xml:"ScoreName"`
+	IntervalTime           int64                            `json:"IntervalTime" xml:"IntervalTime"`
 	HitNumber              int                              `json:"HitNumber" xml:"HitNumber"`
 	Type                   int                              `json:"Type" xml:"Type"`
 	Name                   string                           `json:"Name" xml:"Name"`
@@ -53,6 +56,7 @@ type Data struct {
 	ScoreSubName           string                           `json:"ScoreSubName" xml:"ScoreSubName"`
 	Duration               int                              `json:"Duration" xml:"Duration"`
 	InstanceId             string                           `json:"InstanceId" xml:"InstanceId"`
+	Lambda                 string                           `json:"Lambda" xml:"Lambda"`
 	BusinessType           int                              `json:"BusinessType" xml:"BusinessType"`
 	TotalScore             int                              `json:"TotalScore" xml:"TotalScore"`
 	Audio                  bool                             `json:"Audio" xml:"Audio"`
@@ -71,6 +75,7 @@ type Data struct {
 	ManualScoreInfoList    ManualScoreInfoList              `json:"ManualScoreInfoList" xml:"ManualScoreInfoList"`
 	HandScoreInfoList      HandScoreInfoList                `json:"HandScoreInfoList" xml:"HandScoreInfoList"`
 	AllRuleList            AllRuleListInGetSkillGroupConfig `json:"AllRuleList" xml:"AllRuleList"`
+	WarningStrategyList    WarningStrategyList              `json:"WarningStrategyList" xml:"WarningStrategyList"`
 	Words                  Words                            `json:"Words" xml:"Words"`
 	HitRuleReviewInfoList  HitRuleReviewInfoList            `json:"HitRuleReviewInfoList" xml:"HitRuleReviewInfoList"`
 	ReviewHistoryList      ReviewHistoryList                `json:"ReviewHistoryList" xml:"ReviewHistoryList"`

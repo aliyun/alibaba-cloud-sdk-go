@@ -73,6 +73,7 @@ type GetScoreInfoRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	JsonStr         string           `position:"Query" name:"JsonStr"`
+	BaseMeAgentId   requests.Integer `position:"Query" name:"BaseMeAgentId"`
 }
 
 // GetScoreInfoResponse is the response struct for api GetScoreInfo

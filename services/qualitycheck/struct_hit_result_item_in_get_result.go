@@ -17,11 +17,12 @@ package qualitycheck
 
 // HitResultItemInGetResult is a nested struct in qualitycheck response
 type HitResultItemInGetResult struct {
-	Type          string          `json:"Type" xml:"Type"`
-	ReviewResult  int             `json:"ReviewResult" xml:"ReviewResult"`
-	Name          string          `json:"Name" xml:"Name"`
-	Rid           string          `json:"Rid" xml:"Rid"`
-	SchemeId      int64           `json:"SchemeId" xml:"SchemeId"`
-	SchemeVersion int64           `json:"SchemeVersion" xml:"SchemeVersion"`
-	Hits          HitsInGetResult `json:"Hits" xml:"Hits"`
+	Type          string                `json:"Type" xml:"Type"`
+	ReviewResult  int                   `json:"ReviewResult" xml:"ReviewResult"`
+	Name          string                `json:"Name" xml:"Name"`
+	Rid           string                `json:"Rid" xml:"Rid"`
+	SchemeId      int64                 `json:"SchemeId" xml:"SchemeId"`
+	SchemeVersion int64                 `json:"SchemeVersion" xml:"SchemeVersion"`
+	Hits          HitsInGetResult       `json:"Hits" xml:"Hits"`
+	Conditions    ConditionsInGetResult `json:"Conditions" xml:"Conditions"`
 }

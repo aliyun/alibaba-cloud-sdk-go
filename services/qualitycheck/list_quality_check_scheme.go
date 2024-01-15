@@ -73,20 +73,21 @@ type ListQualityCheckSchemeRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	JsonStr         string           `position:"Query" name:"JsonStr"`
+	BaseMeAgentId   requests.Integer `position:"Query" name:"BaseMeAgentId"`
 }
 
 // ListQualityCheckSchemeResponse is the response struct for api ListQualityCheckScheme
 type ListQualityCheckSchemeResponse struct {
 	*responses.BaseResponse
-	RequestId     string                         `json:"RequestId" xml:"RequestId"`
-	Success       bool                           `json:"Success" xml:"Success"`
-	ResultCountId string                         `json:"ResultCountId" xml:"ResultCountId"`
-	Code          string                         `json:"Code" xml:"Code"`
-	Message       string                         `json:"Message" xml:"Message"`
-	PageNumber    int                            `json:"PageNumber" xml:"PageNumber"`
-	PageSize      int                            `json:"PageSize" xml:"PageSize"`
-	Count         int                            `json:"Count" xml:"Count"`
-	Data          []DataInListQualityCheckScheme `json:"Data" xml:"Data"`
+	RequestId     string                             `json:"RequestId" xml:"RequestId"`
+	Success       bool                               `json:"Success" xml:"Success"`
+	ResultCountId string                             `json:"ResultCountId" xml:"ResultCountId"`
+	Code          string                             `json:"Code" xml:"Code"`
+	Message       string                             `json:"Message" xml:"Message"`
+	PageNumber    int                                `json:"PageNumber" xml:"PageNumber"`
+	PageSize      int                                `json:"PageSize" xml:"PageSize"`
+	Count         int                                `json:"Count" xml:"Count"`
+	Data          []DataItemInListQualityCheckScheme `json:"Data" xml:"Data"`
 }
 
 // CreateListQualityCheckSchemeRequest creates a request to invoke ListQualityCheckScheme API

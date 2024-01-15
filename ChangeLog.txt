@@ -1,3 +1,7 @@
+2024-01-15 Version: v1.62.655
+- Generated 2019-01-15 for `Qualitycheck`.
+- Add  GetRuleV4 param schemeTaskConfigId/schemeTaskConfigName
+
 2024-01-08 Version: v1.62.654
 - Generated 2020-01-10 for `ResourceSharing`.
 - Support share resource to service for RS.

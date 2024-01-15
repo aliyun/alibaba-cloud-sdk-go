@@ -71,7 +71,8 @@ func (client *Client) GetSyncResultWithCallback(request *GetSyncResultRequest, c
 // GetSyncResultRequest is the request struct for api GetSyncResult
 type GetSyncResultRequest struct {
 	*requests.RpcRequest
-	JsonStr string `position:"Query" name:"JsonStr"`
+	JsonStr       string           `position:"Query" name:"JsonStr"`
+	BaseMeAgentId requests.Integer `position:"Query" name:"BaseMeAgentId"`
 }
 
 // GetSyncResultResponse is the response struct for api GetSyncResult

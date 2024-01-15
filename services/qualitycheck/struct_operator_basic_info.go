@@ -17,8 +17,8 @@ package qualitycheck
 
 // OperatorBasicInfo is a nested struct in qualitycheck response
 type OperatorBasicInfo struct {
-	Type     string `json:"Type" xml:"Type"`
-	Oid      string `json:"Oid" xml:"Oid"`
-	OperName string `json:"OperName" xml:"OperName"`
-	Param    Param  `json:"Param" xml:"Param"`
+	Type     string               `json:"Type" xml:"Type"`
+	Oid      string               `json:"Oid" xml:"Oid"`
+	OperName string               `json:"OperName" xml:"OperName"`
+	Param    ParamInGetRuleDetail `json:"Param" xml:"Param"`
 }

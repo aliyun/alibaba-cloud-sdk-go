@@ -17,9 +17,9 @@ package qualitycheck
 
 // DataInGetRuleDetail is a nested struct in qualitycheck response
 type DataInGetRuleDetail struct {
-	PageSize   int                  `json:"PageSize" xml:"PageSize"`
-	PageNumber int                  `json:"PageNumber" xml:"PageNumber"`
-	Count      int                  `json:"Count" xml:"Count"`
-	Conditions Conditions           `json:"Conditions" xml:"Conditions"`
-	Rules      RulesInGetRuleDetail `json:"Rules" xml:"Rules"`
+	PageSize   int                       `json:"PageSize" xml:"PageSize"`
+	PageNumber int                       `json:"PageNumber" xml:"PageNumber"`
+	Count      int                       `json:"Count" xml:"Count"`
+	Conditions ConditionsInGetRuleDetail `json:"Conditions" xml:"Conditions"`
+	Rules      RulesInGetRuleDetail      `json:"Rules" xml:"Rules"`
 }
