@@ -78,14 +78,19 @@ type DescribeLiveMessageAppRequest struct {
 // DescribeLiveMessageAppResponse is the response struct for api DescribeLiveMessageApp
 type DescribeLiveMessageAppResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
-	AppId       string `json:"AppId" xml:"AppId"`
-	AppKey      string `json:"AppKey" xml:"AppKey"`
-	AppSign     string `json:"AppSign" xml:"AppSign"`
-	AuditType   int    `json:"AuditType" xml:"AuditType"`
-	AuditUrl    string `json:"AuditUrl" xml:"AuditUrl"`
-	CallbackUrl string `json:"CallbackUrl" xml:"CallbackUrl"`
-	Disable     bool   `json:"Disable" xml:"Disable"`
+	RequestId        string `json:"RequestId" xml:"RequestId"`
+	AppId            string `json:"AppId" xml:"AppId"`
+	AppName          string `json:"AppName" xml:"AppName"`
+	AppKey           string `json:"AppKey" xml:"AppKey"`
+	AppSign          string `json:"AppSign" xml:"AppSign"`
+	AuditType        int    `json:"AuditType" xml:"AuditType"`
+	AuditUrl         string `json:"AuditUrl" xml:"AuditUrl"`
+	EventCallbackUrl string `json:"EventCallbackUrl" xml:"EventCallbackUrl"`
+	CallbackUrl      string `json:"CallbackUrl" xml:"CallbackUrl"`
+	Disable          bool   `json:"Disable" xml:"Disable"`
+	CreateTime       int64  `json:"CreateTime" xml:"CreateTime"`
+	ModifyTime       int64  `json:"ModifyTime" xml:"ModifyTime"`
+	DataCenter       string `json:"DataCenter" xml:"DataCenter"`
 }
 
 // CreateDescribeLiveMessageAppRequest creates a request to invoke DescribeLiveMessageApp API

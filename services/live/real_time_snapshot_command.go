@@ -71,14 +71,16 @@ func (client *Client) RealTimeSnapshotCommandWithCallback(request *RealTimeSnaps
 // RealTimeSnapshotCommandRequest is the request struct for api RealTimeSnapshotCommand
 type RealTimeSnapshotCommandRequest struct {
 	*requests.RpcRequest
-	Source     requests.Integer `position:"Query" name:"Source"`
-	Mode       requests.Integer `position:"Query" name:"Mode"`
-	AppName    string           `position:"Query" name:"AppName"`
-	StreamName string           `position:"Query" name:"StreamName"`
-	DomainName string           `position:"Query" name:"DomainName"`
-	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
-	Command    string           `position:"Query" name:"Command"`
-	Interval   requests.Integer `position:"Query" name:"Interval"`
+	Source       requests.Integer `position:"Query" name:"Source"`
+	Mode         requests.Integer `position:"Query" name:"Mode"`
+	UserData     string           `position:"Query" name:"UserData"`
+	AppName      string           `position:"Query" name:"AppName"`
+	StreamName   string           `position:"Query" name:"StreamName"`
+	DomainName   string           `position:"Query" name:"DomainName"`
+	OwnerId      requests.Integer `position:"Query" name:"OwnerId"`
+	Command      string           `position:"Query" name:"Command"`
+	SnapshotType requests.Integer `position:"Query" name:"SnapshotType"`
+	Interval     requests.Integer `position:"Query" name:"Interval"`
 }
 
 // RealTimeSnapshotCommandResponse is the response struct for api RealTimeSnapshotCommand

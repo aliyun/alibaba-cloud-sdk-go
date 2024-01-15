@@ -36,7 +36,9 @@ type Data struct {
 	Initialized         string   `json:"Initialized" xml:"Initialized"`
 	V20011              string   `json:"V20011" xml:"V20011"`
 	StallTime           string   `json:"StallTime" xml:"StallTime"`
+	Message             string   `json:"message" xml:"message"`
 	SubId               string   `json:"SubId" xml:"SubId"`
+	Status              string   `json:"status" xml:"status"`
 	V20052              string   `json:"V20052" xml:"V20052"`
 	VvTotal             string   `json:"VvTotal" xml:"VvTotal"`
 	V20013              string   `json:"V20013" xml:"V20013"`

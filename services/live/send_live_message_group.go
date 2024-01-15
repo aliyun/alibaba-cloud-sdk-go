@@ -74,6 +74,7 @@ type SendLiveMessageGroupRequest struct {
 	SenderMetaInfo  string           `position:"Query" name:"SenderMetaInfo"`
 	Body            string           `position:"Query" name:"Body"`
 	StaticsIncrease requests.Integer `position:"Query" name:"StaticsIncrease"`
+	NoCache         requests.Boolean `position:"Query" name:"NoCache"`
 	MsgType         requests.Integer `position:"Query" name:"MsgType"`
 	NoStorage       requests.Boolean `position:"Query" name:"NoStorage"`
 	GroupId         string           `position:"Query" name:"GroupId"`
