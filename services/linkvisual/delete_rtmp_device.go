@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// QueryVoiceIntercom invokes the linkvisual.QueryVoiceIntercom API synchronously
-func (client *Client) QueryVoiceIntercom(request *QueryVoiceIntercomRequest) (response *QueryVoiceIntercomResponse, err error) {
-	response = CreateQueryVoiceIntercomResponse()
+// DeleteRtmpDevice invokes the linkvisual.DeleteRtmpDevice API synchronously
+func (client *Client) DeleteRtmpDevice(request *DeleteRtmpDeviceRequest) (response *DeleteRtmpDeviceResponse, err error) {
+	response = CreateDeleteRtmpDeviceResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// QueryVoiceIntercomWithChan invokes the linkvisual.QueryVoiceIntercom API asynchronously
-func (client *Client) QueryVoiceIntercomWithChan(request *QueryVoiceIntercomRequest) (<-chan *QueryVoiceIntercomResponse, <-chan error) {
-	responseChan := make(chan *QueryVoiceIntercomResponse, 1)
+// DeleteRtmpDeviceWithChan invokes the linkvisual.DeleteRtmpDevice API asynchronously
+func (client *Client) DeleteRtmpDeviceWithChan(request *DeleteRtmpDeviceRequest) (<-chan *DeleteRtmpDeviceResponse, <-chan error) {
+	responseChan := make(chan *DeleteRtmpDeviceResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.QueryVoiceIntercom(request)
+		response, err := client.DeleteRtmpDevice(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) QueryVoiceIntercomWithChan(request *QueryVoiceIntercomRequ
 	return responseChan, errChan
 }
 
-// QueryVoiceIntercomWithCallback invokes the linkvisual.QueryVoiceIntercom API asynchronously
-func (client *Client) QueryVoiceIntercomWithCallback(request *QueryVoiceIntercomRequest, callback func(response *QueryVoiceIntercomResponse, err error)) <-chan int {
+// DeleteRtmpDeviceWithCallback invokes the linkvisual.DeleteRtmpDevice API asynchronously
+func (client *Client) DeleteRtmpDeviceWithCallback(request *DeleteRtmpDeviceRequest, callback func(response *DeleteRtmpDeviceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *QueryVoiceIntercomResponse
+		var response *DeleteRtmpDeviceResponse
 		var err error
 		defer close(result)
-		response, err = client.QueryVoiceIntercom(request)
+		response, err = client.DeleteRtmpDevice(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,10 +68,9 @@ func (client *Client) QueryVoiceIntercomWithCallback(request *QueryVoiceIntercom
 	return result
 }
 
-// QueryVoiceIntercomRequest is the request struct for api QueryVoiceIntercom
-type QueryVoiceIntercomRequest struct {
+// DeleteRtmpDeviceRequest is the request struct for api DeleteRtmpDevice
+type DeleteRtmpDeviceRequest struct {
 	*requests.RpcRequest
-	Scheme        string `position:"Query" name:"Scheme"`
 	IotId         string `position:"Query" name:"IotId"`
 	IotInstanceId string `position:"Query" name:"IotInstanceId"`
 	ProductKey    string `position:"Query" name:"ProductKey"`
@@ -80,29 +79,28 @@ type QueryVoiceIntercomRequest struct {
 	DeviceName    string `position:"Query" name:"DeviceName"`
 }
 
-// QueryVoiceIntercomResponse is the response struct for api QueryVoiceIntercom
-type QueryVoiceIntercomResponse struct {
+// DeleteRtmpDeviceResponse is the response struct for api DeleteRtmpDevice
+type DeleteRtmpDeviceResponse struct {
 	*responses.BaseResponse
 	Code         string `json:"Code" xml:"Code"`
 	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
 	RequestId    string `json:"RequestId" xml:"RequestId"`
 	Success      bool   `json:"Success" xml:"Success"`
-	Data         Data   `json:"Data" xml:"Data"`
 }
 
-// CreateQueryVoiceIntercomRequest creates a request to invoke QueryVoiceIntercom API
-func CreateQueryVoiceIntercomRequest() (request *QueryVoiceIntercomRequest) {
-	request = &QueryVoiceIntercomRequest{
+// CreateDeleteRtmpDeviceRequest creates a request to invoke DeleteRtmpDevice API
+func CreateDeleteRtmpDeviceRequest() (request *DeleteRtmpDeviceRequest) {
+	request = &DeleteRtmpDeviceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Linkvisual", "2018-01-20", "QueryVoiceIntercom", "Linkvisual", "openAPI")
+	request.InitWithApiInfo("Linkvisual", "2018-01-20", "DeleteRtmpDevice", "Linkvisual", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateQueryVoiceIntercomResponse creates a response to parse from QueryVoiceIntercom response
-func CreateQueryVoiceIntercomResponse() (response *QueryVoiceIntercomResponse) {
-	response = &QueryVoiceIntercomResponse{
+// CreateDeleteRtmpDeviceResponse creates a response to parse from DeleteRtmpDevice response
+func CreateDeleteRtmpDeviceResponse() (response *DeleteRtmpDeviceResponse) {
+	response = &DeleteRtmpDeviceResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

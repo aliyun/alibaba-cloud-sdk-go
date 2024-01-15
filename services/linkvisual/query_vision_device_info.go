@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// QueryVoiceIntercom invokes the linkvisual.QueryVoiceIntercom API synchronously
-func (client *Client) QueryVoiceIntercom(request *QueryVoiceIntercomRequest) (response *QueryVoiceIntercomResponse, err error) {
-	response = CreateQueryVoiceIntercomResponse()
+// QueryVisionDeviceInfo invokes the linkvisual.QueryVisionDeviceInfo API synchronously
+func (client *Client) QueryVisionDeviceInfo(request *QueryVisionDeviceInfoRequest) (response *QueryVisionDeviceInfoResponse, err error) {
+	response = CreateQueryVisionDeviceInfoResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// QueryVoiceIntercomWithChan invokes the linkvisual.QueryVoiceIntercom API asynchronously
-func (client *Client) QueryVoiceIntercomWithChan(request *QueryVoiceIntercomRequest) (<-chan *QueryVoiceIntercomResponse, <-chan error) {
-	responseChan := make(chan *QueryVoiceIntercomResponse, 1)
+// QueryVisionDeviceInfoWithChan invokes the linkvisual.QueryVisionDeviceInfo API asynchronously
+func (client *Client) QueryVisionDeviceInfoWithChan(request *QueryVisionDeviceInfoRequest) (<-chan *QueryVisionDeviceInfoResponse, <-chan error) {
+	responseChan := make(chan *QueryVisionDeviceInfoResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.QueryVoiceIntercom(request)
+		response, err := client.QueryVisionDeviceInfo(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) QueryVoiceIntercomWithChan(request *QueryVoiceIntercomRequ
 	return responseChan, errChan
 }
 
-// QueryVoiceIntercomWithCallback invokes the linkvisual.QueryVoiceIntercom API asynchronously
-func (client *Client) QueryVoiceIntercomWithCallback(request *QueryVoiceIntercomRequest, callback func(response *QueryVoiceIntercomResponse, err error)) <-chan int {
+// QueryVisionDeviceInfoWithCallback invokes the linkvisual.QueryVisionDeviceInfo API asynchronously
+func (client *Client) QueryVisionDeviceInfoWithCallback(request *QueryVisionDeviceInfoRequest, callback func(response *QueryVisionDeviceInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *QueryVoiceIntercomResponse
+		var response *QueryVisionDeviceInfoResponse
 		var err error
 		defer close(result)
-		response, err = client.QueryVoiceIntercom(request)
+		response, err = client.QueryVisionDeviceInfo(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,10 +68,9 @@ func (client *Client) QueryVoiceIntercomWithCallback(request *QueryVoiceIntercom
 	return result
 }
 
-// QueryVoiceIntercomRequest is the request struct for api QueryVoiceIntercom
-type QueryVoiceIntercomRequest struct {
+// QueryVisionDeviceInfoRequest is the request struct for api QueryVisionDeviceInfo
+type QueryVisionDeviceInfoRequest struct {
 	*requests.RpcRequest
-	Scheme        string `position:"Query" name:"Scheme"`
 	IotId         string `position:"Query" name:"IotId"`
 	IotInstanceId string `position:"Query" name:"IotInstanceId"`
 	ProductKey    string `position:"Query" name:"ProductKey"`
@@ -80,8 +79,8 @@ type QueryVoiceIntercomRequest struct {
 	DeviceName    string `position:"Query" name:"DeviceName"`
 }
 
-// QueryVoiceIntercomResponse is the response struct for api QueryVoiceIntercom
-type QueryVoiceIntercomResponse struct {
+// QueryVisionDeviceInfoResponse is the response struct for api QueryVisionDeviceInfo
+type QueryVisionDeviceInfoResponse struct {
 	*responses.BaseResponse
 	Code         string `json:"Code" xml:"Code"`
 	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
@@ -90,19 +89,19 @@ type QueryVoiceIntercomResponse struct {
 	Data         Data   `json:"Data" xml:"Data"`
 }
 
-// CreateQueryVoiceIntercomRequest creates a request to invoke QueryVoiceIntercom API
-func CreateQueryVoiceIntercomRequest() (request *QueryVoiceIntercomRequest) {
-	request = &QueryVoiceIntercomRequest{
+// CreateQueryVisionDeviceInfoRequest creates a request to invoke QueryVisionDeviceInfo API
+func CreateQueryVisionDeviceInfoRequest() (request *QueryVisionDeviceInfoRequest) {
+	request = &QueryVisionDeviceInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Linkvisual", "2018-01-20", "QueryVoiceIntercom", "Linkvisual", "openAPI")
+	request.InitWithApiInfo("Linkvisual", "2018-01-20", "QueryVisionDeviceInfo", "Linkvisual", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateQueryVoiceIntercomResponse creates a response to parse from QueryVoiceIntercom response
-func CreateQueryVoiceIntercomResponse() (response *QueryVoiceIntercomResponse) {
-	response = &QueryVoiceIntercomResponse{
+// CreateQueryVisionDeviceInfoResponse creates a response to parse from QueryVisionDeviceInfo response
+func CreateQueryVisionDeviceInfoResponse() (response *QueryVisionDeviceInfoResponse) {
+	response = &QueryVisionDeviceInfoResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

@@ -19,6 +19,7 @@ package linkvisual
 type Data struct {
 	TemplateId        string                `json:"TemplateId" xml:"TemplateId"`
 	VodUrl            string                `json:"VodUrl" xml:"VodUrl"`
+	DeviceType        int                   `json:"DeviceType" xml:"DeviceType"`
 	DeviceGroupName   string                `json:"DeviceGroupName" xml:"DeviceGroupName"`
 	EndTime           int64                 `json:"EndTime" xml:"EndTime"`
 	StartTime         int64                 `json:"StartTime" xml:"StartTime"`
@@ -31,6 +32,7 @@ type Data struct {
 	Path              string                `json:"Path" xml:"Path"`
 	UserGroupId       string                `json:"UserGroupId" xml:"UserGroupId"`
 	DecryptKey        string                `json:"DecryptKey" xml:"DecryptKey"`
+	DeviceName        string                `json:"DeviceName" xml:"DeviceName"`
 	Total             int                   `json:"Total" xml:"Total"`
 	Page              int                   `json:"Page" xml:"Page"`
 	PicId             string                `json:"PicId" xml:"PicId"`
@@ -42,15 +44,21 @@ type Data struct {
 	JobStatus         int                   `json:"JobStatus" xml:"JobStatus"`
 	Name              string                `json:"Name" xml:"Name"`
 	SearchPicUrl      string                `json:"SearchPicUrl" xml:"SearchPicUrl"`
+	PullAuthKey       string                `json:"PullAuthKey" xml:"PullAuthKey"`
 	StunInfo          string                `json:"StunInfo" xml:"StunInfo"`
 	PageCount         int                   `json:"PageCount" xml:"PageCount"`
+	PullKeyExpireTime int                   `json:"PullKeyExpireTime" xml:"PullKeyExpireTime"`
+	PushAuthKey       string                `json:"PushAuthKey" xml:"PushAuthKey"`
 	CreateTime        int64                 `json:"CreateTime" xml:"CreateTime"`
 	PageSize          int                   `json:"PageSize" xml:"PageSize"`
+	PushKeyExpireTime int                   `json:"PushKeyExpireTime" xml:"PushKeyExpireTime"`
+	StreamName        string                `json:"StreamName" xml:"StreamName"`
 	Threshold         float64               `json:"Threshold" xml:"Threshold"`
 	DeviceGroupId     string                `json:"DeviceGroupId" xml:"DeviceGroupId"`
 	ControlType       string                `json:"ControlType" xml:"ControlType"`
 	UserId            string                `json:"UserId" xml:"UserId"`
 	UserGroupName     string                `json:"UserGroupName" xml:"UserGroupName"`
+	Description       string                `json:"Description" xml:"Description"`
 	ControlId         string                `json:"ControlId" xml:"ControlId"`
 	RelayDecryptKey   string                `json:"RelayDecryptKey" xml:"RelayDecryptKey"`
 	JobId             string                `json:"JobId" xml:"JobId"`
@@ -65,10 +73,14 @@ type Data struct {
 	PicCreateTime     int64                 `json:"PicCreateTime" xml:"PicCreateTime"`
 	CryptoKey         CryptoKey             `json:"CryptoKey" xml:"CryptoKey"`
 	TemplateInfo      TemplateInfo          `json:"TemplateInfo" xml:"TemplateInfo"`
+	RtmpDeviceInfo    RtmpDeviceInfo        `json:"RtmpDeviceInfo" xml:"RtmpDeviceInfo"`
+	GbDeviceInfo      GbDeviceInfo          `json:"GbDeviceInfo" xml:"GbDeviceInfo"`
 	List              []ListItem            `json:"List" xml:"List"`
 	FacePicList       []FacePicListItem     `json:"FacePicList" xml:"FacePicList"`
 	PageData          []SearchData          `json:"PageData" xml:"PageData"`
 	UserGroupList     []UserGroupListItem   `json:"UserGroupList" xml:"UserGroupList"`
+	JobList           []Job                 `json:"JobList" xml:"JobList"`
+	DeviceInfoList    []DeviceInfo          `json:"DeviceInfoList" xml:"DeviceInfoList"`
 	ResultList        []ResultListItem      `json:"ResultList" xml:"ResultList"`
 	FailedList        []FailedListItem      `json:"FailedList" xml:"FailedList"`
 	DeviceGroupList   []DeviceGroupListItem `json:"DeviceGroupList" xml:"DeviceGroupList"`

@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// QueryVoiceIntercom invokes the linkvisual.QueryVoiceIntercom API synchronously
-func (client *Client) QueryVoiceIntercom(request *QueryVoiceIntercomRequest) (response *QueryVoiceIntercomResponse, err error) {
-	response = CreateQueryVoiceIntercomResponse()
+// QueryRtmpKey invokes the linkvisual.QueryRtmpKey API synchronously
+func (client *Client) QueryRtmpKey(request *QueryRtmpKeyRequest) (response *QueryRtmpKeyResponse, err error) {
+	response = CreateQueryRtmpKeyResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// QueryVoiceIntercomWithChan invokes the linkvisual.QueryVoiceIntercom API asynchronously
-func (client *Client) QueryVoiceIntercomWithChan(request *QueryVoiceIntercomRequest) (<-chan *QueryVoiceIntercomResponse, <-chan error) {
-	responseChan := make(chan *QueryVoiceIntercomResponse, 1)
+// QueryRtmpKeyWithChan invokes the linkvisual.QueryRtmpKey API asynchronously
+func (client *Client) QueryRtmpKeyWithChan(request *QueryRtmpKeyRequest) (<-chan *QueryRtmpKeyResponse, <-chan error) {
+	responseChan := make(chan *QueryRtmpKeyResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.QueryVoiceIntercom(request)
+		response, err := client.QueryRtmpKey(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) QueryVoiceIntercomWithChan(request *QueryVoiceIntercomRequ
 	return responseChan, errChan
 }
 
-// QueryVoiceIntercomWithCallback invokes the linkvisual.QueryVoiceIntercom API asynchronously
-func (client *Client) QueryVoiceIntercomWithCallback(request *QueryVoiceIntercomRequest, callback func(response *QueryVoiceIntercomResponse, err error)) <-chan int {
+// QueryRtmpKeyWithCallback invokes the linkvisual.QueryRtmpKey API asynchronously
+func (client *Client) QueryRtmpKeyWithCallback(request *QueryRtmpKeyRequest, callback func(response *QueryRtmpKeyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *QueryVoiceIntercomResponse
+		var response *QueryRtmpKeyResponse
 		var err error
 		defer close(result)
-		response, err = client.QueryVoiceIntercom(request)
+		response, err = client.QueryRtmpKey(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,10 +68,9 @@ func (client *Client) QueryVoiceIntercomWithCallback(request *QueryVoiceIntercom
 	return result
 }
 
-// QueryVoiceIntercomRequest is the request struct for api QueryVoiceIntercom
-type QueryVoiceIntercomRequest struct {
+// QueryRtmpKeyRequest is the request struct for api QueryRtmpKey
+type QueryRtmpKeyRequest struct {
 	*requests.RpcRequest
-	Scheme        string `position:"Query" name:"Scheme"`
 	IotId         string `position:"Query" name:"IotId"`
 	IotInstanceId string `position:"Query" name:"IotInstanceId"`
 	ProductKey    string `position:"Query" name:"ProductKey"`
@@ -80,8 +79,8 @@ type QueryVoiceIntercomRequest struct {
 	DeviceName    string `position:"Query" name:"DeviceName"`
 }
 
-// QueryVoiceIntercomResponse is the response struct for api QueryVoiceIntercom
-type QueryVoiceIntercomResponse struct {
+// QueryRtmpKeyResponse is the response struct for api QueryRtmpKey
+type QueryRtmpKeyResponse struct {
 	*responses.BaseResponse
 	Code         string `json:"Code" xml:"Code"`
 	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
@@ -90,19 +89,19 @@ type QueryVoiceIntercomResponse struct {
 	Data         Data   `json:"Data" xml:"Data"`
 }
 
-// CreateQueryVoiceIntercomRequest creates a request to invoke QueryVoiceIntercom API
-func CreateQueryVoiceIntercomRequest() (request *QueryVoiceIntercomRequest) {
-	request = &QueryVoiceIntercomRequest{
+// CreateQueryRtmpKeyRequest creates a request to invoke QueryRtmpKey API
+func CreateQueryRtmpKeyRequest() (request *QueryRtmpKeyRequest) {
+	request = &QueryRtmpKeyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Linkvisual", "2018-01-20", "QueryVoiceIntercom", "Linkvisual", "openAPI")
+	request.InitWithApiInfo("Linkvisual", "2018-01-20", "QueryRtmpKey", "Linkvisual", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateQueryVoiceIntercomResponse creates a response to parse from QueryVoiceIntercom response
-func CreateQueryVoiceIntercomResponse() (response *QueryVoiceIntercomResponse) {
-	response = &QueryVoiceIntercomResponse{
+// CreateQueryRtmpKeyResponse creates a response to parse from QueryRtmpKey response
+func CreateQueryRtmpKeyResponse() (response *QueryRtmpKeyResponse) {
+	response = &QueryRtmpKeyResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return
