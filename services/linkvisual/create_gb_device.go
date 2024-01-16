@@ -82,6 +82,7 @@ type CreateGbDeviceRequest struct {
 	MediaNetProtocol string           `position:"Query" name:"MediaNetProtocol"`
 	ApiProduct       string           `position:"Body" name:"ApiProduct"`
 	ApiRevision      string           `position:"Body" name:"ApiRevision"`
+	DeviceName       string           `position:"Query" name:"DeviceName"`
 }
 
 // CreateGbDeviceResponse is the response struct for api CreateGbDevice

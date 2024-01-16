@@ -64,6 +64,7 @@ type Data struct {
 	JobId             string                `json:"JobId" xml:"JobId"`
 	Status            int                   `json:"Status" xml:"Status"`
 	Day               int                   `json:"Day" xml:"Day"`
+	ProductKey        string                `json:"ProductKey" xml:"ProductKey"`
 	DoExist           bool                  `json:"DoExist" xml:"DoExist"`
 	Url               string                `json:"Url" xml:"Url"`
 	CurrentPage       int                   `json:"CurrentPage" xml:"CurrentPage"`
@@ -86,4 +87,5 @@ type Data struct {
 	DeviceGroupList   []DeviceGroupListItem `json:"DeviceGroupList" xml:"DeviceGroupList"`
 	SuccessList       []SuccessListItem     `json:"SuccessList" xml:"SuccessList"`
 	TimeSectionList   []TimeSectionListItem `json:"TimeSectionList" xml:"TimeSectionList"`
+	GbSubDeviceList   []GbSubDevice         `json:"GbSubDeviceList" xml:"GbSubDeviceList"`
 }
