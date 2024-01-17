@@ -72,6 +72,7 @@ func (client *Client) SubmitAudioTo2DAvatarVideoTaskWithCallback(request *Submit
 type SubmitAudioTo2DAvatarVideoTaskRequest struct {
 	*requests.RpcRequest
 	App               SubmitAudioTo2DAvatarVideoTaskApp        `position:"Query" name:"App"  type:"Struct"`
+	AudioInfo         SubmitAudioTo2DAvatarVideoTaskAudioInfo  `position:"Query" name:"AudioInfo"  type:"Struct"`
 	AvatarInfo        SubmitAudioTo2DAvatarVideoTaskAvatarInfo `position:"Query" name:"AvatarInfo"  type:"Struct"`
 	Title             string                                   `position:"Query" name:"Title"`
 	ExtParams         string                                   `position:"Query" name:"ExtParams"`
@@ -87,6 +88,11 @@ type SubmitAudioTo2DAvatarVideoTaskRequest struct {
 // SubmitAudioTo2DAvatarVideoTaskApp is a repeated param struct in SubmitAudioTo2DAvatarVideoTaskRequest
 type SubmitAudioTo2DAvatarVideoTaskApp struct {
 	AppId string `name:"AppId"`
+}
+
+// SubmitAudioTo2DAvatarVideoTaskAudioInfo is a repeated param struct in SubmitAudioTo2DAvatarVideoTaskRequest
+type SubmitAudioTo2DAvatarVideoTaskAudioInfo struct {
+	SampleRate string `name:"SampleRate"`
 }
 
 // SubmitAudioTo2DAvatarVideoTaskAvatarInfo is a repeated param struct in SubmitAudioTo2DAvatarVideoTaskRequest

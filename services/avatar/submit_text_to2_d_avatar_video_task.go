@@ -96,6 +96,7 @@ type SubmitTextTo2DAvatarVideoTaskAudioInfo struct {
 	Volume     string `name:"Volume"`
 	SpeechRate string `name:"SpeechRate"`
 	PitchRate  string `name:"PitchRate"`
+	SampleRate string `name:"SampleRate"`
 }
 
 // SubmitTextTo2DAvatarVideoTaskAvatarInfo is a repeated param struct in SubmitTextTo2DAvatarVideoTaskRequest
@@ -109,12 +110,22 @@ type SubmitTextTo2DAvatarVideoTaskAvatarInfo struct {
 
 // SubmitTextTo2DAvatarVideoTaskVideoInfo is a repeated param struct in SubmitTextTo2DAvatarVideoTaskRequest
 type SubmitTextTo2DAvatarVideoTaskVideoInfo struct {
-	IsAlpha            string `name:"IsAlpha"`
-	BackgroundImageUrl string `name:"BackgroundImageUrl"`
-	IsSubtitles        string `name:"IsSubtitles"`
-	SubtitleEmbedded   string `name:"SubtitleEmbedded"`
-	Resolution         string `name:"Resolution"`
-	AlphaFormat        string `name:"AlphaFormat"`
+	IsAlpha            string                                              `name:"IsAlpha"`
+	BackgroundImageUrl string                                              `name:"BackgroundImageUrl"`
+	IsSubtitles        string                                              `name:"IsSubtitles"`
+	SubtitleEmbedded   string                                              `name:"SubtitleEmbedded"`
+	SubtitleStyle      SubmitTextTo2DAvatarVideoTaskVideoInfoSubtitleStyle `name:"SubtitleStyle" type:"Struct"`
+	Resolution         string                                              `name:"Resolution"`
+	AlphaFormat        string                                              `name:"AlphaFormat"`
+}
+
+// SubmitTextTo2DAvatarVideoTaskVideoInfoSubtitleStyle is a repeated param struct in SubmitTextTo2DAvatarVideoTaskRequest
+type SubmitTextTo2DAvatarVideoTaskVideoInfoSubtitleStyle struct {
+	Color        string `name:"Color"`
+	Size         string `name:"Size"`
+	Name         string `name:"Name"`
+	Y            string `name:"Y"`
+	OutlineColor string `name:"OutlineColor"`
 }
 
 // SubmitTextTo2DAvatarVideoTaskResponse is the response struct for api SubmitTextTo2DAvatarVideoTask
