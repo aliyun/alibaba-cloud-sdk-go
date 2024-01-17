@@ -18,15 +18,16 @@ package ddoscoo
 // Rule is a nested struct in ddoscoo response
 type Rule struct {
 	Name          string      `json:"Name" xml:"Name"`
-	Value         string      `json:"Value" xml:"Value"`
-	Expires       int64       `json:"Expires" xml:"Expires"`
 	Status        int         `json:"Status" xml:"Status"`
 	Priority      int         `json:"Priority" xml:"Priority"`
-	RegionId      string      `json:"RegionId" xml:"RegionId"`
 	Action        string      `json:"Action" xml:"Action"`
-	ValueType     int         `json:"ValueType" xml:"ValueType"`
 	Owner         string      `json:"Owner" xml:"Owner"`
 	RestoreDelay  int         `json:"RestoreDelay" xml:"RestoreDelay"`
+	Line          string      `json:"Line" xml:"Line"`
+	Value         string      `json:"Value" xml:"Value"`
+	Expires       int64       `json:"Expires" xml:"Expires"`
+	RegionId      string      `json:"RegionId" xml:"RegionId"`
+	ValueType     int         `json:"ValueType" xml:"ValueType"`
 	Type          string      `json:"Type" xml:"Type"`
 	ConditionList []Condition `json:"ConditionList" xml:"ConditionList"`
 }

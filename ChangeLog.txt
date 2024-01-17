@@ -1,3 +1,7 @@
+2024-01-17 Version: v1.62.662
+- Generated 2020-01-01 for `ddoscoo`.
+- Update sdk.
+
 2024-01-16 Version: v1.62.661
 - Generated 2023-08-01 for `AiMiaoBi`.
 undefined

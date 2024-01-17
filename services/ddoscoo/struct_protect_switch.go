@@ -27,4 +27,5 @@ type ProtectSwitch struct {
 	CcTemplate           string `json:"CcTemplate" xml:"CcTemplate"`
 	CcCustomRuleEnable   int    `json:"CcCustomRuleEnable" xml:"CcCustomRuleEnable"`
 	CcEnable             int    `json:"CcEnable" xml:"CcEnable"`
+	CcGlobalSwitch       string `json:"CcGlobalSwitch" xml:"CcGlobalSwitch"`
 }
