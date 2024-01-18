@@ -28,4 +28,5 @@ type InstanceNetInfo struct {
 	Port              string `json:"Port" xml:"Port"`
 	VPCId             string `json:"VPCId" xml:"VPCId"`
 	IPAddress         string `json:"IPAddress" xml:"IPAddress"`
+	IsSlaveProxy      int    `json:"IsSlaveProxy" xml:"IsSlaveProxy"`
 }

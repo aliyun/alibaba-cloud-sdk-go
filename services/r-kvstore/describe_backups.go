@@ -71,6 +71,7 @@ func (client *Client) DescribeBackupsWithCallback(request *DescribeBackupsReques
 // DescribeBackupsRequest is the request struct for api DescribeBackups
 type DescribeBackupsRequest struct {
 	*requests.RpcRequest
+	BackupJobId          requests.Integer `position:"Query" name:"BackupJobId"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	StartTime            string           `position:"Query" name:"StartTime"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
@@ -88,12 +89,12 @@ type DescribeBackupsRequest struct {
 // DescribeBackupsResponse is the response struct for api DescribeBackups
 type DescribeBackupsResponse struct {
 	*responses.BaseResponse
-	RequestId          string             `json:"RequestId" xml:"RequestId"`
-	PageNumber         int                `json:"PageNumber" xml:"PageNumber"`
-	PageSize           int                `json:"PageSize" xml:"PageSize"`
-	TotalCount         int                `json:"TotalCount" xml:"TotalCount"`
-	AccessDeniedDetail AccessDeniedDetail `json:"AccessDeniedDetail" xml:"AccessDeniedDetail"`
-	Backups            Backups            `json:"Backups" xml:"Backups"`
+	RequestId          string                   `json:"RequestId" xml:"RequestId"`
+	PageNumber         int                      `json:"PageNumber" xml:"PageNumber"`
+	PageSize           int                      `json:"PageSize" xml:"PageSize"`
+	TotalCount         int                      `json:"TotalCount" xml:"TotalCount"`
+	AccessDeniedDetail AccessDeniedDetail       `json:"AccessDeniedDetail" xml:"AccessDeniedDetail"`
+	Backups            BackupsInDescribeBackups `json:"Backups" xml:"Backups"`
 }
 
 // CreateDescribeBackupsRequest creates a request to invoke DescribeBackups API

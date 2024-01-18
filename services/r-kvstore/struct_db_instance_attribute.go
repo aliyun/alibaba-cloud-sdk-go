@@ -60,6 +60,7 @@ type DBInstanceAttribute struct {
 	NodeType                  string                          `json:"NodeType" xml:"NodeType"`
 	Connections               int64                           `json:"Connections" xml:"Connections"`
 	BackupLogStartTime        string                          `json:"BackupLogStartTime" xml:"BackupLogStartTime"`
+	SlaveReadOnlyCount        int64                           `json:"SlaveReadOnlyCount" xml:"SlaveReadOnlyCount"`
 	ResourceGroupId           string                          `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	ZoneId                    string                          `json:"ZoneId" xml:"ZoneId"`
 	InstanceStatus            string                          `json:"InstanceStatus" xml:"InstanceStatus"`

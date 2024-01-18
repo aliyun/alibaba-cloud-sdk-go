@@ -83,19 +83,22 @@ type DescribeEngineVersionRequest struct {
 // DescribeEngineVersionResponse is the response struct for api DescribeEngineVersion
 type DescribeEngineVersionResponse struct {
 	*responses.BaseResponse
-	IsLatestVersion           bool   `json:"IsLatestVersion" xml:"IsLatestVersion"`
-	RequestId                 string `json:"RequestId" xml:"RequestId"`
-	ProxyMinorVersion         string `json:"ProxyMinorVersion" xml:"ProxyMinorVersion"`
-	DBVersionRelease          string `json:"DBVersionRelease" xml:"DBVersionRelease"`
-	ProxyVersionRelease       string `json:"ProxyVersionRelease" xml:"ProxyVersionRelease"`
-	EnableUpgradeMajorVersion bool   `json:"EnableUpgradeMajorVersion" xml:"EnableUpgradeMajorVersion"`
-	EnableUpgradeMinorVersion bool   `json:"EnableUpgradeMinorVersion" xml:"EnableUpgradeMinorVersion"`
-	MajorVersion              string `json:"MajorVersion" xml:"MajorVersion"`
-	Engine                    string `json:"Engine" xml:"Engine"`
-	MinorVersion              string `json:"MinorVersion" xml:"MinorVersion"`
-	IsRedisCompatibleVersion  string `json:"IsRedisCompatibleVersion" xml:"IsRedisCompatibleVersion"`
-	IsSSLEnable               string `json:"IsSSLEnable" xml:"IsSSLEnable"`
-	IsNewSSLMode              string `json:"IsNewSSLMode" xml:"IsNewSSLMode"`
+	IsLatestVersion           bool                    `json:"IsLatestVersion" xml:"IsLatestVersion"`
+	RequestId                 string                  `json:"RequestId" xml:"RequestId"`
+	ProxyMinorVersion         string                  `json:"ProxyMinorVersion" xml:"ProxyMinorVersion"`
+	DBVersionRelease          string                  `json:"DBVersionRelease" xml:"DBVersionRelease"`
+	ProxyVersionRelease       string                  `json:"ProxyVersionRelease" xml:"ProxyVersionRelease"`
+	EnableUpgradeMajorVersion bool                    `json:"EnableUpgradeMajorVersion" xml:"EnableUpgradeMajorVersion"`
+	EnableUpgradeMinorVersion bool                    `json:"EnableUpgradeMinorVersion" xml:"EnableUpgradeMinorVersion"`
+	MajorVersion              string                  `json:"MajorVersion" xml:"MajorVersion"`
+	Engine                    string                  `json:"Engine" xml:"Engine"`
+	MinorVersion              string                  `json:"MinorVersion" xml:"MinorVersion"`
+	IsRedisCompatibleVersion  string                  `json:"IsRedisCompatibleVersion" xml:"IsRedisCompatibleVersion"`
+	IsSSLEnable               string                  `json:"IsSSLEnable" xml:"IsSSLEnable"`
+	IsNewSSLMode              string                  `json:"IsNewSSLMode" xml:"IsNewSSLMode"`
+	IsAutoUpgradeOpen         string                  `json:"IsAutoUpgradeOpen" xml:"IsAutoUpgradeOpen"`
+	DBLatestMinorVersion      DBLatestMinorVersion    `json:"DBLatestMinorVersion" xml:"DBLatestMinorVersion"`
+	ProxyLatestMinorVersion   ProxyLatestMinorVersion `json:"ProxyLatestMinorVersion" xml:"ProxyLatestMinorVersion"`
 }
 
 // CreateDescribeEngineVersionRequest creates a request to invoke DescribeEngineVersion API

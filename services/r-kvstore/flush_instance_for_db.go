@@ -72,7 +72,6 @@ func (client *Client) FlushInstanceForDBWithCallback(request *FlushInstanceForDB
 type FlushInstanceForDBRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`

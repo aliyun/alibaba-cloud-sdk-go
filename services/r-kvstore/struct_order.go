@@ -22,6 +22,7 @@ type Order struct {
 	Currency          string                 `json:"Currency" xml:"Currency"`
 	DiscountAmount    string                 `json:"DiscountAmount" xml:"DiscountAmount"`
 	TradeAmount       string                 `json:"TradeAmount" xml:"TradeAmount"`
+	ShowDiscountInfo  bool                   `json:"ShowDiscountInfo" xml:"ShowDiscountInfo"`
 	RuleIds           RuleIdsInDescribePrice `json:"RuleIds" xml:"RuleIds"`
 	Coupons           Coupons                `json:"Coupons" xml:"Coupons"`
 }

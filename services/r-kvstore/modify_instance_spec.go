@@ -73,6 +73,7 @@ type ModifyInstanceSpecRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
+	SlaveReadOnlyCount   requests.Integer `position:"Query" name:"SlaveReadOnlyCount"`
 	CouponNo             string           `position:"Query" name:"CouponNo"`
 	InstanceClass        string           `position:"Query" name:"InstanceClass"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`

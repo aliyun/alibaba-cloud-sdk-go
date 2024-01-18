@@ -82,6 +82,7 @@ type SwitchInstanceHARequest struct {
 	InstanceId           string           `position:"Query" name:"InstanceId"`
 	SwitchType           string           `position:"Query" name:"SwitchType"`
 	Category             string           `position:"Query" name:"Category"`
+	SwitchZone           requests.Integer `position:"Query" name:"SwitchZone"`
 }
 
 // SwitchInstanceHAResponse is the response struct for api SwitchInstanceHA

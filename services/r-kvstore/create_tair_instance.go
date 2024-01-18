@@ -73,6 +73,7 @@ type CreateTairInstanceRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId        requests.Integer         `position:"Query" name:"ResourceOwnerId"`
 	SecondaryZoneId        string                   `position:"Query" name:"SecondaryZoneId"`
+	SlaveReadOnlyCount     requests.Integer         `position:"Query" name:"SlaveReadOnlyCount"`
 	CouponNo               string                   `position:"Query" name:"CouponNo"`
 	EngineVersion          string                   `position:"Query" name:"EngineVersion"`
 	StorageType            string                   `position:"Query" name:"StorageType"`
@@ -109,6 +110,7 @@ type CreateTairInstanceRequest struct {
 	VpcId                  string                   `position:"Query" name:"VpcId"`
 	ReadOnlyCount          requests.Integer         `position:"Query" name:"ReadOnlyCount"`
 	ChargeType             string                   `position:"Query" name:"ChargeType"`
+	ClusterBackupId        string                   `position:"Query" name:"ClusterBackupId"`
 }
 
 // CreateTairInstanceTag is a repeated param struct in CreateTairInstanceRequest

@@ -74,6 +74,7 @@ type CreateInstanceRequest struct {
 	ResourceOwnerId        requests.Integer     `position:"Query" name:"ResourceOwnerId"`
 	ConnectionStringPrefix string               `position:"Query" name:"ConnectionStringPrefix"`
 	SecondaryZoneId        string               `position:"Query" name:"SecondaryZoneId"`
+	SlaveReadOnlyCount     requests.Integer     `position:"Query" name:"SlaveReadOnlyCount"`
 	CouponNo               string               `position:"Query" name:"CouponNo"`
 	NetworkType            string               `position:"Query" name:"NetworkType"`
 	EngineVersion          string               `position:"Query" name:"EngineVersion"`
@@ -116,6 +117,7 @@ type CreateInstanceRequest struct {
 	ReadOnlyCount          requests.Integer     `position:"Query" name:"ReadOnlyCount"`
 	ChargeType             string               `position:"Query" name:"ChargeType"`
 	Config                 string               `position:"Query" name:"Config"`
+	ClusterBackupId        string               `position:"Query" name:"ClusterBackupId"`
 }
 
 // CreateInstanceTag is a repeated param struct in CreateInstanceRequest
