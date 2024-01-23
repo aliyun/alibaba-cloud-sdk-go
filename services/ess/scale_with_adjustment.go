@@ -71,19 +71,26 @@ func (client *Client) ScaleWithAdjustmentWithCallback(request *ScaleWithAdjustme
 // ScaleWithAdjustmentRequest is the request struct for api ScaleWithAdjustment
 type ScaleWithAdjustmentRequest struct {
 	*requests.RpcRequest
-	ClientToken            string                       `position:"Query" name:"ClientToken"`
-	ScalingGroupId         string                       `position:"Query" name:"ScalingGroupId"`
-	InstanceType           *[]string                    `position:"Query" name:"InstanceType"  type:"Repeated"`
-	SyncActivity           requests.Boolean             `position:"Query" name:"SyncActivity"`
-	AdjustmentValue        requests.Integer             `position:"Query" name:"AdjustmentValue"`
-	ResourceOwnerAccount   string                       `position:"Query" name:"ResourceOwnerAccount"`
-	AdjustmentType         string                       `position:"Query" name:"AdjustmentType"`
-	ParallelTask           requests.Boolean             `position:"Query" name:"ParallelTask"`
-	Overrides              ScaleWithAdjustmentOverrides `position:"Query" name:"Overrides"  type:"Struct"`
-	OwnerId                requests.Integer             `position:"Query" name:"OwnerId"`
-	SpotStrategy           string                       `position:"Query" name:"SpotStrategy"`
-	VSwitchId              *[]string                    `position:"Query" name:"VSwitchId"  type:"Repeated"`
-	MinAdjustmentMagnitude requests.Integer             `position:"Query" name:"MinAdjustmentMagnitude"`
+	ClientToken            string                           `position:"Query" name:"ClientToken"`
+	ScalingGroupId         string                           `position:"Query" name:"ScalingGroupId"`
+	InstanceType           *[]string                        `position:"Query" name:"InstanceType"  type:"Repeated"`
+	SyncActivity           requests.Boolean                 `position:"Query" name:"SyncActivity"`
+	Allocation             *[]ScaleWithAdjustmentAllocation `position:"Query" name:"Allocation"  type:"Repeated"`
+	AdjustmentValue        requests.Integer                 `position:"Query" name:"AdjustmentValue"`
+	ResourceOwnerAccount   string                           `position:"Query" name:"ResourceOwnerAccount"`
+	AdjustmentType         string                           `position:"Query" name:"AdjustmentType"`
+	ParallelTask           requests.Boolean                 `position:"Query" name:"ParallelTask"`
+	Overrides              ScaleWithAdjustmentOverrides     `position:"Query" name:"Overrides"  type:"Struct"`
+	OwnerId                requests.Integer                 `position:"Query" name:"OwnerId"`
+	SpotStrategy           string                           `position:"Query" name:"SpotStrategy"`
+	VSwitchId              *[]string                        `position:"Query" name:"VSwitchId"  type:"Repeated"`
+	MinAdjustmentMagnitude requests.Integer                 `position:"Query" name:"MinAdjustmentMagnitude"`
+}
+
+// ScaleWithAdjustmentAllocation is a repeated param struct in ScaleWithAdjustmentRequest
+type ScaleWithAdjustmentAllocation struct {
+	VSwitchId *[]string `name:"VSwitchId" type:"Repeated"`
+	Count     string    `name:"Count"`
 }
 
 // ScaleWithAdjustmentOverrides is a repeated param struct in ScaleWithAdjustmentRequest

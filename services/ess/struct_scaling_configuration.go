@@ -59,8 +59,8 @@ type ScalingConfiguration struct {
 	InstanceTypes                 []string                  `json:"InstanceTypes" xml:"InstanceTypes"`
 	DnsConfigSearches             []string                  `json:"DnsConfigSearches" xml:"DnsConfigSearches"`
 	NtpServers                    []string                  `json:"NtpServers" xml:"NtpServers"`
-	Containers                    []Container               `json:"Containers" xml:"Containers"`
 	Tags                          []Tag                     `json:"Tags" xml:"Tags"`
+	Containers                    []Container               `json:"Containers" xml:"Containers"`
 	DnsConfigOptions              []DnsConfigOption         `json:"DnsConfigOptions" xml:"DnsConfigOptions"`
 	HostAliases                   []HostAlias               `json:"HostAliases" xml:"HostAliases"`
 	ImageRegistryCredentials      []ImageRegistryCredential `json:"ImageRegistryCredentials" xml:"ImageRegistryCredentials"`

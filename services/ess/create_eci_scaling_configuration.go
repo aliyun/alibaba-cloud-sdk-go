@@ -124,44 +124,58 @@ type CreateEciScalingConfigurationRequest struct {
 
 // CreateEciScalingConfigurationContainer is a repeated param struct in CreateEciScalingConfigurationRequest
 type CreateEciScalingConfigurationContainer struct {
-	Stdin                                 string                                                  `name:"Stdin"`
-	Memory                                string                                                  `name:"Memory"`
-	LivenessProbeExecCommand              *[]string                                               `name:"LivenessProbe.Exec.Command" type:"Repeated"`
-	WorkingDir                            string                                                  `name:"WorkingDir"`
-	ReadinessProbeHttpGetPort             string                                                  `name:"ReadinessProbe.HttpGet.Port"`
-	ReadinessProbeFailureThreshold        string                                                  `name:"ReadinessProbe.FailureThreshold"`
-	LivenessProbeHttpGetPort              string                                                  `name:"LivenessProbe.HttpGet.Port"`
-	Arg                                   *[]string                                               `name:"Arg" type:"Repeated"`
-	ReadinessProbeSuccessThreshold        string                                                  `name:"ReadinessProbe.SuccessThreshold"`
-	VolumeMount                           *[]CreateEciScalingConfigurationContainerVolumeMount    `name:"VolumeMount" type:"Repeated"`
-	Image                                 string                                                  `name:"Image"`
-	SecurityContextCapabilityAdd          *[]string                                               `name:"SecurityContext.Capability.Add" type:"Repeated"`
-	ReadinessProbeInitialDelaySeconds     string                                                  `name:"ReadinessProbe.InitialDelaySeconds"`
-	Cpu                                   string                                                  `name:"Cpu"`
-	ReadinessProbeExecCommand             *[]string                                               `name:"ReadinessProbe.Exec.Command" type:"Repeated"`
-	ReadinessProbeHttpGetScheme           string                                                  `name:"ReadinessProbe.HttpGet.Scheme"`
-	ReadinessProbeHttpGetPath             string                                                  `name:"ReadinessProbe.HttpGet.Path"`
-	Gpu                                   string                                                  `name:"Gpu"`
-	StdinOnce                             string                                                  `name:"StdinOnce"`
-	ImagePullPolicy                       string                                                  `name:"ImagePullPolicy"`
-	Command                               *[]string                                               `name:"Command" type:"Repeated"`
-	LivenessProbeSuccessThreshold         string                                                  `name:"LivenessProbe.SuccessThreshold"`
-	SecurityContextRunAsUser              string                                                  `name:"SecurityContext.RunAsUser"`
-	LivenessProbeHttpGetPath              string                                                  `name:"LivenessProbe.HttpGet.Path"`
-	LivenessProbePeriodSeconds            string                                                  `name:"LivenessProbe.PeriodSeconds"`
-	LivenessProbeInitialDelaySeconds      string                                                  `name:"LivenessProbe.InitialDelaySeconds"`
-	LivenessProbeTimeoutSeconds           string                                                  `name:"LivenessProbe.TimeoutSeconds"`
-	LivenessProbeTcpSocketPort            string                                                  `name:"LivenessProbe.TcpSocket.Port"`
-	Port                                  *[]CreateEciScalingConfigurationContainerPort           `name:"Port" type:"Repeated"`
-	ReadinessProbePeriodSeconds           string                                                  `name:"ReadinessProbe.PeriodSeconds"`
-	EnvironmentVar                        *[]CreateEciScalingConfigurationContainerEnvironmentVar `name:"EnvironmentVar" type:"Repeated"`
-	Tty                                   string                                                  `name:"Tty"`
-	Name                                  string                                                  `name:"Name"`
-	SecurityContextReadOnlyRootFilesystem string                                                  `name:"SecurityContext.ReadOnlyRootFilesystem"`
-	LivenessProbeFailureThreshold         string                                                  `name:"LivenessProbe.FailureThreshold"`
-	ReadinessProbeTimeoutSeconds          string                                                  `name:"ReadinessProbe.TimeoutSeconds"`
-	ReadinessProbeTcpSocketPort           string                                                  `name:"ReadinessProbe.TcpSocket.Port"`
-	LivenessProbeHttpGetScheme            string                                                  `name:"LivenessProbe.HttpGet.Scheme"`
+	Stdin                                  string                                                  `name:"Stdin"`
+	LivenessProbeExecCommand               *[]string                                               `name:"LivenessProbe.Exec.Command" type:"Repeated"`
+	LifecyclePostStartHandlerHttpGetPort   string                                                  `name:"LifecyclePostStartHandlerHttpGetPort"`
+	WorkingDir                             string                                                  `name:"WorkingDir"`
+	ReadinessProbeHttpGetPort              string                                                  `name:"ReadinessProbe.HttpGet.Port"`
+	LivenessProbeHttpGetPort               string                                                  `name:"LivenessProbe.HttpGet.Port"`
+	LifecyclePreStopHandlerTcpSocketPort   string                                                  `name:"LifecyclePreStopHandlerTcpSocketPort"`
+	VolumeMount                            *[]CreateEciScalingConfigurationContainerVolumeMount    `name:"VolumeMount" type:"Repeated"`
+	Image                                  string                                                  `name:"Image"`
+	LifecyclePostStartHandlerExec          *[]string                                               `name:"LifecyclePostStartHandlerExec" type:"Repeated"`
+	Cpu                                    string                                                  `name:"Cpu"`
+	ReadinessProbeHttpGetPath              string                                                  `name:"ReadinessProbe.HttpGet.Path"`
+	Gpu                                    string                                                  `name:"Gpu"`
+	StdinOnce                              string                                                  `name:"StdinOnce"`
+	LifecyclePostStartHandlerTcpSocketHost string                                                  `name:"LifecyclePostStartHandlerTcpSocketHost"`
+	LivenessProbeSuccessThreshold          string                                                  `name:"LivenessProbe.SuccessThreshold"`
+	SecurityContextRunAsUser               string                                                  `name:"SecurityContext.RunAsUser"`
+	LivenessProbePeriodSeconds             string                                                  `name:"LivenessProbe.PeriodSeconds"`
+	LivenessProbeInitialDelaySeconds       string                                                  `name:"LivenessProbe.InitialDelaySeconds"`
+	Port                                   *[]CreateEciScalingConfigurationContainerPort           `name:"Port" type:"Repeated"`
+	Name                                   string                                                  `name:"Name"`
+	LifecyclePreStopHandlerTcpSocketHost   string                                                  `name:"LifecyclePreStopHandlerTcpSocketHost"`
+	SecurityContextReadOnlyRootFilesystem  string                                                  `name:"SecurityContext.ReadOnlyRootFilesystem"`
+	LifecyclePreStopHandlerHttpGetHost     string                                                  `name:"LifecyclePreStopHandlerHttpGetHost"`
+	Memory                                 string                                                  `name:"Memory"`
+	LifecyclePreStopHandlerHttpGetScheme   string                                                  `name:"LifecyclePreStopHandlerHttpGetScheme"`
+	LifecyclePostStartHandlerTcpSocketPort string                                                  `name:"LifecyclePostStartHandlerTcpSocketPort"`
+	LifecyclePreStopHandlerHttpGetPath     string                                                  `name:"LifecyclePreStopHandlerHttpGetPath"`
+	LifecyclePostStartHandlerHttpGetHost   string                                                  `name:"LifecyclePostStartHandlerHttpGetHost"`
+	ReadinessProbeFailureThreshold         string                                                  `name:"ReadinessProbe.FailureThreshold"`
+	Arg                                    *[]string                                               `name:"Arg" type:"Repeated"`
+	ReadinessProbeSuccessThreshold         string                                                  `name:"ReadinessProbe.SuccessThreshold"`
+	LifecyclePostStartHandlerHttpGetPath   string                                                  `name:"LifecyclePostStartHandlerHttpGetPath"`
+	LifecyclePreStopHandlerExec            *[]string                                               `name:"LifecyclePreStopHandlerExec" type:"Repeated"`
+	SecurityContextCapabilityAdd           *[]string                                               `name:"SecurityContext.Capability.Add" type:"Repeated"`
+	ReadinessProbeInitialDelaySeconds      string                                                  `name:"ReadinessProbe.InitialDelaySeconds"`
+	ReadinessProbeExecCommand              *[]string                                               `name:"ReadinessProbe.Exec.Command" type:"Repeated"`
+	ReadinessProbeHttpGetScheme            string                                                  `name:"ReadinessProbe.HttpGet.Scheme"`
+	LifecyclePreStopHandlerHttpGetPort     string                                                  `name:"LifecyclePreStopHandlerHttpGetPort"`
+	ImagePullPolicy                        string                                                  `name:"ImagePullPolicy"`
+	Command                                *[]string                                               `name:"Command" type:"Repeated"`
+	LivenessProbeHttpGetPath               string                                                  `name:"LivenessProbe.HttpGet.Path"`
+	LifecyclePostStartHandlerHttpGetScheme string                                                  `name:"LifecyclePostStartHandlerHttpGetScheme"`
+	LivenessProbeTimeoutSeconds            string                                                  `name:"LivenessProbe.TimeoutSeconds"`
+	LivenessProbeTcpSocketPort             string                                                  `name:"LivenessProbe.TcpSocket.Port"`
+	ReadinessProbePeriodSeconds            string                                                  `name:"ReadinessProbe.PeriodSeconds"`
+	EnvironmentVar                         *[]CreateEciScalingConfigurationContainerEnvironmentVar `name:"EnvironmentVar" type:"Repeated"`
+	Tty                                    string                                                  `name:"Tty"`
+	LivenessProbeFailureThreshold          string                                                  `name:"LivenessProbe.FailureThreshold"`
+	ReadinessProbeTimeoutSeconds           string                                                  `name:"ReadinessProbe.TimeoutSeconds"`
+	ReadinessProbeTcpSocketPort            string                                                  `name:"ReadinessProbe.TcpSocket.Port"`
+	LivenessProbeHttpGetScheme             string                                                  `name:"LivenessProbe.HttpGet.Scheme"`
 }
 
 // CreateEciScalingConfigurationHostAliase is a repeated param struct in CreateEciScalingConfigurationRequest
