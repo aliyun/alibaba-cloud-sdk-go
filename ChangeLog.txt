@@ -1,3 +1,7 @@
+2024-01-24 Version: v1.62.666
+- Generated 2022-01-30 for `avatar`.
+- support start params
+
 2024-01-23 Version: v1.62.665
 - Generated 2014-08-28 for `Ess`.
 - ECIScalingConfiguration add lifecycle params.

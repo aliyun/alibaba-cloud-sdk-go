@@ -72,11 +72,20 @@ func (client *Client) StartInstanceWithCallback(request *StartInstanceRequest, c
 type StartInstanceRequest struct {
 	*requests.RpcRequest
 	App            string                      `position:"Query" name:"App"`
+	TextRequest    StartInstanceTextRequest    `position:"Query" name:"TextRequest"  type:"Struct"`
 	TenantId       requests.Integer            `position:"Query" name:"TenantId"`
 	BizId          string                      `position:"Query" name:"BizId"`
 	Channel        StartInstanceChannel        `position:"Query" name:"Channel"  type:"Struct"`
 	CommandRequest StartInstanceCommandRequest `position:"Query" name:"CommandRequest"  type:"Struct"`
 	User           string                      `position:"Query" name:"User"`
+}
+
+// StartInstanceTextRequest is a repeated param struct in StartInstanceRequest
+type StartInstanceTextRequest struct {
+	Voice      string `name:"Voice"`
+	Volume     string `name:"Volume"`
+	SpeechRate string `name:"SpeechRate"`
+	PitchRate  string `name:"PitchRate"`
 }
 
 // StartInstanceChannel is a repeated param struct in StartInstanceRequest
@@ -87,7 +96,9 @@ type StartInstanceChannel struct {
 
 // StartInstanceCommandRequest is a repeated param struct in StartInstanceRequest
 type StartInstanceCommandRequest struct {
-	AlphaSwitch string `name:"AlphaSwitch"`
+	BackGroundImageUrl string `name:"BackGroundImageUrl"`
+	AlphaSwitch        string `name:"AlphaSwitch"`
+	Locate             string `name:"Locate"`
 }
 
 // StartInstanceResponse is the response struct for api StartInstance
