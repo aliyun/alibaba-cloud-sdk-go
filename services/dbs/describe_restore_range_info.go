@@ -95,7 +95,7 @@ func CreateDescribeRestoreRangeInfoRequest() (request *DescribeRestoreRangeInfoR
 	request = &DescribeRestoreRangeInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dbs", "2019-03-06", "DescribeRestoreRangeInfo", "", "")
+	request.InitWithApiInfo("Dbs", "2019-03-06", "DescribeRestoreRangeInfo", "cbs", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -93,7 +93,7 @@ func CreateDisableBackupLogRequest() (request *DisableBackupLogRequest) {
 	request = &DisableBackupLogRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dbs", "2019-03-06", "DisableBackupLog", "", "")
+	request.InitWithApiInfo("Dbs", "2019-03-06", "DisableBackupLog", "cbs", "openAPI")
 	request.Method = requests.POST
 	return
 }

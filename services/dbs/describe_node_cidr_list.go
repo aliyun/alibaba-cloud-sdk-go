@@ -93,7 +93,7 @@ func CreateDescribeNodeCidrListRequest() (request *DescribeNodeCidrListRequest) 
 	request = &DescribeNodeCidrListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dbs", "2019-03-06", "DescribeNodeCidrList", "", "")
+	request.InitWithApiInfo("Dbs", "2019-03-06", "DescribeNodeCidrList", "cbs", "openAPI")
 	request.Method = requests.POST
 	return
 }

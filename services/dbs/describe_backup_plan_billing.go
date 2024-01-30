@@ -93,7 +93,7 @@ func CreateDescribeBackupPlanBillingRequest() (request *DescribeBackupPlanBillin
 	request = &DescribeBackupPlanBillingRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dbs", "2019-03-06", "DescribeBackupPlanBilling", "", "")
+	request.InitWithApiInfo("Dbs", "2019-03-06", "DescribeBackupPlanBilling", "cbs", "openAPI")
 	request.Method = requests.POST
 	return
 }

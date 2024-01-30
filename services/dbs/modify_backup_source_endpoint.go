@@ -106,7 +106,7 @@ func CreateModifyBackupSourceEndpointRequest() (request *ModifyBackupSourceEndpo
 	request = &ModifyBackupSourceEndpointRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dbs", "2019-03-06", "ModifyBackupSourceEndpoint", "", "")
+	request.InitWithApiInfo("Dbs", "2019-03-06", "ModifyBackupSourceEndpoint", "cbs", "openAPI")
 	request.Method = requests.POST
 	return
 }

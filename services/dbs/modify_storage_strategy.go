@@ -96,7 +96,7 @@ func CreateModifyStorageStrategyRequest() (request *ModifyStorageStrategyRequest
 	request = &ModifyStorageStrategyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dbs", "2019-03-06", "ModifyStorageStrategy", "", "")
+	request.InitWithApiInfo("Dbs", "2019-03-06", "ModifyStorageStrategy", "cbs", "openAPI")
 	request.Method = requests.POST
 	return
 }

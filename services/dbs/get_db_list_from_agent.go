@@ -94,7 +94,7 @@ func CreateGetDBListFromAgentRequest() (request *GetDBListFromAgentRequest) {
 	request = &GetDBListFromAgentRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dbs", "2019-03-06", "GetDBListFromAgent", "", "")
+	request.InitWithApiInfo("Dbs", "2019-03-06", "GetDBListFromAgent", "cbs", "openAPI")
 	request.Method = requests.POST
 	return
 }

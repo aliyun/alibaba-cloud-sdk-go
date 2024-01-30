@@ -95,7 +95,7 @@ func CreateDescribePreCheckProgressListRequest() (request *DescribePreCheckProgr
 	request = &DescribePreCheckProgressListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dbs", "2019-03-06", "DescribePreCheckProgressList", "", "")
+	request.InitWithApiInfo("Dbs", "2019-03-06", "DescribePreCheckProgressList", "cbs", "openAPI")
 	request.Method = requests.POST
 	return
 }

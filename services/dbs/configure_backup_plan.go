@@ -120,7 +120,7 @@ func CreateConfigureBackupPlanRequest() (request *ConfigureBackupPlanRequest) {
 	request = &ConfigureBackupPlanRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dbs", "2019-03-06", "ConfigureBackupPlan", "", "")
+	request.InitWithApiInfo("Dbs", "2019-03-06", "ConfigureBackupPlan", "cbs", "openAPI")
 	request.Method = requests.POST
 	return
 }

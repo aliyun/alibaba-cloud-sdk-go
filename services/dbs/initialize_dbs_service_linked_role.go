@@ -88,7 +88,7 @@ func CreateInitializeDbsServiceLinkedRoleRequest() (request *InitializeDbsServic
 	request = &InitializeDbsServiceLinkedRoleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dbs", "2019-03-06", "InitializeDbsServiceLinkedRole", "", "")
+	request.InitWithApiInfo("Dbs", "2019-03-06", "InitializeDbsServiceLinkedRole", "cbs", "openAPI")
 	request.Method = requests.POST
 	return
 }

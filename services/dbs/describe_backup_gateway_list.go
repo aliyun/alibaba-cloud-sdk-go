@@ -99,7 +99,7 @@ func CreateDescribeBackupGatewayListRequest() (request *DescribeBackupGatewayLis
 	request = &DescribeBackupGatewayListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dbs", "2019-03-06", "DescribeBackupGatewayList", "", "")
+	request.InitWithApiInfo("Dbs", "2019-03-06", "DescribeBackupGatewayList", "cbs", "openAPI")
 	request.Method = requests.POST
 	return
 }
