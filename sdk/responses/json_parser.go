@@ -31,9 +31,9 @@ func init() {
 }
 
 // Error handler function for easy maintain & read code
-func handleIteratorError(mainIter, subIter *jsoniter.Iterator) {
+func handleIteratorError(mainIter, subIter *jsoniter.Iterator, err error) {
     if subIter.Error != nil && subIter.Error != io.EOF {
-        mainIter.Error = subIter.Error
+        mainIter.Error = err
     }
 }
 
@@ -217,7 +217,7 @@ func (decoder *fuzzyBoolDecoder) Decode(ptr unsafe.Pointer, iter *jsoniter.Itera
 			*((*bool)(ptr)) = false
 		default:
 			iter.ReportError("fuzzyBoolDecoder", "unsupported bool value: "+strValue)
-		}		
+		}
 	case jsoniter.NilValue:
 		iter.ReadNil()
 		*((*bool)(ptr)) = false
@@ -261,7 +261,7 @@ func (decoder *nullableFuzzyIntegerDecoder) Decode(ptr unsafe.Pointer, iter *jso
 	isFloat := strings.IndexByte(str, '.') != -1
 	decoder.fun(isFloat, ptr, newIter)
 	if newIter.Error != nil && newIter.Error != io.EOF {
-		handleIteratorError(iter, newIter.Error)
+		handleIteratorError(iter, newIter, newIter.Error)
 	}
 }
 
@@ -283,9 +283,10 @@ func (decoder *nullableFuzzyFloat32Decoder) Decode(ptr unsafe.Pointer, iter *jso
 		}
 		newIter := iter.Pool().BorrowIterator([]byte(str))
 		defer iter.Pool().ReturnIterator(newIter)
-		nullableFuzzyFloat32Decoder{}.Decode(ptr, newIter)
+		float32Decoder := nullableFuzzyFloat32Decoder{}
+		float32Decoder.Decode(ptr, newIter)
 		if newIter.Error != nil && newIter.Error != io.EOF {
-			handleIteratorError(iter, newIter.Error)
+			handleIteratorError(iter, newIter, newIter.Error)
 		}
 	case jsoniter.BoolValue:
 		// support bool to float32
@@ -320,9 +321,11 @@ func (decoder *nullableFuzzyFloat64Decoder) Decode(ptr unsafe.Pointer, iter *jso
 		}
 		newIter := iter.Pool().BorrowIterator([]byte(str))
 		defer iter.Pool().ReturnIterator(newIter)
-		*((*float64)(ptr)) = newIter.ReadFloat64()
-		handleIteratorError(iter, newIter.Error)
-
+		float64Decoder := nullableFuzzyFloat64Decoder{}
+		float64Decoder.Decode(ptr, newIter)
+		if newIter.Error != nil && newIter.Error != io.EOF {
+			handleIteratorError(iter, newIter, newIter.Error)
+		}
 	case jsoniter.BoolValue:
 		// support bool to float64
 		if iter.ReadBool() {
@@ -331,7 +334,6 @@ func (decoder *nullableFuzzyFloat64Decoder) Decode(ptr unsafe.Pointer, iter *jso
 			*((*float64)(ptr)) = 0
 		}
 	case jsoniter.NilValue:
-		// support empty string
 		iter.ReadNil()
 		*((*float64)(ptr)) = 0
 	default:
