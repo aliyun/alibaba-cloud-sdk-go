@@ -82,4 +82,5 @@ type ScalingConfigurationInDescribeScalingConfigurations struct {
 	Tags                            TagsInDescribeScalingConfigurations          `json:"Tags" xml:"Tags"`
 	SpotPriceLimit                  SpotPriceLimit                               `json:"SpotPriceLimit" xml:"SpotPriceLimit"`
 	InstancePatternInfos            InstancePatternInfos                         `json:"InstancePatternInfos" xml:"InstancePatternInfos"`
+	CustomPriorities                CustomPriorities                             `json:"CustomPriorities" xml:"CustomPriorities"`
 }

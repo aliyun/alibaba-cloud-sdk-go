@@ -82,6 +82,7 @@ type CreateScalingConfigurationRequest struct {
 	Password                        string                                            `position:"Query" name:"Password"`
 	InstanceDescription             string                                            `position:"Query" name:"InstanceDescription"`
 	StorageSetPartitionNumber       requests.Integer                                  `position:"Query" name:"StorageSetPartitionNumber"`
+	CustomPriorities                *[]CreateScalingConfigurationCustomPriorities     `position:"Query" name:"CustomPriorities"  type:"Repeated"`
 	SystemDiskAutoSnapshotPolicyId  string                                            `position:"Query" name:"SystemDisk.AutoSnapshotPolicyId"`
 	PrivatePoolOptionsId            string                                            `position:"Query" name:"PrivatePoolOptions.Id"`
 	ImageOptionsLoginAsNonRoot      requests.Boolean                                  `position:"Query" name:"ImageOptions.LoginAsNonRoot"`
@@ -142,6 +143,12 @@ type CreateScalingConfigurationRequest struct {
 type CreateScalingConfigurationSpotPriceLimit struct {
 	InstanceType string `name:"InstanceType"`
 	PriceLimit   string `name:"PriceLimit"`
+}
+
+// CreateScalingConfigurationCustomPriorities is a repeated param struct in CreateScalingConfigurationRequest
+type CreateScalingConfigurationCustomPriorities struct {
+	VswitchId    string `name:"VswitchId"`
+	InstanceType string `name:"InstanceType"`
 }
 
 // CreateScalingConfigurationInstancePatternInfo is a repeated param struct in CreateScalingConfigurationRequest

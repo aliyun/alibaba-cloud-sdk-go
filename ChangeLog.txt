@@ -1,3 +1,7 @@
+2024-01-31 Version: v1.62.670
+- Generated 2014-08-28 for `Ess`.
+- ECIScalingConfiguration add lifecycle params.
+
 2024-01-31 Version: v1.62.669
 - Generated 2016-11-01 for `live`.
 - Update to support new apis.

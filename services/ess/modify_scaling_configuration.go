@@ -81,6 +81,7 @@ type ModifyScalingConfigurationRequest struct {
 	Password                        string                                            `position:"Query" name:"Password"`
 	InstanceDescription             string                                            `position:"Query" name:"InstanceDescription"`
 	StorageSetPartitionNumber       requests.Integer                                  `position:"Query" name:"StorageSetPartitionNumber"`
+	CustomPriorities                *[]ModifyScalingConfigurationCustomPriorities     `position:"Query" name:"CustomPriorities"  type:"Repeated"`
 	SystemDiskAutoSnapshotPolicyId  string                                            `position:"Query" name:"SystemDisk.AutoSnapshotPolicyId"`
 	PrivatePoolOptionsId            string                                            `position:"Query" name:"PrivatePoolOptions.Id"`
 	ImageOptionsLoginAsNonRoot      requests.Boolean                                  `position:"Query" name:"ImageOptions.LoginAsNonRoot"`
@@ -139,6 +140,12 @@ type ModifyScalingConfigurationRequest struct {
 type ModifyScalingConfigurationSpotPriceLimit struct {
 	InstanceType string `name:"InstanceType"`
 	PriceLimit   string `name:"PriceLimit"`
+}
+
+// ModifyScalingConfigurationCustomPriorities is a repeated param struct in ModifyScalingConfigurationRequest
+type ModifyScalingConfigurationCustomPriorities struct {
+	VswitchId    string `name:"VswitchId"`
+	InstanceType string `name:"InstanceType"`
 }
 
 // ModifyScalingConfigurationInstancePatternInfo is a repeated param struct in ModifyScalingConfigurationRequest
