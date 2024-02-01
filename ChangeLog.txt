@@ -1,3 +1,7 @@
+2024-02-01 Version: v1.62.671
+- Generated 2014-05-26 for `Ecs`.
+- Describe tcpOptionAddress.
+
 2024-01-31 Version: v1.62.670
 - Generated 2014-08-28 for `Ess`.
 - ECIScalingConfiguration add lifecycle params.
