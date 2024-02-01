@@ -1,3 +1,8 @@
+2024-02-01 Version: v1.62.672
+- Generated 2014-05-26 for `Ecs`.
+- Support DryRun for DeleteInstance.
+- Support DryRun for ModifyInstanceSpec.
+
 2024-02-01 Version: v1.62.671
 - Generated 2014-05-26 for `Ecs`.
 - Describe tcpOptionAddress.
