@@ -17,12 +17,13 @@ package eventbridge
 
 // EventStreamingsItem is a nested struct in eventbridge response
 type EventStreamingsItem struct {
-	EventStreamingName string     `json:"EventStreamingName" xml:"EventStreamingName"`
-	Description        string     `json:"Description" xml:"Description"`
-	FilterPattern      string     `json:"FilterPattern" xml:"FilterPattern"`
-	Tag                string     `json:"Tag" xml:"Tag"`
-	Status             string     `json:"Status" xml:"Status"`
-	Source             Source     `json:"Source" xml:"Source"`
-	Sink               Sink       `json:"Sink" xml:"Sink"`
-	RunOptions         RunOptions `json:"RunOptions" xml:"RunOptions"`
+	EventStreamingName string           `json:"EventStreamingName" xml:"EventStreamingName"`
+	Description        string           `json:"Description" xml:"Description"`
+	FilterPattern      string           `json:"FilterPattern" xml:"FilterPattern"`
+	Tag                string           `json:"Tag" xml:"Tag"`
+	Status             string           `json:"Status" xml:"Status"`
+	Source             Source           `json:"Source" xml:"Source"`
+	Sink               Sink             `json:"Sink" xml:"Sink"`
+	RunOptions         RunOptions       `json:"RunOptions" xml:"RunOptions"`
+	Transforms         []TransformsItem `json:"Transforms" xml:"Transforms"`
 }

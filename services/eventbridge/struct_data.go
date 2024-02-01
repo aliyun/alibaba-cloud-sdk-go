@@ -39,13 +39,14 @@ type Data struct {
 	Total                        float64               `json:"Total" xml:"Total"`
 	Status                       string                `json:"Status" xml:"Status"`
 	ErrorEntriesCount            int                   `json:"ErrorEntriesCount" xml:"ErrorEntriesCount"`
-	Source                       Source                `json:"Source" xml:"Source"`
 	Sink                         Sink                  `json:"Sink" xml:"Sink"`
 	RunOptions                   RunOptions            `json:"RunOptions" xml:"RunOptions"`
+	Source                       Source                `json:"Source" xml:"Source"`
 	HttpApiParameters            HttpApiParameters     `json:"HttpApiParameters" xml:"HttpApiParameters"`
 	Connections                  []ConnectionsItem     `json:"Connections" xml:"Connections"`
 	EventSourceList              []EventSourceListItem `json:"EventSourceList" xml:"EventSourceList"`
 	ApiDestinations              []ApiDestinationsItem `json:"ApiDestinations" xml:"ApiDestinations"`
 	Targets                      []TargetsItem         `json:"Targets" xml:"Targets"`
+	Transforms                   []TransformsItem      `json:"Transforms" xml:"Transforms"`
 	ErrorEntries                 []ErrorEntriesItem    `json:"ErrorEntries" xml:"ErrorEntries"`
 }

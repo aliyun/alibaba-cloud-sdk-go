@@ -17,11 +17,12 @@ package eventbridge
 
 // Source is a nested struct in eventbridge response
 type Source struct {
-	SourceKafkaParameters    SourceKafkaParameters    `json:"SourceKafkaParameters" xml:"SourceKafkaParameters"`
-	SourceRocketMQParameters SourceRocketMQParameters `json:"SourceRocketMQParameters" xml:"SourceRocketMQParameters"`
-	SourceSLSParameters      SourceSLSParameters      `json:"SourceSLSParameters" xml:"SourceSLSParameters"`
-	SourceMQTTParameters     SourceMQTTParameters     `json:"SourceMQTTParameters" xml:"SourceMQTTParameters"`
-	SourceRabbitMQParameters SourceRabbitMQParameters `json:"SourceRabbitMQParameters" xml:"SourceRabbitMQParameters"`
-	SourceDTSParameters      SourceDTSParameters      `json:"SourceDTSParameters" xml:"SourceDTSParameters"`
-	SourceMNSParameters      SourceMNSParameters      `json:"SourceMNSParameters" xml:"SourceMNSParameters"`
+	SourceKafkaParameters      SourceKafkaParameters      `json:"SourceKafkaParameters" xml:"SourceKafkaParameters"`
+	SourcePrometheusParameters SourcePrometheusParameters `json:"SourcePrometheusParameters" xml:"SourcePrometheusParameters"`
+	SourceRocketMQParameters   SourceRocketMQParameters   `json:"SourceRocketMQParameters" xml:"SourceRocketMQParameters"`
+	SourceSLSParameters        SourceSLSParameters        `json:"SourceSLSParameters" xml:"SourceSLSParameters"`
+	SourceMQTTParameters       SourceMQTTParameters       `json:"SourceMQTTParameters" xml:"SourceMQTTParameters"`
+	SourceRabbitMQParameters   SourceRabbitMQParameters   `json:"SourceRabbitMQParameters" xml:"SourceRabbitMQParameters"`
+	SourceDTSParameters        SourceDTSParameters        `json:"SourceDTSParameters" xml:"SourceDTSParameters"`
+	SourceMNSParameters        SourceMNSParameters        `json:"SourceMNSParameters" xml:"SourceMNSParameters"`
 }

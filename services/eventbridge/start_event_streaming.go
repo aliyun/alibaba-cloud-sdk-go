@@ -80,7 +80,7 @@ type StartEventStreamingResponse struct {
 	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Data      bool   `json:"Data" xml:"Data"`
-	Code      bool   `json:"Code" xml:"Code"`
+	Code      string `json:"Code" xml:"Code"`
 	Success   bool   `json:"Success" xml:"Success"`
 }
 

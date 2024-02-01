@@ -71,36 +71,44 @@ func (client *Client) CreateEventStreamingWithCallback(request *CreateEventStrea
 // CreateEventStreamingRequest is the request struct for api CreateEventStreaming
 type CreateEventStreamingRequest struct {
 	*requests.RpcRequest
-	Sink               CreateEventStreamingSink       `position:"Body" name:"Sink"  type:"Struct"`
-	Description        string                         `position:"Body" name:"Description"`
-	FilterPattern      string                         `position:"Body" name:"FilterPattern"`
-	Source             CreateEventStreamingSource     `position:"Body" name:"Source"  type:"Struct"`
-	RunOptions         CreateEventStreamingRunOptions `position:"Body" name:"RunOptions"  type:"Struct"`
-	EventStreamingName string                         `position:"Body" name:"EventStreamingName"`
-	Tag                string                         `position:"Body" name:"Tag"`
+	Sink               CreateEventStreamingSink          `position:"Body" name:"Sink"  type:"Struct"`
+	Transforms         *[]CreateEventStreamingTransforms `position:"Body" name:"Transforms"  type:"Json"`
+	Description        string                            `position:"Body" name:"Description"`
+	FilterPattern      string                            `position:"Body" name:"FilterPattern"`
+	Source             CreateEventStreamingSource        `position:"Body" name:"Source"  type:"Struct"`
+	RunOptions         CreateEventStreamingRunOptions    `position:"Body" name:"RunOptions"  type:"Struct"`
+	EventStreamingName string                            `position:"Body" name:"EventStreamingName"`
+	Tag                string                            `position:"Body" name:"Tag"`
+}
+
+// CreateEventStreamingTransforms is a repeated param struct in CreateEventStreamingRequest
+type CreateEventStreamingTransforms struct {
+	Arn string `name:"Arn"`
 }
 
 // CreateEventStreamingSink is a repeated param struct in CreateEventStreamingRequest
 type CreateEventStreamingSink struct {
-	SinkRabbitMQParameters CreateEventStreamingSinkSinkRabbitMQParameters `name:"SinkRabbitMQParameters" type:"Struct"`
-	SinkMNSParameters      CreateEventStreamingSinkSinkMNSParameters      `name:"SinkMNSParameters" type:"Struct"`
-	SinkDataHubParameters  CreateEventStreamingSinkSinkDataHubParameters  `name:"SinkDataHubParameters" type:"Struct"`
-	SinkKafkaParameters    CreateEventStreamingSinkSinkKafkaParameters    `name:"SinkKafkaParameters" type:"Struct"`
-	SinkFnfParameters      CreateEventStreamingSinkSinkFnfParameters      `name:"SinkFnfParameters" type:"Struct"`
-	SinkFcParameters       CreateEventStreamingSinkSinkFcParameters       `name:"SinkFcParameters" type:"Struct"`
-	SinkSLSParameters      CreateEventStreamingSinkSinkSLSParameters      `name:"SinkSLSParameters" type:"Struct"`
-	SinkRocketMQParameters CreateEventStreamingSinkSinkRocketMQParameters `name:"SinkRocketMQParameters" type:"Struct"`
+	SinkRabbitMQParameters   CreateEventStreamingSinkSinkRabbitMQParameters   `name:"SinkRabbitMQParameters" type:"Struct"`
+	SinkMNSParameters        CreateEventStreamingSinkSinkMNSParameters        `name:"SinkMNSParameters" type:"Struct"`
+	SinkDataHubParameters    CreateEventStreamingSinkSinkDataHubParameters    `name:"SinkDataHubParameters" type:"Struct"`
+	SinkKafkaParameters      CreateEventStreamingSinkSinkKafkaParameters      `name:"SinkKafkaParameters" type:"Struct"`
+	SinkFnfParameters        CreateEventStreamingSinkSinkFnfParameters        `name:"SinkFnfParameters" type:"Struct"`
+	SinkFcParameters         CreateEventStreamingSinkSinkFcParameters         `name:"SinkFcParameters" type:"Struct"`
+	SinkPrometheusParameters CreateEventStreamingSinkSinkPrometheusParameters `name:"SinkPrometheusParameters" type:"Struct"`
+	SinkSLSParameters        CreateEventStreamingSinkSinkSLSParameters        `name:"SinkSLSParameters" type:"Struct"`
+	SinkRocketMQParameters   CreateEventStreamingSinkSinkRocketMQParameters   `name:"SinkRocketMQParameters" type:"Struct"`
 }
 
 // CreateEventStreamingSource is a repeated param struct in CreateEventStreamingRequest
 type CreateEventStreamingSource struct {
-	SourceMQTTParameters     CreateEventStreamingSourceSourceMQTTParameters     `name:"SourceMQTTParameters" type:"Struct"`
-	SourceRocketMQParameters CreateEventStreamingSourceSourceRocketMQParameters `name:"SourceRocketMQParameters" type:"Struct"`
-	SourceSLSParameters      CreateEventStreamingSourceSourceSLSParameters      `name:"SourceSLSParameters" type:"Struct"`
-	SourceDTSParameters      CreateEventStreamingSourceSourceDTSParameters      `name:"SourceDTSParameters" type:"Struct"`
-	SourceKafkaParameters    CreateEventStreamingSourceSourceKafkaParameters    `name:"SourceKafkaParameters" type:"Struct"`
-	SourceMNSParameters      CreateEventStreamingSourceSourceMNSParameters      `name:"SourceMNSParameters" type:"Struct"`
-	SourceRabbitMQParameters CreateEventStreamingSourceSourceRabbitMQParameters `name:"SourceRabbitMQParameters" type:"Struct"`
+	SourceMQTTParameters       CreateEventStreamingSourceSourceMQTTParameters       `name:"SourceMQTTParameters" type:"Struct"`
+	SourceRocketMQParameters   CreateEventStreamingSourceSourceRocketMQParameters   `name:"SourceRocketMQParameters" type:"Struct"`
+	SourceSLSParameters        CreateEventStreamingSourceSourceSLSParameters        `name:"SourceSLSParameters" type:"Struct"`
+	SourcePrometheusParameters CreateEventStreamingSourceSourcePrometheusParameters `name:"SourcePrometheusParameters" type:"Struct"`
+	SourceDTSParameters        CreateEventStreamingSourceSourceDTSParameters        `name:"SourceDTSParameters" type:"Struct"`
+	SourceKafkaParameters      CreateEventStreamingSourceSourceKafkaParameters      `name:"SourceKafkaParameters" type:"Struct"`
+	SourceMNSParameters        CreateEventStreamingSourceSourceMNSParameters        `name:"SourceMNSParameters" type:"Struct"`
+	SourceRabbitMQParameters   CreateEventStreamingSourceSourceRabbitMQParameters   `name:"SourceRabbitMQParameters" type:"Struct"`
 }
 
 // CreateEventStreamingRunOptions is a repeated param struct in CreateEventStreamingRequest
@@ -170,6 +178,19 @@ type CreateEventStreamingSinkSinkFcParameters struct {
 	Concurrency    CreateEventStreamingSinkSinkFcParametersConcurrency    `name:"Concurrency" type:"Struct"`
 }
 
+// CreateEventStreamingSinkSinkPrometheusParameters is a repeated param struct in CreateEventStreamingRequest
+type CreateEventStreamingSinkSinkPrometheusParameters struct {
+	VSwitchId         CreateEventStreamingSinkSinkPrometheusParametersVSwitchId         `name:"VSwitchId" type:"Struct"`
+	Password          CreateEventStreamingSinkSinkPrometheusParametersPassword          `name:"Password" type:"Struct"`
+	Data              CreateEventStreamingSinkSinkPrometheusParametersData              `name:"Data" type:"Struct"`
+	VpcId             CreateEventStreamingSinkSinkPrometheusParametersVpcId             `name:"VpcId" type:"Struct"`
+	SecurityGroupId   CreateEventStreamingSinkSinkPrometheusParametersSecurityGroupId   `name:"SecurityGroupId" type:"Struct"`
+	AuthorizationType CreateEventStreamingSinkSinkPrometheusParametersAuthorizationType `name:"AuthorizationType" type:"Struct"`
+	NetworkType       CreateEventStreamingSinkSinkPrometheusParametersNetworkType       `name:"NetworkType" type:"Struct"`
+	URL               CreateEventStreamingSinkSinkPrometheusParametersURL               `name:"URL" type:"Struct"`
+	Username          CreateEventStreamingSinkSinkPrometheusParametersUsername          `name:"Username" type:"Struct"`
+}
+
 // CreateEventStreamingSinkSinkSLSParameters is a repeated param struct in CreateEventStreamingRequest
 type CreateEventStreamingSinkSinkSLSParameters struct {
 	RoleName CreateEventStreamingSinkSinkSLSParametersRoleName `name:"RoleName" type:"Struct"`
@@ -236,6 +257,13 @@ type CreateEventStreamingSourceSourceSLSParameters struct {
 	Project         string `name:"Project"`
 	LogStore        string `name:"LogStore"`
 	ConsumePosition string `name:"ConsumePosition"`
+}
+
+// CreateEventStreamingSourceSourcePrometheusParameters is a repeated param struct in CreateEventStreamingRequest
+type CreateEventStreamingSourceSourcePrometheusParameters struct {
+	DataType  string `name:"DataType"`
+	ClusterId string `name:"ClusterId"`
+	Labels    string `name:"Labels"`
 }
 
 // CreateEventStreamingSourceSourceDTSParameters is a repeated param struct in CreateEventStreamingRequest
@@ -528,6 +556,69 @@ type CreateEventStreamingSinkSinkFcParametersBody struct {
 
 // CreateEventStreamingSinkSinkFcParametersConcurrency is a repeated param struct in CreateEventStreamingRequest
 type CreateEventStreamingSinkSinkFcParametersConcurrency struct {
+	Template string `name:"Template"`
+	Form     string `name:"Form"`
+	Value    string `name:"Value"`
+}
+
+// CreateEventStreamingSinkSinkPrometheusParametersVSwitchId is a repeated param struct in CreateEventStreamingRequest
+type CreateEventStreamingSinkSinkPrometheusParametersVSwitchId struct {
+	Template string `name:"Template"`
+	Form     string `name:"Form"`
+	Value    string `name:"Value"`
+}
+
+// CreateEventStreamingSinkSinkPrometheusParametersPassword is a repeated param struct in CreateEventStreamingRequest
+type CreateEventStreamingSinkSinkPrometheusParametersPassword struct {
+	Template string `name:"Template"`
+	Form     string `name:"Form"`
+	Value    string `name:"Value"`
+}
+
+// CreateEventStreamingSinkSinkPrometheusParametersData is a repeated param struct in CreateEventStreamingRequest
+type CreateEventStreamingSinkSinkPrometheusParametersData struct {
+	Template string `name:"Template"`
+	Form     string `name:"Form"`
+	Value    string `name:"Value"`
+}
+
+// CreateEventStreamingSinkSinkPrometheusParametersVpcId is a repeated param struct in CreateEventStreamingRequest
+type CreateEventStreamingSinkSinkPrometheusParametersVpcId struct {
+	Template string `name:"Template"`
+	Form     string `name:"Form"`
+	Value    string `name:"Value"`
+}
+
+// CreateEventStreamingSinkSinkPrometheusParametersSecurityGroupId is a repeated param struct in CreateEventStreamingRequest
+type CreateEventStreamingSinkSinkPrometheusParametersSecurityGroupId struct {
+	Template string `name:"Template"`
+	Form     string `name:"Form"`
+	Value    string `name:"Value"`
+}
+
+// CreateEventStreamingSinkSinkPrometheusParametersAuthorizationType is a repeated param struct in CreateEventStreamingRequest
+type CreateEventStreamingSinkSinkPrometheusParametersAuthorizationType struct {
+	Template string `name:"Template"`
+	Form     string `name:"Form"`
+	Value    string `name:"Value"`
+}
+
+// CreateEventStreamingSinkSinkPrometheusParametersNetworkType is a repeated param struct in CreateEventStreamingRequest
+type CreateEventStreamingSinkSinkPrometheusParametersNetworkType struct {
+	Template string `name:"Template"`
+	Form     string `name:"Form"`
+	Value    string `name:"Value"`
+}
+
+// CreateEventStreamingSinkSinkPrometheusParametersURL is a repeated param struct in CreateEventStreamingRequest
+type CreateEventStreamingSinkSinkPrometheusParametersURL struct {
+	Template string `name:"Template"`
+	Form     string `name:"Form"`
+	Value    string `name:"Value"`
+}
+
+// CreateEventStreamingSinkSinkPrometheusParametersUsername is a repeated param struct in CreateEventStreamingRequest
+type CreateEventStreamingSinkSinkPrometheusParametersUsername struct {
 	Template string `name:"Template"`
 	Form     string `name:"Form"`
 	Value    string `name:"Value"`

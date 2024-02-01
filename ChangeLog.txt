@@ -1,3 +1,7 @@
+2024-02-01 Version: v1.62.673
+- Generated 2020-04-01 for `eventbridge`.
+- Bugfix: change response code type to string for StartEventStreaming.
+
 2024-02-01 Version: v1.62.672
 - Generated 2014-05-26 for `Ecs`.
 - Support DryRun for DeleteInstance.
