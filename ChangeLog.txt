@@ -1,3 +1,7 @@
+2024-02-02 Version: v1.62.674
+- Generated 2022-05-30 for `eflo`.
+- Support error message for vcc route entry.
+
 2024-02-01 Version: v1.62.673
 - Generated 2020-04-01 for `eventbridge`.
 - Bugfix: change response code type to string for StartEventStreaming.

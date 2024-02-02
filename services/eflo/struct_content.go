@@ -136,6 +136,7 @@ type Content struct {
 	AliyunRouterInfo          []AliyunRouterInfoItem         `json:"AliyunRouterInfo" xml:"AliyunRouterInfo"`
 	PrivateIpAddressMacGroup  []PrivateIpAddressMacGroupItem `json:"PrivateIpAddressMacGroup" xml:"PrivateIpAddressMacGroup"`
 	ErRouteEntrys             []ErRouteEntry                 `json:"ErRouteEntrys" xml:"ErRouteEntrys"`
+	VbrInfos                  []VbrInfo                      `json:"VbrInfos" xml:"VbrInfos"`
 	InstanceInfos             []InstanceInfo                 `json:"InstanceInfos" xml:"InstanceInfos"`
 	TopoInfo                  []Layer                        `json:"TopoInfo" xml:"TopoInfo"`
 	CisRouterInfo             []CisRouterInfoItem            `json:"CisRouterInfo" xml:"CisRouterInfo"`
