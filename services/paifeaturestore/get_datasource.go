@@ -78,13 +78,15 @@ type GetDatasourceRequest struct {
 // GetDatasourceResponse is the response struct for api GetDatasource
 type GetDatasourceResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
-	DatasourceId string `json:"DatasourceId" xml:"DatasourceId"`
-	Name         string `json:"Name" xml:"Name"`
-	Type         string `json:"Type" xml:"Type"`
-	Uri          string `json:"Uri" xml:"Uri"`
-	Config       string `json:"Config" xml:"Config"`
-	WorkspaceId  string `json:"WorkspaceId" xml:"WorkspaceId"`
+	RequestId       string `json:"RequestId" xml:"RequestId"`
+	DatasourceId    string `json:"DatasourceId" xml:"DatasourceId"`
+	Name            string `json:"Name" xml:"Name"`
+	Type            string `json:"Type" xml:"Type"`
+	Uri             string `json:"Uri" xml:"Uri"`
+	Config          string `json:"Config" xml:"Config"`
+	WorkspaceId     string `json:"WorkspaceId" xml:"WorkspaceId"`
+	GmtCreateTime   string `json:"GmtCreateTime" xml:"GmtCreateTime"`
+	GmtModifiedTime string `json:"GmtModifiedTime" xml:"GmtModifiedTime"`
 }
 
 // CreateGetDatasourceRequest creates a request to invoke GetDatasource API

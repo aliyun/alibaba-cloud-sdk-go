@@ -78,19 +78,20 @@ type GetModelFeatureRequest struct {
 // GetModelFeatureResponse is the response struct for api GetModelFeature
 type GetModelFeatureResponse struct {
 	*responses.BaseResponse
-	RequestId          string         `json:"RequestId" xml:"RequestId"`
-	ProjectId          string         `json:"ProjectId" xml:"ProjectId"`
-	ProjectName        string         `json:"ProjectName" xml:"ProjectName"`
-	Name               string         `json:"Name" xml:"Name"`
-	Owner              string         `json:"Owner" xml:"Owner"`
-	GmtCreateTime      string         `json:"GmtCreateTime" xml:"GmtCreateTime"`
-	GmtModifiedTime    string         `json:"GmtModifiedTime" xml:"GmtModifiedTime"`
-	LabelTableId       string         `json:"LabelTableId" xml:"LabelTableId"`
-	LabelTableName     string         `json:"LabelTableName" xml:"LabelTableName"`
-	TrainingSetTable   string         `json:"TrainingSetTable" xml:"TrainingSetTable"`
-	TrainingSetFGTable string         `json:"TrainingSetFGTable" xml:"TrainingSetFGTable"`
-	Relations          Relations      `json:"Relations" xml:"Relations"`
-	Features           []FeaturesItem `json:"Features" xml:"Features"`
+	RequestId                    string         `json:"RequestId" xml:"RequestId"`
+	ProjectId                    string         `json:"ProjectId" xml:"ProjectId"`
+	ProjectName                  string         `json:"ProjectName" xml:"ProjectName"`
+	Name                         string         `json:"Name" xml:"Name"`
+	Owner                        string         `json:"Owner" xml:"Owner"`
+	GmtCreateTime                string         `json:"GmtCreateTime" xml:"GmtCreateTime"`
+	GmtModifiedTime              string         `json:"GmtModifiedTime" xml:"GmtModifiedTime"`
+	LabelTableId                 string         `json:"LabelTableId" xml:"LabelTableId"`
+	LabelTableName               string         `json:"LabelTableName" xml:"LabelTableName"`
+	TrainingSetTable             string         `json:"TrainingSetTable" xml:"TrainingSetTable"`
+	TrainingSetFGTable           string         `json:"TrainingSetFGTable" xml:"TrainingSetFGTable"`
+	ExportTrainingSetTableScript string         `json:"ExportTrainingSetTableScript" xml:"ExportTrainingSetTableScript"`
+	Relations                    Relations      `json:"Relations" xml:"Relations"`
+	Features                     []FeaturesItem `json:"Features" xml:"Features"`
 }
 
 // CreateGetModelFeatureRequest creates a request to invoke GetModelFeature API
