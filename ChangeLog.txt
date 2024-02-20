@@ -1,3 +1,11 @@
+2024-02-20 Version: v1.62.677
+- Generated 2024-01-11 for `aigen`.
+- Release GenerateCosplayImage.
+- Release GenerateTextDeformation.
+- Release GenerateTextTexture.
+- Release InteractiveFullSegmentation.
+- Release InteractiveScribbleSegmentation.
+
 2024-02-02 Version: v1.62.676
 - Generated 2023-06-21 for `PaiFeatureStore`.
 - Add FG apis in ModelFeature.
