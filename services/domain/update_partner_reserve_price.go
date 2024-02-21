@@ -88,7 +88,7 @@ func CreateUpdatePartnerReservePriceRequest() (request *UpdatePartnerReservePric
 	request = &UpdatePartnerReservePriceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-02-08", "UpdatePartnerReservePrice", "", "")
+	request.InitWithApiInfo("Domain", "2018-02-08", "UpdatePartnerReservePrice", "domain", "openAPI")
 	request.Method = requests.POST
 	return
 }

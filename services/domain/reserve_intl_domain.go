@@ -95,7 +95,7 @@ func CreateReserveIntlDomainRequest() (request *ReserveIntlDomainRequest) {
 	request = &ReserveIntlDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-02-08", "ReserveIntlDomain", "", "")
+	request.InitWithApiInfo("Domain", "2018-02-08", "ReserveIntlDomain", "domain", "openAPI")
 	request.Method = requests.POST
 	return
 }

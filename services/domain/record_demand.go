@@ -86,7 +86,7 @@ func CreateRecordDemandRequest() (request *RecordDemandRequest) {
 	request = &RecordDemandRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-02-08", "RecordDemand", "", "")
+	request.InitWithApiInfo("Domain", "2018-02-08", "RecordDemand", "domain", "openAPI")
 	request.Method = requests.POST
 	return
 }

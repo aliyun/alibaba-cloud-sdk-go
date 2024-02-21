@@ -89,7 +89,7 @@ func CreateCheckDomainStatusRequest() (request *CheckDomainStatusRequest) {
 	request = &CheckDomainStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-02-08", "CheckDomainStatus", "", "")
+	request.InitWithApiInfo("Domain", "2018-02-08", "CheckDomainStatus", "domain", "openAPI")
 	request.Method = requests.GET
 	return
 }

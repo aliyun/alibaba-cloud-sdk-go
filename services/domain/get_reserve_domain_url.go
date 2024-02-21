@@ -85,7 +85,7 @@ func CreateGetReserveDomainUrlRequest() (request *GetReserveDomainUrlRequest) {
 	request = &GetReserveDomainUrlRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-02-08", "GetReserveDomainUrl", "", "")
+	request.InitWithApiInfo("Domain", "2018-02-08", "GetReserveDomainUrl", "domain", "openAPI")
 	request.Method = requests.POST
 	return
 }

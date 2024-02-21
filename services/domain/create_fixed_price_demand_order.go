@@ -92,7 +92,7 @@ func CreateCreateFixedPriceDemandOrderRequest() (request *CreateFixedPriceDemand
 	request = &CreateFixedPriceDemandOrderRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-02-08", "CreateFixedPriceDemandOrder", "", "")
+	request.InitWithApiInfo("Domain", "2018-02-08", "CreateFixedPriceDemandOrder", "domain", "openAPI")
 	request.Method = requests.POST
 	return
 }

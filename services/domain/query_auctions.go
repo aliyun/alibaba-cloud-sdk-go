@@ -92,7 +92,7 @@ func CreateQueryAuctionsRequest() (request *QueryAuctionsRequest) {
 	request = &QueryAuctionsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-02-08", "QueryAuctions", "", "")
+	request.InitWithApiInfo("Domain", "2018-02-08", "QueryAuctions", "domain", "openAPI")
 	request.Method = requests.POST
 	return
 }

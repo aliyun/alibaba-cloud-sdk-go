@@ -98,7 +98,7 @@ func CreateQueryPurchasedDomainsRequest() (request *QueryPurchasedDomainsRequest
 	request = &QueryPurchasedDomainsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-02-08", "QueryPurchasedDomains", "", "")
+	request.InitWithApiInfo("Domain", "2018-02-08", "QueryPurchasedDomains", "domain", "openAPI")
 	request.Method = requests.POST
 	return
 }

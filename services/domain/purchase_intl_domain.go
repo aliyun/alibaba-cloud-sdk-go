@@ -97,7 +97,7 @@ func CreatePurchaseIntlDomainRequest() (request *PurchaseIntlDomainRequest) {
 	request = &PurchaseIntlDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-02-08", "PurchaseIntlDomain", "", "")
+	request.InitWithApiInfo("Domain", "2018-02-08", "PurchaseIntlDomain", "domain", "openAPI")
 	request.Method = requests.POST
 	return
 }

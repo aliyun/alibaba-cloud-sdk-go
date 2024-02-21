@@ -94,7 +94,7 @@ func CreateGetIntlDomainDownloadUrlRequest() (request *GetIntlDomainDownloadUrlR
 	request = &GetIntlDomainDownloadUrlRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-02-08", "GetIntlDomainDownloadUrl", "", "")
+	request.InitWithApiInfo("Domain", "2018-02-08", "GetIntlDomainDownloadUrl", "domain", "openAPI")
 	request.Method = requests.POST
 	return
 }
