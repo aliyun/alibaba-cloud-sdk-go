@@ -1,3 +1,7 @@
+2024-02-22 Version: v1.62.680
+- Generated 2018-02-08, 2018-01-29, 2018-1-24, 2016-05-11 for `Domain`.
+- Supported for submit purchase info.
+
 2024-02-21 Version: v1.62.679
 - Generated 2018-02-08, 2018-01-29, 2018-1-24, 2016-05-11 for `Domain`.
 - Supported for submit purchase info.
