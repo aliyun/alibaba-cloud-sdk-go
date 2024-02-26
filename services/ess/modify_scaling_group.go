@@ -80,6 +80,7 @@ type ModifyScalingGroupRequest struct {
 	ScaleOutAmountCheck                 requests.Boolean                            `position:"Query" name:"ScaleOutAmountCheck"`
 	CustomPolicyARN                     string                                      `position:"Query" name:"CustomPolicyARN"`
 	DefaultCooldown                     requests.Integer                            `position:"Query" name:"DefaultCooldown"`
+	HealthCheckTypes                    *[]string                                   `position:"Query" name:"HealthCheckTypes"  type:"Repeated"`
 	MultiAZPolicy                       string                                      `position:"Query" name:"MultiAZPolicy"`
 	LaunchTemplateId                    string                                      `position:"Query" name:"LaunchTemplateId"`
 	DesiredCapacity                     requests.Integer                            `position:"Query" name:"DesiredCapacity"`
@@ -103,6 +104,7 @@ type ModifyScalingGroupRequest struct {
 	SpotInstancePools                   requests.Integer                            `position:"Query" name:"SpotInstancePools"`
 	GroupDeletionProtection             requests.Boolean                            `position:"Query" name:"GroupDeletionProtection"`
 	LaunchTemplateVersion               string                                      `position:"Query" name:"LaunchTemplateVersion"`
+	ScalingPolicy                       string                                      `position:"Query" name:"ScalingPolicy"`
 	AllocationStrategy                  string                                      `position:"Query" name:"AllocationStrategy"`
 }
 
