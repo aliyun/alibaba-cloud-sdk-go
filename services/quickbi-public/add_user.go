@@ -78,6 +78,7 @@ type AddUserRequest struct {
 	UserType      requests.Integer `position:"Query" name:"UserType"`
 	SignType      string           `position:"Query" name:"SignType"`
 	AccountId     string           `position:"Query" name:"AccountId"`
+	RoleIds       string           `position:"Body" name:"RoleIds"`
 	AccountName   string           `position:"Query" name:"AccountName"`
 	Phone         string           `position:"Query" name:"Phone"`
 	NickName      string           `position:"Query" name:"NickName"`

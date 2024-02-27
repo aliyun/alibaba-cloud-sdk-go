@@ -75,6 +75,7 @@ type DataItem struct {
 	AccountName           string     `json:"AccountName" xml:"AccountName"`
 	OwnerId               string     `json:"OwnerId" xml:"OwnerId"`
 	HasEditAuth           bool       `json:"HasEditAuth" xml:"HasEditAuth"`
+	RoleIdList            []int64    `json:"RoleIdList" xml:"RoleIdList"`
 	Directory             Directory  `json:"Directory" xml:"Directory"`
 	Role                  Role       `json:"Role" xml:"Role"`
 	DataSource            DataSource `json:"DataSource" xml:"DataSource"`

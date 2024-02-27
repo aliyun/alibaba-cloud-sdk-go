@@ -71,10 +71,11 @@ func (client *Client) QueryUserInfoByAccountWithCallback(request *QueryUserInfoB
 // QueryUserInfoByAccountRequest is the request struct for api QueryUserInfoByAccount
 type QueryUserInfoByAccountRequest struct {
 	*requests.RpcRequest
-	AccessPoint string           `position:"Query" name:"AccessPoint"`
-	AccountType requests.Integer `position:"Query" name:"AccountType"`
-	SignType    string           `position:"Query" name:"SignType"`
-	Account     string           `position:"Query" name:"Account"`
+	AccessPoint       string           `position:"Query" name:"AccessPoint"`
+	AccountType       requests.Integer `position:"Query" name:"AccountType"`
+	SignType          string           `position:"Query" name:"SignType"`
+	ParentAccountName string           `position:"Query" name:"ParentAccountName"`
+	Account           string           `position:"Query" name:"Account"`
 }
 
 // QueryUserInfoByAccountResponse is the response struct for api QueryUserInfoByAccount

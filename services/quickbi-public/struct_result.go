@@ -78,6 +78,7 @@ type Result struct {
 	OwnerId                     string                   `json:"OwnerId" xml:"OwnerId"`
 	DsType                      string                   `json:"DsType" xml:"DsType"`
 	Values                      []map[string]interface{} `json:"Values" xml:"Values"`
+	RoleIdList                  []int64                  `json:"RoleIdList" xml:"RoleIdList"`
 	FailedUserGroupIds          []string                 `json:"FailedUserGroupIds" xml:"FailedUserGroupIds"`
 	UsersModel                  UsersModel               `json:"UsersModel" xml:"UsersModel"`
 	Detail                      Detail                   `json:"Detail" xml:"Detail"`
