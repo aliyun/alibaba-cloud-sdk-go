@@ -64,4 +64,6 @@ type UserStatus struct {
 	ReleaseTime          int64  `json:"ReleaseTime" xml:"ReleaseTime"`
 	InstanceTotalCount   int64  `json:"InstanceTotalCount" xml:"InstanceTotalCount"`
 	OssTotalSize         int64  `json:"OssTotalSize" xml:"OssTotalSize"`
+	UseAgentAudit        bool   `json:"UseAgentAudit" xml:"UseAgentAudit"`
+	ProtectionDays       int    `json:"ProtectionDays" xml:"ProtectionDays"`
 }

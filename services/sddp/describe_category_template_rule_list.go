@@ -75,6 +75,7 @@ type DescribeCategoryTemplateRuleListRequest struct {
 	SourceIp             string           `position:"Query" name:"SourceIp"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	Lang                 string           `position:"Query" name:"Lang"`
+	FeatureType          requests.Integer `position:"Query" name:"FeatureType"`
 	ParentCategoryIdList string           `position:"Query" name:"ParentCategoryIdList"`
 	CurrentPage          requests.Integer `position:"Query" name:"CurrentPage"`
 	TemplateId           requests.Integer `position:"Query" name:"TemplateId"`

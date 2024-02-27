@@ -71,6 +71,7 @@ func (client *Client) ModifyReportTaskStatusWithCallback(request *ModifyReportTa
 // ModifyReportTaskStatusRequest is the request struct for api ModifyReportTaskStatus
 type ModifyReportTaskStatusRequest struct {
 	*requests.RpcRequest
+	FeatureType      requests.Integer `position:"Query" name:"FeatureType"`
 	SourceIp         string           `position:"Query" name:"SourceIp"`
 	ReportTaskStatus requests.Integer `position:"Query" name:"ReportTaskStatus"`
 	Lang             string           `position:"Query" name:"Lang"`

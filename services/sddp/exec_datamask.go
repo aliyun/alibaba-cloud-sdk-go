@@ -71,10 +71,11 @@ func (client *Client) ExecDatamaskWithCallback(request *ExecDatamaskRequest, cal
 // ExecDatamaskRequest is the request struct for api ExecDatamask
 type ExecDatamaskRequest struct {
 	*requests.RpcRequest
-	Data       string           `position:"Query" name:"Data"`
-	TemplateId requests.Integer `position:"Query" name:"TemplateId"`
-	SourceIp   string           `position:"Query" name:"SourceIp"`
-	Lang       string           `position:"Query" name:"Lang"`
+	Data        string           `position:"Query" name:"Data"`
+	FeatureType requests.Integer `position:"Query" name:"FeatureType"`
+	TemplateId  requests.Integer `position:"Query" name:"TemplateId"`
+	SourceIp    string           `position:"Query" name:"SourceIp"`
+	Lang        string           `position:"Query" name:"Lang"`
 }
 
 // ExecDatamaskResponse is the response struct for api ExecDatamask

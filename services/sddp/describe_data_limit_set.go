@@ -71,10 +71,11 @@ func (client *Client) DescribeDataLimitSetWithCallback(request *DescribeDataLimi
 // DescribeDataLimitSetRequest is the request struct for api DescribeDataLimitSet
 type DescribeDataLimitSetRequest struct {
 	*requests.RpcRequest
+	FeatureType  requests.Integer `position:"Query" name:"FeatureType"`
+	ResourceType requests.Integer `position:"Query" name:"ResourceType"`
 	ParentId     string           `position:"Query" name:"ParentId"`
 	SourceIp     string           `position:"Query" name:"SourceIp"`
 	Lang         string           `position:"Query" name:"Lang"`
-	ResourceType requests.Integer `position:"Query" name:"ResourceType"`
 }
 
 // DescribeDataLimitSetResponse is the response struct for api DescribeDataLimitSet

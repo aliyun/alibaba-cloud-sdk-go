@@ -71,10 +71,10 @@ func (client *Client) StopMaskingProcessWithCallback(request *StopMaskingProcess
 // StopMaskingProcessRequest is the request struct for api StopMaskingProcess
 type StopMaskingProcessRequest struct {
 	*requests.RpcRequest
+	FeatureType requests.Integer `position:"Query" name:"FeatureType"`
 	SourceIp    string           `position:"Query" name:"SourceIp"`
 	Id          requests.Integer `position:"Query" name:"Id"`
 	Lang        string           `position:"Query" name:"Lang"`
-	FeatureType requests.Integer `position:"Query" name:"FeatureType"`
 }
 
 // StopMaskingProcessResponse is the response struct for api StopMaskingProcess

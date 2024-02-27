@@ -71,9 +71,10 @@ func (client *Client) DisableUserConfigWithCallback(request *DisableUserConfigRe
 // DisableUserConfigRequest is the request struct for api DisableUserConfig
 type DisableUserConfigRequest struct {
 	*requests.RpcRequest
-	Code     string `position:"Query" name:"Code"`
-	SourceIp string `position:"Query" name:"SourceIp"`
-	Lang     string `position:"Query" name:"Lang"`
+	Code        string           `position:"Query" name:"Code"`
+	FeatureType requests.Integer `position:"Query" name:"FeatureType"`
+	SourceIp    string           `position:"Query" name:"SourceIp"`
+	Lang        string           `position:"Query" name:"Lang"`
 }
 
 // DisableUserConfigResponse is the response struct for api DisableUserConfig

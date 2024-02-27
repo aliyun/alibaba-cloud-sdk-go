@@ -76,6 +76,7 @@ type DescribeDataObjectColumnDetailRequest struct {
 	PageSize    requests.Integer `position:"Query" name:"PageSize"`
 	Id          requests.Integer `position:"Query" name:"Id"`
 	Lang        string           `position:"Query" name:"Lang"`
+	FeatureType requests.Integer `position:"Query" name:"FeatureType"`
 	CurrentPage requests.Integer `position:"Query" name:"CurrentPage"`
 	TemplateId  requests.Integer `position:"Query" name:"TemplateId"`
 }

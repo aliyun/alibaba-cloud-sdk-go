@@ -80,6 +80,7 @@ type CreateScanTaskRequest struct {
 	IntervalDay      requests.Integer `position:"Query" name:"IntervalDay"`
 	ScanRange        requests.Integer `position:"Query" name:"ScanRange"`
 	Lang             string           `position:"Query" name:"Lang"`
+	FeatureType      requests.Integer `position:"Query" name:"FeatureType"`
 	OssScanPath      string           `position:"Query" name:"OssScanPath"`
 	ResourceType     requests.Integer `position:"Query" name:"ResourceType"`
 	TaskUserName     string           `position:"Query" name:"TaskUserName"`

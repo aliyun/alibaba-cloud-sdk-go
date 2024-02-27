@@ -71,8 +71,9 @@ func (client *Client) CreateSlrRoleWithCallback(request *CreateSlrRoleRequest, c
 // CreateSlrRoleRequest is the request struct for api CreateSlrRole
 type CreateSlrRoleRequest struct {
 	*requests.RpcRequest
-	SourceIp string `position:"Query" name:"SourceIp"`
-	Lang     string `position:"Query" name:"Lang"`
+	FeatureType requests.Integer `position:"Query" name:"FeatureType"`
+	SourceIp    string           `position:"Query" name:"SourceIp"`
+	Lang        string           `position:"Query" name:"Lang"`
 }
 
 // CreateSlrRoleResponse is the response struct for api CreateSlrRole

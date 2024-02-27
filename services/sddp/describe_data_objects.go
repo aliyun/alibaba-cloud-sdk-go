@@ -82,6 +82,8 @@ type DescribeDataObjectsRequest struct {
 	Lang              string           `position:"Query" name:"Lang"`
 	ServiceRegionId   string           `position:"Query" name:"ServiceRegionId"`
 	ModelTagIds       string           `position:"Query" name:"ModelTagIds"`
+	FeatureType       requests.Integer `position:"Query" name:"FeatureType"`
+	FileCategoryCode  requests.Integer `position:"Query" name:"FileCategoryCode"`
 	CurrentPage       requests.Integer `position:"Query" name:"CurrentPage"`
 	TemplateId        requests.Integer `position:"Query" name:"TemplateId"`
 	InstanceId        string           `position:"Query" name:"InstanceId"`

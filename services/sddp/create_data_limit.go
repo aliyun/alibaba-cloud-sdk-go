@@ -84,6 +84,7 @@ type CreateDataLimitRequest struct {
 	EngineType            string           `position:"Query" name:"EngineType"`
 	AuditStatus           requests.Integer `position:"Query" name:"AuditStatus"`
 	AutoScan              requests.Integer `position:"Query" name:"AutoScan"`
+	FeatureType           requests.Integer `position:"Query" name:"FeatureType"`
 	LogStoreDay           requests.Integer `position:"Query" name:"LogStoreDay"`
 	CertificatePermission string           `position:"Query" name:"CertificatePermission"`
 	ResourceType          requests.Integer `position:"Query" name:"ResourceType"`

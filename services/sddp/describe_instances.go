@@ -71,33 +71,33 @@ func (client *Client) DescribeInstancesWithCallback(request *DescribeInstancesRe
 // DescribeInstancesRequest is the request struct for api DescribeInstances
 type DescribeInstancesRequest struct {
 	*requests.RpcRequest
+	ProductCode         string           `position:"Query" name:"ProductCode"`
 	ProductId           requests.Integer `position:"Query" name:"ProductId"`
+	RiskLevels          string           `position:"Query" name:"RiskLevels"`
 	QueryName           string           `position:"Query" name:"QueryName"`
 	RiskLevelId         requests.Integer `position:"Query" name:"RiskLevelId"`
 	Source              string           `position:"Query" name:"Source"`
 	StartTime           requests.Integer `position:"Query" name:"StartTime"`
 	UserId              requests.Integer `position:"Query" name:"UserId"`
+	NameAccurate        string           `position:"Query" name:"NameAccurate"`
+	SensLevelName       string           `position:"Query" name:"SensLevelName"`
 	SourceIp            string           `position:"Query" name:"SourceIp"`
+	LastFinishTimeStart requests.Integer `position:"Query" name:"LastFinishTimeStart"`
+	DataType            requests.Integer `position:"Query" name:"DataType"`
+	PageSize            requests.Integer `position:"Query" name:"PageSize"`
 	CheckStatus         requests.Integer `position:"Query" name:"CheckStatus"`
+	Lang                string           `position:"Query" name:"Lang"`
+	QueryType           requests.Integer `position:"Query" name:"QueryType"`
 	ServiceRegionId     string           `position:"Query" name:"ServiceRegionId"`
 	EngineType          string           `position:"Query" name:"EngineType"`
 	FeatureType         requests.Integer `position:"Query" name:"FeatureType"`
 	OrderBy             string           `position:"Query" name:"OrderBy"`
 	UserType            requests.Integer `position:"Query" name:"UserType"`
+	EndTime             requests.Integer `position:"Query" name:"EndTime"`
+	CurrentPage         requests.Integer `position:"Query" name:"CurrentPage"`
 	Name                string           `position:"Query" name:"Name"`
 	NeedModelTag        requests.Boolean `position:"Query" name:"NeedModelTag"`
 	RuleId              requests.Integer `position:"Query" name:"RuleId"`
-	ProductCode         string           `position:"Query" name:"ProductCode"`
-	RiskLevels          string           `position:"Query" name:"RiskLevels"`
-	NameAccurate        string           `position:"Query" name:"NameAccurate"`
-	SensLevelName       string           `position:"Query" name:"SensLevelName"`
-	LastFinishTimeStart requests.Integer `position:"Query" name:"LastFinishTimeStart"`
-	DataType            requests.Integer `position:"Query" name:"DataType"`
-	PageSize            requests.Integer `position:"Query" name:"PageSize"`
-	Lang                string           `position:"Query" name:"Lang"`
-	QueryType           requests.Integer `position:"Query" name:"QueryType"`
-	EndTime             requests.Integer `position:"Query" name:"EndTime"`
-	CurrentPage         requests.Integer `position:"Query" name:"CurrentPage"`
 	LastFinishTimeEnd   requests.Integer `position:"Query" name:"LastFinishTimeEnd"`
 }
 

@@ -71,9 +71,10 @@ func (client *Client) DescribeTemplateAllRulesWithCallback(request *DescribeTemp
 // DescribeTemplateAllRulesRequest is the request struct for api DescribeTemplateAllRules
 type DescribeTemplateAllRulesRequest struct {
 	*requests.RpcRequest
-	TemplateId requests.Integer `position:"Query" name:"TemplateId"`
-	SourceIp   string           `position:"Query" name:"SourceIp"`
-	Lang       string           `position:"Query" name:"Lang"`
+	FeatureType requests.Integer `position:"Query" name:"FeatureType"`
+	TemplateId  requests.Integer `position:"Query" name:"TemplateId"`
+	SourceIp    string           `position:"Query" name:"SourceIp"`
+	Lang        string           `position:"Query" name:"Lang"`
 }
 
 // DescribeTemplateAllRulesResponse is the response struct for api DescribeTemplateAllRules

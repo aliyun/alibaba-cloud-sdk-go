@@ -71,11 +71,12 @@ func (client *Client) DescribeCategoryTemplateListWithCallback(request *Describe
 // DescribeCategoryTemplateListRequest is the request struct for api DescribeCategoryTemplateList
 type DescribeCategoryTemplateListRequest struct {
 	*requests.RpcRequest
+	FeatureType   requests.Integer `position:"Query" name:"FeatureType"`
+	CurrentPage   requests.Integer `position:"Query" name:"CurrentPage"`
 	SourceIp      string           `position:"Query" name:"SourceIp"`
 	PageSize      requests.Integer `position:"Query" name:"PageSize"`
 	UsageScenario requests.Integer `position:"Query" name:"UsageScenario"`
 	Lang          string           `position:"Query" name:"Lang"`
-	CurrentPage   requests.Integer `position:"Query" name:"CurrentPage"`
 }
 
 // DescribeCategoryTemplateListResponse is the response struct for api DescribeCategoryTemplateList

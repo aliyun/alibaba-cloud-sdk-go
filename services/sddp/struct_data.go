@@ -17,6 +17,23 @@ package sddp
 
 // Data is a nested struct in sddp response
 type Data struct {
-	Y []string `json:"Y" xml:"Y"`
-	X []string `json:"X" xml:"X"`
+	ParentId                    string   `json:"ParentId" xml:"ParentId"`
+	AuthStatus                  int      `json:"AuthStatus" xml:"AuthStatus"`
+	TenantName                  string   `json:"TenantName" xml:"TenantName"`
+	LocalName                   string   `json:"LocalName" xml:"LocalName"`
+	ConnectNode                 string   `json:"ConnectNode" xml:"ConnectNode"`
+	SupportConnectNodes         string   `json:"SupportConnectNodes" xml:"SupportConnectNodes"`
+	InstanceDescription         string   `json:"InstanceDescription" xml:"InstanceDescription"`
+	ClusterStatus               string   `json:"ClusterStatus" xml:"ClusterStatus"`
+	ResourceType                string   `json:"ResourceType" xml:"ResourceType"`
+	UnConnectDbCount            string   `json:"UnConnectDbCount" xml:"UnConnectDbCount"`
+	InstanceSize                int64    `json:"InstanceSize" xml:"InstanceSize"`
+	DbNum                       string   `json:"DbNum" xml:"DbNum"`
+	InstanceId                  string   `json:"InstanceId" xml:"InstanceId"`
+	EngineType                  string   `json:"EngineType" xml:"EngineType"`
+	AuditStatus                 int      `json:"AuditStatus" xml:"AuditStatus"`
+	UnSupportOneClickAuthReason string   `json:"UnSupportOneClickAuthReason" xml:"UnSupportOneClickAuthReason"`
+	TenantId                    string   `json:"TenantId" xml:"TenantId"`
+	Y                           []string `json:"Y" xml:"Y"`
+	X                           []string `json:"X" xml:"X"`
 }

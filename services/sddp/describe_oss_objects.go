@@ -83,6 +83,7 @@ type DescribeOssObjectsRequest struct {
 	ServiceRegionId   string           `position:"Query" name:"ServiceRegionId"`
 	FeatureType       requests.Integer `position:"Query" name:"FeatureType"`
 	OrderBy           string           `position:"Query" name:"OrderBy"`
+	FileCategoryCode  requests.Integer `position:"Query" name:"FileCategoryCode"`
 	CurrentPage       requests.Integer `position:"Query" name:"CurrentPage"`
 	TemplateId        requests.Integer `position:"Query" name:"TemplateId"`
 	RuleIds           string           `position:"Query" name:"RuleIds"`

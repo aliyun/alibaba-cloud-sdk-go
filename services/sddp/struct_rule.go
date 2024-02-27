@@ -40,6 +40,7 @@ type Rule struct {
 	ObjectType          string          `json:"ObjectType" xml:"ObjectType"`
 	Category            int             `json:"Category" xml:"Category"`
 	RiskLevelId         int64           `json:"RiskLevelId" xml:"RiskLevelId"`
+	ObjectFileCategory  string          `json:"ObjectFileCategory" xml:"ObjectFileCategory"`
 	SensitiveCount      int             `json:"SensitiveCount" xml:"SensitiveCount"`
 	Categories          []string        `json:"Categories" xml:"Categories"`
 	SampleList          []string        `json:"SampleList" xml:"SampleList"`

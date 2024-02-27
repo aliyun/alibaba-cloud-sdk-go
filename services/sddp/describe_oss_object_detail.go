@@ -71,10 +71,10 @@ func (client *Client) DescribeOssObjectDetailWithCallback(request *DescribeOssOb
 // DescribeOssObjectDetailRequest is the request struct for api DescribeOssObjectDetail
 type DescribeOssObjectDetailRequest struct {
 	*requests.RpcRequest
+	FeatureType requests.Integer `position:"Query" name:"FeatureType"`
 	SourceIp    string           `position:"Query" name:"SourceIp"`
 	Id          requests.Integer `position:"Query" name:"Id"`
 	Lang        string           `position:"Query" name:"Lang"`
-	FeatureType requests.Integer `position:"Query" name:"FeatureType"`
 }
 
 // DescribeOssObjectDetailResponse is the response struct for api DescribeOssObjectDetail

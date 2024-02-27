@@ -82,6 +82,7 @@ type DescribeDataLimitsRequest struct {
 	ServiceRegionId string           `position:"Query" name:"ServiceRegionId"`
 	EngineType      string           `position:"Query" name:"EngineType"`
 	AuditStatus     requests.Integer `position:"Query" name:"AuditStatus"`
+	FeatureType     requests.Integer `position:"Query" name:"FeatureType"`
 	EndTime         requests.Integer `position:"Query" name:"EndTime"`
 	CurrentPage     requests.Integer `position:"Query" name:"CurrentPage"`
 	ResourceType    requests.Integer `position:"Query" name:"ResourceType"`

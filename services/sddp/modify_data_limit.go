@@ -82,6 +82,7 @@ type ModifyDataLimitRequest struct {
 	EngineType          string           `position:"Query" name:"EngineType"`
 	AuditStatus         requests.Integer `position:"Query" name:"AuditStatus"`
 	AutoScan            requests.Integer `position:"Query" name:"AutoScan"`
+	FeatureType         requests.Integer `position:"Query" name:"FeatureType"`
 	SecurityGroupIdList *[]string        `position:"Query" name:"SecurityGroupIdList"  type:"Repeated"`
 	LogStoreDay         requests.Integer `position:"Query" name:"LogStoreDay"`
 	ResourceType        requests.Integer `position:"Query" name:"ResourceType"`

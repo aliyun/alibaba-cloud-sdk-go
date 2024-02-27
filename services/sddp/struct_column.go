@@ -25,6 +25,8 @@ type Column struct {
 	DataType           string          `json:"DataType" xml:"DataType"`
 	RegionId           string          `json:"RegionId" xml:"RegionId"`
 	OdpsRiskLevelValue int             `json:"OdpsRiskLevelValue" xml:"OdpsRiskLevelValue"`
+	FileCategoryCode   int64           `json:"FileCategoryCode" xml:"FileCategoryCode"`
+	FileCategoryName   string          `json:"FileCategoryName" xml:"FileCategoryName"`
 	RuleId             int64           `json:"RuleId" xml:"RuleId"`
 	Size               int64           `json:"Size" xml:"Size"`
 	Id                 string          `json:"Id" xml:"Id"`

@@ -71,6 +71,7 @@ func (client *Client) DescribeEventsWithCallback(request *DescribeEventsRequest,
 // DescribeEventsRequest is the request struct for api DescribeEvents
 type DescribeEventsRequest struct {
 	*requests.RpcRequest
+	WarnLevel         requests.Integer `position:"Query" name:"WarnLevel"`
 	ProductCode       string           `position:"Query" name:"ProductCode"`
 	StartTime         string           `position:"Query" name:"StartTime"`
 	UserId            requests.Integer `position:"Query" name:"UserId"`

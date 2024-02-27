@@ -82,6 +82,7 @@ type DescribeInstanceSourcesRequest struct {
 	EngineType      string           `position:"Query" name:"EngineType"`
 	AuditStatus     requests.Integer `position:"Query" name:"AuditStatus"`
 	AuthStatus      requests.Integer `position:"Query" name:"AuthStatus"`
+	FeatureType     requests.Integer `position:"Query" name:"FeatureType"`
 	CurrentPage     requests.Integer `position:"Query" name:"CurrentPage"`
 	Authed          requests.Boolean `position:"Query" name:"Authed"`
 	InstanceId      string           `position:"Query" name:"InstanceId"`

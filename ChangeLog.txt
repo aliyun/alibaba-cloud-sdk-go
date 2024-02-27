@@ -1,3 +1,7 @@
+2024-02-27 Version: v1.62.682
+- Generated 2019-01-03 for `Sddp`.
+- Add DescribeParentInstance open api.
+
 2024-02-26 Version: v1.62.681
 - Generated 2014-08-28 for `Ess`.
 -ModifyScalingGroup add ScalingPolicy params.
