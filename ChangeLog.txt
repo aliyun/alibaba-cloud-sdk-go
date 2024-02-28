@@ -1,3 +1,7 @@
+2024-02-28 Version: v1.62.684
+- Generated 2020-04-01 for `eventbridge`.
+- Fixed bugs for ListUserDefinedEventSources
+
 2024-02-27 Version: v1.62.683
 - Generated 2022-01-01 for `quickbi-public`.
 - AllotDatasetAccelerationTask API add error code.

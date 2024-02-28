@@ -40,8 +40,8 @@ type Data struct {
 	Status                       string                `json:"Status" xml:"Status"`
 	ErrorEntriesCount            int                   `json:"ErrorEntriesCount" xml:"ErrorEntriesCount"`
 	Sink                         Sink                  `json:"Sink" xml:"Sink"`
-	RunOptions                   RunOptions            `json:"RunOptions" xml:"RunOptions"`
 	Source                       Source                `json:"Source" xml:"Source"`
+	RunOptions                   RunOptions            `json:"RunOptions" xml:"RunOptions"`
 	HttpApiParameters            HttpApiParameters     `json:"HttpApiParameters" xml:"HttpApiParameters"`
 	Connections                  []ConnectionsItem     `json:"Connections" xml:"Connections"`
 	EventSourceList              []EventSourceListItem `json:"EventSourceList" xml:"EventSourceList"`

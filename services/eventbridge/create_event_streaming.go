@@ -220,9 +220,10 @@ type CreateEventStreamingSinkSinkRocketMQParameters struct {
 
 // CreateEventStreamingSourceSourceMQTTParameters is a repeated param struct in CreateEventStreamingRequest
 type CreateEventStreamingSourceSourceMQTTParameters struct {
-	InstanceId string `name:"InstanceId"`
-	RegionId   string `name:"RegionId"`
-	Topic      string `name:"Topic"`
+	InstanceId   string `name:"InstanceId"`
+	BodyDataType string `name:"BodyDataType"`
+	RegionId     string `name:"RegionId"`
+	Topic        string `name:"Topic"`
 }
 
 // CreateEventStreamingSourceSourceRocketMQParameters is a repeated param struct in CreateEventStreamingRequest
@@ -284,6 +285,7 @@ type CreateEventStreamingSourceSourceKafkaParameters struct {
 	RegionId        string `name:"RegionId"`
 	VSwitchIds      string `name:"VSwitchIds"`
 	VpcId           string `name:"VpcId"`
+	ValueDataType   string `name:"ValueDataType"`
 	SecurityGroupId string `name:"SecurityGroupId"`
 	Topic           string `name:"Topic"`
 	OffsetReset     string `name:"OffsetReset"`

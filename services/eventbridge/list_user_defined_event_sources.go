@@ -81,11 +81,11 @@ type ListUserDefinedEventSourcesRequest struct {
 // ListUserDefinedEventSourcesResponse is the response struct for api ListUserDefinedEventSources
 type ListUserDefinedEventSourcesResponse struct {
 	*responses.BaseResponse
-	Message   string `json:"Message" xml:"Message"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Code      string `json:"Code" xml:"Code"`
-	Success   bool   `json:"Success" xml:"Success"`
-	Data      Data   `json:"Data" xml:"Data"`
+	Message   string                            `json:"Message" xml:"Message"`
+	RequestId string                            `json:"RequestId" xml:"RequestId"`
+	Code      string                            `json:"Code" xml:"Code"`
+	Success   bool                              `json:"Success" xml:"Success"`
+	Data      DataInListUserDefinedEventSources `json:"Data" xml:"Data"`
 }
 
 // CreateListUserDefinedEventSourcesRequest creates a request to invoke ListUserDefinedEventSources API

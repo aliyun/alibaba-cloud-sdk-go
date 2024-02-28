@@ -256,6 +256,7 @@ type UpdateEventStreamingSourceSourceKafkaParameters struct {
 	RegionId        string `name:"RegionId"`
 	VSwitchIds      string `name:"VSwitchIds"`
 	VpcId           string `name:"VpcId"`
+	ValueDataType   string `name:"ValueDataType"`
 	SecurityGroupId string `name:"SecurityGroupId"`
 	Topic           string `name:"Topic"`
 	OffsetReset     string `name:"OffsetReset"`

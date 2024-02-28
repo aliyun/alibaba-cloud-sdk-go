@@ -17,6 +17,7 @@ package eventbridge
 
 // SourceKafkaParameters is a nested struct in eventbridge response
 type SourceKafkaParameters struct {
+	ValueDataType   string `json:"ValueDataType" xml:"ValueDataType"`
 	RegionId        string `json:"RegionId" xml:"RegionId"`
 	SecurityGroupId string `json:"SecurityGroupId" xml:"SecurityGroupId"`
 	ConsumerGroup   string `json:"ConsumerGroup" xml:"ConsumerGroup"`
