@@ -71,15 +71,16 @@ func (client *Client) DescribeLiveCdnDiagnoseInfoWithCallback(request *DescribeL
 // DescribeLiveCdnDiagnoseInfoRequest is the request struct for api DescribeLiveCdnDiagnoseInfo
 type DescribeLiveCdnDiagnoseInfoRequest struct {
 	*requests.RpcRequest
-	IntervalType string           `position:"Query" name:"intervalType"`
-	StreamSuffix string           `position:"Query" name:"streamSuffix"`
-	StartTime    requests.Integer `position:"Query" name:"startTime"`
-	RequestType  string           `position:"Query" name:"requestType"`
-	StreamName   string           `position:"Query" name:"streamName"`
-	App          string           `position:"Query" name:"app"`
-	Phase        requests.Integer `position:"Query" name:"phase"`
-	EndTime      requests.Integer `position:"Query" name:"endTime"`
-	Domain       string           `position:"Query" name:"domain"`
+	IntervalType  string           `position:"Query" name:"intervalType"`
+	StreamSuffix  string           `position:"Query" name:"streamSuffix"`
+	StartTime     requests.Integer `position:"Query" name:"startTime"`
+	RequestType   string           `position:"Query" name:"requestType"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	StreamName    string           `position:"Query" name:"streamName"`
+	App           string           `position:"Query" name:"app"`
+	Phase         requests.Integer `position:"Query" name:"phase"`
+	EndTime       requests.Integer `position:"Query" name:"endTime"`
+	Domain        string           `position:"Query" name:"domain"`
 }
 
 // DescribeLiveCdnDiagnoseInfoResponse is the response struct for api DescribeLiveCdnDiagnoseInfo

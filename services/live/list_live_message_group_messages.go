@@ -73,13 +73,13 @@ type ListLiveMessageGroupMessagesRequest struct {
 	*requests.RpcRequest
 	SortType      requests.Integer `position:"Query" name:"SortType"`
 	NextPageToken requests.Integer `position:"Query" name:"NextPageToken"`
+	PageSize      requests.Integer `position:"Query" name:"PageSize"`
+	MsgType       requests.Integer `position:"Query" name:"MsgType"`
 	GroupId       string           `position:"Query" name:"GroupId"`
 	EndTime       requests.Integer `position:"Query" name:"EndTime"`
 	BeginTime     requests.Integer `position:"Query" name:"BeginTime"`
 	DataCenter    string           `position:"Query" name:"DataCenter"`
 	AppId         string           `position:"Query" name:"AppId"`
-	PageSize      requests.Integer `position:"Query" name:"PageSize"`
-	MsgType       requests.Integer `position:"Query" name:"MsgType"`
 }
 
 // ListLiveMessageGroupMessagesResponse is the response struct for api ListLiveMessageGroupMessages

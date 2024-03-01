@@ -71,9 +71,10 @@ func (client *Client) DescribeLiveDomainTranscodeParamsWithCallback(request *Des
 // DescribeLiveDomainTranscodeParamsRequest is the request struct for api DescribeLiveDomainTranscodeParams
 type DescribeLiveDomainTranscodeParamsRequest struct {
 	*requests.RpcRequest
-	Pushdomain   string `position:"Query" name:"pushdomain"`
-	App          string `position:"Query" name:"app"`
-	TemplateName string `position:"Query" name:"template_name"`
+	Pushdomain    string `position:"Query" name:"pushdomain"`
+	SecurityToken string `position:"Query" name:"SecurityToken"`
+	App           string `position:"Query" name:"app"`
+	TemplateName  string `position:"Query" name:"template_name"`
 }
 
 // DescribeLiveDomainTranscodeParamsResponse is the response struct for api DescribeLiveDomainTranscodeParams

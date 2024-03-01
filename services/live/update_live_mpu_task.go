@@ -104,17 +104,16 @@ type UpdateLiveMPUTaskTranscodeParams struct {
 
 // UpdateLiveMPUTaskSeiParamsLayoutVolume is a repeated param struct in UpdateLiveMPUTaskRequest
 type UpdateLiveMPUTaskSeiParamsLayoutVolume struct {
-	FollowIdr   string `name:"FollowIdr"`
-	PayloadType string `name:"PayloadType"`
-	Interval    string `name:"Interval"`
+	FollowIdr string `name:"FollowIdr"`
+	Interval  string `name:"Interval"`
 }
 
 // UpdateLiveMPUTaskSeiParamsPassThrough is a repeated param struct in UpdateLiveMPUTaskRequest
 type UpdateLiveMPUTaskSeiParamsPassThrough struct {
-	FollowIdr      string `name:"FollowIdr"`
-	PayloadType    string `name:"PayloadType"`
-	PayloadContent string `name:"PayloadContent"`
-	Interval       string `name:"Interval"`
+	FollowIdr         string `name:"FollowIdr"`
+	PayloadContentKey string `name:"PayloadContentKey"`
+	PayloadContent    string `name:"PayloadContent"`
+	Interval          string `name:"Interval"`
 }
 
 // UpdateLiveMPUTaskTranscodeParamsLayout is a repeated param struct in UpdateLiveMPUTaskRequest

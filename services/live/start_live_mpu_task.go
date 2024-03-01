@@ -91,6 +91,7 @@ type StartLiveMPUTaskSingleSubParams struct {
 
 // StartLiveMPUTaskSeiParams is a repeated param struct in StartLiveMPUTaskRequest
 type StartLiveMPUTaskSeiParams struct {
+	PayloadType  string                                `name:"PayloadType"`
 	LayoutVolume StartLiveMPUTaskSeiParamsLayoutVolume `name:"LayoutVolume" type:"Struct"`
 	PassThrough  StartLiveMPUTaskSeiParamsPassThrough  `name:"PassThrough" type:"Struct"`
 }
@@ -105,17 +106,16 @@ type StartLiveMPUTaskTranscodeParams struct {
 
 // StartLiveMPUTaskSeiParamsLayoutVolume is a repeated param struct in StartLiveMPUTaskRequest
 type StartLiveMPUTaskSeiParamsLayoutVolume struct {
-	FollowIdr   string `name:"FollowIdr"`
-	PayloadType string `name:"PayloadType"`
-	Interval    string `name:"Interval"`
+	FollowIdr string `name:"FollowIdr"`
+	Interval  string `name:"Interval"`
 }
 
 // StartLiveMPUTaskSeiParamsPassThrough is a repeated param struct in StartLiveMPUTaskRequest
 type StartLiveMPUTaskSeiParamsPassThrough struct {
-	FollowIdr      string `name:"FollowIdr"`
-	PayloadType    string `name:"PayloadType"`
-	PayloadContent string `name:"PayloadContent"`
-	Interval       string `name:"Interval"`
+	FollowIdr         string `name:"FollowIdr"`
+	PayloadContentKey string `name:"PayloadContentKey"`
+	PayloadContent    string `name:"PayloadContent"`
+	Interval          string `name:"Interval"`
 }
 
 // StartLiveMPUTaskTranscodeParamsLayout is a repeated param struct in StartLiveMPUTaskRequest

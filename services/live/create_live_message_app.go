@@ -81,10 +81,11 @@ type CreateLiveMessageAppRequest struct {
 // CreateLiveMessageAppResponse is the response struct for api CreateLiveMessageApp
 type CreateLiveMessageAppResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	AppId     string `json:"AppId" xml:"AppId"`
-	AppKey    string `json:"AppKey" xml:"AppKey"`
-	AppSign   string `json:"AppSign" xml:"AppSign"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
+	AppId      string `json:"AppId" xml:"AppId"`
+	AppKey     string `json:"AppKey" xml:"AppKey"`
+	AppSign    string `json:"AppSign" xml:"AppSign"`
+	DataCenter string `json:"DataCenter" xml:"DataCenter"`
 }
 
 // CreateCreateLiveMessageAppRequest creates a request to invoke CreateLiveMessageApp API
