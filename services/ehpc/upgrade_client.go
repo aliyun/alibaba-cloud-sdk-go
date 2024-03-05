@@ -86,7 +86,7 @@ func CreateUpgradeClientRequest() (request *UpgradeClientRequest) {
 	request = &UpgradeClientRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "UpgradeClient", "", "")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "UpgradeClient", "ehs", "openAPI")
 	request.Method = requests.GET
 	return
 }

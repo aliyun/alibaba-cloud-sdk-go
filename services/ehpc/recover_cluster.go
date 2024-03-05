@@ -92,7 +92,7 @@ func CreateRecoverClusterRequest() (request *RecoverClusterRequest) {
 	request = &RecoverClusterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "RecoverCluster", "", "")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "RecoverCluster", "ehs", "openAPI")
 	request.Method = requests.GET
 	return
 }

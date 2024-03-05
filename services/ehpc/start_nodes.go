@@ -93,7 +93,7 @@ func CreateStartNodesRequest() (request *StartNodesRequest) {
 	request = &StartNodesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "StartNodes", "", "")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "StartNodes", "ehs", "openAPI")
 	request.Method = requests.GET
 	return
 }

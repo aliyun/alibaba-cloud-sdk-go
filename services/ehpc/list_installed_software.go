@@ -86,7 +86,7 @@ func CreateListInstalledSoftwareRequest() (request *ListInstalledSoftwareRequest
 	request = &ListInstalledSoftwareRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "ListInstalledSoftware", "", "")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "ListInstalledSoftware", "ehs", "openAPI")
 	request.Method = requests.GET
 	return
 }

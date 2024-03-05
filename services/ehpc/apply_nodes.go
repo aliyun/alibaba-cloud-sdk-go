@@ -80,6 +80,7 @@ type ApplyNodesRequest struct {
 	StrictResourceProvision       requests.Boolean               `position:"Query" name:"StrictResourceProvision"`
 	JobQueue                      string                         `position:"Query" name:"JobQueue"`
 	SystemDiskType                string                         `position:"Query" name:"SystemDiskType"`
+	UserData                      string                         `position:"Query" name:"UserData"`
 	Cores                         requests.Integer               `position:"Query" name:"Cores"`
 	SystemDiskSize                requests.Integer               `position:"Query" name:"SystemDiskSize"`
 	ZoneInfos                     *[]ApplyNodesZoneInfos         `position:"Query" name:"ZoneInfos"  type:"Repeated"`
@@ -134,7 +135,7 @@ func CreateApplyNodesRequest() (request *ApplyNodesRequest) {
 	request = &ApplyNodesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "ApplyNodes", "", "")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "ApplyNodes", "ehs", "openAPI")
 	request.Method = requests.GET
 	return
 }

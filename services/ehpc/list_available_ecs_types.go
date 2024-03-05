@@ -90,7 +90,7 @@ func CreateListAvailableEcsTypesRequest() (request *ListAvailableEcsTypesRequest
 	request = &ListAvailableEcsTypesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "ListAvailableEcsTypes", "", "")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "ListAvailableEcsTypes", "ehs", "openAPI")
 	request.Method = requests.GET
 	return
 }

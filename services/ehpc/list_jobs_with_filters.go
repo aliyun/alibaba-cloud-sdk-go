@@ -103,7 +103,7 @@ func CreateListJobsWithFiltersRequest() (request *ListJobsWithFiltersRequest) {
 	request = &ListJobsWithFiltersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "ListJobsWithFilters", "", "")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "ListJobsWithFilters", "ehs", "openAPI")
 	request.Method = requests.GET
 	return
 }

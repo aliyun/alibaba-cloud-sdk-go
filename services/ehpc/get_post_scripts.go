@@ -86,7 +86,7 @@ func CreateGetPostScriptsRequest() (request *GetPostScriptsRequest) {
 	request = &GetPostScriptsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "GetPostScripts", "", "")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "GetPostScripts", "ehs", "openAPI")
 	request.Method = requests.GET
 	return
 }

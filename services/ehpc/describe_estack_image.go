@@ -90,7 +90,7 @@ func CreateDescribeEstackImageRequest() (request *DescribeEstackImageRequest) {
 	request = &DescribeEstackImageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "DescribeEstackImage", "", "")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "DescribeEstackImage", "ehs", "openAPI")
 	request.Method = requests.GET
 	return
 }

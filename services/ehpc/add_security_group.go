@@ -87,7 +87,7 @@ func CreateAddSecurityGroupRequest() (request *AddSecurityGroupRequest) {
 	request = &AddSecurityGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "AddSecurityGroup", "", "")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "AddSecurityGroup", "ehs", "openAPI")
 	request.Method = requests.GET
 	return
 }

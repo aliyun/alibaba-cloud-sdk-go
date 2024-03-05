@@ -85,7 +85,7 @@ func CreateDeleteGWSClusterRequest() (request *DeleteGWSClusterRequest) {
 	request = &DeleteGWSClusterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "DeleteGWSCluster", "", "")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "DeleteGWSCluster", "ehs", "openAPI")
 	request.Method = requests.GET
 	return
 }

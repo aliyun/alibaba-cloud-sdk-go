@@ -90,7 +90,7 @@ func CreateListVolumesRequest() (request *ListVolumesRequest) {
 	request = &ListVolumesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "ListVolumes", "", "")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "ListVolumes", "ehs", "openAPI")
 	request.Method = requests.GET
 	return
 }

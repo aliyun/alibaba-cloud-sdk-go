@@ -71,6 +71,7 @@ func (client *Client) InitializeEHPCWithCallback(request *InitializeEHPCRequest,
 // InitializeEHPCRequest is the request struct for api InitializeEHPC
 type InitializeEHPCRequest struct {
 	*requests.RpcRequest
+	ServiceName string `position:"Query" name:"ServiceName"`
 }
 
 // InitializeEHPCResponse is the response struct for api InitializeEHPC
@@ -84,7 +85,7 @@ func CreateInitializeEHPCRequest() (request *InitializeEHPCRequest) {
 	request = &InitializeEHPCRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "InitializeEHPC", "", "")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "InitializeEHPC", "ehs", "openAPI")
 	request.Method = requests.GET
 	return
 }

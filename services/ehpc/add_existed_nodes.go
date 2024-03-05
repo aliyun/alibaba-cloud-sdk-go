@@ -95,7 +95,7 @@ func CreateAddExistedNodesRequest() (request *AddExistedNodesRequest) {
 	request = &AddExistedNodesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "AddExistedNodes", "", "")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "AddExistedNodes", "ehs", "openAPI")
 	request.Method = requests.GET
 	return
 }

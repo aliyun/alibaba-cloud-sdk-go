@@ -146,7 +146,7 @@ func CreateSetAutoScaleConfigRequest() (request *SetAutoScaleConfigRequest) {
 	request = &SetAutoScaleConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "SetAutoScaleConfig", "", "")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "SetAutoScaleConfig", "ehs", "openAPI")
 	request.Method = requests.GET
 	return
 }

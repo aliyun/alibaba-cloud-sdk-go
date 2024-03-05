@@ -92,7 +92,7 @@ func CreateListCommandsRequest() (request *ListCommandsRequest) {
 	request = &ListCommandsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "ListCommands", "", "")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "ListCommands", "ehs", "openAPI")
 	request.Method = requests.GET
 	return
 }

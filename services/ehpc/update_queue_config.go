@@ -90,7 +90,7 @@ func CreateUpdateQueueConfigRequest() (request *UpdateQueueConfigRequest) {
 	request = &UpdateQueueConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "UpdateQueueConfig", "", "")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "UpdateQueueConfig", "ehs", "openAPI")
 	request.Method = requests.GET
 	return
 }

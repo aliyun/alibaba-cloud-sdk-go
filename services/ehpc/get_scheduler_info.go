@@ -92,7 +92,7 @@ func CreateGetSchedulerInfoRequest() (request *GetSchedulerInfoRequest) {
 	request = &GetSchedulerInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "GetSchedulerInfo", "", "")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "GetSchedulerInfo", "ehs", "openAPI")
 	request.Method = requests.GET
 	return
 }

@@ -86,7 +86,7 @@ func CreateDescribeContainerAppRequest() (request *DescribeContainerAppRequest) 
 	request = &DescribeContainerAppRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "DescribeContainerApp", "", "")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "DescribeContainerApp", "ehs", "openAPI")
 	request.Method = requests.GET
 	return
 }

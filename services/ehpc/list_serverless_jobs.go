@@ -100,7 +100,7 @@ func CreateListServerlessJobsRequest() (request *ListServerlessJobsRequest) {
 	request = &ListServerlessJobsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "ListServerlessJobs", "", "")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "ListServerlessJobs", "ehs", "openAPI")
 	request.Method = requests.POST
 	return
 }

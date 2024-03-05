@@ -186,7 +186,7 @@ func CreateSubmitServerlessJobRequest() (request *SubmitServerlessJobRequest) {
 	request = &SubmitServerlessJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "SubmitServerlessJob", "", "")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "SubmitServerlessJob", "ehs", "openAPI")
 	request.Method = requests.POST
 	return
 }

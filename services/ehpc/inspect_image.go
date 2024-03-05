@@ -88,7 +88,7 @@ func CreateInspectImageRequest() (request *InspectImageRequest) {
 	request = &InspectImageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "InspectImage", "", "")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "InspectImage", "ehs", "openAPI")
 	request.Method = requests.GET
 	return
 }

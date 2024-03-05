@@ -91,7 +91,7 @@ func CreateListUsersRequest() (request *ListUsersRequest) {
 	request = &ListUsersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "ListUsers", "", "")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "ListUsers", "ehs", "openAPI")
 	request.Method = requests.GET
 	return
 }

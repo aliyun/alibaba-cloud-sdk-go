@@ -87,7 +87,7 @@ func CreateListImagesRequest() (request *ListImagesRequest) {
 	request = &ListImagesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "ListImages", "", "")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "ListImages", "ehs", "openAPI")
 	request.Method = requests.GET
 	return
 }

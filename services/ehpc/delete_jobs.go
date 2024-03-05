@@ -87,7 +87,7 @@ func CreateDeleteJobsRequest() (request *DeleteJobsRequest) {
 	request = &DeleteJobsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "DeleteJobs", "", "")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "DeleteJobs", "ehs", "openAPI")
 	request.Method = requests.GET
 	return
 }

@@ -105,7 +105,7 @@ func CreateCreateJobTemplateRequest() (request *CreateJobTemplateRequest) {
 	request = &CreateJobTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "CreateJobTemplate", "", "")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "CreateJobTemplate", "ehs", "openAPI")
 	request.Method = requests.GET
 	return
 }

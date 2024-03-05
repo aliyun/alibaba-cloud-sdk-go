@@ -88,7 +88,7 @@ func CreateDescribeJobRequest() (request *DescribeJobRequest) {
 	request = &DescribeJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "DescribeJob", "", "")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "DescribeJob", "ehs", "openAPI")
 	request.Method = requests.GET
 	return
 }

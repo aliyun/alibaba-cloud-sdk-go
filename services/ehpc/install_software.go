@@ -86,7 +86,7 @@ func CreateInstallSoftwareRequest() (request *InstallSoftwareRequest) {
 	request = &InstallSoftwareRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "InstallSoftware", "", "")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "InstallSoftware", "ehs", "openAPI")
 	request.Method = requests.GET
 	return
 }

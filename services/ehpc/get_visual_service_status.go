@@ -86,7 +86,7 @@ func CreateGetVisualServiceStatusRequest() (request *GetVisualServiceStatusReque
 	request = &GetVisualServiceStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "GetVisualServiceStatus", "", "")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "GetVisualServiceStatus", "ehs", "openAPI")
 	request.Method = requests.GET
 	return
 }

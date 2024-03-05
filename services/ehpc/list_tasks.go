@@ -93,7 +93,7 @@ func CreateListTasksRequest() (request *ListTasksRequest) {
 	request = &ListTasksRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "ListTasks", "", "")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "ListTasks", "ehs", "openAPI")
 	request.Method = requests.GET
 	return
 }

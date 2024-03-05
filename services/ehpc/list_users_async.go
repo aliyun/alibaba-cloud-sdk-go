@@ -94,7 +94,7 @@ func CreateListUsersAsyncRequest() (request *ListUsersAsyncRequest) {
 	request = &ListUsersAsyncRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "ListUsersAsync", "", "")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "ListUsersAsync", "ehs", "openAPI")
 	request.Method = requests.GET
 	return
 }

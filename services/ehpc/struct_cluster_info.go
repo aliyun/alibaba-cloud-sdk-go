@@ -19,6 +19,7 @@ package ehpc
 type ClusterInfo struct {
 	Domain                string                              `json:"Domain" xml:"Domain"`
 	ImageId               string                              `json:"ImageId" xml:"ImageId"`
+	SchedulerVersion      string                              `json:"SchedulerVersion" xml:"SchedulerVersion"`
 	ImageOwnerAlias       string                              `json:"ImageOwnerAlias" xml:"ImageOwnerAlias"`
 	ClusterVersion        string                              `json:"ClusterVersion" xml:"ClusterVersion"`
 	VolumeMountpoint      string                              `json:"VolumeMountpoint" xml:"VolumeMountpoint"`

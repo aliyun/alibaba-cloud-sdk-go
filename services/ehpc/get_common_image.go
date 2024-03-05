@@ -87,7 +87,7 @@ func CreateGetCommonImageRequest() (request *GetCommonImageRequest) {
 	request = &GetCommonImageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "GetCommonImage", "", "")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "GetCommonImage", "ehs", "openAPI")
 	request.Method = requests.GET
 	return
 }

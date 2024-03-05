@@ -87,7 +87,7 @@ func CreateListQueuesRequest() (request *ListQueuesRequest) {
 	request = &ListQueuesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "ListQueues", "", "")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "ListQueues", "ehs", "openAPI")
 	request.Method = requests.GET
 	return
 }

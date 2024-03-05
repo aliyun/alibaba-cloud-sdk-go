@@ -88,7 +88,7 @@ func CreateDescribeServerlessJobsRequest() (request *DescribeServerlessJobsReque
 	request = &DescribeServerlessJobsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "DescribeServerlessJobs", "", "")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "DescribeServerlessJobs", "ehs", "openAPI")
 	request.Method = requests.POST
 	return
 }

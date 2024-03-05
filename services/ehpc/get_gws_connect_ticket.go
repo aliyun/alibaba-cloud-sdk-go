@@ -87,7 +87,7 @@ func CreateGetGWSConnectTicketRequest() (request *GetGWSConnectTicketRequest) {
 	request = &GetGWSConnectTicketRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "GetGWSConnectTicket", "", "")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "GetGWSConnectTicket", "ehs", "openAPI")
 	request.Method = requests.GET
 	return
 }

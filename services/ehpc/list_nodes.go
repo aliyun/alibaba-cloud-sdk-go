@@ -99,7 +99,7 @@ func CreateListNodesRequest() (request *ListNodesRequest) {
 	request = &ListNodesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "ListNodes", "", "")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "ListNodes", "ehs", "openAPI")
 	request.Method = requests.GET
 	return
 }

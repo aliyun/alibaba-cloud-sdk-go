@@ -87,7 +87,7 @@ func CreateSummaryImagesRequest() (request *SummaryImagesRequest) {
 	request = &SummaryImagesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "SummaryImages", "", "")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "SummaryImages", "ehs", "openAPI")
 	request.Method = requests.GET
 	return
 }

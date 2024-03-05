@@ -94,7 +94,7 @@ func CreateDescribeGWSInstancesRequest() (request *DescribeGWSInstancesRequest) 
 	request = &DescribeGWSInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "DescribeGWSInstances", "", "")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "DescribeGWSInstances", "ehs", "openAPI")
 	request.Method = requests.GET
 	return
 }

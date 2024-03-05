@@ -85,7 +85,7 @@ func CreateSyncUsersRequest() (request *SyncUsersRequest) {
 	request = &SyncUsersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "SyncUsers", "", "")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "SyncUsers", "ehs", "openAPI")
 	request.Method = requests.GET
 	return
 }

@@ -86,7 +86,7 @@ func CreateModifyContainerAppAttributesRequest() (request *ModifyContainerAppAtt
 	request = &ModifyContainerAppAttributesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "ModifyContainerAppAttributes", "", "")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "ModifyContainerAppAttributes", "ehs", "openAPI")
 	request.Method = requests.GET
 	return
 }

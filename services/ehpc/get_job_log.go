@@ -92,7 +92,7 @@ func CreateGetJobLogRequest() (request *GetJobLogRequest) {
 	request = &GetJobLogRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "GetJobLog", "", "")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "GetJobLog", "ehs", "openAPI")
 	request.Method = requests.GET
 	return
 }

@@ -90,7 +90,7 @@ func CreateListNodesNoPagingRequest() (request *ListNodesNoPagingRequest) {
 	request = &ListNodesNoPagingRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "ListNodesNoPaging", "", "")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "ListNodesNoPaging", "ehs", "openAPI")
 	request.Method = requests.GET
 	return
 }
