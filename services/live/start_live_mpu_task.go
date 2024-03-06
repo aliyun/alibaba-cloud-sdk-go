@@ -144,7 +144,7 @@ type StartLiveMPUTaskTranscodeParamsEncodeParams struct {
 	VideoWidth      string `name:"VideoWidth"`
 	AudioBitrate    string `name:"AudioBitrate"`
 	VideoFramerate  string `name:"VideoFramerate"`
-	VIdeoHeight     string `name:"VIdeoHeight"`
+	VideoHeight     string `name:"VideoHeight"`
 	VideoBitrate    string `name:"VideoBitrate"`
 	AudioSampleRate string `name:"AudioSampleRate"`
 	VideoGop        string `name:"VideoGop"`
