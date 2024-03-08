@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// CreateInstance invokes the amqp_open.CreateInstance API synchronously
-func (client *Client) CreateInstance(request *CreateInstanceRequest) (response *CreateInstanceResponse, err error) {
-	response = CreateCreateInstanceResponse()
+// UpdateInstance invokes the amqp_open.UpdateInstance API synchronously
+func (client *Client) UpdateInstance(request *UpdateInstanceRequest) (response *UpdateInstanceResponse, err error) {
+	response = CreateUpdateInstanceResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// CreateInstanceWithChan invokes the amqp_open.CreateInstance API asynchronously
-func (client *Client) CreateInstanceWithChan(request *CreateInstanceRequest) (<-chan *CreateInstanceResponse, <-chan error) {
-	responseChan := make(chan *CreateInstanceResponse, 1)
+// UpdateInstanceWithChan invokes the amqp_open.UpdateInstance API asynchronously
+func (client *Client) UpdateInstanceWithChan(request *UpdateInstanceRequest) (<-chan *UpdateInstanceResponse, <-chan error) {
+	responseChan := make(chan *UpdateInstanceResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.CreateInstance(request)
+		response, err := client.UpdateInstance(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) CreateInstanceWithChan(request *CreateInstanceRequest) (<-
 	return responseChan, errChan
 }
 
-// CreateInstanceWithCallback invokes the amqp_open.CreateInstance API asynchronously
-func (client *Client) CreateInstanceWithCallback(request *CreateInstanceRequest, callback func(response *CreateInstanceResponse, err error)) <-chan int {
+// UpdateInstanceWithCallback invokes the amqp_open.UpdateInstance API asynchronously
+func (client *Client) UpdateInstanceWithCallback(request *UpdateInstanceRequest, callback func(response *UpdateInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *CreateInstanceResponse
+		var response *UpdateInstanceResponse
 		var err error
 		defer close(result)
-		response, err = client.CreateInstance(request)
+		response, err = client.UpdateInstance(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,12 +68,11 @@ func (client *Client) CreateInstanceWithCallback(request *CreateInstanceRequest,
 	return result
 }
 
-// CreateInstanceRequest is the request struct for api CreateInstance
-type CreateInstanceRequest struct {
+// UpdateInstanceRequest is the request struct for api UpdateInstance
+type UpdateInstanceRequest struct {
 	*requests.RpcRequest
 	MaxPrivateTps        requests.Integer `position:"Query" name:"MaxPrivateTps"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
-	PeriodCycle          string           `position:"Query" name:"PeriodCycle"`
 	StorageSize          requests.Integer `position:"Query" name:"StorageSize"`
 	QueueCapacity        requests.Integer `position:"Query" name:"QueueCapacity"`
 	TracingStorageTime   requests.Integer `position:"Query" name:"TracingStorageTime"`
@@ -81,35 +80,30 @@ type CreateInstanceRequest struct {
 	SupportTracing       requests.Boolean `position:"Query" name:"SupportTracing"`
 	ServerlessChargeType string           `position:"Query" name:"ServerlessChargeType"`
 	InstanceType         string           `position:"Query" name:"InstanceType"`
-	RenewStatus          string           `position:"Query" name:"RenewStatus"`
-	AutoRenewPeriod      requests.Integer `position:"Query" name:"AutoRenewPeriod"`
-	Period               requests.Integer `position:"Query" name:"Period"`
-	RenewalDurationUnit  string           `position:"Query" name:"RenewalDurationUnit"`
-	InstanceName         string           `position:"Query" name:"InstanceName"`
-	AutoRenew            requests.Boolean `position:"Query" name:"AutoRenew"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
 	SupportEip           requests.Boolean `position:"Query" name:"SupportEip"`
+	ModifyType           string           `position:"Query" name:"ModifyType"`
 	MaxEipTps            requests.Integer `position:"Query" name:"MaxEipTps"`
-	PaymentType          string           `position:"Query" name:"PaymentType"`
 }
 
-// CreateInstanceResponse is the response struct for api CreateInstance
-type CreateInstanceResponse struct {
+// UpdateInstanceResponse is the response struct for api UpdateInstance
+type UpdateInstanceResponse struct {
 	*responses.BaseResponse
 }
 
-// CreateCreateInstanceRequest creates a request to invoke CreateInstance API
-func CreateCreateInstanceRequest() (request *CreateInstanceRequest) {
-	request = &CreateInstanceRequest{
+// CreateUpdateInstanceRequest creates a request to invoke UpdateInstance API
+func CreateUpdateInstanceRequest() (request *UpdateInstanceRequest) {
+	request = &UpdateInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("amqp-open", "2019-12-12", "CreateInstance", "onsproxy", "openAPI")
+	request.InitWithApiInfo("amqp-open", "2019-12-12", "UpdateInstance", "onsproxy", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateCreateInstanceResponse creates a response to parse from CreateInstance response
-func CreateCreateInstanceResponse() (response *CreateInstanceResponse) {
-	response = &CreateInstanceResponse{
+// CreateUpdateInstanceResponse creates a response to parse from UpdateInstance response
+func CreateUpdateInstanceResponse() (response *UpdateInstanceResponse) {
+	response = &UpdateInstanceResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

@@ -1,3 +1,8 @@
+2024-03-08 Version: v1.62.690
+- Generated 2019-12-12 for `amqp-open`.
+- Support CreateInstance API.
+- Support UpdateInstance API.
+
 2024-03-08 Version: v1.62.689
 - Generated 2015-12-01 for `Dds`.
 undefined
