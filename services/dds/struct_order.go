@@ -17,11 +17,20 @@ package dds
 
 // Order is a nested struct in dds response
 type Order struct {
-	TradeAmount      string                 `json:"TradeAmount" xml:"TradeAmount"`
-	OriginalAmount   string                 `json:"OriginalAmount" xml:"OriginalAmount"`
-	ShowDiscountInfo bool                   `json:"ShowDiscountInfo" xml:"ShowDiscountInfo"`
-	Currency         string                 `json:"Currency" xml:"Currency"`
-	DiscountAmount   string                 `json:"DiscountAmount" xml:"DiscountAmount"`
-	RuleIds          RuleIdsInDescribePrice `json:"RuleIds" xml:"RuleIds"`
-	Coupons          CouponsInDescribePrice `json:"Coupons" xml:"Coupons"`
+	Message            string                 `json:"Message" xml:"Message"`
+	Code               string                 `json:"Code" xml:"Code"`
+	Currency           string                 `json:"Currency" xml:"Currency"`
+	StandPrice         string                 `json:"StandPrice" xml:"StandPrice"`
+	OptionalPromotions string                 `json:"OptionalPromotions" xml:"OptionalPromotions"`
+	TradeAmount        string                 `json:"TradeAmount" xml:"TradeAmount"`
+	OriginalAmount     string                 `json:"OriginalAmount" xml:"OriginalAmount"`
+	IsContractActivity bool                   `json:"IsContractActivity" xml:"IsContractActivity"`
+	StandDiscountPrice string                 `json:"StandDiscountPrice" xml:"StandDiscountPrice"`
+	ShowDiscountInfo   bool                   `json:"ShowDiscountInfo" xml:"ShowDiscountInfo"`
+	ContractActivity   bool                   `json:"ContractActivity" xml:"ContractActivity"`
+	DiscountAmount     string                 `json:"DiscountAmount" xml:"DiscountAmount"`
+	PromDetailList     string                 `json:"PromDetailList" xml:"PromDetailList"`
+	RuleIds            RuleIdsInDescribePrice `json:"RuleIds" xml:"RuleIds"`
+	DepreciateInfo     DepreciateInfo         `json:"DepreciateInfo" xml:"DepreciateInfo"`
+	Coupons            CouponsInDescribePrice `json:"Coupons" xml:"Coupons"`
 }

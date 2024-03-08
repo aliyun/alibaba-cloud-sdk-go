@@ -78,7 +78,6 @@ type CreateShardingDBInstanceRequest struct {
 	ReplicaSet             *[]CreateShardingDBInstanceReplicaSet   `position:"Query" name:"ReplicaSet"  type:"Repeated"`
 	StorageType            string                                  `position:"Query" name:"StorageType"`
 	ResourceGroupId        string                                  `position:"Query" name:"ResourceGroupId"`
-	SecurityToken          string                                  `position:"Query" name:"SecurityToken"`
 	DBInstanceDescription  string                                  `position:"Query" name:"DBInstanceDescription"`
 	Tag                    *[]CreateShardingDBInstanceTag          `position:"Query" name:"Tag"  type:"Repeated"`
 	GlobalSecurityGroupIds string                                  `position:"Query" name:"GlobalSecurityGroupIds"`

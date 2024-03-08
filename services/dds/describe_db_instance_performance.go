@@ -75,7 +75,6 @@ type DescribeDBInstancePerformanceRequest struct {
 	RoleId               string           `position:"Query" name:"RoleId"`
 	StartTime            string           `position:"Query" name:"StartTime"`
 	ReplicaSetRole       string           `position:"Query" name:"ReplicaSetRole"`
-	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	NodeId               string           `position:"Query" name:"NodeId"`
 	Key                  string           `position:"Query" name:"Key"`

@@ -79,7 +79,6 @@ type CreateNodeRequest struct {
 	NodeClass            string           `position:"Query" name:"NodeClass"`
 	ShardDirect          requests.Boolean `position:"Query" name:"ShardDirect"`
 	AccountName          string           `position:"Query" name:"AccountName"`
-	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	BusinessInfo         string           `position:"Query" name:"BusinessInfo"`
 	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`

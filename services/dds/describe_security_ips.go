@@ -72,7 +72,7 @@ func (client *Client) DescribeSecurityIpsWithCallback(request *DescribeSecurityI
 type DescribeSecurityIpsRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	SecurityToken        string           `position:"Query" name:"SecurityToken"`
+	ShowHDMIps           requests.Boolean `position:"Query" name:"ShowHDMIps"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`

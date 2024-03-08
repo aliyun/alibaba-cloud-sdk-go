@@ -73,7 +73,6 @@ type TransformToPrePaidRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	CouponNo             string           `position:"Query" name:"CouponNo"`
-	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	BusinessInfo         string           `position:"Query" name:"BusinessInfo"`
 	Period               requests.Integer `position:"Query" name:"Period"`
 	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`

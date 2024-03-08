@@ -74,7 +74,6 @@ type DescribeGlobalSecurityIPGroupRequest struct {
 	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceGroupId       string           `position:"Query" name:"ResourceGroupId"`
 	GlobalSecurityGroupId string           `position:"Query" name:"GlobalSecurityGroupId"`
-	SecurityToken         string           `position:"Query" name:"SecurityToken"`
 	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
 	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`

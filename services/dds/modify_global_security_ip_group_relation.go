@@ -74,7 +74,6 @@ type ModifyGlobalSecurityIPGroupRelationRequest struct {
 	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceGroupId       string           `position:"Query" name:"ResourceGroupId"`
 	GlobalSecurityGroupId string           `position:"Query" name:"GlobalSecurityGroupId"`
-	SecurityToken         string           `position:"Query" name:"SecurityToken"`
 	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
 	DBClusterId           string           `position:"Query" name:"DBClusterId"`
 	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`

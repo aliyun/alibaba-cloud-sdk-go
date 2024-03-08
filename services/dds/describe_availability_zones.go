@@ -72,9 +72,10 @@ func (client *Client) DescribeAvailabilityZonesWithCallback(request *DescribeAva
 type DescribeAvailabilityZonesRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId        requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	EngineVersion          string           `position:"Query" name:"EngineVersion"`
 	StorageType            string           `position:"Query" name:"StorageType"`
+	ReplicationFactor      string           `position:"Query" name:"ReplicationFactor"`
 	ResourceGroupId        string           `position:"Query" name:"ResourceGroupId"`
-	SecurityToken          string           `position:"Query" name:"SecurityToken"`
 	ExcludeZoneId          string           `position:"Query" name:"ExcludeZoneId"`
 	ExcludeSecondaryZoneId string           `position:"Query" name:"ExcludeSecondaryZoneId"`
 	InstanceChargeType     string           `position:"Query" name:"InstanceChargeType"`
@@ -83,6 +84,7 @@ type DescribeAvailabilityZonesRequest struct {
 	OwnerAccount           string           `position:"Query" name:"OwnerAccount"`
 	MongoType              string           `position:"Query" name:"MongoType"`
 	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
+	DBInstanceClass        string           `position:"Query" name:"DBInstanceClass"`
 	StorageSupport         string           `position:"Query" name:"StorageSupport"`
 	DbType                 string           `position:"Query" name:"DbType"`
 	AcceptLanguage         string           `position:"Query" name:"AcceptLanguage"`

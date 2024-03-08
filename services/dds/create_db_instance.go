@@ -79,7 +79,6 @@ type CreateDBInstanceRequest struct {
 	NetworkType            string                 `position:"Query" name:"NetworkType"`
 	StorageType            string                 `position:"Query" name:"StorageType"`
 	ResourceGroupId        string                 `position:"Query" name:"ResourceGroupId"`
-	SecurityToken          string                 `position:"Query" name:"SecurityToken"`
 	DBInstanceDescription  string                 `position:"Query" name:"DBInstanceDescription"`
 	Tag                    *[]CreateDBInstanceTag `position:"Query" name:"Tag"  type:"Repeated"`
 	GlobalSecurityGroupIds string                 `position:"Query" name:"GlobalSecurityGroupIds"`

@@ -76,7 +76,6 @@ type DescribeAuditRecordsRequest struct {
 	QueryKeywords        string           `position:"Query" name:"QueryKeywords"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	Database             string           `position:"Query" name:"Database"`
-	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	NodeId               string           `position:"Query" name:"NodeId"`
@@ -84,6 +83,7 @@ type DescribeAuditRecordsRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	EndTime              string           `position:"Query" name:"EndTime"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	LogicalOperator      string           `position:"Query" name:"LogicalOperator"`
 	Form                 string           `position:"Query" name:"Form"`
 	User                 string           `position:"Query" name:"User"`
 	OrderType            string           `position:"Query" name:"OrderType"`

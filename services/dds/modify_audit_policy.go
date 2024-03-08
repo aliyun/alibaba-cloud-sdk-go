@@ -73,7 +73,6 @@ type ModifyAuditPolicyRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	StoragePeriod        requests.Integer `position:"Query" name:"StoragePeriod"`
-	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	AuditLogSwitchSource string           `position:"Query" name:"AuditLogSwitchSource"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	AuditStatus          string           `position:"Query" name:"AuditStatus"`

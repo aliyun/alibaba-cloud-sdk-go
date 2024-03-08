@@ -78,7 +78,6 @@ type DescribeDBInstancesRequest struct {
 	ReplicationFactor     string                    `position:"Query" name:"ReplicationFactor"`
 	ResourceGroupId       string                    `position:"Query" name:"ResourceGroupId"`
 	Expired               string                    `position:"Query" name:"Expired"`
-	SecurityToken         string                    `position:"Query" name:"SecurityToken"`
 	Engine                string                    `position:"Query" name:"Engine"`
 	PageSize              requests.Integer          `position:"Query" name:"PageSize"`
 	DBNodeType            string                    `position:"Query" name:"DBNodeType"`

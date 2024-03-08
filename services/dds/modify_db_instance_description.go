@@ -72,7 +72,6 @@ func (client *Client) ModifyDBInstanceDescriptionWithCallback(request *ModifyDBI
 type ModifyDBInstanceDescriptionRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	SecurityToken         string           `position:"Query" name:"SecurityToken"`
 	DBInstanceId          string           `position:"Query" name:"DBInstanceId"`
 	DBInstanceDescription string           `position:"Query" name:"DBInstanceDescription"`
 	NodeId                string           `position:"Query" name:"NodeId"`

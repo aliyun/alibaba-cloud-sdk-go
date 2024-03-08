@@ -74,7 +74,6 @@ type RenewDBInstanceRequest struct {
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
 	CouponNo             string           `position:"Query" name:"CouponNo"`
-	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	BusinessInfo         string           `position:"Query" name:"BusinessInfo"`
 	Period               requests.Integer `position:"Query" name:"Period"`
@@ -82,6 +81,7 @@ type RenewDBInstanceRequest struct {
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	AutoRenew            requests.Boolean `position:"Query" name:"AutoRenew"`
 }
 
 // RenewDBInstanceResponse is the response struct for api RenewDBInstance

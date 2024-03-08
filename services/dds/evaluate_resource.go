@@ -77,7 +77,6 @@ type EvaluateResourceRequest struct {
 	Storage              string           `position:"Query" name:"Storage"`
 	ShardsInfo           string           `position:"Query" name:"ShardsInfo"`
 	ReplicationFactor    string           `position:"Query" name:"ReplicationFactor"`
-	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	Engine               string           `position:"Query" name:"Engine"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`

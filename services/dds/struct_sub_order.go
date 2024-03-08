@@ -17,9 +17,18 @@ package dds
 
 // SubOrder is a nested struct in dds response
 type SubOrder struct {
-	TradeAmount    string                 `json:"TradeAmount" xml:"TradeAmount"`
-	OriginalAmount string                 `json:"OriginalAmount" xml:"OriginalAmount"`
-	InstanceId     string                 `json:"InstanceId" xml:"InstanceId"`
-	DiscountAmount string                 `json:"DiscountAmount" xml:"DiscountAmount"`
-	RuleIds        RuleIdsInDescribePrice `json:"RuleIds" xml:"RuleIds"`
+	StandPrice            string                        `json:"StandPrice" xml:"StandPrice"`
+	IsNewOfficialActivity string                        `json:"IsNewOfficialActivity" xml:"IsNewOfficialActivity"`
+	TradeAmount           string                        `json:"TradeAmount" xml:"TradeAmount"`
+	OriginalAmount        string                        `json:"OriginalAmount" xml:"OriginalAmount"`
+	IsContractActivity    bool                          `json:"IsContractActivity" xml:"IsContractActivity"`
+	StandDiscountPrice    string                        `json:"StandDiscountPrice" xml:"StandDiscountPrice"`
+	InstanceId            string                        `json:"InstanceId" xml:"InstanceId"`
+	ContractActivity      bool                          `json:"ContractActivity" xml:"ContractActivity"`
+	DiscountAmount        string                        `json:"DiscountAmount" xml:"DiscountAmount"`
+	RuleIds               RuleIdsInDescribePrice        `json:"RuleIds" xml:"RuleIds"`
+	DepreciateInfo        DepreciateInfo                `json:"DepreciateInfo" xml:"DepreciateInfo"`
+	ModuleInstance        ModuleInstance                `json:"ModuleInstance" xml:"ModuleInstance"`
+	OptionalPromotions    OptionalPromotions            `json:"OptionalPromotions" xml:"OptionalPromotions"`
+	PromDetailList        PromDetailListInDescribePrice `json:"PromDetailList" xml:"PromDetailList"`
 }

@@ -73,7 +73,6 @@ type ModifyDBInstanceNetworkTypeRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	NetworkType          string           `position:"Query" name:"NetworkType"`
-	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	ClassicExpiredDays   requests.Integer `position:"Query" name:"ClassicExpiredDays"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`

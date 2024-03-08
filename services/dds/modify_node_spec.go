@@ -76,7 +76,6 @@ type ModifyNodeSpecRequest struct {
 	ReadonlyReplicas     requests.Integer `position:"Query" name:"ReadonlyReplicas"`
 	CouponNo             string           `position:"Query" name:"CouponNo"`
 	NodeClass            string           `position:"Query" name:"NodeClass"`
-	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	EffectiveTime        string           `position:"Query" name:"EffectiveTime"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	SwitchTime           string           `position:"Query" name:"SwitchTime"`

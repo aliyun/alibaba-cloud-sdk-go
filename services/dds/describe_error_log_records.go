@@ -74,8 +74,8 @@ type DescribeErrorLogRecordsRequest struct {
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	StartTime            string           `position:"Query" name:"StartTime"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	QueryKeywords        string           `position:"Query" name:"QueryKeywords"`
 	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
-	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	RoleType             string           `position:"Query" name:"RoleType"`
@@ -84,6 +84,7 @@ type DescribeErrorLogRecordsRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	EndTime              string           `position:"Query" name:"EndTime"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	LogicalOperator      string           `position:"Query" name:"LogicalOperator"`
 	DBName               string           `position:"Query" name:"DBName"`
 }
 

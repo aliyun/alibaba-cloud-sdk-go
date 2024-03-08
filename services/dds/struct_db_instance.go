@@ -46,6 +46,7 @@ type DBInstance struct {
 	CurrentKernelVersion        string                                        `json:"CurrentKernelVersion" xml:"CurrentKernelVersion"`
 	StorageType                 string                                        `json:"StorageType" xml:"StorageType"`
 	ZoneId                      string                                        `json:"ZoneId" xml:"ZoneId"`
+	MaxMBPS                     int                                           `json:"MaxMBPS" xml:"MaxMBPS"`
 	PaymentType                 string                                        `json:"PaymentType" xml:"PaymentType"`
 	LockMode                    string                                        `json:"LockMode" xml:"LockMode"`
 	DBInstanceDescription       string                                        `json:"DBInstanceDescription" xml:"DBInstanceDescription"`
@@ -68,7 +69,7 @@ type DBInstance struct {
 	ReplicaSets                 ReplicaSetsInDescribeDBInstanceAttribute      `json:"ReplicaSets" xml:"ReplicaSets"`
 	Tags                        TagsInDescribeDBInstanceAttribute             `json:"Tags" xml:"Tags"`
 	ConfigserverList            ConfigserverList                              `json:"ConfigserverList" xml:"ConfigserverList"`
-	ShardList                   ShardListInDescribeDBInstances                `json:"ShardList" xml:"ShardList"`
+	ShardList                   ShardListInDescribeDBInstanceAttribute        `json:"ShardList" xml:"ShardList"`
 	NetworkAddresses            NetworkAddressesInDescribeDBInstanceAttribute `json:"NetworkAddresses" xml:"NetworkAddresses"`
 	MongosList                  MongosListInDescribeDBInstanceAttribute       `json:"MongosList" xml:"MongosList"`
 }

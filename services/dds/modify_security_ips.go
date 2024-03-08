@@ -74,7 +74,6 @@ type ModifySecurityIpsRequest struct {
 	ResourceOwnerId          requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	SecurityIps              string           `position:"Query" name:"SecurityIps"`
 	SecurityIpGroupName      string           `position:"Query" name:"SecurityIpGroupName"`
-	SecurityToken            string           `position:"Query" name:"SecurityToken"`
 	DBInstanceId             string           `position:"Query" name:"DBInstanceId"`
 	ModifyMode               string           `position:"Query" name:"ModifyMode"`
 	ResourceOwnerAccount     string           `position:"Query" name:"ResourceOwnerAccount"`

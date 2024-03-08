@@ -75,7 +75,6 @@ type ModifyNodeSpecBatchRequest struct {
 	ClientToken          string           `position:"Query" name:"ClientToken"`
 	NodesInfo            string           `position:"Query" name:"NodesInfo"`
 	CouponNo             string           `position:"Query" name:"CouponNo"`
-	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	EffectiveTime        string           `position:"Query" name:"EffectiveTime"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	BusinessInfo         string           `position:"Query" name:"BusinessInfo"`

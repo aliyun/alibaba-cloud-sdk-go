@@ -17,7 +17,7 @@ package dds
 
 // AvailableRestoreTime is a nested struct in dds response
 type AvailableRestoreTime struct {
+	RestoreType      string `json:"RestoreType" xml:"RestoreType"`
 	RestoreBeginTime string `json:"RestoreBeginTime" xml:"RestoreBeginTime"`
 	RestoreEndTime   string `json:"RestoreEndTime" xml:"RestoreEndTime"`
-	RestoreType      string `json:"RestoreType" xml:"RestoreType"`
 }

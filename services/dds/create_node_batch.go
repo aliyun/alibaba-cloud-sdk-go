@@ -77,7 +77,6 @@ type CreateNodeBatchRequest struct {
 	CouponNo             string           `position:"Query" name:"CouponNo"`
 	ShardDirect          requests.Boolean `position:"Query" name:"ShardDirect"`
 	AccountName          string           `position:"Query" name:"AccountName"`
-	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	BusinessInfo         string           `position:"Query" name:"BusinessInfo"`
 	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`

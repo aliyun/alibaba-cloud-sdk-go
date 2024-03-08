@@ -74,7 +74,6 @@ type SwitchDBInstanceHARequest struct {
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	SwitchMode           requests.Integer `position:"Query" name:"SwitchMode"`
 	RoleIds              string           `position:"Query" name:"RoleIds"`
-	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	NodeId               string           `position:"Query" name:"NodeId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`

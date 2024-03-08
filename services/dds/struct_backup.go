@@ -27,5 +27,6 @@ type Backup struct {
 	BackupId                  int    `json:"BackupId" xml:"BackupId"`
 	BackupType                string `json:"BackupType" xml:"BackupType"`
 	BackupDownloadURL         string `json:"BackupDownloadURL" xml:"BackupDownloadURL"`
+	BackupJobId               int64  `json:"BackupJobId" xml:"BackupJobId"`
 	BackupSize                int64  `json:"BackupSize" xml:"BackupSize"`
 }

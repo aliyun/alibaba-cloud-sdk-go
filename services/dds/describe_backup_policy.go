@@ -82,15 +82,16 @@ type DescribeBackupPolicyRequest struct {
 // DescribeBackupPolicyResponse is the response struct for api DescribeBackupPolicy
 type DescribeBackupPolicyResponse struct {
 	*responses.BaseResponse
-	PreferredBackupPeriod    string `json:"PreferredBackupPeriod" xml:"PreferredBackupPeriod"`
-	RequestId                string `json:"RequestId" xml:"RequestId"`
-	PreferredBackupTime      string `json:"PreferredBackupTime" xml:"PreferredBackupTime"`
-	BackupRetentionPeriod    string `json:"BackupRetentionPeriod" xml:"BackupRetentionPeriod"`
-	PreferredNextBackupTime  string `json:"PreferredNextBackupTime" xml:"PreferredNextBackupTime"`
-	EnableBackupLog          int    `json:"EnableBackupLog" xml:"EnableBackupLog"`
-	LogBackupRetentionPeriod int    `json:"LogBackupRetentionPeriod" xml:"LogBackupRetentionPeriod"`
-	SnapshotBackupType       string `json:"SnapshotBackupType" xml:"SnapshotBackupType"`
-	BackupInterval           int    `json:"BackupInterval" xml:"BackupInterval"`
+	PreferredBackupPeriod        string `json:"PreferredBackupPeriod" xml:"PreferredBackupPeriod"`
+	RequestId                    string `json:"RequestId" xml:"RequestId"`
+	PreferredBackupTime          string `json:"PreferredBackupTime" xml:"PreferredBackupTime"`
+	BackupRetentionPeriod        string `json:"BackupRetentionPeriod" xml:"BackupRetentionPeriod"`
+	PreferredNextBackupTime      string `json:"PreferredNextBackupTime" xml:"PreferredNextBackupTime"`
+	EnableBackupLog              int    `json:"EnableBackupLog" xml:"EnableBackupLog"`
+	LogBackupRetentionPeriod     int    `json:"LogBackupRetentionPeriod" xml:"LogBackupRetentionPeriod"`
+	SnapshotBackupType           string `json:"SnapshotBackupType" xml:"SnapshotBackupType"`
+	BackupInterval               int    `json:"BackupInterval" xml:"BackupInterval"`
+	HighFrequencyBackupRetention string `json:"HighFrequencyBackupRetention" xml:"HighFrequencyBackupRetention"`
 }
 
 // CreateDescribeBackupPolicyRequest creates a request to invoke DescribeBackupPolicy API

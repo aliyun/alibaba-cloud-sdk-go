@@ -72,7 +72,6 @@ func (client *Client) ModifyInstanceVpcAuthModeWithCallback(request *ModifyInsta
 type ModifyInstanceVpcAuthModeRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	VpcAuthMode          string           `position:"Query" name:"VpcAuthMode"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	NodeId               string           `position:"Query" name:"NodeId"`

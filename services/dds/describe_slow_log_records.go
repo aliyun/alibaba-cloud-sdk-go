@@ -73,9 +73,9 @@ type DescribeSlowLogRecordsRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	StartTime            string           `position:"Query" name:"StartTime"`
+	QueryKeywords        string           `position:"Query" name:"QueryKeywords"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
-	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	NodeId               string           `position:"Query" name:"NodeId"`
@@ -83,6 +83,7 @@ type DescribeSlowLogRecordsRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	EndTime              string           `position:"Query" name:"EndTime"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	LogicalOperator      string           `position:"Query" name:"LogicalOperator"`
 	DBName               string           `position:"Query" name:"DBName"`
 	OrderType            string           `position:"Query" name:"OrderType"`
 }

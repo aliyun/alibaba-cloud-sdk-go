@@ -18,6 +18,7 @@ package dds
 // ShardAttribute is a nested struct in dds response
 type ShardAttribute struct {
 	MaxIOPS          int    `json:"MaxIOPS" xml:"MaxIOPS"`
+	MaxDiskMbps      string `json:"MaxDiskMbps" xml:"MaxDiskMbps"`
 	Port             int    `json:"Port" xml:"Port"`
 	NodeDescription  string `json:"NodeDescription" xml:"NodeDescription"`
 	NodeId           string `json:"NodeId" xml:"NodeId"`

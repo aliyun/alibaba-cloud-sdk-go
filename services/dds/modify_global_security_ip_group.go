@@ -75,7 +75,6 @@ type ModifyGlobalSecurityIPGroupRequest struct {
 	GIpList               string           `position:"Query" name:"GIpList"`
 	ResourceGroupId       string           `position:"Query" name:"ResourceGroupId"`
 	GlobalSecurityGroupId string           `position:"Query" name:"GlobalSecurityGroupId"`
-	SecurityToken         string           `position:"Query" name:"SecurityToken"`
 	SecurityIPType        string           `position:"Query" name:"SecurityIPType"`
 	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`

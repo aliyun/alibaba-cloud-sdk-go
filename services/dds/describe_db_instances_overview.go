@@ -76,7 +76,6 @@ type DescribeDBInstancesOverviewRequest struct {
 	EngineVersion        string           `position:"Query" name:"EngineVersion"`
 	InstanceClass        string           `position:"Query" name:"InstanceClass"`
 	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
-	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	InstanceType         string           `position:"Query" name:"InstanceType"`
 	InstanceStatus       string           `position:"Query" name:"InstanceStatus"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`

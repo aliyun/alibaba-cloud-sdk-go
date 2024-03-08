@@ -72,7 +72,6 @@ func (client *Client) ModifyDBInstanceMaintainTimeWithCallback(request *ModifyDB
 type ModifyDBInstanceMaintainTimeRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	MaintainStartTime    string           `position:"Query" name:"MaintainStartTime"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`

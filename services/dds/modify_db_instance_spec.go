@@ -77,7 +77,6 @@ type ModifyDBInstanceSpecRequest struct {
 	ExtraParam           string           `position:"Query" name:"ExtraParam"`
 	CouponNo             string           `position:"Query" name:"CouponNo"`
 	ReplicationFactor    string           `position:"Query" name:"ReplicationFactor"`
-	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	EffectiveTime        string           `position:"Query" name:"EffectiveTime"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	BusinessInfo         string           `position:"Query" name:"BusinessInfo"`
