@@ -1,3 +1,7 @@
+2024-03-13 Version: v1.62.692
+- Generated 2020-03-20 for `videoenhan`.
+- Update QueryFaceVideoTemplate.
+
 2024-03-13 Version: v1.62.691
 - Generated 2016-11-01 for `live`.
 - Update to support new apis.

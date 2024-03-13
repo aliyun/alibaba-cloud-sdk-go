@@ -24,6 +24,7 @@ type Data struct {
 	Status        string         `json:"Status" xml:"Status"`
 	VideoUrl      string         `json:"VideoUrl" xml:"VideoUrl"`
 	VideoURL      string         `json:"VideoURL" xml:"VideoURL"`
+	Total         int64          `json:"Total" xml:"Total"`
 	ErrorCode     string         `json:"ErrorCode" xml:"ErrorCode"`
 	Elements      []ElementsItem `json:"Elements" xml:"Elements"`
 }

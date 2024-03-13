@@ -71,8 +71,10 @@ func (client *Client) QueryFaceVideoTemplateWithCallback(request *QueryFaceVideo
 // QueryFaceVideoTemplateRequest is the request struct for api QueryFaceVideoTemplate
 type QueryFaceVideoTemplateRequest struct {
 	*requests.RpcRequest
-	UserId     string `position:"Query" name:"UserId"`
-	TemplateId string `position:"Query" name:"TemplateId"`
+	UserId     string           `position:"Query" name:"UserId"`
+	PageSize   requests.Integer `position:"Query" name:"PageSize"`
+	TemplateId string           `position:"Query" name:"TemplateId"`
+	PageNo     requests.Integer `position:"Query" name:"PageNo"`
 }
 
 // QueryFaceVideoTemplateResponse is the response struct for api QueryFaceVideoTemplate
