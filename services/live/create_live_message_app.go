@@ -72,6 +72,7 @@ func (client *Client) CreateLiveMessageAppWithCallback(request *CreateLiveMessag
 type CreateLiveMessageAppRequest struct {
 	*requests.RpcRequest
 	DataCenter       string           `position:"Query" name:"DataCenter"`
+	MsgLifeCycle     requests.Integer `position:"Query" name:"MsgLifeCycle"`
 	AppName          string           `position:"Query" name:"AppName"`
 	AuditType        requests.Integer `position:"Query" name:"AuditType"`
 	AuditUrl         string           `position:"Query" name:"AuditUrl"`

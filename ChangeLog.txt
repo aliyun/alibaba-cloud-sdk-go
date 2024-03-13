@@ -1,3 +1,7 @@
+2024-03-13 Version: v1.62.691
+- Generated 2016-11-01 for `live`.
+- Update to support new apis.
+
 2024-03-08 Version: v1.62.690
 - Generated 2019-12-12 for `amqp-open`.
 - Support CreateInstance API.
