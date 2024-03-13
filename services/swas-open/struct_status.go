@@ -17,6 +17,14 @@ package swas_open
 
 // Status is a nested struct in swas_open response
 type Status struct {
-	InstanceId string `json:"InstanceId" xml:"InstanceId"`
-	Status     bool   `json:"Status" xml:"Status"`
+	LastInvokedTime       string `json:"LastInvokedTime" xml:"LastInvokedTime"`
+	Status                bool   `json:"Status" xml:"Status"`
+	InvocationCount       int64  `json:"InvocationCount" xml:"InvocationCount"`
+	CloudAssistantVersion string `json:"CloudAssistantVersion" xml:"CloudAssistantVersion"`
+	OSType                string `json:"OSType" xml:"OSType"`
+	CloudAssistantStatus  string `json:"CloudAssistantStatus" xml:"CloudAssistantStatus"`
+	InstanceId            string `json:"InstanceId" xml:"InstanceId"`
+	LastHeartbeatTime     string `json:"LastHeartbeatTime" xml:"LastHeartbeatTime"`
+	SupportSessionManager bool   `json:"SupportSessionManager" xml:"SupportSessionManager"`
+	ActiveTaskCount       int64  `json:"ActiveTaskCount" xml:"ActiveTaskCount"`
 }

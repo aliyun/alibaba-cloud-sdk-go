@@ -36,4 +36,6 @@ type Instance struct {
 	Uuid                  string       `json:"Uuid" xml:"Uuid"`
 	ResourceSpec          ResourceSpec `json:"ResourceSpec" xml:"ResourceSpec"`
 	Image                 Image        `json:"Image" xml:"Image"`
+	Tags                  []Tag        `json:"Tags" xml:"Tags"`
+	Disks                 []Disk       `json:"Disks" xml:"Disks"`
 }

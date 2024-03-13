@@ -71,12 +71,19 @@ func (client *Client) DescribeCommandsWithCallback(request *DescribeCommandsRequ
 // DescribeCommandsRequest is the request struct for api DescribeCommands
 type DescribeCommandsRequest struct {
 	*requests.RpcRequest
-	Type       string `position:"Query" name:"Type"`
-	CommandId  string `position:"Query" name:"CommandId"`
-	PageNumber string `position:"Query" name:"PageNumber"`
-	Provider   string `position:"Query" name:"Provider"`
-	Name       string `position:"Query" name:"Name"`
-	PageSize   string `position:"Query" name:"PageSize"`
+	Type       string                 `position:"Query" name:"Type"`
+	CommandId  string                 `position:"Query" name:"CommandId"`
+	PageNumber string                 `position:"Query" name:"PageNumber"`
+	Provider   string                 `position:"Query" name:"Provider"`
+	PageSize   string                 `position:"Query" name:"PageSize"`
+	Tag        *[]DescribeCommandsTag `position:"Query" name:"Tag"  type:"Repeated"`
+	Name       string                 `position:"Query" name:"Name"`
+}
+
+// DescribeCommandsTag is a repeated param struct in DescribeCommandsRequest
+type DescribeCommandsTag struct {
+	Key   string `name:"Key"`
+	Value string `name:"Value"`
 }
 
 // DescribeCommandsResponse is the response struct for api DescribeCommands

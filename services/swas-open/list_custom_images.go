@@ -71,13 +71,21 @@ func (client *Client) ListCustomImagesWithCallback(request *ListCustomImagesRequ
 // ListCustomImagesRequest is the request struct for api ListCustomImages
 type ListCustomImagesRequest struct {
 	*requests.RpcRequest
-	SystemSnapshotId string           `position:"Query" name:"SystemSnapshotId"`
-	DataSnapshotId   string           `position:"Query" name:"DataSnapshotId"`
-	ClientToken      string           `position:"Query" name:"ClientToken"`
-	ImageNames       string           `position:"Query" name:"ImageNames"`
-	PageNumber       requests.Integer `position:"Query" name:"PageNumber"`
-	PageSize         requests.Integer `position:"Query" name:"PageSize"`
-	ImageIds         string           `position:"Query" name:"ImageIds"`
+	SystemSnapshotId string                 `position:"Query" name:"SystemSnapshotId"`
+	DataSnapshotId   string                 `position:"Query" name:"DataSnapshotId"`
+	ClientToken      string                 `position:"Query" name:"ClientToken"`
+	ImageNames       string                 `position:"Query" name:"ImageNames"`
+	PageNumber       requests.Integer       `position:"Query" name:"PageNumber"`
+	ResourceGroupId  string                 `position:"Query" name:"ResourceGroupId"`
+	PageSize         requests.Integer       `position:"Query" name:"PageSize"`
+	Tag              *[]ListCustomImagesTag `position:"Query" name:"Tag"  type:"Repeated"`
+	ImageIds         string                 `position:"Query" name:"ImageIds"`
+}
+
+// ListCustomImagesTag is a repeated param struct in ListCustomImagesRequest
+type ListCustomImagesTag struct {
+	Key   string `name:"Key"`
+	Value string `name:"Value"`
 }
 
 // ListCustomImagesResponse is the response struct for api ListCustomImages

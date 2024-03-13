@@ -74,6 +74,7 @@ type CreateFirewallRulesRequest struct {
 	ClientToken   string                              `position:"Query" name:"ClientToken"`
 	InstanceId    string                              `position:"Query" name:"InstanceId"`
 	FirewallRules *[]CreateFirewallRulesFirewallRules `position:"Query" name:"FirewallRules"  type:"Json"`
+	Tag           *[]CreateFirewallRulesTag           `position:"Query" name:"Tag"  type:"Repeated"`
 }
 
 // CreateFirewallRulesFirewallRules is a repeated param struct in CreateFirewallRulesRequest
@@ -84,10 +85,17 @@ type CreateFirewallRulesFirewallRules struct {
 	Remark       string `name:"Remark"`
 }
 
+// CreateFirewallRulesTag is a repeated param struct in CreateFirewallRulesRequest
+type CreateFirewallRulesTag struct {
+	Key   string `name:"Key"`
+	Value string `name:"Value"`
+}
+
 // CreateFirewallRulesResponse is the response struct for api CreateFirewallRules
 type CreateFirewallRulesResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	RequestId       string   `json:"RequestId" xml:"RequestId"`
+	FirewallRuleIds []string `json:"FirewallRuleIds" xml:"FirewallRuleIds"`
 }
 
 // CreateCreateFirewallRulesRequest creates a request to invoke CreateFirewallRules API

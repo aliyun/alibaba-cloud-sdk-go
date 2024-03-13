@@ -71,13 +71,20 @@ func (client *Client) CreateCommandWithCallback(request *CreateCommandRequest, c
 // CreateCommandRequest is the request struct for api CreateCommand
 type CreateCommandRequest struct {
 	*requests.RpcRequest
-	WorkingDir      string           `position:"Query" name:"WorkingDir"`
-	Description     string           `position:"Query" name:"Description"`
-	Type            string           `position:"Query" name:"Type"`
-	CommandContent  string           `position:"Query" name:"CommandContent"`
-	Timeout         requests.Integer `position:"Query" name:"Timeout"`
-	Name            string           `position:"Query" name:"Name"`
-	EnableParameter requests.Boolean `position:"Query" name:"EnableParameter"`
+	WorkingDir      string              `position:"Query" name:"WorkingDir"`
+	Description     string              `position:"Query" name:"Description"`
+	Type            string              `position:"Query" name:"Type"`
+	CommandContent  string              `position:"Query" name:"CommandContent"`
+	Timeout         requests.Integer    `position:"Query" name:"Timeout"`
+	Tag             *[]CreateCommandTag `position:"Query" name:"Tag"  type:"Repeated"`
+	Name            string              `position:"Query" name:"Name"`
+	EnableParameter requests.Boolean    `position:"Query" name:"EnableParameter"`
+}
+
+// CreateCommandTag is a repeated param struct in CreateCommandRequest
+type CreateCommandTag struct {
+	Key   string `name:"Key"`
+	Value string `name:"Value"`
 }
 
 // CreateCommandResponse is the response struct for api CreateCommand

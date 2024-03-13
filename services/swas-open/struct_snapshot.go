@@ -28,4 +28,5 @@ type Snapshot struct {
 	RegionId       string `json:"RegionId" xml:"RegionId"`
 	InstanceId     string `json:"InstanceId" xml:"InstanceId"`
 	RollbackTime   string `json:"RollbackTime" xml:"RollbackTime"`
+	Tags           []Tag  `json:"Tags" xml:"Tags"`
 }

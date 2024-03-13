@@ -71,6 +71,7 @@ func (client *Client) ListRegionsWithCallback(request *ListRegionsRequest, callb
 // ListRegionsRequest is the request struct for api ListRegions
 type ListRegionsRequest struct {
 	*requests.RpcRequest
+	AcceptLanguage string `position:"Query" name:"AcceptLanguage"`
 }
 
 // ListRegionsResponse is the response struct for api ListRegions

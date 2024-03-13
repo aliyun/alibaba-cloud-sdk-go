@@ -71,13 +71,20 @@ func (client *Client) CreateCustomImageWithCallback(request *CreateCustomImageRe
 // CreateCustomImageRequest is the request struct for api CreateCustomImage
 type CreateCustomImageRequest struct {
 	*requests.RpcRequest
-	SystemSnapshotId string `position:"Query" name:"SystemSnapshotId"`
-	DataSnapshotId   string `position:"Query" name:"DataSnapshotId"`
-	ClientToken      string `position:"Query" name:"ClientToken"`
-	Description      string `position:"Query" name:"Description"`
-	Platform         string `position:"Query" name:"Platform"`
-	ImageName        string `position:"Query" name:"ImageName"`
-	InstanceId       string `position:"Query" name:"InstanceId"`
+	SystemSnapshotId string                  `position:"Query" name:"SystemSnapshotId"`
+	DataSnapshotId   string                  `position:"Query" name:"DataSnapshotId"`
+	ClientToken      string                  `position:"Query" name:"ClientToken"`
+	Description      string                  `position:"Query" name:"Description"`
+	Platform         string                  `position:"Query" name:"Platform"`
+	ImageName        string                  `position:"Query" name:"ImageName"`
+	Tag              *[]CreateCustomImageTag `position:"Query" name:"Tag"  type:"Repeated"`
+	InstanceId       string                  `position:"Query" name:"InstanceId"`
+}
+
+// CreateCustomImageTag is a repeated param struct in CreateCustomImageRequest
+type CreateCustomImageTag struct {
+	Key   string `name:"Key"`
+	Value string `name:"Value"`
 }
 
 // CreateCustomImageResponse is the response struct for api CreateCustomImage

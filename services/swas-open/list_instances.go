@@ -71,12 +71,19 @@ func (client *Client) ListInstancesWithCallback(request *ListInstancesRequest, c
 // ListInstancesRequest is the request struct for api ListInstances
 type ListInstancesRequest struct {
 	*requests.RpcRequest
-	PageNumber        requests.Integer `position:"Query" name:"PageNumber"`
-	InstanceIds       string           `position:"Query" name:"InstanceIds"`
-	PageSize          requests.Integer `position:"Query" name:"PageSize"`
-	PublicIpAddresses string           `position:"Query" name:"PublicIpAddresses"`
-	ChargeType        string           `position:"Query" name:"ChargeType"`
-	Status            string           `position:"Query" name:"Status"`
+	PageNumber        requests.Integer    `position:"Query" name:"PageNumber"`
+	PageSize          requests.Integer    `position:"Query" name:"PageSize"`
+	PublicIpAddresses string              `position:"Query" name:"PublicIpAddresses"`
+	Tag               *[]ListInstancesTag `position:"Query" name:"Tag"  type:"Repeated"`
+	InstanceIds       string              `position:"Query" name:"InstanceIds"`
+	ChargeType        string              `position:"Query" name:"ChargeType"`
+	Status            string              `position:"Query" name:"Status"`
+}
+
+// ListInstancesTag is a repeated param struct in ListInstancesRequest
+type ListInstancesTag struct {
+	Key   string `name:"Key"`
+	Value string `name:"Value"`
 }
 
 // ListInstancesResponse is the response struct for api ListInstances

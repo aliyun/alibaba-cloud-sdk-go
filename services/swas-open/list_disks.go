@@ -76,6 +76,13 @@ type ListDisksRequest struct {
 	InstanceId string           `position:"Query" name:"InstanceId"`
 	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 	DiskIds    string           `position:"Query" name:"DiskIds"`
+	Tag        *[]ListDisksTag  `position:"Query" name:"Tag"  type:"Repeated"`
+}
+
+// ListDisksTag is a repeated param struct in ListDisksRequest
+type ListDisksTag struct {
+	Key   string `name:"Key"`
+	Value string `name:"Value"`
 }
 
 // ListDisksResponse is the response struct for api ListDisks

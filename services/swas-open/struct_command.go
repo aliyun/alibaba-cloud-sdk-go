@@ -37,4 +37,5 @@ type Command struct {
 	ParameterNames       []string              `json:"ParameterNames" xml:"ParameterNames"`
 	ParameterDefinitions []ParameterDefinition `json:"ParameterDefinitions" xml:"ParameterDefinitions"`
 	InvokeInstances      []InvokeInstance      `json:"InvokeInstances" xml:"InvokeInstances"`
+	Tags                 []Tag                 `json:"Tags" xml:"Tags"`
 }

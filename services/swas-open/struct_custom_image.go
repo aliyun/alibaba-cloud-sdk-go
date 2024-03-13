@@ -30,4 +30,6 @@ type CustomImage struct {
 	ImageId            string `json:"ImageId" xml:"ImageId"`
 	Status             string `json:"Status" xml:"Status"`
 	InstanceName       string `json:"InstanceName" xml:"InstanceName"`
+	ResourceGroupId    string `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	Tags               []Tag  `json:"Tags" xml:"Tags"`
 }

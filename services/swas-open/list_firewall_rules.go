@@ -71,9 +71,17 @@ func (client *Client) ListFirewallRulesWithCallback(request *ListFirewallRulesRe
 // ListFirewallRulesRequest is the request struct for api ListFirewallRules
 type ListFirewallRulesRequest struct {
 	*requests.RpcRequest
-	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
-	InstanceId string           `position:"Query" name:"InstanceId"`
-	PageSize   requests.Integer `position:"Query" name:"PageSize"`
+	PageNumber     requests.Integer        `position:"Query" name:"PageNumber"`
+	InstanceId     string                  `position:"Query" name:"InstanceId"`
+	PageSize       requests.Integer        `position:"Query" name:"PageSize"`
+	FirewallRuleId string                  `position:"Query" name:"FirewallRuleId"`
+	Tag            *[]ListFirewallRulesTag `position:"Query" name:"Tag"  type:"Repeated"`
+}
+
+// ListFirewallRulesTag is a repeated param struct in ListFirewallRulesRequest
+type ListFirewallRulesTag struct {
+	Key   string `name:"Key"`
+	Value string `name:"Value"`
 }
 
 // ListFirewallRulesResponse is the response struct for api ListFirewallRules
