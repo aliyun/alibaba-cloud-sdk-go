@@ -17,5 +17,6 @@ package facebody
 
 // DataInQueryFaceImageTemplate is a nested struct in facebody response
 type DataInQueryFaceImageTemplate struct {
+	Total    int64          `json:"Total" xml:"Total"`
 	Elements []ElementsItem `json:"Elements" xml:"Elements"`
 }

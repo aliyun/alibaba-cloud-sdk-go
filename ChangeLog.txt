@@ -1,3 +1,7 @@
+2024-03-13 Version: v1.62.693
+- Generated 2019-12-30 for `facebody`.
+- Update QueryFaceImageTemplate.
+
 2024-03-13 Version: v1.62.692
 - Generated 2020-03-20 for `videoenhan`.
 - Update QueryFaceVideoTemplate.

@@ -73,9 +73,11 @@ type QueryFaceImageTemplateRequest struct {
 	*requests.RpcRequest
 	FormatResultToJson requests.Boolean `position:"Query" name:"FormatResultToJson"`
 	UserId             string           `position:"Query" name:"UserId"`
+	PageSize           requests.Integer `position:"Query" name:"PageSize"`
 	OssFile            string           `position:"Query" name:"OssFile"`
 	TemplateId         string           `position:"Query" name:"TemplateId"`
 	RequestProxyBy     string           `position:"Query" name:"RequestProxyBy"`
+	PageNo             requests.Integer `position:"Query" name:"PageNo"`
 }
 
 // QueryFaceImageTemplateResponse is the response struct for api QueryFaceImageTemplate
