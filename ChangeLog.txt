@@ -1,3 +1,7 @@
+2024-03-14 Version: v1.62.695
+- Generated 2020-04-01 for `eventbridge`.
+- Fixed bugs for PauseEventStreaming and DeleteEventStreaming
+
 2024-03-13 Version: v1.62.694
 - Generated 2020-06-01 for `SWAS-OPEN`.
 undefined
