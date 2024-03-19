@@ -1,3 +1,7 @@
+2024-03-19 Version: v1.62.696
+- Generated 2022-01-01 for `quickbi-public`.
+- Add QueryWorkspaceRoleConfig, ListWorkspaceRoleUsers, ListWorkspaceRoles, QueryOrganizationRoleConfig, ListOrganizationRoleUsers and ListOrganizationRoles APIs.
+
 2024-03-14 Version: v1.62.695
 - Generated 2020-04-01 for `eventbridge`.
 - Fixed bugs for PauseEventStreaming and DeleteEventStreaming
