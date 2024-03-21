@@ -1,3 +1,7 @@
+2024-03-21 Version: v1.62.697
+- Generated 2023-06-21 for `PaiFeatureStore`.
+- Add Region in host.
+
 2024-03-19 Version: v1.62.696
 - Generated 2022-01-01 for `quickbi-public`.
 - Add QueryWorkspaceRoleConfig, ListWorkspaceRoleUsers, ListWorkspaceRoles, QueryOrganizationRoleConfig, ListOrganizationRoleUsers and ListOrganizationRoles APIs.
