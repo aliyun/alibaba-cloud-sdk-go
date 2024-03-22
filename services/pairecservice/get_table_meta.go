@@ -89,6 +89,9 @@ type GetTableMetaResponse struct {
 	GmtCreateTime   string       `json:"GmtCreateTime" xml:"GmtCreateTime"`
 	GmtModifiedTime string       `json:"GmtModifiedTime" xml:"GmtModifiedTime"`
 	Url             string       `json:"Url" xml:"Url"`
+	TableMetaId     string       `json:"TableMetaId" xml:"TableMetaId"`
+	GmtImportedTime string       `json:"GmtImportedTime" xml:"GmtImportedTime"`
+	Config          string       `json:"Config" xml:"Config"`
 	Fields          []FieldsItem `json:"Fields" xml:"Fields"`
 }
 

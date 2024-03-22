@@ -75,7 +75,9 @@ type ListABMetricGroupsRequest struct {
 	InstanceId string           `position:"Query" name:"InstanceId"`
 	SceneId    string           `position:"Query" name:"SceneId"`
 	PageSize   requests.Integer `position:"Query" name:"PageSize"`
+	SortBy     string           `position:"Query" name:"SortBy"`
 	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
+	Order      string           `position:"Query" name:"Order"`
 }
 
 // ListABMetricGroupsResponse is the response struct for api ListABMetricGroups

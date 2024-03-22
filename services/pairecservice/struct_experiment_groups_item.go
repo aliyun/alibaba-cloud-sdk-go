@@ -34,4 +34,7 @@ type ExperimentGroupsItem struct {
 	Config                   string `json:"Config" xml:"Config"`
 	ReservedBuckets          string `json:"ReservedBuckets" xml:"ReservedBuckets"`
 	Status                   string `json:"Status" xml:"Status"`
+	CrowdTargetType          string `json:"CrowdTargetType" xml:"CrowdTargetType"`
+	RandomFlow               int64  `json:"RandomFlow" xml:"RandomFlow"`
+	HoldingBuckets           string `json:"HoldingBuckets" xml:"HoldingBuckets"`
 }

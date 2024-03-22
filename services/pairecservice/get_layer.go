@@ -78,11 +78,13 @@ type GetLayerRequest struct {
 // GetLayerResponse is the response struct for api GetLayer
 type GetLayerResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
-	LaboratoryId string `json:"LaboratoryId" xml:"LaboratoryId"`
-	SceneId      string `json:"SceneId" xml:"SceneId"`
-	Name         string `json:"Name" xml:"Name"`
-	Description  string `json:"Description" xml:"Description"`
+	RequestId     string `json:"RequestId" xml:"RequestId"`
+	LaboratoryId  string `json:"LaboratoryId" xml:"LaboratoryId"`
+	SceneId       string `json:"SceneId" xml:"SceneId"`
+	Name          string `json:"Name" xml:"Name"`
+	Description   string `json:"Description" xml:"Description"`
+	ResidualFlow  int64  `json:"ResidualFlow" xml:"ResidualFlow"`
+	GmtCreateTime string `json:"GmtCreateTime" xml:"GmtCreateTime"`
 }
 
 // CreateGetLayerRequest creates a request to invoke GetLayer API

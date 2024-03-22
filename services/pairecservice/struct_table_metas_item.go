@@ -29,5 +29,6 @@ type TableMetasItem struct {
 	GmtModifiedTime string       `json:"GmtModifiedTime" xml:"GmtModifiedTime"`
 	GmtImportedTime string       `json:"GmtImportedTime" xml:"GmtImportedTime"`
 	Url             string       `json:"Url" xml:"Url"`
+	Config          string       `json:"Config" xml:"Config"`
 	Fields          []FieldsItem `json:"Fields" xml:"Fields"`
 }

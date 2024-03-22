@@ -18,6 +18,7 @@ package pairecservice
 // FieldsItem is a nested struct in pairecservice response
 type FieldsItem struct {
 	Name             string `json:"Name" xml:"Name"`
+	IsPartitionField bool   `json:"IsPartitionField" xml:"IsPartitionField"`
 	Meaning          string `json:"Meaning" xml:"Meaning"`
 	Type             string `json:"Type" xml:"Type"`
 	IsDimensionField bool   `json:"IsDimensionField" xml:"IsDimensionField"`

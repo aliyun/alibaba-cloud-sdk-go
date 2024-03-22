@@ -17,9 +17,11 @@ package pairecservice
 
 // LayersItem is a nested struct in pairecservice response
 type LayersItem struct {
-	LayerId      string `json:"LayerId" xml:"LayerId"`
-	LaboratoryId string `json:"LaboratoryId" xml:"LaboratoryId"`
-	SceneId      string `json:"SceneId" xml:"SceneId"`
-	Name         string `json:"Name" xml:"Name"`
-	Description  string `json:"Description" xml:"Description"`
+	LayerId       string `json:"LayerId" xml:"LayerId"`
+	LaboratoryId  string `json:"LaboratoryId" xml:"LaboratoryId"`
+	SceneId       string `json:"SceneId" xml:"SceneId"`
+	Name          string `json:"Name" xml:"Name"`
+	Description   string `json:"Description" xml:"Description"`
+	ResidualFlow  int64  `json:"ResidualFlow" xml:"ResidualFlow"`
+	GmtCreateTime string `json:"GmtCreateTime" xml:"GmtCreateTime"`
 }

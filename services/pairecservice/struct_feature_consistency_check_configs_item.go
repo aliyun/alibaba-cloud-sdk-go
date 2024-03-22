@@ -52,4 +52,11 @@ type FeatureConsistencyCheckConfigsItem struct {
 	FeatureDisplayExclude              string `json:"FeatureDisplayExclude" xml:"FeatureDisplayExclude"`
 	GmtCreateTime                      string `json:"GmtCreateTime" xml:"GmtCreateTime"`
 	GmtModifiedTime                    string `json:"GmtModifiedTime" xml:"GmtModifiedTime"`
+	UseFeatureStore                    string `json:"UseFeatureStore" xml:"UseFeatureStore"`
+	FeatureStoreProjectName            string `json:"FeatureStoreProjectName" xml:"FeatureStoreProjectName"`
+	FeatureStoreModelId                string `json:"FeatureStoreModelId" xml:"FeatureStoreModelId"`
+	FeatureStoreUserId                 string `json:"FeatureStoreUserId" xml:"FeatureStoreUserId"`
+	FeatureStoreItemId                 string `json:"FeatureStoreItemId" xml:"FeatureStoreItemId"`
+	FeatureStoreSeqFeatureView         string `json:"FeatureStoreSeqFeatureView" xml:"FeatureStoreSeqFeatureView"`
+	FeatureStoreProjectId              string `json:"FeatureStoreProjectId" xml:"FeatureStoreProjectId"`
 }
