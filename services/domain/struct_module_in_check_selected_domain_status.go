@@ -22,4 +22,5 @@ type ModuleInCheckSelectedDomainStatus struct {
 	RegDate  int64  `json:"RegDate" xml:"RegDate"`
 	DeadDate int64  `json:"DeadDate" xml:"DeadDate"`
 	EndTime  int64  `json:"EndTime" xml:"EndTime"`
+	Premium  bool   `json:"Premium" xml:"Premium"`
 }

@@ -1,3 +1,7 @@
+2024-03-25 Version: v1.62.702
+- Generated 2018-02-08, 2018-01-29, 2018-1-24, 2016-05-11 for `Domain`.
+- Supported for QueryBrokerDemand.
+
 2024-03-25 Version: v1.62.701
 - Generated 2019-01-03 for `Sddp`.
 - Fix API
