@@ -27,7 +27,6 @@ type OpsItemInGetOpsItem struct {
 	Source          string                   `json:"Source" xml:"Source"`
 	Priority        int                      `json:"Priority" xml:"Priority"`
 	Tags            map[string]interface{}   `json:"Tags" xml:"Tags"`
-	DedupString     string                   `json:"DedupString" xml:"DedupString"`
 	ResourceGroupId string                   `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	Description     string                   `json:"Description" xml:"Description"`
 	CreateBy        string                   `json:"CreateBy" xml:"CreateBy"`

@@ -71,10 +71,12 @@ func (client *Client) UpdateExecutionWithCallback(request *UpdateExecutionReques
 // UpdateExecutionRequest is the request struct for api UpdateExecution
 type UpdateExecutionRequest struct {
 	*requests.RpcRequest
-	ClientToken string `position:"Query" name:"ClientToken"`
-	Description string `position:"Query" name:"Description"`
-	ExecutionId string `position:"Query" name:"ExecutionId"`
-	Parameters  string `position:"Query" name:"Parameters"`
+	ClientToken     string `position:"Query" name:"ClientToken"`
+	Description     string `position:"Query" name:"Description"`
+	Tags            string `position:"Query" name:"Tags"`
+	ExecutionId     string `position:"Query" name:"ExecutionId"`
+	ResourceGroupId string `position:"Query" name:"ResourceGroupId"`
+	Parameters      string `position:"Query" name:"Parameters"`
 }
 
 // UpdateExecutionResponse is the response struct for api UpdateExecution

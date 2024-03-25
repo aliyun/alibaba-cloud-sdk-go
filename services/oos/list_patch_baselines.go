@@ -72,6 +72,7 @@ func (client *Client) ListPatchBaselinesWithCallback(request *ListPatchBaselines
 type ListPatchBaselinesRequest struct {
 	*requests.RpcRequest
 	Sources                          *[]string                 `position:"Query" name:"Sources"  type:"Json"`
+	ResourceGroupId                  string                    `position:"Query" name:"ResourceGroupId"`
 	NextToken                        string                    `position:"Query" name:"NextToken"`
 	ShareType                        string                    `position:"Query" name:"ShareType"`
 	ApprovedPatchesEnableNonSecurity requests.Boolean          `position:"Query" name:"ApprovedPatchesEnableNonSecurity"`

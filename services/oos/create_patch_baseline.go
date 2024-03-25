@@ -75,6 +75,7 @@ type CreatePatchBaselineRequest struct {
 	ClientToken                      string                     `position:"Query" name:"ClientToken"`
 	ApprovalRules                    string                     `position:"Query" name:"ApprovalRules"`
 	Description                      string                     `position:"Query" name:"Description"`
+	ResourceGroupId                  string                     `position:"Query" name:"ResourceGroupId"`
 	RejectedPatchesAction            string                     `position:"Query" name:"RejectedPatchesAction"`
 	ApprovedPatchesEnableNonSecurity requests.Boolean           `position:"Query" name:"ApprovedPatchesEnableNonSecurity"`
 	Tags                             *[]CreatePatchBaselineTags `position:"Query" name:"Tags"  type:"Json"`

@@ -24,12 +24,15 @@ type Template struct {
 	TemplateName        string                 `json:"TemplateName" xml:"TemplateName"`
 	Hash                string                 `json:"Hash" xml:"Hash"`
 	CreatedBy           string                 `json:"CreatedBy" xml:"CreatedBy"`
+	Publisher           string                 `json:"Publisher" xml:"Publisher"`
 	TemplateVersion     string                 `json:"TemplateVersion" xml:"TemplateVersion"`
 	TemplateFormat      string                 `json:"TemplateFormat" xml:"TemplateFormat"`
 	UpdatedBy           string                 `json:"UpdatedBy" xml:"UpdatedBy"`
 	ResourceGroupId     string                 `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	Constraints         string                 `json:"Constraints" xml:"Constraints"`
 	CreatedDate         string                 `json:"CreatedDate" xml:"CreatedDate"`
 	HasTrigger          bool                   `json:"HasTrigger" xml:"HasTrigger"`
+	IsFavorite          bool                   `json:"IsFavorite" xml:"IsFavorite"`
 	TemplateType        string                 `json:"TemplateType" xml:"TemplateType"`
 	Description         string                 `json:"Description" xml:"Description"`
 	UpdatedDate         string                 `json:"UpdatedDate" xml:"UpdatedDate"`

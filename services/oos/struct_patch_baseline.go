@@ -22,6 +22,7 @@ type PatchBaseline struct {
 	ApprovedPatchesEnableNonSecurity bool       `json:"ApprovedPatchesEnableNonSecurity" xml:"ApprovedPatchesEnableNonSecurity"`
 	CreatedBy                        string     `json:"CreatedBy" xml:"CreatedBy"`
 	UpdatedBy                        string     `json:"UpdatedBy" xml:"UpdatedBy"`
+	ResourceGroupId                  string     `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	IsDefault                        bool       `json:"IsDefault" xml:"IsDefault"`
 	ApprovalRules                    string     `json:"ApprovalRules" xml:"ApprovalRules"`
 	CreatedDate                      string     `json:"CreatedDate" xml:"CreatedDate"`

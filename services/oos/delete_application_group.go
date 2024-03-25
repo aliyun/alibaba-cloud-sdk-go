@@ -71,8 +71,9 @@ func (client *Client) DeleteApplicationGroupWithCallback(request *DeleteApplicat
 // DeleteApplicationGroupRequest is the request struct for api DeleteApplicationGroup
 type DeleteApplicationGroupRequest struct {
 	*requests.RpcRequest
-	ApplicationName string `position:"Query" name:"ApplicationName"`
-	Name            string `position:"Query" name:"Name"`
+	RetainResource  requests.Boolean `position:"Query" name:"RetainResource"`
+	ApplicationName string           `position:"Query" name:"ApplicationName"`
+	Name            string           `position:"Query" name:"Name"`
 }
 
 // DeleteApplicationGroupResponse is the response struct for api DeleteApplicationGroup

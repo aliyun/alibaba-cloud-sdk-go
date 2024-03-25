@@ -71,6 +71,7 @@ func (client *Client) GenerateExecutionPolicyWithCallback(request *GenerateExecu
 // GenerateExecutionPolicyRequest is the request struct for api GenerateExecutionPolicy
 type GenerateExecutionPolicyRequest struct {
 	*requests.RpcRequest
+	TemplateContent string `position:"Query" name:"TemplateContent"`
 	TemplateVersion string `position:"Query" name:"TemplateVersion"`
 	RamRole         string `position:"Query" name:"RamRole"`
 	TemplateName    string `position:"Query" name:"TemplateName"`

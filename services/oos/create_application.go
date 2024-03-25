@@ -77,6 +77,7 @@ type CreateApplicationRequest struct {
 	ResourceGroupId string                       `position:"Query" name:"ResourceGroupId"`
 	Tags            string                       `position:"Query" name:"Tags"`
 	Name            string                       `position:"Query" name:"Name"`
+	ServiceId       string                       `position:"Query" name:"ServiceId"`
 }
 
 // CreateApplicationAlarmConfig is a repeated param struct in CreateApplicationRequest

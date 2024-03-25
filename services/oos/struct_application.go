@@ -19,6 +19,7 @@ package oos
 type Application struct {
 	Name            string                 `json:"Name" xml:"Name"`
 	CreateDate      string                 `json:"CreateDate" xml:"CreateDate"`
+	ServiceId       string                 `json:"ServiceId" xml:"ServiceId"`
 	ResourceGroupId string                 `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	UpdateDate      string                 `json:"UpdateDate" xml:"UpdateDate"`
 	CreatedDate     string                 `json:"CreatedDate" xml:"CreatedDate"`

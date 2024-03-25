@@ -83,6 +83,7 @@ type ListTemplatesRequest struct {
 	CreatedDateAfter  string                 `position:"Query" name:"CreatedDateAfter"`
 	Tags              map[string]interface{} `position:"Query" name:"Tags"`
 	MaxResults        requests.Integer       `position:"Query" name:"MaxResults"`
+	IsFavorite        requests.Boolean       `position:"Query" name:"IsFavorite"`
 	TemplateFormat    string                 `position:"Query" name:"TemplateFormat"`
 	SortField         string                 `position:"Query" name:"SortField"`
 	Category          string                 `position:"Query" name:"Category"`
