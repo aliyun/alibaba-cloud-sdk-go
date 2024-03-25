@@ -71,13 +71,13 @@ func (client *Client) CreateScheduleWithCallback(request *CreateScheduleRequest,
 // CreateScheduleRequest is the request struct for api CreateSchedule
 type CreateScheduleRequest struct {
 	*requests.RpcRequest
-	ScheduleName   string           `position:"Body" name:"ScheduleName"`
-	CronExpression string           `position:"Body" name:"CronExpression"`
-	Payload        string           `position:"Body" name:"Payload"`
-	RequestId      string           `position:"Query" name:"RequestId"`
-	Enable         requests.Boolean `position:"Body" name:"Enable"`
-	Description    string           `position:"Body" name:"Description"`
-	FlowName       string           `position:"Body" name:"FlowName"`
+	CronExpression   string           `position:"Body" name:"CronExpression"`
+	Description      string           `position:"Body" name:"Description"`
+	ScheduleName     string           `position:"Body" name:"ScheduleName"`
+	SignatureVersion string           `position:"Query" name:"SignatureVersion"`
+	Payload          string           `position:"Body" name:"Payload"`
+	Enable           requests.Boolean `position:"Body" name:"Enable"`
+	FlowName         string           `position:"Body" name:"FlowName"`
 }
 
 // CreateScheduleResponse is the response struct for api CreateSchedule

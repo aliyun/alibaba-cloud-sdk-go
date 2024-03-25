@@ -72,7 +72,6 @@ func (client *Client) DeleteScheduleWithCallback(request *DeleteScheduleRequest,
 type DeleteScheduleRequest struct {
 	*requests.RpcRequest
 	ScheduleName string `position:"Query" name:"ScheduleName"`
-	RequestId    string `position:"Query" name:"RequestId"`
 	FlowName     string `position:"Query" name:"FlowName"`
 }
 
@@ -88,7 +87,7 @@ func CreateDeleteScheduleRequest() (request *DeleteScheduleRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("fnf", "2019-03-15", "DeleteSchedule", "fnf", "openAPI")
-	request.Method = requests.GET
+	request.Method = requests.POST
 	return
 }
 

@@ -74,7 +74,6 @@ type StopExecutionRequest struct {
 	ExecutionName string `position:"Body" name:"ExecutionName"`
 	Cause         string `position:"Body" name:"Cause"`
 	Error         string `position:"Body" name:"Error"`
-	RequestId     string `position:"Query" name:"RequestId"`
 	FlowName      string `position:"Body" name:"FlowName"`
 }
 

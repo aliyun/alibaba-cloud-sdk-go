@@ -73,7 +73,6 @@ type GetExecutionHistoryRequest struct {
 	*requests.RpcRequest
 	ExecutionName string           `position:"Query" name:"ExecutionName"`
 	NextToken     string           `position:"Query" name:"NextToken"`
-	RequestId     string           `position:"Query" name:"RequestId"`
 	Limit         requests.Integer `position:"Query" name:"Limit"`
 	FlowName      string           `position:"Query" name:"FlowName"`
 }

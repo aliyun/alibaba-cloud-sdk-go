@@ -71,12 +71,11 @@ func (client *Client) UpdateScheduleWithCallback(request *UpdateScheduleRequest,
 // UpdateScheduleRequest is the request struct for api UpdateSchedule
 type UpdateScheduleRequest struct {
 	*requests.RpcRequest
-	ScheduleName   string           `position:"Body" name:"ScheduleName"`
 	CronExpression string           `position:"Body" name:"CronExpression"`
-	Payload        string           `position:"Body" name:"Payload"`
-	RequestId      string           `position:"Query" name:"RequestId"`
-	Enable         requests.Boolean `position:"Body" name:"Enable"`
 	Description    string           `position:"Body" name:"Description"`
+	ScheduleName   string           `position:"Body" name:"ScheduleName"`
+	Payload        string           `position:"Body" name:"Payload"`
+	Enable         requests.Boolean `position:"Body" name:"Enable"`
 	FlowName       string           `position:"Body" name:"FlowName"`
 }
 

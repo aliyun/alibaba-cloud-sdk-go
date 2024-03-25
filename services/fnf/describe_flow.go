@@ -71,8 +71,7 @@ func (client *Client) DescribeFlowWithCallback(request *DescribeFlowRequest, cal
 // DescribeFlowRequest is the request struct for api DescribeFlow
 type DescribeFlowRequest struct {
 	*requests.RpcRequest
-	RequestId string `position:"Query" name:"RequestId"`
-	Name      string `position:"Query" name:"Name"`
+	Name string `position:"Query" name:"Name"`
 }
 
 // DescribeFlowResponse is the response struct for api DescribeFlow

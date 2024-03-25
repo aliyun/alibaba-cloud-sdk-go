@@ -74,7 +74,6 @@ type StartExecutionRequest struct {
 	CallbackFnFTaskToken string `position:"Body" name:"CallbackFnFTaskToken"`
 	ExecutionName        string `position:"Body" name:"ExecutionName"`
 	Input                string `position:"Body" name:"Input"`
-	RequestId            string `position:"Query" name:"RequestId"`
 	FlowName             string `position:"Body" name:"FlowName"`
 }
 

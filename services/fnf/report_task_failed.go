@@ -73,7 +73,6 @@ type ReportTaskFailedRequest struct {
 	*requests.RpcRequest
 	Cause     string `position:"Body" name:"Cause"`
 	Error     string `position:"Body" name:"Error"`
-	RequestId string `position:"Query" name:"RequestId"`
 	TaskToken string `position:"Query" name:"TaskToken"`
 }
 

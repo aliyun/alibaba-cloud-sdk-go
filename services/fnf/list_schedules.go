@@ -72,7 +72,6 @@ func (client *Client) ListSchedulesWithCallback(request *ListSchedulesRequest, c
 type ListSchedulesRequest struct {
 	*requests.RpcRequest
 	NextToken string           `position:"Query" name:"NextToken"`
-	RequestId string           `position:"Query" name:"RequestId"`
 	Limit     requests.Integer `position:"Query" name:"Limit"`
 	FlowName  string           `position:"Query" name:"FlowName"`
 }

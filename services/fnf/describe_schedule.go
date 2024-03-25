@@ -72,7 +72,6 @@ func (client *Client) DescribeScheduleWithCallback(request *DescribeScheduleRequ
 type DescribeScheduleRequest struct {
 	*requests.RpcRequest
 	ScheduleName string `position:"Query" name:"ScheduleName"`
-	RequestId    string `position:"Query" name:"RequestId"`
 	FlowName     string `position:"Query" name:"FlowName"`
 }
 

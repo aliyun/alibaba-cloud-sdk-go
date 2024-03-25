@@ -72,7 +72,6 @@ func (client *Client) ListFlowsWithCallback(request *ListFlowsRequest, callback 
 type ListFlowsRequest struct {
 	*requests.RpcRequest
 	NextToken string           `position:"Query" name:"NextToken"`
-	RequestId string           `position:"Query" name:"RequestId"`
 	Limit     requests.Integer `position:"Query" name:"Limit"`
 }
 

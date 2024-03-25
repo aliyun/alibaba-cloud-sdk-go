@@ -73,7 +73,6 @@ type StartSyncExecutionRequest struct {
 	*requests.RpcRequest
 	ExecutionName string `position:"Body" name:"ExecutionName"`
 	Input         string `position:"Body" name:"Input"`
-	RequestId     string `position:"Query" name:"RequestId"`
 	FlowName      string `position:"Body" name:"FlowName"`
 }
 

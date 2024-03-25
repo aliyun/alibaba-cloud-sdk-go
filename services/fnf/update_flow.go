@@ -73,7 +73,6 @@ type UpdateFlowRequest struct {
 	*requests.RpcRequest
 	Description             string `position:"Body" name:"Description"`
 	Type                    string `position:"Body" name:"Type"`
-	RequestId               string `position:"Query" name:"RequestId"`
 	RoleArn                 string `position:"Body" name:"RoleArn"`
 	Name                    string `position:"Body" name:"Name"`
 	Definition              string `position:"Body" name:"Definition"`

@@ -72,7 +72,6 @@ func (client *Client) ReportTaskSucceededWithCallback(request *ReportTaskSucceed
 type ReportTaskSucceededRequest struct {
 	*requests.RpcRequest
 	Output    string `position:"Body" name:"Output"`
-	RequestId string `position:"Query" name:"RequestId"`
 	TaskToken string `position:"Query" name:"TaskToken"`
 }
 

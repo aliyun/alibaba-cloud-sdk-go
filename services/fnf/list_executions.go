@@ -74,7 +74,6 @@ type ListExecutionsRequest struct {
 	StartedTimeBegin    string           `position:"Query" name:"StartedTimeBegin"`
 	ExecutionNamePrefix string           `position:"Query" name:"ExecutionNamePrefix"`
 	NextToken           string           `position:"Query" name:"NextToken"`
-	RequestId           string           `position:"Query" name:"RequestId"`
 	Limit               requests.Integer `position:"Query" name:"Limit"`
 	FlowName            string           `position:"Query" name:"FlowName"`
 	StartedTimeEnd      string           `position:"Query" name:"StartedTimeEnd"`
