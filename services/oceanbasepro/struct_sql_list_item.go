@@ -17,6 +17,7 @@ package oceanbasepro
 
 // SqlListItem is a nested struct in oceanbasepro response
 type SqlListItem struct {
+	AvgLogicalReads  float64  `json:"AvgLogicalReads" xml:"AvgLogicalReads"`
 	LastExecutedTime string   `json:"LastExecutedTime" xml:"LastExecutedTime"`
 	Diagnosis        string   `json:"Diagnosis" xml:"Diagnosis"`
 	Executions       string   `json:"Executions" xml:"Executions"`
@@ -24,7 +25,9 @@ type SqlListItem struct {
 	SqlId            string   `json:"SqlId" xml:"SqlId"`
 	SqlTextShort     string   `json:"SqlTextShort" xml:"SqlTextShort"`
 	AvgCpuTime       string   `json:"AvgCpuTime" xml:"AvgCpuTime"`
+	SumRetryCount    float64  `json:"SumRetryCount" xml:"SumRetryCount"`
 	DbName           string   `json:"DbName" xml:"DbName"`
+	AvgRetryCount    float64  `json:"AvgRetryCount" xml:"AvgRetryCount"`
 	CpuTime          string   `json:"CpuTime" xml:"CpuTime"`
 	Suggestion       string   `json:"Suggestion" xml:"Suggestion"`
 	AvgElapsedTime   string   `json:"AvgElapsedTime" xml:"AvgElapsedTime"`

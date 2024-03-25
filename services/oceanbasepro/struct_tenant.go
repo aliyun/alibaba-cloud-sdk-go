@@ -44,6 +44,7 @@ type Tenant struct {
 	EnableBinlogService          bool                    `json:"EnableBinlogService" xml:"EnableBinlogService"`
 	TimeZone                     string                  `json:"TimeZone" xml:"TimeZone"`
 	DataMergeTime                string                  `json:"DataMergeTime" xml:"DataMergeTime"`
+	EnableReadOnlyReplica        bool                    `json:"EnableReadOnlyReplica" xml:"EnableReadOnlyReplica"`
 	AvailableZones               []string                `json:"AvailableZones" xml:"AvailableZones"`
 	TenantResource               TenantResource          `json:"TenantResource" xml:"TenantResource"`
 	ReadOnlyResource             ReadOnlyResource        `json:"ReadOnlyResource" xml:"ReadOnlyResource"`

@@ -17,11 +17,13 @@ package oceanbasepro
 
 // DataDiskAutoScaleConfig is a nested struct in oceanbasepro response
 type DataDiskAutoScaleConfig struct {
-	Upperbound          int64 `json:"Upperbound" xml:"Upperbound"`
-	UpperThreshold      int64 `json:"UpperThreshold" xml:"UpperThreshold"`
-	UpperMergeThreshold int64 `json:"UpperMergeThreshold" xml:"UpperMergeThreshold"`
-	ScaleStepInMerge    int64 `json:"ScaleStepInMerge" xml:"ScaleStepInMerge"`
-	MaxDiskSize         int64 `json:"MaxDiskSize" xml:"MaxDiskSize"`
-	ScaleStepInNormal   int64 `json:"ScaleStepInNormal" xml:"ScaleStepInNormal"`
-	AutoScale           bool  `json:"AutoScale" xml:"AutoScale"`
+	UpperScaleStep      string `json:"UpperScaleStep" xml:"UpperScaleStep"`
+	UpperScaleStrategy  string `json:"UpperScaleStrategy" xml:"UpperScaleStrategy"`
+	Upperbound          int64  `json:"Upperbound" xml:"Upperbound"`
+	UpperThreshold      int64  `json:"UpperThreshold" xml:"UpperThreshold"`
+	UpperMergeThreshold int64  `json:"UpperMergeThreshold" xml:"UpperMergeThreshold"`
+	ScaleStepInMerge    int64  `json:"ScaleStepInMerge" xml:"ScaleStepInMerge"`
+	MaxDiskSize         int64  `json:"MaxDiskSize" xml:"MaxDiskSize"`
+	ScaleStepInNormal   int64  `json:"ScaleStepInNormal" xml:"ScaleStepInNormal"`
+	AutoScale           bool   `json:"AutoScale" xml:"AutoScale"`
 }

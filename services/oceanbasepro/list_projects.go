@@ -80,6 +80,7 @@ type ListProjectsRequest struct {
 	Order               string           `position:"Body" name:"Order"`
 	SourceEndpointTypes *[]string        `position:"Body" name:"SourceEndpointTypes"  type:"Json"`
 	SortField           string           `position:"Body" name:"SortField"`
+	NeedRelatedInfo     requests.Boolean `position:"Body" name:"NeedRelatedInfo"`
 	LabelIds            *[]string        `position:"Body" name:"LabelIds"  type:"Json"`
 	Status              *[]string        `position:"Body" name:"Status"  type:"Json"`
 }

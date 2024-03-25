@@ -80,6 +80,7 @@ type CreateProjectRequest struct {
 	EnableStructTransfer      requests.Boolean                  `position:"Body" name:"EnableStructTransfer"`
 	TransferMapping           CreateProjectTransferMapping      `position:"Body" name:"TransferMapping"  type:"Struct"`
 	WorkerGradeId             string                            `position:"Body" name:"WorkerGradeId"`
+	Id                        string                            `position:"Body" name:"Id"`
 	CommonTransferConfig      CreateProjectCommonTransferConfig `position:"Body" name:"CommonTransferConfig"  type:"Struct"`
 	StructTransferConfig      CreateProjectStructTransferConfig `position:"Body" name:"StructTransferConfig"  type:"Struct"`
 	EnableIncrTransfer        requests.Boolean                  `position:"Body" name:"EnableIncrTransfer"`
@@ -110,17 +111,20 @@ type CreateProjectTransferMapping struct {
 
 // CreateProjectCommonTransferConfig is a repeated param struct in CreateProjectRequest
 type CreateProjectCommonTransferConfig struct {
-	RocketMqSendMsgTimeout string `name:"RocketMqSendMsgTimeout"`
-	MqPartition            string `name:"MqPartition"`
-	TableCategory          string `name:"TableCategory"`
-	ActiveActive           string `name:"ActiveActive"`
-	DatahubTopicType       string `name:"DatahubTopicType"`
-	RocketMqMsgTags        string `name:"RocketMqMsgTags"`
-	RocketMqEnableMsgTrace string `name:"RocketMqEnableMsgTrace"`
-	DataWorksBusinessName  string `name:"DataWorksBusinessName"`
-	RocketMqProducerGroup  string `name:"RocketMqProducerGroup"`
-	MqSerializerType       string `name:"MqSerializerType"`
-	MqPartitionMode        string `name:"MqPartitionMode"`
+	MqPartition            string                                                `name:"MqPartition"`
+	SyncSchemaColumnName   string                                                `name:"SyncSchemaColumnName"`
+	ActiveActive           string                                                `name:"ActiveActive"`
+	RocketMqEnableMsgTrace string                                                `name:"RocketMqEnableMsgTrace"`
+	CustomColumns          *[]CreateProjectCommonTransferConfigCustomColumnsItem `name:"CustomColumns" type:"Repeated"`
+	RocketMqProducerGroup  string                                                `name:"RocketMqProducerGroup"`
+	MqPartitionMode        string                                                `name:"MqPartitionMode"`
+	RocketMqSendMsgTimeout string                                                `name:"RocketMqSendMsgTimeout"`
+	TableCategory          string                                                `name:"TableCategory"`
+	DatahubTopicType       string                                                `name:"DatahubTopicType"`
+	RocketMqMsgTags        string                                                `name:"RocketMqMsgTags"`
+	DataWorksBusinessName  string                                                `name:"DataWorksBusinessName"`
+	SyncSchema             string                                                `name:"SyncSchema"`
+	MqSerializerType       string                                                `name:"MqSerializerType"`
 }
 
 // CreateProjectStructTransferConfig is a repeated param struct in CreateProjectRequest
@@ -163,6 +167,12 @@ type CreateProjectTransferMappingDatabasesBlackItem struct {
 	Id             string                                                              `name:"Id"`
 	SpecificTables *[]CreateProjectTransferMappingDatabasesBlackItemSpecificTablesItem `name:"SpecificTables" type:"Repeated"`
 	Views          *[]CreateProjectTransferMappingDatabasesBlackItemViewsItem          `name:"Views" type:"Repeated"`
+}
+
+// CreateProjectCommonTransferConfigCustomColumnsItem is a repeated param struct in CreateProjectRequest
+type CreateProjectCommonTransferConfigCustomColumnsItem struct {
+	Expression string `name:"Expression"`
+	ColumnName string `name:"ColumnName"`
 }
 
 // CreateProjectTransferMappingDatabasesItemSpecificViewsItem is a repeated param struct in CreateProjectRequest

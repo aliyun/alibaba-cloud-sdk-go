@@ -84,4 +84,6 @@ type DataItemInDescribeOasSQLHistoryList struct {
 	AvgUsedWorkerCount          string `json:"AvgUsedWorkerCount" xml:"AvgUsedWorkerCount"`
 	SumLogicalReads             string `json:"SumLogicalReads" xml:"SumLogicalReads"`
 	ExecPs                      string `json:"ExecPs" xml:"ExecPs"`
+	AvgDbTime                   string `json:"AvgDbTime" xml:"AvgDbTime"`
+	SumDbTime                   string `json:"SumDbTime" xml:"SumDbTime"`
 }
