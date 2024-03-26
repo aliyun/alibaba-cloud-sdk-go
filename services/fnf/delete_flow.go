@@ -71,7 +71,7 @@ func (client *Client) DeleteFlowWithCallback(request *DeleteFlowRequest, callbac
 // DeleteFlowRequest is the request struct for api DeleteFlow
 type DeleteFlowRequest struct {
 	*requests.RpcRequest
-	Name string `position:"Query" name:"Name"`
+	Name string `position:"Body" name:"Name"`
 }
 
 // DeleteFlowResponse is the response struct for api DeleteFlow

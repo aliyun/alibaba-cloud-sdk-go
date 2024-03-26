@@ -71,8 +71,8 @@ func (client *Client) DeleteScheduleWithCallback(request *DeleteScheduleRequest,
 // DeleteScheduleRequest is the request struct for api DeleteSchedule
 type DeleteScheduleRequest struct {
 	*requests.RpcRequest
-	ScheduleName string `position:"Query" name:"ScheduleName"`
-	FlowName     string `position:"Query" name:"FlowName"`
+	ScheduleName string `position:"Body" name:"ScheduleName"`
+	FlowName     string `position:"Body" name:"FlowName"`
 }
 
 // DeleteScheduleResponse is the response struct for api DeleteSchedule
