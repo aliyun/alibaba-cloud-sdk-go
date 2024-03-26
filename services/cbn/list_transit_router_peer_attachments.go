@@ -73,6 +73,7 @@ type ListTransitRouterPeerAttachmentsRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId           requests.Integer                       `position:"Query" name:"ResourceOwnerId"`
 	CenId                     string                                 `position:"Query" name:"CenId"`
+	DefaultLinkType           string                                 `position:"Query" name:"DefaultLinkType"`
 	NextToken                 string                                 `position:"Query" name:"NextToken"`
 	Tag                       *[]ListTransitRouterPeerAttachmentsTag `position:"Query" name:"Tag"  type:"Repeated"`
 	ResourceOwnerAccount      string                                 `position:"Query" name:"ResourceOwnerAccount"`
@@ -106,7 +107,7 @@ func CreateListTransitRouterPeerAttachmentsRequest() (request *ListTransitRouter
 	request = &ListTransitRouterPeerAttachmentsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "ListTransitRouterPeerAttachments", "", "")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "ListTransitRouterPeerAttachments", "cbn", "openAPI")
 	request.Method = requests.POST
 	return
 }

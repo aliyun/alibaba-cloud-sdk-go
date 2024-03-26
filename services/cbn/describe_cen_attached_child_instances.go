@@ -98,7 +98,7 @@ func CreateDescribeCenAttachedChildInstancesRequest() (request *DescribeCenAttac
 	request = &DescribeCenAttachedChildInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeCenAttachedChildInstances", "", "")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeCenAttachedChildInstances", "cbn", "openAPI")
 	request.Method = requests.POST
 	return
 }

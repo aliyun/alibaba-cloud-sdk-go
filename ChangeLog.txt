@@ -1,3 +1,7 @@
+2024-03-26 Version: v1.62.705
+- Generated 2017-09-12 for `Cbn`.
+- Supported ECR Attachment.
+
 2024-03-25 Version: v1.62.704
 - Generated 2019-03-15 for `fnf`.
 - update api

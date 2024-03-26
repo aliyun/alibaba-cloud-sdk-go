@@ -106,7 +106,7 @@ func CreateUpdateTransitRouterVpcAttachmentZonesRequest() (request *UpdateTransi
 	request = &UpdateTransitRouterVpcAttachmentZonesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "UpdateTransitRouterVpcAttachmentZones", "", "")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "UpdateTransitRouterVpcAttachmentZones", "cbn", "openAPI")
 	request.Method = requests.POST
 	return
 }

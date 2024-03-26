@@ -97,7 +97,7 @@ func CreateCreateCenInterRegionTrafficQosQueueRequest() (request *CreateCenInter
 	request = &CreateCenInterRegionTrafficQosQueueRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "CreateCenInterRegionTrafficQosQueue", "", "")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "CreateCenInterRegionTrafficQosQueue", "cbn", "openAPI")
 	request.Method = requests.POST
 	return
 }

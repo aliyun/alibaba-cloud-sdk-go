@@ -104,7 +104,7 @@ func CreateListCenChildInstanceRouteEntriesToAttachmentRequest() (request *ListC
 	request = &ListCenChildInstanceRouteEntriesToAttachmentRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "ListCenChildInstanceRouteEntriesToAttachment", "", "")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "ListCenChildInstanceRouteEntriesToAttachment", "cbn", "openAPI")
 	request.Method = requests.POST
 	return
 }

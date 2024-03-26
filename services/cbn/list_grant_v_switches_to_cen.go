@@ -98,7 +98,7 @@ func CreateListGrantVSwitchesToCenRequest() (request *ListGrantVSwitchesToCenReq
 	request = &ListGrantVSwitchesToCenRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "ListGrantVSwitchesToCen", "", "")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "ListGrantVSwitchesToCen", "cbn", "openAPI")
 	request.Method = requests.POST
 	return
 }

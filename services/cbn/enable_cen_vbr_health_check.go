@@ -74,6 +74,7 @@ type EnableCenVbrHealthCheckRequest struct {
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	CenId                string           `position:"Query" name:"CenId"`
 	HealthCheckTargetIp  string           `position:"Query" name:"HealthCheckTargetIp"`
+	Description          string           `position:"Query" name:"Description"`
 	HealthyThreshold     requests.Integer `position:"Query" name:"HealthyThreshold"`
 	VbrInstanceOwnerId   requests.Integer `position:"Query" name:"VbrInstanceOwnerId"`
 	HealthCheckOnly      requests.Boolean `position:"Query" name:"HealthCheckOnly"`
@@ -98,7 +99,7 @@ func CreateEnableCenVbrHealthCheckRequest() (request *EnableCenVbrHealthCheckReq
 	request = &EnableCenVbrHealthCheckRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "EnableCenVbrHealthCheck", "", "")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "EnableCenVbrHealthCheck", "cbn", "openAPI")
 	request.Method = requests.POST
 	return
 }

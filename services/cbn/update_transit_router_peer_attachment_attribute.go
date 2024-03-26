@@ -75,6 +75,7 @@ type UpdateTransitRouterPeerAttachmentAttributeRequest struct {
 	BandwidthType                      string           `position:"Query" name:"BandwidthType"`
 	ClientToken                        string           `position:"Query" name:"ClientToken"`
 	TransitRouterAttachmentName        string           `position:"Query" name:"TransitRouterAttachmentName"`
+	DefaultLinkType                    string           `position:"Query" name:"DefaultLinkType"`
 	AutoPublishRouteEnabled            requests.Boolean `position:"Query" name:"AutoPublishRouteEnabled"`
 	DryRun                             requests.Boolean `position:"Query" name:"DryRun"`
 	ResourceOwnerAccount               string           `position:"Query" name:"ResourceOwnerAccount"`
@@ -99,7 +100,7 @@ func CreateUpdateTransitRouterPeerAttachmentAttributeRequest() (request *UpdateT
 	request = &UpdateTransitRouterPeerAttachmentAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "UpdateTransitRouterPeerAttachmentAttribute", "", "")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "UpdateTransitRouterPeerAttachmentAttribute", "cbn", "openAPI")
 	request.Method = requests.POST
 	return
 }

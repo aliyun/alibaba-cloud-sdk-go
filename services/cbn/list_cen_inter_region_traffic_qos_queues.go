@@ -99,7 +99,7 @@ func CreateListCenInterRegionTrafficQosQueuesRequest() (request *ListCenInterReg
 	request = &ListCenInterRegionTrafficQosQueuesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "ListCenInterRegionTrafficQosQueues", "", "")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "ListCenInterRegionTrafficQosQueues", "cbn", "openAPI")
 	request.Method = requests.POST
 	return
 }

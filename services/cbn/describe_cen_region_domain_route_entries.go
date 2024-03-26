@@ -99,7 +99,7 @@ func CreateDescribeCenRegionDomainRouteEntriesRequest() (request *DescribeCenReg
 	request = &DescribeCenRegionDomainRouteEntriesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeCenRegionDomainRouteEntries", "", "")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeCenRegionDomainRouteEntries", "cbn", "openAPI")
 	request.Method = requests.POST
 	return
 }

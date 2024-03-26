@@ -96,7 +96,7 @@ func CreateDescribeGeographicRegionMembershipRequest() (request *DescribeGeograp
 	request = &DescribeGeographicRegionMembershipRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeGeographicRegionMembership", "", "")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeGeographicRegionMembership", "cbn", "openAPI")
 	request.Method = requests.POST
 	return
 }

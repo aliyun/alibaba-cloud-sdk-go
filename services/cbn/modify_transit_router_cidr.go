@@ -97,7 +97,7 @@ func CreateModifyTransitRouterCidrRequest() (request *ModifyTransitRouterCidrReq
 	request = &ModifyTransitRouterCidrRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "ModifyTransitRouterCidr", "", "")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "ModifyTransitRouterCidr", "cbn", "openAPI")
 	request.Method = requests.POST
 	return
 }

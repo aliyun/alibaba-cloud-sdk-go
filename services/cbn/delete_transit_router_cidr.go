@@ -93,7 +93,7 @@ func CreateDeleteTransitRouterCidrRequest() (request *DeleteTransitRouterCidrReq
 	request = &DeleteTransitRouterCidrRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DeleteTransitRouterCidr", "", "")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DeleteTransitRouterCidr", "cbn", "openAPI")
 	request.Method = requests.POST
 	return
 }

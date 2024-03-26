@@ -17,5 +17,5 @@ package cbn
 
 // GrantRulesInDescribeGrantRulesToResource is a nested struct in cbn response
 type GrantRulesInDescribeGrantRulesToResource struct {
-	GrantRule []GrantRule `json:"GrantRule" xml:"GrantRule"`
+	GrantRule []GrantRuleInDescribeGrantRulesToResource `json:"GrantRule" xml:"GrantRule"`
 }

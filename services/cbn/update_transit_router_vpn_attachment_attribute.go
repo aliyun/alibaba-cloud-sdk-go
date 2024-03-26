@@ -96,7 +96,7 @@ func CreateUpdateTransitRouterVpnAttachmentAttributeRequest() (request *UpdateTr
 	request = &UpdateTransitRouterVpnAttachmentAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "UpdateTransitRouterVpnAttachmentAttribute", "", "")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "UpdateTransitRouterVpnAttachmentAttribute", "cbn", "openAPI")
 	request.Method = requests.POST
 	return
 }

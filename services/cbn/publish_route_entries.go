@@ -93,7 +93,7 @@ func CreatePublishRouteEntriesRequest() (request *PublishRouteEntriesRequest) {
 	request = &PublishRouteEntriesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "PublishRouteEntries", "", "")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "PublishRouteEntries", "cbn", "openAPI")
 	request.Method = requests.POST
 	return
 }

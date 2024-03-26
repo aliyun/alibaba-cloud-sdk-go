@@ -96,7 +96,7 @@ func CreateDeleteCenChildInstanceRouteEntryToCenRequest() (request *DeleteCenChi
 	request = &DeleteCenChildInstanceRouteEntryToCenRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DeleteCenChildInstanceRouteEntryToCen", "", "")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DeleteCenChildInstanceRouteEntryToCen", "cbn", "openAPI")
 	request.Method = requests.POST
 	return
 }

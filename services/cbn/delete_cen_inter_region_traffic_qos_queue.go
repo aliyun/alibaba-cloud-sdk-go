@@ -92,7 +92,7 @@ func CreateDeleteCenInterRegionTrafficQosQueueRequest() (request *DeleteCenInter
 	request = &DeleteCenInterRegionTrafficQosQueueRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DeleteCenInterRegionTrafficQosQueue", "", "")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DeleteCenInterRegionTrafficQosQueue", "cbn", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -28,4 +28,5 @@ type VbrHealthCheck struct {
 	HealthCheckSourceIp string `json:"HealthCheckSourceIp" xml:"HealthCheckSourceIp"`
 	PacketLoss          int64  `json:"PacketLoss" xml:"PacketLoss"`
 	HealthCheckOnly     bool   `json:"HealthCheckOnly" xml:"HealthCheckOnly"`
+	Description         string `json:"Description" xml:"Description"`
 }

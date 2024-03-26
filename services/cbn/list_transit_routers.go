@@ -71,21 +71,22 @@ func (client *Client) ListTransitRoutersWithCallback(request *ListTransitRouters
 // ListTransitRoutersRequest is the request struct for api ListTransitRouters
 type ListTransitRoutersRequest struct {
 	*requests.RpcRequest
-	TransitRouterName    string                             `position:"Query" name:"TransitRouterName"`
-	ResourceOwnerId      requests.Integer                   `position:"Query" name:"ResourceOwnerId"`
-	CenId                string                             `position:"Query" name:"CenId"`
-	FeatureFilter        *[]ListTransitRoutersFeatureFilter `position:"Query" name:"FeatureFilter"  type:"Repeated"`
-	Type                 string                             `position:"Query" name:"Type"`
-	TransitRouterIds     *[]string                          `position:"Query" name:"TransitRouterIds"  type:"Repeated"`
-	PageNumber           requests.Integer                   `position:"Query" name:"PageNumber"`
-	PageSize             requests.Integer                   `position:"Query" name:"PageSize"`
-	Tag                  *[]ListTransitRoutersTag           `position:"Query" name:"Tag"  type:"Repeated"`
-	ResourceOwnerAccount string                             `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string                             `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer                   `position:"Query" name:"OwnerId"`
-	TransitRouterId      string                             `position:"Query" name:"TransitRouterId"`
-	Version              string                             `position:"Query" name:"Version"`
-	Status               string                             `position:"Query" name:"Status"`
+	TransitRouterName         string                             `position:"Query" name:"TransitRouterName"`
+	ResourceOwnerId           requests.Integer                   `position:"Query" name:"ResourceOwnerId"`
+	CenId                     string                             `position:"Query" name:"CenId"`
+	GetPrimaryStandbyZoneInfo requests.Boolean                   `position:"Query" name:"GetPrimaryStandbyZoneInfo"`
+	FeatureFilter             *[]ListTransitRoutersFeatureFilter `position:"Query" name:"FeatureFilter"  type:"Repeated"`
+	Type                      string                             `position:"Query" name:"Type"`
+	TransitRouterIds          *[]string                          `position:"Query" name:"TransitRouterIds"  type:"Repeated"`
+	PageNumber                requests.Integer                   `position:"Query" name:"PageNumber"`
+	PageSize                  requests.Integer                   `position:"Query" name:"PageSize"`
+	Tag                       *[]ListTransitRoutersTag           `position:"Query" name:"Tag"  type:"Repeated"`
+	ResourceOwnerAccount      string                             `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount              string                             `position:"Query" name:"OwnerAccount"`
+	OwnerId                   requests.Integer                   `position:"Query" name:"OwnerId"`
+	TransitRouterId           string                             `position:"Query" name:"TransitRouterId"`
+	Version                   string                             `position:"Query" name:"Version"`
+	Status                    string                             `position:"Query" name:"Status"`
 }
 
 // ListTransitRoutersFeatureFilter is a repeated param struct in ListTransitRoutersRequest
@@ -115,7 +116,7 @@ func CreateListTransitRoutersRequest() (request *ListTransitRoutersRequest) {
 	request = &ListTransitRoutersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "ListTransitRouters", "", "")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "ListTransitRouters", "cbn", "openAPI")
 	request.Method = requests.POST
 	return
 }

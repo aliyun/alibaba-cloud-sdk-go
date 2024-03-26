@@ -94,7 +94,7 @@ func CreateDeleteTransitRouterVpnAttachmentRequest() (request *DeleteTransitRout
 	request = &DeleteTransitRouterVpnAttachmentRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DeleteTransitRouterVpnAttachment", "", "")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DeleteTransitRouterVpnAttachment", "cbn", "openAPI")
 	request.Method = requests.POST
 	return
 }

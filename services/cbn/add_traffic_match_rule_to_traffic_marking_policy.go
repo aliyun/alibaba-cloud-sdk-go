@@ -105,7 +105,7 @@ func CreateAddTrafficMatchRuleToTrafficMarkingPolicyRequest() (request *AddTraff
 	request = &AddTrafficMatchRuleToTrafficMarkingPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "AddTrafficMatchRuleToTrafficMarkingPolicy", "", "")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "AddTrafficMatchRuleToTrafficMarkingPolicy", "cbn", "openAPI")
 	request.Method = requests.POST
 	return
 }

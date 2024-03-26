@@ -77,6 +77,7 @@ type CreateTransitRouterPeerAttachmentRequest struct {
 	CenId                              string                                  `position:"Query" name:"CenId"`
 	RouteTableAssociationEnabled       requests.Boolean                        `position:"Query" name:"RouteTableAssociationEnabled"`
 	TransitRouterAttachmentName        string                                  `position:"Query" name:"TransitRouterAttachmentName"`
+	DefaultLinkType                    string                                  `position:"Query" name:"DefaultLinkType"`
 	Tag                                *[]CreateTransitRouterPeerAttachmentTag `position:"Query" name:"Tag"  type:"Repeated"`
 	AutoPublishRouteEnabled            requests.Boolean                        `position:"Query" name:"AutoPublishRouteEnabled"`
 	RouteTablePropagationEnabled       requests.Boolean                        `position:"Query" name:"RouteTablePropagationEnabled"`
@@ -112,7 +113,7 @@ func CreateCreateTransitRouterPeerAttachmentRequest() (request *CreateTransitRou
 	request = &CreateTransitRouterPeerAttachmentRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "CreateTransitRouterPeerAttachment", "", "")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "CreateTransitRouterPeerAttachment", "cbn", "openAPI")
 	request.Method = requests.POST
 	return
 }

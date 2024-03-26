@@ -104,7 +104,7 @@ func CreateListTransitRouterCidrAllocationRequest() (request *ListTransitRouterC
 	request = &ListTransitRouterCidrAllocationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "ListTransitRouterCidrAllocation", "", "")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "ListTransitRouterCidrAllocation", "cbn", "openAPI")
 	request.Method = requests.POST
 	return
 }

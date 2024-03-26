@@ -107,7 +107,7 @@ func CreateListTransitRouterMulticastGroupsRequest() (request *ListTransitRouter
 	request = &ListTransitRouterMulticastGroupsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "ListTransitRouterMulticastGroups", "", "")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "ListTransitRouterMulticastGroups", "cbn", "openAPI")
 	request.Method = requests.POST
 	return
 }

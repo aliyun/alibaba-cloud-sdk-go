@@ -17,6 +17,7 @@ package cbn
 
 // TransitRouterAttachment is a nested struct in cbn response
 type TransitRouterAttachment struct {
+	DefaultLinkType                    string        `json:"DefaultLinkType" xml:"DefaultLinkType"`
 	PeerTransitRouterOwnerId           int64         `json:"PeerTransitRouterOwnerId" xml:"PeerTransitRouterOwnerId"`
 	VbrRegionId                        string        `json:"VbrRegionId" xml:"VbrRegionId"`
 	ChargeType                         string        `json:"ChargeType" xml:"ChargeType"`
@@ -24,6 +25,7 @@ type TransitRouterAttachment struct {
 	VbrOwnerId                         int64         `json:"VbrOwnerId" xml:"VbrOwnerId"`
 	VpcOwnerId                         int64         `json:"VpcOwnerId" xml:"VpcOwnerId"`
 	VbrId                              string        `json:"VbrId" xml:"VbrId"`
+	TransitRouterRegionId              string        `json:"TransitRouterRegionId" xml:"TransitRouterRegionId"`
 	Bandwidth                          int           `json:"Bandwidth" xml:"Bandwidth"`
 	RegionId                           string        `json:"RegionId" xml:"RegionId"`
 	GeographicSpanId                   string        `json:"GeographicSpanId" xml:"GeographicSpanId"`
@@ -33,11 +35,13 @@ type TransitRouterAttachment struct {
 	TransitRouterAttachmentName        string        `json:"TransitRouterAttachmentName" xml:"TransitRouterAttachmentName"`
 	VpcId                              string        `json:"VpcId" xml:"VpcId"`
 	PeerTransitRouterRegionId          string        `json:"PeerTransitRouterRegionId" xml:"PeerTransitRouterRegionId"`
+	EcrId                              string        `json:"EcrId" xml:"EcrId"`
 	CreationTime                       string        `json:"CreationTime" xml:"CreationTime"`
 	AutoPublishRouteEnabled            bool          `json:"AutoPublishRouteEnabled" xml:"AutoPublishRouteEnabled"`
 	ServiceMode                        string        `json:"ServiceMode" xml:"ServiceMode"`
 	CenId                              string        `json:"CenId" xml:"CenId"`
 	OrderType                          string        `json:"OrderType" xml:"OrderType"`
+	EcrOwnerId                         int64         `json:"EcrOwnerId" xml:"EcrOwnerId"`
 	ResourceType                       string        `json:"ResourceType" xml:"ResourceType"`
 	TransitRouterAttachmentId          string        `json:"TransitRouterAttachmentId" xml:"TransitRouterAttachmentId"`
 	BandwidthType                      string        `json:"BandwidthType" xml:"BandwidthType"`

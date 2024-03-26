@@ -103,7 +103,7 @@ func CreateListGrantVSwitchEnisRequest() (request *ListGrantVSwitchEnisRequest) 
 	request = &ListGrantVSwitchEnisRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "ListGrantVSwitchEnis", "", "")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "ListGrantVSwitchEnis", "cbn", "openAPI")
 	request.Method = requests.POST
 	return
 }

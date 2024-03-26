@@ -100,7 +100,7 @@ func CreateDescribeRouteConflictRequest() (request *DescribeRouteConflictRequest
 	request = &DescribeRouteConflictRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeRouteConflict", "", "")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeRouteConflict", "cbn", "openAPI")
 	request.Method = requests.POST
 	return
 }

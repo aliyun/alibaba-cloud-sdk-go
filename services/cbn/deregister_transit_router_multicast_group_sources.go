@@ -95,7 +95,7 @@ func CreateDeregisterTransitRouterMulticastGroupSourcesRequest() (request *Dereg
 	request = &DeregisterTransitRouterMulticastGroupSourcesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DeregisterTransitRouterMulticastGroupSources", "", "")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DeregisterTransitRouterMulticastGroupSources", "cbn", "openAPI")
 	request.Method = requests.POST
 	return
 }

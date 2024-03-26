@@ -92,7 +92,7 @@ func CreateDeleteTransitRouterMulticastDomainRequest() (request *DeleteTransitRo
 	request = &DeleteTransitRouterMulticastDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DeleteTransitRouterMulticastDomain", "", "")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DeleteTransitRouterMulticastDomain", "cbn", "openAPI")
 	request.Method = requests.POST
 	return
 }

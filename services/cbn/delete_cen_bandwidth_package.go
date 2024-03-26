@@ -90,7 +90,7 @@ func CreateDeleteCenBandwidthPackageRequest() (request *DeleteCenBandwidthPackag
 	request = &DeleteCenBandwidthPackageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DeleteCenBandwidthPackage", "", "")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DeleteCenBandwidthPackage", "cbn", "openAPI")
 	request.Method = requests.POST
 	return
 }

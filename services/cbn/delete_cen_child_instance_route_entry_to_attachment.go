@@ -95,7 +95,7 @@ func CreateDeleteCenChildInstanceRouteEntryToAttachmentRequest() (request *Delet
 	request = &DeleteCenChildInstanceRouteEntryToAttachmentRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DeleteCenChildInstanceRouteEntryToAttachment", "", "")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DeleteCenChildInstanceRouteEntryToAttachment", "cbn", "openAPI")
 	request.Method = requests.POST
 	return
 }

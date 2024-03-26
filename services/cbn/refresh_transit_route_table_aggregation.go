@@ -92,7 +92,7 @@ func CreateRefreshTransitRouteTableAggregationRequest() (request *RefreshTransit
 	request = &RefreshTransitRouteTableAggregationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "RefreshTransitRouteTableAggregation", "", "")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "RefreshTransitRouteTableAggregation", "cbn", "openAPI")
 	request.Method = requests.POST
 	return
 }

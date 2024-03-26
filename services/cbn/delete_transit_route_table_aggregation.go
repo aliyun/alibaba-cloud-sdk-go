@@ -93,7 +93,7 @@ func CreateDeleteTransitRouteTableAggregationRequest() (request *DeleteTransitRo
 	request = &DeleteTransitRouteTableAggregationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DeleteTransitRouteTableAggregation", "", "")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DeleteTransitRouteTableAggregation", "cbn", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -94,7 +94,7 @@ func CreateDisassociateTransitRouterMulticastDomainRequest() (request *Disassoci
 	request = &DisassociateTransitRouterMulticastDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DisassociateTransitRouterMulticastDomain", "", "")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DisassociateTransitRouterMulticastDomain", "cbn", "openAPI")
 	request.Method = requests.POST
 	return
 }

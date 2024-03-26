@@ -98,7 +98,7 @@ func CreateCreateCenChildInstanceRouteEntryToCenRequest() (request *CreateCenChi
 	request = &CreateCenChildInstanceRouteEntryToCenRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "CreateCenChildInstanceRouteEntryToCen", "", "")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "CreateCenChildInstanceRouteEntryToCen", "cbn", "openAPI")
 	request.Method = requests.POST
 	return
 }

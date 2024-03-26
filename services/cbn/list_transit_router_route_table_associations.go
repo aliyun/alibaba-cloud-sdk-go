@@ -101,7 +101,7 @@ func CreateListTransitRouterRouteTableAssociationsRequest() (request *ListTransi
 	request = &ListTransitRouterRouteTableAssociationsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "ListTransitRouterRouteTableAssociations", "", "")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "ListTransitRouterRouteTableAssociations", "cbn", "openAPI")
 	request.Method = requests.POST
 	return
 }

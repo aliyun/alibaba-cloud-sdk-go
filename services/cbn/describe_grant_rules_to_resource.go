@@ -85,11 +85,11 @@ type DescribeGrantRulesToResourceRequest struct {
 // DescribeGrantRulesToResourceResponse is the response struct for api DescribeGrantRulesToResource
 type DescribeGrantRulesToResourceResponse struct {
 	*responses.BaseResponse
-	NextToken  string      `json:"NextToken" xml:"NextToken"`
-	RequestId  string      `json:"RequestId" xml:"RequestId"`
-	TotalCount int         `json:"TotalCount" xml:"TotalCount"`
-	MaxResults int         `json:"MaxResults" xml:"MaxResults"`
-	GrantRules []GrantRule `json:"GrantRules" xml:"GrantRules"`
+	NextToken  string                                    `json:"NextToken" xml:"NextToken"`
+	RequestId  string                                    `json:"RequestId" xml:"RequestId"`
+	TotalCount int                                       `json:"TotalCount" xml:"TotalCount"`
+	MaxResults int                                       `json:"MaxResults" xml:"MaxResults"`
+	GrantRules []GrantRuleInDescribeGrantRulesToResource `json:"GrantRules" xml:"GrantRules"`
 }
 
 // CreateDescribeGrantRulesToResourceRequest creates a request to invoke DescribeGrantRulesToResource API
@@ -97,7 +97,7 @@ func CreateDescribeGrantRulesToResourceRequest() (request *DescribeGrantRulesToR
 	request = &DescribeGrantRulesToResourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeGrantRulesToResource", "", "")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeGrantRulesToResource", "cbn", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -116,7 +116,7 @@ func CreateCreateTransitRouterVpnAttachmentRequest() (request *CreateTransitRout
 	request = &CreateTransitRouterVpnAttachmentRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "CreateTransitRouterVpnAttachment", "", "")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "CreateTransitRouterVpnAttachment", "cbn", "openAPI")
 	request.Method = requests.POST
 	return
 }
