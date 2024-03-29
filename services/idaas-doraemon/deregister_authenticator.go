@@ -87,7 +87,7 @@ func CreateDeregisterAuthenticatorRequest() (request *DeregisterAuthenticatorReq
 	request = &DeregisterAuthenticatorRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("idaas-doraemon", "2021-05-20", "DeregisterAuthenticator", "", "")
+	request.InitWithApiInfo("idaas-doraemon", "2021-05-20", "DeregisterAuthenticator", "idaasauth", "openAPI")
 	request.Method = requests.POST
 	return
 }

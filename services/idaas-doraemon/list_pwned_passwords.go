@@ -89,7 +89,7 @@ func CreateListPwnedPasswordsRequest() (request *ListPwnedPasswordsRequest) {
 	request = &ListPwnedPasswordsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("idaas-doraemon", "2021-05-20", "ListPwnedPasswords", "", "")
+	request.InitWithApiInfo("idaas-doraemon", "2021-05-20", "ListPwnedPasswords", "idaasauth", "openAPI")
 	request.Method = requests.POST
 	return
 }

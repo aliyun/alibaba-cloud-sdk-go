@@ -87,7 +87,7 @@ func CreateVerifyIdTokenRequest() (request *VerifyIdTokenRequest) {
 	request = &VerifyIdTokenRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("idaas-doraemon", "2021-05-20", "VerifyIdToken", "", "")
+	request.InitWithApiInfo("idaas-doraemon", "2021-05-20", "VerifyIdToken", "idaasauth", "openAPI")
 	request.Method = requests.POST
 	return
 }

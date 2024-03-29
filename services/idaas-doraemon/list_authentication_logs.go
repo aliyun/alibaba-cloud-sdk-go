@@ -86,11 +86,11 @@ type ListAuthenticationLogsRequest struct {
 // ListAuthenticationLogsResponse is the response struct for api ListAuthenticationLogs
 type ListAuthenticationLogsResponse struct {
 	*responses.BaseResponse
-	RequestId                string                     `json:"RequestId" xml:"RequestId"`
-	TotalCount               int64                      `json:"TotalCount" xml:"TotalCount"`
-	PageNumber               int64                      `json:"PageNumber" xml:"PageNumber"`
-	PageSize                 int64                      `json:"PageSize" xml:"PageSize"`
-	AuthenticationLogContent []AuthenticationLogContent `json:"AuthenticationLogContent" xml:"AuthenticationLogContent"`
+	RequestId                string                         `json:"RequestId" xml:"RequestId"`
+	TotalCount               int64                          `json:"TotalCount" xml:"TotalCount"`
+	PageNumber               int64                          `json:"PageNumber" xml:"PageNumber"`
+	PageSize                 int64                          `json:"PageSize" xml:"PageSize"`
+	AuthenticationLogContent []AuthenticationLogContentItem `json:"AuthenticationLogContent" xml:"AuthenticationLogContent"`
 }
 
 // CreateListAuthenticationLogsRequest creates a request to invoke ListAuthenticationLogs API
@@ -98,7 +98,7 @@ func CreateListAuthenticationLogsRequest() (request *ListAuthenticationLogsReque
 	request = &ListAuthenticationLogsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("idaas-doraemon", "2021-05-20", "ListAuthenticationLogs", "", "")
+	request.InitWithApiInfo("idaas-doraemon", "2021-05-20", "ListAuthenticationLogs", "idaasauth", "openAPI")
 	request.Method = requests.POST
 	return
 }

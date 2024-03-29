@@ -19,6 +19,7 @@ package idaas_doraemon
 type Item struct {
 	AliOrderInstanceId    string `json:"AliOrderInstanceId" xml:"AliOrderInstanceId"`
 	CreateTime            int64  `json:"CreateTime" xml:"CreateTime"`
+	Exhausted             bool   `json:"Exhausted" xml:"Exhausted"`
 	StatisticTime         int64  `json:"StatisticTime" xml:"StatisticTime"`
 	RefundTime            int64  `json:"RefundTime" xml:"RefundTime"`
 	ServiceCode           string `json:"ServiceCode" xml:"ServiceCode"`

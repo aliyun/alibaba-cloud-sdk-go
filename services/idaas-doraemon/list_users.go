@@ -78,9 +78,9 @@ type ListUsersRequest struct {
 // ListUsersResponse is the response struct for api ListUsers
 type ListUsersResponse struct {
 	*responses.BaseResponse
-	RequestId  string  `json:"RequestId" xml:"RequestId"`
-	TotalCount int64   `json:"TotalCount" xml:"TotalCount"`
-	Users      []Users `json:"Users" xml:"Users"`
+	RequestId  string      `json:"RequestId" xml:"RequestId"`
+	TotalCount int64       `json:"TotalCount" xml:"TotalCount"`
+	Users      []UsersItem `json:"Users" xml:"Users"`
 }
 
 // CreateListUsersRequest creates a request to invoke ListUsers API
@@ -88,7 +88,7 @@ func CreateListUsersRequest() (request *ListUsersRequest) {
 	request = &ListUsersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("idaas-doraemon", "2021-05-20", "ListUsers", "", "")
+	request.InitWithApiInfo("idaas-doraemon", "2021-05-20", "ListUsers", "idaasauth", "openAPI")
 	request.Method = requests.POST
 	return
 }

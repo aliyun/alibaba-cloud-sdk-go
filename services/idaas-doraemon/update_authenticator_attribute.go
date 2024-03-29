@@ -88,7 +88,7 @@ func CreateUpdateAuthenticatorAttributeRequest() (request *UpdateAuthenticatorAt
 	request = &UpdateAuthenticatorAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("idaas-doraemon", "2021-05-20", "UpdateAuthenticatorAttribute", "", "")
+	request.InitWithApiInfo("idaas-doraemon", "2021-05-20", "UpdateAuthenticatorAttribute", "idaasauth", "openAPI")
 	request.Method = requests.POST
 	return
 }

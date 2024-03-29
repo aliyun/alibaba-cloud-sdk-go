@@ -93,7 +93,7 @@ func CreateListAuthenticatorsRequest() (request *ListAuthenticatorsRequest) {
 	request = &ListAuthenticatorsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("idaas-doraemon", "2021-05-20", "ListAuthenticators", "", "")
+	request.InitWithApiInfo("idaas-doraemon", "2021-05-20", "ListAuthenticators", "idaasauth", "openAPI")
 	request.Method = requests.POST
 	return
 }

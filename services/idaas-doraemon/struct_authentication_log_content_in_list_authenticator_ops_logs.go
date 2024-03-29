@@ -17,5 +17,5 @@ package idaas_doraemon
 
 // AuthenticationLogContentInListAuthenticatorOpsLogs is a nested struct in idaas_doraemon response
 type AuthenticationLogContentInListAuthenticatorOpsLogs struct {
-	AuthenticationLogContent []AuthenticationLogContent `json:"authenticationLogContent" xml:"authenticationLogContent"`
+	AuthenticationLogContentItem []AuthenticationLogContentItem `json:"authenticationLogContent" xml:"authenticationLogContent"`
 }

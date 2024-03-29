@@ -94,7 +94,7 @@ func CreateFetchAccessTokenRequest() (request *FetchAccessTokenRequest) {
 	request = &FetchAccessTokenRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("idaas-doraemon", "2021-05-20", "FetchAccessToken", "", "")
+	request.InitWithApiInfo("idaas-doraemon", "2021-05-20", "FetchAccessToken", "idaasauth", "openAPI")
 	request.Method = requests.POST
 	return
 }

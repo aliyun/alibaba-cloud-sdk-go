@@ -95,7 +95,7 @@ func CreateCreateAuthenticatorRegistrationRequest() (request *CreateAuthenticato
 	request = &CreateAuthenticatorRegistrationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("idaas-doraemon", "2021-05-20", "CreateAuthenticatorRegistration", "", "")
+	request.InitWithApiInfo("idaas-doraemon", "2021-05-20", "CreateAuthenticatorRegistration", "idaasauth", "openAPI")
 	request.Method = requests.POST
 	return
 }

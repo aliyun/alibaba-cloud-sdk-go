@@ -93,7 +93,7 @@ func CreateCreateUserAuthenticateOptionsRequest() (request *CreateUserAuthentica
 	request = &CreateUserAuthenticateOptionsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("idaas-doraemon", "2021-05-20", "CreateUserAuthenticateOptions", "", "")
+	request.InitWithApiInfo("idaas-doraemon", "2021-05-20", "CreateUserAuthenticateOptions", "idaasauth", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -71,11 +71,13 @@ func (client *Client) ListOrderConsumeStatisticRecordsWithCallback(request *List
 // ListOrderConsumeStatisticRecordsRequest is the request struct for api ListOrderConsumeStatisticRecords
 type ListOrderConsumeStatisticRecordsRequest struct {
 	*requests.RpcRequest
-	StatisticTimeMin string           `position:"Query" name:"StatisticTimeMin"`
-	AliOrderCode     string           `position:"Query" name:"AliOrderCode"`
-	PageNumber       requests.Integer `position:"Query" name:"PageNumber"`
-	PageSize         requests.Integer `position:"Query" name:"PageSize"`
-	StatisticTimeMax string           `position:"Query" name:"StatisticTimeMax"`
+	StatisticTimeMin      string           `position:"Query" name:"StatisticTimeMin"`
+	AliOrderCode          string           `position:"Query" name:"AliOrderCode"`
+	PageNumber            requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize              requests.Integer `position:"Query" name:"PageSize"`
+	ServiceCode           string           `position:"Query" name:"ServiceCode"`
+	StatisticTimeMax      string           `position:"Query" name:"StatisticTimeMax"`
+	ApplicationExternalId string           `position:"Query" name:"ApplicationExternalId"`
 }
 
 // ListOrderConsumeStatisticRecordsResponse is the response struct for api ListOrderConsumeStatisticRecords
@@ -93,7 +95,7 @@ func CreateListOrderConsumeStatisticRecordsRequest() (request *ListOrderConsumeS
 	request = &ListOrderConsumeStatisticRecordsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("idaas-doraemon", "2021-05-20", "ListOrderConsumeStatisticRecords", "", "")
+	request.InitWithApiInfo("idaas-doraemon", "2021-05-20", "ListOrderConsumeStatisticRecords", "idaasauth", "openAPI")
 	request.Method = requests.POST
 	return
 }

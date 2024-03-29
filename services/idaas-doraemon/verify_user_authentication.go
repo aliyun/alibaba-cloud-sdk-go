@@ -100,7 +100,7 @@ func CreateVerifyUserAuthenticationRequest() (request *VerifyUserAuthenticationR
 	request = &VerifyUserAuthenticationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("idaas-doraemon", "2021-05-20", "VerifyUserAuthentication", "", "")
+	request.InitWithApiInfo("idaas-doraemon", "2021-05-20", "VerifyUserAuthentication", "idaasauth", "openAPI")
 	request.Method = requests.POST
 	return
 }

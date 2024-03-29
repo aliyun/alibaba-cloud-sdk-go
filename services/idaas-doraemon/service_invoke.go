@@ -90,6 +90,7 @@ type ServiceInvokeResponse struct {
 	Code      string `json:"Code" xml:"Code"`
 	Success   bool   `json:"Success" xml:"Success"`
 	IdToken   string `json:"IdToken" xml:"IdToken"`
+	EventId   string `json:"EventId" xml:"EventId"`
 }
 
 // CreateServiceInvokeRequest creates a request to invoke ServiceInvoke API
@@ -97,7 +98,7 @@ func CreateServiceInvokeRequest() (request *ServiceInvokeRequest) {
 	request = &ServiceInvokeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("idaas-doraemon", "2021-05-20", "ServiceInvoke", "", "")
+	request.InitWithApiInfo("idaas-doraemon", "2021-05-20", "ServiceInvoke", "idaasauth", "openAPI")
 	request.Method = requests.POST
 	return
 }

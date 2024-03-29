@@ -1,3 +1,7 @@
+2024-03-29 Version: v1.62.707
+- Generated 2021-05-20 for `idaas-doraemon`.
+- ListOrderConsumeStatisticRecords  add applicationExternalId serviceCode.
+
 2024-03-26 Version: v1.62.706
 - Generated 2019-03-15 for `fnf`.
 - DeleteFlow、DeleteSchedule Parameters move to body.

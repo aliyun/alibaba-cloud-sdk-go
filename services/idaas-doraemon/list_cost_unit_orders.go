@@ -92,7 +92,7 @@ func CreateListCostUnitOrdersRequest() (request *ListCostUnitOrdersRequest) {
 	request = &ListCostUnitOrdersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("idaas-doraemon", "2021-05-20", "ListCostUnitOrders", "", "")
+	request.InitWithApiInfo("idaas-doraemon", "2021-05-20", "ListCostUnitOrders", "idaasauth", "openAPI")
 	request.Method = requests.POST
 	return
 }
