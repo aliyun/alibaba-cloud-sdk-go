@@ -84,50 +84,28 @@ type DescribeLoadBalancerTCPListenerAttributeRequest struct {
 // DescribeLoadBalancerTCPListenerAttributeResponse is the response struct for api DescribeLoadBalancerTCPListenerAttribute
 type DescribeLoadBalancerTCPListenerAttributeResponse struct {
 	*responses.BaseResponse
-	VServerGroupId                 string                                               `json:"VServerGroupId" xml:"VServerGroupId"`
-	Status                         string                                               `json:"Status" xml:"Status"`
-	AclType                        string                                               `json:"AclType" xml:"AclType"`
-	ConnectionDrainTimeout         int                                                  `json:"ConnectionDrainTimeout" xml:"ConnectionDrainTimeout"`
-	FailoverStrategy               string                                               `json:"FailoverStrategy" xml:"FailoverStrategy"`
-	WorkingServerGroupId           string                                               `json:"WorkingServerGroupId" xml:"WorkingServerGroupId"`
-	HealthCheckTcpFastCloseEnabled bool                                                 `json:"HealthCheckTcpFastCloseEnabled" xml:"HealthCheckTcpFastCloseEnabled"`
-	FullNatEnabled                 bool                                                 `json:"FullNatEnabled" xml:"FullNatEnabled"`
-	ServiceManagedMode             string                                               `json:"ServiceManagedMode" xml:"ServiceManagedMode"`
-	RequestId                      string                                               `json:"RequestId" xml:"RequestId"`
-	HealthCheckConnectPort         int                                                  `json:"HealthCheckConnectPort" xml:"HealthCheckConnectPort"`
-	Description                    string                                               `json:"Description" xml:"Description"`
-	Bandwidth                      int                                                  `json:"Bandwidth" xml:"Bandwidth"`
-	HealthCheckType                string                                               `json:"HealthCheckType" xml:"HealthCheckType"`
-	MasterSlaveServerGroupId       string                                               `json:"MasterSlaveServerGroupId" xml:"MasterSlaveServerGroupId"`
-	BackendServerPort              int                                                  `json:"BackendServerPort" xml:"BackendServerPort"`
-	AclStatus                      string                                               `json:"AclStatus" xml:"AclStatus"`
-	HealthCheckDomain              string                                               `json:"HealthCheckDomain" xml:"HealthCheckDomain"`
-	UnhealthyThreshold             int                                                  `json:"UnhealthyThreshold" xml:"UnhealthyThreshold"`
-	MasterServerGroupId            string                                               `json:"MasterServerGroupId" xml:"MasterServerGroupId"`
-	HealthCheckHttpCode            string                                               `json:"HealthCheckHttpCode" xml:"HealthCheckHttpCode"`
-	MaxConnection                  int                                                  `json:"MaxConnection" xml:"MaxConnection"`
-	ProxyProtocolV2Enabled         bool                                                 `json:"ProxyProtocolV2Enabled" xml:"ProxyProtocolV2Enabled"`
-	SlaveServerGroupId             string                                               `json:"SlaveServerGroupId" xml:"SlaveServerGroupId"`
-	PersistenceTimeout             int                                                  `json:"PersistenceTimeout" xml:"PersistenceTimeout"`
-	ListenerPort                   int                                                  `json:"ListenerPort" xml:"ListenerPort"`
-	HealthCheckInterval            int                                                  `json:"HealthCheckInterval" xml:"HealthCheckInterval"`
-	HealthCheckURI                 string                                               `json:"HealthCheckURI" xml:"HealthCheckURI"`
-	FailoverThreshold              int                                                  `json:"FailoverThreshold" xml:"FailoverThreshold"`
-	AclId                          string                                               `json:"AclId" xml:"AclId"`
-	SynProxy                       string                                               `json:"SynProxy" xml:"SynProxy"`
-	Scheduler                      string                                               `json:"Scheduler" xml:"Scheduler"`
-	EstablishedTimeout             int                                                  `json:"EstablishedTimeout" xml:"EstablishedTimeout"`
-	VpcIds                         string                                               `json:"VpcIds" xml:"VpcIds"`
-	HealthCheckConnectTimeout      int                                                  `json:"HealthCheckConnectTimeout" xml:"HealthCheckConnectTimeout"`
-	MasterSlaveModeEnabled         bool                                                 `json:"MasterSlaveModeEnabled" xml:"MasterSlaveModeEnabled"`
-	HealthyThreshold               int                                                  `json:"HealthyThreshold" xml:"HealthyThreshold"`
-	ConnectionDrain                string                                               `json:"ConnectionDrain" xml:"ConnectionDrain"`
-	HealthCheckMethod              string                                               `json:"HealthCheckMethod" xml:"HealthCheckMethod"`
-	HealthCheck                    string                                               `json:"HealthCheck" xml:"HealthCheck"`
-	LoadBalancerId                 string                                               `json:"LoadBalancerId" xml:"LoadBalancerId"`
-	AclIds                         AclIdsInDescribeLoadBalancerTCPListenerAttribute     `json:"AclIds" xml:"AclIds"`
-	PortRanges                     PortRangesInDescribeLoadBalancerTCPListenerAttribute `json:"PortRanges" xml:"PortRanges"`
-	Tags                           TagsInDescribeLoadBalancerTCPListenerAttribute       `json:"Tags" xml:"Tags"`
+	VServerGroupId           string `json:"VServerGroupId" xml:"VServerGroupId"`
+	HealthCheckHttpCode      string `json:"HealthCheckHttpCode" xml:"HealthCheckHttpCode"`
+	ConnectPort              int    `json:"ConnectPort" xml:"ConnectPort"`
+	Status                   string `json:"Status" xml:"Status"`
+	MaxConnection            int    `json:"MaxConnection" xml:"MaxConnection"`
+	PersistenceTimeout       int    `json:"PersistenceTimeout" xml:"PersistenceTimeout"`
+	ListenerPort             int    `json:"ListenerPort" xml:"ListenerPort"`
+	HealthCheckURI           string `json:"HealthCheckURI" xml:"HealthCheckURI"`
+	SynProxy                 string `json:"SynProxy" xml:"SynProxy"`
+	Scheduler                string `json:"Scheduler" xml:"Scheduler"`
+	RequestId                string `json:"RequestId" xml:"RequestId"`
+	Interval                 int    `json:"Interval" xml:"Interval"`
+	Bandwidth                int    `json:"Bandwidth" xml:"Bandwidth"`
+	EstablishedTimeout       int    `json:"EstablishedTimeout" xml:"EstablishedTimeout"`
+	HealthCheckType          string `json:"HealthCheckType" xml:"HealthCheckType"`
+	MasterSlaveServerGroupId string `json:"MasterSlaveServerGroupId" xml:"MasterSlaveServerGroupId"`
+	BackendServerPort        int    `json:"BackendServerPort" xml:"BackendServerPort"`
+	HealthyThreshold         int    `json:"HealthyThreshold" xml:"HealthyThreshold"`
+	HealthCheckDomain        string `json:"HealthCheckDomain" xml:"HealthCheckDomain"`
+	UnhealthyThreshold       int    `json:"UnhealthyThreshold" xml:"UnhealthyThreshold"`
+	ConnectTimeout           int    `json:"ConnectTimeout" xml:"ConnectTimeout"`
+	HealthCheck              string `json:"HealthCheck" xml:"HealthCheck"`
 }
 
 // CreateDescribeLoadBalancerTCPListenerAttributeRequest creates a request to invoke DescribeLoadBalancerTCPListenerAttribute API
@@ -135,7 +113,7 @@ func CreateDescribeLoadBalancerTCPListenerAttributeRequest() (request *DescribeL
 	request = &DescribeLoadBalancerTCPListenerAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "DescribeLoadBalancerTCPListenerAttribute", "slb", "openAPI")
+	request.InitWithApiInfo("Slb", "2013-02-21", "DescribeLoadBalancerTCPListenerAttribute", "slb", "openAPI")
 	request.Method = requests.POST
 	return
 }

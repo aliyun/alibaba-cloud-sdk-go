@@ -77,7 +77,6 @@ type DeleteLoadBalancerListenerRequest struct {
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ListenerProtocol     string           `position:"Query" name:"ListenerProtocol"`
 	Tags                 string           `position:"Query" name:"Tags"`
 	LoadBalancerId       string           `position:"Query" name:"LoadBalancerId"`
 }
@@ -93,7 +92,7 @@ func CreateDeleteLoadBalancerListenerRequest() (request *DeleteLoadBalancerListe
 	request = &DeleteLoadBalancerListenerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "DeleteLoadBalancerListener", "slb", "openAPI")
+	request.InitWithApiInfo("Slb", "2013-02-21", "DeleteLoadBalancerListener", "slb", "openAPI")
 	request.Method = requests.POST
 	return
 }

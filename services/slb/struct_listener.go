@@ -17,26 +17,6 @@ package slb
 
 // Listener is a nested struct in slb response
 type Listener struct {
-	AclType             string                                `json:"AclType" xml:"AclType"`
-	Port                int                                   `json:"Port" xml:"Port"`
-	Protocol            string                                `json:"Protocol" xml:"Protocol"`
-	ServiceManagedMode  string                                `json:"ServiceManagedMode" xml:"ServiceManagedMode"`
-	AclId               string                                `json:"AclId" xml:"AclId"`
-	AclStatus           string                                `json:"AclStatus" xml:"AclStatus"`
-	ListenerProtocol    string                                `json:"ListenerProtocol" xml:"ListenerProtocol"`
-	LoadBalancerId      string                                `json:"LoadBalancerId" xml:"LoadBalancerId"`
-	Scheduler           string                                `json:"Scheduler" xml:"Scheduler"`
-	BackendServerPort   int                                   `json:"BackendServerPort" xml:"BackendServerPort"`
-	VServerGroupId      string                                `json:"VServerGroupId" xml:"VServerGroupId"`
-	Bandwidth           int                                   `json:"Bandwidth" xml:"Bandwidth"`
-	Status              string                                `json:"Status" xml:"Status"`
-	ListenerPort        int                                   `json:"ListenerPort" xml:"ListenerPort"`
-	Description         string                                `json:"Description" xml:"Description"`
-	AclIds              AclIdsInDescribeLoadBalancerListeners `json:"AclIds" xml:"AclIds"`
-	HTTPListenerConfig  HTTPListenerConfig                    `json:"HTTPListenerConfig" xml:"HTTPListenerConfig"`
-	TCPListenerConfig   TCPListenerConfig                     `json:"TCPListenerConfig" xml:"TCPListenerConfig"`
-	HTTPSListenerConfig HTTPSListenerConfig                   `json:"HTTPSListenerConfig" xml:"HTTPSListenerConfig"`
-	TCPSListenerConfig  TCPSListenerConfig                    `json:"TCPSListenerConfig" xml:"TCPSListenerConfig"`
-	UDPListenerConfig   UDPListenerConfig                     `json:"UDPListenerConfig" xml:"UDPListenerConfig"`
-	Tags                []Tag                                 `json:"Tags" xml:"Tags"`
+	ListenerPort   int                                    `json:"ListenerPort" xml:"ListenerPort"`
+	BackendServers BackendServersInDescribeBackendServers `json:"BackendServers" xml:"BackendServers"`
 }

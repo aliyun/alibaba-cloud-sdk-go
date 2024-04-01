@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// RemoveTags invokes the slb.RemoveTags API synchronously
-func (client *Client) RemoveTags(request *RemoveTagsRequest) (response *RemoveTagsResponse, err error) {
-	response = CreateRemoveTagsResponse()
+// DescribeBackendServers invokes the slb.DescribeBackendServers API synchronously
+func (client *Client) DescribeBackendServers(request *DescribeBackendServersRequest) (response *DescribeBackendServersResponse, err error) {
+	response = CreateDescribeBackendServersResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// RemoveTagsWithChan invokes the slb.RemoveTags API asynchronously
-func (client *Client) RemoveTagsWithChan(request *RemoveTagsRequest) (<-chan *RemoveTagsResponse, <-chan error) {
-	responseChan := make(chan *RemoveTagsResponse, 1)
+// DescribeBackendServersWithChan invokes the slb.DescribeBackendServers API asynchronously
+func (client *Client) DescribeBackendServersWithChan(request *DescribeBackendServersRequest) (<-chan *DescribeBackendServersResponse, <-chan error) {
+	responseChan := make(chan *DescribeBackendServersResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.RemoveTags(request)
+		response, err := client.DescribeBackendServers(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) RemoveTagsWithChan(request *RemoveTagsRequest) (<-chan *Re
 	return responseChan, errChan
 }
 
-// RemoveTagsWithCallback invokes the slb.RemoveTags API asynchronously
-func (client *Client) RemoveTagsWithCallback(request *RemoveTagsRequest, callback func(response *RemoveTagsResponse, err error)) <-chan int {
+// DescribeBackendServersWithCallback invokes the slb.DescribeBackendServers API asynchronously
+func (client *Client) DescribeBackendServersWithCallback(request *DescribeBackendServersRequest, callback func(response *DescribeBackendServersResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *RemoveTagsResponse
+		var response *DescribeBackendServersResponse
 		var err error
 		defer close(result)
-		response, err = client.RemoveTags(request)
+		response, err = client.DescribeBackendServers(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,11 +68,12 @@ func (client *Client) RemoveTagsWithCallback(request *RemoveTagsRequest, callbac
 	return result
 }
 
-// RemoveTagsRequest is the request struct for api RemoveTags
-type RemoveTagsRequest struct {
+// DescribeBackendServersRequest is the request struct for api DescribeBackendServers
+type DescribeBackendServersRequest struct {
 	*requests.RpcRequest
 	AccessKeyId          string           `position:"Query" name:"access_key_id"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ListenerPort         requests.Integer `position:"Query" name:"ListenerPort"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -80,25 +81,26 @@ type RemoveTagsRequest struct {
 	LoadBalancerId       string           `position:"Query" name:"LoadBalancerId"`
 }
 
-// RemoveTagsResponse is the response struct for api RemoveTags
-type RemoveTagsResponse struct {
+// DescribeBackendServersResponse is the response struct for api DescribeBackendServers
+type DescribeBackendServersResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	RequestId string    `json:"RequestId" xml:"RequestId"`
+	Listeners Listeners `json:"Listeners" xml:"Listeners"`
 }
 
-// CreateRemoveTagsRequest creates a request to invoke RemoveTags API
-func CreateRemoveTagsRequest() (request *RemoveTagsRequest) {
-	request = &RemoveTagsRequest{
+// CreateDescribeBackendServersRequest creates a request to invoke DescribeBackendServers API
+func CreateDescribeBackendServersRequest() (request *DescribeBackendServersRequest) {
+	request = &DescribeBackendServersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2014-05-15", "RemoveTags", "slb", "openAPI")
+	request.InitWithApiInfo("Slb", "2013-02-21", "DescribeBackendServers", "slb", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateRemoveTagsResponse creates a response to parse from RemoveTags response
-func CreateRemoveTagsResponse() (response *RemoveTagsResponse) {
-	response = &RemoveTagsResponse{
+// CreateDescribeBackendServersResponse creates a response to parse from DescribeBackendServers response
+func CreateDescribeBackendServersResponse() (response *DescribeBackendServersResponse) {
+	response = &DescribeBackendServersResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

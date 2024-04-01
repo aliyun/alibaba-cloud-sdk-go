@@ -17,10 +17,6 @@ package slb
 
 // BackendServerInRemoveBackendServers is a nested struct in slb response
 type BackendServerInRemoveBackendServers struct {
-	VpcId       string `json:"VpcId" xml:"VpcId"`
-	Type        string `json:"Type" xml:"Type"`
-	Weight      int    `json:"Weight" xml:"Weight"`
-	Description string `json:"Description" xml:"Description"`
-	ServerIp    string `json:"ServerIp" xml:"ServerIp"`
-	ServerId    string `json:"ServerId" xml:"ServerId"`
+	Weight   int    `json:"Weight" xml:"Weight"`
+	ServerId string `json:"ServerId" xml:"ServerId"`
 }
