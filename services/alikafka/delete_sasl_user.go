@@ -73,6 +73,7 @@ type DeleteSaslUserRequest struct {
 	*requests.RpcRequest
 	Type       string `position:"Query" name:"Type"`
 	InstanceId string `position:"Query" name:"InstanceId"`
+	Mechanism  string `position:"Query" name:"Mechanism"`
 	Username   string `position:"Query" name:"Username"`
 }
 
@@ -90,7 +91,7 @@ func CreateDeleteSaslUserRequest() (request *DeleteSaslUserRequest) {
 	request = &DeleteSaslUserRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alikafka", "2019-09-16", "DeleteSaslUser", "", "")
+	request.InitWithApiInfo("alikafka", "2019-09-16", "DeleteSaslUser", "alikafka", "openAPI")
 	request.Method = requests.POST
 	return
 }

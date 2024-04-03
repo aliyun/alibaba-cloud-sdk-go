@@ -89,7 +89,7 @@ func CreateDeleteTopicRequest() (request *DeleteTopicRequest) {
 	request = &DeleteTopicRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alikafka", "2019-09-16", "DeleteTopic", "", "")
+	request.InitWithApiInfo("alikafka", "2019-09-16", "DeleteTopic", "alikafka", "openAPI")
 	request.Method = requests.POST
 	return
 }

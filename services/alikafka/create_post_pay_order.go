@@ -106,7 +106,7 @@ func CreateCreatePostPayOrderRequest() (request *CreatePostPayOrderRequest) {
 	request = &CreatePostPayOrderRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alikafka", "2019-09-16", "CreatePostPayOrder", "", "")
+	request.InitWithApiInfo("alikafka", "2019-09-16", "CreatePostPayOrder", "alikafka", "openAPI")
 	request.Method = requests.POST
 	return
 }

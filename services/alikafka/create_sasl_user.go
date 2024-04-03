@@ -74,6 +74,7 @@ type CreateSaslUserRequest struct {
 	Type       string `position:"Query" name:"Type"`
 	Password   string `position:"Query" name:"Password"`
 	InstanceId string `position:"Query" name:"InstanceId"`
+	Mechanism  string `position:"Query" name:"Mechanism"`
 	Username   string `position:"Query" name:"Username"`
 }
 
@@ -91,7 +92,7 @@ func CreateCreateSaslUserRequest() (request *CreateSaslUserRequest) {
 	request = &CreateSaslUserRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alikafka", "2019-09-16", "CreateSaslUser", "", "")
+	request.InitWithApiInfo("alikafka", "2019-09-16", "CreateSaslUser", "alikafka", "openAPI")
 	request.Method = requests.POST
 	return
 }

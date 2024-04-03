@@ -90,7 +90,7 @@ func CreateChangeResourceGroupRequest() (request *ChangeResourceGroupRequest) {
 	request = &ChangeResourceGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alikafka", "2019-09-16", "ChangeResourceGroup", "", "")
+	request.InitWithApiInfo("alikafka", "2019-09-16", "ChangeResourceGroup", "alikafka", "openAPI")
 	request.Method = requests.POST
 	return
 }

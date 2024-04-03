@@ -71,9 +71,9 @@ func (client *Client) ModifyTopicRemarkWithCallback(request *ModifyTopicRemarkRe
 // ModifyTopicRemarkRequest is the request struct for api ModifyTopicRemark
 type ModifyTopicRemarkRequest struct {
 	*requests.RpcRequest
+	Remark     string `position:"Query" name:"Remark"`
 	InstanceId string `position:"Query" name:"InstanceId"`
 	Topic      string `position:"Query" name:"Topic"`
-	Remark     string `position:"Query" name:"Remark"`
 }
 
 // ModifyTopicRemarkResponse is the response struct for api ModifyTopicRemark
@@ -90,7 +90,7 @@ func CreateModifyTopicRemarkRequest() (request *ModifyTopicRemarkRequest) {
 	request = &ModifyTopicRemarkRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alikafka", "2019-09-16", "ModifyTopicRemark", "", "")
+	request.InitWithApiInfo("alikafka", "2019-09-16", "ModifyTopicRemark", "alikafka", "openAPI")
 	request.Method = requests.POST
 	return
 }

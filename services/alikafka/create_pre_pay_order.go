@@ -71,17 +71,42 @@ func (client *Client) CreatePrePayOrderWithCallback(request *CreatePrePayOrderRe
 // CreatePrePayOrderRequest is the request struct for api CreatePrePayOrder
 type CreatePrePayOrderRequest struct {
 	*requests.RpcRequest
-	IoMax           requests.Integer        `position:"Query" name:"IoMax"`
-	EipMax          requests.Integer        `position:"Query" name:"EipMax"`
-	SpecType        string                  `position:"Query" name:"SpecType"`
-	ResourceGroupId string                  `position:"Query" name:"ResourceGroupId"`
-	Tag             *[]CreatePrePayOrderTag `position:"Query" name:"Tag"  type:"Repeated"`
-	PartitionNum    requests.Integer        `position:"Query" name:"PartitionNum"`
-	DiskSize        requests.Integer        `position:"Query" name:"DiskSize"`
-	IoMaxSpec       string                  `position:"Query" name:"IoMaxSpec"`
-	DiskType        string                  `position:"Query" name:"DiskType"`
-	TopicQuota      requests.Integer        `position:"Query" name:"TopicQuota"`
-	DeployType      requests.Integer        `position:"Query" name:"DeployType"`
+	IoMax           requests.Integer                 `position:"Query" name:"IoMax"`
+	EipMax          requests.Integer                 `position:"Query" name:"EipMax"`
+	Duration        requests.Integer                 `position:"Query" name:"Duration"`
+	SpecType        string                           `position:"Query" name:"SpecType"`
+	ResourceGroupId string                           `position:"Query" name:"ResourceGroupId"`
+	ConfluentConfig CreatePrePayOrderConfluentConfig `position:"Query" name:"ConfluentConfig"  type:"Struct"`
+	Tag             *[]CreatePrePayOrderTag          `position:"Query" name:"Tag"  type:"Repeated"`
+	PartitionNum    requests.Integer                 `position:"Query" name:"PartitionNum"`
+	PaidType        requests.Integer                 `position:"Query" name:"PaidType"`
+	DiskSize        requests.Integer                 `position:"Query" name:"DiskSize"`
+	IoMaxSpec       string                           `position:"Query" name:"IoMaxSpec"`
+	DiskType        string                           `position:"Query" name:"DiskType"`
+	TopicQuota      requests.Integer                 `position:"Query" name:"TopicQuota"`
+	DeployType      requests.Integer                 `position:"Query" name:"DeployType"`
+}
+
+// CreatePrePayOrderConfluentConfig is a repeated param struct in CreatePrePayOrderRequest
+type CreatePrePayOrderConfluentConfig struct {
+	KsqlStorage           string `name:"KsqlStorage"`
+	ControlCenterStorage  string `name:"ControlCenterStorage"`
+	KafkaRestProxyReplica string `name:"KafkaRestProxyReplica"`
+	ZooKeeperReplica      string `name:"ZooKeeperReplica"`
+	ConnectCU             string `name:"ConnectCU"`
+	KafkaReplica          string `name:"KafkaReplica"`
+	SchemaRegistryReplica string `name:"SchemaRegistryReplica"`
+	KafkaCU               string `name:"KafkaCU"`
+	ConnectReplica        string `name:"ConnectReplica"`
+	ControlCenterCU       string `name:"ControlCenterCU"`
+	KsqlReplica           string `name:"KsqlReplica"`
+	ControlCenterReplica  string `name:"ControlCenterReplica"`
+	KafkaStorage          string `name:"KafkaStorage"`
+	ZooKeeperStorage      string `name:"ZooKeeperStorage"`
+	KsqlCU                string `name:"KsqlCU"`
+	SchemaRegistryCU      string `name:"SchemaRegistryCU"`
+	ZooKeeperCU           string `name:"ZooKeeperCU"`
+	KafkaRestProxyCU      string `name:"KafkaRestProxyCU"`
 }
 
 // CreatePrePayOrderTag is a repeated param struct in CreatePrePayOrderRequest
@@ -105,7 +130,7 @@ func CreateCreatePrePayOrderRequest() (request *CreatePrePayOrderRequest) {
 	request = &CreatePrePayOrderRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alikafka", "2019-09-16", "CreatePrePayOrder", "", "")
+	request.InitWithApiInfo("alikafka", "2019-09-16", "CreatePrePayOrder", "alikafka", "openAPI")
 	request.Method = requests.POST
 	return
 }

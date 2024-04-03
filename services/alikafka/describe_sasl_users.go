@@ -89,7 +89,7 @@ func CreateDescribeSaslUsersRequest() (request *DescribeSaslUsersRequest) {
 	request = &DescribeSaslUsersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alikafka", "2019-09-16", "DescribeSaslUsers", "", "")
+	request.InitWithApiInfo("alikafka", "2019-09-16", "DescribeSaslUsers", "alikafka", "openAPI")
 	request.Method = requests.POST
 	return
 }

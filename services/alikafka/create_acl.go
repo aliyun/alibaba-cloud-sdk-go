@@ -73,9 +73,12 @@ type CreateAclRequest struct {
 	*requests.RpcRequest
 	AclResourcePatternType string `position:"Query" name:"AclResourcePatternType"`
 	AclResourceType        string `position:"Query" name:"AclResourceType"`
+	AclOperationTypes      string `position:"Query" name:"AclOperationTypes"`
 	AclOperationType       string `position:"Query" name:"AclOperationType"`
 	AclResourceName        string `position:"Query" name:"AclResourceName"`
 	InstanceId             string `position:"Query" name:"InstanceId"`
+	Host                   string `position:"Query" name:"Host"`
+	AclPermissionType      string `position:"Query" name:"AclPermissionType"`
 	Username               string `position:"Query" name:"Username"`
 }
 
@@ -93,7 +96,7 @@ func CreateCreateAclRequest() (request *CreateAclRequest) {
 	request = &CreateAclRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alikafka", "2019-09-16", "CreateAcl", "", "")
+	request.InitWithApiInfo("alikafka", "2019-09-16", "CreateAcl", "alikafka", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -71,6 +71,7 @@ func (client *Client) StartInstanceWithCallback(request *StartInstanceRequest, c
 // StartInstanceRequest is the request struct for api StartInstance
 type StartInstanceRequest struct {
 	*requests.RpcRequest
+	VSwitchIds           *[]string        `position:"Query" name:"VSwitchIds"  type:"Repeated"`
 	SelectedZones        string           `position:"Query" name:"SelectedZones"`
 	IsEipInner           requests.Boolean `position:"Query" name:"IsEipInner"`
 	SecurityGroup        string           `position:"Query" name:"SecurityGroup"`
@@ -106,7 +107,7 @@ func CreateStartInstanceRequest() (request *StartInstanceRequest) {
 	request = &StartInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alikafka", "2019-09-16", "StartInstance", "", "")
+	request.InitWithApiInfo("alikafka", "2019-09-16", "StartInstance", "alikafka", "openAPI")
 	request.Method = requests.POST
 	return
 }

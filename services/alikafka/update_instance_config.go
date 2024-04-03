@@ -89,7 +89,7 @@ func CreateUpdateInstanceConfigRequest() (request *UpdateInstanceConfigRequest) 
 	request = &UpdateInstanceConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alikafka", "2019-09-16", "UpdateInstanceConfig", "", "")
+	request.InitWithApiInfo("alikafka", "2019-09-16", "UpdateInstanceConfig", "alikafka", "openAPI")
 	request.Method = requests.POST
 	return
 }

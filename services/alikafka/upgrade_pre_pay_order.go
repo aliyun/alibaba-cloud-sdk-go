@@ -71,15 +71,39 @@ func (client *Client) UpgradePrePayOrderWithCallback(request *UpgradePrePayOrder
 // UpgradePrePayOrderRequest is the request struct for api UpgradePrePayOrder
 type UpgradePrePayOrderRequest struct {
 	*requests.RpcRequest
-	DiskSize     requests.Integer `position:"Query" name:"DiskSize"`
-	IoMax        requests.Integer `position:"Query" name:"IoMax"`
-	EipModel     requests.Boolean `position:"Query" name:"EipModel"`
-	IoMaxSpec    string           `position:"Query" name:"IoMaxSpec"`
-	TopicQuota   requests.Integer `position:"Query" name:"TopicQuota"`
-	EipMax       requests.Integer `position:"Query" name:"EipMax"`
-	SpecType     string           `position:"Query" name:"SpecType"`
-	InstanceId   string           `position:"Query" name:"InstanceId"`
-	PartitionNum requests.Integer `position:"Query" name:"PartitionNum"`
+	IoMax           requests.Integer                  `position:"Query" name:"IoMax"`
+	EipModel        requests.Boolean                  `position:"Query" name:"EipModel"`
+	EipMax          requests.Integer                  `position:"Query" name:"EipMax"`
+	SpecType        string                            `position:"Query" name:"SpecType"`
+	ConfluentConfig UpgradePrePayOrderConfluentConfig `position:"Query" name:"ConfluentConfig"  type:"Struct"`
+	PartitionNum    requests.Integer                  `position:"Query" name:"PartitionNum"`
+	PaidType        requests.Integer                  `position:"Query" name:"PaidType"`
+	DiskSize        requests.Integer                  `position:"Query" name:"DiskSize"`
+	IoMaxSpec       string                            `position:"Query" name:"IoMaxSpec"`
+	TopicQuota      requests.Integer                  `position:"Query" name:"TopicQuota"`
+	InstanceId      string                            `position:"Query" name:"InstanceId"`
+}
+
+// UpgradePrePayOrderConfluentConfig is a repeated param struct in UpgradePrePayOrderRequest
+type UpgradePrePayOrderConfluentConfig struct {
+	KsqlStorage           string `name:"KsqlStorage"`
+	ControlCenterStorage  string `name:"ControlCenterStorage"`
+	KafkaRestProxyReplica string `name:"KafkaRestProxyReplica"`
+	ZooKeeperReplica      string `name:"ZooKeeperReplica"`
+	ConnectCU             string `name:"ConnectCU"`
+	KafkaReplica          string `name:"KafkaReplica"`
+	SchemaRegistryReplica string `name:"SchemaRegistryReplica"`
+	KafkaCU               string `name:"KafkaCU"`
+	ConnectReplica        string `name:"ConnectReplica"`
+	ControlCenterCU       string `name:"ControlCenterCU"`
+	KsqlReplica           string `name:"KsqlReplica"`
+	ControlCenterReplica  string `name:"ControlCenterReplica"`
+	KafkaStorage          string `name:"KafkaStorage"`
+	ZooKeeperStorage      string `name:"ZooKeeperStorage"`
+	KsqlCU                string `name:"KsqlCU"`
+	SchemaRegistryCU      string `name:"SchemaRegistryCU"`
+	ZooKeeperCU           string `name:"ZooKeeperCU"`
+	KafkaRestProxyCU      string `name:"KafkaRestProxyCU"`
 }
 
 // UpgradePrePayOrderResponse is the response struct for api UpgradePrePayOrder
@@ -96,7 +120,7 @@ func CreateUpgradePrePayOrderRequest() (request *UpgradePrePayOrderRequest) {
 	request = &UpgradePrePayOrderRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alikafka", "2019-09-16", "UpgradePrePayOrder", "", "")
+	request.InitWithApiInfo("alikafka", "2019-09-16", "UpgradePrePayOrder", "alikafka", "openAPI")
 	request.Method = requests.POST
 	return
 }

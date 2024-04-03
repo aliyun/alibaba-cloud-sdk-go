@@ -88,7 +88,7 @@ func CreateGetAllInstanceIdListRequest() (request *GetAllInstanceIdListRequest) 
 	request = &GetAllInstanceIdListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alikafka", "2019-09-16", "GetAllInstanceIdList", "", "")
+	request.InitWithApiInfo("alikafka", "2019-09-16", "GetAllInstanceIdList", "alikafka", "openAPI")
 	request.Method = requests.POST
 	return
 }

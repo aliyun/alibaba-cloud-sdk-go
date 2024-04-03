@@ -23,4 +23,5 @@ type KafkaAclVO struct {
 	AclResourceName        string `json:"AclResourceName" xml:"AclResourceName"`
 	AclResourcePatternType string `json:"AclResourcePatternType" xml:"AclResourcePatternType"`
 	Username               string `json:"Username" xml:"Username"`
+	AclPermissionType      string `json:"AclPermissionType" xml:"AclPermissionType"`
 }

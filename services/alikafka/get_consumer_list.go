@@ -84,6 +84,9 @@ type GetConsumerListResponse struct {
 	Message      string       `json:"Message" xml:"Message"`
 	RequestId    string       `json:"RequestId" xml:"RequestId"`
 	Success      bool         `json:"Success" xml:"Success"`
+	Total        int64        `json:"Total" xml:"Total"`
+	PageSize     int          `json:"PageSize" xml:"PageSize"`
+	CurrentPage  int          `json:"CurrentPage" xml:"CurrentPage"`
 	ConsumerList ConsumerList `json:"ConsumerList" xml:"ConsumerList"`
 }
 
@@ -92,7 +95,7 @@ func CreateGetConsumerListRequest() (request *GetConsumerListRequest) {
 	request = &GetConsumerListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alikafka", "2019-09-16", "GetConsumerList", "", "")
+	request.InitWithApiInfo("alikafka", "2019-09-16", "GetConsumerList", "alikafka", "openAPI")
 	request.Method = requests.POST
 	return
 }

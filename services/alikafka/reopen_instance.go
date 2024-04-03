@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DeleteInstance invokes the alikafka.DeleteInstance API synchronously
-func (client *Client) DeleteInstance(request *DeleteInstanceRequest) (response *DeleteInstanceResponse, err error) {
-	response = CreateDeleteInstanceResponse()
+// ReopenInstance invokes the alikafka.ReopenInstance API synchronously
+func (client *Client) ReopenInstance(request *ReopenInstanceRequest) (response *ReopenInstanceResponse, err error) {
+	response = CreateReopenInstanceResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DeleteInstanceWithChan invokes the alikafka.DeleteInstance API asynchronously
-func (client *Client) DeleteInstanceWithChan(request *DeleteInstanceRequest) (<-chan *DeleteInstanceResponse, <-chan error) {
-	responseChan := make(chan *DeleteInstanceResponse, 1)
+// ReopenInstanceWithChan invokes the alikafka.ReopenInstance API asynchronously
+func (client *Client) ReopenInstanceWithChan(request *ReopenInstanceRequest) (<-chan *ReopenInstanceResponse, <-chan error) {
+	responseChan := make(chan *ReopenInstanceResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DeleteInstance(request)
+		response, err := client.ReopenInstance(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) DeleteInstanceWithChan(request *DeleteInstanceRequest) (<-
 	return responseChan, errChan
 }
 
-// DeleteInstanceWithCallback invokes the alikafka.DeleteInstance API asynchronously
-func (client *Client) DeleteInstanceWithCallback(request *DeleteInstanceRequest, callback func(response *DeleteInstanceResponse, err error)) <-chan int {
+// ReopenInstanceWithCallback invokes the alikafka.ReopenInstance API asynchronously
+func (client *Client) ReopenInstanceWithCallback(request *ReopenInstanceRequest, callback func(response *ReopenInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DeleteInstanceResponse
+		var response *ReopenInstanceResponse
 		var err error
 		defer close(result)
-		response, err = client.DeleteInstance(request)
+		response, err = client.ReopenInstance(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,34 +68,34 @@ func (client *Client) DeleteInstanceWithCallback(request *DeleteInstanceRequest,
 	return result
 }
 
-// DeleteInstanceRequest is the request struct for api DeleteInstance
-type DeleteInstanceRequest struct {
+// ReopenInstanceRequest is the request struct for api ReopenInstance
+type ReopenInstanceRequest struct {
 	*requests.RpcRequest
 	InstanceId string `position:"Query" name:"InstanceId"`
 }
 
-// DeleteInstanceResponse is the response struct for api DeleteInstance
-type DeleteInstanceResponse struct {
+// ReopenInstanceResponse is the response struct for api ReopenInstance
+type ReopenInstanceResponse struct {
 	*responses.BaseResponse
 	Code      int    `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Message   string `json:"Message" xml:"Message"`
 }
 
-// CreateDeleteInstanceRequest creates a request to invoke DeleteInstance API
-func CreateDeleteInstanceRequest() (request *DeleteInstanceRequest) {
-	request = &DeleteInstanceRequest{
+// CreateReopenInstanceRequest creates a request to invoke ReopenInstance API
+func CreateReopenInstanceRequest() (request *ReopenInstanceRequest) {
+	request = &ReopenInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alikafka", "2019-09-16", "DeleteInstance", "alikafka", "openAPI")
+	request.InitWithApiInfo("alikafka", "2019-09-16", "ReopenInstance", "alikafka", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateDeleteInstanceResponse creates a response to parse from DeleteInstance response
-func CreateDeleteInstanceResponse() (response *DeleteInstanceResponse) {
-	response = &DeleteInstanceResponse{
+// CreateReopenInstanceResponse creates a response to parse from ReopenInstance response
+func CreateReopenInstanceResponse() (response *ReopenInstanceResponse) {
+	response = &ReopenInstanceResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

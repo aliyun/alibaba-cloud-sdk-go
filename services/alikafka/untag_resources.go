@@ -88,7 +88,7 @@ func CreateUntagResourcesRequest() (request *UntagResourcesRequest) {
 	request = &UntagResourcesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alikafka", "2019-09-16", "UntagResources", "", "")
+	request.InitWithApiInfo("alikafka", "2019-09-16", "UntagResources", "alikafka", "openAPI")
 	request.Method = requests.POST
 	return
 }
