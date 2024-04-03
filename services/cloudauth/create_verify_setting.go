@@ -83,10 +83,10 @@ type CreateVerifySettingRequest struct {
 // CreateVerifySettingResponse is the response struct for api CreateVerifySetting
 type CreateVerifySettingResponse struct {
 	*responses.BaseResponse
-	RequestId string   `json:"RequestId" xml:"RequestId"`
-	BizType   string   `json:"BizType" xml:"BizType"`
 	BizName   string   `json:"BizName" xml:"BizName"`
+	RequestId string   `json:"RequestId" xml:"RequestId"`
 	Solution  string   `json:"Solution" xml:"Solution"`
+	BizType   string   `json:"BizType" xml:"BizType"`
 	StepList  []string `json:"StepList" xml:"StepList"`
 }
 

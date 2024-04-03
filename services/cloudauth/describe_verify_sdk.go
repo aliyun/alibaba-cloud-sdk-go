@@ -79,8 +79,8 @@ type DescribeVerifySDKRequest struct {
 // DescribeVerifySDKResponse is the response struct for api DescribeVerifySDK
 type DescribeVerifySDKResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	SdkUrl    string `json:"SdkUrl" xml:"SdkUrl"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDescribeVerifySDKRequest creates a request to invoke DescribeVerifySDK API

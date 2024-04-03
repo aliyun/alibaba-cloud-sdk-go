@@ -76,6 +76,7 @@ type ContrastFaceVerifyRequest struct {
 	DeviceToken            string           `position:"Body" name:"DeviceToken"`
 	UserId                 string           `position:"Body" name:"UserId"`
 	CertifyId              string           `position:"Body" name:"CertifyId"`
+	EncryptType            string           `position:"Body" name:"EncryptType"`
 	CertNo                 string           `position:"Body" name:"CertNo"`
 	OuterOrderNo           string           `position:"Body" name:"OuterOrderNo"`
 	CertType               string           `position:"Body" name:"CertType"`

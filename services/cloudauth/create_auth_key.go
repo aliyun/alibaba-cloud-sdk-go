@@ -82,8 +82,8 @@ type CreateAuthKeyRequest struct {
 // CreateAuthKeyResponse is the response struct for api CreateAuthKey
 type CreateAuthKeyResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	AuthKey   string `json:"AuthKey" xml:"AuthKey"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCreateAuthKeyRequest creates a request to invoke CreateAuthKey API

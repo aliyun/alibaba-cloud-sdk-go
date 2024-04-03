@@ -91,8 +91,8 @@ type DescribeVerifyTokenRequest struct {
 // DescribeVerifyTokenResponse is the response struct for api DescribeVerifyToken
 type DescribeVerifyTokenResponse struct {
 	*responses.BaseResponse
-	RequestId      string         `json:"RequestId" xml:"RequestId"`
 	VerifyPageUrl  string         `json:"VerifyPageUrl" xml:"VerifyPageUrl"`
+	RequestId      string         `json:"RequestId" xml:"RequestId"`
 	VerifyToken    string         `json:"VerifyToken" xml:"VerifyToken"`
 	OssUploadToken OssUploadToken `json:"OssUploadToken" xml:"OssUploadToken"`
 }

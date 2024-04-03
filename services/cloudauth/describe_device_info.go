@@ -86,9 +86,9 @@ type DescribeDeviceInfoRequest struct {
 // DescribeDeviceInfoResponse is the response struct for api DescribeDeviceInfo
 type DescribeDeviceInfoResponse struct {
 	*responses.BaseResponse
+	CurrentPage    int            `json:"CurrentPage" xml:"CurrentPage"`
 	RequestId      string         `json:"RequestId" xml:"RequestId"`
 	PageSize       int            `json:"PageSize" xml:"PageSize"`
-	CurrentPage    int            `json:"CurrentPage" xml:"CurrentPage"`
 	TotalCount     int            `json:"TotalCount" xml:"TotalCount"`
 	DeviceInfoList DeviceInfoList `json:"DeviceInfoList" xml:"DeviceInfoList"`
 }

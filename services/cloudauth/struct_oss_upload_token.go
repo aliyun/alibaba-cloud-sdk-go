@@ -18,10 +18,10 @@ package cloudauth
 // OssUploadToken is a nested struct in cloudauth response
 type OssUploadToken struct {
 	Key      string `json:"Key" xml:"Key"`
-	Bucket   string `json:"Bucket" xml:"Bucket"`
-	Path     string `json:"Path" xml:"Path"`
 	Token    string `json:"Token" xml:"Token"`
-	EndPoint string `json:"EndPoint" xml:"EndPoint"`
+	Path     string `json:"Path" xml:"Path"`
+	Bucket   string `json:"Bucket" xml:"Bucket"`
 	Expired  int64  `json:"Expired" xml:"Expired"`
+	EndPoint string `json:"EndPoint" xml:"EndPoint"`
 	Secret   string `json:"Secret" xml:"Secret"`
 }

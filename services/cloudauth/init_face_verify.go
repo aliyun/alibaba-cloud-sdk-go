@@ -71,28 +71,39 @@ func (client *Client) InitFaceVerifyWithCallback(request *InitFaceVerifyRequest,
 // InitFaceVerifyRequest is the request struct for api InitFaceVerify
 type InitFaceVerifyRequest struct {
 	*requests.RpcRequest
-	ProductCode            string           `position:"Query" name:"ProductCode"`
-	FaceContrastPicture    string           `position:"Body" name:"FaceContrastPicture"`
-	UserId                 string           `position:"Query" name:"UserId"`
-	CertifyId              string           `position:"Query" name:"CertifyId"`
-	CertNo                 string           `position:"Query" name:"CertNo"`
-	OuterOrderNo           string           `position:"Query" name:"OuterOrderNo"`
-	CertType               string           `position:"Query" name:"CertType"`
-	FaceContrastPictureUrl string           `position:"Query" name:"FaceContrastPictureUrl"`
-	Model                  string           `position:"Body" name:"Model"`
-	MetaInfo               string           `position:"Query" name:"MetaInfo"`
-	OssObjectName          string           `position:"Query" name:"OssObjectName"`
-	CertName               string           `position:"Query" name:"CertName"`
-	Ip                     string           `position:"Query" name:"Ip"`
-	Mobile                 string           `position:"Query" name:"Mobile"`
-	AuthId                 string           `position:"Body" name:"AuthId"`
-	SceneId                requests.Integer `position:"Query" name:"SceneId"`
-	OssBucketName          string           `position:"Query" name:"OssBucketName"`
-	CallbackToken          string           `position:"Query" name:"CallbackToken"`
-	ReturnUrl              string           `position:"Query" name:"ReturnUrl"`
-	CallbackUrl            string           `position:"Query" name:"CallbackUrl"`
-	Crop                   string           `position:"Body" name:"Crop"`
-	CertifyUrlType         string           `position:"Query" name:"CertifyUrlType"`
+	Birthday                   string           `position:"Query" name:"Birthday"`
+	ProductCode                string           `position:"Query" name:"ProductCode"`
+	FaceContrastPicture        string           `position:"Body" name:"FaceContrastPicture"`
+	ReadImg                    string           `position:"Query" name:"ReadImg"`
+	RarelyCharacters           string           `position:"Query" name:"RarelyCharacters"`
+	VoluntaryCustomizedContent string           `position:"Query" name:"VoluntaryCustomizedContent"`
+	UserId                     string           `position:"Query" name:"UserId"`
+	CertifyId                  string           `position:"Query" name:"CertifyId"`
+	EncryptType                string           `position:"Query" name:"EncryptType"`
+	Mode                       string           `position:"Query" name:"Mode"`
+	CertNo                     string           `position:"Query" name:"CertNo"`
+	OuterOrderNo               string           `position:"Query" name:"OuterOrderNo"`
+	CertType                   string           `position:"Query" name:"CertType"`
+	FaceContrastPictureUrl     string           `position:"Query" name:"FaceContrastPictureUrl"`
+	Model                      string           `position:"Body" name:"Model"`
+	SuitableType               string           `position:"Query" name:"SuitableType"`
+	CertifyUrlStyle            string           `position:"Query" name:"CertifyUrlStyle"`
+	MetaInfo                   string           `position:"Query" name:"MetaInfo"`
+	OssObjectName              string           `position:"Query" name:"OssObjectName"`
+	ValidityDate               string           `position:"Query" name:"ValidityDate"`
+	CertName                   string           `position:"Query" name:"CertName"`
+	Ip                         string           `position:"Query" name:"Ip"`
+	Mobile                     string           `position:"Query" name:"Mobile"`
+	FaceGuardOutput            string           `position:"Query" name:"FaceGuardOutput"`
+	AuthId                     string           `position:"Body" name:"AuthId"`
+	ProcedurePriority          string           `position:"Query" name:"ProcedurePriority"`
+	SceneId                    requests.Integer `position:"Query" name:"SceneId"`
+	OssBucketName              string           `position:"Query" name:"OssBucketName"`
+	CallbackToken              string           `position:"Query" name:"CallbackToken"`
+	ReturnUrl                  string           `position:"Query" name:"ReturnUrl"`
+	CallbackUrl                string           `position:"Query" name:"CallbackUrl"`
+	Crop                       string           `position:"Body" name:"Crop"`
+	CertifyUrlType             string           `position:"Query" name:"CertifyUrlType"`
 }
 
 // InitFaceVerifyResponse is the response struct for api InitFaceVerify

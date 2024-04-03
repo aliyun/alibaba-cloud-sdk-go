@@ -84,11 +84,11 @@ type ModifyDeviceInfoRequest struct {
 type ModifyDeviceInfoResponse struct {
 	*responses.BaseResponse
 	RequestId    string `json:"RequestId" xml:"RequestId"`
-	DeviceId     string `json:"DeviceId" xml:"DeviceId"`
 	UserDeviceId string `json:"UserDeviceId" xml:"UserDeviceId"`
-	BizType      string `json:"BizType" xml:"BizType"`
-	BeginDay     string `json:"BeginDay" xml:"BeginDay"`
+	DeviceId     string `json:"DeviceId" xml:"DeviceId"`
 	ExpiredDay   string `json:"ExpiredDay" xml:"ExpiredDay"`
+	BeginDay     string `json:"BeginDay" xml:"BeginDay"`
+	BizType      string `json:"BizType" xml:"BizType"`
 }
 
 // CreateModifyDeviceInfoRequest creates a request to invoke ModifyDeviceInfo API

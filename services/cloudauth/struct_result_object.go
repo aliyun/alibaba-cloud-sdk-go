@@ -18,11 +18,18 @@ package cloudauth
 // ResultObject is a nested struct in cloudauth response
 type ResultObject struct {
 	VerifyScore  float64 `json:"VerifyScore" xml:"VerifyScore"`
-	IdentityInfo string  `json:"IdentityInfo" xml:"IdentityInfo"`
-	CertifyId    string  `json:"CertifyId" xml:"CertifyId"`
+	Result       string  `json:"Result" xml:"Result"`
+	DeviceRisk   string  `json:"DeviceRisk" xml:"DeviceRisk"`
+	IspName      string  `json:"IspName" xml:"IspName"`
 	SubCode      string  `json:"SubCode" xml:"SubCode"`
-	CertifyUrl   string  `json:"CertifyUrl" xml:"CertifyUrl"`
 	DeviceToken  string  `json:"DeviceToken" xml:"DeviceToken"`
 	Passed       string  `json:"Passed" xml:"Passed"`
 	MaterialInfo string  `json:"MaterialInfo" xml:"MaterialInfo"`
+	Score        string  `json:"Score" xml:"Score"`
+	Success      string  `json:"Success" xml:"Success"`
+	UserInfo     string  `json:"UserInfo" xml:"UserInfo"`
+	IdentityInfo string  `json:"IdentityInfo" xml:"IdentityInfo"`
+	CertifyId    string  `json:"CertifyId" xml:"CertifyId"`
+	CertifyUrl   string  `json:"CertifyUrl" xml:"CertifyUrl"`
+	BizCode      string  `json:"BizCode" xml:"BizCode"`
 }

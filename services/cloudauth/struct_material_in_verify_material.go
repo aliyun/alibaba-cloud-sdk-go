@@ -17,11 +17,11 @@ package cloudauth
 
 // MaterialInVerifyMaterial is a nested struct in cloudauth response
 type MaterialInVerifyMaterial struct {
-	FaceImageUrl  string     `json:"FaceImageUrl" xml:"FaceImageUrl"`
-	IdCardName    string     `json:"IdCardName" xml:"IdCardName"`
 	IdCardNumber  string     `json:"IdCardNumber" xml:"IdCardNumber"`
-	FaceQuality   string     `json:"FaceQuality" xml:"FaceQuality"`
 	FaceGlobalUrl string     `json:"FaceGlobalUrl" xml:"FaceGlobalUrl"`
+	FaceImageUrl  string     `json:"FaceImageUrl" xml:"FaceImageUrl"`
 	FaceMask      string     `json:"FaceMask" xml:"FaceMask"`
+	IdCardName    string     `json:"IdCardName" xml:"IdCardName"`
+	FaceQuality   string     `json:"FaceQuality" xml:"FaceQuality"`
 	IdCardInfo    IdCardInfo `json:"IdCardInfo" xml:"IdCardInfo"`
 }
