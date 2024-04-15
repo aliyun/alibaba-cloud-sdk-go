@@ -26,6 +26,7 @@ type PolicyInGetPrivateAccessPolicy struct {
 	CreateTime           string                `json:"CreateTime" xml:"CreateTime"`
 	UserGroupMode        string                `json:"UserGroupMode" xml:"UserGroupMode"`
 	ApplicationType      string                `json:"ApplicationType" xml:"ApplicationType"`
+	DeviceAttributeId    string                `json:"DeviceAttributeId" xml:"DeviceAttributeId"`
 	UserGroupIds         []string              `json:"UserGroupIds" xml:"UserGroupIds"`
 	ApplicationIds       []string              `json:"ApplicationIds" xml:"ApplicationIds"`
 	TagIds               []string              `json:"TagIds" xml:"TagIds"`

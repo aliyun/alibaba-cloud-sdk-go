@@ -71,16 +71,18 @@ func (client *Client) ListPrivateAccessPolicesWithCallback(request *ListPrivateA
 // ListPrivateAccessPolicesRequest is the request struct for api ListPrivateAccessPolices
 type ListPrivateAccessPolicesRequest struct {
 	*requests.RpcRequest
-	PolicyIds     *[]string        `position:"Query" name:"PolicyIds"  type:"Repeated"`
-	SourceIp      string           `position:"Query" name:"SourceIp"`
-	PageSize      requests.Integer `position:"Query" name:"PageSize"`
-	ApplicationId string           `position:"Query" name:"ApplicationId"`
-	TagId         string           `position:"Query" name:"TagId"`
-	UserGroupId   string           `position:"Query" name:"UserGroupId"`
-	CurrentPage   requests.Integer `position:"Query" name:"CurrentPage"`
-	PolicyAction  string           `position:"Query" name:"PolicyAction"`
-	Name          string           `position:"Query" name:"Name"`
-	Status        string           `position:"Query" name:"Status"`
+	PolicyIds       *[]string        `position:"Query" name:"PolicyIds"  type:"Repeated"`
+	TagName         string           `position:"Query" name:"TagName"`
+	SourceIp        string           `position:"Query" name:"SourceIp"`
+	PageSize        requests.Integer `position:"Query" name:"PageSize"`
+	ApplicationId   string           `position:"Query" name:"ApplicationId"`
+	TagId           string           `position:"Query" name:"TagId"`
+	UserGroupId     string           `position:"Query" name:"UserGroupId"`
+	CurrentPage     requests.Integer `position:"Query" name:"CurrentPage"`
+	PolicyAction    string           `position:"Query" name:"PolicyAction"`
+	ApplicationName string           `position:"Query" name:"ApplicationName"`
+	Name            string           `position:"Query" name:"Name"`
+	Status          string           `position:"Query" name:"Status"`
 }
 
 // ListPrivateAccessPolicesResponse is the response struct for api ListPrivateAccessPolices

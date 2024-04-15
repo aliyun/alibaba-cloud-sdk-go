@@ -46,8 +46,10 @@ type Data struct {
 	SrcIP         string           `json:"SrcIP" xml:"SrcIP"`
 	DeviceBelong  string           `json:"DeviceBelong" xml:"DeviceBelong"`
 	AppVersion    string           `json:"AppVersion" xml:"AppVersion"`
+	MetricName    string           `json:"MetricName" xml:"MetricName"`
 	InnerIP       string           `json:"InnerIP" xml:"InnerIP"`
 	Status        string           `json:"Status" xml:"Status"`
+	Datapoints    []Point          `json:"Datapoints" xml:"Datapoints"`
 	Policies      []PoliciesItem   `json:"Policies" xml:"Policies"`
 	UserGroups    []UserGroupsItem `json:"UserGroups" xml:"UserGroups"`
 }

@@ -75,6 +75,7 @@ type CreatePrivateAccessPolicyRequest struct {
 	SourceIp             string                                           `position:"Query" name:"SourceIp"`
 	CustomUserAttributes *[]CreatePrivateAccessPolicyCustomUserAttributes `position:"Body" name:"CustomUserAttributes"  type:"Repeated"`
 	TagIds               *[]string                                        `position:"Body" name:"TagIds"  type:"Repeated"`
+	DeviceAttributeId    string                                           `position:"Body" name:"DeviceAttributeId"`
 	UserGroupIds         *[]string                                        `position:"Body" name:"UserGroupIds"  type:"Repeated"`
 	PolicyAction         string                                           `position:"Body" name:"PolicyAction"`
 	Priority             requests.Integer                                 `position:"Body" name:"Priority"`

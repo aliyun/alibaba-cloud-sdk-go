@@ -32,15 +32,18 @@ type DataList struct {
 	PaStatus      string            `json:"PaStatus" xml:"PaStatus"`
 	Department    string            `json:"Department" xml:"Department"`
 	NacStatus     string            `json:"NacStatus" xml:"NacStatus"`
+	IdpName       string            `json:"IdpName" xml:"IdpName"`
 	DeviceVersion string            `json:"DeviceVersion" xml:"DeviceVersion"`
 	PolicyId      string            `json:"PolicyId" xml:"PolicyId"`
 	Description   string            `json:"Description" xml:"Description"`
+	Phone         string            `json:"Phone" xml:"Phone"`
 	IaStatus      string            `json:"IaStatus" xml:"IaStatus"`
 	IsUsed        bool              `json:"IsUsed" xml:"IsUsed"`
 	SaseUserId    string            `json:"SaseUserId" xml:"SaseUserId"`
 	CPU           string            `json:"CPU" xml:"CPU"`
 	Username      string            `json:"Username" xml:"Username"`
 	UpdateTime    string            `json:"UpdateTime" xml:"UpdateTime"`
+	Email         string            `json:"Email" xml:"Email"`
 	DeviceTag     string            `json:"DeviceTag" xml:"DeviceTag"`
 	InstallTime   string            `json:"InstallTime" xml:"InstallTime"`
 	Memory        string            `json:"Memory" xml:"Memory"`

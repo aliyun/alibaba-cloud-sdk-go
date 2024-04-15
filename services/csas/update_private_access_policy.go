@@ -76,6 +76,7 @@ type UpdatePrivateAccessPolicyRequest struct {
 	PolicyId             string                                           `position:"Body" name:"PolicyId"`
 	CustomUserAttributes *[]UpdatePrivateAccessPolicyCustomUserAttributes `position:"Body" name:"CustomUserAttributes"  type:"Repeated"`
 	TagIds               *[]string                                        `position:"Body" name:"TagIds"  type:"Repeated"`
+	DeviceAttributeId    string                                           `position:"Body" name:"DeviceAttributeId"`
 	UserGroupIds         *[]string                                        `position:"Body" name:"UserGroupIds"  type:"Repeated"`
 	PolicyAction         string                                           `position:"Body" name:"PolicyAction"`
 	Priority             requests.Integer                                 `position:"Body" name:"Priority"`
