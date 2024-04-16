@@ -17,17 +17,17 @@ package ehpc
 
 // JobInfo is a nested struct in ehpc response
 type JobInfo struct {
-	LastModifyTime  int64            `json:"LastModifyTime" xml:"LastModifyTime"`
-	JobId           string           `json:"JobId" xml:"JobId"`
-	User            string           `json:"User" xml:"User"`
-	EndTime         int64            `json:"EndTime" xml:"EndTime"`
-	StartTime       int64            `json:"StartTime" xml:"StartTime"`
-	SubmitTime      int64            `json:"SubmitTime" xml:"SubmitTime"`
-	State           string           `json:"State" xml:"State"`
-	Queue           string           `json:"Queue" xml:"Queue"`
-	Priority        int64            `json:"Priority" xml:"Priority"`
-	IsArrayJob      bool             `json:"IsArrayJob" xml:"IsArrayJob"`
-	JobName         string           `json:"JobName" xml:"JobName"`
-	ArrayProperties ArrayProperties  `json:"ArrayProperties" xml:"ArrayProperties"`
-	ContainerGroups []ContainerGroup `json:"ContainerGroups" xml:"ContainerGroups"`
+	JobId            string           `json:"JobId" xml:"JobId"`
+	JobName          string           `json:"JobName" xml:"JobName"`
+	JobDescription   string           `json:"JobDescription" xml:"JobDescription"`
+	JobScheduler     string           `json:"JobScheduler" xml:"JobScheduler"`
+	CreateTime       string           `json:"CreateTime" xml:"CreateTime"`
+	StartTime        string           `json:"StartTime" xml:"StartTime"`
+	EndTime          string           `json:"EndTime" xml:"EndTime"`
+	Status           string           `json:"Status" xml:"Status"`
+	DeploymentPolicy DeploymentPolicy `json:"DeploymentPolicy" xml:"DeploymentPolicy"`
+	SecurityPolicy   SecurityPolicy   `json:"SecurityPolicy" xml:"SecurityPolicy"`
+	DependencyPolicy DependencyPolicy `json:"DependencyPolicy" xml:"DependencyPolicy"`
+	MonitorPolicy    MonitorPolicy    `json:"MonitorPolicy" xml:"MonitorPolicy"`
+	Tasks            []Task           `json:"Tasks" xml:"Tasks"`
 }

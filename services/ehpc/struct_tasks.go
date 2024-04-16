@@ -17,5 +17,5 @@ package ehpc
 
 // Tasks is a nested struct in ehpc response
 type Tasks struct {
-	TaskInfo []TaskInfo `json:"TaskInfo" xml:"TaskInfo"`
+	Task []Task `json:"Task" xml:"Task"`
 }

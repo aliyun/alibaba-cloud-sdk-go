@@ -71,22 +71,35 @@ func (client *Client) ListJobsWithCallback(request *ListJobsRequest, callback fu
 // ListJobsRequest is the request struct for api ListJobs
 type ListJobsRequest struct {
 	*requests.RpcRequest
-	Owner      string           `position:"Query" name:"Owner"`
-	ClusterId  string           `position:"Query" name:"ClusterId"`
-	Rerunable  string           `position:"Query" name:"Rerunable"`
-	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
-	PageSize   requests.Integer `position:"Query" name:"PageSize"`
-	State      string           `position:"Query" name:"State"`
+	PageNumber string         `position:"Query" name:"PageNumber"`
+	Filter     ListJobsFilter `position:"Query" name:"Filter"  type:"Struct"`
+	PageSize   string         `position:"Query" name:"PageSize"`
+	SortBy     ListJobsSortBy `position:"Query" name:"SortBy"  type:"Struct"`
+}
+
+// ListJobsFilter is a repeated param struct in ListJobsRequest
+type ListJobsFilter struct {
+	JobId             string `name:"JobId"`
+	TimeCreatedAfter  string `name:"TimeCreatedAfter"`
+	TimeCreatedBefore string `name:"TimeCreatedBefore"`
+	JobName           string `name:"JobName"`
+	Status            string `name:"Status"`
+}
+
+// ListJobsSortBy is a repeated param struct in ListJobsRequest
+type ListJobsSortBy struct {
+	Label string `name:"Label"`
+	Order string `name:"Order"`
 }
 
 // ListJobsResponse is the response struct for api ListJobs
 type ListJobsResponse struct {
 	*responses.BaseResponse
-	PageSize   int            `json:"PageSize" xml:"PageSize"`
-	RequestId  string         `json:"RequestId" xml:"RequestId"`
-	PageNumber int            `json:"PageNumber" xml:"PageNumber"`
-	TotalCount int            `json:"TotalCount" xml:"TotalCount"`
-	Jobs       JobsInListJobs `json:"Jobs" xml:"Jobs"`
+	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
+	PageSize   int    `json:"PageSize" xml:"PageSize"`
+	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
+	JobList    []Job  `json:"JobList" xml:"JobList"`
 }
 
 // CreateListJobsRequest creates a request to invoke ListJobs API
@@ -94,8 +107,8 @@ func CreateListJobsRequest() (request *ListJobsRequest) {
 	request = &ListJobsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "ListJobs", "ehs", "openAPI")
-	request.Method = requests.GET
+	request.InitWithApiInfo("EHPC", "2023-07-01", "ListJobs", "ehs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

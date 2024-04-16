@@ -17,6 +17,6 @@ package ehpc
 
 // Tag is a nested struct in ehpc response
 type Tag struct {
-	Key   string `json:"Key" xml:"Key"`
+	Name  string `json:"Name" xml:"Name"`
 	Value string `json:"Value" xml:"Value"`
 }

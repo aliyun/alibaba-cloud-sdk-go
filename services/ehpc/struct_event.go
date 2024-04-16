@@ -17,11 +17,5 @@ package ehpc
 
 // Event is a nested struct in ehpc response
 type Event struct {
-	Count          int    `json:"Count" xml:"Count"`
-	FirstTimestamp string `json:"FirstTimestamp" xml:"FirstTimestamp"`
-	LastTimestamp  string `json:"LastTimestamp" xml:"LastTimestamp"`
-	Message        string `json:"Message" xml:"Message"`
-	Name           string `json:"Name" xml:"Name"`
-	Reason         string `json:"Reason" xml:"Reason"`
-	Type           string `json:"Type" xml:"Type"`
+	Event []string `json:"Event" xml:"Event"`
 }

@@ -17,9 +17,5 @@ package ehpc
 
 // VolumeMount is a nested struct in ehpc response
 type VolumeMount struct {
-	Name             string `json:"Name" xml:"Name"`
-	MountPath        string `json:"MountPath" xml:"MountPath"`
-	MountPropagation string `json:"MountPropagation" xml:"MountPropagation"`
-	SubPath          string `json:"SubPath" xml:"SubPath"`
-	ReadOnly         bool   `json:"ReadOnly" xml:"ReadOnly"`
+	VolumeMountItem []VolumeMountItem `json:"VolumeMount" xml:"VolumeMount"`
 }

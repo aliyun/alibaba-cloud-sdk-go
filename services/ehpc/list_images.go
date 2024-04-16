@@ -71,15 +71,24 @@ func (client *Client) ListImagesWithCallback(request *ListImagesRequest, callbac
 // ListImagesRequest is the request struct for api ListImages
 type ListImagesRequest struct {
 	*requests.RpcRequest
-	BaseOsTag    string `position:"Query" name:"BaseOsTag"`
-	InstanceType string `position:"Query" name:"InstanceType"`
+	ImageType     string           `position:"Query" name:"ImageType"`
+	ImageNames    *[]string        `position:"Query" name:"ImageNames"  type:"Json"`
+	PageNumber    requests.Integer `position:"Query" name:"PageNumber"`
+	ImageCategory string           `position:"Query" name:"ImageCategory"`
+	AppIds        *[]string        `position:"Query" name:"AppIds"  type:"Json"`
+	PageSize      requests.Integer `position:"Query" name:"PageSize"`
+	ImageIds      *[]string        `position:"Query" name:"ImageIds"  type:"Json"`
 }
 
 // ListImagesResponse is the response struct for api ListImages
 type ListImagesResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	OsTags    OsTags `json:"OsTags" xml:"OsTags"`
+	RequestId  string  `json:"RequestId" xml:"RequestId"`
+	Success    bool    `json:"Success" xml:"Success"`
+	TotalCount int     `json:"TotalCount" xml:"TotalCount"`
+	PageSize   int64   `json:"PageSize" xml:"PageSize"`
+	PageNumber int64   `json:"PageNumber" xml:"PageNumber"`
+	Images     []Image `json:"Images" xml:"Images"`
 }
 
 // CreateListImagesRequest creates a request to invoke ListImages API
@@ -87,8 +96,8 @@ func CreateListImagesRequest() (request *ListImagesRequest) {
 	request = &ListImagesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "ListImages", "ehs", "openAPI")
-	request.Method = requests.GET
+	request.InitWithApiInfo("EHPC", "2023-07-01", "ListImages", "ehs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

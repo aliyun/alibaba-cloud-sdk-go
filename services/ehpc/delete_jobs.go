@@ -71,9 +71,20 @@ func (client *Client) DeleteJobsWithCallback(request *DeleteJobsRequest, callbac
 // DeleteJobsRequest is the request struct for api DeleteJobs
 type DeleteJobsRequest struct {
 	*requests.RpcRequest
-	Jobs      string           `position:"Query" name:"Jobs"`
-	ClusterId string           `position:"Query" name:"ClusterId"`
-	Async     requests.Boolean `position:"Query" name:"Async"`
+	JobSpec     *[]DeleteJobsJobSpec `position:"Query" name:"JobSpec"  type:"Json"`
+	ExecutorIds *[]string            `position:"Query" name:"ExecutorIds"  type:"Json"`
+}
+
+// DeleteJobsJobSpec is a repeated param struct in DeleteJobsRequest
+type DeleteJobsJobSpec struct {
+	JobId    string                           `name:"JobId"`
+	TaskSpec *[]DeleteJobsJobSpecTaskSpecItem `name:"TaskSpec" type:"Repeated"`
+}
+
+// DeleteJobsJobSpecTaskSpecItem is a repeated param struct in DeleteJobsRequest
+type DeleteJobsJobSpecTaskSpecItem struct {
+	TaskName   string    `name:"TaskName"`
+	ArrayIndex *[]string `name:"ArrayIndex" type:"Repeated"`
 }
 
 // DeleteJobsResponse is the response struct for api DeleteJobs
@@ -87,8 +98,8 @@ func CreateDeleteJobsRequest() (request *DeleteJobsRequest) {
 	request = &DeleteJobsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "DeleteJobs", "ehs", "openAPI")
-	request.Method = requests.GET
+	request.InitWithApiInfo("EHPC", "2023-07-01", "DeleteJobs", "ehs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

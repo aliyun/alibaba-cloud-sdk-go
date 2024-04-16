@@ -17,26 +17,9 @@ package ehpc
 
 // Container is a nested struct in ehpc response
 type Container struct {
-	Cpu             float64          `json:"Cpu" xml:"Cpu"`
-	Gpu             int              `json:"Gpu" xml:"Gpu"`
 	Image           string           `json:"Image" xml:"Image"`
-	ImagePullPolicy string           `json:"ImagePullPolicy" xml:"ImagePullPolicy"`
-	Memory          float64          `json:"Memory" xml:"Memory"`
-	Name            string           `json:"Name" xml:"Name"`
-	Ready           bool             `json:"Ready" xml:"Ready"`
-	RestartCount    int              `json:"RestartCount" xml:"RestartCount"`
-	Stdin           bool             `json:"Stdin" xml:"Stdin"`
-	StdinOnce       bool             `json:"StdinOnce" xml:"StdinOnce"`
-	Tty             bool             `json:"Tty" xml:"Tty"`
 	WorkingDir      string           `json:"WorkingDir" xml:"WorkingDir"`
-	Args            []string         `json:"Args" xml:"Args"`
-	Commands        []string         `json:"Commands" xml:"Commands"`
-	CurrentState    CurrentState     `json:"CurrentState" xml:"CurrentState"`
-	LivenessProbe   LivenessProbe    `json:"LivenessProbe" xml:"LivenessProbe"`
-	PreviousState   PreviousState    `json:"PreviousState" xml:"PreviousState"`
-	ReadinessProbe  ReadinessProbe   `json:"ReadinessProbe" xml:"ReadinessProbe"`
-	SecurityContext SecurityContext  `json:"SecurityContext" xml:"SecurityContext"`
+	Command         string           `json:"Command" xml:"Command"`
+	AppId           string           `json:"AppId" xml:"AppId"`
 	EnvironmentVars []EnvironmentVar `json:"EnvironmentVars" xml:"EnvironmentVars"`
-	Ports           []Port           `json:"Ports" xml:"Ports"`
-	VolumeMounts    []VolumeMount    `json:"VolumeMounts" xml:"VolumeMounts"`
 }
