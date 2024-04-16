@@ -71,8 +71,8 @@ func (client *Client) RecordDemandWithCallback(request *RecordDemandRequest, cal
 // RecordDemandRequest is the request struct for api RecordDemand
 type RecordDemandRequest struct {
 	*requests.RpcRequest
-	BizId   string `position:"Query" name:"BizId"`
 	Message string `position:"Query" name:"Message"`
+	BizId   string `position:"Query" name:"BizId"`
 }
 
 // RecordDemandResponse is the response struct for api RecordDemand

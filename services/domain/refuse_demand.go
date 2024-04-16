@@ -71,8 +71,8 @@ func (client *Client) RefuseDemandWithCallback(request *RefuseDemandRequest, cal
 // RefuseDemandRequest is the request struct for api RefuseDemand
 type RefuseDemandRequest struct {
 	*requests.RpcRequest
-	BizId   string `position:"Query" name:"BizId"`
 	Message string `position:"Query" name:"Message"`
+	BizId   string `position:"Query" name:"BizId"`
 }
 
 // RefuseDemandResponse is the response struct for api RefuseDemand

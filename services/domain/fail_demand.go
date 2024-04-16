@@ -71,8 +71,8 @@ func (client *Client) FailDemandWithCallback(request *FailDemandRequest, callbac
 // FailDemandRequest is the request struct for api FailDemand
 type FailDemandRequest struct {
 	*requests.RpcRequest
-	BizId   string `position:"Query" name:"BizId"`
 	Message string `position:"Query" name:"Message"`
+	BizId   string `position:"Query" name:"BizId"`
 }
 
 // FailDemandResponse is the response struct for api FailDemand

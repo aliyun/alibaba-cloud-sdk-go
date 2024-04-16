@@ -84,6 +84,7 @@ type QueryBookingDomainInfoResponse struct {
 	AuctionId       int     `json:"AuctionId" xml:"AuctionId"`
 	Currency        string  `json:"Currency" xml:"Currency"`
 	PartnerType     string  `json:"PartnerType" xml:"PartnerType"`
+	SnatchNo        string  `json:"SnatchNo" xml:"SnatchNo"`
 }
 
 // CreateQueryBookingDomainInfoRequest creates a request to invoke QueryBookingDomainInfo API

@@ -1,3 +1,7 @@
+2024-04-16 Version: v1.62.715
+- Generated 2018-02-08 for `Domain`.
+- Add SnatchNo For QueryBookingDomainInfo
+
 2024-04-16 Version: v1.62.714
 - Generated 2023-07-01 for `EHPC`.
 - Support Container for CreateJob.

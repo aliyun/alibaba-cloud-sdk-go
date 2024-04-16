@@ -71,8 +71,8 @@ func (client *Client) ReserveDomainWithCallback(request *ReserveDomainRequest, c
 // ReserveDomainRequest is the request struct for api ReserveDomain
 type ReserveDomainRequest struct {
 	*requests.RpcRequest
-	Channels   *[]string `position:"Body" name:"Channels"  type:"Repeated"`
 	DomainName string    `position:"Body" name:"DomainName"`
+	Channels   *[]string `position:"Body" name:"Channels"  type:"Repeated"`
 }
 
 // ReserveDomainResponse is the response struct for api ReserveDomain

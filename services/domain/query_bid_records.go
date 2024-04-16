@@ -71,9 +71,9 @@ func (client *Client) QueryBidRecordsWithCallback(request *QueryBidRecordsReques
 // QueryBidRecordsRequest is the request struct for api QueryBidRecords
 type QueryBidRecordsRequest struct {
 	*requests.RpcRequest
+	CurrentPage requests.Integer `position:"Body" name:"CurrentPage"`
 	AuctionId   string           `position:"Body" name:"AuctionId"`
 	PageSize    requests.Integer `position:"Body" name:"PageSize"`
-	CurrentPage requests.Integer `position:"Body" name:"CurrentPage"`
 }
 
 // QueryBidRecordsResponse is the response struct for api QueryBidRecords

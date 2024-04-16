@@ -71,8 +71,8 @@ func (client *Client) AcceptDemandWithCallback(request *AcceptDemandRequest, cal
 // AcceptDemandRequest is the request struct for api AcceptDemand
 type AcceptDemandRequest struct {
 	*requests.RpcRequest
-	BizId   string `position:"Query" name:"BizId"`
 	Message string `position:"Query" name:"Message"`
+	BizId   string `position:"Query" name:"BizId"`
 }
 
 // AcceptDemandResponse is the response struct for api AcceptDemand

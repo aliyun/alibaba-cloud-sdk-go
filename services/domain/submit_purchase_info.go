@@ -72,9 +72,9 @@ func (client *Client) SubmitPurchaseInfoWithCallback(request *SubmitPurchaseInfo
 type SubmitPurchaseInfoRequest struct {
 	*requests.RpcRequest
 	PurchaseProofs   *[]string `position:"Body" name:"PurchaseProofs"  type:"Repeated"`
+	PurchasePrice    string    `position:"Body" name:"PurchasePrice"`
 	PurchaseCurrency string    `position:"Body" name:"PurchaseCurrency"`
 	BizId            string    `position:"Body" name:"BizId"`
-	PurchasePrice    string    `position:"Body" name:"PurchasePrice"`
 }
 
 // SubmitPurchaseInfoResponse is the response struct for api SubmitPurchaseInfo

@@ -17,24 +17,10 @@ package domain
 
 // Module is a nested struct in domain response
 type Module struct {
-	BizStatus                   string                       `json:"BizStatus" xml:"BizStatus"`
-	Status                      int                          `json:"Status" xml:"Status"`
-	UpdateTime                  int64                        `json:"UpdateTime" xml:"UpdateTime"`
-	DomainName                  string                       `json:"DomainName" xml:"DomainName"`
-	ProductId                   string                       `json:"ProductId" xml:"ProductId"`
-	GmtModified                 string                       `json:"GmtModified" xml:"GmtModified"`
-	BizName                     string                       `json:"BizName" xml:"BizName"`
-	Id                          int64                        `json:"Id" xml:"Id"`
-	SaleId                      string                       `json:"SaleId" xml:"SaleId"`
-	CreateTime                  int64                        `json:"CreateTime" xml:"CreateTime"`
-	AuditMsg                    string                       `json:"AuditMsg" xml:"AuditMsg"`
-	BizNo                       string                       `json:"BizNo" xml:"BizNo"`
-	OrderId                     string                       `json:"OrderId" xml:"OrderId"`
-	GmtCreate                   string                       `json:"GmtCreate" xml:"GmtCreate"`
-	BizType                     string                       `json:"BizType" xml:"BizType"`
-	UserId                      string                       `json:"UserId" xml:"UserId"`
-	StatusDesc                  string                       `json:"StatusDesc" xml:"StatusDesc"`
-	DomainSpecialBizContact     DomainSpecialBizContact      `json:"DomainSpecialBizContact" xml:"DomainSpecialBizContact"`
-	DomainSpecialOrderResult    DomainSpecialOrderResult     `json:"DomainSpecialOrderResult" xml:"DomainSpecialOrderResult"`
-	DomainSpecialBizCredentials []DomainSpecialBizCredential `json:"DomainSpecialBizCredentials" xml:"DomainSpecialBizCredentials"`
+	Domain      string  `json:"Domain" xml:"Domain"`
+	Price       float64 `json:"Price" xml:"Price"`
+	DownloadUrl string  `json:"DownloadUrl" xml:"DownloadUrl"`
+	RegDate     int64   `json:"RegDate" xml:"RegDate"`
+	DeadDate    int64   `json:"DeadDate" xml:"DeadDate"`
+	EndTime     int64   `json:"EndTime" xml:"EndTime"`
 }

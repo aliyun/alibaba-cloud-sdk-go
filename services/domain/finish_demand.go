@@ -71,8 +71,8 @@ func (client *Client) FinishDemandWithCallback(request *FinishDemandRequest, cal
 // FinishDemandRequest is the request struct for api FinishDemand
 type FinishDemandRequest struct {
 	*requests.RpcRequest
-	BizId   string `position:"Query" name:"BizId"`
 	Message string `position:"Query" name:"Message"`
+	BizId   string `position:"Query" name:"BizId"`
 }
 
 // FinishDemandResponse is the response struct for api FinishDemand

@@ -71,11 +71,11 @@ func (client *Client) RequestPayDemandWithCallback(request *RequestPayDemandRequ
 // RequestPayDemandRequest is the request struct for api RequestPayDemand
 type RequestPayDemandRequest struct {
 	*requests.RpcRequest
-	Price       requests.Float   `position:"Query" name:"Price"`
-	BizId       string           `position:"Query" name:"BizId"`
 	DomainName  string           `position:"Query" name:"DomainName"`
 	ProduceType requests.Integer `position:"Query" name:"ProduceType"`
 	Message     string           `position:"Query" name:"Message"`
+	Price       requests.Float   `position:"Query" name:"Price"`
+	BizId       string           `position:"Query" name:"BizId"`
 }
 
 // RequestPayDemandResponse is the response struct for api RequestPayDemand

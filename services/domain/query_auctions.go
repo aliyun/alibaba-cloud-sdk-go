@@ -71,8 +71,8 @@ func (client *Client) QueryAuctionsWithCallback(request *QueryAuctionsRequest, c
 // QueryAuctionsRequest is the request struct for api QueryAuctions
 type QueryAuctionsRequest struct {
 	*requests.RpcRequest
-	PageSize    requests.Integer `position:"Body" name:"PageSize"`
 	CurrentPage requests.Integer `position:"Body" name:"CurrentPage"`
+	PageSize    requests.Integer `position:"Body" name:"PageSize"`
 	Status      string           `position:"Body" name:"Status"`
 }
 
