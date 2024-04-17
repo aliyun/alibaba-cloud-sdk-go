@@ -100,6 +100,7 @@ type CreateScalingConfigurationRequest struct {
 	InternetMaxBandwidthIn          requests.Integer                                  `position:"Query" name:"InternetMaxBandwidthIn"`
 	InstancePatternInfo             *[]CreateScalingConfigurationInstancePatternInfo  `position:"Query" name:"InstancePatternInfo"  type:"Repeated"`
 	Affinity                        string                                            `position:"Query" name:"Affinity"`
+	NetworkInterfaces               *[]CreateScalingConfigurationNetworkInterfaces    `position:"Query" name:"NetworkInterfaces"  type:"Repeated"`
 	ImageId                         string                                            `position:"Query" name:"ImageId"`
 	Memory                          requests.Integer                                  `position:"Query" name:"Memory"`
 	ClientToken                     string                                            `position:"Query" name:"ClientToken"`
@@ -160,6 +161,14 @@ type CreateScalingConfigurationInstancePatternInfo struct {
 	ExcludedInstanceType *[]string `name:"ExcludedInstanceType" type:"Repeated"`
 	BurstablePerformance string    `name:"BurstablePerformance"`
 	Architecture         *[]string `name:"Architecture" type:"Repeated"`
+}
+
+// CreateScalingConfigurationNetworkInterfaces is a repeated param struct in CreateScalingConfigurationRequest
+type CreateScalingConfigurationNetworkInterfaces struct {
+	Ipv6AddressCount            string    `name:"Ipv6AddressCount"`
+	InstanceType                string    `name:"InstanceType"`
+	SecurityGroupIds            *[]string `name:"SecurityGroupIds" type:"Repeated"`
+	NetworkInterfaceTrafficMode string    `name:"NetworkInterfaceTrafficMode"`
 }
 
 // CreateScalingConfigurationDataDisk is a repeated param struct in CreateScalingConfigurationRequest

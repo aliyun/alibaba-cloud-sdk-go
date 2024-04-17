@@ -99,6 +99,7 @@ type ModifyScalingConfigurationRequest struct {
 	ZoneId                          string                                            `position:"Query" name:"ZoneId"`
 	InstancePatternInfo             *[]ModifyScalingConfigurationInstancePatternInfo  `position:"Query" name:"InstancePatternInfo"  type:"Repeated"`
 	Affinity                        string                                            `position:"Query" name:"Affinity"`
+	NetworkInterfaces               *[]ModifyScalingConfigurationNetworkInterfaces    `position:"Query" name:"NetworkInterfaces"  type:"Repeated"`
 	ImageId                         string                                            `position:"Query" name:"ImageId"`
 	Memory                          requests.Integer                                  `position:"Query" name:"Memory"`
 	SpotInterruptionBehavior        string                                            `position:"Query" name:"SpotInterruptionBehavior"`
@@ -157,6 +158,14 @@ type ModifyScalingConfigurationInstancePatternInfo struct {
 	ExcludedInstanceType *[]string `name:"ExcludedInstanceType" type:"Repeated"`
 	BurstablePerformance string    `name:"BurstablePerformance"`
 	Architecture         *[]string `name:"Architecture" type:"Repeated"`
+}
+
+// ModifyScalingConfigurationNetworkInterfaces is a repeated param struct in ModifyScalingConfigurationRequest
+type ModifyScalingConfigurationNetworkInterfaces struct {
+	Ipv6AddressCount            string    `name:"Ipv6AddressCount"`
+	InstanceType                string    `name:"InstanceType"`
+	SecurityGroupIds            *[]string `name:"SecurityGroupIds" type:"Repeated"`
+	NetworkInterfaceTrafficMode string    `name:"NetworkInterfaceTrafficMode"`
 }
 
 // ModifyScalingConfigurationDataDisk is a repeated param struct in ModifyScalingConfigurationRequest
