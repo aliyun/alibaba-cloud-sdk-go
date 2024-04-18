@@ -71,15 +71,16 @@ func (client *Client) ListVccGrantRulesWithCallback(request *ListVccGrantRulesRe
 // ListVccGrantRulesRequest is the request struct for api ListVccGrantRules
 type ListVccGrantRulesRequest struct {
 	*requests.RpcRequest
-	GrantTenantId string           `position:"Body" name:"GrantTenantId"`
-	PageNumber    requests.Integer `position:"Body" name:"PageNumber"`
-	GrantRuleId   string           `position:"Body" name:"GrantRuleId"`
-	PageSize      requests.Integer `position:"Body" name:"PageSize"`
-	ErId          string           `position:"Body" name:"ErId"`
-	ForSelect     requests.Boolean `position:"Body" name:"ForSelect"`
-	InstanceId    string           `position:"Body" name:"InstanceId"`
-	InstanceName  string           `position:"Body" name:"InstanceName"`
-	EnablePage    requests.Boolean `position:"Body" name:"EnablePage"`
+	GrantTenantId   string           `position:"Body" name:"GrantTenantId"`
+	PageNumber      requests.Integer `position:"Body" name:"PageNumber"`
+	ResourceGroupId string           `position:"Body" name:"ResourceGroupId"`
+	GrantRuleId     string           `position:"Body" name:"GrantRuleId"`
+	PageSize        requests.Integer `position:"Body" name:"PageSize"`
+	ErId            string           `position:"Body" name:"ErId"`
+	ForSelect       requests.Boolean `position:"Body" name:"ForSelect"`
+	InstanceId      string           `position:"Body" name:"InstanceId"`
+	InstanceName    string           `position:"Body" name:"InstanceName"`
+	EnablePage      requests.Boolean `position:"Body" name:"EnablePage"`
 }
 
 // ListVccGrantRulesResponse is the response struct for api ListVccGrantRules

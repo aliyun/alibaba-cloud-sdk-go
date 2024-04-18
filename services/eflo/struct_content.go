@@ -71,6 +71,7 @@ type Content struct {
 	Ip                        string                         `json:"Ip" xml:"Ip"`
 	VSwitchId                 string                         `json:"VSwitchId" xml:"VSwitchId"`
 	Quota                     int                            `json:"Quota" xml:"Quota"`
+	HdeniQuota                int                            `json:"HdeniQuota" xml:"HdeniQuota"`
 	CenId                     string                         `json:"CenId" xml:"CenId"`
 	ConnectionType            string                         `json:"ConnectionType" xml:"ConnectionType"`
 	NcCount                   int                            `json:"NcCount" xml:"NcCount"`
