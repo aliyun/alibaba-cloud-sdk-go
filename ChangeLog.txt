@@ -1,3 +1,9 @@
+2024-04-18 Version: v1.62.719
+- Generated 2018-11-01 for `dms-enterprise`.
+- Supported ApproveOrder request parameter NewApproverList.
+- Add ListSensitiveColumnInfo API.
+- Supported GetDataCorrectOrderDetail return ConfigDetail Information.
+
 2024-04-18 Version: v1.62.718
 - Generated 2022-05-30 for `eflo`.
 - Update HDENI API.

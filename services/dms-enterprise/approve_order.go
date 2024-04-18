@@ -79,6 +79,7 @@ type ApproveOrderRequest struct {
 	OldApprover        requests.Integer `position:"Query" name:"OldApprover"`
 	Comment            string           `position:"Query" name:"Comment"`
 	ApprovalNodePos    string           `position:"Query" name:"ApprovalNodePos"`
+	NewApproverList    string           `position:"Query" name:"NewApproverList"`
 }
 
 // ApproveOrderResponse is the response struct for api ApproveOrder

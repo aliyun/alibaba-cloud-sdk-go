@@ -85,12 +85,12 @@ type ListSensitiveColumnsRequest struct {
 // ListSensitiveColumnsResponse is the response struct for api ListSensitiveColumns
 type ListSensitiveColumnsResponse struct {
 	*responses.BaseResponse
-	TotalCount          int64               `json:"TotalCount" xml:"TotalCount"`
-	RequestId           string              `json:"RequestId" xml:"RequestId"`
-	ErrorCode           string              `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMessage        string              `json:"ErrorMessage" xml:"ErrorMessage"`
-	Success             bool                `json:"Success" xml:"Success"`
-	SensitiveColumnList SensitiveColumnList `json:"SensitiveColumnList" xml:"SensitiveColumnList"`
+	TotalCount          int64                                     `json:"TotalCount" xml:"TotalCount"`
+	RequestId           string                                    `json:"RequestId" xml:"RequestId"`
+	ErrorCode           string                                    `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage        string                                    `json:"ErrorMessage" xml:"ErrorMessage"`
+	Success             bool                                      `json:"Success" xml:"Success"`
+	SensitiveColumnList SensitiveColumnListInListSensitiveColumns `json:"SensitiveColumnList" xml:"SensitiveColumnList"`
 }
 
 // CreateListSensitiveColumnsRequest creates a request to invoke ListSensitiveColumns API

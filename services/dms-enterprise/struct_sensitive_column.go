@@ -17,10 +17,17 @@ package dms_enterprise
 
 // SensitiveColumn is a nested struct in dms_enterprise response
 type SensitiveColumn struct {
-	ColumnName    string `json:"ColumnName" xml:"ColumnName"`
-	TableName     string `json:"TableName" xml:"TableName"`
-	SecurityLevel string `json:"SecurityLevel" xml:"SecurityLevel"`
-	ColumnCount   int64  `json:"ColumnCount" xml:"ColumnCount"`
-	SchemaName    string `json:"SchemaName" xml:"SchemaName"`
-	FunctionType  string `json:"FunctionType" xml:"FunctionType"`
+	SchemaName                  string                      `json:"SchemaName" xml:"SchemaName"`
+	ColumnCount                 int64                       `json:"ColumnCount" xml:"ColumnCount"`
+	TableName                   string                      `json:"TableName" xml:"TableName"`
+	SampleData                  string                      `json:"SampleData" xml:"SampleData"`
+	UserSensitivityLevel        string                      `json:"UserSensitivityLevel" xml:"UserSensitivityLevel"`
+	CategoryName                string                      `json:"CategoryName" xml:"CategoryName"`
+	ColumnName                  string                      `json:"ColumnName" xml:"ColumnName"`
+	SecurityLevel               string                      `json:"SecurityLevel" xml:"SecurityLevel"`
+	InstanceId                  int                         `json:"InstanceId" xml:"InstanceId"`
+	FunctionType                string                      `json:"FunctionType" xml:"FunctionType"`
+	IsPlain                     bool                        `json:"IsPlain" xml:"IsPlain"`
+	DefaultDesensitizationRule  DefaultDesensitizationRule  `json:"DefaultDesensitizationRule" xml:"DefaultDesensitizationRule"`
+	SemiDesensitizationRuleList SemiDesensitizationRuleList `json:"SemiDesensitizationRuleList" xml:"SemiDesensitizationRuleList"`
 }

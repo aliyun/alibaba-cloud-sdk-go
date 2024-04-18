@@ -19,6 +19,7 @@ package dms_enterprise
 type StandardGroup struct {
 	LastMenderId int64  `json:"LastMenderId" xml:"LastMenderId"`
 	GmtCreate    string `json:"GmtCreate" xml:"GmtCreate"`
+	GroupId      int64  `json:"GroupId" xml:"GroupId"`
 	FreeOrStable bool   `json:"FreeOrStable" xml:"FreeOrStable"`
 	GroupMode    string `json:"GroupMode" xml:"GroupMode"`
 	GmtModified  string `json:"GmtModified" xml:"GmtModified"`
