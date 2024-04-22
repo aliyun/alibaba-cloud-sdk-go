@@ -78,6 +78,7 @@ type Data struct {
 	Landmarks            []float64             `json:"Landmarks" xml:"Landmarks"`
 	FaceRectangles       []int                 `json:"FaceRectangles" xml:"FaceRectangles"`
 	RectAList            []int                 `json:"RectAList" xml:"RectAList"`
+	LandmarkScore        []float64             `json:"LandmarkScore" xml:"LandmarkScore"`
 	FaceProbabilityList  []float64             `json:"FaceProbabilityList" xml:"FaceProbabilityList"`
 	Pupils               []string              `json:"Pupils" xml:"Pupils"`
 	LandmarksAList       []int64               `json:"LandmarksAList" xml:"LandmarksAList"`

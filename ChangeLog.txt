@@ -1,3 +1,7 @@
+2024-04-22 Version: v1.62.721
+- Generated 2019-12-30 for `facebody`.
+- Update DetectFace.
+
 2024-04-22 Version: v1.62.720
 - Generated 2019-05-06 for `sae`.
 undefined
