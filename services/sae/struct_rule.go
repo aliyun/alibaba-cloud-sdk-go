@@ -23,6 +23,7 @@ type Rule struct {
 	Path            string `json:"Path" xml:"Path"`
 	RuleDescId      int64  `json:"RuleDescId" xml:"RuleDescId"`
 	BackendProtocol string `json:"BackendProtocol" xml:"BackendProtocol"`
+	RewritePath     string `json:"RewritePath" xml:"RewritePath"`
 	AppName         string `json:"AppName" xml:"AppName"`
 	ContainerPort   int    `json:"ContainerPort" xml:"ContainerPort"`
 }

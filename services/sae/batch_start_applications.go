@@ -73,6 +73,7 @@ type BatchStartApplicationsRequest struct {
 	*requests.RoaRequest
 	AppIds      string `position:"Query" name:"AppIds"`
 	NamespaceId string `position:"Query" name:"NamespaceId"`
+	Version     string `position:"Query" name:"Version"`
 }
 
 // BatchStartApplicationsResponse is the response struct for api BatchStartApplications

@@ -33,6 +33,7 @@ type Data struct {
 	InternetSlbId                 string                   `json:"InternetSlbId" xml:"InternetSlbId"`
 	InternetSlbExpired            bool                     `json:"InternetSlbExpired" xml:"InternetSlbExpired"`
 	RepoTag                       string                   `json:"RepoTag" xml:"RepoTag"`
+	MseApplicationName            string                   `json:"MseApplicationName" xml:"MseApplicationName"`
 	UpdateStrategy                string                   `json:"UpdateStrategy" xml:"UpdateStrategy"`
 	Name                          string                   `json:"Name" xml:"Name"`
 	IntranetSlbId                 string                   `json:"IntranetSlbId" xml:"IntranetSlbId"`
@@ -134,12 +135,14 @@ type Data struct {
 	Liveness                      string                   `json:"Liveness" xml:"Liveness"`
 	CurrentPage                   int                      `json:"CurrentPage" xml:"CurrentPage"`
 	AcrInstanceId                 string                   `json:"AcrInstanceId" xml:"AcrInstanceId"`
+	AppSource                     string                   `json:"AppSource" xml:"AppSource"`
 	AppName                       string                   `json:"AppName" xml:"AppName"`
 	DubboApplicationName          string                   `json:"DubboApplicationName" xml:"DubboApplicationName"`
 	JumpServerIp                  string                   `json:"JumpServerIp" xml:"JumpServerIp"`
 	RefAppId                      string                   `json:"RefAppId" xml:"RefAppId"`
 	MountHost                     string                   `json:"MountHost" xml:"MountHost"`
 	StartTime                     int64                    `json:"StartTime" xml:"StartTime"`
+	SaeVersion                    string                   `json:"SaeVersion" xml:"SaeVersion"`
 	CurrentPoint                  int                      `json:"CurrentPoint" xml:"CurrentPoint"`
 	ImageUrl                      string                   `json:"ImageUrl" xml:"ImageUrl"`
 	Active                        int64                    `json:"Active" xml:"Active"`
@@ -177,15 +180,18 @@ type Data struct {
 	RefedAppIds                   []string                 `json:"RefedAppIds" xml:"RefedAppIds"`
 	PublicWebHookUrls             []string                 `json:"PublicWebHookUrls" xml:"PublicWebHookUrls"`
 	Order                         Order                    `json:"Order" xml:"Order"`
+	CpuMemPrice                   CpuMemPrice              `json:"CpuMemPrice" xml:"CpuMemPrice"`
+	RequestPrice                  RequestPrice             `json:"RequestPrice" xml:"RequestPrice"`
+	Timer                         Timer                    `json:"Timer" xml:"Timer"`
 	RealTimeRes                   RealTimeRes              `json:"RealTimeRes" xml:"RealTimeRes"`
 	DefaultRule                   DefaultRule              `json:"DefaultRule" xml:"DefaultRule"`
-	Metric                        Metric                   `json:"Metric" xml:"Metric"`
 	BagUsage                      BagUsage                 `json:"BagUsage" xml:"BagUsage"`
-	Timer                         Timer                    `json:"Timer" xml:"Timer"`
+	Metric                        Metric                   `json:"Metric" xml:"Metric"`
+	TrafficPrice                  TrafficPrice             `json:"TrafficPrice" xml:"TrafficPrice"`
 	Summary                       Summary                  `json:"Summary" xml:"Summary"`
 	OssMountDescs                 []OssMountDesc           `json:"OssMountDescs" xml:"OssMountDescs"`
-	TagResources                  []TagResource            `json:"TagResources" xml:"TagResources"`
 	Rules                         []Rule                   `json:"Rules" xml:"Rules"`
+	TagResources                  []TagResource            `json:"TagResources" xml:"TagResources"`
 	Applications                  []Application            `json:"Applications" xml:"Applications"`
 	Intranet                      []IntranetItem           `json:"Intranet" xml:"Intranet"`
 	DubboRules                    []DubboRule              `json:"DubboRules" xml:"DubboRules"`
@@ -199,12 +205,12 @@ type Data struct {
 	LogConfigs                    []LogConfig              `json:"LogConfigs" xml:"LogConfigs"`
 	ScRules                       []ScRule                 `json:"ScRules" xml:"ScRules"`
 	ChangeOrderList               []ChangeOrder            `json:"ChangeOrderList" xml:"ChangeOrderList"`
-	IngressList                   []Ingress                `json:"IngressList" xml:"IngressList"`
 	Svcs                          []Svc                    `json:"Svcs" xml:"Svcs"`
 	Secrets                       []Secret                 `json:"Secrets" xml:"Secrets"`
 	ConfigMapMountDesc            []ConfigMapMountDescItem `json:"ConfigMapMountDesc" xml:"ConfigMapMountDesc"`
-	AlbRules                      []AlbRule                `json:"AlbRules" xml:"AlbRules"`
 	ApplicationScalingRules       []ApplicationScalingRule `json:"ApplicationScalingRules" xml:"ApplicationScalingRules"`
+	AlbRules                      []AlbRule                `json:"AlbRules" xml:"AlbRules"`
+	IngressList                   []Ingress                `json:"IngressList" xml:"IngressList"`
 	Namespaces                    []Namespace              `json:"Namespaces" xml:"Namespaces"`
 	AppEventEntity                []AppEventEntityItem     `json:"AppEventEntity" xml:"AppEventEntity"`
 	StageList                     []Stage                  `json:"StageList" xml:"StageList"`

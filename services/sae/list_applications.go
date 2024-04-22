@@ -71,6 +71,7 @@ func (client *Client) ListApplicationsWithCallback(request *ListApplicationsRequ
 // ListApplicationsRequest is the request struct for api ListApplications
 type ListApplicationsRequest struct {
 	*requests.RoaRequest
+	AppSource   string           `position:"Query" name:"AppSource"`
 	AppName     string           `position:"Query" name:"AppName"`
 	NamespaceId string           `position:"Query" name:"NamespaceId"`
 	PageSize    requests.Integer `position:"Query" name:"PageSize"`

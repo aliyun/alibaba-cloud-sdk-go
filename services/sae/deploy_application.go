@@ -89,7 +89,9 @@ type DeployApplicationRequest struct {
 	ImagePullSecrets                 string           `position:"Query" name:"ImagePullSecrets"`
 	PreStop                          string           `position:"Query" name:"PreStop"`
 	Python                           string           `position:"Query" name:"Python"`
+	Cpu                              requests.Integer `position:"Query" name:"Cpu"`
 	UpdateStrategy                   string           `position:"Query" name:"UpdateStrategy"`
+	VSwitchId                        string           `position:"Query" name:"VSwitchId"`
 	ChangeOrderDesc                  string           `position:"Query" name:"ChangeOrderDesc"`
 	MinReadyInstanceRatio            requests.Integer `position:"Query" name:"MinReadyInstanceRatio"`
 	AutoEnableApplicationScalingRule requests.Boolean `position:"Query" name:"AutoEnableApplicationScalingRule"`
@@ -101,12 +103,14 @@ type DeployApplicationRequest struct {
 	EnableAhas                       string           `position:"Query" name:"EnableAhas"`
 	SlsConfigs                       string           `position:"Query" name:"SlsConfigs"`
 	KafkaConfigs                     string           `position:"Query" name:"KafkaConfigs"`
+	Memory                           requests.Integer `position:"Query" name:"Memory"`
 	CommandArgs                      string           `position:"Query" name:"CommandArgs"`
 	AcrAssumeRoleArn                 string           `position:"Query" name:"AcrAssumeRoleArn"`
 	Readiness                        string           `position:"Query" name:"Readiness"`
 	Timezone                         string           `position:"Query" name:"Timezone"`
 	OssAkId                          string           `position:"Body" name:"OssAkId"`
 	Liveness                         string           `position:"Query" name:"Liveness"`
+	SecurityGroupId                  string           `position:"Query" name:"SecurityGroupId"`
 	PackageVersion                   string           `position:"Query" name:"PackageVersion"`
 	TomcatConfig                     string           `position:"Query" name:"TomcatConfig"`
 	WarStartOptions                  string           `position:"Query" name:"WarStartOptions"`
@@ -118,6 +122,7 @@ type DeployApplicationRequest struct {
 	EnableImageAccl                  requests.Boolean `position:"Body" name:"EnableImageAccl"`
 	MicroRegistration                string           `position:"Query" name:"MicroRegistration"`
 	EnableGreyTagRoute               requests.Boolean `position:"Query" name:"EnableGreyTagRoute"`
+	Replicas                         requests.Integer `position:"Query" name:"Replicas"`
 	Command                          string           `position:"Query" name:"Command"`
 	MountDesc                        string           `position:"Query" name:"MountDesc"`
 	Jdk                              string           `position:"Query" name:"Jdk"`

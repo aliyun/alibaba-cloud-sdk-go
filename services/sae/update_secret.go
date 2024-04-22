@@ -73,7 +73,7 @@ type UpdateSecretRequest struct {
 	*requests.RoaRequest
 	NamespaceId string           `position:"Query" name:"NamespaceId"`
 	SecretId    requests.Integer `position:"Query" name:"SecretId"`
-	SecretData  string           `position:"Body" name:"SecretData"`
+	SecretData  string           `position:"Query" name:"SecretData"`
 }
 
 // UpdateSecretResponse is the response struct for api UpdateSecret

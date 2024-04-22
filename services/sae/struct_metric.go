@@ -21,8 +21,12 @@ type Metric struct {
 	MetricTargetAverageUtilization int            `json:"MetricTargetAverageUtilization" xml:"MetricTargetAverageUtilization"`
 	MetricType                     string         `json:"MetricType" xml:"MetricType"`
 	MaxReplicas                    int            `json:"MaxReplicas" xml:"MaxReplicas"`
+	SlbLogstore                    string         `json:"SlbLogstore" xml:"SlbLogstore"`
+	SlbProject                     string         `json:"SlbProject" xml:"SlbProject"`
+	Vport                          string         `json:"Vport" xml:"Vport"`
+	SlbId                          string         `json:"SlbId" xml:"SlbId"`
 	ScaleUpRules                   ScaleUpRules   `json:"ScaleUpRules" xml:"ScaleUpRules"`
-	MetricsStatus                  MetricsStatus  `json:"MetricsStatus" xml:"MetricsStatus"`
 	ScaleDownRules                 ScaleDownRules `json:"ScaleDownRules" xml:"ScaleDownRules"`
+	MetricsStatus                  MetricsStatus  `json:"MetricsStatus" xml:"MetricsStatus"`
 	Metrics                        []Metric       `json:"Metrics" xml:"Metrics"`
 }

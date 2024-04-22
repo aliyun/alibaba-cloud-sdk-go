@@ -71,9 +71,11 @@ func (client *Client) GetWarningEventMetricWithCallback(request *GetWarningEvent
 // GetWarningEventMetricRequest is the request struct for api GetWarningEventMetric
 type GetWarningEventMetricRequest struct {
 	*requests.RoaRequest
-	Limit     requests.Integer `position:"Query" name:"Limit"`
-	EndTime   requests.Integer `position:"Query" name:"EndTime"`
-	StartTime requests.Integer `position:"Query" name:"StartTime"`
+	AppSource   string           `position:"Query" name:"AppSource"`
+	CpuStrategy string           `position:"Query" name:"CpuStrategy"`
+	Limit       requests.Integer `position:"Query" name:"Limit"`
+	EndTime     requests.Integer `position:"Query" name:"EndTime"`
+	StartTime   requests.Integer `position:"Query" name:"StartTime"`
 }
 
 // GetWarningEventMetricResponse is the response struct for api GetWarningEventMetric

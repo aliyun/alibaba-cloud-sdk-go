@@ -17,13 +17,15 @@ package sae
 
 // ApplicationScalingRule is a nested struct in sae response
 type ApplicationScalingRule struct {
-	UpdateTime       int64  `json:"UpdateTime" xml:"UpdateTime"`
-	AppId            string `json:"AppId" xml:"AppId"`
-	CreateTime       int64  `json:"CreateTime" xml:"CreateTime"`
-	LastDisableTime  int64  `json:"LastDisableTime" xml:"LastDisableTime"`
-	ScaleRuleEnabled bool   `json:"ScaleRuleEnabled" xml:"ScaleRuleEnabled"`
-	ScaleRuleType    string `json:"ScaleRuleType" xml:"ScaleRuleType"`
-	ScaleRuleName    string `json:"ScaleRuleName" xml:"ScaleRuleName"`
-	Timer            Timer  `json:"Timer" xml:"Timer"`
-	Metric           Metric `json:"Metric" xml:"Metric"`
+	UpdateTime            int64  `json:"UpdateTime" xml:"UpdateTime"`
+	AppId                 string `json:"AppId" xml:"AppId"`
+	CreateTime            int64  `json:"CreateTime" xml:"CreateTime"`
+	LastDisableTime       int64  `json:"LastDisableTime" xml:"LastDisableTime"`
+	ScaleRuleEnabled      bool   `json:"ScaleRuleEnabled" xml:"ScaleRuleEnabled"`
+	ScaleRuleType         string `json:"ScaleRuleType" xml:"ScaleRuleType"`
+	ScaleRuleName         string `json:"ScaleRuleName" xml:"ScaleRuleName"`
+	MinReadyInstances     int    `json:"MinReadyInstances" xml:"MinReadyInstances"`
+	MinReadyInstanceRatio int    `json:"MinReadyInstanceRatio" xml:"MinReadyInstanceRatio"`
+	Timer                 Timer  `json:"Timer" xml:"Timer"`
+	Metric                Metric `json:"Metric" xml:"Metric"`
 }

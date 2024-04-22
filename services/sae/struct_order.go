@@ -17,8 +17,8 @@ package sae
 
 // Order is a nested struct in sae response
 type Order struct {
+	TradeAmount    float64  `json:"TradeAmount" xml:"TradeAmount"`
 	OriginalAmount float64  `json:"OriginalAmount" xml:"OriginalAmount"`
 	DiscountAmount float64  `json:"DiscountAmount" xml:"DiscountAmount"`
-	TradeAmount    float64  `json:"TradeAmount" xml:"TradeAmount"`
 	RuleIds        []string `json:"RuleIds" xml:"RuleIds"`
 }

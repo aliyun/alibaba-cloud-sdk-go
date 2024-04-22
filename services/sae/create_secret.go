@@ -73,7 +73,7 @@ type CreateSecretRequest struct {
 	*requests.RoaRequest
 	SecretType  string `position:"Query" name:"SecretType"`
 	NamespaceId string `position:"Query" name:"NamespaceId"`
-	SecretData  string `position:"Body" name:"SecretData"`
+	SecretData  string `position:"Query" name:"SecretData"`
 	SecretName  string `position:"Query" name:"SecretName"`
 }
 

@@ -17,15 +17,18 @@ package sae
 
 // Ingress is a nested struct in sae response
 type Ingress struct {
-	SlbId            string `json:"SlbId" xml:"SlbId"`
-	NamespaceId      string `json:"NamespaceId" xml:"NamespaceId"`
-	Description      string `json:"Description" xml:"Description"`
-	ListenerPort     string `json:"ListenerPort" xml:"ListenerPort"`
-	SlbType          string `json:"SlbType" xml:"SlbType"`
-	CertId           string `json:"CertId" xml:"CertId"`
-	CertIds          string `json:"CertIds" xml:"CertIds"`
-	Name             string `json:"Name" xml:"Name"`
-	Id               int64  `json:"Id" xml:"Id"`
-	LoadBalanceType  string `json:"LoadBalanceType" xml:"LoadBalanceType"`
-	ListenerProtocol string `json:"ListenerProtocol" xml:"ListenerProtocol"`
+	SlbId              string `json:"SlbId" xml:"SlbId"`
+	NamespaceId        string `json:"NamespaceId" xml:"NamespaceId"`
+	Description        string `json:"Description" xml:"Description"`
+	ListenerPort       string `json:"ListenerPort" xml:"ListenerPort"`
+	SlbType            string `json:"SlbType" xml:"SlbType"`
+	CertId             string `json:"CertId" xml:"CertId"`
+	CertIds            string `json:"CertIds" xml:"CertIds"`
+	Name               string `json:"Name" xml:"Name"`
+	Id                 int64  `json:"Id" xml:"Id"`
+	LoadBalanceType    string `json:"LoadBalanceType" xml:"LoadBalanceType"`
+	ListenerProtocol   string `json:"ListenerProtocol" xml:"ListenerProtocol"`
+	MseGatewayId       string `json:"MseGatewayId" xml:"MseGatewayId"`
+	MseGatewayPort     string `json:"MseGatewayPort" xml:"MseGatewayPort"`
+	MseGatewayProtocol string `json:"MseGatewayProtocol" xml:"MseGatewayProtocol"`
 }

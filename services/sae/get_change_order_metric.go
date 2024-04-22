@@ -71,9 +71,11 @@ func (client *Client) GetChangeOrderMetricWithCallback(request *GetChangeOrderMe
 // GetChangeOrderMetricRequest is the request struct for api GetChangeOrderMetric
 type GetChangeOrderMetricRequest struct {
 	*requests.RoaRequest
-	CreateTime string           `position:"Query" name:"CreateTime"`
-	Limit      requests.Integer `position:"Query" name:"Limit"`
-	OrderBy    string           `position:"Query" name:"OrderBy"`
+	AppSource   string           `position:"Query" name:"AppSource"`
+	CreateTime  string           `position:"Query" name:"CreateTime"`
+	CpuStrategy string           `position:"Query" name:"CpuStrategy"`
+	Limit       requests.Integer `position:"Query" name:"Limit"`
+	OrderBy     string           `position:"Query" name:"OrderBy"`
 }
 
 // GetChangeOrderMetricResponse is the response struct for api GetChangeOrderMetric

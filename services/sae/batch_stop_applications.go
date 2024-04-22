@@ -73,6 +73,7 @@ type BatchStopApplicationsRequest struct {
 	*requests.RoaRequest
 	AppIds      string `position:"Query" name:"AppIds"`
 	NamespaceId string `position:"Query" name:"NamespaceId"`
+	Version     string `position:"Query" name:"Version"`
 }
 
 // BatchStopApplicationsResponse is the response struct for api BatchStopApplications

@@ -17,8 +17,8 @@ package sae
 
 // Schedule is a nested struct in sae response
 type Schedule struct {
+	MinReplicas    int    `json:"MinReplicas" xml:"MinReplicas"`
 	TargetReplicas int    `json:"TargetReplicas" xml:"TargetReplicas"`
-	MinReplicas    int64  `json:"MinReplicas" xml:"MinReplicas"`
+	MaxReplicas    int    `json:"MaxReplicas" xml:"MaxReplicas"`
 	AtTime         string `json:"AtTime" xml:"AtTime"`
-	MaxReplicas    int64  `json:"MaxReplicas" xml:"MaxReplicas"`
 }

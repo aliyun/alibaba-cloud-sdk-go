@@ -87,6 +87,7 @@ type CreateApplicationRequest struct {
 	AppName                       string           `position:"Query" name:"AppName"`
 	NamespaceId                   string           `position:"Query" name:"NamespaceId"`
 	PurchaseEip                   requests.Boolean `position:"Query" name:"PurchaseEip"`
+	SaeVersion                    string           `position:"Query" name:"SaeVersion"`
 	PvtzDiscoverySvc              string           `position:"Query" name:"PvtzDiscoverySvc"`
 	ConfigMapMountDesc            string           `position:"Body" name:"ConfigMapMountDesc"`
 	OssMountDescs                 string           `position:"Body" name:"OssMountDescs"`
@@ -100,6 +101,7 @@ type CreateApplicationRequest struct {
 	PostStart                     string           `position:"Query" name:"PostStart"`
 	PhpExtensions                 string           `position:"Body" name:"PhpExtensions"`
 	AssociateEip                  requests.Boolean `position:"Body" name:"AssociateEip"`
+	AppSource                     string           `position:"Query" name:"AppSource"`
 	WebContainer                  string           `position:"Query" name:"WebContainer"`
 	Memory                        requests.Integer `position:"Query" name:"Memory"`
 	SlsConfigs                    string           `position:"Query" name:"SlsConfigs"`
