@@ -75,7 +75,7 @@ type ListServiceInstancesRequest struct {
 	NextToken       string                        `position:"Query" name:"NextToken"`
 	Tag             *[]ListServiceInstancesTag    `position:"Query" name:"Tag"  type:"Repeated"`
 	Filter          *[]ListServiceInstancesFilter `position:"Query" name:"Filter"  type:"Repeated"`
-	MaxResults      string                        `position:"Query" name:"MaxResults"`
+	MaxResults      requests.Integer              `position:"Query" name:"MaxResults"`
 }
 
 // ListServiceInstancesTag is a repeated param struct in ListServiceInstancesRequest
@@ -96,7 +96,7 @@ type ListServiceInstancesResponse struct {
 	NextToken        string            `json:"NextToken" xml:"NextToken"`
 	RequestId        string            `json:"RequestId" xml:"RequestId"`
 	TotalCount       int64             `json:"TotalCount" xml:"TotalCount"`
-	MaxResults       string            `json:"MaxResults" xml:"MaxResults"`
+	MaxResults       int               `json:"MaxResults" xml:"MaxResults"`
 	ServiceInstances []ServiceInstance `json:"ServiceInstances" xml:"ServiceInstances"`
 }
 

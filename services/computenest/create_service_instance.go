@@ -87,13 +87,14 @@ type CreateServiceInstanceRequest struct {
 	ServiceVersion       string                                 `position:"Query" name:"ServiceVersion"`
 	ServiceId            string                                 `position:"Query" name:"ServiceId"`
 	Parameters           string                                 `position:"Query" name:"Parameters"`
-	PayType              requests.Integer                       `position:"Query" name:"PayType"`
 	OperationMetadata    CreateServiceInstanceOperationMetadata `position:"Query" name:"OperationMetadata"  type:"Struct"`
 }
 
 // CreateServiceInstanceCommodity is a repeated param struct in CreateServiceInstanceRequest
 type CreateServiceInstanceCommodity struct {
 	PayPeriod     string `name:"PayPeriod"`
+	AutoPay       string `name:"AutoPay"`
+	AutoRenew     string `name:"AutoRenew"`
 	PayPeriodUnit string `name:"PayPeriodUnit"`
 }
 
@@ -119,6 +120,7 @@ type CreateServiceInstanceResponse struct {
 	RequestId         string `json:"RequestId" xml:"RequestId"`
 	ServiceInstanceId string `json:"ServiceInstanceId" xml:"ServiceInstanceId"`
 	MarketInstanceId  string `json:"MarketInstanceId" xml:"MarketInstanceId"`
+	OrderId           string `json:"OrderId" xml:"OrderId"`
 }
 
 // CreateCreateServiceInstanceRequest creates a request to invoke CreateServiceInstance API

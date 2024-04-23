@@ -26,4 +26,5 @@ type ResourcesItem struct {
 	RenewalPeriodUnit string `json:"RenewalPeriodUnit" xml:"RenewalPeriodUnit"`
 	ProductType       string `json:"ProductType" xml:"ProductType"`
 	ProductCode       string `json:"ProductCode" xml:"ProductCode"`
+	Status            string `json:"Status" xml:"Status"`
 }

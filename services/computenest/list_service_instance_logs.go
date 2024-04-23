@@ -71,9 +71,11 @@ func (client *Client) ListServiceInstanceLogsWithCallback(request *ListServiceIn
 // ListServiceInstanceLogsRequest is the request struct for api ListServiceInstanceLogs
 type ListServiceInstanceLogsRequest struct {
 	*requests.RpcRequest
-	NextToken         string `position:"Query" name:"NextToken"`
-	ServiceInstanceId string `position:"Query" name:"ServiceInstanceId"`
-	MaxResults        string `position:"Query" name:"MaxResults"`
+	NextToken         string           `position:"Query" name:"NextToken"`
+	ServiceInstanceId string           `position:"Query" name:"ServiceInstanceId"`
+	LogSource         string           `position:"Query" name:"LogSource"`
+	MaxResults        requests.Integer `position:"Query" name:"MaxResults"`
+	Logstore          string           `position:"Query" name:"Logstore"`
 }
 
 // ListServiceInstanceLogsResponse is the response struct for api ListServiceInstanceLogs
@@ -81,7 +83,7 @@ type ListServiceInstanceLogsResponse struct {
 	*responses.BaseResponse
 	NextToken            string                `json:"NextToken" xml:"NextToken"`
 	RequestId            string                `json:"RequestId" xml:"RequestId"`
-	MaxResults           string                `json:"MaxResults" xml:"MaxResults"`
+	MaxResults           int                   `json:"MaxResults" xml:"MaxResults"`
 	ServiceInstancesLogs []ServiceInstanceLogs `json:"ServiceInstancesLogs" xml:"ServiceInstancesLogs"`
 }
 

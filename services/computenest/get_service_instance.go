@@ -107,6 +107,8 @@ type GetServiceInstanceResponse struct {
 	PredefinedParameterName   string        `json:"PredefinedParameterName" xml:"PredefinedParameterName"`
 	MarketInstanceId          string        `json:"MarketInstanceId" xml:"MarketInstanceId"`
 	ResourceGroupId           string        `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	BizStatus                 string        `json:"BizStatus" xml:"BizStatus"`
+	GrafanaDashBoardUrl       string        `json:"GrafanaDashBoardUrl" xml:"GrafanaDashBoardUrl"`
 	Service                   Service       `json:"Service" xml:"Service"`
 	NetworkConfig             NetworkConfig `json:"NetworkConfig" xml:"NetworkConfig"`
 	Tags                      []Tag         `json:"Tags" xml:"Tags"`

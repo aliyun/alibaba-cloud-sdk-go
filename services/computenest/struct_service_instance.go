@@ -38,6 +38,7 @@ type ServiceInstance struct {
 	PayType                   string  `json:"PayType" xml:"PayType"`
 	MarketInstanceId          string  `json:"MarketInstanceId" xml:"MarketInstanceId"`
 	ResourceGroupId           string  `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	BizStatus                 string  `json:"BizStatus" xml:"BizStatus"`
 	Service                   Service `json:"Service" xml:"Service"`
 	Tags                      []Tag   `json:"Tags" xml:"Tags"`
 }

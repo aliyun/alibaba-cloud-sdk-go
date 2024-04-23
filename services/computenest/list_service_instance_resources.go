@@ -71,14 +71,15 @@ func (client *Client) ListServiceInstanceResourcesWithCallback(request *ListServ
 // ListServiceInstanceResourcesRequest is the request struct for api ListServiceInstanceResources
 type ListServiceInstanceResourcesRequest struct {
 	*requests.RpcRequest
-	ExpireTimeEnd     string                             `position:"Query" name:"ExpireTimeEnd"`
-	NextToken         string                             `position:"Query" name:"NextToken"`
-	ResourceARN       *[]string                          `position:"Query" name:"ResourceARN"  type:"Repeated"`
-	Tag               *[]ListServiceInstanceResourcesTag `position:"Query" name:"Tag"  type:"Repeated"`
-	ServiceInstanceId string                             `position:"Query" name:"ServiceInstanceId"`
-	ExpireTimeStart   string                             `position:"Query" name:"ExpireTimeStart"`
-	MaxResults        string                             `position:"Query" name:"MaxResults"`
-	PayType           string                             `position:"Query" name:"PayType"`
+	ExpireTimeEnd               string                             `position:"Query" name:"ExpireTimeEnd"`
+	NextToken                   string                             `position:"Query" name:"NextToken"`
+	ServiceInstanceResourceType string                             `position:"Query" name:"ServiceInstanceResourceType"`
+	ResourceARN                 *[]string                          `position:"Query" name:"ResourceARN"  type:"Repeated"`
+	Tag                         *[]ListServiceInstanceResourcesTag `position:"Query" name:"Tag"  type:"Repeated"`
+	ServiceInstanceId           string                             `position:"Query" name:"ServiceInstanceId"`
+	ExpireTimeStart             string                             `position:"Query" name:"ExpireTimeStart"`
+	MaxResults                  requests.Integer                   `position:"Query" name:"MaxResults"`
+	PayType                     string                             `position:"Query" name:"PayType"`
 }
 
 // ListServiceInstanceResourcesTag is a repeated param struct in ListServiceInstanceResourcesRequest
@@ -92,7 +93,7 @@ type ListServiceInstanceResourcesResponse struct {
 	*responses.BaseResponse
 	NextToken  string          `json:"NextToken" xml:"NextToken"`
 	RequestId  string          `json:"RequestId" xml:"RequestId"`
-	MaxResults string          `json:"MaxResults" xml:"MaxResults"`
+	MaxResults int             `json:"MaxResults" xml:"MaxResults"`
 	Resources  []ResourcesItem `json:"Resources" xml:"Resources"`
 }
 
