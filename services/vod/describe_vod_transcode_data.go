@@ -76,6 +76,7 @@ type DescribeVodTranscodeDataRequest struct {
 	EndTime       string           `position:"Query" name:"EndTime"`
 	Specification string           `position:"Query" name:"Specification"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	AppId         string           `position:"Query" name:"AppId"`
 	Interval      string           `position:"Query" name:"Interval"`
 	Region        string           `position:"Query" name:"Region"`
 }

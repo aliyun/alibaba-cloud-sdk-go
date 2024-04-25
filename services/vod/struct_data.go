@@ -17,11 +17,19 @@ package vod
 
 // Data is a nested struct in vod response
 type Data struct {
-	Suggestion      string            `json:"Suggestion" xml:"Suggestion"`
-	Label           string            `json:"Label" xml:"Label"`
-	AbnormalModules string            `json:"AbnormalModules" xml:"AbnormalModules"`
-	VideoResult     VideoResult       `json:"VideoResult" xml:"VideoResult"`
-	AudioResult     []AudioResultItem `json:"AudioResult" xml:"AudioResult"`
-	TextResult      []TextResultItem  `json:"TextResult" xml:"TextResult"`
-	ImageResult     []ImageResultItem `json:"ImageResult" xml:"ImageResult"`
+	Label             string            `json:"Label" xml:"Label"`
+	VideoTitle        float64           `json:"VideoTitle" xml:"VideoTitle"`
+	PlayDurationPerUv float64           `json:"PlayDurationPerUv" xml:"PlayDurationPerUv"`
+	PlaySuccessVv     float64           `json:"PlaySuccessVv" xml:"PlaySuccessVv"`
+	DAU               float64           `json:"DAU" xml:"DAU"`
+	PlayDuration      float64           `json:"PlayDuration" xml:"PlayDuration"`
+	VideoDuration     float64           `json:"VideoDuration" xml:"VideoDuration"`
+	Suggestion        string            `json:"Suggestion" xml:"Suggestion"`
+	AbnormalModules   string            `json:"AbnormalModules" xml:"AbnormalModules"`
+	PlayPerVv         float64           `json:"PlayPerVv" xml:"PlayPerVv"`
+	MediaId           string            `json:"MediaId" xml:"MediaId"`
+	VideoResult       VideoResult       `json:"VideoResult" xml:"VideoResult"`
+	ImageResult       []ImageResultItem `json:"ImageResult" xml:"ImageResult"`
+	AudioResult       []AudioResultItem `json:"AudioResult" xml:"AudioResult"`
+	TextResult        []TextResultItem  `json:"TextResult" xml:"TextResult"`
 }

@@ -72,9 +72,10 @@ func (client *Client) RefreshVodObjectCachesWithCallback(request *RefreshVodObje
 type RefreshVodObjectCachesRequest struct {
 	*requests.RpcRequest
 	ObjectPath    string           `position:"Query" name:"ObjectPath"`
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	ObjectType    string           `position:"Query" name:"ObjectType"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	Force         requests.Boolean `position:"Query" name:"Force"`
 }
 
 // RefreshVodObjectCachesResponse is the response struct for api RefreshVodObjectCaches

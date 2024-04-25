@@ -76,6 +76,7 @@ type DescribeVodStorageDataRequest struct {
 	StorageType string           `position:"Query" name:"StorageType"`
 	EndTime     string           `position:"Query" name:"EndTime"`
 	OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
+	AppId       string           `position:"Query" name:"AppId"`
 	Interval    string           `position:"Query" name:"Interval"`
 	Region      string           `position:"Query" name:"Region"`
 }
