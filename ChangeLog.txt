@@ -1,3 +1,9 @@
+2024-04-26 Version: v1.62.726
+- Generated 2018-11-01 for `dms-enterprise`.
+- Supported ApproveOrder request parameter NewApproverList.
+- Add ListSensitiveColumnInfo API.
+- Supported GetDataCorrectOrderDetail return ConfigDetail Information.
+
 2024-04-26 Version: v1.62.725
 - Generated 2014-05-26 for `Ecs`.
 - Add SupportedBootModes for DescribeInstanceTypes.
