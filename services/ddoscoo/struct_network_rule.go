@@ -19,6 +19,7 @@ package ddoscoo
 type NetworkRule struct {
 	IsAutoCreate     bool     `json:"IsAutoCreate" xml:"IsAutoCreate"`
 	Protocol         string   `json:"Protocol" xml:"Protocol"`
+	Remark           string   `json:"Remark" xml:"Remark"`
 	InstanceId       string   `json:"InstanceId" xml:"InstanceId"`
 	BackendPort      int      `json:"BackendPort" xml:"BackendPort"`
 	FrontendPort     int      `json:"FrontendPort" xml:"FrontendPort"`
