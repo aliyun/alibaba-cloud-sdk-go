@@ -79,9 +79,9 @@ type DescribeCasterSceneAudioRequest struct {
 // DescribeCasterSceneAudioResponse is the response struct for api DescribeCasterSceneAudio
 type DescribeCasterSceneAudioResponse struct {
 	*responses.BaseResponse
-	RequestId    string                                `json:"RequestId" xml:"RequestId"`
 	CasterId     string                                `json:"CasterId" xml:"CasterId"`
 	FollowEnable int                                   `json:"FollowEnable" xml:"FollowEnable"`
+	RequestId    string                                `json:"RequestId" xml:"RequestId"`
 	MixList      MixListInDescribeCasterSceneAudio     `json:"MixList" xml:"MixList"`
 	AudioLayers  AudioLayersInDescribeCasterSceneAudio `json:"AudioLayers" xml:"AudioLayers"`
 }

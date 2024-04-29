@@ -17,6 +17,6 @@ package live
 
 // AudioConfig is a nested struct in live response
 type AudioConfig struct {
-	VolumeRate   float64 `json:"VolumeRate" xml:"VolumeRate"`
 	ValidChannel string  `json:"ValidChannel" xml:"ValidChannel"`
+	VolumeRate   float64 `json:"VolumeRate" xml:"VolumeRate"`
 }

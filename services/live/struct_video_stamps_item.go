@@ -17,6 +17,6 @@ package live
 
 // VideoStampsItem is a nested struct in live response
 type VideoStampsItem struct {
-	Value int   `json:"Value" xml:"Value"`
 	Time  int64 `json:"Time" xml:"Time"`
+	Value int   `json:"Value" xml:"Value"`
 }

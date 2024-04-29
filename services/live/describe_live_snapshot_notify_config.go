@@ -78,11 +78,11 @@ type DescribeLiveSnapshotNotifyConfigRequest struct {
 // DescribeLiveSnapshotNotifyConfigResponse is the response struct for api DescribeLiveSnapshotNotifyConfig
 type DescribeLiveSnapshotNotifyConfigResponse struct {
 	*responses.BaseResponse
-	NotifyReqAuth string `json:"NotifyReqAuth" xml:"NotifyReqAuth"`
-	RequestId     string `json:"RequestId" xml:"RequestId"`
-	NotifyAuthKey string `json:"NotifyAuthKey" xml:"NotifyAuthKey"`
 	DomainName    string `json:"DomainName" xml:"DomainName"`
+	NotifyAuthKey string `json:"NotifyAuthKey" xml:"NotifyAuthKey"`
+	NotifyReqAuth string `json:"NotifyReqAuth" xml:"NotifyReqAuth"`
 	NotifyUrl     string `json:"NotifyUrl" xml:"NotifyUrl"`
+	RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDescribeLiveSnapshotNotifyConfigRequest creates a request to invoke DescribeLiveSnapshotNotifyConfig API

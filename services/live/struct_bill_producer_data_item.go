@@ -17,15 +17,15 @@ package live
 
 // BillProducerDataItem is a nested struct in live response
 type BillProducerDataItem struct {
-	TranSdDuration   int64  `json:"TranSdDuration" xml:"TranSdDuration"`
-	Type             string `json:"Type" xml:"Type"`
-	TranLdDuration   int64  `json:"TranLdDuration" xml:"TranLdDuration"`
+	DomainName       string `json:"DomainName" xml:"DomainName"`
 	Instance         string `json:"Instance" xml:"Instance"`
-	TranHdDuration   int64  `json:"TranHdDuration" xml:"TranHdDuration"`
+	OutputHdDuration int64  `json:"OutputHdDuration" xml:"OutputHdDuration"`
+	OutputLdDuration int64  `json:"OutputLdDuration" xml:"OutputLdDuration"`
+	OutputSdDuration int64  `json:"OutputSdDuration" xml:"OutputSdDuration"`
 	Region           string `json:"Region" xml:"Region"`
 	TimeStamp        string `json:"TimeStamp" xml:"TimeStamp"`
-	OutputHdDuration int64  `json:"OutputHdDuration" xml:"OutputHdDuration"`
-	OutputSdDuration int64  `json:"OutputSdDuration" xml:"OutputSdDuration"`
-	DomainName       string `json:"DomainName" xml:"DomainName"`
-	OutputLdDuration int64  `json:"OutputLdDuration" xml:"OutputLdDuration"`
+	TranHdDuration   int64  `json:"TranHdDuration" xml:"TranHdDuration"`
+	TranLdDuration   int64  `json:"TranLdDuration" xml:"TranLdDuration"`
+	TranSdDuration   int64  `json:"TranSdDuration" xml:"TranSdDuration"`
+	Type             string `json:"Type" xml:"Type"`
 }

@@ -79,8 +79,8 @@ type StartCasterSceneRequest struct {
 // StartCasterSceneResponse is the response struct for api StartCasterScene
 type StartCasterSceneResponse struct {
 	*responses.BaseResponse
-	StreamUrl string `json:"StreamUrl" xml:"StreamUrl"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	StreamUrl string `json:"StreamUrl" xml:"StreamUrl"`
 }
 
 // CreateStartCasterSceneRequest creates a request to invoke StartCasterScene API

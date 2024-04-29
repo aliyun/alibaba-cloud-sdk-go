@@ -78,13 +78,13 @@ type ModifyCasterProgramRequest struct {
 
 // ModifyCasterProgramEpisode is a repeated param struct in ModifyCasterProgramRequest
 type ModifyCasterProgramEpisode struct {
+	ComponentId *[]string `name:"ComponentId" type:"Repeated"`
 	EndTime     string    `name:"EndTime"`
-	StartTime   string    `name:"StartTime"`
+	EpisodeId   string    `name:"EpisodeId"`
 	EpisodeName string    `name:"EpisodeName"`
 	EpisodeType string    `name:"EpisodeType"`
-	EpisodeId   string    `name:"EpisodeId"`
 	ResourceId  string    `name:"ResourceId"`
-	ComponentId *[]string `name:"ComponentId" type:"Repeated"`
+	StartTime   string    `name:"StartTime"`
 	SwitchType  string    `name:"SwitchType"`
 }
 

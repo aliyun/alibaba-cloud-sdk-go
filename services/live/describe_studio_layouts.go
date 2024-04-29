@@ -79,8 +79,8 @@ type DescribeStudioLayoutsRequest struct {
 // DescribeStudioLayoutsResponse is the response struct for api DescribeStudioLayouts
 type DescribeStudioLayoutsResponse struct {
 	*responses.BaseResponse
-	Total         int            `json:"Total" xml:"Total"`
 	RequestId     string         `json:"RequestId" xml:"RequestId"`
+	Total         int            `json:"Total" xml:"Total"`
 	StudioLayouts []StudioLayout `json:"StudioLayouts" xml:"StudioLayouts"`
 }
 

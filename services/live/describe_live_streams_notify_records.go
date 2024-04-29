@@ -85,11 +85,11 @@ type DescribeLiveStreamsNotifyRecordsRequest struct {
 // DescribeLiveStreamsNotifyRecordsResponse is the response struct for api DescribeLiveStreamsNotifyRecords
 type DescribeLiveStreamsNotifyRecordsResponse struct {
 	*responses.BaseResponse
-	TotalPage         int               `json:"TotalPage" xml:"TotalPage"`
 	PageNum           int               `json:"PageNum" xml:"PageNum"`
 	PageSize          int               `json:"PageSize" xml:"PageSize"`
 	RequestId         string            `json:"RequestId" xml:"RequestId"`
 	TotalNum          int               `json:"TotalNum" xml:"TotalNum"`
+	TotalPage         int               `json:"TotalPage" xml:"TotalPage"`
 	NotifyRecordsInfo NotifyRecordsInfo `json:"NotifyRecordsInfo" xml:"NotifyRecordsInfo"`
 }
 

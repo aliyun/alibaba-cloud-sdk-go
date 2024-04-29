@@ -87,13 +87,13 @@ type AddShowIntoShowListRequest struct {
 
 // AddShowIntoShowListShowList is a repeated param struct in AddShowIntoShowListRequest
 type AddShowIntoShowListShowList struct {
-	ShowName      string `name:"showName"`
+	Duration      string `name:"duration"`
+	LiveInputType string `name:"liveInputType"`
 	RepeatTimes   string `name:"repeatTimes"`
+	ResourceId    string `name:"resourceId"`
 	ResourceType  string `name:"resourceType"`
 	ResourceUrl   string `name:"resourceUrl"`
-	LiveInputType string `name:"liveInputType"`
-	Duration      string `name:"duration"`
-	ResourceId    string `name:"resourceId"`
+	ShowName      string `name:"showName"`
 }
 
 // AddShowIntoShowListResponse is the response struct for api AddShowIntoShowList
@@ -101,8 +101,8 @@ type AddShowIntoShowListResponse struct {
 	*responses.BaseResponse
 	RequestId         string `json:"RequestId" xml:"RequestId"`
 	ShowId            string `json:"ShowId" xml:"ShowId"`
-	SuccessfulShowIds string `json:"successfulShowIds" xml:"successfulShowIds"`
 	FailedList        string `json:"failedList" xml:"failedList"`
+	SuccessfulShowIds string `json:"successfulShowIds" xml:"successfulShowIds"`
 }
 
 // CreateAddShowIntoShowListRequest creates a request to invoke AddShowIntoShowList API

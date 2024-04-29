@@ -80,8 +80,8 @@ type DescribeLiveHttpsDomainListRequest struct {
 // DescribeLiveHttpsDomainListResponse is the response struct for api DescribeLiveHttpsDomainList
 type DescribeLiveHttpsDomainListResponse struct {
 	*responses.BaseResponse
-	TotalCount int                                    `json:"TotalCount" xml:"TotalCount"`
 	RequestId  string                                 `json:"RequestId" xml:"RequestId"`
+	TotalCount int                                    `json:"TotalCount" xml:"TotalCount"`
 	CertInfos  CertInfosInDescribeLiveHttpsDomainList `json:"CertInfos" xml:"CertInfos"`
 }
 

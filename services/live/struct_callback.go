@@ -18,12 +18,12 @@ package live
 // Callback is a nested struct in live response
 type Callback struct {
 	AppName       string `json:"AppName" xml:"AppName"`
-	NotifyType    string `json:"NotifyType" xml:"NotifyType"`
-	NotifyContent string `json:"NotifyContent" xml:"NotifyContent"`
 	Description   string `json:"Description" xml:"Description"`
-	StreamName    string `json:"StreamName" xml:"StreamName"`
-	NotifyUrl     string `json:"NotifyUrl" xml:"NotifyUrl"`
+	DomainName    string `json:"DomainName" xml:"DomainName"`
+	NotifyContent string `json:"NotifyContent" xml:"NotifyContent"`
 	NotifyResult  string `json:"NotifyResult" xml:"NotifyResult"`
 	NotifyTime    string `json:"NotifyTime" xml:"NotifyTime"`
-	DomainName    string `json:"DomainName" xml:"DomainName"`
+	NotifyType    string `json:"NotifyType" xml:"NotifyType"`
+	NotifyUrl     string `json:"NotifyUrl" xml:"NotifyUrl"`
+	StreamName    string `json:"StreamName" xml:"StreamName"`
 }

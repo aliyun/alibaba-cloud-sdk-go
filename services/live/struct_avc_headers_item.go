@@ -17,6 +17,6 @@ package live
 
 // AvcHeadersItem is a nested struct in live response
 type AvcHeadersItem struct {
-	Value int   `json:"Value" xml:"Value"`
 	Time  int64 `json:"Time" xml:"Time"`
+	Value int   `json:"Value" xml:"Value"`
 }

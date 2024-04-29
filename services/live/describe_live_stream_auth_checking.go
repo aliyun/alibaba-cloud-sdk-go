@@ -79,9 +79,9 @@ type DescribeLiveStreamAuthCheckingRequest struct {
 // DescribeLiveStreamAuthCheckingResponse is the response struct for api DescribeLiveStreamAuthChecking
 type DescribeLiveStreamAuthCheckingResponse struct {
 	*responses.BaseResponse
-	Status      string `json:"Status" xml:"Status"`
-	RequestId   string `json:"RequestId" xml:"RequestId"`
 	Description string `json:"Description" xml:"Description"`
+	RequestId   string `json:"RequestId" xml:"RequestId"`
+	Status      string `json:"Status" xml:"Status"`
 }
 
 // CreateDescribeLiveStreamAuthCheckingRequest creates a request to invoke DescribeLiveStreamAuthChecking API

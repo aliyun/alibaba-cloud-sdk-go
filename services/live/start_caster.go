@@ -80,8 +80,8 @@ type StartCasterRequest struct {
 type StartCasterResponse struct {
 	*responses.BaseResponse
 	RequestId     string        `json:"RequestId" xml:"RequestId"`
-	PvwSceneInfos PvwSceneInfos `json:"PvwSceneInfos" xml:"PvwSceneInfos"`
 	PgmSceneInfos PgmSceneInfos `json:"PgmSceneInfos" xml:"PgmSceneInfos"`
+	PvwSceneInfos PvwSceneInfos `json:"PvwSceneInfos" xml:"PvwSceneInfos"`
 }
 
 // CreateStartCasterRequest creates a request to invoke StartCaster API

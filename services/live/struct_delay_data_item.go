@@ -17,9 +17,9 @@ package live
 
 // DelayDataItem is a nested struct in live response
 type DelayDataItem struct {
-	Duration   int64  `json:"Duration" xml:"Duration"`
-	TimeStamp  string `json:"TimeStamp" xml:"TimeStamp"`
-	StreamName string `json:"StreamName" xml:"StreamName"`
 	DomainName string `json:"DomainName" xml:"DomainName"`
+	Duration   int64  `json:"Duration" xml:"Duration"`
 	Region     string `json:"Region" xml:"Region"`
+	StreamName string `json:"StreamName" xml:"StreamName"`
+	TimeStamp  string `json:"TimeStamp" xml:"TimeStamp"`
 }

@@ -81,11 +81,11 @@ type DescribeLiveDomainPublishErrorCodeRequest struct {
 // DescribeLiveDomainPublishErrorCodeResponse is the response struct for api DescribeLiveDomainPublishErrorCode
 type DescribeLiveDomainPublishErrorCodeResponse struct {
 	*responses.BaseResponse
-	RequestId        string `json:"RequestId" xml:"RequestId"`
 	DataInterval     string `json:"DataInterval" xml:"DataInterval"`
 	DomainName       string `json:"DomainName" xml:"DomainName"`
-	StartTime        string `json:"StartTime" xml:"StartTime"`
 	EndTime          string `json:"EndTime" xml:"EndTime"`
+	RequestId        string `json:"RequestId" xml:"RequestId"`
+	StartTime        string `json:"StartTime" xml:"StartTime"`
 	RealTimeCodeData []Rtcd `json:"RealTimeCodeData" xml:"RealTimeCodeData"`
 }
 

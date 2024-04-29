@@ -17,7 +17,7 @@ package live
 
 // PreloadTasksMessage is a nested struct in live response
 type PreloadTasksMessage struct {
-	PlayUrl     string `json:"PlayUrl" xml:"PlayUrl"`
 	Description string `json:"Description" xml:"Description"`
+	PlayUrl     string `json:"PlayUrl" xml:"PlayUrl"`
 	TaskId      string `json:"TaskId" xml:"TaskId"`
 }

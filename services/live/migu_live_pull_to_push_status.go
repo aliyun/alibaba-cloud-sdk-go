@@ -79,10 +79,10 @@ type MiguLivePullToPushStatusRequest struct {
 // MiguLivePullToPushStatusResponse is the response struct for api MiguLivePullToPushStatus
 type MiguLivePullToPushStatusResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"requestId" xml:"requestId"`
 	Code      string `json:"code" xml:"code"`
-	Timestamp string `json:"timestamp" xml:"timestamp"`
 	Message   string `json:"message" xml:"message"`
+	RequestId string `json:"requestId" xml:"requestId"`
+	Timestamp string `json:"timestamp" xml:"timestamp"`
 	Data      Data   `json:"data" xml:"data"`
 }
 

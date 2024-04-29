@@ -23,6 +23,6 @@ type StreamInfo struct {
 	OutputStreamUrl string  `json:"OutputStreamUrl" xml:"OutputStreamUrl"`
 	AppName         string  `json:"AppName" xml:"AppName"`
 	StreamName      string  `json:"StreamName" xml:"StreamName"`
-	Infos           []Info  `json:"Infos" xml:"Infos"`
 	Streams         Streams `json:"Streams" xml:"Streams"`
+	Infos           []Info  `json:"Infos" xml:"Infos"`
 }

@@ -82,11 +82,11 @@ type SetLiveStreamPreloadTasksRequest struct {
 // SetLiveStreamPreloadTasksResponse is the response struct for api SetLiveStreamPreloadTasks
 type SetLiveStreamPreloadTasksResponse struct {
 	*responses.BaseResponse
-	Status               string               `json:"Status" xml:"Status"`
 	FailedURL            int                  `json:"FailedURL" xml:"FailedURL"`
-	TotalURL             int                  `json:"TotalURL" xml:"TotalURL"`
 	RequestId            string               `json:"RequestId" xml:"RequestId"`
+	Status               string               `json:"Status" xml:"Status"`
 	SuccessURL           int                  `json:"SuccessURL" xml:"SuccessURL"`
+	TotalURL             int                  `json:"TotalURL" xml:"TotalURL"`
 	PreloadTasksMessages PreloadTasksMessages `json:"PreloadTasksMessages" xml:"PreloadTasksMessages"`
 }
 

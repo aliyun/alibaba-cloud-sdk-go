@@ -85,9 +85,9 @@ type ModifyCasterEpisodeRequest struct {
 // ModifyCasterEpisodeResponse is the response struct for api ModifyCasterEpisode
 type ModifyCasterEpisodeResponse struct {
 	*responses.BaseResponse
+	CasterId  string `json:"CasterId" xml:"CasterId"`
 	EpisodeId string `json:"EpisodeId" xml:"EpisodeId"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	CasterId  string `json:"CasterId" xml:"CasterId"`
 }
 
 // CreateModifyCasterEpisodeRequest creates a request to invoke ModifyCasterEpisode API

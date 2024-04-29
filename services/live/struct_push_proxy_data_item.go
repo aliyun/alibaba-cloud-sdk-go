@@ -17,8 +17,8 @@ package live
 
 // PushProxyDataItem is a nested struct in live response
 type PushProxyDataItem struct {
-	TimeStamp   string `json:"TimeStamp" xml:"TimeStamp"`
-	StreamCount int64  `json:"StreamCount" xml:"StreamCount"`
 	DomainName  string `json:"DomainName" xml:"DomainName"`
 	Region      string `json:"Region" xml:"Region"`
+	StreamCount int64  `json:"StreamCount" xml:"StreamCount"`
+	TimeStamp   string `json:"TimeStamp" xml:"TimeStamp"`
 }

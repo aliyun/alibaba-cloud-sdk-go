@@ -84,12 +84,12 @@ type DescribeLiveDomainMonitoringUsageDataRequest struct {
 // DescribeLiveDomainMonitoringUsageDataResponse is the response struct for api DescribeLiveDomainMonitoringUsageData
 type DescribeLiveDomainMonitoringUsageDataResponse struct {
 	*responses.BaseResponse
-	EndTime        string         `json:"EndTime" xml:"EndTime"`
-	StartTime      string         `json:"StartTime" xml:"StartTime"`
-	RequestId      string         `json:"RequestId" xml:"RequestId"`
-	Region         string         `json:"Region" xml:"Region"`
-	InstanceId     string         `json:"InstanceId" xml:"InstanceId"`
 	DomainName     string         `json:"DomainName" xml:"DomainName"`
+	EndTime        string         `json:"EndTime" xml:"EndTime"`
+	InstanceId     string         `json:"InstanceId" xml:"InstanceId"`
+	Region         string         `json:"Region" xml:"Region"`
+	RequestId      string         `json:"RequestId" xml:"RequestId"`
+	StartTime      string         `json:"StartTime" xml:"StartTime"`
 	MonitoringData MonitoringData `json:"MonitoringData" xml:"MonitoringData"`
 }
 

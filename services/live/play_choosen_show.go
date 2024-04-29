@@ -79,8 +79,8 @@ type PlayChoosenShowRequest struct {
 // PlayChoosenShowResponse is the response struct for api PlayChoosenShow
 type PlayChoosenShowResponse struct {
 	*responses.BaseResponse
-	ShowId    string `json:"ShowId" xml:"ShowId"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	ShowId    string `json:"ShowId" xml:"ShowId"`
 }
 
 // CreatePlayChoosenShowRequest creates a request to invoke PlayChoosenShow API

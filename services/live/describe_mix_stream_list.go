@@ -85,8 +85,8 @@ type DescribeMixStreamListRequest struct {
 // DescribeMixStreamListResponse is the response struct for api DescribeMixStreamList
 type DescribeMixStreamListResponse struct {
 	*responses.BaseResponse
-	Total         int             `json:"Total" xml:"Total"`
 	RequestId     string          `json:"RequestId" xml:"RequestId"`
+	Total         int             `json:"Total" xml:"Total"`
 	MixStreamList []MixStreamInfo `json:"MixStreamList" xml:"MixStreamList"`
 }
 

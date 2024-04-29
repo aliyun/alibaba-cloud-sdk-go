@@ -18,11 +18,11 @@ package live
 // LivePackageConfig is a nested struct in live response
 type LivePackageConfig struct {
 	AppName         string `json:"AppName" xml:"AppName"`
-	SegmentNum      int    `json:"SegmentNum" xml:"SegmentNum"`
-	StreamName      string `json:"StreamName" xml:"StreamName"`
-	Protocol        string `json:"Protocol" xml:"Protocol"`
+	DomainName      string `json:"DomainName" xml:"DomainName"`
 	IgnoreTranscode bool   `json:"IgnoreTranscode" xml:"IgnoreTranscode"`
 	PartDuration    int    `json:"PartDuration" xml:"PartDuration"`
+	Protocol        string `json:"Protocol" xml:"Protocol"`
 	SegmentDuration int    `json:"SegmentDuration" xml:"SegmentDuration"`
-	DomainName      string `json:"DomainName" xml:"DomainName"`
+	SegmentNum      int    `json:"SegmentNum" xml:"SegmentNum"`
+	StreamName      string `json:"StreamName" xml:"StreamName"`
 }

@@ -17,11 +17,11 @@ package live
 
 // Channel is a nested struct in live response
 type Channel struct {
-	InputType  int    `json:"InputType" xml:"InputType"`
-	RtmpUrl    string `json:"RtmpUrl" xml:"RtmpUrl"`
 	ChannelId  string `json:"ChannelId" xml:"ChannelId"`
-	RtsUrl     string `json:"RtsUrl" xml:"RtsUrl"`
 	FaceBeauty string `json:"FaceBeauty" xml:"FaceBeauty"`
+	InputType  int    `json:"InputType" xml:"InputType"`
 	ResourceId string `json:"ResourceId" xml:"ResourceId"`
+	RtmpUrl    string `json:"RtmpUrl" xml:"RtmpUrl"`
+	RtsUrl     string `json:"RtsUrl" xml:"RtsUrl"`
 	StreamUrl  string `json:"StreamUrl" xml:"StreamUrl"`
 }

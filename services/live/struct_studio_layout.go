@@ -17,12 +17,12 @@ package live
 
 // StudioLayout is a nested struct in live response
 type StudioLayout struct {
-	LayoutType            string              `json:"LayoutType" xml:"LayoutType"`
 	LayoutId              string              `json:"LayoutId" xml:"LayoutId"`
 	LayoutName            string              `json:"LayoutName" xml:"LayoutName"`
-	CommonConfig          CommonConfig        `json:"CommonConfig" xml:"CommonConfig"`
+	LayoutType            string              `json:"LayoutType" xml:"LayoutType"`
 	BgImageConfig         BgImageConfig       `json:"BgImageConfig" xml:"BgImageConfig"`
-	ScreenInputConfigList []ScreenInputConfig `json:"ScreenInputConfigList" xml:"ScreenInputConfigList"`
-	MediaInputConfigList  []MediaInputConfig  `json:"MediaInputConfigList" xml:"MediaInputConfigList"`
+	CommonConfig          CommonConfig        `json:"CommonConfig" xml:"CommonConfig"`
 	LayerOrderConfigList  []LayerOrderConfig  `json:"LayerOrderConfigList" xml:"LayerOrderConfigList"`
+	MediaInputConfigList  []MediaInputConfig  `json:"MediaInputConfigList" xml:"MediaInputConfigList"`
+	ScreenInputConfigList []ScreenInputConfig `json:"ScreenInputConfigList" xml:"ScreenInputConfigList"`
 }

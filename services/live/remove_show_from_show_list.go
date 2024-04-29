@@ -83,8 +83,8 @@ type RemoveShowFromShowListResponse struct {
 	*responses.BaseResponse
 	RequestId         string `json:"RequestId" xml:"RequestId"`
 	ShowId            string `json:"ShowId" xml:"ShowId"`
-	SuccessfulShowIds string `json:"successfulShowIds" xml:"successfulShowIds"`
 	FailedList        string `json:"failedList" xml:"failedList"`
+	SuccessfulShowIds string `json:"successfulShowIds" xml:"successfulShowIds"`
 }
 
 // CreateRemoveShowFromShowListRequest creates a request to invoke RemoveShowFromShowList API

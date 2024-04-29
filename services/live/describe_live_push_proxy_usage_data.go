@@ -83,8 +83,8 @@ type DescribeLivePushProxyUsageDataRequest struct {
 type DescribeLivePushProxyUsageDataResponse struct {
 	*responses.BaseResponse
 	EndTime       string        `json:"EndTime" xml:"EndTime"`
-	StartTime     string        `json:"StartTime" xml:"StartTime"`
 	RequestId     string        `json:"RequestId" xml:"RequestId"`
+	StartTime     string        `json:"StartTime" xml:"StartTime"`
 	PushProxyData PushProxyData `json:"PushProxyData" xml:"PushProxyData"`
 }
 

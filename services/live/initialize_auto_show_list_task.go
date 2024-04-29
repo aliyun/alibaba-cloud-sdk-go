@@ -83,9 +83,9 @@ type InitializeAutoShowListTaskRequest struct {
 // InitializeAutoShowListTaskResponse is the response struct for api InitializeAutoShowListTask
 type InitializeAutoShowListTaskResponse struct {
 	*responses.BaseResponse
-	StreamList string `json:"StreamList" xml:"StreamList"`
-	RequestId  string `json:"RequestId" xml:"RequestId"`
 	CasterId   string `json:"CasterId" xml:"CasterId"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
+	StreamList string `json:"StreamList" xml:"StreamList"`
 }
 
 // CreateInitializeAutoShowListTaskRequest creates a request to invoke InitializeAutoShowListTask API

@@ -83,9 +83,9 @@ type SetLiveStreamBlockRequest struct {
 // SetLiveStreamBlockResponse is the response struct for api SetLiveStreamBlock
 type SetLiveStreamBlockResponse struct {
 	*responses.BaseResponse
-	Status      string `json:"Status" xml:"Status"`
-	RequestId   string `json:"RequestId" xml:"RequestId"`
 	Description string `json:"Description" xml:"Description"`
+	RequestId   string `json:"RequestId" xml:"RequestId"`
+	Status      string `json:"Status" xml:"Status"`
 }
 
 // CreateSetLiveStreamBlockRequest creates a request to invoke SetLiveStreamBlock API

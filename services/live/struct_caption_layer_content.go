@@ -17,18 +17,18 @@ package live
 
 // CaptionLayerContent is a nested struct in live response
 type CaptionLayerContent struct {
-	Color                 string  `json:"Color" xml:"Color"`
-	WordSpaceNormalized   float64 `json:"WordSpaceNormalized" xml:"WordSpaceNormalized"`
-	BorderWidthNormalized float64 `json:"BorderWidthNormalized" xml:"BorderWidthNormalized"`
-	SourceLan             string  `json:"SourceLan" xml:"SourceLan"`
-	WordCountPerLine      int     `json:"WordCountPerLine" xml:"WordCountPerLine"`
-	TargetLan             string  `json:"TargetLan" xml:"TargetLan"`
 	BorderColor           string  `json:"BorderColor" xml:"BorderColor"`
-	LocationId            string  `json:"LocationId" xml:"LocationId"`
+	BorderWidthNormalized float64 `json:"BorderWidthNormalized" xml:"BorderWidthNormalized"`
+	Color                 string  `json:"Color" xml:"Color"`
+	FontName              string  `json:"FontName" xml:"FontName"`
 	LineSpaceNormalized   float64 `json:"LineSpaceNormalized" xml:"LineSpaceNormalized"`
+	LocationId            string  `json:"LocationId" xml:"LocationId"`
+	PtsOffset             int     `json:"PtsOffset" xml:"PtsOffset"`
 	ShowSourceLan         bool    `json:"ShowSourceLan" xml:"ShowSourceLan"`
 	SizeNormalized        float64 `json:"SizeNormalized" xml:"SizeNormalized"`
+	SourceLan             string  `json:"SourceLan" xml:"SourceLan"`
+	TargetLan             string  `json:"TargetLan" xml:"TargetLan"`
+	WordCountPerLine      int     `json:"WordCountPerLine" xml:"WordCountPerLine"`
+	WordSpaceNormalized   float64 `json:"WordSpaceNormalized" xml:"WordSpaceNormalized"`
 	WordsCount            int     `json:"WordsCount" xml:"WordsCount"`
-	FontName              string  `json:"FontName" xml:"FontName"`
-	PtsOffset             int     `json:"PtsOffset" xml:"PtsOffset"`
 }

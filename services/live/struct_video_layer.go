@@ -17,10 +17,10 @@ package live
 
 // VideoLayer is a nested struct in live response
 type VideoLayer struct {
-	WidthNormalized     float64                                    `json:"WidthNormalized" xml:"WidthNormalized"`
+	FillMode            string                                     `json:"FillMode" xml:"FillMode"`
 	FixedDelayDuration  int                                        `json:"FixedDelayDuration" xml:"FixedDelayDuration"`
 	HeightNormalized    float64                                    `json:"HeightNormalized" xml:"HeightNormalized"`
-	FillMode            string                                     `json:"FillMode" xml:"FillMode"`
 	PositionRefer       string                                     `json:"PositionRefer" xml:"PositionRefer"`
+	WidthNormalized     float64                                    `json:"WidthNormalized" xml:"WidthNormalized"`
 	PositionNormalizeds PositionNormalizedsInDescribeCasterLayouts `json:"PositionNormalizeds" xml:"PositionNormalizeds"`
 }

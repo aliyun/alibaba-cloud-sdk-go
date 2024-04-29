@@ -85,10 +85,10 @@ type DescribeCasterProgramRequest struct {
 // DescribeCasterProgramResponse is the response struct for api DescribeCasterProgram
 type DescribeCasterProgramResponse struct {
 	*responses.BaseResponse
+	CasterId      string   `json:"CasterId" xml:"CasterId"`
+	ProgramEffect int      `json:"ProgramEffect" xml:"ProgramEffect"`
 	ProgramName   string   `json:"ProgramName" xml:"ProgramName"`
 	RequestId     string   `json:"RequestId" xml:"RequestId"`
-	ProgramEffect int      `json:"ProgramEffect" xml:"ProgramEffect"`
-	CasterId      string   `json:"CasterId" xml:"CasterId"`
 	Total         int      `json:"Total" xml:"Total"`
 	Episodes      Episodes `json:"Episodes" xml:"Episodes"`
 }

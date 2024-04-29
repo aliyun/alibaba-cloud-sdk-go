@@ -92,9 +92,9 @@ type DescribeLiveUserDomainsTag struct {
 // DescribeLiveUserDomainsResponse is the response struct for api DescribeLiveUserDomains
 type DescribeLiveUserDomainsResponse struct {
 	*responses.BaseResponse
-	RequestId  string                           `json:"RequestId" xml:"RequestId"`
 	PageNumber int64                            `json:"PageNumber" xml:"PageNumber"`
 	PageSize   int64                            `json:"PageSize" xml:"PageSize"`
+	RequestId  string                           `json:"RequestId" xml:"RequestId"`
 	TotalCount int64                            `json:"TotalCount" xml:"TotalCount"`
 	Domains    DomainsInDescribeLiveUserDomains `json:"Domains" xml:"Domains"`
 }

@@ -83,12 +83,12 @@ type DescribeLivePackageConfigRequest struct {
 // DescribeLivePackageConfigResponse is the response struct for api DescribeLivePackageConfig
 type DescribeLivePackageConfigResponse struct {
 	*responses.BaseResponse
-	PageNum               int                   `json:"PageNum" xml:"PageNum"`
-	RequestId             string                `json:"RequestId" xml:"RequestId"`
 	Order                 string                `json:"Order" xml:"Order"`
-	TotalPage             int                   `json:"TotalPage" xml:"TotalPage"`
+	PageNum               int                   `json:"PageNum" xml:"PageNum"`
 	PageSize              int                   `json:"PageSize" xml:"PageSize"`
+	RequestId             string                `json:"RequestId" xml:"RequestId"`
 	TotalNum              int                   `json:"TotalNum" xml:"TotalNum"`
+	TotalPage             int                   `json:"TotalPage" xml:"TotalPage"`
 	LivePackageConfigList LivePackageConfigList `json:"LivePackageConfigList" xml:"LivePackageConfigList"`
 }
 

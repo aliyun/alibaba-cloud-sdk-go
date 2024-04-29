@@ -85,11 +85,11 @@ type DescribeLiveStreamPreloadTasksRequest struct {
 // DescribeLiveStreamPreloadTasksResponse is the response struct for api DescribeLiveStreamPreloadTasks
 type DescribeLiveStreamPreloadTasksResponse struct {
 	*responses.BaseResponse
-	TotalPage    int          `json:"TotalPage" xml:"TotalPage"`
 	PageNum      int          `json:"PageNum" xml:"PageNum"`
 	PageSize     int          `json:"PageSize" xml:"PageSize"`
 	RequestId    string       `json:"RequestId" xml:"RequestId"`
 	TotalNum     int          `json:"TotalNum" xml:"TotalNum"`
+	TotalPage    int          `json:"TotalPage" xml:"TotalPage"`
 	PreloadTasks PreloadTasks `json:"PreloadTasks" xml:"PreloadTasks"`
 }
 

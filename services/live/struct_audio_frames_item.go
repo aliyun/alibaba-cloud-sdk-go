@@ -17,6 +17,6 @@ package live
 
 // AudioFramesItem is a nested struct in live response
 type AudioFramesItem struct {
-	Value int   `json:"Value" xml:"Value"`
 	Time  int64 `json:"Time" xml:"Time"`
+	Value int   `json:"Value" xml:"Value"`
 }

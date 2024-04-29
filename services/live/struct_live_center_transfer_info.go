@@ -17,11 +17,11 @@ package live
 
 // LiveCenterTransferInfo is a nested struct in live response
 type LiveCenterTransferInfo struct {
-	EndTime      string `json:"EndTime" xml:"EndTime"`
 	AppName      string `json:"AppName" xml:"AppName"`
-	StartTime    string `json:"StartTime" xml:"StartTime"`
-	TransferArgs string `json:"TransferArgs" xml:"TransferArgs"`
-	StreamName   string `json:"StreamName" xml:"StreamName"`
-	DstUrl       string `json:"DstUrl" xml:"DstUrl"`
 	DomainName   string `json:"DomainName" xml:"DomainName"`
+	DstUrl       string `json:"DstUrl" xml:"DstUrl"`
+	EndTime      string `json:"EndTime" xml:"EndTime"`
+	StartTime    string `json:"StartTime" xml:"StartTime"`
+	StreamName   string `json:"StreamName" xml:"StreamName"`
+	TransferArgs string `json:"TransferArgs" xml:"TransferArgs"`
 }

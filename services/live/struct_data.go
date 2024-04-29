@@ -32,6 +32,7 @@ type Data struct {
 	Connected           string   `json:"Connected" xml:"Connected"`
 	V20002              string   `json:"V20002" xml:"V20002"`
 	FirstPacket         string   `json:"FirstPacket" xml:"FirstPacket"`
+	Timestamp           string   `json:"Timestamp" xml:"Timestamp"`
 	V20001              string   `json:"V20001" xml:"V20001"`
 	Initialized         string   `json:"Initialized" xml:"Initialized"`
 	V20011              string   `json:"V20011" xml:"V20011"`
@@ -39,6 +40,7 @@ type Data struct {
 	Message             string   `json:"message" xml:"message"`
 	SubId               string   `json:"SubId" xml:"SubId"`
 	Status              string   `json:"status" xml:"status"`
+	Value               string   `json:"Value" xml:"Value"`
 	V20052              string   `json:"V20052" xml:"V20052"`
 	VvTotal             string   `json:"VvTotal" xml:"VvTotal"`
 	V20013              string   `json:"V20013" xml:"V20013"`

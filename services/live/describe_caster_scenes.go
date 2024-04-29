@@ -79,8 +79,8 @@ type DescribeCasterScenesRequest struct {
 // DescribeCasterScenesResponse is the response struct for api DescribeCasterScenes
 type DescribeCasterScenesResponse struct {
 	*responses.BaseResponse
-	Total     int       `json:"Total" xml:"Total"`
 	RequestId string    `json:"RequestId" xml:"RequestId"`
+	Total     int       `json:"Total" xml:"Total"`
 	SceneList SceneList `json:"SceneList" xml:"SceneList"`
 }
 

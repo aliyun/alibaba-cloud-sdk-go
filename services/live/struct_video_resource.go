@@ -17,17 +17,17 @@ package live
 
 // VideoResource is a nested struct in live response
 type VideoResource struct {
+	BeginOffset         int    `json:"BeginOffset" xml:"BeginOffset"`
 	EndOffset           int    `json:"EndOffset" xml:"EndOffset"`
 	FlvUrl              string `json:"FlvUrl" xml:"FlvUrl"`
-	BeginOffset         int    `json:"BeginOffset" xml:"BeginOffset"`
-	PtsCallbackInterval int    `json:"PtsCallbackInterval" xml:"PtsCallbackInterval"`
-	MaterialId          string `json:"MaterialId" xml:"MaterialId"`
-	LocationId          string `json:"LocationId" xml:"LocationId"`
-	LiveStreamUrl       string `json:"LiveStreamUrl" xml:"LiveStreamUrl"`
-	VodUrl              string `json:"VodUrl" xml:"VodUrl"`
-	ResourceId          string `json:"ResourceId" xml:"ResourceId"`
-	RepeatNum           int    `json:"RepeatNum" xml:"RepeatNum"`
-	ResourceName        string `json:"ResourceName" xml:"ResourceName"`
 	ImageId             string `json:"ImageId" xml:"ImageId"`
 	ImageUrl            string `json:"ImageUrl" xml:"ImageUrl"`
+	LiveStreamUrl       string `json:"LiveStreamUrl" xml:"LiveStreamUrl"`
+	LocationId          string `json:"LocationId" xml:"LocationId"`
+	MaterialId          string `json:"MaterialId" xml:"MaterialId"`
+	PtsCallbackInterval int    `json:"PtsCallbackInterval" xml:"PtsCallbackInterval"`
+	RepeatNum           int    `json:"RepeatNum" xml:"RepeatNum"`
+	ResourceId          string `json:"ResourceId" xml:"ResourceId"`
+	ResourceName        string `json:"ResourceName" xml:"ResourceName"`
+	VodUrl              string `json:"VodUrl" xml:"VodUrl"`
 }

@@ -17,10 +17,10 @@ package live
 
 // MonitoringDataItem is a nested struct in live response
 type MonitoringDataItem struct {
-	Region     string `json:"Region" xml:"Region"`
-	TimeStamp  string `json:"TimeStamp" xml:"TimeStamp"`
+	DomainName string `json:"DomainName" xml:"DomainName"`
 	Duration   int    `json:"Duration" xml:"Duration"`
 	InstanceId string `json:"InstanceId" xml:"InstanceId"`
-	DomainName string `json:"DomainName" xml:"DomainName"`
+	Region     string `json:"Region" xml:"Region"`
 	Resolution string `json:"Resolution" xml:"Resolution"`
+	TimeStamp  string `json:"TimeStamp" xml:"TimeStamp"`
 }

@@ -79,9 +79,9 @@ type DeleteCasterLayoutRequest struct {
 // DeleteCasterLayoutResponse is the response struct for api DeleteCasterLayout
 type DeleteCasterLayoutResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	LayoutId  string `json:"LayoutId" xml:"LayoutId"`
 	CasterId  string `json:"CasterId" xml:"CasterId"`
+	LayoutId  string `json:"LayoutId" xml:"LayoutId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDeleteCasterLayoutRequest creates a request to invoke DeleteCasterLayout API

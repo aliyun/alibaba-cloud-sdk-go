@@ -90,8 +90,8 @@ type ModifyCasterVideoResourceRequest struct {
 // ModifyCasterVideoResourceResponse is the response struct for api ModifyCasterVideoResource
 type ModifyCasterVideoResourceResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
 	CasterId   string `json:"CasterId" xml:"CasterId"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
 	ResourceId string `json:"ResourceId" xml:"ResourceId"`
 }
 

@@ -87,8 +87,8 @@ type DescribeLiveProducerUsageDataRequest struct {
 type DescribeLiveProducerUsageDataResponse struct {
 	*responses.BaseResponse
 	EndTime          string           `json:"EndTime" xml:"EndTime"`
-	StartTime        string           `json:"StartTime" xml:"StartTime"`
 	RequestId        string           `json:"RequestId" xml:"RequestId"`
+	StartTime        string           `json:"StartTime" xml:"StartTime"`
 	BillProducerData BillProducerData `json:"BillProducerData" xml:"BillProducerData"`
 }
 

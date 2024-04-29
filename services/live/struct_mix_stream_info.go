@@ -17,13 +17,13 @@ package live
 
 // MixStreamInfo is a nested struct in live response
 type MixStreamInfo struct {
-	MixStreamTemplate string `json:"MixStreamTemplate" xml:"MixStreamTemplate"`
 	AppName           string `json:"AppName" xml:"AppName"`
-	LayoutId          string `json:"LayoutId" xml:"LayoutId"`
-	StreamName        string `json:"StreamName" xml:"StreamName"`
+	DomainName        string `json:"DomainName" xml:"DomainName"`
 	GmtCreate         string `json:"GmtCreate" xml:"GmtCreate"`
-	MixstreamId       string `json:"MixstreamId" xml:"MixstreamId"`
 	GmtModified       string `json:"GmtModified" xml:"GmtModified"`
 	InputStreamNumber int    `json:"InputStreamNumber" xml:"InputStreamNumber"`
-	DomainName        string `json:"DomainName" xml:"DomainName"`
+	LayoutId          string `json:"LayoutId" xml:"LayoutId"`
+	MixStreamTemplate string `json:"MixStreamTemplate" xml:"MixStreamTemplate"`
+	MixstreamId       string `json:"MixstreamId" xml:"MixstreamId"`
+	StreamName        string `json:"StreamName" xml:"StreamName"`
 }

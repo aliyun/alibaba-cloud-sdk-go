@@ -17,8 +17,8 @@ package live
 
 // BgImageConfig is a nested struct in live response
 type BgImageConfig struct {
-	MaterialId string `json:"MaterialId" xml:"MaterialId"`
-	ImageUrl   string `json:"ImageUrl" xml:"ImageUrl"`
 	Id         string `json:"Id" xml:"Id"`
+	ImageUrl   string `json:"ImageUrl" xml:"ImageUrl"`
 	LocationId string `json:"LocationId" xml:"LocationId"`
+	MaterialId string `json:"MaterialId" xml:"MaterialId"`
 }

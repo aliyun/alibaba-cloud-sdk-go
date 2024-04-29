@@ -85,13 +85,13 @@ type DescribeLiveRecordNotifyRecordsRequest struct {
 // DescribeLiveRecordNotifyRecordsResponse is the response struct for api DescribeLiveRecordNotifyRecords
 type DescribeLiveRecordNotifyRecordsResponse struct {
 	*responses.BaseResponse
+	Code         int        `json:"Code" xml:"Code"`
 	Msg          string     `json:"Msg" xml:"Msg"`
 	PageNum      int        `json:"PageNum" xml:"PageNum"`
-	RequestId    string     `json:"RequestId" xml:"RequestId"`
-	Code         int        `json:"Code" xml:"Code"`
-	TotalPage    int        `json:"TotalPage" xml:"TotalPage"`
 	PageSize     int        `json:"PageSize" xml:"PageSize"`
+	RequestId    string     `json:"RequestId" xml:"RequestId"`
 	TotalNum     int        `json:"TotalNum" xml:"TotalNum"`
+	TotalPage    int        `json:"TotalPage" xml:"TotalPage"`
 	CallbackList []Callback `json:"CallbackList" xml:"CallbackList"`
 }
 

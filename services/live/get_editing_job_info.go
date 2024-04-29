@@ -79,9 +79,9 @@ type GetEditingJobInfoRequest struct {
 // GetEditingJobInfoResponse is the response struct for api GetEditingJobInfo
 type GetEditingJobInfoResponse struct {
 	*responses.BaseResponse
-	RequestId        string `json:"RequestId" xml:"RequestId"`
 	CasterId         string `json:"CasterId" xml:"CasterId"`
 	EditingTasksInfo string `json:"EditingTasksInfo" xml:"EditingTasksInfo"`
+	RequestId        string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateGetEditingJobInfoRequest creates a request to invoke GetEditingJobInfo API

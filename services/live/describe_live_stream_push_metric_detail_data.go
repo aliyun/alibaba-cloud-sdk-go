@@ -83,12 +83,12 @@ type DescribeLiveStreamPushMetricDetailDataRequest struct {
 // DescribeLiveStreamPushMetricDetailDataResponse is the response struct for api DescribeLiveStreamPushMetricDetailData
 type DescribeLiveStreamPushMetricDetailDataResponse struct {
 	*responses.BaseResponse
+	DomainName       string                                                   `json:"DomainName" xml:"DomainName"`
 	EndTime          string                                                   `json:"EndTime" xml:"EndTime"`
-	StartTime        string                                                   `json:"StartTime" xml:"StartTime"`
-	RequestId        string                                                   `json:"RequestId" xml:"RequestId"`
 	NextPageToken    string                                                   `json:"NextPageToken" xml:"NextPageToken"`
 	PageSize         int                                                      `json:"PageSize" xml:"PageSize"`
-	DomainName       string                                                   `json:"DomainName" xml:"DomainName"`
+	RequestId        string                                                   `json:"RequestId" xml:"RequestId"`
+	StartTime        string                                                   `json:"StartTime" xml:"StartTime"`
 	StreamDetailData StreamDetailDataInDescribeLiveStreamPushMetricDetailData `json:"StreamDetailData" xml:"StreamDetailData"`
 }
 

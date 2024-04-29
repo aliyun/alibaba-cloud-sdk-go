@@ -17,12 +17,12 @@ package live
 
 // Scene is a nested struct in live response
 type Scene struct {
-	Status       int                                `json:"Status" xml:"Status"`
 	LayoutId     string                             `json:"LayoutId" xml:"LayoutId"`
 	OutputType   string                             `json:"OutputType" xml:"OutputType"`
 	RtsUrl       string                             `json:"RtsUrl" xml:"RtsUrl"`
 	SceneId      string                             `json:"SceneId" xml:"SceneId"`
 	SceneName    string                             `json:"SceneName" xml:"SceneName"`
+	Status       int                                `json:"Status" xml:"Status"`
 	StreamUrl    string                             `json:"StreamUrl" xml:"StreamUrl"`
 	ComponentIds ComponentIdsInDescribeCasterScenes `json:"ComponentIds" xml:"ComponentIds"`
 	StreamInfos  StreamInfosInDescribeCasterScenes  `json:"StreamInfos" xml:"StreamInfos"`

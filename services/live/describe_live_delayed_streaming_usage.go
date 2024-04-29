@@ -85,8 +85,8 @@ type DescribeLiveDelayedStreamingUsageRequest struct {
 type DescribeLiveDelayedStreamingUsageResponse struct {
 	*responses.BaseResponse
 	EndTime   string    `json:"EndTime" xml:"EndTime"`
-	StartTime string    `json:"StartTime" xml:"StartTime"`
 	RequestId string    `json:"RequestId" xml:"RequestId"`
+	StartTime string    `json:"StartTime" xml:"StartTime"`
 	DelayData DelayData `json:"DelayData" xml:"DelayData"`
 }
 

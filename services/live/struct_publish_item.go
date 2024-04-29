@@ -17,26 +17,26 @@ package live
 
 // PublishItem is a nested struct in live response
 type PublishItem struct {
-	PublishTime        string             `json:"PublishTime" xml:"PublishTime"`
 	AppName            string             `json:"AppName" xml:"AppName"`
 	CodecInfo          string             `json:"CodecInfo" xml:"CodecInfo"`
-	PublishIp          string             `json:"PublishIp" xml:"PublishIp"`
-	StreamName         string             `json:"StreamName" xml:"StreamName"`
-	PublishStatus      string             `json:"PublishStatus" xml:"PublishStatus"`
-	UniqueId           string             `json:"UniqueId" xml:"UniqueId"`
-	PublishInterval    string             `json:"PublishInterval" xml:"PublishInterval"`
-	StopTime           string             `json:"StopTime" xml:"StopTime"`
 	DomainName         string             `json:"DomainName" xml:"DomainName"`
-	VideoFrames        VideoFrames        `json:"VideoFrames" xml:"VideoFrames"`
-	AudioFrames        AudioFrames        `json:"AudioFrames" xml:"AudioFrames"`
-	VideoStamps        VideoStamps        `json:"VideoStamps" xml:"VideoStamps"`
-	AudioStamps        AudioStamps        `json:"AudioStamps" xml:"AudioStamps"`
-	VideoAndAudioStamp VideoAndAudioStamp `json:"VideoAndAudioStamp" xml:"VideoAndAudioStamp"`
-	AvcHeaders         AvcHeaders         `json:"AvcHeaders" xml:"AvcHeaders"`
+	PublishInterval    string             `json:"PublishInterval" xml:"PublishInterval"`
+	PublishIp          string             `json:"PublishIp" xml:"PublishIp"`
+	PublishStatus      string             `json:"PublishStatus" xml:"PublishStatus"`
+	PublishTime        string             `json:"PublishTime" xml:"PublishTime"`
+	StopTime           string             `json:"StopTime" xml:"StopTime"`
+	StreamName         string             `json:"StreamName" xml:"StreamName"`
+	UniqueId           string             `json:"UniqueId" xml:"UniqueId"`
 	AacHeaders         AacHeaders         `json:"AacHeaders" xml:"AacHeaders"`
-	VideoBitRate       VideoBitRate       `json:"VideoBitRate" xml:"VideoBitRate"`
 	AudioBitRate       AudioBitRate       `json:"AudioBitRate" xml:"AudioBitRate"`
-	VideoInterval      VideoInterval      `json:"VideoInterval" xml:"VideoInterval"`
+	AudioFrames        AudioFrames        `json:"AudioFrames" xml:"AudioFrames"`
 	AudioInterval      AudioInterval      `json:"AudioInterval" xml:"AudioInterval"`
+	AudioStamps        AudioStamps        `json:"AudioStamps" xml:"AudioStamps"`
+	AvcHeaders         AvcHeaders         `json:"AvcHeaders" xml:"AvcHeaders"`
 	ErrorFlags         ErrorFlags         `json:"ErrorFlags" xml:"ErrorFlags"`
+	VideoAndAudioStamp VideoAndAudioStamp `json:"VideoAndAudioStamp" xml:"VideoAndAudioStamp"`
+	VideoBitRate       VideoBitRate       `json:"VideoBitRate" xml:"VideoBitRate"`
+	VideoFrames        VideoFrames        `json:"VideoFrames" xml:"VideoFrames"`
+	VideoInterval      VideoInterval      `json:"VideoInterval" xml:"VideoInterval"`
+	VideoStamps        VideoStamps        `json:"VideoStamps" xml:"VideoStamps"`
 }

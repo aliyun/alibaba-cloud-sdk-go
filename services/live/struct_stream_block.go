@@ -17,12 +17,12 @@ package live
 
 // StreamBlock is a nested struct in live response
 type StreamBlock struct {
-	Status       int    `json:"Status" xml:"Status"`
-	BlockType    string `json:"BlockType" xml:"BlockType"`
 	AppName      string `json:"AppName" xml:"AppName"`
-	UpdateTime   string `json:"UpdateTime" xml:"UpdateTime"`
-	StreamName   string `json:"StreamName" xml:"StreamName"`
-	ReleaseTime  string `json:"ReleaseTime" xml:"ReleaseTime"`
-	LocationList string `json:"LocationList" xml:"LocationList"`
+	BlockType    string `json:"BlockType" xml:"BlockType"`
 	DomainName   string `json:"DomainName" xml:"DomainName"`
+	LocationList string `json:"LocationList" xml:"LocationList"`
+	ReleaseTime  string `json:"ReleaseTime" xml:"ReleaseTime"`
+	Status       int    `json:"Status" xml:"Status"`
+	StreamName   string `json:"StreamName" xml:"StreamName"`
+	UpdateTime   string `json:"UpdateTime" xml:"UpdateTime"`
 }

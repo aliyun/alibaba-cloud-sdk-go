@@ -80,9 +80,9 @@ type EditPlaylistRequest struct {
 // EditPlaylistResponse is the response struct for api EditPlaylist
 type EditPlaylistResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	CasterId  string `json:"CasterId" xml:"CasterId"`
 	ProgramId string `json:"ProgramId" xml:"ProgramId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	Items     Items  `json:"Items" xml:"Items"`
 }
 

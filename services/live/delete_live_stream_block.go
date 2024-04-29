@@ -80,9 +80,9 @@ type DeleteLiveStreamBlockRequest struct {
 // DeleteLiveStreamBlockResponse is the response struct for api DeleteLiveStreamBlock
 type DeleteLiveStreamBlockResponse struct {
 	*responses.BaseResponse
-	Status      string `json:"Status" xml:"Status"`
-	RequestId   string `json:"RequestId" xml:"RequestId"`
 	Description string `json:"Description" xml:"Description"`
+	RequestId   string `json:"RequestId" xml:"RequestId"`
+	Status      string `json:"Status" xml:"Status"`
 }
 
 // CreateDeleteLiveStreamBlockRequest creates a request to invoke DeleteLiveStreamBlock API

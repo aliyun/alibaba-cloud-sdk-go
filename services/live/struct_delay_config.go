@@ -17,9 +17,9 @@ package live
 
 // DelayConfig is a nested struct in live response
 type DelayConfig struct {
-	Stream          string `json:"Stream" xml:"Stream"`
-	Domain          string `json:"Domain" xml:"Domain"`
-	TaskTriggerMode string `json:"TaskTriggerMode" xml:"TaskTriggerMode"`
-	DelayTime       string `json:"DelayTime" xml:"DelayTime"`
 	App             string `json:"App" xml:"App"`
+	DelayTime       string `json:"DelayTime" xml:"DelayTime"`
+	Domain          string `json:"Domain" xml:"Domain"`
+	Stream          string `json:"Stream" xml:"Stream"`
+	TaskTriggerMode string `json:"TaskTriggerMode" xml:"TaskTriggerMode"`
 }

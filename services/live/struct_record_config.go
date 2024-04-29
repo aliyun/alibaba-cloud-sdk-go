@@ -17,8 +17,8 @@ package live
 
 // RecordConfig is a nested struct in live response
 type RecordConfig struct {
-	OssEndpoint  string                             `json:"OssEndpoint" xml:"OssEndpoint"`
-	OssBucket    string                             `json:"OssBucket" xml:"OssBucket"`
 	OnDemand     int                                `json:"OnDemand" xml:"OnDemand"`
+	OssBucket    string                             `json:"OssBucket" xml:"OssBucket"`
+	OssEndpoint  string                             `json:"OssEndpoint" xml:"OssEndpoint"`
 	RecordFormat RecordFormatInDescribeCasterConfig `json:"RecordFormat" xml:"RecordFormat"`
 }

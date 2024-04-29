@@ -80,8 +80,8 @@ type ListLiveDelayConfigRequest struct {
 // ListLiveDelayConfigResponse is the response struct for api ListLiveDelayConfig
 type ListLiveDelayConfigResponse struct {
 	*responses.BaseResponse
-	Total           int             `json:"Total" xml:"Total"`
 	RequestId       string          `json:"RequestId" xml:"RequestId"`
+	Total           int             `json:"Total" xml:"Total"`
 	DelayConfigList DelayConfigList `json:"DelayConfigList" xml:"DelayConfigList"`
 }
 

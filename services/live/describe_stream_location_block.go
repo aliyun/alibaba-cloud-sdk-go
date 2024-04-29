@@ -83,11 +83,11 @@ type DescribeStreamLocationBlockRequest struct {
 // DescribeStreamLocationBlockResponse is the response struct for api DescribeStreamLocationBlock
 type DescribeStreamLocationBlockResponse struct {
 	*responses.BaseResponse
-	TotalPage       int             `json:"TotalPage" xml:"TotalPage"`
+	Count           int             `json:"Count" xml:"Count"`
 	PageNum         int             `json:"PageNum" xml:"PageNum"`
 	PageSize        int             `json:"PageSize" xml:"PageSize"`
 	RequestId       string          `json:"RequestId" xml:"RequestId"`
-	Count           int             `json:"Count" xml:"Count"`
+	TotalPage       int             `json:"TotalPage" xml:"TotalPage"`
 	StreamBlockList StreamBlockList `json:"StreamBlockList" xml:"StreamBlockList"`
 }
 

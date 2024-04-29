@@ -81,18 +81,18 @@ type AddCasterLayoutRequest struct {
 
 // AddCasterLayoutAudioLayer is a repeated param struct in AddCasterLayoutRequest
 type AddCasterLayoutAudioLayer struct {
-	VolumeRate         string `name:"VolumeRate"`
 	FixedDelayDuration string `name:"FixedDelayDuration"`
 	ValidChannel       string `name:"ValidChannel"`
+	VolumeRate         string `name:"VolumeRate"`
 }
 
 // AddCasterLayoutVideoLayer is a repeated param struct in AddCasterLayoutRequest
 type AddCasterLayoutVideoLayer struct {
-	FixedDelayDuration string    `name:"FixedDelayDuration"`
 	FillMode           string    `name:"FillMode"`
+	FixedDelayDuration string    `name:"FixedDelayDuration"`
 	HeightNormalized   string    `name:"HeightNormalized"`
-	PositionRefer      string    `name:"PositionRefer"`
 	PositionNormalized *[]string `name:"PositionNormalized" type:"Repeated"`
+	PositionRefer      string    `name:"PositionRefer"`
 	WidthNormalized    string    `name:"WidthNormalized"`
 }
 

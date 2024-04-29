@@ -17,14 +17,14 @@ package live
 
 // PreloadTask is a nested struct in live response
 type PreloadTask struct {
-	Status             string `json:"Status" xml:"Status"`
-	Process            string `json:"Process" xml:"Process"`
-	Description        string `json:"Description" xml:"Description"`
+	Area               string `json:"Area" xml:"Area"`
 	CreateTime         string `json:"CreateTime" xml:"CreateTime"`
+	Description        string `json:"Description" xml:"Description"`
+	DomainName         string `json:"DomainName" xml:"DomainName"`
+	PlayUrl            string `json:"PlayUrl" xml:"PlayUrl"`
 	PreloadedEndTime   string `json:"PreloadedEndTime" xml:"PreloadedEndTime"`
 	PreloadedStartTime string `json:"PreloadedStartTime" xml:"PreloadedStartTime"`
-	PlayUrl            string `json:"PlayUrl" xml:"PlayUrl"`
-	Area               string `json:"Area" xml:"Area"`
+	Process            string `json:"Process" xml:"Process"`
+	Status             string `json:"Status" xml:"Status"`
 	TaskId             string `json:"TaskId" xml:"TaskId"`
-	DomainName         string `json:"DomainName" xml:"DomainName"`
 }

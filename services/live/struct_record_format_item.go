@@ -18,7 +18,7 @@ package live
 // RecordFormatItem is a nested struct in live response
 type RecordFormatItem struct {
 	CycleDuration        int    `json:"CycleDuration" xml:"CycleDuration"`
-	SliceOssObjectPrefix string `json:"SliceOssObjectPrefix" xml:"SliceOssObjectPrefix"`
-	OssObjectPrefix      string `json:"OssObjectPrefix" xml:"OssObjectPrefix"`
 	Format               string `json:"Format" xml:"Format"`
+	OssObjectPrefix      string `json:"OssObjectPrefix" xml:"OssObjectPrefix"`
+	SliceOssObjectPrefix string `json:"SliceOssObjectPrefix" xml:"SliceOssObjectPrefix"`
 }

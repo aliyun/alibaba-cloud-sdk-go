@@ -78,8 +78,8 @@ type DescribeCasterStreamUrlRequest struct {
 // DescribeCasterStreamUrlResponse is the response struct for api DescribeCasterStreamUrl
 type DescribeCasterStreamUrlResponse struct {
 	*responses.BaseResponse
-	RequestId     string        `json:"RequestId" xml:"RequestId"`
 	CasterId      string        `json:"CasterId" xml:"CasterId"`
+	RequestId     string        `json:"RequestId" xml:"RequestId"`
 	Total         int           `json:"Total" xml:"Total"`
 	CasterStreams CasterStreams `json:"CasterStreams" xml:"CasterStreams"`
 }

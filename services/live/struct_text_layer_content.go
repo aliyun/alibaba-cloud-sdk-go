@@ -17,10 +17,10 @@ package live
 
 // TextLayerContent is a nested struct in live response
 type TextLayerContent struct {
-	Color                 string  `json:"Color" xml:"Color"`
 	BorderColor           string  `json:"BorderColor" xml:"BorderColor"`
 	BorderWidthNormalized float64 `json:"BorderWidthNormalized" xml:"BorderWidthNormalized"`
-	Text                  string  `json:"Text" xml:"Text"`
-	SizeNormalized        float64 `json:"SizeNormalized" xml:"SizeNormalized"`
+	Color                 string  `json:"Color" xml:"Color"`
 	FontName              string  `json:"FontName" xml:"FontName"`
+	SizeNormalized        float64 `json:"SizeNormalized" xml:"SizeNormalized"`
+	Text                  string  `json:"Text" xml:"Text"`
 }

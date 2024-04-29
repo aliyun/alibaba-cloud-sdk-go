@@ -78,8 +78,8 @@ type DescribeCasterVideoResourcesRequest struct {
 // DescribeCasterVideoResourcesResponse is the response struct for api DescribeCasterVideoResources
 type DescribeCasterVideoResourcesResponse struct {
 	*responses.BaseResponse
-	Total          int            `json:"Total" xml:"Total"`
 	RequestId      string         `json:"RequestId" xml:"RequestId"`
+	Total          int            `json:"Total" xml:"Total"`
 	VideoResources VideoResources `json:"VideoResources" xml:"VideoResources"`
 }
 
