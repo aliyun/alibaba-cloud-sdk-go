@@ -17,5 +17,5 @@ package dcdn
 
 // DomainLogDetailsInDescribeDcdnDomainLog is a nested struct in dcdn response
 type DomainLogDetailsInDescribeDcdnDomainLog struct {
-	DomainLogDetail []DomainLogDetailInDescribeDcdnDomainLog `json:"DomainLogDetail" xml:"DomainLogDetail"`
+	DomainLogDetail []DomainLogDetail `json:"DomainLogDetail" xml:"DomainLogDetail"`
 }

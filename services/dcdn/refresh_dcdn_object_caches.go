@@ -75,6 +75,7 @@ type RefreshDcdnObjectCachesRequest struct {
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	ObjectType    string           `position:"Query" name:"ObjectType"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	Force         requests.Boolean `position:"Query" name:"Force"`
 }
 
 // RefreshDcdnObjectCachesResponse is the response struct for api RefreshDcdnObjectCaches

@@ -22,6 +22,7 @@ type Cert struct {
 	Fingerprint    string `json:"Fingerprint" xml:"Fingerprint"`
 	Issuer         string `json:"Issuer" xml:"Issuer"`
 	CertId         int64  `json:"CertId" xml:"CertId"`
+	CertRegion     string `json:"CertRegion" xml:"CertRegion"`
 	CertIdentifier string `json:"CertIdentifier" xml:"CertIdentifier"`
 	LastTime       int64  `json:"LastTime" xml:"LastTime"`
 }

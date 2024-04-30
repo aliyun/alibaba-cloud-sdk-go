@@ -17,6 +17,8 @@ package dcdn
 
 // CertificateListModel is a nested struct in dcdn response
 type CertificateListModel struct {
-	Count    int    `json:"Count" xml:"Count"`
-	CertList []Cert `json:"CertList" xml:"CertList"`
+	PageNumber int64  `json:"PageNumber" xml:"PageNumber"`
+	Count      int    `json:"Count" xml:"Count"`
+	PageSize   int64  `json:"PageSize" xml:"PageSize"`
+	CertList   []Cert `json:"CertList" xml:"CertList"`
 }

@@ -71,9 +71,11 @@ func (client *Client) PutDcdnKvWithCallback(request *PutDcdnKvRequest, callback 
 // PutDcdnKvRequest is the request struct for api PutDcdnKv
 type PutDcdnKvRequest struct {
 	*requests.RpcRequest
-	Namespace string `position:"Query" name:"Namespace"`
-	Value     string `position:"Body" name:"Value"`
-	Key       string `position:"Query" name:"Key"`
+	ExpirationTtl requests.Integer `position:"Query" name:"ExpirationTtl"`
+	Namespace     string           `position:"Query" name:"Namespace"`
+	Expiration    requests.Integer `position:"Query" name:"Expiration"`
+	Value         string           `position:"Body" name:"Value"`
+	Key           string           `position:"Query" name:"Key"`
 }
 
 // PutDcdnKvResponse is the response struct for api PutDcdnKv

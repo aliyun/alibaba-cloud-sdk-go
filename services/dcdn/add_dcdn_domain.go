@@ -72,6 +72,7 @@ func (client *Client) AddDcdnDomainWithCallback(request *AddDcdnDomainRequest, c
 type AddDcdnDomainRequest struct {
 	*requests.RpcRequest
 	Sources         string              `position:"Query" name:"Sources"`
+	Scene           string              `position:"Query" name:"Scene"`
 	ResourceGroupId string              `position:"Query" name:"ResourceGroupId"`
 	SecurityToken   string              `position:"Query" name:"SecurityToken"`
 	Scope           string              `position:"Query" name:"Scope"`
@@ -79,6 +80,7 @@ type AddDcdnDomainRequest struct {
 	TopLevelDomain  string              `position:"Query" name:"TopLevelDomain"`
 	OwnerAccount    string              `position:"Query" name:"OwnerAccount"`
 	DomainName      string              `position:"Query" name:"DomainName"`
+	FunctionType    string              `position:"Query" name:"FunctionType"`
 	OwnerId         requests.Integer    `position:"Query" name:"OwnerId"`
 	CheckUrl        string              `position:"Query" name:"CheckUrl"`
 }

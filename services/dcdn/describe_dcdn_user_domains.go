@@ -78,6 +78,7 @@ type DescribeDcdnUserDomainsRequest struct {
 	ChangeEndTime    string                        `position:"Query" name:"ChangeEndTime"`
 	PageSize         requests.Integer              `position:"Query" name:"PageSize"`
 	Tag              *[]DescribeDcdnUserDomainsTag `position:"Query" name:"Tag"  type:"Repeated"`
+	WebSiteType      string                        `position:"Query" name:"WebSiteType"`
 	FuncFilter       string                        `position:"Query" name:"FuncFilter"`
 	Coverage         string                        `position:"Query" name:"Coverage"`
 	DomainName       string                        `position:"Query" name:"DomainName"`

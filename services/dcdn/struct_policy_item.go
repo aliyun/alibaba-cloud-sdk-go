@@ -17,12 +17,15 @@ package dcdn
 
 // PolicyItem is a nested struct in dcdn response
 type PolicyItem struct {
+	Name         string `json:"Name" xml:"Name"`
+	RuleCount    int64  `json:"RuleCount" xml:"RuleCount"`
 	PolicyStatus string `json:"PolicyStatus" xml:"PolicyStatus"`
-	DefenseScene string `json:"DefenseScene" xml:"DefenseScene"`
+	PolicyType   string `json:"PolicyType" xml:"PolicyType"`
+	GmtModified  string `json:"GmtModified" xml:"GmtModified"`
+	Id           int64  `json:"Id" xml:"Id"`
 	DomainCount  int    `json:"DomainCount" xml:"DomainCount"`
+	DefenseScene string `json:"DefenseScene" xml:"DefenseScene"`
 	PolicyName   string `json:"PolicyName" xml:"PolicyName"`
 	PolicyId     int64  `json:"PolicyId" xml:"PolicyId"`
-	RuleCount    int64  `json:"RuleCount" xml:"RuleCount"`
-	GmtModified  string `json:"GmtModified" xml:"GmtModified"`
-	PolicyType   string `json:"PolicyType" xml:"PolicyType"`
+	Type         string `json:"Type" xml:"Type"`
 }

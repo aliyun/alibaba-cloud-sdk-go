@@ -17,5 +17,5 @@ package dcdn
 
 // DomainLogDetailsInDescribeDcdnWafLogs is a nested struct in dcdn response
 type DomainLogDetailsInDescribeDcdnWafLogs struct {
-	DomainLogDetail []DomainLogDetail `json:"DomainLogDetail" xml:"DomainLogDetail"`
+	DomainLogDetail []DomainLogDetailInDescribeDcdnWafLogs `json:"DomainLogDetail" xml:"DomainLogDetail"`
 }

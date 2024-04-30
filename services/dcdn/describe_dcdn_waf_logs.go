@@ -82,8 +82,8 @@ type DescribeDcdnWafLogsRequest struct {
 // DescribeDcdnWafLogsResponse is the response struct for api DescribeDcdnWafLogs
 type DescribeDcdnWafLogsResponse struct {
 	*responses.BaseResponse
-	RequestId        string            `json:"RequestId" xml:"RequestId"`
-	DomainLogDetails []DomainLogDetail `json:"DomainLogDetails" xml:"DomainLogDetails"`
+	RequestId        string                                 `json:"RequestId" xml:"RequestId"`
+	DomainLogDetails []DomainLogDetailInDescribeDcdnWafLogs `json:"DomainLogDetails" xml:"DomainLogDetails"`
 }
 
 // CreateDescribeDcdnWafLogsRequest creates a request to invoke DescribeDcdnWafLogs API

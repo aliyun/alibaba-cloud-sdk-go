@@ -87,7 +87,7 @@ func CreateUpdateDcdnUserRealTimeDeliveryFieldRequest() (request *UpdateDcdnUser
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("dcdn", "2018-01-15", "UpdateDcdnUserRealTimeDeliveryField", "", "")
-	request.Method = requests.GET
+	request.Method = requests.POST
 	return
 }
 

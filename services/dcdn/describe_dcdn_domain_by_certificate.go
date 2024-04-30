@@ -72,6 +72,7 @@ func (client *Client) DescribeDcdnDomainByCertificateWithCallback(request *Descr
 type DescribeDcdnDomainByCertificateRequest struct {
 	*requests.RpcRequest
 	SSLPub    string           `position:"Query" name:"SSLPub"`
+	Exact     requests.Boolean `position:"Query" name:"Exact"`
 	SSLStatus requests.Boolean `position:"Query" name:"SSLStatus"`
 }
 

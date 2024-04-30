@@ -17,11 +17,19 @@ package dcdn
 
 // RuleItem is a nested struct in dcdn response
 type RuleItem struct {
-	RuleStatus   string `json:"RuleStatus" xml:"RuleStatus"`
-	DefenseScene string `json:"DefenseScene" xml:"DefenseScene"`
-	PolicyId     int64  `json:"PolicyId" xml:"PolicyId"`
-	GmtModified  string `json:"GmtModified" xml:"GmtModified"`
-	RuleId       int64  `json:"RuleId" xml:"RuleId"`
-	RuleName     string `json:"RuleName" xml:"RuleName"`
-	RuleConfig   string `json:"RuleConfig" xml:"RuleConfig"`
+	Name            string `json:"Name" xml:"Name"`
+	RiskLevel       int    `json:"RiskLevel" xml:"RiskLevel"`
+	RuleName        string `json:"RuleName" xml:"RuleName"`
+	GmtModified     string `json:"GmtModified" xml:"GmtModified"`
+	Id              int64  `json:"Id" xml:"Id"`
+	CveUrl          string `json:"CveUrl" xml:"CveUrl"`
+	DefenseScene    string `json:"DefenseScene" xml:"DefenseScene"`
+	ApplicationType int    `json:"ApplicationType" xml:"ApplicationType"`
+	CveId           string `json:"CveId" xml:"CveId"`
+	RuleId          int64  `json:"RuleId" xml:"RuleId"`
+	Description     string `json:"Description" xml:"Description"`
+	ProtectionType  int    `json:"ProtectionType" xml:"ProtectionType"`
+	RuleConfig      string `json:"RuleConfig" xml:"RuleConfig"`
+	RuleStatus      string `json:"RuleStatus" xml:"RuleStatus"`
+	PolicyId        int64  `json:"PolicyId" xml:"PolicyId"`
 }

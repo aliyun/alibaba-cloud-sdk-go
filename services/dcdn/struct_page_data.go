@@ -28,6 +28,8 @@ type PageData struct {
 	Sandbox         string                              `json:"Sandbox" xml:"Sandbox"`
 	ServiceCode     string                              `json:"ServiceCode" xml:"ServiceCode"`
 	ResourceGroupId string                              `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	Scene           string                              `json:"Scene" xml:"Scene"`
+	FunctionType    string                              `json:"FunctionType" xml:"FunctionType"`
 	Description     string                              `json:"Description" xml:"Description"`
 	SslProtocol     string                              `json:"SslProtocol" xml:"SslProtocol"`
 	Sources         SourcesInDescribeDcdnIpaUserDomains `json:"Sources" xml:"Sources"`

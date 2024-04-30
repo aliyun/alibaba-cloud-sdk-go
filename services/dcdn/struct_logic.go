@@ -20,6 +20,7 @@ type Logic struct {
 	Type        string `json:"Type" xml:"Type"`
 	Symbol      string `json:"Symbol" xml:"Symbol"`
 	Tip         string `json:"Tip" xml:"Tip"`
+	Attributes  int    `json:"Attributes" xml:"Attributes"`
 	MaxLength   int    `json:"MaxLength" xml:"MaxLength"`
 	Description string `json:"Description" xml:"Description"`
 	Regexp      Regexp `json:"Regexp" xml:"Regexp"`

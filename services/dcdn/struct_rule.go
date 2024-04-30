@@ -17,11 +17,16 @@ package dcdn
 
 // Rule is a nested struct in dcdn response
 type Rule struct {
-	RuleStatus   string `json:"RuleStatus" xml:"RuleStatus"`
-	DefenseScene string `json:"DefenseScene" xml:"DefenseScene"`
-	PolicyId     int64  `json:"PolicyId" xml:"PolicyId"`
-	GmtModified  string `json:"GmtModified" xml:"GmtModified"`
-	RuleId       int64  `json:"RuleId" xml:"RuleId"`
+	Name         string `json:"Name" xml:"Name"`
 	RuleName     string `json:"RuleName" xml:"RuleName"`
+	Action       string `json:"Action" xml:"Action"`
+	RuleId       int64  `json:"RuleId" xml:"RuleId"`
+	GmtModified  string `json:"GmtModified" xml:"GmtModified"`
+	Config       string `json:"Config" xml:"Config"`
+	Status       string `json:"Status" xml:"Status"`
+	DefenseScene string `json:"DefenseScene" xml:"DefenseScene"`
 	RuleConfig   string `json:"RuleConfig" xml:"RuleConfig"`
+	RuleStatus   string `json:"RuleStatus" xml:"RuleStatus"`
+	PolicyId     int64  `json:"PolicyId" xml:"PolicyId"`
+	Type         string `json:"Type" xml:"Type"`
 }
