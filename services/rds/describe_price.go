@@ -103,11 +103,13 @@ type DescribePriceServerlessConfig struct {
 // DescribePriceResponse is the response struct for api DescribePrice
 type DescribePriceResponse struct {
 	*responses.BaseResponse
+	OrderParams       string               `json:"OrderParams" xml:"OrderParams"`
 	RequestId         string               `json:"RequestId" xml:"RequestId"`
 	ShowDiscount      bool                 `json:"ShowDiscount" xml:"ShowDiscount"`
 	TradeMaxRCUAmount float64              `json:"TradeMaxRCUAmount" xml:"TradeMaxRCUAmount"`
 	TradeMinRCUAmount float64              `json:"TradeMinRCUAmount" xml:"TradeMinRCUAmount"`
 	PriceInfo         PriceInfo            `json:"PriceInfo" xml:"PriceInfo"`
+	ServerlessPrice   ServerlessPrice      `json:"ServerlessPrice" xml:"ServerlessPrice"`
 	Rules             RulesInDescribePrice `json:"Rules" xml:"Rules"`
 }
 
@@ -116,7 +118,7 @@ func CreateDescribePriceRequest() (request *DescribePriceRequest) {
 	request = &DescribePriceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribePrice", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribePrice", "rds", "openAPI")
 	request.Method = requests.POST
 	return
 }

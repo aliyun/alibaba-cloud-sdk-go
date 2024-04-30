@@ -73,6 +73,7 @@ type CreatePostgresExtensionsRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
+	RiskConfirmed        requests.Boolean `position:"Query" name:"RiskConfirmed"`
 	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	AccountName          string           `position:"Query" name:"AccountName"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
@@ -95,7 +96,7 @@ func CreateCreatePostgresExtensionsRequest() (request *CreatePostgresExtensionsR
 	request = &CreatePostgresExtensionsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "CreatePostgresExtensions", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "CreatePostgresExtensions", "rds", "openAPI")
 	request.Method = requests.POST
 	return
 }

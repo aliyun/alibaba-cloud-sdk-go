@@ -73,6 +73,7 @@ type DescribeInstanceLinkedWhitelistTemplateRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	InsName              string           `position:"Query" name:"InsName"`
 }
 
@@ -92,7 +93,7 @@ func CreateDescribeInstanceLinkedWhitelistTemplateRequest() (request *DescribeIn
 	request = &DescribeInstanceLinkedWhitelistTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeInstanceLinkedWhitelistTemplate", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeInstanceLinkedWhitelistTemplate", "rds", "openAPI")
 	request.Method = requests.POST
 	return
 }

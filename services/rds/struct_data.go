@@ -18,24 +18,53 @@ package rds
 // Data is a nested struct in rds response
 type Data struct {
 	InsName              string               `json:"InsName" xml:"InsName"`
-	CurrPageNumbers      int                  `json:"CurrPageNumbers" xml:"CurrPageNumbers"`
-	DBInstanceName       string               `json:"DBInstanceName" xml:"DBInstanceName"`
-	IpVersion            string               `json:"IpVersion" xml:"IpVersion"`
-	PageSize             int                  `json:"PageSize" xml:"PageSize"`
 	HasNext              bool                 `json:"HasNext" xml:"HasNext"`
 	TotalPageNumbers     int                  `json:"TotalPageNumbers" xml:"TotalPageNumbers"`
 	DBInstanceEndpointId string               `json:"DBInstanceEndpointId" xml:"DBInstanceEndpointId"`
-	TotalRecords         int                  `json:"TotalRecords" xml:"TotalRecords"`
+	DbType               string               `json:"DbType" xml:"DbType"`
 	HasPrev              bool                 `json:"HasPrev" xml:"HasPrev"`
-	ConnectionString     string               `json:"ConnectionString" xml:"ConnectionString"`
-	MaxRecordsPerPage    int                  `json:"MaxRecordsPerPage" xml:"MaxRecordsPerPage"`
-	PageNumber           int                  `json:"PageNumber" xml:"PageNumber"`
+	DetailImpact         string               `json:"DetailImpact" xml:"DetailImpact"`
+	HasLifeCycle         int                  `json:"HasLifeCycle" xml:"HasLifeCycle"`
+	InstanceName         string               `json:"InstanceName" xml:"InstanceName"`
+	CurrPageNumbers      int                  `json:"CurrPageNumbers" xml:"CurrPageNumbers"`
+	GmtCreated           string               `json:"GmtCreated" xml:"GmtCreated"`
+	CmsProduct           string               `json:"CmsProduct" xml:"CmsProduct"`
+	ResourceType         string               `json:"ResourceType" xml:"ResourceType"`
+	EventReason          string               `json:"EventReason" xml:"EventReason"`
+	StartTime            string               `json:"StartTime" xml:"StartTime"`
+	EventType            string               `json:"EventType" xml:"EventType"`
+	EndTime              string               `json:"EndTime" xml:"EndTime"`
 	Status               string               `json:"Status" xml:"Status"`
 	TotalRecordCount     int                  `json:"TotalRecordCount" xml:"TotalRecordCount"`
+	DBInstanceName       string               `json:"DBInstanceName" xml:"DBInstanceName"`
+	PageSize             int                  `json:"PageSize" xml:"PageSize"`
+	TotalRecords         int                  `json:"TotalRecords" xml:"TotalRecords"`
+	DetailReason         string               `json:"DetailReason" xml:"DetailReason"`
+	HandleStatus         string               `json:"HandleStatus" xml:"HandleStatus"`
+	IsClosed             int                  `json:"IsClosed" xml:"IsClosed"`
+	RegionId             string               `json:"RegionId" xml:"RegionId"`
+	SourceType           string               `json:"SourceType" xml:"SourceType"`
+	InstanceId           string               `json:"InstanceId" xml:"InstanceId"`
+	EventDetail          string               `json:"EventDetail" xml:"EventDetail"`
+	MaxRecordsPerPage    int                  `json:"MaxRecordsPerPage" xml:"MaxRecordsPerPage"`
+	PageNumber           int                  `json:"PageNumber" xml:"PageNumber"`
+	Uid                  string               `json:"Uid" xml:"Uid"`
+	Product              string               `json:"Product" xml:"Product"`
+	EventStatus          string               `json:"EventStatus" xml:"EventStatus"`
+	EventLevel           string               `json:"EventLevel" xml:"EventLevel"`
+	EventCategory        string               `json:"EventCategory" xml:"EventCategory"`
+	GmtModified          string               `json:"GmtModified" xml:"GmtModified"`
+	IpVersion            string               `json:"IpVersion" xml:"IpVersion"`
+	EventId              string               `json:"EventId" xml:"EventId"`
+	ConnectionString     string               `json:"ConnectionString" xml:"ConnectionString"`
+	EventCode            string               `json:"EventCode" xml:"EventCode"`
+	EventImpact          string               `json:"EventImpact" xml:"EventImpact"`
 	Template             Template             `json:"Template" xml:"Template"`
 	Nodes                []Node               `json:"Nodes" xml:"Nodes"`
 	NotifyItemList       []NotifyItemListItem `json:"NotifyItemList" xml:"NotifyItemList"`
 	Templates            []Template           `json:"Templates" xml:"Templates"`
 	Connections          []Connection         `json:"Connections" xml:"Connections"`
 	DBInstanceEndpoints  DBInstanceEndpoints  `json:"DBInstanceEndpoints" xml:"DBInstanceEndpoints"`
+	UserPrivilege        []UserPrivilegeItem  `json:"UserPrivilege" xml:"UserPrivilege"`
+	Rules                []EncDBInfo          `json:"Rules" xml:"Rules"`
 }

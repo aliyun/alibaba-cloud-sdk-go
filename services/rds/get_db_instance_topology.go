@@ -71,7 +71,9 @@ func (client *Client) GetDBInstanceTopologyWithCallback(request *GetDBInstanceTo
 // GetDBInstanceTopologyRequest is the request struct for api GetDBInstanceTopology
 type GetDBInstanceTopologyRequest struct {
 	*requests.RpcRequest
-	DBInstanceId string `position:"Query" name:"DBInstanceId"`
+	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerId         requests.Integer `position:"Query" name:"OwnerId"`
+	DBInstanceId    string           `position:"Query" name:"DBInstanceId"`
 }
 
 // GetDBInstanceTopologyResponse is the response struct for api GetDBInstanceTopology
@@ -88,7 +90,7 @@ func CreateGetDBInstanceTopologyRequest() (request *GetDBInstanceTopologyRequest
 	request = &GetDBInstanceTopologyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "GetDBInstanceTopology", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "GetDBInstanceTopology", "rds", "openAPI")
 	request.Method = requests.POST
 	return
 }

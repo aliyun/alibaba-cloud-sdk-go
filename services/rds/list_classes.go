@@ -93,7 +93,7 @@ func CreateListClassesRequest() (request *ListClassesRequest) {
 	request = &ListClassesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ListClasses", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "ListClasses", "rds", "openAPI")
 	request.Method = requests.POST
 	return
 }

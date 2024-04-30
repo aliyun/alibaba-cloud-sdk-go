@@ -86,10 +86,12 @@ type CreateReadOnlyDBInstanceRequest struct {
 	VSwitchId                      string           `position:"Query" name:"VSwitchId"`
 	PrivateIpAddress               string           `position:"Query" name:"PrivateIpAddress"`
 	AutoRenew                      string           `position:"Query" name:"AutoRenew"`
+	Port                           string           `position:"Query" name:"Port"`
 	ZoneId                         string           `position:"Query" name:"ZoneId"`
 	InstanceNetworkType            string           `position:"Query" name:"InstanceNetworkType"`
 	ClientToken                    string           `position:"Query" name:"ClientToken"`
 	InstructionSetArch             string           `position:"Query" name:"InstructionSetArch"`
+	IoAccelerationEnabled          string           `position:"Query" name:"IoAccelerationEnabled"`
 	TddlRegionConfig               string           `position:"Query" name:"TddlRegionConfig"`
 	DBInstanceId                   string           `position:"Query" name:"DBInstanceId"`
 	DBInstanceStorageType          string           `position:"Query" name:"DBInstanceStorageType"`
@@ -120,7 +122,7 @@ func CreateCreateReadOnlyDBInstanceRequest() (request *CreateReadOnlyDBInstanceR
 	request = &CreateReadOnlyDBInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "CreateReadOnlyDBInstance", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "CreateReadOnlyDBInstance", "rds", "openAPI")
 	request.Method = requests.POST
 	return
 }

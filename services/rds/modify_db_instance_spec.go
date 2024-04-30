@@ -76,6 +76,8 @@ type ModifyDBInstanceSpecRequest struct {
 	ClientToken             string                                      `position:"Query" name:"ClientToken"`
 	EngineVersion           string                                      `position:"Query" name:"EngineVersion"`
 	AutoUseCoupon           requests.Boolean                            `position:"Query" name:"AutoUseCoupon"`
+	IoAccelerationEnabled   string                                      `position:"Query" name:"IoAccelerationEnabled"`
+	ColdDataEnabled         requests.Boolean                            `position:"Query" name:"ColdDataEnabled"`
 	ResourceGroupId         string                                      `position:"Query" name:"ResourceGroupId"`
 	ServerlessConfiguration ModifyDBInstanceSpecServerlessConfiguration `position:"Query" name:"ServerlessConfiguration"  type:"Struct"`
 	EffectiveTime           string                                      `position:"Query" name:"EffectiveTime"`
@@ -119,7 +121,7 @@ func CreateModifyDBInstanceSpecRequest() (request *ModifyDBInstanceSpecRequest) 
 	request = &ModifyDBInstanceSpecRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDBInstanceSpec", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDBInstanceSpec", "rds", "openAPI")
 	request.Method = requests.POST
 	return
 }

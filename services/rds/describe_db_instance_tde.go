@@ -83,6 +83,7 @@ type DescribeDBInstanceTDEResponse struct {
 	*responses.BaseResponse
 	TDEStatus string                           `json:"TDEStatus" xml:"TDEStatus"`
 	RequestId string                           `json:"RequestId" xml:"RequestId"`
+	TDEMode   string                           `json:"TDEMode" xml:"TDEMode"`
 	Databases DatabasesInDescribeDBInstanceTDE `json:"Databases" xml:"Databases"`
 }
 
@@ -91,7 +92,7 @@ func CreateDescribeDBInstanceTDERequest() (request *DescribeDBInstanceTDERequest
 	request = &DescribeDBInstanceTDERequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstanceTDE", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstanceTDE", "rds", "openAPI")
 	request.Method = requests.POST
 	return
 }

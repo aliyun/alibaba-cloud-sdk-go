@@ -17,11 +17,12 @@ package rds
 
 // Slot is a nested struct in rds response
 type Slot struct {
-	SlotName   string `json:"SlotName" xml:"SlotName"`
-	Plugin     string `json:"Plugin" xml:"Plugin"`
-	SlotType   string `json:"SlotType" xml:"SlotType"`
-	Database   string `json:"Database" xml:"Database"`
-	Temporary  string `json:"Temporary" xml:"Temporary"`
-	SlotStatus string `json:"SlotStatus" xml:"SlotStatus"`
-	WalDelay   string `json:"WalDelay" xml:"WalDelay"`
+	SlotName     string `json:"SlotName" xml:"SlotName"`
+	Plugin       string `json:"Plugin" xml:"Plugin"`
+	SlotType     string `json:"SlotType" xml:"SlotType"`
+	Database     string `json:"Database" xml:"Database"`
+	Temporary    string `json:"Temporary" xml:"Temporary"`
+	SlotStatus   string `json:"SlotStatus" xml:"SlotStatus"`
+	WalDelay     string `json:"WalDelay" xml:"WalDelay"`
+	SubReplayLag string `json:"SubReplayLag" xml:"SubReplayLag"`
 }

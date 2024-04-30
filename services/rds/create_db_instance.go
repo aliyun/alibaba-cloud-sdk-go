@@ -84,6 +84,7 @@ type CreateDBInstanceRequest struct {
 	DBInstanceDescription          string                           `position:"Query" name:"DBInstanceDescription"`
 	Tag                            *[]CreateDBInstanceTag           `position:"Query" name:"Tag"  type:"Repeated"`
 	BusinessInfo                   string                           `position:"Query" name:"BusinessInfo"`
+	WhitelistTemplateList          string                           `position:"Query" name:"WhitelistTemplateList"`
 	Period                         string                           `position:"Query" name:"Period"`
 	DryRun                         requests.Boolean                 `position:"Query" name:"DryRun"`
 	BackupId                       string                           `position:"Query" name:"BackupId"`
@@ -107,6 +108,8 @@ type CreateDBInstanceRequest struct {
 	ZoneIdSlave1                   string                           `position:"Query" name:"ZoneIdSlave1"`
 	ZoneIdSlave2                   string                           `position:"Query" name:"ZoneIdSlave2"`
 	DBIsIgnoreCase                 string                           `position:"Query" name:"DBIsIgnoreCase"`
+	IoAccelerationEnabled          string                           `position:"Query" name:"IoAccelerationEnabled"`
+	ColdDataEnabled                requests.Boolean                 `position:"Query" name:"ColdDataEnabled"`
 	Engine                         string                           `position:"Query" name:"Engine"`
 	DBTimeZone                     string                           `position:"Query" name:"DBTimeZone"`
 	DBInstanceStorageType          string                           `position:"Query" name:"DBInstanceStorageType"`
@@ -164,7 +167,7 @@ func CreateCreateDBInstanceRequest() (request *CreateDBInstanceRequest) {
 	request = &CreateDBInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "CreateDBInstance", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "CreateDBInstance", "rds", "openAPI")
 	request.Method = requests.POST
 	return
 }

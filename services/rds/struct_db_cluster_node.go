@@ -22,4 +22,8 @@ type DBClusterNode struct {
 	NodeId       string `json:"NodeId" xml:"NodeId"`
 	NodeRole     string `json:"NodeRole" xml:"NodeRole"`
 	ClassCode    string `json:"ClassCode" xml:"ClassCode"`
+	ClassType    string `json:"ClassType" xml:"ClassType"`
+	Cpu          string `json:"Cpu" xml:"Cpu"`
+	Memory       string `json:"Memory" xml:"Memory"`
+	Status       string `json:"Status" xml:"Status"`
 }

@@ -27,4 +27,6 @@ type MinorVersionItemsItem struct {
 	MinorVersion          string `json:"MinorVersion" xml:"MinorVersion"`
 	CommunityMinorVersion string `json:"CommunityMinorVersion" xml:"CommunityMinorVersion"`
 	Tag                   string `json:"Tag" xml:"Tag"`
+	ExpireStatus          string `json:"ExpireStatus" xml:"ExpireStatus"`
+	ExpireDate            string `json:"ExpireDate" xml:"ExpireDate"`
 }

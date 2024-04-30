@@ -87,6 +87,7 @@ type DescribeDBProxyResponse struct {
 	DBProxyInstanceCurrentMinorVersion string                    `json:"DBProxyInstanceCurrentMinorVersion" xml:"DBProxyInstanceCurrentMinorVersion"`
 	DBProxyInstanceNum                 int                       `json:"DBProxyInstanceNum" xml:"DBProxyInstanceNum"`
 	DBProxyInstanceType                string                    `json:"DBProxyInstanceType" xml:"DBProxyInstanceType"`
+	DBProxyPersistentConnectionStatus  string                    `json:"DBProxyPersistentConnectionStatus" xml:"DBProxyPersistentConnectionStatus"`
 	DBProxyInstanceStatus              string                    `json:"DBProxyInstanceStatus" xml:"DBProxyInstanceStatus"`
 	DBProxyServiceStatus               string                    `json:"DBProxyServiceStatus" xml:"DBProxyServiceStatus"`
 	DBProxyInstanceName                string                    `json:"DBProxyInstanceName" xml:"DBProxyInstanceName"`
@@ -104,7 +105,7 @@ func CreateDescribeDBProxyRequest() (request *DescribeDBProxyRequest) {
 	request = &DescribeDBProxyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBProxy", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBProxy", "rds", "openAPI")
 	request.Method = requests.POST
 	return
 }

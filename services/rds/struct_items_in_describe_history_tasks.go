@@ -17,5 +17,5 @@ package rds
 
 // ItemsInDescribeHistoryTasks is a nested struct in rds response
 type ItemsInDescribeHistoryTasks struct {
-	ItemsItem []ItemsItem `json:"Items" xml:"Items"`
+	ItemsItem []ItemsItemInDescribeHistoryTasks `json:"Items" xml:"Items"`
 }

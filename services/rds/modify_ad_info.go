@@ -93,7 +93,7 @@ func CreateModifyADInfoRequest() (request *ModifyADInfoRequest) {
 	request = &ModifyADInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyADInfo", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyADInfo", "rds", "openAPI")
 	request.Method = requests.POST
 	return
 }

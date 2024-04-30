@@ -89,7 +89,7 @@ func CreateUnlockAccountRequest() (request *UnlockAccountRequest) {
 	request = &UnlockAccountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "UnlockAccount", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "UnlockAccount", "rds", "openAPI")
 	request.Method = requests.POST
 	return
 }

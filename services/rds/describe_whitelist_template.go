@@ -74,6 +74,7 @@ type DescribeWhitelistTemplateRequest struct {
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	TemplateId           requests.Integer `position:"Query" name:"TemplateId"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 }
 
 // DescribeWhitelistTemplateResponse is the response struct for api DescribeWhitelistTemplate
@@ -92,7 +93,7 @@ func CreateDescribeWhitelistTemplateRequest() (request *DescribeWhitelistTemplat
 	request = &DescribeWhitelistTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeWhitelistTemplate", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeWhitelistTemplate", "rds", "openAPI")
 	request.Method = requests.POST
 	return
 }

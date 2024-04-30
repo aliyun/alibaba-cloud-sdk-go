@@ -100,6 +100,8 @@ type DescribeDBInstanceSSLResponse struct {
 	ClientCACert             string `json:"ClientCACert" xml:"ClientCACert"`
 	ServerKey                string `json:"ServerKey" xml:"ServerKey"`
 	ModifyStatusReason       string `json:"ModifyStatusReason" xml:"ModifyStatusReason"`
+	ForceEncryption          string `json:"ForceEncryption" xml:"ForceEncryption"`
+	TlsVersion               string `json:"TlsVersion" xml:"TlsVersion"`
 }
 
 // CreateDescribeDBInstanceSSLRequest creates a request to invoke DescribeDBInstanceSSL API
@@ -107,7 +109,7 @@ func CreateDescribeDBInstanceSSLRequest() (request *DescribeDBInstanceSSLRequest
 	request = &DescribeDBInstanceSSLRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstanceSSL", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstanceSSL", "rds", "openAPI")
 	request.Method = requests.POST
 	return
 }

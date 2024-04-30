@@ -95,7 +95,7 @@ func CreateDescribeSupportOnlineResizeDiskRequest() (request *DescribeSupportOnl
 	request = &DescribeSupportOnlineResizeDiskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeSupportOnlineResizeDisk", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeSupportOnlineResizeDisk", "rds", "openAPI")
 	request.Method = requests.POST
 	return
 }

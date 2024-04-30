@@ -95,7 +95,7 @@ func CreateRestoreTableRequest() (request *RestoreTableRequest) {
 	request = &RestoreTableRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "RestoreTable", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "RestoreTable", "rds", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -112,6 +112,8 @@ type DescribeBackupPolicyResponse struct {
 	EnableIncrementDataBackup     bool                `json:"EnableIncrementDataBackup" xml:"EnableIncrementDataBackup"`
 	SupportModifyBackupPriority   bool                `json:"SupportModifyBackupPriority" xml:"SupportModifyBackupPriority"`
 	BackupPriority                int                 `json:"BackupPriority" xml:"BackupPriority"`
+	EnablePitrProtection          bool                `json:"EnablePitrProtection" xml:"EnablePitrProtection"`
+	PitrRetentionPeriod           int                 `json:"PitrRetentionPeriod" xml:"PitrRetentionPeriod"`
 	DuplicationLocation           DuplicationLocation `json:"DuplicationLocation" xml:"DuplicationLocation"`
 }
 
@@ -120,7 +122,7 @@ func CreateDescribeBackupPolicyRequest() (request *DescribeBackupPolicyRequest) 
 	request = &DescribeBackupPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeBackupPolicy", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeBackupPolicy", "rds", "openAPI")
 	request.Method = requests.POST
 	return
 }

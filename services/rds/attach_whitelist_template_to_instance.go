@@ -74,6 +74,7 @@ type AttachWhitelistTemplateToInstanceRequest struct {
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	TemplateId           requests.Integer `position:"Query" name:"TemplateId"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	InsName              string           `position:"Query" name:"InsName"`
 }
 
@@ -93,7 +94,7 @@ func CreateAttachWhitelistTemplateToInstanceRequest() (request *AttachWhitelistT
 	request = &AttachWhitelistTemplateToInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "AttachWhitelistTemplateToInstance", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "AttachWhitelistTemplateToInstance", "rds", "openAPI")
 	request.Method = requests.POST
 	return
 }

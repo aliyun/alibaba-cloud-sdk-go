@@ -72,6 +72,7 @@ func (client *Client) ModifyDBProxyInstanceWithCallback(request *ModifyDBProxyIn
 type ModifyDBProxyInstanceRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	VSwitchIds            string           `position:"Query" name:"VSwitchIds"`
 	EffectiveTime         string           `position:"Query" name:"EffectiveTime"`
 	EffectiveSpecificTime string           `position:"Query" name:"EffectiveSpecificTime"`
 	DBInstanceId          string           `position:"Query" name:"DBInstanceId"`
@@ -93,7 +94,7 @@ func CreateModifyDBProxyInstanceRequest() (request *ModifyDBProxyInstanceRequest
 	request = &ModifyDBProxyInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDBProxyInstance", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDBProxyInstance", "rds", "openAPI")
 	request.Method = requests.POST
 	return
 }

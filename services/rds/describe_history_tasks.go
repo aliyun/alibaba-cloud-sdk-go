@@ -92,11 +92,11 @@ type DescribeHistoryTasksRequest struct {
 // DescribeHistoryTasksResponse is the response struct for api DescribeHistoryTasks
 type DescribeHistoryTasksResponse struct {
 	*responses.BaseResponse
-	PageNumber int         `json:"PageNumber" xml:"PageNumber"`
-	RequestId  string      `json:"RequestId" xml:"RequestId"`
-	PageSize   int         `json:"PageSize" xml:"PageSize"`
-	TotalCount int         `json:"TotalCount" xml:"TotalCount"`
-	Items      []ItemsItem `json:"Items" xml:"Items"`
+	PageNumber int                               `json:"PageNumber" xml:"PageNumber"`
+	RequestId  string                            `json:"RequestId" xml:"RequestId"`
+	PageSize   int                               `json:"PageSize" xml:"PageSize"`
+	TotalCount int                               `json:"TotalCount" xml:"TotalCount"`
+	Items      []ItemsItemInDescribeHistoryTasks `json:"Items" xml:"Items"`
 }
 
 // CreateDescribeHistoryTasksRequest creates a request to invoke DescribeHistoryTasks API
@@ -104,7 +104,7 @@ func CreateDescribeHistoryTasksRequest() (request *DescribeHistoryTasksRequest) 
 	request = &DescribeHistoryTasksRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeHistoryTasks", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeHistoryTasks", "rds", "openAPI")
 	request.Method = requests.POST
 	return
 }

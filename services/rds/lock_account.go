@@ -89,7 +89,7 @@ func CreateLockAccountRequest() (request *LockAccountRequest) {
 	request = &LockAccountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "LockAccount", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "LockAccount", "rds", "openAPI")
 	request.Method = requests.POST
 	return
 }

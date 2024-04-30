@@ -90,7 +90,7 @@ func CreateQueryNotifyRequest() (request *QueryNotifyRequest) {
 	request = &QueryNotifyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "QueryNotify", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "QueryNotify", "rds", "openAPI")
 	request.Method = requests.POST
 	return
 }

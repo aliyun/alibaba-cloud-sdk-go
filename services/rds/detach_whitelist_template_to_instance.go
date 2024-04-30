@@ -74,6 +74,7 @@ type DetachWhitelistTemplateToInstanceRequest struct {
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	TemplateId           requests.Integer `position:"Query" name:"TemplateId"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	InsName              string           `position:"Query" name:"InsName"`
 }
 
@@ -93,7 +94,7 @@ func CreateDetachWhitelistTemplateToInstanceRequest() (request *DetachWhitelistT
 	request = &DetachWhitelistTemplateToInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DetachWhitelistTemplateToInstance", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DetachWhitelistTemplateToInstance", "rds", "openAPI")
 	request.Method = requests.POST
 	return
 }

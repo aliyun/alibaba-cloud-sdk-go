@@ -90,7 +90,7 @@ func CreateReleaseInstancePublicConnectionRequest() (request *ReleaseInstancePub
 	request = &ReleaseInstancePublicConnectionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ReleaseInstancePublicConnection", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "ReleaseInstancePublicConnection", "rds", "openAPI")
 	request.Method = requests.POST
 	return
 }

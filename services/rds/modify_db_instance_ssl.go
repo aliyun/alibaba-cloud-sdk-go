@@ -75,10 +75,13 @@ type ModifyDBInstanceSSLRequest struct {
 	ConnectionString         string           `position:"Query" name:"ConnectionString"`
 	ServerKey                string           `position:"Query" name:"ServerKey"`
 	ClientCrlEnabled         requests.Integer `position:"Query" name:"ClientCrlEnabled"`
+	Certificate              string           `position:"Query" name:"Certificate"`
 	ACL                      string           `position:"Query" name:"ACL"`
+	PassWord                 string           `position:"Query" name:"PassWord"`
 	ClientCertRevocationList string           `position:"Query" name:"ClientCertRevocationList"`
 	ServerCert               string           `position:"Query" name:"ServerCert"`
 	DBInstanceId             string           `position:"Query" name:"DBInstanceId"`
+	ForceEncryption          string           `position:"Query" name:"ForceEncryption"`
 	ClientCAEnabled          requests.Integer `position:"Query" name:"ClientCAEnabled"`
 	ClientCACert             string           `position:"Query" name:"ClientCACert"`
 	ReplicationACL           string           `position:"Query" name:"ReplicationACL"`
@@ -87,6 +90,7 @@ type ModifyDBInstanceSSLRequest struct {
 	OwnerAccount             string           `position:"Query" name:"OwnerAccount"`
 	OwnerId                  requests.Integer `position:"Query" name:"OwnerId"`
 	SSLEnabled               requests.Integer `position:"Query" name:"SSLEnabled"`
+	TlsVersion               string           `position:"Query" name:"TlsVersion"`
 }
 
 // ModifyDBInstanceSSLResponse is the response struct for api ModifyDBInstanceSSL
@@ -100,7 +104,7 @@ func CreateModifyDBInstanceSSLRequest() (request *ModifyDBInstanceSSLRequest) {
 	request = &ModifyDBInstanceSSLRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDBInstanceSSL", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDBInstanceSSL", "rds", "openAPI")
 	request.Method = requests.POST
 	return
 }

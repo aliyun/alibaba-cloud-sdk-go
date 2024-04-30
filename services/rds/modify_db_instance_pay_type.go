@@ -99,7 +99,7 @@ func CreateModifyDBInstancePayTypeRequest() (request *ModifyDBInstancePayTypeReq
 	request = &ModifyDBInstancePayTypeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDBInstancePayType", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDBInstancePayType", "rds", "openAPI")
 	request.Method = requests.POST
 	return
 }

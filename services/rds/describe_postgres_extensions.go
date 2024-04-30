@@ -95,7 +95,7 @@ func CreateDescribePostgresExtensionsRequest() (request *DescribePostgresExtensi
 	request = &DescribePostgresExtensionsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribePostgresExtensions", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribePostgresExtensions", "rds", "openAPI")
 	request.Method = requests.POST
 	return
 }

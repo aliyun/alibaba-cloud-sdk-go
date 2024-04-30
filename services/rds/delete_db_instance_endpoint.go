@@ -89,7 +89,7 @@ func CreateDeleteDBInstanceEndpointRequest() (request *DeleteDBInstanceEndpointR
 	request = &DeleteDBInstanceEndpointRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DeleteDBInstanceEndpoint", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DeleteDBInstanceEndpoint", "rds", "openAPI")
 	request.Method = requests.POST
 	return
 }

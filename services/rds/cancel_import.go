@@ -72,11 +72,12 @@ func (client *Client) CancelImportWithCallback(request *CancelImportRequest, cal
 type CancelImportRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
+	ImportId             requests.Integer `position:"Query" name:"ImportId"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ImportId             requests.Integer `position:"Query" name:"ImportId"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 }
 
 // CancelImportResponse is the response struct for api CancelImport
@@ -90,7 +91,7 @@ func CreateCancelImportRequest() (request *CancelImportRequest) {
 	request = &CancelImportRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "CancelImport", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "CancelImport", "rds", "openAPI")
 	request.Method = requests.POST
 	return
 }

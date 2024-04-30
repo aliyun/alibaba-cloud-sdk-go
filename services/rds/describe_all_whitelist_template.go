@@ -72,6 +72,7 @@ func (client *Client) DescribeAllWhitelistTemplateWithCallback(request *Describe
 type DescribeAllWhitelistTemplateRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	PageNumbers          requests.Integer `position:"Query" name:"PageNumbers"`
 	TemplateName         string           `position:"Query" name:"TemplateName"`
 	FuzzySearch          requests.Boolean `position:"Query" name:"FuzzySearch"`
@@ -95,7 +96,7 @@ func CreateDescribeAllWhitelistTemplateRequest() (request *DescribeAllWhitelistT
 	request = &DescribeAllWhitelistTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeAllWhitelistTemplate", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeAllWhitelistTemplate", "rds", "openAPI")
 	request.Method = requests.POST
 	return
 }

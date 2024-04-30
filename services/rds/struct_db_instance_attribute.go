@@ -47,6 +47,7 @@ type DBInstanceAttribute struct {
 	SupportUpgradeAccountType         string                                             `json:"SupportUpgradeAccountType" xml:"SupportUpgradeAccountType"`
 	MaxIOPS                           int                                                `json:"MaxIOPS" xml:"MaxIOPS"`
 	TipsLevel                         int                                                `json:"TipsLevel" xml:"TipsLevel"`
+	IoAccelerationEnabled             string                                             `json:"IoAccelerationEnabled" xml:"IoAccelerationEnabled"`
 	MaintainTime                      string                                             `json:"MaintainTime" xml:"MaintainTime"`
 	EngineVersion                     string                                             `json:"EngineVersion" xml:"EngineVersion"`
 	InstructionSetArch                string                                             `json:"InstructionSetArch" xml:"InstructionSetArch"`
@@ -55,6 +56,7 @@ type DBInstanceAttribute struct {
 	Tips                              string                                             `json:"Tips" xml:"Tips"`
 	DBInstanceStorage                 int                                                `json:"DBInstanceStorage" xml:"DBInstanceStorage"`
 	KindCode                          string                                             `json:"kindCode" xml:"kindCode"`
+	ColdDataEnabled                   bool                                               `json:"ColdDataEnabled" xml:"ColdDataEnabled"`
 	SupportCreateSuperAccount         string                                             `json:"SupportCreateSuperAccount" xml:"SupportCreateSuperAccount"`
 	TempDBInstanceId                  string                                             `json:"TempDBInstanceId" xml:"TempDBInstanceId"`
 	CurrentKernelVersion              string                                             `json:"CurrentKernelVersion" xml:"CurrentKernelVersion"`

@@ -93,7 +93,7 @@ func CreateUpdatePostgresExtensionsRequest() (request *UpdatePostgresExtensionsR
 	request = &UpdatePostgresExtensionsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "UpdatePostgresExtensions", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "UpdatePostgresExtensions", "rds", "openAPI")
 	request.Method = requests.POST
 	return
 }

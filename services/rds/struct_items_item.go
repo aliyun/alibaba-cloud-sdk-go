@@ -17,50 +17,63 @@ package rds
 
 // ItemsItem is a nested struct in rds response
 type ItemsItem struct {
-	Region                string                `json:"Region" xml:"Region"`
 	ResultInfo            string                `json:"ResultInfo" xml:"ResultInfo"`
 	InsName               string                `json:"InsName" xml:"InsName"`
-	TaskTypeEn            string                `json:"TaskTypeEn" xml:"TaskTypeEn"`
+	Engine                string                `json:"Engine" xml:"Engine"`
 	Impact                string                `json:"Impact" xml:"Impact"`
 	TaskParams            string                `json:"TaskParams" xml:"TaskParams"`
-	InsComment            string                `json:"InsComment" xml:"InsComment"`
-	InstanceType          string                `json:"InstanceType" xml:"InstanceType"`
-	ReasonCode            string                `json:"ReasonCode" xml:"ReasonCode"`
+	ClassCode             string                `json:"ClassCode" xml:"ClassCode"`
+	UpgradeClassGroup     string                `json:"UpgradeClassGroup" xml:"UpgradeClassGroup"`
 	Deadline              string                `json:"Deadline" xml:"Deadline"`
-	ImpactZh              string                `json:"ImpactZh" xml:"ImpactZh"`
+	UpgradeMaxIombps      int                   `json:"UpgradeMaxIombps" xml:"UpgradeMaxIombps"`
 	DbType                string                `json:"DbType" xml:"DbType"`
+	UpgradeStorageType    string                `json:"UpgradeStorageType" xml:"UpgradeStorageType"`
 	ModifiedTime          string                `json:"ModifiedTime" xml:"ModifiedTime"`
+	MaxIops               int                   `json:"MaxIops" xml:"MaxIops"`
+	MaxConnections        int                   `json:"MaxConnections" xml:"MaxConnections"`
+	TotalCount            int                   `json:"TotalCount" xml:"TotalCount"`
+	DBInstanceId          string                `json:"DBInstanceId" xml:"DBInstanceId"`
+	AllowChange           string                `json:"AllowChange" xml:"AllowChange"`
+	Cpu                   string                `json:"Cpu" xml:"Cpu"`
+	EngineVersion         string                `json:"EngineVersion" xml:"EngineVersion"`
+	InstanceName          string                `json:"InstanceName" xml:"InstanceName"`
+	UpgradeReferencePrice string                `json:"UpgradeReferencePrice" xml:"UpgradeReferencePrice"`
+	ImpactEn              string                `json:"ImpactEn" xml:"ImpactEn"`
+	Memory                int64                 `json:"Memory" xml:"Memory"`
+	UpgradeMaxConnections int                   `json:"UpgradeMaxConnections" xml:"UpgradeMaxConnections"`
+	PrepareInterval       string                `json:"PrepareInterval" xml:"PrepareInterval"`
+	StartTime             string                `json:"StartTime" xml:"StartTime"`
+	StorageType           string                `json:"StorageType" xml:"StorageType"`
+	ChangeLevelZh         string                `json:"ChangeLevelZh" xml:"ChangeLevelZh"`
+	UpgradeMemory         int64                 `json:"UpgradeMemory" xml:"UpgradeMemory"`
+	UpgradeDescContent    string                `json:"UpgradeDescContent" xml:"UpgradeDescContent"`
+	TaskType              string                `json:"TaskType" xml:"TaskType"`
+	Region                string                `json:"Region" xml:"Region"`
+	Category              string                `json:"Category" xml:"Category"`
+	ClassGroup            string                `json:"ClassGroup" xml:"ClassGroup"`
+	TaskTypeEn            string                `json:"TaskTypeEn" xml:"TaskTypeEn"`
+	ChargeType            string                `json:"ChargeType" xml:"ChargeType"`
+	InsComment            string                `json:"InsComment" xml:"InsComment"`
+	MaxIombps             int                   `json:"MaxIombps" xml:"MaxIombps"`
+	UpgradeCpu            string                `json:"UpgradeCpu" xml:"UpgradeCpu"`
+	ImpactZh              string                `json:"ImpactZh" xml:"ImpactZh"`
+	UpgradeClassCode      string                `json:"UpgradeClassCode" xml:"UpgradeClassCode"`
 	DbVersion             string                `json:"DbVersion" xml:"DbVersion"`
 	AllowCancel           string                `json:"AllowCancel" xml:"AllowCancel"`
 	CreatedTime           string                `json:"CreatedTime" xml:"CreatedTime"`
-	TaskId                string                `json:"TaskId" xml:"TaskId"`
-	RegionId              string                `json:"RegionId" xml:"RegionId"`
 	InstanceId            string                `json:"InstanceId" xml:"InstanceId"`
 	SwitchTime            string                `json:"SwitchTime" xml:"SwitchTime"`
-	Progress              float64               `json:"Progress" xml:"Progress"`
-	DBInstanceId          string                `json:"DBInstanceId" xml:"DBInstanceId"`
-	AllowChange           string                `json:"AllowChange" xml:"AllowChange"`
-	TaskDetail            string                `json:"TaskDetail" xml:"TaskDetail"`
+	UpgradeDiskSize       int                   `json:"UpgradeDiskSize" xml:"UpgradeDiskSize"`
 	ChangeLevel           string                `json:"ChangeLevel" xml:"ChangeLevel"`
-	Uid                   string                `json:"Uid" xml:"Uid"`
 	Id                    int                   `json:"Id" xml:"Id"`
-	CallerSource          string                `json:"CallerSource" xml:"CallerSource"`
 	Status                int                   `json:"Status" xml:"Status"`
-	Product               string                `json:"Product" xml:"Product"`
-	CallerUid             string                `json:"CallerUid" xml:"CallerUid"`
-	InstanceName          string                `json:"InstanceName" xml:"InstanceName"`
-	ActionInfo            string                `json:"ActionInfo" xml:"ActionInfo"`
-	ImpactEn              string                `json:"ImpactEn" xml:"ImpactEn"`
+	EventCategory         string                `json:"EventCategory" xml:"EventCategory"`
+	UpgradeMaxIops        int                   `json:"UpgradeMaxIops" xml:"UpgradeMaxIops"`
 	ChangeLevelEn         string                `json:"ChangeLevelEn" xml:"ChangeLevelEn"`
-	PrepareInterval       string                `json:"PrepareInterval" xml:"PrepareInterval"`
 	CurrentAVZ            string                `json:"CurrentAVZ" xml:"CurrentAVZ"`
-	StartTime             string                `json:"StartTime" xml:"StartTime"`
-	EndTime               string                `json:"EndTime" xml:"EndTime"`
-	RemainTime            int                   `json:"RemainTime" xml:"RemainTime"`
-	CurrentStepName       string                `json:"CurrentStepName" xml:"CurrentStepName"`
-	ChangeLevelZh         string                `json:"ChangeLevelZh" xml:"ChangeLevelZh"`
-	TaskType              string                `json:"TaskType" xml:"TaskType"`
+	DiskSize              int                   `json:"DiskSize" xml:"DiskSize"`
 	TaskTypeZh            string                `json:"TaskTypeZh" xml:"TaskTypeZh"`
+	UpgradeCategory       string                `json:"UpgradeCategory" xml:"UpgradeCategory"`
 	ReadDBInstanceNames   []string              `json:"ReadDBInstanceNames" xml:"ReadDBInstanceNames"`
 	ReadDelayTimes        []string              `json:"ReadDelayTimes" xml:"ReadDelayTimes"`
 	SubInsNames           []string              `json:"SubInsNames" xml:"SubInsNames"`

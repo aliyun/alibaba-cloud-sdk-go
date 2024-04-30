@@ -74,6 +74,7 @@ type ModifyWhitelistTemplateRequest struct {
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	TemplateId           requests.Integer `position:"Query" name:"TemplateId"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	TemplateName         string           `position:"Query" name:"TemplateName"`
 	IpWhitelist          string           `position:"Query" name:"IpWhitelist"`
 }
@@ -94,7 +95,7 @@ func CreateModifyWhitelistTemplateRequest() (request *ModifyWhitelistTemplateReq
 	request = &ModifyWhitelistTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyWhitelistTemplate", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyWhitelistTemplate", "rds", "openAPI")
 	request.Method = requests.POST
 	return
 }

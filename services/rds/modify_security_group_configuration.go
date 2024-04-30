@@ -91,7 +91,7 @@ func CreateModifySecurityGroupConfigurationRequest() (request *ModifySecurityGro
 	request = &ModifySecurityGroupConfigurationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ModifySecurityGroupConfiguration", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "ModifySecurityGroupConfiguration", "rds", "openAPI")
 	request.Method = requests.POST
 	return
 }

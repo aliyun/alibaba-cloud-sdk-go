@@ -71,9 +71,11 @@ func (client *Client) MigrateConnectionToOtherZoneWithCallback(request *MigrateC
 // MigrateConnectionToOtherZoneRequest is the request struct for api MigrateConnectionToOtherZone
 type MigrateConnectionToOtherZoneRequest struct {
 	*requests.RpcRequest
-	ConnectionString string `position:"Query" name:"ConnectionString"`
-	ZoneId           string `position:"Query" name:"ZoneId"`
-	DBInstanceId     string `position:"Query" name:"DBInstanceId"`
+	ResourceOwnerId  requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ConnectionString string           `position:"Query" name:"ConnectionString"`
+	OwnerId          requests.Integer `position:"Query" name:"OwnerId"`
+	ZoneId           string           `position:"Query" name:"ZoneId"`
+	DBInstanceId     string           `position:"Query" name:"DBInstanceId"`
 }
 
 // MigrateConnectionToOtherZoneResponse is the response struct for api MigrateConnectionToOtherZone
@@ -89,7 +91,7 @@ func CreateMigrateConnectionToOtherZoneRequest() (request *MigrateConnectionToOt
 	request = &MigrateConnectionToOtherZoneRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "MigrateConnectionToOtherZone", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "MigrateConnectionToOtherZone", "rds", "openAPI")
 	request.Method = requests.POST
 	return
 }

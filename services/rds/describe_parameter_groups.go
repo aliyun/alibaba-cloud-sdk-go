@@ -73,6 +73,7 @@ type DescribeParameterGroupsRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	EnableDetail         requests.Boolean `position:"Query" name:"EnableDetail"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 }
@@ -90,7 +91,7 @@ func CreateDescribeParameterGroupsRequest() (request *DescribeParameterGroupsReq
 	request = &DescribeParameterGroupsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeParameterGroups", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeParameterGroups", "rds", "openAPI")
 	request.Method = requests.POST
 	return
 }

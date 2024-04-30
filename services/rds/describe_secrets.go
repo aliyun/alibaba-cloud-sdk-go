@@ -74,6 +74,7 @@ type DescribeSecretsRequest struct {
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	Engine               string           `position:"Query" name:"Engine"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	DbInstanceId         string           `position:"Query" name:"DbInstanceId"`
@@ -97,7 +98,7 @@ func CreateDescribeSecretsRequest() (request *DescribeSecretsRequest) {
 	request = &DescribeSecretsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeSecrets", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeSecrets", "rds", "openAPI")
 	request.Method = requests.POST
 	return
 }
