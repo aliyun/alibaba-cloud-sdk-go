@@ -62,6 +62,7 @@ type DataItem struct {
 	Status                    string                         `json:"Status" xml:"Status"`
 	ErRouteMapId              string                         `json:"ErRouteMapId" xml:"ErRouteMapId"`
 	PrivateIpAddress          string                         `json:"PrivateIpAddress" xml:"PrivateIpAddress"`
+	SecurityGroupId           string                         `json:"SecurityGroupId" xml:"SecurityGroupId"`
 	NextHopType               string                         `json:"NextHopType" xml:"NextHopType"`
 	ReceptionInstanceType     string                         `json:"ReceptionInstanceType" xml:"ReceptionInstanceType"`
 	GrantRuleId               string                         `json:"GrantRuleId" xml:"GrantRuleId"`

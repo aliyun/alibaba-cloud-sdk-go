@@ -53,6 +53,7 @@ type Content struct {
 	SourceInstanceId          string                         `json:"SourceInstanceId" xml:"SourceInstanceId"`
 	Status                    string                         `json:"Status" xml:"Status"`
 	PrivateIpCount            int64                          `json:"PrivateIpCount" xml:"PrivateIpCount"`
+	SecurityGroupId           string                         `json:"SecurityGroupId" xml:"SecurityGroupId"`
 	GrantRuleId               string                         `json:"GrantRuleId" xml:"GrantRuleId"`
 	NextHopType               string                         `json:"NextHopType" xml:"NextHopType"`
 	ReceptionInstanceType     string                         `json:"ReceptionInstanceType" xml:"ReceptionInstanceType"`
