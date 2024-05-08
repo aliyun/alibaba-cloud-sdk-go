@@ -80,6 +80,7 @@ type CreateKeyRequest struct {
 	ProtectionLevel         string           `position:"Query" name:"ProtectionLevel"`
 	KeyUsage                string           `position:"Query" name:"KeyUsage"`
 	DKMSInstanceId          string           `position:"Query" name:"DKMSInstanceId"`
+	Policy                  string           `position:"Query" name:"Policy"`
 }
 
 // CreateKeyResponse is the response struct for api CreateKey

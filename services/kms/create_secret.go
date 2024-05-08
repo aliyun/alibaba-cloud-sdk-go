@@ -83,6 +83,7 @@ type CreateSecretRequest struct {
 	SecretData              string           `position:"Query" name:"SecretData"`
 	SecretName              string           `position:"Query" name:"SecretName"`
 	SecretDataType          string           `position:"Query" name:"SecretDataType"`
+	Policy                  string           `position:"Query" name:"Policy"`
 }
 
 // CreateSecretResponse is the response struct for api CreateSecret
