@@ -17,11 +17,17 @@ package vod
 
 // DataModule is a nested struct in vod response
 type DataModule struct {
-	DomesticValue      string `json:"DomesticValue" xml:"DomesticValue"`
-	Value              string `json:"Value" xml:"Value"`
-	OverseasValue      string `json:"OverseasValue" xml:"OverseasValue"`
-	TimeStamp          string `json:"TimeStamp" xml:"TimeStamp"`
-	HttpsOverseasValue string `json:"HttpsOverseasValue" xml:"HttpsOverseasValue"`
-	HttpsDomesticValue string `json:"HttpsDomesticValue" xml:"HttpsDomesticValue"`
-	HttpsValue         string `json:"HttpsValue" xml:"HttpsValue"`
+	OverseasValue         string `json:"OverseasValue" xml:"OverseasValue"`
+	HttpsAccOverseasValue string `json:"HttpsAccOverseasValue" xml:"HttpsAccOverseasValue"`
+	HttpsOverseasValue    string `json:"HttpsOverseasValue" xml:"HttpsOverseasValue"`
+	DomesticValue         string `json:"DomesticValue" xml:"DomesticValue"`
+	AccValue              string `json:"AccValue" xml:"AccValue"`
+	Value                 string `json:"Value" xml:"Value"`
+	AccDomesticValue      string `json:"AccDomesticValue" xml:"AccDomesticValue"`
+	TimeStamp             string `json:"TimeStamp" xml:"TimeStamp"`
+	HttpsDomesticValue    string `json:"HttpsDomesticValue" xml:"HttpsDomesticValue"`
+	HttpsValue            string `json:"HttpsValue" xml:"HttpsValue"`
+	HttpsAccValue         string `json:"HttpsAccValue" xml:"HttpsAccValue"`
+	AccOverseasValue      string `json:"AccOverseasValue" xml:"AccOverseasValue"`
+	HttpsAccDomesticValue string `json:"HttpsAccDomesticValue" xml:"HttpsAccDomesticValue"`
 }
