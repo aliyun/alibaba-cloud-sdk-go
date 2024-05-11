@@ -80,7 +80,9 @@ type ModifyLiveMessageUserInfoRequest struct {
 // ModifyLiveMessageUserInfoResponse is the response struct for api ModifyLiveMessageUserInfo
 type ModifyLiveMessageUserInfoResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	RequestId   string          `json:"RequestId" xml:"RequestId"`
+	SuccessList []SuccessGroups `json:"SuccessList" xml:"SuccessList"`
+	FailList    []FailGroups    `json:"FailList" xml:"FailList"`
 }
 
 // CreateModifyLiveMessageUserInfoRequest creates a request to invoke ModifyLiveMessageUserInfo API
