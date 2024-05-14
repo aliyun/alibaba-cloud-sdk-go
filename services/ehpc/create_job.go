@@ -207,8 +207,9 @@ type CreateJobMonitorPolicyNotificationSpecMNSTopicItem struct {
 // CreateJobResponse is the response struct for api CreateJob
 type CreateJobResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	JobId     string `json:"JobId" xml:"JobId"`
+	RequestId string      `json:"RequestId" xml:"RequestId"`
+	JobId     string      `json:"JobId" xml:"JobId"`
+	Tasks     []TasksItem `json:"Tasks" xml:"Tasks"`
 }
 
 // CreateCreateJobRequest creates a request to invoke CreateJob API

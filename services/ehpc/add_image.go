@@ -73,8 +73,8 @@ type AddImageRequest struct {
 	*requests.RpcRequest
 	ImageType          string                     `position:"Query" name:"ImageType"`
 	Description        string                     `position:"Query" name:"Description"`
-	Version            string                     `position:"Query" name:"Version"`
 	Name               string                     `position:"Query" name:"Name"`
+	ImageVersion       string                     `position:"Query" name:"ImageVersion"`
 	ContainerImageSpec AddImageContainerImageSpec `position:"Query" name:"ContainerImageSpec"  type:"Struct"`
 	VMImageSpec        AddImageVMImageSpec        `position:"Query" name:"VMImageSpec"  type:"Struct"`
 }
