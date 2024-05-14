@@ -71,11 +71,12 @@ func (client *Client) DescribeProtectionModuleStatusWithCallback(request *Descri
 // DescribeProtectionModuleStatusRequest is the request struct for api DescribeProtectionModuleStatus
 type DescribeProtectionModuleStatusRequest struct {
 	*requests.RpcRequest
-	DefenseType string `position:"Query" name:"DefenseType"`
-	InstanceId  string `position:"Query" name:"InstanceId"`
-	SourceIp    string `position:"Query" name:"SourceIp"`
-	Domain      string `position:"Query" name:"Domain"`
-	Lang        string `position:"Query" name:"Lang"`
+	ResourceGroupId string `position:"Query" name:"ResourceGroupId"`
+	SourceIp        string `position:"Query" name:"SourceIp"`
+	Lang            string `position:"Query" name:"Lang"`
+	DefenseType     string `position:"Query" name:"DefenseType"`
+	InstanceId      string `position:"Query" name:"InstanceId"`
+	Domain          string `position:"Query" name:"Domain"`
 }
 
 // DescribeProtectionModuleStatusResponse is the response struct for api DescribeProtectionModuleStatus

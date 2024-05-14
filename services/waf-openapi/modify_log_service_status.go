@@ -71,11 +71,12 @@ func (client *Client) ModifyLogServiceStatusWithCallback(request *ModifyLogServi
 // ModifyLogServiceStatusRequest is the request struct for api ModifyLogServiceStatus
 type ModifyLogServiceStatusRequest struct {
 	*requests.RpcRequest
-	Enabled    requests.Integer `position:"Query" name:"Enabled"`
-	InstanceId string           `position:"Query" name:"InstanceId"`
-	SourceIp   string           `position:"Query" name:"SourceIp"`
-	Domain     string           `position:"Query" name:"Domain"`
-	Lang       string           `position:"Query" name:"Lang"`
+	Enabled         requests.Integer `position:"Query" name:"Enabled"`
+	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
+	SourceIp        string           `position:"Query" name:"SourceIp"`
+	Lang            string           `position:"Query" name:"Lang"`
+	InstanceId      string           `position:"Query" name:"InstanceId"`
+	Domain          string           `position:"Query" name:"Domain"`
 }
 
 // ModifyLogServiceStatusResponse is the response struct for api ModifyLogServiceStatus

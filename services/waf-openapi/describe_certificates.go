@@ -71,10 +71,11 @@ func (client *Client) DescribeCertificatesWithCallback(request *DescribeCertific
 // DescribeCertificatesRequest is the request struct for api DescribeCertificates
 type DescribeCertificatesRequest struct {
 	*requests.RpcRequest
-	SourceIp   string `position:"Query" name:"SourceIp"`
-	Lang       string `position:"Query" name:"Lang"`
-	InstanceId string `position:"Query" name:"InstanceId"`
-	Domain     string `position:"Query" name:"Domain"`
+	ResourceGroupId string `position:"Query" name:"ResourceGroupId"`
+	SourceIp        string `position:"Query" name:"SourceIp"`
+	Lang            string `position:"Query" name:"Lang"`
+	InstanceId      string `position:"Query" name:"InstanceId"`
+	Domain          string `position:"Query" name:"Domain"`
 }
 
 // DescribeCertificatesResponse is the response struct for api DescribeCertificates

@@ -73,9 +73,9 @@ type DescribeDomainAdvanceConfigsRequest struct {
 	*requests.RpcRequest
 	DomainList      string `position:"Query" name:"DomainList"`
 	ResourceGroupId string `position:"Query" name:"ResourceGroupId"`
-	InstanceId      string `position:"Query" name:"InstanceId"`
 	SourceIp        string `position:"Query" name:"SourceIp"`
 	Lang            string `position:"Query" name:"Lang"`
+	InstanceId      string `position:"Query" name:"InstanceId"`
 }
 
 // DescribeDomainAdvanceConfigsResponse is the response struct for api DescribeDomainAdvanceConfigs

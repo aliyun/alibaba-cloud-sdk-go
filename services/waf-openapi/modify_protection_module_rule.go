@@ -71,14 +71,15 @@ func (client *Client) ModifyProtectionModuleRuleWithCallback(request *ModifyProt
 // ModifyProtectionModuleRuleRequest is the request struct for api ModifyProtectionModuleRule
 type ModifyProtectionModuleRuleRequest struct {
 	*requests.RpcRequest
-	Rule        string           `position:"Query" name:"Rule"`
-	LockVersion requests.Integer `position:"Query" name:"LockVersion"`
-	SourceIp    string           `position:"Query" name:"SourceIp"`
-	Lang        string           `position:"Query" name:"Lang"`
-	DefenseType string           `position:"Query" name:"DefenseType"`
-	InstanceId  string           `position:"Query" name:"InstanceId"`
-	Domain      string           `position:"Query" name:"Domain"`
-	RuleId      requests.Integer `position:"Query" name:"RuleId"`
+	Rule            string           `position:"Query" name:"Rule"`
+	LockVersion     requests.Integer `position:"Query" name:"LockVersion"`
+	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
+	SourceIp        string           `position:"Query" name:"SourceIp"`
+	Lang            string           `position:"Query" name:"Lang"`
+	DefenseType     string           `position:"Query" name:"DefenseType"`
+	InstanceId      string           `position:"Query" name:"InstanceId"`
+	Domain          string           `position:"Query" name:"Domain"`
+	RuleId          requests.Integer `position:"Query" name:"RuleId"`
 }
 
 // ModifyProtectionModuleRuleResponse is the response struct for api ModifyProtectionModuleRule

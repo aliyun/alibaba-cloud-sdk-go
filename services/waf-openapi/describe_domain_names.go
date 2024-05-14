@@ -72,9 +72,9 @@ func (client *Client) DescribeDomainNamesWithCallback(request *DescribeDomainNam
 type DescribeDomainNamesRequest struct {
 	*requests.RpcRequest
 	ResourceGroupId string `position:"Query" name:"ResourceGroupId"`
-	InstanceId      string `position:"Query" name:"InstanceId"`
 	SourceIp        string `position:"Query" name:"SourceIp"`
 	Lang            string `position:"Query" name:"Lang"`
+	InstanceId      string `position:"Query" name:"InstanceId"`
 	CallSource      string `position:"Query" name:"CallSource"`
 }
 

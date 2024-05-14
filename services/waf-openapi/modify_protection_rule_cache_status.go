@@ -71,12 +71,13 @@ func (client *Client) ModifyProtectionRuleCacheStatusWithCallback(request *Modif
 // ModifyProtectionRuleCacheStatusRequest is the request struct for api ModifyProtectionRuleCacheStatus
 type ModifyProtectionRuleCacheStatusRequest struct {
 	*requests.RpcRequest
-	DefenseType string           `position:"Query" name:"DefenseType"`
-	InstanceId  string           `position:"Query" name:"InstanceId"`
-	SourceIp    string           `position:"Query" name:"SourceIp"`
-	Domain      string           `position:"Query" name:"Domain"`
-	Lang        string           `position:"Query" name:"Lang"`
-	RuleId      requests.Integer `position:"Query" name:"RuleId"`
+	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
+	SourceIp        string           `position:"Query" name:"SourceIp"`
+	Lang            string           `position:"Query" name:"Lang"`
+	DefenseType     string           `position:"Query" name:"DefenseType"`
+	InstanceId      string           `position:"Query" name:"InstanceId"`
+	Domain          string           `position:"Query" name:"Domain"`
+	RuleId          requests.Integer `position:"Query" name:"RuleId"`
 }
 
 // ModifyProtectionRuleCacheStatusResponse is the response struct for api ModifyProtectionRuleCacheStatus

@@ -73,6 +73,7 @@ type CreateCertificateRequest struct {
 	*requests.RpcRequest
 	Certificate     string `position:"Query" name:"Certificate"`
 	PrivateKey      string `position:"Query" name:"PrivateKey"`
+	ResourceGroupId string `position:"Query" name:"ResourceGroupId"`
 	SourceIp        string `position:"Query" name:"SourceIp"`
 	Lang            string `position:"Query" name:"Lang"`
 	InstanceId      string `position:"Query" name:"InstanceId"`

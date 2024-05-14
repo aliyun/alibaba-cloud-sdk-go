@@ -71,14 +71,15 @@ func (client *Client) ModifyProtectionRuleStatusWithCallback(request *ModifyProt
 // ModifyProtectionRuleStatusRequest is the request struct for api ModifyProtectionRuleStatus
 type ModifyProtectionRuleStatusRequest struct {
 	*requests.RpcRequest
-	LockVersion requests.Integer `position:"Query" name:"LockVersion"`
-	SourceIp    string           `position:"Query" name:"SourceIp"`
-	Lang        string           `position:"Query" name:"Lang"`
-	DefenseType string           `position:"Query" name:"DefenseType"`
-	RuleStatus  requests.Integer `position:"Query" name:"RuleStatus"`
-	InstanceId  string           `position:"Query" name:"InstanceId"`
-	Domain      string           `position:"Query" name:"Domain"`
-	RuleId      requests.Integer `position:"Query" name:"RuleId"`
+	LockVersion     requests.Integer `position:"Query" name:"LockVersion"`
+	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
+	SourceIp        string           `position:"Query" name:"SourceIp"`
+	Lang            string           `position:"Query" name:"Lang"`
+	DefenseType     string           `position:"Query" name:"DefenseType"`
+	RuleStatus      requests.Integer `position:"Query" name:"RuleStatus"`
+	InstanceId      string           `position:"Query" name:"InstanceId"`
+	Domain          string           `position:"Query" name:"Domain"`
+	RuleId          requests.Integer `position:"Query" name:"RuleId"`
 }
 
 // ModifyProtectionRuleStatusResponse is the response struct for api ModifyProtectionRuleStatus

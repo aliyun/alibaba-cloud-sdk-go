@@ -71,12 +71,13 @@ func (client *Client) ModifyDomainIpv6StatusWithCallback(request *ModifyDomainIp
 // ModifyDomainIpv6StatusRequest is the request struct for api ModifyDomainIpv6Status
 type ModifyDomainIpv6StatusRequest struct {
 	*requests.RpcRequest
-	WafVersion string `position:"Query" name:"WafVersion"`
-	Enabled    string `position:"Query" name:"Enabled"`
-	InstanceId string `position:"Query" name:"InstanceId"`
-	SourceIp   string `position:"Query" name:"SourceIp"`
-	Domain     string `position:"Query" name:"Domain"`
-	Lang       string `position:"Query" name:"Lang"`
+	WafVersion      string `position:"Query" name:"WafVersion"`
+	Enabled         string `position:"Query" name:"Enabled"`
+	ResourceGroupId string `position:"Query" name:"ResourceGroupId"`
+	SourceIp        string `position:"Query" name:"SourceIp"`
+	Lang            string `position:"Query" name:"Lang"`
+	InstanceId      string `position:"Query" name:"InstanceId"`
+	Domain          string `position:"Query" name:"Domain"`
 }
 
 // ModifyDomainIpv6StatusResponse is the response struct for api ModifyDomainIpv6Status

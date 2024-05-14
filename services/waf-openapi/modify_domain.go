@@ -74,6 +74,7 @@ type ModifyDomainRequest struct {
 	IpFollowStatus       requests.Integer `position:"Query" name:"IpFollowStatus"`
 	Keepalive            requests.Boolean `position:"Query" name:"Keepalive"`
 	SniHost              string           `position:"Query" name:"SniHost"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	HybridCloudType      requests.Integer `position:"Query" name:"HybridCloudType"`
 	SourceIp             string           `position:"Query" name:"SourceIp"`
 	HttpPort             string           `position:"Query" name:"HttpPort"`

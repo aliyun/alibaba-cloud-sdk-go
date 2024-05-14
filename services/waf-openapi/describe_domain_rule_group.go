@@ -71,10 +71,11 @@ func (client *Client) DescribeDomainRuleGroupWithCallback(request *DescribeDomai
 // DescribeDomainRuleGroupRequest is the request struct for api DescribeDomainRuleGroup
 type DescribeDomainRuleGroupRequest struct {
 	*requests.RpcRequest
-	InstanceId string `position:"Query" name:"InstanceId"`
-	SourceIp   string `position:"Query" name:"SourceIp"`
-	Domain     string `position:"Query" name:"Domain"`
-	Lang       string `position:"Query" name:"Lang"`
+	ResourceGroupId string `position:"Query" name:"ResourceGroupId"`
+	SourceIp        string `position:"Query" name:"SourceIp"`
+	Lang            string `position:"Query" name:"Lang"`
+	InstanceId      string `position:"Query" name:"InstanceId"`
+	Domain          string `position:"Query" name:"Domain"`
 }
 
 // DescribeDomainRuleGroupResponse is the response struct for api DescribeDomainRuleGroup

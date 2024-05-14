@@ -72,9 +72,9 @@ func (client *Client) DescribeWafSourceIpSegmentWithCallback(request *DescribeWa
 type DescribeWafSourceIpSegmentRequest struct {
 	*requests.RpcRequest
 	ResourceGroupId string `position:"Query" name:"ResourceGroupId"`
-	InstanceId      string `position:"Query" name:"InstanceId"`
 	SourceIp        string `position:"Query" name:"SourceIp"`
 	Lang            string `position:"Query" name:"Lang"`
+	InstanceId      string `position:"Query" name:"InstanceId"`
 }
 
 // DescribeWafSourceIpSegmentResponse is the response struct for api DescribeWafSourceIpSegment

@@ -71,12 +71,13 @@ func (client *Client) DescribeCertMatchStatusWithCallback(request *DescribeCertM
 // DescribeCertMatchStatusRequest is the request struct for api DescribeCertMatchStatus
 type DescribeCertMatchStatusRequest struct {
 	*requests.RpcRequest
-	Certificate string `position:"Query" name:"Certificate"`
-	PrivateKey  string `position:"Query" name:"PrivateKey"`
-	InstanceId  string `position:"Query" name:"InstanceId"`
-	SourceIp    string `position:"Query" name:"SourceIp"`
-	Domain      string `position:"Query" name:"Domain"`
-	Lang        string `position:"Query" name:"Lang"`
+	Certificate     string `position:"Query" name:"Certificate"`
+	PrivateKey      string `position:"Query" name:"PrivateKey"`
+	ResourceGroupId string `position:"Query" name:"ResourceGroupId"`
+	SourceIp        string `position:"Query" name:"SourceIp"`
+	Lang            string `position:"Query" name:"Lang"`
+	InstanceId      string `position:"Query" name:"InstanceId"`
+	Domain          string `position:"Query" name:"Domain"`
 }
 
 // DescribeCertMatchStatusResponse is the response struct for api DescribeCertMatchStatus
