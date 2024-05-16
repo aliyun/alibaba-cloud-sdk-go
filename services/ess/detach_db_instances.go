@@ -73,6 +73,7 @@ type DetachDBInstancesRequest struct {
 	*requests.RpcRequest
 	ClientToken          string           `position:"Query" name:"ClientToken"`
 	ScalingGroupId       string           `position:"Query" name:"ScalingGroupId"`
+	RemoveSecurityGroup  requests.Boolean `position:"Query" name:"RemoveSecurityGroup"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	DBInstance           *[]string        `position:"Query" name:"DBInstance"  type:"Repeated"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`

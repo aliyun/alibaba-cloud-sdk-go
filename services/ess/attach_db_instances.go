@@ -74,6 +74,8 @@ type AttachDBInstancesRequest struct {
 	ClientToken          string           `position:"Query" name:"ClientToken"`
 	ScalingGroupId       string           `position:"Query" name:"ScalingGroupId"`
 	ForceAttach          requests.Boolean `position:"Query" name:"ForceAttach"`
+	Type                 string           `position:"Query" name:"Type"`
+	AttachMode           string           `position:"Query" name:"AttachMode"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	DBInstance           *[]string        `position:"Query" name:"DBInstance"  type:"Repeated"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`

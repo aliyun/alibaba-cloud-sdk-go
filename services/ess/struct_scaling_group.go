@@ -78,4 +78,5 @@ type ScalingGroup struct {
 	ServerGroups                        ServerGroups                `json:"ServerGroups" xml:"ServerGroups"`
 	LoadBalancerConfigs                 LoadBalancerConfigs         `json:"LoadBalancerConfigs" xml:"LoadBalancerConfigs"`
 	Tags                                TagsInDescribeScalingGroups `json:"Tags" xml:"Tags"`
+	DBInstances                         DBInstances                 `json:"DBInstances" xml:"DBInstances"`
 }

@@ -113,6 +113,7 @@ type ModifyScalingConfigurationRequest struct {
 	UserData                        string                                            `position:"Query" name:"UserData"`
 	PasswordInherit                 requests.Boolean                                  `position:"Query" name:"PasswordInherit"`
 	ImageName                       string                                            `position:"Query" name:"ImageName"`
+	DedicatedHostClusterId          string                                            `position:"Query" name:"DedicatedHostClusterId"`
 	Override                        requests.Boolean                                  `position:"Query" name:"Override"`
 	SchedulerOptions                map[string]interface{}                            `position:"Query" name:"SchedulerOptions"`
 	DeploymentSetId                 string                                            `position:"Query" name:"DeploymentSetId"`

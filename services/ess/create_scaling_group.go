@@ -113,6 +113,7 @@ type CreateScalingGroupRequest struct {
 	ScalingGroupName                    string                                      `position:"Query" name:"ScalingGroupName"`
 	OwnerAccount                        string                                      `position:"Query" name:"OwnerAccount"`
 	SpotInstancePools                   requests.Integer                            `position:"Query" name:"SpotInstancePools"`
+	DBInstance                          *[]CreateScalingGroupDBInstance             `position:"Query" name:"DBInstance"  type:"Repeated"`
 	GroupDeletionProtection             requests.Boolean                            `position:"Query" name:"GroupDeletionProtection"`
 	LaunchTemplateVersion               string                                      `position:"Query" name:"LaunchTemplateVersion"`
 	ScalingPolicy                       string                                      `position:"Query" name:"ScalingPolicy"`
@@ -171,6 +172,13 @@ type CreateScalingGroupSystemTag struct {
 type CreateScalingGroupLoadBalancerConfig struct {
 	LoadBalancerId string `name:"LoadBalancerId"`
 	Weight         string `name:"Weight"`
+}
+
+// CreateScalingGroupDBInstance is a repeated param struct in CreateScalingGroupRequest
+type CreateScalingGroupDBInstance struct {
+	DBInstanceId string `name:"DBInstanceId"`
+	Type         string `name:"Type"`
+	AttachMode   string `name:"AttachMode"`
 }
 
 // CreateScalingGroupVServerGroup is a repeated param struct in CreateScalingGroupRequest

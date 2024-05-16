@@ -73,6 +73,7 @@ type ScalingConfigurationInDescribeScalingConfigurations struct {
 	DeletionProtection              bool                                            `json:"DeletionProtection" xml:"DeletionProtection"`
 	StorageSetId                    string                                          `json:"StorageSetId" xml:"StorageSetId"`
 	StorageSetPartitionNumber       int                                             `json:"StorageSetPartitionNumber" xml:"StorageSetPartitionNumber"`
+	DedicatedHostClusterId          string                                          `json:"DedicatedHostClusterId" xml:"DedicatedHostClusterId"`
 	SystemDiskCategories            SystemDiskCategories                            `json:"SystemDiskCategories" xml:"SystemDiskCategories"`
 	WeightedCapacities              WeightedCapacities                              `json:"WeightedCapacities" xml:"WeightedCapacities"`
 	InstanceTypes                   InstanceTypesInDescribeScalingConfigurations    `json:"InstanceTypes" xml:"InstanceTypes"`
