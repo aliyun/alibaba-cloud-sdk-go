@@ -73,8 +73,8 @@ type CreateFixedPriceDemandOrderRequest struct {
 	*requests.RpcRequest
 	Code      string `position:"Query" name:"Code"`
 	ContactId string `position:"Query" name:"ContactId"`
-	Domain    string `position:"Query" name:"Domain"`
 	Source    string `position:"Query" name:"Source"`
+	Domain    string `position:"Query" name:"Domain"`
 }
 
 // CreateFixedPriceDemandOrderResponse is the response struct for api CreateFixedPriceDemandOrder

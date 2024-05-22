@@ -36,4 +36,5 @@ type Demand struct {
 	PartnerDomain       string  `json:"PartnerDomain" xml:"PartnerDomain"`
 	PurchaseStatus      int     `json:"PurchaseStatus" xml:"PurchaseStatus"`
 	Email               string  `json:"Email" xml:"Email"`
+	SettleBasePrice     float64 `json:"SettleBasePrice" xml:"SettleBasePrice"`
 }

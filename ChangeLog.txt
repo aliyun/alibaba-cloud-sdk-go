@@ -1,3 +1,7 @@
+2024-05-22 Version: v1.62.740
+- Generated 2018-02-08, 2018-01-29, 2016-05-11 for `Domain`.
+- Supported for QueryBrokerDemand.
+
 2024-05-22 Version: v1.62.739
 - Generated 2022-01-01 for `quickbi-public`.
 - Add CreateTicket4Copilot API.
