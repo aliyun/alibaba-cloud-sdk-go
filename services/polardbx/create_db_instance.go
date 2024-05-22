@@ -71,28 +71,38 @@ func (client *Client) CreateDBInstanceWithCallback(request *CreateDBInstanceRequ
 // CreateDBInstanceRequest is the request struct for api CreateDBInstance
 type CreateDBInstanceRequest struct {
 	*requests.RpcRequest
-	NetworkType           string           `position:"Query" name:"NetworkType"`
-	EngineVersion         string           `position:"Query" name:"EngineVersion"`
-	ResourceGroupId       string           `position:"Query" name:"ResourceGroupId"`
-	DBNodeClass           string           `position:"Query" name:"DBNodeClass"`
-	Period                string           `position:"Query" name:"Period"`
-	IsReadDBInstance      requests.Boolean `position:"Query" name:"IsReadDBInstance"`
-	VSwitchId             string           `position:"Query" name:"VSwitchId"`
-	AutoRenew             requests.Boolean `position:"Query" name:"AutoRenew"`
-	ZoneId                string           `position:"Query" name:"ZoneId"`
-	PrimaryDBInstanceName string           `position:"Query" name:"PrimaryDBInstanceName"`
-	ClientToken           string           `position:"Query" name:"ClientToken"`
-	DBNodeCount           requests.Integer `position:"Query" name:"DBNodeCount"`
-	UsedTime              requests.Integer `position:"Query" name:"UsedTime"`
-	VPCId                 string           `position:"Query" name:"VPCId"`
-	PayType               string           `position:"Query" name:"PayType"`
+	NetworkType              string           `position:"Query" name:"NetworkType"`
+	EngineVersion            string           `position:"Query" name:"EngineVersion"`
+	TertiaryZone             string           `position:"Query" name:"TertiaryZone"`
+	CnClass                  string           `position:"Query" name:"CnClass"`
+	ResourceGroupId          string           `position:"Query" name:"ResourceGroupId"`
+	DBNodeClass              string           `position:"Query" name:"DBNodeClass"`
+	SecondaryZone            string           `position:"Query" name:"SecondaryZone"`
+	Period                   string           `position:"Query" name:"Period"`
+	IsReadDBInstance         requests.Boolean `position:"Query" name:"IsReadDBInstance"`
+	VSwitchId                string           `position:"Query" name:"VSwitchId"`
+	AutoRenew                requests.Boolean `position:"Query" name:"AutoRenew"`
+	ZoneId                   string           `position:"Query" name:"ZoneId"`
+	CNNodeCount              string           `position:"Query" name:"CNNodeCount"`
+	PrimaryDBInstanceName    string           `position:"Query" name:"PrimaryDBInstanceName"`
+	TopologyType             string           `position:"Query" name:"TopologyType"`
+	ClientToken              string           `position:"Query" name:"ClientToken"`
+	IsColumnarReadDBInstance requests.Boolean `position:"Query" name:"IsColumnarReadDBInstance"`
+	DNNodeCount              string           `position:"Query" name:"DNNodeCount"`
+	DBNodeCount              requests.Integer `position:"Query" name:"DBNodeCount"`
+	DnClass                  string           `position:"Query" name:"DnClass"`
+	UsedTime                 requests.Integer `position:"Query" name:"UsedTime"`
+	PrimaryZone              string           `position:"Query" name:"PrimaryZone"`
+	Series                   string           `position:"Query" name:"Series"`
+	VPCId                    string           `position:"Query" name:"VPCId"`
+	PayType                  string           `position:"Query" name:"PayType"`
 }
 
 // CreateDBInstanceResponse is the response struct for api CreateDBInstance
 type CreateDBInstanceResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
 	DBInstanceName string `json:"DBInstanceName" xml:"DBInstanceName"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
 	OrderId        string `json:"OrderId" xml:"OrderId"`
 }
 

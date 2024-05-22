@@ -79,9 +79,9 @@ type ModifyDatabaseDescriptionRequest struct {
 // ModifyDatabaseDescriptionResponse is the response struct for api ModifyDatabaseDescription
 type ModifyDatabaseDescriptionResponse struct {
 	*responses.BaseResponse
+	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
-	Message   string `json:"Message" xml:"Message"`
 }
 
 // CreateModifyDatabaseDescriptionRequest creates a request to invoke ModifyDatabaseDescription API

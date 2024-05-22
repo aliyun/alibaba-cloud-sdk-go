@@ -81,8 +81,8 @@ type DescribeScaleOutMigrateTaskListRequest struct {
 // DescribeScaleOutMigrateTaskListResponse is the response struct for api DescribeScaleOutMigrateTaskList
 type DescribeScaleOutMigrateTaskListResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Progress  int    `json:"Progress" xml:"Progress"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDescribeScaleOutMigrateTaskListRequest creates a request to invoke DescribeScaleOutMigrateTaskList API

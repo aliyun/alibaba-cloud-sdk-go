@@ -71,20 +71,22 @@ func (client *Client) CreateAccountWithCallback(request *CreateAccountRequest, c
 // CreateAccountRequest is the request struct for api CreateAccount
 type CreateAccountRequest struct {
 	*requests.RpcRequest
-	DBInstanceName     string `position:"Query" name:"DBInstanceName"`
-	AccountDescription string `position:"Query" name:"AccountDescription"`
-	AccountPrivilege   string `position:"Query" name:"AccountPrivilege"`
-	AccountPassword    string `position:"Query" name:"AccountPassword"`
-	AccountName        string `position:"Query" name:"AccountName"`
-	DBName             string `position:"Query" name:"DBName"`
+	DBInstanceName          string `position:"Query" name:"DBInstanceName"`
+	SecurityAccountPassword string `position:"Query" name:"SecurityAccountPassword"`
+	AccountDescription      string `position:"Query" name:"AccountDescription"`
+	AccountPrivilege        string `position:"Query" name:"AccountPrivilege"`
+	AccountPassword         string `position:"Query" name:"AccountPassword"`
+	AccountName             string `position:"Query" name:"AccountName"`
+	DBName                  string `position:"Query" name:"DBName"`
+	SecurityAccountName     string `position:"Query" name:"SecurityAccountName"`
 }
 
 // CreateAccountResponse is the response struct for api CreateAccount
 type CreateAccountResponse struct {
 	*responses.BaseResponse
+	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
-	Message   string `json:"Message" xml:"Message"`
 }
 
 // CreateCreateAccountRequest creates a request to invoke CreateAccount API

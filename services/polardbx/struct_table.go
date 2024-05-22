@@ -19,6 +19,6 @@ package polardbx
 type Table struct {
 	TableName string `json:"TableName" xml:"TableName"`
 	TableType string `json:"TableType" xml:"TableType"`
-	DbKey     string `json:"DbKey" xml:"DbKey"`
 	TbKey     string `json:"TbKey" xml:"TbKey"`
+	DbKey     string `json:"DbKey" xml:"DbKey"`
 }

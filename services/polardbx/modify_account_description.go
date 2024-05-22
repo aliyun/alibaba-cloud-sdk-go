@@ -79,9 +79,9 @@ type ModifyAccountDescriptionRequest struct {
 // ModifyAccountDescriptionResponse is the response struct for api ModifyAccountDescription
 type ModifyAccountDescriptionResponse struct {
 	*responses.BaseResponse
+	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
-	Message   string `json:"Message" xml:"Message"`
 }
 
 // CreateModifyAccountDescriptionRequest creates a request to invoke ModifyAccountDescription API

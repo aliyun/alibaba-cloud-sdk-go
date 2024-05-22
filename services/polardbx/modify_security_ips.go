@@ -80,9 +80,9 @@ type ModifySecurityIpsRequest struct {
 // ModifySecurityIpsResponse is the response struct for api ModifySecurityIps
 type ModifySecurityIpsResponse struct {
 	*responses.BaseResponse
+	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
-	Message   string `json:"Message" xml:"Message"`
 }
 
 // CreateModifySecurityIpsRequest creates a request to invoke ModifySecurityIps API

@@ -17,7 +17,8 @@ package polardbx
 
 // PerformanceItem is a nested struct in polardbx response
 type PerformanceItem struct {
-	MetricName  string  `json:"MetricName" xml:"MetricName"`
-	Measurement string  `json:"Measurement" xml:"Measurement"`
-	Points      []Point `json:"Points" xml:"Points"`
+	MetricName  string `json:"MetricName" xml:"MetricName"`
+	DBNodeId    string `json:"DBNodeId" xml:"DBNodeId"`
+	Measurement string `json:"Measurement" xml:"Measurement"`
+	Points      Points `json:"Points" xml:"Points"`
 }

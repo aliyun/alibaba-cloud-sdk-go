@@ -17,8 +17,8 @@ package polardbx
 
 // Region is a nested struct in polardbx response
 type Region struct {
-	RegionId        string `json:"RegionId" xml:"RegionId"`
-	SupportPolarx20 bool   `json:"SupportPolarx20" xml:"SupportPolarx20"`
 	SupportPolarx10 bool   `json:"SupportPolarx10" xml:"SupportPolarx10"`
+	SupportPolarx20 bool   `json:"SupportPolarx20" xml:"SupportPolarx20"`
+	RegionId        string `json:"RegionId" xml:"RegionId"`
 	Zones           Zones  `json:"Zones" xml:"Zones"`
 }

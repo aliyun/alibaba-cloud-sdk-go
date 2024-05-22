@@ -71,9 +71,13 @@ func (client *Client) DescribeDBInstancesWithCallback(request *DescribeDBInstanc
 // DescribeDBInstancesRequest is the request struct for api DescribeDBInstances
 type DescribeDBInstancesRequest struct {
 	*requests.RpcRequest
-	PageNumber      requests.Integer `position:"Query" name:"PageNumber"`
 	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
+	MustHasCdc      requests.Boolean `position:"Query" name:"MustHasCdc"`
+	Tags            string           `position:"Query" name:"Tags"`
+	InstanceId      string           `position:"Query" name:"InstanceId"`
+	PageNumber      requests.Integer `position:"Query" name:"PageNumber"`
 	PageSize        requests.Integer `position:"Query" name:"PageSize"`
+	Series          string           `position:"Query" name:"Series"`
 }
 
 // DescribeDBInstancesResponse is the response struct for api DescribeDBInstances

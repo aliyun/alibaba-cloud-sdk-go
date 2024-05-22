@@ -17,11 +17,12 @@ package polardbx
 
 // BackupSet is a nested struct in polardbx response
 type BackupSet struct {
-	BackupSetId   int64 `json:"BackupSetId" xml:"BackupSetId"`
-	BeginTime     int64 `json:"BeginTime" xml:"BeginTime"`
-	EndTime       int64 `json:"EndTime" xml:"EndTime"`
-	BackupSetSize int64 `json:"BackupSetSize" xml:"BackupSetSize"`
-	BackupModel   int   `json:"BackupModel" xml:"BackupModel"`
 	Status        int   `json:"Status" xml:"Status"`
+	BeginTime     int64 `json:"BeginTime" xml:"BeginTime"`
+	BackupSetSize int64 `json:"BackupSetSize" xml:"BackupSetSize"`
 	BackupType    int   `json:"BackupType" xml:"BackupType"`
+	EndTime       int64 `json:"EndTime" xml:"EndTime"`
+	BackupModel   int   `json:"BackupModel" xml:"BackupModel"`
+	BackupSetId   int64 `json:"BackupSetId" xml:"BackupSetId"`
+	OSSList       []OSS `json:"OSSList" xml:"OSSList"`
 }

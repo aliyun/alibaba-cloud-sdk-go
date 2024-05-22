@@ -17,8 +17,10 @@ package polardbx
 
 // DBNode is a nested struct in polardbx response
 type DBNode struct {
-	RegionId  string `json:"RegionId" xml:"RegionId"`
-	ZoneId    string `json:"ZoneId" xml:"ZoneId"`
-	Id        string `json:"Id" xml:"Id"`
-	NodeClass string `json:"NodeClass" xml:"NodeClass"`
+	ComputeNodeId string `json:"ComputeNodeId" xml:"ComputeNodeId"`
+	DataNodeId    string `json:"DataNodeId" xml:"DataNodeId"`
+	RegionId      string `json:"RegionId" xml:"RegionId"`
+	ZoneId        string `json:"ZoneId" xml:"ZoneId"`
+	Id            string `json:"Id" xml:"Id"`
+	NodeClass     string `json:"NodeClass" xml:"NodeClass"`
 }

@@ -71,17 +71,25 @@ func (client *Client) UpdateBackupPolicyWithCallback(request *UpdateBackupPolicy
 // UpdateBackupPolicyRequest is the request struct for api UpdateBackupPolicy
 type UpdateBackupPolicyRequest struct {
 	*requests.RpcRequest
-	DBInstanceName             string           `position:"Query" name:"DBInstanceName"`
-	ForceCleanOnHighSpaceUsage requests.Integer `position:"Query" name:"ForceCleanOnHighSpaceUsage"`
-	BackupPlanBegin            string           `position:"Query" name:"BackupPlanBegin"`
-	RemoveLogRetention         requests.Integer `position:"Query" name:"RemoveLogRetention"`
-	BackupType                 string           `position:"Query" name:"BackupType"`
-	IsEnabled                  requests.Integer `position:"Query" name:"IsEnabled"`
-	BackupWay                  string           `position:"Query" name:"BackupWay"`
-	BackupSetRetention         requests.Integer `position:"Query" name:"BackupSetRetention"`
-	BackupPeriod               string           `position:"Query" name:"BackupPeriod"`
-	LocalLogRetention          requests.Integer `position:"Query" name:"LocalLogRetention"`
-	LogLocalRetentionSpace     requests.Integer `position:"Query" name:"LogLocalRetentionSpace"`
+	DBInstanceName                 string           `position:"Query" name:"DBInstanceName"`
+	CrossRegionDataBackupRetention requests.Integer `position:"Query" name:"CrossRegionDataBackupRetention"`
+	ForceCleanOnHighSpaceUsage     requests.Integer `position:"Query" name:"ForceCleanOnHighSpaceUsage"`
+	BackupPlanBegin                string           `position:"Query" name:"BackupPlanBegin"`
+	RemoveLogRetention             requests.Integer `position:"Query" name:"RemoveLogRetention"`
+	ColdDataBackupRetention        requests.Integer `position:"Query" name:"ColdDataBackupRetention"`
+	LocalLogRetentionNumber        requests.Integer `position:"Query" name:"LocalLogRetentionNumber"`
+	BackupType                     string           `position:"Query" name:"BackupType"`
+	IsEnabled                      requests.Integer `position:"Query" name:"IsEnabled"`
+	ColdDataBackupInterval         requests.Integer `position:"Query" name:"ColdDataBackupInterval"`
+	BackupWay                      string           `position:"Query" name:"BackupWay"`
+	DestCrossRegion                string           `position:"Query" name:"DestCrossRegion"`
+	BackupSetRetention             requests.Integer `position:"Query" name:"BackupSetRetention"`
+	IsCrossRegionDataBackupEnabled requests.Boolean `position:"Query" name:"IsCrossRegionDataBackupEnabled"`
+	CrossRegionLogBackupRetention  requests.Integer `position:"Query" name:"CrossRegionLogBackupRetention"`
+	BackupPeriod                   string           `position:"Query" name:"BackupPeriod"`
+	IsCrossRegionLogBackupEnabled  requests.Boolean `position:"Query" name:"IsCrossRegionLogBackupEnabled"`
+	LocalLogRetention              requests.Integer `position:"Query" name:"LocalLogRetention"`
+	LogLocalRetentionSpace         requests.Integer `position:"Query" name:"LogLocalRetentionSpace"`
 }
 
 // UpdateBackupPolicyResponse is the response struct for api UpdateBackupPolicy

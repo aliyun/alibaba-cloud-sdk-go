@@ -71,16 +71,22 @@ func (client *Client) ModifyDBInstanceClassWithCallback(request *ModifyDBInstanc
 // ModifyDBInstanceClassRequest is the request struct for api ModifyDBInstanceClass
 type ModifyDBInstanceClassRequest struct {
 	*requests.RpcRequest
-	DBInstanceName        string `position:"Query" name:"DBInstanceName"`
-	ClientToken           string `position:"Query" name:"ClientToken"`
-	TargetDBInstanceClass string `position:"Query" name:"TargetDBInstanceClass"`
+	SpecifiedDNSpecMapJson string           `position:"Query" name:"SpecifiedDNSpecMapJson"`
+	CnClass                string           `position:"Query" name:"CnClass"`
+	TargetDBInstanceClass  string           `position:"Query" name:"TargetDBInstanceClass"`
+	SpecifiedDNScale       requests.Boolean `position:"Query" name:"SpecifiedDNScale"`
+	DBInstanceName         string           `position:"Query" name:"DBInstanceName"`
+	ClientToken            string           `position:"Query" name:"ClientToken"`
+	SwitchTimeMode         string           `position:"Query" name:"SwitchTimeMode"`
+	SwitchTime             string           `position:"Query" name:"SwitchTime"`
+	DnClass                string           `position:"Query" name:"DnClass"`
 }
 
 // ModifyDBInstanceClassResponse is the response struct for api ModifyDBInstanceClass
 type ModifyDBInstanceClassResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	OrderId   string `json:"OrderId" xml:"OrderId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateModifyDBInstanceClassRequest creates a request to invoke ModifyDBInstanceClass API

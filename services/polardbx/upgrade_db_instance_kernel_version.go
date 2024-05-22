@@ -72,17 +72,17 @@ func (client *Client) UpgradeDBInstanceKernelVersionWithCallback(request *Upgrad
 type UpgradeDBInstanceKernelVersionRequest struct {
 	*requests.RpcRequest
 	DBInstanceName string `position:"Query" name:"DBInstanceName"`
-	SwitchTime     string `position:"Query" name:"SwitchTime"`
-	UpgradeTime    string `position:"Query" name:"UpgradeTime"`
+	SwitchMode     string `position:"Query" name:"SwitchMode"`
+	MinorVersion   string `position:"Query" name:"MinorVersion"`
 }
 
 // UpgradeDBInstanceKernelVersionResponse is the response struct for api UpgradeDBInstanceKernelVersion
 type UpgradeDBInstanceKernelVersionResponse struct {
 	*responses.BaseResponse
-	RequestId          string `json:"RequestId" xml:"RequestId"`
 	DBInstanceName     string `json:"DBInstanceName" xml:"DBInstanceName"`
-	TaskId             string `json:"TaskId" xml:"TaskId"`
 	TargetMinorVersion string `json:"TargetMinorVersion" xml:"TargetMinorVersion"`
+	RequestId          string `json:"RequestId" xml:"RequestId"`
+	TaskId             string `json:"TaskId" xml:"TaskId"`
 }
 
 // CreateUpgradeDBInstanceKernelVersionRequest creates a request to invoke UpgradeDBInstanceKernelVersion API

@@ -78,10 +78,10 @@ type DescribeDistributeTableListRequest struct {
 // DescribeDistributeTableListResponse is the response struct for api DescribeDistributeTableList
 type DescribeDistributeTableListResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
-	Message   string `json:"Message" xml:"Message"`
-	Data      Data   `json:"Data" xml:"Data"`
+	Message   string                            `json:"Message" xml:"Message"`
+	RequestId string                            `json:"RequestId" xml:"RequestId"`
+	Success   bool                              `json:"Success" xml:"Success"`
+	Data      DataInDescribeDistributeTableList `json:"Data" xml:"Data"`
 }
 
 // CreateDescribeDistributeTableListRequest creates a request to invoke DescribeDistributeTableList API

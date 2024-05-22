@@ -1,3 +1,7 @@
+2024-05-22 Version: v1.62.738
+- Generated 2020-02-02 for `polardbx`.
+- DescribeDBInstances, add cpuType.
+
 2024-05-16 Version: v1.62.737
 - Generated 2014-08-28 for `Ess`.
 - ModifyScalingGroup add ScalingPolicy params.

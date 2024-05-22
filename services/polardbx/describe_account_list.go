@@ -72,6 +72,7 @@ func (client *Client) DescribeAccountListWithCallback(request *DescribeAccountLi
 type DescribeAccountListRequest struct {
 	*requests.RpcRequest
 	DBInstanceName string `position:"Query" name:"DBInstanceName"`
+	AccountType    string `position:"Query" name:"AccountType"`
 	AccountName    string `position:"Query" name:"AccountName"`
 }
 

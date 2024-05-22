@@ -71,20 +71,24 @@ func (client *Client) CreateDBWithCallback(request *CreateDBRequest, callback fu
 // CreateDBRequest is the request struct for api CreateDB
 type CreateDBRequest struct {
 	*requests.RpcRequest
-	DBInstanceName   string `position:"Query" name:"DBInstanceName"`
-	Charset          string `position:"Query" name:"Charset"`
-	AccountPrivilege string `position:"Query" name:"AccountPrivilege"`
-	AccountName      string `position:"Query" name:"AccountName"`
-	DbName           string `position:"Query" name:"DbName"`
-	DbDescription    string `position:"Query" name:"DbDescription"`
+	DBInstanceName          string `position:"Query" name:"DBInstanceName"`
+	Charset                 string `position:"Query" name:"Charset"`
+	SecurityAccountPassword string `position:"Query" name:"SecurityAccountPassword"`
+	AccountPrivilege        string `position:"Query" name:"AccountPrivilege"`
+	Mode                    string `position:"Query" name:"Mode"`
+	AccountName             string `position:"Query" name:"AccountName"`
+	SecurityAccountName     string `position:"Query" name:"SecurityAccountName"`
+	DbDescription           string `position:"Query" name:"DbDescription"`
+	DbName                  string `position:"Query" name:"DbName"`
+	StoragePoolName         string `position:"Query" name:"StoragePoolName"`
 }
 
 // CreateDBResponse is the response struct for api CreateDB
 type CreateDBResponse struct {
 	*responses.BaseResponse
+	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
-	Message   string `json:"Message" xml:"Message"`
 }
 
 // CreateCreateDBRequest creates a request to invoke CreateDB API

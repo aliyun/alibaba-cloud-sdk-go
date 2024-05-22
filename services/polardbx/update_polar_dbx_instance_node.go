@@ -71,16 +71,21 @@ func (client *Client) UpdatePolarDBXInstanceNodeWithCallback(request *UpdatePola
 // UpdatePolarDBXInstanceNodeRequest is the request struct for api UpdatePolarDBXInstanceNode
 type UpdatePolarDBXInstanceNodeRequest struct {
 	*requests.RpcRequest
+	AddDNSpec           string `position:"Query" name:"AddDNSpec"`
+	StoragePoolName     string `position:"Query" name:"StoragePoolName"`
+	DbInstanceNodeCount string `position:"Query" name:"DbInstanceNodeCount"`
+	CNNodeCount         string `position:"Query" name:"CNNodeCount"`
 	DBInstanceName      string `position:"Query" name:"DBInstanceName"`
 	ClientToken         string `position:"Query" name:"ClientToken"`
-	DbInstanceNodeCount string `position:"Query" name:"DbInstanceNodeCount"`
+	DeleteDNIds         string `position:"Query" name:"DeleteDNIds"`
+	DNNodeCount         string `position:"Query" name:"DNNodeCount"`
 }
 
 // UpdatePolarDBXInstanceNodeResponse is the response struct for api UpdatePolarDBXInstanceNode
 type UpdatePolarDBXInstanceNodeResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	OrderId   string `json:"OrderId" xml:"OrderId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateUpdatePolarDBXInstanceNodeRequest creates a request to invoke UpdatePolarDBXInstanceNode API

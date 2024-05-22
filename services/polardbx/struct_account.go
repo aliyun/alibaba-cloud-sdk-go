@@ -17,21 +17,30 @@ package polardbx
 
 // Account is a nested struct in polardbx response
 type Account struct {
-	BackupPeriod               string `json:"BackupPeriod" xml:"BackupPeriod"`
-	AccountType                string `json:"AccountType" xml:"AccountType"`
-	BackupSetRetention         int    `json:"BackupSetRetention" xml:"BackupSetRetention"`
-	LogLocalRetentionSpace     int    `json:"LogLocalRetentionSpace" xml:"LogLocalRetentionSpace"`
-	AccountDescription         string `json:"AccountDescription" xml:"AccountDescription"`
-	DBInstanceName             string `json:"DBInstanceName" xml:"DBInstanceName"`
-	AccountPrivilege           string `json:"AccountPrivilege" xml:"AccountPrivilege"`
-	BackupType                 string `json:"BackupType" xml:"BackupType"`
-	BackupPlanBegin            string `json:"BackupPlanBegin" xml:"BackupPlanBegin"`
-	LocalLogRetention          int    `json:"LocalLogRetention" xml:"LocalLogRetention"`
-	IsEnabled                  int    `json:"IsEnabled" xml:"IsEnabled"`
-	AccountName                string `json:"AccountName" xml:"AccountName"`
-	BackupWay                  string `json:"BackupWay" xml:"BackupWay"`
-	DBName                     string `json:"DBName" xml:"DBName"`
-	RemoveLogRetention         int    `json:"RemoveLogRetention" xml:"RemoveLogRetention"`
-	BackupSetId                int64  `json:"BackupSetId" xml:"BackupSetId"`
-	ForceCleanOnHighSpaceUsage int    `json:"ForceCleanOnHighSpaceUsage" xml:"ForceCleanOnHighSpaceUsage"`
+	CrossRegionDataBackupRetention int    `json:"CrossRegionDataBackupRetention" xml:"CrossRegionDataBackupRetention"`
+	BackupPeriod                   string `json:"BackupPeriod" xml:"BackupPeriod"`
+	AccountType                    string `json:"AccountType" xml:"AccountType"`
+	DestCrossRegion                string `json:"DestCrossRegion" xml:"DestCrossRegion"`
+	LogLocalRetentionSpace         int    `json:"LogLocalRetentionSpace" xml:"LogLocalRetentionSpace"`
+	AccountDescription             string `json:"AccountDescription" xml:"AccountDescription"`
+	ColdDataBackupInterval         int    `json:"ColdDataBackupInterval" xml:"ColdDataBackupInterval"`
+	DBInstanceName                 string `json:"DBInstanceName" xml:"DBInstanceName"`
+	CrossRegionLogBackupRetention  int    `json:"CrossRegionLogBackupRetention" xml:"CrossRegionLogBackupRetention"`
+	BackupPlanBegin                string `json:"BackupPlanBegin" xml:"BackupPlanBegin"`
+	IsEnabled                      int    `json:"IsEnabled" xml:"IsEnabled"`
+	BackupWay                      string `json:"BackupWay" xml:"BackupWay"`
+	DBName                         string `json:"DBName" xml:"DBName"`
+	BackupSetId                    int64  `json:"BackupSetId" xml:"BackupSetId"`
+	ForceCleanOnHighSpaceUsage     int    `json:"ForceCleanOnHighSpaceUsage" xml:"ForceCleanOnHighSpaceUsage"`
+	BackupSetRetention             int    `json:"BackupSetRetention" xml:"BackupSetRetention"`
+	ColdDataBackupRetention        int    `json:"ColdDataBackupRetention" xml:"ColdDataBackupRetention"`
+	AccountPrivilege               string `json:"AccountPrivilege" xml:"AccountPrivilege"`
+	GmtCreated                     string `json:"GmtCreated" xml:"GmtCreated"`
+	BackupType                     string `json:"BackupType" xml:"BackupType"`
+	LocalLogRetention              int    `json:"LocalLogRetention" xml:"LocalLogRetention"`
+	LocalLogRetentionNumber        int    `json:"LocalLogRetentionNumber" xml:"LocalLogRetentionNumber"`
+	IsCrossRegionDataBackupEnabled bool   `json:"IsCrossRegionDataBackupEnabled" xml:"IsCrossRegionDataBackupEnabled"`
+	AccountName                    string `json:"AccountName" xml:"AccountName"`
+	RemoveLogRetention             int    `json:"RemoveLogRetention" xml:"RemoveLogRetention"`
+	IsCrossRegionLogBackupEnabled  bool   `json:"IsCrossRegionLogBackupEnabled" xml:"IsCrossRegionLogBackupEnabled"`
 }

@@ -17,15 +17,15 @@ package polardbx
 
 // TaskProgressInfo is a nested struct in polardbx response
 type TaskProgressInfo struct {
-	DBName           string `json:"DBName" xml:"DBName"`
-	BeginTime        string `json:"BeginTime" xml:"BeginTime"`
-	ProgressInfo     string `json:"ProgressInfo" xml:"ProgressInfo"`
-	FinishTime       string `json:"FinishTime" xml:"FinishTime"`
-	TaskAction       string `json:"TaskAction" xml:"TaskAction"`
-	TaskId           string `json:"TaskId" xml:"TaskId"`
-	Progress         string `json:"Progress" xml:"Progress"`
 	Status           string `json:"Status" xml:"Status"`
+	FinishTime       string `json:"FinishTime" xml:"FinishTime"`
+	Progress         string `json:"Progress" xml:"Progress"`
+	BeginTime        string `json:"BeginTime" xml:"BeginTime"`
 	TaskErrorCode    string `json:"TaskErrorCode" xml:"TaskErrorCode"`
-	TaskErrorMessage string `json:"TaskErrorMessage" xml:"TaskErrorMessage"`
+	DBName           string `json:"DBName" xml:"DBName"`
+	ProgressInfo     string `json:"ProgressInfo" xml:"ProgressInfo"`
 	ScaleOutToken    string `json:"ScaleOutToken" xml:"ScaleOutToken"`
+	TaskId           string `json:"TaskId" xml:"TaskId"`
+	TaskErrorMessage string `json:"TaskErrorMessage" xml:"TaskErrorMessage"`
+	TaskAction       string `json:"TaskAction" xml:"TaskAction"`
 }

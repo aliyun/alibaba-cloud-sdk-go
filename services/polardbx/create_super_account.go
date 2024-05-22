@@ -80,9 +80,9 @@ type CreateSuperAccountRequest struct {
 // CreateSuperAccountResponse is the response struct for api CreateSuperAccount
 type CreateSuperAccountResponse struct {
 	*responses.BaseResponse
+	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
-	Message   string `json:"Message" xml:"Message"`
 }
 
 // CreateCreateSuperAccountRequest creates a request to invoke CreateSuperAccount API

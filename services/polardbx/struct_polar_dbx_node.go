@@ -17,8 +17,8 @@ package polardbx
 
 // PolarDBXNode is a nested struct in polardbx response
 type PolarDBXNode struct {
+	ZoneId    string `json:"ZoneId" xml:"ZoneId"`
 	Id        string `json:"Id" xml:"Id"`
 	ClassCode string `json:"ClassCode" xml:"ClassCode"`
 	RegionId  string `json:"RegionId" xml:"RegionId"`
-	ZoneId    string `json:"ZoneId" xml:"ZoneId"`
 }

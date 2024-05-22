@@ -78,9 +78,9 @@ type DeleteDBRequest struct {
 // DeleteDBResponse is the response struct for api DeleteDB
 type DeleteDBResponse struct {
 	*responses.BaseResponse
+	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
-	Message   string `json:"Message" xml:"Message"`
 }
 
 // CreateDeleteDBRequest creates a request to invoke DeleteDB API

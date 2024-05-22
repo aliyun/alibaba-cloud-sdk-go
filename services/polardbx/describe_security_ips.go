@@ -77,9 +77,9 @@ type DescribeSecurityIpsRequest struct {
 // DescribeSecurityIpsResponse is the response struct for api DescribeSecurityIps
 type DescribeSecurityIpsResponse struct {
 	*responses.BaseResponse
+	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
-	Message   string `json:"Message" xml:"Message"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 

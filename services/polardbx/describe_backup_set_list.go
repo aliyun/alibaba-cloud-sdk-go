@@ -71,11 +71,12 @@ func (client *Client) DescribeBackupSetListWithCallback(request *DescribeBackupS
 // DescribeBackupSetListRequest is the request struct for api DescribeBackupSetList
 type DescribeBackupSetListRequest struct {
 	*requests.RpcRequest
-	DBInstanceName string           `position:"Query" name:"DBInstanceName"`
-	EndTime        requests.Integer `position:"Query" name:"EndTime"`
-	StartTime      requests.Integer `position:"Query" name:"StartTime"`
-	PageNumber     requests.Integer `position:"Query" name:"PageNumber"`
-	PageSize       requests.Integer `position:"Query" name:"PageSize"`
+	DBInstanceName  string           `position:"Query" name:"DBInstanceName"`
+	EndTime         requests.Integer `position:"Query" name:"EndTime"`
+	StartTime       requests.Integer `position:"Query" name:"StartTime"`
+	DestCrossRegion string           `position:"Query" name:"DestCrossRegion"`
+	PageNumber      requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize        requests.Integer `position:"Query" name:"PageSize"`
 }
 
 // DescribeBackupSetListResponse is the response struct for api DescribeBackupSetList

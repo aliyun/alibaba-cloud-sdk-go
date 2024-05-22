@@ -80,17 +80,15 @@ type DescribeTasksRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	EndTime              string           `position:"Query" name:"EndTime"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	TaskAction           string           `position:"Query" name:"TaskAction"`
-	Status               string           `position:"Query" name:"Status"`
 }
 
 // DescribeTasksResponse is the response struct for api DescribeTasks
 type DescribeTasksResponse struct {
 	*responses.BaseResponse
 	RequestId        string             `json:"RequestId" xml:"RequestId"`
-	TotalRecordCount int                `json:"TotalRecordCount" xml:"TotalRecordCount"`
 	PageNumber       int                `json:"PageNumber" xml:"PageNumber"`
 	PageRecordCount  int                `json:"PageRecordCount" xml:"PageRecordCount"`
+	TotalRecordCount int                `json:"TotalRecordCount" xml:"TotalRecordCount"`
 	Items            []TaskProgressInfo `json:"Items" xml:"Items"`
 }
 

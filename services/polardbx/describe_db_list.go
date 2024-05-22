@@ -78,9 +78,9 @@ type DescribeDbListRequest struct {
 // DescribeDbListResponse is the response struct for api DescribeDbList
 type DescribeDbListResponse struct {
 	*responses.BaseResponse
+	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
-	Message   string `json:"Message" xml:"Message"`
 	Data      []DB   `json:"Data" xml:"Data"`
 }
 
