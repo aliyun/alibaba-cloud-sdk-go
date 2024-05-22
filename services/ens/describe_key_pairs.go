@@ -74,6 +74,7 @@ type DescribeKeyPairsRequest struct {
 	KeyPairName string `position:"Query" name:"KeyPairName"`
 	PageNumber  string `position:"Query" name:"PageNumber"`
 	PageSize    string `position:"Query" name:"PageSize"`
+	KeyPairId   string `position:"Query" name:"KeyPairId"`
 }
 
 // DescribeKeyPairsResponse is the response struct for api DescribeKeyPairs

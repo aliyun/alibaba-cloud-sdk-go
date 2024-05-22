@@ -71,9 +71,8 @@ func (client *Client) ResetAICInstanceWithCallback(request *ResetAICInstanceRequ
 // ResetAICInstanceRequest is the request struct for api ResetAICInstance
 type ResetAICInstanceRequest struct {
 	*requests.RpcRequest
-	ServerId    string    `position:"Query" name:"ServerId"`
-	InstanceId  string    `position:"Query" name:"InstanceId"`
-	InstanceIds *[]string `position:"Query" name:"InstanceIds"  type:"Json"`
+	ServerId   string `position:"Query" name:"ServerId"`
+	InstanceId string `position:"Query" name:"InstanceId"`
 }
 
 // ResetAICInstanceResponse is the response struct for api ResetAICInstance

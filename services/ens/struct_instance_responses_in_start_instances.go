@@ -17,5 +17,5 @@ package ens
 
 // InstanceResponsesInStartInstances is a nested struct in ens response
 type InstanceResponsesInStartInstances struct {
-	InstanceResponsesItem []InstanceResponsesItem `json:"InstanceResponses" xml:"InstanceResponses"`
+	Response []Response `json:"response" xml:"response"`
 }

@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// RetryWorkflow invokes the ens.RetryWorkflow API synchronously
-func (client *Client) RetryWorkflow(request *RetryWorkflowRequest) (response *RetryWorkflowResponse, err error) {
-	response = CreateRetryWorkflowResponse()
+// DeleteSDG invokes the ens.DeleteSDG API synchronously
+func (client *Client) DeleteSDG(request *DeleteSDGRequest) (response *DeleteSDGResponse, err error) {
+	response = CreateDeleteSDGResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// RetryWorkflowWithChan invokes the ens.RetryWorkflow API asynchronously
-func (client *Client) RetryWorkflowWithChan(request *RetryWorkflowRequest) (<-chan *RetryWorkflowResponse, <-chan error) {
-	responseChan := make(chan *RetryWorkflowResponse, 1)
+// DeleteSDGWithChan invokes the ens.DeleteSDG API asynchronously
+func (client *Client) DeleteSDGWithChan(request *DeleteSDGRequest) (<-chan *DeleteSDGResponse, <-chan error) {
+	responseChan := make(chan *DeleteSDGResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.RetryWorkflow(request)
+		response, err := client.DeleteSDG(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) RetryWorkflowWithChan(request *RetryWorkflowRequest) (<-ch
 	return responseChan, errChan
 }
 
-// RetryWorkflowWithCallback invokes the ens.RetryWorkflow API asynchronously
-func (client *Client) RetryWorkflowWithCallback(request *RetryWorkflowRequest, callback func(response *RetryWorkflowResponse, err error)) <-chan int {
+// DeleteSDGWithCallback invokes the ens.DeleteSDG API asynchronously
+func (client *Client) DeleteSDGWithCallback(request *DeleteSDGRequest, callback func(response *DeleteSDGResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *RetryWorkflowResponse
+		var response *DeleteSDGResponse
 		var err error
 		defer close(result)
-		response, err = client.RetryWorkflow(request)
+		response, err = client.DeleteSDG(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,31 +68,31 @@ func (client *Client) RetryWorkflowWithCallback(request *RetryWorkflowRequest, c
 	return result
 }
 
-// RetryWorkflowRequest is the request struct for api RetryWorkflow
-type RetryWorkflowRequest struct {
+// DeleteSDGRequest is the request struct for api DeleteSDG
+type DeleteSDGRequest struct {
 	*requests.RpcRequest
-	WorkflowIds *[]string `position:"Query" name:"WorkflowIds"  type:"Json"`
+	SDGId *[]string `position:"Query" name:"SDGId"  type:"Json"`
 }
 
-// RetryWorkflowResponse is the response struct for api RetryWorkflow
-type RetryWorkflowResponse struct {
+// DeleteSDGResponse is the response struct for api DeleteSDG
+type DeleteSDGResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateRetryWorkflowRequest creates a request to invoke RetryWorkflow API
-func CreateRetryWorkflowRequest() (request *RetryWorkflowRequest) {
-	request = &RetryWorkflowRequest{
+// CreateDeleteSDGRequest creates a request to invoke DeleteSDG API
+func CreateDeleteSDGRequest() (request *DeleteSDGRequest) {
+	request = &DeleteSDGRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ens", "2017-11-10", "RetryWorkflow", "ens", "openAPI")
-	request.Method = requests.POST
+	request.InitWithApiInfo("Ens", "2017-11-10", "DeleteSDG", "ens", "openAPI")
+	request.Method = requests.GET
 	return
 }
 
-// CreateRetryWorkflowResponse creates a response to parse from RetryWorkflow response
-func CreateRetryWorkflowResponse() (response *RetryWorkflowResponse) {
-	response = &RetryWorkflowResponse{
+// CreateDeleteSDGResponse creates a response to parse from DeleteSDG response
+func CreateDeleteSDGResponse() (response *DeleteSDGResponse) {
+	response = &DeleteSDGResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

@@ -74,6 +74,7 @@ type RenewARMServerInstanceRequest struct {
 	Period     requests.Integer `position:"Query" name:"Period"`
 	PeriodUnit string           `position:"Query" name:"PeriodUnit"`
 	InstanceId string           `position:"Query" name:"InstanceId"`
+	AutoRenew  requests.Boolean `position:"Query" name:"AutoRenew"`
 }
 
 // RenewARMServerInstanceResponse is the response struct for api RenewARMServerInstance

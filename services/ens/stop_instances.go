@@ -77,8 +77,8 @@ type StopInstancesRequest struct {
 // StopInstancesResponse is the response struct for api StopInstances
 type StopInstancesResponse struct {
 	*responses.BaseResponse
-	RequestId         string                  `json:"RequestId" xml:"RequestId"`
-	InstanceResponses []InstanceResponsesItem `json:"InstanceResponses" xml:"InstanceResponses"`
+	RequestId         string      `json:"RequestId" xml:"RequestId"`
+	InstanceResponses []Responses `json:"InstanceResponses" xml:"InstanceResponses"`
 }
 
 // CreateStopInstancesRequest creates a request to invoke StopInstances API

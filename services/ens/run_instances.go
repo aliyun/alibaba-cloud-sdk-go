@@ -81,11 +81,13 @@ type RunInstancesRequest struct {
 	SystemDisk              RunInstancesSystemDisk  `position:"Query" name:"SystemDisk"  type:"Struct"`
 	NetDistrictCode         string                  `position:"Query" name:"NetDistrictCode"`
 	EnsRegionId             string                  `position:"Query" name:"EnsRegionId"`
+	Tag                     *[]RunInstancesTag      `position:"Query" name:"Tag"  type:"Repeated"`
 	Period                  requests.Integer        `position:"Query" name:"Period"`
 	PublicIpIdentification  requests.Boolean        `position:"Query" name:"PublicIpIdentification"`
 	BillingCycle            string                  `position:"Query" name:"BillingCycle"`
 	VSwitchId               string                  `position:"Query" name:"VSwitchId"`
 	PrivateIpAddress        string                  `position:"Query" name:"PrivateIpAddress"`
+	SpotStrategy            string                  `position:"Query" name:"SpotStrategy"`
 	PeriodUnit              string                  `position:"Query" name:"PeriodUnit"`
 	InstanceName            string                  `position:"Query" name:"InstanceName"`
 	AutoRenew               requests.Boolean        `position:"Query" name:"AutoRenew"`
@@ -100,6 +102,7 @@ type RunInstancesRequest struct {
 	InstanceType            string                  `position:"Query" name:"InstanceType"`
 	InstanceChargeType      string                  `position:"Query" name:"InstanceChargeType"`
 	Amount                  requests.Integer        `position:"Query" name:"Amount"`
+	AutoReleaseTime         string                  `position:"Query" name:"AutoReleaseTime"`
 	IpType                  string                  `position:"Query" name:"IpType"`
 	DataDisk                *[]RunInstancesDataDisk `position:"Query" name:"DataDisk"  type:"Json"`
 	SchedulingStrategy      string                  `position:"Query" name:"SchedulingStrategy"`
@@ -118,6 +121,12 @@ type RunInstancesDataDisk struct {
 type RunInstancesSystemDisk struct {
 	Size     string `name:"Size"`
 	Category string `name:"Category"`
+}
+
+// RunInstancesTag is a repeated param struct in RunInstancesRequest
+type RunInstancesTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // RunInstancesResponse is the response struct for api RunInstances

@@ -72,6 +72,7 @@ func (client *Client) DeleteKeyPairsWithCallback(request *DeleteKeyPairsRequest,
 type DeleteKeyPairsRequest struct {
 	*requests.RpcRequest
 	KeyPairName string `position:"Query" name:"KeyPairName"`
+	KeyPairId   string `position:"Query" name:"KeyPairId"`
 }
 
 // DeleteKeyPairsResponse is the response struct for api DeleteKeyPairs

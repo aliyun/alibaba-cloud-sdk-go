@@ -21,6 +21,7 @@ type Instance struct {
 	InstanceResourceType    string                               `json:"InstanceResourceType" xml:"InstanceResourceType"`
 	ImageId                 string                               `json:"ImageId" xml:"ImageId"`
 	OSName                  string                               `json:"OSName" xml:"OSName"`
+	AutoReleaseTime         string                               `json:"AutoReleaseTime" xml:"AutoReleaseTime"`
 	InternetMaxBandwidthOut int                                  `json:"InternetMaxBandwidthOut" xml:"InternetMaxBandwidthOut"`
 	InstanceTypeFamily      string                               `json:"InstanceTypeFamily" xml:"InstanceTypeFamily"`
 	InstanceId              string                               `json:"InstanceId" xml:"InstanceId"`
@@ -37,12 +38,14 @@ type Instance struct {
 	Disk                    int                                  `json:"Disk" xml:"Disk"`
 	HostName                string                               `json:"HostName" xml:"HostName"`
 	Status                  string                               `json:"Status" xml:"Status"`
+	SpotStrategy            string                               `json:"SpotStrategy" xml:"SpotStrategy"`
 	SecurityGroupIds        SecurityGroupIdsInDescribeInstances  `json:"SecurityGroupIds" xml:"SecurityGroupIds"`
 	InnerIpAddress          InnerIpAddress                       `json:"InnerIpAddress" xml:"InnerIpAddress"`
 	PublicIpAddress         PublicIpAddressInDescribeInstances   `json:"PublicIpAddress" xml:"PublicIpAddress"`
 	SystemDisk              SystemDisk                           `json:"SystemDisk" xml:"SystemDisk"`
 	NetworkAttributes       NetworkAttributesInDescribeInstances `json:"NetworkAttributes" xml:"NetworkAttributes"`
-	DataDisk                DataDisk                             `json:"DataDisk" xml:"DataDisk"`
+	Tags                    Tags                                 `json:"Tags" xml:"Tags"`
 	PublicIpAddresses       PublicIpAddresses                    `json:"PublicIpAddresses" xml:"PublicIpAddresses"`
+	DataDisk                DataDisk                             `json:"DataDisk" xml:"DataDisk"`
 	PrivateIpAddresses      PrivateIpAddresses                   `json:"PrivateIpAddresses" xml:"PrivateIpAddresses"`
 }

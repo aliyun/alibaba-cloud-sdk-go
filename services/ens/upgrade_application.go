@@ -80,6 +80,7 @@ type UpgradeApplicationRequest struct {
 type UpgradeApplicationResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	TaskId    string `json:"TaskId" xml:"TaskId"`
 }
 
 // CreateUpgradeApplicationRequest creates a request to invoke UpgradeApplication API

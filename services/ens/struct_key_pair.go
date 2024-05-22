@@ -20,4 +20,5 @@ type KeyPair struct {
 	CreationTime       string `json:"CreationTime" xml:"CreationTime"`
 	KeyPairFingerPrint string `json:"KeyPairFingerPrint" xml:"KeyPairFingerPrint"`
 	KeyPairName        string `json:"KeyPairName" xml:"KeyPairName"`
+	KeyPairId          string `json:"KeyPairId" xml:"KeyPairId"`
 }

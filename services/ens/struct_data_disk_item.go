@@ -26,4 +26,5 @@ type DataDiskItem struct {
 	DiskId     string `json:"DiskId" xml:"DiskId"`
 	Category   string `json:"Category" xml:"Category"`
 	Name       string `json:"name" xml:"name"`
+	DiskSize   int    `json:"DiskSize" xml:"DiskSize"`
 }

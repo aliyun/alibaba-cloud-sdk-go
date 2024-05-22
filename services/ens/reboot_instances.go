@@ -77,8 +77,8 @@ type RebootInstancesRequest struct {
 // RebootInstancesResponse is the response struct for api RebootInstances
 type RebootInstancesResponse struct {
 	*responses.BaseResponse
-	RequestId         string                  `json:"RequestId" xml:"RequestId"`
-	InstanceResponses []InstanceResponsesItem `json:"InstanceResponses" xml:"InstanceResponses"`
+	RequestId         string      `json:"RequestId" xml:"RequestId"`
+	InstanceResponses []Responses `json:"InstanceResponses" xml:"InstanceResponses"`
 }
 
 // CreateRebootInstancesRequest creates a request to invoke RebootInstances API

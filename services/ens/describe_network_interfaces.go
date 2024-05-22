@@ -71,18 +71,19 @@ func (client *Client) DescribeNetworkInterfacesWithCallback(request *DescribeNet
 // DescribeNetworkInterfacesRequest is the request struct for api DescribeNetworkInterfaces
 type DescribeNetworkInterfacesRequest struct {
 	*requests.RpcRequest
-	Type                 string `position:"Query" name:"Type"`
-	EnsRegionId          string `position:"Query" name:"EnsRegionId"`
-	NetworkInterfaceName string `position:"Query" name:"NetworkInterfaceName"`
-	VSwitchId            string `position:"Query" name:"VSwitchId"`
-	InstanceId           string `position:"Query" name:"InstanceId"`
-	NetworkId            string `position:"Query" name:"NetworkId"`
-	Status               string `position:"Query" name:"Status"`
-	SecurityGroupId      string `position:"Query" name:"SecurityGroupId"`
-	PageNumber           string `position:"Query" name:"PageNumber"`
-	PageSize             string `position:"Query" name:"PageSize"`
-	PrimaryIpAddress     string `position:"Query" name:"PrimaryIpAddress"`
-	NetworkInterfaceId   string `position:"Query" name:"NetworkInterfaceId"`
+	Type                 string           `position:"Query" name:"Type"`
+	EnsRegionId          string           `position:"Query" name:"EnsRegionId"`
+	NetworkInterfaceName string           `position:"Query" name:"NetworkInterfaceName"`
+	VSwitchId            string           `position:"Query" name:"VSwitchId"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
+	NetworkId            string           `position:"Query" name:"NetworkId"`
+	Status               string           `position:"Query" name:"Status"`
+	SecurityGroupId      string           `position:"Query" name:"SecurityGroupId"`
+	PageNumber           string           `position:"Query" name:"PageNumber"`
+	ShowDetail           requests.Boolean `position:"Query" name:"ShowDetail"`
+	PageSize             string           `position:"Query" name:"PageSize"`
+	PrimaryIpAddress     string           `position:"Query" name:"PrimaryIpAddress"`
+	NetworkInterfaceId   string           `position:"Query" name:"NetworkInterfaceId"`
 }
 
 // DescribeNetworkInterfacesResponse is the response struct for api DescribeNetworkInterfaces

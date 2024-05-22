@@ -79,8 +79,8 @@ type ReinitInstancesRequest struct {
 // ReinitInstancesResponse is the response struct for api ReinitInstances
 type ReinitInstancesResponse struct {
 	*responses.BaseResponse
-	RequestId         string                  `json:"RequestId" xml:"RequestId"`
-	InstanceResponses []InstanceResponsesItem `json:"InstanceResponses" xml:"InstanceResponses"`
+	RequestId         string      `json:"RequestId" xml:"RequestId"`
+	InstanceResponses []Responses `json:"InstanceResponses" xml:"InstanceResponses"`
 }
 
 // CreateReinitInstancesRequest creates a request to invoke ReinitInstances API

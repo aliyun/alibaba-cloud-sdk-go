@@ -20,6 +20,7 @@ type NetworkInterfaceSet struct {
 	CreationTime         string                                      `json:"CreationTime" xml:"CreationTime"`
 	EnsRegionId          string                                      `json:"EnsRegionId" xml:"EnsRegionId"`
 	InstanceId           string                                      `json:"InstanceId" xml:"InstanceId"`
+	InstanceName         string                                      `json:"InstanceName" xml:"InstanceName"`
 	MacAddress           string                                      `json:"MacAddress" xml:"MacAddress"`
 	NetworkInterfaceId   string                                      `json:"NetworkInterfaceId" xml:"NetworkInterfaceId"`
 	PrimaryIp            string                                      `json:"PrimaryIp" xml:"PrimaryIp"`

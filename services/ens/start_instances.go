@@ -77,8 +77,8 @@ type StartInstancesRequest struct {
 // StartInstancesResponse is the response struct for api StartInstances
 type StartInstancesResponse struct {
 	*responses.BaseResponse
-	RequestId         string                  `json:"RequestId" xml:"RequestId"`
-	InstanceResponses []InstanceResponsesItem `json:"InstanceResponses" xml:"InstanceResponses"`
+	RequestId         string     `json:"RequestId" xml:"RequestId"`
+	InstanceResponses []Response `json:"InstanceResponses" xml:"InstanceResponses"`
 }
 
 // CreateStartInstancesRequest creates a request to invoke StartInstances API

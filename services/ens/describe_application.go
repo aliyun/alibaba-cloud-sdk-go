@@ -71,6 +71,7 @@ func (client *Client) DescribeApplicationWithCallback(request *DescribeApplicati
 // DescribeApplicationRequest is the request struct for api DescribeApplication
 type DescribeApplicationRequest struct {
 	*requests.RpcRequest
+	ResourceSelector    string `position:"Query" name:"ResourceSelector"`
 	AppVersions         string `position:"Query" name:"AppVersions"`
 	OutDetailStatParams string `position:"Query" name:"OutDetailStatParams"`
 	Level               string `position:"Query" name:"Level"`

@@ -73,7 +73,6 @@ type ModifyImageAttributeRequest struct {
 	*requests.RpcRequest
 	ImageId   string `position:"Query" name:"ImageId"`
 	ImageName string `position:"Query" name:"ImageName"`
-	Product   string `position:"Query" name:"product"`
 }
 
 // ModifyImageAttributeResponse is the response struct for api ModifyImageAttribute

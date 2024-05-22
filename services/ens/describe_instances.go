@@ -71,23 +71,30 @@ func (client *Client) DescribeInstancesWithCallback(request *DescribeInstancesRe
 // DescribeInstancesRequest is the request struct for api DescribeInstances
 type DescribeInstancesRequest struct {
 	*requests.RpcRequest
-	OrderByParams        string           `position:"Query" name:"OrderByParams"`
-	EnsRegionId          string           `position:"Query" name:"EnsRegionId"`
-	InstanceResourceType string           `position:"Query" name:"InstanceResourceType"`
-	EnsServiceId         string           `position:"Query" name:"EnsServiceId"`
-	VSwitchId            string           `position:"Query" name:"VSwitchId"`
-	InstanceId           string           `position:"Query" name:"InstanceId"`
-	InstanceName         string           `position:"Query" name:"InstanceName"`
-	InstanceIds          string           `position:"Query" name:"InstanceIds"`
-	NetworkId            string           `position:"Query" name:"NetworkId"`
-	Status               string           `position:"Query" name:"Status"`
-	IntranetIp           string           `position:"Query" name:"IntranetIp"`
-	ImageId              string           `position:"Query" name:"ImageId"`
-	SecurityGroupId      string           `position:"Query" name:"SecurityGroupId"`
-	SearchKey            string           `position:"Query" name:"SearchKey"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	PageSize             string           `position:"Query" name:"PageSize"`
-	EnsRegionIds         string           `position:"Query" name:"EnsRegionIds"`
+	OrderByParams        string                   `position:"Query" name:"OrderByParams"`
+	EnsRegionId          string                   `position:"Query" name:"EnsRegionId"`
+	InstanceResourceType string                   `position:"Query" name:"InstanceResourceType"`
+	EnsServiceId         string                   `position:"Query" name:"EnsServiceId"`
+	Tags                 *[]DescribeInstancesTags `position:"Query" name:"Tags"  type:"Json"`
+	VSwitchId            string                   `position:"Query" name:"VSwitchId"`
+	InstanceId           string                   `position:"Query" name:"InstanceId"`
+	InstanceName         string                   `position:"Query" name:"InstanceName"`
+	InstanceIds          string                   `position:"Query" name:"InstanceIds"`
+	NetworkId            string                   `position:"Query" name:"NetworkId"`
+	Status               string                   `position:"Query" name:"Status"`
+	IntranetIp           string                   `position:"Query" name:"IntranetIp"`
+	ImageId              string                   `position:"Query" name:"ImageId"`
+	SecurityGroupId      string                   `position:"Query" name:"SecurityGroupId"`
+	SearchKey            string                   `position:"Query" name:"SearchKey"`
+	PageNumber           requests.Integer         `position:"Query" name:"PageNumber"`
+	PageSize             string                   `position:"Query" name:"PageSize"`
+	EnsRegionIds         string                   `position:"Query" name:"EnsRegionIds"`
+}
+
+// DescribeInstancesTags is a repeated param struct in DescribeInstancesRequest
+type DescribeInstancesTags struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // DescribeInstancesResponse is the response struct for api DescribeInstances
