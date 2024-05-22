@@ -33,9 +33,11 @@ type Result struct {
 	FailCount                   int                      `json:"FailCount" xml:"FailCount"`
 	RuleType                    string                   `json:"RuleType" xml:"RuleType"`
 	Email                       string                   `json:"Email" xml:"Email"`
+	IsSystemRole                bool                     `json:"IsSystemRole" xml:"IsSystemRole"`
 	OwnerName                   string                   `json:"OwnerName" xml:"OwnerName"`
 	WorkspaceName               string                   `json:"WorkspaceName" xml:"WorkspaceName"`
 	Sql                         string                   `json:"Sql" xml:"Sql"`
+	OpenOfflineAcceleration     bool                     `json:"OpenOfflineAcceleration" xml:"OpenOfflineAcceleration"`
 	RowLevel                    bool                     `json:"RowLevel" xml:"RowLevel"`
 	WorksId                     string                   `json:"WorksId" xml:"WorksId"`
 	TotalNum                    int                      `json:"TotalNum" xml:"TotalNum"`
@@ -83,6 +85,7 @@ type Result struct {
 	UsersModel                  UsersModel               `json:"UsersModel" xml:"UsersModel"`
 	Detail                      Detail                   `json:"Detail" xml:"Detail"`
 	Directory                   Directory                `json:"Directory" xml:"Directory"`
+	AuthConfigList              []AuthConfigListItem     `json:"AuthConfigList" xml:"AuthConfigList"`
 	Data                        []DataItem               `json:"Data" xml:"Data"`
 	FailResults                 []FailResultsItem        `json:"FailResults" xml:"FailResults"`
 	CubeTableList               []CubeTableListItem      `json:"CubeTableList" xml:"CubeTableList"`

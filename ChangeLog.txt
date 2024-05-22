@@ -1,3 +1,8 @@
+2024-05-22 Version: v1.62.739
+- Generated 2022-01-01 for `quickbi-public`.
+- Add CreateTicket4Copilot API.
+- QueryDatasetList and QueryDatasetInfo APIs add response parameters.
+
 2024-05-22 Version: v1.62.738
 - Generated 2020-02-02 for `polardbx`.
 - DescribeDBInstances, add cpuType.

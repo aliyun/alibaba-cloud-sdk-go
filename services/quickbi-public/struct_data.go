@@ -20,6 +20,7 @@ type Data struct {
 	WorksName                    string                       `json:"WorksName" xml:"WorksName"`
 	IdentifiedPath               string                       `json:"IdentifiedPath" xml:"IdentifiedPath"`
 	UsergroupDesc                string                       `json:"UsergroupDesc" xml:"UsergroupDesc"`
+	RoleName                     string                       `json:"RoleName" xml:"RoleName"`
 	ModifiedTime                 string                       `json:"ModifiedTime" xml:"ModifiedTime"`
 	CubeName                     string                       `json:"CubeName" xml:"CubeName"`
 	TagName                      string                       `json:"TagName" xml:"TagName"`
@@ -32,6 +33,7 @@ type Data struct {
 	QueryTimeoutCountPercent     string                       `json:"QueryTimeoutCountPercent" xml:"QueryTimeoutCountPercent"`
 	ShareToId                    string                       `json:"ShareToId" xml:"ShareToId"`
 	WorksType                    string                       `json:"WorksType" xml:"WorksType"`
+	IsSystemRole                 bool                         `json:"IsSystemRole" xml:"IsSystemRole"`
 	RepeatSqlQueryCount          int                          `json:"RepeatSqlQueryCount" xml:"RepeatSqlQueryCount"`
 	ModifyUser                   string                       `json:"ModifyUser" xml:"ModifyUser"`
 	OwnerName                    string                       `json:"OwnerName" xml:"OwnerName"`
@@ -80,6 +82,7 @@ type Data struct {
 	ComponentQueryCountAvg       string                       `json:"ComponentQueryCountAvg" xml:"ComponentQueryCountAvg"`
 	QueryOverFiveSecPercent      string                       `json:"QueryOverFiveSecPercent" xml:"QueryOverFiveSecPercent"`
 	ShareToName                  string                       `json:"ShareToName" xml:"ShareToName"`
+	RoleId                       int64                        `json:"RoleId" xml:"RoleId"`
 	ShareToType                  int                          `json:"ShareToType" xml:"ShareToType"`
 	QuickIndexQueryCount         int                          `json:"QuickIndexQueryCount" xml:"QuickIndexQueryCount"`
 	ParentUsergroupId            string                       `json:"ParentUsergroupId" xml:"ParentUsergroupId"`
@@ -91,5 +94,6 @@ type Data struct {
 	ShareType                    string                       `json:"ShareType" xml:"ShareType"`
 	CubePerformanceDiagnoseModel CubePerformanceDiagnoseModel `json:"CubePerformanceDiagnoseModel" xml:"CubePerformanceDiagnoseModel"`
 	Directory                    Directory                    `json:"Directory" xml:"Directory"`
+	AuthConfigList               []AuthConfigListItem         `json:"AuthConfigList" xml:"AuthConfigList"`
 	Receivers                    []ReceiversItem              `json:"Receivers" xml:"Receivers"`
 }
