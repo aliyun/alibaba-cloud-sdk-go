@@ -1,3 +1,7 @@
+2024-05-23 Version: v1.62.744
+- Generated 2014-05-26 for `Ecs`.
+- Add SnapshotLinkId for DescribeSnapshots.
+
 2024-05-23 Version: v1.62.743
 - Generated 2019-09-01 for `OceanBasePro`.
 undefined
