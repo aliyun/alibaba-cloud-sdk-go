@@ -71,12 +71,13 @@ func (client *Client) DescribeSQLSamplesWithCallback(request *DescribeSQLSamples
 // DescribeSQLSamplesRequest is the request struct for api DescribeSQLSamples
 type DescribeSQLSamplesRequest struct {
 	*requests.RpcRequest
-	StartTime  string `position:"Body" name:"StartTime"`
-	TenantId   string `position:"Body" name:"TenantId"`
-	SqlId      string `position:"Body" name:"SqlId"`
-	EndTime    string `position:"Body" name:"EndTime"`
-	InstanceId string `position:"Body" name:"InstanceId"`
-	DbName     string `position:"Body" name:"DbName"`
+	ReturnSqlText requests.Boolean `position:"Body" name:"ReturnSqlText"`
+	StartTime     string           `position:"Body" name:"StartTime"`
+	TenantId      string           `position:"Body" name:"TenantId"`
+	SqlId         string           `position:"Body" name:"SqlId"`
+	EndTime       string           `position:"Body" name:"EndTime"`
+	InstanceId    string           `position:"Body" name:"InstanceId"`
+	DbName        string           `position:"Body" name:"DbName"`
 }
 
 // DescribeSQLSamplesResponse is the response struct for api DescribeSQLSamples

@@ -53,6 +53,8 @@ type Instance struct {
 	ExclusiveUnitNumLimit           int                     `json:"ExclusiveUnitNumLimit" xml:"ExclusiveUnitNumLimit"`
 	EnableReadOnlyReplica           bool                    `json:"EnableReadOnlyReplica" xml:"EnableReadOnlyReplica"`
 	EnableReadOnlyReplicaManagement bool                    `json:"EnableReadOnlyReplicaManagement" xml:"EnableReadOnlyReplicaManagement"`
+	PrimaryInstance                 string                  `json:"PrimaryInstance" xml:"PrimaryInstance"`
+	PrimaryRegion                   string                  `json:"PrimaryRegion" xml:"PrimaryRegion"`
 	AvailableZones                  []string                `json:"AvailableZones" xml:"AvailableZones"`
 	Zones                           []string                `json:"Zones" xml:"Zones"`
 	Resource                        Resource                `json:"Resource" xml:"Resource"`

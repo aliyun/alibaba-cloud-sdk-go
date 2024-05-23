@@ -79,6 +79,7 @@ type ModifyTenantPrimaryZoneRequest struct {
 	InstanceId                string `position:"Body" name:"InstanceId"`
 	PrimaryZone               string `position:"Body" name:"PrimaryZone"`
 	VpcId                     string `position:"Body" name:"VpcId"`
+	UserVpcOwnerId            string `position:"Body" name:"UserVpcOwnerId"`
 	UserDirectVSwitchId       string `position:"Body" name:"UserDirectVSwitchId"`
 }
 

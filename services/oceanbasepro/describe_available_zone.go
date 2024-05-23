@@ -72,9 +72,10 @@ func (client *Client) DescribeAvailableZoneWithCallback(request *DescribeAvailab
 type DescribeAvailableZoneRequest struct {
 	*requests.RpcRequest
 	Spec         string `position:"Body" name:"Spec"`
+	InstanceType string `position:"Body" name:"InstanceType"`
 	ObVersion    string `position:"Body" name:"ObVersion"`
 	Series       string `position:"Body" name:"Series"`
-	InstanceType string `position:"Body" name:"InstanceType"`
+	CpuArch      string `position:"Body" name:"CpuArch"`
 	DeployType   string `position:"Body" name:"DeployType"`
 }
 

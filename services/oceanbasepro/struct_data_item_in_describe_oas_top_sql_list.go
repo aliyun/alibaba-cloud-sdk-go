@@ -17,7 +17,7 @@ package oceanbasepro
 
 // DataItemInDescribeOasTopSQLList is a nested struct in oceanbasepro response
 type DataItemInDescribeOasTopSQLList struct {
-	Executions                  string                               `json:"Executions" xml:"Executions"`
+	Executions                  int64                                `json:"Executions" xml:"Executions"`
 	RpcCount                    string                               `json:"RpcCount" xml:"RpcCount"`
 	RemotePlans                 string                               `json:"RemotePlans" xml:"RemotePlans"`
 	MissPlans                   string                               `json:"MissPlans" xml:"MissPlans"`

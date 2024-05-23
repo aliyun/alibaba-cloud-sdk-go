@@ -23,5 +23,6 @@ type AvailableZonesItem struct {
 	DeployType            string                      `json:"DeployType" xml:"DeployType"`
 	InstanceType          string                      `json:"InstanceType" xml:"InstanceType"`
 	Series                string                      `json:"Series" xml:"Series"`
+	CpuArch               string                      `json:"CpuArch" xml:"CpuArch"`
 	SupportSpecifications []SupportSpecificationsItem `json:"SupportSpecifications" xml:"SupportSpecifications"`
 }

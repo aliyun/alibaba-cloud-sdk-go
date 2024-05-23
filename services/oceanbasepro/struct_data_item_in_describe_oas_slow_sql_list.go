@@ -28,13 +28,13 @@ type DataItemInDescribeOasSlowSQLList struct {
 	ClientIp                    string                                `json:"ClientIp" xml:"ClientIp"`
 	UserName                    string                                `json:"UserName" xml:"UserName"`
 	DbName                      string                                `json:"DbName" xml:"DbName"`
-	RetCode4012Count            int64                                 `json:"RetCode4012Count" xml:"RetCode4012Count"`
-	RetCode4013Count            int64                                 `json:"RetCode4013Count" xml:"RetCode4013Count"`
-	RetCode5001Count            int64                                 `json:"RetCode5001Count" xml:"RetCode5001Count"`
-	RetCode5024Count            int64                                 `json:"RetCode5024Count" xml:"RetCode5024Count"`
-	RetCode5167Count            int64                                 `json:"RetCode5167Count" xml:"RetCode5167Count"`
-	RetCode5217Count            int64                                 `json:"RetCode5217Count" xml:"RetCode5217Count"`
-	RetCode6002Count            int64                                 `json:"RetCode6002Count" xml:"RetCode6002Count"`
+	RetCode4012Count            string                                `json:"RetCode4012Count" xml:"RetCode4012Count"`
+	RetCode4013Count            string                                `json:"RetCode4013Count" xml:"RetCode4013Count"`
+	RetCode5001Count            string                                `json:"RetCode5001Count" xml:"RetCode5001Count"`
+	RetCode5024Count            string                                `json:"RetCode5024Count" xml:"RetCode5024Count"`
+	RetCode5167Count            string                                `json:"RetCode5167Count" xml:"RetCode5167Count"`
+	RetCode5217Count            string                                `json:"RetCode5217Count" xml:"RetCode5217Count"`
+	RetCode6002Count            string                                `json:"RetCode6002Count" xml:"RetCode6002Count"`
 	FailPercentage              string                                `json:"FailPercentage" xml:"FailPercentage"`
 	SumWaitTime                 string                                `json:"SumWaitTime" xml:"SumWaitTime"`
 	AvgWaitCount                string                                `json:"AvgWaitCount" xml:"AvgWaitCount"`

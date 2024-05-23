@@ -86,8 +86,8 @@ type DescribeMetricsDataRequest struct {
 // DescribeMetricsDataResponse is the response struct for api DescribeMetricsData
 type DescribeMetricsDataResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Data      string `json:"Data" xml:"Data"`
+	RequestId string   `json:"RequestId" xml:"RequestId"`
+	Data      []string `json:"Data" xml:"Data"`
 }
 
 // CreateDescribeMetricsDataRequest creates a request to invoke DescribeMetricsData API

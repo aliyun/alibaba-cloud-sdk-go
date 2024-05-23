@@ -71,33 +71,38 @@ func (client *Client) CreateProjectWithCallback(request *CreateProjectRequest, c
 // CreateProjectRequest is the request struct for api CreateProject
 type CreateProjectRequest struct {
 	*requests.RpcRequest
-	SinkEndpointId            string                            `position:"Body" name:"SinkEndpointId"`
-	UseOss                    requests.Boolean                  `position:"Body" name:"UseOss"`
-	OssKey                    string                            `position:"Body" name:"OssKey"`
-	SourceEndpointId          string                            `position:"Body" name:"SourceEndpointId"`
-	Type                      string                            `position:"Body" name:"Type"`
-	FullTransferConfig        CreateProjectFullTransferConfig   `position:"Body" name:"FullTransferConfig"  type:"Struct"`
-	EnableStructTransfer      requests.Boolean                  `position:"Body" name:"EnableStructTransfer"`
-	TransferMapping           CreateProjectTransferMapping      `position:"Body" name:"TransferMapping"  type:"Struct"`
-	WorkerGradeId             string                            `position:"Body" name:"WorkerGradeId"`
-	Id                        string                            `position:"Body" name:"Id"`
-	CommonTransferConfig      CreateProjectCommonTransferConfig `position:"Body" name:"CommonTransferConfig"  type:"Struct"`
-	StructTransferConfig      CreateProjectStructTransferConfig `position:"Body" name:"StructTransferConfig"  type:"Struct"`
-	EnableIncrTransfer        requests.Boolean                  `position:"Body" name:"EnableIncrTransfer"`
-	EnableFullTransfer        requests.Boolean                  `position:"Body" name:"EnableFullTransfer"`
-	EnableFullVerify          requests.Boolean                  `position:"Body" name:"EnableFullVerify"`
-	Name                      string                            `position:"Body" name:"Name"`
-	LabelIds                  *[]string                         `position:"Body" name:"LabelIds"  type:"Json"`
-	IncrTransferConfig        CreateProjectIncrTransferConfig   `position:"Body" name:"IncrTransferConfig"  type:"Struct"`
-	EnableReverseIncrTransfer requests.Boolean                  `position:"Body" name:"EnableReverseIncrTransfer"`
+	SinkEndpointId            string                                 `position:"Body" name:"SinkEndpointId"`
+	UseOss                    requests.Boolean                       `position:"Body" name:"UseOss"`
+	OssKey                    string                                 `position:"Body" name:"OssKey"`
+	SourceEndpointId          string                                 `position:"Body" name:"SourceEndpointId"`
+	Type                      string                                 `position:"Body" name:"Type"`
+	FullTransferConfig        CreateProjectFullTransferConfig        `position:"Body" name:"FullTransferConfig"  type:"Struct"`
+	EnableStructTransfer      requests.Boolean                       `position:"Body" name:"EnableStructTransfer"`
+	TransferMapping           CreateProjectTransferMapping           `position:"Body" name:"TransferMapping"  type:"Struct"`
+	WorkerGradeId             string                                 `position:"Body" name:"WorkerGradeId"`
+	Id                        string                                 `position:"Body" name:"Id"`
+	CommonTransferConfig      CreateProjectCommonTransferConfig      `position:"Body" name:"CommonTransferConfig"  type:"Struct"`
+	StructTransferConfig      CreateProjectStructTransferConfig      `position:"Body" name:"StructTransferConfig"  type:"Struct"`
+	ReverseIncrTransferConfig CreateProjectReverseIncrTransferConfig `position:"Body" name:"ReverseIncrTransferConfig"  type:"Struct"`
+	EnableIncrTransfer        requests.Boolean                       `position:"Body" name:"EnableIncrTransfer"`
+	EnableFullTransfer        requests.Boolean                       `position:"Body" name:"EnableFullTransfer"`
+	EnableFullVerify          requests.Boolean                       `position:"Body" name:"EnableFullVerify"`
+	Name                      string                                 `position:"Body" name:"Name"`
+	LabelIds                  *[]string                              `position:"Body" name:"LabelIds"  type:"Json"`
+	IncrTransferConfig        CreateProjectIncrTransferConfig        `position:"Body" name:"IncrTransferConfig"  type:"Struct"`
+	EnableReverseIncrTransfer requests.Boolean                       `position:"Body" name:"EnableReverseIncrTransfer"`
 }
 
 // CreateProjectFullTransferConfig is a repeated param struct in CreateProjectRequest
 type CreateProjectFullTransferConfig struct {
 	NonePkUkTruncateDstTable string `name:"NonePkUkTruncateDstTable"`
+	ThrottleRps              string `name:"ThrottleRps"`
 	FullVerifySpeedMode      string `name:"FullVerifySpeedMode"`
+	WriteWorkerNum           string `name:"WriteWorkerNum"`
+	ReadWorkerNum            string `name:"ReadWorkerNum"`
 	FullTransferSpeedMode    string `name:"FullTransferSpeedMode"`
 	AllowDestTableNotEmpty   string `name:"AllowDestTableNotEmpty"`
+	ThrottleIOPS             string `name:"ThrottleIOPS"`
 }
 
 // CreateProjectTransferMapping is a repeated param struct in CreateProjectRequest
@@ -133,14 +138,30 @@ type CreateProjectStructTransferConfig struct {
 	DeferIndexCreation      string `name:"DeferIndexCreation"`
 }
 
-// CreateProjectIncrTransferConfig is a repeated param struct in CreateProjectRequest
-type CreateProjectIncrTransferConfig struct {
+// CreateProjectReverseIncrTransferConfig is a repeated param struct in CreateProjectRequest
+type CreateProjectReverseIncrTransferConfig struct {
+	ThrottleRps               string    `name:"ThrottleRps"`
 	EnableSequencingWithinTxn string    `name:"EnableSequencingWithinTxn"`
+	SupportDDLTypes           *[]string `name:"SupportDDLTypes" type:"Repeated"`
 	StoreLogKeptHour          string    `name:"StoreLogKeptHour"`
 	StartTimestamp            string    `name:"StartTimestamp"`
 	RecordTypeWhiteList       *[]string `name:"RecordTypeWhiteList" type:"Repeated"`
 	IncrSyncConcurrency       string    `name:"IncrSyncConcurrency"`
 	EnableIncrSyncStatistics  string    `name:"EnableIncrSyncStatistics"`
+	ThrottleIOPS              string    `name:"ThrottleIOPS"`
+}
+
+// CreateProjectIncrTransferConfig is a repeated param struct in CreateProjectRequest
+type CreateProjectIncrTransferConfig struct {
+	ThrottleRps               string    `name:"ThrottleRps"`
+	EnableSequencingWithinTxn string    `name:"EnableSequencingWithinTxn"`
+	SupportDDLTypes           *[]string `name:"SupportDDLTypes" type:"Repeated"`
+	StoreLogKeptHour          string    `name:"StoreLogKeptHour"`
+	StartTimestamp            string    `name:"StartTimestamp"`
+	RecordTypeWhiteList       *[]string `name:"RecordTypeWhiteList" type:"Repeated"`
+	IncrSyncConcurrency       string    `name:"IncrSyncConcurrency"`
+	EnableIncrSyncStatistics  string    `name:"EnableIncrSyncStatistics"`
+	ThrottleIOPS              string    `name:"ThrottleIOPS"`
 }
 
 // CreateProjectTransferMappingDatabasesItem is a repeated param struct in CreateProjectRequest

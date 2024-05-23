@@ -136,8 +136,8 @@ type Data struct {
 	AcceptableValue         []string                      `json:"AcceptableValue" xml:"AcceptableValue"`
 	SqlText                 []string                      `json:"SqlText" xml:"SqlText"`
 	Tables                  []TablesItem                  `json:"Tables" xml:"Tables"`
-	AvailableZones          []AvailableZonesItem          `json:"AvailableZones" xml:"AvailableZones"`
 	Parameters              []ParametersItem              `json:"Parameters" xml:"Parameters"`
 	AvailableSpecifications []AvailableSpecificationsItem `json:"AvailableSpecifications" xml:"AvailableSpecifications"`
 	Users                   []UsersItem                   `json:"Users" xml:"Users"`
+	AvailableZones          []AvailableZonesItem          `json:"AvailableZones" xml:"AvailableZones"`
 }

@@ -86,6 +86,7 @@ type CreateInstanceRequest struct {
 	ReplicaMode           string           `position:"Body" name:"ReplicaMode"`
 	AutoRenew             requests.Boolean `position:"Body" name:"AutoRenew"`
 	Series                string           `position:"Body" name:"Series"`
+	CpuArch               string           `position:"Body" name:"CpuArch"`
 	PrimaryInstance       string           `position:"Body" name:"PrimaryInstance"`
 	PrimaryRegion         string           `position:"Body" name:"PrimaryRegion"`
 	ChargeType            string           `position:"Body" name:"ChargeType"`

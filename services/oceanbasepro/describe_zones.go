@@ -72,6 +72,7 @@ func (client *Client) DescribeZonesWithCallback(request *DescribeZonesRequest, c
 type DescribeZonesRequest struct {
 	*requests.RpcRequest
 	Series     string `position:"Body" name:"Series"`
+	CpuArch    string `position:"Body" name:"CpuArch"`
 	DeployType string `position:"Body" name:"DeployType"`
 }
 
