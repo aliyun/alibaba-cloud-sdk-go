@@ -17,14 +17,15 @@ package dds
 
 // BackupInDescribeClusterBackups is a nested struct in dds response
 type BackupInDescribeClusterBackups struct {
-	BackupId                  string `json:"BackupId" xml:"BackupId"`
-	InstanceName              string `json:"InstanceName" xml:"InstanceName"`
-	BackupDownloadURL         string `json:"BackupDownloadURL" xml:"BackupDownloadURL"`
-	BackupIntranetDownloadURL string `json:"BackupIntranetDownloadURL" xml:"BackupIntranetDownloadURL"`
-	BackupStartTime           string `json:"BackupStartTime" xml:"BackupStartTime"`
-	BackupEndTime             string `json:"BackupEndTime" xml:"BackupEndTime"`
-	BackupSize                string `json:"BackupSize" xml:"BackupSize"`
-	IsAvail                   string `json:"IsAvail" xml:"IsAvail"`
-	BackupStatus              string `json:"BackupStatus" xml:"BackupStatus"`
-	BackupName                string `json:"BackupName" xml:"BackupName"`
+	BackupId                  string    `json:"BackupId" xml:"BackupId"`
+	InstanceName              string    `json:"InstanceName" xml:"InstanceName"`
+	BackupDownloadURL         string    `json:"BackupDownloadURL" xml:"BackupDownloadURL"`
+	BackupIntranetDownloadURL string    `json:"BackupIntranetDownloadURL" xml:"BackupIntranetDownloadURL"`
+	BackupStartTime           string    `json:"BackupStartTime" xml:"BackupStartTime"`
+	BackupEndTime             string    `json:"BackupEndTime" xml:"BackupEndTime"`
+	BackupSize                string    `json:"BackupSize" xml:"BackupSize"`
+	IsAvail                   string    `json:"IsAvail" xml:"IsAvail"`
+	BackupStatus              string    `json:"BackupStatus" xml:"BackupStatus"`
+	BackupName                string    `json:"BackupName" xml:"BackupName"`
+	ExtraInfo                 ExtraInfo `json:"ExtraInfo" xml:"ExtraInfo"`
 }

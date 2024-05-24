@@ -42,10 +42,12 @@ type DBInstance struct {
 	MaintainStartTime           string                                        `json:"MaintainStartTime" xml:"MaintainStartTime"`
 	DBInstanceStorage           int                                           `json:"DBInstanceStorage" xml:"DBInstanceStorage"`
 	SecondaryZoneId             string                                        `json:"SecondaryZoneId" xml:"SecondaryZoneId"`
+	BackupRetentionPolicy       int                                           `json:"BackupRetentionPolicy" xml:"BackupRetentionPolicy"`
 	Encrypted                   bool                                          `json:"Encrypted" xml:"Encrypted"`
 	CurrentKernelVersion        string                                        `json:"CurrentKernelVersion" xml:"CurrentKernelVersion"`
 	StorageType                 string                                        `json:"StorageType" xml:"StorageType"`
 	ZoneId                      string                                        `json:"ZoneId" xml:"ZoneId"`
+	ReleaseTime                 string                                        `json:"ReleaseTime" xml:"ReleaseTime"`
 	MaxMBPS                     int                                           `json:"MaxMBPS" xml:"MaxMBPS"`
 	PaymentType                 string                                        `json:"PaymentType" xml:"PaymentType"`
 	LockMode                    string                                        `json:"LockMode" xml:"LockMode"`

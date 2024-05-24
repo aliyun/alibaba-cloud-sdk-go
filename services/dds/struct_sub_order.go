@@ -28,7 +28,7 @@ type SubOrder struct {
 	DiscountAmount        string                        `json:"DiscountAmount" xml:"DiscountAmount"`
 	RuleIds               RuleIdsInDescribePrice        `json:"RuleIds" xml:"RuleIds"`
 	DepreciateInfo        DepreciateInfo                `json:"DepreciateInfo" xml:"DepreciateInfo"`
-	ModuleInstance        ModuleInstance                `json:"ModuleInstance" xml:"ModuleInstance"`
-	OptionalPromotions    OptionalPromotions            `json:"OptionalPromotions" xml:"OptionalPromotions"`
 	PromDetailList        PromDetailListInDescribePrice `json:"PromDetailList" xml:"PromDetailList"`
+	OptionalPromotions    OptionalPromotions            `json:"OptionalPromotions" xml:"OptionalPromotions"`
+	ModuleInstance        ModuleInstance                `json:"ModuleInstance" xml:"ModuleInstance"`
 }

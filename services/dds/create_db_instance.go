@@ -77,6 +77,7 @@ type CreateDBInstanceRequest struct {
 	CouponNo               string                 `position:"Query" name:"CouponNo"`
 	EngineVersion          string                 `position:"Query" name:"EngineVersion"`
 	NetworkType            string                 `position:"Query" name:"NetworkType"`
+	SrcRegion              string                 `position:"Query" name:"SrcRegion"`
 	StorageType            string                 `position:"Query" name:"StorageType"`
 	ResourceGroupId        string                 `position:"Query" name:"ResourceGroupId"`
 	DBInstanceDescription  string                 `position:"Query" name:"DBInstanceDescription"`
@@ -105,6 +106,7 @@ type CreateDBInstanceRequest struct {
 	SrcDBInstanceId        string                 `position:"Query" name:"SrcDBInstanceId"`
 	OwnerAccount           string                 `position:"Query" name:"OwnerAccount"`
 	ClusterId              string                 `position:"Query" name:"ClusterId"`
+	RestoreType            string                 `position:"Query" name:"RestoreType"`
 	AccountPassword        string                 `position:"Query" name:"AccountPassword"`
 	Encrypted              requests.Boolean       `position:"Query" name:"Encrypted"`
 	VpcId                  string                 `position:"Query" name:"VpcId"`

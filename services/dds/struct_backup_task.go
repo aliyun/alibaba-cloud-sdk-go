@@ -17,7 +17,7 @@ package dds
 
 // BackupTask is a nested struct in dds response
 type BackupTask struct {
-	BackupjobId     int64  `json:"BackupjobId" xml:"BackupjobId"`
+	BackupjobId     string `json:"BackupjobId" xml:"BackupjobId"`
 	BackupSetStatus string `json:"BackupSetStatus" xml:"BackupSetStatus"`
 	BackupStartTime string `json:"BackupStartTime" xml:"BackupStartTime"`
 	Progress        string `json:"Progress" xml:"Progress"`

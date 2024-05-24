@@ -72,7 +72,9 @@ func (client *Client) DescribeBackupPolicyWithCallback(request *DescribeBackupPo
 type DescribeBackupPolicyRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	SrcRegion            string           `position:"Query" name:"SrcRegion"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
+	InstanceType         string           `position:"Query" name:"InstanceType"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
@@ -82,16 +84,25 @@ type DescribeBackupPolicyRequest struct {
 // DescribeBackupPolicyResponse is the response struct for api DescribeBackupPolicy
 type DescribeBackupPolicyResponse struct {
 	*responses.BaseResponse
-	PreferredBackupPeriod        string `json:"PreferredBackupPeriod" xml:"PreferredBackupPeriod"`
-	RequestId                    string `json:"RequestId" xml:"RequestId"`
-	PreferredBackupTime          string `json:"PreferredBackupTime" xml:"PreferredBackupTime"`
-	BackupRetentionPeriod        string `json:"BackupRetentionPeriod" xml:"BackupRetentionPeriod"`
-	PreferredNextBackupTime      string `json:"PreferredNextBackupTime" xml:"PreferredNextBackupTime"`
-	EnableBackupLog              int    `json:"EnableBackupLog" xml:"EnableBackupLog"`
-	LogBackupRetentionPeriod     int    `json:"LogBackupRetentionPeriod" xml:"LogBackupRetentionPeriod"`
-	SnapshotBackupType           string `json:"SnapshotBackupType" xml:"SnapshotBackupType"`
-	BackupInterval               int    `json:"BackupInterval" xml:"BackupInterval"`
-	HighFrequencyBackupRetention string `json:"HighFrequencyBackupRetention" xml:"HighFrequencyBackupRetention"`
+	PreferredBackupPeriod                  string `json:"PreferredBackupPeriod" xml:"PreferredBackupPeriod"`
+	RequestId                              string `json:"RequestId" xml:"RequestId"`
+	PreferredBackupTime                    string `json:"PreferredBackupTime" xml:"PreferredBackupTime"`
+	BackupRetentionPeriod                  string `json:"BackupRetentionPeriod" xml:"BackupRetentionPeriod"`
+	PreferredNextBackupTime                string `json:"PreferredNextBackupTime" xml:"PreferredNextBackupTime"`
+	EnableBackupLog                        int    `json:"EnableBackupLog" xml:"EnableBackupLog"`
+	LogBackupRetentionPeriod               int    `json:"LogBackupRetentionPeriod" xml:"LogBackupRetentionPeriod"`
+	SnapshotBackupType                     string `json:"SnapshotBackupType" xml:"SnapshotBackupType"`
+	BackupInterval                         int    `json:"BackupInterval" xml:"BackupInterval"`
+	HighFrequencyBackupRetention           string `json:"HighFrequencyBackupRetention" xml:"HighFrequencyBackupRetention"`
+	BackupRetentionPolicyOnClusterDeletion int    `json:"BackupRetentionPolicyOnClusterDeletion" xml:"BackupRetentionPolicyOnClusterDeletion"`
+	SrcRegion                              string `json:"SrcRegion" xml:"SrcRegion"`
+	DestRegion                             string `json:"DestRegion" xml:"DestRegion"`
+	CrossRetentionType                     string `json:"CrossRetentionType" xml:"CrossRetentionType"`
+	CrossRetentionValue                    int    `json:"CrossRetentionValue" xml:"CrossRetentionValue"`
+	CrossBackupPeriod                      string `json:"CrossBackupPeriod" xml:"CrossBackupPeriod"`
+	EnableCrossLogBackup                   int    `json:"EnableCrossLogBackup" xml:"EnableCrossLogBackup"`
+	CrossLogRetentionType                  string `json:"CrossLogRetentionType" xml:"CrossLogRetentionType"`
+	CrossLogRetentionValue                 int    `json:"CrossLogRetentionValue" xml:"CrossLogRetentionValue"`
 }
 
 // CreateDescribeBackupPolicyRequest creates a request to invoke DescribeBackupPolicy API

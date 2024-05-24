@@ -73,6 +73,7 @@ type ReleasePublicNetworkAddressRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	ConnectionType       string           `position:"Query" name:"ConnectionType"`
 	NodeId               string           `position:"Query" name:"NodeId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`

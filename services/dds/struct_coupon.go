@@ -28,6 +28,6 @@ type Coupon struct {
 	PriceBreakReduceValue  string                                `json:"PriceBreakReduceValue" xml:"PriceBreakReduceValue"`
 	OptionCode             string                                `json:"OptionCode" xml:"OptionCode"`
 	Description            string                                `json:"Description" xml:"Description"`
-	PromotionRuleIdList    PromotionRuleIdList                   `json:"PromotionRuleIdList" xml:"PromotionRuleIdList"`
+	PromotionRuleIdList    PromotionRuleIdListInDescribePrice    `json:"PromotionRuleIdList" xml:"PromotionRuleIdList"`
 	TargetArticleItemCodes TargetArticleItemCodesInDescribePrice `json:"TargetArticleItemCodes" xml:"TargetArticleItemCodes"`
 }

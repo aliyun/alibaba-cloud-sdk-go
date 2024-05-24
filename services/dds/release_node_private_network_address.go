@@ -74,6 +74,7 @@ type ReleaseNodePrivateNetworkAddressRequest struct {
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	NetworkType          string           `position:"Query" name:"NetworkType"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	ConnectionType       string           `position:"Query" name:"ConnectionType"`
 	NodeId               string           `position:"Query" name:"NodeId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`

@@ -73,10 +73,12 @@ type DescribeBackupsRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	StartTime            string           `position:"Query" name:"StartTime"`
+	SrcRegion            string           `position:"Query" name:"SrcRegion"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	NodeId               string           `position:"Query" name:"NodeId"`
+	DestRegion           string           `position:"Query" name:"DestRegion"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	BackupId             string           `position:"Query" name:"BackupId"`

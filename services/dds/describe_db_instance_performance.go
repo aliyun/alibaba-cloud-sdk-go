@@ -82,6 +82,7 @@ type DescribeDBInstancePerformanceRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	EndTime              string           `position:"Query" name:"EndTime"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Interval             string           `position:"Query" name:"Interval"`
 }
 
 // DescribeDBInstancePerformanceResponse is the response struct for api DescribeDBInstancePerformance

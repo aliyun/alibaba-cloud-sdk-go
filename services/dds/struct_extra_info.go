@@ -17,5 +17,9 @@ package dds
 
 // ExtraInfo is a nested struct in dds response
 type ExtraInfo struct {
+	InstanceClass       string `json:"InstanceClass" xml:"InstanceClass"`
+	StorageSize         string `json:"StorageSize" xml:"StorageSize"`
 	RegistryFromHistory string `json:"RegistryFromHistory" xml:"RegistryFromHistory"`
+	NodeId              string `json:"NodeId" xml:"NodeId"`
+	NodeType            string `json:"NodeType" xml:"NodeType"`
 }

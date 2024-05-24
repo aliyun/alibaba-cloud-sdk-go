@@ -20,6 +20,7 @@ type DepreciateInfo struct {
 	ListPrice           string           `json:"ListPrice" xml:"ListPrice"`
 	CheapRate           string           `json:"CheapRate" xml:"CheapRate"`
 	IsContractActivity  bool             `json:"IsContractActivity" xml:"IsContractActivity"`
+	StartTime           string           `json:"StartTime" xml:"StartTime"`
 	CheapStandAmount    string           `json:"CheapStandAmount" xml:"CheapStandAmount"`
 	DifferentialName    string           `json:"DifferentialName" xml:"DifferentialName"`
 	Differential        string           `json:"Differential" xml:"Differential"`

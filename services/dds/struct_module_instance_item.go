@@ -17,18 +17,19 @@ package dds
 
 // ModuleInstanceItem is a nested struct in dds response
 type ModuleInstanceItem struct {
-	CycleFee         string                        `json:"CycleFee" xml:"CycleFee"`
-	DiscountFee      string                        `json:"DiscountFee" xml:"DiscountFee"`
-	ModuleCode       string                        `json:"ModuleCode" xml:"ModuleCode"`
-	ModuleId         int64                         `json:"ModuleId" xml:"ModuleId"`
-	ModuleName       string                        `json:"ModuleName" xml:"ModuleName"`
-	NeedOrderPay     bool                          `json:"NeedOrderPay" xml:"NeedOrderPay"`
-	PayFee           string                        `json:"PayFee" xml:"PayFee"`
-	PricingModule    bool                          `json:"PricingModule" xml:"PricingModule"`
-	StandPrice       string                        `json:"StandPrice" xml:"StandPrice"`
-	TotalProductFee  string                        `json:"TotalProductFee" xml:"TotalProductFee"`
-	ContractActivity bool                          `json:"ContractActivity" xml:"ContractActivity"`
-	DepreciateInfo   DepreciateInfo                `json:"DepreciateInfo" xml:"DepreciateInfo"`
-	PromDetailList   PromDetailListInDescribePrice `json:"PromDetailList" xml:"PromDetailList"`
-	ModuleAttrs      ModuleAttrs                   `json:"ModuleAttrs" xml:"ModuleAttrs"`
+	CycleFee           string                        `json:"CycleFee" xml:"CycleFee"`
+	DiscountFee        string                        `json:"DiscountFee" xml:"DiscountFee"`
+	ModuleCode         string                        `json:"ModuleCode" xml:"ModuleCode"`
+	ModuleId           int64                         `json:"ModuleId" xml:"ModuleId"`
+	ModuleName         string                        `json:"ModuleName" xml:"ModuleName"`
+	NeedOrderPay       bool                          `json:"NeedOrderPay" xml:"NeedOrderPay"`
+	PayFee             string                        `json:"PayFee" xml:"PayFee"`
+	PricingModule      bool                          `json:"PricingModule" xml:"PricingModule"`
+	StandPrice         string                        `json:"StandPrice" xml:"StandPrice"`
+	TotalProductFee    string                        `json:"TotalProductFee" xml:"TotalProductFee"`
+	ContractActivity   bool                          `json:"ContractActivity" xml:"ContractActivity"`
+	StandDiscountPrice string                        `json:"StandDiscountPrice" xml:"StandDiscountPrice"`
+	DepreciateInfo     DepreciateInfo                `json:"DepreciateInfo" xml:"DepreciateInfo"`
+	PromDetailList     PromDetailListInDescribePrice `json:"PromDetailList" xml:"PromDetailList"`
+	ModuleAttrs        ModuleAttrs                   `json:"ModuleAttrs" xml:"ModuleAttrs"`
 }

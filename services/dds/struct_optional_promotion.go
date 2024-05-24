@@ -26,4 +26,5 @@ type OptionalPromotion struct {
 	Selected               bool                                  `json:"Selected" xml:"Selected"`
 	Show                   bool                                  `json:"Show" xml:"Show"`
 	TargetArticleItemCodes TargetArticleItemCodesInDescribePrice `json:"TargetArticleItemCodes" xml:"TargetArticleItemCodes"`
+	PromotionRuleIdList    PromotionRuleIdListInDescribePrice    `json:"PromotionRuleIdList" xml:"PromotionRuleIdList"`
 }

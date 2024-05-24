@@ -17,5 +17,5 @@ package dds
 
 // PromDetailListInDescribePrice is a nested struct in dds response
 type PromDetailListInDescribePrice struct {
-	PromDetal []PromDetal `json:"PromDetal" xml:"PromDetal"`
+	PromDetail []PromDetail `json:"PromDetail" xml:"PromDetail"`
 }

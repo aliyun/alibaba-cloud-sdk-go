@@ -75,6 +75,7 @@ type CreateShardingDBInstanceRequest struct {
 	SecondaryZoneId        string                                  `position:"Query" name:"SecondaryZoneId"`
 	EngineVersion          string                                  `position:"Query" name:"EngineVersion"`
 	NetworkType            string                                  `position:"Query" name:"NetworkType"`
+	SrcRegion              string                                  `position:"Query" name:"SrcRegion"`
 	ReplicaSet             *[]CreateShardingDBInstanceReplicaSet   `position:"Query" name:"ReplicaSet"  type:"Repeated"`
 	StorageType            string                                  `position:"Query" name:"StorageType"`
 	ResourceGroupId        string                                  `position:"Query" name:"ResourceGroupId"`
@@ -82,6 +83,7 @@ type CreateShardingDBInstanceRequest struct {
 	Tag                    *[]CreateShardingDBInstanceTag          `position:"Query" name:"Tag"  type:"Repeated"`
 	GlobalSecurityGroupIds string                                  `position:"Query" name:"GlobalSecurityGroupIds"`
 	Period                 requests.Integer                        `position:"Query" name:"Period"`
+	BackupId               string                                  `position:"Query" name:"BackupId"`
 	EncryptionKey          string                                  `position:"Query" name:"EncryptionKey"`
 	ConfigServer           *[]CreateShardingDBInstanceConfigServer `position:"Query" name:"ConfigServer"  type:"Repeated"`
 	OwnerId                requests.Integer                        `position:"Query" name:"OwnerId"`
@@ -96,9 +98,11 @@ type CreateShardingDBInstanceRequest struct {
 	Engine                 string                                  `position:"Query" name:"Engine"`
 	HiddenZoneId           string                                  `position:"Query" name:"HiddenZoneId"`
 	RestoreTime            string                                  `position:"Query" name:"RestoreTime"`
+	DestRegion             string                                  `position:"Query" name:"DestRegion"`
 	ResourceOwnerAccount   string                                  `position:"Query" name:"ResourceOwnerAccount"`
 	SrcDBInstanceId        string                                  `position:"Query" name:"SrcDBInstanceId"`
 	OwnerAccount           string                                  `position:"Query" name:"OwnerAccount"`
+	RestoreType            string                                  `position:"Query" name:"RestoreType"`
 	AccountPassword        string                                  `position:"Query" name:"AccountPassword"`
 	Encrypted              requests.Boolean                        `position:"Query" name:"Encrypted"`
 	VpcId                  string                                  `position:"Query" name:"VpcId"`

@@ -71,19 +71,30 @@ func (client *Client) ModifyBackupPolicyWithCallback(request *ModifyBackupPolicy
 // ModifyBackupPolicyRequest is the request struct for api ModifyBackupPolicy
 type ModifyBackupPolicyRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId              requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	BackupInterval               string           `position:"Query" name:"BackupInterval"`
-	DBInstanceId                 string           `position:"Query" name:"DBInstanceId"`
-	EnableBackupLog              requests.Integer `position:"Query" name:"EnableBackupLog"`
-	PreferredBackupPeriod        string           `position:"Query" name:"PreferredBackupPeriod"`
-	ResourceOwnerAccount         string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount                 string           `position:"Query" name:"OwnerAccount"`
-	OwnerId                      requests.Integer `position:"Query" name:"OwnerId"`
-	SnapshotBackupType           string           `position:"Query" name:"SnapshotBackupType"`
-	PreferredBackupTime          string           `position:"Query" name:"PreferredBackupTime"`
-	BackupRetentionPeriod        requests.Integer `position:"Query" name:"BackupRetentionPeriod"`
-	HighFrequencyBackupRetention requests.Integer `position:"Query" name:"HighFrequencyBackupRetention"`
-	LogBackupRetentionPeriod     requests.Integer `position:"Query" name:"LogBackupRetentionPeriod"`
+	ResourceOwnerId                        requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	CrossLogRetentionValue                 requests.Integer `position:"Query" name:"CrossLogRetentionValue"`
+	SrcRegion                              string           `position:"Query" name:"SrcRegion"`
+	CrossRetentionType                     string           `position:"Query" name:"CrossRetentionType"`
+	BackupInterval                         string           `position:"Query" name:"BackupInterval"`
+	InstanceType                           string           `position:"Query" name:"InstanceType"`
+	DBInstanceId                           string           `position:"Query" name:"DBInstanceId"`
+	EnableBackupLog                        requests.Integer `position:"Query" name:"EnableBackupLog"`
+	PreferredBackupPeriod                  string           `position:"Query" name:"PreferredBackupPeriod"`
+	BackupRetentionPolicyOnClusterDeletion requests.Integer `position:"Query" name:"BackupRetentionPolicyOnClusterDeletion"`
+	DestRegion                             string           `position:"Query" name:"DestRegion"`
+	ResourceOwnerAccount                   string           `position:"Query" name:"ResourceOwnerAccount"`
+	CrossBackupType                        string           `position:"Query" name:"CrossBackupType"`
+	OwnerAccount                           string           `position:"Query" name:"OwnerAccount"`
+	OwnerId                                requests.Integer `position:"Query" name:"OwnerId"`
+	SnapshotBackupType                     string           `position:"Query" name:"SnapshotBackupType"`
+	PreferredBackupTime                    string           `position:"Query" name:"PreferredBackupTime"`
+	BackupRetentionPeriod                  requests.Integer `position:"Query" name:"BackupRetentionPeriod"`
+	HighFrequencyBackupRetention           requests.Integer `position:"Query" name:"HighFrequencyBackupRetention"`
+	EnableCrossLogBackup                   requests.Integer `position:"Query" name:"EnableCrossLogBackup"`
+	CrossBackupPeriod                      string           `position:"Query" name:"CrossBackupPeriod"`
+	CrossRetentionValue                    requests.Integer `position:"Query" name:"CrossRetentionValue"`
+	CrossLogRetentionType                  string           `position:"Query" name:"CrossLogRetentionType"`
+	LogBackupRetentionPeriod               requests.Integer `position:"Query" name:"LogBackupRetentionPeriod"`
 }
 
 // ModifyBackupPolicyResponse is the response struct for api ModifyBackupPolicy
