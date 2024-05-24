@@ -22,9 +22,9 @@ type Job struct {
 	JobId        string `json:"JobId" xml:"JobId"`
 	StreamOutput string `json:"StreamOutput" xml:"StreamOutput"`
 	TemplateName string `json:"TemplateName" xml:"TemplateName"`
-	StreamInput  string `json:"StreamInput" xml:"StreamInput"`
-	LastStopAt   string `json:"LastStopAt" xml:"LastStopAt"`
 	CreateTime   string `json:"CreateTime" xml:"CreateTime"`
+	LastStopAt   string `json:"LastStopAt" xml:"LastStopAt"`
+	StreamInput  string `json:"StreamInput" xml:"StreamInput"`
 	Status       string `json:"Status" xml:"Status"`
 	LastStartAt  string `json:"LastStartAt" xml:"LastStartAt"`
 	Type         string `json:"Type" xml:"Type"`

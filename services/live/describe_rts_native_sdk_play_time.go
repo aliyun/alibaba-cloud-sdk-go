@@ -80,10 +80,10 @@ type DescribeRTSNativeSDKPlayTimeRequest struct {
 // DescribeRTSNativeSDKPlayTimeResponse is the response struct for api DescribeRTSNativeSDKPlayTime
 type DescribeRTSNativeSDKPlayTimeResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
 	DataInterval string `json:"DataInterval" xml:"DataInterval"`
-	StartTime    string `json:"StartTime" xml:"StartTime"`
 	EndTime      string `json:"EndTime" xml:"EndTime"`
+	RequestId    string `json:"RequestId" xml:"RequestId"`
+	StartTime    string `json:"StartTime" xml:"StartTime"`
 	PlayTimeData []Data `json:"PlayTimeData" xml:"PlayTimeData"`
 }
 

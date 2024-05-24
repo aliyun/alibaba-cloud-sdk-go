@@ -81,9 +81,9 @@ type DescribeMeterLiveInteractionDauRequest struct {
 // DescribeMeterLiveInteractionDauResponse is the response struct for api DescribeMeterLiveInteractionDau
 type DescribeMeterLiveInteractionDauResponse struct {
 	*responses.BaseResponse
-	RequestId string     `json:"RequestId" xml:"RequestId"`
-	PeakDau   string     `json:"PeakDau" xml:"PeakDau"`
-	Data      []DataItem `json:"Data" xml:"Data"`
+	PeakDau   string                                      `json:"PeakDau" xml:"PeakDau"`
+	RequestId string                                      `json:"RequestId" xml:"RequestId"`
+	Data      []DataItemInDescribeMeterLiveInteractionDau `json:"Data" xml:"Data"`
 }
 
 // CreateDescribeMeterLiveInteractionDauRequest creates a request to invoke DescribeMeterLiveInteractionDau API

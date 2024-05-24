@@ -80,10 +80,10 @@ type DescribeRTSNativeSDKPlayFailStatusRequest struct {
 // DescribeRTSNativeSDKPlayFailStatusResponse is the response struct for api DescribeRTSNativeSDKPlayFailStatus
 type DescribeRTSNativeSDKPlayFailStatusResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
 	DataInterval   string `json:"DataInterval" xml:"DataInterval"`
-	StartTime      string `json:"StartTime" xml:"StartTime"`
 	EndTime        string `json:"EndTime" xml:"EndTime"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	StartTime      string `json:"StartTime" xml:"StartTime"`
 	PlayFailStatus []Data `json:"PlayFailStatus" xml:"PlayFailStatus"`
 }
 

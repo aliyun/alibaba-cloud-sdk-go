@@ -81,10 +81,10 @@ type DescribeChannelParticipantsRequest struct {
 // DescribeChannelParticipantsResponse is the response struct for api DescribeChannelParticipants
 type DescribeChannelParticipantsResponse struct {
 	*responses.BaseResponse
-	TotalPage int      `json:"TotalPage" xml:"TotalPage"`
 	RequestId string   `json:"RequestId" xml:"RequestId"`
-	TotalNum  int      `json:"TotalNum" xml:"TotalNum"`
 	Times     int64    `json:"Times" xml:"Times"`
+	TotalNum  int      `json:"TotalNum" xml:"TotalNum"`
+	TotalPage int      `json:"TotalPage" xml:"TotalPage"`
 	UserList  []string `json:"UserList" xml:"UserList"`
 }
 

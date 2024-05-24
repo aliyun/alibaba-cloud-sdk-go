@@ -17,7 +17,7 @@ package live
 
 // ResultItem is a nested struct in live response
 type ResultItem struct {
-	TotalCount int           `json:"TotalCount" xml:"TotalCount"`
 	HasMore    bool          `json:"HasMore" xml:"HasMore"`
+	TotalCount int           `json:"TotalCount" xml:"TotalCount"`
 	AppList    []AppListItem `json:"AppList" xml:"AppList"`
 }

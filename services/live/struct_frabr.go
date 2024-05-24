@@ -17,11 +17,11 @@ package live
 
 // Frabr is a nested struct in live response
 type Frabr struct {
-	Time           string  `json:"Time" xml:"Time"`
-	VideoFrameRate float64 `json:"VideoFrameRate" xml:"VideoFrameRate"`
-	AudioFrameRate float64 `json:"AudioFrameRate" xml:"AudioFrameRate"`
-	StreamUrl      string  `json:"StreamUrl" xml:"StreamUrl"`
-	BitRate        float64 `json:"BitRate" xml:"BitRate"`
-	VideoBitRate   float64 `json:"VideoBitRate" xml:"VideoBitRate"`
 	AudioBitRate   float64 `json:"AudioBitRate" xml:"AudioBitRate"`
+	AudioFrameRate float64 `json:"AudioFrameRate" xml:"AudioFrameRate"`
+	BitRate        float64 `json:"BitRate" xml:"BitRate"`
+	StreamUrl      string  `json:"StreamUrl" xml:"StreamUrl"`
+	Time           string  `json:"Time" xml:"Time"`
+	VideoBitRate   float64 `json:"VideoBitRate" xml:"VideoBitRate"`
+	VideoFrameRate float64 `json:"VideoFrameRate" xml:"VideoFrameRate"`
 }

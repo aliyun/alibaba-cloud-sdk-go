@@ -80,10 +80,10 @@ type DescribeRTSNativeSDKFirstFrameDelayRequest struct {
 // DescribeRTSNativeSDKFirstFrameDelayResponse is the response struct for api DescribeRTSNativeSDKFirstFrameDelay
 type DescribeRTSNativeSDKFirstFrameDelayResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
 	DataInterval   string `json:"DataInterval" xml:"DataInterval"`
-	StartTime      string `json:"StartTime" xml:"StartTime"`
 	EndTime        string `json:"EndTime" xml:"EndTime"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	StartTime      string `json:"StartTime" xml:"StartTime"`
 	FrameDelayData []Data `json:"FrameDelayData" xml:"FrameDelayData"`
 }
 

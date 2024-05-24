@@ -81,8 +81,8 @@ type ModifyLiveMessageUserInfoRequest struct {
 type ModifyLiveMessageUserInfoResponse struct {
 	*responses.BaseResponse
 	RequestId   string          `json:"RequestId" xml:"RequestId"`
-	SuccessList []SuccessGroups `json:"SuccessList" xml:"SuccessList"`
 	FailList    []FailGroups    `json:"FailList" xml:"FailList"`
+	SuccessList []SuccessGroups `json:"SuccessList" xml:"SuccessList"`
 }
 
 // CreateModifyLiveMessageUserInfoRequest creates a request to invoke ModifyLiveMessageUserInfo API

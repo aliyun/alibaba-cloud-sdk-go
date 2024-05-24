@@ -17,7 +17,7 @@ package live
 
 // DomainLogDetail is a nested struct in live response
 type DomainLogDetail struct {
-	LogCount  int64                               `json:"LogCount" xml:"LogCount"`
-	PageInfos PageInfos                           `json:"PageInfos" xml:"PageInfos"`
-	LogInfos  LogInfosInDescribeLiveDomainEdgeLog `json:"LogInfos" xml:"LogInfos"`
+	LogCount  int64                           `json:"LogCount" xml:"LogCount"`
+	PageInfos PageInfos                       `json:"PageInfos" xml:"PageInfos"`
+	LogInfos  LogInfosInDescribeLiveDomainLog `json:"LogInfos" xml:"LogInfos"`
 }

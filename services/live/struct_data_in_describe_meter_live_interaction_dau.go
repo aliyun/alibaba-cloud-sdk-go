@@ -17,5 +17,5 @@ package live
 
 // DataInDescribeMeterLiveInteractionDau is a nested struct in live response
 type DataInDescribeMeterLiveInteractionDau struct {
-	DataItem []DataItem `json:"Data" xml:"Data"`
+	DataItem []DataItemInDescribeMeterLiveInteractionDau `json:"Data" xml:"Data"`
 }

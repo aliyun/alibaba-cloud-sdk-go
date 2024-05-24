@@ -80,12 +80,12 @@ type DescribeLiveDelayConfigRequest struct {
 // DescribeLiveDelayConfigResponse is the response struct for api DescribeLiveDelayConfig
 type DescribeLiveDelayConfigResponse struct {
 	*responses.BaseResponse
-	Domain          string `json:"Domain" xml:"Domain"`
-	RequestId       string `json:"RequestId" xml:"RequestId"`
-	TaskTriggerMode string `json:"TaskTriggerMode" xml:"TaskTriggerMode"`
 	App             string `json:"App" xml:"App"`
 	DelayTime       string `json:"DelayTime" xml:"DelayTime"`
+	Domain          string `json:"Domain" xml:"Domain"`
+	RequestId       string `json:"RequestId" xml:"RequestId"`
 	Stream          string `json:"Stream" xml:"Stream"`
+	TaskTriggerMode string `json:"TaskTriggerMode" xml:"TaskTriggerMode"`
 }
 
 // CreateDescribeLiveDelayConfigRequest creates a request to invoke DescribeLiveDelayConfig API

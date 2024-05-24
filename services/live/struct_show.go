@@ -17,9 +17,9 @@ package live
 
 // Show is a nested struct in live response
 type Show struct {
-	ShowName     string       `json:"ShowName" xml:"ShowName"`
 	Duration     int64        `json:"Duration" xml:"Duration"`
 	RepeatTimes  int          `json:"RepeatTimes" xml:"RepeatTimes"`
 	ShowId       string       `json:"ShowId" xml:"ShowId"`
+	ShowName     string       `json:"ShowName" xml:"ShowName"`
 	ResourceInfo ResourceInfo `json:"ResourceInfo" xml:"ResourceInfo"`
 }

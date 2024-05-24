@@ -34,9 +34,9 @@ type Result struct {
 	LikeCount              int                    `json:"LikeCount" xml:"LikeCount"`
 	GroupId                string                 `json:"GroupId" xml:"GroupId"`
 	AppName                string                 `json:"AppName" xml:"AppName"`
+	OnlineUsers            []OnlineUsersItem      `json:"OnlineUsers" xml:"OnlineUsers"`
+	AppList                []AppListItem          `json:"AppList" xml:"AppList"`
 	UserList               []UserListItem         `json:"UserList" xml:"UserList"`
 	MessageList            []MessageListItem      `json:"MessageList" xml:"MessageList"`
 	GroupList              []GroupListItem        `json:"GroupList" xml:"GroupList"`
-	AppList                []AppListItem          `json:"AppList" xml:"AppList"`
-	OnlineUsers            []OnlineUsersItem      `json:"OnlineUsers" xml:"OnlineUsers"`
 }

@@ -17,7 +17,7 @@ package live
 
 // OnlineUsersItem is a nested struct in live response
 type OnlineUsersItem struct {
-	UserId   string `json:"UserId" xml:"UserId"`
 	JoinTime int64  `json:"JoinTime" xml:"JoinTime"`
 	Online   bool   `json:"Online" xml:"Online"`
+	UserId   string `json:"UserId" xml:"UserId"`
 }

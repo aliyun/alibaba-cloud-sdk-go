@@ -125,8 +125,8 @@ type UpdateLiveMPUTaskTranscodeParamsLayout struct {
 
 // UpdateLiveMPUTaskTranscodeParamsBackground is a repeated param struct in UpdateLiveMPUTaskRequest
 type UpdateLiveMPUTaskTranscodeParamsBackground struct {
-	URL        string `name:"URL"`
 	RenderMode string `name:"RenderMode"`
+	URL        string `name:"URL"`
 }
 
 // UpdateLiveMPUTaskTranscodeParamsUserInfosItem is a repeated param struct in UpdateLiveMPUTaskRequest
@@ -143,21 +143,21 @@ type UpdateLiveMPUTaskTranscodeParamsEncodeParams struct {
 	AudioBitrate    string `name:"AudioBitrate"`
 	VideoFramerate  string `name:"VideoFramerate"`
 	VideoHeight     string `name:"VideoHeight"`
-	VideoBitrate    string `name:"VideoBitrate"`
 	AudioSampleRate string `name:"AudioSampleRate"`
-	VideoGop        string `name:"VideoGop"`
+	VideoBitrate    string `name:"VideoBitrate"`
 	AudioChannels   string `name:"AudioChannels"`
+	VideoGop        string `name:"VideoGop"`
 }
 
 // UpdateLiveMPUTaskTranscodeParamsLayoutUserPanesItem is a repeated param struct in UpdateLiveMPUTaskRequest
 type UpdateLiveMPUTaskTranscodeParamsLayoutUserPanesItem struct {
 	BackgroundImageUrl string                                                      `name:"BackgroundImageUrl"`
 	ZOrder             string                                                      `name:"ZOrder"`
-	X                  string                                                      `name:"X"`
 	Width              string                                                      `name:"Width"`
+	X                  string                                                      `name:"X"`
 	Y                  string                                                      `name:"Y"`
-	UserInfo           UpdateLiveMPUTaskTranscodeParamsLayoutUserPanesItemUserInfo `name:"UserInfo" type:"Struct"`
 	RenderMode         string                                                      `name:"RenderMode"`
+	UserInfo           UpdateLiveMPUTaskTranscodeParamsLayoutUserPanesItemUserInfo `name:"UserInfo" type:"Struct"`
 	Height             string                                                      `name:"Height"`
 }
 

@@ -18,6 +18,6 @@ package live
 // Users is a nested struct in live response
 type Users struct {
 	UserInfo string `json:"UserInfo" xml:"UserInfo"`
-	UserId   string `json:"UserId" xml:"UserId"`
 	Online   bool   `json:"Online" xml:"Online"`
+	UserId   string `json:"UserId" xml:"UserId"`
 }

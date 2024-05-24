@@ -17,5 +17,5 @@ package live
 
 // DataInDescribeMeterLiveRtcDuration is a nested struct in live response
 type DataInDescribeMeterLiveRtcDuration struct {
-	DataItem []DataItemInDescribeMeterLiveRtcDuration `json:"Data" xml:"Data"`
+	DataItem []DataItem `json:"Data" xml:"Data"`
 }

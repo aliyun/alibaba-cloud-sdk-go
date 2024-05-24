@@ -72,6 +72,7 @@ func (client *Client) ListLiveMessageGroupsWithCallback(request *ListLiveMessage
 type ListLiveMessageGroupsRequest struct {
 	*requests.RpcRequest
 	SortType      requests.Integer `position:"Query" name:"SortType"`
+	GroupStatus   requests.Integer `position:"Query" name:"GroupStatus"`
 	NextPageToken requests.Integer `position:"Query" name:"NextPageToken"`
 	DataCenter    string           `position:"Query" name:"DataCenter"`
 	AppId         string           `position:"Query" name:"AppId"`

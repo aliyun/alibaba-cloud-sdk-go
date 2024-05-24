@@ -127,8 +127,8 @@ type StartLiveMPUTaskTranscodeParamsLayout struct {
 
 // StartLiveMPUTaskTranscodeParamsBackground is a repeated param struct in StartLiveMPUTaskRequest
 type StartLiveMPUTaskTranscodeParamsBackground struct {
-	URL        string `name:"URL"`
 	RenderMode string `name:"RenderMode"`
+	URL        string `name:"URL"`
 }
 
 // StartLiveMPUTaskTranscodeParamsUserInfosItem is a repeated param struct in StartLiveMPUTaskRequest
@@ -145,21 +145,21 @@ type StartLiveMPUTaskTranscodeParamsEncodeParams struct {
 	AudioBitrate    string `name:"AudioBitrate"`
 	VideoFramerate  string `name:"VideoFramerate"`
 	VideoHeight     string `name:"VideoHeight"`
-	VideoBitrate    string `name:"VideoBitrate"`
 	AudioSampleRate string `name:"AudioSampleRate"`
-	VideoGop        string `name:"VideoGop"`
+	VideoBitrate    string `name:"VideoBitrate"`
 	AudioChannels   string `name:"AudioChannels"`
+	VideoGop        string `name:"VideoGop"`
 }
 
 // StartLiveMPUTaskTranscodeParamsLayoutUserPanesItem is a repeated param struct in StartLiveMPUTaskRequest
 type StartLiveMPUTaskTranscodeParamsLayoutUserPanesItem struct {
 	BackgroundImageUrl string                                                     `name:"BackgroundImageUrl"`
 	ZOrder             string                                                     `name:"ZOrder"`
-	X                  string                                                     `name:"X"`
 	Width              string                                                     `name:"Width"`
+	X                  string                                                     `name:"X"`
 	Y                  string                                                     `name:"Y"`
-	UserInfo           StartLiveMPUTaskTranscodeParamsLayoutUserPanesItemUserInfo `name:"UserInfo" type:"Struct"`
 	RenderMode         string                                                     `name:"RenderMode"`
+	UserInfo           StartLiveMPUTaskTranscodeParamsLayoutUserPanesItemUserInfo `name:"UserInfo" type:"Struct"`
 	Height             string                                                     `name:"Height"`
 }
 

@@ -79,9 +79,9 @@ type ListLiveMessageAppsRequest struct {
 // ListLiveMessageAppsResponse is the response struct for api ListLiveMessageApps
 type ListLiveMessageAppsResponse struct {
 	*responses.BaseResponse
-	RequestId     string `json:"RequestId" xml:"RequestId"`
 	HasMore       bool   `json:"HasMore" xml:"HasMore"`
 	NextPageToken int64  `json:"NextPageToken" xml:"NextPageToken"`
+	RequestId     string `json:"RequestId" xml:"RequestId"`
 	AppList       []Apps `json:"AppList" xml:"AppList"`
 }
 

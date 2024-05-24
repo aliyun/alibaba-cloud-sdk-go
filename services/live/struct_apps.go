@@ -19,10 +19,10 @@ package live
 type Apps struct {
 	AppId      string `json:"AppId" xml:"AppId"`
 	AppKey     string `json:"AppKey" xml:"AppKey"`
-	AppSign    string `json:"AppSign" xml:"AppSign"`
-	Disable    string `json:"Disable" xml:"Disable"`
 	AppName    string `json:"AppName" xml:"AppName"`
+	AppSign    string `json:"AppSign" xml:"AppSign"`
 	CreateTime int64  `json:"CreateTime" xml:"CreateTime"`
-	ModifyTime int64  `json:"ModifyTime" xml:"ModifyTime"`
 	DataCenter string `json:"DataCenter" xml:"DataCenter"`
+	Disable    string `json:"Disable" xml:"Disable"`
+	ModifyTime int64  `json:"ModifyTime" xml:"ModifyTime"`
 }

@@ -83,12 +83,12 @@ type DescribeLiveGrtnTrafficUsageRequest struct {
 // DescribeLiveGrtnTrafficUsageResponse is the response struct for api DescribeLiveGrtnTrafficUsage
 type DescribeLiveGrtnTrafficUsageResponse struct {
 	*responses.BaseResponse
-	EndTime              string                                             `json:"EndTime" xml:"EndTime"`
-	StartTime            string                                             `json:"StartTime" xml:"StartTime"`
-	RequestId            string                                             `json:"RequestId" xml:"RequestId"`
-	Filed                string                                             `json:"Filed" xml:"Filed"`
 	AppId                string                                             `json:"AppId" xml:"AppId"`
 	Area                 string                                             `json:"Area" xml:"Area"`
+	EndTime              string                                             `json:"EndTime" xml:"EndTime"`
+	Filed                string                                             `json:"Filed" xml:"Filed"`
+	RequestId            string                                             `json:"RequestId" xml:"RequestId"`
+	StartTime            string                                             `json:"StartTime" xml:"StartTime"`
 	UsageDataPerInterval UsageDataPerIntervalInDescribeLiveGrtnTrafficUsage `json:"UsageDataPerInterval" xml:"UsageDataPerInterval"`
 }
 

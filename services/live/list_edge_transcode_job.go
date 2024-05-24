@@ -84,8 +84,8 @@ type ListEdgeTranscodeJobRequest struct {
 // ListEdgeTranscodeJobResponse is the response struct for api ListEdgeTranscodeJob
 type ListEdgeTranscodeJobResponse struct {
 	*responses.BaseResponse
-	TotalCount int     `json:"TotalCount" xml:"TotalCount"`
 	RequestId  string  `json:"RequestId" xml:"RequestId"`
+	TotalCount int     `json:"TotalCount" xml:"TotalCount"`
 	JobList    JobList `json:"JobList" xml:"JobList"`
 }
 

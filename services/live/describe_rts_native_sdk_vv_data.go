@@ -80,10 +80,10 @@ type DescribeRTSNativeSDKVvDataRequest struct {
 // DescribeRTSNativeSDKVvDataResponse is the response struct for api DescribeRTSNativeSDKVvData
 type DescribeRTSNativeSDKVvDataResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
 	DataInterval string `json:"DataInterval" xml:"DataInterval"`
-	StartTime    string `json:"StartTime" xml:"StartTime"`
 	EndTime      string `json:"EndTime" xml:"EndTime"`
+	RequestId    string `json:"RequestId" xml:"RequestId"`
+	StartTime    string `json:"StartTime" xml:"StartTime"`
 	VvData       []Data `json:"VvData" xml:"VvData"`
 }
 

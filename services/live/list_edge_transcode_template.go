@@ -84,8 +84,8 @@ type ListEdgeTranscodeTemplateRequest struct {
 // ListEdgeTranscodeTemplateResponse is the response struct for api ListEdgeTranscodeTemplate
 type ListEdgeTranscodeTemplateResponse struct {
 	*responses.BaseResponse
-	TotalCount   int          `json:"TotalCount" xml:"TotalCount"`
 	RequestId    string       `json:"RequestId" xml:"RequestId"`
+	TotalCount   int          `json:"TotalCount" xml:"TotalCount"`
 	TemplateList TemplateList `json:"TemplateList" xml:"TemplateList"`
 }
 

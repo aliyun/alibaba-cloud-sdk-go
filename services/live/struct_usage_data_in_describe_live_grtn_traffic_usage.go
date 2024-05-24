@@ -17,6 +17,6 @@ package live
 
 // UsageDataInDescribeLiveGrtnTrafficUsage is a nested struct in live response
 type UsageDataInDescribeLiveGrtnTrafficUsage struct {
-	Value     string `json:"Value" xml:"Value"`
 	TimeStamp string `json:"TimeStamp" xml:"TimeStamp"`
+	Value     string `json:"Value" xml:"Value"`
 }

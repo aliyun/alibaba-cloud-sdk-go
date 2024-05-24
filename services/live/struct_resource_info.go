@@ -18,7 +18,7 @@ package live
 // ResourceInfo is a nested struct in live response
 type ResourceInfo struct {
 	LiveInputType int    `json:"LiveInputType" xml:"LiveInputType"`
-	ResourceUrl   string `json:"ResourceUrl" xml:"ResourceUrl"`
-	ResourceType  string `json:"ResourceType" xml:"ResourceType"`
 	ResourceId    string `json:"ResourceId" xml:"ResourceId"`
+	ResourceType  string `json:"ResourceType" xml:"ResourceType"`
+	ResourceUrl   string `json:"ResourceUrl" xml:"ResourceUrl"`
 }
