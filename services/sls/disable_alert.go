@@ -71,19 +71,20 @@ func (client *Client) DisableAlertWithCallback(request *DisableAlertRequest, cal
 // DisableAlertRequest is the request struct for api DisableAlert
 type DisableAlertRequest struct {
 	*requests.RpcRequest
-	App         string `position:"Body" name:"App"`
-	ProjectName string `position:"Body" name:"ProjectName"`
-	Endpoint    string `position:"Body" name:"Endpoint"`
-	AlertId     string `position:"Body" name:"AlertId"`
+	App            string `position:"Body" name:"App"`
+	ProjectName    string `position:"Body" name:"ProjectName"`
+	SlsAccessToken string `position:"Query" name:"SlsAccessToken"`
+	Endpoint       string `position:"Body" name:"Endpoint"`
+	AlertId        string `position:"Body" name:"AlertId"`
 }
 
 // DisableAlertResponse is the response struct for api DisableAlert
 type DisableAlertResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateDisableAlertRequest creates a request to invoke DisableAlert API

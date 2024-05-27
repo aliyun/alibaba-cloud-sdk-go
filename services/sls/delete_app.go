@@ -71,17 +71,18 @@ func (client *Client) DeleteAppWithCallback(request *DeleteAppRequest, callback 
 // DeleteAppRequest is the request struct for api DeleteApp
 type DeleteAppRequest struct {
 	*requests.RpcRequest
-	AppName  string `position:"Query" name:"AppName"`
-	ClientIp string `position:"Query" name:"ClientIp"`
+	SlsAccessToken string `position:"Query" name:"SlsAccessToken"`
+	AppName        string `position:"Query" name:"AppName"`
+	ClientIp       string `position:"Query" name:"ClientIp"`
 }
 
 // DeleteAppResponse is the response struct for api DeleteApp
 type DeleteAppResponse struct {
 	*responses.BaseResponse
 	Code      string `json:"Code" xml:"Code"`
-	Success   string `json:"Success" xml:"Success"`
 	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   string `json:"Success" xml:"Success"`
 }
 
 // CreateDeleteAppRequest creates a request to invoke DeleteApp API

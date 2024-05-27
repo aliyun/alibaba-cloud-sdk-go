@@ -71,18 +71,19 @@ func (client *Client) AnalyzeAppLogWithCallback(request *AnalyzeAppLogRequest, c
 // AnalyzeAppLogRequest is the request struct for api AnalyzeAppLog
 type AnalyzeAppLogRequest struct {
 	*requests.RpcRequest
-	AppType     string `position:"Query" name:"AppType"`
-	VariableMap string `position:"Query" name:"VariableMap"`
-	DisplayName string `position:"Query" name:"DisplayName"`
+	AppType        string `position:"Query" name:"AppType"`
+	SlsAccessToken string `position:"Query" name:"SlsAccessToken"`
+	VariableMap    string `position:"Query" name:"VariableMap"`
+	DisplayName    string `position:"Query" name:"DisplayName"`
 }
 
 // AnalyzeAppLogResponse is the response struct for api AnalyzeAppLog
 type AnalyzeAppLogResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      string `json:"Code" xml:"Code"`
-	Success   string `json:"Success" xml:"Success"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   string `json:"Success" xml:"Success"`
 }
 
 // CreateAnalyzeAppLogRequest creates a request to invoke AnalyzeAppLog API

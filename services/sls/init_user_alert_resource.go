@@ -71,9 +71,10 @@ func (client *Client) InitUserAlertResourceWithCallback(request *InitUserAlertRe
 // InitUserAlertResourceRequest is the request struct for api InitUserAlertResource
 type InitUserAlertResourceRequest struct {
 	*requests.RpcRequest
-	App      string `position:"Body" name:"App"`
-	Language string `position:"Body" name:"Language"`
-	Region   string `position:"Body" name:"Region"`
+	App            string `position:"Body" name:"App"`
+	SlsAccessToken string `position:"Query" name:"SlsAccessToken"`
+	Language       string `position:"Body" name:"Language"`
+	Region         string `position:"Body" name:"Region"`
 }
 
 // InitUserAlertResourceResponse is the response struct for api InitUserAlertResource

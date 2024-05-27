@@ -71,17 +71,18 @@ func (client *Client) DescribeAppWithCallback(request *DescribeAppRequest, callb
 // DescribeAppRequest is the request struct for api DescribeApp
 type DescribeAppRequest struct {
 	*requests.RpcRequest
-	AppName  string `position:"Query" name:"AppName"`
-	ClientIp string `position:"Query" name:"ClientIp"`
+	SlsAccessToken string `position:"Query" name:"SlsAccessToken"`
+	AppName        string `position:"Query" name:"AppName"`
+	ClientIp       string `position:"Query" name:"ClientIp"`
 }
 
 // DescribeAppResponse is the response struct for api DescribeApp
 type DescribeAppResponse struct {
 	*responses.BaseResponse
 	Code      string   `json:"Code" xml:"Code"`
-	Success   string   `json:"Success" xml:"Success"`
 	Message   string   `json:"Message" xml:"Message"`
 	RequestId string   `json:"RequestId" xml:"RequestId"`
+	Success   string   `json:"Success" xml:"Success"`
 	AppModel  AppModel `json:"AppModel" xml:"AppModel"`
 }
 

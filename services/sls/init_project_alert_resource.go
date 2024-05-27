@@ -71,8 +71,9 @@ func (client *Client) InitProjectAlertResourceWithCallback(request *InitProjectA
 // InitProjectAlertResourceRequest is the request struct for api InitProjectAlertResource
 type InitProjectAlertResourceRequest struct {
 	*requests.RpcRequest
-	ProjectName string `position:"Body" name:"ProjectName"`
-	Region      string `position:"Body" name:"Region"`
+	ProjectName    string `position:"Body" name:"ProjectName"`
+	SlsAccessToken string `position:"Query" name:"SlsAccessToken"`
+	Region         string `position:"Body" name:"Region"`
 }
 
 // InitProjectAlertResourceResponse is the response struct for api InitProjectAlertResource

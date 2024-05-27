@@ -71,19 +71,20 @@ func (client *Client) UpdateAppWithCallback(request *UpdateAppRequest, callback 
 // UpdateAppRequest is the request struct for api UpdateApp
 type UpdateAppRequest struct {
 	*requests.RpcRequest
-	AppName     string `position:"Query" name:"AppName"`
-	DisplayName string `position:"Query" name:"DisplayName"`
-	ClientIp    string `position:"Query" name:"ClientIp"`
-	Config      string `position:"Body" name:"Config"`
+	SlsAccessToken string `position:"Query" name:"SlsAccessToken"`
+	AppName        string `position:"Query" name:"AppName"`
+	DisplayName    string `position:"Query" name:"DisplayName"`
+	ClientIp       string `position:"Query" name:"ClientIp"`
+	Config         string `position:"Body" name:"Config"`
 }
 
 // UpdateAppResponse is the response struct for api UpdateApp
 type UpdateAppResponse struct {
 	*responses.BaseResponse
 	Code      string `json:"Code" xml:"Code"`
-	Success   string `json:"Success" xml:"Success"`
 	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   string `json:"Success" xml:"Success"`
 }
 
 // CreateUpdateAppRequest creates a request to invoke UpdateApp API

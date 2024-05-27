@@ -71,25 +71,26 @@ func (client *Client) GetAlertHistoriesWithCallback(request *GetAlertHistoriesRe
 // GetAlertHistoriesRequest is the request struct for api GetAlertHistories
 type GetAlertHistoriesRequest struct {
 	*requests.RpcRequest
-	Line        requests.Integer `position:"Body" name:"Line"`
-	ToTs        requests.Integer `position:"Body" name:"ToTs"`
-	Endpoint    string           `position:"Body" name:"Endpoint"`
-	App         string           `position:"Body" name:"App"`
-	FromTs      requests.Integer `position:"Body" name:"FromTs"`
-	ProjectName string           `position:"Body" name:"ProjectName"`
-	Offset      requests.Integer `position:"Body" name:"Offset"`
-	AlertId     string           `position:"Body" name:"AlertId"`
-	Region      string           `position:"Body" name:"Region"`
+	Line           requests.Integer `position:"Body" name:"Line"`
+	SlsAccessToken string           `position:"Query" name:"SlsAccessToken"`
+	ToTs           requests.Integer `position:"Body" name:"ToTs"`
+	Endpoint       string           `position:"Body" name:"Endpoint"`
+	App            string           `position:"Body" name:"App"`
+	FromTs         requests.Integer `position:"Body" name:"FromTs"`
+	ProjectName    string           `position:"Body" name:"ProjectName"`
+	Offset         requests.Integer `position:"Body" name:"Offset"`
+	AlertId        string           `position:"Body" name:"AlertId"`
+	Region         string           `position:"Body" name:"Region"`
 }
 
 // GetAlertHistoriesResponse is the response struct for api GetAlertHistories
 type GetAlertHistoriesResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
 	Data      string `json:"Data" xml:"Data"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateGetAlertHistoriesRequest creates a request to invoke GetAlertHistories API

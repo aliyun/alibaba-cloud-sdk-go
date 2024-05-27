@@ -17,8 +17,8 @@ package sls
 
 // AppModel is a nested struct in sls response
 type AppModel struct {
-	Uid         int64  `json:"Uid" xml:"Uid"`
+	DisplayName string `json:"DisplayName" xml:"DisplayName"`
 	AppName     string `json:"AppName" xml:"AppName"`
 	Config      string `json:"Config" xml:"Config"`
-	DisplayName string `json:"DisplayName" xml:"DisplayName"`
+	Uid         int64  `json:"Uid" xml:"Uid"`
 }

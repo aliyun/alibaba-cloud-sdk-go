@@ -71,18 +71,19 @@ func (client *Client) SyncAlertUsersWithCallback(request *SyncAlertUsersRequest,
 // SyncAlertUsersRequest is the request struct for api SyncAlertUsers
 type SyncAlertUsersRequest struct {
 	*requests.RpcRequest
-	App   string `position:"Body" name:"App"`
-	Users string `position:"Body" name:"Users"`
+	App            string `position:"Body" name:"App"`
+	SlsAccessToken string `position:"Query" name:"SlsAccessToken"`
+	Users          string `position:"Body" name:"Users"`
 }
 
 // SyncAlertUsersResponse is the response struct for api SyncAlertUsers
 type SyncAlertUsersResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
 	Data      string `json:"Data" xml:"Data"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateSyncAlertUsersRequest creates a request to invoke SyncAlertUsers API

@@ -71,6 +71,7 @@ func (client *Client) GetSlsServiceWithCallback(request *GetSlsServiceRequest, c
 // GetSlsServiceRequest is the request struct for api GetSlsService
 type GetSlsServiceRequest struct {
 	*requests.RpcRequest
+	SlsAccessToken string `position:"Query" name:"SlsAccessToken"`
 }
 
 // GetSlsServiceResponse is the response struct for api GetSlsService

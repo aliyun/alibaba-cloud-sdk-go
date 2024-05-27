@@ -71,25 +71,27 @@ func (client *Client) AnalyzeProductLogWithCallback(request *AnalyzeProductLogRe
 // AnalyzeProductLogRequest is the request struct for api AnalyzeProductLog
 type AnalyzeProductLogRequest struct {
 	*requests.RpcRequest
-	Project       string           `position:"Query" name:"Project"`
-	CloudProduct  string           `position:"Query" name:"CloudProduct"`
-	ResourceQuota string           `position:"Query" name:"ResourceQuota"`
-	VariableMap   string           `position:"Query" name:"VariableMap"`
-	TTL           requests.Integer `position:"Query" name:"TTL"`
-	ClientIp      string           `position:"Query" name:"ClientIp"`
-	Region        string           `position:"Query" name:"Region"`
-	Lang          string           `position:"Query" name:"Lang"`
-	Logstore      string           `position:"Query" name:"Logstore"`
-	Overwrite     requests.Boolean `position:"Query" name:"Overwrite"`
+	Project        string           `position:"Query" name:"Project"`
+	SlsAccessToken string           `position:"Query" name:"SlsAccessToken"`
+	CloudProduct   string           `position:"Query" name:"CloudProduct"`
+	ResourceQuota  string           `position:"Query" name:"ResourceQuota"`
+	VariableMap    string           `position:"Query" name:"VariableMap"`
+	ClientIp       string           `position:"Query" name:"ClientIp"`
+	Lang           string           `position:"Query" name:"Lang"`
+	Overwrite      requests.Boolean `position:"Query" name:"Overwrite"`
+	TTL            requests.Integer `position:"Query" name:"TTL"`
+	HotTTL         requests.Integer `position:"Query" name:"HotTTL"`
+	Region         string           `position:"Query" name:"Region"`
+	Logstore       string           `position:"Query" name:"Logstore"`
 }
 
 // AnalyzeProductLogResponse is the response struct for api AnalyzeProductLog
 type AnalyzeProductLogResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      string `json:"Code" xml:"Code"`
-	Success   string `json:"Success" xml:"Success"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   string `json:"Success" xml:"Success"`
 }
 
 // CreateAnalyzeProductLogRequest creates a request to invoke AnalyzeProductLog API
@@ -97,7 +99,7 @@ func CreateAnalyzeProductLogRequest() (request *AnalyzeProductLogRequest) {
 	request = &AnalyzeProductLogRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sls", "2018-06-13", "AnalyzeProductLog", "sls", "openAPI")
+	request.InitWithApiInfo("Sls", "2019-10-23", "AnalyzeProductLog", "sls", "openAPI")
 	request.Method = requests.POST
 	return
 }

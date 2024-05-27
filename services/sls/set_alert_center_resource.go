@@ -71,18 +71,19 @@ func (client *Client) SetAlertCenterResourceWithCallback(request *SetAlertCenter
 // SetAlertCenterResourceRequest is the request struct for api SetAlertCenterResource
 type SetAlertCenterResourceRequest struct {
 	*requests.RpcRequest
-	App      string `position:"Body" name:"App"`
-	Language string `position:"Body" name:"Language"`
-	Region   string `position:"Body" name:"Region"`
+	App            string `position:"Body" name:"App"`
+	SlsAccessToken string `position:"Query" name:"SlsAccessToken"`
+	Language       string `position:"Body" name:"Language"`
+	Region         string `position:"Body" name:"Region"`
 }
 
 // SetAlertCenterResourceResponse is the response struct for api SetAlertCenterResource
 type SetAlertCenterResourceResponse struct {
 	*responses.BaseResponse
+	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
-	Message   string `json:"Message" xml:"Message"`
-	Code      string `json:"Code" xml:"Code"`
 }
 
 // CreateSetAlertCenterResourceRequest creates a request to invoke SetAlertCenterResource API

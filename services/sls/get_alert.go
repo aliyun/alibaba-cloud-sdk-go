@@ -71,20 +71,21 @@ func (client *Client) GetAlertWithCallback(request *GetAlertRequest, callback fu
 // GetAlertRequest is the request struct for api GetAlert
 type GetAlertRequest struct {
 	*requests.RpcRequest
-	App         string `position:"Body" name:"App"`
-	ProjectName string `position:"Body" name:"ProjectName"`
-	Endpoint    string `position:"Body" name:"Endpoint"`
-	AlertId     string `position:"Body" name:"AlertId"`
+	App            string `position:"Body" name:"App"`
+	ProjectName    string `position:"Body" name:"ProjectName"`
+	SlsAccessToken string `position:"Query" name:"SlsAccessToken"`
+	Endpoint       string `position:"Body" name:"Endpoint"`
+	AlertId        string `position:"Body" name:"AlertId"`
 }
 
 // GetAlertResponse is the response struct for api GetAlert
 type GetAlertResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
-	Success   bool   `json:"Success" xml:"Success"`
 	Data      string `json:"Data" xml:"Data"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateGetAlertRequest creates a request to invoke GetAlert API

@@ -71,24 +71,25 @@ func (client *Client) EnableAlertWithCallback(request *EnableAlertRequest, callb
 // EnableAlertRequest is the request struct for api EnableAlert
 type EnableAlertRequest struct {
 	*requests.RpcRequest
-	Language    string `position:"Body" name:"Language"`
-	RuleVersion string `position:"Body" name:"RuleVersion"`
-	Endpoint    string `position:"Body" name:"Endpoint"`
-	Tokens      string `position:"Body" name:"Tokens"`
-	App         string `position:"Body" name:"App"`
-	ProjectName string `position:"Body" name:"ProjectName"`
-	AlertId     string `position:"Body" name:"AlertId"`
-	RuleId      string `position:"Body" name:"RuleId"`
-	Region      string `position:"Body" name:"Region"`
+	SlsAccessToken string `position:"Query" name:"SlsAccessToken"`
+	Language       string `position:"Body" name:"Language"`
+	RuleVersion    string `position:"Body" name:"RuleVersion"`
+	Endpoint       string `position:"Body" name:"Endpoint"`
+	Tokens         string `position:"Body" name:"Tokens"`
+	App            string `position:"Body" name:"App"`
+	ProjectName    string `position:"Body" name:"ProjectName"`
+	AlertId        string `position:"Body" name:"AlertId"`
+	RuleId         string `position:"Body" name:"RuleId"`
+	Region         string `position:"Body" name:"Region"`
 }
 
 // EnableAlertResponse is the response struct for api EnableAlert
 type EnableAlertResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateEnableAlertRequest creates a request to invoke EnableAlert API

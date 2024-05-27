@@ -71,21 +71,22 @@ func (client *Client) CreateAppWithCallback(request *CreateAppRequest, callback 
 // CreateAppRequest is the request struct for api CreateApp
 type CreateAppRequest struct {
 	*requests.RpcRequest
-	ClientToken string `position:"Query" name:"ClientToken"`
-	AppName     string `position:"Query" name:"AppName"`
-	DisplayName string `position:"Query" name:"DisplayName"`
-	ClientIp    string `position:"Query" name:"ClientIp"`
-	Config      string `position:"Body" name:"Config"`
+	ClientToken    string `position:"Query" name:"ClientToken"`
+	SlsAccessToken string `position:"Query" name:"SlsAccessToken"`
+	AppName        string `position:"Query" name:"AppName"`
+	DisplayName    string `position:"Query" name:"DisplayName"`
+	ClientIp       string `position:"Query" name:"ClientIp"`
+	Config         string `position:"Body" name:"Config"`
 }
 
 // CreateAppResponse is the response struct for api CreateApp
 type CreateAppResponse struct {
 	*responses.BaseResponse
 	Code      string `json:"Code" xml:"Code"`
-	Success   string `json:"Success" xml:"Success"`
+	AppName   string `json:"AppName" xml:"AppName"`
 	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	AppName   string `json:"AppName" xml:"AppName"`
+	Success   string `json:"Success" xml:"Success"`
 }
 
 // CreateCreateAppRequest creates a request to invoke CreateApp API

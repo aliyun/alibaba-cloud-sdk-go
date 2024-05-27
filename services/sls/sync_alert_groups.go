@@ -71,18 +71,19 @@ func (client *Client) SyncAlertGroupsWithCallback(request *SyncAlertGroupsReques
 // SyncAlertGroupsRequest is the request struct for api SyncAlertGroups
 type SyncAlertGroupsRequest struct {
 	*requests.RpcRequest
-	App    string `position:"Body" name:"App"`
-	Groups string `position:"Body" name:"Groups"`
+	App            string `position:"Body" name:"App"`
+	Groups         string `position:"Body" name:"Groups"`
+	SlsAccessToken string `position:"Query" name:"SlsAccessToken"`
 }
 
 // SyncAlertGroupsResponse is the response struct for api SyncAlertGroups
 type SyncAlertGroupsResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
 	Data      string `json:"Data" xml:"Data"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateSyncAlertGroupsRequest creates a request to invoke SyncAlertGroups API

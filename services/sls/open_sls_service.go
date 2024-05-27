@@ -71,15 +71,16 @@ func (client *Client) OpenSlsServiceWithCallback(request *OpenSlsServiceRequest,
 // OpenSlsServiceRequest is the request struct for api OpenSlsService
 type OpenSlsServiceRequest struct {
 	*requests.RpcRequest
+	SlsAccessToken string `position:"Query" name:"SlsAccessToken"`
 }
 
 // OpenSlsServiceResponse is the response struct for api OpenSlsService
 type OpenSlsServiceResponse struct {
 	*responses.BaseResponse
+	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
-	Message   string `json:"Message" xml:"Message"`
-	Code      string `json:"Code" xml:"Code"`
 }
 
 // CreateOpenSlsServiceRequest creates a request to invoke OpenSlsService API
