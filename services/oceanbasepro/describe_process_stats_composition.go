@@ -84,8 +84,8 @@ type DescribeProcessStatsCompositionRequest struct {
 // DescribeProcessStatsCompositionResponse is the response struct for api DescribeProcessStatsComposition
 type DescribeProcessStatsCompositionResponse struct {
 	*responses.BaseResponse
-	RequestId string     `json:"RequestId" xml:"RequestId"`
-	Data      []DataItem `json:"Data" xml:"Data"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Data      Data   `json:"Data" xml:"Data"`
 }
 
 // CreateDescribeProcessStatsCompositionRequest creates a request to invoke DescribeProcessStatsComposition API

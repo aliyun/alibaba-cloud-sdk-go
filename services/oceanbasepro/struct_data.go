@@ -36,6 +36,7 @@ type Data struct {
 	QuerySQL                string                        `json:"QuerySQL" xml:"QuerySQL"`
 	RPCCount                int64                         `json:"RPCCount" xml:"RPCCount"`
 	ScheduleTime            float64                       `json:"ScheduleTime" xml:"ScheduleTime"`
+	ObVersion               string                        `json:"ObVersion" xml:"ObVersion"`
 	EndpointId              string                        `json:"EndpointId" xml:"EndpointId"`
 	DiagnosisRule           string                        `json:"DiagnosisRule" xml:"DiagnosisRule"`
 	DefaultValue            string                        `json:"DefaultValue" xml:"DefaultValue"`
@@ -55,6 +56,7 @@ type Data struct {
 	TenantName              string                        `json:"TenantName" xml:"TenantName"`
 	ValueType               string                        `json:"ValueType" xml:"ValueType"`
 	CreateTime              string                        `json:"CreateTime" xml:"CreateTime"`
+	TotalSessionCount       int                           `json:"TotalSessionCount" xml:"TotalSessionCount"`
 	ReturnRows              int64                         `json:"ReturnRows" xml:"ReturnRows"`
 	HitCount                int                           `json:"HitCount" xml:"HitCount"`
 	PlanId                  int                           `json:"PlanId" xml:"PlanId"`
@@ -122,7 +124,9 @@ type Data struct {
 	PrimaryZone             string                        `json:"PrimaryZone" xml:"PrimaryZone"`
 	Description             string                        `json:"Description" xml:"Description"`
 	EnableReadOnlyReplica   bool                          `json:"EnableReadOnlyReplica" xml:"EnableReadOnlyReplica"`
+	ActiveSessionCount      int                           `json:"ActiveSessionCount" xml:"ActiveSessionCount"`
 	BlockCacheHit           int64                         `json:"BlockCacheHit" xml:"BlockCacheHit"`
+	IdleSessionCount        int                           `json:"IdleSessionCount" xml:"IdleSessionCount"`
 	PlanInfo                string                        `json:"PlanInfo" xml:"PlanInfo"`
 	RequestTimeUTCString    string                        `json:"RequestTimeUTCString" xml:"RequestTimeUTCString"`
 	Key                     int64                         `json:"Key" xml:"Key"`
@@ -135,8 +139,10 @@ type Data struct {
 	RejectedValue           []string                      `json:"RejectedValue" xml:"RejectedValue"`
 	AcceptableValue         []string                      `json:"AcceptableValue" xml:"AcceptableValue"`
 	SqlText                 []string                      `json:"SqlText" xml:"SqlText"`
+	SessionStatistics       SessionStatistics             `json:"SessionStatistics" xml:"SessionStatistics"`
 	Tables                  []TablesItem                  `json:"Tables" xml:"Tables"`
 	Parameters              []ParametersItem              `json:"Parameters" xml:"Parameters"`
+	AllProcessList          []AllProcessListItem          `json:"AllProcessList" xml:"AllProcessList"`
 	AvailableSpecifications []AvailableSpecificationsItem `json:"AvailableSpecifications" xml:"AvailableSpecifications"`
 	Users                   []UsersItem                   `json:"Users" xml:"Users"`
 	AvailableZones          []AvailableZonesItem          `json:"AvailableZones" xml:"AvailableZones"`
