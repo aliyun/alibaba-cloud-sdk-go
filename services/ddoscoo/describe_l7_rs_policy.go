@@ -80,9 +80,10 @@ type DescribeL7RsPolicyRequest struct {
 // DescribeL7RsPolicyResponse is the response struct for api DescribeL7RsPolicy
 type DescribeL7RsPolicyResponse struct {
 	*responses.BaseResponse
-	ProxyMode  string          `json:"ProxyMode" xml:"ProxyMode"`
-	RequestId  string          `json:"RequestId" xml:"RequestId"`
-	Attributes []AttributeItem `json:"Attributes" xml:"Attributes"`
+	ProxyMode     string          `json:"ProxyMode" xml:"ProxyMode"`
+	UpstreamRetry int             `json:"UpstreamRetry" xml:"UpstreamRetry"`
+	RequestId     string          `json:"RequestId" xml:"RequestId"`
+	Attributes    []AttributeItem `json:"Attributes" xml:"Attributes"`
 }
 
 // CreateDescribeL7RsPolicyRequest creates a request to invoke DescribeL7RsPolicy API

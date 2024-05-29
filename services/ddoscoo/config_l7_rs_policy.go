@@ -71,10 +71,11 @@ func (client *Client) ConfigL7RsPolicyWithCallback(request *ConfigL7RsPolicyRequ
 // ConfigL7RsPolicyRequest is the request struct for api ConfigL7RsPolicy
 type ConfigL7RsPolicyRequest struct {
 	*requests.RpcRequest
-	ResourceGroupId string `position:"Query" name:"ResourceGroupId"`
-	SourceIp        string `position:"Query" name:"SourceIp"`
-	Domain          string `position:"Query" name:"Domain"`
-	Policy          string `position:"Query" name:"Policy"`
+	UpstreamRetry   requests.Integer `position:"Query" name:"UpstreamRetry"`
+	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
+	SourceIp        string           `position:"Query" name:"SourceIp"`
+	Domain          string           `position:"Query" name:"Domain"`
+	Policy          string           `position:"Query" name:"Policy"`
 }
 
 // ConfigL7RsPolicyResponse is the response struct for api ConfigL7RsPolicy

@@ -71,15 +71,15 @@ func (client *Client) AssociateWebCertWithCallback(request *AssociateWebCertRequ
 // AssociateWebCertRequest is the request struct for api AssociateWebCert
 type AssociateWebCertRequest struct {
 	*requests.RpcRequest
-	Cert            string           `position:"Query" name:"Cert"`
-	CertId          requests.Integer `position:"Query" name:"CertId"`
+	Cert            string           `position:"Body" name:"Cert"`
+	CertId          requests.Integer `position:"Body" name:"CertId"`
 	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
 	SourceIp        string           `position:"Query" name:"SourceIp"`
-	Key             string           `position:"Query" name:"Key"`
-	CertRegion      string           `position:"Query" name:"CertRegion"`
-	CertName        string           `position:"Query" name:"CertName"`
-	CertIdentifier  string           `position:"Query" name:"CertIdentifier"`
-	Domain          string           `position:"Query" name:"Domain"`
+	Key             string           `position:"Body" name:"Key"`
+	CertRegion      string           `position:"Body" name:"CertRegion"`
+	CertName        string           `position:"Body" name:"CertName"`
+	CertIdentifier  string           `position:"Body" name:"CertIdentifier"`
+	Domain          string           `position:"Body" name:"Domain"`
 }
 
 // AssociateWebCertResponse is the response struct for api AssociateWebCert

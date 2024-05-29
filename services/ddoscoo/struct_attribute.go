@@ -17,5 +17,11 @@ package ddoscoo
 
 // Attribute is a nested struct in ddoscoo response
 type Attribute struct {
-	Weight int `json:"Weight" xml:"Weight"`
+	Weight         int    `json:"Weight" xml:"Weight"`
+	ConnectTimeout int    `json:"ConnectTimeout" xml:"ConnectTimeout"`
+	FailTimeout    int    `json:"FailTimeout" xml:"FailTimeout"`
+	MaxFails       int    `json:"MaxFails" xml:"MaxFails"`
+	Mode           string `json:"Mode" xml:"Mode"`
+	ReadTimeout    int    `json:"ReadTimeout" xml:"ReadTimeout"`
+	SendTimeout    int    `json:"SendTimeout" xml:"SendTimeout"`
 }
