@@ -71,12 +71,20 @@ func (client *Client) GetServiceEstimateCostWithCallback(request *GetServiceEsti
 // GetServiceEstimateCostRequest is the request struct for api GetServiceEstimateCost
 type GetServiceEstimateCostRequest struct {
 	*requests.RpcRequest
-	ClientToken       string `position:"Query" name:"ClientToken"`
-	ServiceVersion    string `position:"Query" name:"ServiceVersion"`
-	TemplateName      string `position:"Query" name:"TemplateName"`
-	ServiceId         string `position:"Query" name:"ServiceId"`
-	Parameters        string `position:"Query" name:"Parameters"`
-	ServiceInstanceId string `position:"Query" name:"ServiceInstanceId"`
+	Commodity         GetServiceEstimateCostCommodity `position:"Query" name:"Commodity"  type:"Struct"`
+	ClientToken       string                          `position:"Query" name:"ClientToken"`
+	TemplateName      string                          `position:"Query" name:"TemplateName"`
+	ServiceInstanceId string                          `position:"Query" name:"ServiceInstanceId"`
+	SpecificationName string                          `position:"Query" name:"SpecificationName"`
+	ServiceVersion    string                          `position:"Query" name:"ServiceVersion"`
+	ServiceId         string                          `position:"Query" name:"ServiceId"`
+	Parameters        string                          `position:"Query" name:"Parameters"`
+}
+
+// GetServiceEstimateCostCommodity is a repeated param struct in GetServiceEstimateCostRequest
+type GetServiceEstimateCostCommodity struct {
+	PayPeriod     string `name:"PayPeriod"`
+	PayPeriodUnit string `name:"PayPeriodUnit"`
 }
 
 // GetServiceEstimateCostResponse is the response struct for api GetServiceEstimateCost
@@ -84,6 +92,7 @@ type GetServiceEstimateCostResponse struct {
 	*responses.BaseResponse
 	RequestId string                 `json:"RequestId" xml:"RequestId"`
 	Resources map[string]interface{} `json:"Resources" xml:"Resources"`
+	Commodity map[string]interface{} `json:"Commodity" xml:"Commodity"`
 }
 
 // CreateGetServiceEstimateCostRequest creates a request to invoke GetServiceEstimateCost API

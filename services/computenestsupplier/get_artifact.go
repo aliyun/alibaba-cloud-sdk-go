@@ -92,6 +92,8 @@ type GetArtifactResponse struct {
 	ArtifactProperty string `json:"ArtifactProperty" xml:"ArtifactProperty"`
 	SupportRegionIds string `json:"SupportRegionIds" xml:"SupportRegionIds"`
 	Progress         string `json:"Progress" xml:"Progress"`
+	ResourceGroupId  string `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	Tags             []Tag  `json:"Tags" xml:"Tags"`
 }
 
 // CreateGetArtifactRequest creates a request to invoke GetArtifact API

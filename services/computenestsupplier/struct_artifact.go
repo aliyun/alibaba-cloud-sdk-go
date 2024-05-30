@@ -28,9 +28,11 @@ type Artifact struct {
 	SecurityAuditResult string                 `json:"SecurityAuditResult" xml:"SecurityAuditResult"`
 	Progress            string                 `json:"Progress" xml:"Progress"`
 	GmtCreate           string                 `json:"GmtCreate" xml:"GmtCreate"`
+	ResourceGroupId     string                 `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	ArtifactType        string                 `json:"ArtifactType" xml:"ArtifactType"`
 	ArtifactId          string                 `json:"ArtifactId" xml:"ArtifactId"`
 	Status              string                 `json:"Status" xml:"Status"`
 	Description         string                 `json:"Description" xml:"Description"`
 	ImageDelivery       map[string]interface{} `json:"ImageDelivery" xml:"ImageDelivery"`
+	Tags                []Tag                  `json:"Tags" xml:"Tags"`
 }

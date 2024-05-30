@@ -71,54 +71,71 @@ func (client *Client) GetServiceWithCallback(request *GetServiceRequest, callbac
 // GetServiceRequest is the request struct for api GetService
 type GetServiceRequest struct {
 	*requests.RpcRequest
-	ServiceVersion string `position:"Query" name:"ServiceVersion"`
-	ServiceId      string `position:"Query" name:"ServiceId"`
+	ShowDetail        *[]string        `position:"Query" name:"ShowDetail"  type:"Repeated"`
+	SharedAccountType string           `position:"Query" name:"SharedAccountType"`
+	FilterAliUid      requests.Boolean `position:"Query" name:"FilterAliUid"`
+	ServiceVersion    string           `position:"Query" name:"ServiceVersion"`
+	ServiceId         string           `position:"Query" name:"ServiceId"`
 }
 
 // GetServiceResponse is the response struct for api GetService
 type GetServiceResponse struct {
 	*responses.BaseResponse
-	Status                  string                   `json:"Status" xml:"Status"`
-	DeployMetadata          string                   `json:"DeployMetadata" xml:"DeployMetadata"`
-	PublishTime             string                   `json:"PublishTime" xml:"PublishTime"`
-	RequestId               string                   `json:"RequestId" xml:"RequestId"`
-	Version                 string                   `json:"Version" xml:"Version"`
-	DeployType              string                   `json:"DeployType" xml:"DeployType"`
-	ServiceId               string                   `json:"ServiceId" xml:"ServiceId"`
-	SupplierUrl             string                   `json:"SupplierUrl" xml:"SupplierUrl"`
-	ServiceDocUrl           string                   `json:"ServiceDocUrl" xml:"ServiceDocUrl"`
-	ServiceProductUrl       string                   `json:"ServiceProductUrl" xml:"ServiceProductUrl"`
-	ServiceType             string                   `json:"ServiceType" xml:"ServiceType"`
-	SupplierName            string                   `json:"SupplierName" xml:"SupplierName"`
-	CommodityCode           string                   `json:"CommodityCode" xml:"CommodityCode"`
-	IsSupportOperated       bool                     `json:"IsSupportOperated" xml:"IsSupportOperated"`
-	PolicyNames             string                   `json:"PolicyNames" xml:"PolicyNames"`
-	Duration                int64                    `json:"Duration" xml:"Duration"`
-	Progress                int64                    `json:"Progress" xml:"Progress"`
-	StatusDetail            string                   `json:"StatusDetail" xml:"StatusDetail"`
-	CreateTime              string                   `json:"CreateTime" xml:"CreateTime"`
-	UpdateTime              string                   `json:"UpdateTime" xml:"UpdateTime"`
-	ShareType               string                   `json:"ShareType" xml:"ShareType"`
-	AlarmMetadata           string                   `json:"AlarmMetadata" xml:"AlarmMetadata"`
-	UpgradeMetadata         string                   `json:"UpgradeMetadata" xml:"UpgradeMetadata"`
-	VersionName             string                   `json:"VersionName" xml:"VersionName"`
-	PayFromType             string                   `json:"PayFromType" xml:"PayFromType"`
-	PayType                 string                   `json:"PayType" xml:"PayType"`
-	DefaultLicenseDays      int64                    `json:"DefaultLicenseDays" xml:"DefaultLicenseDays"`
-	TrialDuration           int64                    `json:"TrialDuration" xml:"TrialDuration"`
-	TrialType               string                   `json:"TrialType" xml:"TrialType"`
-	TenantType              string                   `json:"TenantType" xml:"TenantType"`
-	LicenseMetadata         string                   `json:"LicenseMetadata" xml:"LicenseMetadata"`
-	OperationMetadata       string                   `json:"OperationMetadata" xml:"OperationMetadata"`
-	TestStatus              string                   `json:"TestStatus" xml:"TestStatus"`
-	ApprovalType            string                   `json:"ApprovalType" xml:"ApprovalType"`
-	RegistrationId          string                   `json:"RegistrationId" xml:"RegistrationId"`
-	ResourceGroupId         string                   `json:"ResourceGroupId" xml:"ResourceGroupId"`
-	Permission              string                   `json:"Permission" xml:"Permission"`
-	ServiceInfos            []ServiceInfo            `json:"ServiceInfos" xml:"ServiceInfos"`
-	CommoditySpecifications []CommoditySpecification `json:"CommoditySpecifications" xml:"CommoditySpecifications"`
-	Tags                    []Tag                    `json:"Tags" xml:"Tags"`
-	CommodityEntities       []CommodityEntitiesItem  `json:"CommodityEntities" xml:"CommodityEntities"`
+	Status                      string                 `json:"Status" xml:"Status"`
+	DeployMetadata              string                 `json:"DeployMetadata" xml:"DeployMetadata"`
+	PublishTime                 string                 `json:"PublishTime" xml:"PublishTime"`
+	RequestId                   string                 `json:"RequestId" xml:"RequestId"`
+	Version                     string                 `json:"Version" xml:"Version"`
+	DeployType                  string                 `json:"DeployType" xml:"DeployType"`
+	ServiceId                   string                 `json:"ServiceId" xml:"ServiceId"`
+	SupplierUrl                 string                 `json:"SupplierUrl" xml:"SupplierUrl"`
+	ServiceDocUrl               string                 `json:"ServiceDocUrl" xml:"ServiceDocUrl"`
+	ServiceProductUrl           string                 `json:"ServiceProductUrl" xml:"ServiceProductUrl"`
+	ServiceType                 string                 `json:"ServiceType" xml:"ServiceType"`
+	SupplierName                string                 `json:"SupplierName" xml:"SupplierName"`
+	CommodityCode               string                 `json:"CommodityCode" xml:"CommodityCode"`
+	IsSupportOperated           bool                   `json:"IsSupportOperated" xml:"IsSupportOperated"`
+	PolicyNames                 string                 `json:"PolicyNames" xml:"PolicyNames"`
+	Duration                    int64                  `json:"Duration" xml:"Duration"`
+	Progress                    int64                  `json:"Progress" xml:"Progress"`
+	StatusDetail                string                 `json:"StatusDetail" xml:"StatusDetail"`
+	CreateTime                  string                 `json:"CreateTime" xml:"CreateTime"`
+	UpdateTime                  string                 `json:"UpdateTime" xml:"UpdateTime"`
+	ShareType                   string                 `json:"ShareType" xml:"ShareType"`
+	AlarmMetadata               string                 `json:"AlarmMetadata" xml:"AlarmMetadata"`
+	UpgradeMetadata             string                 `json:"UpgradeMetadata" xml:"UpgradeMetadata"`
+	VersionName                 string                 `json:"VersionName" xml:"VersionName"`
+	PayFromType                 string                 `json:"PayFromType" xml:"PayFromType"`
+	PayType                     string                 `json:"PayType" xml:"PayType"`
+	DefaultLicenseDays          int64                  `json:"DefaultLicenseDays" xml:"DefaultLicenseDays"`
+	TrialDuration               int64                  `json:"TrialDuration" xml:"TrialDuration"`
+	TrialType                   string                 `json:"TrialType" xml:"TrialType"`
+	TenantType                  string                 `json:"TenantType" xml:"TenantType"`
+	LicenseMetadata             string                 `json:"LicenseMetadata" xml:"LicenseMetadata"`
+	OperationMetadata           string                 `json:"OperationMetadata" xml:"OperationMetadata"`
+	TestStatus                  string                 `json:"TestStatus" xml:"TestStatus"`
+	ApprovalType                string                 `json:"ApprovalType" xml:"ApprovalType"`
+	RegistrationId              string                 `json:"RegistrationId" xml:"RegistrationId"`
+	ResourceGroupId             string                 `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	Permission                  string                 `json:"Permission" xml:"Permission"`
+	SourceServiceId             string                 `json:"SourceServiceId" xml:"SourceServiceId"`
+	SourceServiceVersion        string                 `json:"SourceServiceVersion" xml:"SourceServiceVersion"`
+	SourceSupplierName          string                 `json:"SourceSupplierName" xml:"SourceSupplierName"`
+	LogMetadata                 string                 `json:"LogMetadata" xml:"LogMetadata"`
+	Resellable                  bool                   `json:"Resellable" xml:"Resellable"`
+	VirtualInternetService      string                 `json:"VirtualInternetService" xml:"VirtualInternetService"`
+	ServiceDiscoverable         string                 `json:"ServiceDiscoverable" xml:"ServiceDiscoverable"`
+	Categories                  string                 `json:"Categories" xml:"Categories"`
+	ShareTypeStatus             string                 `json:"ShareTypeStatus" xml:"ShareTypeStatus"`
+	ServiceAuditDocumentUrl     string                 `json:"ServiceAuditDocumentUrl" xml:"ServiceAuditDocumentUrl"`
+	EntitySource                map[string]interface{} `json:"EntitySource" xml:"EntitySource"`
+	CrossRegionConnectionStatus string                 `json:"CrossRegionConnectionStatus" xml:"CrossRegionConnectionStatus"`
+	VirtualInternetServiceId    string                 `json:"VirtualInternetServiceId" xml:"VirtualInternetServiceId"`
+	BuildInfo                   string                 `json:"BuildInfo" xml:"BuildInfo"`
+	Statistic                   Statistic              `json:"Statistic" xml:"Statistic"`
+	Commodity                   Commodity              `json:"Commodity" xml:"Commodity"`
+	ServiceInfos                []ServiceInfo          `json:"ServiceInfos" xml:"ServiceInfos"`
+	Tags                        []Tag                  `json:"Tags" xml:"Tags"`
 }
 
 // CreateGetServiceRequest creates a request to invoke GetService API

@@ -71,13 +71,21 @@ func (client *Client) CreateArtifactWithCallback(request *CreateArtifactRequest,
 // CreateArtifactRequest is the request struct for api CreateArtifact
 type CreateArtifactRequest struct {
 	*requests.RpcRequest
-	Description      string    `position:"Query" name:"Description"`
-	SupportRegionIds *[]string `position:"Query" name:"SupportRegionIds"  type:"Repeated"`
-	ArtifactType     string    `position:"Query" name:"ArtifactType"`
-	Name             string    `position:"Query" name:"Name"`
-	ArtifactId       string    `position:"Query" name:"ArtifactId"`
-	ArtifactProperty string    `position:"Query" name:"ArtifactProperty"`
-	VersionName      string    `position:"Query" name:"VersionName"`
+	Description      string               `position:"Query" name:"Description"`
+	ResourceGroupId  string               `position:"Query" name:"ResourceGroupId"`
+	Tag              *[]CreateArtifactTag `position:"Query" name:"Tag"  type:"Repeated"`
+	SupportRegionIds *[]string            `position:"Query" name:"SupportRegionIds"  type:"Repeated"`
+	ArtifactType     string               `position:"Query" name:"ArtifactType"`
+	Name             string               `position:"Query" name:"Name"`
+	ArtifactId       string               `position:"Query" name:"ArtifactId"`
+	ArtifactProperty string               `position:"Query" name:"ArtifactProperty"`
+	VersionName      string               `position:"Query" name:"VersionName"`
+}
+
+// CreateArtifactTag is a repeated param struct in CreateArtifactRequest
+type CreateArtifactTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // CreateArtifactResponse is the response struct for api CreateArtifact

@@ -17,13 +17,13 @@ package computenestsupplier
 
 // Policy is a nested struct in computenestsupplier response
 type Policy struct {
-	UserAliUid      int64           `json:"UserAliUid" xml:"UserAliUid"`
-	ServiceId       string          `json:"ServiceId" xml:"ServiceId"`
-	ServiceName     string          `json:"ServiceName" xml:"ServiceName"`
-	SupplierName    string          `json:"SupplierName" xml:"SupplierName"`
-	Status          string          `json:"Status" xml:"Status"`
-	Comments        string          `json:"Comments" xml:"Comments"`
-	CreateTime      string          `json:"CreateTime" xml:"CreateTime"`
-	UpdateTime      string          `json:"UpdateTime" xml:"UpdateTime"`
-	UserInformation UserInformation `json:"UserInformation" xml:"UserInformation"`
+	UserAliUid      int64                  `json:"UserAliUid" xml:"UserAliUid"`
+	ServiceId       string                 `json:"ServiceId" xml:"ServiceId"`
+	ServiceName     string                 `json:"ServiceName" xml:"ServiceName"`
+	SupplierName    string                 `json:"SupplierName" xml:"SupplierName"`
+	Status          string                 `json:"Status" xml:"Status"`
+	Comments        string                 `json:"Comments" xml:"Comments"`
+	CreateTime      string                 `json:"CreateTime" xml:"CreateTime"`
+	UpdateTime      string                 `json:"UpdateTime" xml:"UpdateTime"`
+	UserInformation map[string]interface{} `json:"UserInformation" xml:"UserInformation"`
 }

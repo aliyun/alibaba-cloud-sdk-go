@@ -71,9 +71,10 @@ func (client *Client) ListServiceUsagesWithCallback(request *ListServiceUsagesRe
 // ListServiceUsagesRequest is the request struct for api ListServiceUsages
 type ListServiceUsagesRequest struct {
 	*requests.RpcRequest
-	NextToken  string                     `position:"Query" name:"NextToken"`
-	Filter     *[]ListServiceUsagesFilter `position:"Query" name:"Filter"  type:"Repeated"`
-	MaxResults requests.Integer           `position:"Query" name:"MaxResults"`
+	NextToken    string                     `position:"Query" name:"NextToken"`
+	SupplierRole string                     `position:"Query" name:"SupplierRole"`
+	Filter       *[]ListServiceUsagesFilter `position:"Query" name:"Filter"  type:"Repeated"`
+	MaxResults   requests.Integer           `position:"Query" name:"MaxResults"`
 }
 
 // ListServiceUsagesFilter is a repeated param struct in ListServiceUsagesRequest

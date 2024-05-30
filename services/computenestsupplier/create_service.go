@@ -71,26 +71,31 @@ func (client *Client) CreateServiceWithCallback(request *CreateServiceRequest, c
 // CreateServiceRequest is the request struct for api CreateService
 type CreateServiceRequest struct {
 	*requests.RpcRequest
-	AlarmMetadata     string                      `position:"Query" name:"AlarmMetadata"`
-	ClientToken       string                      `position:"Query" name:"ClientToken"`
-	PolicyNames       string                      `position:"Query" name:"PolicyNames"`
-	LicenseMetadata   string                      `position:"Query" name:"LicenseMetadata"`
-	Duration          requests.Integer            `position:"Query" name:"Duration"`
-	ResourceGroupId   string                      `position:"Query" name:"ResourceGroupId"`
-	ApprovalType      string                      `position:"Query" name:"ApprovalType"`
-	TrialDuration     requests.Integer            `position:"Query" name:"TrialDuration"`
-	ShareType         string                      `position:"Query" name:"ShareType"`
-	Tag               *[]CreateServiceTag         `position:"Query" name:"Tag"  type:"Repeated"`
-	UpgradeMetadata   string                      `position:"Query" name:"UpgradeMetadata"`
-	DeployMetadata    string                      `position:"Query" name:"DeployMetadata"`
-	ServiceType       string                      `position:"Query" name:"ServiceType"`
-	IsSupportOperated requests.Boolean            `position:"Query" name:"IsSupportOperated"`
-	TenantType        string                      `position:"Query" name:"TenantType"`
-	ServiceInfo       *[]CreateServiceServiceInfo `position:"Query" name:"ServiceInfo"  type:"Repeated"`
-	ServiceId         string                      `position:"Query" name:"ServiceId"`
-	VersionName       string                      `position:"Query" name:"VersionName"`
-	OperationMetadata string                      `position:"Query" name:"OperationMetadata"`
-	DeployType        string                      `position:"Query" name:"DeployType"`
+	PolicyNames          string                      `position:"Query" name:"PolicyNames"`
+	ResourceGroupId      string                      `position:"Query" name:"ResourceGroupId"`
+	ApprovalType         string                      `position:"Query" name:"ApprovalType"`
+	TrialDuration        requests.Integer            `position:"Query" name:"TrialDuration"`
+	Tag                  *[]CreateServiceTag         `position:"Query" name:"Tag"  type:"Repeated"`
+	OperationMetadata    string                      `position:"Query" name:"OperationMetadata"`
+	DeployType           string                      `position:"Query" name:"DeployType"`
+	AlarmMetadata        string                      `position:"Query" name:"AlarmMetadata"`
+	Resellable           requests.Boolean            `position:"Query" name:"Resellable"`
+	ClientToken          string                      `position:"Query" name:"ClientToken"`
+	SourceServiceId      string                      `position:"Query" name:"SourceServiceId"`
+	SourceServiceVersion string                      `position:"Query" name:"SourceServiceVersion"`
+	LicenseMetadata      string                      `position:"Query" name:"LicenseMetadata"`
+	Duration             requests.Integer            `position:"Query" name:"Duration"`
+	ShareType            string                      `position:"Query" name:"ShareType"`
+	BuildParameters      string                      `position:"Query" name:"BuildParameters"`
+	UpgradeMetadata      string                      `position:"Query" name:"UpgradeMetadata"`
+	DeployMetadata       string                      `position:"Query" name:"DeployMetadata"`
+	ServiceType          string                      `position:"Query" name:"ServiceType"`
+	IsSupportOperated    requests.Boolean            `position:"Query" name:"IsSupportOperated"`
+	TenantType           string                      `position:"Query" name:"TenantType"`
+	LogMetadata          string                      `position:"Query" name:"LogMetadata"`
+	ServiceInfo          *[]CreateServiceServiceInfo `position:"Query" name:"ServiceInfo"  type:"Repeated"`
+	ServiceId            string                      `position:"Query" name:"ServiceId"`
+	VersionName          string                      `position:"Query" name:"VersionName"`
 }
 
 // CreateServiceTag is a repeated param struct in CreateServiceRequest
@@ -101,10 +106,18 @@ type CreateServiceTag struct {
 
 // CreateServiceServiceInfo is a repeated param struct in CreateServiceRequest
 type CreateServiceServiceInfo struct {
-	ShortDescription string `name:"ShortDescription"`
-	Image            string `name:"Image"`
-	Name             string `name:"Name"`
-	Locale           string `name:"Locale"`
+	ShortDescription   string                                `name:"ShortDescription"`
+	Image              string                                `name:"Image"`
+	Name               string                                `name:"Name"`
+	Agreements         *[]CreateServiceServiceInfoAgreements `name:"Agreements" type:"Repeated"`
+	Locale             string                                `name:"Locale"`
+	LongDescriptionUrl string                                `name:"LongDescriptionUrl"`
+}
+
+// CreateServiceServiceInfoAgreements is a repeated param struct in CreateServiceRequest
+type CreateServiceServiceInfoAgreements struct {
+	Name string `name:"Name"`
+	Url  string `name:"Url"`
 }
 
 // CreateServiceResponse is the response struct for api CreateService

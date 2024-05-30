@@ -101,8 +101,12 @@ type GetServiceInstanceResponse struct {
 	PayType                   string        `json:"PayType" xml:"PayType"`
 	LicenseMetadata           string        `json:"LicenseMetadata" xml:"LicenseMetadata"`
 	Name                      string        `json:"Name" xml:"Name"`
-	EnableUserPrometheus      string        `json:"EnableUserPrometheus" xml:"EnableUserPrometheus"`
+	EnableUserPrometheus      bool          `json:"EnableUserPrometheus" xml:"EnableUserPrometheus"`
 	RdAccountLoginUrl         string        `json:"RdAccountLoginUrl" xml:"RdAccountLoginUrl"`
+	PredefinedParameterName   string        `json:"PredefinedParameterName" xml:"PredefinedParameterName"`
+	ResourceGroupId           string        `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	BizStatus                 string        `json:"BizStatus" xml:"BizStatus"`
+	GrafanaDashBoardUrl       string        `json:"GrafanaDashBoardUrl" xml:"GrafanaDashBoardUrl"`
 	Service                   Service       `json:"Service" xml:"Service"`
 	NetworkConfig             NetworkConfig `json:"NetworkConfig" xml:"NetworkConfig"`
 	Tags                      []Tag         `json:"Tags" xml:"Tags"`

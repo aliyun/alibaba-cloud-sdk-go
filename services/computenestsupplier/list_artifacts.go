@@ -71,9 +71,17 @@ func (client *Client) ListArtifactsWithCallback(request *ListArtifactsRequest, c
 // ListArtifactsRequest is the request struct for api ListArtifacts
 type ListArtifactsRequest struct {
 	*requests.RpcRequest
-	NextToken  string                 `position:"Query" name:"NextToken"`
-	Filter     *[]ListArtifactsFilter `position:"Query" name:"Filter"  type:"Repeated"`
-	MaxResults string                 `position:"Query" name:"MaxResults"`
+	ResourceGroupId string                 `position:"Query" name:"ResourceGroupId"`
+	NextToken       string                 `position:"Query" name:"NextToken"`
+	Tag             *[]ListArtifactsTag    `position:"Query" name:"Tag"  type:"Repeated"`
+	Filter          *[]ListArtifactsFilter `position:"Query" name:"Filter"  type:"Repeated"`
+	MaxResults      requests.Integer       `position:"Query" name:"MaxResults"`
+}
+
+// ListArtifactsTag is a repeated param struct in ListArtifactsRequest
+type ListArtifactsTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // ListArtifactsFilter is a repeated param struct in ListArtifactsRequest
@@ -87,8 +95,8 @@ type ListArtifactsResponse struct {
 	*responses.BaseResponse
 	RequestId  string     `json:"RequestId" xml:"RequestId"`
 	NextToken  string     `json:"NextToken" xml:"NextToken"`
-	MaxResults string     `json:"MaxResults" xml:"MaxResults"`
-	TotalCount string     `json:"TotalCount" xml:"TotalCount"`
+	MaxResults int        `json:"MaxResults" xml:"MaxResults"`
+	TotalCount int        `json:"TotalCount" xml:"TotalCount"`
 	Artifacts  []Artifact `json:"Artifacts" xml:"Artifacts"`
 }
 

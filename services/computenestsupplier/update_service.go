@@ -72,6 +72,7 @@ func (client *Client) UpdateServiceWithCallback(request *UpdateServiceRequest, c
 type UpdateServiceRequest struct {
 	*requests.RpcRequest
 	AlarmMetadata     string                      `position:"Query" name:"AlarmMetadata"`
+	Resellable        requests.Boolean            `position:"Query" name:"Resellable"`
 	ClientToken       string                      `position:"Query" name:"ClientToken"`
 	PolicyNames       string                      `position:"Query" name:"PolicyNames"`
 	LicenseMetadata   string                      `position:"Query" name:"LicenseMetadata"`
@@ -83,7 +84,9 @@ type UpdateServiceRequest struct {
 	IsSupportOperated requests.Boolean            `position:"Query" name:"IsSupportOperated"`
 	TenantType        string                      `position:"Query" name:"TenantType"`
 	ServiceVersion    string                      `position:"Query" name:"ServiceVersion"`
+	LogMetadata       string                      `position:"Query" name:"LogMetadata"`
 	ServiceInfo       *[]UpdateServiceServiceInfo `position:"Query" name:"ServiceInfo"  type:"Repeated"`
+	UpdateOption      UpdateServiceUpdateOption   `position:"Query" name:"UpdateOption"  type:"Struct"`
 	ServiceId         string                      `position:"Query" name:"ServiceId"`
 	VersionName       string                      `position:"Query" name:"VersionName"`
 	OperationMetadata string                      `position:"Query" name:"OperationMetadata"`
@@ -92,10 +95,23 @@ type UpdateServiceRequest struct {
 
 // UpdateServiceServiceInfo is a repeated param struct in UpdateServiceRequest
 type UpdateServiceServiceInfo struct {
-	ShortDescription string `name:"ShortDescription"`
-	Image            string `name:"Image"`
-	Name             string `name:"Name"`
-	Locale           string `name:"Locale"`
+	ShortDescription   string                                `name:"ShortDescription"`
+	Image              string                                `name:"Image"`
+	Name               string                                `name:"Name"`
+	Agreements         *[]UpdateServiceServiceInfoAgreements `name:"Agreements" type:"Repeated"`
+	Locale             string                                `name:"Locale"`
+	LongDescriptionUrl string                                `name:"LongDescriptionUrl"`
+}
+
+// UpdateServiceUpdateOption is a repeated param struct in UpdateServiceRequest
+type UpdateServiceUpdateOption struct {
+	UpdateFrom string `name:"UpdateFrom"`
+}
+
+// UpdateServiceServiceInfoAgreements is a repeated param struct in UpdateServiceRequest
+type UpdateServiceServiceInfoAgreements struct {
+	Name string `name:"Name"`
+	Url  string `name:"Url"`
 }
 
 // UpdateServiceResponse is the response struct for api UpdateService

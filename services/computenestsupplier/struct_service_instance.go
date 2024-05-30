@@ -36,6 +36,8 @@ type ServiceInstance struct {
 	ServiceType               string  `json:"ServiceType" xml:"ServiceType"`
 	PayType                   string  `json:"PayType" xml:"PayType"`
 	IsOperated                bool    `json:"IsOperated" xml:"IsOperated"`
+	ResourceGroupId           string  `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	BizStatus                 string  `json:"BizStatus" xml:"BizStatus"`
 	Service                   Service `json:"Service" xml:"Service"`
 	Tags                      []Tag   `json:"Tags" xml:"Tags"`
 }

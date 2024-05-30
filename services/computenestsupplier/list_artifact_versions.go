@@ -71,9 +71,9 @@ func (client *Client) ListArtifactVersionsWithCallback(request *ListArtifactVers
 // ListArtifactVersionsRequest is the request struct for api ListArtifactVersions
 type ListArtifactVersionsRequest struct {
 	*requests.RpcRequest
-	NextToken  string `position:"Query" name:"NextToken"`
-	MaxResult  string `position:"Query" name:"MaxResult"`
-	ArtifactId string `position:"Query" name:"ArtifactId"`
+	NextToken  string           `position:"Query" name:"NextToken"`
+	MaxResults requests.Integer `position:"Query" name:"MaxResults"`
+	ArtifactId string           `position:"Query" name:"ArtifactId"`
 }
 
 // ListArtifactVersionsResponse is the response struct for api ListArtifactVersions
@@ -81,8 +81,8 @@ type ListArtifactVersionsResponse struct {
 	*responses.BaseResponse
 	RequestId  string     `json:"RequestId" xml:"RequestId"`
 	NextToken  string     `json:"NextToken" xml:"NextToken"`
-	MaxResults string     `json:"MaxResults" xml:"MaxResults"`
-	TotalCount string     `json:"TotalCount" xml:"TotalCount"`
+	MaxResults int        `json:"MaxResults" xml:"MaxResults"`
+	TotalCount int        `json:"TotalCount" xml:"TotalCount"`
 	Artifacts  []Artifact `json:"Artifacts" xml:"Artifacts"`
 }
 
