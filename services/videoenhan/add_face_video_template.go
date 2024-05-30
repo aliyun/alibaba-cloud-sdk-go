@@ -71,10 +71,11 @@ func (client *Client) AddFaceVideoTemplateWithCallback(request *AddFaceVideoTemp
 // AddFaceVideoTemplateRequest is the request struct for api AddFaceVideoTemplate
 type AddFaceVideoTemplateRequest struct {
 	*requests.RpcRequest
-	UserId     string           `position:"Body" name:"UserId"`
-	VideoScene string           `position:"Body" name:"VideoScene"`
-	Async      requests.Boolean `position:"Body" name:"Async"`
-	VideoURL   string           `position:"Body" name:"VideoURL"`
+	UserId      string           `position:"Body" name:"UserId"`
+	VideoScene  string           `position:"Body" name:"VideoScene"`
+	ReturnTrans requests.Boolean `position:"Body" name:"ReturnTrans"`
+	Async       requests.Boolean `position:"Body" name:"Async"`
+	VideoURL    string           `position:"Body" name:"VideoURL"`
 }
 
 // AddFaceVideoTemplateResponse is the response struct for api AddFaceVideoTemplate
