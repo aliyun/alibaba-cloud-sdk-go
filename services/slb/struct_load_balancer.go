@@ -17,21 +17,36 @@ package slb
 
 // LoadBalancer is a nested struct in slb response
 type LoadBalancer struct {
-	VpcId              string `json:"VpcId" xml:"VpcId"`
-	CreateTimeStamp    int64  `json:"CreateTimeStamp" xml:"CreateTimeStamp"`
-	CreateTime         string `json:"CreateTime" xml:"CreateTime"`
-	LoadBalancerId     string `json:"LoadBalancerId" xml:"LoadBalancerId"`
-	PayType            string `json:"PayType" xml:"PayType"`
-	AddressType        string `json:"AddressType" xml:"AddressType"`
-	NetworkType        string `json:"NetworkType" xml:"NetworkType"`
-	RegionId           string `json:"RegionId" xml:"RegionId"`
-	VSwitchId          string `json:"VSwitchId" xml:"VSwitchId"`
-	LoadBalancerStatus string `json:"LoadBalancerStatus" xml:"LoadBalancerStatus"`
-	LoadBalancerName   string `json:"LoadBalancerName" xml:"LoadBalancerName"`
-	ResourceGroupId    string `json:"ResourceGroupId" xml:"ResourceGroupId"`
-	InternetChargeType string `json:"InternetChargeType" xml:"InternetChargeType"`
-	Address            string `json:"Address" xml:"Address"`
-	SlaveZoneId        string `json:"SlaveZoneId" xml:"SlaveZoneId"`
-	RegionIdAlias      string `json:"RegionIdAlias" xml:"RegionIdAlias"`
-	MasterZoneId       string `json:"MasterZoneId" xml:"MasterZoneId"`
+	VpcId                        string                      `json:"VpcId" xml:"VpcId"`
+	CreateTimeStamp              int64                       `json:"CreateTimeStamp" xml:"CreateTimeStamp"`
+	LoadBalancerId               string                      `json:"LoadBalancerId" xml:"LoadBalancerId"`
+	CreateTime                   string                      `json:"CreateTime" xml:"CreateTime"`
+	PayType                      string                      `json:"PayType" xml:"PayType"`
+	AddressType                  string                      `json:"AddressType" xml:"AddressType"`
+	NetworkType                  string                      `json:"NetworkType" xml:"NetworkType"`
+	ServiceManagedMode           string                      `json:"ServiceManagedMode" xml:"ServiceManagedMode"`
+	SpecBpsFlag                  bool                        `json:"SpecBpsFlag" xml:"SpecBpsFlag"`
+	AddressIPVersion             string                      `json:"AddressIPVersion" xml:"AddressIPVersion"`
+	LoadBalancerName             string                      `json:"LoadBalancerName" xml:"LoadBalancerName"`
+	Bandwidth                    int                         `json:"Bandwidth" xml:"Bandwidth"`
+	Address                      string                      `json:"Address" xml:"Address"`
+	SlaveZoneId                  string                      `json:"SlaveZoneId" xml:"SlaveZoneId"`
+	MasterZoneId                 string                      `json:"MasterZoneId" xml:"MasterZoneId"`
+	InternetChargeTypeAlias      string                      `json:"InternetChargeTypeAlias" xml:"InternetChargeTypeAlias"`
+	LoadBalancerSpec             string                      `json:"LoadBalancerSpec" xml:"LoadBalancerSpec"`
+	SpecType                     string                      `json:"SpecType" xml:"SpecType"`
+	RegionId                     string                      `json:"RegionId" xml:"RegionId"`
+	ModificationProtectionReason string                      `json:"ModificationProtectionReason" xml:"ModificationProtectionReason"`
+	ModificationProtectionStatus string                      `json:"ModificationProtectionStatus" xml:"ModificationProtectionStatus"`
+	VSwitchId                    string                      `json:"VSwitchId" xml:"VSwitchId"`
+	LoadBalancerStatus           string                      `json:"LoadBalancerStatus" xml:"LoadBalancerStatus"`
+	ResourceGroupId              string                      `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	InternetChargeType           string                      `json:"InternetChargeType" xml:"InternetChargeType"`
+	BusinessStatus               string                      `json:"BusinessStatus" xml:"BusinessStatus"`
+	DeleteProtection             string                      `json:"DeleteProtection" xml:"DeleteProtection"`
+	RegionIdAlias                string                      `json:"RegionIdAlias" xml:"RegionIdAlias"`
+	InstanceChargeType           string                      `json:"InstanceChargeType" xml:"InstanceChargeType"`
+	ServiceManagedReason         string                      `json:"ServiceManagedReason" xml:"ServiceManagedReason"`
+	IneffectiveOrderList         IneffectiveOrderList        `json:"IneffectiveOrderList" xml:"IneffectiveOrderList"`
+	Tags                         TagsInDescribeLoadBalancers `json:"Tags" xml:"Tags"`
 }

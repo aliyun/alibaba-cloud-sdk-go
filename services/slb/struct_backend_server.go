@@ -17,7 +17,15 @@ package slb
 
 // BackendServer is a nested struct in slb response
 type BackendServer struct {
+	Port               int    `json:"Port" xml:"Port"`
+	Protocol           string `json:"Protocol" xml:"Protocol"`
+	ServerIp           string `json:"ServerIp" xml:"ServerIp"`
 	ServerHealthStatus string `json:"ServerHealthStatus" xml:"ServerHealthStatus"`
 	ServerId           string `json:"ServerId" xml:"ServerId"`
+	VpcId              string `json:"VpcId" xml:"VpcId"`
+	ListenerPort       int    `json:"ListenerPort" xml:"ListenerPort"`
 	Weight             string `json:"Weight" xml:"Weight"`
+	Description        string `json:"Description" xml:"Description"`
+	EniHost            string `json:"EniHost" xml:"EniHost"`
+	Type               string `json:"Type" xml:"Type"`
 }

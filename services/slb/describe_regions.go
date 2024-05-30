@@ -77,6 +77,7 @@ type DescribeRegionsRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	Tags                 string           `position:"Query" name:"Tags"`
+	AcceptLanguage       string           `position:"Query" name:"AcceptLanguage"`
 }
 
 // DescribeRegionsResponse is the response struct for api DescribeRegions
@@ -91,7 +92,7 @@ func CreateDescribeRegionsRequest() (request *DescribeRegionsRequest) {
 	request = &DescribeRegionsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2013-02-21", "DescribeRegions", "slb", "openAPI")
+	request.InitWithApiInfo("Slb", "2014-05-15", "DescribeRegions", "slb", "openAPI")
 	request.Method = requests.POST
 	return
 }

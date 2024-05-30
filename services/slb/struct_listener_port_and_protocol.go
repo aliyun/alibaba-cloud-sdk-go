@@ -19,4 +19,7 @@ package slb
 type ListenerPortAndProtocol struct {
 	ListenerPort     int    `json:"ListenerPort" xml:"ListenerPort"`
 	ListenerProtocol string `json:"ListenerProtocol" xml:"ListenerProtocol"`
+	ListenerForward  string `json:"ListenerForward" xml:"ListenerForward"`
+	Description      string `json:"Description" xml:"Description"`
+	ForwardPort      int    `json:"ForwardPort" xml:"ForwardPort"`
 }

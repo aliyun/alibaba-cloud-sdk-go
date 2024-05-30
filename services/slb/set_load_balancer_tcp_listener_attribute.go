@@ -71,19 +71,58 @@ func (client *Client) SetLoadBalancerTCPListenerAttributeWithCallback(request *S
 // SetLoadBalancerTCPListenerAttributeRequest is the request struct for api SetLoadBalancerTCPListenerAttribute
 type SetLoadBalancerTCPListenerAttributeRequest struct {
 	*requests.RpcRequest
-	HostId             string           `position:"Query" name:"HostId"`
-	UnhealthyThreshold requests.Integer `position:"Query" name:"UnhealthyThreshold"`
-	HealthyThreshold   requests.Integer `position:"Query" name:"HealthyThreshold"`
-	Scheduler          string           `position:"Query" name:"Scheduler"`
-	HealthCheck        string           `position:"Query" name:"HealthCheck"`
-	PersistenceTimeout requests.Integer `position:"Query" name:"PersistenceTimeout"`
-	ConnectTimeout     requests.Integer `position:"Query" name:"ConnectTimeout"`
-	ListenerPort       requests.Integer `position:"Query" name:"ListenerPort"`
-	ConnectPort        requests.Integer `position:"Query" name:"ConnectPort"`
-	OwnerAccount       string           `position:"Query" name:"OwnerAccount"`
-	OwnerId            string           `position:"Query" name:"OwnerId"`
-	LoadBalancerId     string           `position:"Query" name:"LoadBalancerId"`
-	Interval           requests.Integer `position:"Query" name:"Interval"`
+	ResourceOwnerId                requests.Integer                                `position:"Query" name:"ResourceOwnerId"`
+	HealthCheckURI                 string                                          `position:"Query" name:"HealthCheckURI"`
+	AclStatus                      string                                          `position:"Query" name:"AclStatus"`
+	FullNatEnabled                 requests.Boolean                                `position:"Query" name:"FullNatEnabled"`
+	HealthCheckTcpFastCloseEnabled requests.Boolean                                `position:"Query" name:"HealthCheckTcpFastCloseEnabled"`
+	AclType                        string                                          `position:"Query" name:"AclType"`
+	MasterSlaveServerGroup         string                                          `position:"Query" name:"MasterSlaveServerGroup"`
+	EstablishedTimeout             requests.Integer                                `position:"Query" name:"EstablishedTimeout"`
+	FailoverStrategy               string                                          `position:"Query" name:"FailoverStrategy"`
+	PersistenceTimeout             requests.Integer                                `position:"Query" name:"PersistenceTimeout"`
+	VpcIds                         string                                          `position:"Query" name:"VpcIds"`
+	MasterSlaveModeEnabled         requests.Boolean                                `position:"Query" name:"MasterSlaveModeEnabled"`
+	VServerGroupId                 string                                          `position:"Query" name:"VServerGroupId"`
+	AclId                          string                                          `position:"Query" name:"AclId"`
+	PortRange                      *[]SetLoadBalancerTCPListenerAttributePortRange `position:"Query" name:"PortRange"  type:"Repeated"`
+	HealthCheckMethod              string                                          `position:"Query" name:"HealthCheckMethod"`
+	HealthCheckDomain              string                                          `position:"Query" name:"HealthCheckDomain"`
+	SynProxy                       string                                          `position:"Query" name:"SynProxy"`
+	OwnerId                        requests.Integer                                `position:"Query" name:"OwnerId"`
+	ProxyProtocolVpcIdEnabled      requests.Boolean                                `position:"Query" name:"ProxyProtocolVpcIdEnabled"`
+	Tags                           string                                          `position:"Query" name:"Tags"`
+	LoadBalancerId                 string                                          `position:"Query" name:"LoadBalancerId"`
+	MasterSlaveServerGroupId       string                                          `position:"Query" name:"MasterSlaveServerGroupId"`
+	HealthCheckInterval            requests.Integer                                `position:"Query" name:"HealthCheckInterval"`
+	FailoverThreshold              requests.Integer                                `position:"Query" name:"FailoverThreshold"`
+	ProxyProtocolV2Enabled         requests.Boolean                                `position:"Query" name:"ProxyProtocolV2Enabled"`
+	ConnectionDrain                string                                          `position:"Query" name:"ConnectionDrain"`
+	HealthCheckSwitch              string                                          `position:"Query" name:"HealthCheckSwitch"`
+	AccessKeyId                    string                                          `position:"Query" name:"access_key_id"`
+	HealthCheckConnectTimeout      requests.Integer                                `position:"Query" name:"HealthCheckConnectTimeout"`
+	SlaveServerGroupId             string                                          `position:"Query" name:"SlaveServerGroupId"`
+	Description                    string                                          `position:"Query" name:"Description"`
+	UnhealthyThreshold             requests.Integer                                `position:"Query" name:"UnhealthyThreshold"`
+	HealthyThreshold               requests.Integer                                `position:"Query" name:"HealthyThreshold"`
+	Scheduler                      string                                          `position:"Query" name:"Scheduler"`
+	MaxConnection                  requests.Integer                                `position:"Query" name:"MaxConnection"`
+	MasterServerGroupId            string                                          `position:"Query" name:"MasterServerGroupId"`
+	ListenerPort                   requests.Integer                                `position:"Query" name:"ListenerPort"`
+	HealthCheckType                string                                          `position:"Query" name:"HealthCheckType"`
+	ResourceOwnerAccount           string                                          `position:"Query" name:"ResourceOwnerAccount"`
+	Bandwidth                      requests.Integer                                `position:"Query" name:"Bandwidth"`
+	OwnerAccount                   string                                          `position:"Query" name:"OwnerAccount"`
+	ConnectionDrainTimeout         requests.Integer                                `position:"Query" name:"ConnectionDrainTimeout"`
+	HealthCheckConnectPort         requests.Integer                                `position:"Query" name:"HealthCheckConnectPort"`
+	HealthCheckHttpCode            string                                          `position:"Query" name:"HealthCheckHttpCode"`
+	VServerGroup                   string                                          `position:"Query" name:"VServerGroup"`
+}
+
+// SetLoadBalancerTCPListenerAttributePortRange is a repeated param struct in SetLoadBalancerTCPListenerAttributeRequest
+type SetLoadBalancerTCPListenerAttributePortRange struct {
+	StartPort string `name:"StartPort"`
+	EndPort   string `name:"EndPort"`
 }
 
 // SetLoadBalancerTCPListenerAttributeResponse is the response struct for api SetLoadBalancerTCPListenerAttribute
@@ -97,7 +136,7 @@ func CreateSetLoadBalancerTCPListenerAttributeRequest() (request *SetLoadBalance
 	request = &SetLoadBalancerTCPListenerAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2013-02-21", "SetLoadBalancerTCPListenerAttribute", "slb", "openAPI")
+	request.InitWithApiInfo("Slb", "2014-05-15", "SetLoadBalancerTCPListenerAttribute", "slb", "openAPI")
 	request.Method = requests.POST
 	return
 }

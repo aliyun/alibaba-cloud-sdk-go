@@ -17,6 +17,7 @@ package slb
 
 // Region is a nested struct in slb response
 type Region struct {
-	LocalName string `json:"LocalName" xml:"LocalName"`
-	RegionId  string `json:"RegionId" xml:"RegionId"`
+	RegionEndpoint string `json:"RegionEndpoint" xml:"RegionEndpoint"`
+	LocalName      string `json:"LocalName" xml:"LocalName"`
+	RegionId       string `json:"RegionId" xml:"RegionId"`
 }

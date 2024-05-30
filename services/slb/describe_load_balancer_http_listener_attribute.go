@@ -84,33 +84,53 @@ type DescribeLoadBalancerHTTPListenerAttributeRequest struct {
 // DescribeLoadBalancerHTTPListenerAttributeResponse is the response struct for api DescribeLoadBalancerHTTPListenerAttribute
 type DescribeLoadBalancerHTTPListenerAttributeResponse struct {
 	*responses.BaseResponse
-	Status                 string `json:"Status" xml:"Status"`
-	VServerGroupId         string `json:"VServerGroupId" xml:"VServerGroupId"`
-	Cookie                 string `json:"Cookie" xml:"Cookie"`
-	Gzip                   string `json:"Gzip" xml:"Gzip"`
-	RequestId              string `json:"RequestId" xml:"RequestId"`
-	HealthCheckConnectPort int    `json:"HealthCheckConnectPort" xml:"HealthCheckConnectPort"`
-	Bandwidth              int    `json:"Bandwidth" xml:"Bandwidth"`
-	HealthCheckTimeout     int    `json:"HealthCheckTimeout" xml:"HealthCheckTimeout"`
-	BackendServerPort      int    `json:"BackendServerPort" xml:"BackendServerPort"`
-	CookieTimeout          int    `json:"CookieTimeout" xml:"CookieTimeout"`
-	URI                    string `json:"URI" xml:"URI"`
-	UnhealthyThreshold     int    `json:"UnhealthyThreshold" xml:"UnhealthyThreshold"`
-	XForwardedForSLBID     string `json:"XForwardedFor_SLBID" xml:"XForwardedFor_SLBID"`
-	SecurityStatus         string `json:"SecurityStatus" xml:"SecurityStatus"`
-	HealthCheckHttpCode    string `json:"HealthCheckHttpCode" xml:"HealthCheckHttpCode"`
-	Domain                 string `json:"Domain" xml:"Domain"`
-	MaxConnection          int    `json:"MaxConnection" xml:"MaxConnection"`
-	XForwardedFor          string `json:"XForwardedFor" xml:"XForwardedFor"`
-	ListenerPort           int    `json:"ListenerPort" xml:"ListenerPort"`
-	StickySessionType      string `json:"StickySessionType" xml:"StickySessionType"`
-	Scheduler              string `json:"Scheduler" xml:"Scheduler"`
-	Interval               int    `json:"Interval" xml:"Interval"`
-	HealthyThreshold       int    `json:"HealthyThreshold" xml:"HealthyThreshold"`
-	XForwardedForProto     string `json:"XForwardedFor_proto" xml:"XForwardedFor_proto"`
-	XForwardedForSLBIP     string `json:"XForwardedFor_SLBIP" xml:"XForwardedFor_SLBIP"`
-	StickySession          string `json:"StickySession" xml:"StickySession"`
-	HealthCheck            string `json:"HealthCheck" xml:"HealthCheck"`
+	AclType                    string                                            `json:"AclType" xml:"AclType"`
+	VServerGroupId             string                                            `json:"VServerGroupId" xml:"VServerGroupId"`
+	HealthCheckHttpVersion     string                                            `json:"HealthCheckHttpVersion" xml:"HealthCheckHttpVersion"`
+	Status                     string                                            `json:"Status" xml:"Status"`
+	XForwardedForClientSrcPort string                                            `json:"XForwardedFor_ClientSrcPort" xml:"XForwardedFor_ClientSrcPort"`
+	Cookie                     string                                            `json:"Cookie" xml:"Cookie"`
+	Gzip                       string                                            `json:"Gzip" xml:"Gzip"`
+	ForwardCode                int                                               `json:"ForwardCode" xml:"ForwardCode"`
+	ServiceManagedMode         string                                            `json:"ServiceManagedMode" xml:"ServiceManagedMode"`
+	HealthCheckConnectPort     int                                               `json:"HealthCheckConnectPort" xml:"HealthCheckConnectPort"`
+	RequestId                  string                                            `json:"RequestId" xml:"RequestId"`
+	Description                string                                            `json:"Description" xml:"Description"`
+	Bandwidth                  int                                               `json:"Bandwidth" xml:"Bandwidth"`
+	HealthCheckTimeout         int                                               `json:"HealthCheckTimeout" xml:"HealthCheckTimeout"`
+	HealthCheckType            string                                            `json:"HealthCheckType" xml:"HealthCheckType"`
+	AclStatus                  string                                            `json:"AclStatus" xml:"AclStatus"`
+	BackendServerPort          int                                               `json:"BackendServerPort" xml:"BackendServerPort"`
+	CookieTimeout              int                                               `json:"CookieTimeout" xml:"CookieTimeout"`
+	HealthCheckDomain          string                                            `json:"HealthCheckDomain" xml:"HealthCheckDomain"`
+	UnhealthyThreshold         int                                               `json:"UnhealthyThreshold" xml:"UnhealthyThreshold"`
+	ForwardPort                int                                               `json:"ForwardPort" xml:"ForwardPort"`
+	XForwardedForSLBID         string                                            `json:"XForwardedFor_SLBID" xml:"XForwardedFor_SLBID"`
+	SecurityStatus             string                                            `json:"SecurityStatus" xml:"SecurityStatus"`
+	HealthCheckHttpCode        string                                            `json:"HealthCheckHttpCode" xml:"HealthCheckHttpCode"`
+	MaxConnection              int                                               `json:"MaxConnection" xml:"MaxConnection"`
+	ListenerForward            string                                            `json:"ListenerForward" xml:"ListenerForward"`
+	XForwardedFor              string                                            `json:"XForwardedFor" xml:"XForwardedFor"`
+	IdleTimeout                int                                               `json:"IdleTimeout" xml:"IdleTimeout"`
+	RequestTimeout             int                                               `json:"RequestTimeout" xml:"RequestTimeout"`
+	ListenerPort               int                                               `json:"ListenerPort" xml:"ListenerPort"`
+	HealthCheckInterval        int                                               `json:"HealthCheckInterval" xml:"HealthCheckInterval"`
+	XForwardedForSLBPORT       string                                            `json:"XForwardedFor_SLBPORT" xml:"XForwardedFor_SLBPORT"`
+	HealthCheckURI             string                                            `json:"HealthCheckURI" xml:"HealthCheckURI"`
+	StickySessionType          string                                            `json:"StickySessionType" xml:"StickySessionType"`
+	AclId                      string                                            `json:"AclId" xml:"AclId"`
+	Scheduler                  string                                            `json:"Scheduler" xml:"Scheduler"`
+	VpcIds                     string                                            `json:"VpcIds" xml:"VpcIds"`
+	HealthyThreshold           int                                               `json:"HealthyThreshold" xml:"HealthyThreshold"`
+	XForwardedForProto         string                                            `json:"XForwardedFor_proto" xml:"XForwardedFor_proto"`
+	XForwardedForSLBIP         string                                            `json:"XForwardedFor_SLBIP" xml:"XForwardedFor_SLBIP"`
+	StickySession              string                                            `json:"StickySession" xml:"StickySession"`
+	HealthCheckMethod          string                                            `json:"HealthCheckMethod" xml:"HealthCheckMethod"`
+	HealthCheck                string                                            `json:"HealthCheck" xml:"HealthCheck"`
+	LoadBalancerId             string                                            `json:"LoadBalancerId" xml:"LoadBalancerId"`
+	AclIds                     AclIdsInDescribeLoadBalancerHTTPListenerAttribute `json:"AclIds" xml:"AclIds"`
+	Rules                      RulesInDescribeLoadBalancerHTTPListenerAttribute  `json:"Rules" xml:"Rules"`
+	Tags                       TagsInDescribeLoadBalancerHTTPListenerAttribute   `json:"Tags" xml:"Tags"`
 }
 
 // CreateDescribeLoadBalancerHTTPListenerAttributeRequest creates a request to invoke DescribeLoadBalancerHTTPListenerAttribute API
@@ -118,7 +138,7 @@ func CreateDescribeLoadBalancerHTTPListenerAttributeRequest() (request *Describe
 	request = &DescribeLoadBalancerHTTPListenerAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Slb", "2013-02-21", "DescribeLoadBalancerHTTPListenerAttribute", "slb", "openAPI")
+	request.InitWithApiInfo("Slb", "2014-05-15", "DescribeLoadBalancerHTTPListenerAttribute", "slb", "openAPI")
 	request.Method = requests.POST
 	return
 }
