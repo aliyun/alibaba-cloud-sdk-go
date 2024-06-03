@@ -1,3 +1,7 @@
+2024-06-03 Version: v1.62.754
+- Generated 2022-05-30 for `eflo`.
+- Supported gateway for hdeni api.
+
 2024-05-30 Version: v1.62.753
 - Generated 2014-05-15 for `Slb`.
 undefined

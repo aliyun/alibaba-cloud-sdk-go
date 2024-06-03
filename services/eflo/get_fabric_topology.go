@@ -71,9 +71,11 @@ func (client *Client) GetFabricTopologyWithCallback(request *GetFabricTopologyRe
 // GetFabricTopologyRequest is the request struct for api GetFabricTopology
 type GetFabricTopologyRequest struct {
 	*requests.RpcRequest
-	VpdId   string    `position:"Body" name:"VpdId"`
-	LniIds  *[]string `position:"Body" name:"LniIds"  type:"Repeated"`
-	NodeIds *[]string `position:"Body" name:"NodeIds"  type:"Repeated"`
+	ClusterId string    `position:"Body" name:"ClusterId"`
+	VpdId     string    `position:"Body" name:"VpdId"`
+	VpcId     string    `position:"Body" name:"VpcId"`
+	LniIds    *[]string `position:"Body" name:"LniIds"  type:"Repeated"`
+	NodeIds   *[]string `position:"Body" name:"NodeIds"  type:"Repeated"`
 }
 
 // GetFabricTopologyResponse is the response struct for api GetFabricTopology

@@ -17,12 +17,14 @@ package eflo
 
 // ContentItem is a nested struct in eflo response
 type ContentItem struct {
-	RegionId    string   `json:"RegionId" xml:"RegionId"`
-	ZoneId      string   `json:"ZoneId" xml:"ZoneId"`
-	ClusterId   string   `json:"ClusterId" xml:"ClusterId"`
-	VpcId       string   `json:"VpcId" xml:"VpcId"`
-	NodeId      string   `json:"NodeId" xml:"NodeId"`
-	LeniQuota   int      `json:"LeniQuota" xml:"LeniQuota"`
-	LniSipQuota int      `json:"LniSipQuota" xml:"LniSipQuota"`
-	VSwitches   []string `json:"VSwitches" xml:"VSwitches"`
+	RegionId     string   `json:"RegionId" xml:"RegionId"`
+	ZoneId       string   `json:"ZoneId" xml:"ZoneId"`
+	ClusterId    string   `json:"ClusterId" xml:"ClusterId"`
+	VpcId        string   `json:"VpcId" xml:"VpcId"`
+	NodeId       string   `json:"NodeId" xml:"NodeId"`
+	LeniQuota    int      `json:"LeniQuota" xml:"LeniQuota"`
+	LniSipQuota  int      `json:"LniSipQuota" xml:"LniSipQuota"`
+	LeniSipQuota int      `json:"LeniSipQuota" xml:"LeniSipQuota"`
+	HdeniQuota   int      `json:"HdeniQuota" xml:"HdeniQuota"`
+	VSwitches    []string `json:"VSwitches" xml:"VSwitches"`
 }

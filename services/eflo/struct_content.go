@@ -67,6 +67,7 @@ type Content struct {
 	RouteMapNum               int                            `json:"RouteMapNum" xml:"RouteMapNum"`
 	TenantId                  string                         `json:"TenantId" xml:"TenantId"`
 	ErAttachmentName          string                         `json:"ErAttachmentName" xml:"ErAttachmentName"`
+	LeniSipQuota              int                            `json:"LeniSipQuota" xml:"LeniSipQuota"`
 	VpdName                   string                         `json:"VpdName" xml:"VpdName"`
 	HasRole                   bool                           `json:"HasRole" xml:"HasRole"`
 	Ip                        string                         `json:"Ip" xml:"Ip"`
