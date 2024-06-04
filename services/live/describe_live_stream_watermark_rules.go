@@ -80,9 +80,9 @@ type DescribeLiveStreamWatermarkRulesRequest struct {
 // DescribeLiveStreamWatermarkRulesResponse is the response struct for api DescribeLiveStreamWatermarkRules
 type DescribeLiveStreamWatermarkRulesResponse struct {
 	*responses.BaseResponse
-	Total        int          `json:"Total" xml:"Total"`
-	RequestId    string       `json:"RequestId" xml:"RequestId"`
-	RuleInfoList RuleInfoList `json:"RuleInfoList" xml:"RuleInfoList"`
+	Total        int                                            `json:"Total" xml:"Total"`
+	RequestId    string                                         `json:"RequestId" xml:"RequestId"`
+	RuleInfoList RuleInfoListInDescribeLiveStreamWatermarkRules `json:"RuleInfoList" xml:"RuleInfoList"`
 }
 
 // CreateDescribeLiveStreamWatermarkRulesRequest creates a request to invoke DescribeLiveStreamWatermarkRules API
