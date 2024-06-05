@@ -72,7 +72,7 @@ type DBInstance struct {
 	DBInstanceStatus             string                                     `json:"DBInstanceStatus" xml:"DBInstanceStatus"`
 	ReplicateId                  string                                     `json:"ReplicateId" xml:"ReplicateId"`
 	ConnectionString             string                                     `json:"ConnectionString" xml:"ConnectionString"`
-	Port                         string                                     `json:"Port" xml:"Port"`
+	Port                         int                                        `json:"Port" xml:"Port"`
 	DedicatedHostNameForMaster   string                                     `json:"DedicatedHostNameForMaster" xml:"DedicatedHostNameForMaster"`
 	AutoUpgradeMinorVersion      string                                     `json:"AutoUpgradeMinorVersion" xml:"AutoUpgradeMinorVersion"`
 	DeletionProtection           bool                                       `json:"DeletionProtection" xml:"DeletionProtection"`
