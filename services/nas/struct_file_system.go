@@ -45,4 +45,5 @@ type FileSystem struct {
 	MountTargets          MountTargetsInDescribeFileSystems      `json:"MountTargets" xml:"MountTargets"`
 	Tags                  TagsInDescribeFileSystems              `json:"Tags" xml:"Tags"`
 	Packages              PackagesInDescribeFileSystemStatistics `json:"Packages" xml:"Packages"`
+	QuotaSize             int64                                  `json:"QuotaSize" xml:"QuotaSize"`
 }
