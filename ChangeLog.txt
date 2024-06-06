@@ -1,3 +1,7 @@
+2024-06-06 Version: v1.62.757
+- Generated 2021-05-20 for `idaas-doraemon`.
+- ListOrderConsumeStatisticRecords  add applicationExternalId serviceCode.
+
 2024-06-05 Version: v1.62.756
 - Generated 2023-09-14 for `dms-dg`.
 - Support dms dg.
