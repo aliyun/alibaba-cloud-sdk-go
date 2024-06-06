@@ -79,8 +79,8 @@ type UpdateUserDevicesStatusRequest struct {
 // UpdateUserDevicesStatusResponse is the response struct for api UpdateUserDevicesStatus
 type UpdateUserDevicesStatusResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Devices   []Data `json:"Devices" xml:"Devices"`
+	RequestId string                          `json:"RequestId" xml:"RequestId"`
+	Devices   []DataInUpdateUserDevicesStatus `json:"Devices" xml:"Devices"`
 }
 
 // CreateUpdateUserDevicesStatusRequest creates a request to invoke UpdateUserDevicesStatus API

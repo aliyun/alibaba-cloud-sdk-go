@@ -81,6 +81,7 @@ type ListUserDevicesRequest struct {
 	PageSize       requests.Integer `position:"Query" name:"PageSize"`
 	NacStatuses    *[]string        `position:"Query" name:"NacStatuses"  type:"Repeated"`
 	Department     string           `position:"Query" name:"Department"`
+	InnerIp        string           `position:"Query" name:"InnerIp"`
 	IaStatuses     *[]string        `position:"Query" name:"IaStatuses"  type:"Repeated"`
 	DeviceBelong   string           `position:"Query" name:"DeviceBelong"`
 	CurrentPage    requests.Integer `position:"Query" name:"CurrentPage"`

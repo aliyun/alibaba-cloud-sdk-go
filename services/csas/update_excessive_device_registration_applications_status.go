@@ -79,8 +79,8 @@ type UpdateExcessiveDeviceRegistrationApplicationsStatusRequest struct {
 // UpdateExcessiveDeviceRegistrationApplicationsStatusResponse is the response struct for api UpdateExcessiveDeviceRegistrationApplicationsStatus
 type UpdateExcessiveDeviceRegistrationApplicationsStatusResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
-	Applications []Data `json:"Applications" xml:"Applications"`
+	RequestId    string                                                      `json:"RequestId" xml:"RequestId"`
+	Applications []DataInUpdateExcessiveDeviceRegistrationApplicationsStatus `json:"Applications" xml:"Applications"`
 }
 
 // CreateUpdateExcessiveDeviceRegistrationApplicationsStatusRequest creates a request to invoke UpdateExcessiveDeviceRegistrationApplicationsStatus API

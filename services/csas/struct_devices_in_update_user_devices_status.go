@@ -17,5 +17,5 @@ package csas
 
 // DevicesInUpdateUserDevicesStatus is a nested struct in csas response
 type DevicesInUpdateUserDevicesStatus struct {
-	Data []Data `json:"data" xml:"data"`
+	Data []DataInUpdateUserDevicesStatus `json:"data" xml:"data"`
 }

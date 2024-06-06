@@ -17,5 +17,5 @@ package csas
 
 // ApplicationsInUpdateExcessiveDeviceRegistrationApplicationsStatus is a nested struct in csas response
 type ApplicationsInUpdateExcessiveDeviceRegistrationApplicationsStatus struct {
-	Data []Data `json:"data" xml:"data"`
+	Data []DataInUpdateExcessiveDeviceRegistrationApplicationsStatus `json:"data" xml:"data"`
 }
