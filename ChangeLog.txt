@@ -1,3 +1,7 @@
+2024-06-11 Version: v1.62.761
+- Generated 2023-06-21 for `PaiFeatureStore`.
+- Add ListFeatureViewOnlineFeatures API.
+
 2024-06-11 Version: v1.62.760
 - Generated 2016-08-10 for `Beian`.
 - Domain Self Diagnosis.

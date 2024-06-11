@@ -18,6 +18,7 @@ package paifeaturestore
 // FeatureViewsItem is a nested struct in paifeaturestore response
 type FeatureViewsItem struct {
 	Name                   string         `json:"Name" xml:"Name"`
+	WriteToFeatureDB       bool           `json:"WriteToFeatureDB" xml:"WriteToFeatureDB"`
 	FeatureEntityName      string         `json:"FeatureEntityName" xml:"FeatureEntityName"`
 	GmtModifiedTime        string         `json:"GmtModifiedTime" xml:"GmtModifiedTime"`
 	FeatureViewId          string         `json:"FeatureViewId" xml:"FeatureViewId"`

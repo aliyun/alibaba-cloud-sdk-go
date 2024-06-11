@@ -93,6 +93,7 @@ type GetFeatureViewResponse struct {
 	RegisterTable          string       `json:"RegisterTable" xml:"RegisterTable"`
 	RegisterDatasourceId   string       `json:"RegisterDatasourceId" xml:"RegisterDatasourceId"`
 	RegisterDatasourceName string       `json:"RegisterDatasourceName" xml:"RegisterDatasourceName"`
+	WriteToFeatureDB       bool         `json:"WriteToFeatureDB" xml:"WriteToFeatureDB"`
 	SyncOnlineTable        bool         `json:"SyncOnlineTable" xml:"SyncOnlineTable"`
 	TTL                    int          `json:"TTL" xml:"TTL"`
 	Config                 string       `json:"Config" xml:"Config"`
