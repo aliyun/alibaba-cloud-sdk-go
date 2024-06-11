@@ -1,3 +1,7 @@
+2024-06-11 Version: v1.62.760
+- Generated 2016-08-10 for `Beian`.
+- Domain Self Diagnosis.
+
 2024-06-11 Version: v1.62.759
 - Generated 2023-01-20 for `csas`.
 undefined
