@@ -74,6 +74,7 @@ type DescribeLiveAISubtitleRequest struct {
 	SubtitleName string           `position:"Query" name:"SubtitleName"`
 	PageNumber   string           `position:"Query" name:"PageNumber"`
 	PageSize     string           `position:"Query" name:"PageSize"`
+	IsDefault    requests.Boolean `position:"Query" name:"IsDefault"`
 	OwnerId      requests.Integer `position:"Query" name:"OwnerId"`
 	SubtitleId   string           `position:"Query" name:"SubtitleId"`
 }

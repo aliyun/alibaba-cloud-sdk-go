@@ -141,10 +141,12 @@ type UpdateLiveMPUTaskTranscodeParamsEncodeParams struct {
 	AudioOnly       string `name:"AudioOnly"`
 	VideoWidth      string `name:"VideoWidth"`
 	AudioBitrate    string `name:"AudioBitrate"`
+	EnhancedParam   string `name:"EnhancedParam"`
 	VideoFramerate  string `name:"VideoFramerate"`
 	VideoHeight     string `name:"VideoHeight"`
 	AudioSampleRate string `name:"AudioSampleRate"`
 	VideoBitrate    string `name:"VideoBitrate"`
+	VideoCodec      string `name:"VideoCodec"`
 	AudioChannels   string `name:"AudioChannels"`
 	VideoGop        string `name:"VideoGop"`
 }
@@ -156,8 +158,8 @@ type UpdateLiveMPUTaskTranscodeParamsLayoutUserPanesItem struct {
 	Width              string                                                      `name:"Width"`
 	X                  string                                                      `name:"X"`
 	Y                  string                                                      `name:"Y"`
-	RenderMode         string                                                      `name:"RenderMode"`
 	UserInfo           UpdateLiveMPUTaskTranscodeParamsLayoutUserPanesItemUserInfo `name:"UserInfo" type:"Struct"`
+	RenderMode         string                                                      `name:"RenderMode"`
 	Height             string                                                      `name:"Height"`
 }
 

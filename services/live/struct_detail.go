@@ -17,21 +17,7 @@ package live
 
 // Detail is a nested struct in live response
 type Detail struct {
-	Gop             string `json:"Gop" xml:"Gop"`
-	FLV             int    `json:"FLV" xml:"FLV"`
-	Profile         int    `json:"Profile" xml:"Profile"`
-	Fps             int    `json:"Fps" xml:"Fps"`
-	MP4             int    `json:"MP4" xml:"MP4"`
-	AudioCodec      string `json:"AudioCodec" xml:"AudioCodec"`
-	TS              int    `json:"TS" xml:"TS"`
-	AudioProfile    string `json:"AudioProfile" xml:"AudioProfile"`
-	Template        string `json:"Template" xml:"Template"`
-	AudioRate       int    `json:"AudioRate" xml:"AudioRate"`
-	Height          int    `json:"Height" xml:"Height"`
-	Width           int    `json:"Width" xml:"Width"`
-	TemplateType    string `json:"TemplateType" xml:"TemplateType"`
-	BandWidth       int    `json:"BandWidth" xml:"BandWidth"`
-	VideoBitrate    int    `json:"VideoBitrate" xml:"VideoBitrate"`
-	AudioBitrate    int    `json:"AudioBitrate" xml:"AudioBitrate"`
-	AudioChannelNum int    `json:"AudioChannelNum" xml:"AudioChannelNum"`
+	FLV int `json:"FLV" xml:"FLV"`
+	TS  int `json:"TS" xml:"TS"`
+	MP4 int `json:"MP4" xml:"MP4"`
 }

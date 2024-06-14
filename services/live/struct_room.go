@@ -17,11 +17,8 @@ package live
 
 // Room is a nested struct in live response
 type Room struct {
-	AnchorId     string `json:"AnchorId" xml:"AnchorId"`
-	OpEndTime    string `json:"OpEndTime" xml:"OpEndTime"`
-	OpStartTime  string `json:"OpStartTime" xml:"OpStartTime"`
-	CreateTime   string `json:"CreateTime" xml:"CreateTime"`
-	RoomStatus   int    `json:"RoomStatus" xml:"RoomStatus"`
-	RoomId       string `json:"RoomId" xml:"RoomId"`
-	ForbidStream string `json:"ForbidStream" xml:"ForbidStream"`
+	OpEndTime   string `json:"OpEndTime" xml:"OpEndTime"`
+	AnchorId    string `json:"AnchorId" xml:"AnchorId"`
+	OpStartTime string `json:"OpStartTime" xml:"OpStartTime"`
+	RoomId      string `json:"RoomId" xml:"RoomId"`
 }
