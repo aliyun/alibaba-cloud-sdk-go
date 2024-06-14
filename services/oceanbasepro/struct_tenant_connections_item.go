@@ -34,5 +34,12 @@ type TenantConnectionsItem struct {
 	TenantEndpointId            string   `json:"TenantEndpointId" xml:"TenantEndpointId"`
 	MaxConnectionNum            int64    `json:"MaxConnectionNum" xml:"MaxConnectionNum"`
 	ConnectionReplicaType       string   `json:"ConnectionReplicaType" xml:"ConnectionReplicaType"`
+	ProxyClusterId              string   `json:"ProxyClusterId" xml:"ProxyClusterId"`
+	MaxConnectionLimit          int64    `json:"MaxConnectionLimit" xml:"MaxConnectionLimit"`
+	InternetMaxConnectionLimit  int64    `json:"InternetMaxConnectionLimit" xml:"InternetMaxConnectionLimit"`
+	IntranetRpcPort             int      `json:"IntranetRpcPort" xml:"IntranetRpcPort"`
+	InternetMaxConnectionNum    int64    `json:"InternetMaxConnectionNum" xml:"InternetMaxConnectionNum"`
+	InternetRpcPort             int      `json:"InternetRpcPort" xml:"InternetRpcPort"`
 	ConnectionZones             []string `json:"ConnectionZones" xml:"ConnectionZones"`
+	ConnectionLogicalZones      []string `json:"ConnectionLogicalZones" xml:"ConnectionLogicalZones"`
 }

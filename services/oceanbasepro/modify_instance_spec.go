@@ -71,13 +71,14 @@ func (client *Client) ModifyInstanceSpecWithCallback(request *ModifyInstanceSpec
 // ModifyInstanceSpecRequest is the request struct for api ModifyInstanceSpec
 type ModifyInstanceSpecRequest struct {
 	*requests.RpcRequest
-	AutoUseCoupon requests.Boolean `position:"Body" name:"AutoUseCoupon"`
-	InstanceClass string           `position:"Body" name:"InstanceClass"`
-	DryRun        requests.Boolean `position:"Body" name:"DryRun"`
-	DiskSize      requests.Integer `position:"Body" name:"DiskSize"`
-	DiskType      string           `position:"Body" name:"DiskType"`
-	InstanceId    string           `position:"Body" name:"InstanceId"`
-	LogDiskSize   requests.Integer `position:"Body" name:"LogDiskSize"`
+	AutoUseCoupon     requests.Boolean `position:"Body" name:"AutoUseCoupon"`
+	InstanceClass     string           `position:"Body" name:"InstanceClass"`
+	DryRun            requests.Boolean `position:"Body" name:"DryRun"`
+	DiskSize          requests.Integer `position:"Body" name:"DiskSize"`
+	DiskType          string           `position:"Body" name:"DiskType"`
+	InstanceId        string           `position:"Body" name:"InstanceId"`
+	LogDiskSize       requests.Integer `position:"Body" name:"LogDiskSize"`
+	UpgradeSpecNative requests.Boolean `position:"Body" name:"UpgradeSpecNative"`
 }
 
 // ModifyInstanceSpecResponse is the response struct for api ModifyInstanceSpec

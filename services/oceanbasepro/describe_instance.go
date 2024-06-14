@@ -71,8 +71,9 @@ func (client *Client) DescribeInstanceWithCallback(request *DescribeInstanceRequ
 // DescribeInstanceRequest is the request struct for api DescribeInstance
 type DescribeInstanceRequest struct {
 	*requests.RpcRequest
-	PageNumber requests.Integer `position:"Body" name:"PageNumber"`
-	InstanceId string           `position:"Body" name:"InstanceId"`
+	PageNumber         requests.Integer `position:"Body" name:"PageNumber"`
+	MaxConnectionLimit string           `position:"Body" name:"MaxConnectionLimit"`
+	InstanceId         string           `position:"Body" name:"InstanceId"`
 }
 
 // DescribeInstanceResponse is the response struct for api DescribeInstance

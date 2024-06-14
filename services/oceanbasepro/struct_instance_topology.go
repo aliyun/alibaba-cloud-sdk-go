@@ -17,6 +17,7 @@ package oceanbasepro
 
 // InstanceTopology is a nested struct in oceanbasepro response
 type InstanceTopology struct {
-	Tenants []TenantsItem `json:"Tenants" xml:"Tenants"`
-	Zones   []ZonesItem   `json:"Zones" xml:"Zones"`
+	Tenants  []TenantsItem  `json:"Tenants" xml:"Tenants"`
+	Zones    []ZonesItem    `json:"Zones" xml:"Zones"`
+	Replicas []ReplicasItem `json:"Replicas" xml:"Replicas"`
 }

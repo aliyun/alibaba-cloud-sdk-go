@@ -44,6 +44,7 @@ type DataInDescribeInstances struct {
 	InstanceRole                    string                                     `json:"InstanceRole" xml:"InstanceRole"`
 	InTempCapacityStatus            bool                                       `json:"InTempCapacityStatus" xml:"InTempCapacityStatus"`
 	EnableReadOnlyReplicaManagement bool                                       `json:"EnableReadOnlyReplicaManagement" xml:"EnableReadOnlyReplicaManagement"`
+	SpecType                        string                                     `json:"SpecType" xml:"SpecType"`
 	AvailableZones                  []string                                   `json:"AvailableZones" xml:"AvailableZones"`
 	Resource                        Resource                                   `json:"Resource" xml:"Resource"`
 	DataDiskAutoScaleConfig         DataDiskAutoScaleConfigInDescribeInstances `json:"DataDiskAutoScaleConfig" xml:"DataDiskAutoScaleConfig"`

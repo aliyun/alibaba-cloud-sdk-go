@@ -17,11 +17,11 @@ package oceanbasepro
 
 // InstanceSSL is a nested struct in oceanbasepro response
 type InstanceSSL struct {
-	InstanceId      string `json:"InstanceId" xml:"InstanceId"`
-	EnableSSL       string `json:"EnableSSL" xml:"EnableSSL"`
-	ValidPeriod     string `json:"ValidPeriod" xml:"ValidPeriod"`
 	CaUrl           string `json:"CaUrl" xml:"CaUrl"`
-	Status          string `json:"Status" xml:"Status"`
 	ForceSSLSupport bool   `json:"ForceSSLSupport" xml:"ForceSSLSupport"`
+	InstanceId      string `json:"InstanceId" xml:"InstanceId"`
+	ValidPeriod     string `json:"ValidPeriod" xml:"ValidPeriod"`
+	Status          string `json:"Status" xml:"Status"`
 	ForceSSL        string `json:"ForceSSL" xml:"ForceSSL"`
+	EnableSSL       string `json:"EnableSSL" xml:"EnableSSL"`
 }

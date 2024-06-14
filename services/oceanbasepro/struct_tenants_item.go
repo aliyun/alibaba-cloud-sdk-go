@@ -26,5 +26,8 @@ type TenantsItem struct {
 	TenantDeployType      string            `json:"TenantDeployType" xml:"TenantDeployType"`
 	TenantUnitNum         int               `json:"TenantUnitNum" xml:"TenantUnitNum"`
 	PrimaryZoneDeployType string            `json:"PrimaryZoneDeployType" xml:"PrimaryZoneDeployType"`
+	TenantDiskSize        float64           `json:"TenantDiskSize" xml:"TenantDiskSize"`
+	TenantUnitCpu         float64           `json:"TenantUnitCpu" xml:"TenantUnitCpu"`
+	TenantUnitMemory      float64           `json:"TenantUnitMemory" xml:"TenantUnitMemory"`
 	TenantZones           []TenantZonesItem `json:"TenantZones" xml:"TenantZones"`
 }

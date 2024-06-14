@@ -79,6 +79,7 @@ type Data struct {
 	DownloadTaskCreateTime  string                        `json:"DownloadTaskCreateTime" xml:"DownloadTaskCreateTime"`
 	RequiredSize            string                        `json:"RequiredSize" xml:"RequiredSize"`
 	PlanUnionHash           string                        `json:"PlanUnionHash" xml:"PlanUnionHash"`
+	ReadableScn             int64                         `json:"ReadableScn" xml:"ReadableScn"`
 	MaxElapsedTime          float64                       `json:"MaxElapsedTime" xml:"MaxElapsedTime"`
 	SQLId                   string                        `json:"SQLId" xml:"SQLId"`
 	OrderId                 string                        `json:"OrderId" xml:"OrderId"`

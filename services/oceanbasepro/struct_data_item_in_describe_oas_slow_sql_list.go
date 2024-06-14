@@ -28,8 +28,8 @@ type DataItemInDescribeOasSlowSQLList struct {
 	ClientIp                    string                                `json:"ClientIp" xml:"ClientIp"`
 	UserName                    string                                `json:"UserName" xml:"UserName"`
 	DbName                      string                                `json:"DbName" xml:"DbName"`
-	RetCode4012Count            string                                `json:"RetCode4012Count" xml:"RetCode4012Count"`
-	RetCode4013Count            string                                `json:"RetCode4013Count" xml:"RetCode4013Count"`
+	RetCode4012Count            int64                                 `json:"RetCode4012Count" xml:"RetCode4012Count"`
+	RetCode4013Count            int64                                 `json:"RetCode4013Count" xml:"RetCode4013Count"`
 	RetCode5001Count            string                                `json:"RetCode5001Count" xml:"RetCode5001Count"`
 	RetCode5024Count            string                                `json:"RetCode5024Count" xml:"RetCode5024Count"`
 	RetCode5167Count            string                                `json:"RetCode5167Count" xml:"RetCode5167Count"`

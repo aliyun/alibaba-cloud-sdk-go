@@ -23,8 +23,10 @@ type TenantZonesItem struct {
 	IsPrimaryTenantZone bool                     `json:"IsPrimaryTenantZone" xml:"IsPrimaryTenantZone"`
 	Zone                string                   `json:"Zone" xml:"Zone"`
 	TenantZoneId        string                   `json:"TenantZoneId" xml:"TenantZoneId"`
+	LogicalZone         string                   `json:"LogicalZone" xml:"LogicalZone"`
 	IsPrimary           bool                     `json:"IsPrimary" xml:"IsPrimary"`
 	IsReadable          string                   `json:"IsReadable" xml:"IsReadable"`
+	ReplicaType         string                   `json:"ReplicaType" xml:"ReplicaType"`
 	Units               []UnitsItem              `json:"Units" xml:"Units"`
 	TenantZoneReplicas  []TenantZoneReplicasItem `json:"TenantZoneReplicas" xml:"TenantZoneReplicas"`
 }

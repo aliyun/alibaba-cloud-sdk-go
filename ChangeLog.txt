@@ -1,3 +1,7 @@
+2024-06-14 Version: v1.62.762
+- Generated 2019-09-01 for `OceanBasePro`.
+undefined
+
 2024-06-11 Version: v1.62.761
 - Generated 2023-06-21 for `PaiFeatureStore`.
 - Add ListFeatureViewOnlineFeatures API.
