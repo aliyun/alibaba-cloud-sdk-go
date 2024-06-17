@@ -20,6 +20,7 @@ type DBInstance struct {
 	DBNodeClass             string       `json:"DBNodeClass" xml:"DBNodeClass"`
 	DBType                  string       `json:"DBType" xml:"DBType"`
 	Engine                  string       `json:"Engine" xml:"Engine"`
+	SpecCategory            string       `json:"SpecCategory" xml:"SpecCategory"`
 	TertiaryZone            string       `json:"TertiaryZone" xml:"TertiaryZone"`
 	RightsSeparationEnabled bool         `json:"RightsSeparationEnabled" xml:"RightsSeparationEnabled"`
 	CnNodeCount             int          `json:"CnNodeCount" xml:"CnNodeCount"`

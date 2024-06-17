@@ -92,6 +92,7 @@ type CreateDBInstanceRequest struct {
 	DBNodeCount              requests.Integer `position:"Query" name:"DBNodeCount"`
 	DnClass                  string           `position:"Query" name:"DnClass"`
 	UsedTime                 requests.Integer `position:"Query" name:"UsedTime"`
+	DnStorageSpace           string           `position:"Query" name:"DnStorageSpace"`
 	PrimaryZone              string           `position:"Query" name:"PrimaryZone"`
 	Series                   string           `position:"Query" name:"Series"`
 	VPCId                    string           `position:"Query" name:"VPCId"`

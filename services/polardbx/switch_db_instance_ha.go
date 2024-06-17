@@ -72,10 +72,10 @@ func (client *Client) SwitchDBInstanceHAWithCallback(request *SwitchDBInstanceHA
 type SwitchDBInstanceHARequest struct {
 	*requests.RpcRequest
 	DBInstanceName        string `position:"Query" name:"DBInstanceName"`
-	TargetPrimaryRegionId string `position:"Query" name:"TargetPrimaryRegionId"`
 	SwitchTimeMode        string `position:"Query" name:"SwitchTimeMode"`
-	TargetPrimaryAzoneId  string `position:"Query" name:"TargetPrimaryAzoneId"`
 	SwitchTime            string `position:"Query" name:"SwitchTime"`
+	TargetPrimaryRegionId string `position:"Query" name:"TargetPrimaryRegionId"`
+	TargetPrimaryAzoneId  string `position:"Query" name:"TargetPrimaryAzoneId"`
 }
 
 // SwitchDBInstanceHAResponse is the response struct for api SwitchDBInstanceHA
