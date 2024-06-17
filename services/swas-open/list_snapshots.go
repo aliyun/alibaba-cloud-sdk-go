@@ -71,13 +71,14 @@ func (client *Client) ListSnapshotsWithCallback(request *ListSnapshotsRequest, c
 // ListSnapshotsRequest is the request struct for api ListSnapshots
 type ListSnapshotsRequest struct {
 	*requests.RpcRequest
-	SnapshotIds    string              `position:"Query" name:"SnapshotIds"`
-	PageNumber     requests.Integer    `position:"Query" name:"PageNumber"`
-	PageSize       requests.Integer    `position:"Query" name:"PageSize"`
-	DiskId         string              `position:"Query" name:"DiskId"`
-	Tag            *[]ListSnapshotsTag `position:"Query" name:"Tag"  type:"Repeated"`
-	SourceDiskType string              `position:"Query" name:"SourceDiskType"`
-	InstanceId     string              `position:"Query" name:"InstanceId"`
+	SnapshotIds     string              `position:"Query" name:"SnapshotIds"`
+	PageNumber      requests.Integer    `position:"Query" name:"PageNumber"`
+	ResourceGroupId string              `position:"Query" name:"ResourceGroupId"`
+	PageSize        requests.Integer    `position:"Query" name:"PageSize"`
+	DiskId          string              `position:"Query" name:"DiskId"`
+	Tag             *[]ListSnapshotsTag `position:"Query" name:"Tag"  type:"Repeated"`
+	SourceDiskType  string              `position:"Query" name:"SourceDiskType"`
+	InstanceId      string              `position:"Query" name:"InstanceId"`
 }
 
 // ListSnapshotsTag is a repeated param struct in ListSnapshotsRequest

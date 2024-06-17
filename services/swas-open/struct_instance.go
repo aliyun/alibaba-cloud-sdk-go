@@ -34,6 +34,7 @@ type Instance struct {
 	Combination           bool         `json:"Combination" xml:"Combination"`
 	CombinationInstanceId string       `json:"CombinationInstanceId" xml:"CombinationInstanceId"`
 	Uuid                  string       `json:"Uuid" xml:"Uuid"`
+	ResourceGroupId       string       `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	ResourceSpec          ResourceSpec `json:"ResourceSpec" xml:"ResourceSpec"`
 	Image                 Image        `json:"Image" xml:"Image"`
 	Tags                  []Tag        `json:"Tags" xml:"Tags"`

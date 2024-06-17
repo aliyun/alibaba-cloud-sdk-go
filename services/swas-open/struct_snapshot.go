@@ -17,16 +17,17 @@ package swas_open
 
 // Snapshot is a nested struct in swas_open response
 type Snapshot struct {
-	Status         string `json:"Status" xml:"Status"`
-	CreationTime   string `json:"CreationTime" xml:"CreationTime"`
-	SourceDiskId   string `json:"SourceDiskId" xml:"SourceDiskId"`
-	SnapshotName   string `json:"SnapshotName" xml:"SnapshotName"`
-	Progress       string `json:"Progress" xml:"Progress"`
-	Remark         string `json:"Remark" xml:"Remark"`
-	SnapshotId     string `json:"SnapshotId" xml:"SnapshotId"`
-	SourceDiskType string `json:"SourceDiskType" xml:"SourceDiskType"`
-	RegionId       string `json:"RegionId" xml:"RegionId"`
-	InstanceId     string `json:"InstanceId" xml:"InstanceId"`
-	RollbackTime   string `json:"RollbackTime" xml:"RollbackTime"`
-	Tags           []Tag  `json:"Tags" xml:"Tags"`
+	Status          string `json:"Status" xml:"Status"`
+	CreationTime    string `json:"CreationTime" xml:"CreationTime"`
+	SourceDiskId    string `json:"SourceDiskId" xml:"SourceDiskId"`
+	SnapshotName    string `json:"SnapshotName" xml:"SnapshotName"`
+	Progress        string `json:"Progress" xml:"Progress"`
+	Remark          string `json:"Remark" xml:"Remark"`
+	SnapshotId      string `json:"SnapshotId" xml:"SnapshotId"`
+	SourceDiskType  string `json:"SourceDiskType" xml:"SourceDiskType"`
+	RegionId        string `json:"RegionId" xml:"RegionId"`
+	InstanceId      string `json:"InstanceId" xml:"InstanceId"`
+	RollbackTime    string `json:"RollbackTime" xml:"RollbackTime"`
+	ResourceGroupId string `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	Tags            []Tag  `json:"Tags" xml:"Tags"`
 }

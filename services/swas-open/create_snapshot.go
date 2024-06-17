@@ -71,10 +71,11 @@ func (client *Client) CreateSnapshotWithCallback(request *CreateSnapshotRequest,
 // CreateSnapshotRequest is the request struct for api CreateSnapshot
 type CreateSnapshotRequest struct {
 	*requests.RpcRequest
-	ClientToken  string               `position:"Query" name:"ClientToken"`
-	SnapshotName string               `position:"Query" name:"SnapshotName"`
-	DiskId       string               `position:"Query" name:"DiskId"`
-	Tag          *[]CreateSnapshotTag `position:"Query" name:"Tag"  type:"Repeated"`
+	ClientToken     string               `position:"Query" name:"ClientToken"`
+	SnapshotName    string               `position:"Query" name:"SnapshotName"`
+	ResourceGroupId string               `position:"Query" name:"ResourceGroupId"`
+	DiskId          string               `position:"Query" name:"DiskId"`
+	Tag             *[]CreateSnapshotTag `position:"Query" name:"Tag"  type:"Repeated"`
 }
 
 // CreateSnapshotTag is a repeated param struct in CreateSnapshotRequest

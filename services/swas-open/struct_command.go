@@ -27,6 +27,7 @@ type Command struct {
 	Provider             string                `json:"Provider" xml:"Provider"`
 	CommandName          string                `json:"CommandName" xml:"CommandName"`
 	Parameters           string                `json:"Parameters" xml:"Parameters"`
+	ResourceGroupId      string                `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	InvokeId             string                `json:"InvokeId" xml:"InvokeId"`
 	CommandContent       string                `json:"CommandContent" xml:"CommandContent"`
 	InvocationStatus     string                `json:"InvocationStatus" xml:"InvocationStatus"`

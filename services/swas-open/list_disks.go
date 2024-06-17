@@ -71,12 +71,13 @@ func (client *Client) ListDisksWithCallback(request *ListDisksRequest, callback 
 // ListDisksRequest is the request struct for api ListDisks
 type ListDisksRequest struct {
 	*requests.RpcRequest
-	DiskType   string           `position:"Query" name:"DiskType"`
-	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
-	InstanceId string           `position:"Query" name:"InstanceId"`
-	PageSize   requests.Integer `position:"Query" name:"PageSize"`
-	DiskIds    string           `position:"Query" name:"DiskIds"`
-	Tag        *[]ListDisksTag  `position:"Query" name:"Tag"  type:"Repeated"`
+	PageNumber      requests.Integer `position:"Query" name:"PageNumber"`
+	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
+	PageSize        requests.Integer `position:"Query" name:"PageSize"`
+	DiskIds         string           `position:"Query" name:"DiskIds"`
+	Tag             *[]ListDisksTag  `position:"Query" name:"Tag"  type:"Repeated"`
+	DiskType        string           `position:"Query" name:"DiskType"`
+	InstanceId      string           `position:"Query" name:"InstanceId"`
 }
 
 // ListDisksTag is a repeated param struct in ListDisksRequest

@@ -76,6 +76,7 @@ type CreateCommandRequest struct {
 	Type            string              `position:"Query" name:"Type"`
 	CommandContent  string              `position:"Query" name:"CommandContent"`
 	Timeout         requests.Integer    `position:"Query" name:"Timeout"`
+	ResourceGroupId string              `position:"Query" name:"ResourceGroupId"`
 	Tag             *[]CreateCommandTag `position:"Query" name:"Tag"  type:"Repeated"`
 	Name            string              `position:"Query" name:"Name"`
 	EnableParameter requests.Boolean    `position:"Query" name:"EnableParameter"`

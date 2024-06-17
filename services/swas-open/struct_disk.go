@@ -17,19 +17,20 @@ package swas_open
 
 // Disk is a nested struct in swas_open response
 type Disk struct {
-	Category       string `json:"Category" xml:"Category"`
-	Device         string `json:"Device" xml:"Device"`
-	Remark         string `json:"Remark" xml:"Remark"`
-	DiskType       string `json:"DiskType" xml:"DiskType"`
-	InstanceName   string `json:"InstanceName" xml:"InstanceName"`
-	CreationTime   string `json:"CreationTime" xml:"CreationTime"`
-	DiskId         string `json:"DiskId" xml:"DiskId"`
-	Size           int    `json:"Size" xml:"Size"`
-	RegionId       string `json:"RegionId" xml:"RegionId"`
-	DiskChargeType string `json:"DiskChargeType" xml:"DiskChargeType"`
-	InstanceId     string `json:"InstanceId" xml:"InstanceId"`
-	Status         string `json:"Status" xml:"Status"`
-	DiskName       string `json:"DiskName" xml:"DiskName"`
-	DiskTags       []Tag  `json:"DiskTags" xml:"DiskTags"`
-	Tags           []Tag  `json:"Tags" xml:"Tags"`
+	Category        string `json:"Category" xml:"Category"`
+	Device          string `json:"Device" xml:"Device"`
+	Remark          string `json:"Remark" xml:"Remark"`
+	DiskType        string `json:"DiskType" xml:"DiskType"`
+	InstanceName    string `json:"InstanceName" xml:"InstanceName"`
+	CreationTime    string `json:"CreationTime" xml:"CreationTime"`
+	DiskId          string `json:"DiskId" xml:"DiskId"`
+	Size            int    `json:"Size" xml:"Size"`
+	RegionId        string `json:"RegionId" xml:"RegionId"`
+	DiskChargeType  string `json:"DiskChargeType" xml:"DiskChargeType"`
+	ResourceGroupId string `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	InstanceId      string `json:"InstanceId" xml:"InstanceId"`
+	Status          string `json:"Status" xml:"Status"`
+	DiskName        string `json:"DiskName" xml:"DiskName"`
+	DiskTags        []Tag  `json:"DiskTags" xml:"DiskTags"`
+	Tags            []Tag  `json:"Tags" xml:"Tags"`
 }
