@@ -17,9 +17,12 @@ package live
 
 // Layout is a nested struct in live response
 type Layout struct {
-	LayoutId    string                             `json:"LayoutId" xml:"LayoutId"`
-	BlendList   BlendList                          `json:"BlendList" xml:"BlendList"`
-	MixList     MixListInDescribeCasterLayouts     `json:"MixList" xml:"MixList"`
-	AudioLayers AudioLayersInDescribeCasterLayouts `json:"AudioLayers" xml:"AudioLayers"`
-	VideoLayers VideoLayers                        `json:"VideoLayers" xml:"VideoLayers"`
+	LayoutId     string                             `json:"LayoutId" xml:"LayoutId"`
+	LayoutMode   string                             `json:"LayoutMode" xml:"LayoutMode"`
+	MixList      []string                           `json:"MixList" xml:"MixList"`
+	BlendList    []string                           `json:"BlendList" xml:"BlendList"`
+	MaxVideoUser MaxVideoUser                       `json:"MaxVideoUser" xml:"MaxVideoUser"`
+	UserPanes    []UserPane                         `json:"UserPanes" xml:"UserPanes"`
+	VideoLayers  VideoLayers                        `json:"VideoLayers" xml:"VideoLayers"`
+	AudioLayers  AudioLayersInDescribeCasterLayouts `json:"AudioLayers" xml:"AudioLayers"`
 }
