@@ -73,6 +73,7 @@ type ListErAttachmentsRequest struct {
 	*requests.RpcRequest
 	PageNumber          requests.Integer `position:"Body" name:"PageNumber"`
 	ResourceTenantId    string           `position:"Body" name:"ResourceTenantId"`
+	ResourceGroupId     string           `position:"Body" name:"ResourceGroupId"`
 	AutoReceiveAllRoute requests.Boolean `position:"Body" name:"AutoReceiveAllRoute"`
 	PageSize            requests.Integer `position:"Body" name:"PageSize"`
 	InstanceType        string           `position:"Body" name:"InstanceType"`

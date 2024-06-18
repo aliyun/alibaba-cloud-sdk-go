@@ -28,4 +28,5 @@ type ErRouteEntry struct {
 	RouteType            string `json:"RouteType" xml:"RouteType"`
 	Status               string `json:"Status" xml:"Status"`
 	GmtModified          string `json:"GmtModified" xml:"GmtModified"`
+	ResourceGroupId      string `json:"ResourceGroupId" xml:"ResourceGroupId"`
 }

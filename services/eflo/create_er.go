@@ -71,9 +71,10 @@ func (client *Client) CreateErWithCallback(request *CreateErRequest, callback fu
 // CreateErRequest is the request struct for api CreateEr
 type CreateErRequest struct {
 	*requests.RpcRequest
-	Description  string `position:"Body" name:"Description"`
-	ErName       string `position:"Body" name:"ErName"`
-	MasterZoneId string `position:"Body" name:"MasterZoneId"`
+	Description     string `position:"Body" name:"Description"`
+	ErName          string `position:"Body" name:"ErName"`
+	MasterZoneId    string `position:"Body" name:"MasterZoneId"`
+	ResourceGroupId string `position:"Body" name:"ResourceGroupId"`
 }
 
 // CreateErResponse is the response struct for api CreateEr

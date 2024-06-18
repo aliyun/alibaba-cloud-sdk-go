@@ -71,14 +71,15 @@ func (client *Client) ListErsWithCallback(request *ListErsRequest, callback func
 // ListErsRequest is the request struct for api ListErs
 type ListErsRequest struct {
 	*requests.RpcRequest
-	MasterZoneId string           `position:"Body" name:"MasterZoneId"`
-	PageNumber   requests.Integer `position:"Body" name:"PageNumber"`
-	PageSize     requests.Integer `position:"Body" name:"PageSize"`
-	InstanceType string           `position:"Body" name:"InstanceType"`
-	ErId         string           `position:"Body" name:"ErId"`
-	ErName       string           `position:"Body" name:"ErName"`
-	InstanceId   string           `position:"Body" name:"InstanceId"`
-	EnablePage   requests.Boolean `position:"Body" name:"EnablePage"`
+	MasterZoneId    string           `position:"Body" name:"MasterZoneId"`
+	PageNumber      requests.Integer `position:"Body" name:"PageNumber"`
+	ResourceGroupId string           `position:"Body" name:"ResourceGroupId"`
+	PageSize        requests.Integer `position:"Body" name:"PageSize"`
+	InstanceType    string           `position:"Body" name:"InstanceType"`
+	ErId            string           `position:"Body" name:"ErId"`
+	ErName          string           `position:"Body" name:"ErName"`
+	InstanceId      string           `position:"Body" name:"InstanceId"`
+	EnablePage      requests.Boolean `position:"Body" name:"EnablePage"`
 }
 
 // ListErsResponse is the response struct for api ListErs

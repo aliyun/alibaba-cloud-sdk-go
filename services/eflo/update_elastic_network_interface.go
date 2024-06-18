@@ -72,6 +72,7 @@ func (client *Client) UpdateElasticNetworkInterfaceWithCallback(request *UpdateE
 type UpdateElasticNetworkInterfaceRequest struct {
 	*requests.RpcRequest
 	ClientToken               string `position:"Body" name:"ClientToken"`
+	SecurityGroupId           string `position:"Body" name:"SecurityGroupId"`
 	Description               string `position:"Body" name:"Description"`
 	ElasticNetworkInterfaceId string `position:"Body" name:"ElasticNetworkInterfaceId"`
 }

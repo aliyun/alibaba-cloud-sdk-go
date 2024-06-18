@@ -23,7 +23,6 @@ type ErRouteMap struct {
 	GmtModified               string `json:"GmtModified" xml:"GmtModified"`
 	Message                   string `json:"Message" xml:"Message"`
 	Status                    string `json:"Status" xml:"Status"`
-	ErRouteMapName            string `json:"ErRouteMapName" xml:"ErRouteMapName"`
 	ErRouteMapId              string `json:"ErRouteMapId" xml:"ErRouteMapId"`
 	ErId                      string `json:"ErId" xml:"ErId"`
 	RouteMapNum               int    `json:"RouteMapNum" xml:"RouteMapNum"`
@@ -38,4 +37,6 @@ type ErRouteMap struct {
 	Action                    string `json:"Action" xml:"Action"`
 	TransmissionInstanceOwner string `json:"TransmissionInstanceOwner" xml:"TransmissionInstanceOwner"`
 	ReceptionInstanceOwner    string `json:"ReceptionInstanceOwner" xml:"ReceptionInstanceOwner"`
+	ResourceGroupId           string `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	ErRouteMapName            string `json:"ErRouteMapName" xml:"ErRouteMapName"`
 }

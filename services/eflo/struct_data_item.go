@@ -73,8 +73,8 @@ type DataItem struct {
 	GmtCreate                 string                         `json:"GmtCreate" xml:"GmtCreate"`
 	NodeId                    string                         `json:"NodeId" xml:"NodeId"`
 	RegionId                  string                         `json:"RegionId" xml:"RegionId"`
-	SubnetName                string                         `json:"SubnetName" xml:"SubnetName"`
 	ResourceGroupId           string                         `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	SubnetName                string                         `json:"SubnetName" xml:"SubnetName"`
 	Mask                      string                         `json:"Mask" xml:"Mask"`
 	InstanceId                string                         `json:"InstanceId" xml:"InstanceId"`
 	SubnetId                  string                         `json:"SubnetId" xml:"SubnetId"`

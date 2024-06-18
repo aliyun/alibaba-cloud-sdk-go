@@ -32,4 +32,5 @@ type ErAttachment struct {
 	AutoReceiveAllRoute bool   `json:"AutoReceiveAllRoute" xml:"AutoReceiveAllRoute"`
 	Across              bool   `json:"Across" xml:"Across"`
 	ResourceTenantId    string `json:"ResourceTenantId" xml:"ResourceTenantId"`
+	ResourceGroupId     string `json:"ResourceGroupId" xml:"ResourceGroupId"`
 }

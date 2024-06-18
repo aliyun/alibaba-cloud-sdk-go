@@ -108,8 +108,8 @@ type Content struct {
 	PortType                  string                         `json:"PortType" xml:"PortType"`
 	NodeId                    string                         `json:"NodeId" xml:"NodeId"`
 	RegionId                  string                         `json:"RegionId" xml:"RegionId"`
-	SubnetName                string                         `json:"SubnetName" xml:"SubnetName"`
 	ResourceGroupId           string                         `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	SubnetName                string                         `json:"SubnetName" xml:"SubnetName"`
 	AttachErStatus            bool                           `json:"AttachErStatus" xml:"AttachErStatus"`
 	ResourceTenantId          string                         `json:"ResourceTenantId" xml:"ResourceTenantId"`
 	Description               string                         `json:"Description" xml:"Description"`
@@ -130,12 +130,12 @@ type Content struct {
 	Ethernet                  []string                       `json:"Ethernet" xml:"Ethernet"`
 	VpdBaseInfo               VpdBaseInfo                    `json:"VpdBaseInfo" xml:"VpdBaseInfo"`
 	SubnetBaseInfo            SubnetBaseInfo                 `json:"SubnetBaseInfo" xml:"SubnetBaseInfo"`
-	ErAttachments             []ErAttachment                 `json:"ErAttachments" xml:"ErAttachments"`
 	ErInfos                   []ErInfo                       `json:"ErInfos" xml:"ErInfos"`
 	Data                      []DataItem                     `json:"Data" xml:"Data"`
-	ErRouteMaps               []ErRouteMap                   `json:"ErRouteMaps" xml:"ErRouteMaps"`
+	ErAttachments             []ErAttachment                 `json:"ErAttachments" xml:"ErAttachments"`
 	PrivateIpAddresses        []PrivateIpAddress             `json:"PrivateIpAddresses" xml:"PrivateIpAddresses"`
 	Tags                      []Tag                          `json:"Tags" xml:"Tags"`
+	ErRouteMaps               []ErRouteMap                   `json:"ErRouteMaps" xml:"ErRouteMaps"`
 	AliyunRouterInfo          []AliyunRouterInfoItem         `json:"AliyunRouterInfo" xml:"AliyunRouterInfo"`
 	PrivateIpAddressMacGroup  []PrivateIpAddressMacGroupItem `json:"PrivateIpAddressMacGroup" xml:"PrivateIpAddressMacGroup"`
 	ErRouteEntrys             []ErRouteEntry                 `json:"ErRouteEntrys" xml:"ErRouteEntrys"`

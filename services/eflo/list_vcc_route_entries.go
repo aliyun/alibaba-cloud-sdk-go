@@ -74,6 +74,7 @@ type ListVccRouteEntriesRequest struct {
 	IgnoreDetailedRouteEntry requests.Boolean `position:"Body" name:"IgnoreDetailedRouteEntry"`
 	PageNumber               requests.Integer `position:"Body" name:"PageNumber"`
 	RouteType                string           `position:"Body" name:"RouteType"`
+	ResourceGroupId          string           `position:"Body" name:"ResourceGroupId"`
 	PageSize                 requests.Integer `position:"Body" name:"PageSize"`
 	NextHopId                string           `position:"Body" name:"NextHopId"`
 	VccId                    string           `position:"Body" name:"VccId"`

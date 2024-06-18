@@ -75,6 +75,7 @@ type ListErRouteMapsRequest struct {
 	ReceptionInstanceId      string           `position:"Body" name:"ReceptionInstanceId"`
 	ErRouteMapNum            requests.Integer `position:"Body" name:"ErRouteMapNum"`
 	PageNumber               requests.Integer `position:"Body" name:"PageNumber"`
+	ResourceGroupId          string           `position:"Body" name:"ResourceGroupId"`
 	RouteMapAction           string           `position:"Body" name:"RouteMapAction"`
 	TransmissionInstanceType string           `position:"Body" name:"TransmissionInstanceType"`
 	PageSize                 requests.Integer `position:"Body" name:"PageSize"`
