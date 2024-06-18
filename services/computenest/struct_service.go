@@ -31,5 +31,6 @@ type Service struct {
 	ServiceType               string        `json:"ServiceType" xml:"ServiceType"`
 	UpgradeMetadata           string        `json:"UpgradeMetadata" xml:"UpgradeMetadata"`
 	UpgradableServiceVersions []string      `json:"UpgradableServiceVersions" xml:"UpgradableServiceVersions"`
+	Commodity                 Commodity     `json:"Commodity" xml:"Commodity"`
 	ServiceInfos              []ServiceInfo `json:"ServiceInfos" xml:"ServiceInfos"`
 }

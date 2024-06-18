@@ -39,6 +39,7 @@ type ServiceInstance struct {
 	MarketInstanceId          string  `json:"MarketInstanceId" xml:"MarketInstanceId"`
 	ResourceGroupId           string  `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	BizStatus                 string  `json:"BizStatus" xml:"BizStatus"`
+	OrderId                   string  `json:"OrderId" xml:"OrderId"`
 	Service                   Service `json:"Service" xml:"Service"`
 	Tags                      []Tag   `json:"Tags" xml:"Tags"`
 }
