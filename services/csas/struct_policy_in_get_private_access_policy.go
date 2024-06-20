@@ -17,18 +17,19 @@ package csas
 
 // PolicyInGetPrivateAccessPolicy is a nested struct in csas response
 type PolicyInGetPrivateAccessPolicy struct {
-	PolicyId             string                `json:"PolicyId" xml:"PolicyId"`
-	Name                 string                `json:"Name" xml:"Name"`
-	Description          string                `json:"Description" xml:"Description"`
-	PolicyAction         string                `json:"PolicyAction" xml:"PolicyAction"`
-	Priority             int                   `json:"Priority" xml:"Priority"`
-	Status               string                `json:"Status" xml:"Status"`
-	CreateTime           string                `json:"CreateTime" xml:"CreateTime"`
-	UserGroupMode        string                `json:"UserGroupMode" xml:"UserGroupMode"`
-	ApplicationType      string                `json:"ApplicationType" xml:"ApplicationType"`
-	DeviceAttributeId    string                `json:"DeviceAttributeId" xml:"DeviceAttributeId"`
-	UserGroupIds         []string              `json:"UserGroupIds" xml:"UserGroupIds"`
-	ApplicationIds       []string              `json:"ApplicationIds" xml:"ApplicationIds"`
-	TagIds               []string              `json:"TagIds" xml:"TagIds"`
-	CustomUserAttributes []CustomUserAttribute `json:"CustomUserAttributes" xml:"CustomUserAttributes"`
+	PolicyId              string                `json:"PolicyId" xml:"PolicyId"`
+	Name                  string                `json:"Name" xml:"Name"`
+	Description           string                `json:"Description" xml:"Description"`
+	PolicyAction          string                `json:"PolicyAction" xml:"PolicyAction"`
+	Priority              int                   `json:"Priority" xml:"Priority"`
+	Status                string                `json:"Status" xml:"Status"`
+	CreateTime            string                `json:"CreateTime" xml:"CreateTime"`
+	UserGroupMode         string                `json:"UserGroupMode" xml:"UserGroupMode"`
+	ApplicationType       string                `json:"ApplicationType" xml:"ApplicationType"`
+	DeviceAttributeId     string                `json:"DeviceAttributeId" xml:"DeviceAttributeId"`
+	DeviceAttributeAction string                `json:"DeviceAttributeAction" xml:"DeviceAttributeAction"`
+	UserGroupIds          []string              `json:"UserGroupIds" xml:"UserGroupIds"`
+	ApplicationIds        []string              `json:"ApplicationIds" xml:"ApplicationIds"`
+	TagIds                []string              `json:"TagIds" xml:"TagIds"`
+	CustomUserAttributes  []CustomUserAttribute `json:"CustomUserAttributes" xml:"CustomUserAttributes"`
 }

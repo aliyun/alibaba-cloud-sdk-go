@@ -71,20 +71,21 @@ func (client *Client) UpdatePrivateAccessPolicyWithCallback(request *UpdatePriva
 // UpdatePrivateAccessPolicyRequest is the request struct for api UpdatePrivateAccessPolicy
 type UpdatePrivateAccessPolicyRequest struct {
 	*requests.RpcRequest
-	Description          string                                           `position:"Body" name:"Description"`
-	SourceIp             string                                           `position:"Query" name:"SourceIp"`
-	PolicyId             string                                           `position:"Body" name:"PolicyId"`
-	CustomUserAttributes *[]UpdatePrivateAccessPolicyCustomUserAttributes `position:"Body" name:"CustomUserAttributes"  type:"Repeated"`
-	TagIds               *[]string                                        `position:"Body" name:"TagIds"  type:"Repeated"`
-	DeviceAttributeId    string                                           `position:"Body" name:"DeviceAttributeId"`
-	UserGroupIds         *[]string                                        `position:"Body" name:"UserGroupIds"  type:"Repeated"`
-	PolicyAction         string                                           `position:"Body" name:"PolicyAction"`
-	Priority             requests.Integer                                 `position:"Body" name:"Priority"`
-	ApplicationIds       *[]string                                        `position:"Body" name:"ApplicationIds"  type:"Repeated"`
-	UserGroupMode        string                                           `position:"Body" name:"UserGroupMode"`
-	ModifyType           string                                           `position:"Body" name:"ModifyType"`
-	ApplicationType      string                                           `position:"Body" name:"ApplicationType"`
-	Status               string                                           `position:"Body" name:"Status"`
+	Description           string                                           `position:"Body" name:"Description"`
+	SourceIp              string                                           `position:"Query" name:"SourceIp"`
+	PolicyId              string                                           `position:"Body" name:"PolicyId"`
+	CustomUserAttributes  *[]UpdatePrivateAccessPolicyCustomUserAttributes `position:"Body" name:"CustomUserAttributes"  type:"Repeated"`
+	TagIds                *[]string                                        `position:"Body" name:"TagIds"  type:"Repeated"`
+	DeviceAttributeId     string                                           `position:"Body" name:"DeviceAttributeId"`
+	UserGroupIds          *[]string                                        `position:"Body" name:"UserGroupIds"  type:"Repeated"`
+	PolicyAction          string                                           `position:"Body" name:"PolicyAction"`
+	Priority              requests.Integer                                 `position:"Body" name:"Priority"`
+	DeviceAttributeAction string                                           `position:"Body" name:"DeviceAttributeAction"`
+	ApplicationIds        *[]string                                        `position:"Body" name:"ApplicationIds"  type:"Repeated"`
+	UserGroupMode         string                                           `position:"Body" name:"UserGroupMode"`
+	ModifyType            string                                           `position:"Body" name:"ModifyType"`
+	ApplicationType       string                                           `position:"Body" name:"ApplicationType"`
+	Status                string                                           `position:"Body" name:"Status"`
 }
 
 // UpdatePrivateAccessPolicyCustomUserAttributes is a repeated param struct in UpdatePrivateAccessPolicyRequest

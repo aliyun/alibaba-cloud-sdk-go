@@ -71,19 +71,20 @@ func (client *Client) CreatePrivateAccessPolicyWithCallback(request *CreatePriva
 // CreatePrivateAccessPolicyRequest is the request struct for api CreatePrivateAccessPolicy
 type CreatePrivateAccessPolicyRequest struct {
 	*requests.RpcRequest
-	Description          string                                           `position:"Body" name:"Description"`
-	SourceIp             string                                           `position:"Query" name:"SourceIp"`
-	CustomUserAttributes *[]CreatePrivateAccessPolicyCustomUserAttributes `position:"Body" name:"CustomUserAttributes"  type:"Repeated"`
-	TagIds               *[]string                                        `position:"Body" name:"TagIds"  type:"Repeated"`
-	DeviceAttributeId    string                                           `position:"Body" name:"DeviceAttributeId"`
-	UserGroupIds         *[]string                                        `position:"Body" name:"UserGroupIds"  type:"Repeated"`
-	PolicyAction         string                                           `position:"Body" name:"PolicyAction"`
-	Priority             requests.Integer                                 `position:"Body" name:"Priority"`
-	ApplicationIds       *[]string                                        `position:"Body" name:"ApplicationIds"  type:"Repeated"`
-	UserGroupMode        string                                           `position:"Body" name:"UserGroupMode"`
-	Name                 string                                           `position:"Body" name:"Name"`
-	ApplicationType      string                                           `position:"Body" name:"ApplicationType"`
-	Status               string                                           `position:"Body" name:"Status"`
+	Description           string                                           `position:"Body" name:"Description"`
+	SourceIp              string                                           `position:"Query" name:"SourceIp"`
+	CustomUserAttributes  *[]CreatePrivateAccessPolicyCustomUserAttributes `position:"Body" name:"CustomUserAttributes"  type:"Repeated"`
+	TagIds                *[]string                                        `position:"Body" name:"TagIds"  type:"Repeated"`
+	DeviceAttributeId     string                                           `position:"Body" name:"DeviceAttributeId"`
+	UserGroupIds          *[]string                                        `position:"Body" name:"UserGroupIds"  type:"Repeated"`
+	PolicyAction          string                                           `position:"Body" name:"PolicyAction"`
+	Priority              requests.Integer                                 `position:"Body" name:"Priority"`
+	DeviceAttributeAction string                                           `position:"Body" name:"DeviceAttributeAction"`
+	ApplicationIds        *[]string                                        `position:"Body" name:"ApplicationIds"  type:"Repeated"`
+	UserGroupMode         string                                           `position:"Body" name:"UserGroupMode"`
+	Name                  string                                           `position:"Body" name:"Name"`
+	ApplicationType       string                                           `position:"Body" name:"ApplicationType"`
+	Status                string                                           `position:"Body" name:"Status"`
 }
 
 // CreatePrivateAccessPolicyCustomUserAttributes is a repeated param struct in CreatePrivateAccessPolicyRequest

@@ -17,34 +17,53 @@ package csas
 
 // Data is a nested struct in csas response
 type Data struct {
-	Name                string           `json:"Name" xml:"Name"`
 	MfaConfigType       string           `json:"MfaConfigType" xml:"MfaConfigType"`
+	FileHashMd5         string           `json:"FileHashMd5" xml:"FileHashMd5"`
 	GetGroupUrl         string           `json:"GetGroupUrl" xml:"GetGroupUrl"`
 	IdpMetadata         string           `json:"IdpMetadata" xml:"IdpMetadata"`
-	MobileNumber        string           `json:"MobileNumber" xml:"MobileNumber"`
+	ImageId             string           `json:"ImageId" xml:"ImageId"`
+	WmInfoBytesB64      string           `json:"WmInfoBytesB64" xml:"WmInfoBytesB64"`
 	PcLoginType         string           `json:"PcLoginType" xml:"PcLoginType"`
 	MobileMfaConfigType string           `json:"MobileMfaConfigType" xml:"MobileMfaConfigType"`
-	VerifyAesKey        string           `json:"VerifyAesKey" xml:"VerifyAesKey"`
+	TaskStatus          string           `json:"TaskStatus" xml:"TaskStatus"`
+	ImageUrlExp         int64            `json:"ImageUrlExp" xml:"ImageUrlExp"`
+	InFileSize          string           `json:"InFileSize" xml:"InFileSize"`
+	TaskId              string           `json:"TaskId" xml:"TaskId"`
 	PolicyId            string           `json:"PolicyId" xml:"PolicyId"`
-	UserId              string           `json:"UserId" xml:"UserId"`
-	IdpConfigId         string           `json:"IdpConfigId" xml:"IdpConfigId"`
-	TotalNum            int64            `json:"TotalNum" xml:"TotalNum"`
+	ImageUrl            string           `json:"ImageUrl" xml:"ImageUrl"`
 	Id                  string           `json:"Id" xml:"Id"`
 	AccessKey           string           `json:"AccessKey" xml:"AccessKey"`
 	MobileLoginType     string           `json:"MobileLoginType" xml:"MobileLoginType"`
-	VerifyToken         string           `json:"VerifyToken" xml:"VerifyToken"`
-	Description         string           `json:"Description" xml:"Description"`
 	Type                string           `json:"Type" xml:"Type"`
-	Username            string           `json:"Username" xml:"Username"`
 	Email               string           `json:"Email" xml:"Email"`
-	UpdateTime          string           `json:"UpdateTime" xml:"UpdateTime"`
 	UserGroupId         string           `json:"UserGroupId" xml:"UserGroupId"`
 	MultiIdpInfo        string           `json:"MultiIdpInfo" xml:"MultiIdpInfo"`
-	VerifyUrl           string           `json:"VerifyUrl" xml:"VerifyUrl"`
+	WmType              string           `json:"WmType" xml:"WmType"`
 	DepartmentId        string           `json:"DepartmentId" xml:"DepartmentId"`
-	AccessKeySecret     string           `json:"AccessKeySecret" xml:"AccessKeySecret"`
-	MetricName          string           `json:"MetricName" xml:"MetricName"`
+	FileUrl             string           `json:"FileUrl" xml:"FileUrl"`
 	Status              string           `json:"Status" xml:"Status"`
+	WmInfoSize          int64            `json:"WmInfoSize" xml:"WmInfoSize"`
+	WmInfoUint          int64            `json:"WmInfoUint" xml:"WmInfoUint"`
+	Name                string           `json:"Name" xml:"Name"`
+	OutFileHashMd5      string           `json:"OutFileHashMd5" xml:"OutFileHashMd5"`
+	CreateTime          string           `json:"CreateTime" xml:"CreateTime"`
+	MobileNumber        string           `json:"MobileNumber" xml:"MobileNumber"`
+	FileUrlExp          string           `json:"FileUrlExp" xml:"FileUrlExp"`
+	VerifyAesKey        string           `json:"VerifyAesKey" xml:"VerifyAesKey"`
+	InFileHashMd5       string           `json:"InFileHashMd5" xml:"InFileHashMd5"`
+	UserId              string           `json:"UserId" xml:"UserId"`
+	IdpConfigId         string           `json:"IdpConfigId" xml:"IdpConfigId"`
+	TotalNum            int64            `json:"TotalNum" xml:"TotalNum"`
+	VerifyToken         string           `json:"VerifyToken" xml:"VerifyToken"`
+	Description         string           `json:"Description" xml:"Description"`
+	Username            string           `json:"Username" xml:"Username"`
+	UpdateTime          string           `json:"UpdateTime" xml:"UpdateTime"`
+	Filename            string           `json:"Filename" xml:"Filename"`
+	VerifyUrl           string           `json:"VerifyUrl" xml:"VerifyUrl"`
+	AccessKeySecret     string           `json:"AccessKeySecret" xml:"AccessKeySecret"`
+	FileSize            string           `json:"FileSize" xml:"FileSize"`
+	MetricName          string           `json:"MetricName" xml:"MetricName"`
+	OutFileSize         int64            `json:"OutFileSize" xml:"OutFileSize"`
 	Department          Department       `json:"Department" xml:"Department"`
 	Datapoints          []Point          `json:"Datapoints" xml:"Datapoints"`
 	DataList            []DataListItem   `json:"DataList" xml:"DataList"`
