@@ -1,3 +1,9 @@
+2024-06-25 Version: v1.62.773
+- Generated 2019-04-30 for `schedulerx2`.
+- Create AppGroup Support Set AppVersion.
+- Update AppGroup Support Set AppVersion.
+- List AppGroup Support return AppVersion.
+
 2024-06-20 Version: v1.62.772
 - Generated 2023-01-20 for `csas`.
 undefined

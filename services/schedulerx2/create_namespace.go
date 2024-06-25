@@ -92,7 +92,7 @@ func CreateCreateNamespaceRequest() (request *CreateNamespaceRequest) {
 	request = &CreateNamespaceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("schedulerx2", "2019-04-30", "CreateNamespace", "", "")
+	request.InitWithApiInfo("schedulerx2", "2019-04-30", "CreateNamespace", "schedulerx2", "openAPI")
 	request.Method = requests.POST
 	return
 }

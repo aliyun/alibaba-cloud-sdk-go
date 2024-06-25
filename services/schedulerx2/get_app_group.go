@@ -90,7 +90,7 @@ func CreateGetAppGroupRequest() (request *GetAppGroupRequest) {
 	request = &GetAppGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("schedulerx2", "2019-04-30", "GetAppGroup", "", "")
+	request.InitWithApiInfo("schedulerx2", "2019-04-30", "GetAppGroup", "schedulerx2", "openAPI")
 	request.Method = requests.POST
 	return
 }

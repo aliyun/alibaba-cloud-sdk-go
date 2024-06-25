@@ -99,7 +99,7 @@ func CreateGetLogRequest() (request *GetLogRequest) {
 	request = &GetLogRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("schedulerx2", "2019-04-30", "GetLog", "", "")
+	request.InitWithApiInfo("schedulerx2", "2019-04-30", "GetLog", "schedulerx2", "openAPI")
 	request.Method = requests.GET
 	return
 }

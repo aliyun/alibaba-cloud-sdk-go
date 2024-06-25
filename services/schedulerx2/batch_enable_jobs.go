@@ -91,7 +91,7 @@ func CreateBatchEnableJobsRequest() (request *BatchEnableJobsRequest) {
 	request = &BatchEnableJobsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("schedulerx2", "2019-04-30", "BatchEnableJobs", "", "")
+	request.InitWithApiInfo("schedulerx2", "2019-04-30", "BatchEnableJobs", "schedulerx2", "openAPI")
 	request.Method = requests.POST
 	return
 }

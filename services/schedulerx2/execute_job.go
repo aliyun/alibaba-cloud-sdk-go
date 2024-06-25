@@ -97,7 +97,7 @@ func CreateExecuteJobRequest() (request *ExecuteJobRequest) {
 	request = &ExecuteJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("schedulerx2", "2019-04-30", "ExecuteJob", "", "")
+	request.InitWithApiInfo("schedulerx2", "2019-04-30", "ExecuteJob", "schedulerx2", "openAPI")
 	request.Method = requests.GET
 	return
 }

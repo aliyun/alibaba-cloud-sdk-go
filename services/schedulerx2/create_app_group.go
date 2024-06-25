@@ -82,6 +82,7 @@ type CreateAppGroupRequest struct {
 	MetricsThresholdJson string           `position:"Query" name:"MetricsThresholdJson"`
 	GroupId              string           `position:"Query" name:"GroupId"`
 	AppType              requests.Integer `position:"Query" name:"AppType"`
+	AppVersion           requests.Integer `position:"Query" name:"AppVersion"`
 	MonitorConfigJson    string           `position:"Query" name:"MonitorConfigJson"`
 	Namespace            string           `position:"Query" name:"Namespace"`
 	Xattrs               string           `position:"Query" name:"Xattrs"`
@@ -104,7 +105,7 @@ func CreateCreateAppGroupRequest() (request *CreateAppGroupRequest) {
 	request = &CreateAppGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("schedulerx2", "2019-04-30", "CreateAppGroup", "", "")
+	request.InitWithApiInfo("schedulerx2", "2019-04-30", "CreateAppGroup", "schedulerx2", "openAPI")
 	request.Method = requests.GET
 	return
 }

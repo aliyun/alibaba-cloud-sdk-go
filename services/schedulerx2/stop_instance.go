@@ -92,7 +92,7 @@ func CreateStopInstanceRequest() (request *StopInstanceRequest) {
 	request = &StopInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("schedulerx2", "2019-04-30", "StopInstance", "", "")
+	request.InitWithApiInfo("schedulerx2", "2019-04-30", "StopInstance", "schedulerx2", "openAPI")
 	request.Method = requests.GET
 	return
 }

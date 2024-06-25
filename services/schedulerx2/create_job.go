@@ -132,7 +132,7 @@ func CreateCreateJobRequest() (request *CreateJobRequest) {
 	request = &CreateJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("schedulerx2", "2019-04-30", "CreateJob", "", "")
+	request.InitWithApiInfo("schedulerx2", "2019-04-30", "CreateJob", "schedulerx2", "openAPI")
 	request.Method = requests.POST
 	return
 }

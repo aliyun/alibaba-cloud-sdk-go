@@ -91,7 +91,7 @@ func CreateDeleteRouteStrategyRequest() (request *DeleteRouteStrategyRequest) {
 	request = &DeleteRouteStrategyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("schedulerx2", "2019-04-30", "DeleteRouteStrategy", "", "")
+	request.InitWithApiInfo("schedulerx2", "2019-04-30", "DeleteRouteStrategy", "schedulerx2", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -91,7 +91,7 @@ func CreateDeleteWorkflowRequest() (request *DeleteWorkflowRequest) {
 	request = &DeleteWorkflowRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("schedulerx2", "2019-04-30", "DeleteWorkflow", "", "")
+	request.InitWithApiInfo("schedulerx2", "2019-04-30", "DeleteWorkflow", "schedulerx2", "openAPI")
 	request.Method = requests.GET
 	return
 }

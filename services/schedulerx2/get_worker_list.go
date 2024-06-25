@@ -91,7 +91,7 @@ func CreateGetWorkerListRequest() (request *GetWorkerListRequest) {
 	request = &GetWorkerListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("schedulerx2", "2019-04-30", "GetWorkerList", "", "")
+	request.InitWithApiInfo("schedulerx2", "2019-04-30", "GetWorkerList", "schedulerx2", "openAPI")
 	request.Method = requests.GET
 	return
 }

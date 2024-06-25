@@ -35,6 +35,7 @@ type Data struct {
 	WorkflowId           int64                    `json:"WorkflowId" xml:"WorkflowId"`
 	RunningInstanceNum   int                      `json:"RunningInstanceNum" xml:"RunningInstanceNum"`
 	AppGroupId           int64                    `json:"AppGroupId" xml:"AppGroupId"`
+	AppVersion           string                   `json:"AppVersion" xml:"AppVersion"`
 	AppName              string                   `json:"AppName" xml:"AppName"`
 	Logs                 []string                 `json:"Logs" xml:"Logs"`
 	JobInstanceDetail    JobInstanceDetail        `json:"JobInstanceDetail" xml:"JobInstanceDetail"`

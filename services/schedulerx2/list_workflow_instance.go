@@ -92,7 +92,7 @@ func CreateListWorkflowInstanceRequest() (request *ListWorkflowInstanceRequest) 
 	request = &ListWorkflowInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("schedulerx2", "2019-04-30", "ListWorkflowInstance", "", "")
+	request.InitWithApiInfo("schedulerx2", "2019-04-30", "ListWorkflowInstance", "schedulerx2", "openAPI")
 	request.Method = requests.GET
 	return
 }

@@ -77,6 +77,7 @@ type UpdateAppGroupRequest struct {
 	MaxJobs              requests.Integer `position:"Query" name:"MaxJobs"`
 	MetricsThresholdJson string           `position:"Query" name:"MetricsThresholdJson"`
 	GroupId              string           `position:"Query" name:"GroupId"`
+	AppVersion           requests.Integer `position:"Query" name:"AppVersion"`
 	Namespace            string           `position:"Query" name:"Namespace"`
 	Xattrs               string           `position:"Query" name:"Xattrs"`
 	MaxConcurrency       requests.Integer `position:"Query" name:"MaxConcurrency"`
@@ -96,7 +97,7 @@ func CreateUpdateAppGroupRequest() (request *UpdateAppGroupRequest) {
 	request = &UpdateAppGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("schedulerx2", "2019-04-30", "UpdateAppGroup", "", "")
+	request.InitWithApiInfo("schedulerx2", "2019-04-30", "UpdateAppGroup", "schedulerx2", "openAPI")
 	request.Method = requests.POST
 	return
 }

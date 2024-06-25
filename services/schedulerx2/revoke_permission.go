@@ -91,7 +91,7 @@ func CreateRevokePermissionRequest() (request *RevokePermissionRequest) {
 	request = &RevokePermissionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("schedulerx2", "2019-04-30", "RevokePermission", "", "")
+	request.InitWithApiInfo("schedulerx2", "2019-04-30", "RevokePermission", "schedulerx2", "openAPI")
 	request.Method = requests.POST
 	return
 }

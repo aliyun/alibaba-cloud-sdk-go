@@ -93,7 +93,7 @@ func CreateExecuteWorkflowRequest() (request *ExecuteWorkflowRequest) {
 	request = &ExecuteWorkflowRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("schedulerx2", "2019-04-30", "ExecuteWorkflow", "", "")
+	request.InitWithApiInfo("schedulerx2", "2019-04-30", "ExecuteWorkflow", "schedulerx2", "openAPI")
 	request.Method = requests.GET
 	return
 }

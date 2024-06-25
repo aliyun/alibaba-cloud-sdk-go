@@ -93,7 +93,7 @@ func CreateGrantPermissionRequest() (request *GrantPermissionRequest) {
 	request = &GrantPermissionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("schedulerx2", "2019-04-30", "GrantPermission", "", "")
+	request.InitWithApiInfo("schedulerx2", "2019-04-30", "GrantPermission", "schedulerx2", "openAPI")
 	request.Method = requests.POST
 	return
 }

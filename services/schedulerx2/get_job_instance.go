@@ -93,7 +93,7 @@ func CreateGetJobInstanceRequest() (request *GetJobInstanceRequest) {
 	request = &GetJobInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("schedulerx2", "2019-04-30", "GetJobInstance", "", "")
+	request.InitWithApiInfo("schedulerx2", "2019-04-30", "GetJobInstance", "schedulerx2", "openAPI")
 	request.Method = requests.GET
 	return
 }

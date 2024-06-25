@@ -91,7 +91,7 @@ func CreateBatchDeleteJobsRequest() (request *BatchDeleteJobsRequest) {
 	request = &BatchDeleteJobsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("schedulerx2", "2019-04-30", "BatchDeleteJobs", "", "")
+	request.InitWithApiInfo("schedulerx2", "2019-04-30", "BatchDeleteJobs", "schedulerx2", "openAPI")
 	request.Method = requests.POST
 	return
 }

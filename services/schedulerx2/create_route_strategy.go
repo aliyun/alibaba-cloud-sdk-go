@@ -71,10 +71,10 @@ func (client *Client) CreateRouteStrategyWithCallback(request *CreateRouteStrate
 // CreateRouteStrategyRequest is the request struct for api CreateRouteStrategy
 type CreateRouteStrategyRequest struct {
 	*requests.RpcRequest
-	GroupId         string           `position:"Query" name:"GroupId"`
-	StrategyContent string           `position:"Query" name:"StrategyContent"`
 	Type            requests.Integer `position:"Query" name:"Type"`
 	JobId           requests.Integer `position:"Query" name:"JobId"`
+	GroupId         string           `position:"Query" name:"GroupId"`
+	StrategyContent string           `position:"Query" name:"StrategyContent"`
 	Name            string           `position:"Query" name:"Name"`
 	Namespace       string           `position:"Query" name:"Namespace"`
 	Status          requests.Integer `position:"Query" name:"Status"`
@@ -95,7 +95,7 @@ func CreateCreateRouteStrategyRequest() (request *CreateRouteStrategyRequest) {
 	request = &CreateRouteStrategyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("schedulerx2", "2019-04-30", "CreateRouteStrategy", "", "")
+	request.InitWithApiInfo("schedulerx2", "2019-04-30", "CreateRouteStrategy", "schedulerx2", "openAPI")
 	request.Method = requests.POST
 	return
 }

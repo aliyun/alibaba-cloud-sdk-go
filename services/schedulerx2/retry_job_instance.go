@@ -92,7 +92,7 @@ func CreateRetryJobInstanceRequest() (request *RetryJobInstanceRequest) {
 	request = &RetryJobInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("schedulerx2", "2019-04-30", "RetryJobInstance", "", "")
+	request.InitWithApiInfo("schedulerx2", "2019-04-30", "RetryJobInstance", "schedulerx2", "openAPI")
 	request.Method = requests.POST
 	return
 }

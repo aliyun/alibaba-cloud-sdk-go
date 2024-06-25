@@ -91,7 +91,7 @@ func CreateBatchDeleteRouteStrategyRequest() (request *BatchDeleteRouteStrategyR
 	request = &BatchDeleteRouteStrategyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("schedulerx2", "2019-04-30", "BatchDeleteRouteStrategy", "", "")
+	request.InitWithApiInfo("schedulerx2", "2019-04-30", "BatchDeleteRouteStrategy", "schedulerx2", "openAPI")
 	request.Method = requests.POST
 	return
 }

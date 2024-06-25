@@ -73,9 +73,9 @@ type GetOverviewRequest struct {
 	*requests.RpcRequest
 	MetricType      requests.Integer `position:"Query" name:"MetricType"`
 	NamespaceSource string           `position:"Query" name:"NamespaceSource"`
+	StartTime       requests.Integer `position:"Query" name:"StartTime"`
 	GroupId         string           `position:"Query" name:"GroupId"`
 	EndTime         requests.Integer `position:"Query" name:"EndTime"`
-	StartTime       requests.Integer `position:"Query" name:"StartTime"`
 	Operate         string           `position:"Query" name:"Operate"`
 	Namespace       string           `position:"Query" name:"Namespace"`
 }
@@ -95,7 +95,7 @@ func CreateGetOverviewRequest() (request *GetOverviewRequest) {
 	request = &GetOverviewRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("schedulerx2", "2019-04-30", "GetOverview", "", "")
+	request.InitWithApiInfo("schedulerx2", "2019-04-30", "GetOverview", "schedulerx2", "openAPI")
 	request.Method = requests.POST
 	return
 }

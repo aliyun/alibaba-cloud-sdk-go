@@ -95,7 +95,7 @@ func CreateUpdateWorkflowRequest() (request *UpdateWorkflowRequest) {
 	request = &UpdateWorkflowRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("schedulerx2", "2019-04-30", "UpdateWorkflow", "", "")
+	request.InitWithApiInfo("schedulerx2", "2019-04-30", "UpdateWorkflow", "schedulerx2", "openAPI")
 	request.Method = requests.POST
 	return
 }

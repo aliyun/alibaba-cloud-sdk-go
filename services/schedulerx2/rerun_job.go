@@ -73,9 +73,9 @@ type RerunJobRequest struct {
 	*requests.RpcRequest
 	NamespaceSource string           `position:"Body" name:"NamespaceSource"`
 	DataTime        string           `position:"Body" name:"DataTime"`
-	GroupId         string           `position:"Body" name:"GroupId"`
 	StartDate       requests.Integer `position:"Body" name:"StartDate"`
 	JobId           requests.Integer `position:"Body" name:"JobId"`
+	GroupId         string           `position:"Body" name:"GroupId"`
 	EndDate         requests.Integer `position:"Body" name:"EndDate"`
 	Namespace       string           `position:"Body" name:"Namespace"`
 }
@@ -94,7 +94,7 @@ func CreateRerunJobRequest() (request *RerunJobRequest) {
 	request = &RerunJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("schedulerx2", "2019-04-30", "RerunJob", "", "")
+	request.InitWithApiInfo("schedulerx2", "2019-04-30", "RerunJob", "schedulerx2", "openAPI")
 	request.Method = requests.POST
 	return
 }

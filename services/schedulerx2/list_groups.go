@@ -91,7 +91,7 @@ func CreateListGroupsRequest() (request *ListGroupsRequest) {
 	request = &ListGroupsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("schedulerx2", "2019-04-30", "ListGroups", "", "")
+	request.InitWithApiInfo("schedulerx2", "2019-04-30", "ListGroups", "schedulerx2", "openAPI")
 	request.Method = requests.POST
 	return
 }

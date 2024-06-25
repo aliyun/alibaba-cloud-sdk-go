@@ -132,7 +132,7 @@ func CreateUpdateJobRequest() (request *UpdateJobRequest) {
 	request = &UpdateJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("schedulerx2", "2019-04-30", "UpdateJob", "", "")
+	request.InitWithApiInfo("schedulerx2", "2019-04-30", "UpdateJob", "schedulerx2", "openAPI")
 	request.Method = requests.POST
 	return
 }

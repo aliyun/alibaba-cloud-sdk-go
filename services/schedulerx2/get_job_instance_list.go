@@ -72,10 +72,12 @@ func (client *Client) GetJobInstanceListWithCallback(request *GetJobInstanceList
 type GetJobInstanceListRequest struct {
 	*requests.RpcRequest
 	NamespaceSource string           `position:"Query" name:"NamespaceSource"`
-	GroupId         string           `position:"Query" name:"GroupId"`
 	StartTimestamp  requests.Integer `position:"Query" name:"StartTimestamp"`
+	PageNum         requests.Integer `position:"Query" name:"PageNum"`
 	EndTimestamp    requests.Integer `position:"Query" name:"EndTimestamp"`
 	JobId           requests.Integer `position:"Query" name:"JobId"`
+	PageSize        requests.Integer `position:"Query" name:"PageSize"`
+	GroupId         string           `position:"Query" name:"GroupId"`
 	Namespace       string           `position:"Query" name:"Namespace"`
 	Status          requests.Integer `position:"Query" name:"Status"`
 }
@@ -95,7 +97,7 @@ func CreateGetJobInstanceListRequest() (request *GetJobInstanceListRequest) {
 	request = &GetJobInstanceListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("schedulerx2", "2019-04-30", "GetJobInstanceList", "", "")
+	request.InitWithApiInfo("schedulerx2", "2019-04-30", "GetJobInstanceList", "schedulerx2", "openAPI")
 	request.Method = requests.GET
 	return
 }

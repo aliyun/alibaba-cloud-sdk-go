@@ -91,7 +91,7 @@ func CreateDisableWorkflowRequest() (request *DisableWorkflowRequest) {
 	request = &DisableWorkflowRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("schedulerx2", "2019-04-30", "DisableWorkflow", "", "")
+	request.InitWithApiInfo("schedulerx2", "2019-04-30", "DisableWorkflow", "schedulerx2", "openAPI")
 	request.Method = requests.GET
 	return
 }

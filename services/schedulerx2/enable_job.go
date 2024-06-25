@@ -91,7 +91,7 @@ func CreateEnableJobRequest() (request *EnableJobRequest) {
 	request = &EnableJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("schedulerx2", "2019-04-30", "EnableJob", "", "")
+	request.InitWithApiInfo("schedulerx2", "2019-04-30", "EnableJob", "schedulerx2", "openAPI")
 	request.Method = requests.GET
 	return
 }

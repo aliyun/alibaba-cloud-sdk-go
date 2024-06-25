@@ -90,7 +90,7 @@ func CreateDeleteAppGroupRequest() (request *DeleteAppGroupRequest) {
 	request = &DeleteAppGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("schedulerx2", "2019-04-30", "DeleteAppGroup", "", "")
+	request.InitWithApiInfo("schedulerx2", "2019-04-30", "DeleteAppGroup", "schedulerx2", "openAPI")
 	request.Method = requests.POST
 	return
 }

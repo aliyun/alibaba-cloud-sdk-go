@@ -92,7 +92,7 @@ func CreateSetJobInstanceSuccessRequest() (request *SetJobInstanceSuccessRequest
 	request = &SetJobInstanceSuccessRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("schedulerx2", "2019-04-30", "SetJobInstanceSuccess", "", "")
+	request.InitWithApiInfo("schedulerx2", "2019-04-30", "SetJobInstanceSuccess", "schedulerx2", "openAPI")
 	request.Method = requests.POST
 	return
 }
