@@ -1,3 +1,7 @@
+2024-06-26 Version: v1.62.774
+- Generated 2022-05-30 for `eflo`.
+- Supported AssumeRoleProxyChain for CreateHighDensityElasticNetworkInterface.
+
 2024-06-25 Version: v1.62.773
 - Generated 2019-04-30 for `schedulerx2`.
 - Create AppGroup Support Set AppVersion.
