@@ -75,9 +75,11 @@ type Result struct {
 	IsOpenRowLevelPermission    int                      `json:"IsOpenRowLevelPermission" xml:"IsOpenRowLevelPermission"`
 	AdminUser                   bool                     `json:"AdminUser" xml:"AdminUser"`
 	RoleId                      int64                    `json:"RoleId" xml:"RoleId"`
+	PublicFlag                  bool                     `json:"PublicFlag" xml:"PublicFlag"`
 	Attention                   string                   `json:"Attention" xml:"Attention"`
 	AccountName                 string                   `json:"AccountName" xml:"AccountName"`
 	OwnerId                     string                   `json:"OwnerId" xml:"OwnerId"`
+	PublicInvalidTime           int64                    `json:"PublicInvalidTime" xml:"PublicInvalidTime"`
 	DsType                      string                   `json:"DsType" xml:"DsType"`
 	Values                      []map[string]interface{} `json:"Values" xml:"Values"`
 	RoleIdList                  []int64                  `json:"RoleIdList" xml:"RoleIdList"`

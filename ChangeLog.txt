@@ -1,3 +1,8 @@
+2024-06-28 Version: v1.62.775
+- Generated 2022-01-01 for `quickbi-public`.
+- Add QueryAuditLog, QueryApprovalInfo, DataSourceBlood, DataSetBlood and QueryDataServiceList APIs.
+- QueryUserInfoByAccount API updates error code.
+
 2024-06-26 Version: v1.62.774
 - Generated 2022-05-30 for `eflo`.
 - Supported AssumeRoleProxyChain for CreateHighDensityElasticNetworkInterface.

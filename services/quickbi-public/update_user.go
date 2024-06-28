@@ -77,6 +77,7 @@ type UpdateUserRequest struct {
 	UserType      requests.Integer `position:"Query" name:"UserType"`
 	SignType      string           `position:"Query" name:"SignType"`
 	UserId        string           `position:"Query" name:"UserId"`
+	IsDeleted     requests.Boolean `position:"Query" name:"IsDeleted"`
 	RoleIds       string           `position:"Query" name:"RoleIds"`
 	Phone         string           `position:"Query" name:"Phone"`
 	NickName      string           `position:"Query" name:"NickName"`

@@ -36,6 +36,7 @@ type DataItem struct {
 	OwnerName               string     `json:"OwnerName" xml:"OwnerName"`
 	ModifyUser              string     `json:"ModifyUser" xml:"ModifyUser"`
 	WorkspaceName           string     `json:"WorkspaceName" xml:"WorkspaceName"`
+	JoinedDate              int64      `json:"JoinedDate" xml:"JoinedDate"`
 	DateUpdateTime          string     `json:"DateUpdateTime" xml:"DateUpdateTime"`
 	OpenOfflineAcceleration bool       `json:"OpenOfflineAcceleration" xml:"OpenOfflineAcceleration"`
 	RowLevel                bool       `json:"RowLevel" xml:"RowLevel"`
@@ -72,11 +73,14 @@ type DataItem struct {
 	Owner                   string     `json:"Owner" xml:"Owner"`
 	Body                    string     `json:"Body" xml:"Body"`
 	AdminUser               bool       `json:"AdminUser" xml:"AdminUser"`
+	PublicFlag              bool       `json:"PublicFlag" xml:"PublicFlag"`
 	ApiId                   string     `json:"ApiId" xml:"ApiId"`
 	LatestViewTime          string     `json:"LatestViewTime" xml:"LatestViewTime"`
 	AccountName             string     `json:"AccountName" xml:"AccountName"`
 	OwnerId                 string     `json:"OwnerId" xml:"OwnerId"`
+	PublicInvalidTime       int64      `json:"PublicInvalidTime" xml:"PublicInvalidTime"`
 	HasEditAuth             bool       `json:"HasEditAuth" xml:"HasEditAuth"`
+	LastLoginTime           int64      `json:"LastLoginTime" xml:"LastLoginTime"`
 	RoleIdList              []int64    `json:"RoleIdList" xml:"RoleIdList"`
 	Directory               Directory  `json:"Directory" xml:"Directory"`
 	Role                    Role       `json:"Role" xml:"Role"`
