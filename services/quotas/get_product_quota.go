@@ -71,9 +71,9 @@ func (client *Client) GetProductQuotaWithCallback(request *GetProductQuotaReques
 // GetProductQuotaRequest is the request struct for api GetProductQuota
 type GetProductQuotaRequest struct {
 	*requests.RpcRequest
-	OriginalContext string                       `position:"Body" name:"OriginalContext"`
 	ProductCode     string                       `position:"Body" name:"ProductCode"`
 	QuotaActionCode string                       `position:"Body" name:"QuotaActionCode"`
+	OriginalContext string                       `position:"Body" name:"OriginalContext"`
 	Dimensions      *[]GetProductQuotaDimensions `position:"Body" name:"Dimensions"  type:"Repeated"`
 }
 

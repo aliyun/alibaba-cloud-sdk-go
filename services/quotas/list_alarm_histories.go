@@ -77,6 +77,7 @@ type ListAlarmHistoriesRequest struct {
 	Keyword         string           `position:"Body" name:"Keyword"`
 	OriginalContext string           `position:"Body" name:"OriginalContext"`
 	EndTime         requests.Integer `position:"Body" name:"EndTime"`
+	AlarmId         string           `position:"Body" name:"AlarmId"`
 	MaxResults      requests.Integer `position:"Body" name:"MaxResults"`
 }
 

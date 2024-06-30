@@ -26,5 +26,7 @@ type QuotaBatchApplicationsItem struct {
 	DesireValue             string                 `json:"DesireValue" xml:"DesireValue"`
 	QuotaCategory           string                 `json:"QuotaCategory" xml:"QuotaCategory"`
 	Dimensions              map[string]interface{} `json:"Dimensions" xml:"Dimensions"`
+	Reason                  string                 `json:"Reason" xml:"Reason"`
+	AliyunUids              []string               `json:"AliyunUids" xml:"AliyunUids"`
 	AuditStatusVos          []AuditStatusVo        `json:"AuditStatusVos" xml:"AuditStatusVos"`
 }

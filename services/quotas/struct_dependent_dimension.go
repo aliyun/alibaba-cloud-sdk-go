@@ -17,5 +17,6 @@ package quotas
 
 // DependentDimension is a nested struct in quotas response
 type DependentDimension struct {
-	DependentDimension []string `json:"DependentDimension" xml:"DependentDimension"`
+	Key   string `json:"Key" xml:"Key"`
+	Value string `json:"Value" xml:"Value"`
 }

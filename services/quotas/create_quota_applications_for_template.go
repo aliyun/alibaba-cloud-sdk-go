@@ -94,9 +94,10 @@ type CreateQuotaApplicationsForTemplateDimensions struct {
 // CreateQuotaApplicationsForTemplateResponse is the response struct for api CreateQuotaApplicationsForTemplate
 type CreateQuotaApplicationsForTemplateResponse struct {
 	*responses.BaseResponse
-	RequestId               string   `json:"RequestId" xml:"RequestId"`
-	BatchQuotaApplicationId string   `json:"BatchQuotaApplicationId" xml:"BatchQuotaApplicationId"`
-	AliyunUids              []string `json:"AliyunUids" xml:"AliyunUids"`
+	RequestId               string            `json:"RequestId" xml:"RequestId"`
+	BatchQuotaApplicationId string            `json:"BatchQuotaApplicationId" xml:"BatchQuotaApplicationId"`
+	AliyunUids              []string          `json:"AliyunUids" xml:"AliyunUids"`
+	FailResults             []FailResultsItem `json:"FailResults" xml:"FailResults"`
 }
 
 // CreateCreateQuotaApplicationsForTemplateRequest creates a request to invoke CreateQuotaApplicationsForTemplate API

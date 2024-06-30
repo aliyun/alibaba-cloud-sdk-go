@@ -35,8 +35,10 @@ type QuotasItemInListProductQuotas struct {
 	ExpireTime         string                 `json:"ExpireTime" xml:"ExpireTime"`
 	QuotaCategory      string                 `json:"QuotaCategory" xml:"QuotaCategory"`
 	ApplyReasonTips    string                 `json:"ApplyReasonTips" xml:"ApplyReasonTips"`
+	GlobalQuota        bool                   `json:"GlobalQuota" xml:"GlobalQuota"`
 	ApplicableRange    []float64              `json:"ApplicableRange" xml:"ApplicableRange"`
 	SupportedRange     []float64              `json:"SupportedRange" xml:"SupportedRange"`
 	Period             Period                 `json:"Period" xml:"Period"`
+	UsageMetric        UsageMetric            `json:"UsageMetric" xml:"UsageMetric"`
 	QuotaItems         []QuotaItemsItem       `json:"QuotaItems" xml:"QuotaItems"`
 }
