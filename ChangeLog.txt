@@ -1,3 +1,7 @@
+2024-07-01 Version: v1.62.777
+- Generated 2022-12-13 for `PaiRecService`.
+undefined
+
 2024-06-30 Version: v1.62.776
 - Generated 2020-05-10 for `quotas`.
 - Add UsageMetric.

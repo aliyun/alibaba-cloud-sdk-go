@@ -71,9 +71,11 @@ func (client *Client) ListExperimentGroupsWithCallback(request *ListExperimentGr
 // ListExperimentGroupsRequest is the request struct for api ListExperimentGroups
 type ListExperimentGroupsRequest struct {
 	*requests.RoaRequest
-	LayerId    string `position:"Query" name:"LayerId"`
-	InstanceId string `position:"Query" name:"InstanceId"`
-	Status     string `position:"Query" name:"Status"`
+	TimeRangeEnd   string `position:"Query" name:"TimeRangeEnd"`
+	LayerId        string `position:"Query" name:"LayerId"`
+	InstanceId     string `position:"Query" name:"InstanceId"`
+	TimeRangeStart string `position:"Query" name:"TimeRangeStart"`
+	Status         string `position:"Query" name:"Status"`
 }
 
 // ListExperimentGroupsResponse is the response struct for api ListExperimentGroups
