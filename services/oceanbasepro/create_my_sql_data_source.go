@@ -74,6 +74,7 @@ type CreateMySqlDataSourceRequest struct {
 	Schema       string           `position:"Body" name:"Schema"`
 	Description  string           `position:"Body" name:"Description"`
 	Type         string           `position:"Body" name:"Type"`
+	UseSsl       requests.Boolean `position:"Body" name:"UseSsl"`
 	Password     string           `position:"Body" name:"Password"`
 	DgInstanceId string           `position:"Body" name:"DgInstanceId"`
 	Ip           string           `position:"Body" name:"Ip"`

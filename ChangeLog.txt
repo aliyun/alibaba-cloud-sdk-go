@@ -1,3 +1,7 @@
+2024-07-02 Version: v1.62.778
+- Generated 2019-09-01 for `OceanBasePro`.
+undefined
+
 2024-07-01 Version: v1.62.777
 - Generated 2022-12-13 for `PaiRecService`.
 undefined

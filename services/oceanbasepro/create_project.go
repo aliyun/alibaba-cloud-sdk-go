@@ -119,6 +119,7 @@ type CreateProjectCommonTransferConfig struct {
 	MqPartition            string                                                `name:"MqPartition"`
 	SyncSchemaColumnName   string                                                `name:"SyncSchemaColumnName"`
 	ActiveActive           string                                                `name:"ActiveActive"`
+	SinkStoreFormat        string                                                `name:"SinkStoreFormat"`
 	RocketMqEnableMsgTrace string                                                `name:"RocketMqEnableMsgTrace"`
 	CustomColumns          *[]CreateProjectCommonTransferConfigCustomColumnsItem `name:"CustomColumns" type:"Repeated"`
 	RocketMqProducerGroup  string                                                `name:"RocketMqProducerGroup"`
@@ -128,6 +129,7 @@ type CreateProjectCommonTransferConfig struct {
 	DatahubTopicType       string                                                `name:"DatahubTopicType"`
 	RocketMqMsgTags        string                                                `name:"RocketMqMsgTags"`
 	DataWorksBusinessName  string                                                `name:"DataWorksBusinessName"`
+	SourceStoreFormat      string                                                `name:"SourceStoreFormat"`
 	SyncSchema             string                                                `name:"SyncSchema"`
 	MqSerializerType       string                                                `name:"MqSerializerType"`
 }

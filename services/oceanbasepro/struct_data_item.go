@@ -17,15 +17,59 @@ package oceanbasepro
 
 // DataItem is a nested struct in oceanbasepro response
 type DataItem struct {
-	MaxCpu              int64               `json:"MaxCpu" xml:"MaxCpu"`
 	LastExecutedTime    string              `json:"LastExecutedTime" xml:"LastExecutedTime"`
 	SqlText             string              `json:"SqlText" xml:"SqlText"`
-	Inner               bool                `json:"Inner" xml:"Inner"`
 	BlockCacheHit       string              `json:"BlockCacheHit" xml:"BlockCacheHit"`
-	AvgDbTime           string              `json:"AvgDbTime" xml:"AvgDbTime"`
 	DataSize            int                 `json:"DataSize" xml:"DataSize"`
 	SumRetryCount       float64             `json:"SumRetryCount" xml:"SumRetryCount"`
+	SessionId           string              `json:"SessionId" xml:"SessionId"`
 	BlockIndexCacheHit  string              `json:"BlockIndexCacheHit" xml:"BlockIndexCacheHit"`
+	ConsistencyLevel    string              `json:"ConsistencyLevel" xml:"ConsistencyLevel"`
+	Type                string              `json:"Type" xml:"Type"`
+	AvgGetPlanTime      string              `json:"AvgGetPlanTime" xml:"AvgGetPlanTime"`
+	RpcCount            string              `json:"RpcCount" xml:"RpcCount"`
+	SsstoreReadRows     string              `json:"SsstoreReadRows" xml:"SsstoreReadRows"`
+	ExpectedWorkerCount string              `json:"ExpectedWorkerCount" xml:"ExpectedWorkerCount"`
+	Executions          string              `json:"Executions" xml:"Executions"`
+	DataVersion         int                 `json:"DataVersion" xml:"DataVersion"`
+	MemstoreReadRows    string              `json:"MemstoreReadRows" xml:"MemstoreReadRows"`
+	DbName              string              `json:"DbName" xml:"DbName"`
+	RetCode             string              `json:"RetCode" xml:"RetCode"`
+	Progress            string              `json:"Progress" xml:"Progress"`
+	DownloadTaskId      int64               `json:"DownloadTaskId" xml:"DownloadTaskId"`
+	Host                string              `json:"Host" xml:"Host"`
+	SqlType             string              `json:"SqlType" xml:"SqlType"`
+	StartTime           string              `json:"StartTime" xml:"StartTime"`
+	EndTime             string              `json:"EndTime" xml:"EndTime"`
+	ObServerId          string              `json:"ObServerId" xml:"ObServerId"`
+	SumDbTime           string              `json:"SumDbTime" xml:"SumDbTime"`
+	BackupObjectType    string              `json:"BackupObjectType" xml:"BackupObjectType"`
+	Status              string              `json:"Status" xml:"Status"`
+	ApplicationWaitTime string              `json:"ApplicationWaitTime" xml:"ApplicationWaitTime"`
+	RequestTime         string              `json:"RequestTime" xml:"RequestTime"`
+	SetId               int                 `json:"SetId" xml:"SetId"`
+	Server              string              `json:"Server" xml:"Server"`
+	ObUserId            string              `json:"ObUserId" xml:"ObUserId"`
+	AvgCpuTime          string              `json:"AvgCpuTime" xml:"AvgCpuTime"`
+	DiskReads           string              `json:"DiskReads" xml:"DiskReads"`
+	MinCpu              int64               `json:"MinCpu" xml:"MinCpu"`
+	StorageClass        string              `json:"StorageClass" xml:"StorageClass"`
+	ClientPort          string              `json:"ClientPort" xml:"ClientPort"`
+	Comment             string              `json:"Comment" xml:"Comment"`
+	DynamicSql          bool                `json:"DynamicSql" xml:"DynamicSql"`
+	PlanId              string              `json:"PlanId" xml:"PlanId"`
+	TransHash           string              `json:"TransHash" xml:"TransHash"`
+	Method              string              `json:"Method" xml:"Method"`
+	Policy              string              `json:"Policy" xml:"Policy"`
+	AvgLogicalReads     float64             `json:"AvgLogicalReads" xml:"AvgLogicalReads"`
+	NetTime             string              `json:"NetTime" xml:"NetTime"`
+	UnitNum             int64               `json:"UnitNum" xml:"UnitNum"`
+	UsedWorkerCount     string              `json:"UsedWorkerCount" xml:"UsedWorkerCount"`
+	RowCacheHit         string              `json:"RowCacheHit" xml:"RowCacheHit"`
+	RiskLevel           string              `json:"RiskLevel" xml:"RiskLevel"`
+	MaxCpu              int64               `json:"MaxCpu" xml:"MaxCpu"`
+	Inner               bool                `json:"Inner" xml:"Inner"`
+	AvgDbTime           string              `json:"AvgDbTime" xml:"AvgDbTime"`
 	CpuTime             string              `json:"CpuTime" xml:"CpuTime"`
 	ExecutorRpc         bool                `json:"ExecutorRpc" xml:"ExecutorRpc"`
 	ElapsedTime         string              `json:"ElapsedTime" xml:"ElapsedTime"`
@@ -34,83 +78,41 @@ type DataItem struct {
 	ReviewCode          string              `json:"ReviewCode" xml:"ReviewCode"`
 	Validity            string              `json:"Validity" xml:"Validity"`
 	ConcurrencyWaitTime string              `json:"ConcurrencyWaitTime" xml:"ConcurrencyWaitTime"`
-	ConsistencyLevel    string              `json:"ConsistencyLevel" xml:"ConsistencyLevel"`
-	Type                string              `json:"Type" xml:"Type"`
-	AvgGetPlanTime      string              `json:"AvgGetPlanTime" xml:"AvgGetPlanTime"`
-	RpcCount            string              `json:"RpcCount" xml:"RpcCount"`
-	SsstoreReadRows     string              `json:"SsstoreReadRows" xml:"SsstoreReadRows"`
 	Checkpoint          string              `json:"Checkpoint" xml:"Checkpoint"`
 	PartitionCount      string              `json:"PartitionCount" xml:"PartitionCount"`
-	ExpectedWorkerCount string              `json:"ExpectedWorkerCount" xml:"ExpectedWorkerCount"`
-	Executions          string              `json:"Executions" xml:"Executions"`
 	SqlId               string              `json:"SqlId" xml:"SqlId"`
-	DataVersion         int                 `json:"DataVersion" xml:"DataVersion"`
-	MemstoreReadRows    string              `json:"MemstoreReadRows" xml:"MemstoreReadRows"`
 	SqlTextShort        string              `json:"SqlTextShort" xml:"SqlTextShort"`
 	NetWaitTime         string              `json:"NetWaitTime" xml:"NetWaitTime"`
-	DbName              string              `json:"DbName" xml:"DbName"`
-	RetCode             string              `json:"RetCode" xml:"RetCode"`
 	AvgRetryCount       float64             `json:"AvgRetryCount" xml:"AvgRetryCount"`
 	AffectedRows        string              `json:"AffectedRows" xml:"AffectedRows"`
-	Progress            string              `json:"Progress" xml:"Progress"`
-	DownloadTaskId      int64               `json:"DownloadTaskId" xml:"DownloadTaskId"`
-	SqlType             string              `json:"SqlType" xml:"SqlType"`
-	StartTime           string              `json:"StartTime" xml:"StartTime"`
 	RetryCount          string              `json:"RetryCount" xml:"RetryCount"`
 	Success             bool                `json:"Success" xml:"Success"`
-	EndTime             string              `json:"EndTime" xml:"EndTime"`
 	Suggestion          string              `json:"Suggestion" xml:"Suggestion"`
 	HitPlan             bool                `json:"HitPlan" xml:"HitPlan"`
 	Statement           string              `json:"Statement" xml:"Statement"`
-	ObServerId          string              `json:"ObServerId" xml:"ObServerId"`
-	SumDbTime           string              `json:"SumDbTime" xml:"SumDbTime"`
-	BackupObjectType    string              `json:"BackupObjectType" xml:"BackupObjectType"`
-	Status              string              `json:"Status" xml:"Status"`
-	ApplicationWaitTime string              `json:"ApplicationWaitTime" xml:"ApplicationWaitTime"`
-	RequestTime         string              `json:"RequestTime" xml:"RequestTime"`
 	SumElapsedTime      string              `json:"SumElapsedTime" xml:"SumElapsedTime"`
 	ClientIp            string              `json:"ClientIp" xml:"ClientIp"`
 	QueueTime           string              `json:"QueueTime" xml:"QueueTime"`
 	TableScan           bool                `json:"TableScan" xml:"TableScan"`
-	SetId               int                 `json:"SetId" xml:"SetId"`
 	Diagnosis           string              `json:"Diagnosis" xml:"Diagnosis"`
-	Server              string              `json:"Server" xml:"Server"`
-	ObUserId            string              `json:"ObUserId" xml:"ObUserId"`
-	AvgCpuTime          string              `json:"AvgCpuTime" xml:"AvgCpuTime"`
 	DecodeTime          string              `json:"DecodeTime" xml:"DecodeTime"`
-	DiskReads           string              `json:"DiskReads" xml:"DiskReads"`
-	MinCpu              int64               `json:"MinCpu" xml:"MinCpu"`
-	StorageClass        string              `json:"StorageClass" xml:"StorageClass"`
-	ClientPort          string              `json:"ClientPort" xml:"ClientPort"`
 	ScheduleTime        string              `json:"ScheduleTime" xml:"ScheduleTime"`
-	Comment             string              `json:"Comment" xml:"Comment"`
 	DownloadTaskStatus  string              `json:"DownloadTaskStatus" xml:"DownloadTaskStatus"`
-	DynamicSql          bool                `json:"DynamicSql" xml:"DynamicSql"`
 	WaitEvent           string              `json:"WaitEvent" xml:"WaitEvent"`
 	GetPlanTime         string              `json:"GetPlanTime" xml:"GetPlanTime"`
 	WaitCount           string              `json:"WaitCount" xml:"WaitCount"`
-	PlanId              string              `json:"PlanId" xml:"PlanId"`
-	TransHash           string              `json:"TransHash" xml:"TransHash"`
-	Method              string              `json:"Method" xml:"Method"`
 	AvgElapsedTime      string              `json:"AvgElapsedTime" xml:"AvgElapsedTime"`
 	TraceId             string              `json:"TraceId" xml:"TraceId"`
 	WaitTime            string              `json:"WaitTime" xml:"WaitTime"`
-	Policy              string              `json:"Policy" xml:"Policy"`
 	ObDbId              string              `json:"ObDbId" xml:"ObDbId"`
-	AvgLogicalReads     float64             `json:"AvgLogicalReads" xml:"AvgLogicalReads"`
 	PlanType            string              `json:"PlanType" xml:"PlanType"`
-	NetTime             string              `json:"NetTime" xml:"NetTime"`
 	UserIoWaitTime      string              `json:"UserIoWaitTime" xml:"UserIoWaitTime"`
-	UnitNum             int64               `json:"UnitNum" xml:"UnitNum"`
-	UsedWorkerCount     string              `json:"UsedWorkerCount" xml:"UsedWorkerCount"`
 	ReturnRows          string              `json:"ReturnRows" xml:"ReturnRows"`
 	RequestId           string              `json:"RequestId" xml:"RequestId"`
 	BloomFilterCacheHit string              `json:"BloomFilterCacheHit" xml:"BloomFilterCacheHit"`
-	RowCacheHit         string              `json:"RowCacheHit" xml:"RowCacheHit"`
 	UserName            string              `json:"UserName" xml:"UserName"`
-	RiskLevel           string              `json:"RiskLevel" xml:"RiskLevel"`
 	DiagTypes           []string            `json:"DiagTypes" xml:"DiagTypes"`
 	BackupResults       []BackupResultsItem `json:"BackupResults" xml:"BackupResults"`
-	SqlList             []SqlListItem       `json:"SqlList" xml:"SqlList"`
 	BackupObjects       []BackupObjectsItem `json:"BackupObjects" xml:"BackupObjects"`
+	SqlList             []SqlListItem       `json:"SqlList" xml:"SqlList"`
 }

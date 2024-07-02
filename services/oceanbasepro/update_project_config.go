@@ -71,10 +71,17 @@ func (client *Client) UpdateProjectConfigWithCallback(request *UpdateProjectConf
 // UpdateProjectConfigRequest is the request struct for api UpdateProjectConfig
 type UpdateProjectConfigRequest struct {
 	*requests.RpcRequest
+	CommonTransferConfig      UpdateProjectConfigCommonTransferConfig      `position:"Body" name:"CommonTransferConfig"  type:"Struct"`
 	ReverseIncrTransferConfig UpdateProjectConfigReverseIncrTransferConfig `position:"Body" name:"ReverseIncrTransferConfig"  type:"Struct"`
 	FullTransferConfig        UpdateProjectConfigFullTransferConfig        `position:"Body" name:"FullTransferConfig"  type:"Struct"`
 	Id                        string                                       `position:"Body" name:"Id"`
 	IncrTransferConfig        UpdateProjectConfigIncrTransferConfig        `position:"Body" name:"IncrTransferConfig"  type:"Struct"`
+}
+
+// UpdateProjectConfigCommonTransferConfig is a repeated param struct in UpdateProjectConfigRequest
+type UpdateProjectConfigCommonTransferConfig struct {
+	SinkStoreFormat   string `name:"SinkStoreFormat"`
+	SourceStoreFormat string `name:"SourceStoreFormat"`
 }
 
 // UpdateProjectConfigReverseIncrTransferConfig is a repeated param struct in UpdateProjectConfigRequest
