@@ -72,6 +72,7 @@ func (client *Client) DeleteEnsSaleControlWithCallback(request *DeleteEnsSaleCon
 type DeleteEnsSaleControlRequest struct {
 	*requests.RpcRequest
 	SaleControls  *[]DeleteEnsSaleControlSaleControls `position:"Query" name:"SaleControls"  type:"Json"`
+	CustomAccount string                              `position:"Query" name:"CustomAccount"`
 	CommodityCode string                              `position:"Query" name:"CommodityCode"`
 	AliUidAccount string                              `position:"Query" name:"AliUidAccount"`
 }

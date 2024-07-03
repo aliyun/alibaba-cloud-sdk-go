@@ -78,6 +78,7 @@ type DeleteSDGRequest struct {
 type DeleteSDGResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Data      Data   `json:"Data" xml:"Data"`
 }
 
 // CreateDeleteSDGRequest creates a request to invoke DeleteSDG API
@@ -86,7 +87,7 @@ func CreateDeleteSDGRequest() (request *DeleteSDGRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ens", "2017-11-10", "DeleteSDG", "ens", "openAPI")
-	request.Method = requests.GET
+	request.Method = requests.POST
 	return
 }
 

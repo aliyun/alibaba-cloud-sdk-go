@@ -88,6 +88,7 @@ type DescribeInstancesRequest struct {
 	SearchKey            string                   `position:"Query" name:"SearchKey"`
 	PageNumber           requests.Integer         `position:"Query" name:"PageNumber"`
 	PageSize             string                   `position:"Query" name:"PageSize"`
+	InstanceType         string                   `position:"Query" name:"InstanceType"`
 	EnsRegionIds         string                   `position:"Query" name:"EnsRegionIds"`
 }
 

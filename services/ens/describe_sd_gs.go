@@ -88,7 +88,7 @@ func CreateDescribeSDGsRequest() (request *DescribeSDGsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ens", "2017-11-10", "DescribeSDGs", "ens", "openAPI")
-	request.Method = requests.GET
+	request.Method = requests.POST
 	return
 }
 

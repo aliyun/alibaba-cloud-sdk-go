@@ -17,6 +17,9 @@ package ens
 
 // FailedItemsItem is a nested struct in ens response
 type FailedItemsItem struct {
-	ErrorMessage        string `json:"ErrorMessage" xml:"ErrorMessage"`
 	DestinationRegionId string `json:"DestinationRegionId" xml:"DestinationRegionId"`
+	ErrorMessage        string `json:"ErrorMessage" xml:"ErrorMessage"`
+	InstanceId          string `json:"InstanceId" xml:"InstanceId"`
+	ErrMessage          string `json:"ErrMessage" xml:"ErrMessage"`
+	Item                Item   `json:"Item" xml:"Item"`
 }

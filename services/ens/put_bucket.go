@@ -83,6 +83,7 @@ type PutBucketRequest struct {
 	DispatcherType     string `position:"Body" name:"DispatcherType"`
 	ResourceType       string `position:"Body" name:"ResourceType"`
 	StorageClass       string `position:"Body" name:"StorageClass"`
+	DispatchScope      string `position:"Body" name:"DispatchScope"`
 	Comment            string `position:"Body" name:"Comment"`
 }
 

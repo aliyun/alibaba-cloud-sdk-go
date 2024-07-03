@@ -72,6 +72,7 @@ func (client *Client) UpdateEnsSaleControlWithCallback(request *UpdateEnsSaleCon
 type UpdateEnsSaleControlRequest struct {
 	*requests.RpcRequest
 	SaleControls  *[]UpdateEnsSaleControlSaleControls `position:"Query" name:"SaleControls"  type:"Json"`
+	CustomAccount string                              `position:"Query" name:"CustomAccount"`
 	CommodityCode string                              `position:"Query" name:"CommodityCode"`
 	AliUidAccount string                              `position:"Query" name:"AliUidAccount"`
 }

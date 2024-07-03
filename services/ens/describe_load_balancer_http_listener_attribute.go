@@ -104,6 +104,7 @@ type DescribeLoadBalancerHTTPListenerAttributeResponse struct {
 	HealthCheckURI         string `json:"HealthCheckURI" xml:"HealthCheckURI"`
 	ServerCertificateId    string `json:"ServerCertificateId" xml:"ServerCertificateId"`
 	HealthCheckMethod      string `json:"HealthCheckMethod" xml:"HealthCheckMethod"`
+	XForwardedFor          string `json:"XForwardedFor" xml:"XForwardedFor"`
 }
 
 // CreateDescribeLoadBalancerHTTPListenerAttributeRequest creates a request to invoke DescribeLoadBalancerHTTPListenerAttribute API

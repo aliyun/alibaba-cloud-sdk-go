@@ -17,15 +17,16 @@ package ens
 
 // SDGsItem is a nested struct in ens response
 type SDGsItem struct {
+	ParentSDGId         string                    `json:"ParentSDGId" xml:"ParentSDGId"`
+	UpdateTime          string                    `json:"UpdateTime" xml:"UpdateTime"`
 	CreationInstanceId  string                    `json:"CreationInstanceId" xml:"CreationInstanceId"`
 	CreationRegionId    string                    `json:"CreationRegionId" xml:"CreationRegionId"`
 	CreationTime        string                    `json:"CreationTime" xml:"CreationTime"`
-	Description         string                    `json:"Description" xml:"Description"`
-	ParentSDGId         string                    `json:"ParentSDGId" xml:"ParentSDGId"`
 	SDGId               string                    `json:"SDGId" xml:"SDGId"`
 	Size                int64                     `json:"Size" xml:"Size"`
 	Status              string                    `json:"Status" xml:"Status"`
-	UpdateTime          string                    `json:"UpdateTime" xml:"UpdateTime"`
+	Description         string                    `json:"Description" xml:"Description"`
 	AvaliableRegionIds  []AvaliableRegionIdsItem  `json:"AvaliableRegionIds" xml:"AvaliableRegionIds"`
 	DeployedInstanceIds []DeployedInstanceIdsItem `json:"DeployedInstanceIds" xml:"DeployedInstanceIds"`
+	PreloadInfos        []PreloadInfosItem        `json:"PreloadInfos" xml:"PreloadInfos"`
 }

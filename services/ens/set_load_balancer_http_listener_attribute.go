@@ -73,6 +73,7 @@ type SetLoadBalancerHTTPListenerAttributeRequest struct {
 	*requests.RpcRequest
 	HealthCheckTimeout     requests.Integer `position:"Query" name:"HealthCheckTimeout"`
 	HealthCheckURI         string           `position:"Query" name:"HealthCheckURI"`
+	XForwardedFor          string           `position:"Query" name:"XForwardedFor"`
 	HealthCheck            string           `position:"Query" name:"HealthCheck"`
 	Protocol               string           `position:"Query" name:"Protocol"`
 	Cookie                 string           `position:"Query" name:"Cookie"`
