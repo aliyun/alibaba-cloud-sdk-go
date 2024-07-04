@@ -17,11 +17,27 @@ package ess
 
 // InstancePatternInfo is a nested struct in ess response
 type InstancePatternInfo struct {
-	MaxPrice              float64               `json:"MaxPrice" xml:"MaxPrice"`
-	Cores                 int                   `json:"Cores" xml:"Cores"`
-	Memory                float64               `json:"Memory" xml:"Memory"`
-	InstanceFamilyLevel   string                `json:"InstanceFamilyLevel" xml:"InstanceFamilyLevel"`
-	BurstablePerformance  string                `json:"BurstablePerformance" xml:"BurstablePerformance"`
-	Architectures         Architectures         `json:"Architectures" xml:"Architectures"`
-	ExcludedInstanceTypes ExcludedInstanceTypes `json:"ExcludedInstanceTypes" xml:"ExcludedInstanceTypes"`
+	MaxPrice                           float64                 `json:"MaxPrice" xml:"MaxPrice"`
+	Cores                              int                     `json:"Cores" xml:"Cores"`
+	Memory                             float64                 `json:"Memory" xml:"Memory"`
+	InstanceFamilyLevel                string                  `json:"InstanceFamilyLevel" xml:"InstanceFamilyLevel"`
+	BurstablePerformance               string                  `json:"BurstablePerformance" xml:"BurstablePerformance"`
+	MinimumCpuCoreCount                int                     `json:"MinimumCpuCoreCount" xml:"MinimumCpuCoreCount"`
+	MaximumCpuCoreCount                int                     `json:"MaximumCpuCoreCount" xml:"MaximumCpuCoreCount"`
+	MinimumEniQuantity                 int                     `json:"MinimumEniQuantity" xml:"MinimumEniQuantity"`
+	MinimumEniPrivateIpAddressQuantity int                     `json:"MinimumEniPrivateIpAddressQuantity" xml:"MinimumEniPrivateIpAddressQuantity"`
+	MinimumEniIpv6AddressQuantity      int                     `json:"MinimumEniIpv6AddressQuantity" xml:"MinimumEniIpv6AddressQuantity"`
+	MinimumInitialCredit               int                     `json:"MinimumInitialCredit" xml:"MinimumInitialCredit"`
+	MinimumBaselineCredit              int                     `json:"MinimumBaselineCredit" xml:"MinimumBaselineCredit"`
+	MinimumMemorySize                  float64                 `json:"MinimumMemorySize" xml:"MinimumMemorySize"`
+	MaximumMemorySize                  float64                 `json:"MaximumMemorySize" xml:"MaximumMemorySize"`
+	MinimumGpuAmount                   int                     `json:"MinimumGpuAmount" xml:"MinimumGpuAmount"`
+	MaximumGpuAmount                   int                     `json:"MaximumGpuAmount" xml:"MaximumGpuAmount"`
+	Architectures                      Architectures           `json:"Architectures" xml:"Architectures"`
+	ExcludedInstanceTypes              ExcludedInstanceTypes   `json:"ExcludedInstanceTypes" xml:"ExcludedInstanceTypes"`
+	InstanceTypeFamilies               InstanceTypeFamilies    `json:"InstanceTypeFamilies" xml:"InstanceTypeFamilies"`
+	GpuSpecs                           GpuSpecs                `json:"GpuSpecs" xml:"GpuSpecs"`
+	InstanceCategories                 InstanceCategories      `json:"InstanceCategories" xml:"InstanceCategories"`
+	CpuArchitectures                   CpuArchitectures        `json:"CpuArchitectures" xml:"CpuArchitectures"`
+	PhysicalProcessorModels            PhysicalProcessorModels `json:"PhysicalProcessorModels" xml:"PhysicalProcessorModels"`
 }

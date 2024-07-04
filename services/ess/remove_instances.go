@@ -75,6 +75,7 @@ type RemoveInstancesRequest struct {
 	ClientToken             string           `position:"Query" name:"ClientToken"`
 	ScalingGroupId          string           `position:"Query" name:"ScalingGroupId"`
 	DecreaseDesiredCapacity requests.Boolean `position:"Query" name:"DecreaseDesiredCapacity"`
+	IgnoreInvalidInstance   requests.Boolean `position:"Query" name:"IgnoreInvalidInstance"`
 	RemovePolicy            string           `position:"Query" name:"RemovePolicy"`
 	ResourceOwnerAccount    string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount            string           `position:"Query" name:"OwnerAccount"`

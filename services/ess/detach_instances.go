@@ -75,6 +75,7 @@ type DetachInstancesRequest struct {
 	ClientToken             string           `position:"Query" name:"ClientToken"`
 	ScalingGroupId          string           `position:"Query" name:"ScalingGroupId"`
 	DecreaseDesiredCapacity requests.Boolean `position:"Query" name:"DecreaseDesiredCapacity"`
+	IgnoreInvalidInstance   requests.Boolean `position:"Query" name:"IgnoreInvalidInstance"`
 	ResourceOwnerAccount    string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount            string           `position:"Query" name:"OwnerAccount"`
 	OwnerId                 requests.Integer `position:"Query" name:"OwnerId"`

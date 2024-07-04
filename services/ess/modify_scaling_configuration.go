@@ -152,13 +152,29 @@ type ModifyScalingConfigurationCustomPriorities struct {
 
 // ModifyScalingConfigurationInstancePatternInfo is a repeated param struct in ModifyScalingConfigurationRequest
 type ModifyScalingConfigurationInstancePatternInfo struct {
-	Cores                string    `name:"Cores"`
-	InstanceFamilyLevel  string    `name:"InstanceFamilyLevel"`
-	Memory               string    `name:"Memory"`
-	MaxPrice             string    `name:"MaxPrice"`
-	ExcludedInstanceType *[]string `name:"ExcludedInstanceType" type:"Repeated"`
-	BurstablePerformance string    `name:"BurstablePerformance"`
-	Architecture         *[]string `name:"Architecture" type:"Repeated"`
+	InstanceCategories                 *[]string `name:"InstanceCategories" type:"Repeated"`
+	Memory                             string    `name:"Memory"`
+	MaximumCpuCoreCount                string    `name:"MaximumCpuCoreCount"`
+	MaxPrice                           string    `name:"MaxPrice"`
+	MinimumGpuAmount                   string    `name:"MinimumGpuAmount"`
+	MaximumGpuAmount                   string    `name:"MaximumGpuAmount"`
+	MaximumMemorySize                  string    `name:"MaximumMemorySize"`
+	MinimumInitialCredit               string    `name:"MinimumInitialCredit"`
+	ExcludedInstanceType               *[]string `name:"ExcludedInstanceType" type:"Repeated"`
+	MinimumEniIpv6AddressQuantity      string    `name:"MinimumEniIpv6AddressQuantity"`
+	MinimumEniPrivateIpAddressQuantity string    `name:"MinimumEniPrivateIpAddressQuantity"`
+	BurstablePerformance               string    `name:"BurstablePerformance"`
+	PhysicalProcessorModels            *[]string `name:"PhysicalProcessorModels" type:"Repeated"`
+	MinimumCpuCoreCount                string    `name:"MinimumCpuCoreCount"`
+	GpuSpecs                           *[]string `name:"GpuSpecs" type:"Repeated"`
+	MinimumEniQuantity                 string    `name:"MinimumEniQuantity"`
+	MinimumMemorySize                  string    `name:"MinimumMemorySize"`
+	Cores                              string    `name:"Cores"`
+	InstanceFamilyLevel                string    `name:"InstanceFamilyLevel"`
+	InstanceTypeFamilies               *[]string `name:"InstanceTypeFamilies" type:"Repeated"`
+	MinimumBaselineCredit              string    `name:"MinimumBaselineCredit"`
+	CpuArchitectures                   *[]string `name:"CpuArchitectures" type:"Repeated"`
+	Architecture                       *[]string `name:"Architecture" type:"Repeated"`
 }
 
 // ModifyScalingConfigurationNetworkInterfaces is a repeated param struct in ModifyScalingConfigurationRequest

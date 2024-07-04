@@ -74,13 +74,17 @@ type DescribeScheduledTasksRequest struct {
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ScheduledAction      *[]string        `position:"Query" name:"ScheduledAction"  type:"Repeated"`
 	ScalingGroupId       string           `position:"Query" name:"ScalingGroupId"`
+	TaskName             string           `position:"Query" name:"TaskName"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	RecurrenceValue      string           `position:"Query" name:"RecurrenceValue"`
 	ScheduledTaskName    *[]string        `position:"Query" name:"ScheduledTaskName"  type:"Repeated"`
+	TaskEnabled          requests.Boolean `position:"Query" name:"TaskEnabled"`
 	ScheduledTaskId      *[]string        `position:"Query" name:"ScheduledTaskId"  type:"Repeated"`
+	RecurrenceType       string           `position:"Query" name:"RecurrenceType"`
 }
 
 // DescribeScheduledTasksResponse is the response struct for api DescribeScheduledTasks
