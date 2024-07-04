@@ -17,12 +17,12 @@ package oceanbasepro
 
 // NodesItem is a nested struct in oceanbasepro response
 type NodesItem struct {
-	NodeId         string             `json:"NodeId" xml:"NodeId"`
-	NodeCopyId     int64              `json:"NodeCopyId" xml:"NodeCopyId"`
-	NodeStatus     string             `json:"NodeStatus" xml:"NodeStatus"`
-	ReplicaType    string             `json:"ReplicaType" xml:"ReplicaType"`
-	FullCopyId     int64              `json:"FullCopyId" xml:"FullCopyId"`
-	ReadOnlyCopyId int64              `json:"ReadOnlyCopyId" xml:"ReadOnlyCopyId"`
-	LogicalZone    string             `json:"LogicalZone" xml:"LogicalZone"`
-	NodeResource   []NodeResourceItem `json:"NodeResource" xml:"NodeResource"`
+	NodeId         string       `json:"NodeId" xml:"NodeId"`
+	NodeCopyId     int64        `json:"NodeCopyId" xml:"NodeCopyId"`
+	NodeStatus     string       `json:"NodeStatus" xml:"NodeStatus"`
+	ReplicaType    string       `json:"ReplicaType" xml:"ReplicaType"`
+	FullCopyId     int64        `json:"FullCopyId" xml:"FullCopyId"`
+	ReadOnlyCopyId int64        `json:"ReadOnlyCopyId" xml:"ReadOnlyCopyId"`
+	LogicalZone    string       `json:"LogicalZone" xml:"LogicalZone"`
+	NodeResource   NodeResource `json:"NodeResource" xml:"NodeResource"`
 }

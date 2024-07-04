@@ -17,5 +17,7 @@ package oceanbasepro
 
 // NodeResource is a nested struct in oceanbasepro response
 type NodeResource struct {
-	NodeResourceItem []NodeResourceItem `json:"NodeResource" xml:"NodeResource"`
+	Cpu      CpuInDescribeInstanceTopology      `json:"Cpu" xml:"Cpu"`
+	Memory   MemoryInDescribeInstanceTopology   `json:"Memory" xml:"Memory"`
+	DiskSize DiskSizeInDescribeInstanceTopology `json:"DiskSize" xml:"DiskSize"`
 }

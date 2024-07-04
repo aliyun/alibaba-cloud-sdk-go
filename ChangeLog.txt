@@ -1,3 +1,7 @@
+2024-07-04 Version: v1.62.782
+- Generated 2019-09-01 for `OceanBasePro`.
+undefined
+
 2024-07-04 Version: v1.62.781
 - Generated 2014-08-28 for `Ess`.
 - ModifyScalingGroup add ScalingPolicy params.
