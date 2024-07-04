@@ -1,3 +1,8 @@
+2024-07-04 Version: v1.62.783
+- Generated 2021-12-16 for `nis`.
+- Publish Api：GetNisNetworkRanking
+- Publish Api：GetNisNetworkMetrics
+
 2024-07-04 Version: v1.62.782
 - Generated 2019-09-01 for `OceanBasePro`.
 undefined
