@@ -17,6 +17,7 @@ package live
 
 // RecordIndexInfo is a nested struct in live response
 type RecordIndexInfo struct {
+	Format      string  `json:"Format" xml:"Format"`
 	OssObject   string  `json:"OssObject" xml:"OssObject"`
 	DomainName  string  `json:"DomainName" xml:"DomainName"`
 	RecordUrl   string  `json:"RecordUrl" xml:"RecordUrl"`
