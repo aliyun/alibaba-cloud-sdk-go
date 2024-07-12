@@ -17,12 +17,18 @@ package r_kvstore
 
 // Order is a nested struct in r_kvstore response
 type Order struct {
-	OriginalAmount    string                 `json:"OriginalAmount" xml:"OriginalAmount"`
-	HandlingFeeAmount string                 `json:"HandlingFeeAmount" xml:"HandlingFeeAmount"`
-	Currency          string                 `json:"Currency" xml:"Currency"`
-	DiscountAmount    string                 `json:"DiscountAmount" xml:"DiscountAmount"`
-	TradeAmount       string                 `json:"TradeAmount" xml:"TradeAmount"`
-	ShowDiscountInfo  bool                   `json:"ShowDiscountInfo" xml:"ShowDiscountInfo"`
-	RuleIds           RuleIdsInDescribePrice `json:"RuleIds" xml:"RuleIds"`
-	Coupons           Coupons                `json:"Coupons" xml:"Coupons"`
+	OriginalAmount     string                 `json:"OriginalAmount" xml:"OriginalAmount"`
+	HandlingFeeAmount  string                 `json:"HandlingFeeAmount" xml:"HandlingFeeAmount"`
+	Currency           string                 `json:"Currency" xml:"Currency"`
+	DiscountAmount     string                 `json:"DiscountAmount" xml:"DiscountAmount"`
+	TradeAmount        string                 `json:"TradeAmount" xml:"TradeAmount"`
+	ShowDiscountInfo   bool                   `json:"ShowDiscountInfo" xml:"ShowDiscountInfo"`
+	StandDiscountPrice int64                  `json:"StandDiscountPrice" xml:"StandDiscountPrice"`
+	IsContractActivity bool                   `json:"IsContractActivity" xml:"IsContractActivity"`
+	StandPrice         int64                  `json:"StandPrice" xml:"StandPrice"`
+	Code               string                 `json:"Code" xml:"Code"`
+	Message            string                 `json:"Message" xml:"Message"`
+	RuleIds            RuleIdsInDescribePrice `json:"RuleIds" xml:"RuleIds"`
+	DepreciateInfo     DepreciateInfo         `json:"DepreciateInfo" xml:"DepreciateInfo"`
+	Coupons            Coupons                `json:"Coupons" xml:"Coupons"`
 }

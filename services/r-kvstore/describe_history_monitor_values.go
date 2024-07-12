@@ -72,6 +72,7 @@ func (client *Client) DescribeHistoryMonitorValuesWithCallback(request *Describe
 type DescribeHistoryMonitorValuesRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	NodeRole             string           `position:"Query" name:"NodeRole"`
 	StartTime            string           `position:"Query" name:"StartTime"`
 	ReplicatorJobId      string           `position:"Query" name:"ReplicatorJobId"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`

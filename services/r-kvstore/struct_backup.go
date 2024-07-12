@@ -24,11 +24,12 @@ type Backup struct {
 	BackupEndTime             string `json:"BackupEndTime" xml:"BackupEndTime"`
 	BackupDBNames             string `json:"BackupDBNames" xml:"BackupDBNames"`
 	BackupMethod              string `json:"BackupMethod" xml:"BackupMethod"`
+	BackupId                  int64  `json:"BackupId" xml:"BackupId"`
 	BackupType                string `json:"BackupType" xml:"BackupType"`
+	BackupJobID               int64  `json:"BackupJobID" xml:"BackupJobID"`
 	BackupSize                int64  `json:"BackupSize" xml:"BackupSize"`
-	BackupJobID               int    `json:"BackupJobID" xml:"BackupJobID"`
+	RecoverConfigMode         string `json:"RecoverConfigMode" xml:"RecoverConfigMode"`
 	BackupStatus              string `json:"BackupStatus" xml:"BackupStatus"`
 	BackupStartTime           string `json:"BackupStartTime" xml:"BackupStartTime"`
-	BackupId                  int    `json:"BackupId" xml:"BackupId"`
 	BackupDownloadURL         string `json:"BackupDownloadURL" xml:"BackupDownloadURL"`
 }

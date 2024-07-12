@@ -29,6 +29,7 @@ type KVStoreInstance struct {
 	DestroyTime         string                  `json:"DestroyTime" xml:"DestroyTime"`
 	RegionId            string                  `json:"RegionId" xml:"RegionId"`
 	ResourceGroupId     string                  `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	ComputingType       string                  `json:"ComputingType" xml:"ComputingType"`
 	CloudType           string                  `json:"CloudType" xml:"CloudType"`
 	PrivateIp           string                  `json:"PrivateIp" xml:"PrivateIp"`
 	InstanceId          string                  `json:"InstanceId" xml:"InstanceId"`

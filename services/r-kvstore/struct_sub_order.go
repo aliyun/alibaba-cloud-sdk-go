@@ -17,9 +17,17 @@ package r_kvstore
 
 // SubOrder is a nested struct in r_kvstore response
 type SubOrder struct {
-	OriginalAmount string                 `json:"OriginalAmount" xml:"OriginalAmount"`
-	InstanceId     string                 `json:"InstanceId" xml:"InstanceId"`
-	DiscountAmount string                 `json:"DiscountAmount" xml:"DiscountAmount"`
-	TradeAmount    string                 `json:"TradeAmount" xml:"TradeAmount"`
-	RuleIds        RuleIdsInDescribePrice `json:"RuleIds" xml:"RuleIds"`
+	OriginalAmount     string                 `json:"OriginalAmount" xml:"OriginalAmount"`
+	InstanceId         string                 `json:"InstanceId" xml:"InstanceId"`
+	DiscountAmount     string                 `json:"DiscountAmount" xml:"DiscountAmount"`
+	TradeAmount        string                 `json:"TradeAmount" xml:"TradeAmount"`
+	StandDiscountPrice int64                  `json:"StandDiscountPrice" xml:"StandDiscountPrice"`
+	IsContractActivity bool                   `json:"IsContractActivity" xml:"IsContractActivity"`
+	StandPrice         int64                  `json:"StandPrice" xml:"StandPrice"`
+	ContractActivity   bool                   `json:"ContractActivity" xml:"ContractActivity"`
+	RuleIds            RuleIdsInDescribePrice `json:"RuleIds" xml:"RuleIds"`
+	DepreciateInfo     DepreciateInfo         `json:"DepreciateInfo" xml:"DepreciateInfo"`
+	OptionalPromotions OptionalPromotions     `json:"OptionalPromotions" xml:"OptionalPromotions"`
+	ModuleInstance     ModuleInstance         `json:"ModuleInstance" xml:"ModuleInstance"`
+	PromDetailList     PromDetailList         `json:"PromDetailList" xml:"PromDetailList"`
 }

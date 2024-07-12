@@ -21,6 +21,7 @@ type BackupInDescribeClusterBackupList struct {
 	InstanceName              string    `json:"InstanceName" xml:"InstanceName"`
 	BackupDownloadURL         string    `json:"BackupDownloadURL" xml:"BackupDownloadURL"`
 	BackupIntranetDownloadURL string    `json:"BackupIntranetDownloadURL" xml:"BackupIntranetDownloadURL"`
+	RecoverConfigMode         string    `json:"RecoverConfigMode" xml:"RecoverConfigMode"`
 	BackupStartTime           string    `json:"BackupStartTime" xml:"BackupStartTime"`
 	BackupEndTime             string    `json:"BackupEndTime" xml:"BackupEndTime"`
 	BackupSize                string    `json:"BackupSize" xml:"BackupSize"`

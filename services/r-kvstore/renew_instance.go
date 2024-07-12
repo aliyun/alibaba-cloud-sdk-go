@@ -85,6 +85,7 @@ type RenewInstanceRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
+	AutoRenew            requests.Boolean `position:"Query" name:"AutoRenew"`
 	ForceUpgrade         requests.Boolean `position:"Query" name:"ForceUpgrade"`
 }
 

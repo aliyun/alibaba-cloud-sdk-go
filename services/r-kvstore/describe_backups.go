@@ -93,6 +93,9 @@ type DescribeBackupsResponse struct {
 	PageNumber         int                      `json:"PageNumber" xml:"PageNumber"`
 	PageSize           int                      `json:"PageSize" xml:"PageSize"`
 	TotalCount         int                      `json:"TotalCount" xml:"TotalCount"`
+	FullStorageSize    int64                    `json:"FullStorageSize" xml:"FullStorageSize"`
+	LogStorageSize     int64                    `json:"LogStorageSize" xml:"LogStorageSize"`
+	FreeSize           int64                    `json:"FreeSize" xml:"FreeSize"`
 	AccessDeniedDetail AccessDeniedDetail       `json:"AccessDeniedDetail" xml:"AccessDeniedDetail"`
 	Backups            BackupsInDescribeBackups `json:"Backups" xml:"Backups"`
 }

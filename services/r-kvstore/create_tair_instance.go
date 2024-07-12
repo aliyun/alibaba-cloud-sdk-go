@@ -101,10 +101,12 @@ type CreateTairInstanceRequest struct {
 	Storage                requests.Integer         `position:"Query" name:"Storage"`
 	InstanceClass          string                   `position:"Query" name:"InstanceClass"`
 	InstanceType           string                   `position:"Query" name:"InstanceType"`
+	RestoreTime            string                   `position:"Query" name:"RestoreTime"`
 	AutoPay                requests.Boolean         `position:"Query" name:"AutoPay"`
 	ResourceOwnerAccount   string                   `position:"Query" name:"ResourceOwnerAccount"`
 	SrcDBInstanceId        string                   `position:"Query" name:"SrcDBInstanceId"`
 	OwnerAccount           string                   `position:"Query" name:"OwnerAccount"`
+	RecoverConfigMode      string                   `position:"Query" name:"RecoverConfigMode"`
 	GlobalInstanceId       string                   `position:"Query" name:"GlobalInstanceId"`
 	ParamGroupId           string                   `position:"Query" name:"ParamGroupId"`
 	VpcId                  string                   `position:"Query" name:"VpcId"`

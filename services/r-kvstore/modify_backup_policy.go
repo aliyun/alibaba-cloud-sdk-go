@@ -79,6 +79,7 @@ type ModifyBackupPolicyRequest struct {
 	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
 	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
 	PreferredBackupTime   string           `position:"Query" name:"PreferredBackupTime"`
+	BackupRetentionPeriod requests.Integer `position:"Query" name:"BackupRetentionPeriod"`
 	InstanceId            string           `position:"Query" name:"InstanceId"`
 }
 

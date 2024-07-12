@@ -87,11 +87,14 @@ type DescribeClusterBackupListRequest struct {
 // DescribeClusterBackupListResponse is the response struct for api DescribeClusterBackupList
 type DescribeClusterBackupListResponse struct {
 	*responses.BaseResponse
-	RequestId      string          `json:"RequestId" xml:"RequestId"`
-	MaxResults     int             `json:"MaxResults" xml:"MaxResults"`
-	PageNumber     int             `json:"PageNumber" xml:"PageNumber"`
-	PageSize       int             `json:"PageSize" xml:"PageSize"`
-	ClusterBackups []ClusterBackup `json:"ClusterBackups" xml:"ClusterBackups"`
+	RequestId       string          `json:"RequestId" xml:"RequestId"`
+	MaxResults      int             `json:"MaxResults" xml:"MaxResults"`
+	PageNumber      int             `json:"PageNumber" xml:"PageNumber"`
+	PageSize        int             `json:"PageSize" xml:"PageSize"`
+	FullStorageSize int64           `json:"FullStorageSize" xml:"FullStorageSize"`
+	LogStorageSize  int64           `json:"LogStorageSize" xml:"LogStorageSize"`
+	FreeSize        int64           `json:"FreeSize" xml:"FreeSize"`
+	ClusterBackups  []ClusterBackup `json:"ClusterBackups" xml:"ClusterBackups"`
 }
 
 // CreateDescribeClusterBackupListRequest creates a request to invoke DescribeClusterBackupList API

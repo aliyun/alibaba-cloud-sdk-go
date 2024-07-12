@@ -97,6 +97,7 @@ type DescribeEngineVersionResponse struct {
 	IsSSLEnable               string                  `json:"IsSSLEnable" xml:"IsSSLEnable"`
 	IsNewSSLMode              string                  `json:"IsNewSSLMode" xml:"IsNewSSLMode"`
 	IsAutoUpgradeOpen         string                  `json:"IsAutoUpgradeOpen" xml:"IsAutoUpgradeOpen"`
+	IsOpenNGLB                string                  `json:"IsOpenNGLB" xml:"IsOpenNGLB"`
 	DBLatestMinorVersion      DBLatestMinorVersion    `json:"DBLatestMinorVersion" xml:"DBLatestMinorVersion"`
 	ProxyLatestMinorVersion   ProxyLatestMinorVersion `json:"ProxyLatestMinorVersion" xml:"ProxyLatestMinorVersion"`
 }

@@ -75,6 +75,7 @@ type ModifyAccountPasswordRequest struct {
 	AccountName          string           `position:"Query" name:"AccountName"`
 	NewAccountPassword   string           `position:"Query" name:"NewAccountPassword"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
+	SourceBiz            string           `position:"Query" name:"SourceBiz"`
 	OldAccountPassword   string           `position:"Query" name:"OldAccountPassword"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`

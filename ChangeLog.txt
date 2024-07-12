@@ -1,3 +1,7 @@
+2024-07-12 Version: v1.62.788
+- Generated 2015-01-01 for `R-kvstore`.
+- Account management add SourceBiz parameters.
+
 2024-07-11 Version: v1.62.787
 - Generated 2022-12-13 for `PaiRecService`.
 undefined

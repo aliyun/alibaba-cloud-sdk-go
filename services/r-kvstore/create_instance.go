@@ -109,6 +109,7 @@ type CreateInstanceRequest struct {
 	SrcDBInstanceId        string               `position:"Query" name:"SrcDBInstanceId"`
 	OwnerAccount           string               `position:"Query" name:"OwnerAccount"`
 	GlobalInstance         requests.Boolean     `position:"Query" name:"GlobalInstance"`
+	RecoverConfigMode      string               `position:"Query" name:"RecoverConfigMode"`
 	Token                  string               `position:"Query" name:"Token"`
 	GlobalInstanceId       string               `position:"Query" name:"GlobalInstanceId"`
 	ParamGroupId           string               `position:"Query" name:"ParamGroupId"`

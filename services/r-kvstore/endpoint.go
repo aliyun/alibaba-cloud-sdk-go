@@ -47,7 +47,6 @@ func GetEndpointMap() map[string]string {
 			"cn-shanghai-et2-b01":         "r-kvstore.aliyuncs.com",
 			"cn-guangzhou":                "r-kvstore.aliyuncs.com",
 			"cn-hangzhou-finance":         "r-kvstore.aliyuncs.com",
-			"ap-southeast-1":              "r-kvstore.aliyuncs.com",
 			"cn-beijing-nu16-b01":         "r-kvstore.aliyuncs.com",
 			"cn-edge-1":                   "r-kvstore.aliyuncs.com",
 			"cn-fujian":                   "r-kvstore.aliyuncs.com",

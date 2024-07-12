@@ -72,6 +72,7 @@ func (client *Client) ModifyInstanceSpecWithCallback(request *ModifyInstanceSpec
 type ModifyInstanceSpecRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	NodeType             string           `position:"Query" name:"NodeType"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
 	SlaveReadOnlyCount   requests.Integer `position:"Query" name:"SlaveReadOnlyCount"`
 	CouponNo             string           `position:"Query" name:"CouponNo"`

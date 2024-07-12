@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DeleteAccount invokes the r_kvstore.DeleteAccount API synchronously
-func (client *Client) DeleteAccount(request *DeleteAccountRequest) (response *DeleteAccountResponse, err error) {
-	response = CreateDeleteAccountResponse()
+// DeleteParameterGroup invokes the r_kvstore.DeleteParameterGroup API synchronously
+func (client *Client) DeleteParameterGroup(request *DeleteParameterGroupRequest) (response *DeleteParameterGroupResponse, err error) {
+	response = CreateDeleteParameterGroupResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DeleteAccountWithChan invokes the r_kvstore.DeleteAccount API asynchronously
-func (client *Client) DeleteAccountWithChan(request *DeleteAccountRequest) (<-chan *DeleteAccountResponse, <-chan error) {
-	responseChan := make(chan *DeleteAccountResponse, 1)
+// DeleteParameterGroupWithChan invokes the r_kvstore.DeleteParameterGroup API asynchronously
+func (client *Client) DeleteParameterGroupWithChan(request *DeleteParameterGroupRequest) (<-chan *DeleteParameterGroupResponse, <-chan error) {
+	responseChan := make(chan *DeleteParameterGroupResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DeleteAccount(request)
+		response, err := client.DeleteParameterGroup(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) DeleteAccountWithChan(request *DeleteAccountRequest) (<-ch
 	return responseChan, errChan
 }
 
-// DeleteAccountWithCallback invokes the r_kvstore.DeleteAccount API asynchronously
-func (client *Client) DeleteAccountWithCallback(request *DeleteAccountRequest, callback func(response *DeleteAccountResponse, err error)) <-chan int {
+// DeleteParameterGroupWithCallback invokes the r_kvstore.DeleteParameterGroup API asynchronously
+func (client *Client) DeleteParameterGroupWithCallback(request *DeleteParameterGroupRequest, callback func(response *DeleteParameterGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DeleteAccountResponse
+		var response *DeleteParameterGroupResponse
 		var err error
 		defer close(result)
-		response, err = client.DeleteAccount(request)
+		response, err = client.DeleteParameterGroup(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,38 +68,37 @@ func (client *Client) DeleteAccountWithCallback(request *DeleteAccountRequest, c
 	return result
 }
 
-// DeleteAccountRequest is the request struct for api DeleteAccount
-type DeleteAccountRequest struct {
+// DeleteParameterGroupRequest is the request struct for api DeleteParameterGroup
+type DeleteParameterGroupRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	AccountName          string           `position:"Query" name:"AccountName"`
+	ParameterGroupId     string           `position:"Query" name:"ParameterGroupId"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
-	SourceBiz            string           `position:"Query" name:"SourceBiz"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	InstanceId           string           `position:"Query" name:"InstanceId"`
 }
 
-// DeleteAccountResponse is the response struct for api DeleteAccount
-type DeleteAccountResponse struct {
+// DeleteParameterGroupResponse is the response struct for api DeleteParameterGroup
+type DeleteParameterGroupResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	RequestId    string `json:"RequestId" xml:"RequestId"`
+	ParamGroupId string `json:"ParamGroupId" xml:"ParamGroupId"`
 }
 
-// CreateDeleteAccountRequest creates a request to invoke DeleteAccount API
-func CreateDeleteAccountRequest() (request *DeleteAccountRequest) {
-	request = &DeleteAccountRequest{
+// CreateDeleteParameterGroupRequest creates a request to invoke DeleteParameterGroup API
+func CreateDeleteParameterGroupRequest() (request *DeleteParameterGroupRequest) {
+	request = &DeleteParameterGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DeleteAccount", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DeleteParameterGroup", "redisa", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateDeleteAccountResponse creates a response to parse from DeleteAccount response
-func CreateDeleteAccountResponse() (response *DeleteAccountResponse) {
-	response = &DeleteAccountResponse{
+// CreateDeleteParameterGroupResponse creates a response to parse from DeleteParameterGroup response
+func CreateDeleteParameterGroupResponse() (response *DeleteParameterGroupResponse) {
+	response = &DeleteParameterGroupResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

@@ -54,6 +54,7 @@ type KVStoreInstanceInDescribeInstances struct {
 	ZoneId              string                  `json:"ZoneId" xml:"ZoneId"`
 	InstanceStatus      string                  `json:"InstanceStatus" xml:"InstanceStatus"`
 	ProxyCount          int                     `json:"ProxyCount" xml:"ProxyCount"`
+	ComputingType       string                  `json:"ComputingType" xml:"ComputingType"`
 	CloudType           string                  `json:"CloudType" xml:"CloudType"`
 	EditionType         string                  `json:"EditionType" xml:"EditionType"`
 	ReadOnlyCount       string                  `json:"ReadOnlyCount" xml:"ReadOnlyCount"`
