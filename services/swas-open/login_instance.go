@@ -71,9 +71,10 @@ func (client *Client) LoginInstanceWithCallback(request *LoginInstanceRequest, c
 // LoginInstanceRequest is the request struct for api LoginInstance
 type LoginInstanceRequest struct {
 	*requests.RpcRequest
-	Password   string `position:"Query" name:"Password"`
-	InstanceId string `position:"Query" name:"InstanceId"`
-	Username   string `position:"Query" name:"Username"`
+	Password   string           `position:"Query" name:"Password"`
+	InstanceId string           `position:"Query" name:"InstanceId"`
+	Port       requests.Integer `position:"Query" name:"Port"`
+	Username   string           `position:"Query" name:"Username"`
 }
 
 // LoginInstanceResponse is the response struct for api LoginInstance

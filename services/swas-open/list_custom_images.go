@@ -78,7 +78,9 @@ type ListCustomImagesRequest struct {
 	PageNumber       requests.Integer       `position:"Query" name:"PageNumber"`
 	ResourceGroupId  string                 `position:"Query" name:"ResourceGroupId"`
 	PageSize         requests.Integer       `position:"Query" name:"PageSize"`
+	Share            requests.Boolean       `position:"Query" name:"Share"`
 	Tag              *[]ListCustomImagesTag `position:"Query" name:"Tag"  type:"Repeated"`
+	InstanceId       string                 `position:"Query" name:"InstanceId"`
 	ImageIds         string                 `position:"Query" name:"ImageIds"`
 }
 

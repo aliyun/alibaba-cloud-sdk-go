@@ -17,19 +17,23 @@ package swas_open
 
 // CustomImage is a nested struct in swas_open response
 type CustomImage struct {
-	CreationTime       string `json:"CreationTime" xml:"CreationTime"`
-	DataSnapshotName   string `json:"DataSnapshotName" xml:"DataSnapshotName"`
-	SystemSnapshotId   string `json:"SystemSnapshotId" xml:"SystemSnapshotId"`
-	InShare            bool   `json:"InShare" xml:"InShare"`
-	InstanceId         string `json:"InstanceId" xml:"InstanceId"`
-	DataSnapshotId     string `json:"DataSnapshotId" xml:"DataSnapshotId"`
-	RegionId           string `json:"RegionId" xml:"RegionId"`
-	SystemSnapshotName string `json:"SystemSnapshotName" xml:"SystemSnapshotName"`
-	Description        string `json:"Description" xml:"Description"`
-	Name               string `json:"Name" xml:"Name"`
-	ImageId            string `json:"ImageId" xml:"ImageId"`
-	Status             string `json:"Status" xml:"Status"`
-	InstanceName       string `json:"InstanceName" xml:"InstanceName"`
-	ResourceGroupId    string `json:"ResourceGroupId" xml:"ResourceGroupId"`
-	Tags               []Tag  `json:"Tags" xml:"Tags"`
+	CreationTime       string   `json:"CreationTime" xml:"CreationTime"`
+	DataSnapshotName   string   `json:"DataSnapshotName" xml:"DataSnapshotName"`
+	SystemSnapshotId   string   `json:"SystemSnapshotId" xml:"SystemSnapshotId"`
+	InShare            bool     `json:"InShare" xml:"InShare"`
+	InShareUser        bool     `json:"InShareUser" xml:"InShareUser"`
+	InstanceId         string   `json:"InstanceId" xml:"InstanceId"`
+	DataSnapshotId     string   `json:"DataSnapshotId" xml:"DataSnapshotId"`
+	RegionId           string   `json:"RegionId" xml:"RegionId"`
+	SystemSnapshotName string   `json:"SystemSnapshotName" xml:"SystemSnapshotName"`
+	Description        string   `json:"Description" xml:"Description"`
+	Name               string   `json:"Name" xml:"Name"`
+	ImageId            string   `json:"ImageId" xml:"ImageId"`
+	Status             string   `json:"Status" xml:"Status"`
+	InstanceName       string   `json:"InstanceName" xml:"InstanceName"`
+	ResourceGroupId    string   `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	UserId             int64    `json:"UserId" xml:"UserId"`
+	OsType             string   `json:"OsType" xml:"OsType"`
+	CreateInstances    []string `json:"CreateInstances" xml:"CreateInstances"`
+	Tags               []Tag    `json:"Tags" xml:"Tags"`
 }
