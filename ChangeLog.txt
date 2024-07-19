@@ -1,3 +1,7 @@
+2024-07-19 Version: v1.62.792
+- Generated 2019-12-30 for `imageseg`.
+- Update SegmentCloth.
+
 2024-07-18 Version: v1.62.791
 - Generated 20240611 for `AiContent`.
 初始发布
