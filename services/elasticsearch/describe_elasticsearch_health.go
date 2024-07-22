@@ -77,9 +77,9 @@ type DescribeElasticsearchHealthRequest struct {
 // DescribeElasticsearchHealthResponse is the response struct for api DescribeElasticsearchHealth
 type DescribeElasticsearchHealthResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    string `json:"Result" xml:"Result"`
 }
 

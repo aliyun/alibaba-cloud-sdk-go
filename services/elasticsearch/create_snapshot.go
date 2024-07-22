@@ -71,15 +71,16 @@ func (client *Client) CreateSnapshotWithCallback(request *CreateSnapshotRequest,
 // CreateSnapshotRequest is the request struct for api CreateSnapshot
 type CreateSnapshotRequest struct {
 	*requests.RoaRequest
-	InstanceId  string `position:"Path" name:"InstanceId"`
 	ClientToken string `position:"Query" name:"ClientToken"`
+	Body        string `position:"Body" name:"body"`
+	InstanceId  string `position:"Path" name:"InstanceId"`
 }
 
 // CreateSnapshotResponse is the response struct for api CreateSnapshot
 type CreateSnapshotResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    bool   `json:"Result" xml:"Result"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCreateSnapshotRequest creates a request to invoke CreateSnapshot API

@@ -17,15 +17,16 @@ package elasticsearch
 
 // InstanceInListLogstash is a nested struct in elasticsearch response
 type InstanceInListLogstash struct {
-	InstanceId    string        `json:"instanceId" xml:"instanceId"`
-	Description   string        `json:"description" xml:"description"`
-	NodeAmount    int           `json:"nodeAmount" xml:"nodeAmount"`
-	PaymentType   string        `json:"paymentType" xml:"paymentType"`
-	Status        string        `json:"status" xml:"status"`
-	Version       string        `json:"version" xml:"version"`
-	CreatedAt     string        `json:"createdAt" xml:"createdAt"`
-	UpdatedAt     string        `json:"updatedAt" xml:"updatedAt"`
-	NodeSpec      NodeSpec      `json:"nodeSpec" xml:"nodeSpec"`
-	NetworkConfig NetworkConfig `json:"networkConfig" xml:"networkConfig"`
-	Tags          []Tags        `json:"Tags" xml:"Tags"`
+	PaymentType     string                 `json:"paymentType" xml:"paymentType"`
+	NodeAmount      int                    `json:"nodeAmount" xml:"nodeAmount"`
+	Description     string                 `json:"description" xml:"description"`
+	CreatedAt       string                 `json:"createdAt" xml:"createdAt"`
+	Status          string                 `json:"status" xml:"status"`
+	UpdatedAt       string                 `json:"updatedAt" xml:"updatedAt"`
+	InstanceId      string                 `json:"instanceId" xml:"instanceId"`
+	Version         string                 `json:"version" xml:"version"`
+	ResourceGroupId string                 `json:"resourceGroupId" xml:"resourceGroupId"`
+	NodeSpec        NodeSpecInListLogstash `json:"nodeSpec" xml:"nodeSpec"`
+	NetworkConfig   NetworkConfig          `json:"networkConfig" xml:"networkConfig"`
+	Tags            []TagsItem             `json:"Tags" xml:"Tags"`
 }

@@ -17,8 +17,8 @@ package elasticsearch
 
 // ResultInDescribeXpackMonitorConfig is a nested struct in elasticsearch response
 type ResultInDescribeXpackMonitorConfig struct {
-	EsInstanceId string   `json:"esInstanceId" xml:"esInstanceId"`
 	UserName     string   `json:"userName" xml:"userName"`
+	EsInstanceId string   `json:"esInstanceId" xml:"esInstanceId"`
 	Enable       bool     `json:"enable" xml:"enable"`
 	Endpoints    []string `json:"endpoints" xml:"endpoints"`
 	PipelineIds  []string `json:"pipelineIds" xml:"pipelineIds"`

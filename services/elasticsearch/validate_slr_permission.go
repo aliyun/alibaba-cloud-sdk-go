@@ -78,8 +78,8 @@ type ValidateSlrPermissionRequest struct {
 // ValidateSlrPermissionResponse is the response struct for api ValidateSlrPermission
 type ValidateSlrPermissionResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    bool   `json:"Result" xml:"Result"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateValidateSlrPermissionRequest creates a request to invoke ValidateSlrPermission API

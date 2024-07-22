@@ -17,8 +17,8 @@ package elasticsearch
 
 // Dict is a nested struct in elasticsearch response
 type Dict struct {
-	Name       string `json:"name" xml:"name"`
 	FileSize   int64  `json:"fileSize" xml:"fileSize"`
-	Type       string `json:"type" xml:"type"`
 	SourceType string `json:"sourceType" xml:"sourceType"`
+	Name       string `json:"name" xml:"name"`
+	Type       string `json:"type" xml:"type"`
 }

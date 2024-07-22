@@ -73,13 +73,14 @@ type ActivateZonesRequest struct {
 	*requests.RoaRequest
 	InstanceId  string `position:"Path" name:"InstanceId"`
 	ClientToken string `position:"Query" name:"clientToken"`
+	Body        string `position:"Body" name:"body"`
 }
 
 // ActivateZonesResponse is the response struct for api ActivateZones
 type ActivateZonesResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    bool   `json:"Result" xml:"Result"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateActivateZonesRequest creates a request to invoke ActivateZones API

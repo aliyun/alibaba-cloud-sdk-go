@@ -23,10 +23,10 @@ type ExtendConfigsItem struct {
 	GroupId          string         `json:"groupId" xml:"groupId"`
 	SuccessPodsCount string         `json:"successPodsCount" xml:"successPodsCount"`
 	DiskType         string         `json:"DiskType" xml:"DiskType"`
-	InstanceType     string         `json:"instanceType" xml:"instanceType"`
 	UserName         string         `json:"userName" xml:"userName"`
-	Host             string         `json:"host" xml:"host"`
+	InstanceType     string         `json:"instanceType" xml:"instanceType"`
 	KibanaHost       string         `json:"kibanaHost" xml:"kibanaHost"`
+	Host             string         `json:"host" xml:"host"`
 	InstanceId       string         `json:"instanceId" xml:"instanceId"`
 	Protocol         string         `json:"protocol" xml:"protocol"`
 	EnableMonitoring bool           `json:"enableMonitoring" xml:"enableMonitoring"`

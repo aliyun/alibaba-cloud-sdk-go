@@ -17,9 +17,10 @@ package elasticsearch
 
 // WarmNodeConfiguration is a nested struct in elasticsearch response
 type WarmNodeConfiguration struct {
-	Spec           string `json:"spec" xml:"spec"`
 	Amount         int    `json:"amount" xml:"amount"`
-	DiskType       string `json:"diskType" xml:"diskType"`
+	Spec           string `json:"spec" xml:"spec"`
 	Disk           int    `json:"disk" xml:"disk"`
 	DiskEncryption bool   `json:"diskEncryption" xml:"diskEncryption"`
+	DiskType       string `json:"diskType" xml:"diskType"`
+	SpecInfo       string `json:"specInfo" xml:"specInfo"`
 }

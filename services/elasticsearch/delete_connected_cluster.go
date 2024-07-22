@@ -79,8 +79,8 @@ type DeleteConnectedClusterRequest struct {
 // DeleteConnectedClusterResponse is the response struct for api DeleteConnectedCluster
 type DeleteConnectedClusterResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    bool   `json:"Result" xml:"Result"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDeleteConnectedClusterRequest creates a request to invoke DeleteConnectedCluster API

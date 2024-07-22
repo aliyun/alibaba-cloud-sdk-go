@@ -73,13 +73,14 @@ type UpdateInstanceChargeTypeRequest struct {
 	*requests.RoaRequest
 	InstanceId  string `position:"Path" name:"InstanceId"`
 	ClientToken string `position:"Query" name:"clientToken"`
+	Body        string `position:"Body" name:"body"`
 }
 
 // UpdateInstanceChargeTypeResponse is the response struct for api UpdateInstanceChargeType
 type UpdateInstanceChargeTypeResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    bool   `json:"Result" xml:"Result"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateUpdateInstanceChargeTypeRequest creates a request to invoke UpdateInstanceChargeType API

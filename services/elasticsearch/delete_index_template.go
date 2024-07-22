@@ -78,8 +78,8 @@ type DeleteIndexTemplateRequest struct {
 // DeleteIndexTemplateResponse is the response struct for api DeleteIndexTemplate
 type DeleteIndexTemplateResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    bool   `json:"Result" xml:"Result"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDeleteIndexTemplateRequest creates a request to invoke DeleteIndexTemplate API

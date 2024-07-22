@@ -73,6 +73,7 @@ type UntagResourcesRequest struct {
 	*requests.RoaRequest
 	All          requests.Boolean `position:"Query" name:"All"`
 	TagKeys      string           `position:"Query" name:"TagKeys"`
+	Body         string           `position:"Body" name:"body"`
 	ResourceType string           `position:"Query" name:"ResourceType"`
 	ResourceIds  string           `position:"Query" name:"ResourceIds"`
 }
@@ -80,8 +81,8 @@ type UntagResourcesRequest struct {
 // UntagResourcesResponse is the response struct for api UntagResources
 type UntagResourcesResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    bool   `json:"Result" xml:"Result"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateUntagResourcesRequest creates a request to invoke UntagResources API

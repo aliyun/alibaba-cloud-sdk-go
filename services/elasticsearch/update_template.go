@@ -74,13 +74,14 @@ type UpdateTemplateRequest struct {
 	InstanceId   string `position:"Path" name:"InstanceId"`
 	ClientToken  string `position:"Query" name:"ClientToken"`
 	TemplateName string `position:"Path" name:"TemplateName"`
+	Body         string `position:"Body" name:"body"`
 }
 
 // UpdateTemplateResponse is the response struct for api UpdateTemplate
 type UpdateTemplateResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    bool   `json:"Result" xml:"Result"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateUpdateTemplateRequest creates a request to invoke UpdateTemplate API

@@ -17,5 +17,5 @@ package elasticsearch
 
 // SynonymsDictsInDescribeInstance is a nested struct in elasticsearch response
 type SynonymsDictsInDescribeInstance struct {
-	SynonymsDicts []SynonymsDicts `json:"SynonymsDicts" xml:"SynonymsDicts"`
+	SynonymsDictsItem []SynonymsDictsItem `json:"SynonymsDicts" xml:"SynonymsDicts"`
 }

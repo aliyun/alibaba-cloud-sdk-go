@@ -75,13 +75,15 @@ type ShrinkNodeRequest struct {
 	InstanceId   string           `position:"Path" name:"InstanceId"`
 	NodeType     string           `position:"Query" name:"nodeType"`
 	ClientToken  string           `position:"Query" name:"clientToken"`
+	Count        requests.Integer `position:"Query" name:"count"`
+	Body         string           `position:"Body" name:"body"`
 }
 
 // ShrinkNodeResponse is the response struct for api ShrinkNode
 type ShrinkNodeResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    bool   `json:"Result" xml:"Result"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateShrinkNodeRequest creates a request to invoke ShrinkNode API

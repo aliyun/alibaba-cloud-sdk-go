@@ -73,13 +73,15 @@ type UninstallLogstashPluginRequest struct {
 	*requests.RoaRequest
 	InstanceId  string `position:"Path" name:"InstanceId"`
 	ClientToken string `position:"Query" name:"clientToken"`
+	Body        string `position:"Body" name:"body"`
 }
 
 // UninstallLogstashPluginResponse is the response struct for api UninstallLogstashPlugin
 type UninstallLogstashPluginResponse struct {
 	*responses.BaseResponse
-	RequestId string   `json:"RequestId" xml:"RequestId"`
-	Result    []string `json:"Result" xml:"Result"`
+	RequestId string                 `json:"RequestId" xml:"RequestId"`
+	Headers   map[string]interface{} `json:"Headers" xml:"Headers"`
+	Result    []string               `json:"Result" xml:"Result"`
 }
 
 // CreateUninstallLogstashPluginRequest creates a request to invoke UninstallLogstashPlugin API

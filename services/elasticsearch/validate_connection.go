@@ -73,13 +73,14 @@ type ValidateConnectionRequest struct {
 	*requests.RoaRequest
 	InstanceId  string `position:"Path" name:"InstanceId"`
 	ClientToken string `position:"Query" name:"ClientToken"`
+	Body        string `position:"Body" name:"body"`
 }
 
 // ValidateConnectionResponse is the response struct for api ValidateConnection
 type ValidateConnectionResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    bool   `json:"Result" xml:"Result"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateValidateConnectionRequest creates a request to invoke ValidateConnection API

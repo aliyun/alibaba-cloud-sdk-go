@@ -71,15 +71,16 @@ func (client *Client) GetEmonGrafanaDashboardsWithCallback(request *GetEmonGrafa
 // GetEmonGrafanaDashboardsRequest is the request struct for api GetEmonGrafanaDashboards
 type GetEmonGrafanaDashboardsRequest struct {
 	*requests.RoaRequest
+	Body      string `position:"Body" name:"body"`
 	ProjectId string `position:"Path" name:"ProjectId"`
 }
 
 // GetEmonGrafanaDashboardsResponse is the response struct for api GetEmonGrafanaDashboards
 type GetEmonGrafanaDashboardsResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
 }
 

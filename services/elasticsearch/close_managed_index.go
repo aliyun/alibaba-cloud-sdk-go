@@ -79,8 +79,8 @@ type CloseManagedIndexRequest struct {
 // CloseManagedIndexResponse is the response struct for api CloseManagedIndex
 type CloseManagedIndexResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    bool   `json:"Result" xml:"Result"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCloseManagedIndexRequest creates a request to invoke CloseManagedIndex API

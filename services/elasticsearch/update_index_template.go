@@ -73,14 +73,15 @@ type UpdateIndexTemplateRequest struct {
 	*requests.RoaRequest
 	InstanceId    string `position:"Path" name:"InstanceId"`
 	ClientToken   string `position:"Query" name:"ClientToken"`
+	Body          string `position:"Body" name:"body"`
 	IndexTemplate string `position:"Path" name:"IndexTemplate"`
 }
 
 // UpdateIndexTemplateResponse is the response struct for api UpdateIndexTemplate
 type UpdateIndexTemplateResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    string `json:"Result" xml:"Result"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateUpdateIndexTemplateRequest creates a request to invoke UpdateIndexTemplate API

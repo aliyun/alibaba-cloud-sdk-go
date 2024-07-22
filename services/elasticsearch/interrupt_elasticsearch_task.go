@@ -78,9 +78,9 @@ type InterruptElasticsearchTaskRequest struct {
 // InterruptElasticsearchTaskResponse is the response struct for api InterruptElasticsearchTask
 type InterruptElasticsearchTaskResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    bool   `json:"Result" xml:"Result"`
 }
 

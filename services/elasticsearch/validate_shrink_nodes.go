@@ -74,13 +74,15 @@ type ValidateShrinkNodesRequest struct {
 	IgnoreStatus requests.Boolean `position:"Query" name:"ignoreStatus"`
 	InstanceId   string           `position:"Path" name:"InstanceId"`
 	NodeType     string           `position:"Query" name:"nodeType"`
+	Count        requests.Integer `position:"Query" name:"count"`
+	Body         string           `position:"Body" name:"body"`
 }
 
 // ValidateShrinkNodesResponse is the response struct for api ValidateShrinkNodes
 type ValidateShrinkNodesResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    bool   `json:"Result" xml:"Result"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateValidateShrinkNodesRequest creates a request to invoke ValidateShrinkNodes API

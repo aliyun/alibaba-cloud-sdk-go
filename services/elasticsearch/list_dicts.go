@@ -79,9 +79,9 @@ type ListDictsRequest struct {
 // ListDictsResponse is the response struct for api ListDicts
 type ListDictsResponse struct {
 	*responses.BaseResponse
-	RequestId string       `json:"RequestId" xml:"RequestId"`
-	Headers   Headers      `json:"Headers" xml:"Headers"`
-	Result    []ResultItem `json:"Result" xml:"Result"`
+	RequestId string             `json:"RequestId" xml:"RequestId"`
+	Headers   HeadersInListDicts `json:"Headers" xml:"Headers"`
+	Result    []ResultItem       `json:"Result" xml:"Result"`
 }
 
 // CreateListDictsRequest creates a request to invoke ListDicts API

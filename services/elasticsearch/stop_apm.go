@@ -77,7 +77,8 @@ type StopApmRequest struct {
 // StopApmResponse is the response struct for api StopApm
 type StopApmResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"requestId" xml:"requestId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Result    bool   `json:"Result" xml:"Result"`
 }
 
 // CreateStopApmRequest creates a request to invoke StopApm API

@@ -72,6 +72,7 @@ func (client *Client) ListPipelineIdsWithCallback(request *ListPipelineIdsReques
 type ListPipelineIdsRequest struct {
 	*requests.RoaRequest
 	InstanceId string `position:"Path" name:"InstanceId"`
+	Body       string `position:"Body" name:"body"`
 }
 
 // ListPipelineIdsResponse is the response struct for api ListPipelineIds

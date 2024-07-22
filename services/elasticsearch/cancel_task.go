@@ -79,8 +79,8 @@ type CancelTaskRequest struct {
 // CancelTaskResponse is the response struct for api CancelTask
 type CancelTaskResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    bool   `json:"Result" xml:"Result"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCancelTaskRequest creates a request to invoke CancelTask API

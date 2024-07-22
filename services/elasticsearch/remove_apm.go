@@ -77,7 +77,8 @@ type RemoveApmRequest struct {
 // RemoveApmResponse is the response struct for api RemoveApm
 type RemoveApmResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"requestId" xml:"requestId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Result    bool   `json:"Result" xml:"Result"`
 }
 
 // CreateRemoveApmRequest creates a request to invoke RemoveApm API

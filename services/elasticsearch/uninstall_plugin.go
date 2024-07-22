@@ -71,8 +71,10 @@ func (client *Client) UninstallPluginWithCallback(request *UninstallPluginReques
 // UninstallPluginRequest is the request struct for api UninstallPlugin
 type UninstallPluginRequest struct {
 	*requests.RoaRequest
-	InstanceId  string `position:"Path" name:"InstanceId"`
-	ClientToken string `position:"Query" name:"clientToken"`
+	InstanceId  string           `position:"Path" name:"InstanceId"`
+	ClientToken string           `position:"Query" name:"clientToken"`
+	Force       requests.Boolean `position:"Query" name:"force"`
+	Body        string           `position:"Body" name:"body"`
 }
 
 // UninstallPluginResponse is the response struct for api UninstallPlugin

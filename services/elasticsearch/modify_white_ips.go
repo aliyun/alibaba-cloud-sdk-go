@@ -71,18 +71,16 @@ func (client *Client) ModifyWhiteIpsWithCallback(request *ModifyWhiteIpsRequest,
 // ModifyWhiteIpsRequest is the request struct for api ModifyWhiteIps
 type ModifyWhiteIpsRequest struct {
 	*requests.RoaRequest
-	ModifyMode  string `position:"Body" name:"modifyMode"`
 	InstanceId  string `position:"Path" name:"InstanceId"`
-	NodeType    string `position:"Body" name:"nodeType"`
 	ClientToken string `position:"Query" name:"clientToken"`
-	NetworkType string `position:"Body" name:"networkType"`
+	Body        string `position:"Body" name:"body"`
 }
 
 // ModifyWhiteIpsResponse is the response struct for api ModifyWhiteIps
 type ModifyWhiteIpsResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    bool   `json:"Result" xml:"Result"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateModifyWhiteIpsRequest creates a request to invoke ModifyWhiteIps API

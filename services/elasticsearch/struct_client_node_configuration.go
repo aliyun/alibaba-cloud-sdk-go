@@ -21,4 +21,5 @@ type ClientNodeConfiguration struct {
 	Disk     int    `json:"disk" xml:"disk"`
 	Spec     string `json:"spec" xml:"spec"`
 	DiskType string `json:"diskType" xml:"diskType"`
+	SpecInfo string `json:"specInfo" xml:"specInfo"`
 }

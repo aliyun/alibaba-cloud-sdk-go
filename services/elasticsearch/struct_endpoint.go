@@ -17,7 +17,7 @@ package elasticsearch
 
 // Endpoint is a nested struct in elasticsearch response
 type Endpoint struct {
-	Host   string `json:"host" xml:"host"`
-	Port   string `json:"port" xml:"port"`
 	ZoneId string `json:"zoneId" xml:"zoneId"`
+	Port   string `json:"port" xml:"port"`
+	Host   string `json:"host" xml:"host"`
 }

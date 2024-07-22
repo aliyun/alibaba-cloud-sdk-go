@@ -17,7 +17,5 @@ package elasticsearch
 
 // ValidateResult is a nested struct in elasticsearch response
 type ValidateResult struct {
-	ErrorType string `json:"errorType" xml:"errorType"`
-	ErrorCode string `json:"errorCode" xml:"errorCode"`
-	ErrorMsg  string `json:"errorMsg" xml:"errorMsg"`
+	ValidateResultItem []ValidateResultItem `json:"validateResult" xml:"validateResult"`
 }

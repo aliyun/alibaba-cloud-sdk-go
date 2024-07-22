@@ -17,5 +17,5 @@ package elasticsearch
 
 // DictListInDescribeInstance is a nested struct in elasticsearch response
 type DictListInDescribeInstance struct {
-	DictList []DictList `json:"DictList" xml:"DictList"`
+	DictListItem []DictListItem `json:"DictList" xml:"DictList"`
 }

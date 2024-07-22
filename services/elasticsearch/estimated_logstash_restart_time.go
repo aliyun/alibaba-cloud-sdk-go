@@ -73,6 +73,7 @@ type EstimatedLogstashRestartTimeRequest struct {
 	*requests.RoaRequest
 	InstanceId string           `position:"Path" name:"InstanceId"`
 	Force      requests.Boolean `position:"Query" name:"force"`
+	Body       string           `position:"Body" name:"body"`
 }
 
 // EstimatedLogstashRestartTimeResponse is the response struct for api EstimatedLogstashRestartTime

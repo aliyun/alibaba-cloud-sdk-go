@@ -18,6 +18,6 @@ package elasticsearch
 // JvmConfine is a nested struct in elasticsearch response
 type JvmConfine struct {
 	Memory            int      `json:"memory" xml:"memory"`
-	SupportGcs        []string `json:"supportGcs" xml:"supportGcs"`
 	SupportEsVersions []string `json:"supportEsVersions" xml:"supportEsVersions"`
+	SupportGcs        []string `json:"supportGcs" xml:"supportGcs"`
 }

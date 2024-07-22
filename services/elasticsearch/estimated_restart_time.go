@@ -73,6 +73,7 @@ type EstimatedRestartTimeRequest struct {
 	*requests.RoaRequest
 	InstanceId string           `position:"Path" name:"InstanceId"`
 	Force      requests.Boolean `position:"Query" name:"force"`
+	Body       string           `position:"Body" name:"body"`
 }
 
 // EstimatedRestartTimeResponse is the response struct for api EstimatedRestartTime

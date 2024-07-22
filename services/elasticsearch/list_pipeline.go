@@ -80,9 +80,9 @@ type ListPipelineRequest struct {
 // ListPipelineResponse is the response struct for api ListPipeline
 type ListPipelineResponse struct {
 	*responses.BaseResponse
-	RequestId string       `json:"RequestId" xml:"RequestId"`
-	Headers   Headers      `json:"Headers" xml:"Headers"`
-	Result    []ResultItem `json:"Result" xml:"Result"`
+	RequestId string                `json:"RequestId" xml:"RequestId"`
+	Headers   HeadersInListPipeline `json:"Headers" xml:"Headers"`
+	Result    []ResultItem          `json:"Result" xml:"Result"`
 }
 
 // CreateListPipelineRequest creates a request to invoke ListPipeline API

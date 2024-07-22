@@ -74,6 +74,7 @@ type RestartInstanceRequest struct {
 	InstanceId  string           `position:"Path" name:"InstanceId"`
 	ClientToken string           `position:"Query" name:"clientToken"`
 	Force       requests.Boolean `position:"Query" name:"force"`
+	Body        string           `position:"Body" name:"body"`
 }
 
 // RestartInstanceResponse is the response struct for api RestartInstance

@@ -73,13 +73,14 @@ type MigrateToOtherZoneRequest struct {
 	*requests.RoaRequest
 	InstanceId string           `position:"Path" name:"InstanceId"`
 	DryRun     requests.Boolean `position:"Query" name:"dryRun"`
+	Body       string           `position:"Body" name:"body"`
 }
 
 // MigrateToOtherZoneResponse is the response struct for api MigrateToOtherZone
 type MigrateToOtherZoneResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    bool   `json:"Result" xml:"Result"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateMigrateToOtherZoneRequest creates a request to invoke MigrateToOtherZone API

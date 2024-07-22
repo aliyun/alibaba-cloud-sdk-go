@@ -17,5 +17,5 @@ package elasticsearch
 
 // ResultInGetEmonMonitorData is a nested struct in elasticsearch response
 type ResultInGetEmonMonitorData struct {
-	Result []Result `json:"result" xml:"result"`
+	ResultItem []ResultItem `json:"result" xml:"result"`
 }

@@ -73,13 +73,14 @@ type UpdateExtendConfigRequest struct {
 	*requests.RoaRequest
 	InstanceId  string `position:"Path" name:"InstanceId"`
 	ClientToken string `position:"Query" name:"ClientToken"`
+	Body        string `position:"Body" name:"body"`
 }
 
 // UpdateExtendConfigResponse is the response struct for api UpdateExtendConfig
 type UpdateExtendConfigResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    bool   `json:"Result" xml:"Result"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateUpdateExtendConfigRequest creates a request to invoke UpdateExtendConfig API

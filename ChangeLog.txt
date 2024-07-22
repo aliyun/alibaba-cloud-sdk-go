@@ -1,3 +1,7 @@
+2024-07-22 Version: v1.62.794
+- Generated 2017-06-13 for `elasticsearch`.
+- Support kibana Pvl private link operation.
+
 2024-07-19 Version: v1.62.793
 - Generated 2015-01-01 for `R-kvstore`.
 - Account management add SourceBiz parameters.

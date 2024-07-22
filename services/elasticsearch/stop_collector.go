@@ -78,8 +78,8 @@ type StopCollectorRequest struct {
 // StopCollectorResponse is the response struct for api StopCollector
 type StopCollectorResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    bool   `json:"Result" xml:"Result"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateStopCollectorRequest creates a request to invoke StopCollector API

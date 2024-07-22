@@ -77,8 +77,8 @@ type DescribeKibanaSettingsRequest struct {
 // DescribeKibanaSettingsResponse is the response struct for api DescribeKibanaSettings
 type DescribeKibanaSettingsResponse struct {
 	*responses.BaseResponse
-	RequestId string                 `json:"RequestId" xml:"RequestId"`
 	Result    map[string]interface{} `json:"Result" xml:"Result"`
+	RequestId string                 `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDescribeKibanaSettingsRequest creates a request to invoke DescribeKibanaSettings API

@@ -79,8 +79,8 @@ type RolloverDataStreamRequest struct {
 // RolloverDataStreamResponse is the response struct for api RolloverDataStream
 type RolloverDataStreamResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    bool   `json:"Result" xml:"Result"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateRolloverDataStreamRequest creates a request to invoke RolloverDataStream API

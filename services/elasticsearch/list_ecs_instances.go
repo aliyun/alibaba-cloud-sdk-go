@@ -82,9 +82,9 @@ type ListEcsInstancesRequest struct {
 // ListEcsInstancesResponse is the response struct for api ListEcsInstances
 type ListEcsInstancesResponse struct {
 	*responses.BaseResponse
-	RequestId string       `json:"RequestId" xml:"RequestId"`
-	Headers   Headers      `json:"Headers" xml:"Headers"`
-	Result    []ResultItem `json:"Result" xml:"Result"`
+	RequestId string                         `json:"RequestId" xml:"RequestId"`
+	Headers   HeadersInListEcsInstances      `json:"Headers" xml:"Headers"`
+	Result    []ResultItemInListEcsInstances `json:"Result" xml:"Result"`
 }
 
 // CreateListEcsInstancesRequest creates a request to invoke ListEcsInstances API

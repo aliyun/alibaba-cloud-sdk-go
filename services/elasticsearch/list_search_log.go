@@ -83,9 +83,9 @@ type ListSearchLogRequest struct {
 // ListSearchLogResponse is the response struct for api ListSearchLog
 type ListSearchLogResponse struct {
 	*responses.BaseResponse
-	RequestId string       `json:"RequestId" xml:"RequestId"`
-	Headers   Headers      `json:"Headers" xml:"Headers"`
-	Result    []ResultItem `json:"Result" xml:"Result"`
+	RequestId string                 `json:"RequestId" xml:"RequestId"`
+	Headers   HeadersInListSearchLog `json:"Headers" xml:"Headers"`
+	Result    []ResultItem           `json:"Result" xml:"Result"`
 }
 
 // CreateListSearchLogRequest creates a request to invoke ListSearchLog API

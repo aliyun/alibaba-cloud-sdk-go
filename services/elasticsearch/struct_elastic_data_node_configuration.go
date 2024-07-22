@@ -22,4 +22,5 @@ type ElasticDataNodeConfiguration struct {
 	DiskEncryption bool   `json:"diskEncryption" xml:"diskEncryption"`
 	Spec           string `json:"spec" xml:"spec"`
 	DiskType       string `json:"diskType" xml:"diskType"`
+	SpecInfo       string `json:"specInfo" xml:"specInfo"`
 }

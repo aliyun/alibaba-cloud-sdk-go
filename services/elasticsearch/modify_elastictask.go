@@ -72,6 +72,7 @@ func (client *Client) ModifyElastictaskWithCallback(request *ModifyElastictaskRe
 type ModifyElastictaskRequest struct {
 	*requests.RoaRequest
 	InstanceId string `position:"Path" name:"InstanceId"`
+	Body       string `position:"Body" name:"body"`
 }
 
 // ModifyElastictaskResponse is the response struct for api ModifyElastictask

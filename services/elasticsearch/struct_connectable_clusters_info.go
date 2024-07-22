@@ -17,6 +17,6 @@ package elasticsearch
 
 // ConnectableClustersInfo is a nested struct in elasticsearch response
 type ConnectableClustersInfo struct {
-	Instances   string `json:"instances" xml:"instances"`
 	NetworkType string `json:"networkType" xml:"networkType"`
+	Instances   string `json:"instances" xml:"instances"`
 }

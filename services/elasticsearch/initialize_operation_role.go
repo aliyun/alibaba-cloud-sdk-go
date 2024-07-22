@@ -72,13 +72,14 @@ func (client *Client) InitializeOperationRoleWithCallback(request *InitializeOpe
 type InitializeOperationRoleRequest struct {
 	*requests.RoaRequest
 	ClientToken string `position:"Query" name:"ClientToken"`
+	Body        string `position:"Body" name:"body"`
 }
 
 // InitializeOperationRoleResponse is the response struct for api InitializeOperationRole
 type InitializeOperationRoleResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    bool   `json:"Result" xml:"Result"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateInitializeOperationRoleRequest creates a request to invoke InitializeOperationRole API

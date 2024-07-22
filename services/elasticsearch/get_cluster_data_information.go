@@ -71,6 +71,7 @@ func (client *Client) GetClusterDataInformationWithCallback(request *GetClusterD
 // GetClusterDataInformationRequest is the request struct for api GetClusterDataInformation
 type GetClusterDataInformationRequest struct {
 	*requests.RoaRequest
+	Body string `position:"Body" name:"body"`
 }
 
 // GetClusterDataInformationResponse is the response struct for api GetClusterDataInformation

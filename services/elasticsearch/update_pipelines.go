@@ -74,13 +74,14 @@ type UpdatePipelinesRequest struct {
 	InstanceId  string           `position:"Path" name:"InstanceId"`
 	ClientToken string           `position:"Query" name:"clientToken"`
 	Trigger     requests.Boolean `position:"Query" name:"trigger"`
+	Body        string           `position:"Body" name:"body"`
 }
 
 // UpdatePipelinesResponse is the response struct for api UpdatePipelines
 type UpdatePipelinesResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    bool   `json:"Result" xml:"Result"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateUpdatePipelinesRequest creates a request to invoke UpdatePipelines API

@@ -78,8 +78,8 @@ type CancelDeletionRequest struct {
 // CancelDeletionResponse is the response struct for api CancelDeletion
 type CancelDeletionResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    bool   `json:"Result" xml:"Result"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCancelDeletionRequest creates a request to invoke CancelDeletion API

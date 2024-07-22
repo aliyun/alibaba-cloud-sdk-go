@@ -73,7 +73,9 @@ type ListInstanceRequest struct {
 	*requests.RoaRequest
 	Description      string           `position:"Query" name:"description"`
 	InstanceCategory string           `position:"Query" name:"instanceCategory"`
+	InnerapiOwnerId  string           `position:"Query" name:"innerapiOwnerId"`
 	Tags             string           `position:"Query" name:"tags"`
+	ProductType      string           `position:"Query" name:"productType"`
 	ResourceGroupId  string           `position:"Query" name:"resourceGroupId"`
 	InstanceId       string           `position:"Query" name:"instanceId"`
 	Size             requests.Integer `position:"Query" name:"size"`
@@ -87,9 +89,9 @@ type ListInstanceRequest struct {
 // ListInstanceResponse is the response struct for api ListInstance
 type ListInstanceResponse struct {
 	*responses.BaseResponse
-	RequestId string     `json:"RequestId" xml:"RequestId"`
-	Headers   Headers    `json:"Headers" xml:"Headers"`
-	Result    []Instance `json:"Result" xml:"Result"`
+	RequestId string                `json:"RequestId" xml:"RequestId"`
+	Headers   HeadersInListInstance `json:"Headers" xml:"Headers"`
+	Result    []Instance            `json:"Result" xml:"Result"`
 }
 
 // CreateListInstanceRequest creates a request to invoke ListInstance API

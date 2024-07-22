@@ -71,11 +71,13 @@ func (client *Client) TagResourcesWithCallback(request *TagResourcesRequest, cal
 // TagResourcesRequest is the request struct for api TagResources
 type TagResourcesRequest struct {
 	*requests.RoaRequest
+	Body string `position:"Body" name:"body"`
 }
 
 // TagResourcesResponse is the response struct for api TagResources
 type TagResourcesResponse struct {
 	*responses.BaseResponse
+	Result    bool   `json:"Result" xml:"Result"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 

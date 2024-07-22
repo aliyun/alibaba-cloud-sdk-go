@@ -74,15 +74,14 @@ type UpgradeEngineVersionRequest struct {
 	InstanceId  string           `position:"Path" name:"InstanceId"`
 	DryRun      requests.Boolean `position:"Query" name:"dryRun"`
 	ClientToken string           `position:"Query" name:"clientToken"`
-	Type        string           `position:"Body" name:"type"`
-	Version     string           `position:"Body" name:"version"`
+	Body        string           `position:"Body" name:"body"`
 }
 
 // UpgradeEngineVersionResponse is the response struct for api UpgradeEngineVersion
 type UpgradeEngineVersionResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Result    Result `json:"Result" xml:"Result"`
+	RequestId string       `json:"RequestId" xml:"RequestId"`
+	Result    []ResultItem `json:"Result" xml:"Result"`
 }
 
 // CreateUpgradeEngineVersionRequest creates a request to invoke UpgradeEngineVersion API

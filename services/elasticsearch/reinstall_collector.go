@@ -72,14 +72,15 @@ func (client *Client) ReinstallCollectorWithCallback(request *ReinstallCollector
 type ReinstallCollectorRequest struct {
 	*requests.RoaRequest
 	ClientToken string `position:"Query" name:"ClientToken"`
+	Body        string `position:"Body" name:"body"`
 	ResId       string `position:"Path" name:"ResId"`
 }
 
 // ReinstallCollectorResponse is the response struct for api ReinstallCollector
 type ReinstallCollectorResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    bool   `json:"Result" xml:"Result"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateReinstallCollectorRequest creates a request to invoke ReinstallCollector API

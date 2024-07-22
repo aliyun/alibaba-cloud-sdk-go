@@ -82,9 +82,9 @@ type ListCollectorsRequest struct {
 // ListCollectorsResponse is the response struct for api ListCollectors
 type ListCollectorsResponse struct {
 	*responses.BaseResponse
-	RequestId string       `json:"RequestId" xml:"RequestId"`
-	Headers   Headers      `json:"Headers" xml:"Headers"`
-	Result    []ResultItem `json:"Result" xml:"Result"`
+	RequestId string                  `json:"RequestId" xml:"RequestId"`
+	Headers   HeadersInListCollectors `json:"Headers" xml:"Headers"`
+	Result    []ResultItem            `json:"Result" xml:"Result"`
 }
 
 // CreateListCollectorsRequest creates a request to invoke ListCollectors API

@@ -83,9 +83,9 @@ type ListDiagnoseReportIdsRequest struct {
 // ListDiagnoseReportIdsResponse is the response struct for api ListDiagnoseReportIds
 type ListDiagnoseReportIdsResponse struct {
 	*responses.BaseResponse
-	RequestId string   `json:"RequestId" xml:"RequestId"`
-	Result    []string `json:"Result" xml:"Result"`
-	Headers   Headers  `json:"Headers" xml:"Headers"`
+	RequestId string                         `json:"RequestId" xml:"RequestId"`
+	Result    []string                       `json:"Result" xml:"Result"`
+	Headers   HeadersInListDiagnoseReportIds `json:"Headers" xml:"Headers"`
 }
 
 // CreateListDiagnoseReportIdsRequest creates a request to invoke ListDiagnoseReportIds API

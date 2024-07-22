@@ -74,12 +74,14 @@ type RestartLogstashRequest struct {
 	InstanceId  string           `position:"Path" name:"InstanceId"`
 	ClientToken string           `position:"Query" name:"clientToken"`
 	Force       requests.Boolean `position:"Query" name:"force"`
+	Body        string           `position:"Body" name:"body"`
 }
 
 // RestartLogstashResponse is the response struct for api RestartLogstash
 type RestartLogstashResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Result    Result `json:"Result" xml:"Result"`
 }
 
 // CreateRestartLogstashRequest creates a request to invoke RestartLogstash API

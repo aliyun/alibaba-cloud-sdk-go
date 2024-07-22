@@ -79,8 +79,8 @@ type TransferNodeRequest struct {
 // TransferNodeResponse is the response struct for api TransferNode
 type TransferNodeResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    bool   `json:"Result" xml:"Result"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateTransferNodeRequest creates a request to invoke TransferNode API

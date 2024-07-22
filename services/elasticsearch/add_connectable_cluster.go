@@ -73,13 +73,14 @@ type AddConnectableClusterRequest struct {
 	*requests.RoaRequest
 	InstanceId  string `position:"Path" name:"InstanceId"`
 	ClientToken string `position:"Query" name:"clientToken"`
+	Body        string `position:"Body" name:"body"`
 }
 
 // AddConnectableClusterResponse is the response struct for api AddConnectableCluster
 type AddConnectableClusterResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    bool   `json:"Result" xml:"Result"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateAddConnectableClusterRequest creates a request to invoke AddConnectableCluster API

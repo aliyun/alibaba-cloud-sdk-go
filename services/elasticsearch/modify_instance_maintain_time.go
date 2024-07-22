@@ -73,13 +73,14 @@ type ModifyInstanceMaintainTimeRequest struct {
 	*requests.RoaRequest
 	InstanceId  string `position:"Path" name:"InstanceId"`
 	ClientToken string `position:"Query" name:"ClientToken"`
+	Body        string `position:"Body" name:"body"`
 }
 
 // ModifyInstanceMaintainTimeResponse is the response struct for api ModifyInstanceMaintainTime
 type ModifyInstanceMaintainTimeResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    bool   `json:"Result" xml:"Result"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateModifyInstanceMaintainTimeRequest creates a request to invoke ModifyInstanceMaintainTime API

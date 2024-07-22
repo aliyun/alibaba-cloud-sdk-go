@@ -82,10 +82,10 @@ type ListTagResourcesRequest struct {
 // ListTagResourcesResponse is the response struct for api ListTagResources
 type ListTagResourcesResponse struct {
 	*responses.BaseResponse
-	RequestId    string       `json:"RequestId" xml:"RequestId"`
-	PageSize     int          `json:"PageSize" xml:"PageSize"`
-	Headers      Headers      `json:"Headers" xml:"Headers"`
-	TagResources TagResources `json:"TagResources" xml:"TagResources"`
+	PageSize     int                       `json:"PageSize" xml:"PageSize"`
+	RequestId    string                    `json:"RequestId" xml:"RequestId"`
+	Headers      HeadersInListTagResources `json:"Headers" xml:"Headers"`
+	TagResources TagResources              `json:"TagResources" xml:"TagResources"`
 }
 
 // CreateListTagResourcesRequest creates a request to invoke ListTagResources API

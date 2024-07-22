@@ -74,6 +74,8 @@ type UpdateInstanceRequest struct {
 	IgnoreStatus    requests.Boolean `position:"Query" name:"ignoreStatus"`
 	InstanceId      string           `position:"Path" name:"InstanceId"`
 	ClientToken     string           `position:"Query" name:"clientToken"`
+	Force           requests.Boolean `position:"Query" name:"force"`
+	Body            string           `position:"Body" name:"body"`
 	OrderActionType string           `position:"Query" name:"orderActionType"`
 }
 
@@ -81,6 +83,8 @@ type UpdateInstanceRequest struct {
 type UpdateInstanceResponse struct {
 	*responses.BaseResponse
 	RequestId string                 `json:"RequestId" xml:"RequestId"`
+	Code      string                 `json:"Code" xml:"Code"`
+	Message   string                 `json:"Message" xml:"Message"`
 	Result    ResultInUpdateInstance `json:"Result" xml:"Result"`
 }
 

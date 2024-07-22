@@ -72,6 +72,7 @@ func (client *Client) UpdateCollectorWithCallback(request *UpdateCollectorReques
 type UpdateCollectorRequest struct {
 	*requests.RoaRequest
 	ClientToken string `position:"Query" name:"ClientToken"`
+	Body        string `position:"Body" name:"body"`
 	ResId       string `position:"Path" name:"ResId"`
 }
 

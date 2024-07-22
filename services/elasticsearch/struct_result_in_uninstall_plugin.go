@@ -17,5 +17,5 @@ package elasticsearch
 
 // ResultInUninstallPlugin is a nested struct in elasticsearch response
 type ResultInUninstallPlugin struct {
-	Result []string `json:"Result" xml:"Result"`
+	Result []string `json:"result" xml:"result"`
 }

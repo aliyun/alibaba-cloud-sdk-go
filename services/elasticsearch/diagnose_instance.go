@@ -74,6 +74,7 @@ type DiagnoseInstanceRequest struct {
 	InstanceId  string `position:"Path" name:"InstanceId"`
 	ClientToken string `position:"Query" name:"ClientToken"`
 	Lang        string `position:"Query" name:"lang"`
+	Body        string `position:"Body" name:"body"`
 }
 
 // DiagnoseInstanceResponse is the response struct for api DiagnoseInstance

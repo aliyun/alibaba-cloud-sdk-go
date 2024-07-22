@@ -79,8 +79,8 @@ type DeleteDataTaskRequest struct {
 // DeleteDataTaskResponse is the response struct for api DeleteDataTask
 type DeleteDataTaskResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    bool   `json:"Result" xml:"Result"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDeleteDataTaskRequest creates a request to invoke DeleteDataTask API

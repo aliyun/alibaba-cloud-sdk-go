@@ -72,6 +72,7 @@ func (client *Client) InstallUserPluginsWithCallback(request *InstallUserPlugins
 type InstallUserPluginsRequest struct {
 	*requests.RoaRequest
 	InstanceId string `position:"Path" name:"InstanceId"`
+	Body       string `position:"Body" name:"body"`
 }
 
 // InstallUserPluginsResponse is the response struct for api InstallUserPlugins

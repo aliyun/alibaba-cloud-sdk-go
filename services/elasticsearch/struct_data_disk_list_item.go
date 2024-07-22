@@ -17,9 +17,9 @@ package elasticsearch
 
 // DataDiskListItem is a nested struct in elasticsearch response
 type DataDiskListItem struct {
-	DiskType      string   `json:"diskType" xml:"diskType"`
+	ScaleLimit    int      `json:"scaleLimit" xml:"scaleLimit"`
 	MinSize       int      `json:"minSize" xml:"minSize"`
 	MaxSize       int      `json:"maxSize" xml:"maxSize"`
-	ScaleLimit    int      `json:"scaleLimit" xml:"scaleLimit"`
+	DiskType      string   `json:"diskType" xml:"diskType"`
 	ValueLimitSet []string `json:"valueLimitSet" xml:"valueLimitSet"`
 }

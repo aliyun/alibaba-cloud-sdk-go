@@ -78,8 +78,8 @@ type ValidateTransferableNodesRequest struct {
 // ValidateTransferableNodesResponse is the response struct for api ValidateTransferableNodes
 type ValidateTransferableNodesResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    bool   `json:"Result" xml:"Result"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateValidateTransferableNodesRequest creates a request to invoke ValidateTransferableNodes API

@@ -72,6 +72,7 @@ func (client *Client) UpdateSnapshotSettingWithCallback(request *UpdateSnapshotS
 type UpdateSnapshotSettingRequest struct {
 	*requests.RoaRequest
 	InstanceId string `position:"Path" name:"InstanceId"`
+	Body       string `position:"Body" name:"body"`
 }
 
 // UpdateSnapshotSettingResponse is the response struct for api UpdateSnapshotSetting

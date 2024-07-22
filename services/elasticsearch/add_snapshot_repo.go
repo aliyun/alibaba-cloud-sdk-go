@@ -72,13 +72,14 @@ func (client *Client) AddSnapshotRepoWithCallback(request *AddSnapshotRepoReques
 type AddSnapshotRepoRequest struct {
 	*requests.RoaRequest
 	InstanceId string `position:"Path" name:"InstanceId"`
+	Body       string `position:"Body" name:"body"`
 }
 
 // AddSnapshotRepoResponse is the response struct for api AddSnapshotRepo
 type AddSnapshotRepoResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    bool   `json:"Result" xml:"Result"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateAddSnapshotRepoRequest creates a request to invoke AddSnapshotRepo API

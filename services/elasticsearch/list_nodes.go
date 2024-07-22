@@ -83,7 +83,7 @@ type ListNodesRequest struct {
 type ListNodesResponse struct {
 	*responses.BaseResponse
 	RequestId string                  `json:"RequestId" xml:"RequestId"`
-	Headers   Headers                 `json:"Headers" xml:"Headers"`
+	Headers   HeadersInListNodes      `json:"Headers" xml:"Headers"`
 	Result    []ResultItemInListNodes `json:"Result" xml:"Result"`
 }
 

@@ -18,25 +18,32 @@ package elasticsearch
 // Instance is a nested struct in elasticsearch response
 type Instance struct {
 	DedicateMaster               bool                         `json:"dedicateMaster" xml:"dedicateMaster"`
+	VpcInstanceId                string                       `json:"vpcInstanceId" xml:"vpcInstanceId"`
+	ArchType                     string                       `json:"archType" xml:"archType"`
+	PostpaidServiceStatus        string                       `json:"postpaidServiceStatus" xml:"postpaidServiceStatus"`
+	PaymentType                  string                       `json:"paymentType" xml:"paymentType"`
 	ServiceVpc                   bool                         `json:"serviceVpc" xml:"serviceVpc"`
 	UpdatedAt                    string                       `json:"updatedAt" xml:"updatedAt"`
 	NodeAmount                   int                          `json:"nodeAmount" xml:"nodeAmount"`
-	InstanceId                   string                       `json:"instanceId" xml:"instanceId"`
 	Status                       string                       `json:"status" xml:"status"`
+	InstanceId                   string                       `json:"instanceId" xml:"instanceId"`
 	Description                  string                       `json:"description" xml:"description"`
 	AdvancedDedicateMaster       bool                         `json:"advancedDedicateMaster" xml:"advancedDedicateMaster"`
 	IsNewDeployment              string                       `json:"isNewDeployment" xml:"isNewDeployment"`
 	EsVersion                    string                       `json:"esVersion" xml:"esVersion"`
-	PostpaidServiceStatus        string                       `json:"postpaidServiceStatus" xml:"postpaidServiceStatus"`
-	PaymentType                  string                       `json:"paymentType" xml:"paymentType"`
 	ResourceGroupId              string                       `json:"resourceGroupId" xml:"resourceGroupId"`
 	CreatedAt                    string                       `json:"createdAt" xml:"createdAt"`
+	EndTime                      int64                        `json:"endTime" xml:"endTime"`
 	ExtendConfigs                []map[string]interface{}     `json:"extendConfigs" xml:"extendConfigs"`
-	NodeSpec                     NodeSpec                     `json:"nodeSpec" xml:"nodeSpec"`
+	PublicIpWhitelist            []string                     `json:"publicIpWhitelist" xml:"publicIpWhitelist"`
+	KibanaIPWhitelist            []string                     `json:"kibanaIPWhitelist" xml:"kibanaIPWhitelist"`
+	KibanaPrivateIPWhitelist     []string                     `json:"kibanaPrivateIPWhitelist" xml:"kibanaPrivateIPWhitelist"`
+	PrivateNetworkIpWhiteList    []string                     `json:"privateNetworkIpWhiteList" xml:"privateNetworkIpWhiteList"`
+	ElasticDataNodeConfiguration ElasticDataNodeConfiguration `json:"elasticDataNodeConfiguration" xml:"elasticDataNodeConfiguration"`
 	ClientNodeConfiguration      ClientNodeConfiguration      `json:"clientNodeConfiguration" xml:"clientNodeConfiguration"`
-	KibanaConfiguration          KibanaConfiguration          `json:"kibanaConfiguration" xml:"kibanaConfiguration"`
 	NetworkConfig                NetworkConfig                `json:"networkConfig" xml:"networkConfig"`
 	MasterConfiguration          MasterConfiguration          `json:"masterConfiguration" xml:"masterConfiguration"`
-	ElasticDataNodeConfiguration ElasticDataNodeConfiguration `json:"elasticDataNodeConfiguration" xml:"elasticDataNodeConfiguration"`
+	KibanaConfiguration          KibanaConfiguration          `json:"kibanaConfiguration" xml:"kibanaConfiguration"`
+	NodeSpec                     NodeSpecInListInstance       `json:"nodeSpec" xml:"nodeSpec"`
 	Tags                         []Tag                        `json:"tags" xml:"tags"`
 }

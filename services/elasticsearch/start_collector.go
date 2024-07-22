@@ -78,8 +78,8 @@ type StartCollectorRequest struct {
 // StartCollectorResponse is the response struct for api StartCollector
 type StartCollectorResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    bool   `json:"Result" xml:"Result"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateStartCollectorRequest creates a request to invoke StartCollector API

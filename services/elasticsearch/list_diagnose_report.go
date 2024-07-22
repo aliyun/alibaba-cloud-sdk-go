@@ -85,7 +85,7 @@ type ListDiagnoseReportRequest struct {
 type ListDiagnoseReportResponse struct {
 	*responses.BaseResponse
 	RequestId string                           `json:"RequestId" xml:"RequestId"`
-	Headers   Headers                          `json:"Headers" xml:"Headers"`
+	Headers   HeadersInListDiagnoseReport      `json:"Headers" xml:"Headers"`
 	Result    []ResultItemInListDiagnoseReport `json:"Result" xml:"Result"`
 }
 

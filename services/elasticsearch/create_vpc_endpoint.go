@@ -74,6 +74,7 @@ type CreateVpcEndpointRequest struct {
 	InstanceId  string           `position:"Path" name:"InstanceId"`
 	DryRun      requests.Boolean `position:"Query" name:"dryRun"`
 	ClientToken string           `position:"Query" name:"ClientToken"`
+	Body        string           `position:"Body" name:"body"`
 }
 
 // CreateVpcEndpointResponse is the response struct for api CreateVpcEndpoint

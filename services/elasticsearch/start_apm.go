@@ -77,7 +77,8 @@ type StartApmRequest struct {
 // StartApmResponse is the response struct for api StartApm
 type StartApmResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"requestId" xml:"requestId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Result    bool   `json:"Result" xml:"Result"`
 }
 
 // CreateStartApmRequest creates a request to invoke StartApm API

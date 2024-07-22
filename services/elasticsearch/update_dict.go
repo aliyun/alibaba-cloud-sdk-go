@@ -73,6 +73,7 @@ type UpdateDictRequest struct {
 	*requests.RoaRequest
 	InstanceId  string `position:"Path" name:"InstanceId"`
 	ClientToken string `position:"Query" name:"clientToken"`
+	Body        string `position:"Body" name:"body"`
 }
 
 // UpdateDictResponse is the response struct for api UpdateDict

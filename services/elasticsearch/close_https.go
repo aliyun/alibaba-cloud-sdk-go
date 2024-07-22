@@ -78,8 +78,8 @@ type CloseHttpsRequest struct {
 // CloseHttpsResponse is the response struct for api CloseHttps
 type CloseHttpsResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    bool   `json:"Result" xml:"Result"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCloseHttpsRequest creates a request to invoke CloseHttps API

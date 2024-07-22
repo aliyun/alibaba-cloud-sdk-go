@@ -81,9 +81,9 @@ type ListPluginsRequest struct {
 // ListPluginsResponse is the response struct for api ListPlugins
 type ListPluginsResponse struct {
 	*responses.BaseResponse
-	RequestId string       `json:"RequestId" xml:"RequestId"`
-	Headers   Headers      `json:"Headers" xml:"Headers"`
-	Result    []ResultItem `json:"Result" xml:"Result"`
+	RequestId string               `json:"RequestId" xml:"RequestId"`
+	Headers   HeadersInListPlugins `json:"Headers" xml:"Headers"`
+	Result    []ResultItem         `json:"Result" xml:"Result"`
 }
 
 // CreateListPluginsRequest creates a request to invoke ListPlugins API

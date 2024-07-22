@@ -17,10 +17,10 @@ package elasticsearch
 
 // IndicesItem is a nested struct in elasticsearch response
 type IndicesItem struct {
+	IsManaged     bool   `json:"isManaged" xml:"isManaged"`
+	CreateTime    string `json:"createTime" xml:"createTime"`
+	Size          int64  `json:"size" xml:"size"`
+	ManagedStatus string `json:"managedStatus" xml:"managedStatus"`
 	Name          string `json:"name" xml:"name"`
 	Health        string `json:"health" xml:"health"`
-	Size          int64  `json:"size" xml:"size"`
-	CreateTime    string `json:"createTime" xml:"createTime"`
-	IsManaged     bool   `json:"isManaged" xml:"isManaged"`
-	ManagedStatus string `json:"managedStatus" xml:"managedStatus"`
 }

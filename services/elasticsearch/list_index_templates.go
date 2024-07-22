@@ -71,8 +71,10 @@ func (client *Client) ListIndexTemplatesWithCallback(request *ListIndexTemplates
 // ListIndexTemplatesRequest is the request struct for api ListIndexTemplates
 type ListIndexTemplatesRequest struct {
 	*requests.RoaRequest
-	InstanceId    string `position:"Path" name:"InstanceId"`
-	IndexTemplate string `position:"Query" name:"indexTemplate"`
+	InstanceId    string           `position:"Path" name:"InstanceId"`
+	Size          requests.Integer `position:"Query" name:"size"`
+	Page          requests.Integer `position:"Query" name:"page"`
+	IndexTemplate string           `position:"Query" name:"indexTemplate"`
 }
 
 // ListIndexTemplatesResponse is the response struct for api ListIndexTemplates

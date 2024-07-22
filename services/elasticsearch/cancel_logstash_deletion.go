@@ -78,8 +78,8 @@ type CancelLogstashDeletionRequest struct {
 // CancelLogstashDeletionResponse is the response struct for api CancelLogstashDeletion
 type CancelLogstashDeletionResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    bool   `json:"Result" xml:"Result"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCancelLogstashDeletionRequest creates a request to invoke CancelLogstashDeletion API

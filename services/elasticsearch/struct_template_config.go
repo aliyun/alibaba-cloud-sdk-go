@@ -17,6 +17,6 @@ package elasticsearch
 
 // TemplateConfig is a nested struct in elasticsearch response
 type TemplateConfig struct {
-	TemplateName string `json:"templateName" xml:"templateName"`
 	Content      string `json:"content" xml:"content"`
+	TemplateName string `json:"templateName" xml:"templateName"`
 }

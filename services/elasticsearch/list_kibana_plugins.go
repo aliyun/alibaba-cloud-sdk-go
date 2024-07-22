@@ -79,9 +79,9 @@ type ListKibanaPluginsRequest struct {
 // ListKibanaPluginsResponse is the response struct for api ListKibanaPlugins
 type ListKibanaPluginsResponse struct {
 	*responses.BaseResponse
-	RequestId string       `json:"RequestId" xml:"RequestId"`
-	Headers   Headers      `json:"Headers" xml:"Headers"`
-	Result    []PluginItem `json:"Result" xml:"Result"`
+	RequestId string                     `json:"RequestId" xml:"RequestId"`
+	Headers   HeadersInListKibanaPlugins `json:"Headers" xml:"Headers"`
+	Result    []PluginItem               `json:"Result" xml:"Result"`
 }
 
 // CreateListKibanaPluginsRequest creates a request to invoke ListKibanaPlugins API

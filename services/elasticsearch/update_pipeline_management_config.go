@@ -73,13 +73,14 @@ type UpdatePipelineManagementConfigRequest struct {
 	*requests.RoaRequest
 	InstanceId  string `position:"Path" name:"InstanceId"`
 	ClientToken string `position:"Query" name:"clientToken"`
+	Body        string `position:"Body" name:"body"`
 }
 
 // UpdatePipelineManagementConfigResponse is the response struct for api UpdatePipelineManagementConfig
 type UpdatePipelineManagementConfigResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    bool   `json:"Result" xml:"Result"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateUpdatePipelineManagementConfigRequest creates a request to invoke UpdatePipelineManagementConfig API

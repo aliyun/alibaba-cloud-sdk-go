@@ -17,23 +17,23 @@ package elasticsearch
 
 // ResultInRestartInstance is a nested struct in elasticsearch response
 type ResultInRestartInstance struct {
-	CreatedAt           string              `json:"createdAt" xml:"createdAt"`
-	Description         string              `json:"description" xml:"description"`
-	Domain              string              `json:"domain" xml:"domain"`
-	EsVersion           string              `json:"esVersion" xml:"esVersion"`
-	InstanceId          string              `json:"instanceId" xml:"instanceId"`
-	KibanaDomain        string              `json:"kibanaDomain" xml:"kibanaDomain"`
-	KibanaPort          int                 `json:"kibanaPort" xml:"kibanaPort"`
-	NodeAmount          int                 `json:"nodeAmount" xml:"nodeAmount"`
-	PaymentType         string              `json:"paymentType" xml:"paymentType"`
-	PublicDomain        string              `json:"publicDomain" xml:"publicDomain"`
-	PublicPort          int                 `json:"publicPort" xml:"publicPort"`
-	Status              string              `json:"status" xml:"status"`
-	UpdatedAt           string              `json:"updatedAt" xml:"updatedAt"`
-	KibanaConfiguration KibanaConfiguration `json:"kibanaConfiguration" xml:"kibanaConfiguration"`
-	MasterConfiguration MasterConfiguration `json:"masterConfiguration" xml:"masterConfiguration"`
-	NetworkConfig       NetworkConfig       `json:"networkConfig" xml:"networkConfig"`
-	NodeSpec            NodeSpec            `json:"nodeSpec" xml:"nodeSpec"`
-	DictList            []DictListItem      `json:"dictList" xml:"dictList"`
-	SynonymsDicts       []SynonymsDictsItem `json:"synonymsDicts" xml:"synonymsDicts"`
+	NodeAmount          int                       `json:"nodeAmount" xml:"nodeAmount"`
+	PublicDomain        string                    `json:"publicDomain" xml:"publicDomain"`
+	CreatedAt           string                    `json:"createdAt" xml:"createdAt"`
+	Status              string                    `json:"status" xml:"status"`
+	KibanaPort          int                       `json:"kibanaPort" xml:"kibanaPort"`
+	PublicPort          int                       `json:"publicPort" xml:"publicPort"`
+	PaymentType         string                    `json:"paymentType" xml:"paymentType"`
+	Domain              string                    `json:"domain" xml:"domain"`
+	Description         string                    `json:"description" xml:"description"`
+	EsVersion           string                    `json:"esVersion" xml:"esVersion"`
+	KibanaDomain        string                    `json:"kibanaDomain" xml:"kibanaDomain"`
+	UpdatedAt           string                    `json:"updatedAt" xml:"updatedAt"`
+	InstanceId          string                    `json:"instanceId" xml:"instanceId"`
+	KibanaConfiguration KibanaConfiguration       `json:"kibanaConfiguration" xml:"kibanaConfiguration"`
+	MasterConfiguration MasterConfiguration       `json:"masterConfiguration" xml:"masterConfiguration"`
+	NetworkConfig       NetworkConfig             `json:"networkConfig" xml:"networkConfig"`
+	NodeSpec            NodeSpecInRestartInstance `json:"nodeSpec" xml:"nodeSpec"`
+	DictList            []DictListItem            `json:"dictList" xml:"dictList"`
+	SynonymsDicts       []SynonymsDictsItem       `json:"synonymsDicts" xml:"synonymsDicts"`
 }

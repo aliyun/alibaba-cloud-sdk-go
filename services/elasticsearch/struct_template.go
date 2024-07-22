@@ -17,7 +17,7 @@ package elasticsearch
 
 // Template is a nested struct in elasticsearch response
 type Template struct {
-	Settings string `json:"settings" xml:"settings"`
-	Aliases  string `json:"aliases" xml:"aliases"`
-	Mappings string `json:"mappings" xml:"mappings"`
+	Settings map[string]interface{} `json:"settings" xml:"settings"`
+	Aliases  map[string]interface{} `json:"aliases" xml:"aliases"`
+	Mappings map[string]interface{} `json:"mappings" xml:"mappings"`
 }

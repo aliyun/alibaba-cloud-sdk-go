@@ -73,6 +73,7 @@ type UpdateInstanceSettingsRequest struct {
 	*requests.RoaRequest
 	InstanceId  string `position:"Path" name:"InstanceId"`
 	ClientToken string `position:"Query" name:"clientToken"`
+	Body        string `position:"Body" name:"body"`
 }
 
 // UpdateInstanceSettingsResponse is the response struct for api UpdateInstanceSettings

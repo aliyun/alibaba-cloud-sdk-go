@@ -17,5 +17,5 @@ package elasticsearch
 
 // ZoneInfosInDescribeLogstash is a nested struct in elasticsearch response
 type ZoneInfosInDescribeLogstash struct {
-	ZoneInfos []ZoneInfos `json:"zoneInfos" xml:"zoneInfos"`
+	ZoneInfosItem []ZoneInfosItem `json:"zoneInfos" xml:"zoneInfos"`
 }

@@ -73,13 +73,14 @@ type CreateILMPolicyRequest struct {
 	*requests.RoaRequest
 	InstanceId  string `position:"Path" name:"InstanceId"`
 	ClientToken string `position:"Query" name:"ClientToken"`
+	Body        string `position:"Body" name:"body"`
 }
 
 // CreateILMPolicyResponse is the response struct for api CreateILMPolicy
 type CreateILMPolicyResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    string `json:"Result" xml:"Result"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCreateILMPolicyRequest creates a request to invoke CreateILMPolicy API

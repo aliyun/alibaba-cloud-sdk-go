@@ -17,11 +17,11 @@ package elasticsearch
 
 // NodeSpecListItem is a nested struct in elasticsearch response
 type NodeSpecListItem struct {
-	CpuCount      int    `json:"cpuCount" xml:"cpuCount"`
 	MemorySize    int    `json:"memorySize" xml:"memorySize"`
-	Enable        bool   `json:"enable" xml:"enable"`
-	Spec          string `json:"spec" xml:"spec"`
+	CpuCount      int    `json:"cpuCount" xml:"cpuCount"`
 	DiskType      string `json:"diskType" xml:"diskType"`
+	Spec          string `json:"spec" xml:"spec"`
 	Disk          int    `json:"disk" xml:"disk"`
 	SpecGroupType string `json:"specGroupType" xml:"specGroupType"`
+	Enable        bool   `json:"enable" xml:"enable"`
 }

@@ -78,8 +78,8 @@ type ResumeElasticsearchTaskRequest struct {
 // ResumeElasticsearchTaskResponse is the response struct for api ResumeElasticsearchTask
 type ResumeElasticsearchTaskResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    bool   `json:"Result" xml:"Result"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateResumeElasticsearchTaskRequest creates a request to invoke ResumeElasticsearchTask API

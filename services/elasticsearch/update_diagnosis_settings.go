@@ -74,13 +74,14 @@ type UpdateDiagnosisSettingsRequest struct {
 	InstanceId  string `position:"Path" name:"InstanceId"`
 	ClientToken string `position:"Query" name:"ClientToken"`
 	Lang        string `position:"Query" name:"lang"`
+	Body        string `position:"Body" name:"body"`
 }
 
 // UpdateDiagnosisSettingsResponse is the response struct for api UpdateDiagnosisSettings
 type UpdateDiagnosisSettingsResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    bool   `json:"Result" xml:"Result"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateUpdateDiagnosisSettingsRequest creates a request to invoke UpdateDiagnosisSettings API

@@ -73,13 +73,14 @@ type UpdateLogstashChargeTypeRequest struct {
 	*requests.RoaRequest
 	InstanceId  string `position:"Path" name:"InstanceId"`
 	ClientToken string `position:"Query" name:"clientToken"`
+	Body        string `position:"Body" name:"body"`
 }
 
 // UpdateLogstashChargeTypeResponse is the response struct for api UpdateLogstashChargeType
 type UpdateLogstashChargeTypeResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    bool   `json:"Result" xml:"Result"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateUpdateLogstashChargeTypeRequest creates a request to invoke UpdateLogstashChargeType API

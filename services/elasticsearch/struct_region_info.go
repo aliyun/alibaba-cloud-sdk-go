@@ -18,8 +18,8 @@ package elasticsearch
 // RegionInfo is a nested struct in elasticsearch response
 type RegionInfo struct {
 	RegionId        string `json:"regionId" xml:"regionId"`
+	Status          string `json:"status" xml:"status"`
 	RegionEndpoint  string `json:"regionEndpoint" xml:"regionEndpoint"`
 	LocalName       string `json:"localName" xml:"localName"`
 	ConsoleEndpoint string `json:"consoleEndpoint" xml:"consoleEndpoint"`
-	Status          string `json:"status" xml:"status"`
 }

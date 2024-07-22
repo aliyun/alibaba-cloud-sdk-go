@@ -72,15 +72,16 @@ func (client *Client) PostEmonTryAlarmRuleWithCallback(request *PostEmonTryAlarm
 type PostEmonTryAlarmRuleRequest struct {
 	*requests.RoaRequest
 	AlarmGroupId string `position:"Path" name:"AlarmGroupId"`
+	Body         string `position:"Body" name:"body"`
 	ProjectId    string `position:"Path" name:"ProjectId"`
 }
 
 // PostEmonTryAlarmRuleResponse is the response struct for api PostEmonTryAlarmRule
 type PostEmonTryAlarmRuleResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
 }
 

@@ -78,8 +78,8 @@ type DeleteILMPolicyRequest struct {
 // DeleteILMPolicyResponse is the response struct for api DeleteILMPolicy
 type DeleteILMPolicyResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    bool   `json:"Result" xml:"Result"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDeleteILMPolicyRequest creates a request to invoke DeleteILMPolicy API

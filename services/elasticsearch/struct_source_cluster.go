@@ -17,16 +17,10 @@ package elasticsearch
 
 // SourceCluster is a nested struct in elasticsearch response
 type SourceCluster struct {
-	VpcInstancePort int    `json:"vpcInstancePort" xml:"vpcInstancePort"`
-	Type            string `json:"type" xml:"type"`
-	DataSourceType  string `json:"dataSourceType" xml:"dataSourceType"`
-	Endpoint        string `json:"endpoint" xml:"endpoint"`
-	Index           string `json:"index" xml:"index"`
-	Username        string `json:"username" xml:"username"`
-	Password        string `json:"password" xml:"password"`
-	Routing         string `json:"routing" xml:"routing"`
-	VpcInstanceId   string `json:"vpcInstanceId" xml:"vpcInstanceId"`
-	Settings        string `json:"settings" xml:"settings"`
-	Mapping         string `json:"mapping" xml:"mapping"`
-	VpcId           string `json:"vpcId" xml:"vpcId"`
+	Index          string `json:"index" xml:"index"`
+	Settings       string `json:"settings" xml:"settings"`
+	Mapping        string `json:"mapping" xml:"mapping"`
+	Type           string `json:"type" xml:"type"`
+	Routing        string `json:"routing" xml:"routing"`
+	DataSourceType string `json:"dataSourceType" xml:"dataSourceType"`
 }

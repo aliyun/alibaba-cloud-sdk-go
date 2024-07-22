@@ -17,5 +17,5 @@ package elasticsearch
 
 // TagsInDescribeLogstash is a nested struct in elasticsearch response
 type TagsInDescribeLogstash struct {
-	Tags []Tags `json:"tags" xml:"tags"`
+	TagsItem []TagsItem `json:"tags" xml:"tags"`
 }

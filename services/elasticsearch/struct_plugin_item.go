@@ -17,9 +17,9 @@ package elasticsearch
 
 // PluginItem is a nested struct in elasticsearch response
 type PluginItem struct {
-	Name             string `json:"name" xml:"name"`
-	State            string `json:"state" xml:"state"`
-	Source           string `json:"source" xml:"source"`
 	Description      string `json:"description" xml:"description"`
 	SpecificationUrl string `json:"specificationUrl" xml:"specificationUrl"`
+	State            string `json:"state" xml:"state"`
+	Source           string `json:"source" xml:"source"`
+	Name             string `json:"name" xml:"name"`
 }

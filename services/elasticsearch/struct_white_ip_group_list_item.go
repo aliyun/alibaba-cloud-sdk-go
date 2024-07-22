@@ -17,7 +17,7 @@ package elasticsearch
 
 // WhiteIpGroupListItem is a nested struct in elasticsearch response
 type WhiteIpGroupListItem struct {
-	GroupName   string   `json:"groupName" xml:"groupName"`
 	WhiteIpType string   `json:"whiteIpType" xml:"whiteIpType"`
+	GroupName   string   `json:"groupName" xml:"groupName"`
 	Ips         []string `json:"ips" xml:"ips"`
 }

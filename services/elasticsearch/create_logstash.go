@@ -72,13 +72,14 @@ func (client *Client) CreateLogstashWithCallback(request *CreateLogstashRequest,
 type CreateLogstashRequest struct {
 	*requests.RoaRequest
 	ClientToken string `position:"Query" name:"clientToken"`
+	Body        string `position:"Body" name:"body"`
 }
 
 // CreateLogstashResponse is the response struct for api CreateLogstash
 type CreateLogstashResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Result    Result `json:"Result" xml:"Result"`
+	RequestId string                 `json:"RequestId" xml:"RequestId"`
+	Result    ResultInCreateLogstash `json:"Result" xml:"Result"`
 }
 
 // CreateCreateLogstashRequest creates a request to invoke CreateLogstash API

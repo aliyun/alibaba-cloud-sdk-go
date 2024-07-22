@@ -79,8 +79,8 @@ type DeletePipelinesRequest struct {
 // DeletePipelinesResponse is the response struct for api DeletePipelines
 type DeletePipelinesResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    bool   `json:"Result" xml:"Result"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDeletePipelinesRequest creates a request to invoke DeletePipelines API

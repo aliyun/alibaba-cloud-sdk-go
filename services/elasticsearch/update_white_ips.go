@@ -74,6 +74,7 @@ type UpdateWhiteIpsRequest struct {
 	ModifyMode  string `position:"Query" name:"modifyMode"`
 	InstanceId  string `position:"Path" name:"InstanceId"`
 	ClientToken string `position:"Query" name:"clientToken"`
+	Body        string `position:"Body" name:"body"`
 }
 
 // UpdateWhiteIpsResponse is the response struct for api UpdateWhiteIps

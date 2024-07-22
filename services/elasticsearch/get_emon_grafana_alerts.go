@@ -71,15 +71,16 @@ func (client *Client) GetEmonGrafanaAlertsWithCallback(request *GetEmonGrafanaAl
 // GetEmonGrafanaAlertsRequest is the request struct for api GetEmonGrafanaAlerts
 type GetEmonGrafanaAlertsRequest struct {
 	*requests.RoaRequest
+	Body      string `position:"Body" name:"body"`
 	ProjectId string `position:"Path" name:"ProjectId"`
 }
 
 // GetEmonGrafanaAlertsResponse is the response struct for api GetEmonGrafanaAlerts
 type GetEmonGrafanaAlertsResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
 }
 

@@ -78,7 +78,8 @@ type UpdateApmRequest struct {
 // UpdateApmResponse is the response struct for api UpdateApm
 type UpdateApmResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"requestId" xml:"requestId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Result    bool   `json:"Result" xml:"Result"`
 }
 
 // CreateUpdateApmRequest creates a request to invoke UpdateApm API

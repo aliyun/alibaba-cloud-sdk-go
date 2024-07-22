@@ -74,13 +74,14 @@ type CreatePipelinesRequest struct {
 	InstanceId  string           `position:"Path" name:"InstanceId"`
 	ClientToken string           `position:"Query" name:"ClientToken"`
 	Trigger     requests.Boolean `position:"Query" name:"trigger"`
+	Body        string           `position:"Body" name:"body"`
 }
 
 // CreatePipelinesResponse is the response struct for api CreatePipelines
 type CreatePipelinesResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    bool   `json:"Result" xml:"Result"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCreatePipelinesRequest creates a request to invoke CreatePipelines API

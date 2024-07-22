@@ -73,13 +73,14 @@ type UpdateAdvancedSettingRequest struct {
 	*requests.RoaRequest
 	InstanceId  string `position:"Path" name:"InstanceId"`
 	ClientToken string `position:"Query" name:"clientToken"`
+	Body        string `position:"Body" name:"body"`
 }
 
 // UpdateAdvancedSettingResponse is the response struct for api UpdateAdvancedSetting
 type UpdateAdvancedSettingResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    bool   `json:"Result" xml:"Result"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateUpdateAdvancedSettingRequest creates a request to invoke UpdateAdvancedSetting API

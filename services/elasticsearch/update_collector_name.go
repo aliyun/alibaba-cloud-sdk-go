@@ -72,6 +72,7 @@ func (client *Client) UpdateCollectorNameWithCallback(request *UpdateCollectorNa
 type UpdateCollectorNameRequest struct {
 	*requests.RoaRequest
 	ClientToken string `position:"Query" name:"ClientToken"`
+	Body        string `position:"Body" name:"body"`
 	ResId       string `position:"Path" name:"ResId"`
 }
 

@@ -77,8 +77,8 @@ type GetRegionConfigurationRequest struct {
 // GetRegionConfigurationResponse is the response struct for api GetRegionConfiguration
 type GetRegionConfigurationResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Result    Result `json:"Result" xml:"Result"`
+	RequestId string                         `json:"RequestId" xml:"RequestId"`
+	Result    ResultInGetRegionConfiguration `json:"Result" xml:"Result"`
 }
 
 // CreateGetRegionConfigurationRequest creates a request to invoke GetRegionConfiguration API

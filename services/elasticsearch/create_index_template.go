@@ -73,13 +73,14 @@ type CreateIndexTemplateRequest struct {
 	*requests.RoaRequest
 	InstanceId  string `position:"Path" name:"InstanceId"`
 	ClientToken string `position:"Query" name:"ClientToken"`
+	Body        string `position:"Body" name:"body"`
 }
 
 // CreateIndexTemplateResponse is the response struct for api CreateIndexTemplate
 type CreateIndexTemplateResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    string `json:"Result" xml:"Result"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCreateIndexTemplateRequest creates a request to invoke CreateIndexTemplate API

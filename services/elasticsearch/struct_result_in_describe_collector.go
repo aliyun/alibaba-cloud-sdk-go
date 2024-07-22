@@ -17,16 +17,16 @@ package elasticsearch
 
 // ResultInDescribeCollector is a nested struct in elasticsearch response
 type ResultInDescribeCollector struct {
-	GmtCreatedTime string              `json:"gmtCreatedTime" xml:"gmtCreatedTime"`
-	GmtUpdateTime  string              `json:"gmtUpdateTime" xml:"gmtUpdateTime"`
-	Name           string              `json:"name" xml:"name"`
 	ResId          string              `json:"resId" xml:"resId"`
-	ResVersion     string              `json:"resVersion" xml:"resVersion"`
+	GmtUpdateTime  string              `json:"gmtUpdateTime" xml:"gmtUpdateTime"`
+	DryRun         bool                `json:"dryRun" xml:"dryRun"`
+	OwnerId        string              `json:"ownerId" xml:"ownerId"`
 	VpcId          string              `json:"vpcId" xml:"vpcId"`
 	ResType        string              `json:"resType" xml:"resType"`
-	OwnerId        string              `json:"ownerId" xml:"ownerId"`
+	ResVersion     string              `json:"resVersion" xml:"resVersion"`
+	GmtCreatedTime string              `json:"gmtCreatedTime" xml:"gmtCreatedTime"`
 	Status         string              `json:"status" xml:"status"`
-	DryRun         bool                `json:"dryRun" xml:"dryRun"`
+	Name           string              `json:"name" xml:"name"`
 	CollectorPaths []string            `json:"collectorPaths" xml:"collectorPaths"`
 	Configs        []ConfigsItem       `json:"configs" xml:"configs"`
 	ExtendConfigs  []ExtendConfigsItem `json:"extendConfigs" xml:"extendConfigs"`

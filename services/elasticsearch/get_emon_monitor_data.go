@@ -71,17 +71,18 @@ func (client *Client) GetEmonMonitorDataWithCallback(request *GetEmonMonitorData
 // GetEmonMonitorDataRequest is the request struct for api GetEmonMonitorData
 type GetEmonMonitorDataRequest struct {
 	*requests.RoaRequest
+	Body      string `position:"Body" name:"body"`
 	ProjectId string `position:"Path" name:"ProjectId"`
 }
 
 // GetEmonMonitorDataResponse is the response struct for api GetEmonMonitorData
 type GetEmonMonitorDataResponse struct {
 	*responses.BaseResponse
-	RequestId string   `json:"RequestId" xml:"RequestId"`
-	Code      string   `json:"Code" xml:"Code"`
-	Message   string   `json:"Message" xml:"Message"`
-	Success   bool     `json:"Success" xml:"Success"`
-	Result    []Result `json:"Result" xml:"Result"`
+	Code      string       `json:"Code" xml:"Code"`
+	Message   string       `json:"Message" xml:"Message"`
+	RequestId string       `json:"RequestId" xml:"RequestId"`
+	Success   bool         `json:"Success" xml:"Success"`
+	Result    []ResultItem `json:"Result" xml:"Result"`
 }
 
 // CreateGetEmonMonitorDataRequest creates a request to invoke GetEmonMonitorData API

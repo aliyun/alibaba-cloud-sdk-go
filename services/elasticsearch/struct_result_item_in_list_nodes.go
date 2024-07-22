@@ -17,11 +17,11 @@ package elasticsearch
 
 // ResultItemInListNodes is a nested struct in elasticsearch response
 type ResultItemInListNodes struct {
-	EcsInstanceId        string          `json:"ecsInstanceId" xml:"ecsInstanceId"`
-	EcsInstanceName      string          `json:"ecsInstanceName" xml:"ecsInstanceName"`
-	Status               string          `json:"status" xml:"status"`
-	OsType               string          `json:"osType" xml:"osType"`
 	CloudAssistantStatus string          `json:"cloudAssistantStatus" xml:"cloudAssistantStatus"`
+	EcsInstanceName      string          `json:"ecsInstanceName" xml:"ecsInstanceName"`
+	EcsInstanceId        string          `json:"ecsInstanceId" xml:"ecsInstanceId"`
+	OsType               string          `json:"osType" xml:"osType"`
+	Status               string          `json:"status" xml:"status"`
 	AgentStatus          string          `json:"agentStatus" xml:"agentStatus"`
 	Tags                 []TagsItem      `json:"tags" xml:"tags"`
 	IpAddress            []IpAddressItem `json:"ipAddress" xml:"ipAddress"`

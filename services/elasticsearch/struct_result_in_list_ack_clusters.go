@@ -17,5 +17,5 @@ package elasticsearch
 
 // ResultInListAckClusters is a nested struct in elasticsearch response
 type ResultInListAckClusters struct {
-	Result []Result `json:"result" xml:"result"`
+	ResultItem []ResultItem `json:"result" xml:"result"`
 }

@@ -73,6 +73,7 @@ type CreateDataStreamRequest struct {
 	*requests.RoaRequest
 	InstanceId  string `position:"Path" name:"InstanceId"`
 	ClientToken string `position:"Query" name:"ClientToken"`
+	Body        string `position:"Body" name:"body"`
 }
 
 // CreateDataStreamResponse is the response struct for api CreateDataStream

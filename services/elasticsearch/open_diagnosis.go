@@ -79,8 +79,8 @@ type OpenDiagnosisRequest struct {
 // OpenDiagnosisResponse is the response struct for api OpenDiagnosis
 type OpenDiagnosisResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    bool   `json:"Result" xml:"Result"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateOpenDiagnosisRequest creates a request to invoke OpenDiagnosis API

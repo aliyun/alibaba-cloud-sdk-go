@@ -17,11 +17,11 @@ package elasticsearch
 
 // ResultItemInListDiagnoseReport is a nested struct in elasticsearch response
 type ResultItemInListDiagnoseReport struct {
-	ReportId      string              `json:"reportId" xml:"reportId"`
-	InstanceId    string              `json:"instanceId" xml:"instanceId"`
-	State         string              `json:"state" xml:"state"`
 	Trigger       string              `json:"trigger" xml:"trigger"`
-	Health        string              `json:"health" xml:"health"`
 	CreateTime    int64               `json:"createTime" xml:"createTime"`
+	ReportId      string              `json:"reportId" xml:"reportId"`
+	State         string              `json:"state" xml:"state"`
+	InstanceId    string              `json:"instanceId" xml:"instanceId"`
+	Health        string              `json:"health" xml:"health"`
 	DiagnoseItems []DiagnoseItemsItem `json:"diagnoseItems" xml:"diagnoseItems"`
 }

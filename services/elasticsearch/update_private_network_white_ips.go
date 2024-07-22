@@ -74,6 +74,7 @@ type UpdatePrivateNetworkWhiteIpsRequest struct {
 	ModifyMode  string `position:"Query" name:"modifyMode"`
 	InstanceId  string `position:"Path" name:"InstanceId"`
 	ClientToken string `position:"Query" name:"clientToken"`
+	Body        string `position:"Body" name:"body"`
 }
 
 // UpdatePrivateNetworkWhiteIpsResponse is the response struct for api UpdatePrivateNetworkWhiteIps

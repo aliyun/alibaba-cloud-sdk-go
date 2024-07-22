@@ -79,8 +79,8 @@ type DeleteSnapshotRepoRequest struct {
 // DeleteSnapshotRepoResponse is the response struct for api DeleteSnapshotRepo
 type DeleteSnapshotRepoResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    bool   `json:"Result" xml:"Result"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDeleteSnapshotRepoRequest creates a request to invoke DeleteSnapshotRepo API

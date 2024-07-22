@@ -79,8 +79,8 @@ type CloseDiagnosisRequest struct {
 // CloseDiagnosisResponse is the response struct for api CloseDiagnosis
 type CloseDiagnosisResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    bool   `json:"Result" xml:"Result"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCloseDiagnosisRequest creates a request to invoke CloseDiagnosis API

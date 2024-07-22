@@ -78,8 +78,8 @@ type RestartCollectorRequest struct {
 // RestartCollectorResponse is the response struct for api RestartCollector
 type RestartCollectorResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    bool   `json:"Result" xml:"Result"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateRestartCollectorRequest creates a request to invoke RestartCollector API

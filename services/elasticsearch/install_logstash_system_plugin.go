@@ -73,6 +73,7 @@ type InstallLogstashSystemPluginRequest struct {
 	*requests.RoaRequest
 	InstanceId  string `position:"Path" name:"InstanceId"`
 	ClientToken string `position:"Query" name:"clientToken"`
+	Body        string `position:"Body" name:"body"`
 }
 
 // InstallLogstashSystemPluginResponse is the response struct for api InstallLogstashSystemPlugin

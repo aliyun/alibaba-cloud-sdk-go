@@ -72,14 +72,15 @@ func (client *Client) ModifyDeployMachineWithCallback(request *ModifyDeployMachi
 type ModifyDeployMachineRequest struct {
 	*requests.RoaRequest
 	ClientToken string `position:"Query" name:"ClientToken"`
+	Body        string `position:"Body" name:"body"`
 	ResId       string `position:"Path" name:"ResId"`
 }
 
 // ModifyDeployMachineResponse is the response struct for api ModifyDeployMachine
 type ModifyDeployMachineResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    bool   `json:"Result" xml:"Result"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateModifyDeployMachineRequest creates a request to invoke ModifyDeployMachine API

@@ -17,6 +17,6 @@ package elasticsearch
 
 // ZoneInfo is a nested struct in elasticsearch response
 type ZoneInfo struct {
-	ZoneId string `json:"zoneId" xml:"zoneId"`
 	Status string `json:"status" xml:"status"`
+	ZoneId string `json:"zoneId" xml:"zoneId"`
 }

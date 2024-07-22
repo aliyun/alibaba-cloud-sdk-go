@@ -79,8 +79,8 @@ type ListAckClustersRequest struct {
 // ListAckClustersResponse is the response struct for api ListAckClusters
 type ListAckClustersResponse struct {
 	*responses.BaseResponse
-	RequestId string   `json:"RequestId" xml:"RequestId"`
-	Result    []Result `json:"Result" xml:"Result"`
+	RequestId string       `json:"RequestId" xml:"RequestId"`
+	Result    []ResultItem `json:"Result" xml:"Result"`
 }
 
 // CreateListAckClustersRequest creates a request to invoke ListAckClusters API

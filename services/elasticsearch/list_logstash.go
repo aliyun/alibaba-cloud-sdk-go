@@ -78,13 +78,14 @@ type ListLogstashRequest struct {
 	Page            requests.Integer `position:"Query" name:"page"`
 	OwnerId         string           `position:"Query" name:"ownerId"`
 	Version         string           `position:"Query" name:"version"`
+	Tags            string           `position:"Query" name:"tags"`
 }
 
 // ListLogstashResponse is the response struct for api ListLogstash
 type ListLogstashResponse struct {
 	*responses.BaseResponse
 	RequestId string                   `json:"RequestId" xml:"RequestId"`
-	Headers   Headers                  `json:"Headers" xml:"Headers"`
+	Headers   HeadersInListLogstash    `json:"Headers" xml:"Headers"`
 	Result    []InstanceInListLogstash `json:"Result" xml:"Result"`
 }
 

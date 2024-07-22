@@ -17,9 +17,9 @@ package elasticsearch
 
 // MetaInfo is a nested struct in elasticsearch response
 type MetaInfo struct {
-	Settings string   `json:"settings" xml:"settings"`
 	Mapping  string   `json:"mapping" xml:"mapping"`
-	Indices  []string `json:"indices" xml:"indices"`
-	Fields   []string `json:"fields" xml:"fields"`
+	Settings string   `json:"settings" xml:"settings"`
 	TypeName []string `json:"typeName" xml:"typeName"`
+	Fields   []string `json:"fields" xml:"fields"`
+	Indices  []string `json:"indices" xml:"indices"`
 }

@@ -73,13 +73,14 @@ type UpdateXpackMonitorConfigRequest struct {
 	*requests.RoaRequest
 	InstanceId  string `position:"Path" name:"InstanceId"`
 	ClientToken string `position:"Query" name:"ClientToken"`
+	Body        string `position:"Body" name:"body"`
 }
 
 // UpdateXpackMonitorConfigResponse is the response struct for api UpdateXpackMonitorConfig
 type UpdateXpackMonitorConfigResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    bool   `json:"Result" xml:"Result"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateUpdateXpackMonitorConfigRequest creates a request to invoke UpdateXpackMonitorConfig API

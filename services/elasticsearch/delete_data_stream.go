@@ -79,8 +79,8 @@ type DeleteDataStreamRequest struct {
 // DeleteDataStreamResponse is the response struct for api DeleteDataStream
 type DeleteDataStreamResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    bool   `json:"Result" xml:"Result"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDeleteDataStreamRequest creates a request to invoke DeleteDataStream API

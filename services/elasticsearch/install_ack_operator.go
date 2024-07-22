@@ -73,13 +73,14 @@ type InstallAckOperatorRequest struct {
 	*requests.RoaRequest
 	ClientToken string `position:"Query" name:"ClientToken"`
 	ClusterId   string `position:"Path" name:"ClusterId"`
+	Body        string `position:"Body" name:"body"`
 }
 
 // InstallAckOperatorResponse is the response struct for api InstallAckOperator
 type InstallAckOperatorResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    bool   `json:"Result" xml:"Result"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateInstallAckOperatorRequest creates a request to invoke InstallAckOperator API

@@ -17,16 +17,11 @@ package elasticsearch
 
 // SinkCluster is a nested struct in elasticsearch response
 type SinkCluster struct {
-	Type            string `json:"type" xml:"type"`
-	DataSourceType  string `json:"dataSourceType" xml:"dataSourceType"`
-	Endpoint        string `json:"endpoint" xml:"endpoint"`
 	Index           string `json:"index" xml:"index"`
-	Routing         string `json:"routing" xml:"routing"`
-	Username        string `json:"username" xml:"username"`
-	Password        string `json:"password" xml:"password"`
-	VpcInstanceId   string `json:"vpcInstanceId" xml:"vpcInstanceId"`
-	Settings        string `json:"settings" xml:"settings"`
-	Mapping         string `json:"mapping" xml:"mapping"`
-	VpcInstancePort string `json:"vpcInstancePort" xml:"vpcInstancePort"`
+	Type            string `json:"type" xml:"type"`
+	Endpoint        string `json:"endpoint" xml:"endpoint"`
 	VpcId           string `json:"vpcId" xml:"vpcId"`
+	VpcInstancePort string `json:"vpcInstancePort" xml:"vpcInstancePort"`
+	VpcInstanceId   string `json:"vpcInstanceId" xml:"vpcInstanceId"`
+	DataSourceType  string `json:"dataSourceType" xml:"dataSourceType"`
 }

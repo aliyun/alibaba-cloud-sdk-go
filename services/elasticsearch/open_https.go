@@ -78,8 +78,8 @@ type OpenHttpsRequest struct {
 // OpenHttpsResponse is the response struct for api OpenHttps
 type OpenHttpsResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    bool   `json:"Result" xml:"Result"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateOpenHttpsRequest creates a request to invoke OpenHttps API

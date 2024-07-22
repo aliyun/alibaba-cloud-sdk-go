@@ -79,8 +79,8 @@ type DeleteVpcEndpointRequest struct {
 // DeleteVpcEndpointResponse is the response struct for api DeleteVpcEndpoint
 type DeleteVpcEndpointResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    bool   `json:"Result" xml:"Result"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDeleteVpcEndpointRequest creates a request to invoke DeleteVpcEndpoint API

@@ -17,7 +17,7 @@ package elasticsearch
 
 // OssObject is a nested struct in elasticsearch response
 type OssObject struct {
-	BucketName string `json:"bucketName" xml:"bucketName"`
 	Key        string `json:"key" xml:"key"`
+	BucketName string `json:"bucketName" xml:"bucketName"`
 	Etag       string `json:"etag" xml:"etag"`
 }

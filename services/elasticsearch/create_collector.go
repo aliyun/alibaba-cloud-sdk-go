@@ -72,6 +72,7 @@ func (client *Client) CreateCollectorWithCallback(request *CreateCollectorReques
 type CreateCollectorRequest struct {
 	*requests.RoaRequest
 	ClientToken string `position:"Query" name:"clientToken"`
+	Body        string `position:"Body" name:"body"`
 }
 
 // CreateCollectorResponse is the response struct for api CreateCollector

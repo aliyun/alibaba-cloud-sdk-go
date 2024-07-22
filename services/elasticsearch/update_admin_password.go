@@ -73,12 +73,14 @@ type UpdateAdminPasswordRequest struct {
 	*requests.RoaRequest
 	InstanceId  string `position:"Path" name:"InstanceId"`
 	ClientToken string `position:"Query" name:"clientToken"`
+	Body        string `position:"Body" name:"body"`
 }
 
 // UpdateAdminPasswordResponse is the response struct for api UpdateAdminPassword
 type UpdateAdminPasswordResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Result    bool   `json:"Result" xml:"Result"`
 }
 
 // CreateUpdateAdminPasswordRequest creates a request to invoke UpdateAdminPassword API

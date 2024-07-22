@@ -73,13 +73,14 @@ type UpdateReadWritePolicyRequest struct {
 	*requests.RoaRequest
 	InstanceId  string `position:"Path" name:"InstanceId"`
 	ClientToken string `position:"Query" name:"ClientToken"`
+	Body        string `position:"Body" name:"body"`
 }
 
 // UpdateReadWritePolicyResponse is the response struct for api UpdateReadWritePolicy
 type UpdateReadWritePolicyResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    bool   `json:"Result" xml:"Result"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateUpdateReadWritePolicyRequest creates a request to invoke UpdateReadWritePolicy API

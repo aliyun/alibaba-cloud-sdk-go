@@ -17,5 +17,5 @@ package elasticsearch
 
 // ResultInListEcsInstances is a nested struct in elasticsearch response
 type ResultInListEcsInstances struct {
-	ResultItem []ResultItem `json:"Result" xml:"Result"`
+	ResultItem []ResultItemInListEcsInstances `json:"Result" xml:"Result"`
 }

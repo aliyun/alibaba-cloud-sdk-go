@@ -17,21 +17,21 @@ package elasticsearch
 
 // ResultInDescribeLogstash is a nested struct in elasticsearch response
 type ResultInDescribeLogstash struct {
-	InstanceId      string                   `json:"instanceId" xml:"instanceId"`
-	Description     string                   `json:"description" xml:"description"`
-	NodeAmount      int                      `json:"nodeAmount" xml:"nodeAmount"`
-	PaymentType     string                   `json:"paymentType" xml:"paymentType"`
-	Status          string                   `json:"status" xml:"status"`
-	Version         string                   `json:"version" xml:"version"`
-	CreatedAt       string                   `json:"createdAt" xml:"createdAt"`
-	UpdatedAt       string                   `json:"updatedAt" xml:"updatedAt"`
-	VpcInstanceId   string                   `json:"vpcInstanceId" xml:"vpcInstanceId"`
-	Config          map[string]interface{}   `json:"config" xml:"config"`
-	ResourceGroupId string                   `json:"ResourceGroupId" xml:"ResourceGroupId"`
-	ExtendConfigs   []map[string]interface{} `json:"ExtendConfigs" xml:"ExtendConfigs"`
-	NodeSpec        NodeSpec                 `json:"nodeSpec" xml:"nodeSpec"`
-	NetworkConfig   NetworkConfig            `json:"networkConfig" xml:"networkConfig"`
-	EndpointList    []Endpoint               `json:"endpointList" xml:"endpointList"`
-	Tags            []Tags                   `json:"Tags" xml:"Tags"`
-	ZoneInfos       []ZoneInfos              `json:"ZoneInfos" xml:"ZoneInfos"`
+	Config          map[string]interface{}     `json:"config" xml:"config"`
+	PaymentType     string                     `json:"paymentType" xml:"paymentType"`
+	ResourceGroupId string                     `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	NodeAmount      int                        `json:"nodeAmount" xml:"nodeAmount"`
+	Description     string                     `json:"description" xml:"description"`
+	CreatedAt       string                     `json:"createdAt" xml:"createdAt"`
+	Status          string                     `json:"status" xml:"status"`
+	VpcInstanceId   string                     `json:"vpcInstanceId" xml:"vpcInstanceId"`
+	UpdatedAt       string                     `json:"updatedAt" xml:"updatedAt"`
+	Version         string                     `json:"version" xml:"version"`
+	InstanceId      string                     `json:"instanceId" xml:"instanceId"`
+	ExtendConfigs   []map[string]interface{}   `json:"ExtendConfigs" xml:"ExtendConfigs"`
+	NodeSpec        NodeSpecInDescribeLogstash `json:"nodeSpec" xml:"nodeSpec"`
+	NetworkConfig   NetworkConfig              `json:"networkConfig" xml:"networkConfig"`
+	EndpointList    []Endpoint                 `json:"endpointList" xml:"endpointList"`
+	Tags            []TagsItem                 `json:"Tags" xml:"Tags"`
+	ZoneInfos       []ZoneInfosItem            `json:"ZoneInfos" xml:"ZoneInfos"`
 }

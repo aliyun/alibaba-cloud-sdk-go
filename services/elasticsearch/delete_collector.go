@@ -78,8 +78,8 @@ type DeleteCollectorRequest struct {
 // DeleteCollectorResponse is the response struct for api DeleteCollector
 type DeleteCollectorResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    bool   `json:"Result" xml:"Result"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDeleteCollectorRequest creates a request to invoke DeleteCollector API

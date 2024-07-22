@@ -74,13 +74,14 @@ type UpdateILMPolicyRequest struct {
 	InstanceId  string `position:"Path" name:"InstanceId"`
 	ClientToken string `position:"Query" name:"ClientToken"`
 	PolicyName  string `position:"Path" name:"PolicyName"`
+	Body        string `position:"Body" name:"body"`
 }
 
 // UpdateILMPolicyResponse is the response struct for api UpdateILMPolicy
 type UpdateILMPolicyResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    string `json:"Result" xml:"Result"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateUpdateILMPolicyRequest creates a request to invoke UpdateILMPolicy API
