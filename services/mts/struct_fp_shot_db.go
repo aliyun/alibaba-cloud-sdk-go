@@ -20,6 +20,7 @@ type FpShotDB struct {
 	Name        string `json:"Name" xml:"Name"`
 	FpDBId      string `json:"FpDBId" xml:"FpDBId"`
 	State       string `json:"State" xml:"State"`
+	InstanceId  string `json:"InstanceId" xml:"InstanceId"`
 	ModelId     int    `json:"ModelId" xml:"ModelId"`
 	Config      string `json:"Config" xml:"Config"`
 	Status      string `json:"Status" xml:"Status"`

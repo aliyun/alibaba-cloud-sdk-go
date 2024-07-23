@@ -74,6 +74,7 @@ type UpdatePipelineRequest struct {
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	Role                 string           `position:"Query" name:"Role"`
 	State                string           `position:"Query" name:"State"`
+	ExtendConfig         string           `position:"Query" name:"ExtendConfig"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	NotifyConfig         string           `position:"Query" name:"NotifyConfig"`

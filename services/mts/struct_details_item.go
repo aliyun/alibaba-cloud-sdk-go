@@ -17,5 +17,6 @@ package mts
 
 // DetailsItem is a nested struct in mts response
 type DetailsItem struct {
-	Label string `json:"Label" xml:"Label"`
+	Label    string         `json:"Label" xml:"Label"`
+	Contexts []ContextsItem `json:"contexts" xml:"contexts"`
 }

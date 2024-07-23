@@ -71,7 +71,9 @@ func (client *Client) BindInputBucketWithCallback(request *BindInputBucketReques
 // BindInputBucketRequest is the request struct for api BindInputBucket
 type BindInputBucketRequest struct {
 	*requests.RpcRequest
+	Referer              string           `position:"Query" name:"Referer"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DepositorCredentials string           `position:"Query" name:"DepositorCredentials"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`

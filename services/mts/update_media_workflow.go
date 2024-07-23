@@ -77,6 +77,8 @@ type UpdateMediaWorkflowRequest struct {
 	Topology             string           `position:"Query" name:"Topology"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	TriggerMode          string           `position:"Query" name:"TriggerMode"`
+	Name                 string           `position:"Query" name:"Name"`
 }
 
 // UpdateMediaWorkflowResponse is the response struct for api UpdateMediaWorkflow

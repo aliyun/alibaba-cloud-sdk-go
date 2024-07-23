@@ -73,6 +73,7 @@ type QueryTemplateListRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	TemplateIds          string           `position:"Query" name:"TemplateIds"`
+	ForFrontend          requests.Boolean `position:"Query" name:"ForFrontend"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,7 +83,7 @@ type QueryTemplateListRequest struct {
 type QueryTemplateListResponse struct {
 	*responses.BaseResponse
 	RequestId    string                          `json:"RequestId" xml:"RequestId"`
-	NonExistTids NonExistTidsInQueryTemplateList `json:"NonExistTids" xml:"NonExistTids"`
+	NonExistTids NonExistTids                    `json:"NonExistTids" xml:"NonExistTids"`
 	TemplateList TemplateListInQueryTemplateList `json:"TemplateList" xml:"TemplateList"`
 }
 

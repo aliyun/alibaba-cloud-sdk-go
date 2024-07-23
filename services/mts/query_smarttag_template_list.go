@@ -81,8 +81,8 @@ type QuerySmarttagTemplateListRequest struct {
 // QuerySmarttagTemplateListResponse is the response struct for api QuerySmarttagTemplateList
 type QuerySmarttagTemplateListResponse struct {
 	*responses.BaseResponse
-	RequestId string                               `json:"RequestId" xml:"RequestId"`
-	Templates TemplatesInQuerySmarttagTemplateList `json:"Templates" xml:"Templates"`
+	RequestId string    `json:"RequestId" xml:"RequestId"`
+	Templates Templates `json:"Templates" xml:"Templates"`
 }
 
 // CreateQuerySmarttagTemplateListRequest creates a request to invoke QuerySmarttagTemplateList API

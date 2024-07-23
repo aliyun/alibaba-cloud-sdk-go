@@ -82,8 +82,8 @@ type ListCustomPersonsRequest struct {
 // ListCustomPersonsResponse is the response struct for api ListCustomPersons
 type ListCustomPersonsResponse struct {
 	*responses.BaseResponse
-	RequestId  string                        `json:"RequestId" xml:"RequestId"`
-	Categories CategoriesInListCustomPersons `json:"Categories" xml:"Categories"`
+	RequestId  string     `json:"RequestId" xml:"RequestId"`
+	Categories Categories `json:"Categories" xml:"Categories"`
 }
 
 // CreateListCustomPersonsRequest creates a request to invoke ListCustomPersons API

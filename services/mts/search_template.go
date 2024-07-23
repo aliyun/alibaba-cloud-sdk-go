@@ -72,12 +72,15 @@ func (client *Client) SearchTemplateWithCallback(request *SearchTemplateRequest,
 type SearchTemplateRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ForFrontend          requests.Boolean `position:"Query" name:"ForFrontend"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	State                string           `position:"Query" name:"State"`
+	NamePrefix           string           `position:"Query" name:"NamePrefix"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	TemplateId           string           `position:"Query" name:"TemplateId"`
 }
 
 // SearchTemplateResponse is the response struct for api SearchTemplate

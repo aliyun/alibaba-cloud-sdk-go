@@ -17,8 +17,6 @@ package mts
 
 // Timeline is a nested struct in mts response
 type Timeline struct {
-	Duration       string                         `json:"Duration" xml:"Duration"`
-	Start          string                         `json:"Start" xml:"Start"`
-	TimelineConfig TimelineConfig                 `json:"TimelineConfig" xml:"TimelineConfig"`
-	TrackList      TrackListInQueryComplexJobList `json:"TrackList" xml:"TrackList"`
+	Duration string `json:"Duration" xml:"Duration"`
+	Start    string `json:"Start" xml:"Start"`
 }

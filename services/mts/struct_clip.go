@@ -17,22 +17,5 @@ package mts
 
 // Clip is a nested struct in mts response
 type Clip struct {
-	MaxScore      string                       `json:"MaxScore" xml:"MaxScore"`
-	StartTarget   string                       `json:"StartTarget" xml:"StartTarget"`
-	Out           string                       `json:"Out" xml:"Out"`
-	In            string                       `json:"In" xml:"In"`
-	ClipID        string                       `json:"clipID" xml:"clipID"`
-	SourceStrmMap string                       `json:"SourceStrmMap" xml:"SourceStrmMap"`
-	MinScore      string                       `json:"MinScore" xml:"MinScore"`
-	SourceID      string                       `json:"SourceID" xml:"SourceID"`
-	AvgScore      string                       `json:"AvgScore" xml:"AvgScore"`
-	SourceType    string                       `json:"SourceType" xml:"SourceType"`
-	StartTime     string                       `json:"StartTime" xml:"StartTime"`
-	EndTime       string                       `json:"EndTime" xml:"EndTime"`
-	Id            string                       `json:"Id" xml:"Id"`
-	EndTarget     string                       `json:"EndTarget" xml:"EndTarget"`
-	Type          string                       `json:"Type" xml:"Type"`
-	TimeSpan      TimeSpan                     `json:"TimeSpan" xml:"TimeSpan"`
-	ClipsConfig   ClipsConfig                  `json:"ClipsConfig" xml:"ClipsConfig"`
-	Effects       EffectsInQueryComplexJobList `json:"Effects" xml:"Effects"`
+	TimeSpan TimeSpan `json:"TimeSpan" xml:"TimeSpan"`
 }

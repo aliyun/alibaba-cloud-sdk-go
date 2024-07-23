@@ -72,6 +72,7 @@ func (client *Client) QueryJobListWithCallback(request *QueryJobListRequest, cal
 type QueryJobListRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	IncludePipelineInfo  requests.Boolean `position:"Query" name:"IncludePipelineInfo"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -81,9 +82,9 @@ type QueryJobListRequest struct {
 // QueryJobListResponse is the response struct for api QueryJobList
 type QueryJobListResponse struct {
 	*responses.BaseResponse
-	RequestId      string                       `json:"RequestId" xml:"RequestId"`
-	NonExistJobIds NonExistJobIdsInQueryJobList `json:"NonExistJobIds" xml:"NonExistJobIds"`
-	JobList        JobListInQueryJobList        `json:"JobList" xml:"JobList"`
+	RequestId      string                `json:"RequestId" xml:"RequestId"`
+	NonExistJobIds NonExistJobIds        `json:"NonExistJobIds" xml:"NonExistJobIds"`
+	JobList        JobListInQueryJobList `json:"JobList" xml:"JobList"`
 }
 
 // CreateQueryJobListRequest creates a request to invoke QueryJobList API

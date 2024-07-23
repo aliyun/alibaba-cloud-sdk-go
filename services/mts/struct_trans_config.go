@@ -20,7 +20,6 @@ type TransConfig struct {
 	AdjDarMethod            string `json:"AdjDarMethod" xml:"AdjDarMethod"`
 	IsCheckResoFail         string `json:"IsCheckResoFail" xml:"IsCheckResoFail"`
 	IsCheckAudioBitrate     string `json:"IsCheckAudioBitrate" xml:"IsCheckAudioBitrate"`
-	Duration                string `json:"Duration" xml:"Duration"`
 	IsCheckReso             string `json:"IsCheckReso" xml:"IsCheckReso"`
 	IsCheckAudioBitrateFail string `json:"IsCheckAudioBitrateFail" xml:"IsCheckAudioBitrateFail"`
 	IsCheckVideoBitrate     string `json:"IsCheckVideoBitrate" xml:"IsCheckVideoBitrate"`

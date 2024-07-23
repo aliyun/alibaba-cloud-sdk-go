@@ -25,6 +25,7 @@ type FpShotJob struct {
 	TransactionId string       `json:"TransactionId" xml:"TransactionId"`
 	FileId        string       `json:"FileId" xml:"FileId"`
 	UserData      string       `json:"UserData" xml:"UserData"`
+	Duration      int          `json:"Duration" xml:"Duration"`
 	Code          string       `json:"Code" xml:"Code"`
 	PipelineId    string       `json:"PipelineId" xml:"PipelineId"`
 	Id            string       `json:"Id" xml:"Id"`

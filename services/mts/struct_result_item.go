@@ -24,5 +24,5 @@ type ResultItem struct {
 	DataId  string                 `json:"dataId" xml:"dataId"`
 	TaskId  string                 `json:"taskId" xml:"taskId"`
 	Url     string                 `json:"url" xml:"url"`
-	Results []ResultInImAudit      `json:"results" xml:"results"`
+	Results []Result               `json:"results" xml:"results"`
 }

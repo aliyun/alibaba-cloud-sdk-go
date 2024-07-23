@@ -19,5 +19,6 @@ package mts
 type FpShotFile struct {
 	PrimaryKey string    `json:"PrimaryKey" xml:"PrimaryKey"`
 	FileId     string    `json:"FileId" xml:"FileId"`
+	StoreTime  string    `json:"StoreTime" xml:"StoreTime"`
 	InputFile  InputFile `json:"InputFile" xml:"InputFile"`
 }

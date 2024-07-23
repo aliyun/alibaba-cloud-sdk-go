@@ -17,27 +17,19 @@ package mts
 
 // Result is a nested struct in mts response
 type Result struct {
-	Suggestion       string           `json:"suggestion" xml:"suggestion"`
-	Index            int              `json:"Index" xml:"Index"`
-	Score            string           `json:"Score" xml:"Score"`
-	Label            string           `json:"label" xml:"label"`
-	Result           int              `json:"Result" xml:"Result"`
-	Type             string           `json:"Type" xml:"Type"`
-	Message          string           `json:"Message" xml:"Message"`
-	Code             string           `json:"Code" xml:"Code"`
-	Data             string           `json:"Data" xml:"Data"`
-	Rate             string           `json:"rate" xml:"rate"`
-	Scene            string           `json:"Scene" xml:"Scene"`
-	TerrorismResult  TerrorismResult  `json:"TerrorismResult" xml:"TerrorismResult"`
-	AbuseResult      AbuseResult      `json:"AbuseResult" xml:"AbuseResult"`
-	PornResult       PornResult       `json:"PornResult" xml:"PornResult"`
-	LogoResult       LogoResult       `json:"LogoResult" xml:"LogoResult"`
-	SpamResult       SpamResult       `json:"SpamResult" xml:"SpamResult"`
-	AdResult         AdResult         `json:"AdResult" xml:"AdResult"`
-	PoliticsResult   PoliticsResult   `json:"PoliticsResult" xml:"PoliticsResult"`
-	ContrabandResult ContrabandResult `json:"ContrabandResult" xml:"ContrabandResult"`
-	LiveResult       LiveResult       `json:"LiveResult" xml:"LiveResult"`
-	QrcodeResult     QrcodeResult     `json:"QrcodeResult" xml:"QrcodeResult"`
-	ImageSearchShots ImageSearchShots `json:"ImageSearchShots" xml:"ImageSearchShots"`
-	Details          []DetailsItem    `json:"details" xml:"details"`
+	Label           string                `json:"Label" xml:"Label"`
+	Data            string                `json:"Data" xml:"Data"`
+	Suggestion      string                `json:"suggestion" xml:"suggestion"`
+	Rate            string                `json:"rate" xml:"rate"`
+	Scene           string                `json:"Scene" xml:"Scene"`
+	Type            string                `json:"Type" xml:"Type"`
+	QrcodeData      []string              `json:"qrcodeData" xml:"qrcodeData"`
+	OcrData         []string              `json:"ocrData" xml:"ocrData"`
+	QrcodeLocations []QrcodeLocationsItem `json:"qrcodeLocations" xml:"qrcodeLocations"`
+	LogoData        []LogoDataItem        `json:"logoData" xml:"logoData"`
+	HintWordsInfo   []HintWordsInfoItem   `json:"hintWordsInfo" xml:"hintWordsInfo"`
+	Frames          []FramesItem          `json:"frames" xml:"frames"`
+	ProgramCodeData []ProgramCodeDataItem `json:"programCodeData" xml:"programCodeData"`
+	SfaceData       []SfaceDataItem       `json:"sfaceData" xml:"sfaceData"`
+	Details         []DetailsItem         `json:"details" xml:"details"`
 }

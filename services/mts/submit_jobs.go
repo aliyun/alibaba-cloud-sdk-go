@@ -85,8 +85,8 @@ type SubmitJobsRequest struct {
 // SubmitJobsResponse is the response struct for api SubmitJobs
 type SubmitJobsResponse struct {
 	*responses.BaseResponse
-	RequestId     string                    `json:"RequestId" xml:"RequestId"`
-	JobResultList JobResultListInSubmitJobs `json:"JobResultList" xml:"JobResultList"`
+	RequestId     string        `json:"RequestId" xml:"RequestId"`
+	JobResultList JobResultList `json:"JobResultList" xml:"JobResultList"`
 }
 
 // CreateSubmitJobsRequest creates a request to invoke SubmitJobs API

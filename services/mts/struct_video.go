@@ -21,10 +21,8 @@ type Video struct {
 	Fps           string     `json:"Fps" xml:"Fps"`
 	PixFmt        string     `json:"PixFmt" xml:"PixFmt"`
 	ScanMode      string     `json:"ScanMode" xml:"ScanMode"`
-	Index         int        `json:"Index" xml:"Index"`
 	Width         string     `json:"Width" xml:"Width"`
 	ResoPriority  string     `json:"ResoPriority" xml:"ResoPriority"`
-	Result        int        `json:"Result" xml:"Result"`
 	Codec         string     `json:"Codec" xml:"Codec"`
 	Degrain       string     `json:"Degrain" xml:"Degrain"`
 	Pad           string     `json:"Pad" xml:"Pad"`
@@ -33,8 +31,8 @@ type Video struct {
 	Preset        string     `json:"Preset" xml:"Preset"`
 	Qscale        string     `json:"Qscale" xml:"Qscale"`
 	LongShortMode string     `json:"LongShortMode" xml:"LongShortMode"`
-	Code          string     `json:"Code" xml:"Code"`
 	Profile       string     `json:"Profile" xml:"Profile"`
+	Hdr2sdr       string     `json:"Hdr2sdr" xml:"Hdr2sdr"`
 	Bitrate       string     `json:"Bitrate" xml:"Bitrate"`
 	Bufsize       string     `json:"Bufsize" xml:"Bufsize"`
 	Remove        string     `json:"Remove" xml:"Remove"`
@@ -42,4 +40,5 @@ type Video struct {
 	Crf           string     `json:"Crf" xml:"Crf"`
 	Maxrate       string     `json:"Maxrate" xml:"Maxrate"`
 	BitrateBnd    BitrateBnd `json:"BitrateBnd" xml:"BitrateBnd"`
+	NarrowBand    NarrowBand `json:"NarrowBand" xml:"NarrowBand"`
 }

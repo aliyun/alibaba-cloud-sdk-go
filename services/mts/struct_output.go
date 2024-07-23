@@ -29,6 +29,7 @@ type Output struct {
 	WaterMarkConfigUrl     string                   `json:"WaterMarkConfigUrl" xml:"WaterMarkConfigUrl"`
 	Encryption             Encryption               `json:"Encryption" xml:"Encryption"`
 	TransConfig            TransConfig              `json:"TransConfig" xml:"TransConfig"`
+	CopyrightMark          CopyrightMark            `json:"CopyrightMark" xml:"CopyrightMark"`
 	Clip                   Clip                     `json:"Clip" xml:"Clip"`
 	MuxConfig              MuxConfig                `json:"MuxConfig" xml:"MuxConfig"`
 	M3U8NonStandardSupport M3U8NonStandardSupport   `json:"M3U8NonStandardSupport" xml:"M3U8NonStandardSupport"`
@@ -36,8 +37,10 @@ type Output struct {
 	Properties             Properties               `json:"Properties" xml:"Properties"`
 	SubtitleConfig         SubtitleConfig           `json:"SubtitleConfig" xml:"SubtitleConfig"`
 	Container              Container                `json:"Container" xml:"Container"`
+	MultiSpeedInfo         MultiSpeedInfo           `json:"MultiSpeedInfo" xml:"MultiSpeedInfo"`
 	OutputFile             OutputFile               `json:"OutputFile" xml:"OutputFile"`
 	SuperReso              SuperReso                `json:"SuperReso" xml:"SuperReso"`
+	TraceMark              TraceMark                `json:"TraceMark" xml:"TraceMark"`
 	Video                  Video                    `json:"Video" xml:"Video"`
 	DigiWaterMark          DigiWaterMark            `json:"DigiWaterMark" xml:"DigiWaterMark"`
 	MergeList              MergeListInListJob       `json:"MergeList" xml:"MergeList"`

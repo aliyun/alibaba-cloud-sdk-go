@@ -28,4 +28,5 @@ type FpShotImportJob struct {
 	FinishTime     string `json:"FinishTime" xml:"FinishTime"`
 	UserData       string `json:"UserData" xml:"UserData"`
 	Input          string `json:"Input" xml:"Input"`
+	ProcessMessage string `json:"ProcessMessage" xml:"ProcessMessage"`
 }

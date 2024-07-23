@@ -32,5 +32,6 @@ type MediaCensorJob struct {
 	DescCensorResult        DescCensorResult                                 `json:"DescCensorResult" xml:"DescCensorResult"`
 	VideoCensorConfig       VideoCensorConfig                                `json:"VideoCensorConfig" xml:"VideoCensorConfig"`
 	VensorCensorResult      VensorCensorResult                               `json:"VensorCensorResult" xml:"VensorCensorResult"`
+	AudioCensorResult       AudioCensorResult                                `json:"AudioCensorResult" xml:"AudioCensorResult"`
 	CoverImageCensorResults CoverImageCensorResultsInQueryMediaCensorJobList `json:"CoverImageCensorResults" xml:"CoverImageCensorResults"`
 }

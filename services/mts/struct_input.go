@@ -24,6 +24,5 @@ type Input struct {
 	Object    string    `json:"Object" xml:"Object"`
 	Location  string    `json:"Location" xml:"Location"`
 	RoleArn   string    `json:"RoleArn" xml:"RoleArn"`
-	Url       string    `json:"Url" xml:"Url"`
 	InputFile InputFile `json:"InputFile" xml:"InputFile"`
 }

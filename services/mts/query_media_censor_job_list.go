@@ -74,7 +74,6 @@ type QueryMediaCensorJobListRequest struct {
 	ResourceOwnerId            requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	NextPageToken              string           `position:"Query" name:"NextPageToken"`
 	StartOfJobCreatedTimeRange string           `position:"Query" name:"StartOfJobCreatedTimeRange"`
-	JobId                      string           `position:"Query" name:"JobId"`
 	State                      string           `position:"Query" name:"State"`
 	EndOfJobCreatedTimeRange   string           `position:"Query" name:"EndOfJobCreatedTimeRange"`
 	ResourceOwnerAccount       string           `position:"Query" name:"ResourceOwnerAccount"`
@@ -82,6 +81,7 @@ type QueryMediaCensorJobListRequest struct {
 	MaximumPageSize            requests.Integer `position:"Query" name:"MaximumPageSize"`
 	OwnerId                    requests.Integer `position:"Query" name:"OwnerId"`
 	PipelineId                 string           `position:"Query" name:"PipelineId"`
+	JobIds                     string           `position:"Query" name:"JobIds"`
 }
 
 // QueryMediaCensorJobListResponse is the response struct for api QueryMediaCensorJobList

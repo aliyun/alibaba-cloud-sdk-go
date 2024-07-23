@@ -81,6 +81,7 @@ type SubmitSmarttagJobRequest struct {
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	Params               string           `position:"Query" name:"Params"`
 	TemplateId           string           `position:"Query" name:"TemplateId"`
+	Priority             string           `position:"Query" name:"Priority"`
 	PipelineId           string           `position:"Query" name:"PipelineId"`
 	ContentType          string           `position:"Query" name:"ContentType"`
 	Input                string           `position:"Query" name:"Input"`

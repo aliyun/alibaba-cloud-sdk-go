@@ -74,6 +74,7 @@ type SubmitFpFileDeleteJobRequest struct {
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	FpDBId               string           `position:"Query" name:"FpDBId"`
 	UserData             string           `position:"Query" name:"UserData"`
+	PrimaryKeys          string           `position:"Query" name:"PrimaryKeys"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`

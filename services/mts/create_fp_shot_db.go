@@ -77,6 +77,7 @@ type CreateFpShotDBRequest struct {
 	ModelId              requests.Integer `position:"Query" name:"ModelId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
 	Name                 string           `position:"Query" name:"Name"`
 	Config               string           `position:"Query" name:"Config"`
 }

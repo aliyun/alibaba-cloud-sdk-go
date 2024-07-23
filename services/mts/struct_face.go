@@ -17,12 +17,6 @@ package mts
 
 // Face is a nested struct in mts response
 type Face struct {
-	Name        string                   `json:"Name" xml:"Name"`
-	Score       string                   `json:"Score" xml:"Score"`
-	Time        string                   `json:"Time" xml:"Time"`
-	ImageUrl    string                   `json:"ImageUrl" xml:"ImageUrl"`
-	ImageId     string                   `json:"ImageId" xml:"ImageId"`
-	Target      string                   `json:"Target" xml:"Target"`
-	FaceId      string                   `json:"FaceId" xml:"FaceId"`
-	Celebrities CelebritiesInQueryMcuJob `json:"Celebrities" xml:"Celebrities"`
+	ImageUrl string `json:"ImageUrl" xml:"ImageUrl"`
+	FaceId   string `json:"FaceId" xml:"FaceId"`
 }

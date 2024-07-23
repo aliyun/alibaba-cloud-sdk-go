@@ -74,6 +74,7 @@ type AddPipelineRequest struct {
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	Role                 string           `position:"Query" name:"Role"`
 	Speed                string           `position:"Query" name:"Speed"`
+	ExtendConfig         string           `position:"Query" name:"ExtendConfig"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	NotifyConfig         string           `position:"Query" name:"NotifyConfig"`

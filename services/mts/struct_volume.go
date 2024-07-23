@@ -17,6 +17,10 @@ package mts
 
 // Volume is a nested struct in mts response
 type Volume struct {
-	Level  string `json:"Level" xml:"Level"`
-	Method string `json:"Method" xml:"Method"`
+	PeakLevel                string `json:"PeakLevel" xml:"PeakLevel"`
+	IntegratedLoudnessTarget string `json:"IntegratedLoudnessTarget" xml:"IntegratedLoudnessTarget"`
+	LoudnessRangeTarget      string `json:"LoudnessRangeTarget" xml:"LoudnessRangeTarget"`
+	TruePeak                 string `json:"TruePeak" xml:"TruePeak"`
+	Level                    string `json:"Level" xml:"Level"`
+	Method                   string `json:"Method" xml:"Method"`
 }

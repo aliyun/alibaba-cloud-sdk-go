@@ -74,9 +74,11 @@ type ListFpShotFilesRequest struct {
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	FpDBId               string           `position:"Query" name:"FpDBId"`
 	NextPageToken        string           `position:"Query" name:"NextPageToken"`
+	StartTime            string           `position:"Query" name:"StartTime"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	EndTime              string           `position:"Query" name:"EndTime"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 

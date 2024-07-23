@@ -81,8 +81,10 @@ type AddSmarttagTemplateRequest struct {
 	IsDefault              requests.Boolean `position:"Query" name:"IsDefault"`
 	FaceCategoryIds        string           `position:"Query" name:"FaceCategoryIds"`
 	KeywordConfig          string           `position:"Query" name:"KeywordConfig"`
+	LandmarkGroupIds       string           `position:"Query" name:"LandmarkGroupIds"`
 	ResourceOwnerAccount   string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount           string           `position:"Query" name:"OwnerAccount"`
+	ObjectGroupIds         string           `position:"Query" name:"ObjectGroupIds"`
 	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
 	AnalyseTypes           string           `position:"Query" name:"AnalyseTypes"`
 	LabelType              string           `position:"Query" name:"LabelType"`

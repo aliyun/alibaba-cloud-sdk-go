@@ -17,13 +17,14 @@ package mts
 
 // SnapshotConfig is a nested struct in mts response
 type SnapshotConfig struct {
-	Height         string         `json:"Height" xml:"Height"`
-	Time           string         `json:"Time" xml:"Time"`
-	Width          string         `json:"Width" xml:"Width"`
-	Interval       string         `json:"Interval" xml:"Interval"`
-	FrameType      string         `json:"FrameType" xml:"FrameType"`
-	Num            string         `json:"Num" xml:"Num"`
-	OutputFile     OutputFile     `json:"OutputFile" xml:"OutputFile"`
-	TileOut        TileOut        `json:"TileOut" xml:"TileOut"`
-	TileOutputFile TileOutputFile `json:"TileOutputFile" xml:"TileOutputFile"`
+	Height         string                          `json:"Height" xml:"Height"`
+	Time           string                          `json:"Time" xml:"Time"`
+	Width          string                          `json:"Width" xml:"Width"`
+	Interval       string                          `json:"Interval" xml:"Interval"`
+	FrameType      string                          `json:"FrameType" xml:"FrameType"`
+	Num            string                          `json:"Num" xml:"Num"`
+	TimeArray      TimeArrayInQuerySnapshotJobList `json:"TimeArray" xml:"TimeArray"`
+	OutputFile     OutputFile                      `json:"OutputFile" xml:"OutputFile"`
+	TileOut        TileOut                         `json:"TileOut" xml:"TileOut"`
+	TileOutputFile TileOutputFile                  `json:"TileOutputFile" xml:"TileOutputFile"`
 }
