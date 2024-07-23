@@ -21,6 +21,7 @@ type Backup struct {
 	CopyOnlyBackup            string                 `json:"CopyOnlyBackup" xml:"CopyOnlyBackup"`
 	HostInstanceID            string                 `json:"HostInstanceID" xml:"HostInstanceID"`
 	BackupMode                string                 `json:"BackupMode" xml:"BackupMode"`
+	Engine                    string                 `json:"Engine" xml:"Engine"`
 	IsAvail                   int                    `json:"IsAvail" xml:"IsAvail"`
 	BackupDBNames             string                 `json:"BackupDBNames" xml:"BackupDBNames"`
 	StorageClass              string                 `json:"StorageClass" xml:"StorageClass"`
@@ -37,6 +38,7 @@ type Backup struct {
 	BackupExtractionStatus    string                 `json:"BackupExtractionStatus" xml:"BackupExtractionStatus"`
 	DBInstanceComment         string                 `json:"DBInstanceComment" xml:"DBInstanceComment"`
 	BackupIntranetDownloadURL string                 `json:"BackupIntranetDownloadURL" xml:"BackupIntranetDownloadURL"`
+	EngineVersion             string                 `json:"EngineVersion" xml:"EngineVersion"`
 	BackupEndTime             string                 `json:"BackupEndTime" xml:"BackupEndTime"`
 	BackupMethod              string                 `json:"BackupMethod" xml:"BackupMethod"`
 	BackupType                string                 `json:"BackupType" xml:"BackupType"`

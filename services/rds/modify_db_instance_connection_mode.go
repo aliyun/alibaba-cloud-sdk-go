@@ -73,10 +73,10 @@ type ModifyDBInstanceConnectionModeRequest struct {
 	*requests.RpcRequest
 	ConnectionMode       string           `position:"Query" name:"ConnectionMode"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 }
 
 // ModifyDBInstanceConnectionModeResponse is the response struct for api ModifyDBInstanceConnectionMode

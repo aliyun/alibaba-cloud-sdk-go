@@ -74,9 +74,9 @@ type ModifyDBInstanceMetricsRequest struct {
 	DBInstanceName       string           `position:"Query" name:"DBInstanceName"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	MetricsConfig        string           `position:"Query" name:"MetricsConfig"`
+	Scope                string           `position:"Query" name:"Scope"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	Scope                string           `position:"Query" name:"Scope"`
 }
 
 // ModifyDBInstanceMetricsResponse is the response struct for api ModifyDBInstanceMetrics

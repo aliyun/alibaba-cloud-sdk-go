@@ -17,8 +17,8 @@ package rds
 
 // Coupon is a nested struct in rds response
 type Coupon struct {
-	Name        string `json:"Name" xml:"Name"`
-	CouponNo    string `json:"CouponNo" xml:"CouponNo"`
 	IsSelected  string `json:"IsSelected" xml:"IsSelected"`
+	CouponNo    string `json:"CouponNo" xml:"CouponNo"`
+	Name        string `json:"Name" xml:"Name"`
 	Description string `json:"Description" xml:"Description"`
 }

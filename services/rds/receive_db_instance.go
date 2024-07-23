@@ -72,11 +72,11 @@ func (client *Client) ReceiveDBInstanceWithCallback(request *ReceiveDBInstanceRe
 type ReceiveDBInstanceRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	GuardDBInstanceId    string           `position:"Query" name:"GuardDBInstanceId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	GuardDBInstanceId    string           `position:"Query" name:"GuardDBInstanceId"`
 }
 
 // ReceiveDBInstanceResponse is the response struct for api ReceiveDBInstance

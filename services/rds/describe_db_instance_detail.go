@@ -72,11 +72,11 @@ func (client *Client) DescribeDBInstanceDetailWithCallback(request *DescribeDBIn
 type DescribeDBInstanceDetailRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeDBInstanceDetailResponse is the response struct for api DescribeDBInstanceDetail

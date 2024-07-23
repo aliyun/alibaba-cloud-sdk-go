@@ -72,32 +72,32 @@ func (client *Client) ModifyBackupPolicyWithCallback(request *ModifyBackupPolicy
 type ModifyBackupPolicyRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId               requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	LocalLogRetentionHours        string           `position:"Query" name:"LocalLogRetentionHours"`
 	BackupPriority                requests.Integer `position:"Query" name:"BackupPriority"`
+	BackupLog                     string           `position:"Query" name:"BackupLog"`
+	HighSpaceUsageProtection      string           `position:"Query" name:"HighSpaceUsageProtection"`
+	EnableIncrementDataBackup     requests.Boolean `position:"Query" name:"EnableIncrementDataBackup"`
+	LocalLogRetentionSpace        string           `position:"Query" name:"LocalLogRetentionSpace"`
+	OwnerId                       requests.Integer `position:"Query" name:"OwnerId"`
+	ArchiveBackupKeepPolicy       string           `position:"Query" name:"ArchiveBackupKeepPolicy"`
+	BackupRetentionPeriod         string           `position:"Query" name:"BackupRetentionPeriod"`
+	BackupMethod                  string           `position:"Query" name:"BackupMethod"`
+	DuplicationLocation           string           `position:"Query" name:"DuplicationLocation"`
+	LocalLogRetentionHours        string           `position:"Query" name:"LocalLogRetentionHours"`
 	LogBackupFrequency            string           `position:"Query" name:"LogBackupFrequency"`
 	ArchiveBackupKeepCount        requests.Integer `position:"Query" name:"ArchiveBackupKeepCount"`
-	BackupLog                     string           `position:"Query" name:"BackupLog"`
 	BackupInterval                string           `position:"Query" name:"BackupInterval"`
 	DuplicationContent            string           `position:"Query" name:"DuplicationContent"`
-	HighSpaceUsageProtection      string           `position:"Query" name:"HighSpaceUsageProtection"`
 	LogBackupLocalRetentionNumber requests.Integer `position:"Query" name:"LogBackupLocalRetentionNumber"`
 	DBInstanceId                  string           `position:"Query" name:"DBInstanceId"`
 	EnableBackupLog               string           `position:"Query" name:"EnableBackupLog"`
 	BackupPolicyMode              string           `position:"Query" name:"BackupPolicyMode"`
 	PreferredBackupPeriod         string           `position:"Query" name:"PreferredBackupPeriod"`
-	EnableIncrementDataBackup     requests.Boolean `position:"Query" name:"EnableIncrementDataBackup"`
 	ReleasedKeepPolicy            string           `position:"Query" name:"ReleasedKeepPolicy"`
 	ResourceOwnerAccount          string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount                  string           `position:"Query" name:"OwnerAccount"`
 	CompressType                  string           `position:"Query" name:"CompressType"`
-	LocalLogRetentionSpace        string           `position:"Query" name:"LocalLogRetentionSpace"`
-	OwnerId                       requests.Integer `position:"Query" name:"OwnerId"`
-	ArchiveBackupKeepPolicy       string           `position:"Query" name:"ArchiveBackupKeepPolicy"`
 	Duplication                   string           `position:"Query" name:"Duplication"`
 	PreferredBackupTime           string           `position:"Query" name:"PreferredBackupTime"`
-	BackupRetentionPeriod         string           `position:"Query" name:"BackupRetentionPeriod"`
-	BackupMethod                  string           `position:"Query" name:"BackupMethod"`
-	DuplicationLocation           string           `position:"Query" name:"DuplicationLocation"`
 	ArchiveBackupRetentionPeriod  string           `position:"Query" name:"ArchiveBackupRetentionPeriod"`
 	Category                      string           `position:"Query" name:"Category"`
 	LogBackupRetentionPeriod      string           `position:"Query" name:"LogBackupRetentionPeriod"`

@@ -72,11 +72,11 @@ func (client *Client) ReleaseInstancePublicConnectionWithCallback(request *Relea
 type ReleaseInstancePublicConnectionRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId         requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DBInstanceId            string           `position:"Query" name:"DBInstanceId"`
 	ResourceOwnerAccount    string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount            string           `position:"Query" name:"OwnerAccount"`
 	OwnerId                 requests.Integer `position:"Query" name:"OwnerId"`
 	CurrentConnectionString string           `position:"Query" name:"CurrentConnectionString"`
-	DBInstanceId            string           `position:"Query" name:"DBInstanceId"`
 }
 
 // ReleaseInstancePublicConnectionResponse is the response struct for api ReleaseInstancePublicConnection

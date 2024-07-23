@@ -72,10 +72,10 @@ func (client *Client) UpgradeDBInstanceMajorVersionPrecheckWithCallback(request 
 type UpgradeDBInstanceMajorVersionPrecheckRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	TargetMajorVersion   string           `position:"Query" name:"TargetMajorVersion"`
 }
 

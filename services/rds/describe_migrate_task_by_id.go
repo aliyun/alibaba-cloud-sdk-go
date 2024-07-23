@@ -72,11 +72,11 @@ func (client *Client) DescribeMigrateTaskByIdWithCallback(request *DescribeMigra
 type DescribeMigrateTaskByIdRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	MigrateTaskId        string           `position:"Query" name:"MigrateTaskId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 }
 
 // DescribeMigrateTaskByIdResponse is the response struct for api DescribeMigrateTaskById

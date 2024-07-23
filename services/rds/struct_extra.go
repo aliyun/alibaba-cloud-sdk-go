@@ -20,5 +20,6 @@ type Extra struct {
 	ReplicaGroupStatus        string                                     `json:"ReplicaGroupStatus" xml:"ReplicaGroupStatus"`
 	ActiveReplicaDBInstanceID string                                     `json:"ActiveReplicaDBInstanceID" xml:"ActiveReplicaDBInstanceID"`
 	ReplicaGroupID            string                                     `json:"ReplicaGroupID" xml:"ReplicaGroupID"`
+	RecoveryModel             string                                     `json:"RecoveryModel" xml:"RecoveryModel"`
 	DBInstanceIds             DBInstanceIdsInDescribeDBInstanceAttribute `json:"DBInstanceIds" xml:"DBInstanceIds"`
 }

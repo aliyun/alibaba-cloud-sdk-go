@@ -73,9 +73,9 @@ type QueryRecommendByCodeRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
 	Code                 string `position:"Query" name:"Code"`
+	ResourceGroupId      string `position:"Query" name:"ResourceGroupId"`
 	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerId              string `position:"Query" name:"OwnerId"`
-	ResourceGroupId      string `position:"Query" name:"ResourceGroupId"`
 }
 
 // QueryRecommendByCodeResponse is the response struct for api QueryRecommendByCode

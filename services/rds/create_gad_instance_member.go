@@ -71,13 +71,13 @@ func (client *Client) CreateGadInstanceMemberWithCallback(request *CreateGadInst
 // CreateGadInstanceMemberRequest is the request struct for api CreateGadInstanceMember
 type CreateGadInstanceMemberRequest struct {
 	*requests.RpcRequest
-	DBList                     string                             `position:"Query" name:"DBList"`
-	CentralDBInstanceId        string                             `position:"Query" name:"CentralDBInstanceId"`
-	CentralRdsDtsAdminPassword string                             `position:"Query" name:"CentralRdsDtsAdminPassword"`
 	CentralRdsDtsAdminAccount  string                             `position:"Query" name:"CentralRdsDtsAdminAccount"`
 	CentralRegionId            string                             `position:"Query" name:"CentralRegionId"`
 	GadInstanceId              string                             `position:"Query" name:"GadInstanceId"`
 	UnitNode                   *[]CreateGadInstanceMemberUnitNode `position:"Query" name:"UnitNode"  type:"Repeated"`
+	DBList                     string                             `position:"Query" name:"DBList"`
+	CentralDBInstanceId        string                             `position:"Query" name:"CentralDBInstanceId"`
+	CentralRdsDtsAdminPassword string                             `position:"Query" name:"CentralRdsDtsAdminPassword"`
 }
 
 // CreateGadInstanceMemberUnitNode is a repeated param struct in CreateGadInstanceMemberRequest

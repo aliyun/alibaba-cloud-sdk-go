@@ -72,11 +72,11 @@ func (client *Client) ModifyDBInstanceProxyConfigurationWithCallback(request *Mo
 type ModifyDBInstanceProxyConfigurationRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId         requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DBInstanceId            string           `position:"Query" name:"DBInstanceId"`
 	ResourceOwnerAccount    string           `position:"Query" name:"ResourceOwnerAccount"`
 	ProxyConfigurationValue string           `position:"Query" name:"ProxyConfigurationValue"`
 	OwnerId                 requests.Integer `position:"Query" name:"OwnerId"`
 	ProxyConfigurationKey   string           `position:"Query" name:"ProxyConfigurationKey"`
-	DBInstanceId            string           `position:"Query" name:"DBInstanceId"`
 }
 
 // ModifyDBInstanceProxyConfigurationResponse is the response struct for api ModifyDBInstanceProxyConfiguration
