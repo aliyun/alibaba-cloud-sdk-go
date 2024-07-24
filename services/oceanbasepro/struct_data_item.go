@@ -35,6 +35,7 @@ type DataItem struct {
 	MemstoreReadRows    string              `json:"MemstoreReadRows" xml:"MemstoreReadRows"`
 	DbName              string              `json:"DbName" xml:"DbName"`
 	RetCode             string              `json:"RetCode" xml:"RetCode"`
+	ColumnNames         string              `json:"ColumnNames" xml:"ColumnNames"`
 	Progress            string              `json:"Progress" xml:"Progress"`
 	DownloadTaskId      int64               `json:"DownloadTaskId" xml:"DownloadTaskId"`
 	Host                string              `json:"Host" xml:"Host"`
@@ -60,6 +61,7 @@ type DataItem struct {
 	PlanId              string              `json:"PlanId" xml:"PlanId"`
 	TransHash           string              `json:"TransHash" xml:"TransHash"`
 	Method              string              `json:"Method" xml:"Method"`
+	LocalityType        string              `json:"LocalityType" xml:"LocalityType"`
 	Policy              string              `json:"Policy" xml:"Policy"`
 	AvgLogicalReads     float64             `json:"AvgLogicalReads" xml:"AvgLogicalReads"`
 	NetTime             string              `json:"NetTime" xml:"NetTime"`
@@ -80,6 +82,7 @@ type DataItem struct {
 	ConcurrencyWaitTime string              `json:"ConcurrencyWaitTime" xml:"ConcurrencyWaitTime"`
 	Checkpoint          string              `json:"Checkpoint" xml:"Checkpoint"`
 	PartitionCount      string              `json:"PartitionCount" xml:"PartitionCount"`
+	Table               string              `json:"Table" xml:"Table"`
 	SqlId               string              `json:"SqlId" xml:"SqlId"`
 	SqlTextShort        string              `json:"SqlTextShort" xml:"SqlTextShort"`
 	NetWaitTime         string              `json:"NetWaitTime" xml:"NetWaitTime"`
@@ -112,6 +115,8 @@ type DataItem struct {
 	BloomFilterCacheHit string              `json:"BloomFilterCacheHit" xml:"BloomFilterCacheHit"`
 	UserName            string              `json:"UserName" xml:"UserName"`
 	DiagTypes           []string            `json:"DiagTypes" xml:"DiagTypes"`
+	Plan                Plan                `json:"Plan" xml:"Plan"`
+	Columns             []ColumnsItem       `json:"Columns" xml:"Columns"`
 	BackupResults       []BackupResultsItem `json:"BackupResults" xml:"BackupResults"`
 	BackupObjects       []BackupObjectsItem `json:"BackupObjects" xml:"BackupObjects"`
 	SqlList             []SqlListItem       `json:"SqlList" xml:"SqlList"`
