@@ -21,7 +21,6 @@ import (
 )
 
 // QueryTokenForMnsQueue invokes the dybaseapi.QueryTokenForMnsQueue API synchronously
-// api document: https://help.aliyun.com/api/dybaseapi/querytokenformnsqueue.html
 func (client *Client) QueryTokenForMnsQueue(request *QueryTokenForMnsQueueRequest) (response *QueryTokenForMnsQueueResponse, err error) {
 	response = CreateQueryTokenForMnsQueueResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryTokenForMnsQueue(request *QueryTokenForMnsQueueReques
 }
 
 // QueryTokenForMnsQueueWithChan invokes the dybaseapi.QueryTokenForMnsQueue API asynchronously
-// api document: https://help.aliyun.com/api/dybaseapi/querytokenformnsqueue.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryTokenForMnsQueueWithChan(request *QueryTokenForMnsQueueRequest) (<-chan *QueryTokenForMnsQueueResponse, <-chan error) {
 	responseChan := make(chan *QueryTokenForMnsQueueResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryTokenForMnsQueueWithChan(request *QueryTokenForMnsQue
 }
 
 // QueryTokenForMnsQueueWithCallback invokes the dybaseapi.QueryTokenForMnsQueue API asynchronously
-// api document: https://help.aliyun.com/api/dybaseapi/querytokenformnsqueue.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryTokenForMnsQueueWithCallback(request *QueryTokenForMnsQueueRequest, callback func(response *QueryTokenForMnsQueueResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -86,9 +81,9 @@ type QueryTokenForMnsQueueRequest struct {
 // QueryTokenForMnsQueueResponse is the response struct for api QueryTokenForMnsQueue
 type QueryTokenForMnsQueueResponse struct {
 	*responses.BaseResponse
-	RequestId       string          `json:"RequestId" xml:"RequestId"`
 	Code            string          `json:"Code" xml:"Code"`
 	Message         string          `json:"Message" xml:"Message"`
+	RequestId       string          `json:"RequestId" xml:"RequestId"`
 	MessageTokenDTO MessageTokenDTO `json:"MessageTokenDTO" xml:"MessageTokenDTO"`
 }
 
@@ -97,7 +92,8 @@ func CreateQueryTokenForMnsQueueRequest() (request *QueryTokenForMnsQueueRequest
 	request = &QueryTokenForMnsQueueRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dybaseapi", "2017-05-25", "QueryTokenForMnsQueue", "dybaseapi", "openAPI")
+	request.InitWithApiInfo("Dybaseapi", "2017-05-25", "QueryTokenForMnsQueue", "", "")
+	request.Method = requests.POST
 	return
 }
 

@@ -1,3 +1,7 @@
+2024-07-26 Version: v1.62.798
+- Generated 2017-05-25 for `Dybaseapi`.
+- Supported C#.
+
 2024-07-24 Version: v1.62.797
 - Generated 2019-09-01 for `OceanBasePro`.
 undefined

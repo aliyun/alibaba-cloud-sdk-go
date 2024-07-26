@@ -17,9 +17,9 @@ package dybaseapi
 
 // MessageTokenDTO is a nested struct in dybaseapi response
 type MessageTokenDTO struct {
-	AccessKeyId     string `json:"AccessKeyId" xml:"AccessKeyId"`
 	AccessKeySecret string `json:"AccessKeySecret" xml:"AccessKeySecret"`
-	SecurityToken   string `json:"SecurityToken" xml:"SecurityToken"`
-	CreateTime      string `json:"CreateTime" xml:"CreateTime"`
 	ExpireTime      string `json:"ExpireTime" xml:"ExpireTime"`
+	SecurityToken   string `json:"SecurityToken" xml:"SecurityToken"`
+	AccessKeyId     string `json:"AccessKeyId" xml:"AccessKeyId"`
+	CreateTime      string `json:"CreateTime" xml:"CreateTime"`
 }
