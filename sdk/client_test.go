@@ -717,7 +717,7 @@ func TestClient_BuildRequestWithSigner2(t *testing.T) {
 	request.Domain = ""
 	httprequest, err = client.buildRequestWithSigner(request, signer)
 	assert.Nil(t, httprequest)
-	assert.Equal(t, "RegionId is empty, please set a valid RegionId.", err.Error())
+	assert.Equal(t, "RegionId is empty, please set a valid RegionId", err.Error())
 
 	//Test: exceptional rule
 	client.regionId = "regionid"
@@ -811,30 +811,36 @@ func TestClient_AppendUserAgent(t *testing.T) {
 	// Test set client useragent.
 	client.AppendUserAgent("test", "1.01")
 	httpRequest, err = client.buildRequestWithSigner(request, signer)
+	assert.Nil(t, err)
 	assert.Equal(t, DefaultUserAgent+" test/1.01", httpRequest.Header.Get("User-Agent"))
 
 	// Test set request useragent. And request useragent has a higner priority than client's.
 	request.AppendUserAgent("test", "2.01")
 	httpRequest, err = client.buildRequestWithSigner(request, signer)
+	assert.Nil(t, err)
 	assert.Equal(t, DefaultUserAgent+" test/2.01", httpRequest.Header.Get("User-Agent"))
 
 	client.AppendUserAgent("test", "2.02")
 	httpRequest, err = client.buildRequestWithSigner(request, signer)
+	assert.Nil(t, err)
 	assert.Equal(t, DefaultUserAgent+" test/2.01", httpRequest.Header.Get("User-Agent"))
 
 	// Test update request useragent.
 	request.AppendUserAgent("test", "2.02")
 	httpRequest, err = client.buildRequestWithSigner(request, signer)
+	assert.Nil(t, err)
 	assert.Equal(t, DefaultUserAgent+" test/2.02", httpRequest.Header.Get("User-Agent"))
 
 	// Test client can't modify DefaultUserAgent.
 	client.AppendUserAgent("core", "1.01")
 	httpRequest, err = client.buildRequestWithSigner(request, signer)
+	assert.Nil(t, err)
 	assert.Equal(t, DefaultUserAgent+" test/2.02", httpRequest.Header.Get("User-Agent"))
 
 	// Test request can't modify DefaultUserAgent.
 	request.AppendUserAgent("core", "1.01")
 	httpRequest, err = client.buildRequestWithSigner(request, signer)
+	assert.Nil(t, err)
 	assert.Equal(t, DefaultUserAgent+" test/2.02", httpRequest.Header.Get("User-Agent"))
 
 	request1 := requests.NewCommonRequest()
