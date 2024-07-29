@@ -8,9 +8,11 @@ import (
 	"strings"
 
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/auth/credentials"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/auth/credentials/provider"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
 	"github.com/aliyun/alibaba-cloud-sdk-go/services/ecs"
+	"github.com/aliyun/alibaba-cloud-sdk-go/services/sts"
 	"github.com/stretchr/testify/assert"
 
 	"os"
@@ -139,4 +141,18 @@ func TestDescribeRegionsWithBearToken(t *testing.T) {
 	response, err := client.ProcessCommonRequest(request)
 	assert.True(t, strings.Contains(err.Error(), "Bearertoken has expired"))
 	assert.False(t, response.IsSuccess())
+}
+
+func TestGetCallerIdentityWithOIDCCredentialsProvider(t *testing.T) {
+	provider, err := credentials.NewOIDCCredentialsProviderBuilder().Build()
+	assert.Nil(t, err)
+	config := sdk.NewConfig().WithScheme("HTTPS")
+	client, err := sts.NewClientWithOptions("cn-hangzhou", config, provider)
+	assert.Nil(t, err)
+	request := sts.CreateGetCallerIdentityRequest()
+	response, err := client.GetCallerIdentity(request)
+	assert.Nil(t, err)
+	assert.True(t, response.IsSuccess())
+	assert.NotZero(t, response.RoleId)
+	assert.NotZero(t, response.AccountId)
 }
