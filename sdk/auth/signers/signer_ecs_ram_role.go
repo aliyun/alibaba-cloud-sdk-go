@@ -77,6 +77,22 @@ func (signer *EcsRamRoleSigner) GetAccessKeyId() (accessKeyId string, err error)
 	return signer.sessionCredential.AccessKeyId, nil
 }
 
+func (signer *EcsRamRoleSigner) GetCredentials() (cc *credentials.Credentials, err error) {
+	if signer.sessionCredential == nil || signer.needUpdateCredential() {
+		err = signer.updateCredential()
+		if err != nil {
+			return
+		}
+	}
+
+	cc = &credentials.Credentials{
+		AccessKeyId:     signer.sessionCredential.AccessKeyId,
+		AccessKeySecret: signer.sessionCredential.AccessKeySecret,
+		SecurityToken:   signer.sessionCredential.StsToken,
+	}
+	return
+}
+
 func (signer *EcsRamRoleSigner) GetExtraParam() map[string]string {
 	if signer.sessionCredential == nil {
 		return make(map[string]string)

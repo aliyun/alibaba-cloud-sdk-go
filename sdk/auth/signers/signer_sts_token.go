@@ -40,8 +40,17 @@ func (*StsTokenSigner) GetVersion() string {
 	return "1.0"
 }
 
+// Deprecated: use GetCredentials() instead of
 func (signer *StsTokenSigner) GetAccessKeyId() (accessKeyId string, err error) {
 	return signer.credential.AccessKeyId, nil
+}
+
+func (signer *StsTokenSigner) GetCredentials() (cc *credentials.Credentials, err error) {
+	return &credentials.Credentials{
+		AccessKeyId:     signer.credential.AccessKeyId,
+		AccessKeySecret: signer.credential.AccessKeySecret,
+		SecurityToken:   signer.credential.AccessKeyStsToken,
+	}, nil
 }
 
 func (signer *StsTokenSigner) GetExtraParam() map[string]string {

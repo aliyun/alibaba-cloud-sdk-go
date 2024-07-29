@@ -67,6 +67,10 @@ func (s *signertest) Sign(stringToSign, secretSuffix string) string {
 	return ""
 }
 
+func (s *signertest) GetCredentials() (cc *credentials.Credentials, err error) {
+	return &credentials.Credentials{}, nil
+}
+
 func Test_Client(t *testing.T) {
 	defer func() {
 		err := recover()

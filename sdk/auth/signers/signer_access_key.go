@@ -22,6 +22,7 @@ type AccessKeySigner struct {
 	credential *credentials.AccessKeyCredential
 }
 
+// Deprecated: no more use it.
 func (signer *AccessKeySigner) GetExtraParam() map[string]string {
 	return nil
 }
@@ -44,8 +45,16 @@ func (*AccessKeySigner) GetVersion() string {
 	return "1.0"
 }
 
+// Deprecated: the api is deprecated
 func (signer *AccessKeySigner) GetAccessKeyId() (accessKeyId string, err error) {
 	return signer.credential.AccessKeyId, nil
+}
+
+func (signer *AccessKeySigner) GetCredentials() (cc *credentials.Credentials, err error) {
+	return &credentials.Credentials{
+		AccessKeyId:     signer.credential.AccessKeyId,
+		AccessKeySecret: signer.credential.AccessKeySecret,
+	}, nil
 }
 
 func (signer *AccessKeySigner) Sign(stringToSign, secretSuffix string) string {

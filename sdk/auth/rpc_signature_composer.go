@@ -18,6 +18,7 @@ import (
 	"net/url"
 	"strings"
 
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/auth/credentials"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/utils"
 )
@@ -26,7 +27,7 @@ var hookGetNonce = func(fn func() string) string {
 	return fn()
 }
 
-func signRpcRequest(request requests.AcsRequest, signer Signer, regionId string) (err error) {
+func signRpcRequest(request requests.AcsRequest, signer Signer, regionId string, provider credentials.CredentialsProvider) (err error) {
 	err = completeRpcSignParams(request, signer, regionId)
 	if err != nil {
 		return
@@ -43,7 +44,7 @@ func signRpcRequest(request requests.AcsRequest, signer Signer, regionId string)
 	return
 }
 
-func completeRpcSignParams(request requests.AcsRequest, signer Signer, regionId string) (err error) {
+func completeRpcSignParams(request requests.AcsRequest, signer Signer, regionId string, provider credentials.CredentialsProvider) (err error) {
 	queryParams := request.GetQueryParams()
 	queryParams["Version"] = request.GetVersion()
 	queryParams["Action"] = request.GetActionName()
@@ -53,19 +54,19 @@ func completeRpcSignParams(request requests.AcsRequest, signer Signer, regionId 
 	queryParams["SignatureType"] = signer.GetType()
 	queryParams["SignatureVersion"] = signer.GetVersion()
 	queryParams["SignatureNonce"] = hookGetNonce(utils.GetNonce)
-	queryParams["AccessKeyId"], err = signer.GetAccessKeyId()
-
+	credentials, err := provider.GetCredentials()
 	if err != nil {
 		return
 	}
 
+	queryParams["AccessKeyId"] = credentials.AccessKeyId
+
 	if _, contains := queryParams["RegionId"]; !contains {
 		queryParams["RegionId"] = regionId
 	}
-	if extraParam := signer.GetExtraParam(); extraParam != nil {
-		for key, value := range extraParam {
-			queryParams[key] = value
-		}
+
+	if credentials.SecurityToken != "" {
+		queryParams["SecurityToken"] = credentials.SecurityToken
 	}
 
 	request.GetHeaders()["Content-Type"] = requests.Form

@@ -1,5 +1,6 @@
 package credentials
 
+// Deprecated: The RsaKeyPair is no more supported now.
 type RsaKeyPairCredential struct {
 	PrivateKey        string
 	PublicKeyId       string

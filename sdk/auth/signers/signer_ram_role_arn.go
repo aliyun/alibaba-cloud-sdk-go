@@ -82,6 +82,7 @@ func (*RamRoleArnSigner) GetVersion() string {
 	return "1.0"
 }
 
+// Deprecated: Use GetCredentials instead of
 func (signer *RamRoleArnSigner) GetAccessKeyId() (accessKeyId string, err error) {
 	if signer.sessionCredential == nil || signer.needUpdateCredential() {
 		err = signer.updateCredential()
@@ -110,6 +111,22 @@ func (signer *RamRoleArnSigner) GetExtraParam() map[string]string {
 func (signer *RamRoleArnSigner) Sign(stringToSign, secretSuffix string) string {
 	secret := signer.sessionCredential.AccessKeySecret + secretSuffix
 	return ShaHmac1(stringToSign, secret)
+}
+
+func (signer *RamRoleArnSigner) GetCredentials() (cc *credentials.Credentials, err error) {
+	if signer.sessionCredential == nil || signer.needUpdateCredential() {
+		err = signer.updateCredential()
+		if err != nil {
+			return
+		}
+	}
+
+	cc = &credentials.Credentials{
+		AccessKeyId:     signer.sessionCredential.AccessKeyId,
+		AccessKeySecret: signer.sessionCredential.AccessKeySecret,
+		SecurityToken:   signer.sessionCredential.StsToken,
+	}
+	return
 }
 
 func (signer *RamRoleArnSigner) buildCommonRequest() (request *requests.CommonRequest, err error) {

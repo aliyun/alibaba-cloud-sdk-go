@@ -19,6 +19,7 @@ import (
 	"sort"
 	"strings"
 
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/auth/credentials"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/utils"
 )
@@ -33,43 +34,21 @@ func init() {
 	debug = utils.Init("sdk")
 }
 
-func signRoaRequest(request requests.AcsRequest, signer Signer, regionId string) (err error) {
+func signRoaRequest(request requests.AcsRequest, signer Signer, provider credentials.CredentialsProvider) (err error) {
 	// 先获取 accesskey，确保刷新 credential
-	accessKeyId, err := signer.GetAccessKeyId()
+	credentials, err := provider.GetCredentials()
 	if err != nil {
 		return err
 	}
 
-	completeROASignParams(request, signer, regionId)
-	stringToSign := buildRoaStringToSign(request)
-	request.SetStringToSign(stringToSign)
-
-	signature := signer.Sign(stringToSign, "")
-	request.GetHeaders()["Authorization"] = "acs " + accessKeyId + ":" + signature
-
-	return
-}
-
-func completeROASignParams(request requests.AcsRequest, signer Signer, regionId string) {
 	headerParams := request.GetHeaders()
 
-	// complete query params
-	queryParams := request.GetQueryParams()
-	//if _, ok := queryParams["RegionId"]; !ok {
-	//	queryParams["RegionId"] = regionId
-	//}
-	if extraParam := signer.GetExtraParam(); extraParam != nil {
-		for key, value := range extraParam {
-			if key == "SecurityToken" {
-				headerParams["x-acs-security-token"] = value
-				continue
-			}
-			if key == "BearerToken" {
-				headerParams["x-acs-bearer-token"] = value
-				continue
-			}
-			queryParams[key] = value
-		}
+	if credentials.SecurityToken != "" {
+		headerParams["x-acs-security-token"] = credentials.SecurityToken
+	}
+
+	if credentials.BearerToken != "" {
+		headerParams["x-acs-bearer-token"] = credentials.BearerToken
 	}
 
 	// complete header params
@@ -96,6 +75,13 @@ func completeROASignParams(request requests.AcsRequest, signer Signer, regionId 
 	default:
 		headerParams["Accept"] = requests.Raw
 	}
+	stringToSign := buildRoaStringToSign(request)
+	request.SetStringToSign(stringToSign)
+
+	signature := signer.Sign(stringToSign, "")
+	request.GetHeaders()["Authorization"] = "acs " + credentials.AccessKeyId + ":" + signature
+
+	return
 }
 
 func buildRoaStringToSign(request requests.AcsRequest) (stringToSign string) {

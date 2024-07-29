@@ -92,6 +92,20 @@ func (signer *SignerKeyPair) GetAccessKeyId() (accessKeyId string, err error) {
 	return
 }
 
+func (signer *SignerKeyPair) GetCredentials() (cc *credentials.Credentials, err error) {
+	err = signer.ensureCredential()
+	if err != nil {
+		return
+	}
+
+	cc = &credentials.Credentials{
+		AccessKeyId:     signer.sessionCredential.AccessKeyId,
+		AccessKeySecret: signer.sessionCredential.AccessKeySecret,
+		SecurityToken:   signer.sessionCredential.StsToken,
+	}
+	return
+}
+
 func (signer *SignerKeyPair) GetExtraParam() map[string]string {
 	return make(map[string]string)
 }

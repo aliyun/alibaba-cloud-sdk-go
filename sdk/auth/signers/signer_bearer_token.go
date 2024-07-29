@@ -30,6 +30,13 @@ func (*BearerTokenSigner) GetVersion() string {
 func (signer *BearerTokenSigner) GetAccessKeyId() (accessKeyId string, err error) {
 	return "", nil
 }
+
+func (signer *BearerTokenSigner) GetCredentials() (cc *credentials.Credentials, err error) {
+	return &credentials.Credentials{
+		BearerToken: signer.credential.BearerToken,
+	}, nil
+}
+
 func (signer *BearerTokenSigner) Sign(stringToSign, secretSuffix string) string {
 	return ""
 }
