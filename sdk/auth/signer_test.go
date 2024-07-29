@@ -107,7 +107,9 @@ func Test_Sign_Other(t *testing.T) {
 	c := credentials.NewAccessKeyCredential("accessKeyId", "accessKeySecret")
 	signer := signers.NewAccessKeySigner(c)
 
-	err := Sign(request, signer, "regionId")
+	provider, err := ToCredentialsProvider(c)
+	assert.Nil(t, err)
+	err = Sign(request, signer, "regionId", provider)
 	assert.Equal(t, "[SDK.UnknownRequestType] Unknown Request Type: *auth.otherRequest", err.Error())
 }
 
@@ -118,7 +120,9 @@ func Test_Sign_ROA(t *testing.T) {
 	c := credentials.NewAccessKeyCredential("accessKeyId", "accessKeySecret")
 	signer := signers.NewAccessKeySigner(c)
 
-	err := Sign(request, signer, "regionId")
+	provider, err := ToCredentialsProvider(c)
+	assert.Nil(t, err)
+	err = Sign(request, signer, "regionId", provider)
 	assert.Nil(t, err)
 }
 
@@ -128,6 +132,8 @@ func Test_Sign_RPC(t *testing.T) {
 	c := credentials.NewAccessKeyCredential("accessKeyId", "accessKeySecret")
 	signer := signers.NewAccessKeySigner(c)
 
-	err := Sign(request, signer, "regionId")
+	provider, err := ToCredentialsProvider(c)
+	assert.Nil(t, err)
+	err = Sign(request, signer, "regionId", provider)
 	assert.Nil(t, err)
 }
