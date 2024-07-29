@@ -46,13 +46,20 @@ func TestRpcSignatureComposer(t *testing.T) {
 	origTestHookGetNonce := hookGetNonce
 	defer func() { hookGetNonce = origTestHookGetNonce }()
 	hookGetNonce = mockRpcGetNonce
-	signRpcRequest(request, signer, "regionId")
+
+	provider, err := ToCredentialsProvider(c)
+	assert.Nil(t, err)
+	signRpcRequest(request, signer, "regionId", provider)
 	assert.Equal(t, "mock date", request.GetQueryParams()["Timestamp"])
 	assert.Equal(t, "MOCK_UUID", request.GetQueryParams()["SignatureNonce"])
 	assert.Equal(t, "7loPmFjvDnzOVnQeQNj85S6nFGY=", request.GetQueryParams()["Signature"])
 
-	sign1 := signers.NewStsTokenSigner(credentials.NewStsTokenCredential("accessKeyId", "accessKeySecret", "accessKeyStsToken"))
-	signRpcRequest(request, sign1, "regionId")
+	sts := credentials.NewStsTokenCredential("accessKeyId", "accessKeySecret", "accessKeyStsToken")
+	sign1 := signers.NewStsTokenSigner(sts)
+
+	provider, err = ToCredentialsProvider(sts)
+	assert.Nil(t, err)
+	signRpcRequest(request, sign1, "regionId", provider)
 	assert.Equal(t, "mock date", request.GetQueryParams()["Timestamp"])
 	assert.Equal(t, "MOCK_UUID", request.GetQueryParams()["SignatureNonce"])
 	assert.Equal(t, "5Nxdcler+ihqWqv0Hr2On4PsBf4=", request.GetQueryParams()["Signature"])

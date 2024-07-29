@@ -46,7 +46,10 @@ func TestRoaSignatureComposer(t *testing.T) {
 	origTestHookGetDate := hookGetDate
 	defer func() { hookGetDate = origTestHookGetDate }()
 	hookGetDate = mockDate
-	signRoaRequest(request, signer)
+
+	provider, err := ToCredentialsProvider(c)
+	assert.Nil(t, err)
+	signRoaRequest(request, signer, provider)
 	assert.Equal(t, "mock date", request.GetHeaders()["Date"])
 	assert.Equal(t, "acs accessKeyId:degLHXLEN6rMojj+bOlK74U9iic=", request.GetHeaders()["Authorization"])
 }
@@ -63,7 +66,10 @@ func TestRoaSignatureComposer2(t *testing.T) {
 	origTestHookLookupIP := hookGetDate
 	defer func() { hookGetDate = origTestHookLookupIP }()
 	hookGetDate = mockDate
-	signRoaRequest(request, signer)
+
+	provider, err := ToCredentialsProvider(c)
+	assert.Nil(t, err)
+	signRoaRequest(request, signer, provider)
 	assert.Equal(t, "application/x-www-form-urlencoded", request.GetHeaders()["Content-Type"])
 	assert.Equal(t, "mock date", request.GetHeaders()["Date"])
 	assert.Equal(t, "application/xml", request.GetHeaders()["Accept"])
@@ -81,20 +87,34 @@ func TestRoaSignatureComposer3(t *testing.T) {
 	origTestHookGetDate := hookGetDate
 	defer func() { hookGetDate = origTestHookGetDate }()
 	hookGetDate = mockDate
-	signRoaRequest(request, signer)
+
+	provider, err := ToCredentialsProvider(c)
+	assert.Nil(t, err)
+	signRoaRequest(request, signer, provider)
 	assert.Equal(t, "mock date", request.GetHeaders()["Date"])
 }
 
 func TestCompleteROASignParams(t *testing.T) {
 	req := requests.NewCommonRequest()
 	req.TransToAcsRequest()
-	sign := signers.NewBearerTokenSigner(credentials.NewBearerTokenCredential("Bearer.Token"))
-	completeROASignParams(req, sign)
+	c := credentials.NewBearerTokenCredential("Bearer.Token")
+	sign := signers.NewBearerTokenSigner(c)
+	provider, err := ToCredentialsProvider(c)
+	assert.Nil(t, err)
+	cc, err := provider.GetCredentials()
+	assert.Nil(t, err)
+
+	completeROASignParams(req, sign, cc)
 	head := req.GetHeaders()
 	assert.Equal(t, "Bearer.Token", head["x-acs-bearer-token"])
 
-	sign1 := signers.NewStsTokenSigner(credentials.NewStsTokenCredential("accessKeyId", "accessKeySecret", "accessKeyStsToken"))
-	completeROASignParams(req, sign1)
+	stc := credentials.NewStsTokenCredential("accessKeyId", "accessKeySecret", "accessKeyStsToken")
+	sign1 := signers.NewStsTokenSigner(stc)
+	provider, err = ToCredentialsProvider(stc)
+	assert.Nil(t, err)
+	cc, err = provider.GetCredentials()
+	assert.Nil(t, err)
+	completeROASignParams(req, sign1, cc)
 	head = req.GetHeaders()
 	assert.Equal(t, "accessKeyStsToken", head["x-acs-security-token"])
 }
