@@ -92,7 +92,7 @@ func CreateCreateOrderRequest() (request *CreateOrderRequest) {
 	request = &CreateOrderRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Market", "2015-11-01", "CreateOrder", "", "")
+	request.InitWithApiInfo("Market", "2015-11-01", "CreateOrder", "yunmarket", "openAPI")
 	request.Method = requests.POST
 	return
 }

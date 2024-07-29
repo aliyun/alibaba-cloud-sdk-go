@@ -72,8 +72,8 @@ func (client *Client) FinishCurrentProjectNodeWithCallback(request *FinishCurren
 type FinishCurrentProjectNodeRequest struct {
 	*requests.RpcRequest
 	TemplateForm string           `position:"Query" name:"TemplateForm"`
-	InstanceId   string           `position:"Query" name:"InstanceId"`
 	Remark       string           `position:"Query" name:"Remark"`
+	InstanceId   string           `position:"Query" name:"InstanceId"`
 	NodeId       requests.Integer `position:"Query" name:"NodeId"`
 }
 
@@ -90,7 +90,7 @@ func CreateFinishCurrentProjectNodeRequest() (request *FinishCurrentProjectNodeR
 	request = &FinishCurrentProjectNodeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Market", "2015-11-01", "FinishCurrentProjectNode", "", "")
+	request.InitWithApiInfo("Market", "2015-11-01", "FinishCurrentProjectNode", "yunmarket", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -97,6 +97,8 @@ type DescribeInstanceResponse struct {
 	ProductCode    string                    `json:"ProductCode" xml:"ProductCode"`
 	SupplierName   string                    `json:"SupplierName" xml:"SupplierName"`
 	AutoRenewal    string                    `json:"AutoRenewal" xml:"AutoRenewal"`
+	ActiveAddress  string                    `json:"ActiveAddress" xml:"ActiveAddress"`
+	LicenseCode    string                    `json:"LicenseCode" xml:"LicenseCode"`
 	RelationalData RelationalData            `json:"RelationalData" xml:"RelationalData"`
 	Modules        ModulesInDescribeInstance `json:"Modules" xml:"Modules"`
 }
@@ -106,7 +108,7 @@ func CreateDescribeInstanceRequest() (request *DescribeInstanceRequest) {
 	request = &DescribeInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Market", "2015-11-01", "DescribeInstance", "", "")
+	request.InitWithApiInfo("Market", "2015-11-01", "DescribeInstance", "yunmarket", "openAPI")
 	request.Method = requests.POST
 	return
 }

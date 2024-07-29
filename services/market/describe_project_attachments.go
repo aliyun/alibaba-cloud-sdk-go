@@ -87,7 +87,7 @@ func CreateDescribeProjectAttachmentsRequest() (request *DescribeProjectAttachme
 	request = &DescribeProjectAttachmentsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Market", "2015-11-01", "DescribeProjectAttachments", "", "")
+	request.InitWithApiInfo("Market", "2015-11-01", "DescribeProjectAttachments", "yunmarket", "openAPI")
 	request.Method = requests.POST
 	return
 }

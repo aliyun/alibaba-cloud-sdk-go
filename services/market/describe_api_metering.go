@@ -96,7 +96,7 @@ func CreateDescribeApiMeteringRequest() (request *DescribeApiMeteringRequest) {
 	request = &DescribeApiMeteringRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Market", "2015-11-01", "DescribeApiMetering", "", "")
+	request.InitWithApiInfo("Market", "2015-11-01", "DescribeApiMetering", "yunmarket", "openAPI")
 	request.Method = requests.GET
 	return
 }

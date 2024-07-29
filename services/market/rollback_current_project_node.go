@@ -71,8 +71,8 @@ func (client *Client) RollbackCurrentProjectNodeWithCallback(request *RollbackCu
 // RollbackCurrentProjectNodeRequest is the request struct for api RollbackCurrentProjectNode
 type RollbackCurrentProjectNodeRequest struct {
 	*requests.RpcRequest
-	InstanceId string           `position:"Query" name:"InstanceId"`
 	Remark     string           `position:"Query" name:"Remark"`
+	InstanceId string           `position:"Query" name:"InstanceId"`
 	NodeId     requests.Integer `position:"Query" name:"NodeId"`
 }
 
@@ -89,7 +89,7 @@ func CreateRollbackCurrentProjectNodeRequest() (request *RollbackCurrentProjectN
 	request = &RollbackCurrentProjectNodeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Market", "2015-11-01", "RollbackCurrentProjectNode", "", "")
+	request.InitWithApiInfo("Market", "2015-11-01", "RollbackCurrentProjectNode", "yunmarket", "openAPI")
 	request.Method = requests.POST
 	return
 }

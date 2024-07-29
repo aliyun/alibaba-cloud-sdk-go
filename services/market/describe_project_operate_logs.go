@@ -87,7 +87,7 @@ func CreateDescribeProjectOperateLogsRequest() (request *DescribeProjectOperateL
 	request = &DescribeProjectOperateLogsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Market", "2015-11-01", "DescribeProjectOperateLogs", "", "")
+	request.InitWithApiInfo("Market", "2015-11-01", "DescribeProjectOperateLogs", "yunmarket", "openAPI")
 	request.Method = requests.POST
 	return
 }

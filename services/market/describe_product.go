@@ -106,7 +106,7 @@ func CreateDescribeProductRequest() (request *DescribeProductRequest) {
 	request = &DescribeProductRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Market", "2015-11-01", "DescribeProduct", "", "")
+	request.InitWithApiInfo("Market", "2015-11-01", "DescribeProduct", "yunmarket", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -71,8 +71,8 @@ func (client *Client) PauseProjectWithCallback(request *PauseProjectRequest, cal
 // PauseProjectRequest is the request struct for api PauseProject
 type PauseProjectRequest struct {
 	*requests.RpcRequest
-	InstanceId string           `position:"Query" name:"InstanceId"`
 	Remark     string           `position:"Query" name:"Remark"`
+	InstanceId string           `position:"Query" name:"InstanceId"`
 	NodeId     requests.Integer `position:"Query" name:"NodeId"`
 }
 
@@ -89,7 +89,7 @@ func CreatePauseProjectRequest() (request *PauseProjectRequest) {
 	request = &PauseProjectRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Market", "2015-11-01", "PauseProject", "", "")
+	request.InitWithApiInfo("Market", "2015-11-01", "PauseProject", "yunmarket", "openAPI")
 	request.Method = requests.POST
 	return
 }

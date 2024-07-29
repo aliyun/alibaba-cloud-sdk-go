@@ -87,7 +87,7 @@ func CreateDescribeProjectInfoRequest() (request *DescribeProjectInfoRequest) {
 	request = &DescribeProjectInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Market", "2015-11-01", "DescribeProjectInfo", "", "")
+	request.InitWithApiInfo("Market", "2015-11-01", "DescribeProjectInfo", "yunmarket", "openAPI")
 	request.Method = requests.POST
 	return
 }

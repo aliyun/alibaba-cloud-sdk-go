@@ -86,7 +86,7 @@ func CreateDescribeLicenseRequest() (request *DescribeLicenseRequest) {
 	request = &DescribeLicenseRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Market", "2015-11-01", "DescribeLicense", "", "")
+	request.InitWithApiInfo("Market", "2015-11-01", "DescribeLicense", "yunmarket", "openAPI")
 	request.Method = requests.POST
 	return
 }

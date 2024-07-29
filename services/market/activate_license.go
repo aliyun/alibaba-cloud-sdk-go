@@ -87,7 +87,7 @@ func CreateActivateLicenseRequest() (request *ActivateLicenseRequest) {
 	request = &ActivateLicenseRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Market", "2015-11-01", "ActivateLicense", "", "")
+	request.InitWithApiInfo("Market", "2015-11-01", "ActivateLicense", "yunmarket", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -97,7 +97,7 @@ func CreateDescribeDistributionProductsRequest() (request *DescribeDistributionP
 	request = &DescribeDistributionProductsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Market", "2015-11-01", "DescribeDistributionProducts", "", "")
+	request.InitWithApiInfo("Market", "2015-11-01", "DescribeDistributionProducts", "yunmarket", "openAPI")
 	request.Method = requests.GET
 	return
 }

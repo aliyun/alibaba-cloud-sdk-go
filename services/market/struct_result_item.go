@@ -17,10 +17,11 @@ package market
 
 // ResultItem is a nested struct in market response
 type ResultItem struct {
-	AliyunPk    int64  `json:"AliyunPk" xml:"AliyunPk"`
-	ProductCode string `json:"ProductCode" xml:"ProductCode"`
-	ProductName string `json:"ProductName" xml:"ProductName"`
-	TotalQuota  int64  `json:"TotalQuota" xml:"TotalQuota"`
-	TotalUsage  int64  `json:"TotalUsage" xml:"TotalUsage"`
-	Unit        string `json:"Unit" xml:"Unit"`
+	AliyunPk      int64  `json:"AliyunPk" xml:"AliyunPk"`
+	ProductCode   string `json:"ProductCode" xml:"ProductCode"`
+	ProductName   string `json:"ProductName" xml:"ProductName"`
+	TotalQuota    int64  `json:"TotalQuota" xml:"TotalQuota"`
+	TotalUsage    int64  `json:"TotalUsage" xml:"TotalUsage"`
+	TotalCapacity int64  `json:"TotalCapacity" xml:"TotalCapacity"`
+	Unit          string `json:"Unit" xml:"Unit"`
 }

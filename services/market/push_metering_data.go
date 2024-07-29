@@ -86,7 +86,7 @@ func CreatePushMeteringDataRequest() (request *PushMeteringDataRequest) {
 	request = &PushMeteringDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Market", "2015-11-01", "PushMeteringData", "", "")
+	request.InitWithApiInfo("Market", "2015-11-01", "PushMeteringData", "yunmarket", "openAPI")
 	request.Method = requests.POST
 	return
 }

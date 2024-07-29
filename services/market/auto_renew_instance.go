@@ -91,7 +91,7 @@ func CreateAutoRenewInstanceRequest() (request *AutoRenewInstanceRequest) {
 	request = &AutoRenewInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Market", "2015-11-01", "AutoRenewInstance", "", "")
+	request.InitWithApiInfo("Market", "2015-11-01", "AutoRenewInstance", "yunmarket", "openAPI")
 	request.Method = requests.POST
 	return
 }

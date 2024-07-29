@@ -89,7 +89,7 @@ func CreateCrossAccountVerifyTokenRequest() (request *CrossAccountVerifyTokenReq
 	request = &CrossAccountVerifyTokenRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Market", "2015-11-01", "CrossAccountVerifyToken", "", "")
+	request.InitWithApiInfo("Market", "2015-11-01", "CrossAccountVerifyToken", "yunmarket", "openAPI")
 	request.Method = requests.POST
 	return
 }
