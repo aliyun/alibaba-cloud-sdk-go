@@ -1,3 +1,7 @@
+2024-07-29 Version: v1.62.800
+- Generated 2014-08-28 for `Ess`.
+- Ess support instance refresh.
+
 2024-07-29 Version: v1.62.799
 - Generated 2015-11-01 for `Market`.
 - Update DescribeApiMetering API.
