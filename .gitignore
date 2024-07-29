@@ -13,3 +13,4 @@ out/
 .gitignore
 coverage.*
 .history/
+coverage/
