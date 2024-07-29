@@ -31,7 +31,7 @@ type SignerKeyPair struct {
 	*credentialUpdater
 	sessionCredential *SessionCredential
 	credential        *credentials.RsaKeyPairCredential
-	commonApi         func(request *requests.CommonRequest, signer interface{}) (response *responses.CommonResponse, err error)
+	commonApi         commonApiFunc
 }
 
 func NewSignerKeyPair(credential *credentials.RsaKeyPairCredential, commonApi func(*requests.CommonRequest, interface{}) (response *responses.CommonResponse, err error)) (signer *SignerKeyPair, err error) {

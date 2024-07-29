@@ -22,7 +22,6 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/auth/signers"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/errors"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 type Signer interface {
@@ -34,7 +33,7 @@ type Signer interface {
 	Sign(stringToSign, secretSuffix string) string
 }
 
-func NewSignerWithCredential(credential Credential, commonApi func(request *requests.CommonRequest, signer interface{}) (response *responses.CommonResponse, err error)) (signer Signer, err error) {
+func NewSignerWithCredential(credential Credential, commonApi commonApiFunc) (signer Signer, err error) {
 	switch instance := credential.(type) {
 	case *credentials.AccessKeyCredential:
 		{
@@ -51,6 +50,10 @@ func NewSignerWithCredential(credential Credential, commonApi func(request *requ
 	case *credentials.RamRoleArnCredential:
 		{
 			signer, err = signers.NewRamRoleArnSigner(instance, commonApi)
+		}
+	case *credentials.OIDCCredential:
+		{
+			signer, err = signers.NewOIDCSigner(instance, commonApi)
 		}
 	case *credentials.RsaKeyPairCredential:
 		{

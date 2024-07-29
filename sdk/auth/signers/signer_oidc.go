@@ -27,17 +27,15 @@ import (
 	jmespath "github.com/jmespath/go-jmespath"
 )
 
-var securityCredURL = "http://100.100.100.200/latest/meta-data/ram/security-credentials/"
-
-type EcsRamRoleSigner struct {
+type OIDCSigner struct {
 	*credentialUpdater
 	sessionCredential *SessionCredential
 	credential        *credentials.EcsRamRoleCredential
 	commonApi         commonApiFunc
 }
 
-func NewEcsRamRoleSigner(credential *credentials.EcsRamRoleCredential, commonApi func(*requests.CommonRequest, interface{}) (response *responses.CommonResponse, err error)) (signer *EcsRamRoleSigner) {
-	signer = &EcsRamRoleSigner{
+func NewOIDCSigner(credential *credentials.EcsRamRoleCredential, commonApi func(*requests.CommonRequest, interface{}) (response *responses.CommonResponse, err error)) (signer *OIDCSigner, err error) {
+	signer = &OIDCSigner{
 		credential: credential,
 		commonApi:  commonApi,
 	}
@@ -49,22 +47,22 @@ func NewEcsRamRoleSigner(credential *credentials.EcsRamRoleCredential, commonApi
 		refreshApi:           signer.refreshApi,
 	}
 
-	return signer
+	return signer, nil
 }
 
-func (*EcsRamRoleSigner) GetName() string {
+func (*OIDCSigner) GetName() string {
 	return "HMAC-SHA1"
 }
 
-func (*EcsRamRoleSigner) GetType() string {
+func (*OIDCSigner) GetType() string {
 	return ""
 }
 
-func (*EcsRamRoleSigner) GetVersion() string {
+func (*OIDCSigner) GetVersion() string {
 	return "1.0"
 }
 
-func (signer *EcsRamRoleSigner) GetAccessKeyId() (accessKeyId string, err error) {
+func (signer *OIDCSigner) GetAccessKeyId() (accessKeyId string, err error) {
 	if signer.sessionCredential == nil || signer.needUpdateCredential() {
 		err = signer.updateCredential()
 		if err != nil {
@@ -77,26 +75,24 @@ func (signer *EcsRamRoleSigner) GetAccessKeyId() (accessKeyId string, err error)
 	return signer.sessionCredential.AccessKeyId, nil
 }
 
-func (signer *EcsRamRoleSigner) GetExtraParam() map[string]string {
+func (signer *OIDCSigner) GetExtraParam() map[string]string {
 	if signer.sessionCredential == nil {
-		return make(map[string]string)
+		return nil
 	}
-	if len(signer.sessionCredential.StsToken) <= 0 {
-		return make(map[string]string)
-	}
+
 	return map[string]string{"SecurityToken": signer.sessionCredential.StsToken}
 }
 
-func (signer *EcsRamRoleSigner) Sign(stringToSign, secretSuffix string) string {
+func (signer *OIDCSigner) Sign(stringToSign, secretSuffix string) string {
 	secret := signer.sessionCredential.AccessKeySecret + secretSuffix
 	return ShaHmac1(stringToSign, secret)
 }
 
-func (signer *EcsRamRoleSigner) buildCommonRequest() (request *requests.CommonRequest, err error) {
+func (signer *OIDCSigner) buildCommonRequest() (request *requests.CommonRequest, err error) {
 	return
 }
 
-func (signer *EcsRamRoleSigner) refreshApi(request *requests.CommonRequest) (response *responses.CommonResponse, err error) {
+func (signer *OIDCSigner) refreshApi(request *requests.CommonRequest) (response *responses.CommonResponse, err error) {
 	requestUrl := securityCredURL + signer.credential.RoleName
 	httpRequest, err := http.NewRequest(requests.GET, requestUrl, strings.NewReader(""))
 	if err != nil {
@@ -115,7 +111,7 @@ func (signer *EcsRamRoleSigner) refreshApi(request *requests.CommonRequest) (res
 	return
 }
 
-func (signer *EcsRamRoleSigner) refreshCredential(response *responses.CommonResponse) (err error) {
+func (signer *OIDCSigner) refreshCredential(response *responses.CommonResponse) (err error) {
 	if response.GetHttpStatus() != http.StatusOK {
 		return fmt.Errorf("refresh Ecs sts token err, httpStatus: %d, message = %s", response.GetHttpStatus(), response.GetHttpContentString())
 	}
@@ -162,6 +158,6 @@ func (signer *EcsRamRoleSigner) refreshCredential(response *responses.CommonResp
 	return
 }
 
-func (signer *EcsRamRoleSigner) GetSessionCredential() *SessionCredential {
+func (signer *OIDCSigner) GetSessionCredential() *SessionCredential {
 	return signer.sessionCredential
 }

@@ -37,10 +37,10 @@ type RamRoleArnSigner struct {
 	roleSessionName   string
 	sessionCredential *SessionCredential
 	credential        *credentials.RamRoleArnCredential
-	commonApi         func(request *requests.CommonRequest, signer interface{}) (response *responses.CommonResponse, err error)
+	commonApi         commonApiFunc
 }
 
-func NewRamRoleArnSigner(credential *credentials.RamRoleArnCredential, commonApi func(request *requests.CommonRequest, signer interface{}) (response *responses.CommonResponse, err error)) (signer *RamRoleArnSigner, err error) {
+func NewRamRoleArnSigner(credential *credentials.RamRoleArnCredential, commonApi commonApiFunc) (signer *RamRoleArnSigner, err error) {
 	signer = &RamRoleArnSigner{
 		credential: credential,
 		commonApi:  commonApi,
