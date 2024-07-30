@@ -98,18 +98,18 @@ func main() {
 
 ## ドキュメント
 
-- [Requirements](docs/0-Requirements-JP.md)
-- [Installation](docs/1-Installation-JP.md)
-- [Client & Credentials](docs/2-Client-JP.md)
-- [SSL Verify](docs/3-Verify-JP.md)
-- [Proxy](docs/4-Proxy-JP.md)
-- [Timeout](docs/5-Timeout-JP.md)
-- [Debug](docs/6-Debug-JP.md)
-- [Logger](docs/7-Logger-JP.md)
-- [Concurrent](docs/8-Concurrent-JP.md)
-- [Asynchronous Call](docs/9-Asynchronous-JP.md)
-- [Package Management](docs/10-Package-Management-JP.md)
-- [Endpoint](docs/11-Endpoint-JP.md)
+- [Requirements](docs/0-Requirements-EN.md)
+- [Installation](docs/1-Installation-EN.md)
+- [Client & Credentials](docs/2-Client-EN.md)
+- [SSL Verify](docs/3-Verify-EN.md)
+- [Proxy](docs/4-Proxy-EN.md)
+- [Timeout](docs/5-Timeout-EN.md)
+- [Debug](docs/6-Debug-EN.md)
+- [Logger](docs/7-Logger-EN.md)
+- [Concurrent](docs/8-Concurrent-EN.md)
+- [Asynchronous Call](docs/9-Asynchronous-EN.md)
+- [Package Management](docs/10-Package-Management-EN.md)
+- [Endpoint](docs/11-Endpoint-EN.md)
 
 ## 問題
 
