@@ -28,7 +28,7 @@ import (
 type Signer interface {
 	GetName() string
 	GetType() string
-	GetVersion() string
+	// GetVersion() string
 	// Deprecated: Use credentials provider instead of
 	GetAccessKeyId() (string, error)
 	// Deprecated: Use credentials provider instead of
@@ -38,11 +38,6 @@ type Signer interface {
 }
 
 func NewSignerWithCredential(credential Credential, commonApi func(request *requests.CommonRequest, signer interface{}) (response *responses.CommonResponse, err error)) (signer Signer, err error) {
-	if reflect.TypeOf(credential).Implements(reflect.TypeOf((*credentials.CredentialsProvider)(nil)).Elem()) {
-		signer = signers.NewDefaultSigner()
-		return
-	}
-
 	switch instance := credential.(type) {
 	case *credentials.AccessKeyCredential:
 		{
@@ -91,11 +86,11 @@ func Sign(request requests.AcsRequest, signer Signer, regionId string, credentia
 	switch request.GetStyle() {
 	case requests.ROA:
 		{
-			err = signRoaRequest(request, signer, credentialsProvider)
+			err = signRoaRequest(request, credentialsProvider)
 		}
 	case requests.RPC:
 		{
-			err = signRpcRequest(request, signer, regionId, credentialsProvider)
+			err = signRpcRequest(request, regionId, credentialsProvider)
 		}
 	default:
 		message := fmt.Sprintf(errors.UnknownRequestTypeErrorMessage, reflect.TypeOf(request))

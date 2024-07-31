@@ -6,7 +6,6 @@ import (
 	"github.com/stretchr/testify/assert"
 
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/auth/credentials"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/auth/signers"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
 )
 
@@ -38,7 +37,6 @@ func TestRpcSignatureComposer(t *testing.T) {
 	request := requests.NewCommonRequest()
 	request.TransToAcsRequest()
 	c := credentials.NewAccessKeyCredential("accessKeyId", "accessKeySecret")
-	signer := signers.NewAccessKeySigner(c)
 
 	origTestHookGetDate := hookGetDate
 	defer func() { hookGetDate = origTestHookGetDate }()
@@ -49,37 +47,17 @@ func TestRpcSignatureComposer(t *testing.T) {
 
 	provider, err := ToCredentialsProvider(c)
 	assert.Nil(t, err)
-	signRpcRequest(request, signer, "regionId", provider)
+	signRpcRequest(request, "regionId", provider)
 	assert.Equal(t, "mock date", request.GetQueryParams()["Timestamp"])
 	assert.Equal(t, "MOCK_UUID", request.GetQueryParams()["SignatureNonce"])
 	assert.Equal(t, "7loPmFjvDnzOVnQeQNj85S6nFGY=", request.GetQueryParams()["Signature"])
 
 	sts := credentials.NewStsTokenCredential("accessKeyId", "accessKeySecret", "accessKeyStsToken")
-	sign1 := signers.NewStsTokenSigner(sts)
 
 	provider, err = ToCredentialsProvider(sts)
 	assert.Nil(t, err)
-	signRpcRequest(request, sign1, "regionId", provider)
+	signRpcRequest(request, "regionId", provider)
 	assert.Equal(t, "mock date", request.GetQueryParams()["Timestamp"])
 	assert.Equal(t, "MOCK_UUID", request.GetQueryParams()["SignatureNonce"])
 	assert.Equal(t, "5Nxdcler+ihqWqv0Hr2On4PsBf4=", request.GetQueryParams()["Signature"])
 }
-
-// func TestRpcSignatureComposer2(t *testing.T) {
-// 	request := requests.NewCommonRequest()
-// 	request.PathPattern = "/users/:user"
-// 	request.FormParams["key"] = "value"
-// 	request.AcceptFormat = "XML"
-// 	request.TransToAcsRequest()
-// 	c := credentials.NewAccessKeyCredential("accessKeyId", "accessKeySecret")
-// 	signer := signers.NewAccessKeySigner(c)
-
-// 	origTestHookLookupIP := hookGetDate
-// 	defer func() { hookGetDate = origTestHookLookupIP }()
-// 	hookGetDate = mockDate
-// 	signRpcRequest(request, signer, "regionId")
-// 	assert.Equal(t, "application/x-www-form-urlencoded", request.GetHeaders()["Content-Type"])
-// 	assert.Equal(t, "mock date", request.GetHeaders()["Date"])
-// 	assert.Equal(t, "application/xml", request.GetHeaders()["Accept"])
-// 	assert.Equal(t, "acs accessKeyId:U9uA3ftRZKixHPB08Z7Z4GOlpTY=", request.GetQueryParams()["Signature"])
-// }

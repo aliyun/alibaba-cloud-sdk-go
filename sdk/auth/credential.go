@@ -57,7 +57,7 @@ func ToCredentialsProvider(credential Credential) (provider credentials.Credenti
 		}
 	case *credentials.RsaKeyPairCredential:
 		{
-			provider = credentials.NewRSAKeyPairCredentialsProvider(instance.PublicKeyId, instance.PrivateKey, instance.SessionExpiration)
+			provider, err = credentials.NewRSAKeyPairCredentialsProvider(instance.PublicKeyId, instance.PrivateKey, instance.SessionExpiration)
 			return
 		}
 	case *credentials.EcsRamRoleCredential:

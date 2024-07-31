@@ -703,19 +703,16 @@ func TestClient_BuildRequestWithSigner2(t *testing.T) {
 	request.QueryParams["PageSize"] = "30"
 	request.Product = "Ecs"
 	request.TransToAcsRequest()
-	signer := &signertest{
-		name: "signer",
-	}
 
 	//Test: regional rule
 	client.EndpointType = "regional"
-	httprequest, err := client.buildRequestWithSigner(request, signer)
+	httprequest, err := client.buildRequestWithSigner(request)
 	assert.Nil(t, err)
 	assert.Equal(t, "ecs.regionid.aliyuncs.com", httprequest.URL.Host)
 
 	client.regionId = ""
 	request.Domain = ""
-	httprequest, err = client.buildRequestWithSigner(request, signer)
+	httprequest, err = client.buildRequestWithSigner(request)
 	assert.Nil(t, httprequest)
 	assert.Equal(t, "RegionId is empty, please set a valid RegionId", err.Error())
 
@@ -724,7 +721,7 @@ func TestClient_BuildRequestWithSigner2(t *testing.T) {
 	client.EndpointMap = map[string]string{
 		"regionid": "ecs.test.com",
 	}
-	httprequest, err = client.buildRequestWithSigner(request, signer)
+	httprequest, err = client.buildRequestWithSigner(request)
 	assert.Nil(t, err)
 	assert.Equal(t, "ecs.test.com", httprequest.URL.Host)
 
@@ -733,7 +730,7 @@ func TestClient_BuildRequestWithSigner2(t *testing.T) {
 	client.EndpointMap = map[string]string{
 		"regiontest": "ecs.test.com",
 	}
-	httprequest, err = client.buildRequestWithSigner(request, signer)
+	httprequest, err = client.buildRequestWithSigner(request)
 	assert.Nil(t, err)
 	assert.Equal(t, "ecs.regionid.aliyuncs.com", httprequest.URL.Host)
 
@@ -741,7 +738,7 @@ func TestClient_BuildRequestWithSigner2(t *testing.T) {
 	request.Domain = ""
 	client.EndpointType = "centeral"
 	client.Network = "share"
-	httprequest, err = client.buildRequestWithSigner(request, signer)
+	httprequest, err = client.buildRequestWithSigner(request)
 	assert.Nil(t, err)
 	assert.Equal(t, "ecs-share.aliyuncs.com", httprequest.URL.Host)
 
@@ -752,12 +749,12 @@ func TestClient_BuildRequestWithSigner2(t *testing.T) {
 
 	client.Domain = "ecs-client.aliyuncs.com"
 	request.Domain = ""
-	httprequest, err = client.buildRequestWithSigner(request, signer)
+	httprequest, err = client.buildRequestWithSigner(request)
 	assert.Nil(t, err)
 	assert.Equal(t, "ecs-client.aliyuncs.com", httprequest.URL.Host)
 
 	request.Domain = "ecs-request.aliyuncs.com"
-	httprequest, err = client.buildRequestWithSigner(request, signer)
+	httprequest, err = client.buildRequestWithSigner(request)
 	assert.Nil(t, err)
 	assert.Equal(t, "ecs-request.aliyuncs.com", httprequest.URL.Host)
 }
@@ -800,46 +797,44 @@ func TestClient_AppendUserAgent(t *testing.T) {
 	request.ApiName = "DescribeInstanceStatus"
 
 	request.RegionId = "regionid"
-	signer := &signertest{
-		name: "signer",
-	}
+
 	request.TransToAcsRequest()
-	httpRequest, err := client.buildRequestWithSigner(request, signer)
+	httpRequest, err := client.buildRequestWithSigner(request)
 	assert.Nil(t, err)
 	assert.Equal(t, DefaultUserAgent, httpRequest.Header.Get("User-Agent"))
 
 	// Test set client useragent.
 	client.AppendUserAgent("test", "1.01")
-	httpRequest, err = client.buildRequestWithSigner(request, signer)
+	httpRequest, err = client.buildRequestWithSigner(request)
 	assert.Nil(t, err)
 	assert.Equal(t, DefaultUserAgent+" test/1.01", httpRequest.Header.Get("User-Agent"))
 
 	// Test set request useragent. And request useragent has a higner priority than client's.
 	request.AppendUserAgent("test", "2.01")
-	httpRequest, err = client.buildRequestWithSigner(request, signer)
+	httpRequest, err = client.buildRequestWithSigner(request)
 	assert.Nil(t, err)
 	assert.Equal(t, DefaultUserAgent+" test/2.01", httpRequest.Header.Get("User-Agent"))
 
 	client.AppendUserAgent("test", "2.02")
-	httpRequest, err = client.buildRequestWithSigner(request, signer)
+	httpRequest, err = client.buildRequestWithSigner(request)
 	assert.Nil(t, err)
 	assert.Equal(t, DefaultUserAgent+" test/2.01", httpRequest.Header.Get("User-Agent"))
 
 	// Test update request useragent.
 	request.AppendUserAgent("test", "2.02")
-	httpRequest, err = client.buildRequestWithSigner(request, signer)
+	httpRequest, err = client.buildRequestWithSigner(request)
 	assert.Nil(t, err)
 	assert.Equal(t, DefaultUserAgent+" test/2.02", httpRequest.Header.Get("User-Agent"))
 
 	// Test client can't modify DefaultUserAgent.
 	client.AppendUserAgent("core", "1.01")
-	httpRequest, err = client.buildRequestWithSigner(request, signer)
+	httpRequest, err = client.buildRequestWithSigner(request)
 	assert.Nil(t, err)
 	assert.Equal(t, DefaultUserAgent+" test/2.02", httpRequest.Header.Get("User-Agent"))
 
 	// Test request can't modify DefaultUserAgent.
 	request.AppendUserAgent("core", "1.01")
-	httpRequest, err = client.buildRequestWithSigner(request, signer)
+	httpRequest, err = client.buildRequestWithSigner(request)
 	assert.Nil(t, err)
 	assert.Equal(t, DefaultUserAgent+" test/2.02", httpRequest.Header.Get("User-Agent"))
 
@@ -850,7 +845,7 @@ func TestClient_AppendUserAgent(t *testing.T) {
 	request1.RegionId = "regionid"
 	request1.AppendUserAgent("sys", "1.01")
 	request1.TransToAcsRequest()
-	httpRequest, err = client.buildRequestWithSigner(request1, signer)
+	httpRequest, err = client.buildRequestWithSigner(request1)
 	assert.Nil(t, err)
 	assert.Equal(t, DefaultUserAgent+" test/2.02 sys/1.01", httpRequest.Header.Get("User-Agent"))
 }
@@ -1014,6 +1009,7 @@ func TestClient_SetSigner(t *testing.T) {
 	c1, err := NewClientWithBearerToken("cn-hangzhou", "Bearer.Token")
 	assert.Nil(t, err)
 	oldSinger := c1.GetSigner()
+	assert.Nil(t, oldSinger)
 
 	c2, err := NewClientWithBearerToken("cn-hangzhou", "Bearer.Token")
 	assert.Nil(t, err)
@@ -1022,5 +1018,4 @@ func TestClient_SetSigner(t *testing.T) {
 	c1.SetSigner(newSinger)
 	assert.Equal(t, newSinger, c1.signer)
 	assert.True(t, c1.signer == newSinger)
-	assert.True(t, c1.signer != oldSinger)
 }
