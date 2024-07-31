@@ -12,8 +12,7 @@ func TestNewInteger(t *testing.T) {
 	value, err := integer.GetValue()
 	assert.Nil(t, err)
 	assert.Equal(t, 123123, value)
-	var expected Integer
-	expected = "123123"
+	var expected Integer = "123123"
 	assert.Equal(t, expected, integer)
 }
 
@@ -23,8 +22,7 @@ func TestNewInteger64(t *testing.T) {
 	value, err := long.GetValue64()
 	assert.Nil(t, err)
 	assert.Equal(t, int64(123123123123123123), value)
-	var expected Integer
-	expected = "123123123123123123"
+	var expected Integer = "123123123123123123"
 	assert.Equal(t, expected, long)
 }
 
@@ -34,8 +32,7 @@ func TestNewBoolean(t *testing.T) {
 	value, err := boolean.GetValue()
 	assert.Nil(t, err)
 	assert.Equal(t, false, value)
-	var expected Boolean
-	expected = "false"
+	var expected Boolean = "false"
 	assert.Equal(t, expected, boolean)
 }
 
@@ -45,7 +42,6 @@ func TestNewFloat(t *testing.T) {
 	value, err := float.GetValue()
 	assert.Nil(t, err)
 	assert.Equal(t, 123123.123123, value)
-	var expected Float
-	expected = "123123.123123"
+	var expected Float = "123123.123123"
 	assert.Equal(t, expected, float)
 }
