@@ -28,6 +28,7 @@ import (
 	jmespath "github.com/jmespath/go-jmespath"
 )
 
+// Deprecated: RSA key pair is deprecated
 type SignerKeyPair struct {
 	*credentialUpdater
 	sessionCredential *SessionCredential
