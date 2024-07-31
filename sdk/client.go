@@ -853,6 +853,7 @@ func NewClientWithEcsRamRole(regionId string, roleName string) (client *Client, 
 	return
 }
 
+// Deprecated: the RsaKeyPair is deprecated
 func NewClientWithRsaKeyPair(regionId string, publicKeyId, privateKey string, sessionExpiration int) (client *Client, err error) {
 	client = &Client{}
 	err = client.InitWithRsaKeyPair(regionId, publicKeyId, privateKey, sessionExpiration)
