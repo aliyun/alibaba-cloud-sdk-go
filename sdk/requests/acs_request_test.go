@@ -159,7 +159,6 @@ func (r AcsRequestTest) GetStyle() string {
 }
 
 func (r AcsRequestTest) addPathParam(key, value string) {
-	return
 }
 
 func Test_AcsRequest_InitParams(t *testing.T) {
