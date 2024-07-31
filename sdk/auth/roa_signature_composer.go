@@ -34,14 +34,14 @@ func init() {
 	debug = utils.Init("sdk")
 }
 
-func signRoaRequest(request requests.AcsRequest, signer Signer, credentialsProvider credentials.CredentialsProvider) (err error) {
+func signRoaRequest(request requests.AcsRequest, credentialsProvider credentials.CredentialsProvider) (err error) {
 	// 先获取 accesskey，确保刷新 credential
 	cc, err := credentialsProvider.GetCredentials()
 	if err != nil {
 		return err
 	}
 
-	completeROASignParams(request, signer, cc)
+	completeROASignParams(request, cc)
 	stringToSign := buildRoaStringToSign(request)
 	request.SetStringToSign(stringToSign)
 	secret := cc.AccessKeySecret + ""
@@ -51,7 +51,7 @@ func signRoaRequest(request requests.AcsRequest, signer Signer, credentialsProvi
 	return
 }
 
-func completeROASignParams(request requests.AcsRequest, signer Signer, cc *credentials.Credentials) {
+func completeROASignParams(request requests.AcsRequest, cc *credentials.Credentials) {
 	headerParams := request.GetHeaders()
 
 	if cc.SecurityToken != "" {
@@ -64,8 +64,8 @@ func completeROASignParams(request requests.AcsRequest, signer Signer, cc *crede
 
 	// complete header params
 	headerParams["Date"] = hookGetDate(utils.GetTimeInFormatRFC2616)
-	headerParams["x-acs-signature-method"] = signer.GetName()
-	headerParams["x-acs-signature-version"] = signer.GetVersion()
+	headerParams["x-acs-signature-method"] = "HMAC-SHA1"
+	headerParams["x-acs-signature-version"] = "1.0"
 	if request.GetFormParams() != nil && len(request.GetFormParams()) > 0 {
 		formString := utils.GetUrlFormedMap(request.GetFormParams())
 		request.SetContent([]byte(formString))

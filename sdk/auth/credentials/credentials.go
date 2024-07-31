@@ -12,7 +12,6 @@ import (
 	"time"
 
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/errors"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/utils"
 )
 
@@ -41,6 +40,17 @@ type assumeRoleResponse struct {
 	Credentials     *credentials     `json:"Credentials"`
 }
 
+type generateSessionAccessKeyResponse struct {
+	RequestID        *string           `json:"RequestId"`
+	SessionAccessKey *sessionAccessKey `json:"SessionAccessKey"`
+}
+
+type sessionAccessKey struct {
+	SessionAccessKeyId     *string `json:"SessionAccessKeyId"`
+	SessionAccessKeySecret *string `json:"SessionAccessKeySecret"`
+	Expiration             *string `json:"Expiration"`
+}
+
 type SessionCredentials struct {
 	AccessKeyId     string
 	AccessKeySecret string
@@ -60,106 +70,240 @@ type CredentialsProvider interface {
 }
 
 type StaticAKCredentialsProvider struct {
-	AccessKeyId     string
-	AccessKeySecret string
+	accessKeyId     string
+	accessKeySecret string
 }
 
 func NewStaticAKCredentialsProvider(accessKeyId, accessKeySecret string) *StaticAKCredentialsProvider {
 	return &StaticAKCredentialsProvider{
-		AccessKeyId:     accessKeyId,
-		AccessKeySecret: accessKeySecret,
+		accessKeyId:     accessKeyId,
+		accessKeySecret: accessKeySecret,
 	}
 }
 
 func (provider *StaticAKCredentialsProvider) GetCredentials() (cc *Credentials, err error) {
 	cc = &Credentials{
-		AccessKeyId:     provider.AccessKeyId,
-		AccessKeySecret: provider.AccessKeySecret,
+		AccessKeyId:     provider.accessKeyId,
+		AccessKeySecret: provider.accessKeySecret,
 	}
 	return
 }
 
 type StaticSTSCredentialsProvider struct {
-	AccessKeyId     string
-	AccessKeySecret string
-	SecurityToken   string
+	accessKeyId     string
+	accessKeySecret string
+	securityToken   string
 }
 
 func NewStaticSTSCredentialsProvider(accessKeyId, accessKeySecret, securityToken string) *StaticSTSCredentialsProvider {
 	return &StaticSTSCredentialsProvider{
-		AccessKeyId:     accessKeyId,
-		AccessKeySecret: accessKeySecret,
-		SecurityToken:   securityToken,
+		accessKeyId:     accessKeyId,
+		accessKeySecret: accessKeySecret,
+		securityToken:   securityToken,
 	}
 }
 
 func (provider *StaticSTSCredentialsProvider) GetCredentials() (cc *Credentials, err error) {
 	cc = &Credentials{
-		AccessKeyId:     provider.AccessKeyId,
-		AccessKeySecret: provider.AccessKeySecret,
-		SecurityToken:   provider.SecurityToken,
+		AccessKeyId:     provider.accessKeyId,
+		AccessKeySecret: provider.accessKeySecret,
+		SecurityToken:   provider.securityToken,
 	}
 	return
 }
 
 type BearerTokenCredentialsProvider struct {
-	BearerToken string
+	bearerToken string
 }
 
 func NewBearerTokenCredentialsProvider(bearerToken string) *BearerTokenCredentialsProvider {
 	return &BearerTokenCredentialsProvider{
-		BearerToken: bearerToken,
+		bearerToken: bearerToken,
 	}
 }
 
 func (provider *BearerTokenCredentialsProvider) GetCredentials() (cc *Credentials, err error) {
 	cc = &Credentials{
-		BearerToken: provider.BearerToken,
+		BearerToken: provider.bearerToken,
 	}
 	return
 }
 
+// Deprecated: the RSA key pair credentials is deprecated
 type RSAKeyPairCredentialsProvider struct {
-	PublicKeyId       string
-	PrivateKeyId      string
-	sessionExpiration int
+	PublicKeyId         string
+	PrivateKeyId        string
+	durationSeconds     int
+	sessionAccessKey    *sessionAccessKey
+	lastUpdateTimestamp int64
+	expirationTimestamp int64
 }
 
-func NewRSAKeyPairCredentialsProvider(publicKeyId, privateKeyId string, sessionExpiration int) *RSAKeyPairCredentialsProvider {
-	return &RSAKeyPairCredentialsProvider{
-		PublicKeyId:       publicKeyId,
-		PrivateKeyId:      privateKeyId,
-		sessionExpiration: sessionExpiration,
+// Deprecated: the RSA key pair credentials is deprecated
+func NewRSAKeyPairCredentialsProvider(publicKeyId, privateKeyId string, durationSeconds int) (provider *RSAKeyPairCredentialsProvider, err error) {
+	provider = &RSAKeyPairCredentialsProvider{
+		PublicKeyId:  publicKeyId,
+		PrivateKeyId: privateKeyId,
 	}
+
+	if durationSeconds > 0 {
+		if durationSeconds >= 900 && durationSeconds <= 3600 {
+			provider.durationSeconds = durationSeconds
+		} else {
+			err = errors.NewClientError(errors.InvalidParamErrorCode, "Key Pair session duration should be in the range of 15min - 1hr", nil)
+		}
+	} else {
+		// set to default value
+		provider.durationSeconds = 3600
+	}
+	return
 }
 
+// Deprecated: the RSA key pair credentials is deprecated
 func (provider *RSAKeyPairCredentialsProvider) GetCredentials() (cc *Credentials, err error) {
-	cc = &Credentials{
-		// TODO:
+	if provider.sessionAccessKey == nil || provider.needUpdateCredential() {
+		sessionAccessKey, err := provider.getCredentials()
+		if err != nil {
+			return nil, err
+		}
+
+		expirationTime, err := time.Parse("2006-01-02T15:04:05Z", *sessionAccessKey.Expiration)
+		if err != nil {
+			return nil, err
+		}
+
+		provider.sessionAccessKey = sessionAccessKey
+		provider.lastUpdateTimestamp = time.Now().Unix()
+		provider.expirationTimestamp = expirationTime.Unix()
 	}
+
+	cc = &Credentials{
+		AccessKeyId:     *provider.sessionAccessKey.SessionAccessKeyId,
+		AccessKeySecret: *provider.sessionAccessKey.SessionAccessKeySecret,
+	}
+	return
+}
+
+func (provider *RSAKeyPairCredentialsProvider) needUpdateCredential() bool {
+	if provider.expirationTimestamp == 0 {
+		return true
+	}
+
+	return provider.expirationTimestamp-time.Now().Unix() <= 180
+}
+
+func (provider *RSAKeyPairCredentialsProvider) getCredentials() (sessionAK *sessionAccessKey, err error) {
+	method := "POST"
+	host := "sts.ap-northeast-1.aliyuncs.com"
+
+	queries := make(map[string]string)
+	queries["Version"] = "2015-04-01"
+	queries["Action"] = "GenerateSessionAccessKey"
+	queries["Format"] = "JSON"
+	queries["Timestamp"] = utils.GetTimeInFormatISO8601()
+	queries["SignatureMethod"] = "SHA256withRSA"
+	queries["SignatureVersion"] = "1.0"
+	queries["SignatureNonce"] = utils.GetNonce()
+	queries["PublicKeyId"] = provider.PublicKeyId
+	queries["SignatureType"] = "PRIVATEKEY"
+
+	bodyForm := make(map[string]string)
+	bodyForm["DurationSeconds"] = strconv.Itoa(provider.durationSeconds)
+
+	// caculate signature
+	signParams := make(map[string]string)
+	for key, value := range queries {
+		signParams[key] = value
+	}
+	for key, value := range bodyForm {
+		signParams[key] = value
+	}
+
+	stringToSign := utils.GetUrlFormedMap(signParams)
+	stringToSign = strings.Replace(stringToSign, "+", "%20", -1)
+	stringToSign = strings.Replace(stringToSign, "*", "%2A", -1)
+	stringToSign = strings.Replace(stringToSign, "%7E", "~", -1)
+	stringToSign = url.QueryEscape(stringToSign)
+	stringToSign = method + "&%2F&" + stringToSign
+
+	queries["Signature"] = utils.Sha256WithRsa(stringToSign, provider.PrivateKeyId)
+
+	querystring := utils.GetUrlFormedMap(queries)
+	// do request
+	httpUrl := fmt.Sprintf("https://%s/?%s", host, querystring)
+
+	body := utils.GetUrlFormedMap(bodyForm)
+
+	httpRequest, err := http.NewRequest(method, httpUrl, strings.NewReader(body))
+	if err != nil {
+		return
+	}
+
+	// set headers
+	httpRequest.Header["Accept-Encoding"] = []string{"identity"}
+	httpRequest.Header["Content-Type"] = []string{"application/x-www-form-urlencoded"}
+	httpClient := &http.Client{}
+
+	httpResponse, err := httpClient.Do(httpRequest)
+	if err != nil {
+		return
+	}
+
+	defer httpResponse.Body.Close()
+
+	responseBody, err := ioutil.ReadAll(httpResponse.Body)
+	if err != nil {
+		return
+	}
+
+	if httpResponse.StatusCode != http.StatusOK {
+		message := "refresh temp ak failed"
+		err = errors.NewServerError(httpResponse.StatusCode, string(responseBody), message)
+		return
+	}
+
+	var data generateSessionAccessKeyResponse
+	err = json.Unmarshal(responseBody, &data)
+	if err != nil {
+		err = fmt.Errorf("refresh temp ak err, json.Unmarshal fail: %s", err.Error())
+		return
+	}
+
+	if data.SessionAccessKey == nil {
+		err = fmt.Errorf("refresh temp ak token err, fail to get credentials")
+		return
+	}
+
+	if data.SessionAccessKey.SessionAccessKeyId == nil || data.SessionAccessKey.SessionAccessKeySecret == nil {
+		err = fmt.Errorf("refresh temp ak token err, fail to get credentials")
+		return
+	}
+
+	sessionAK = data.SessionAccessKey
 	return
 }
 
 type RAMRoleARNCredentialsProvider struct {
-	credentialsProvider   CredentialsProvider
-	RoleArn               string
-	RoleSessionName       string
-	RoleSessionExpiration int
-	Policy                string
-	StsRegion             string
-	ExternalId            string
-	lastUpdateTimestamp   int64
-	sessionCredentials    *SessionCredentials
+	credentialsProvider CredentialsProvider
+	RoleArn             string
+	RoleSessionName     string
+	DurationSeconds     int
+	Policy              string
+	StsRegion           string
+	ExternalId          string
+	expirationTimestamp int64
+	lastUpdateTimestamp int64
+	sessionCredentials  *SessionCredentials
 }
 
-func NewRAMRoleARNCredentialsProvider(credentialsProvider CredentialsProvider, roleArn, roleSessionName string, roleSessionExpiration int, policy, stsRegion, externalId string) (provider *RAMRoleARNCredentialsProvider, err error) {
+func NewRAMRoleARNCredentialsProvider(credentialsProvider CredentialsProvider, roleArn, roleSessionName string, durationSeconds int, policy, stsRegion, externalId string) (provider *RAMRoleARNCredentialsProvider, err error) {
 	provider = &RAMRoleARNCredentialsProvider{
-		credentialsProvider:   credentialsProvider,
-		RoleArn:               roleArn,
-		RoleSessionExpiration: roleSessionExpiration,
-		Policy:                policy,
-		StsRegion:             stsRegion,
-		ExternalId:            externalId,
+		credentialsProvider: credentialsProvider,
+		RoleArn:             roleArn,
+		DurationSeconds:     durationSeconds,
+		Policy:              policy,
+		StsRegion:           stsRegion,
+		ExternalId:          externalId,
 	}
 
 	if len(roleSessionName) > 0 {
@@ -168,15 +312,15 @@ func NewRAMRoleARNCredentialsProvider(credentialsProvider CredentialsProvider, r
 		provider.RoleSessionName = "aliyun-go-sdk-" + strconv.FormatInt(time.Now().UnixNano()/1000, 10)
 	}
 
-	if roleSessionExpiration > 0 {
-		if roleSessionExpiration >= 900 && roleSessionExpiration <= 3600 {
-			provider.RoleSessionExpiration = roleSessionExpiration
+	if durationSeconds > 0 {
+		if durationSeconds >= 900 && durationSeconds <= 3600 {
+			provider.DurationSeconds = durationSeconds
 		} else {
 			err = errors.NewClientError(errors.InvalidParamErrorCode, "Assume Role session duration should be in the range of 15min - 1Hr", nil)
 		}
 	} else {
 		// default to 3600
-		provider.RoleSessionExpiration = 3600
+		provider.DurationSeconds = 3600
 	}
 
 	return
@@ -213,7 +357,7 @@ func (provider *RAMRoleARNCredentialsProvider) getCredentials(cc *Credentials) (
 		bodyForm["ExternalId"] = provider.ExternalId
 	}
 	bodyForm["RoleSessionName"] = provider.RoleSessionName
-	bodyForm["DurationSeconds"] = strconv.Itoa(provider.RoleSessionExpiration)
+	bodyForm["DurationSeconds"] = strconv.Itoa(provider.DurationSeconds)
 
 	// caculate signature
 	signParams := make(map[string]string)
@@ -292,7 +436,11 @@ func (provider *RAMRoleARNCredentialsProvider) getCredentials(cc *Credentials) (
 }
 
 func (provider *RAMRoleARNCredentialsProvider) needUpdateCredential() (result bool) {
-	return time.Now().Unix()-provider.lastUpdateTimestamp >= int64(provider.RoleSessionExpiration)-180
+	if provider.expirationTimestamp == 0 {
+		return true
+	}
+
+	return provider.expirationTimestamp-time.Now().Unix() <= 180
 }
 
 func (provider *RAMRoleARNCredentialsProvider) GetCredentials() (cc *Credentials, err error) {
@@ -320,9 +468,9 @@ func (provider *RAMRoleARNCredentialsProvider) GetCredentials() (cc *Credentials
 }
 
 type ECSRAMRoleCredentialsProvider struct {
-	RoleName           string
-	sessionCredentials *SessionCredentials
-	expirationTime     int64
+	RoleName            string
+	sessionCredentials  *SessionCredentials
+	expirationTimestamp int64
 }
 
 func NewECSRAMRoleCredentialsProvider(roleName string) *ECSRAMRoleCredentialsProvider {
@@ -332,16 +480,16 @@ func NewECSRAMRoleCredentialsProvider(roleName string) *ECSRAMRoleCredentialsPro
 }
 
 func (provider *ECSRAMRoleCredentialsProvider) needUpdateCredential() bool {
-	if provider.expirationTime == 0 {
+	if provider.expirationTimestamp == 0 {
 		return true
 	}
 
-	return provider.expirationTime-time.Now().Unix() < 180
+	return provider.expirationTimestamp-time.Now().Unix() <= 180
 }
 
 func (provider *ECSRAMRoleCredentialsProvider) getRoleName() (roleName string, err error) {
 	var securityCredURL = "http://100.100.100.200/latest/meta-data/ram/security-credentials/"
-	httpRequest, err := http.NewRequest(requests.GET, securityCredURL, strings.NewReader(""))
+	httpRequest, err := http.NewRequest("GET", securityCredURL, strings.NewReader(""))
 	if err != nil {
 		err = fmt.Errorf("get role name failed: %s", err.Error())
 		return
@@ -378,7 +526,7 @@ func (provider *ECSRAMRoleCredentialsProvider) getCredentials() (sessionCredenti
 	}
 
 	var requestUrl = "http://100.100.100.200/latest/meta-data/ram/security-credentials/" + roleName
-	httpRequest, err := http.NewRequest(requests.GET, requestUrl, strings.NewReader(""))
+	httpRequest, err := http.NewRequest("GET", requestUrl, strings.NewReader(""))
 	if err != nil {
 		err = fmt.Errorf("refresh Ecs sts token err: %s", err.Error())
 		return
@@ -440,7 +588,7 @@ func (provider *ECSRAMRoleCredentialsProvider) GetCredentials() (cc *Credentials
 		if err2 != nil {
 			return nil, err2
 		}
-		provider.expirationTime = expirationTime.Unix()
+		provider.expirationTimestamp = expirationTime.Unix()
 	}
 
 	cc = &Credentials{
@@ -452,15 +600,16 @@ func (provider *ECSRAMRoleCredentialsProvider) GetCredentials() (cc *Credentials
 }
 
 type OIDCCredentialsProvider struct {
-	OIDCProviderARN       string
-	OIDCTokenFilePath     string
-	RoleArn               string
-	RoleSessionName       string
-	RoleSessionExpiration int
-	Policy                string
-	StsRegion             string
-	lastUpdateTimestamp   int64
-	sessionCredentials    *SessionCredentials
+	OIDCProviderARN     string
+	OIDCTokenFilePath   string
+	RoleArn             string
+	RoleSessionName     string
+	DurationSeconds     int
+	Policy              string
+	StsRegion           string
+	lastUpdateTimestamp int64
+	expirationTimestamp int64
+	sessionCredentials  *SessionCredentials
 }
 
 type OIDCCredentialsProviderBuilder struct {
@@ -493,8 +642,8 @@ func (b *OIDCCredentialsProviderBuilder) WithRoleSessionName(roleSessionName str
 	return b
 }
 
-func (b *OIDCCredentialsProviderBuilder) WithRoleSessionExpiration(roleSessionExpiration int) *OIDCCredentialsProviderBuilder {
-	b.provider.RoleSessionExpiration = roleSessionExpiration
+func (b *OIDCCredentialsProviderBuilder) WithDurationSeconds(durationSeconds int) *OIDCCredentialsProviderBuilder {
+	b.provider.DurationSeconds = durationSeconds
 	return b
 }
 
@@ -542,8 +691,8 @@ func (b *OIDCCredentialsProviderBuilder) Build() (provider *OIDCCredentialsProvi
 		return
 	}
 
-	if provider.RoleSessionExpiration == 0 {
-		provider.RoleSessionExpiration = 3600
+	if provider.DurationSeconds == 0 {
+		provider.DurationSeconds = 3600
 	} else {
 		err = errors.NewClientError(errors.InvalidParamErrorCode, "Assume Role session duration should be in the range of 15min - 1Hr", nil)
 		return
@@ -581,7 +730,7 @@ func (provider *OIDCCredentialsProvider) getCredentials() (sessionCredentials *S
 	}
 
 	bodyForm["RoleSessionName"] = provider.RoleSessionName
-	bodyForm["DurationSeconds"] = strconv.Itoa(provider.RoleSessionExpiration)
+	bodyForm["DurationSeconds"] = strconv.Itoa(provider.DurationSeconds)
 
 	// caculate signature
 	signParams := make(map[string]string)
@@ -651,17 +800,28 @@ func (provider *OIDCCredentialsProvider) getCredentials() (sessionCredentials *S
 }
 
 func (provider *OIDCCredentialsProvider) needUpdateCredential() (result bool) {
-	return time.Now().Unix()-provider.lastUpdateTimestamp >= int64(provider.RoleSessionExpiration)-180
+	if provider.expirationTimestamp == 0 {
+		return true
+	}
+
+	return provider.expirationTimestamp-time.Now().Unix() <= 180
 }
 
 func (provider *OIDCCredentialsProvider) GetCredentials() (cc *Credentials, err error) {
 	if provider.sessionCredentials == nil || provider.needUpdateCredential() {
-		sessionCredentials, err2 := provider.getCredentials()
+		sessionCredentials, err1 := provider.getCredentials()
+		if err1 != nil {
+			return nil, err1
+		}
+
+		provider.sessionCredentials = sessionCredentials
+		expirationTime, err2 := time.Parse("2006-01-02T15:04:05Z", sessionCredentials.Expiration)
 		if err2 != nil {
 			return nil, err2
 		}
 
-		provider.sessionCredentials = sessionCredentials
+		provider.lastUpdateTimestamp = time.Now().Unix()
+		provider.expirationTimestamp = expirationTime.Unix()
 	}
 
 	cc = &Credentials{
