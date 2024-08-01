@@ -31,7 +31,7 @@ func GetEndpointMap() map[string]string {
 			"ap-northeast-1":              "mongodb.ap-northeast-1.aliyuncs.com",
 			"cn-huhehaote-nebula-1":       "mongodb.aliyuncs.com",
 			"cn-shanghai-et2-b01":         "mongodb.aliyuncs.com",
-			"ap-southeast-1":              "mongodb.aliyuncs.com",
+			"ap-southeast-1":              "mongodb.ap-southeast-1.aliyuncs.com",
 			"ap-southeast-2":              "mongodb.ap-southeast-2.aliyuncs.com",
 			"ap-southeast-3":              "mongodb.ap-southeast-3.aliyuncs.com",
 			"ap-southeast-5":              "mongodb.ap-southeast-5.aliyuncs.com",

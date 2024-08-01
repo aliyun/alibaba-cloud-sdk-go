@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// RestoreDBInstance invokes the dds.RestoreDBInstance API synchronously
-func (client *Client) RestoreDBInstance(request *RestoreDBInstanceRequest) (response *RestoreDBInstanceResponse, err error) {
-	response = CreateRestoreDBInstanceResponse()
+// RestartNode invokes the dds.RestartNode API synchronously
+func (client *Client) RestartNode(request *RestartNodeRequest) (response *RestartNodeResponse, err error) {
+	response = CreateRestartNodeResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// RestoreDBInstanceWithChan invokes the dds.RestoreDBInstance API asynchronously
-func (client *Client) RestoreDBInstanceWithChan(request *RestoreDBInstanceRequest) (<-chan *RestoreDBInstanceResponse, <-chan error) {
-	responseChan := make(chan *RestoreDBInstanceResponse, 1)
+// RestartNodeWithChan invokes the dds.RestartNode API asynchronously
+func (client *Client) RestartNodeWithChan(request *RestartNodeRequest) (<-chan *RestartNodeResponse, <-chan error) {
+	responseChan := make(chan *RestartNodeResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.RestoreDBInstance(request)
+		response, err := client.RestartNode(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) RestoreDBInstanceWithChan(request *RestoreDBInstanceReques
 	return responseChan, errChan
 }
 
-// RestoreDBInstanceWithCallback invokes the dds.RestoreDBInstance API asynchronously
-func (client *Client) RestoreDBInstanceWithCallback(request *RestoreDBInstanceRequest, callback func(response *RestoreDBInstanceResponse, err error)) <-chan int {
+// RestartNodeWithCallback invokes the dds.RestartNode API asynchronously
+func (client *Client) RestartNodeWithCallback(request *RestartNodeRequest, callback func(response *RestartNodeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *RestoreDBInstanceResponse
+		var response *RestartNodeResponse
 		var err error
 		defer close(result)
-		response, err = client.RestoreDBInstance(request)
+		response, err = client.RestartNode(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,36 +68,37 @@ func (client *Client) RestoreDBInstanceWithCallback(request *RestoreDBInstanceRe
 	return result
 }
 
-// RestoreDBInstanceRequest is the request struct for api RestoreDBInstance
-type RestoreDBInstanceRequest struct {
+// RestartNodeRequest is the request struct for api RestartNode
+type RestartNodeRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	RoleId               string           `position:"Query" name:"RoleId"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	NodeId               string           `position:"Query" name:"NodeId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	BackupId             requests.Integer `position:"Query" name:"BackupId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
-// RestoreDBInstanceResponse is the response struct for api RestoreDBInstance
-type RestoreDBInstanceResponse struct {
+// RestartNodeResponse is the response struct for api RestartNode
+type RestartNodeResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateRestoreDBInstanceRequest creates a request to invoke RestoreDBInstance API
-func CreateRestoreDBInstanceRequest() (request *RestoreDBInstanceRequest) {
-	request = &RestoreDBInstanceRequest{
+// CreateRestartNodeRequest creates a request to invoke RestartNode API
+func CreateRestartNodeRequest() (request *RestartNodeRequest) {
+	request = &RestartNodeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "RestoreDBInstance", "dds", "openAPI")
+	request.InitWithApiInfo("Dds", "2015-12-01", "RestartNode", "dds", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateRestoreDBInstanceResponse creates a response to parse from RestoreDBInstance response
-func CreateRestoreDBInstanceResponse() (response *RestoreDBInstanceResponse) {
-	response = &RestoreDBInstanceResponse{
+// CreateRestartNodeResponse creates a response to parse from RestartNode response
+func CreateRestartNodeResponse() (response *RestartNodeResponse) {
+	response = &RestartNodeResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

@@ -72,7 +72,9 @@ func (client *Client) MigrateAvailableZoneWithCallback(request *MigrateAvailable
 type MigrateAvailableZoneRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	SecondaryZoneId      string           `position:"Query" name:"SecondaryZoneId"`
 	EffectiveTime        string           `position:"Query" name:"EffectiveTime"`
+	HiddenZoneId         string           `position:"Query" name:"HiddenZoneId"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
