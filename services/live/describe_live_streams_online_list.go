@@ -71,27 +71,28 @@ func (client *Client) DescribeLiveStreamsOnlineListWithCallback(request *Describ
 // DescribeLiveStreamsOnlineListRequest is the request struct for api DescribeLiveStreamsOnlineList
 type DescribeLiveStreamsOnlineListRequest struct {
 	*requests.RpcRequest
-	OnlyStream string           `position:"Query" name:"OnlyStream"`
-	StartTime  string           `position:"Query" name:"StartTime"`
-	PageNum    requests.Integer `position:"Query" name:"PageNum"`
-	AppName    string           `position:"Query" name:"AppName"`
-	PageSize   requests.Integer `position:"Query" name:"PageSize"`
-	StreamName string           `position:"Query" name:"StreamName"`
-	QueryType  string           `position:"Query" name:"QueryType"`
-	StreamType string           `position:"Query" name:"StreamType"`
-	DomainName string           `position:"Query" name:"DomainName"`
-	EndTime    string           `position:"Query" name:"EndTime"`
-	OrderBy    string           `position:"Query" name:"OrderBy"`
-	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
+	OnlyStream       string           `position:"Query" name:"OnlyStream"`
+	StartTime        string           `position:"Query" name:"StartTime"`
+	PageNum          requests.Integer `position:"Query" name:"PageNum"`
+	AppName          string           `position:"Query" name:"AppName"`
+	PageSize         requests.Integer `position:"Query" name:"PageSize"`
+	IsGetCurrentRate requests.Boolean `position:"Query" name:"IsGetCurrentRate"`
+	StreamName       string           `position:"Query" name:"StreamName"`
+	QueryType        string           `position:"Query" name:"QueryType"`
+	StreamType       string           `position:"Query" name:"StreamType"`
+	DomainName       string           `position:"Query" name:"DomainName"`
+	EndTime          string           `position:"Query" name:"EndTime"`
+	OrderBy          string           `position:"Query" name:"OrderBy"`
+	OwnerId          requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeLiveStreamsOnlineListResponse is the response struct for api DescribeLiveStreamsOnlineList
 type DescribeLiveStreamsOnlineListResponse struct {
 	*responses.BaseResponse
+	RequestId  string     `json:"RequestId" xml:"RequestId"`
 	TotalPage  int        `json:"TotalPage" xml:"TotalPage"`
 	PageNum    int        `json:"PageNum" xml:"PageNum"`
 	PageSize   int        `json:"PageSize" xml:"PageSize"`
-	RequestId  string     `json:"RequestId" xml:"RequestId"`
 	TotalNum   int        `json:"TotalNum" xml:"TotalNum"`
 	OnlineInfo OnlineInfo `json:"OnlineInfo" xml:"OnlineInfo"`
 }

@@ -90,6 +90,7 @@ type DescribeLiveMessageAppResponse struct {
 	Disable          bool   `json:"Disable" xml:"Disable"`
 	CreateTime       int64  `json:"CreateTime" xml:"CreateTime"`
 	ModifyTime       int64  `json:"ModifyTime" xml:"ModifyTime"`
+	MsgLifeCycle     int    `json:"MsgLifeCycle" xml:"MsgLifeCycle"`
 	DataCenter       string `json:"DataCenter" xml:"DataCenter"`
 }
 

@@ -17,24 +17,30 @@ package live
 
 // LiveStreamOnlineInfo is a nested struct in live response
 type LiveStreamOnlineInfo struct {
-	AudioDataRate int    `json:"AudioDataRate" xml:"AudioDataRate"`
-	FrameRate     int    `json:"FrameRate" xml:"FrameRate"`
-	PublishUrl    string `json:"PublishUrl" xml:"PublishUrl"`
-	StreamName    string `json:"StreamName" xml:"StreamName"`
-	AudioCodecId  int    `json:"AudioCodecId" xml:"AudioCodecId"`
-	Height        int    `json:"Height" xml:"Height"`
-	VideoDataRate int    `json:"VideoDataRate" xml:"VideoDataRate"`
-	DomainName    string `json:"DomainName" xml:"DomainName"`
-	TranscodeId   string `json:"TranscodeId" xml:"TranscodeId"`
-	TranscodeDrm  string `json:"TranscodeDrm" xml:"TranscodeDrm"`
-	PublishDomain string `json:"PublishDomain" xml:"PublishDomain"`
-	PublishTime   string `json:"PublishTime" xml:"PublishTime"`
-	AppName       string `json:"AppName" xml:"AppName"`
-	PublishType   string `json:"PublishType" xml:"PublishType"`
-	VideoCodecId  int    `json:"VideoCodecId" xml:"VideoCodecId"`
-	Transcoded    string `json:"Transcoded" xml:"Transcoded"`
-	Width         int    `json:"Width" xml:"Width"`
-	ClientIp      string `json:"ClientIp" xml:"ClientIp"`
-	ServerIp      string `json:"ServerIp" xml:"ServerIp"`
-	StreamUrlArgs string `json:"StreamUrlArgs" xml:"StreamUrlArgs"`
+	AudioDataRate     int    `json:"AudioDataRate" xml:"AudioDataRate"`
+	FrameRate         int    `json:"FrameRate" xml:"FrameRate"`
+	PublishUrl        string `json:"PublishUrl" xml:"PublishUrl"`
+	StreamName        string `json:"StreamName" xml:"StreamName"`
+	AudioCodecId      int    `json:"AudioCodecId" xml:"AudioCodecId"`
+	Height            int    `json:"Height" xml:"Height"`
+	VideoDataRate     int    `json:"VideoDataRate" xml:"VideoDataRate"`
+	DomainName        string `json:"DomainName" xml:"DomainName"`
+	TranscodeId       string `json:"TranscodeId" xml:"TranscodeId"`
+	TranscodeDrm      string `json:"TranscodeDrm" xml:"TranscodeDrm"`
+	PublishDomain     string `json:"PublishDomain" xml:"PublishDomain"`
+	PublishTime       string `json:"PublishTime" xml:"PublishTime"`
+	AppName           string `json:"AppName" xml:"AppName"`
+	PublishType       string `json:"PublishType" xml:"PublishType"`
+	VideoCodecId      int    `json:"VideoCodecId" xml:"VideoCodecId"`
+	Transcoded        string `json:"Transcoded" xml:"Transcoded"`
+	Width             int    `json:"Width" xml:"Width"`
+	ClientIp          string `json:"ClientIp" xml:"ClientIp"`
+	ServerIp          string `json:"ServerIp" xml:"ServerIp"`
+	StreamUrlArgs     string `json:"StreamUrlArgs" xml:"StreamUrlArgs"`
+	CurrAudioDataRate int    `json:"CurrAudioDataRate" xml:"CurrAudioDataRate"`
+	CurrVideoDataRate int    `json:"CurrVideoDataRate" xml:"CurrVideoDataRate"`
+	CurrWidth         int    `json:"CurrWidth" xml:"CurrWidth"`
+	CurrHeight        int    `json:"CurrHeight" xml:"CurrHeight"`
+	CurrFrameRate     int    `json:"CurrFrameRate" xml:"CurrFrameRate"`
+	CurrVideoCodecId  int    `json:"CurrVideoCodecId" xml:"CurrVideoCodecId"`
 }

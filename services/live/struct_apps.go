@@ -17,12 +17,13 @@ package live
 
 // Apps is a nested struct in live response
 type Apps struct {
-	AppId      string `json:"AppId" xml:"AppId"`
-	AppKey     string `json:"AppKey" xml:"AppKey"`
-	AppName    string `json:"AppName" xml:"AppName"`
-	AppSign    string `json:"AppSign" xml:"AppSign"`
-	CreateTime int64  `json:"CreateTime" xml:"CreateTime"`
-	DataCenter string `json:"DataCenter" xml:"DataCenter"`
-	Disable    string `json:"Disable" xml:"Disable"`
-	ModifyTime int64  `json:"ModifyTime" xml:"ModifyTime"`
+	AppId        string `json:"AppId" xml:"AppId"`
+	AppKey       string `json:"AppKey" xml:"AppKey"`
+	AppName      string `json:"AppName" xml:"AppName"`
+	AppSign      string `json:"AppSign" xml:"AppSign"`
+	CreateTime   int64  `json:"CreateTime" xml:"CreateTime"`
+	DataCenter   string `json:"DataCenter" xml:"DataCenter"`
+	Disable      string `json:"Disable" xml:"Disable"`
+	ModifyTime   int64  `json:"ModifyTime" xml:"ModifyTime"`
+	MsgLifeCycle int    `json:"MsgLifeCycle" xml:"MsgLifeCycle"`
 }
