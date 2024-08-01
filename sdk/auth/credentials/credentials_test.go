@@ -25,7 +25,7 @@ func mockResponse(statusCode int, content string) (res *http.Response) {
 		StatusCode: statusCode,
 		Status:     status + " " + http.StatusText(statusCode),
 	}
-	res.Body = io.NopCloser(bytes.NewReader([]byte(content)))
+	res.Body = ioutil.NopCloser(bytes.NewReader([]byte(content)))
 	return
 }
 
@@ -126,7 +126,7 @@ vftlY0Hs1vNXcaBgEA==`
 				StatusCode: 200,
 				Status:     status + " " + http.StatusText(200),
 			}
-			res.Body = io.NopCloser(&errorReader{})
+			res.Body = ioutil.NopCloser(&errorReader{})
 			return
 		}
 	}
@@ -360,7 +360,7 @@ func TestRAMRoleARNCredentialsProvider_getCredentials(t *testing.T) {
 				StatusCode: 200,
 				Status:     status + " " + http.StatusText(200),
 			}
-			res.Body = io.NopCloser(&errorReader{})
+			res.Body = ioutil.NopCloser(&errorReader{})
 			return
 		}
 	}
@@ -601,7 +601,7 @@ func TestECSRAMRoleCredentialsProvider_getRoleName(t *testing.T) {
 				StatusCode: 200,
 				Status:     status + " " + http.StatusText(200),
 			}
-			res.Body = io.NopCloser(&errorReader{})
+			res.Body = ioutil.NopCloser(&errorReader{})
 			return
 		}
 	}
@@ -705,7 +705,7 @@ func TestECSRAMRoleCredentialsProvider_getCredentials(t *testing.T) {
 					StatusCode: 200,
 					Status:     status + " " + http.StatusText(200),
 				}
-				res.Body = io.NopCloser(&errorReader{})
+				res.Body = ioutil.NopCloser(&errorReader{})
 				return
 			}
 			return
@@ -1044,7 +1044,7 @@ func TestOIDCCredentialsProvider_getCredentials(t *testing.T) {
 				StatusCode: 200,
 				Status:     status + " " + http.StatusText(200),
 			}
-			res.Body = io.NopCloser(&errorReader{})
+			res.Body = ioutil.NopCloser(&errorReader{})
 			return
 		}
 	}
