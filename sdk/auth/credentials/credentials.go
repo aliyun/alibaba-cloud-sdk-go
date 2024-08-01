@@ -3,6 +3,7 @@ package credentials
 import (
 	"encoding/json"
 	"fmt"
+	"io"
 	"io/ioutil"
 	"net/http"
 	"net/url"
@@ -63,6 +64,18 @@ type Credentials struct {
 	AccessKeySecret string
 	SecurityToken   string
 	BearerToken     string
+}
+
+type Do func(req *http.Request) (*http.Response, error)
+
+var hookDo = func(fn Do) Do {
+	return fn
+}
+
+type NewReuqest func(method, url string, body io.Reader) (*http.Request, error)
+
+var hookNewRequest = func(fn NewReuqest) NewReuqest {
+	return fn
 }
 
 type CredentialsProvider interface {
@@ -234,7 +247,7 @@ func (provider *RSAKeyPairCredentialsProvider) getCredentials() (sessionAK *sess
 
 	body := utils.GetUrlFormedMap(bodyForm)
 
-	httpRequest, err := http.NewRequest(method, httpUrl, strings.NewReader(body))
+	httpRequest, err := hookNewRequest(http.NewRequest)(method, httpUrl, strings.NewReader(body))
 	if err != nil {
 		return
 	}
@@ -244,7 +257,7 @@ func (provider *RSAKeyPairCredentialsProvider) getCredentials() (sessionAK *sess
 	httpRequest.Header["Content-Type"] = []string{"application/x-www-form-urlencoded"}
 	httpClient := &http.Client{}
 
-	httpResponse, err := httpClient.Do(httpRequest)
+	httpResponse, err := hookDo(httpClient.Do)(httpRequest)
 	if err != nil {
 		return
 	}
@@ -285,12 +298,12 @@ func (provider *RSAKeyPairCredentialsProvider) getCredentials() (sessionAK *sess
 
 type RAMRoleARNCredentialsProvider struct {
 	credentialsProvider CredentialsProvider
-	RoleArn             string
-	RoleSessionName     string
-	DurationSeconds     int
-	Policy              string
-	StsRegion           string
-	ExternalId          string
+	roleArn             string
+	roleSessionName     string
+	durationSeconds     int
+	policy              string
+	stsRegion           string
+	externalId          string
 	expirationTimestamp int64
 	lastUpdateTimestamp int64
 	sessionCredentials  *SessionCredentials
@@ -299,28 +312,28 @@ type RAMRoleARNCredentialsProvider struct {
 func NewRAMRoleARNCredentialsProvider(credentialsProvider CredentialsProvider, roleArn, roleSessionName string, durationSeconds int, policy, stsRegion, externalId string) (provider *RAMRoleARNCredentialsProvider, err error) {
 	provider = &RAMRoleARNCredentialsProvider{
 		credentialsProvider: credentialsProvider,
-		RoleArn:             roleArn,
-		DurationSeconds:     durationSeconds,
-		Policy:              policy,
-		StsRegion:           stsRegion,
-		ExternalId:          externalId,
+		roleArn:             roleArn,
+		durationSeconds:     durationSeconds,
+		policy:              policy,
+		stsRegion:           stsRegion,
+		externalId:          externalId,
 	}
 
 	if len(roleSessionName) > 0 {
-		provider.RoleSessionName = roleSessionName
+		provider.roleSessionName = roleSessionName
 	} else {
-		provider.RoleSessionName = "aliyun-go-sdk-" + strconv.FormatInt(time.Now().UnixNano()/1000, 10)
+		provider.roleSessionName = "aliyun-go-sdk-" + strconv.FormatInt(time.Now().UnixNano()/1000, 10)
 	}
 
 	if durationSeconds > 0 {
 		if durationSeconds >= 900 && durationSeconds <= 3600 {
-			provider.DurationSeconds = durationSeconds
+			provider.durationSeconds = durationSeconds
 		} else {
-			err = errors.NewClientError(errors.InvalidParamErrorCode, "Assume Role session duration should be in the range of 15min - 1Hr", nil)
+			err = errors.NewClientError(errors.InvalidParamErrorCode, "Assume Role session duration should be in the range of 15min - 1hr", nil)
 		}
 	} else {
 		// default to 3600
-		provider.DurationSeconds = 3600
+		provider.durationSeconds = 3600
 	}
 
 	return
@@ -329,8 +342,8 @@ func NewRAMRoleARNCredentialsProvider(credentialsProvider CredentialsProvider, r
 func (provider *RAMRoleARNCredentialsProvider) getCredentials(cc *Credentials) (sessionCredentials *SessionCredentials, err error) {
 	method := "POST"
 	var host string
-	if provider.StsRegion != "" {
-		host = fmt.Sprintf("sts.%s.aliyuncs.com", provider.StsRegion)
+	if provider.stsRegion != "" {
+		host = fmt.Sprintf("sts.%s.aliyuncs.com", provider.stsRegion)
 	} else {
 		host = "sts.aliyuncs.com"
 	}
@@ -349,15 +362,15 @@ func (provider *RAMRoleARNCredentialsProvider) getCredentials(cc *Credentials) (
 	}
 
 	bodyForm := make(map[string]string)
-	bodyForm["RoleArn"] = provider.RoleArn
-	if provider.Policy != "" {
-		bodyForm["Policy"] = provider.Policy
+	bodyForm["RoleArn"] = provider.roleArn
+	if provider.policy != "" {
+		bodyForm["Policy"] = provider.policy
 	}
-	if provider.ExternalId != "" {
-		bodyForm["ExternalId"] = provider.ExternalId
+	if provider.externalId != "" {
+		bodyForm["ExternalId"] = provider.externalId
 	}
-	bodyForm["RoleSessionName"] = provider.RoleSessionName
-	bodyForm["DurationSeconds"] = strconv.Itoa(provider.DurationSeconds)
+	bodyForm["RoleSessionName"] = provider.roleSessionName
+	bodyForm["DurationSeconds"] = strconv.Itoa(provider.durationSeconds)
 
 	// caculate signature
 	signParams := make(map[string]string)
@@ -383,7 +396,7 @@ func (provider *RAMRoleARNCredentialsProvider) getCredentials(cc *Credentials) (
 
 	body := utils.GetUrlFormedMap(bodyForm)
 
-	httpRequest, err := http.NewRequest(method, httpUrl, strings.NewReader(body))
+	httpRequest, err := hookNewRequest(http.NewRequest)(method, httpUrl, strings.NewReader(body))
 	if err != nil {
 		return
 	}
@@ -393,7 +406,7 @@ func (provider *RAMRoleARNCredentialsProvider) getCredentials(cc *Credentials) (
 	httpRequest.Header["Content-Type"] = []string{"application/x-www-form-urlencoded"}
 	httpClient := &http.Client{}
 
-	httpResponse, err := httpClient.Do(httpRequest)
+	httpResponse, err := hookDo(httpClient.Do)(httpRequest)
 	if err != nil {
 		return
 	}
@@ -455,8 +468,14 @@ func (provider *RAMRoleARNCredentialsProvider) GetCredentials() (cc *Credentials
 			return nil, err2
 		}
 
-		provider.sessionCredentials = sessionCredentials
+		expirationTime, err := time.Parse("2006-01-02T15:04:05Z", sessionCredentials.Expiration)
+		if err != nil {
+			return nil, err
+		}
+
+		provider.expirationTimestamp = expirationTime.Unix()
 		provider.lastUpdateTimestamp = time.Now().Unix()
+		provider.sessionCredentials = sessionCredentials
 	}
 
 	cc = &Credentials{
