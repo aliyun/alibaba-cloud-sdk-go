@@ -54,7 +54,9 @@ var defaultReadTimeout = 10 * time.Second
 
 var DefaultUserAgent = fmt.Sprintf("AlibabaCloud (%s; %s) Golang/%s Core/%s", runtime.GOOS, runtime.GOARCH, strings.Trim(runtime.Version(), "go"), Version)
 
-var hookDo = func(fn func(req *http.Request) (*http.Response, error)) func(req *http.Request) (*http.Response, error) {
+type Do func(req *http.Request) (*http.Response, error)
+
+var hookDo = func(fn Do) Do {
 	return fn
 }
 

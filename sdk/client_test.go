@@ -127,7 +127,7 @@ func Test_ClientWithSouceIp(t *testing.T) {
 	response := responses.NewCommonResponse()
 	origTestHookDo := hookDo
 	defer func() { hookDo = origTestHookDo }()
-	hookDo = func(fn func(req *http.Request) (*http.Response, error)) func(req *http.Request) (*http.Response, error) {
+	hookDo = func(fn Do) Do {
 		return func(req *http.Request) (*http.Response, error) {
 			return mockResponse(200, "", nil)
 		}
@@ -217,7 +217,7 @@ func Test_DoActionWithProxy(t *testing.T) {
 	response := responses.NewCommonResponse()
 	origTestHookDo := hookDo
 	defer func() { hookDo = origTestHookDo }()
-	hookDo = func(fn func(req *http.Request) (*http.Response, error)) func(req *http.Request) (*http.Response, error) {
+	hookDo = func(fn Do) Do {
 		return func(req *http.Request) (*http.Response, error) {
 			return mockResponse(200, "", nil)
 		}
@@ -338,7 +338,7 @@ func Test_DoAction_HTTPSInsecure(t *testing.T) {
 	response := responses.NewCommonResponse()
 	origTestHookDo := hookDo
 	defer func() { hookDo = origTestHookDo }()
-	hookDo = func(fn func(req *http.Request) (*http.Response, error)) func(req *http.Request) (*http.Response, error) {
+	hookDo = func(fn Do) Do {
 		return func(req *http.Request) (*http.Response, error) {
 			return mockResponse(200, "", nil)
 		}
@@ -409,7 +409,7 @@ func Test_DoAction_HTTPSInsecure(t *testing.T) {
 	assert.Equal(t, url.Scheme, "https")
 	assert.Equal(t, url.Host, "127.0.0.1:6666")
 
-	hookDo = func(fn func(req *http.Request) (*http.Response, error)) func(req *http.Request) (*http.Response, error) {
+	hookDo = func(fn Do) Do {
 		return func(req *http.Request) (*http.Response, error) {
 			return mockResponse(400, "", errors.New("x509: certificate signed by unknown authority"))
 		}
@@ -442,7 +442,7 @@ func Test_DoAction_Timeout(t *testing.T) {
 	response := responses.NewCommonResponse()
 	origTestHookDo := hookDo
 	defer func() { hookDo = origTestHookDo }()
-	hookDo = func(fn func(req *http.Request) (*http.Response, error)) func(req *http.Request) (*http.Response, error) {
+	hookDo = func(fn Do) Do {
 		return func(req *http.Request) (*http.Response, error) {
 			return mockResponse(400, "Server Internel Error", fmt.Errorf("read tcp"))
 		}
@@ -559,7 +559,7 @@ func Test_ProcessCommonRequest(t *testing.T) {
 
 	origTestHookDo := hookDo
 	defer func() { hookDo = origTestHookDo }()
-	hookDo = func(fn func(req *http.Request) (*http.Response, error)) func(req *http.Request) (*http.Response, error) {
+	hookDo = func(fn Do) Do {
 		return func(req *http.Request) (*http.Response, error) {
 			return mockResponse(400, "", fmt.Errorf("test error"))
 		}
@@ -776,7 +776,7 @@ func TestClient_ProcessCommonRequestWithSigner(t *testing.T) {
 	}
 	origTestHookDo := hookDo
 	defer func() { hookDo = origTestHookDo }()
-	hookDo = func(fn func(req *http.Request) (*http.Response, error)) func(req *http.Request) (*http.Response, error) {
+	hookDo = func(fn Do) Do {
 		return func(req *http.Request) (*http.Response, error) {
 			return mockResponse(500, "Server Internel Error", fmt.Errorf("test error"))
 		}
@@ -872,7 +872,7 @@ func TestClient_ProcessCommonRequestWithSigner_Error(t *testing.T) {
 		err := recover()
 		assert.NotNil(t, err)
 	}()
-	hookDo = func(fn func(req *http.Request) (*http.Response, error)) func(req *http.Request) (*http.Response, error) {
+	hookDo = func(fn Do) Do {
 		return func(req *http.Request) (*http.Response, error) {
 			return mockResponse(500, "Server Internel Error", fmt.Errorf("test error"))
 		}

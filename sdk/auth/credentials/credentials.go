@@ -487,14 +487,14 @@ func (provider *RAMRoleARNCredentialsProvider) GetCredentials() (cc *Credentials
 }
 
 type ECSRAMRoleCredentialsProvider struct {
-	RoleName            string
+	roleName            string
 	sessionCredentials  *SessionCredentials
 	expirationTimestamp int64
 }
 
 func NewECSRAMRoleCredentialsProvider(roleName string) *ECSRAMRoleCredentialsProvider {
 	return &ECSRAMRoleCredentialsProvider{
-		RoleName: roleName,
+		roleName: roleName,
 	}
 }
 
@@ -508,13 +508,13 @@ func (provider *ECSRAMRoleCredentialsProvider) needUpdateCredential() bool {
 
 func (provider *ECSRAMRoleCredentialsProvider) getRoleName() (roleName string, err error) {
 	var securityCredURL = "http://100.100.100.200/latest/meta-data/ram/security-credentials/"
-	httpRequest, err := http.NewRequest("GET", securityCredURL, strings.NewReader(""))
+	httpRequest, err := hookNewRequest(http.NewRequest)("GET", securityCredURL, strings.NewReader(""))
 	if err != nil {
 		err = fmt.Errorf("get role name failed: %s", err.Error())
 		return
 	}
 	httpClient := &http.Client{}
-	httpResponse, err := httpClient.Do(httpRequest)
+	httpResponse, err := hookDo(httpClient.Do)(httpRequest)
 	if err != nil {
 		err = fmt.Errorf("get role name failed: %s", err.Error())
 		return
@@ -522,6 +522,7 @@ func (provider *ECSRAMRoleCredentialsProvider) getRoleName() (roleName string, e
 
 	if httpResponse.StatusCode != http.StatusOK {
 		err = fmt.Errorf("get role name failed: request %s %d", securityCredURL, httpResponse.StatusCode)
+		return
 	}
 
 	defer httpResponse.Body.Close()
@@ -536,7 +537,7 @@ func (provider *ECSRAMRoleCredentialsProvider) getRoleName() (roleName string, e
 }
 
 func (provider *ECSRAMRoleCredentialsProvider) getCredentials() (sessionCredentials *SessionCredentials, err error) {
-	roleName := provider.RoleName
+	roleName := provider.roleName
 	if roleName == "" {
 		roleName, err = provider.getRoleName()
 		if err != nil {
@@ -545,13 +546,13 @@ func (provider *ECSRAMRoleCredentialsProvider) getCredentials() (sessionCredenti
 	}
 
 	var requestUrl = "http://100.100.100.200/latest/meta-data/ram/security-credentials/" + roleName
-	httpRequest, err := http.NewRequest("GET", requestUrl, strings.NewReader(""))
+	httpRequest, err := hookNewRequest(http.NewRequest)("GET", requestUrl, strings.NewReader(""))
 	if err != nil {
 		err = fmt.Errorf("refresh Ecs sts token err: %s", err.Error())
 		return
 	}
 	httpClient := &http.Client{}
-	httpResponse, err := httpClient.Do(httpRequest)
+	httpResponse, err := hookDo(httpClient.Do)(httpRequest)
 	if err != nil {
 		err = fmt.Errorf("refresh Ecs sts token err: %s", err.Error())
 		return
@@ -619,13 +620,13 @@ func (provider *ECSRAMRoleCredentialsProvider) GetCredentials() (cc *Credentials
 }
 
 type OIDCCredentialsProvider struct {
-	OIDCProviderARN     string
-	OIDCTokenFilePath   string
-	RoleArn             string
-	RoleSessionName     string
-	DurationSeconds     int
-	Policy              string
-	StsRegion           string
+	oidcProviderARN     string
+	oidcTokenFilePath   string
+	roleArn             string
+	roleSessionName     string
+	durationSeconds     int
+	policy              string
+	stsRegion           string
 	lastUpdateTimestamp int64
 	expirationTimestamp int64
 	sessionCredentials  *SessionCredentials
@@ -642,79 +643,80 @@ func NewOIDCCredentialsProviderBuilder() *OIDCCredentialsProviderBuilder {
 }
 
 func (b *OIDCCredentialsProviderBuilder) WithOIDCProviderARN(oidcProviderArn string) *OIDCCredentialsProviderBuilder {
-	b.provider.OIDCProviderARN = oidcProviderArn
+	b.provider.oidcProviderARN = oidcProviderArn
 	return b
 }
 
 func (b *OIDCCredentialsProviderBuilder) WithOIDCTokenFilePath(oidcTokenFilePath string) *OIDCCredentialsProviderBuilder {
-	b.provider.OIDCTokenFilePath = oidcTokenFilePath
+	b.provider.oidcTokenFilePath = oidcTokenFilePath
 	return b
 }
 
 func (b *OIDCCredentialsProviderBuilder) WithRoleArn(roleArn string) *OIDCCredentialsProviderBuilder {
-	b.provider.RoleArn = roleArn
+	b.provider.roleArn = roleArn
 	return b
 }
 
 func (b *OIDCCredentialsProviderBuilder) WithRoleSessionName(roleSessionName string) *OIDCCredentialsProviderBuilder {
-	b.provider.RoleSessionName = roleSessionName
+	b.provider.roleSessionName = roleSessionName
 	return b
 }
 
 func (b *OIDCCredentialsProviderBuilder) WithDurationSeconds(durationSeconds int) *OIDCCredentialsProviderBuilder {
-	b.provider.DurationSeconds = durationSeconds
+	b.provider.durationSeconds = durationSeconds
 	return b
 }
 
 func (b *OIDCCredentialsProviderBuilder) WithStsRegion(region string) *OIDCCredentialsProviderBuilder {
-	b.provider.StsRegion = region
+	b.provider.stsRegion = region
 	return b
 }
 
 func (b *OIDCCredentialsProviderBuilder) WithPolicy(policy string) *OIDCCredentialsProviderBuilder {
-	b.provider.Policy = policy
+	b.provider.policy = policy
 	return b
 }
 
 func (b *OIDCCredentialsProviderBuilder) Build() (provider *OIDCCredentialsProvider, err error) {
 	provider = b.provider
 
-	if provider.RoleSessionName == "" {
-		provider.RoleSessionName = "aliyun-go-sdk-" + strconv.FormatInt(time.Now().UnixNano()/1000, 10)
+	if provider.roleSessionName == "" {
+		provider.roleSessionName = "aliyun-go-sdk-" + strconv.FormatInt(time.Now().UnixNano()/1000, 10)
 	}
 
-	if provider.OIDCTokenFilePath == "" {
-		provider.OIDCTokenFilePath = os.Getenv("ALIBABA_CLOUD_OIDC_TOKEN_FILE")
+	if provider.oidcTokenFilePath == "" {
+		provider.oidcTokenFilePath = os.Getenv("ALIBABA_CLOUD_OIDC_TOKEN_FILE")
 	}
 
-	if provider.OIDCTokenFilePath == "" {
+	if provider.oidcTokenFilePath == "" {
 		err = errors.NewClientError(errors.InvalidParamErrorCode, "OIDCTokenFilePath can not be empty", nil)
 		return
 	}
 
-	if provider.OIDCProviderARN == "" {
-		provider.OIDCProviderARN = os.Getenv("ALIBABA_CLOUD_OIDC_PROVIDER_ARN")
+	if provider.oidcProviderARN == "" {
+		provider.oidcProviderARN = os.Getenv("ALIBABA_CLOUD_OIDC_PROVIDER_ARN")
 	}
 
-	if provider.OIDCProviderARN == "" {
+	if provider.oidcProviderARN == "" {
 		err = errors.NewClientError(errors.InvalidParamErrorCode, "OIDCProviderARN can not be empty", nil)
 		return
 	}
 
-	if provider.RoleArn == "" {
-		provider.RoleArn = os.Getenv("ALIBABA_CLOUD_ROLE_ARN")
+	if provider.roleArn == "" {
+		provider.roleArn = os.Getenv("ALIBABA_CLOUD_ROLE_ARN")
 	}
 
-	if provider.RoleArn == "" {
+	if provider.roleArn == "" {
 		err = errors.NewClientError(errors.InvalidParamErrorCode, "RoleArn can not be empty", nil)
 		return
 	}
 
-	if provider.DurationSeconds == 0 {
-		provider.DurationSeconds = 3600
-	} else {
-		err = errors.NewClientError(errors.InvalidParamErrorCode, "Assume Role session duration should be in the range of 15min - 1Hr", nil)
-		return
+	if provider.durationSeconds == 0 {
+		provider.durationSeconds = 3600
+	}
+
+	if provider.durationSeconds < 900 || provider.durationSeconds > 3600 {
+		err = errors.NewClientError(errors.InvalidParamErrorCode, "Assume Role session duration should be in the range of 15min - 1hr", nil)
 	}
 
 	return
@@ -723,8 +725,8 @@ func (b *OIDCCredentialsProviderBuilder) Build() (provider *OIDCCredentialsProvi
 func (provider *OIDCCredentialsProvider) getCredentials() (sessionCredentials *SessionCredentials, err error) {
 	method := "POST"
 	var host string
-	if provider.StsRegion != "" {
-		host = fmt.Sprintf("sts.%s.aliyuncs.com", provider.StsRegion)
+	if provider.stsRegion != "" {
+		host = fmt.Sprintf("sts.%s.aliyuncs.com", provider.stsRegion)
 	} else {
 		host = "sts.aliyuncs.com"
 	}
@@ -736,20 +738,20 @@ func (provider *OIDCCredentialsProvider) getCredentials() (sessionCredentials *S
 	queries["Timestamp"] = utils.GetTimeInFormatISO8601()
 
 	bodyForm := make(map[string]string)
-	bodyForm["RoleArn"] = provider.RoleArn
-	bodyForm["OIDCProviderArn"] = provider.OIDCProviderARN
-	token, err := ioutil.ReadFile(provider.OIDCTokenFilePath)
+	bodyForm["RoleArn"] = provider.roleArn
+	bodyForm["OIDCProviderArn"] = provider.oidcProviderARN
+	token, err := ioutil.ReadFile(provider.oidcTokenFilePath)
 	if err != nil {
 		return
 	}
 
 	bodyForm["OIDCToken"] = string(token)
-	if provider.Policy != "" {
-		bodyForm["Policy"] = provider.Policy
+	if provider.policy != "" {
+		bodyForm["Policy"] = provider.policy
 	}
 
-	bodyForm["RoleSessionName"] = provider.RoleSessionName
-	bodyForm["DurationSeconds"] = strconv.Itoa(provider.DurationSeconds)
+	bodyForm["RoleSessionName"] = provider.roleSessionName
+	bodyForm["DurationSeconds"] = strconv.Itoa(provider.durationSeconds)
 
 	// caculate signature
 	signParams := make(map[string]string)
@@ -766,7 +768,7 @@ func (provider *OIDCCredentialsProvider) getCredentials() (sessionCredentials *S
 
 	body := utils.GetUrlFormedMap(bodyForm)
 
-	httpRequest, err := http.NewRequest(method, httpUrl, strings.NewReader(body))
+	httpRequest, err := hookNewRequest(http.NewRequest)(method, httpUrl, strings.NewReader(body))
 	if err != nil {
 		return
 	}
@@ -776,7 +778,7 @@ func (provider *OIDCCredentialsProvider) getCredentials() (sessionCredentials *S
 	httpRequest.Header["Content-Type"] = []string{"application/x-www-form-urlencoded"}
 	httpClient := &http.Client{}
 
-	httpResponse, err := httpClient.Do(httpRequest)
+	httpResponse, err := hookDo(httpClient.Do)(httpRequest)
 	if err != nil {
 		return
 	}
