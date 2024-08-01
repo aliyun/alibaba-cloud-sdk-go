@@ -17,5 +17,17 @@ package aicontent
 
 // Data is a nested struct in aicontent response
 type Data struct {
-	ModelTrainStatus string `json:"modelTrainStatus" xml:"modelTrainStatus"`
+	InferenceImageCount int                    `json:"inferenceImageCount" xml:"inferenceImageCount"`
+	ModelTrainStatus    string                 `json:"modelTrainStatus" xml:"modelTrainStatus"`
+	PromptId            string                 `json:"promptId" xml:"promptId"`
+	ModelId             string                 `json:"modelId" xml:"modelId"`
+	JobTrainProgress    string                 `json:"jobTrainProgress" xml:"jobTrainProgress"`
+	Name                string                 `json:"name" xml:"name"`
+	ObjectType          string                 `json:"objectType" xml:"objectType"`
+	Id                  string                 `json:"id" xml:"id"`
+	CreateTime          string                 `json:"createTime" xml:"createTime"`
+	JobStatus           string                 `json:"jobStatus" xml:"jobStatus"`
+	ResultImageUrl      []string               `json:"resultImageUrl" xml:"resultImageUrl"`
+	ImageUrl            []string               `json:"imageUrl" xml:"imageUrl"`
+	InferenceJobList    []InferenceJobListItem `json:"inferenceJobList" xml:"inferenceJobList"`
 }

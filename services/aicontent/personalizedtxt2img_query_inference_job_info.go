@@ -77,11 +77,12 @@ type Personalizedtxt2imgQueryInferenceJobInfoRequest struct {
 // Personalizedtxt2imgQueryInferenceJobInfoResponse is the response struct for api Personalizedtxt2imgQueryInferenceJobInfo
 type Personalizedtxt2imgQueryInferenceJobInfoResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"requestId" xml:"requestId"`
-	Success    bool   `json:"success" xml:"success"`
-	ErrCode    string `json:"errCode" xml:"errCode"`
-	ErrMessage string `json:"errMessage" xml:"errMessage"`
-	Data       Data   `json:"Data" xml:"Data"`
+	RequestId      string `json:"requestId" xml:"requestId"`
+	Success        bool   `json:"success" xml:"success"`
+	ErrCode        string `json:"errCode" xml:"errCode"`
+	ErrMessage     string `json:"errMessage" xml:"errMessage"`
+	HttpStatusCode int    `json:"httpStatusCode" xml:"httpStatusCode"`
+	Data           Data   `json:"data" xml:"data"`
 }
 
 // CreatePersonalizedtxt2imgQueryInferenceJobInfoRequest creates a request to invoke Personalizedtxt2imgQueryInferenceJobInfo API

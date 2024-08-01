@@ -76,11 +76,12 @@ type Personalizedtxt2imgQueryModelTrainJobListRequest struct {
 // Personalizedtxt2imgQueryModelTrainJobListResponse is the response struct for api Personalizedtxt2imgQueryModelTrainJobList
 type Personalizedtxt2imgQueryModelTrainJobListResponse struct {
 	*responses.BaseResponse
-	RequestId  string     `json:"requestId" xml:"requestId"`
-	Success    bool       `json:"success" xml:"success"`
-	ErrCode    string     `json:"errCode" xml:"errCode"`
-	ErrMessage string     `json:"errMessage" xml:"errMessage"`
-	Data       []DataItem `json:"data" xml:"data"`
+	RequestId      string     `json:"requestId" xml:"requestId"`
+	Success        bool       `json:"success" xml:"success"`
+	ErrCode        string     `json:"errCode" xml:"errCode"`
+	ErrMessage     string     `json:"errMessage" xml:"errMessage"`
+	HttpStatusCode int        `json:"httpStatusCode" xml:"httpStatusCode"`
+	Data           []DataItem `json:"data" xml:"data"`
 }
 
 // CreatePersonalizedtxt2imgQueryModelTrainJobListRequest creates a request to invoke Personalizedtxt2imgQueryModelTrainJobList API

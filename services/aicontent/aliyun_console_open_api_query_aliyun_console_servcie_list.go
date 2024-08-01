@@ -76,11 +76,12 @@ type AliyunConsoleOpenApiQueryAliyunConsoleServcieListRequest struct {
 // AliyunConsoleOpenApiQueryAliyunConsoleServcieListResponse is the response struct for api AliyunConsoleOpenApiQueryAliyunConsoleServcieList
 type AliyunConsoleOpenApiQueryAliyunConsoleServcieListResponse struct {
 	*responses.BaseResponse
-	RequestId  string     `json:"requestId" xml:"requestId"`
-	Success    bool       `json:"success" xml:"success"`
-	ErrCode    string     `json:"errCode" xml:"errCode"`
-	ErrMessage string     `json:"errMessage" xml:"errMessage"`
-	Data       []DataItem `json:"data" xml:"data"`
+	RequestId      string     `json:"requestId" xml:"requestId"`
+	Success        bool       `json:"success" xml:"success"`
+	ErrCode        string     `json:"errCode" xml:"errCode"`
+	ErrMessage     string     `json:"errMessage" xml:"errMessage"`
+	HttpStatusCode int        `json:"httpStatusCode" xml:"httpStatusCode"`
+	Data           []DataItem `json:"data" xml:"data"`
 }
 
 // CreateAliyunConsoleOpenApiQueryAliyunConsoleServcieListRequest creates a request to invoke AliyunConsoleOpenApiQueryAliyunConsoleServcieList API

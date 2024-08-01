@@ -17,14 +17,18 @@ package aicontent
 
 // DataItem is a nested struct in aicontent response
 type DataItem struct {
-	ModelId             string                 `json:"modelId" xml:"modelId"`
-	JobTrainProgress    string                 `json:"jobTrainProgress" xml:"jobTrainProgress"`
-	InferenceImageCount int                    `json:"inferenceImageCount" xml:"inferenceImageCount"`
-	Name                string                 `json:"name" xml:"name"`
-	ObjectType          string                 `json:"objectType" xml:"objectType"`
-	Id                  string                 `json:"id" xml:"id"`
-	CreateTime          string                 `json:"createTime" xml:"createTime"`
-	JobStatus           string                 `json:"jobStatus" xml:"jobStatus"`
-	ImageUrl            []string               `json:"imageUrl" xml:"imageUrl"`
-	InferenceJobList    []InferenceJobListItem `json:"inferenceJobList" xml:"inferenceJobList"`
+	InferenceImageCount  int                    `json:"inferenceImageCount" xml:"inferenceImageCount"`
+	FreeConcurrencyCount int                    `json:"FreeConcurrencyCount" xml:"FreeConcurrencyCount"`
+	ModelId              string                 `json:"modelId" xml:"modelId"`
+	ServiceCode          string                 `json:"ServiceCode" xml:"ServiceCode"`
+	JobTrainProgress     string                 `json:"jobTrainProgress" xml:"jobTrainProgress"`
+	Name                 string                 `json:"name" xml:"name"`
+	FreeCount            int                    `json:"FreeCount" xml:"FreeCount"`
+	ObjectType           string                 `json:"objectType" xml:"objectType"`
+	ServiceName          string                 `json:"ServiceName" xml:"ServiceName"`
+	Id                   string                 `json:"id" xml:"id"`
+	CreateTime           string                 `json:"createTime" xml:"createTime"`
+	JobStatus            string                 `json:"jobStatus" xml:"jobStatus"`
+	ImageUrl             []string               `json:"imageUrl" xml:"imageUrl"`
+	InferenceJobList     []InferenceJobListItem `json:"inferenceJobList" xml:"inferenceJobList"`
 }
