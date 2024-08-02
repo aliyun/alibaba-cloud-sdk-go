@@ -1,6 +1,7 @@
 package integration
 
 import (
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/errors"
 	"github.com/aliyun/alibaba-cloud-sdk-go/services/ram"
 	"github.com/aliyun/alibaba-cloud-sdk-go/services/sts"
 
@@ -64,21 +65,25 @@ func createRole(userid string) (name string, arn string, err error) {
 }
 
 func createUser() (err error) {
-	listRequest := ram.CreateListUsersRequest()
-	listRequest.Scheme = "HTTPS"
 	client, err := ram.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
 	if err != nil {
 		return
 	}
-	listResponse, err := client.ListUsers(listRequest)
+
+	getUserRequest := ram.CreateGetUserRequest()
+	getUserRequest.UserName = username
+	getUserRequest.Scheme = "HTTPS"
+	_, err = client.GetUser(getUserRequest)
 	if err != nil {
+		if se, ok := err.(*errors.ServerError); ok {
+			if se.ErrorCode() == "EntityNotExist.User" {
+				err = nil
+				return
+			}
+		}
 		return
 	}
-	for _, user := range listResponse.Users.User {
-		if user.UserName == username {
-			return
-		}
-	}
+
 	createRequest := ram.CreateCreateUserRequest()
 	createRequest.Scheme = "HTTPS"
 	createRequest.UserName = username
