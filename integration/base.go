@@ -1,6 +1,7 @@
 package integration
 
 import (
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/errors"
 	"github.com/aliyun/alibaba-cloud-sdk-go/services/ram"
 	"github.com/aliyun/alibaba-cloud-sdk-go/services/sts"
 
@@ -32,10 +33,14 @@ var (
 
 var ecsEndpoint = "ecs." + os.Getenv("REGION_ID") + ".aliyuncs.com"
 
+func newRamClient() (*ram.Client, error) {
+	return ram.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
+}
+
 func createRole(userid string) (name string, arn string, err error) {
 	listRequest := ram.CreateListRolesRequest()
 	listRequest.Scheme = "HTTPS"
-	client, err := ram.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
+	client, err := newRamClient()
 	if err != nil {
 		return
 	}
@@ -63,26 +68,39 @@ func createRole(userid string) (name string, arn string, err error) {
 	return
 }
 
-func createUser() (err error) {
-	listRequest := ram.CreateListUsersRequest()
-	listRequest.Scheme = "HTTPS"
-	client, err := ram.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
+func createUser() (response *ram.CreateUserResponse, err error) {
+	client, err := newRamClient()
 	if err != nil {
 		return
-	}
-	listResponse, err := client.ListUsers(listRequest)
-	if err != nil {
-		return
-	}
-	for _, user := range listResponse.Users.User {
-		if user.UserName == username {
-			return
-		}
 	}
 	createRequest := ram.CreateCreateUserRequest()
 	createRequest.Scheme = "HTTPS"
 	createRequest.UserName = username
-	_, err = client.CreateUser(createRequest)
+	return client.CreateUser(createRequest)
+}
+
+func ensureUser() (err error) {
+	client, err := newRamClient()
+	if err != nil {
+		return
+	}
+
+	// 查询用户
+	getUserRequest := ram.CreateGetUserRequest()
+	getUserRequest.UserName = username
+	getUserRequest.Scheme = "HTTPS"
+	_, err = client.GetUser(getUserRequest)
+	if err != nil {
+		if se, ok := err.(*errors.ServerError); ok {
+			if se.ErrorCode() == "EntityNotExist.User" {
+				// 如果用户不存在，则创建
+				_, err = createUser()
+				return
+			}
+		}
+		return
+	}
+
 	return
 }
 
@@ -90,7 +108,7 @@ func createAttachPolicyToUser() error {
 	listRequest := ram.CreateListPoliciesForUserRequest()
 	listRequest.UserName = username
 	listRequest.Scheme = "HTTPS"
-	client, err := ram.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
+	client, err := newRamClient()
 	if err != nil {
 		return err
 	}
@@ -119,7 +137,7 @@ func createAttachPolicyToRole() error {
 	listRequest := ram.CreateListPoliciesForRoleRequest()
 	listRequest.RoleName = rolename
 	listRequest.Scheme = "HTTPS"
-	client, err := ram.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
+	client, err := newRamClient()
 	if err != nil {
 		return err
 	}
@@ -145,7 +163,7 @@ func createAttachPolicyToRole() error {
 }
 
 func createAccessKey() (id string, secret string, err error) {
-	client, err := ram.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
+	client, err := newRamClient()
 	if err != nil {
 		return
 	}
@@ -183,7 +201,7 @@ func createAccessKey() (id string, secret string, err error) {
 }
 
 func createAssumeRole() (response *sts.AssumeRoleResponse, err error) {
-	err = createUser()
+	err = ensureUser()
 	if err != nil {
 		return
 	}
