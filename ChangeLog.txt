@@ -1,3 +1,7 @@
+2024-08-02 Version: v1.62.804
+- Generated 2018-11-01 for `dms-enterprise`.
+- Support switch login user
+
 2024-08-01 Version: v1.62.803
 - Generated 20240611 for `AiContent`.
 - add openapi for Personalized Text to Image ablity init version.

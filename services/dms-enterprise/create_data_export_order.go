@@ -71,12 +71,13 @@ func (client *Client) CreateDataExportOrderWithCallback(request *CreateDataExpor
 // CreateDataExportOrderRequest is the request struct for api CreateDataExportOrder
 type CreateDataExportOrderRequest struct {
 	*requests.RpcRequest
-	ParentId        requests.Integer                 `position:"Query" name:"ParentId"`
-	Tid             requests.Integer                 `position:"Query" name:"Tid"`
-	RelatedUserList *[]string                        `position:"Query" name:"RelatedUserList"  type:"Json"`
-	PluginParam     CreateDataExportOrderPluginParam `position:"Query" name:"PluginParam"  type:"Struct"`
-	AttachmentKey   string                           `position:"Query" name:"AttachmentKey"`
-	Comment         string                           `position:"Query" name:"Comment"`
+	ParentId         requests.Integer                 `position:"Query" name:"ParentId"`
+	Tid              requests.Integer                 `position:"Query" name:"Tid"`
+	RelatedUserList  *[]string                        `position:"Query" name:"RelatedUserList"  type:"Json"`
+	PluginParam      CreateDataExportOrderPluginParam `position:"Query" name:"PluginParam"  type:"Struct"`
+	RealLoginUserUid string                           `position:"Query" name:"RealLoginUserUid"`
+	AttachmentKey    string                           `position:"Query" name:"AttachmentKey"`
+	Comment          string                           `position:"Query" name:"Comment"`
 }
 
 // CreateDataExportOrderPluginParam is a repeated param struct in CreateDataExportOrderRequest

@@ -71,8 +71,9 @@ func (client *Client) SubmitOrderApprovalWithCallback(request *SubmitOrderApprov
 // SubmitOrderApprovalRequest is the request struct for api SubmitOrderApproval
 type SubmitOrderApprovalRequest struct {
 	*requests.RpcRequest
-	Tid     requests.Integer `position:"Query" name:"Tid"`
-	OrderId requests.Integer `position:"Query" name:"OrderId"`
+	Tid              requests.Integer `position:"Query" name:"Tid"`
+	OrderId          requests.Integer `position:"Query" name:"OrderId"`
+	RealLoginUserUid string           `position:"Query" name:"RealLoginUserUid"`
 }
 
 // SubmitOrderApprovalResponse is the response struct for api SubmitOrderApproval

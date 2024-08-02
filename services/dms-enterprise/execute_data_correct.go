@@ -71,10 +71,11 @@ func (client *Client) ExecuteDataCorrectWithCallback(request *ExecuteDataCorrect
 // ExecuteDataCorrectRequest is the request struct for api ExecuteDataCorrect
 type ExecuteDataCorrectRequest struct {
 	*requests.RpcRequest
-	Tid          string                 `position:"Query" name:"Tid"`
-	ActionDetail map[string]interface{} `position:"Query" name:"ActionDetail"`
-	OrderId      requests.Integer       `position:"Query" name:"OrderId"`
-	ActionName   string                 `position:"Query" name:"ActionName"`
+	Tid              string                 `position:"Query" name:"Tid"`
+	ActionDetail     map[string]interface{} `position:"Query" name:"ActionDetail"`
+	OrderId          requests.Integer       `position:"Query" name:"OrderId"`
+	ActionName       string                 `position:"Query" name:"ActionName"`
+	RealLoginUserUid string                 `position:"Query" name:"RealLoginUserUid"`
 }
 
 // ExecuteDataCorrectResponse is the response struct for api ExecuteDataCorrect

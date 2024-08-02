@@ -71,10 +71,11 @@ func (client *Client) ExecuteDataExportWithCallback(request *ExecuteDataExportRe
 // ExecuteDataExportRequest is the request struct for api ExecuteDataExport
 type ExecuteDataExportRequest struct {
 	*requests.RpcRequest
-	Tid          requests.Integer       `position:"Query" name:"Tid"`
-	ActionDetail map[string]interface{} `position:"Query" name:"ActionDetail"`
-	OrderId      requests.Integer       `position:"Query" name:"OrderId"`
-	ActionName   string                 `position:"Query" name:"ActionName"`
+	Tid              requests.Integer       `position:"Query" name:"Tid"`
+	ActionDetail     map[string]interface{} `position:"Query" name:"ActionDetail"`
+	OrderId          requests.Integer       `position:"Query" name:"OrderId"`
+	ActionName       string                 `position:"Query" name:"ActionName"`
+	RealLoginUserUid string                 `position:"Query" name:"RealLoginUserUid"`
 }
 
 // ExecuteDataExportResponse is the response struct for api ExecuteDataExport

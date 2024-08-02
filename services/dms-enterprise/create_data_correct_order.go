@@ -71,11 +71,12 @@ func (client *Client) CreateDataCorrectOrderWithCallback(request *CreateDataCorr
 // CreateDataCorrectOrderRequest is the request struct for api CreateDataCorrectOrder
 type CreateDataCorrectOrderRequest struct {
 	*requests.RpcRequest
-	Tid             requests.Integer            `position:"Query" name:"Tid"`
-	Param           CreateDataCorrectOrderParam `position:"Query" name:"Param"  type:"Struct"`
-	RelatedUserList *[]string                   `position:"Query" name:"RelatedUserList"  type:"Json"`
-	AttachmentKey   string                      `position:"Query" name:"AttachmentKey"`
-	Comment         string                      `position:"Query" name:"Comment"`
+	Tid              requests.Integer            `position:"Query" name:"Tid"`
+	Param            CreateDataCorrectOrderParam `position:"Query" name:"Param"  type:"Struct"`
+	RelatedUserList  *[]string                   `position:"Query" name:"RelatedUserList"  type:"Json"`
+	RealLoginUserUid string                      `position:"Query" name:"RealLoginUserUid"`
+	AttachmentKey    string                      `position:"Query" name:"AttachmentKey"`
+	Comment          string                      `position:"Query" name:"Comment"`
 }
 
 // CreateDataCorrectOrderParam is a repeated param struct in CreateDataCorrectOrderRequest

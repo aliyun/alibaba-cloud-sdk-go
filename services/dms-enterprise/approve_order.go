@@ -77,6 +77,7 @@ type ApproveOrderRequest struct {
 	NewApprover        requests.Integer `position:"Query" name:"NewApprover"`
 	ApprovalNodeId     requests.Integer `position:"Query" name:"ApprovalNodeId"`
 	OldApprover        requests.Integer `position:"Query" name:"OldApprover"`
+	RealLoginUserUid   string           `position:"Query" name:"RealLoginUserUid"`
 	Comment            string           `position:"Query" name:"Comment"`
 	ApprovalNodePos    string           `position:"Query" name:"ApprovalNodePos"`
 	NewApproverList    string           `position:"Query" name:"NewApproverList"`
