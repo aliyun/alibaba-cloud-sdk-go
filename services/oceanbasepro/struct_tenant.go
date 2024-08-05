@@ -46,7 +46,7 @@ type Tenant struct {
 	DataMergeTime                string                  `json:"DataMergeTime" xml:"DataMergeTime"`
 	EnableReadOnlyReplica        bool                    `json:"EnableReadOnlyReplica" xml:"EnableReadOnlyReplica"`
 	RecycleBinStatus             string                  `json:"RecycleBinStatus" xml:"RecycleBinStatus"`
-	LowerCaseTableNames          string                  `json:"LowerCaseTableNames" xml:"LowerCaseTableNames"`
+	LowerCaseTableNames          int                     `json:"LowerCaseTableNames" xml:"LowerCaseTableNames"`
 	Version                      string                  `json:"Version" xml:"Version"`
 	AvailableZones               []string                `json:"AvailableZones" xml:"AvailableZones"`
 	TenantResource               TenantResource          `json:"TenantResource" xml:"TenantResource"`

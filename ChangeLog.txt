@@ -1,3 +1,7 @@
+2024-08-05 Version: v1.62.805
+- Generated 2019-09-01 for `OceanBasePro`.
+undefined
+
 2024-08-02 Version: v1.62.804
 - Generated 2018-11-01 for `dms-enterprise`.
 - Support switch login user
