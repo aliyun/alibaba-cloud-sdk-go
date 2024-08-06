@@ -71,14 +71,20 @@ func (client *Client) UpdateLiveMPUTaskWithCallback(request *UpdateLiveMPUTaskRe
 // UpdateLiveMPUTaskRequest is the request struct for api UpdateLiveMPUTask
 type UpdateLiveMPUTaskRequest struct {
 	*requests.RpcRequest
-	SingleSubParams UpdateLiveMPUTaskSingleSubParams `position:"Query" name:"SingleSubParams"  type:"Struct"`
-	SeiParams       UpdateLiveMPUTaskSeiParams       `position:"Query" name:"SeiParams"  type:"Struct"`
-	TranscodeParams UpdateLiveMPUTaskTranscodeParams `position:"Query" name:"TranscodeParams"  type:"Struct"`
-	AppId           string                           `position:"Query" name:"AppId"`
-	MixMode         string                           `position:"Query" name:"MixMode"`
-	ChannelId       string                           `position:"Query" name:"ChannelId"`
-	TaskId          string                           `position:"Query" name:"TaskId"`
-	StreamURL       string                           `position:"Query" name:"StreamURL"`
+	MultiStreamURL  *[]UpdateLiveMPUTaskMultiStreamURL `position:"Query" name:"MultiStreamURL"  type:"Json"`
+	SingleSubParams UpdateLiveMPUTaskSingleSubParams   `position:"Query" name:"SingleSubParams"  type:"Struct"`
+	SeiParams       UpdateLiveMPUTaskSeiParams         `position:"Query" name:"SeiParams"  type:"Struct"`
+	TranscodeParams UpdateLiveMPUTaskTranscodeParams   `position:"Query" name:"TranscodeParams"  type:"Struct"`
+	AppId           string                             `position:"Query" name:"AppId"`
+	MixMode         string                             `position:"Query" name:"MixMode"`
+	ChannelId       string                             `position:"Query" name:"ChannelId"`
+	TaskId          string                             `position:"Query" name:"TaskId"`
+	StreamURL       string                             `position:"Query" name:"StreamURL"`
+}
+
+// UpdateLiveMPUTaskMultiStreamURL is a repeated param struct in UpdateLiveMPUTaskRequest
+type UpdateLiveMPUTaskMultiStreamURL struct {
+	URL string `name:"URL"`
 }
 
 // UpdateLiveMPUTaskSingleSubParams is a repeated param struct in UpdateLiveMPUTaskRequest

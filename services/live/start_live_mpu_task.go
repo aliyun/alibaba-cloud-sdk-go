@@ -71,15 +71,21 @@ func (client *Client) StartLiveMPUTaskWithCallback(request *StartLiveMPUTaskRequ
 // StartLiveMPUTaskRequest is the request struct for api StartLiveMPUTask
 type StartLiveMPUTaskRequest struct {
 	*requests.RpcRequest
-	SingleSubParams StartLiveMPUTaskSingleSubParams `position:"Query" name:"SingleSubParams"  type:"Struct"`
-	SeiParams       StartLiveMPUTaskSeiParams       `position:"Query" name:"SeiParams"  type:"Struct"`
-	TranscodeParams StartLiveMPUTaskTranscodeParams `position:"Query" name:"TranscodeParams"  type:"Struct"`
-	AppId           string                          `position:"Query" name:"AppId"`
-	Region          string                          `position:"Query" name:"Region"`
-	MixMode         string                          `position:"Query" name:"MixMode"`
-	ChannelId       string                          `position:"Query" name:"ChannelId"`
-	TaskId          string                          `position:"Query" name:"TaskId"`
-	StreamURL       string                          `position:"Query" name:"StreamURL"`
+	SingleSubParams StartLiveMPUTaskSingleSubParams   `position:"Query" name:"SingleSubParams"  type:"Struct"`
+	TaskId          string                            `position:"Query" name:"TaskId"`
+	StreamURL       string                            `position:"Query" name:"StreamURL"`
+	MultiStreamURL  *[]StartLiveMPUTaskMultiStreamURL `position:"Query" name:"MultiStreamURL"  type:"Json"`
+	SeiParams       StartLiveMPUTaskSeiParams         `position:"Query" name:"SeiParams"  type:"Struct"`
+	TranscodeParams StartLiveMPUTaskTranscodeParams   `position:"Query" name:"TranscodeParams"  type:"Struct"`
+	AppId           string                            `position:"Query" name:"AppId"`
+	Region          string                            `position:"Query" name:"Region"`
+	MixMode         string                            `position:"Query" name:"MixMode"`
+	ChannelId       string                            `position:"Query" name:"ChannelId"`
+}
+
+// StartLiveMPUTaskMultiStreamURL is a repeated param struct in StartLiveMPUTaskRequest
+type StartLiveMPUTaskMultiStreamURL struct {
+	URL string `name:"URL"`
 }
 
 // StartLiveMPUTaskSingleSubParams is a repeated param struct in StartLiveMPUTaskRequest

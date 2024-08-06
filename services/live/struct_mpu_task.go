@@ -17,13 +17,14 @@ package live
 
 // MpuTask is a nested struct in live response
 type MpuTask struct {
-	AppId           string          `json:"AppId" xml:"AppId"`
-	ChannelId       string          `json:"ChannelId" xml:"ChannelId"`
-	TaskId          string          `json:"TaskId" xml:"TaskId"`
-	MixMode         string          `json:"MixMode" xml:"MixMode"`
-	StreamURL       string          `json:"StreamURL" xml:"StreamURL"`
-	Region          string          `json:"Region" xml:"Region"`
-	SingleSubParams SingleSubParams `json:"SingleSubParams" xml:"SingleSubParams"`
-	TranscodeParams TranscodeParams `json:"TranscodeParams" xml:"TranscodeParams"`
-	SeiParams       SeiParams       `json:"SeiParams" xml:"SeiParams"`
+	AppId           string               `json:"AppId" xml:"AppId"`
+	ChannelId       string               `json:"ChannelId" xml:"ChannelId"`
+	TaskId          string               `json:"TaskId" xml:"TaskId"`
+	MixMode         string               `json:"MixMode" xml:"MixMode"`
+	StreamURL       string               `json:"StreamURL" xml:"StreamURL"`
+	Region          string               `json:"Region" xml:"Region"`
+	SingleSubParams SingleSubParams      `json:"SingleSubParams" xml:"SingleSubParams"`
+	TranscodeParams TranscodeParams      `json:"TranscodeParams" xml:"TranscodeParams"`
+	SeiParams       SeiParams            `json:"SeiParams" xml:"SeiParams"`
+	MultiStreamURL  []MultiStreamURLItem `json:"MultiStreamURL" xml:"MultiStreamURL"`
 }

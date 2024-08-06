@@ -1,3 +1,7 @@
+2024-08-06 Version: v1.62.806
+- Generated 2016-11-01 for `live`.
+- Update to support new apis.
+
 2024-08-05 Version: v1.62.805
 - Generated 2019-09-01 for `OceanBasePro`.
 undefined
