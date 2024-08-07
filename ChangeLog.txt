@@ -1,3 +1,7 @@
+2024-08-07 Version: v1.62.807
+- Generated 2022-01-01 for `quickbi-public`.
+- Add QueryData, ModifyCopilotEmbedConfig, QueryCopilotEmbedConfig and QueryDataRange APIs.
+
 2024-08-06 Version: v1.62.806
 - Generated 2016-11-01 for `live`.
 - Update to support new apis.
