@@ -6,7 +6,6 @@ import (
 	"github.com/stretchr/testify/assert"
 
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/auth/credentials"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/auth/signers"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
 )
 
@@ -41,12 +40,14 @@ func TestRoaSignatureComposer(t *testing.T) {
 	request.PathPattern = "/users/:user"
 	request.TransToAcsRequest()
 	c := credentials.NewAccessKeyCredential("accessKeyId", "accessKeySecret")
-	signer := signers.NewAccessKeySigner(c)
 
 	origTestHookGetDate := hookGetDate
 	defer func() { hookGetDate = origTestHookGetDate }()
 	hookGetDate = mockDate
-	signRoaRequest(request, signer)
+
+	provider, err := ToCredentialsProvider(c)
+	assert.Nil(t, err)
+	signRoaRequest(request, provider)
 	assert.Equal(t, "mock date", request.GetHeaders()["Date"])
 	assert.Equal(t, "acs accessKeyId:degLHXLEN6rMojj+bOlK74U9iic=", request.GetHeaders()["Authorization"])
 }
@@ -58,12 +59,14 @@ func TestRoaSignatureComposer2(t *testing.T) {
 	request.AcceptFormat = "XML"
 	request.TransToAcsRequest()
 	c := credentials.NewAccessKeyCredential("accessKeyId", "accessKeySecret")
-	signer := signers.NewAccessKeySigner(c)
 
 	origTestHookLookupIP := hookGetDate
 	defer func() { hookGetDate = origTestHookLookupIP }()
 	hookGetDate = mockDate
-	signRoaRequest(request, signer)
+
+	provider, err := ToCredentialsProvider(c)
+	assert.Nil(t, err)
+	signRoaRequest(request, provider)
 	assert.Equal(t, "application/x-www-form-urlencoded", request.GetHeaders()["Content-Type"])
 	assert.Equal(t, "mock date", request.GetHeaders()["Date"])
 	assert.Equal(t, "application/xml", request.GetHeaders()["Accept"])
@@ -76,25 +79,36 @@ func TestRoaSignatureComposer3(t *testing.T) {
 	request.AcceptFormat = "RAW"
 	request.TransToAcsRequest()
 	c := credentials.NewAccessKeyCredential("accessKeyId", "accessKeySecret")
-	signer := signers.NewAccessKeySigner(c)
 
 	origTestHookGetDate := hookGetDate
 	defer func() { hookGetDate = origTestHookGetDate }()
 	hookGetDate = mockDate
-	signRoaRequest(request, signer)
+
+	provider, err := ToCredentialsProvider(c)
+	assert.Nil(t, err)
+	signRoaRequest(request, provider)
 	assert.Equal(t, "mock date", request.GetHeaders()["Date"])
 }
 
 func TestCompleteROASignParams(t *testing.T) {
 	req := requests.NewCommonRequest()
 	req.TransToAcsRequest()
-	sign := signers.NewBearerTokenSigner(credentials.NewBearerTokenCredential("Bearer.Token"))
-	completeROASignParams(req, sign)
+	c := credentials.NewBearerTokenCredential("Bearer.Token")
+	provider, err := ToCredentialsProvider(c)
+	assert.Nil(t, err)
+	cc, err := provider.GetCredentials()
+	assert.Nil(t, err)
+
+	completeROASignParams(req, cc)
 	head := req.GetHeaders()
 	assert.Equal(t, "Bearer.Token", head["x-acs-bearer-token"])
 
-	sign1 := signers.NewStsTokenSigner(credentials.NewStsTokenCredential("accessKeyId", "accessKeySecret", "accessKeyStsToken"))
-	completeROASignParams(req, sign1)
+	stc := credentials.NewStsTokenCredential("accessKeyId", "accessKeySecret", "accessKeyStsToken")
+	provider, err = ToCredentialsProvider(stc)
+	assert.Nil(t, err)
+	cc, err = provider.GetCredentials()
+	assert.Nil(t, err)
+	completeROASignParams(req, cc)
 	head = req.GetHeaders()
 	assert.Equal(t, "accessKeyStsToken", head["x-acs-security-token"])
 }
