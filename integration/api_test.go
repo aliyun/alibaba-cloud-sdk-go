@@ -61,6 +61,7 @@ func Test_DeleteClusterWithROArequestWithJSONWithDelete(t *testing.T) {
 	assert.Contains(t, err.Error(), "ErrorClusterNotFound")
 }
 
+// 创建安全组
 func Test_CreateSecurityGroupWithRPCrequestWithJSONWithNestingparametersWithPOST(t *testing.T) {
 	client, err := ecs.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
 	assert.Nil(t, err)
@@ -79,6 +80,7 @@ func Test_CreateSecurityGroupWithRPCrequestWithJSONWithNestingparametersWithPOST
 	securityGroupId = response.SecurityGroupId
 }
 
+// 查询安全组
 func Test_ECS_DescribeSecurityGroupsWithRPCrequestWithJSONWithNestingparametersWithGET(t *testing.T) {
 	client, err := ecs.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
 	assert.Nil(t, err)
@@ -99,6 +101,7 @@ func Test_ECS_DescribeSecurityGroupsWithRPCrequestWithJSONWithNestingparametersW
 	flag = false
 }
 
+// 删除安全组
 func Test_ECS_DeleteSecurityGroupWithRPCrequestWithJSONWithPOST(t *testing.T) {
 	client, err := ecs.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
 	assert.Nil(t, err)
@@ -112,6 +115,7 @@ func Test_ECS_DeleteSecurityGroupWithRPCrequestWithJSONWithPOST(t *testing.T) {
 	securityGroupId = ""
 }
 
+// 查询 RDS
 func Test_RDS_DescribeDBInstancesWithRPCrequest(t *testing.T) {
 	client, err := rds.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
 	assert.Nil(t, err)
@@ -123,6 +127,7 @@ func Test_RDS_DescribeDBInstancesWithRPCrequest(t *testing.T) {
 	assert.NotNil(t, response)
 }
 
+// 查询 CDN 域名
 func Test_CDN_DescribeCdnDomainDetailWithRPCrequest(t *testing.T) {
 	client, err := cdn.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
 	assert.Nil(t, err)
@@ -134,6 +139,7 @@ func Test_CDN_DescribeCdnDomainDetailWithRPCrequest(t *testing.T) {
 	assert.Equal(t, 36, len(response.RequestId))
 }
 
+// 查询角色列表
 func Test_RAM_ListRolesWithRPCrequest(t *testing.T) {
 	client, err := ram.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
 	assert.Nil(t, err)
@@ -145,6 +151,7 @@ func Test_RAM_ListRolesWithRPCrequest(t *testing.T) {
 	assert.Equal(t, 36, len(response.RequestId))
 }
 
+// 查询 slb regions
 func Test_SLB_DescribeRegionsWithRPCrequest(t *testing.T) {
 	client, err := slb.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
 	assert.Nil(t, err)
@@ -156,6 +163,7 @@ func Test_SLB_DescribeRegionsWithRPCrequest(t *testing.T) {
 	assert.True(t, len(response.Regions.Region) > 0)
 }
 
+// 查询 vpc regions
 func Test_VPC_DescribeRegionsWithRPCrequest(t *testing.T) {
 	client, err := vpc.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
 	assert.Nil(t, err)
