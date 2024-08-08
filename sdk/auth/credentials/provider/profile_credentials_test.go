@@ -87,6 +87,23 @@ private_key_file = ./pk_error.pem
 type = error_type               
 public_key_id = publicKeyId       
 private_key_file = ./pk_error.pem
+
+[nosts]
+type = sts
+access_key_secret = bar
+security_token = security_token
+
+[emptysts]
+type = sts
+access_key_id =
+access_key_secret = bar
+security_token = security_token
+
+[sts]
+type = sts
+access_key_id = foo
+access_key_secret = bar
+security_token = security_token
 `
 var privatekey = `this is privatekey`
 
@@ -239,4 +256,20 @@ func TestProfileProvider(t *testing.T) {
 	c, err = p.Resolve()
 	assert.Nil(t, c)
 	assert.True(t, strings.Contains(err.Error(), "ERROR: Failed to get credential"))
+
+	// testcase, normal StsToken
+	p = provider.NewProfileProvider("sts")
+	c, err = p.Resolve()
+	assert.Equal(t, credentials.NewStsTokenCredential("foo", "bar", "security_token"), c)
+	assert.Nil(t, err)
+	//testcase, key does not exist
+	p = provider.NewProfileProvider("nosts")
+	c, err = p.Resolve()
+	assert.Nil(t, c)
+	assert.True(t, strings.Contains(err.Error(), "ERROR: Failed to get value"))
+	//testcase, value is empty
+	p = provider.NewProfileProvider("emptysts")
+	c, err = p.Resolve()
+	assert.Nil(t, c)
+	assert.True(t, strings.Contains(err.Error(), "ERROR: Value can't be empty"))
 }
