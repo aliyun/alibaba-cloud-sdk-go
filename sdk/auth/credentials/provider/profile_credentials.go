@@ -123,6 +123,17 @@ func (p *ProfileProvider) Resolve() (auth.Credential, error) {
 			data += scan.Text() + "\n"
 		}
 		return credentials.NewRsaKeyPairCredential(privateKey, value1.String(), 3600), nil
+	case "sts":
+		value1, err1 := section.GetKey("access_key_id")
+		value2, err2 := section.GetKey("access_key_secret")
+		value3, err3 := section.GetKey("security_token")
+		if err1 != nil || err2 != nil || err3 != nil {
+			return nil, errors.New("ERROR: Failed to get value")
+		}
+		if value1.String() == "" || value2.String() == "" || value3.String() == "" {
+			return nil, errors.New("ERROR: Value can't be empty")
+		}
+		return credentials.NewStsTokenCredential(value1.String(), value2.String(), value3.String()), nil
 	default:
 		return nil, errors.New("ERROR: Failed to get credential")
 	}
