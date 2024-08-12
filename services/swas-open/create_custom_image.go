@@ -75,8 +75,8 @@ type CreateCustomImageRequest struct {
 	DataSnapshotId   string                  `position:"Query" name:"DataSnapshotId"`
 	ClientToken      string                  `position:"Query" name:"ClientToken"`
 	Description      string                  `position:"Query" name:"Description"`
-	ResoureGroupId   string                  `position:"Query" name:"ResoureGroupId"`
 	Platform         string                  `position:"Query" name:"Platform"`
+	ResourceGroupId  string                  `position:"Query" name:"ResourceGroupId"`
 	ImageName        string                  `position:"Query" name:"ImageName"`
 	Tag              *[]CreateCustomImageTag `position:"Query" name:"Tag"  type:"Repeated"`
 	InstanceId       string                  `position:"Query" name:"InstanceId"`

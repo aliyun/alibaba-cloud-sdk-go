@@ -1,3 +1,7 @@
+2024-08-12 Version: v1.62.808
+- Generated 2020-06-01 for `SWAS-OPEN`.
+undefined
+
 2024-08-07 Version: v1.62.807
 - Generated 2022-01-01 for `quickbi-public`.
 - Add QueryData, ModifyCopilotEmbedConfig, QueryCopilotEmbedConfig and QueryDataRange APIs.
