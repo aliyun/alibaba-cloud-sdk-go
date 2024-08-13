@@ -71,7 +71,7 @@ func (client *Client) CreateYouhuiForOrderWithCallback(request *CreateYouhuiForO
 // CreateYouhuiForOrderRequest is the request struct for api CreateYouhuiForOrder
 type CreateYouhuiForOrderRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      string           `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerId              string           `position:"Query" name:"OwnerId"`
 	PromotionId          requests.Integer `position:"Query" name:"PromotionId"`

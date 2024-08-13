@@ -73,6 +73,7 @@ type CreateReadOnlyDBInstanceRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId                requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	DBInstanceStorage              requests.Integer `position:"Query" name:"DBInstanceStorage"`
+	AutoCreateProxy                requests.Boolean `position:"Query" name:"AutoCreateProxy"`
 	EngineVersion                  string           `position:"Query" name:"EngineVersion"`
 	DeletionProtection             requests.Boolean `position:"Query" name:"DeletionProtection"`
 	ResourceGroupId                string           `position:"Query" name:"ResourceGroupId"`

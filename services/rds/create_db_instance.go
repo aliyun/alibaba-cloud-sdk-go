@@ -77,6 +77,7 @@ type CreateDBInstanceRequest struct {
 	DBInstanceStorage              requests.Integer                 `position:"Query" name:"DBInstanceStorage"`
 	SystemDBCharset                string                           `position:"Query" name:"SystemDBCharset"`
 	ConnectionString               string                           `position:"Query" name:"ConnectionString"`
+	AutoCreateProxy                requests.Boolean                 `position:"Query" name:"AutoCreateProxy"`
 	EngineVersion                  string                           `position:"Query" name:"EngineVersion"`
 	DeletionProtection             requests.Boolean                 `position:"Query" name:"DeletionProtection"`
 	ResourceGroupId                string                           `position:"Query" name:"ResourceGroupId"`
