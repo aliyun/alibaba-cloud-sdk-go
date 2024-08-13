@@ -18,6 +18,7 @@ package live
 // UserInfo is a nested struct in live response
 type UserInfo struct {
 	SourceType string `json:"SourceType" xml:"SourceType"`
+	ChannelId  string `json:"ChannelId" xml:"ChannelId"`
 	UserId     string `json:"UserId" xml:"UserId"`
 	StreamType string `json:"StreamType" xml:"StreamType"`
 }

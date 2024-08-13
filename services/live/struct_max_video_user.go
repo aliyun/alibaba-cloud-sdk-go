@@ -19,5 +19,6 @@ package live
 type MaxVideoUser struct {
 	SourceType string `json:"SourceType" xml:"SourceType"`
 	StreamType string `json:"StreamType" xml:"StreamType"`
+	ChannelId  string `json:"ChannelId" xml:"ChannelId"`
 	UserId     string `json:"UserId" xml:"UserId"`
 }

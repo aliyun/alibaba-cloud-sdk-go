@@ -142,6 +142,7 @@ type StartLiveMPUTaskTranscodeParamsUserInfosItem struct {
 	StreamType string `name:"StreamType"`
 	SourceType string `name:"SourceType"`
 	UserId     string `name:"UserId"`
+	ChannelId  string `name:"ChannelId"`
 }
 
 // StartLiveMPUTaskTranscodeParamsEncodeParams is a repeated param struct in StartLiveMPUTaskRequest
@@ -176,12 +177,14 @@ type StartLiveMPUTaskTranscodeParamsLayoutMaxVideoUser struct {
 	StreamType string `name:"StreamType"`
 	SourceType string `name:"SourceType"`
 	UserId     string `name:"UserId"`
+	ChannelId  string `name:"ChannelId"`
 }
 
 // StartLiveMPUTaskTranscodeParamsLayoutUserPanesItemUserInfo is a repeated param struct in StartLiveMPUTaskRequest
 type StartLiveMPUTaskTranscodeParamsLayoutUserPanesItemUserInfo struct {
 	SourceType string `name:"SourceType"`
 	UserId     string `name:"UserId"`
+	ChannelId  string `name:"ChannelId"`
 }
 
 // StartLiveMPUTaskResponse is the response struct for api StartLiveMPUTask
