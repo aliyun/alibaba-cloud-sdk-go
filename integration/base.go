@@ -7,7 +7,6 @@ import (
 
 	"fmt"
 	"os"
-	"strings"
 )
 
 var role_doc = `{
@@ -37,34 +36,40 @@ func newRamClient() (*ram.Client, error) {
 	return ram.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
 }
 
-func createRole(userid string) (name string, arn string, err error) {
-	listRequest := ram.CreateListRolesRequest()
-	listRequest.Scheme = "HTTPS"
+func createRole(userid string) (err error) {
 	client, err := newRamClient()
 	if err != nil {
 		return
 	}
-	listResponse, err := client.ListRoles(listRequest)
-	if err != nil {
-		return
-	}
-	for _, role := range listResponse.Roles.Role {
-		if strings.ToLower(role.RoleName) == rolename {
-			name = role.RoleName
-			arn = role.Arn
-			return
-		}
-	}
+
 	createRequest := ram.CreateCreateRoleRequest()
 	createRequest.Scheme = "HTTPS"
 	createRequest.RoleName = rolename
 	createRequest.AssumeRolePolicyDocument = fmt.Sprintf(role_doc, userid)
-	res, err := client.CreateRole(createRequest)
+	_, err = client.CreateRole(createRequest)
+	return
+}
+
+func ensureRole(userid string) (err error) {
+	client, err := newRamClient()
 	if err != nil {
 		return
 	}
-	name = res.Role.RoleName
-	arn = res.Role.Arn
+	request := ram.CreateGetRoleRequest()
+	request.RoleName = rolename
+	request.Scheme = "HTTPS"
+	_, err = client.GetRole(request)
+	if err != nil {
+		if se, ok := err.(*errors.ServerError); ok {
+			if se.ErrorCode() == "EntityNotExist.Role" {
+				// 如果角色不存在，则创建
+				err = createRole(userid)
+				return
+			}
+		}
+		return
+	}
+
 	return
 }
 
@@ -211,10 +216,11 @@ func createAssumeRole() (response *sts.AssumeRoleResponse, err error) {
 		return
 	}
 
-	_, _, err = createRole(os.Getenv("USER_ID"))
+	err = ensureRole(os.Getenv("USER_ID"))
 	if err != nil {
 		return
 	}
+
 	err = createAttachPolicyToUser()
 	if err != nil {
 		return
