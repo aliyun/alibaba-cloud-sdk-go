@@ -1,3 +1,7 @@
+2024-08-13 Version: v1.62.810
+- Generated 2016-01-20 for `Kms`.
+- Support DryRun parameter OpenAPI.
+
 2024-08-13 Version: v1.62.809
 - Generated 2017-03-21 for `vod`.
 -DescribeVodCertificateDetail, DescribeVodCertificateList增加返回参数

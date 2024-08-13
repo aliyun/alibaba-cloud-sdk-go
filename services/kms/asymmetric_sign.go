@@ -71,6 +71,7 @@ func (client *Client) AsymmetricSignWithCallback(request *AsymmetricSignRequest,
 // AsymmetricSignRequest is the request struct for api AsymmetricSign
 type AsymmetricSignRequest struct {
 	*requests.RpcRequest
+	DryRun       string `position:"Query" name:"DryRun"`
 	KeyVersionId string `position:"Query" name:"KeyVersionId"`
 	KeyId        string `position:"Query" name:"KeyId"`
 	Digest       string `position:"Query" name:"Digest"`

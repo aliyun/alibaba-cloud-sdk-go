@@ -71,6 +71,7 @@ func (client *Client) GenerateDataKeyWithCallback(request *GenerateDataKeyReques
 // GenerateDataKeyRequest is the request struct for api GenerateDataKey
 type GenerateDataKeyRequest struct {
 	*requests.RpcRequest
+	DryRun            string           `position:"Query" name:"DryRun"`
 	KeyId             string           `position:"Query" name:"KeyId"`
 	KeySpec           string           `position:"Query" name:"KeySpec"`
 	NumberOfBytes     requests.Integer `position:"Query" name:"NumberOfBytes"`

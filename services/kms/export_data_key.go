@@ -71,6 +71,7 @@ func (client *Client) ExportDataKeyWithCallback(request *ExportDataKeyRequest, c
 // ExportDataKeyRequest is the request struct for api ExportDataKey
 type ExportDataKeyRequest struct {
 	*requests.RpcRequest
+	DryRun            string `position:"Query" name:"DryRun"`
 	PublicKeyBlob     string `position:"Query" name:"PublicKeyBlob"`
 	EncryptionContext string `position:"Query" name:"EncryptionContext"`
 	WrappingAlgorithm string `position:"Query" name:"WrappingAlgorithm"`

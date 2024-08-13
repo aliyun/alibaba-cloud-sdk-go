@@ -71,6 +71,7 @@ func (client *Client) AsymmetricDecryptWithCallback(request *AsymmetricDecryptRe
 // AsymmetricDecryptRequest is the request struct for api AsymmetricDecrypt
 type AsymmetricDecryptRequest struct {
 	*requests.RpcRequest
+	DryRun         string `position:"Query" name:"DryRun"`
 	KeyVersionId   string `position:"Query" name:"KeyVersionId"`
 	KeyId          string `position:"Query" name:"KeyId"`
 	CiphertextBlob string `position:"Query" name:"CiphertextBlob"`

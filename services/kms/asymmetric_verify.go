@@ -71,6 +71,7 @@ func (client *Client) AsymmetricVerifyWithCallback(request *AsymmetricVerifyRequ
 // AsymmetricVerifyRequest is the request struct for api AsymmetricVerify
 type AsymmetricVerifyRequest struct {
 	*requests.RpcRequest
+	DryRun       string `position:"Query" name:"DryRun"`
 	KeyVersionId string `position:"Query" name:"KeyVersionId"`
 	KeyId        string `position:"Query" name:"KeyId"`
 	Digest       string `position:"Query" name:"Digest"`

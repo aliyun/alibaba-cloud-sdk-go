@@ -71,6 +71,7 @@ func (client *Client) EncryptWithCallback(request *EncryptRequest, callback func
 // EncryptRequest is the request struct for api Encrypt
 type EncryptRequest struct {
 	*requests.RpcRequest
+	DryRun            string `position:"Query" name:"DryRun"`
 	KeyId             string `position:"Query" name:"KeyId"`
 	Plaintext         string `position:"Query" name:"Plaintext"`
 	EncryptionContext string `position:"Query" name:"EncryptionContext"`

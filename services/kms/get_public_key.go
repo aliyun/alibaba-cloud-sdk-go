@@ -71,6 +71,7 @@ func (client *Client) GetPublicKeyWithCallback(request *GetPublicKeyRequest, cal
 // GetPublicKeyRequest is the request struct for api GetPublicKey
 type GetPublicKeyRequest struct {
 	*requests.RpcRequest
+	DryRun       string `position:"Query" name:"DryRun"`
 	KeyVersionId string `position:"Query" name:"KeyVersionId"`
 	KeyId        string `position:"Query" name:"KeyId"`
 }

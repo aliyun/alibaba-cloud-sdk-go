@@ -71,6 +71,7 @@ func (client *Client) GetSecretValueWithCallback(request *GetSecretValueRequest,
 // GetSecretValueRequest is the request struct for api GetSecretValue
 type GetSecretValueRequest struct {
 	*requests.RpcRequest
+	DryRun              string           `position:"Query" name:"DryRun"`
 	VersionId           string           `position:"Query" name:"VersionId"`
 	VersionStage        string           `position:"Query" name:"VersionStage"`
 	SecretName          string           `position:"Query" name:"SecretName"`
