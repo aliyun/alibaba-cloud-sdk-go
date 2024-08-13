@@ -101,7 +101,7 @@ vftlY0Hs1vNXcaBgEA==`
 	defer func() { hookNewRequest = originNewRequest }()
 
 	// case 1: mock new http request failed
-	hookNewRequest = func(fn NewReuqest) NewReuqest {
+	hookNewRequest = func(fn newReuqest) newReuqest {
 		return func(method, url string, body io.Reader) (*http.Request, error) {
 			return nil, errors.New("new http request failed")
 		}
@@ -116,7 +116,7 @@ vftlY0Hs1vNXcaBgEA==`
 	defer func() { hookDo = originDo }()
 
 	// case 2: mock read response error
-	hookDo = func(fn Do) Do {
+	hookDo = func(fn do) do {
 		return func(req *http.Request) (res *http.Response, err error) {
 			status := strconv.Itoa(200)
 			res = &http.Response{
@@ -135,7 +135,7 @@ vftlY0Hs1vNXcaBgEA==`
 	assert.Equal(t, "read failed", err.Error())
 
 	// case 3: server error
-	hookDo = func(fn Do) Do {
+	hookDo = func(fn do) do {
 		return func(req *http.Request) (res *http.Response, err error) {
 			err = errors.New("mock server error")
 			return
@@ -146,7 +146,7 @@ vftlY0Hs1vNXcaBgEA==`
 	assert.Equal(t, "mock server error", err.Error())
 
 	// case 4: 4xx error
-	hookDo = func(fn Do) Do {
+	hookDo = func(fn do) do {
 		return func(req *http.Request) (res *http.Response, err error) {
 			res = mockResponse(400, "4xx error")
 			return
@@ -157,7 +157,7 @@ vftlY0Hs1vNXcaBgEA==`
 	assert.Equal(t, "SDK.ServerError\nErrorCode: \nRecommend: refresh temp ak failed\nRequestId: \nMessage: 4xx error\nRespHeaders: map[]", err.Error())
 
 	// case 5: invalid json
-	hookDo = func(fn Do) Do {
+	hookDo = func(fn do) do {
 		return func(req *http.Request) (res *http.Response, err error) {
 			res = mockResponse(200, "invalid json")
 			return
@@ -168,7 +168,7 @@ vftlY0Hs1vNXcaBgEA==`
 	assert.Equal(t, "refresh temp ak err, json.Unmarshal fail: invalid character 'i' looking for beginning of value", err.Error())
 
 	// case 6: empty response json
-	hookDo = func(fn Do) Do {
+	hookDo = func(fn do) do {
 		return func(req *http.Request) (res *http.Response, err error) {
 			res = mockResponse(200, "null")
 			return
@@ -179,7 +179,7 @@ vftlY0Hs1vNXcaBgEA==`
 	assert.Equal(t, "refresh temp ak token err, fail to get credentials", err.Error())
 
 	// case 7: empty session ak response json
-	hookDo = func(fn Do) Do {
+	hookDo = func(fn do) do {
 		return func(req *http.Request) (res *http.Response, err error) {
 			res = mockResponse(200, `{"SessionAccessKey": {}}`)
 			return
@@ -190,7 +190,7 @@ vftlY0Hs1vNXcaBgEA==`
 	assert.Equal(t, "refresh temp ak token err, fail to get credentials", err.Error())
 
 	// case 8: mock ok value
-	hookDo = func(fn Do) Do {
+	hookDo = func(fn do) do {
 		return func(req *http.Request) (res *http.Response, err error) {
 			res = mockResponse(200, `{"SessionAccessKey": {"SessionAccessKeyId":"saki","SessionAccessKeySecret":"saks","Expiration":"2021-10-20T04:27:09Z"}}`)
 			return
@@ -234,7 +234,7 @@ vftlY0Hs1vNXcaBgEA==`
 	defer func() { hookDo = originDo }()
 
 	// case 1: get credentials failed
-	hookDo = func(fn Do) Do {
+	hookDo = func(fn do) do {
 		return func(req *http.Request) (res *http.Response, err error) {
 			err = errors.New("mock server error")
 			return
@@ -245,7 +245,7 @@ vftlY0Hs1vNXcaBgEA==`
 	assert.Equal(t, "mock server error", err.Error())
 
 	// case 2: get invalid expiration
-	hookDo = func(fn Do) Do {
+	hookDo = func(fn do) do {
 		return func(req *http.Request) (res *http.Response, err error) {
 			res = mockResponse(200, `{"SessionAccessKey": {"SessionAccessKeyId":"saki","SessionAccessKeySecret":"saks","Expiration":"invalidexpiration"}}`)
 			return
@@ -256,7 +256,7 @@ vftlY0Hs1vNXcaBgEA==`
 	assert.Equal(t, "parsing time \"invalidexpiration\" as \"2006-01-02T15:04:05Z\": cannot parse \"invalidexpiration\" as \"2006\"", err.Error())
 
 	// case 3: happy result
-	hookDo = func(fn Do) Do {
+	hookDo = func(fn do) do {
 		return func(req *http.Request) (res *http.Response, err error) {
 			res = mockResponse(200, `{"SessionAccessKey": {"SessionAccessKeyId":"saki","SessionAccessKeySecret":"saks","Expiration":"2021-10-20T04:27:09Z"}}`)
 			return
@@ -324,7 +324,7 @@ func TestRAMRoleARNCredentialsProvider_getCredentials(t *testing.T) {
 	defer func() { hookNewRequest = originNewRequest }()
 
 	// case 1: mock new http request failed
-	hookNewRequest = func(fn NewReuqest) NewReuqest {
+	hookNewRequest = func(fn newReuqest) newReuqest {
 		return func(method, url string, body io.Reader) (*http.Request, error) {
 			return nil, errors.New("new http request failed")
 		}
@@ -339,7 +339,7 @@ func TestRAMRoleARNCredentialsProvider_getCredentials(t *testing.T) {
 	defer func() { hookDo = originDo }()
 
 	// case 2: server error
-	hookDo = func(fn Do) Do {
+	hookDo = func(fn do) do {
 		return func(req *http.Request) (res *http.Response, err error) {
 			err = errors.New("mock server error")
 			return
@@ -350,7 +350,7 @@ func TestRAMRoleARNCredentialsProvider_getCredentials(t *testing.T) {
 	assert.Equal(t, "mock server error", err.Error())
 
 	// case 3: mock read response error
-	hookDo = func(fn Do) Do {
+	hookDo = func(fn do) do {
 		return func(req *http.Request) (res *http.Response, err error) {
 			status := strconv.Itoa(200)
 			res = &http.Response{
@@ -369,7 +369,7 @@ func TestRAMRoleARNCredentialsProvider_getCredentials(t *testing.T) {
 	assert.Equal(t, "read failed", err.Error())
 
 	// case 4: 4xx error
-	hookDo = func(fn Do) Do {
+	hookDo = func(fn do) do {
 		return func(req *http.Request) (res *http.Response, err error) {
 			res = mockResponse(400, "4xx error")
 			return
@@ -380,7 +380,7 @@ func TestRAMRoleARNCredentialsProvider_getCredentials(t *testing.T) {
 	assert.Equal(t, "SDK.ServerError\nErrorCode: \nRecommend: refresh session token failed\nRequestId: \nMessage: 4xx error\nRespHeaders: map[]", err.Error())
 
 	// case 5: invalid json
-	hookDo = func(fn Do) Do {
+	hookDo = func(fn do) do {
 		return func(req *http.Request) (res *http.Response, err error) {
 			res = mockResponse(200, "invalid json")
 			return
@@ -391,7 +391,7 @@ func TestRAMRoleARNCredentialsProvider_getCredentials(t *testing.T) {
 	assert.Equal(t, "refresh RoleArn sts token err, json.Unmarshal fail: invalid character 'i' looking for beginning of value", err.Error())
 
 	// case 6: empty response json
-	hookDo = func(fn Do) Do {
+	hookDo = func(fn do) do {
 		return func(req *http.Request) (res *http.Response, err error) {
 			res = mockResponse(200, "null")
 			return
@@ -402,7 +402,7 @@ func TestRAMRoleARNCredentialsProvider_getCredentials(t *testing.T) {
 	assert.Equal(t, "refresh RoleArn sts token err, fail to get credentials", err.Error())
 
 	// case 7: empty session ak response json
-	hookDo = func(fn Do) Do {
+	hookDo = func(fn do) do {
 		return func(req *http.Request) (res *http.Response, err error) {
 			res = mockResponse(200, `{"Credentials": {}}`)
 			return
@@ -413,7 +413,7 @@ func TestRAMRoleARNCredentialsProvider_getCredentials(t *testing.T) {
 	assert.Equal(t, "refresh RoleArn sts token err, fail to get credentials", err.Error())
 
 	// case 8: mock ok value
-	hookDo = func(fn Do) Do {
+	hookDo = func(fn do) do {
 		return func(req *http.Request) (res *http.Response, err error) {
 			res = mockResponse(200, `{"Credentials": {"AccessKeyId":"saki","AccessKeySecret":"saks","Expiration":"2021-10-20T04:27:09Z","SecurityToken":"token"}}`)
 			return
@@ -444,7 +444,7 @@ func TestRAMRoleARNCredentialsProvider_getCredentialsWithRequestCheck(t *testing
 	assert.Nil(t, err)
 
 	// case 1: server error
-	hookDo = func(fn Do) Do {
+	hookDo = func(fn do) do {
 		return func(req *http.Request) (res *http.Response, err error) {
 			assert.Equal(t, "sts.cn-beijing.aliyuncs.com", req.Host)
 			assert.Contains(t, req.URL.String(), "SecurityToken=ststoken")
@@ -491,7 +491,7 @@ func TestRAMRoleARNCredentialsProviderGetCredentials(t *testing.T) {
 	assert.Nil(t, err)
 
 	// case 1: get credentials failed
-	hookDo = func(fn Do) Do {
+	hookDo = func(fn do) do {
 		return func(req *http.Request) (res *http.Response, err error) {
 			err = errors.New("mock server error")
 			return
@@ -502,7 +502,7 @@ func TestRAMRoleARNCredentialsProviderGetCredentials(t *testing.T) {
 	assert.Equal(t, "mock server error", err.Error())
 
 	// case 2: get invalid expiration
-	hookDo = func(fn Do) Do {
+	hookDo = func(fn do) do {
 		return func(req *http.Request) (res *http.Response, err error) {
 			res = mockResponse(200, `{"Credentials": {"AccessKeyId":"akid","AccessKeySecret":"aksecret","Expiration":"invalidexpiration","SecurityToken":"ststoken"}}`)
 			return
@@ -513,7 +513,7 @@ func TestRAMRoleARNCredentialsProviderGetCredentials(t *testing.T) {
 	assert.Equal(t, "parsing time \"invalidexpiration\" as \"2006-01-02T15:04:05Z\": cannot parse \"invalidexpiration\" as \"2006\"", err.Error())
 
 	// case 3: happy result
-	hookDo = func(fn Do) Do {
+	hookDo = func(fn do) do {
 		return func(req *http.Request) (res *http.Response, err error) {
 			res = mockResponse(200, `{"Credentials": {"AccessKeyId":"akid","AccessKeySecret":"aksecret","Expiration":"2021-10-20T04:27:09Z","SecurityToken":"ststoken"}}`)
 			return
@@ -553,7 +553,7 @@ func TestECSRAMRoleCredentialsProvider_getRoleName(t *testing.T) {
 	defer func() { hookNewRequest = originNewRequest }()
 
 	// case 1: mock new http request failed
-	hookNewRequest = func(fn NewReuqest) NewReuqest {
+	hookNewRequest = func(fn newReuqest) newReuqest {
 		return func(method, url string, body io.Reader) (*http.Request, error) {
 			return nil, errors.New("new http request failed")
 		}
@@ -568,7 +568,7 @@ func TestECSRAMRoleCredentialsProvider_getRoleName(t *testing.T) {
 	defer func() { hookDo = originDo }()
 
 	// case 2: server error
-	hookDo = func(fn Do) Do {
+	hookDo = func(fn do) do {
 		return func(req *http.Request) (res *http.Response, err error) {
 			err = errors.New("mock server error")
 			return
@@ -579,7 +579,7 @@ func TestECSRAMRoleCredentialsProvider_getRoleName(t *testing.T) {
 	assert.Equal(t, "get role name failed: mock server error", err.Error())
 
 	// case 3: 4xx error
-	hookDo = func(fn Do) Do {
+	hookDo = func(fn do) do {
 		return func(req *http.Request) (res *http.Response, err error) {
 			res = mockResponse(400, "4xx error")
 			return
@@ -591,7 +591,7 @@ func TestECSRAMRoleCredentialsProvider_getRoleName(t *testing.T) {
 	assert.Equal(t, "get role name failed: request http://100.100.100.200/latest/meta-data/ram/security-credentials/ 400", err.Error())
 
 	// case 4: mock read response error
-	hookDo = func(fn Do) Do {
+	hookDo = func(fn do) do {
 		return func(req *http.Request) (res *http.Response, err error) {
 			status := strconv.Itoa(200)
 			res = &http.Response{
@@ -610,7 +610,7 @@ func TestECSRAMRoleCredentialsProvider_getRoleName(t *testing.T) {
 	assert.Equal(t, "read failed", err.Error())
 
 	// case 5: value json
-	hookDo = func(fn Do) Do {
+	hookDo = func(fn do) do {
 		return func(req *http.Request) (res *http.Response, err error) {
 			res = mockResponse(200, "rolename")
 			return
@@ -628,7 +628,7 @@ func TestECSRAMRoleCredentialsProvider_getCredentials(t *testing.T) {
 	p := NewECSRAMRoleCredentialsProvider("")
 
 	// case 1: server error
-	hookDo = func(fn Do) Do {
+	hookDo = func(fn do) do {
 		return func(req *http.Request) (res *http.Response, err error) {
 			err = errors.New("mock server error")
 			return
@@ -638,7 +638,7 @@ func TestECSRAMRoleCredentialsProvider_getCredentials(t *testing.T) {
 	assert.NotNil(t, err)
 	assert.Equal(t, "get role name failed: mock server error", err.Error())
 
-	hookDo = func(fn Do) Do {
+	hookDo = func(fn do) do {
 		return func(req *http.Request) (res *http.Response, err error) {
 			if req.URL.Path == "/latest/meta-data/ram/security-credentials/" {
 				res = mockResponse(200, "rolename")
@@ -654,7 +654,7 @@ func TestECSRAMRoleCredentialsProvider_getCredentials(t *testing.T) {
 	defer func() { hookNewRequest = originNewRequest }()
 
 	// case 2: mock new http request failed
-	hookNewRequest = func(fn NewReuqest) NewReuqest {
+	hookNewRequest = func(fn newReuqest) newReuqest {
 		return func(method, url string, body io.Reader) (*http.Request, error) {
 			if url == "http://100.100.100.200/latest/meta-data/ram/security-credentials/rolename" {
 				return nil, errors.New("new http request failed")
@@ -670,7 +670,7 @@ func TestECSRAMRoleCredentialsProvider_getCredentials(t *testing.T) {
 	hookNewRequest = originNewRequest
 
 	// case 3
-	hookDo = func(fn Do) Do {
+	hookDo = func(fn do) do {
 		return func(req *http.Request) (res *http.Response, err error) {
 			if req.URL.Path == "/latest/meta-data/ram/security-credentials/" {
 				res = mockResponse(200, "rolename")
@@ -689,7 +689,7 @@ func TestECSRAMRoleCredentialsProvider_getCredentials(t *testing.T) {
 	assert.Equal(t, "refresh Ecs sts token err: mock server error", err.Error())
 
 	// case 4: mock read response error
-	hookDo = func(fn Do) Do {
+	hookDo = func(fn do) do {
 		return func(req *http.Request) (res *http.Response, err error) {
 			if req.URL.Path == "/latest/meta-data/ram/security-credentials/" {
 				res = mockResponse(200, "rolename")
@@ -716,7 +716,7 @@ func TestECSRAMRoleCredentialsProvider_getCredentials(t *testing.T) {
 	assert.Equal(t, "read failed", err.Error())
 
 	// case 4: 4xx error
-	hookDo = func(fn Do) Do {
+	hookDo = func(fn do) do {
 		return func(req *http.Request) (res *http.Response, err error) {
 			if req.URL.Path == "/latest/meta-data/ram/security-credentials/" {
 				res = mockResponse(200, "rolename")
@@ -735,7 +735,7 @@ func TestECSRAMRoleCredentialsProvider_getCredentials(t *testing.T) {
 	assert.Equal(t, "refresh Ecs sts token err, httpStatus: 400, message = 4xx error", err.Error())
 
 	// case 5: invalid json
-	hookDo = func(fn Do) Do {
+	hookDo = func(fn do) do {
 		return func(req *http.Request) (res *http.Response, err error) {
 			if req.URL.Path == "/latest/meta-data/ram/security-credentials/" {
 				res = mockResponse(200, "rolename")
@@ -754,7 +754,7 @@ func TestECSRAMRoleCredentialsProvider_getCredentials(t *testing.T) {
 	assert.Equal(t, "refresh Ecs sts token err, json.Unmarshal fail: invalid character 'i' looking for beginning of value", err.Error())
 
 	// case 6: empty response json
-	hookDo = func(fn Do) Do {
+	hookDo = func(fn do) do {
 		return func(req *http.Request) (res *http.Response, err error) {
 			if req.URL.Path == "/latest/meta-data/ram/security-credentials/" {
 				res = mockResponse(200, "rolename")
@@ -773,7 +773,7 @@ func TestECSRAMRoleCredentialsProvider_getCredentials(t *testing.T) {
 	assert.Equal(t, "refresh Ecs sts token err, fail to get credentials", err.Error())
 
 	// case 7: empty session ak response json
-	hookDo = func(fn Do) Do {
+	hookDo = func(fn do) do {
 		return func(req *http.Request) (res *http.Response, err error) {
 			if req.URL.Path == "/latest/meta-data/ram/security-credentials/" {
 				res = mockResponse(200, "rolename")
@@ -792,7 +792,7 @@ func TestECSRAMRoleCredentialsProvider_getCredentials(t *testing.T) {
 	assert.Equal(t, "refresh Ecs sts token err, fail to get credentials", err.Error())
 
 	// case 8: non-success response
-	hookDo = func(fn Do) Do {
+	hookDo = func(fn do) do {
 		return func(req *http.Request) (res *http.Response, err error) {
 			if req.URL.Path == "/latest/meta-data/ram/security-credentials/" {
 				res = mockResponse(200, "rolename")
@@ -811,7 +811,7 @@ func TestECSRAMRoleCredentialsProvider_getCredentials(t *testing.T) {
 	assert.Equal(t, "refresh Ecs sts token err, Code is not Success", err.Error())
 
 	// case 8: mock ok value
-	hookDo = func(fn Do) Do {
+	hookDo = func(fn do) do {
 		return func(req *http.Request) (res *http.Response, err error) {
 			if req.URL.Path == "/latest/meta-data/ram/security-credentials/" {
 				res = mockResponse(200, "rolename")
@@ -847,7 +847,7 @@ func TestECSRAMRoleCredentialsProviderGetCredentials(t *testing.T) {
 
 	p := NewECSRAMRoleCredentialsProvider("rolename")
 	// case 1: get credentials failed
-	hookDo = func(fn Do) Do {
+	hookDo = func(fn do) do {
 		return func(req *http.Request) (res *http.Response, err error) {
 			err = errors.New("mock server error")
 			return
@@ -858,7 +858,7 @@ func TestECSRAMRoleCredentialsProviderGetCredentials(t *testing.T) {
 	assert.Equal(t, "refresh Ecs sts token err: mock server error", err.Error())
 
 	// case 2: get invalid expiration
-	hookDo = func(fn Do) Do {
+	hookDo = func(fn do) do {
 		return func(req *http.Request) (res *http.Response, err error) {
 			res = mockResponse(200, `{"AccessKeyId":"saki","AccessKeySecret":"saks","Expiration":"invalidexpiration","SecurityToken":"token","Code":"Success"}`)
 			return
@@ -869,7 +869,7 @@ func TestECSRAMRoleCredentialsProviderGetCredentials(t *testing.T) {
 	assert.Equal(t, "parsing time \"invalidexpiration\" as \"2006-01-02T15:04:05Z\": cannot parse \"invalidexpiration\" as \"2006\"", err.Error())
 
 	// case 3: happy result
-	hookDo = func(fn Do) Do {
+	hookDo = func(fn do) do {
 		return func(req *http.Request) (res *http.Response, err error) {
 			res = mockResponse(200, `{"AccessKeyId":"akid","AccessKeySecret":"aksecret","Expiration":"2021-10-20T04:27:09Z","SecurityToken":"token","Code":"Success"}`)
 			return
@@ -1006,7 +1006,7 @@ func TestOIDCCredentialsProvider_getCredentials(t *testing.T) {
 	originNewRequest := hookNewRequest
 	defer func() { hookNewRequest = originNewRequest }()
 
-	hookNewRequest = func(fn NewReuqest) NewReuqest {
+	hookNewRequest = func(fn newReuqest) newReuqest {
 		return func(method, url string, body io.Reader) (*http.Request, error) {
 			return nil, errors.New("new http request failed")
 		}
@@ -1023,7 +1023,7 @@ func TestOIDCCredentialsProvider_getCredentials(t *testing.T) {
 	defer func() { hookDo = originDo }()
 
 	// case 2: server error
-	hookDo = func(fn Do) Do {
+	hookDo = func(fn do) do {
 		return func(req *http.Request) (res *http.Response, err error) {
 			err = errors.New("mock server error")
 			return
@@ -1034,7 +1034,7 @@ func TestOIDCCredentialsProvider_getCredentials(t *testing.T) {
 	assert.Equal(t, "mock server error", err.Error())
 
 	// case 3: mock read response error
-	hookDo = func(fn Do) Do {
+	hookDo = func(fn do) do {
 		return func(req *http.Request) (res *http.Response, err error) {
 			status := strconv.Itoa(200)
 			res = &http.Response{
@@ -1053,7 +1053,7 @@ func TestOIDCCredentialsProvider_getCredentials(t *testing.T) {
 	assert.Equal(t, "read failed", err.Error())
 
 	// case 4: 4xx error
-	hookDo = func(fn Do) Do {
+	hookDo = func(fn do) do {
 		return func(req *http.Request) (res *http.Response, err error) {
 			res = mockResponse(400, "4xx error")
 			return
@@ -1064,7 +1064,7 @@ func TestOIDCCredentialsProvider_getCredentials(t *testing.T) {
 	assert.Equal(t, "SDK.ServerError\nErrorCode: \nRecommend: get session token failed\nRequestId: \nMessage: 4xx error\nRespHeaders: map[]", err.Error())
 
 	// case 5: invalid json
-	hookDo = func(fn Do) Do {
+	hookDo = func(fn do) do {
 		return func(req *http.Request) (res *http.Response, err error) {
 			res = mockResponse(200, "invalid json")
 			return
@@ -1075,7 +1075,7 @@ func TestOIDCCredentialsProvider_getCredentials(t *testing.T) {
 	assert.Equal(t, "get oidc sts token err, json.Unmarshal fail: invalid character 'i' looking for beginning of value", err.Error())
 
 	// case 6: empty response json
-	hookDo = func(fn Do) Do {
+	hookDo = func(fn do) do {
 		return func(req *http.Request) (res *http.Response, err error) {
 			res = mockResponse(200, "null")
 			return
@@ -1086,7 +1086,7 @@ func TestOIDCCredentialsProvider_getCredentials(t *testing.T) {
 	assert.Equal(t, "get oidc sts token err, fail to get credentials", err.Error())
 
 	// case 7: empty session ak response json
-	hookDo = func(fn Do) Do {
+	hookDo = func(fn do) do {
 		return func(req *http.Request) (res *http.Response, err error) {
 			res = mockResponse(200, `{"Credentials": {}}`)
 			return
@@ -1097,7 +1097,7 @@ func TestOIDCCredentialsProvider_getCredentials(t *testing.T) {
 	assert.Equal(t, "refresh RoleArn sts token err, fail to get credentials", err.Error())
 
 	// case 8: mock ok value
-	hookDo = func(fn Do) Do {
+	hookDo = func(fn do) do {
 		return func(req *http.Request) (res *http.Response, err error) {
 			res = mockResponse(200, `{"Credentials": {"AccessKeyId":"saki","AccessKeySecret":"saks","Expiration":"2021-10-20T04:27:09Z","SecurityToken":"token"}}`)
 			return
@@ -1138,7 +1138,7 @@ func TestOIDCCredentialsProvider_getCredentialsWithRequestCheck(t *testing.T) {
 	assert.Nil(t, err)
 
 	// case 1: server error
-	hookDo = func(fn Do) Do {
+	hookDo = func(fn do) do {
 		return func(req *http.Request) (res *http.Response, err error) {
 			assert.Equal(t, "sts.aliyuncs.com", req.Host)
 			assert.Contains(t, req.URL.String(), "Action=AssumeRoleWithOIDC")
@@ -1179,7 +1179,7 @@ func TestOIDCCredentialsProviderGetCredentials(t *testing.T) {
 	assert.Nil(t, err)
 
 	// case 1: get credentials failed
-	hookDo = func(fn Do) Do {
+	hookDo = func(fn do) do {
 		return func(req *http.Request) (res *http.Response, err error) {
 			err = errors.New("mock server error")
 			return
@@ -1190,7 +1190,7 @@ func TestOIDCCredentialsProviderGetCredentials(t *testing.T) {
 	assert.Equal(t, "mock server error", err.Error())
 
 	// case 2: get invalid expiration
-	hookDo = func(fn Do) Do {
+	hookDo = func(fn do) do {
 		return func(req *http.Request) (res *http.Response, err error) {
 			res = mockResponse(200, `{"Credentials": {"AccessKeyId":"akid","AccessKeySecret":"aksecret","Expiration":"invalidexpiration","SecurityToken":"ststoken"}}`)
 			return
@@ -1201,7 +1201,7 @@ func TestOIDCCredentialsProviderGetCredentials(t *testing.T) {
 	assert.Equal(t, "parsing time \"invalidexpiration\" as \"2006-01-02T15:04:05Z\": cannot parse \"invalidexpiration\" as \"2006\"", err.Error())
 
 	// case 3: happy result
-	hookDo = func(fn Do) Do {
+	hookDo = func(fn do) do {
 		return func(req *http.Request) (res *http.Response, err error) {
 			res = mockResponse(200, `{"Credentials": {"AccessKeyId":"akid","AccessKeySecret":"aksecret","Expiration":"2021-10-20T04:27:09Z","SecurityToken":"ststoken"}}`)
 			return
