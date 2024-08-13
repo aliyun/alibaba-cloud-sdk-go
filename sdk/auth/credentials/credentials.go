@@ -66,15 +66,15 @@ type Credentials struct {
 	BearerToken     string
 }
 
-type Do func(req *http.Request) (*http.Response, error)
+type do func(req *http.Request) (*http.Response, error)
 
-var hookDo = func(fn Do) Do {
+var hookDo = func(fn do) do {
 	return fn
 }
 
-type NewReuqest func(method, url string, body io.Reader) (*http.Request, error)
+type newReuqest func(method, url string, body io.Reader) (*http.Request, error)
 
-var hookNewRequest = func(fn NewReuqest) NewReuqest {
+var hookNewRequest = func(fn newReuqest) newReuqest {
 	return fn
 }
 

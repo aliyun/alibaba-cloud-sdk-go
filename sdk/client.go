@@ -88,6 +88,7 @@ type Client struct {
 	credentialsProvider credentials.CredentialsProvider
 }
 
+// Deprecated: don't use it
 func (client *Client) Init() (err error) {
 	panic("not support yet")
 }
@@ -798,6 +799,7 @@ func (client *Client) SetSigner(signer auth.Signer) {
 	client.signer = signer
 }
 
+// Deprecated: don't use it
 func NewClient() (client *Client, err error) {
 	client = &Client{}
 	err = client.Init()
@@ -816,36 +818,53 @@ func NewClientWithProvider(regionId string, providers ...provider.Provider) (cli
 	return
 }
 
+// Usage:
+// ```go
+// credentialsProvider := credentials.NewStaticAKCredentialsProvider(accessKeyId, accessKeySecret)
+// sdk.NewClientWithOptions(regionId, config, credentialsProvider)
+// ```
+// More credentials provider, see: github.com/aliyun/alibaba-cloud-sdk-go/sdk/auth/credentials
+// - StaticAKCredentialsProvider
+// - StaticSTSCredentialsProvider
+// - BearerTokenCredentialsProvider
+// - RAMRoleARNCredentialsProvider
+// - ECSRAMRoleCredentialsProvider
+// - OIDCCredentialsProvider
 func NewClientWithOptions(regionId string, config *Config, credential auth.Credential) (client *Client, err error) {
 	client = &Client{}
 	err = client.InitWithOptions(regionId, config, credential)
 	return
 }
 
+// Deprecated: use NewClientWithOptions(regionId, config, credentialsProvider) instead of
 func NewClientWithAccessKey(regionId, accessKeyId, accessKeySecret string) (client *Client, err error) {
 	client = &Client{}
 	err = client.InitWithAccessKey(regionId, accessKeyId, accessKeySecret)
 	return
 }
 
+// Deprecated: use NewClientWithOptions(regionId, config, credentialsProvider) instead of
 func NewClientWithStsToken(regionId, stsAccessKeyId, stsAccessKeySecret, stsToken string) (client *Client, err error) {
 	client = &Client{}
 	err = client.InitWithStsToken(regionId, stsAccessKeyId, stsAccessKeySecret, stsToken)
 	return
 }
 
+// Deprecated: use NewClientWithOptions(regionId, config, credentialsProvider) instead of
 func NewClientWithRamRoleArn(regionId string, accessKeyId, accessKeySecret, roleArn, roleSessionName string) (client *Client, err error) {
 	client = &Client{}
 	err = client.InitWithRamRoleArn(regionId, accessKeyId, accessKeySecret, roleArn, roleSessionName)
 	return
 }
 
+// Deprecated: use NewClientWithOptions(regionId, config, credentialsProvider) instead of
 func NewClientWithRamRoleArnAndPolicy(regionId string, accessKeyId, accessKeySecret, roleArn, roleSessionName, policy string) (client *Client, err error) {
 	client = &Client{}
 	err = client.InitWithRamRoleArnAndPolicy(regionId, accessKeyId, accessKeySecret, roleArn, roleSessionName, policy)
 	return
 }
 
+// Deprecated: use NewClientWithOptions(regionId, config, credentialsProvider) instead of
 func NewClientWithEcsRamRole(regionId string, roleName string) (client *Client, err error) {
 	client = &Client{}
 	err = client.InitWithEcsRamRole(regionId, roleName)
@@ -859,6 +878,7 @@ func NewClientWithRsaKeyPair(regionId string, publicKeyId, privateKey string, se
 	return
 }
 
+// Deprecated: use NewClientWithOptions(regionId, config, credentialsProvider) instead of
 func NewClientWithBearerToken(regionId, bearerToken string) (client *Client, err error) {
 	client = &Client{}
 	err = client.InitWithBearerToken(regionId, bearerToken)
