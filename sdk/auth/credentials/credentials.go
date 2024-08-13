@@ -513,7 +513,9 @@ func (provider *ECSRAMRoleCredentialsProvider) getRoleName() (roleName string, e
 		err = fmt.Errorf("get role name failed: %s", err.Error())
 		return
 	}
-	httpClient := &http.Client{}
+	httpClient := &http.Client{
+		Timeout: 5 * time.Second,
+	}
 	httpResponse, err := hookDo(httpClient.Do)(httpRequest)
 	if err != nil {
 		err = fmt.Errorf("get role name failed: %s", err.Error())
@@ -551,7 +553,9 @@ func (provider *ECSRAMRoleCredentialsProvider) getCredentials() (sessionCredenti
 		err = fmt.Errorf("refresh Ecs sts token err: %s", err.Error())
 		return
 	}
-	httpClient := &http.Client{}
+	httpClient := &http.Client{
+		Timeout: 5 * time.Second,
+	}
 	httpResponse, err := hookDo(httpClient.Do)(httpRequest)
 	if err != nil {
 		err = fmt.Errorf("refresh Ecs sts token err: %s", err.Error())
