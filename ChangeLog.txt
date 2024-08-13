@@ -1,3 +1,7 @@
+2024-08-13 Version: v1.62.809
+- Generated 2017-03-21 for `vod`.
+-DescribeVodCertificateDetail, DescribeVodCertificateList增加返回参数
+
 2024-08-12 Version: v1.62.808
 - Generated 2020-06-01 for `SWAS-OPEN`.
 undefined

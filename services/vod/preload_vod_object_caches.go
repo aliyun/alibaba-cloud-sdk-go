@@ -72,8 +72,11 @@ func (client *Client) PreloadVodObjectCachesWithCallback(request *PreloadVodObje
 type PreloadVodObjectCachesRequest struct {
 	*requests.RpcRequest
 	ObjectPath    string           `position:"Query" name:"ObjectPath"`
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	L2Preload     requests.Boolean `position:"Query" name:"L2Preload"`
+	Area          string           `position:"Query" name:"Area"`
+	WithHeader    string           `position:"Query" name:"WithHeader"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // PreloadVodObjectCachesResponse is the response struct for api PreloadVodObjectCaches

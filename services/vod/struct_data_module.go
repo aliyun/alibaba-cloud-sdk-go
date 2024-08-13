@@ -17,9 +17,13 @@ package vod
 
 // DataModule is a nested struct in vod response
 type DataModule struct {
+	Region                string `json:"Region" xml:"Region"`
 	OverseasValue         string `json:"OverseasValue" xml:"OverseasValue"`
+	LessthanMonthDatasize int64  `json:"LessthanMonthDatasize" xml:"LessthanMonthDatasize"`
 	HttpsAccOverseasValue string `json:"HttpsAccOverseasValue" xml:"HttpsAccOverseasValue"`
+	StorageUtilization    int64  `json:"StorageUtilization" xml:"StorageUtilization"`
 	HttpsOverseasValue    string `json:"HttpsOverseasValue" xml:"HttpsOverseasValue"`
+	StorageClass          string `json:"StorageClass" xml:"StorageClass"`
 	DomesticValue         string `json:"DomesticValue" xml:"DomesticValue"`
 	AccValue              string `json:"AccValue" xml:"AccValue"`
 	Value                 string `json:"Value" xml:"Value"`

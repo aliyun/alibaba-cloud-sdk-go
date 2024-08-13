@@ -73,6 +73,7 @@ type CreateAppInfoRequest struct {
 	*requests.RpcRequest
 	Description         string           `position:"Query" name:"Description"`
 	ResourceRealOwnerId requests.Integer `position:"Query" name:"ResourceRealOwnerId"`
+	ResourceGroupId     string           `position:"Query" name:"ResourceGroupId"`
 	AppName             string           `position:"Query" name:"AppName"`
 }
 

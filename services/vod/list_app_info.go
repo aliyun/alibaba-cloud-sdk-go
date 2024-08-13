@@ -72,6 +72,7 @@ func (client *Client) ListAppInfoWithCallback(request *ListAppInfoRequest, callb
 type ListAppInfoRequest struct {
 	*requests.RpcRequest
 	ResourceRealOwnerId requests.Integer `position:"Query" name:"ResourceRealOwnerId"`
+	ResourceGroupId     string           `position:"Query" name:"ResourceGroupId"`
 	PageSize            requests.Integer `position:"Query" name:"PageSize"`
 	Tag                 ListAppInfoTag   `position:"Query" name:"Tag"  type:"Struct"`
 	PageNo              requests.Integer `position:"Query" name:"PageNo"`

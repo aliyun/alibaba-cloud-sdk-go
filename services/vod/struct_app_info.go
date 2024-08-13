@@ -19,6 +19,7 @@ package vod
 type AppInfo struct {
 	AppId            string     `json:"AppId" xml:"AppId"`
 	RegionId         string     `json:"RegionId" xml:"RegionId"`
+	ResourceGroupId  string     `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	ModificationTime string     `json:"ModificationTime" xml:"ModificationTime"`
 	CreationTime     string     `json:"CreationTime" xml:"CreationTime"`
 	Status           string     `json:"Status" xml:"Status"`
