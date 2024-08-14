@@ -913,7 +913,7 @@ func TestInitWithProviderChain(t *testing.T) {
 	//testcase1: No any environment variable
 	c, err := NewClientWithProvider("cn-hangzhou")
 	assert.Empty(t, c)
-	assert.EqualError(t, err, "No credential found")
+	assert.EqualError(t, err, "no credential found")
 
 	//testcase2: AK
 	os.Setenv(provider.ENVAccessKeyID, "AccessKeyId")
@@ -950,13 +950,12 @@ func TestInitWithProviderChain(t *testing.T) {
 	os.Setenv(provider.ENVEcsMetadata, "")
 	c, err = NewClientWithProvider("cn-hangzhou")
 	assert.Empty(t, c)
-	assert.EqualError(t, err, "Environmental variable 'ALIBABA_CLOUD_ECS_METADATA' are empty")
+	assert.EqualError(t, err, "environmental variable 'ALIBABA_CLOUD_ECS_METADATA' are empty")
 
 	//testcase7: Custom Providers
 	c, err = NewClientWithProvider("cn-hangzhou", provider.ProviderProfile, provider.ProviderEnv)
 	assert.Empty(t, c)
-	assert.EqualError(t, err, "No credential found")
-
+	assert.EqualError(t, err, "no credential found")
 }
 
 func TestNewClientWithBearerToken(t *testing.T) {

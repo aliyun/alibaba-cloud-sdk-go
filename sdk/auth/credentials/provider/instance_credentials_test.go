@@ -24,7 +24,7 @@ func TestInstanceCredentialsProvider(t *testing.T) {
 	os.Setenv(provider.ENVEcsMetadata, "")
 	c, err = p.Resolve()
 	assert.Nil(t, c)
-	assert.EqualError(t, err, "Environmental variable 'ALIBABA_CLOUD_ECS_METADATA' are empty")
+	assert.EqualError(t, err, "environmental variable 'ALIBABA_CLOUD_ECS_METADATA' are empty")
 
 	//testcase 3
 	//return nil, err
@@ -46,7 +46,7 @@ func TestInstanceCredentialsProvider(t *testing.T) {
 	}()
 	c, err = p.Resolve()
 	assert.Nil(t, c)
-	assert.EqualError(t, err, "The role was not found in the instance")
+	assert.EqualError(t, err, "the role was not found in the instance")
 
 	//testcase 5
 	//return nil, fmt.Errorf("Received %d when getting security credentials for %s", status, roleName)
@@ -57,7 +57,7 @@ func TestInstanceCredentialsProvider(t *testing.T) {
 	}
 	c, err = p.Resolve()
 	assert.Nil(t, c)
-	assert.EqualError(t, err, "Received 400 when getting security credentials for test")
+	assert.EqualError(t, err, "received 400 when getting security credentials for test")
 
 	//testcase 6
 	//json unmarshal error
