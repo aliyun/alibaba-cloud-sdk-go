@@ -71,26 +71,26 @@ func (client *Client) DescribeZoneRecordsWithCallback(request *DescribeZoneRecor
 // DescribeZoneRecordsRequest is the request struct for api DescribeZoneRecords
 type DescribeZoneRecordsRequest struct {
 	*requests.RpcRequest
-	OrderBy      string           `position:"Query" name:"OrderBy"`
 	PageNumber   requests.Integer `position:"Query" name:"PageNumber"`
 	PageSize     requests.Integer `position:"Query" name:"PageSize"`
-	UserClientIp string           `position:"Query" name:"UserClientIp"`
-	ZoneId       string           `position:"Query" name:"ZoneId"`
-	SearchMode   string           `position:"Query" name:"SearchMode"`
 	Tag          string           `position:"Query" name:"Tag"`
 	Lang         string           `position:"Query" name:"Lang"`
 	Keyword      string           `position:"Query" name:"Keyword"`
 	Direction    string           `position:"Query" name:"Direction"`
+	OrderBy      string           `position:"Query" name:"OrderBy"`
+	UserClientIp string           `position:"Query" name:"UserClientIp"`
+	ZoneId       string           `position:"Query" name:"ZoneId"`
+	SearchMode   string           `position:"Query" name:"SearchMode"`
 }
 
 // DescribeZoneRecordsResponse is the response struct for api DescribeZoneRecords
 type DescribeZoneRecordsResponse struct {
 	*responses.BaseResponse
-	RequestId  string  `json:"RequestId" xml:"RequestId"`
-	TotalItems int     `json:"TotalItems" xml:"TotalItems"`
-	TotalPages int     `json:"TotalPages" xml:"TotalPages"`
 	PageSize   int     `json:"PageSize" xml:"PageSize"`
+	RequestId  string  `json:"RequestId" xml:"RequestId"`
 	PageNumber int     `json:"PageNumber" xml:"PageNumber"`
+	TotalPages int     `json:"TotalPages" xml:"TotalPages"`
+	TotalItems int     `json:"TotalItems" xml:"TotalItems"`
 	Records    Records `json:"Records" xml:"Records"`
 }
 

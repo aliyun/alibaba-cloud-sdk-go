@@ -78,8 +78,8 @@ type DescribeStatisticSummaryRequest struct {
 // DescribeStatisticSummaryResponse is the response struct for api DescribeStatisticSummary
 type DescribeStatisticSummaryResponse struct {
 	*responses.BaseResponse
-	RequestId       string          `json:"RequestId" xml:"RequestId"`
 	TotalCount      int64           `json:"TotalCount" xml:"TotalCount"`
+	RequestId       string          `json:"RequestId" xml:"RequestId"`
 	ZoneRequestTops ZoneRequestTops `json:"ZoneRequestTops" xml:"ZoneRequestTops"`
 	VpcRequestTops  VpcRequestTops  `json:"VpcRequestTops" xml:"VpcRequestTops"`
 }

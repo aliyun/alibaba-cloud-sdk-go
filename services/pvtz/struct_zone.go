@@ -17,19 +17,24 @@ package pvtz
 
 // Zone is a nested struct in pvtz response
 type Zone struct {
-	UpdateTime      string       `json:"UpdateTime" xml:"UpdateTime"`
-	ProxyPattern    string       `json:"ProxyPattern" xml:"ProxyPattern"`
-	Remark          string       `json:"Remark" xml:"Remark"`
-	CreateTimestamp int64        `json:"CreateTimestamp" xml:"CreateTimestamp"`
-	RecordCount     int          `json:"RecordCount" xml:"RecordCount"`
-	CreateTime      string       `json:"CreateTime" xml:"CreateTime"`
-	UpdateTimestamp int64        `json:"UpdateTimestamp" xml:"UpdateTimestamp"`
-	ZoneId          string       `json:"ZoneId" xml:"ZoneId"`
-	ResourceGroupId string       `json:"ResourceGroupId" xml:"ResourceGroupId"`
-	ZoneTag         string       `json:"ZoneTag" xml:"ZoneTag"`
-	ZoneName        string       `json:"ZoneName" xml:"ZoneName"`
-	IsPtr           bool         `json:"IsPtr" xml:"IsPtr"`
-	ZoneType        string       `json:"ZoneType" xml:"ZoneType"`
-	ResourceTags    ResourceTags `json:"ResourceTags" xml:"ResourceTags"`
-	Vpcs            Vpcs         `json:"Vpcs" xml:"Vpcs"`
+	UpdateTime       string       `json:"UpdateTime" xml:"UpdateTime"`
+	ProxyPattern     string       `json:"ProxyPattern" xml:"ProxyPattern"`
+	Remark           string       `json:"Remark" xml:"Remark"`
+	CreateTimestamp  int64        `json:"CreateTimestamp" xml:"CreateTimestamp"`
+	DnsGroup         string       `json:"DnsGroup" xml:"DnsGroup"`
+	CreatorType      string       `json:"CreatorType" xml:"CreatorType"`
+	CreateTime       string       `json:"CreateTime" xml:"CreateTime"`
+	RecordCount      int          `json:"RecordCount" xml:"RecordCount"`
+	CreatorSubType   string       `json:"CreatorSubType" xml:"CreatorSubType"`
+	UpdateTimestamp  int64        `json:"UpdateTimestamp" xml:"UpdateTimestamp"`
+	DnsGroupChanging bool         `json:"DnsGroupChanging" xml:"DnsGroupChanging"`
+	ResourceGroupId  string       `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	ZoneId           string       `json:"ZoneId" xml:"ZoneId"`
+	ZoneTag          string       `json:"ZoneTag" xml:"ZoneTag"`
+	Creator          string       `json:"Creator" xml:"Creator"`
+	ZoneName         string       `json:"ZoneName" xml:"ZoneName"`
+	IsPtr            bool         `json:"IsPtr" xml:"IsPtr"`
+	ZoneType         string       `json:"ZoneType" xml:"ZoneType"`
+	Vpcs             Vpcs         `json:"Vpcs" xml:"Vpcs"`
+	ResourceTags     ResourceTags `json:"ResourceTags" xml:"ResourceTags"`
 }

@@ -71,6 +71,7 @@ func (client *Client) UpdateRecordRemarkWithCallback(request *UpdateRecordRemark
 // UpdateRecordRemarkRequest is the request struct for api UpdateRecordRemark
 type UpdateRecordRemarkRequest struct {
 	*requests.RpcRequest
+	ClientToken  string           `position:"Query" name:"ClientToken"`
 	Remark       string           `position:"Query" name:"Remark"`
 	RecordId     requests.Integer `position:"Query" name:"RecordId"`
 	UserClientIp string           `position:"Query" name:"UserClientIp"`

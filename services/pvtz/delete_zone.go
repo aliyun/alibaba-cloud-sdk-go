@@ -71,6 +71,7 @@ func (client *Client) DeleteZoneWithCallback(request *DeleteZoneRequest, callbac
 // DeleteZoneRequest is the request struct for api DeleteZone
 type DeleteZoneRequest struct {
 	*requests.RpcRequest
+	ClientToken  string `position:"Query" name:"ClientToken"`
 	UserClientIp string `position:"Query" name:"UserClientIp"`
 	ZoneId       string `position:"Query" name:"ZoneId"`
 	Lang         string `position:"Query" name:"Lang"`
@@ -79,8 +80,8 @@ type DeleteZoneRequest struct {
 // DeleteZoneResponse is the response struct for api DeleteZone
 type DeleteZoneResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	ZoneId    string `json:"ZoneId" xml:"ZoneId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDeleteZoneRequest creates a request to invoke DeleteZone API

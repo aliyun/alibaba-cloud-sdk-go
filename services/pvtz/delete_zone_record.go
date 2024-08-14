@@ -71,6 +71,7 @@ func (client *Client) DeleteZoneRecordWithCallback(request *DeleteZoneRecordRequ
 // DeleteZoneRecordRequest is the request struct for api DeleteZoneRecord
 type DeleteZoneRecordRequest struct {
 	*requests.RpcRequest
+	ClientToken  string           `position:"Query" name:"ClientToken"`
 	RecordId     requests.Integer `position:"Query" name:"RecordId"`
 	UserClientIp string           `position:"Query" name:"UserClientIp"`
 	Lang         string           `position:"Query" name:"Lang"`

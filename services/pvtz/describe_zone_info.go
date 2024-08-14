@@ -79,22 +79,26 @@ type DescribeZoneInfoRequest struct {
 // DescribeZoneInfoResponse is the response struct for api DescribeZoneInfo
 type DescribeZoneInfoResponse struct {
 	*responses.BaseResponse
-	RequestId       string                     `json:"RequestId" xml:"RequestId"`
-	ZoneId          string                     `json:"ZoneId" xml:"ZoneId"`
-	ZoneName        string                     `json:"ZoneName" xml:"ZoneName"`
-	Remark          string                     `json:"Remark" xml:"Remark"`
-	RecordCount     int                        `json:"RecordCount" xml:"RecordCount"`
-	CreateTime      string                     `json:"CreateTime" xml:"CreateTime"`
-	CreateTimestamp int64                      `json:"CreateTimestamp" xml:"CreateTimestamp"`
-	UpdateTime      string                     `json:"UpdateTime" xml:"UpdateTime"`
-	UpdateTimestamp int64                      `json:"UpdateTimestamp" xml:"UpdateTimestamp"`
-	IsPtr           bool                       `json:"IsPtr" xml:"IsPtr"`
-	ProxyPattern    string                     `json:"ProxyPattern" xml:"ProxyPattern"`
-	SlaveDns        bool                       `json:"SlaveDns" xml:"SlaveDns"`
-	ResourceGroupId string                     `json:"ResourceGroupId" xml:"ResourceGroupId"`
-	ZoneType        string                     `json:"ZoneType" xml:"ZoneType"`
-	ZoneTag         string                     `json:"ZoneTag" xml:"ZoneTag"`
-	BindVpcs        BindVpcsInDescribeZoneInfo `json:"BindVpcs" xml:"BindVpcs"`
+	RequestId        string                     `json:"RequestId" xml:"RequestId"`
+	SlaveDns         bool                       `json:"SlaveDns" xml:"SlaveDns"`
+	ResourceGroupId  string                     `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	ZoneId           string                     `json:"ZoneId" xml:"ZoneId"`
+	ProxyPattern     string                     `json:"ProxyPattern" xml:"ProxyPattern"`
+	CreateTime       string                     `json:"CreateTime" xml:"CreateTime"`
+	ZoneType         string                     `json:"ZoneType" xml:"ZoneType"`
+	Remark           string                     `json:"Remark" xml:"Remark"`
+	ZoneName         string                     `json:"ZoneName" xml:"ZoneName"`
+	ZoneTag          string                     `json:"ZoneTag" xml:"ZoneTag"`
+	UpdateTime       string                     `json:"UpdateTime" xml:"UpdateTime"`
+	UpdateTimestamp  int64                      `json:"UpdateTimestamp" xml:"UpdateTimestamp"`
+	RecordCount      int                        `json:"RecordCount" xml:"RecordCount"`
+	CreateTimestamp  int64                      `json:"CreateTimestamp" xml:"CreateTimestamp"`
+	IsPtr            bool                       `json:"IsPtr" xml:"IsPtr"`
+	DnsGroup         string                     `json:"DnsGroup" xml:"DnsGroup"`
+	Creator          string                     `json:"Creator" xml:"Creator"`
+	CreatorType      string                     `json:"CreatorType" xml:"CreatorType"`
+	DnsGroupChanging bool                       `json:"DnsGroupChanging" xml:"DnsGroupChanging"`
+	BindVpcs         BindVpcsInDescribeZoneInfo `json:"BindVpcs" xml:"BindVpcs"`
 }
 
 // CreateDescribeZoneInfoRequest creates a request to invoke DescribeZoneInfo API

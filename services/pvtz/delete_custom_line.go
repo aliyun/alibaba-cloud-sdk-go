@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// CheckZoneName invokes the pvtz.CheckZoneName API synchronously
-func (client *Client) CheckZoneName(request *CheckZoneNameRequest) (response *CheckZoneNameResponse, err error) {
-	response = CreateCheckZoneNameResponse()
+// DeleteCustomLine invokes the pvtz.DeleteCustomLine API synchronously
+func (client *Client) DeleteCustomLine(request *DeleteCustomLineRequest) (response *DeleteCustomLineResponse, err error) {
+	response = CreateDeleteCustomLineResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// CheckZoneNameWithChan invokes the pvtz.CheckZoneName API asynchronously
-func (client *Client) CheckZoneNameWithChan(request *CheckZoneNameRequest) (<-chan *CheckZoneNameResponse, <-chan error) {
-	responseChan := make(chan *CheckZoneNameResponse, 1)
+// DeleteCustomLineWithChan invokes the pvtz.DeleteCustomLine API asynchronously
+func (client *Client) DeleteCustomLineWithChan(request *DeleteCustomLineRequest) (<-chan *DeleteCustomLineResponse, <-chan error) {
+	responseChan := make(chan *DeleteCustomLineResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.CheckZoneName(request)
+		response, err := client.DeleteCustomLine(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) CheckZoneNameWithChan(request *CheckZoneNameRequest) (<-ch
 	return responseChan, errChan
 }
 
-// CheckZoneNameWithCallback invokes the pvtz.CheckZoneName API asynchronously
-func (client *Client) CheckZoneNameWithCallback(request *CheckZoneNameRequest, callback func(response *CheckZoneNameResponse, err error)) <-chan int {
+// DeleteCustomLineWithCallback invokes the pvtz.DeleteCustomLine API asynchronously
+func (client *Client) DeleteCustomLineWithCallback(request *DeleteCustomLineRequest, callback func(response *DeleteCustomLineResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *CheckZoneNameResponse
+		var response *DeleteCustomLineResponse
 		var err error
 		defer close(result)
-		response, err = client.CheckZoneName(request)
+		response, err = client.DeleteCustomLine(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,35 +68,34 @@ func (client *Client) CheckZoneNameWithCallback(request *CheckZoneNameRequest, c
 	return result
 }
 
-// CheckZoneNameRequest is the request struct for api CheckZoneName
-type CheckZoneNameRequest struct {
+// DeleteCustomLineRequest is the request struct for api DeleteCustomLine
+type DeleteCustomLineRequest struct {
 	*requests.RpcRequest
-	ZoneName     string `position:"Query" name:"ZoneName"`
+	LineId       string `position:"Query" name:"LineId"`
 	UserClientIp string `position:"Query" name:"UserClientIp"`
 	Lang         string `position:"Query" name:"Lang"`
 }
 
-// CheckZoneNameResponse is the response struct for api CheckZoneName
-type CheckZoneNameResponse struct {
+// DeleteCustomLineResponse is the response struct for api DeleteCustomLine
+type DeleteCustomLineResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Check     bool   `json:"Check" xml:"Check"`
-	Success   bool   `json:"Success" xml:"Success"`
+	LineId    string `json:"LineId" xml:"LineId"`
 }
 
-// CreateCheckZoneNameRequest creates a request to invoke CheckZoneName API
-func CreateCheckZoneNameRequest() (request *CheckZoneNameRequest) {
-	request = &CheckZoneNameRequest{
+// CreateDeleteCustomLineRequest creates a request to invoke DeleteCustomLine API
+func CreateDeleteCustomLineRequest() (request *DeleteCustomLineRequest) {
+	request = &DeleteCustomLineRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("pvtz", "2018-01-01", "CheckZoneName", "pvtz", "openAPI")
+	request.InitWithApiInfo("pvtz", "2018-01-01", "DeleteCustomLine", "pvtz", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateCheckZoneNameResponse creates a response to parse from CheckZoneName response
-func CreateCheckZoneNameResponse() (response *CheckZoneNameResponse) {
-	response = &CheckZoneNameResponse{
+// CreateDeleteCustomLineResponse creates a response to parse from DeleteCustomLine response
+func CreateDeleteCustomLineResponse() (response *DeleteCustomLineResponse) {
+	response = &DeleteCustomLineResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

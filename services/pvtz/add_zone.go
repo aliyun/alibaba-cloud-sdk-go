@@ -71,22 +71,24 @@ func (client *Client) AddZoneWithCallback(request *AddZoneRequest, callback func
 // AddZoneRequest is the request struct for api AddZone
 type AddZoneRequest struct {
 	*requests.RpcRequest
+	ClientToken     string `position:"Query" name:"ClientToken"`
+	ResourceGroupId string `position:"Query" name:"ResourceGroupId"`
+	Lang            string `position:"Query" name:"Lang"`
 	ProxyPattern    string `position:"Query" name:"ProxyPattern"`
 	ZoneName        string `position:"Query" name:"ZoneName"`
-	ResourceGroupId string `position:"Query" name:"ResourceGroupId"`
 	ZoneTag         string `position:"Query" name:"ZoneTag"`
+	DnsGroup        string `position:"Query" name:"DnsGroup"`
 	UserClientIp    string `position:"Query" name:"UserClientIp"`
 	ZoneType        string `position:"Query" name:"ZoneType"`
-	Lang            string `position:"Query" name:"Lang"`
 }
 
 // AddZoneResponse is the response struct for api AddZone
 type AddZoneResponse struct {
 	*responses.BaseResponse
+	ZoneName  string `json:"ZoneName" xml:"ZoneName"`
+	ZoneId    string `json:"ZoneId" xml:"ZoneId"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
-	ZoneId    string `json:"ZoneId" xml:"ZoneId"`
-	ZoneName  string `json:"ZoneName" xml:"ZoneName"`
 }
 
 // CreateAddZoneRequest creates a request to invoke AddZone API

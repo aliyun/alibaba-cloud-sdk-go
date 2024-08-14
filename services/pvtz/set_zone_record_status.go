@@ -71,6 +71,7 @@ func (client *Client) SetZoneRecordStatusWithCallback(request *SetZoneRecordStat
 // SetZoneRecordStatusRequest is the request struct for api SetZoneRecordStatus
 type SetZoneRecordStatusRequest struct {
 	*requests.RpcRequest
+	ClientToken  string           `position:"Query" name:"ClientToken"`
 	RecordId     requests.Integer `position:"Query" name:"RecordId"`
 	UserClientIp string           `position:"Query" name:"UserClientIp"`
 	Lang         string           `position:"Query" name:"Lang"`
@@ -80,9 +81,9 @@ type SetZoneRecordStatusRequest struct {
 // SetZoneRecordStatusResponse is the response struct for api SetZoneRecordStatus
 type SetZoneRecordStatusResponse struct {
 	*responses.BaseResponse
+	Status    string `json:"Status" xml:"Status"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	RecordId  int64  `json:"RecordId" xml:"RecordId"`
-	Status    string `json:"Status" xml:"Status"`
 }
 
 // CreateSetZoneRecordStatusRequest creates a request to invoke SetZoneRecordStatus API

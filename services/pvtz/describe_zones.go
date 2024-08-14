@@ -96,11 +96,11 @@ type DescribeZonesResourceTag struct {
 // DescribeZonesResponse is the response struct for api DescribeZones
 type DescribeZonesResponse struct {
 	*responses.BaseResponse
-	RequestId  string               `json:"RequestId" xml:"RequestId"`
-	TotalItems int                  `json:"TotalItems" xml:"TotalItems"`
-	TotalPages int                  `json:"TotalPages" xml:"TotalPages"`
 	PageSize   int                  `json:"PageSize" xml:"PageSize"`
+	RequestId  string               `json:"RequestId" xml:"RequestId"`
 	PageNumber int                  `json:"PageNumber" xml:"PageNumber"`
+	TotalPages int                  `json:"TotalPages" xml:"TotalPages"`
+	TotalItems int                  `json:"TotalItems" xml:"TotalItems"`
 	Zones      ZonesInDescribeZones `json:"Zones" xml:"Zones"`
 }
 

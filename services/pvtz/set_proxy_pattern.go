@@ -72,16 +72,18 @@ func (client *Client) SetProxyPatternWithCallback(request *SetProxyPatternReques
 type SetProxyPatternRequest struct {
 	*requests.RpcRequest
 	ProxyPattern string `position:"Query" name:"ProxyPattern"`
+	ClientToken  string `position:"Query" name:"ClientToken"`
 	UserClientIp string `position:"Query" name:"UserClientIp"`
 	ZoneId       string `position:"Query" name:"ZoneId"`
 	Lang         string `position:"Query" name:"Lang"`
+	RemoteType   string `position:"Query" name:"RemoteType"`
 }
 
 // SetProxyPatternResponse is the response struct for api SetProxyPattern
 type SetProxyPatternResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	ZoneId    string `json:"ZoneId" xml:"ZoneId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateSetProxyPatternRequest creates a request to invoke SetProxyPattern API

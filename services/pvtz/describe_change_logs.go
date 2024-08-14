@@ -74,22 +74,22 @@ type DescribeChangeLogsRequest struct {
 	StartTimestamp requests.Integer `position:"Query" name:"StartTimestamp"`
 	PageNumber     requests.Integer `position:"Query" name:"PageNumber"`
 	EndTimestamp   requests.Integer `position:"Query" name:"EndTimestamp"`
-	EntityType     string           `position:"Query" name:"EntityType"`
 	PageSize       requests.Integer `position:"Query" name:"PageSize"`
-	UserClientIp   string           `position:"Query" name:"UserClientIp"`
-	ZoneId         string           `position:"Query" name:"ZoneId"`
 	Keyword        string           `position:"Query" name:"Keyword"`
 	Lang           string           `position:"Query" name:"Lang"`
+	EntityType     string           `position:"Query" name:"EntityType"`
+	UserClientIp   string           `position:"Query" name:"UserClientIp"`
+	ZoneId         string           `position:"Query" name:"ZoneId"`
 }
 
 // DescribeChangeLogsResponse is the response struct for api DescribeChangeLogs
 type DescribeChangeLogsResponse struct {
 	*responses.BaseResponse
-	RequestId  string     `json:"RequestId" xml:"RequestId"`
-	TotalItems int        `json:"TotalItems" xml:"TotalItems"`
-	TotalPages int        `json:"TotalPages" xml:"TotalPages"`
 	PageSize   int        `json:"PageSize" xml:"PageSize"`
+	RequestId  string     `json:"RequestId" xml:"RequestId"`
 	PageNumber int        `json:"PageNumber" xml:"PageNumber"`
+	TotalPages int        `json:"TotalPages" xml:"TotalPages"`
+	TotalItems int        `json:"TotalItems" xml:"TotalItems"`
 	ChangeLogs ChangeLogs `json:"ChangeLogs" xml:"ChangeLogs"`
 }
 
