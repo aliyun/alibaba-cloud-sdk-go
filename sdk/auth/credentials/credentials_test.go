@@ -16,6 +16,23 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
+// set back the memoried enviroment variables
+type Rollback func()
+
+func Memory(keys ...string) Rollback {
+	// remenber enviroment variables
+	m := make(map[string]string)
+	for _, key := range keys {
+		m[key] = os.Getenv(key)
+	}
+
+	return func() {
+		for _, key := range keys {
+			os.Setenv(key, m[key])
+		}
+	}
+}
+
 func mockResponse(statusCode int, content string) (res *http.Response) {
 	status := strconv.Itoa(statusCode)
 	res = &http.Response{
@@ -887,7 +904,7 @@ func TestOIDCCredentialsProviderGetCredentialsWithError(t *testing.T) {
 	wd, _ := os.Getwd()
 	p, err := NewOIDCCredentialsProviderBuilder().
 		// read a normal token
-		WithOIDCTokenFilePath(path.Join(wd, "/mock_oidctoken")).
+		WithOIDCTokenFilePath(path.Join(wd, "fixtures/mock_oidctoken")).
 		WithOIDCProviderARN("provider-arn").
 		WithRoleArn("roleArn").
 		WithRoleSessionName("rsn").
@@ -994,7 +1011,7 @@ func TestOIDCCredentialsProvider_getCredentials(t *testing.T) {
 	wd, _ := os.Getwd()
 	p, err = NewOIDCCredentialsProviderBuilder().
 		// read a normal token
-		WithOIDCTokenFilePath(path.Join(wd, "/mock_oidctoken")).
+		WithOIDCTokenFilePath(path.Join(wd, "fixtures/mock_oidctoken")).
 		WithOIDCProviderARN("provider-arn").
 		WithRoleArn("roleArn").
 		WithRoleSessionName("rsn").
@@ -1127,7 +1144,7 @@ func TestOIDCCredentialsProvider_getCredentialsWithRequestCheck(t *testing.T) {
 	wd, _ := os.Getwd()
 	p, err := NewOIDCCredentialsProviderBuilder().
 		// read a normal token
-		WithOIDCTokenFilePath(path.Join(wd, "/mock_oidctoken")).
+		WithOIDCTokenFilePath(path.Join(wd, "fixtures/mock_oidctoken")).
 		WithOIDCProviderARN("provider-arn").
 		WithRoleArn("roleArn").
 		WithRoleSessionName("rsn").
@@ -1168,7 +1185,7 @@ func TestOIDCCredentialsProviderGetCredentials(t *testing.T) {
 	wd, _ := os.Getwd()
 	p, err := NewOIDCCredentialsProviderBuilder().
 		// read a normal token
-		WithOIDCTokenFilePath(path.Join(wd, "/mock_oidctoken")).
+		WithOIDCTokenFilePath(path.Join(wd, "fixtures/mock_oidctoken")).
 		WithOIDCProviderARN("provider-arn").
 		WithRoleArn("roleArn").
 		WithRoleSessionName("rsn").

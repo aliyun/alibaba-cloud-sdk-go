@@ -26,5 +26,5 @@ func TestEnvResolve(t *testing.T) {
 	os.Setenv(provider.ENVAccessKeySecret, "AccessKeySecret")
 	c, err = p.Resolve()
 	assert.Nil(t, err)
-	assert.Equal(t, &credentials.AccessKeyCredential{"AccessKeyId", "AccessKeySecret"}, c)
+	assert.Equal(t, &credentials.AccessKeyCredential{AccessKeyId: "AccessKeyId", AccessKeySecret: "AccessKeySecret"}, c)
 }

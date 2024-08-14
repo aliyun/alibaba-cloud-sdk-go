@@ -136,5 +136,4 @@ func TestInstanceCredentialsProvider(t *testing.T) {
 	c, err = p.Resolve()
 	assert.Nil(t, err)
 	assert.Equal(t, credentials.NewStsTokenCredential("STS.*******", "*******", "SecurityToken"), c)
-
 }
