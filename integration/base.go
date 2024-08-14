@@ -1,12 +1,12 @@
 package integration
 
 import (
+	"fmt"
+	"os"
+
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/errors"
 	"github.com/aliyun/alibaba-cloud-sdk-go/services/ram"
 	"github.com/aliyun/alibaba-cloud-sdk-go/services/sts"
-
-	"fmt"
-	"os"
 )
 
 var role_doc = `{

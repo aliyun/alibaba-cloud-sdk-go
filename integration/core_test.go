@@ -92,7 +92,8 @@ func Test_AddTagsWithCommonRequestWithError(t *testing.T) {
 	client, err := sdk.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
 	assert.Nil(t, err)
 	_, err = client.ProcessCommonRequest(request)
-	realerr := err.(errors.Error)
+	realerr, ok := err.(errors.Error)
+	assert.True(t, ok)
 	assert.Equal(t, "MissingParameter", realerr.ErrorCode())
 	assert.Equal(t, "The input parameter \"ResourceType\" that is mandatory for processing this request is not supplied.", realerr.Message())
 }

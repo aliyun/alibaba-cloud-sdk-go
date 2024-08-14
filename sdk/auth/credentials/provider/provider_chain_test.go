@@ -33,5 +33,5 @@ func TestProviderChain(t *testing.T) {
 
 	c, err = pc.Resolve()
 	assert.Nil(t, c)
-	assert.EqualError(t, err, "No credential found")
+	assert.EqualError(t, err, "no credential found")
 }
