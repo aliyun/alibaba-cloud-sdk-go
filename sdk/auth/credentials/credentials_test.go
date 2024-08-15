@@ -16,23 +16,6 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-// set back the memoried enviroment variables
-type Rollback func()
-
-func Memory(keys ...string) Rollback {
-	// remenber enviroment variables
-	m := make(map[string]string)
-	for _, key := range keys {
-		m[key] = os.Getenv(key)
-	}
-
-	return func() {
-		for _, key := range keys {
-			os.Setenv(key, m[key])
-		}
-	}
-}
-
 func mockResponse(statusCode int, content string) (res *http.Response) {
 	status := strconv.Itoa(statusCode)
 	res = &http.Response{

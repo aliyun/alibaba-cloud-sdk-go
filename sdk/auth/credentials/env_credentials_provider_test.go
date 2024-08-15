@@ -4,11 +4,12 @@ import (
 	"os"
 	"testing"
 
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/internal"
 	"github.com/stretchr/testify/assert"
 )
 
 func TestEnvironmentVariableCredentialsProvider(t *testing.T) {
-	rollback := Memory("ALIBABA_CLOUD_ACCESS_KEY_ID", "ALIBABA_CLOUD_ACCESS_KEY_SECRET", "ALIBABA_CLOUD_SECURITY_TOKEN")
+	rollback := internal.Memory("ALIBABA_CLOUD_ACCESS_KEY_ID", "ALIBABA_CLOUD_ACCESS_KEY_SECRET", "ALIBABA_CLOUD_SECURITY_TOKEN")
 	defer rollback()
 
 	p := NewEnvironmentVariableCredentialsProvider()

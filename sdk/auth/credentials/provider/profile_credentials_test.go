@@ -14,78 +14,78 @@ import (
 )
 
 var inistr = `
-[default]              
-enable = true                    
-type = access_key                
-access_key_id = foo               
-access_key_secret = bar            
-				   
-[notype]              
-access_key_id = foo               
+[default]
+enable = true
+type = access_key
+access_key_id = foo
+access_key_secret = bar
+
+[notype]
+access_key_id = foo
 access_key_secret = bar
 
 [noak]
-type = access_key                        
-access_key_secret = bar   
+type = access_key
+access_key_secret = bar
 
 [emptyak]
-type = access_key                
-access_key_id =                
-access_key_secret = bar     
+type = access_key
+access_key_id =
+access_key_secret = bar
 
-[ecs]                         
-type = ecs_ram_role                
+[ecs]
+type = ecs_ram_role
 role_name = EcsRamRoleTest
 
 [noecs]
-type = ecs_ram_role                
+type = ecs_ram_role
 
-[emptyecs]                         
-type = ecs_ram_role                
-role_name = 
+[emptyecs]
+type = ecs_ram_role
+role_name =
 
-[ram]                                         
-type = ram_role_arn                
+[ram]
+type = ram_role_arn
 access_key_id = foo
 access_key_secret = bar
 role_arn = role_arn
-role_session_name = session_name  
+role_session_name = session_name
 
-[noram]                                         
-type = ram_role_arn                
+[noram]
+type = ram_role_arn
 access_key_secret = bar
 role_arn = role_arn
-role_session_name = session_name  
+role_session_name = session_name
 
-[emptyram]                                         
-type = ram_role_arn                
-access_key_id = 
+[emptyram]
+type = ram_role_arn
+access_key_id =
 access_key_secret = bar
 role_arn = role_arn
-role_session_name = session_name  
+role_session_name = session_name
 
-[rsa]                          
-type = rsa_key_pair               
-public_key_id = publicKeyId       
+[rsa]
+type = rsa_key_pair
+public_key_id = publicKeyId
 private_key_file = ./pk.pem
 
-[norsa]                          
-type = rsa_key_pair               
-public_key_id = publicKeyId       
+[norsa]
+type = rsa_key_pair
+public_key_id = publicKeyId
 
-[emptyrsa]                          
-type = rsa_key_pair               
-public_key_id = publicKeyId       
-private_key_file = 
+[emptyrsa]
+type = rsa_key_pair
+public_key_id = publicKeyId
+private_key_file =
 
-[error_rsa]                          
-type = rsa_key_pair               
-public_key_id = publicKeyId       
+[error_rsa]
+type = rsa_key_pair
+public_key_id = publicKeyId
 private_key_file = ./pk_error.pem
 
-[error_type]                          
-type = error_type               
-public_key_id = publicKeyId       
+[error_type]
+type = error_type
+public_key_id = publicKeyId
 private_key_file = ./pk_error.pem
 `
 var privatekey = `this is privatekey`
