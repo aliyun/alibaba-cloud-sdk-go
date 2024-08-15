@@ -1,3 +1,9 @@
+2024-08-14 Version: v1.63.0
+- Improve createUser.
+- Add timeout for ECS RAM role.
+- Add real credentials provider.
+- Init with default value directly.
+
 2024-08-14 Version: v1.62.813
 - Generated 2018-01-01 for `pvtz`.
 - Upgrade pvtz sdk.
