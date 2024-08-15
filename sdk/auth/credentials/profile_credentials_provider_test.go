@@ -91,29 +91,24 @@ func TestProfileCredentialsProviderBuilder(t *testing.T) {
 	defer rollback()
 
 	// profile name from specified
-	provider, err := NewProfileCredentialsProviderBuilder().WithProfileName("custom").Build()
-	assert.Nil(t, err)
+	provider := NewProfileCredentialsProviderBuilder().WithProfileName("custom").Build()
 	assert.Equal(t, "custom", provider.profileName)
 
 	// profile name from env
 	os.Setenv("ALIBABA_CLOUD_PROFILE", "profile_from_env")
-	provider, err = NewProfileCredentialsProviderBuilder().Build()
-	assert.Nil(t, err)
+	provider = NewProfileCredentialsProviderBuilder().Build()
 
 	assert.Equal(t, "profile_from_env", provider.profileName)
 
 	// profile name from default
 	os.Setenv("ALIBABA_CLOUD_PROFILE", "")
-	provider, err = NewProfileCredentialsProviderBuilder().Build()
-	assert.Nil(t, err)
+	provider = NewProfileCredentialsProviderBuilder().Build()
 	assert.Equal(t, "default", provider.profileName)
 }
 
 func TestProfileCredentialsProvider_getCredentialsProvider(t *testing.T) {
-	provider, err := NewProfileCredentialsProviderBuilder().WithProfileName("custom").Build()
-	assert.Nil(t, err)
-
-	_, err = provider.getCredentialsProvider(ini.Empty())
+	provider := NewProfileCredentialsProviderBuilder().WithProfileName("custom").Build()
+	_, err := provider.getCredentialsProvider(ini.Empty())
 	assert.NotNil(t, err)
 	assert.EqualError(t, err, "ERROR: Can not load sectionsection \"custom\" does not exist")
 
@@ -122,29 +117,25 @@ func TestProfileCredentialsProvider_getCredentialsProvider(t *testing.T) {
 	assert.NotNil(t, file)
 
 	// no type
-	provider, err = NewProfileCredentialsProviderBuilder().WithProfileName("notype").Build()
-	assert.Nil(t, err)
+	provider = NewProfileCredentialsProviderBuilder().WithProfileName("notype").Build()
 	_, err = provider.getCredentialsProvider(file)
 	assert.NotNil(t, err)
 	assert.EqualError(t, err, "ERROR: Can not find credential typeerror when getting key of section \"notype\": key \"type\" not exists")
 
 	// no ak
-	provider, err = NewProfileCredentialsProviderBuilder().WithProfileName("noak").Build()
-	assert.Nil(t, err)
+	provider = NewProfileCredentialsProviderBuilder().WithProfileName("noak").Build()
 	_, err = provider.getCredentialsProvider(file)
 	assert.NotNil(t, err)
 	assert.EqualError(t, err, "ERROR: Failed to get value")
 
 	// value is empty
-	provider, err = NewProfileCredentialsProviderBuilder().WithProfileName("emptyak").Build()
-	assert.Nil(t, err)
+	provider = NewProfileCredentialsProviderBuilder().WithProfileName("emptyak").Build()
 	_, err = provider.getCredentialsProvider(file)
 	assert.NotNil(t, err)
 	assert.EqualError(t, err, "ERROR: Value can't be empty")
 
 	// static ak provider
-	provider, err = NewProfileCredentialsProviderBuilder().Build()
-	assert.Nil(t, err)
+	provider = NewProfileCredentialsProviderBuilder().Build()
 	cp, err := provider.getCredentialsProvider(file)
 	assert.Nil(t, err)
 	akcp, ok := cp.(*StaticAKCredentialsProvider)
@@ -154,42 +145,36 @@ func TestProfileCredentialsProvider_getCredentialsProvider(t *testing.T) {
 	assert.Equal(t, &Credentials{AccessKeyId: "foo", AccessKeySecret: "bar", SecurityToken: "", BearerToken: ""}, cc)
 
 	// ecs_ram_role without rolename
-	provider, err = NewProfileCredentialsProviderBuilder().WithProfileName("noecs").Build()
-	assert.Nil(t, err)
+	provider = NewProfileCredentialsProviderBuilder().WithProfileName("noecs").Build()
 	_, err = provider.getCredentialsProvider(file)
 	assert.EqualError(t, err, "ERROR: Failed to get value")
 
 	// ecs_ram_role with rolename
-	provider, err = NewProfileCredentialsProviderBuilder().WithProfileName("ecs").Build()
-	assert.Nil(t, err)
+	provider = NewProfileCredentialsProviderBuilder().WithProfileName("ecs").Build()
 	cp, err = provider.getCredentialsProvider(file)
 	assert.Nil(t, err)
 	_, ok = cp.(*ECSRAMRoleCredentialsProvider)
 	assert.True(t, ok)
 
 	// ram role arn without keys
-	provider, err = NewProfileCredentialsProviderBuilder().WithProfileName("noram").Build()
-	assert.Nil(t, err)
+	provider = NewProfileCredentialsProviderBuilder().WithProfileName("noram").Build()
 	_, err = provider.getCredentialsProvider(file)
 	assert.EqualError(t, err, "ERROR: Failed to get value")
 
 	// ram role arn without values
-	provider, err = NewProfileCredentialsProviderBuilder().WithProfileName("emptyram").Build()
-	assert.Nil(t, err)
+	provider = NewProfileCredentialsProviderBuilder().WithProfileName("emptyram").Build()
 	_, err = provider.getCredentialsProvider(file)
 	assert.EqualError(t, err, "ERROR: Value can't be empty")
 
 	// normal ram role arn
-	provider, err = NewProfileCredentialsProviderBuilder().WithProfileName("ram").Build()
-	assert.Nil(t, err)
+	provider = NewProfileCredentialsProviderBuilder().WithProfileName("ram").Build()
 	cp, err = provider.getCredentialsProvider(file)
 	assert.Nil(t, err)
 	_, ok = cp.(*RAMRoleARNCredentialsProvider)
 	assert.True(t, ok)
 
 	// unsupported type
-	provider, err = NewProfileCredentialsProviderBuilder().WithProfileName("error_type").Build()
-	assert.Nil(t, err)
+	provider = NewProfileCredentialsProviderBuilder().WithProfileName("error_type").Build()
 	_, err = provider.getCredentialsProvider(file)
 	assert.EqualError(t, err, "ERROR: Failed to get credential")
 }
@@ -205,9 +190,8 @@ func TestProfileCredentialsProviderGetCredentials(t *testing.T) {
 	getHomePath = func() string {
 		return ""
 	}
-	provider, err := NewProfileCredentialsProviderBuilder().WithProfileName("custom").Build()
-	assert.Nil(t, err)
-	_, err = provider.GetCredentials()
+	provider := NewProfileCredentialsProviderBuilder().WithProfileName("custom").Build()
+	_, err := provider.GetCredentials()
 	assert.EqualError(t, err, "cannot found home dir")
 
 	// testcase: invalid home
@@ -215,15 +199,13 @@ func TestProfileCredentialsProviderGetCredentials(t *testing.T) {
 		return "/path/invalid/home/dir"
 	}
 
-	provider, err = NewProfileCredentialsProviderBuilder().WithProfileName("custom").Build()
-	assert.Nil(t, err)
+	provider = NewProfileCredentialsProviderBuilder().WithProfileName("custom").Build()
 	_, err = provider.GetCredentials()
 	assert.EqualError(t, err, "ERROR: Can not open fileopen /path/invalid/home/dir/.alibabacloud/credentials: no such file or directory")
 
 	// testcase: specify credentials file with env
 	os.Setenv("ALIBABA_CLOUD_CREDENTIALS_FILE", "/path/to/credentials.invalid")
-	provider, err = NewProfileCredentialsProviderBuilder().WithProfileName("custom").Build()
-	assert.Nil(t, err)
+	provider = NewProfileCredentialsProviderBuilder().WithProfileName("custom").Build()
 	_, err = provider.GetCredentials()
 	assert.EqualError(t, err, "ERROR: Can not open fileopen /path/to/credentials.invalid: no such file or directory")
 	os.Unsetenv("ALIBABA_CLOUD_CREDENTIALS_FILE")
@@ -234,15 +216,11 @@ func TestProfileCredentialsProviderGetCredentials(t *testing.T) {
 		return path.Join(wd, "fixtures")
 	}
 
-	//
-	provider, err = NewProfileCredentialsProviderBuilder().WithProfileName("custom").Build()
-	assert.Nil(t, err)
+	provider = NewProfileCredentialsProviderBuilder().WithProfileName("custom").Build()
 	_, err = provider.GetCredentials()
 	assert.EqualError(t, err, "ERROR: Can not load sectionsection \"custom\" does not exist")
 
-	//
-	provider, err = NewProfileCredentialsProviderBuilder().Build()
-	assert.Nil(t, err)
+	provider = NewProfileCredentialsProviderBuilder().Build()
 	cc, err := provider.GetCredentials()
 	assert.Nil(t, err)
 	assert.Equal(t, &Credentials{AccessKeyId: "foo", AccessKeySecret: "bar", SecurityToken: "", BearerToken: ""}, cc)

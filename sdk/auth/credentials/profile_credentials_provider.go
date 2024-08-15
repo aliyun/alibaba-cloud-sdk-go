@@ -30,7 +30,7 @@ func (b *ProfileCredentialsProviderBuilder) WithProfileName(profileName string) 
 	return b
 }
 
-func (b *ProfileCredentialsProviderBuilder) Build() (provider *ProfileCredentialsProvider, err error) {
+func (b *ProfileCredentialsProviderBuilder) Build() (provider *ProfileCredentialsProvider) {
 	// 优先级：
 	// 1. 使用显示指定的 profileName
 	// 2. 使用环境变量（ALIBABA_CLOUD_PROFILE）指定的 profileName
