@@ -11,7 +11,7 @@ import (
 )
 
 func TestCLIProfileCredentialsProvider(t *testing.T) {
-	rollback := Memory("ALIBABA_CLOUD_PROFILE")
+	rollback := internal.Memory("ALIBABA_CLOUD_PROFILE")
 	defer rollback()
 	b := NewCLIProfileCredentialsProviderBuilder().Build()
 	assert.Equal(t, "", b.profileName)
