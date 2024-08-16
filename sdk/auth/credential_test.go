@@ -57,6 +57,13 @@ func TestToCredentialsProvider(t *testing.T) {
 	_, ok = p.(*credentials.OIDCCredentialsProvider)
 	assert.True(t, ok)
 
+	// Default credentials provider
+	p, err = ToCredentialsProvider(nil)
+	assert.Nil(t, err)
+	_, ok = p.(*credentials.DefaultCredentialsProvider)
+	assert.True(t, ok)
+
+	// unsupported
 	_, err = ToCredentialsProvider("string")
 	assert.NotNil(t, err)
 	assert.Equal(t, "[SDK.UnsupportedCredential] Specified credential (type = string) is not supported, please check", err.Error())

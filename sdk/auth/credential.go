@@ -26,6 +26,11 @@ type Credential interface {
 }
 
 func ToCredentialsProvider(credential Credential) (provider credentials.CredentialsProvider, err error) {
+	if credential == nil {
+		provider = credentials.NewDefaultCredentialsProvider()
+		return
+	}
+
 	switch instance := credential.(type) {
 	case *credentials.AccessKeyCredential:
 		{

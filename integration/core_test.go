@@ -309,14 +309,15 @@ func SkipTest_HTTPProxy(t *testing.T) {
 	assert.Equal(t, "test", resp.GetHttpContentString())
 
 	originEnv := os.Getenv("HTTP_PROXY")
+	defer func() {
+		os.Setenv("HTTP_PROXY", originEnv)
+	}()
 	domain = strings.Replace(ts.URL, "http://", "", 1)
 	os.Setenv("HTTP_PROXY", fmt.Sprintf("http://someuser:somepassword@%s", domain))
 	resp, err = client.ProcessCommonRequest(request)
 	assert.Nil(t, err)
 	assert.Equal(t, 200, resp.GetHttpStatus())
 	assert.Equal(t, "sdktest", resp.GetHttpContentString())
-
-	os.Setenv("HTTP_PROXY", originEnv)
 }
 
 func Test_DdoscooWithServiceCode(t *testing.T) {

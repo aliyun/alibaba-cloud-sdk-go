@@ -9,7 +9,6 @@ import (
 
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/auth/credentials"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/auth/credentials/provider"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
 	"github.com/aliyun/alibaba-cloud-sdk-go/services/ecs"
 	"github.com/aliyun/alibaba-cloud-sdk-go/services/sts"
@@ -63,8 +62,15 @@ func Test_DescribeRegionsWithRPCrequestWithArn(t *testing.T) {
 }
 
 func TestDescribeRegionsWithProviderAndAk(t *testing.T) {
-	os.Setenv(provider.ENVAccessKeyID, os.Getenv("ACCESS_KEY_ID"))
-	os.Setenv(provider.ENVAccessKeySecret, os.Getenv("ACCESS_KEY_SECRET"))
+	originAKID := os.Getenv("ALIBABA_CLOUD_ACCESS_KEY_ID")
+	originAKSecret := os.Getenv("ALIBABA_CLOUD_ACCESS_KEY_SECRET")
+	defer func() {
+		os.Setenv("ALIBABA_CLOUD_ACCESS_KEY_ID", originAKID)
+		os.Setenv("ALIBABA_CLOUD_ACCESS_KEY_SECRET", originAKSecret)
+	}()
+
+	os.Setenv("ALIBABA_CLOUD_ACCESS_KEY_ID", os.Getenv("ACCESS_KEY_ID"))
+	os.Setenv("ALIBABA_CLOUD_ACCESS_KEY_SECRET", os.Getenv("ACCESS_KEY_SECRET"))
 	request := requests.NewCommonRequest()
 	request.Version = "2014-05-26"
 	request.Product = "Ecs"
@@ -148,6 +154,18 @@ func TestGetCallerIdentityWithOIDCCredentialsProvider(t *testing.T) {
 	assert.Nil(t, err)
 	config := sdk.NewConfig().WithScheme("HTTPS")
 	client, err := sts.NewClientWithOptions("cn-hangzhou", config, provider)
+	assert.Nil(t, err)
+	request := sts.CreateGetCallerIdentityRequest()
+	response, err := client.GetCallerIdentity(request)
+	assert.Nil(t, err)
+	assert.True(t, response.IsSuccess())
+	assert.NotZero(t, response.RoleId)
+	assert.NotZero(t, response.AccountId)
+}
+
+func TestGetCallerIdentityWithDefaultCredentialsProvider(t *testing.T) {
+	config := sdk.NewConfig().WithScheme("HTTPS")
+	client, err := sts.NewClientWithOptions("cn-hangzhou", config, nil)
 	assert.Nil(t, err)
 	request := sts.CreateGetCallerIdentityRequest()
 	response, err := client.GetCallerIdentity(request)
