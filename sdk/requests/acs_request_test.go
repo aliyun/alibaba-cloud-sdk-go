@@ -10,6 +10,7 @@ import (
 	"testing"
 	"time"
 
+	"github.com/opentracing/opentracing-go"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -119,6 +120,12 @@ func Test_AcsRequest(t *testing.T) {
 	assert.Equal(t, []byte(nil), r.GetContent())
 	r.SetContent([]byte("The Content"))
 	assert.True(t, bytes.Equal([]byte("The Content"), r.GetContent()))
+
+	// get/set for tracer span
+	assert.Equal(t, nil, r.GetTracerSpan())
+	span := opentracing.StartSpan("test_operation")
+	r.SetTracerSpan(span)
+	assert.Equal(t, span, r.GetTracerSpan())
 }
 
 type AcsRequestTest struct {

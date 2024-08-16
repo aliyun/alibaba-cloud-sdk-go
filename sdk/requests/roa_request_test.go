@@ -29,8 +29,14 @@ func Test_RoaRequest_initWithCommonRequest(t *testing.T) {
 	assert.Equal(t, "GET", r.GetMethod())
 	assert.Equal(t, "ROA", r.GetStyle())
 	assert.Equal(t, "common", r.Headers["x-sdk-invoke-type"])
-	// assert.Equal(t, "version", r.GetVersion())
-	// assert.Equal(t, "action", r.GetActionName())
+
+	// test for x-acs-action
+	assert.Equal(t, "", r.GetHeaders()["x-acs-action"])
+
+	common = NewCommonRequest()
+	common.ApiName = "MockAPIName"
+	r.initWithCommonRequest(common)
+	assert.Equal(t, "MockAPIName", r.GetHeaders()["x-acs-action"])
 }
 
 func Test_RoaRequest_BuildQueries(t *testing.T) {
