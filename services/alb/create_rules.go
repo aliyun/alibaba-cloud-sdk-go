@@ -81,6 +81,7 @@ type CreateRulesRequest struct {
 type CreateRulesRules struct {
 	RuleConditions *[]CreateRulesRulesRuleConditionsItem `name:"RuleConditions" type:"Repeated"`
 	RuleName       string                                `name:"RuleName"`
+	Tag            *[]CreateRulesRulesTagItem            `name:"Tag" type:"Repeated"`
 	Priority       string                                `name:"Priority"`
 	RuleActions    *[]CreateRulesRulesRuleActionsItem    `name:"RuleActions" type:"Repeated"`
 	Direction      string                                `name:"Direction"`
@@ -98,6 +99,12 @@ type CreateRulesRulesRuleConditionsItem struct {
 	Type                     string                                                     `name:"Type"`
 	HeaderConfig             CreateRulesRulesRuleConditionsItemHeaderConfig             `name:"HeaderConfig" type:"Struct"`
 	ResponseHeaderConfig     CreateRulesRulesRuleConditionsItemResponseHeaderConfig     `name:"ResponseHeaderConfig" type:"Struct"`
+}
+
+// CreateRulesRulesTagItem is a repeated param struct in CreateRulesRequest
+type CreateRulesRulesTagItem struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // CreateRulesRulesRuleActionsItem is a repeated param struct in CreateRulesRequest

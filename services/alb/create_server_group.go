@@ -71,20 +71,29 @@ func (client *Client) CreateServerGroupWithCallback(request *CreateServerGroupRe
 // CreateServerGroupRequest is the request struct for api CreateServerGroup
 type CreateServerGroupRequest struct {
 	*requests.RpcRequest
-	ServerGroupName          string                               `position:"Query" name:"ServerGroupName"`
-	ClientToken              string                               `position:"Query" name:"ClientToken"`
-	HealthCheckConfig        CreateServerGroupHealthCheckConfig   `position:"Query" name:"HealthCheckConfig"  type:"Struct"`
-	Scheduler                string                               `position:"Query" name:"Scheduler"`
-	ResourceGroupId          string                               `position:"Query" name:"ResourceGroupId"`
-	Protocol                 string                               `position:"Query" name:"Protocol"`
-	UpstreamKeepaliveEnabled requests.Boolean                     `position:"Query" name:"UpstreamKeepaliveEnabled"`
-	ServiceName              string                               `position:"Query" name:"ServiceName"`
-	StickySessionConfig      CreateServerGroupStickySessionConfig `position:"Query" name:"StickySessionConfig"  type:"Struct"`
-	DryRun                   requests.Boolean                     `position:"Query" name:"DryRun"`
-	Ipv6Enabled              requests.Boolean                     `position:"Query" name:"Ipv6Enabled"`
-	ServerGroupType          string                               `position:"Query" name:"ServerGroupType"`
-	VpcId                    string                               `position:"Query" name:"VpcId"`
-	UchConfig                CreateServerGroupUchConfig           `position:"Query" name:"UchConfig"  type:"Struct"`
+	ServerGroupName          string                                 `position:"Query" name:"ServerGroupName"`
+	ClientToken              string                                 `position:"Query" name:"ClientToken"`
+	HealthCheckConfig        CreateServerGroupHealthCheckConfig     `position:"Query" name:"HealthCheckConfig"  type:"Struct"`
+	SlowStartConfig          CreateServerGroupSlowStartConfig       `position:"Query" name:"SlowStartConfig"  type:"Struct"`
+	Scheduler                string                                 `position:"Query" name:"Scheduler"`
+	ResourceGroupId          string                                 `position:"Query" name:"ResourceGroupId"`
+	Protocol                 string                                 `position:"Query" name:"Protocol"`
+	UpstreamKeepaliveEnabled requests.Boolean                       `position:"Query" name:"UpstreamKeepaliveEnabled"`
+	ServiceName              string                                 `position:"Query" name:"ServiceName"`
+	Tag                      *[]CreateServerGroupTag                `position:"Query" name:"Tag"  type:"Repeated"`
+	StickySessionConfig      CreateServerGroupStickySessionConfig   `position:"Query" name:"StickySessionConfig"  type:"Struct"`
+	DryRun                   requests.Boolean                       `position:"Query" name:"DryRun"`
+	Ipv6Enabled              requests.Boolean                       `position:"Query" name:"Ipv6Enabled"`
+	ConnectionDrainConfig    CreateServerGroupConnectionDrainConfig `position:"Query" name:"ConnectionDrainConfig"  type:"Struct"`
+	ServerGroupType          string                                 `position:"Query" name:"ServerGroupType"`
+	VpcId                    string                                 `position:"Query" name:"VpcId"`
+	UchConfig                CreateServerGroupUchConfig             `position:"Query" name:"UchConfig"  type:"Struct"`
+}
+
+// CreateServerGroupTag is a repeated param struct in CreateServerGroupRequest
+type CreateServerGroupTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // CreateServerGroupHealthCheckConfig is a repeated param struct in CreateServerGroupRequest
@@ -105,12 +114,24 @@ type CreateServerGroupHealthCheckConfig struct {
 	HealthCheckConnectPort         string    `name:"HealthCheckConnectPort"`
 }
 
+// CreateServerGroupSlowStartConfig is a repeated param struct in CreateServerGroupRequest
+type CreateServerGroupSlowStartConfig struct {
+	SlowStartDuration string `name:"SlowStartDuration"`
+	SlowStartEnabled  string `name:"SlowStartEnabled"`
+}
+
 // CreateServerGroupStickySessionConfig is a repeated param struct in CreateServerGroupRequest
 type CreateServerGroupStickySessionConfig struct {
 	StickySessionEnabled string `name:"StickySessionEnabled"`
 	Cookie               string `name:"Cookie"`
 	CookieTimeout        string `name:"CookieTimeout"`
 	StickySessionType    string `name:"StickySessionType"`
+}
+
+// CreateServerGroupConnectionDrainConfig is a repeated param struct in CreateServerGroupRequest
+type CreateServerGroupConnectionDrainConfig struct {
+	ConnectionDrainEnabled string `name:"ConnectionDrainEnabled"`
+	ConnectionDrainTimeout string `name:"ConnectionDrainTimeout"`
 }
 
 // CreateServerGroupUchConfig is a repeated param struct in CreateServerGroupRequest

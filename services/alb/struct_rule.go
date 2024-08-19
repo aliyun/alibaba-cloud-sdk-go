@@ -28,4 +28,5 @@ type Rule struct {
 	ServiceManagedMode    string      `json:"ServiceManagedMode" xml:"ServiceManagedMode"`
 	RuleActions           []Action    `json:"RuleActions" xml:"RuleActions"`
 	RuleConditions        []Condition `json:"RuleConditions" xml:"RuleConditions"`
+	Tags                  []Tag       `json:"Tags" xml:"Tags"`
 }

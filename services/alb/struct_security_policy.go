@@ -26,4 +26,5 @@ type SecurityPolicy struct {
 	SecurityPolicyStatus  string   `json:"SecurityPolicyStatus" xml:"SecurityPolicyStatus"`
 	Ciphers               []string `json:"Ciphers" xml:"Ciphers"`
 	TLSVersions           []string `json:"TLSVersions" xml:"TLSVersions"`
+	Tags                  []Tag    `json:"Tags" xml:"Tags"`
 }

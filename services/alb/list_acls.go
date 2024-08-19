@@ -75,8 +75,15 @@ type ListAclsRequest struct {
 	AddressIPVersion string           `position:"Query" name:"AddressIPVersion"`
 	ResourceGroupId  string           `position:"Query" name:"ResourceGroupId"`
 	NextToken        string           `position:"Query" name:"NextToken"`
+	Tag              *[]ListAclsTag   `position:"Query" name:"Tag"  type:"Repeated"`
 	AclNames         *[]string        `position:"Query" name:"AclNames"  type:"Repeated"`
 	MaxResults       requests.Integer `position:"Query" name:"MaxResults"`
+}
+
+// ListAclsTag is a repeated param struct in ListAclsRequest
+type ListAclsTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // ListAclsResponse is the response struct for api ListAcls

@@ -17,21 +17,23 @@ package alb
 
 // Listener is a nested struct in alb response
 type Listener struct {
-	GzipEnabled           bool                `json:"GzipEnabled" xml:"GzipEnabled"`
-	Http2Enabled          bool                `json:"Http2Enabled" xml:"Http2Enabled"`
-	IdleTimeout           int                 `json:"IdleTimeout" xml:"IdleTimeout"`
-	ListenerDescription   string              `json:"ListenerDescription" xml:"ListenerDescription"`
-	ListenerId            string              `json:"ListenerId" xml:"ListenerId"`
-	ListenerPort          int                 `json:"ListenerPort" xml:"ListenerPort"`
-	ListenerProtocol      string              `json:"ListenerProtocol" xml:"ListenerProtocol"`
-	ListenerStatus        string              `json:"ListenerStatus" xml:"ListenerStatus"`
-	LoadBalancerId        string              `json:"LoadBalancerId" xml:"LoadBalancerId"`
-	ServiceManagedEnabled bool                `json:"ServiceManagedEnabled" xml:"ServiceManagedEnabled"`
-	ServiceManagedMode    string              `json:"ServiceManagedMode" xml:"ServiceManagedMode"`
-	RequestTimeout        int                 `json:"RequestTimeout" xml:"RequestTimeout"`
-	SecurityPolicyId      string              `json:"SecurityPolicyId" xml:"SecurityPolicyId"`
-	LogConfig             LogConfig           `json:"LogConfig" xml:"LogConfig"`
-	QuicConfig            QuicConfig          `json:"QuicConfig" xml:"QuicConfig"`
-	XForwardedForConfig   XForwardedForConfig `json:"XForwardedForConfig" xml:"XForwardedForConfig"`
-	DefaultActions        []DefaultAction     `json:"DefaultActions" xml:"DefaultActions"`
+	GzipEnabled           bool                 `json:"GzipEnabled" xml:"GzipEnabled"`
+	Http2Enabled          bool                 `json:"Http2Enabled" xml:"Http2Enabled"`
+	IdleTimeout           int                  `json:"IdleTimeout" xml:"IdleTimeout"`
+	ListenerDescription   string               `json:"ListenerDescription" xml:"ListenerDescription"`
+	ListenerId            string               `json:"ListenerId" xml:"ListenerId"`
+	ListenerPort          int                  `json:"ListenerPort" xml:"ListenerPort"`
+	ListenerProtocol      string               `json:"ListenerProtocol" xml:"ListenerProtocol"`
+	ListenerStatus        string               `json:"ListenerStatus" xml:"ListenerStatus"`
+	LoadBalancerId        string               `json:"LoadBalancerId" xml:"LoadBalancerId"`
+	ServiceManagedEnabled bool                 `json:"ServiceManagedEnabled" xml:"ServiceManagedEnabled"`
+	ServiceManagedMode    string               `json:"ServiceManagedMode" xml:"ServiceManagedMode"`
+	RequestTimeout        int                  `json:"RequestTimeout" xml:"RequestTimeout"`
+	SecurityPolicyId      string               `json:"SecurityPolicyId" xml:"SecurityPolicyId"`
+	LogConfig             LogConfig            `json:"LogConfig" xml:"LogConfig"`
+	QuicConfig            QuicConfig           `json:"QuicConfig" xml:"QuicConfig"`
+	XForwardedForConfig   XForwardedForConfig  `json:"XForwardedForConfig" xml:"XForwardedForConfig"`
+	DefaultActions        []DefaultAction      `json:"DefaultActions" xml:"DefaultActions"`
+	Tags                  []Tag                `json:"Tags" xml:"Tags"`
+	AssociatedResources   []AssociatedResource `json:"AssociatedResources" xml:"AssociatedResources"`
 }

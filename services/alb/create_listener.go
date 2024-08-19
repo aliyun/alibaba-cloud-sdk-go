@@ -75,6 +75,7 @@ type CreateListenerRequest struct {
 	GzipEnabled         requests.Boolean                  `position:"Query" name:"GzipEnabled"`
 	QuicConfig          CreateListenerQuicConfig          `position:"Query" name:"QuicConfig"  type:"Struct"`
 	Http2Enabled        requests.Boolean                  `position:"Query" name:"Http2Enabled"`
+	Tag                 *[]CreateListenerTag              `position:"Query" name:"Tag"  type:"Repeated"`
 	DefaultActions      *[]CreateListenerDefaultActions   `position:"Query" name:"DefaultActions"  type:"Repeated"`
 	ListenerPort        requests.Integer                  `position:"Query" name:"ListenerPort"`
 	DryRun              requests.Boolean                  `position:"Query" name:"DryRun"`
@@ -88,6 +89,12 @@ type CreateListenerRequest struct {
 	Certificates        *[]CreateListenerCertificates     `position:"Query" name:"Certificates"  type:"Repeated"`
 	ListenerDescription string                            `position:"Query" name:"ListenerDescription"`
 	CaEnabled           requests.Boolean                  `position:"Query" name:"CaEnabled"`
+}
+
+// CreateListenerTag is a repeated param struct in CreateListenerRequest
+type CreateListenerTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // CreateListenerDefaultActions is a repeated param struct in CreateListenerRequest

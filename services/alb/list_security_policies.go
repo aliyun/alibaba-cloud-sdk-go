@@ -71,11 +71,18 @@ func (client *Client) ListSecurityPoliciesWithCallback(request *ListSecurityPoli
 // ListSecurityPoliciesRequest is the request struct for api ListSecurityPolicies
 type ListSecurityPoliciesRequest struct {
 	*requests.RpcRequest
-	SecurityPolicyNames *[]string        `position:"Query" name:"SecurityPolicyNames"  type:"Repeated"`
-	ResourceGroupId     string           `position:"Query" name:"ResourceGroupId"`
-	NextToken           string           `position:"Query" name:"NextToken"`
-	SecurityPolicyIds   *[]string        `position:"Query" name:"SecurityPolicyIds"  type:"Repeated"`
-	MaxResults          requests.Integer `position:"Query" name:"MaxResults"`
+	SecurityPolicyNames *[]string                  `position:"Query" name:"SecurityPolicyNames"  type:"Repeated"`
+	ResourceGroupId     string                     `position:"Query" name:"ResourceGroupId"`
+	NextToken           string                     `position:"Query" name:"NextToken"`
+	Tag                 *[]ListSecurityPoliciesTag `position:"Query" name:"Tag"  type:"Repeated"`
+	SecurityPolicyIds   *[]string                  `position:"Query" name:"SecurityPolicyIds"  type:"Repeated"`
+	MaxResults          requests.Integer           `position:"Query" name:"MaxResults"`
+}
+
+// ListSecurityPoliciesTag is a repeated param struct in ListSecurityPoliciesRequest
+type ListSecurityPoliciesTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // ListSecurityPoliciesResponse is the response struct for api ListSecurityPolicies

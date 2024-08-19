@@ -95,6 +95,7 @@ type GetHealthCheckTemplateAttributeResponse struct {
 	ServiceManagedMode             string   `json:"ServiceManagedMode" xml:"ServiceManagedMode"`
 	HealthCheckHttpCodes           []string `json:"HealthCheckHttpCodes" xml:"HealthCheckHttpCodes"`
 	HealthCheckCodes               []string `json:"HealthCheckCodes" xml:"HealthCheckCodes"`
+	Tags                           []Tag    `json:"Tags" xml:"Tags"`
 }
 
 // CreateGetHealthCheckTemplateAttributeRequest creates a request to invoke GetHealthCheckTemplateAttribute API

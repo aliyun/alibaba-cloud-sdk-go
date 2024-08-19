@@ -75,7 +75,14 @@ type CreateAclRequest struct {
 	ClientToken      string           `position:"Query" name:"ClientToken"`
 	AddressIpVersion string           `position:"Query" name:"AddressIpVersion"`
 	ResourceGroupId  string           `position:"Query" name:"ResourceGroupId"`
+	Tag              *[]CreateAclTag  `position:"Query" name:"Tag"  type:"Repeated"`
 	DryRun           requests.Boolean `position:"Query" name:"DryRun"`
+}
+
+// CreateAclTag is a repeated param struct in CreateAclRequest
+type CreateAclTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // CreateAclResponse is the response struct for api CreateAcl

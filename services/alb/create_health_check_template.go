@@ -71,22 +71,29 @@ func (client *Client) CreateHealthCheckTemplateWithCallback(request *CreateHealt
 // CreateHealthCheckTemplateRequest is the request struct for api CreateHealthCheckTemplate
 type CreateHealthCheckTemplateRequest struct {
 	*requests.RpcRequest
-	HealthCheckTimeout             requests.Integer `position:"Query" name:"HealthCheckTimeout"`
-	ClientToken                    string           `position:"Query" name:"ClientToken"`
-	HealthCheckProtocol            string           `position:"Query" name:"HealthCheckProtocol"`
-	UnhealthyThreshold             requests.Integer `position:"Query" name:"UnhealthyThreshold"`
-	HealthyThreshold               requests.Integer `position:"Query" name:"HealthyThreshold"`
-	HealthCheckTcpFastCloseEnabled requests.Boolean `position:"Query" name:"HealthCheckTcpFastCloseEnabled"`
-	HealthCheckPath                string           `position:"Query" name:"HealthCheckPath"`
-	HealthCheckCodes               *[]string        `position:"Query" name:"HealthCheckCodes"  type:"Repeated"`
-	DryRun                         requests.Boolean `position:"Query" name:"DryRun"`
-	HealthCheckMethod              string           `position:"Query" name:"HealthCheckMethod"`
-	HealthCheckHost                string           `position:"Query" name:"HealthCheckHost"`
-	HealthCheckInterval            requests.Integer `position:"Query" name:"HealthCheckInterval"`
-	HealthCheckTemplateName        string           `position:"Query" name:"HealthCheckTemplateName"`
-	HealthCheckHttpCodes           *[]string        `position:"Query" name:"HealthCheckHttpCodes"  type:"Repeated"`
-	HealthCheckHttpVersion         string           `position:"Query" name:"HealthCheckHttpVersion"`
-	HealthCheckConnectPort         requests.Integer `position:"Query" name:"HealthCheckConnectPort"`
+	HealthCheckTimeout             requests.Integer                `position:"Query" name:"HealthCheckTimeout"`
+	ClientToken                    string                          `position:"Query" name:"ClientToken"`
+	HealthCheckProtocol            string                          `position:"Query" name:"HealthCheckProtocol"`
+	UnhealthyThreshold             requests.Integer                `position:"Query" name:"UnhealthyThreshold"`
+	HealthyThreshold               requests.Integer                `position:"Query" name:"HealthyThreshold"`
+	HealthCheckTcpFastCloseEnabled requests.Boolean                `position:"Query" name:"HealthCheckTcpFastCloseEnabled"`
+	HealthCheckPath                string                          `position:"Query" name:"HealthCheckPath"`
+	Tag                            *[]CreateHealthCheckTemplateTag `position:"Query" name:"Tag"  type:"Repeated"`
+	HealthCheckCodes               *[]string                       `position:"Query" name:"HealthCheckCodes"  type:"Repeated"`
+	DryRun                         requests.Boolean                `position:"Query" name:"DryRun"`
+	HealthCheckMethod              string                          `position:"Query" name:"HealthCheckMethod"`
+	HealthCheckHost                string                          `position:"Query" name:"HealthCheckHost"`
+	HealthCheckInterval            requests.Integer                `position:"Query" name:"HealthCheckInterval"`
+	HealthCheckTemplateName        string                          `position:"Query" name:"HealthCheckTemplateName"`
+	HealthCheckHttpCodes           *[]string                       `position:"Query" name:"HealthCheckHttpCodes"  type:"Repeated"`
+	HealthCheckHttpVersion         string                          `position:"Query" name:"HealthCheckHttpVersion"`
+	HealthCheckConnectPort         requests.Integer                `position:"Query" name:"HealthCheckConnectPort"`
+}
+
+// CreateHealthCheckTemplateTag is a repeated param struct in CreateHealthCheckTemplateRequest
+type CreateHealthCheckTemplateTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // CreateHealthCheckTemplateResponse is the response struct for api CreateHealthCheckTemplate

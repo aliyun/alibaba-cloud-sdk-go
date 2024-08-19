@@ -73,6 +73,7 @@ type ListListenerCertificatesRequest struct {
 	*requests.RpcRequest
 	CertificateType string           `position:"Query" name:"CertificateType"`
 	ListenerId      string           `position:"Query" name:"ListenerId"`
+	CertificateIds  *[]string        `position:"Query" name:"CertificateIds"  type:"Repeated"`
 	NextToken       string           `position:"Query" name:"NextToken"`
 	MaxResults      requests.Integer `position:"Query" name:"MaxResults"`
 }

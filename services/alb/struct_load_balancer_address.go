@@ -19,9 +19,9 @@ package alb
 type LoadBalancerAddress struct {
 	Address                 string `json:"Address" xml:"Address"`
 	Ipv6Address             string `json:"Ipv6Address" xml:"Ipv6Address"`
-	Ipv6AddressHcStatus     string `json:"Ipv6AddressHcStatus" xml:"Ipv6AddressHcStatus"`
 	IntranetAddress         string `json:"IntranetAddress" xml:"IntranetAddress"`
-	IntranetAddressHcStatus string `json:"IntranetAddressHcStatus" xml:"IntranetAddressHcStatus"`
 	AllocationId            string `json:"AllocationId" xml:"AllocationId"`
 	EipType                 string `json:"EipType" xml:"EipType"`
+	IntranetAddressHcStatus string `json:"IntranetAddressHcStatus" xml:"IntranetAddressHcStatus"`
+	Ipv6AddressHcStatus     string `json:"Ipv6AddressHcStatus" xml:"Ipv6AddressHcStatus"`
 }

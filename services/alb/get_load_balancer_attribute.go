@@ -109,6 +109,7 @@ type GetLoadBalancerAttributeResponse struct {
 	LoadBalancerOperationLocks   []LoadBalancerOperationLock  `json:"LoadBalancerOperationLocks" xml:"LoadBalancerOperationLocks"`
 	Tags                         []Tag                        `json:"Tags" xml:"Tags"`
 	ZoneMappings                 []ZoneMapping                `json:"ZoneMappings" xml:"ZoneMappings"`
+	AssociatedResources          []AssociatedResource         `json:"AssociatedResources" xml:"AssociatedResources"`
 }
 
 // CreateGetLoadBalancerAttributeRequest creates a request to invoke GetLoadBalancerAttribute API

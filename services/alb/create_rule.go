@@ -74,11 +74,18 @@ type CreateRuleRequest struct {
 	ClientToken    string                      `position:"Query" name:"ClientToken"`
 	RuleName       string                      `position:"Query" name:"RuleName"`
 	ListenerId     string                      `position:"Query" name:"ListenerId"`
+	Tag            *[]CreateRuleTag            `position:"Query" name:"Tag"  type:"Repeated"`
 	Direction      string                      `position:"Query" name:"Direction"`
 	RuleActions    *[]CreateRuleRuleActions    `position:"Query" name:"RuleActions"  type:"Repeated"`
 	RuleConditions *[]CreateRuleRuleConditions `position:"Query" name:"RuleConditions"  type:"Repeated"`
 	DryRun         requests.Boolean            `position:"Query" name:"DryRun"`
 	Priority       requests.Integer            `position:"Query" name:"Priority"`
+}
+
+// CreateRuleTag is a repeated param struct in CreateRuleRequest
+type CreateRuleTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // CreateRuleRuleActions is a repeated param struct in CreateRuleRequest

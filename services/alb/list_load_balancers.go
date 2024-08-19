@@ -78,6 +78,7 @@ type ListLoadBalancersRequest struct {
 	ResourceGroupId             string                  `position:"Query" name:"ResourceGroupId"`
 	NextToken                   string                  `position:"Query" name:"NextToken"`
 	LoadBalancerBussinessStatus string                  `position:"Query" name:"LoadBalancerBussinessStatus"`
+	DNSName                     string                  `position:"Query" name:"DNSName"`
 	AddressType                 string                  `position:"Query" name:"AddressType"`
 	VpcIds                      *[]string               `position:"Query" name:"VpcIds"  type:"Repeated"`
 	Tag                         *[]ListLoadBalancersTag `position:"Query" name:"Tag"  type:"Repeated"`

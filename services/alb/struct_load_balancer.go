@@ -41,4 +41,5 @@ type LoadBalancer struct {
 	ModificationProtectionConfig ModificationProtectionConfig `json:"ModificationProtectionConfig" xml:"ModificationProtectionConfig"`
 	LoadBalancerOperationLocks   []LoadBalancerOperationLock  `json:"LoadBalancerOperationLocks" xml:"LoadBalancerOperationLocks"`
 	Tags                         []Tag                        `json:"Tags" xml:"Tags"`
+	AssociatedResources          []AssociatedResource         `json:"AssociatedResources" xml:"AssociatedResources"`
 }

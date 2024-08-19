@@ -77,28 +77,30 @@ type GetListenerAttributeRequest struct {
 // GetListenerAttributeResponse is the response struct for api GetListenerAttribute
 type GetListenerAttributeResponse struct {
 	*responses.BaseResponse
-	CaEnabled             bool                `json:"CaEnabled" xml:"CaEnabled"`
-	GzipEnabled           bool                `json:"GzipEnabled" xml:"GzipEnabled"`
-	Http2Enabled          bool                `json:"Http2Enabled" xml:"Http2Enabled"`
-	ServiceManagedEnabled bool                `json:"ServiceManagedEnabled" xml:"ServiceManagedEnabled"`
-	ServiceManagedMode    string              `json:"ServiceManagedMode" xml:"ServiceManagedMode"`
-	IdleTimeout           int                 `json:"IdleTimeout" xml:"IdleTimeout"`
-	ListenerDescription   string              `json:"ListenerDescription" xml:"ListenerDescription"`
-	ListenerId            string              `json:"ListenerId" xml:"ListenerId"`
-	ListenerPort          int                 `json:"ListenerPort" xml:"ListenerPort"`
-	ListenerProtocol      string              `json:"ListenerProtocol" xml:"ListenerProtocol"`
-	ListenerStatus        string              `json:"ListenerStatus" xml:"ListenerStatus"`
-	LoadBalancerId        string              `json:"LoadBalancerId" xml:"LoadBalancerId"`
-	RequestId             string              `json:"RequestId" xml:"RequestId"`
-	RequestTimeout        int                 `json:"RequestTimeout" xml:"RequestTimeout"`
-	SecurityPolicyId      string              `json:"SecurityPolicyId" xml:"SecurityPolicyId"`
-	AclConfig             AclConfig           `json:"AclConfig" xml:"AclConfig"`
-	LogConfig             LogConfig           `json:"LogConfig" xml:"LogConfig"`
-	QuicConfig            QuicConfig          `json:"QuicConfig" xml:"QuicConfig"`
-	XForwardedForConfig   XForwardedForConfig `json:"XForwardedForConfig" xml:"XForwardedForConfig"`
-	Certificates          []Certificate       `json:"Certificates" xml:"Certificates"`
-	CaCertificates        []Certificate       `json:"CaCertificates" xml:"CaCertificates"`
-	DefaultActions        []DefaultAction     `json:"DefaultActions" xml:"DefaultActions"`
+	CaEnabled             bool                 `json:"CaEnabled" xml:"CaEnabled"`
+	GzipEnabled           bool                 `json:"GzipEnabled" xml:"GzipEnabled"`
+	Http2Enabled          bool                 `json:"Http2Enabled" xml:"Http2Enabled"`
+	ServiceManagedEnabled bool                 `json:"ServiceManagedEnabled" xml:"ServiceManagedEnabled"`
+	ServiceManagedMode    string               `json:"ServiceManagedMode" xml:"ServiceManagedMode"`
+	IdleTimeout           int                  `json:"IdleTimeout" xml:"IdleTimeout"`
+	ListenerDescription   string               `json:"ListenerDescription" xml:"ListenerDescription"`
+	ListenerId            string               `json:"ListenerId" xml:"ListenerId"`
+	ListenerPort          int                  `json:"ListenerPort" xml:"ListenerPort"`
+	ListenerProtocol      string               `json:"ListenerProtocol" xml:"ListenerProtocol"`
+	ListenerStatus        string               `json:"ListenerStatus" xml:"ListenerStatus"`
+	LoadBalancerId        string               `json:"LoadBalancerId" xml:"LoadBalancerId"`
+	RequestId             string               `json:"RequestId" xml:"RequestId"`
+	RequestTimeout        int                  `json:"RequestTimeout" xml:"RequestTimeout"`
+	SecurityPolicyId      string               `json:"SecurityPolicyId" xml:"SecurityPolicyId"`
+	AclConfig             AclConfig            `json:"AclConfig" xml:"AclConfig"`
+	LogConfig             LogConfig            `json:"LogConfig" xml:"LogConfig"`
+	QuicConfig            QuicConfig           `json:"QuicConfig" xml:"QuicConfig"`
+	XForwardedForConfig   XForwardedForConfig  `json:"XForwardedForConfig" xml:"XForwardedForConfig"`
+	Certificates          []Certificate        `json:"Certificates" xml:"Certificates"`
+	CaCertificates        []Certificate        `json:"CaCertificates" xml:"CaCertificates"`
+	DefaultActions        []DefaultAction      `json:"DefaultActions" xml:"DefaultActions"`
+	Tags                  []Tag                `json:"Tags" xml:"Tags"`
+	AssociatedResources   []AssociatedResource `json:"AssociatedResources" xml:"AssociatedResources"`
 }
 
 // CreateGetListenerAttributeRequest creates a request to invoke GetListenerAttribute API

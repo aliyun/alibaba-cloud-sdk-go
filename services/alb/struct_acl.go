@@ -26,4 +26,5 @@ type Acl struct {
 	ServiceManagedMode    string `json:"ServiceManagedMode" xml:"ServiceManagedMode"`
 	ConfigManagedEnabled  bool   `json:"ConfigManagedEnabled" xml:"ConfigManagedEnabled"`
 	CreateTime            string `json:"CreateTime" xml:"CreateTime"`
+	Tags                  []Tag  `json:"Tags" xml:"Tags"`
 }

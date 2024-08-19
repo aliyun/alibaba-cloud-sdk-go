@@ -74,10 +74,17 @@ type ListRulesRequest struct {
 	LoadBalancerIds *[]string        `position:"Query" name:"LoadBalancerIds"  type:"Repeated"`
 	ListenerId      string           `position:"Query" name:"ListenerId"`
 	NextToken       string           `position:"Query" name:"NextToken"`
+	Tag             *[]ListRulesTag  `position:"Query" name:"Tag"  type:"Repeated"`
 	Direction       string           `position:"Query" name:"Direction"`
 	RuleIds         *[]string        `position:"Query" name:"RuleIds"  type:"Repeated"`
 	ListenerIds     *[]string        `position:"Query" name:"ListenerIds"  type:"Repeated"`
 	MaxResults      requests.Integer `position:"Query" name:"MaxResults"`
+}
+
+// ListRulesTag is a repeated param struct in ListRulesRequest
+type ListRulesTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // ListRulesResponse is the response struct for api ListRules

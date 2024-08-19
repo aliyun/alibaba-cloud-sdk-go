@@ -80,18 +80,26 @@ type CreateLoadBalancerRequest struct {
 	ResourceGroupId              string                                         `position:"Query" name:"ResourceGroupId"`
 	LoadBalancerName             string                                         `position:"Query" name:"LoadBalancerName"`
 	AddressType                  string                                         `position:"Query" name:"AddressType"`
+	Tag                          *[]CreateLoadBalancerTag                       `position:"Query" name:"Tag"  type:"Repeated"`
 	AddressAllocatedMode         string                                         `position:"Query" name:"AddressAllocatedMode"`
 	DryRun                       requests.Boolean                               `position:"Query" name:"DryRun"`
 	ZoneMappings                 *[]CreateLoadBalancerZoneMappings              `position:"Query" name:"ZoneMappings"  type:"Repeated"`
 	VpcId                        string                                         `position:"Query" name:"VpcId"`
 }
 
+// CreateLoadBalancerTag is a repeated param struct in CreateLoadBalancerRequest
+type CreateLoadBalancerTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
+}
+
 // CreateLoadBalancerZoneMappings is a repeated param struct in CreateLoadBalancerRequest
 type CreateLoadBalancerZoneMappings struct {
-	VSwitchId    string `name:"VSwitchId"`
-	EipType      string `name:"EipType"`
-	ZoneId       string `name:"ZoneId"`
-	AllocationId string `name:"AllocationId"`
+	VSwitchId       string `name:"VSwitchId"`
+	EipType         string `name:"EipType"`
+	ZoneId          string `name:"ZoneId"`
+	AllocationId    string `name:"AllocationId"`
+	IntranetAddress string `name:"IntranetAddress"`
 }
 
 // CreateLoadBalancerModificationProtectionConfig is a repeated param struct in CreateLoadBalancerRequest

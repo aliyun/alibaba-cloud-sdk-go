@@ -71,13 +71,21 @@ func (client *Client) ListListenersWithCallback(request *ListListenersRequest, c
 // ListListenersRequest is the request struct for api ListListeners
 type ListListenersRequest struct {
 	*requests.RpcRequest
-	LoadBalancerIds                         *[]string        `position:"Query" name:"LoadBalancerIds"  type:"Repeated"`
-	NextToken                               string           `position:"Query" name:"NextToken"`
-	AccessLogRecordCustomizedHeadersEnabled requests.Boolean `position:"Query" name:"AccessLogRecordCustomizedHeadersEnabled"`
-	ListenerProtocol                        string           `position:"Query" name:"ListenerProtocol"`
-	ListenerIds                             *[]string        `position:"Query" name:"ListenerIds"  type:"Repeated"`
-	MaxResults                              requests.Integer `position:"Query" name:"MaxResults"`
-	Status                                  string           `position:"Query" name:"Status"`
+	LoadBalancerIds                         *[]string           `position:"Query" name:"LoadBalancerIds"  type:"Repeated"`
+	NextToken                               string              `position:"Query" name:"NextToken"`
+	Tag                                     *[]ListListenersTag `position:"Query" name:"Tag"  type:"Repeated"`
+	AccessLogRecordCustomizedHeadersEnabled requests.Boolean    `position:"Query" name:"AccessLogRecordCustomizedHeadersEnabled"`
+	ListenerProtocol                        string              `position:"Query" name:"ListenerProtocol"`
+	ListenerIds                             *[]string           `position:"Query" name:"ListenerIds"  type:"Repeated"`
+	MaxResults                              requests.Integer    `position:"Query" name:"MaxResults"`
+	IsAssociatedAcl                         requests.Boolean    `position:"Query" name:"IsAssociatedAcl"`
+	Status                                  string              `position:"Query" name:"Status"`
+}
+
+// ListListenersTag is a repeated param struct in ListListenersRequest
+type ListListenersTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // ListListenersResponse is the response struct for api ListListeners

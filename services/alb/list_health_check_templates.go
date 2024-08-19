@@ -71,10 +71,17 @@ func (client *Client) ListHealthCheckTemplatesWithCallback(request *ListHealthCh
 // ListHealthCheckTemplatesRequest is the request struct for api ListHealthCheckTemplates
 type ListHealthCheckTemplatesRequest struct {
 	*requests.RpcRequest
-	NextToken                string           `position:"Query" name:"NextToken"`
-	HealthCheckTemplateNames *[]string        `position:"Query" name:"HealthCheckTemplateNames"  type:"Repeated"`
-	MaxResults               requests.Integer `position:"Query" name:"MaxResults"`
-	HealthCheckTemplateIds   *[]string        `position:"Query" name:"HealthCheckTemplateIds"  type:"Repeated"`
+	NextToken                string                         `position:"Query" name:"NextToken"`
+	Tag                      *[]ListHealthCheckTemplatesTag `position:"Query" name:"Tag"  type:"Repeated"`
+	HealthCheckTemplateNames *[]string                      `position:"Query" name:"HealthCheckTemplateNames"  type:"Repeated"`
+	MaxResults               requests.Integer               `position:"Query" name:"MaxResults"`
+	HealthCheckTemplateIds   *[]string                      `position:"Query" name:"HealthCheckTemplateIds"  type:"Repeated"`
+}
+
+// ListHealthCheckTemplatesTag is a repeated param struct in ListHealthCheckTemplatesRequest
+type ListHealthCheckTemplatesTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // ListHealthCheckTemplatesResponse is the response struct for api ListHealthCheckTemplates

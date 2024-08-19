@@ -79,10 +79,11 @@ type UpdateLoadBalancerZonesRequest struct {
 
 // UpdateLoadBalancerZonesZoneMappings is a repeated param struct in UpdateLoadBalancerZonesRequest
 type UpdateLoadBalancerZonesZoneMappings struct {
-	VSwitchId    string `name:"VSwitchId"`
-	EipType      string `name:"EipType"`
-	ZoneId       string `name:"ZoneId"`
-	AllocationId string `name:"AllocationId"`
+	VSwitchId       string `name:"VSwitchId"`
+	EipType         string `name:"EipType"`
+	ZoneId          string `name:"ZoneId"`
+	AllocationId    string `name:"AllocationId"`
+	IntranetAddress string `name:"IntranetAddress"`
 }
 
 // UpdateLoadBalancerZonesResponse is the response struct for api UpdateLoadBalancerZones

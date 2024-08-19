@@ -71,16 +71,18 @@ func (client *Client) UpdateServerGroupAttributeWithCallback(request *UpdateServ
 // UpdateServerGroupAttributeRequest is the request struct for api UpdateServerGroupAttribute
 type UpdateServerGroupAttributeRequest struct {
 	*requests.RpcRequest
-	ServerGroupName          string                                        `position:"Query" name:"ServerGroupName"`
-	ClientToken              string                                        `position:"Query" name:"ClientToken"`
-	HealthCheckConfig        UpdateServerGroupAttributeHealthCheckConfig   `position:"Query" name:"HealthCheckConfig"  type:"Struct"`
-	Scheduler                string                                        `position:"Query" name:"Scheduler"`
-	ServerGroupId            string                                        `position:"Query" name:"ServerGroupId"`
-	UpstreamKeepaliveEnabled requests.Boolean                              `position:"Query" name:"UpstreamKeepaliveEnabled"`
-	ServiceName              string                                        `position:"Query" name:"ServiceName"`
-	StickySessionConfig      UpdateServerGroupAttributeStickySessionConfig `position:"Query" name:"StickySessionConfig"  type:"Struct"`
-	DryRun                   requests.Boolean                              `position:"Query" name:"DryRun"`
-	UchConfig                UpdateServerGroupAttributeUchConfig           `position:"Query" name:"UchConfig"  type:"Struct"`
+	ServerGroupName          string                                          `position:"Query" name:"ServerGroupName"`
+	ClientToken              string                                          `position:"Query" name:"ClientToken"`
+	HealthCheckConfig        UpdateServerGroupAttributeHealthCheckConfig     `position:"Query" name:"HealthCheckConfig"  type:"Struct"`
+	SlowStartConfig          UpdateServerGroupAttributeSlowStartConfig       `position:"Query" name:"SlowStartConfig"  type:"Struct"`
+	Scheduler                string                                          `position:"Query" name:"Scheduler"`
+	ServerGroupId            string                                          `position:"Query" name:"ServerGroupId"`
+	UpstreamKeepaliveEnabled requests.Boolean                                `position:"Query" name:"UpstreamKeepaliveEnabled"`
+	ServiceName              string                                          `position:"Query" name:"ServiceName"`
+	StickySessionConfig      UpdateServerGroupAttributeStickySessionConfig   `position:"Query" name:"StickySessionConfig"  type:"Struct"`
+	DryRun                   requests.Boolean                                `position:"Query" name:"DryRun"`
+	ConnectionDrainConfig    UpdateServerGroupAttributeConnectionDrainConfig `position:"Query" name:"ConnectionDrainConfig"  type:"Struct"`
+	UchConfig                UpdateServerGroupAttributeUchConfig             `position:"Query" name:"UchConfig"  type:"Struct"`
 }
 
 // UpdateServerGroupAttributeHealthCheckConfig is a repeated param struct in UpdateServerGroupAttributeRequest
@@ -101,12 +103,24 @@ type UpdateServerGroupAttributeHealthCheckConfig struct {
 	HealthCheckConnectPort         string    `name:"HealthCheckConnectPort"`
 }
 
+// UpdateServerGroupAttributeSlowStartConfig is a repeated param struct in UpdateServerGroupAttributeRequest
+type UpdateServerGroupAttributeSlowStartConfig struct {
+	SlowStartDuration string `name:"SlowStartDuration"`
+	SlowStartEnabled  string `name:"SlowStartEnabled"`
+}
+
 // UpdateServerGroupAttributeStickySessionConfig is a repeated param struct in UpdateServerGroupAttributeRequest
 type UpdateServerGroupAttributeStickySessionConfig struct {
 	StickySessionEnabled string `name:"StickySessionEnabled"`
 	Cookie               string `name:"Cookie"`
 	CookieTimeout        string `name:"CookieTimeout"`
 	StickySessionType    string `name:"StickySessionType"`
+}
+
+// UpdateServerGroupAttributeConnectionDrainConfig is a repeated param struct in UpdateServerGroupAttributeRequest
+type UpdateServerGroupAttributeConnectionDrainConfig struct {
+	ConnectionDrainEnabled string `name:"ConnectionDrainEnabled"`
+	ConnectionDrainTimeout string `name:"ConnectionDrainTimeout"`
 }
 
 // UpdateServerGroupAttributeUchConfig is a repeated param struct in UpdateServerGroupAttributeRequest
