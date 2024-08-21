@@ -72,6 +72,7 @@ func (client *Client) ModifyNotificationConfigurationWithCallback(request *Modif
 type ModifyNotificationConfigurationRequest struct {
 	*requests.RpcRequest
 	ScalingGroupId       string           `position:"Query" name:"ScalingGroupId"`
+	TimeZone             string           `position:"Query" name:"TimeZone"`
 	NotificationArn      string           `position:"Query" name:"NotificationArn"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`

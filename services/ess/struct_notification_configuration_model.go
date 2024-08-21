@@ -19,5 +19,6 @@ package ess
 type NotificationConfigurationModel struct {
 	NotificationArn   string                                                `json:"NotificationArn" xml:"NotificationArn"`
 	ScalingGroupId    string                                                `json:"ScalingGroupId" xml:"ScalingGroupId"`
+	TimeZone          string                                                `json:"TimeZone" xml:"TimeZone"`
 	NotificationTypes NotificationTypesInDescribeNotificationConfigurations `json:"NotificationTypes" xml:"NotificationTypes"`
 }

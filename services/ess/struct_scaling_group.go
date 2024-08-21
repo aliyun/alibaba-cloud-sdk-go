@@ -66,6 +66,7 @@ type ScalingGroup struct {
 	InitCapacity                        int                               `json:"InitCapacity" xml:"InitCapacity"`
 	ResourceGroupId                     string                            `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	EnableDesiredCapacity               bool                              `json:"EnableDesiredCapacity" xml:"EnableDesiredCapacity"`
+	SpotCapacity                        int                               `json:"SpotCapacity" xml:"SpotCapacity"`
 	RemovalPolicies                     RemovalPolicies                   `json:"RemovalPolicies" xml:"RemovalPolicies"`
 	DBInstanceIds                       DBInstanceIds                     `json:"DBInstanceIds" xml:"DBInstanceIds"`
 	LoadBalancerIds                     LoadBalancerIds                   `json:"LoadBalancerIds" xml:"LoadBalancerIds"`
