@@ -17,18 +17,20 @@ package live
 
 // Caster is a nested struct in live response
 type Caster struct {
-	CasterId       string `json:"CasterId" xml:"CasterId"`
-	CasterName     string `json:"CasterName" xml:"CasterName"`
-	CasterTemplate string `json:"CasterTemplate" xml:"CasterTemplate"`
-	ChannelEnable  int    `json:"ChannelEnable" xml:"ChannelEnable"`
-	ChargeType     string `json:"ChargeType" xml:"ChargeType"`
-	CreateTime     string `json:"CreateTime" xml:"CreateTime"`
-	Duration       string `json:"Duration" xml:"Duration"`
-	ExpireTime     string `json:"ExpireTime" xml:"ExpireTime"`
-	LastModified   string `json:"LastModified" xml:"LastModified"`
-	NormType       int    `json:"NormType" xml:"NormType"`
-	PurchaseTime   string `json:"PurchaseTime" xml:"PurchaseTime"`
-	RoomId         int    `json:"RoomId" xml:"RoomId"`
-	StartTime      string `json:"StartTime" xml:"StartTime"`
-	Status         int    `json:"Status" xml:"Status"`
+	CasterId        string `json:"CasterId" xml:"CasterId"`
+	CasterName      string `json:"CasterName" xml:"CasterName"`
+	CasterTemplate  string `json:"CasterTemplate" xml:"CasterTemplate"`
+	ChannelEnable   int    `json:"ChannelEnable" xml:"ChannelEnable"`
+	ChargeType      string `json:"ChargeType" xml:"ChargeType"`
+	CreateTime      string `json:"CreateTime" xml:"CreateTime"`
+	Duration        string `json:"Duration" xml:"Duration"`
+	ExpireTime      string `json:"ExpireTime" xml:"ExpireTime"`
+	LastModified    string `json:"LastModified" xml:"LastModified"`
+	NormType        int    `json:"NormType" xml:"NormType"`
+	PurchaseTime    string `json:"PurchaseTime" xml:"PurchaseTime"`
+	RoomId          int    `json:"RoomId" xml:"RoomId"`
+	StartTime       string `json:"StartTime" xml:"StartTime"`
+	Status          int    `json:"Status" xml:"Status"`
+	ResourceGroupId int    `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	ClientTokenId   string `json:"ClientTokenId" xml:"ClientTokenId"`
 }

@@ -17,7 +17,7 @@ package live
 
 // SyncGroup is a nested struct in live response
 type SyncGroup struct {
-	HostResourceId string                            `json:"HostResourceId" xml:"HostResourceId"`
-	Mode           int                               `json:"Mode" xml:"Mode"`
-	ResourceIds    ResourceIdsInDescribeCasterConfig `json:"ResourceIds" xml:"ResourceIds"`
+	HostResourceId string      `json:"HostResourceId" xml:"HostResourceId"`
+	Mode           int         `json:"Mode" xml:"Mode"`
+	ResourceIds    ResourceIds `json:"ResourceIds" xml:"ResourceIds"`
 }

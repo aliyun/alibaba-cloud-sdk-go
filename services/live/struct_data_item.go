@@ -19,10 +19,10 @@ package live
 type DataItem struct {
 	AudioDuration int64  `json:"AudioDuration" xml:"AudioDuration"`
 	SingleAudio   int64  `json:"Single_Audio" xml:"Single_Audio"`
-	V480Duration  int64  `json:"V480Duration" xml:"V480Duration"`
-	TotalDuration int64  `json:"TotalDuration" xml:"TotalDuration"`
-	Timestamp     string `json:"Timestamp" xml:"Timestamp"`
-	V720Duration  int64  `json:"V720Duration" xml:"V720Duration"`
 	SingleVideo   int64  `json:"Single_Video" xml:"Single_Video"`
+	Timestamp     string `json:"Timestamp" xml:"Timestamp"`
+	TotalDuration int64  `json:"TotalDuration" xml:"TotalDuration"`
+	V480Duration  int64  `json:"V480Duration" xml:"V480Duration"`
+	V720Duration  int64  `json:"V720Duration" xml:"V720Duration"`
 	V1080Duration int64  `json:"V1080Duration" xml:"V1080Duration"`
 }

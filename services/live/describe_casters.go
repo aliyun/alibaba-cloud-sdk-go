@@ -73,6 +73,7 @@ type DescribeCastersRequest struct {
 	*requests.RpcRequest
 	StartTime        string           `position:"Query" name:"StartTime"`
 	PageNum          requests.Integer `position:"Query" name:"PageNum"`
+	ResourceGroupId  string           `position:"Query" name:"ResourceGroupId"`
 	CasterName       string           `position:"Query" name:"CasterName"`
 	PageSize         requests.Integer `position:"Query" name:"PageSize"`
 	NormType         string           `position:"Query" name:"NormType"`
