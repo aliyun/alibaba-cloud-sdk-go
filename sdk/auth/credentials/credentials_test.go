@@ -476,6 +476,9 @@ func (p *errorCredentialsProvider) GetCredentials() (cc *Credentials, err error)
 	return
 }
 
+func (p *errorCredentialsProvider) GetProviderName() string {
+	return "error_mock"
+}
 func TestRAMRoleARNCredentialsProviderGetCredentials(t *testing.T) {
 	originDo := hookDo
 	defer func() { hookDo = originDo }()
