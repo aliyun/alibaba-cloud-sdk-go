@@ -49,7 +49,8 @@ func TestRoaSignatureComposer(t *testing.T) {
 	assert.Nil(t, err)
 	signRoaRequest(request, provider)
 	assert.Equal(t, "mock date", request.GetHeaders()["Date"])
-	assert.Equal(t, "acs accessKeyId:degLHXLEN6rMojj+bOlK74U9iic=", request.GetHeaders()["Authorization"])
+	assert.Equal(t, "static_ak", request.GetHeaders()["x-acs-credentials-provider"])
+	assert.Equal(t, "acs accessKeyId:PPPSwv0LPoLvg6rGxp7dd4uPESo=", request.GetHeaders()["Authorization"])
 }
 
 func TestRoaSignatureComposer2(t *testing.T) {
@@ -70,7 +71,8 @@ func TestRoaSignatureComposer2(t *testing.T) {
 	assert.Equal(t, "application/x-www-form-urlencoded", request.GetHeaders()["Content-Type"])
 	assert.Equal(t, "mock date", request.GetHeaders()["Date"])
 	assert.Equal(t, "application/xml", request.GetHeaders()["Accept"])
-	assert.Equal(t, "acs accessKeyId:U9uA3ftRZKixHPB08Z7Z4GOlpTY=", request.GetHeaders()["Authorization"])
+	assert.Equal(t, "static_ak", request.GetHeaders()["x-acs-credentials-provider"])
+	assert.Equal(t, "acs accessKeyId:X/tjQCOP4ZMCzQ1I1IdCra3byPA=", request.GetHeaders()["Authorization"])
 }
 
 func TestRoaSignatureComposer3(t *testing.T) {
