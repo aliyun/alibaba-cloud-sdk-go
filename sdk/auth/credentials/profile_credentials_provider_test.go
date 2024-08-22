@@ -142,7 +142,13 @@ func TestProfileCredentialsProvider_getCredentialsProvider(t *testing.T) {
 	assert.True(t, ok)
 	cc, err := akcp.GetCredentials()
 	assert.Nil(t, err)
-	assert.Equal(t, &Credentials{AccessKeyId: "foo", AccessKeySecret: "bar", SecurityToken: "", BearerToken: ""}, cc)
+	assert.Equal(t, &Credentials{
+		AccessKeyId:     "foo",
+		AccessKeySecret: "bar",
+		SecurityToken:   "",
+		BearerToken:     "",
+		ProviderName:    "static_ak"},
+		cc)
 
 	// ecs_ram_role without rolename
 	provider = NewProfileCredentialsProviderBuilder().WithProfileName("noecs").Build()
@@ -223,10 +229,28 @@ func TestProfileCredentialsProviderGetCredentials(t *testing.T) {
 	provider = NewProfileCredentialsProviderBuilder().Build()
 	cc, err := provider.GetCredentials()
 	assert.Nil(t, err)
-	assert.Equal(t, &Credentials{AccessKeyId: "foo", AccessKeySecret: "bar", SecurityToken: "", BearerToken: ""}, cc)
+	assert.Equal(t, &Credentials{
+		AccessKeyId:     "foo",
+		AccessKeySecret: "bar",
+		SecurityToken:   "",
+		BearerToken:     "",
+		ProviderName:    "profile/static_ak",
+	}, cc)
 
 	// get credentials again
 	cc, err = provider.GetCredentials()
 	assert.Nil(t, err)
-	assert.Equal(t, &Credentials{AccessKeyId: "foo", AccessKeySecret: "bar", SecurityToken: "", BearerToken: ""}, cc)
+	assert.Equal(t, &Credentials{
+		AccessKeyId:     "foo",
+		AccessKeySecret: "bar",
+		SecurityToken:   "",
+		BearerToken:     "",
+		ProviderName:    "profile/static_ak",
+	}, cc)
+
+	// the profile ram with invalid ak
+	provider = NewProfileCredentialsProviderBuilder().WithProfileName("ram").Build()
+	_, err = provider.GetCredentials()
+	assert.NotNil(t, err)
+	assert.Contains(t, err.Error(), "InvalidAccessKeyId.NotFound")
 }

@@ -94,9 +94,21 @@ func TestDefaultCredentialsProvider_GetCredentials(t *testing.T) {
 	assert.Len(t, provider.providerChain, 3)
 	cc, err := provider.GetCredentials()
 	assert.Nil(t, err)
-	assert.Equal(t, &Credentials{AccessKeyId: "akid", AccessKeySecret: "aksecret", SecurityToken: "", BearerToken: ""}, cc)
+	assert.Equal(t, &Credentials{
+		AccessKeyId:     "akid",
+		AccessKeySecret: "aksecret",
+		SecurityToken:   "",
+		BearerToken:     "",
+		ProviderName:    "default/env",
+	}, cc)
 	// get again
 	cc, err = provider.GetCredentials()
 	assert.Nil(t, err)
-	assert.Equal(t, &Credentials{AccessKeyId: "akid", AccessKeySecret: "aksecret", SecurityToken: "", BearerToken: ""}, cc)
+	assert.Equal(t, &Credentials{
+		AccessKeyId:     "akid",
+		AccessKeySecret: "aksecret",
+		SecurityToken:   "",
+		BearerToken:     "",
+		ProviderName:    "default/env",
+	}, cc)
 }

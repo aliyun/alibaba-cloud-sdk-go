@@ -35,4 +35,6 @@ func TestEnvironmentVariableCredentialsProvider(t *testing.T) {
 	assert.Equal(t, "aksecret", cc.AccessKeySecret)
 	assert.Equal(t, "token", cc.SecurityToken)
 	assert.Equal(t, "", cc.BearerToken)
+
+	assert.Equal(t, "env", cc.ProviderName)
 }

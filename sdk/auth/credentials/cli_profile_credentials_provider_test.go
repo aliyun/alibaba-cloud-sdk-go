@@ -124,7 +124,7 @@ func TestCLIProfileCredentialsProvider_getCredentialsProvider(t *testing.T) {
 	assert.True(t, ok)
 	cc, err := akcp.GetCredentials()
 	assert.Nil(t, err)
-	assert.Equal(t, cc, &Credentials{AccessKeyId: "akid", AccessKeySecret: "secret", SecurityToken: ""})
+	assert.Equal(t, cc, &Credentials{AccessKeyId: "akid", AccessKeySecret: "secret", SecurityToken: "", ProviderName: "static_ak"})
 	// RamRoleArn
 	cp, err = provider.getCredentialsProvider(conf, "RamRoleArn")
 	assert.Nil(t, err)
@@ -184,9 +184,22 @@ func TestCLIProfileCredentialsProvider_GetCredentials(t *testing.T) {
 	provider = NewCLIProfileCredentialsProviderBuilder().Build()
 	cc, err := provider.GetCredentials()
 	assert.Nil(t, err)
-	assert.Equal(t, &Credentials{AccessKeyId: "akid", AccessKeySecret: "secret", SecurityToken: "", BearerToken: ""}, cc)
+	assert.Equal(t, &Credentials{
+		AccessKeyId:     "akid",
+		AccessKeySecret: "secret",
+		SecurityToken:   "",
+		BearerToken:     "",
+		ProviderName:    "cli_provider/static_ak",
+	}, cc)
 
 	provider = NewCLIProfileCredentialsProviderBuilder().WithProfileName("inexist").Build()
 	_, err = provider.GetCredentials()
 	assert.EqualError(t, err, "unable to get profile with 'inexist'")
+
+	// get credentials with RamRoleArn profile
+	// the previous credentials is invalid
+	provider = NewCLIProfileCredentialsProviderBuilder().WithProfileName("RamRoleArn").Build()
+	_, err = provider.GetCredentials()
+	assert.NotNil(t, err)
+	assert.Contains(t, err.Error(), "InvalidAccessKeyId.NotFound")
 }
