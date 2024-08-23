@@ -84,6 +84,7 @@ type PutBucketLifecycleRequest struct {
 type PutBucketLifecycleResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	RuleId    string `json:"RuleId" xml:"RuleId"`
 }
 
 // CreatePutBucketLifecycleRequest creates a request to invoke PutBucketLifecycle API

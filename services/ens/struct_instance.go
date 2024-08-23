@@ -44,8 +44,8 @@ type Instance struct {
 	PublicIpAddress         PublicIpAddressInDescribeInstances   `json:"PublicIpAddress" xml:"PublicIpAddress"`
 	SystemDisk              SystemDisk                           `json:"SystemDisk" xml:"SystemDisk"`
 	NetworkAttributes       NetworkAttributesInDescribeInstances `json:"NetworkAttributes" xml:"NetworkAttributes"`
+	DataDisk                DataDisk                             `json:"DataDisk" xml:"DataDisk"`
 	Tags                    Tags                                 `json:"Tags" xml:"Tags"`
 	PublicIpAddresses       PublicIpAddresses                    `json:"PublicIpAddresses" xml:"PublicIpAddresses"`
-	DataDisk                DataDisk                             `json:"DataDisk" xml:"DataDisk"`
 	PrivateIpAddresses      PrivateIpAddresses                   `json:"PrivateIpAddresses" xml:"PrivateIpAddresses"`
 }

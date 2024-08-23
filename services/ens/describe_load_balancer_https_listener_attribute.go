@@ -104,6 +104,7 @@ type DescribeLoadBalancerHTTPSListenerAttributeResponse struct {
 	HealthCheckURI         string `json:"HealthCheckURI" xml:"HealthCheckURI"`
 	ServerCertificateId    string `json:"ServerCertificateId" xml:"ServerCertificateId"`
 	HealthCheckMethod      string `json:"HealthCheckMethod" xml:"HealthCheckMethod"`
+	BackendServerPort      int    `json:"BackendServerPort" xml:"BackendServerPort"`
 }
 
 // CreateDescribeLoadBalancerHTTPSListenerAttributeRequest creates a request to invoke DescribeLoadBalancerHTTPSListenerAttribute API

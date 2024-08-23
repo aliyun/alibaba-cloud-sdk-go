@@ -83,6 +83,7 @@ type CreateLoadBalancerHTTPListenerRequest struct {
 	RequestTimeout         requests.Integer `position:"Query" name:"RequestTimeout"`
 	LoadBalancerId         string           `position:"Query" name:"LoadBalancerId"`
 	HealthCheckInterval    requests.Integer `position:"Query" name:"HealthCheckInterval"`
+	BackendServerPort      requests.Integer `position:"Query" name:"BackendServerPort"`
 	Description            string           `position:"Query" name:"Description"`
 	UnhealthyThreshold     requests.Integer `position:"Query" name:"UnhealthyThreshold"`
 	HealthyThreshold       requests.Integer `position:"Query" name:"HealthyThreshold"`

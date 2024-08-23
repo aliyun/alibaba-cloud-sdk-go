@@ -72,6 +72,7 @@ func (client *Client) SetLoadBalancerUDPListenerAttributeWithCallback(request *S
 type SetLoadBalancerUDPListenerAttributeRequest struct {
 	*requests.RpcRequest
 	Protocol                  string           `position:"Query" name:"Protocol"`
+	EstablishedTimeout        requests.Integer `position:"Query" name:"EstablishedTimeout"`
 	LoadBalancerId            string           `position:"Query" name:"LoadBalancerId"`
 	HealthCheckReq            string           `position:"Query" name:"HealthCheckReq"`
 	HealthCheckInterval       requests.Integer `position:"Query" name:"HealthCheckInterval"`

@@ -95,6 +95,7 @@ type DescribeLoadBalancerUDPListenerAttributeResponse struct {
 	HealthCheckReq            string `json:"HealthCheckReq" xml:"HealthCheckReq"`
 	HealthCheckExp            string `json:"HealthCheckExp" xml:"HealthCheckExp"`
 	EipTransmit               string `json:"EipTransmit" xml:"EipTransmit"`
+	EstablishedTimeout        int    `json:"EstablishedTimeout" xml:"EstablishedTimeout"`
 }
 
 // CreateDescribeLoadBalancerUDPListenerAttributeRequest creates a request to invoke DescribeLoadBalancerUDPListenerAttribute API

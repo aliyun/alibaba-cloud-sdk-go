@@ -71,9 +71,13 @@ func (client *Client) DescribeSDGDeploymentStatusWithCallback(request *DescribeS
 // DescribeSDGDeploymentStatusRequest is the request struct for api DescribeSDGDeploymentStatus
 type DescribeSDGDeploymentStatusRequest struct {
 	*requests.RpcRequest
-	PageNumber string `position:"Query" name:"PageNumber"`
-	SDGId      string `position:"Query" name:"SDGId"`
-	PageSize   string `position:"Query" name:"PageSize"`
+	RegionIds      *[]string        `position:"Query" name:"RegionIds"  type:"Json"`
+	InstanceIds    *[]string        `position:"Query" name:"InstanceIds"  type:"Json"`
+	Status         string           `position:"Query" name:"Status"`
+	DeploymentType string           `position:"Query" name:"DeploymentType"`
+	PageNumber     requests.Integer `position:"Query" name:"PageNumber"`
+	SDGId          string           `position:"Query" name:"SDGId"`
+	PageSize       requests.Integer `position:"Query" name:"PageSize"`
 }
 
 // DescribeSDGDeploymentStatusResponse is the response struct for api DescribeSDGDeploymentStatus
@@ -92,7 +96,7 @@ func CreateDescribeSDGDeploymentStatusRequest() (request *DescribeSDGDeploymentS
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ens", "2017-11-10", "DescribeSDGDeploymentStatus", "ens", "openAPI")
-	request.Method = requests.GET
+	request.Method = requests.POST
 	return
 }
 
