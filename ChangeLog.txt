@@ -1,3 +1,7 @@
+2024-08-23 Version: v1.63.7
+- Generated 2021-01-20 for `governance`.
+治理检测新增第一版OpenAPI
+
 2024-08-23 Version: v1.63.6
 - Generated 2017-11-10 for `Ens`.
 undefined
