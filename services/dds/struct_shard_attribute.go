@@ -27,5 +27,6 @@ type ShardAttribute struct {
 	Status           string `json:"Status" xml:"Status"`
 	NodeClass        string `json:"NodeClass" xml:"NodeClass"`
 	ConnectString    string `json:"ConnectString" xml:"ConnectString"`
+	LockMode         string `json:"LockMode" xml:"LockMode"`
 	ReadonlyReplicas int    `json:"ReadonlyReplicas" xml:"ReadonlyReplicas"`
 }

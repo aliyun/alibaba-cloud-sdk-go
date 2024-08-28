@@ -28,4 +28,5 @@ type MongosAttribute struct {
 	Status             string `json:"Status" xml:"Status"`
 	NodeClass          string `json:"NodeClass" xml:"NodeClass"`
 	VpcCloudInstanceId string `json:"VpcCloudInstanceId" xml:"VpcCloudInstanceId"`
+	LockMode           string `json:"LockMode" xml:"LockMode"`
 }

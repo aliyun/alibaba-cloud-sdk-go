@@ -18,6 +18,7 @@ package dds
 // ConfigserverAttribute is a nested struct in dds response
 type ConfigserverAttribute struct {
 	MaxIOPS         int    `json:"MaxIOPS" xml:"MaxIOPS"`
+	LockMode        string `json:"LockMode" xml:"LockMode"`
 	ConnectString   string `json:"ConnectString" xml:"ConnectString"`
 	NodeClass       string `json:"NodeClass" xml:"NodeClass"`
 	MaxConnections  int    `json:"MaxConnections" xml:"MaxConnections"`

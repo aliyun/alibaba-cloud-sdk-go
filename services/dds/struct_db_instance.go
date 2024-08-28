@@ -69,9 +69,9 @@ type DBInstance struct {
 	ProtocolType                string                                        `json:"ProtocolType" xml:"ProtocolType"`
 	KindCode                    string                                        `json:"KindCode" xml:"KindCode"`
 	ReplicaSets                 ReplicaSetsInDescribeDBInstanceAttribute      `json:"ReplicaSets" xml:"ReplicaSets"`
-	Tags                        TagsInDescribeDBInstanceAttribute             `json:"Tags" xml:"Tags"`
 	ConfigserverList            ConfigserverList                              `json:"ConfigserverList" xml:"ConfigserverList"`
-	ShardList                   ShardListInDescribeDBInstanceAttribute        `json:"ShardList" xml:"ShardList"`
-	NetworkAddresses            NetworkAddressesInDescribeDBInstanceAttribute `json:"NetworkAddresses" xml:"NetworkAddresses"`
+	Tags                        TagsInDescribeDBInstanceAttribute             `json:"Tags" xml:"Tags"`
 	MongosList                  MongosListInDescribeDBInstanceAttribute       `json:"MongosList" xml:"MongosList"`
+	ShardList                   ShardListInDescribeDBInstances                `json:"ShardList" xml:"ShardList"`
+	NetworkAddresses            NetworkAddressesInDescribeDBInstanceAttribute `json:"NetworkAddresses" xml:"NetworkAddresses"`
 }
