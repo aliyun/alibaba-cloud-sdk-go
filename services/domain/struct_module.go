@@ -17,10 +17,35 @@ package domain
 
 // Module is a nested struct in domain response
 type Module struct {
-	Domain      string  `json:"Domain" xml:"Domain"`
-	Price       float64 `json:"Price" xml:"Price"`
-	DownloadUrl string  `json:"DownloadUrl" xml:"DownloadUrl"`
-	RegDate     int64   `json:"RegDate" xml:"RegDate"`
-	DeadDate    int64   `json:"DeadDate" xml:"DeadDate"`
-	EndTime     int64   `json:"EndTime" xml:"EndTime"`
+	Domain                      string                       `json:"Domain" xml:"Domain"`
+	ProductId                   string                       `json:"ProductId" xml:"ProductId"`
+	BizName                     string                       `json:"BizName" xml:"BizName"`
+	SaleId                      string                       `json:"SaleId" xml:"SaleId"`
+	DownloadUrl                 string                       `json:"DownloadUrl" xml:"DownloadUrl"`
+	CreateTime                  int64                        `json:"CreateTime" xml:"CreateTime"`
+	EndTime                     int64                        `json:"EndTime" xml:"EndTime"`
+	OrderNo                     string                       `json:"OrderNo" xml:"OrderNo"`
+	OrderId                     string                       `json:"OrderId" xml:"OrderId"`
+	Premium                     bool                         `json:"Premium" xml:"Premium"`
+	GmtCreate                   string                       `json:"GmtCreate" xml:"GmtCreate"`
+	BizType                     string                       `json:"BizType" xml:"BizType"`
+	UserId                      string                       `json:"UserId" xml:"UserId"`
+	PayPrice                    int64                        `json:"PayPrice" xml:"PayPrice"`
+	DeadDate                    int64                        `json:"DeadDate" xml:"DeadDate"`
+	BizStatus                   string                       `json:"BizStatus" xml:"BizStatus"`
+	Status                      int                          `json:"Status" xml:"Status"`
+	UpdateTime                  int64                        `json:"UpdateTime" xml:"UpdateTime"`
+	DomainName                  string                       `json:"DomainName" xml:"DomainName"`
+	GmtModified                 string                       `json:"GmtModified" xml:"GmtModified"`
+	Id                          int64                        `json:"Id" xml:"Id"`
+	Currency                    string                       `json:"Currency" xml:"Currency"`
+	PayUrl                      string                       `json:"PayUrl" xml:"PayUrl"`
+	RegDate                     int64                        `json:"RegDate" xml:"RegDate"`
+	AuditMsg                    string                       `json:"AuditMsg" xml:"AuditMsg"`
+	BizNo                       string                       `json:"BizNo" xml:"BizNo"`
+	StatusDesc                  string                       `json:"StatusDesc" xml:"StatusDesc"`
+	Price                       int64                        `json:"Price" xml:"Price"`
+	DomainSpecialBizContact     DomainSpecialBizContact      `json:"DomainSpecialBizContact" xml:"DomainSpecialBizContact"`
+	DomainSpecialOrderResult    DomainSpecialOrderResult     `json:"DomainSpecialOrderResult" xml:"DomainSpecialOrderResult"`
+	DomainSpecialBizCredentials []DomainSpecialBizCredential `json:"DomainSpecialBizCredentials" xml:"DomainSpecialBizCredentials"`
 }
