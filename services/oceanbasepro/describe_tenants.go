@@ -82,9 +82,9 @@ type DescribeTenantsRequest struct {
 // DescribeTenantsResponse is the response struct for api DescribeTenants
 type DescribeTenantsResponse struct {
 	*responses.BaseResponse
-	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	Tenants    []Data `json:"Tenants" xml:"Tenants"`
+	TotalCount int                     `json:"TotalCount" xml:"TotalCount"`
+	RequestId  string                  `json:"RequestId" xml:"RequestId"`
+	Tenants    []DataInDescribeTenants `json:"Tenants" xml:"Tenants"`
 }
 
 // CreateDescribeTenantsRequest creates a request to invoke DescribeTenants API

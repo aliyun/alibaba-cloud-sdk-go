@@ -57,6 +57,7 @@ type Instance struct {
 	PrimaryRegion                             string                  `json:"PrimaryRegion" xml:"PrimaryRegion"`
 	SpecType                                  string                  `json:"SpecType" xml:"SpecType"`
 	AllowModifyInternetAddressConnectionLimit bool                    `json:"AllowModifyInternetAddressConnectionLimit" xml:"AllowModifyInternetAddressConnectionLimit"`
+	AllowCreateProxySqlFirewallRule           bool                    `json:"AllowCreateProxySqlFirewallRule" xml:"AllowCreateProxySqlFirewallRule"`
 	AvailableZones                            []string                `json:"AvailableZones" xml:"AvailableZones"`
 	Zones                                     []string                `json:"Zones" xml:"Zones"`
 	Resource                                  Resource                `json:"Resource" xml:"Resource"`

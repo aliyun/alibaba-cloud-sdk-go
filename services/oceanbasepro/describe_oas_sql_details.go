@@ -72,6 +72,7 @@ func (client *Client) DescribeOasSQLDetailsWithCallback(request *DescribeOasSQLD
 type DescribeOasSQLDetailsRequest struct {
 	*requests.RpcRequest
 	StartTime  string           `position:"Body" name:"StartTime"`
+	ParseTable requests.Boolean `position:"Body" name:"ParseTable"`
 	DynamicSql requests.Boolean `position:"Body" name:"DynamicSql"`
 	TenantId   string           `position:"Body" name:"TenantId"`
 	SqlId      string           `position:"Body" name:"SqlId"`

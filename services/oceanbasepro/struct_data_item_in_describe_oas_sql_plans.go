@@ -28,6 +28,9 @@ type DataItemInDescribeOasSQLPlans struct {
 	PlanUnionHash string      `json:"PlanUnionHash" xml:"PlanUnionHash"`
 	QuerySql      string      `json:"QuerySql" xml:"QuerySql"`
 	Bounded       bool        `json:"Bounded" xml:"Bounded"`
+	TableScan     bool        `json:"TableScan" xml:"TableScan"`
+	OutlineId     string      `json:"OutlineId" xml:"OutlineId"`
+	OutlineStatus string      `json:"OutlineStatus" xml:"OutlineStatus"`
 	PlanExplain   PlanExplain `json:"PlanExplain" xml:"PlanExplain"`
 	Plans         []PlansItem `json:"Plans" xml:"Plans"`
 }

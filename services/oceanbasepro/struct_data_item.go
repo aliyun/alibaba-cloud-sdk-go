@@ -88,6 +88,7 @@ type DataItem struct {
 	NetWaitTime         string              `json:"NetWaitTime" xml:"NetWaitTime"`
 	AvgRetryCount       float64             `json:"AvgRetryCount" xml:"AvgRetryCount"`
 	AffectedRows        string              `json:"AffectedRows" xml:"AffectedRows"`
+	ParamsValue         string              `json:"ParamsValue" xml:"ParamsValue"`
 	RetryCount          string              `json:"RetryCount" xml:"RetryCount"`
 	Success             bool                `json:"Success" xml:"Success"`
 	Suggestion          string              `json:"Suggestion" xml:"Suggestion"`

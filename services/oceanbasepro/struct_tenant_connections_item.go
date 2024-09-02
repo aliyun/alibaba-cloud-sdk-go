@@ -40,6 +40,8 @@ type TenantConnectionsItem struct {
 	IntranetRpcPort             int      `json:"IntranetRpcPort" xml:"IntranetRpcPort"`
 	InternetMaxConnectionNum    int64    `json:"InternetMaxConnectionNum" xml:"InternetMaxConnectionNum"`
 	InternetRpcPort             int      `json:"InternetRpcPort" xml:"InternetRpcPort"`
+	IntranetSqlPort             int      `json:"IntranetSqlPort" xml:"IntranetSqlPort"`
+	OdpVersion                  string   `json:"OdpVersion" xml:"OdpVersion"`
 	ConnectionZones             []string `json:"ConnectionZones" xml:"ConnectionZones"`
 	ConnectionLogicalZones      []string `json:"ConnectionLogicalZones" xml:"ConnectionLogicalZones"`
 }

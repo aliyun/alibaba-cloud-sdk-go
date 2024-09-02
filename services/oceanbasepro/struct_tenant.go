@@ -48,6 +48,7 @@ type Tenant struct {
 	RecycleBinStatus             string                  `json:"RecycleBinStatus" xml:"RecycleBinStatus"`
 	LowerCaseTableNames          int                     `json:"LowerCaseTableNames" xml:"LowerCaseTableNames"`
 	Version                      string                  `json:"Version" xml:"Version"`
+	OdpVersion                   string                  `json:"OdpVersion" xml:"OdpVersion"`
 	AvailableZones               []string                `json:"AvailableZones" xml:"AvailableZones"`
 	TenantResource               TenantResource          `json:"TenantResource" xml:"TenantResource"`
 	ReadOnlyResource             ReadOnlyResource        `json:"ReadOnlyResource" xml:"ReadOnlyResource"`
