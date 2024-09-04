@@ -90,6 +90,7 @@ type GetModelFeatureResponse struct {
 	TrainingSetTable             string         `json:"TrainingSetTable" xml:"TrainingSetTable"`
 	TrainingSetFGTable           string         `json:"TrainingSetFGTable" xml:"TrainingSetFGTable"`
 	ExportTrainingSetTableScript string         `json:"ExportTrainingSetTableScript" xml:"ExportTrainingSetTableScript"`
+	LabelPriorityLevel           int64          `json:"LabelPriorityLevel" xml:"LabelPriorityLevel"`
 	Relations                    Relations      `json:"Relations" xml:"Relations"`
 	Features                     []FeaturesItem `json:"Features" xml:"Features"`
 }

@@ -1,3 +1,8 @@
+2024-09-04 Version: v1.63.12
+- Generated 2023-06-21 for `PaiFeatureStore`.
+- Add RealTimePartitionCountValue in ExportTranSetTable API.
+- Add LabelPriorityLevel in CreateModelFeature API
+
 2024-09-02 Version: v1.63.11
 - Generated 2019-09-01 for `OceanBasePro`.
 undefined
