@@ -17,7 +17,7 @@ package ecs
 
 // ConnectionTrackingConfiguration is a nested struct in ecs response
 type ConnectionTrackingConfiguration struct {
-	TcpEstablishedTimeout       int `json:"TcpEstablishedTimeout" xml:"TcpEstablishedTimeout"`
 	TcpClosedAndTimeWaitTimeout int `json:"TcpClosedAndTimeWaitTimeout" xml:"TcpClosedAndTimeWaitTimeout"`
+	TcpEstablishedTimeout       int `json:"TcpEstablishedTimeout" xml:"TcpEstablishedTimeout"`
 	UdpTimeout                  int `json:"UdpTimeout" xml:"UdpTimeout"`
 }
