@@ -89,7 +89,7 @@ func CreateModifyBundleRequest() (request *ModifyBundleRequest) {
 	request = &ModifyBundleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "ModifyBundle", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "ModifyBundle", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

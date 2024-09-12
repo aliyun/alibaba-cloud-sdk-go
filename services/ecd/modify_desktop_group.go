@@ -71,22 +71,31 @@ func (client *Client) ModifyDesktopGroupWithCallback(request *ModifyDesktopGroup
 // ModifyDesktopGroupRequest is the request struct for api ModifyDesktopGroup
 type ModifyDesktopGroupRequest struct {
 	*requests.RpcRequest
-	Classify         string           `position:"Query" name:"Classify"`
-	ImageId          string           `position:"Query" name:"ImageId"`
-	ScaleStrategyId  string           `position:"Query" name:"ScaleStrategyId"`
-	BindAmount       requests.Integer `position:"Query" name:"BindAmount"`
-	LoadPolicy       requests.Integer `position:"Query" name:"LoadPolicy"`
-	DesktopGroupName string           `position:"Query" name:"DesktopGroupName"`
-	AllowBufferCount requests.Integer `position:"Query" name:"AllowBufferCount"`
-	DesktopGroupId   string           `position:"Query" name:"DesktopGroupId"`
-	MinDesktopsCount requests.Integer `position:"Query" name:"MinDesktopsCount"`
-	MaxDesktopsCount requests.Integer `position:"Query" name:"MaxDesktopsCount"`
-	AllowAutoSetup   requests.Integer `position:"Query" name:"AllowAutoSetup"`
-	Comments         string           `position:"Query" name:"Comments"`
-	ResetType        requests.Integer `position:"Query" name:"ResetType"`
-	OwnBundleId      string           `position:"Query" name:"OwnBundleId"`
-	KeepDuration     requests.Integer `position:"Query" name:"KeepDuration"`
-	PolicyGroupId    string           `position:"Query" name:"PolicyGroupId"`
+	Classify               string           `position:"Query" name:"Classify"`
+	ImageId                string           `position:"Query" name:"ImageId"`
+	ScaleStrategyId        string           `position:"Query" name:"ScaleStrategyId"`
+	DisableSessionConfig   requests.Boolean `position:"Query" name:"DisableSessionConfig"`
+	BindAmount             requests.Integer `position:"Query" name:"BindAmount"`
+	LoadPolicy             requests.Integer `position:"Query" name:"LoadPolicy"`
+	DesktopGroupName       string           `position:"Query" name:"DesktopGroupName"`
+	AllowBufferCount       requests.Integer `position:"Query" name:"AllowBufferCount"`
+	PolicyGroupIds         *[]string        `position:"Query" name:"PolicyGroupIds"  type:"Repeated"`
+	IdleDisconnectDuration requests.Integer `position:"Query" name:"IdleDisconnectDuration"`
+	DesktopGroupId         string           `position:"Query" name:"DesktopGroupId"`
+	MinDesktopsCount       requests.Integer `position:"Query" name:"MinDesktopsCount"`
+	MaxDesktopsCount       requests.Integer `position:"Query" name:"MaxDesktopsCount"`
+	FileSystemId           string           `position:"Query" name:"FileSystemId"`
+	AllowAutoSetup         requests.Integer `position:"Query" name:"AllowAutoSetup"`
+	Comments               string           `position:"Query" name:"Comments"`
+	ResetType              requests.Integer `position:"Query" name:"ResetType"`
+	OwnBundleId            string           `position:"Query" name:"OwnBundleId"`
+	StopDuration           requests.Integer `position:"Query" name:"StopDuration"`
+	RatioThreshold         requests.Float   `position:"Query" name:"RatioThreshold"`
+	KeepDuration           requests.Integer `position:"Query" name:"KeepDuration"`
+	ConnectDuration        requests.Integer `position:"Query" name:"ConnectDuration"`
+	ProfileFollowSwitch    requests.Boolean `position:"Query" name:"ProfileFollowSwitch"`
+	BuyDesktopsCount       requests.Integer `position:"Query" name:"BuyDesktopsCount"`
+	PolicyGroupId          string           `position:"Query" name:"PolicyGroupId"`
 }
 
 // ModifyDesktopGroupResponse is the response struct for api ModifyDesktopGroup
@@ -100,7 +109,7 @@ func CreateModifyDesktopGroupRequest() (request *ModifyDesktopGroupRequest) {
 	request = &ModifyDesktopGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "ModifyDesktopGroup", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "ModifyDesktopGroup", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

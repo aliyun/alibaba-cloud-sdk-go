@@ -91,7 +91,7 @@ func CreateDescribeVirtualMFADevicesRequest() (request *DescribeVirtualMFADevice
 	request = &DescribeVirtualMFADevicesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "DescribeVirtualMFADevices", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "DescribeVirtualMFADevices", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

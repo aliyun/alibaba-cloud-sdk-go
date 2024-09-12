@@ -86,7 +86,7 @@ func CreateDisableDesktopsInGroupRequest() (request *DisableDesktopsInGroupReque
 	request = &DisableDesktopsInGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "DisableDesktopsInGroup", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "DisableDesktopsInGroup", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

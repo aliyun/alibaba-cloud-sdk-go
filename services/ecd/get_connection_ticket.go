@@ -73,6 +73,7 @@ type GetConnectionTicketRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	Uuid                 string           `position:"Query" name:"Uuid"`
+	CommandContent       string           `position:"Query" name:"CommandContent"`
 	Password             string           `position:"Query" name:"Password"`
 	EndUserId            string           `position:"Query" name:"EndUserId"`
 	DesktopId            string           `position:"Query" name:"DesktopId"`
@@ -95,7 +96,7 @@ func CreateGetConnectionTicketRequest() (request *GetConnectionTicketRequest) {
 	request = &GetConnectionTicketRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "GetConnectionTicket", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "GetConnectionTicket", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

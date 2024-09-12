@@ -87,7 +87,7 @@ func CreateGetSpMetadataRequest() (request *GetSpMetadataRequest) {
 	request = &GetSpMetadataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "GetSpMetadata", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "GetSpMetadata", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

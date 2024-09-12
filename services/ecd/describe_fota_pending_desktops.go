@@ -71,9 +71,12 @@ func (client *Client) DescribeFotaPendingDesktopsWithCallback(request *DescribeF
 // DescribeFotaPendingDesktopsRequest is the request struct for api DescribeFotaPendingDesktops
 type DescribeFotaPendingDesktopsRequest struct {
 	*requests.RpcRequest
-	TaskUid    string           `position:"Query" name:"TaskUid"`
-	NextToken  string           `position:"Query" name:"NextToken"`
-	MaxResults requests.Integer `position:"Query" name:"MaxResults"`
+	OfficeSiteId string           `position:"Query" name:"OfficeSiteId"`
+	DesktopName  string           `position:"Query" name:"DesktopName"`
+	TaskUid      string           `position:"Query" name:"TaskUid"`
+	NextToken    string           `position:"Query" name:"NextToken"`
+	MaxResults   requests.Integer `position:"Query" name:"MaxResults"`
+	DesktopId    string           `position:"Query" name:"DesktopId"`
 }
 
 // DescribeFotaPendingDesktopsResponse is the response struct for api DescribeFotaPendingDesktops
@@ -81,6 +84,8 @@ type DescribeFotaPendingDesktopsResponse struct {
 	*responses.BaseResponse
 	NextToken           string               `json:"NextToken" xml:"NextToken"`
 	RequestId           string               `json:"RequestId" xml:"RequestId"`
+	Code                string               `json:"Code" xml:"Code"`
+	Message             string               `json:"Message" xml:"Message"`
 	FotaPendingDesktops []FotaPendingDesktop `json:"FotaPendingDesktops" xml:"FotaPendingDesktops"`
 }
 
@@ -89,8 +94,8 @@ func CreateDescribeFotaPendingDesktopsRequest() (request *DescribeFotaPendingDes
 	request = &DescribeFotaPendingDesktopsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "DescribeFotaPendingDesktops", "", "")
-	request.Method = requests.GET
+	request.InitWithApiInfo("ecd", "2020-09-30", "DescribeFotaPendingDesktops", "gwsecd", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

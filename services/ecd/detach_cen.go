@@ -85,7 +85,7 @@ func CreateDetachCenRequest() (request *DetachCenRequest) {
 	request = &DetachCenRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "DetachCen", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "DetachCen", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

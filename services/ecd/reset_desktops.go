@@ -71,11 +71,13 @@ func (client *Client) ResetDesktopsWithCallback(request *ResetDesktopsRequest, c
 // ResetDesktopsRequest is the request struct for api ResetDesktops
 type ResetDesktopsRequest struct {
 	*requests.RpcRequest
-	ImageId        string    `position:"Query" name:"ImageId"`
-	ResetType      string    `position:"Query" name:"ResetType"`
-	DesktopGroupId string    `position:"Query" name:"DesktopGroupId"`
-	DesktopId      *[]string `position:"Query" name:"DesktopId"  type:"Repeated"`
-	PayType        string    `position:"Query" name:"PayType"`
+	ImageId         string    `position:"Query" name:"ImageId"`
+	ResetScope      string    `position:"Query" name:"ResetScope"`
+	ResetType       string    `position:"Query" name:"ResetType"`
+	DesktopGroupId  string    `position:"Query" name:"DesktopGroupId"`
+	DesktopId       *[]string `position:"Query" name:"DesktopId"  type:"Repeated"`
+	PayType         string    `position:"Query" name:"PayType"`
+	DesktopGroupIds *[]string `position:"Query" name:"DesktopGroupIds"  type:"Repeated"`
 }
 
 // ResetDesktopsResponse is the response struct for api ResetDesktops
@@ -89,7 +91,7 @@ func CreateResetDesktopsRequest() (request *ResetDesktopsRequest) {
 	request = &ResetDesktopsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "ResetDesktops", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "ResetDesktops", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

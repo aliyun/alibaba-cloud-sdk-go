@@ -71,18 +71,28 @@ func (client *Client) DescribeDesktopGroupsWithCallback(request *DescribeDesktop
 // DescribeDesktopGroupsRequest is the request struct for api DescribeDesktopGroups
 type DescribeDesktopGroupsRequest struct {
 	*requests.RpcRequest
-	OfficeSiteId       string           `position:"Query" name:"OfficeSiteId"`
-	EndUserIds         *[]string        `position:"Query" name:"EndUserIds"  type:"Repeated"`
-	DesktopGroupName   string           `position:"Query" name:"DesktopGroupName"`
-	DesktopGroupId     string           `position:"Query" name:"DesktopGroupId"`
-	NextToken          string           `position:"Query" name:"NextToken"`
-	Period             requests.Integer `position:"Query" name:"Period"`
-	OwnType            requests.Integer `position:"Query" name:"OwnType"`
-	ExcludedEndUserIds *[]string        `position:"Query" name:"ExcludedEndUserIds"  type:"Repeated"`
-	PeriodUnit         string           `position:"Query" name:"PeriodUnit"`
-	MaxResults         requests.Integer `position:"Query" name:"MaxResults"`
-	PolicyGroupId      string           `position:"Query" name:"PolicyGroupId"`
-	Status             requests.Integer `position:"Query" name:"Status"`
+	OfficeSiteId       string                      `position:"Query" name:"OfficeSiteId"`
+	EndUserIds         *[]string                   `position:"Query" name:"EndUserIds"  type:"Repeated"`
+	ImageId            *[]string                   `position:"Query" name:"ImageId"  type:"Repeated"`
+	BundleId           *[]string                   `position:"Query" name:"BundleId"  type:"Repeated"`
+	DesktopGroupName   string                      `position:"Query" name:"DesktopGroupName"`
+	DesktopGroupId     string                      `position:"Query" name:"DesktopGroupId"`
+	NextToken          string                      `position:"Query" name:"NextToken"`
+	Tag                *[]DescribeDesktopGroupsTag `position:"Query" name:"Tag"  type:"Repeated"`
+	Period             requests.Integer            `position:"Query" name:"Period"`
+	OwnType            requests.Integer            `position:"Query" name:"OwnType"`
+	ExcludedEndUserIds *[]string                   `position:"Query" name:"ExcludedEndUserIds"  type:"Repeated"`
+	PeriodUnit         string                      `position:"Query" name:"PeriodUnit"`
+	MaxResults         requests.Integer            `position:"Query" name:"MaxResults"`
+	ProtocolType       string                      `position:"Query" name:"ProtocolType"`
+	PolicyGroupId      string                      `position:"Query" name:"PolicyGroupId"`
+	Status             requests.Integer            `position:"Query" name:"Status"`
+}
+
+// DescribeDesktopGroupsTag is a repeated param struct in DescribeDesktopGroupsRequest
+type DescribeDesktopGroupsTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // DescribeDesktopGroupsResponse is the response struct for api DescribeDesktopGroups
@@ -98,7 +108,7 @@ func CreateDescribeDesktopGroupsRequest() (request *DescribeDesktopGroupsRequest
 	request = &DescribeDesktopGroupsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "DescribeDesktopGroups", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "DescribeDesktopGroups", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

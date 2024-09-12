@@ -90,7 +90,7 @@ func CreateDescribeCensRequest() (request *DescribeCensRequest) {
 	request = &DescribeCensRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "DescribeCens", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "DescribeCens", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -85,7 +85,7 @@ func CreateResetSnapshotRequest() (request *ResetSnapshotRequest) {
 	request = &ResetSnapshotRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "ResetSnapshot", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "ResetSnapshot", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

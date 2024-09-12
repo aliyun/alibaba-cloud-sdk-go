@@ -90,7 +90,7 @@ func CreateModifyDiskSpecRequest() (request *ModifyDiskSpecRequest) {
 	request = &ModifyDiskSpecRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "ModifyDiskSpec", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "ModifyDiskSpec", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

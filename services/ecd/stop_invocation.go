@@ -86,7 +86,7 @@ func CreateStopInvocationRequest() (request *StopInvocationRequest) {
 	request = &StopInvocationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "StopInvocation", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "StopInvocation", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

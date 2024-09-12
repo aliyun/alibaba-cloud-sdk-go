@@ -71,38 +71,94 @@ func (client *Client) CreateDesktopsWithCallback(request *CreateDesktopsRequest,
 // CreateDesktopsRequest is the request struct for api CreateDesktops
 type CreateDesktopsRequest struct {
 	*requests.RpcRequest
-	VolumeEncryptionKey     string               `position:"Query" name:"VolumeEncryptionKey"`
-	OfficeSiteId            string               `position:"Query" name:"OfficeSiteId"`
-	ImageId                 string               `position:"Query" name:"ImageId"`
-	BundleId                string               `position:"Query" name:"BundleId"`
-	UserAssignMode          string               `position:"Query" name:"UserAssignMode"`
-	Hostname                string               `position:"Query" name:"Hostname"`
-	DesktopNameSuffix       requests.Boolean     `position:"Query" name:"DesktopNameSuffix"`
-	SystemDiskSize          string               `position:"Query" name:"SystemDiskSize"`
-	DirectoryId             string               `position:"Query" name:"DirectoryId"`
-	EndUserId               *[]string            `position:"Query" name:"EndUserId"  type:"Repeated"`
-	Tag                     *[]CreateDesktopsTag `position:"Query" name:"Tag"  type:"Repeated"`
-	VolumeEncryptionEnabled requests.Boolean     `position:"Query" name:"VolumeEncryptionEnabled"`
-	DesktopName             string               `position:"Query" name:"DesktopName"`
-	Amount                  requests.Integer     `position:"Query" name:"Amount"`
-	Period                  requests.Integer     `position:"Query" name:"Period"`
-	AutoPay                 requests.Boolean     `position:"Query" name:"AutoPay"`
-	GroupId                 string               `position:"Query" name:"GroupId"`
-	EcsInstanceType         string               `position:"Query" name:"EcsInstanceType"`
-	PromotionId             string               `position:"Query" name:"PromotionId"`
-	PeriodUnit              string               `position:"Query" name:"PeriodUnit"`
-	AutoRenew               requests.Boolean     `position:"Query" name:"AutoRenew"`
-	DataDiskSize            string               `position:"Query" name:"DataDiskSize"`
-	VpcId                   string               `position:"Query" name:"VpcId"`
-	ChargeType              string               `position:"Query" name:"ChargeType"`
-	PolicyGroupId           string               `position:"Query" name:"PolicyGroupId"`
-	UserName                string               `position:"Query" name:"UserName"`
+	ResourceGroupId         string                             `position:"Query" name:"ResourceGroupId"`
+	Hostname                string                             `position:"Query" name:"Hostname"`
+	DesktopTimers           *[]CreateDesktopsDesktopTimers     `position:"Query" name:"DesktopTimers"  type:"Repeated"`
+	DesktopNameSuffix       requests.Boolean                   `position:"Query" name:"DesktopNameSuffix"`
+	SystemDiskSize          string                             `position:"Query" name:"SystemDiskSize"`
+	EndUserId               *[]string                          `position:"Query" name:"EndUserId"  type:"Repeated"`
+	Tag                     *[]CreateDesktopsTag               `position:"Query" name:"Tag"  type:"Repeated"`
+	BundleModels            *[]CreateDesktopsBundleModels      `position:"Query" name:"BundleModels"  type:"Repeated"`
+	VolumeEncryptionEnabled requests.Boolean                   `position:"Query" name:"VolumeEncryptionEnabled"`
+	MonthDesktopSetting     CreateDesktopsMonthDesktopSetting  `position:"Query" name:"MonthDesktopSetting"  type:"Struct"`
+	Period                  requests.Integer                   `position:"Query" name:"Period"`
+	CommonDesktopSetting    CreateDesktopsCommonDesktopSetting `position:"Query" name:"CommonDesktopSetting"  type:"Struct"`
+	UserCommands            *[]CreateDesktopsUserCommands      `position:"Query" name:"UserCommands"  type:"Repeated"`
+	GroupId                 string                             `position:"Query" name:"GroupId"`
+	EcsInstanceType         string                             `position:"Query" name:"EcsInstanceType"`
+	PeriodUnit              string                             `position:"Query" name:"PeriodUnit"`
+	AutoRenew               requests.Boolean                   `position:"Query" name:"AutoRenew"`
+	DataDiskSize            string                             `position:"Query" name:"DataDiskSize"`
+	PolicyGroupId           string                             `position:"Query" name:"PolicyGroupId"`
+	VolumeEncryptionKey     string                             `position:"Query" name:"VolumeEncryptionKey"`
+	OfficeSiteId            string                             `position:"Query" name:"OfficeSiteId"`
+	SnapshotPolicyId        string                             `position:"Query" name:"SnapshotPolicyId"`
+	ImageId                 string                             `position:"Query" name:"ImageId"`
+	BundleId                string                             `position:"Query" name:"BundleId"`
+	EnableInternetAccess    requests.Boolean                   `position:"Query" name:"EnableInternetAccess"`
+	UserAssignMode          string                             `position:"Query" name:"UserAssignMode"`
+	DirectoryId             string                             `position:"Query" name:"DirectoryId"`
+	DesktopMemberIp         string                             `position:"Query" name:"DesktopMemberIp"`
+	SubnetId                string                             `position:"Query" name:"SubnetId"`
+	DesktopName             string                             `position:"Query" name:"DesktopName"`
+	Amount                  requests.Integer                   `position:"Query" name:"Amount"`
+	AutoPay                 requests.Boolean                   `position:"Query" name:"AutoPay"`
+	PromotionId             string                             `position:"Query" name:"PromotionId"`
+	VpcId                   string                             `position:"Query" name:"VpcId"`
+	ChargeType              string                             `position:"Query" name:"ChargeType"`
+	UserName                string                             `position:"Query" name:"UserName"`
+}
+
+// CreateDesktopsDesktopTimers is a repeated param struct in CreateDesktopsRequest
+type CreateDesktopsDesktopTimers struct {
+	CronExpression     string `name:"CronExpression"`
+	TimerType          string `name:"TimerType"`
+	AllowClientSetting string `name:"AllowClientSetting"`
+	ResetType          string `name:"ResetType"`
+	Enforce            string `name:"Enforce"`
+	Interval           string `name:"Interval"`
+	OperationType      string `name:"OperationType"`
 }
 
 // CreateDesktopsTag is a repeated param struct in CreateDesktopsRequest
 type CreateDesktopsTag struct {
 	Value string `name:"Value"`
 	Key   string `name:"Key"`
+}
+
+// CreateDesktopsBundleModels is a repeated param struct in CreateDesktopsRequest
+type CreateDesktopsBundleModels struct {
+	VolumeEncryptionEnabled string    `name:"VolumeEncryptionEnabled"`
+	VolumeEncryptionKey     string    `name:"VolumeEncryptionKey"`
+	Amount                  string    `name:"Amount"`
+	DesktopName             string    `name:"DesktopName"`
+	Hostname                string    `name:"Hostname"`
+	EndUserIds              *[]string `name:"EndUserIds" type:"Repeated"`
+	BundleId                string    `name:"BundleId"`
+}
+
+// CreateDesktopsMonthDesktopSetting is a repeated param struct in CreateDesktopsRequest
+type CreateDesktopsMonthDesktopSetting struct {
+	PostPaidAfterUsedUp string `name:"PostPaidAfterUsedUp"`
+	DesktopId           string `name:"DesktopId"`
+	UseDuration         string `name:"UseDuration"`
+	BuyerId             string `name:"BuyerId"`
+}
+
+// CreateDesktopsCommonDesktopSetting is a repeated param struct in CreateDesktopsRequest
+type CreateDesktopsCommonDesktopSetting struct {
+	DesktopClassify string `name:"DesktopClassify"`
+	UsingPool       string `name:"UsingPool"`
+	DelayProduct    string `name:"DelayProduct"`
+	DesktopId       string `name:"DesktopId"`
+	UseDuration     string `name:"UseDuration"`
+}
+
+// CreateDesktopsUserCommands is a repeated param struct in CreateDesktopsRequest
+type CreateDesktopsUserCommands struct {
+	ContentEncoding string `name:"ContentEncoding"`
+	Content         string `name:"Content"`
+	ContentType     string `name:"ContentType"`
 }
 
 // CreateDesktopsResponse is the response struct for api CreateDesktops
@@ -118,7 +174,7 @@ func CreateCreateDesktopsRequest() (request *CreateDesktopsRequest) {
 	request = &CreateDesktopsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "CreateDesktops", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "CreateDesktops", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

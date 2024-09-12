@@ -91,7 +91,7 @@ func CreateVerifyCenRequest() (request *VerifyCenRequest) {
 	request = &VerifyCenRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "VerifyCen", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "VerifyCen", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -85,7 +85,7 @@ func CreateDeleteDesktopsRequest() (request *DeleteDesktopsRequest) {
 	request = &DeleteDesktopsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "DeleteDesktops", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "DeleteDesktops", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

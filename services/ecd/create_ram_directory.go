@@ -90,7 +90,7 @@ func CreateCreateRAMDirectoryRequest() (request *CreateRAMDirectoryRequest) {
 	request = &CreateRAMDirectoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "CreateRAMDirectory", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "CreateRAMDirectory", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

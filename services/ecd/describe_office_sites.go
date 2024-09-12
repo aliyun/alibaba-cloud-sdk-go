@@ -71,11 +71,17 @@ func (client *Client) DescribeOfficeSitesWithCallback(request *DescribeOfficeSit
 // DescribeOfficeSitesRequest is the request struct for api DescribeOfficeSites
 type DescribeOfficeSitesRequest struct {
 	*requests.RpcRequest
-	OfficeSiteId   *[]string        `position:"Query" name:"OfficeSiteId"  type:"Repeated"`
-	OfficeSiteType string           `position:"Query" name:"OfficeSiteType"`
-	NextToken      string           `position:"Query" name:"NextToken"`
-	MaxResults     requests.Integer `position:"Query" name:"MaxResults"`
-	Status         string           `position:"Query" name:"Status"`
+	OfficeSiteId         *[]string        `position:"Query" name:"OfficeSiteId"  type:"Repeated"`
+	VpcType              string           `position:"Query" name:"VpcType"`
+	NmVersion            string           `position:"Query" name:"NmVersion"`
+	EnableInternetAccess requests.Boolean `position:"Query" name:"EnableInternetAccess"`
+	VpcNotNone           requests.Boolean `position:"Query" name:"VpcNotNone"`
+	OfficeSiteType       string           `position:"Query" name:"OfficeSiteType"`
+	NextToken            string           `position:"Query" name:"NextToken"`
+	SecurityProtection   string           `position:"Query" name:"SecurityProtection"`
+	Name                 string           `position:"Query" name:"Name"`
+	MaxResults           requests.Integer `position:"Query" name:"MaxResults"`
+	Status               string           `position:"Query" name:"Status"`
 }
 
 // DescribeOfficeSitesResponse is the response struct for api DescribeOfficeSites
@@ -83,6 +89,7 @@ type DescribeOfficeSitesResponse struct {
 	*responses.BaseResponse
 	NextToken   string       `json:"NextToken" xml:"NextToken"`
 	RequestId   string       `json:"RequestId" xml:"RequestId"`
+	TotalCount  int          `json:"TotalCount" xml:"TotalCount"`
 	OfficeSites []OfficeSite `json:"OfficeSites" xml:"OfficeSites"`
 }
 
@@ -91,7 +98,7 @@ func CreateDescribeOfficeSitesRequest() (request *DescribeOfficeSitesRequest) {
 	request = &DescribeOfficeSitesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "DescribeOfficeSites", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "DescribeOfficeSites", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

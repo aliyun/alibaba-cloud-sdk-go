@@ -87,7 +87,7 @@ func CreateModifyUserToDesktopGroupRequest() (request *ModifyUserToDesktopGroupR
 	request = &ModifyUserToDesktopGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "ModifyUserToDesktopGroup", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "ModifyUserToDesktopGroup", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

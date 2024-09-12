@@ -86,7 +86,7 @@ func CreateUpdateFotaTaskRequest() (request *UpdateFotaTaskRequest) {
 	request = &UpdateFotaTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "UpdateFotaTask", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "UpdateFotaTask", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

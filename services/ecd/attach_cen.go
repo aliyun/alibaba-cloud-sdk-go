@@ -88,7 +88,7 @@ func CreateAttachCenRequest() (request *AttachCenRequest) {
 	request = &AttachCenRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "AttachCen", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "AttachCen", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -78,9 +78,11 @@ type ModifyADConnectorOfficeSiteRequest struct {
 	AdHostname          string           `position:"Query" name:"AdHostname"`
 	DomainName          string           `position:"Query" name:"DomainName"`
 	OfficeSiteName      string           `position:"Query" name:"OfficeSiteName"`
+	BackupDns           string           `position:"Query" name:"BackupDns"`
 	MfaEnabled          requests.Boolean `position:"Query" name:"MfaEnabled"`
 	DomainUserName      string           `position:"Query" name:"DomainUserName"`
 	DnsAddress          *[]string        `position:"Query" name:"DnsAddress"  type:"Repeated"`
+	BackupDCHostname    string           `position:"Query" name:"BackupDCHostname"`
 	OUName              string           `position:"Query" name:"OUName"`
 }
 
@@ -95,7 +97,7 @@ func CreateModifyADConnectorOfficeSiteRequest() (request *ModifyADConnectorOffic
 	request = &ModifyADConnectorOfficeSiteRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "ModifyADConnectorOfficeSite", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "ModifyADConnectorOfficeSite", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

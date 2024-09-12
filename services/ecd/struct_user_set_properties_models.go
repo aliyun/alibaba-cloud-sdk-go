@@ -17,10 +17,5 @@ package ecd
 
 // UserSetPropertiesModels is a nested struct in ecd response
 type UserSetPropertiesModels struct {
-	PropertyId     int64            `json:"PropertyId" xml:"PropertyId"`
-	UserName       string           `json:"UserName" xml:"UserName"`
-	PropertyKey    string           `json:"PropertyKey" xml:"PropertyKey"`
-	UserId         int64            `json:"UserId" xml:"UserId"`
-	PropertyType   int              `json:"PropertyType" xml:"PropertyType"`
-	PropertyValues []PropertyValues `json:"PropertyValues" xml:"PropertyValues"`
+	UserSetPropertiesModelsItem []UserSetPropertiesModelsItem `json:"userSetPropertiesModels" xml:"userSetPropertiesModels"`
 }

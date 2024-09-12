@@ -86,7 +86,7 @@ func CreateModifyOfficeSiteCrossDesktopAccessRequest() (request *ModifyOfficeSit
 	request = &ModifyOfficeSiteCrossDesktopAccessRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "ModifyOfficeSiteCrossDesktopAccess", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "ModifyOfficeSiteCrossDesktopAccess", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

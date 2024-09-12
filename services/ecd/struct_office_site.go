@@ -39,17 +39,29 @@ type OfficeSite struct {
 	SubDomainName            string        `json:"SubDomainName" xml:"SubDomainName"`
 	OfficeSiteId             string        `json:"OfficeSiteId" xml:"OfficeSiteId"`
 	CenId                    string        `json:"CenId" xml:"CenId"`
+	CenAttachStatus          string        `json:"CenAttachStatus" xml:"CenAttachStatus"`
 	MfaEnabled               bool          `json:"MfaEnabled" xml:"MfaEnabled"`
 	NetworkPackageId         string        `json:"NetworkPackageId" xml:"NetworkPackageId"`
 	DnsUserName              string        `json:"DnsUserName" xml:"DnsUserName"`
 	OfficeSiteType           string        `json:"OfficeSiteType" xml:"OfficeSiteType"`
 	NeedVerifyLoginRisk      bool          `json:"NeedVerifyLoginRisk" xml:"NeedVerifyLoginRisk"`
 	DesktopCount             int64         `json:"DesktopCount" xml:"DesktopCount"`
+	TotalEdsCount            int64         `json:"TotalEdsCount" xml:"TotalEdsCount"`
+	TotalEdsCountForGroup    int64         `json:"TotalEdsCountForGroup" xml:"TotalEdsCountForGroup"`
 	NeedVerifyZeroDevice     bool          `json:"NeedVerifyZeroDevice" xml:"NeedVerifyZeroDevice"`
 	CloudBoxOfficeSite       bool          `json:"CloudBoxOfficeSite" xml:"CloudBoxOfficeSite"`
 	SsoType                  string        `json:"SsoType" xml:"SsoType"`
 	ProtocolType             string        `json:"ProtocolType" xml:"ProtocolType"`
 	AdHostname               string        `json:"AdHostname" xml:"AdHostname"`
+	RdsLicenseStatus         string        `json:"RdsLicenseStatus" xml:"RdsLicenseStatus"`
+	RdsLicenseAddress        string        `json:"RdsLicenseAddress" xml:"RdsLicenseAddress"`
+	RdsLicenseDomainName     string        `json:"RdsLicenseDomainName" xml:"RdsLicenseDomainName"`
+	BackupDns                string        `json:"BackupDns" xml:"BackupDns"`
+	BackupDCHostname         string        `json:"BackupDCHostname" xml:"BackupDCHostname"`
+	EnableServiceRoute       bool          `json:"EnableServiceRoute" xml:"EnableServiceRoute"`
+	SubnetMode               string        `json:"SubnetMode" xml:"SubnetMode"`
+	SecurityProtection       string        `json:"SecurityProtection" xml:"SecurityProtection"`
+	CustomAccessPoint        string        `json:"CustomAccessPoint" xml:"CustomAccessPoint"`
 	VSwitchIds               []string      `json:"VSwitchIds" xml:"VSwitchIds"`
 	FileSystemIds            []string      `json:"FileSystemIds" xml:"FileSystemIds"`
 	SubDnsAddress            []string      `json:"SubDnsAddress" xml:"SubDnsAddress"`

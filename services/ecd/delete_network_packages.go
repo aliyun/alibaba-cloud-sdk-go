@@ -85,7 +85,7 @@ func CreateDeleteNetworkPackagesRequest() (request *DeleteNetworkPackagesRequest
 	request = &DeleteNetworkPackagesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "DeleteNetworkPackages", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "DeleteNetworkPackages", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

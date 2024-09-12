@@ -86,7 +86,7 @@ func CreateDescribeImagePermissionRequest() (request *DescribeImagePermissionReq
 	request = &DescribeImagePermissionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "DescribeImagePermission", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "DescribeImagePermission", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

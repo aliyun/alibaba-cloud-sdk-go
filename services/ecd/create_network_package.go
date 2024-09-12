@@ -79,6 +79,7 @@ type CreateNetworkPackageRequest struct {
 	PeriodUnit         string           `position:"Query" name:"PeriodUnit"`
 	AutoRenew          requests.Boolean `position:"Query" name:"AutoRenew"`
 	InternetChargeType string           `position:"Query" name:"InternetChargeType"`
+	PayType            string           `position:"Query" name:"PayType"`
 }
 
 // CreateNetworkPackageResponse is the response struct for api CreateNetworkPackage
@@ -94,7 +95,7 @@ func CreateCreateNetworkPackageRequest() (request *CreateNetworkPackageRequest) 
 	request = &CreateNetworkPackageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "CreateNetworkPackage", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "CreateNetworkPackage", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

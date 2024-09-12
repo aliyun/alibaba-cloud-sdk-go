@@ -71,7 +71,8 @@ func (client *Client) DeleteImagesWithCallback(request *DeleteImagesRequest, cal
 // DeleteImagesRequest is the request struct for api DeleteImages
 type DeleteImagesRequest struct {
 	*requests.RpcRequest
-	ImageId *[]string `position:"Query" name:"ImageId"  type:"Repeated"`
+	ImageId              *[]string        `position:"Query" name:"ImageId"  type:"Repeated"`
+	DeleteCascadedBundle requests.Boolean `position:"Query" name:"DeleteCascadedBundle"`
 }
 
 // DeleteImagesResponse is the response struct for api DeleteImages
@@ -85,7 +86,7 @@ func CreateDeleteImagesRequest() (request *DeleteImagesRequest) {
 	request = &DeleteImagesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "DeleteImages", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "DeleteImages", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

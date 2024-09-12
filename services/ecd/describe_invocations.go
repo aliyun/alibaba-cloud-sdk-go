@@ -71,15 +71,17 @@ func (client *Client) DescribeInvocationsWithCallback(request *DescribeInvocatio
 // DescribeInvocationsRequest is the request struct for api DescribeInvocations
 type DescribeInvocationsRequest struct {
 	*requests.RpcRequest
-	InvokeStatus    string           `position:"Query" name:"InvokeStatus"`
-	IncludeOutput   requests.Boolean `position:"Query" name:"IncludeOutput"`
-	NextToken       string           `position:"Query" name:"NextToken"`
-	ContentEncoding string           `position:"Query" name:"ContentEncoding"`
-	EndUserId       string           `position:"Query" name:"EndUserId"`
-	DesktopId       string           `position:"Query" name:"DesktopId"`
-	InvokeId        string           `position:"Query" name:"InvokeId"`
-	CommandType     string           `position:"Query" name:"CommandType"`
-	MaxResults      requests.Integer `position:"Query" name:"MaxResults"`
+	InvokeStatus          string           `position:"Query" name:"InvokeStatus"`
+	DesktopIds            *[]string        `position:"Query" name:"DesktopIds"  type:"Repeated"`
+	IncludeOutput         requests.Boolean `position:"Query" name:"IncludeOutput"`
+	NextToken             string           `position:"Query" name:"NextToken"`
+	ContentEncoding       string           `position:"Query" name:"ContentEncoding"`
+	EndUserId             string           `position:"Query" name:"EndUserId"`
+	DesktopId             string           `position:"Query" name:"DesktopId"`
+	InvokeId              string           `position:"Query" name:"InvokeId"`
+	CommandType           string           `position:"Query" name:"CommandType"`
+	MaxResults            requests.Integer `position:"Query" name:"MaxResults"`
+	IncludeInvokeDesktops requests.Boolean `position:"Query" name:"IncludeInvokeDesktops"`
 }
 
 // DescribeInvocationsResponse is the response struct for api DescribeInvocations
@@ -95,7 +97,7 @@ func CreateDescribeInvocationsRequest() (request *DescribeInvocationsRequest) {
 	request = &DescribeInvocationsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "DescribeInvocations", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "DescribeInvocations", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

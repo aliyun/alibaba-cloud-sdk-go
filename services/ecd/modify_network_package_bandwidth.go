@@ -89,7 +89,7 @@ func CreateModifyNetworkPackageBandwidthRequest() (request *ModifyNetworkPackage
 	request = &ModifyNetworkPackageBandwidthRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "ModifyNetworkPackageBandwidth", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "ModifyNetworkPackageBandwidth", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

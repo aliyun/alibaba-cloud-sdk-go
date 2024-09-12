@@ -21,4 +21,6 @@ type FotaUpdate struct {
 	NewAppVersion     string `json:"NewAppVersion" xml:"NewAppVersion"`
 	ReleaseNote       string `json:"ReleaseNote" xml:"ReleaseNote"`
 	Size              int64  `json:"Size" xml:"Size"`
+	ReleaseNoteEn     string `json:"ReleaseNoteEn" xml:"ReleaseNoteEn"`
+	ReleaseNoteJp     string `json:"ReleaseNoteJp" xml:"ReleaseNoteJp"`
 }

@@ -85,11 +85,13 @@ type CreateADConnectorOfficeSiteRequest struct {
 	DomainName           string           `position:"Query" name:"DomainName"`
 	Specification        requests.Integer `position:"Query" name:"Specification"`
 	OfficeSiteName       string           `position:"Query" name:"OfficeSiteName"`
+	BackupDns            string           `position:"Query" name:"BackupDns"`
 	MfaEnabled           requests.Boolean `position:"Query" name:"MfaEnabled"`
 	DomainUserName       string           `position:"Query" name:"DomainUserName"`
 	CidrBlock            string           `position:"Query" name:"CidrBlock"`
 	ProtocolType         string           `position:"Query" name:"ProtocolType"`
 	DnsAddress           *[]string        `position:"Query" name:"DnsAddress"  type:"Repeated"`
+	BackupDCHostname     string           `position:"Query" name:"BackupDCHostname"`
 }
 
 // CreateADConnectorOfficeSiteResponse is the response struct for api CreateADConnectorOfficeSite
@@ -104,7 +106,7 @@ func CreateCreateADConnectorOfficeSiteRequest() (request *CreateADConnectorOffic
 	request = &CreateADConnectorOfficeSiteRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "CreateADConnectorOfficeSite", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "CreateADConnectorOfficeSite", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

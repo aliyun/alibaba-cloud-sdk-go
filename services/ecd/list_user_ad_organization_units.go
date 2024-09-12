@@ -71,13 +71,17 @@ func (client *Client) ListUserAdOrganizationUnitsWithCallback(request *ListUserA
 // ListUserAdOrganizationUnitsRequest is the request struct for api ListUserAdOrganizationUnits
 type ListUserAdOrganizationUnitsRequest struct {
 	*requests.RpcRequest
-	OfficeSiteId string `position:"Query" name:"OfficeSiteId"`
+	OfficeSiteId string           `position:"Query" name:"OfficeSiteId"`
+	Filter       string           `position:"Query" name:"Filter"`
+	NextToken    string           `position:"Query" name:"NextToken"`
+	MaxResults   requests.Integer `position:"Query" name:"MaxResults"`
 }
 
 // ListUserAdOrganizationUnitsResponse is the response struct for api ListUserAdOrganizationUnits
 type ListUserAdOrganizationUnitsResponse struct {
 	*responses.BaseResponse
 	RequestId string   `json:"RequestId" xml:"RequestId"`
+	NextToken string   `json:"NextToken" xml:"NextToken"`
 	OUNames   []OuName `json:"OUNames" xml:"OUNames"`
 }
 
@@ -86,7 +90,7 @@ func CreateListUserAdOrganizationUnitsRequest() (request *ListUserAdOrganization
 	request = &ListUserAdOrganizationUnitsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "ListUserAdOrganizationUnits", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "ListUserAdOrganizationUnits", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

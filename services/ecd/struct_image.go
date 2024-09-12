@@ -35,5 +35,7 @@ type Image struct {
 	VolumeEncryptionKey     string   `json:"VolumeEncryptionKey" xml:"VolumeEncryptionKey"`
 	SharedCount             int      `json:"SharedCount" xml:"SharedCount"`
 	SessionType             string   `json:"SessionType" xml:"SessionType"`
+	UpdateTime              string   `json:"UpdateTime" xml:"UpdateTime"`
+	Platform                string   `json:"Platform" xml:"Platform"`
 	SupportedLanguages      []string `json:"SupportedLanguages" xml:"SupportedLanguages"`
 }

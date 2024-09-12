@@ -87,7 +87,7 @@ func CreateModifyImagePermissionRequest() (request *ModifyImagePermissionRequest
 	request = &ModifyImagePermissionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "ModifyImagePermission", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "ModifyImagePermission", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

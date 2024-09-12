@@ -88,7 +88,7 @@ func CreateSetIdpMetadataRequest() (request *SetIdpMetadataRequest) {
 	request = &SetIdpMetadataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "SetIdpMetadata", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "SetIdpMetadata", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

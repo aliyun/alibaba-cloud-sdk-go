@@ -20,4 +20,5 @@ type TimerInfo struct {
 	Status         int    `json:"Status" xml:"Status"`
 	CronExpression string `json:"CronExpression" xml:"CronExpression"`
 	TimerType      int    `json:"TimerType" xml:"TimerType"`
+	Forced         bool   `json:"Forced" xml:"Forced"`
 }

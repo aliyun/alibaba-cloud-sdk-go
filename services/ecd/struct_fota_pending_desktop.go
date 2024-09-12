@@ -17,9 +17,11 @@ package ecd
 
 // FotaPendingDesktop is a nested struct in ecd response
 type FotaPendingDesktop struct {
-	DesktopId         string `json:"DesktopId" xml:"DesktopId"`
-	DesktopName       string `json:"DesktopName" xml:"DesktopName"`
-	OfficeSiteId      string `json:"OfficeSiteId" xml:"OfficeSiteId"`
-	FotaProject       string `json:"FotaProject" xml:"FotaProject"`
-	CurrentAppVersion string `json:"CurrentAppVersion" xml:"CurrentAppVersion"`
+	DesktopId         string    `json:"DesktopId" xml:"DesktopId"`
+	DesktopName       string    `json:"DesktopName" xml:"DesktopName"`
+	OfficeSiteId      string    `json:"OfficeSiteId" xml:"OfficeSiteId"`
+	FotaProject       string    `json:"FotaProject" xml:"FotaProject"`
+	CurrentAppVersion string    `json:"CurrentAppVersion" xml:"CurrentAppVersion"`
+	Status            int64     `json:"Status" xml:"Status"`
+	Sessions          []Session `json:"Sessions" xml:"Sessions"`
 }

@@ -23,5 +23,8 @@ type Recording struct {
 	RecordingType string   `json:"RecordingType" xml:"RecordingType"`
 	RecordingSize int      `json:"RecordingSize" xml:"RecordingSize"`
 	DesktopId     string   `json:"DesktopId" xml:"DesktopId"`
+	PolicyGroupId string   `json:"PolicyGroupId" xml:"PolicyGroupId"`
+	DesktopName   string   `json:"DesktopName" xml:"DesktopName"`
+	SignedUrl     string   `json:"SignedUrl" xml:"SignedUrl"`
 	EndUserIds    []string `json:"EndUserIds" xml:"EndUserIds"`
 }

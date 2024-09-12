@@ -86,7 +86,7 @@ func CreateModifyDesktopNameRequest() (request *ModifyDesktopNameRequest) {
 	request = &ModifyDesktopNameRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "ModifyDesktopName", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "ModifyDesktopName", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

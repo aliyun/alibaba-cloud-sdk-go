@@ -90,7 +90,7 @@ func CreateRenewNetworkPackagesRequest() (request *RenewNetworkPackagesRequest) 
 	request = &RenewNetworkPackagesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "RenewNetworkPackages", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "RenewNetworkPackages", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -71,8 +71,10 @@ func (client *Client) ModifyDesktopsPolicyGroupWithCallback(request *ModifyDeskt
 // ModifyDesktopsPolicyGroupRequest is the request struct for api ModifyDesktopsPolicyGroup
 type ModifyDesktopsPolicyGroupRequest struct {
 	*requests.RpcRequest
-	DesktopId     *[]string `position:"Query" name:"DesktopId"  type:"Repeated"`
-	PolicyGroupId string    `position:"Query" name:"PolicyGroupId"`
+	PreCheck       requests.Boolean `position:"Query" name:"PreCheck"`
+	PolicyGroupIds *[]string        `position:"Query" name:"PolicyGroupIds"  type:"Repeated"`
+	DesktopId      *[]string        `position:"Query" name:"DesktopId"  type:"Repeated"`
+	PolicyGroupId  string           `position:"Query" name:"PolicyGroupId"`
 }
 
 // ModifyDesktopsPolicyGroupResponse is the response struct for api ModifyDesktopsPolicyGroup
@@ -87,7 +89,7 @@ func CreateModifyDesktopsPolicyGroupRequest() (request *ModifyDesktopsPolicyGrou
 	request = &ModifyDesktopsPolicyGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "ModifyDesktopsPolicyGroup", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "ModifyDesktopsPolicyGroup", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

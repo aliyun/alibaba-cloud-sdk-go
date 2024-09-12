@@ -91,7 +91,7 @@ func CreateRunCommandRequest() (request *RunCommandRequest) {
 	request = &RunCommandRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "RunCommand", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "RunCommand", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -71,7 +71,9 @@ func (client *Client) DescribeUsersInGroupWithCallback(request *DescribeUsersInG
 // DescribeUsersInGroupRequest is the request struct for api DescribeUsersInGroup
 type DescribeUsersInGroupRequest struct {
 	*requests.RpcRequest
+	EndUserIds      *[]string        `position:"Query" name:"EndUserIds"  type:"Repeated"`
 	ConnectState    requests.Integer `position:"Query" name:"ConnectState"`
+	OrgId           string           `position:"Query" name:"OrgId"`
 	Filter          string           `position:"Query" name:"Filter"`
 	DesktopGroupId  string           `position:"Query" name:"DesktopGroupId"`
 	NextToken       string           `position:"Query" name:"NextToken"`
@@ -95,7 +97,7 @@ func CreateDescribeUsersInGroupRequest() (request *DescribeUsersInGroupRequest) 
 	request = &DescribeUsersInGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "DescribeUsersInGroup", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "DescribeUsersInGroup", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

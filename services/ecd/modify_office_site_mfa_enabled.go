@@ -86,7 +86,7 @@ func CreateModifyOfficeSiteMfaEnabledRequest() (request *ModifyOfficeSiteMfaEnab
 	request = &ModifyOfficeSiteMfaEnabledRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "ModifyOfficeSiteMfaEnabled", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "ModifyOfficeSiteMfaEnabled", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

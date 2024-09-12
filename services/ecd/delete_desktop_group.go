@@ -85,7 +85,7 @@ func CreateDeleteDesktopGroupRequest() (request *DeleteDesktopGroupRequest) {
 	request = &DeleteDesktopGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "DeleteDesktopGroup", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "DeleteDesktopGroup", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

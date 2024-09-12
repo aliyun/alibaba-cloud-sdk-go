@@ -71,6 +71,7 @@ func (client *Client) CreateSimpleOfficeSiteWithCallback(request *CreateSimpleOf
 // CreateSimpleOfficeSiteRequest is the request struct for api CreateSimpleOfficeSite
 type CreateSimpleOfficeSiteRequest struct {
 	*requests.RpcRequest
+	VpcType              string           `position:"Query" name:"VpcType"`
 	CenId                string           `position:"Query" name:"CenId"`
 	CenOwnerId           requests.Integer `position:"Query" name:"CenOwnerId"`
 	EnableInternetAccess requests.Boolean `position:"Query" name:"EnableInternetAccess"`
@@ -82,6 +83,7 @@ type CreateSimpleOfficeSiteRequest struct {
 	OfficeSiteName       string           `position:"Query" name:"OfficeSiteName"`
 	CloudBoxOfficeSite   requests.Boolean `position:"Query" name:"CloudBoxOfficeSite"`
 	VSwitchId            *[]string        `position:"Query" name:"VSwitchId"  type:"Repeated"`
+	VpcId                string           `position:"Query" name:"VpcId"`
 	CidrBlock            string           `position:"Query" name:"CidrBlock"`
 }
 
@@ -97,7 +99,7 @@ func CreateCreateSimpleOfficeSiteRequest() (request *CreateSimpleOfficeSiteReque
 	request = &CreateSimpleOfficeSiteRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "CreateSimpleOfficeSite", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "CreateSimpleOfficeSite", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

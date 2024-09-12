@@ -28,6 +28,11 @@ type Snapshot struct {
 	SourceDiskSize          string `json:"SourceDiskSize" xml:"SourceDiskSize"`
 	SourceDiskType          string `json:"SourceDiskType" xml:"SourceDiskType"`
 	DesktopId               string `json:"DesktopId" xml:"DesktopId"`
+	DesktopName             string `json:"DesktopName" xml:"DesktopName"`
+	DesktopStatus           string `json:"DesktopStatus" xml:"DesktopStatus"`
+	Creator                 string `json:"Creator" xml:"Creator"`
+	ProtocolType            string `json:"ProtocolType" xml:"ProtocolType"`
 	VolumeEncryptionEnabled bool   `json:"VolumeEncryptionEnabled" xml:"VolumeEncryptionEnabled"`
 	VolumeEncryptionKey     string `json:"VolumeEncryptionKey" xml:"VolumeEncryptionKey"`
+	DeletionTime            string `json:"DeletionTime" xml:"DeletionTime"`
 }

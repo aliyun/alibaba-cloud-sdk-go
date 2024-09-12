@@ -86,7 +86,7 @@ func CreateGetOfficeSiteSsoStatusRequest() (request *GetOfficeSiteSsoStatusReque
 	request = &GetOfficeSiteSsoStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "GetOfficeSiteSsoStatus", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "GetOfficeSiteSsoStatus", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

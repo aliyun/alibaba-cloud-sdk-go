@@ -71,8 +71,15 @@ func (client *Client) DescribeRecordingsWithCallback(request *DescribeRecordings
 // DescribeRecordingsRequest is the request struct for api DescribeRecordings
 type DescribeRecordingsRequest struct {
 	*requests.RpcRequest
-	NextToken  string           `position:"Query" name:"NextToken"`
-	MaxResults requests.Integer `position:"Query" name:"MaxResults"`
+	NeedSignedUrl          requests.Boolean `position:"Query" name:"NeedSignedUrl"`
+	SignedUrlExpireMinutes requests.Integer `position:"Query" name:"SignedUrlExpireMinutes"`
+	StartTime              string           `position:"Query" name:"StartTime"`
+	NextToken              string           `position:"Query" name:"NextToken"`
+	EndUserId              string           `position:"Query" name:"EndUserId"`
+	DesktopId              string           `position:"Query" name:"DesktopId"`
+	EndTime                string           `position:"Query" name:"EndTime"`
+	MaxResults             requests.Integer `position:"Query" name:"MaxResults"`
+	PolicyGroupId          string           `position:"Query" name:"PolicyGroupId"`
 }
 
 // DescribeRecordingsResponse is the response struct for api DescribeRecordings
@@ -88,7 +95,7 @@ func CreateDescribeRecordingsRequest() (request *DescribeRecordingsRequest) {
 	request = &DescribeRecordingsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "DescribeRecordings", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "DescribeRecordings", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

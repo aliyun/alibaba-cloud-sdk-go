@@ -85,7 +85,7 @@ func CreateDeleteVirtualMFADeviceRequest() (request *DeleteVirtualMFADeviceReque
 	request = &DeleteVirtualMFADeviceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "DeleteVirtualMFADevice", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "DeleteVirtualMFADevice", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

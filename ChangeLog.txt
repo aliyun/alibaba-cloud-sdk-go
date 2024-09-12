@@ -1,3 +1,7 @@
+2024-09-12 Version: v1.63.15
+- Generated 2020-09-30 for `ecd`.
+- CreateDesktops with ResourceGroupId.
+
 2024-09-10 Version: v1.63.14
 - Generated 2014-05-26 for `Ecs`.
 - Update EBS default encrypted APIs from private to public.

@@ -87,7 +87,7 @@ func CreateRemoveUserFromDesktopGroupRequest() (request *RemoveUserFromDesktopGr
 	request = &RemoveUserFromDesktopGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "RemoveUserFromDesktopGroup", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "RemoveUserFromDesktopGroup", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

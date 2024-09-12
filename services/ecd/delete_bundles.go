@@ -85,7 +85,7 @@ func CreateDeleteBundlesRequest() (request *DeleteBundlesRequest) {
 	request = &DeleteBundlesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "DeleteBundles", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "DeleteBundles", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -76,8 +76,11 @@ type DescribeImagesRequest struct {
 	DesktopInstanceType string           `position:"Query" name:"DesktopInstanceType"`
 	LanguageType        string           `position:"Query" name:"LanguageType"`
 	NextToken           string           `position:"Query" name:"NextToken"`
+	ImageName           string           `position:"Query" name:"ImageName"`
 	FotaChannel         string           `position:"Query" name:"FotaChannel"`
 	ImageType           string           `position:"Query" name:"ImageType"`
+	FotaVersion         string           `position:"Query" name:"FotaVersion"`
+	SessionType         string           `position:"Query" name:"SessionType"`
 	OsType              string           `position:"Query" name:"OsType"`
 	ImageStatus         string           `position:"Query" name:"ImageStatus"`
 	MaxResults          requests.Integer `position:"Query" name:"MaxResults"`
@@ -98,7 +101,7 @@ func CreateDescribeImagesRequest() (request *DescribeImagesRequest) {
 	request = &DescribeImagesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "DescribeImages", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "DescribeImages", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -85,7 +85,7 @@ func CreateActivateOfficeSiteRequest() (request *ActivateOfficeSiteRequest) {
 	request = &ActivateOfficeSiteRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "ActivateOfficeSite", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "ActivateOfficeSite", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

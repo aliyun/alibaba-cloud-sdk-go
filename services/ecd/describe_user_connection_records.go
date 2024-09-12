@@ -98,7 +98,7 @@ func CreateDescribeUserConnectionRecordsRequest() (request *DescribeUserConnecti
 	request = &DescribeUserConnectionRecordsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "DescribeUserConnectionRecords", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "DescribeUserConnectionRecords", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

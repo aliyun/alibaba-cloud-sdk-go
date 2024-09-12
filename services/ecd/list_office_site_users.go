@@ -91,7 +91,7 @@ func CreateListOfficeSiteUsersRequest() (request *ListOfficeSiteUsersRequest) {
 	request = &ListOfficeSiteUsersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "ListOfficeSiteUsers", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "ListOfficeSiteUsers", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

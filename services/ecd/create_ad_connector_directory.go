@@ -99,7 +99,7 @@ func CreateCreateADConnectorDirectoryRequest() (request *CreateADConnectorDirect
 	request = &CreateADConnectorDirectoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "CreateADConnectorDirectory", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "CreateADConnectorDirectory", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

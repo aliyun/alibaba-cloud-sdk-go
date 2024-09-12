@@ -85,7 +85,7 @@ func CreateDissociateNetworkPackageRequest() (request *DissociateNetworkPackageR
 	request = &DissociateNetworkPackageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "DissociateNetworkPackage", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "DissociateNetworkPackage", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

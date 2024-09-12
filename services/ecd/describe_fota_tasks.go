@@ -76,12 +76,16 @@ type DescribeFotaTasksRequest struct {
 	TaskUid    *[]string        `position:"Query" name:"TaskUid"  type:"Repeated"`
 	NextToken  string           `position:"Query" name:"NextToken"`
 	MaxResults requests.Integer `position:"Query" name:"MaxResults"`
+	Lang       string           `position:"Query" name:"Lang"`
 }
 
 // DescribeFotaTasksResponse is the response struct for api DescribeFotaTasks
 type DescribeFotaTasksResponse struct {
 	*responses.BaseResponse
 	RequestId string     `json:"RequestId" xml:"RequestId"`
+	Code      string     `json:"Code" xml:"Code"`
+	Message   string     `json:"Message" xml:"Message"`
+	NextToken string     `json:"NextToken" xml:"NextToken"`
 	FotaTasks []FotaTask `json:"FotaTasks" xml:"FotaTasks"`
 }
 
@@ -90,7 +94,7 @@ func CreateDescribeFotaTasksRequest() (request *DescribeFotaTasksRequest) {
 	request = &DescribeFotaTasksRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "DescribeFotaTasks", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "DescribeFotaTasks", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

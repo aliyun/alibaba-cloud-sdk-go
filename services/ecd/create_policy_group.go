@@ -71,49 +71,91 @@ func (client *Client) CreatePolicyGroupWithCallback(request *CreatePolicyGroupRe
 // CreatePolicyGroupRequest is the request struct for api CreatePolicyGroup
 type CreatePolicyGroupRequest struct {
 	*requests.RpcRequest
-	WatermarkCustomText         string                                          `position:"Query" name:"WatermarkCustomText"`
-	PreemptLogin                string                                          `position:"Query" name:"PreemptLogin"`
-	ClientType                  *[]CreatePolicyGroupClientType                  `position:"Query" name:"ClientType"  type:"Repeated"`
-	UsbSupplyRedirectRule       *[]CreatePolicyGroupUsbSupplyRedirectRule       `position:"Query" name:"UsbSupplyRedirectRule"  type:"Repeated"`
-	PrinterRedirection          string                                          `position:"Query" name:"PrinterRedirection"`
-	PreemptLoginUser            *[]string                                       `position:"Query" name:"PreemptLoginUser"  type:"Repeated"`
-	DomainList                  string                                          `position:"Query" name:"DomainList"`
-	NetRedirect                 string                                          `position:"Query" name:"NetRedirect"`
-	LocalDrive                  string                                          `position:"Query" name:"LocalDrive"`
-	AuthorizeSecurityPolicyRule *[]CreatePolicyGroupAuthorizeSecurityPolicyRule `position:"Query" name:"AuthorizeSecurityPolicyRule"  type:"Repeated"`
-	Recording                   string                                          `position:"Query" name:"Recording"`
-	Clipboard                   string                                          `position:"Query" name:"Clipboard"`
-	RecordingFps                requests.Integer                                `position:"Query" name:"RecordingFps"`
-	UsbRedirect                 string                                          `position:"Query" name:"UsbRedirect"`
-	WatermarkType               string                                          `position:"Query" name:"WatermarkType"`
-	RecordingStartTime          string                                          `position:"Query" name:"RecordingStartTime"`
-	Watermark                   string                                          `position:"Query" name:"Watermark"`
-	CameraRedirect              string                                          `position:"Query" name:"CameraRedirect"`
-	Html5Access                 string                                          `position:"Query" name:"Html5Access"`
-	GpuAcceleration             string                                          `position:"Query" name:"GpuAcceleration"`
-	Html5FileTransfer           string                                          `position:"Query" name:"Html5FileTransfer"`
-	AuthorizeAccessPolicyRule   *[]CreatePolicyGroupAuthorizeAccessPolicyRule   `position:"Query" name:"AuthorizeAccessPolicyRule"  type:"Repeated"`
-	VisualQuality               string                                          `position:"Query" name:"VisualQuality"`
-	WatermarkTransparency       string                                          `position:"Query" name:"WatermarkTransparency"`
-	Name                        string                                          `position:"Query" name:"Name"`
-	RecordingEndTime            string                                          `position:"Query" name:"RecordingEndTime"`
-}
-
-// CreatePolicyGroupClientType is a repeated param struct in CreatePolicyGroupRequest
-type CreatePolicyGroupClientType struct {
-	ClientType string `name:"ClientType"`
-	Status     string `name:"Status"`
-}
-
-// CreatePolicyGroupUsbSupplyRedirectRule is a repeated param struct in CreatePolicyGroupRequest
-type CreatePolicyGroupUsbSupplyRedirectRule struct {
-	ProductId       string `name:"ProductId"`
-	DeviceSubclass  string `name:"DeviceSubclass"`
-	UsbRedirectType string `name:"UsbRedirectType"`
-	VendorId        string `name:"VendorId"`
-	Description     string `name:"Description"`
-	DeviceClass     string `name:"DeviceClass"`
-	UsbRuleType     string `name:"UsbRuleType"`
+	PrinterRedirection            string                                          `position:"Query" name:"PrinterRedirection"`
+	WyAssistant                   string                                          `position:"Query" name:"WyAssistant"`
+	LocalDrive                    string                                          `position:"Query" name:"LocalDrive"`
+	AuthorizeSecurityPolicyRule   *[]CreatePolicyGroupAuthorizeSecurityPolicyRule `position:"Query" name:"AuthorizeSecurityPolicyRule"  type:"Repeated"`
+	WatermarkSecurity             string                                          `position:"Query" name:"WatermarkSecurity"`
+	Clipboard                     string                                          `position:"Query" name:"Clipboard"`
+	EndUserApplyAdminCoordinate   string                                          `position:"Query" name:"EndUserApplyAdminCoordinate"`
+	UsbRedirect                   string                                          `position:"Query" name:"UsbRedirect"`
+	RecordingStartTime            string                                          `position:"Query" name:"RecordingStartTime"`
+	NetRedirectRule               *[]CreatePolicyGroupNetRedirectRule             `position:"Query" name:"NetRedirectRule"  type:"Repeated"`
+	WatermarkColor                requests.Integer                                `position:"Query" name:"WatermarkColor"`
+	MemoryRateLimit               requests.Integer                                `position:"Query" name:"MemoryRateLimit"`
+	QualityEnhancement            string                                          `position:"Query" name:"QualityEnhancement"`
+	Watermark                     string                                          `position:"Query" name:"Watermark"`
+	CpuSingleRateLimit            requests.Integer                                `position:"Query" name:"CpuSingleRateLimit"`
+	DomainResolveRule             *[]CreatePolicyGroupDomainResolveRule           `position:"Query" name:"DomainResolveRule"  type:"Repeated"`
+	WatermarkPower                string                                          `position:"Query" name:"WatermarkPower"`
+	CpuDownGradeDuration          requests.Integer                                `position:"Query" name:"CpuDownGradeDuration"`
+	ClientType                    *[]CreatePolicyGroupClientType                  `position:"Query" name:"ClientType"  type:"Repeated"`
+	DeviceRedirects               *[]CreatePolicyGroupDeviceRedirects             `position:"Query" name:"DeviceRedirects"  type:"Repeated"`
+	ScopeValue                    *[]string                                       `position:"Query" name:"ScopeValue"  type:"Repeated"`
+	RecordingFps                  requests.Integer                                `position:"Query" name:"RecordingFps"`
+	WatermarkFontStyle            string                                          `position:"Query" name:"WatermarkFontStyle"`
+	RecordingUserNotifyMessage    string                                          `position:"Query" name:"RecordingUserNotifyMessage"`
+	SmoothEnhancement             string                                          `position:"Query" name:"SmoothEnhancement"`
+	ColorEnhancement              string                                          `position:"Query" name:"ColorEnhancement"`
+	EndUserGroupCoordinate        string                                          `position:"Query" name:"EndUserGroupCoordinate"`
+	WatermarkDegree               string                                          `position:"Query" name:"WatermarkDegree"`
+	DisplayMode                   string                                          `position:"Query" name:"DisplayMode"`
+	RemoteCoordinate              string                                          `position:"Query" name:"RemoteCoordinate"`
+	GpuAcceleration               string                                          `position:"Query" name:"GpuAcceleration"`
+	Html5FileTransfer             string                                          `position:"Query" name:"Html5FileTransfer"`
+	DeviceRules                   *[]CreatePolicyGroupDeviceRules                 `position:"Query" name:"DeviceRules"  type:"Repeated"`
+	VideoEncAvgKbps               requests.Integer                                `position:"Query" name:"VideoEncAvgKbps"`
+	MemoryProtectedMode           string                                          `position:"Query" name:"MemoryProtectedMode"`
+	VideoEncMaxQP                 requests.Integer                                `position:"Query" name:"VideoEncMaxQP"`
+	MemoryDownGradeDuration       requests.Integer                                `position:"Query" name:"MemoryDownGradeDuration"`
+	InternetCommunicationProtocol string                                          `position:"Query" name:"InternetCommunicationProtocol"`
+	RecordingExpires              requests.Integer                                `position:"Query" name:"RecordingExpires"`
+	PreemptLoginUser              *[]string                                       `position:"Query" name:"PreemptLoginUser"  type:"Repeated"`
+	DomainList                    string                                          `position:"Query" name:"DomainList"`
+	NetRedirect                   string                                          `position:"Query" name:"NetRedirect"`
+	WatermarkTransparencyValue    requests.Integer                                `position:"Query" name:"WatermarkTransparencyValue"`
+	WatermarkType                 string                                          `position:"Query" name:"WatermarkType"`
+	AdminAccess                   string                                          `position:"Query" name:"AdminAccess"`
+	RecordingDuration             requests.Integer                                `position:"Query" name:"RecordingDuration"`
+	CloudHub                      string                                          `position:"Query" name:"CloudHub"`
+	CameraRedirect                string                                          `position:"Query" name:"CameraRedirect"`
+	EnableSessionRateLimiting     string                                          `position:"Query" name:"EnableSessionRateLimiting"`
+	MemoryProcessors              *[]string                                       `position:"Query" name:"MemoryProcessors"  type:"Repeated"`
+	VideoRedirect                 string                                          `position:"Query" name:"VideoRedirect"`
+	AppContentProtection          string                                          `position:"Query" name:"AppContentProtection"`
+	CpuProtectedMode              string                                          `position:"Query" name:"CpuProtectedMode"`
+	VideoEncPeakKbps              requests.Integer                                `position:"Query" name:"VideoEncPeakKbps"`
+	AuthorizeAccessPolicyRule     *[]CreatePolicyGroupAuthorizeAccessPolicyRule   `position:"Query" name:"AuthorizeAccessPolicyRule"  type:"Repeated"`
+	MaxReconnectTime              requests.Integer                                `position:"Query" name:"MaxReconnectTime"`
+	WatermarkTransparency         string                                          `position:"Query" name:"WatermarkTransparency"`
+	SessionMaxRateKbps            requests.Integer                                `position:"Query" name:"SessionMaxRateKbps"`
+	Name                          string                                          `position:"Query" name:"Name"`
+	MemorySampleDuration          requests.Integer                                `position:"Query" name:"MemorySampleDuration"`
+	WatermarkCustomText           string                                          `position:"Query" name:"WatermarkCustomText"`
+	PreemptLogin                  string                                          `position:"Query" name:"PreemptLogin"`
+	UsbSupplyRedirectRule         *[]CreatePolicyGroupUsbSupplyRedirectRule       `position:"Query" name:"UsbSupplyRedirectRule"  type:"Repeated"`
+	WatermarkFontSize             requests.Integer                                `position:"Query" name:"WatermarkFontSize"`
+	WatermarkAntiCam              string                                          `position:"Query" name:"WatermarkAntiCam"`
+	Recording                     string                                          `position:"Query" name:"Recording"`
+	DomainResolveRuleType         string                                          `position:"Query" name:"DomainResolveRuleType"`
+	MemorySingleRateLimit         requests.Integer                                `position:"Query" name:"MemorySingleRateLimit"`
+	WatermarkColumnAmount         requests.Integer                                `position:"Query" name:"WatermarkColumnAmount"`
+	RecordContent                 string                                          `position:"Query" name:"RecordContent"`
+	VideoEncPolicy                string                                          `position:"Query" name:"VideoEncPolicy"`
+	Scope                         string                                          `position:"Query" name:"Scope"`
+	WatermarkRowAmount            requests.Integer                                `position:"Query" name:"WatermarkRowAmount"`
+	CpuProcessors                 *[]string                                       `position:"Query" name:"CpuProcessors"  type:"Repeated"`
+	TargetFps                     requests.Integer                                `position:"Query" name:"TargetFps"`
+	RecordContentExpires          requests.Integer                                `position:"Query" name:"RecordContentExpires"`
+	RecordingAudio                string                                          `position:"Query" name:"RecordingAudio"`
+	CpuRateLimit                  requests.Integer                                `position:"Query" name:"CpuRateLimit"`
+	CpuSampleDuration             requests.Integer                                `position:"Query" name:"CpuSampleDuration"`
+	Html5Access                   string                                          `position:"Query" name:"Html5Access"`
+	VideoEncMinQP                 requests.Integer                                `position:"Query" name:"VideoEncMinQP"`
+	VisualQuality                 string                                          `position:"Query" name:"VisualQuality"`
+	RecordingEndTime              string                                          `position:"Query" name:"RecordingEndTime"`
+	StreamingMode                 string                                          `position:"Query" name:"StreamingMode"`
+	RecordingUserNotify           string                                          `position:"Query" name:"RecordingUserNotify"`
 }
 
 // CreatePolicyGroupAuthorizeSecurityPolicyRule is a repeated param struct in CreatePolicyGroupRequest
@@ -127,10 +169,57 @@ type CreatePolicyGroupAuthorizeSecurityPolicyRule struct {
 	Policy      string `name:"Policy"`
 }
 
+// CreatePolicyGroupNetRedirectRule is a repeated param struct in CreatePolicyGroupRequest
+type CreatePolicyGroupNetRedirectRule struct {
+	RuleType string `name:"RuleType"`
+	Domain   string `name:"Domain"`
+	Policy   string `name:"Policy"`
+}
+
+// CreatePolicyGroupDomainResolveRule is a repeated param struct in CreatePolicyGroupRequest
+type CreatePolicyGroupDomainResolveRule struct {
+	Domain      string `name:"Domain"`
+	Description string `name:"Description"`
+	Policy      string `name:"Policy"`
+}
+
+// CreatePolicyGroupClientType is a repeated param struct in CreatePolicyGroupRequest
+type CreatePolicyGroupClientType struct {
+	ClientType string `name:"ClientType"`
+	Status     string `name:"Status"`
+}
+
+// CreatePolicyGroupDeviceRedirects is a repeated param struct in CreatePolicyGroupRequest
+type CreatePolicyGroupDeviceRedirects struct {
+	RedirectType string `name:"RedirectType"`
+	DeviceType   string `name:"DeviceType"`
+}
+
+// CreatePolicyGroupDeviceRules is a repeated param struct in CreatePolicyGroupRequest
+type CreatePolicyGroupDeviceRules struct {
+	DevicePid    string `name:"DevicePid"`
+	DeviceName   string `name:"DeviceName"`
+	DeviceVid    string `name:"DeviceVid"`
+	RedirectType string `name:"RedirectType"`
+	DeviceType   string `name:"DeviceType"`
+	OptCommand   string `name:"OptCommand"`
+}
+
 // CreatePolicyGroupAuthorizeAccessPolicyRule is a repeated param struct in CreatePolicyGroupRequest
 type CreatePolicyGroupAuthorizeAccessPolicyRule struct {
 	Description string `name:"Description"`
 	CidrIp      string `name:"CidrIp"`
+}
+
+// CreatePolicyGroupUsbSupplyRedirectRule is a repeated param struct in CreatePolicyGroupRequest
+type CreatePolicyGroupUsbSupplyRedirectRule struct {
+	ProductId       string `name:"ProductId"`
+	DeviceSubclass  string `name:"DeviceSubclass"`
+	UsbRedirectType string `name:"UsbRedirectType"`
+	VendorId        string `name:"VendorId"`
+	Description     string `name:"Description"`
+	DeviceClass     string `name:"DeviceClass"`
+	UsbRuleType     string `name:"UsbRuleType"`
 }
 
 // CreatePolicyGroupResponse is the response struct for api CreatePolicyGroup
@@ -145,7 +234,7 @@ func CreateCreatePolicyGroupRequest() (request *CreatePolicyGroupRequest) {
 	request = &CreatePolicyGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "CreatePolicyGroup", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "CreatePolicyGroup", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

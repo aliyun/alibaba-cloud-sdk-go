@@ -90,7 +90,7 @@ func CreateDescribeImageModifiedRecordsRequest() (request *DescribeImageModified
 	request = &DescribeImageModifiedRecordsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "DescribeImageModifiedRecords", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "DescribeImageModifiedRecords", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -85,7 +85,7 @@ func CreateDeleteOfficeSitesRequest() (request *DeleteOfficeSitesRequest) {
 	request = &DeleteOfficeSitesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "DeleteOfficeSites", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "DeleteOfficeSites", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

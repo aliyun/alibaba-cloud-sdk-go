@@ -71,34 +71,53 @@ func (client *Client) DescribeDesktopsWithCallback(request *DescribeDesktopsRequ
 // DescribeDesktopsRequest is the request struct for api DescribeDesktops
 type DescribeDesktopsRequest struct {
 	*requests.RpcRequest
-	OfficeSiteId       string           `position:"Query" name:"OfficeSiteId"`
-	DesktopStatus      string           `position:"Query" name:"DesktopStatus"`
-	NextToken          string           `position:"Query" name:"NextToken"`
-	QueryFotaUpdate    requests.Boolean `position:"Query" name:"QueryFotaUpdate"`
-	DirectoryId        string           `position:"Query" name:"DirectoryId"`
-	EndUserId          *[]string        `position:"Query" name:"EndUserId"  type:"Repeated"`
-	DesktopId          *[]string        `position:"Query" name:"DesktopId"  type:"Repeated"`
-	DesktopName        string           `position:"Query" name:"DesktopName"`
-	GroupId            string           `position:"Query" name:"GroupId"`
-	OfficeSiteName     string           `position:"Query" name:"OfficeSiteName"`
-	ExcludedEndUserId  *[]string        `position:"Query" name:"ExcludedEndUserId"  type:"Repeated"`
-	FilterDesktopGroup requests.Boolean `position:"Query" name:"FilterDesktopGroup"`
-	ManagementFlag     string           `position:"Query" name:"ManagementFlag"`
-	ExpiredTime        string           `position:"Query" name:"ExpiredTime"`
-	MaxResults         requests.Integer `position:"Query" name:"MaxResults"`
-	ProtocolType       string           `position:"Query" name:"ProtocolType"`
-	ChargeType         string           `position:"Query" name:"ChargeType"`
-	PolicyGroupId      string           `position:"Query" name:"PolicyGroupId"`
-	UserName           string           `position:"Query" name:"UserName"`
+	OfficeSiteId       string                 `position:"Query" name:"OfficeSiteId"`
+	SnapshotPolicyId   string                 `position:"Query" name:"SnapshotPolicyId"`
+	QosRuleId          string                 `position:"Query" name:"QosRuleId"`
+	ImageId            *[]string              `position:"Query" name:"ImageId"  type:"Repeated"`
+	DesktopStatus      string                 `position:"Query" name:"DesktopStatus"`
+	ResourceGroupId    string                 `position:"Query" name:"ResourceGroupId"`
+	DesktopGroupId     string                 `position:"Query" name:"DesktopGroupId"`
+	NextToken          string                 `position:"Query" name:"NextToken"`
+	OnlyDesktopGroup   requests.Boolean       `position:"Query" name:"OnlyDesktopGroup"`
+	QueryFotaUpdate    requests.Boolean       `position:"Query" name:"QueryFotaUpdate"`
+	DirectoryId        string                 `position:"Query" name:"DirectoryId"`
+	EndUserId          *[]string              `position:"Query" name:"EndUserId"  type:"Repeated"`
+	DesktopId          *[]string              `position:"Query" name:"DesktopId"  type:"Repeated"`
+	Tag                *[]DescribeDesktopsTag `position:"Query" name:"Tag"  type:"Repeated"`
+	DesktopType        string                 `position:"Query" name:"DesktopType"`
+	DesktopStatusList  *[]string              `position:"Query" name:"DesktopStatusList"  type:"Repeated"`
+	DesktopName        string                 `position:"Query" name:"DesktopName"`
+	GroupId            string                 `position:"Query" name:"GroupId"`
+	OfficeSiteName     string                 `position:"Query" name:"OfficeSiteName"`
+	ExcludedEndUserId  *[]string              `position:"Query" name:"ExcludedEndUserId"  type:"Repeated"`
+	GpuInstanceGroupId string                 `position:"Query" name:"GpuInstanceGroupId"`
+	FilterDesktopGroup requests.Boolean       `position:"Query" name:"FilterDesktopGroup"`
+	ManagementFlag     string                 `position:"Query" name:"ManagementFlag"`
+	SubPayType         string                 `position:"Query" name:"SubPayType"`
+	ExpiredTime        string                 `position:"Query" name:"ExpiredTime"`
+	MaxResults         requests.Integer       `position:"Query" name:"MaxResults"`
+	FillResourceGroup  requests.Boolean       `position:"Query" name:"FillResourceGroup"`
+	OsTypes            *[]string              `position:"Query" name:"OsTypes"  type:"Repeated"`
+	ProtocolType       string                 `position:"Query" name:"ProtocolType"`
+	ChargeType         string                 `position:"Query" name:"ChargeType"`
+	PolicyGroupId      string                 `position:"Query" name:"PolicyGroupId"`
+	UserName           string                 `position:"Query" name:"UserName"`
+}
+
+// DescribeDesktopsTag is a repeated param struct in DescribeDesktopsRequest
+type DescribeDesktopsTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // DescribeDesktopsResponse is the response struct for api DescribeDesktops
 type DescribeDesktopsResponse struct {
 	*responses.BaseResponse
-	NextToken  string    `json:"NextToken" xml:"NextToken"`
-	RequestId  string    `json:"RequestId" xml:"RequestId"`
-	TotalCount int       `json:"TotalCount" xml:"TotalCount"`
-	Desktops   []Desktop `json:"Desktops" xml:"Desktops"`
+	NextToken  string                      `json:"NextToken" xml:"NextToken"`
+	RequestId  string                      `json:"RequestId" xml:"RequestId"`
+	TotalCount int                         `json:"TotalCount" xml:"TotalCount"`
+	Desktops   []DesktopInDescribeDesktops `json:"Desktops" xml:"Desktops"`
 }
 
 // CreateDescribeDesktopsRequest creates a request to invoke DescribeDesktops API
@@ -106,7 +125,7 @@ func CreateDescribeDesktopsRequest() (request *DescribeDesktopsRequest) {
 	request = &DescribeDesktopsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "DescribeDesktops", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "DescribeDesktops", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

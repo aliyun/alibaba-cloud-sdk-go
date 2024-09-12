@@ -86,7 +86,7 @@ func CreateSetDirectorySsoStatusRequest() (request *SetDirectorySsoStatusRequest
 	request = &SetDirectorySsoStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "SetDirectorySsoStatus", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "SetDirectorySsoStatus", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -86,7 +86,7 @@ func CreateGetDesktopGroupDetailRequest() (request *GetDesktopGroupDetailRequest
 	request = &GetDesktopGroupDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "GetDesktopGroupDetail", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "GetDesktopGroupDetail", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

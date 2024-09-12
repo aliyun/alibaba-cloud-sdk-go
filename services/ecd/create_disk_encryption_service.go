@@ -86,7 +86,7 @@ func CreateCreateDiskEncryptionServiceRequest() (request *CreateDiskEncryptionSe
 	request = &CreateDiskEncryptionServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "CreateDiskEncryptionService", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "CreateDiskEncryptionService", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

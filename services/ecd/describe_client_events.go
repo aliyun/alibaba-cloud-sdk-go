@@ -72,6 +72,7 @@ func (client *Client) DescribeClientEventsWithCallback(request *DescribeClientEv
 type DescribeClientEventsRequest struct {
 	*requests.RpcRequest
 	OfficeSiteId   string           `position:"Query" name:"OfficeSiteId"`
+	EventTypes     *[]string        `position:"Query" name:"EventTypes"  type:"Repeated"`
 	StartTime      string           `position:"Query" name:"StartTime"`
 	NextToken      string           `position:"Query" name:"NextToken"`
 	EndUserId      string           `position:"Query" name:"EndUserId"`
@@ -98,7 +99,7 @@ func CreateDescribeClientEventsRequest() (request *DescribeClientEventsRequest) 
 	request = &DescribeClientEventsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "DescribeClientEvents", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "DescribeClientEvents", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

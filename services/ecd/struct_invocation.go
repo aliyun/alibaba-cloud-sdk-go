@@ -17,11 +17,13 @@ package ecd
 
 // Invocation is a nested struct in ecd response
 type Invocation struct {
-	InvokeId         string          `json:"InvokeId" xml:"InvokeId"`
-	CommandContent   string          `json:"CommandContent" xml:"CommandContent"`
-	CommandType      string          `json:"CommandType" xml:"CommandType"`
-	InvocationStatus string          `json:"InvocationStatus" xml:"InvocationStatus"`
-	CreationTime     string          `json:"CreationTime" xml:"CreationTime"`
-	EndUserId        string          `json:"EndUserId" xml:"EndUserId"`
-	InvokeDesktops   []InvokeDesktop `json:"InvokeDesktops" xml:"InvokeDesktops"`
+	InvokeId                  string          `json:"InvokeId" xml:"InvokeId"`
+	CommandContent            string          `json:"CommandContent" xml:"CommandContent"`
+	CommandType               string          `json:"CommandType" xml:"CommandType"`
+	InvocationStatus          string          `json:"InvocationStatus" xml:"InvocationStatus"`
+	CreationTime              string          `json:"CreationTime" xml:"CreationTime"`
+	EndUserId                 string          `json:"EndUserId" xml:"EndUserId"`
+	InvokeDesktopCount        int             `json:"InvokeDesktopCount" xml:"InvokeDesktopCount"`
+	InvokeDesktopSucceedCount int             `json:"InvokeDesktopSucceedCount" xml:"InvokeDesktopSucceedCount"`
+	InvokeDesktops            []InvokeDesktop `json:"InvokeDesktops" xml:"InvokeDesktops"`
 }

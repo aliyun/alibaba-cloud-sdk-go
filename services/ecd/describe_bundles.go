@@ -72,19 +72,25 @@ func (client *Client) DescribeBundlesWithCallback(request *DescribeBundlesReques
 type DescribeBundlesRequest struct {
 	*requests.RpcRequest
 	GpuCount                requests.Float   `position:"Query" name:"GpuCount"`
+	ImageId                 *[]string        `position:"Query" name:"ImageId"  type:"Repeated"`
 	BundleId                *[]string        `position:"Query" name:"BundleId"  type:"Repeated"`
 	DesktopTypeFamily       string           `position:"Query" name:"DesktopTypeFamily"`
+	SelectedBundle          requests.Boolean `position:"Query" name:"SelectedBundle"`
 	NextToken               string           `position:"Query" name:"NextToken"`
 	FromDesktopGroup        requests.Boolean `position:"Query" name:"FromDesktopGroup"`
+	Scope                   string           `position:"Query" name:"Scope"`
 	BundleType              string           `position:"Query" name:"BundleType"`
 	FotaChannel             string           `position:"Query" name:"FotaChannel"`
 	VolumeEncryptionEnabled requests.Boolean `position:"Query" name:"VolumeEncryptionEnabled"`
 	MemorySize              requests.Integer `position:"Query" name:"MemorySize"`
+	SessionType             string           `position:"Query" name:"SessionType"`
+	OsType                  string           `position:"Query" name:"OsType"`
 	MaxResults              requests.Integer `position:"Query" name:"MaxResults"`
 	CheckStock              requests.Boolean `position:"Query" name:"CheckStock"`
 	ProtocolType            string           `position:"Query" name:"ProtocolType"`
 	CpuCount                requests.Integer `position:"Query" name:"CpuCount"`
 	SupportMultiSession     requests.Boolean `position:"Query" name:"SupportMultiSession"`
+	GpuDriverType           string           `position:"Query" name:"GpuDriverType"`
 }
 
 // DescribeBundlesResponse is the response struct for api DescribeBundles
@@ -100,7 +106,7 @@ func CreateDescribeBundlesRequest() (request *DescribeBundlesRequest) {
 	request = &DescribeBundlesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "DescribeBundles", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "DescribeBundles", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

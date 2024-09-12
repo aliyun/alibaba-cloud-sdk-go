@@ -30,4 +30,5 @@ type InvokeDesktop struct {
 	ExitCode         int64  `json:"ExitCode" xml:"ExitCode"`
 	ErrorCode        string `json:"ErrorCode" xml:"ErrorCode"`
 	ErrorInfo        string `json:"ErrorInfo" xml:"ErrorInfo"`
+	DesktopName      string `json:"DesktopName" xml:"DesktopName"`
 }

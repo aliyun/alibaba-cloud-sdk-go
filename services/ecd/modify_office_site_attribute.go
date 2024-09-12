@@ -76,6 +76,7 @@ type ModifyOfficeSiteAttributeRequest struct {
 	OfficeSiteName       string           `position:"Query" name:"OfficeSiteName"`
 	NeedVerifyLoginRisk  requests.Boolean `position:"Query" name:"NeedVerifyLoginRisk"`
 	NeedVerifyZeroDevice requests.Boolean `position:"Query" name:"NeedVerifyZeroDevice"`
+	EnableAdminAccess    requests.Boolean `position:"Query" name:"EnableAdminAccess"`
 }
 
 // ModifyOfficeSiteAttributeResponse is the response struct for api ModifyOfficeSiteAttribute
@@ -89,7 +90,7 @@ func CreateModifyOfficeSiteAttributeRequest() (request *ModifyOfficeSiteAttribut
 	request = &ModifyOfficeSiteAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "ModifyOfficeSiteAttribute", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "ModifyOfficeSiteAttribute", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

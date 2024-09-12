@@ -86,7 +86,7 @@ func CreateAssociateNetworkPackageRequest() (request *AssociateNetworkPackageReq
 	request = &AssociateNetworkPackageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "AssociateNetworkPackage", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "AssociateNetworkPackage", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

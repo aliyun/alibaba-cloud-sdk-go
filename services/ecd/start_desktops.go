@@ -85,7 +85,7 @@ func CreateStartDesktopsRequest() (request *StartDesktopsRequest) {
 	request = &StartDesktopsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "StartDesktops", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "StartDesktops", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

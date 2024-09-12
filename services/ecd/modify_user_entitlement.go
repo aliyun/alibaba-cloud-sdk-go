@@ -87,7 +87,7 @@ func CreateModifyUserEntitlementRequest() (request *ModifyUserEntitlementRequest
 	request = &ModifyUserEntitlementRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "ModifyUserEntitlement", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "ModifyUserEntitlement", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

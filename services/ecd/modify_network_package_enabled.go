@@ -86,7 +86,7 @@ func CreateModifyNetworkPackageEnabledRequest() (request *ModifyNetworkPackageEn
 	request = &ModifyNetworkPackageEnabledRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "ModifyNetworkPackageEnabled", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "ModifyNetworkPackageEnabled", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

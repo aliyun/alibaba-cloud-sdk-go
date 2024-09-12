@@ -86,7 +86,7 @@ func CreateApproveFotaUpdateRequest() (request *ApproveFotaUpdateRequest) {
 	request = &ApproveFotaUpdateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "ApproveFotaUpdate", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "ApproveFotaUpdate", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

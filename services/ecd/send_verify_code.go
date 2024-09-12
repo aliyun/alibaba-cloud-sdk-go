@@ -86,7 +86,7 @@ func CreateSendVerifyCodeRequest() (request *SendVerifyCodeRequest) {
 	request = &SendVerifyCodeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "SendVerifyCode", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "SendVerifyCode", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

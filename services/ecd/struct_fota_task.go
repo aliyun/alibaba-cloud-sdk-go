@@ -17,12 +17,13 @@ package ecd
 
 // FotaTask is a nested struct in ecd response
 type FotaTask struct {
-	TaskUid             string `json:"TaskUid" xml:"TaskUid"`
-	FotaProject         string `json:"FotaProject" xml:"FotaProject"`
-	AppVersion          string `json:"AppVersion" xml:"AppVersion"`
-	Status              string `json:"Status" xml:"Status"`
-	PublishTime         string `json:"PublishTime" xml:"PublishTime"`
-	PendingDesktopCount int    `json:"PendingDesktopCount" xml:"PendingDesktopCount"`
-	ReleaseNote         string `json:"ReleaseNote" xml:"ReleaseNote"`
-	Size                int    `json:"Size" xml:"Size"`
+	TaskUid                 string `json:"TaskUid" xml:"TaskUid"`
+	FotaProject             string `json:"FotaProject" xml:"FotaProject"`
+	AppVersion              string `json:"AppVersion" xml:"AppVersion"`
+	Status                  string `json:"Status" xml:"Status"`
+	PublishTime             string `json:"PublishTime" xml:"PublishTime"`
+	PendingDesktopCount     int    `json:"PendingDesktopCount" xml:"PendingDesktopCount"`
+	ReleaseNote             string `json:"ReleaseNote" xml:"ReleaseNote"`
+	Size                    int    `json:"Size" xml:"Size"`
+	PendingCustomImageCount int    `json:"PendingCustomImageCount" xml:"PendingCustomImageCount"`
 }

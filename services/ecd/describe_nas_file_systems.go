@@ -71,10 +71,11 @@ func (client *Client) DescribeNASFileSystemsWithCallback(request *DescribeNASFil
 // DescribeNASFileSystemsRequest is the request struct for api DescribeNASFileSystems
 type DescribeNASFileSystemsRequest struct {
 	*requests.RpcRequest
-	OfficeSiteId string           `position:"Query" name:"OfficeSiteId"`
-	NextToken    string           `position:"Query" name:"NextToken"`
-	MaxResults   requests.Integer `position:"Query" name:"MaxResults"`
-	FileSystemId *[]string        `position:"Query" name:"FileSystemId"  type:"Repeated"`
+	OfficeSiteId           string           `position:"Query" name:"OfficeSiteId"`
+	MatchCompatibleProfile requests.Boolean `position:"Query" name:"MatchCompatibleProfile"`
+	NextToken              string           `position:"Query" name:"NextToken"`
+	MaxResults             requests.Integer `position:"Query" name:"MaxResults"`
+	FileSystemId           *[]string        `position:"Query" name:"FileSystemId"  type:"Repeated"`
 }
 
 // DescribeNASFileSystemsResponse is the response struct for api DescribeNASFileSystems
@@ -90,7 +91,7 @@ func CreateDescribeNASFileSystemsRequest() (request *DescribeNASFileSystemsReque
 	request = &DescribeNASFileSystemsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "DescribeNASFileSystems", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "DescribeNASFileSystems", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -87,7 +87,7 @@ func CreateClonePolicyGroupRequest() (request *ClonePolicyGroupRequest) {
 	request = &ClonePolicyGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "ClonePolicyGroup", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "ClonePolicyGroup", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -71,8 +71,10 @@ func (client *Client) RebuildDesktopsWithCallback(request *RebuildDesktopsReques
 // RebuildDesktopsRequest is the request struct for api RebuildDesktops
 type RebuildDesktopsRequest struct {
 	*requests.RpcRequest
-	ImageId   string    `position:"Query" name:"ImageId"`
-	DesktopId *[]string `position:"Query" name:"DesktopId"  type:"Repeated"`
+	ImageId     string    `position:"Query" name:"ImageId"`
+	Language    string    `position:"Query" name:"Language"`
+	OperateType string    `position:"Query" name:"OperateType"`
+	DesktopId   *[]string `position:"Query" name:"DesktopId"  type:"Repeated"`
 }
 
 // RebuildDesktopsResponse is the response struct for api RebuildDesktops
@@ -87,7 +89,7 @@ func CreateRebuildDesktopsRequest() (request *RebuildDesktopsRequest) {
 	request = &RebuildDesktopsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "RebuildDesktops", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "RebuildDesktops", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

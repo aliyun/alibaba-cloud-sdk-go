@@ -17,13 +17,22 @@ package ecd
 
 // NetworkPackage is a nested struct in ecd response
 type NetworkPackage struct {
-	NetworkPackageId     string   `json:"NetworkPackageId" xml:"NetworkPackageId"`
-	Bandwidth            int      `json:"Bandwidth" xml:"Bandwidth"`
-	ExpiredTime          string   `json:"ExpiredTime" xml:"ExpiredTime"`
-	CreateTime           string   `json:"CreateTime" xml:"CreateTime"`
-	OfficeSiteId         string   `json:"OfficeSiteId" xml:"OfficeSiteId"`
-	InternetChargeType   string   `json:"InternetChargeType" xml:"InternetChargeType"`
-	NetworkPackageStatus string   `json:"NetworkPackageStatus" xml:"NetworkPackageStatus"`
-	OfficeSiteName       string   `json:"OfficeSiteName" xml:"OfficeSiteName"`
-	EipAddresses         []string `json:"EipAddresses" xml:"EipAddresses"`
+	NetworkPackageId              string   `json:"NetworkPackageId" xml:"NetworkPackageId"`
+	Bandwidth                     int      `json:"Bandwidth" xml:"Bandwidth"`
+	ExpiredTime                   string   `json:"ExpiredTime" xml:"ExpiredTime"`
+	CreateTime                    string   `json:"CreateTime" xml:"CreateTime"`
+	OfficeSiteId                  string   `json:"OfficeSiteId" xml:"OfficeSiteId"`
+	PayType                       string   `json:"PayType" xml:"PayType"`
+	InternetChargeType            string   `json:"InternetChargeType" xml:"InternetChargeType"`
+	ReservationInternetChargeType string   `json:"ReservationInternetChargeType" xml:"ReservationInternetChargeType"`
+	ReservationBandwidth          int      `json:"ReservationBandwidth" xml:"ReservationBandwidth"`
+	ReservationActiveTime         string   `json:"ReservationActiveTime" xml:"ReservationActiveTime"`
+	NetworkPackageStatus          string   `json:"NetworkPackageStatus" xml:"NetworkPackageStatus"`
+	OfficeSiteName                string   `json:"OfficeSiteName" xml:"OfficeSiteName"`
+	OfficeSiteVpcType             string   `json:"OfficeSiteVpcType" xml:"OfficeSiteVpcType"`
+	VpcSnatPolicy                 string   `json:"VpcSnatPolicy" xml:"VpcSnatPolicy"`
+	QosType                       string   `json:"QosType" xml:"QosType"`
+	NgwVersion                    string   `json:"NgwVersion" xml:"NgwVersion"`
+	BusinessStatus                string   `json:"BusinessStatus" xml:"BusinessStatus"`
+	EipAddresses                  []string `json:"EipAddresses" xml:"EipAddresses"`
 }

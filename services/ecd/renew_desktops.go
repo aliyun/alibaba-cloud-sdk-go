@@ -71,11 +71,13 @@ func (client *Client) RenewDesktopsWithCallback(request *RenewDesktopsRequest, c
 // RenewDesktopsRequest is the request struct for api RenewDesktops
 type RenewDesktopsRequest struct {
 	*requests.RpcRequest
-	Period      requests.Integer `position:"Query" name:"Period"`
-	AutoPay     requests.Boolean `position:"Query" name:"AutoPay"`
-	PromotionId string           `position:"Query" name:"PromotionId"`
-	PeriodUnit  string           `position:"Query" name:"PeriodUnit"`
-	DesktopId   *[]string        `position:"Query" name:"DesktopId"  type:"Repeated"`
+	Period       requests.Integer `position:"Query" name:"Period"`
+	AutoPay      requests.Boolean `position:"Query" name:"AutoPay"`
+	ResourceType string           `position:"Query" name:"ResourceType"`
+	PromotionId  string           `position:"Query" name:"PromotionId"`
+	PeriodUnit   string           `position:"Query" name:"PeriodUnit"`
+	AutoRenew    requests.Boolean `position:"Query" name:"AutoRenew"`
+	DesktopId    *[]string        `position:"Query" name:"DesktopId"  type:"Repeated"`
 }
 
 // RenewDesktopsResponse is the response struct for api RenewDesktops
@@ -90,7 +92,7 @@ func CreateRenewDesktopsRequest() (request *RenewDesktopsRequest) {
 	request = &RenewDesktopsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "RenewDesktops", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "RenewDesktops", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

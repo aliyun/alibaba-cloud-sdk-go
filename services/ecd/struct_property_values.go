@@ -17,6 +17,5 @@ package ecd
 
 // PropertyValues is a nested struct in ecd response
 type PropertyValues struct {
-	PropertyValueId int64  `json:"PropertyValueId" xml:"PropertyValueId"`
-	PropertyValue   string `json:"PropertyValue" xml:"PropertyValue"`
+	PropertyValuesItem []PropertyValuesItem `json:"propertyValues" xml:"propertyValues"`
 }

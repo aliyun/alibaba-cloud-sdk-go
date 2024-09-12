@@ -39,6 +39,9 @@ type Directory struct {
 	Name                     string        `json:"Name" xml:"Name"`
 	DirectoryId              string        `json:"DirectoryId" xml:"DirectoryId"`
 	NeedVerifyLoginRisk      bool          `json:"NeedVerifyLoginRisk" xml:"NeedVerifyLoginRisk"`
+	AdHostname               string        `json:"AdHostname" xml:"AdHostname"`
+	BackupDns                string        `json:"BackupDns" xml:"BackupDns"`
+	BackupDCHostname         string        `json:"BackupDCHostname" xml:"BackupDCHostname"`
 	VSwitchIds               []string      `json:"VSwitchIds" xml:"VSwitchIds"`
 	FileSystemIds            []string      `json:"FileSystemIds" xml:"FileSystemIds"`
 	SubDnsAddress            []string      `json:"SubDnsAddress" xml:"SubDnsAddress"`

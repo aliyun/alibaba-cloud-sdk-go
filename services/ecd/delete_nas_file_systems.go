@@ -85,7 +85,7 @@ func CreateDeleteNASFileSystemsRequest() (request *DeleteNASFileSystemsRequest) 
 	request = &DeleteNASFileSystemsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "DeleteNASFileSystems", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "DeleteNASFileSystems", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

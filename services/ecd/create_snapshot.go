@@ -89,7 +89,7 @@ func CreateCreateSnapshotRequest() (request *CreateSnapshotRequest) {
 	request = &CreateSnapshotRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "CreateSnapshot", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "CreateSnapshot", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

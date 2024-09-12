@@ -102,7 +102,7 @@ func CreateApplyCoordinationForMonitoringRequest() (request *ApplyCoordinationFo
 	request = &ApplyCoordinationForMonitoringRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "ApplyCoordinationForMonitoring", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "ApplyCoordinationForMonitoring", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

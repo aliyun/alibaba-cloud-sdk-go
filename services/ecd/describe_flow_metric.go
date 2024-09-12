@@ -91,7 +91,7 @@ func CreateDescribeFlowMetricRequest() (request *DescribeFlowMetricRequest) {
 	request = &DescribeFlowMetricRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "DescribeFlowMetric", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "DescribeFlowMetric", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

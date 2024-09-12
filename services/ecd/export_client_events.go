@@ -72,6 +72,7 @@ func (client *Client) ExportClientEventsWithCallback(request *ExportClientEvents
 type ExportClientEventsRequest struct {
 	*requests.RpcRequest
 	OfficeSiteId   string           `position:"Query" name:"OfficeSiteId"`
+	EventTypes     *[]string        `position:"Query" name:"EventTypes"  type:"Repeated"`
 	StartTime      string           `position:"Query" name:"StartTime"`
 	EndUserId      string           `position:"Query" name:"EndUserId"`
 	DesktopId      string           `position:"Query" name:"DesktopId"`
@@ -80,6 +81,7 @@ type ExportClientEventsRequest struct {
 	OfficeSiteName string           `position:"Query" name:"OfficeSiteName"`
 	MaxResults     requests.Integer `position:"Query" name:"MaxResults"`
 	EventType      string           `position:"Query" name:"EventType"`
+	LangType       string           `position:"Query" name:"LangType"`
 }
 
 // ExportClientEventsResponse is the response struct for api ExportClientEvents
@@ -94,7 +96,7 @@ func CreateExportClientEventsRequest() (request *ExportClientEventsRequest) {
 	request = &ExportClientEventsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "ExportClientEvents", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "ExportClientEvents", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

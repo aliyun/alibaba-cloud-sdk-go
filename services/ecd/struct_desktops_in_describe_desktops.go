@@ -17,5 +17,5 @@ package ecd
 
 // DesktopsInDescribeDesktops is a nested struct in ecd response
 type DesktopsInDescribeDesktops struct {
-	Desktop []Desktop `json:"Desktop" xml:"Desktop"`
+	Desktop []DesktopInDescribeDesktops `json:"Desktop" xml:"Desktop"`
 }

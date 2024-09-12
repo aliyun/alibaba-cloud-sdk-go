@@ -85,7 +85,7 @@ func CreateUnlockVirtualMFADeviceRequest() (request *UnlockVirtualMFADeviceReque
 	request = &UnlockVirtualMFADeviceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "UnlockVirtualMFADevice", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "UnlockVirtualMFADevice", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

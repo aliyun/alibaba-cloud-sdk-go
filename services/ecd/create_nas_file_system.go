@@ -93,7 +93,7 @@ func CreateCreateNASFileSystemRequest() (request *CreateNASFileSystemRequest) {
 	request = &CreateNASFileSystemRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "CreateNASFileSystem", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "CreateNASFileSystem", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -31,6 +31,11 @@ type PaidDesktop struct {
 	OsType           string   `json:"OsType" xml:"OsType"`
 	GpuDriverVersion string   `json:"GpuDriverVersion" xml:"GpuDriverVersion"`
 	DiskType         string   `json:"DiskType" xml:"DiskType"`
+	MemberEniIp      string   `json:"MemberEniIp" xml:"MemberEniIp"`
+	PrimaryEniIp     string   `json:"PrimaryEniIp" xml:"PrimaryEniIp"`
+	ProtocolType     string   `json:"ProtocolType" xml:"ProtocolType"`
+	FotaVersion      string   `json:"FotaVersion" xml:"FotaVersion"`
 	EndUserIds       []string `json:"EndUserIds" xml:"EndUserIds"`
 	EndUserNames     []string `json:"EndUserNames" xml:"EndUserNames"`
+	ManagementFlags  []string `json:"ManagementFlags" xml:"ManagementFlags"`
 }

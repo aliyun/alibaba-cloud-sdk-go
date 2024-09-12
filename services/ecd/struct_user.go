@@ -17,6 +17,7 @@ package ecd
 
 // User is a nested struct in ecd response
 type User struct {
-	EndUser     string `json:"EndUser" xml:"EndUser"`
-	DisplayName string `json:"DisplayName" xml:"DisplayName"`
+	AssignedDesktopNumber int    `json:"AssignedDesktopNumber" xml:"AssignedDesktopNumber"`
+	EndUser               string `json:"EndUser" xml:"EndUser"`
+	DisplayName           string `json:"DisplayName" xml:"DisplayName"`
 }

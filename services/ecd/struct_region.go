@@ -19,4 +19,5 @@ package ecd
 type Region struct {
 	RegionEndpoint string `json:"RegionEndpoint" xml:"RegionEndpoint"`
 	RegionId       string `json:"RegionId" xml:"RegionId"`
+	LocalName      string `json:"LocalName" xml:"LocalName"`
 }

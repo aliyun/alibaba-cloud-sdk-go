@@ -71,20 +71,27 @@ func (client *Client) ExportDesktopListInfoWithCallback(request *ExportDesktopLi
 // ExportDesktopListInfoRequest is the request struct for api ExportDesktopListInfo
 type ExportDesktopListInfoRequest struct {
 	*requests.RpcRequest
-	OfficeSiteId  string           `position:"Query" name:"OfficeSiteId"`
-	DesktopStatus string           `position:"Query" name:"DesktopStatus"`
-	NextToken     string           `position:"Query" name:"NextToken"`
-	DirectoryId   string           `position:"Query" name:"DirectoryId"`
-	EndUserId     *[]string        `position:"Query" name:"EndUserId"  type:"Repeated"`
-	DesktopId     *[]string        `position:"Query" name:"DesktopId"  type:"Repeated"`
-	DesktopName   string           `position:"Query" name:"DesktopName"`
-	GroupId       string           `position:"Query" name:"GroupId"`
-	ExpiredTime   string           `position:"Query" name:"ExpiredTime"`
-	MaxResults    requests.Integer `position:"Query" name:"MaxResults"`
-	LangType      string           `position:"Query" name:"LangType"`
-	ChargeType    string           `position:"Query" name:"ChargeType"`
-	PolicyGroupId string           `position:"Query" name:"PolicyGroupId"`
-	UserName      string           `position:"Query" name:"UserName"`
+	OfficeSiteId  string                      `position:"Query" name:"OfficeSiteId"`
+	DesktopStatus string                      `position:"Query" name:"DesktopStatus"`
+	NextToken     string                      `position:"Query" name:"NextToken"`
+	DirectoryId   string                      `position:"Query" name:"DirectoryId"`
+	EndUserId     *[]string                   `position:"Query" name:"EndUserId"  type:"Repeated"`
+	DesktopId     *[]string                   `position:"Query" name:"DesktopId"  type:"Repeated"`
+	Tag           *[]ExportDesktopListInfoTag `position:"Query" name:"Tag"  type:"Repeated"`
+	DesktopName   string                      `position:"Query" name:"DesktopName"`
+	GroupId       string                      `position:"Query" name:"GroupId"`
+	ExpiredTime   string                      `position:"Query" name:"ExpiredTime"`
+	MaxResults    requests.Integer            `position:"Query" name:"MaxResults"`
+	LangType      string                      `position:"Query" name:"LangType"`
+	ChargeType    string                      `position:"Query" name:"ChargeType"`
+	PolicyGroupId string                      `position:"Query" name:"PolicyGroupId"`
+	UserName      string                      `position:"Query" name:"UserName"`
+}
+
+// ExportDesktopListInfoTag is a repeated param struct in ExportDesktopListInfoRequest
+type ExportDesktopListInfoTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // ExportDesktopListInfoResponse is the response struct for api ExportDesktopListInfo
@@ -99,7 +106,7 @@ func CreateExportDesktopListInfoRequest() (request *ExportDesktopListInfoRequest
 	request = &ExportDesktopListInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "ExportDesktopListInfo", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "ExportDesktopListInfo", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

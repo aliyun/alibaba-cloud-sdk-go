@@ -71,11 +71,13 @@ func (client *Client) ListDirectoryUsersWithCallback(request *ListDirectoryUsers
 // ListDirectoryUsersRequest is the request struct for api ListDirectoryUsers
 type ListDirectoryUsersRequest struct {
 	*requests.RpcRequest
-	OUPath      string           `position:"Query" name:"OUPath"`
-	Filter      string           `position:"Query" name:"Filter"`
-	NextToken   string           `position:"Query" name:"NextToken"`
-	MaxResults  requests.Integer `position:"Query" name:"MaxResults"`
-	DirectoryId string           `position:"Query" name:"DirectoryId"`
+	OUPath       string           `position:"Query" name:"OUPath"`
+	SortType     string           `position:"Query" name:"SortType"`
+	Filter       string           `position:"Query" name:"Filter"`
+	AssignedInfo string           `position:"Query" name:"AssignedInfo"`
+	NextToken    string           `position:"Query" name:"NextToken"`
+	MaxResults   requests.Integer `position:"Query" name:"MaxResults"`
+	DirectoryId  string           `position:"Query" name:"DirectoryId"`
 }
 
 // ListDirectoryUsersResponse is the response struct for api ListDirectoryUsers
@@ -91,7 +93,7 @@ func CreateListDirectoryUsersRequest() (request *ListDirectoryUsersRequest) {
 	request = &ListDirectoryUsersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "ListDirectoryUsers", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "ListDirectoryUsers", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

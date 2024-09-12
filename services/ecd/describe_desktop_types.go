@@ -71,14 +71,16 @@ func (client *Client) DescribeDesktopTypesWithCallback(request *DescribeDesktopT
 // DescribeDesktopTypesRequest is the request struct for api DescribeDesktopTypes
 type DescribeDesktopTypesRequest struct {
 	*requests.RpcRequest
-	AppliedScope       string           `position:"Query" name:"AppliedScope"`
-	MemorySize         requests.Integer `position:"Query" name:"MemorySize"`
-	GpuCount           requests.Float   `position:"Query" name:"GpuCount"`
-	InstanceTypeFamily string           `position:"Query" name:"InstanceTypeFamily"`
-	DesktopTypeId      string           `position:"Query" name:"DesktopTypeId"`
-	DesktopIdForModify string           `position:"Query" name:"DesktopIdForModify"`
-	CpuCount           requests.Integer `position:"Query" name:"CpuCount"`
-	OrderType          string           `position:"Query" name:"OrderType"`
+	AppliedScope            string           `position:"Query" name:"AppliedScope"`
+	GpuCount                requests.Float   `position:"Query" name:"GpuCount"`
+	DesktopTypeId           string           `position:"Query" name:"DesktopTypeId"`
+	DesktopIdForModify      string           `position:"Query" name:"DesktopIdForModify"`
+	DesktopGroupIdForModify string           `position:"Query" name:"DesktopGroupIdForModify"`
+	MemorySize              requests.Integer `position:"Query" name:"MemorySize"`
+	InstanceTypeFamily      string           `position:"Query" name:"InstanceTypeFamily"`
+	CpuCount                requests.Integer `position:"Query" name:"CpuCount"`
+	GpuDriverType           string           `position:"Query" name:"GpuDriverType"`
+	OrderType               string           `position:"Query" name:"OrderType"`
 }
 
 // DescribeDesktopTypesResponse is the response struct for api DescribeDesktopTypes
@@ -93,7 +95,7 @@ func CreateDescribeDesktopTypesRequest() (request *DescribeDesktopTypesRequest) 
 	request = &DescribeDesktopTypesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "DescribeDesktopTypes", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "DescribeDesktopTypes", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

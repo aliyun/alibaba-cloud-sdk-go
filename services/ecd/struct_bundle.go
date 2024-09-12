@@ -33,6 +33,8 @@ type Bundle struct {
 	SessionType             string               `json:"SessionType" xml:"SessionType"`
 	VolumeEncryptionEnabled bool                 `json:"VolumeEncryptionEnabled" xml:"VolumeEncryptionEnabled"`
 	VolumeEncryptionKey     string               `json:"VolumeEncryptionKey" xml:"VolumeEncryptionKey"`
+	Platform                string               `json:"Platform" xml:"Platform"`
+	ImageStatus             string               `json:"ImageStatus" xml:"ImageStatus"`
 	DesktopTypeAttribute    DesktopTypeAttribute `json:"DesktopTypeAttribute" xml:"DesktopTypeAttribute"`
 	Disks                   []Disk               `json:"Disks" xml:"Disks"`
 }

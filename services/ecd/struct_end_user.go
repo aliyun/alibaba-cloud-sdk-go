@@ -17,14 +17,17 @@ package ecd
 
 // EndUser is a nested struct in ecd response
 type EndUser struct {
-	EndUserId               string                    `json:"EndUserId" xml:"EndUserId"`
-	EndUserEmail            string                    `json:"EndUserEmail" xml:"EndUserEmail"`
-	DesktopName             string                    `json:"DesktopName" xml:"DesktopName"`
-	ConnectionStatus        string                    `json:"ConnectionStatus" xml:"ConnectionStatus"`
-	DesktopId               string                    `json:"DesktopId" xml:"DesktopId"`
-	EndUserType             string                    `json:"EndUserType" xml:"EndUserType"`
-	EndUserPhone            string                    `json:"EndUserPhone" xml:"EndUserPhone"`
-	EndUserName             string                    `json:"EndUserName" xml:"EndUserName"`
-	ExternalInfo            ExternalInfo              `json:"ExternalInfo" xml:"ExternalInfo"`
-	UserSetPropertiesModels []UserSetPropertiesModels `json:"UserSetPropertiesModels" xml:"UserSetPropertiesModels"`
+	EndUserId               string                        `json:"EndUserId" xml:"EndUserId"`
+	EndUserEmail            string                        `json:"EndUserEmail" xml:"EndUserEmail"`
+	DesktopName             string                        `json:"DesktopName" xml:"DesktopName"`
+	ConnectionStatus        string                        `json:"ConnectionStatus" xml:"ConnectionStatus"`
+	DesktopId               string                        `json:"DesktopId" xml:"DesktopId"`
+	EndUserType             string                        `json:"EndUserType" xml:"EndUserType"`
+	EndUserPhone            string                        `json:"EndUserPhone" xml:"EndUserPhone"`
+	EndUserName             string                        `json:"EndUserName" xml:"EndUserName"`
+	UserDesktopId           string                        `json:"UserDesktopId" xml:"UserDesktopId"`
+	EndUserRemark           string                        `json:"EndUserRemark" xml:"EndUserRemark"`
+	DisplayName             string                        `json:"DisplayName" xml:"DisplayName"`
+	ExternalInfo            ExternalInfo                  `json:"ExternalInfo" xml:"ExternalInfo"`
+	UserSetPropertiesModels []UserSetPropertiesModelsItem `json:"UserSetPropertiesModels" xml:"UserSetPropertiesModels"`
 }

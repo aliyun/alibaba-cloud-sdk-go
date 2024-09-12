@@ -17,21 +17,24 @@ package ecd
 
 // FileSystem is a nested struct in ecd response
 type FileSystem struct {
-	Capacity          int64  `json:"Capacity" xml:"Capacity"`
-	MountTargetStatus string `json:"MountTargetStatus" xml:"MountTargetStatus"`
-	CreateTime        string `json:"CreateTime" xml:"CreateTime"`
-	OfficeSiteId      string `json:"OfficeSiteId" xml:"OfficeSiteId"`
-	SupportAcl        bool   `json:"SupportAcl" xml:"SupportAcl"`
-	StorageType       string `json:"StorageType" xml:"StorageType"`
-	OfficeSiteName    string `json:"OfficeSiteName" xml:"OfficeSiteName"`
-	RegionId          string `json:"RegionId" xml:"RegionId"`
-	FileSystemId      string `json:"FileSystemId" xml:"FileSystemId"`
-	FileSystemType    string `json:"FileSystemType" xml:"FileSystemType"`
-	FileSystemName    string `json:"FileSystemName" xml:"FileSystemName"`
-	MeteredSize       int64  `json:"MeteredSize" xml:"MeteredSize"`
-	MountTargetDomain string `json:"MountTargetDomain" xml:"MountTargetDomain"`
-	Description       string `json:"Description" xml:"Description"`
-	ZoneId            string `json:"ZoneId" xml:"ZoneId"`
-	FileSystemStatus  string `json:"FileSystemStatus" xml:"FileSystemStatus"`
-	EncryptionEnabled bool   `json:"EncryptionEnabled" xml:"EncryptionEnabled"`
+	Capacity          int64          `json:"Capacity" xml:"Capacity"`
+	MountTargetStatus string         `json:"MountTargetStatus" xml:"MountTargetStatus"`
+	CreateTime        string         `json:"CreateTime" xml:"CreateTime"`
+	OfficeSiteId      string         `json:"OfficeSiteId" xml:"OfficeSiteId"`
+	SupportAcl        bool           `json:"SupportAcl" xml:"SupportAcl"`
+	StorageType       string         `json:"StorageType" xml:"StorageType"`
+	OfficeSiteName    string         `json:"OfficeSiteName" xml:"OfficeSiteName"`
+	RegionId          string         `json:"RegionId" xml:"RegionId"`
+	FileSystemId      string         `json:"FileSystemId" xml:"FileSystemId"`
+	FileSystemType    string         `json:"FileSystemType" xml:"FileSystemType"`
+	FileSystemName    string         `json:"FileSystemName" xml:"FileSystemName"`
+	MeteredSize       int64          `json:"MeteredSize" xml:"MeteredSize"`
+	MountTargetDomain string         `json:"MountTargetDomain" xml:"MountTargetDomain"`
+	Description       string         `json:"Description" xml:"Description"`
+	ZoneId            string         `json:"ZoneId" xml:"ZoneId"`
+	FileSystemStatus  string         `json:"FileSystemStatus" xml:"FileSystemStatus"`
+	EncryptionEnabled bool           `json:"EncryptionEnabled" xml:"EncryptionEnabled"`
+	ProfileCompatible bool           `json:"ProfileCompatible" xml:"ProfileCompatible"`
+	DomainId          string         `json:"DomainId" xml:"DomainId"`
+	DesktopGroups     []DesktopGroup `json:"DesktopGroups" xml:"DesktopGroups"`
 }

@@ -71,20 +71,30 @@ func (client *Client) ModifyDesktopSpecWithCallback(request *ModifyDesktopSpecRe
 // ModifyDesktopSpecRequest is the request struct for api ModifyDesktopSpec
 type ModifyDesktopSpecRequest struct {
 	*requests.RpcRequest
-	AutoPay                  requests.Boolean `position:"Query" name:"AutoPay"`
-	UserDiskPerformanceLevel string           `position:"Query" name:"UserDiskPerformanceLevel"`
-	PromotionId              string           `position:"Query" name:"PromotionId"`
-	UserDiskSizeGib          requests.Integer `position:"Query" name:"UserDiskSizeGib"`
-	DesktopId                string           `position:"Query" name:"DesktopId"`
-	DesktopType              string           `position:"Query" name:"DesktopType"`
-	RootDiskSizeGib          requests.Integer `position:"Query" name:"RootDiskSizeGib"`
+	AutoPay                  requests.Boolean                  `position:"Query" name:"AutoPay"`
+	UserDiskPerformanceLevel string                            `position:"Query" name:"UserDiskPerformanceLevel"`
+	ResourceType             string                            `position:"Query" name:"ResourceType"`
+	PromotionId              string                            `position:"Query" name:"PromotionId"`
+	UserDiskSizeGib          requests.Integer                  `position:"Query" name:"UserDiskSizeGib"`
+	ResourceSpecs            *[]ModifyDesktopSpecResourceSpecs `position:"Query" name:"ResourceSpecs"  type:"Repeated"`
+	DesktopId                string                            `position:"Query" name:"DesktopId"`
+	DesktopType              string                            `position:"Query" name:"DesktopType"`
+	RootDiskSizeGib          requests.Integer                  `position:"Query" name:"RootDiskSizeGib"`
+}
+
+// ModifyDesktopSpecResourceSpecs is a repeated param struct in ModifyDesktopSpecRequest
+type ModifyDesktopSpecResourceSpecs struct {
+	UserDiskSizeGib string `name:"UserDiskSizeGib"`
+	DesktopId       string `name:"DesktopId"`
+	RootDiskSizeGib string `name:"RootDiskSizeGib"`
 }
 
 // ModifyDesktopSpecResponse is the response struct for api ModifyDesktopSpec
 type ModifyDesktopSpecResponse struct {
 	*responses.BaseResponse
-	OrderId   string `json:"OrderId" xml:"OrderId"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	OrderId   string  `json:"OrderId" xml:"OrderId"`
+	RequestId string  `json:"RequestId" xml:"RequestId"`
+	OrderIds  []int64 `json:"OrderIds" xml:"OrderIds"`
 }
 
 // CreateModifyDesktopSpecRequest creates a request to invoke ModifyDesktopSpec API
@@ -92,7 +102,7 @@ func CreateModifyDesktopSpecRequest() (request *ModifyDesktopSpecRequest) {
 	request = &ModifyDesktopSpecRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "ModifyDesktopSpec", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "ModifyDesktopSpec", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

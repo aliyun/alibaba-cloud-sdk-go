@@ -86,7 +86,7 @@ func CreateStopDesktopsRequest() (request *StopDesktopsRequest) {
 	request = &StopDesktopsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "StopDesktops", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "StopDesktops", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -90,7 +90,7 @@ func CreateDescribeNetworkPackagesRequest() (request *DescribeNetworkPackagesReq
 	request = &DescribeNetworkPackagesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "DescribeNetworkPackages", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "DescribeNetworkPackages", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

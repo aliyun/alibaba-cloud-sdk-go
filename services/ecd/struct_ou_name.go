@@ -17,6 +17,7 @@ package ecd
 
 // OuName is a nested struct in ecd response
 type OuName struct {
-	OfficeSiteId string `json:"OfficeSiteId" xml:"OfficeSiteId"`
-	OUName       string `json:"OUName" xml:"OUName"`
+	OfficeSiteId  string `json:"OfficeSiteId" xml:"OfficeSiteId"`
+	OUName        string `json:"OUName" xml:"OUName"`
+	DisplayOUName string `json:"DisplayOUName" xml:"DisplayOUName"`
 }

@@ -85,7 +85,7 @@ func CreateDeleteSnapshotRequest() (request *DeleteSnapshotRequest) {
 	request = &DeleteSnapshotRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "DeleteSnapshot", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "DeleteSnapshot", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

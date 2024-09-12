@@ -85,7 +85,7 @@ func CreateResetNASDefaultMountTargetRequest() (request *ResetNASDefaultMountTar
 	request = &ResetNASDefaultMountTargetRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "ResetNASDefaultMountTarget", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "ResetNASDefaultMountTarget", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

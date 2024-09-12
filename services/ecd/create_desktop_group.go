@@ -71,34 +71,53 @@ func (client *Client) CreateDesktopGroupWithCallback(request *CreateDesktopGroup
 // CreateDesktopGroupRequest is the request struct for api CreateDesktopGroup
 type CreateDesktopGroupRequest struct {
 	*requests.RpcRequest
-	VolumeEncryptionKey     string           `position:"Query" name:"VolumeEncryptionKey"`
-	OfficeSiteId            string           `position:"Query" name:"OfficeSiteId"`
-	Classify                string           `position:"Query" name:"Classify"`
-	EndUserIds              *[]string        `position:"Query" name:"EndUserIds"  type:"Repeated"`
-	ScaleStrategyId         string           `position:"Query" name:"ScaleStrategyId"`
-	ClientToken             string           `position:"Query" name:"ClientToken"`
-	BundleId                string           `position:"Query" name:"BundleId"`
-	BindAmount              requests.Integer `position:"Query" name:"BindAmount"`
-	LoadPolicy              requests.Integer `position:"Query" name:"LoadPolicy"`
-	DesktopGroupName        string           `position:"Query" name:"DesktopGroupName"`
-	AllowBufferCount        requests.Integer `position:"Query" name:"AllowBufferCount"`
-	DefaultInitDesktopCount requests.Integer `position:"Query" name:"DefaultInitDesktopCount"`
-	DirectoryId             string           `position:"Query" name:"DirectoryId"`
-	MinDesktopsCount        requests.Integer `position:"Query" name:"MinDesktopsCount"`
-	AllClassifyUsers        requests.Boolean `position:"Query" name:"AllClassifyUsers"`
-	MaxDesktopsCount        requests.Integer `position:"Query" name:"MaxDesktopsCount"`
-	VolumeEncryptionEnabled requests.Boolean `position:"Query" name:"VolumeEncryptionEnabled"`
-	Period                  requests.Integer `position:"Query" name:"Period"`
-	AllowAutoSetup          requests.Integer `position:"Query" name:"AllowAutoSetup"`
-	AutoPay                 requests.Boolean `position:"Query" name:"AutoPay"`
-	Comments                string           `position:"Query" name:"Comments"`
-	ResetType               requests.Integer `position:"Query" name:"ResetType"`
-	OwnType                 requests.Integer `position:"Query" name:"OwnType"`
-	KeepDuration            requests.Integer `position:"Query" name:"KeepDuration"`
-	PeriodUnit              string           `position:"Query" name:"PeriodUnit"`
-	VpcId                   string           `position:"Query" name:"VpcId"`
-	ChargeType              string           `position:"Query" name:"ChargeType"`
-	PolicyGroupId           string           `position:"Query" name:"PolicyGroupId"`
+	DesktopGroupName        string                   `position:"Query" name:"DesktopGroupName"`
+	AllowBufferCount        requests.Integer         `position:"Query" name:"AllowBufferCount"`
+	GroupVersion            requests.Integer         `position:"Query" name:"GroupVersion"`
+	Tag                     *[]CreateDesktopGroupTag `position:"Query" name:"Tag"  type:"Repeated"`
+	AllClassifyUsers        requests.Boolean         `position:"Query" name:"AllClassifyUsers"`
+	MaxDesktopsCount        requests.Integer         `position:"Query" name:"MaxDesktopsCount"`
+	VolumeEncryptionEnabled requests.Boolean         `position:"Query" name:"VolumeEncryptionEnabled"`
+	Period                  requests.Integer         `position:"Query" name:"Period"`
+	AllowAutoSetup          requests.Integer         `position:"Query" name:"AllowAutoSetup"`
+	ResetType               requests.Integer         `position:"Query" name:"ResetType"`
+	RatioThreshold          requests.Float           `position:"Query" name:"RatioThreshold"`
+	KeepDuration            requests.Integer         `position:"Query" name:"KeepDuration"`
+	PeriodUnit              string                   `position:"Query" name:"PeriodUnit"`
+	AutoRenew               requests.Boolean         `position:"Query" name:"AutoRenew"`
+	ProfileFollowSwitch     requests.Boolean         `position:"Query" name:"ProfileFollowSwitch"`
+	BuyDesktopsCount        requests.Integer         `position:"Query" name:"BuyDesktopsCount"`
+	PolicyGroupId           string                   `position:"Query" name:"PolicyGroupId"`
+	VolumeEncryptionKey     string                   `position:"Query" name:"VolumeEncryptionKey"`
+	OfficeSiteId            string                   `position:"Query" name:"OfficeSiteId"`
+	Classify                string                   `position:"Query" name:"Classify"`
+	EndUserIds              *[]string                `position:"Query" name:"EndUserIds"  type:"Repeated"`
+	ScaleStrategyId         string                   `position:"Query" name:"ScaleStrategyId"`
+	ClientToken             string                   `position:"Query" name:"ClientToken"`
+	BundleId                string                   `position:"Query" name:"BundleId"`
+	EnableInternetAccess    requests.Boolean         `position:"Query" name:"EnableInternetAccess"`
+	BindAmount              requests.Integer         `position:"Query" name:"BindAmount"`
+	LoadPolicy              requests.Integer         `position:"Query" name:"LoadPolicy"`
+	DefaultInitDesktopCount requests.Integer         `position:"Query" name:"DefaultInitDesktopCount"`
+	IdleDisconnectDuration  requests.Integer         `position:"Query" name:"IdleDisconnectDuration"`
+	DirectoryId             string                   `position:"Query" name:"DirectoryId"`
+	MinDesktopsCount        requests.Integer         `position:"Query" name:"MinDesktopsCount"`
+	FileSystemId            string                   `position:"Query" name:"FileSystemId"`
+	SubnetId                string                   `position:"Query" name:"SubnetId"`
+	AutoPay                 requests.Boolean         `position:"Query" name:"AutoPay"`
+	Comments                string                   `position:"Query" name:"Comments"`
+	OwnType                 requests.Integer         `position:"Query" name:"OwnType"`
+	StopDuration            requests.Integer         `position:"Query" name:"StopDuration"`
+	PromotionId             string                   `position:"Query" name:"PromotionId"`
+	ConnectDuration         requests.Integer         `position:"Query" name:"ConnectDuration"`
+	VpcId                   string                   `position:"Query" name:"VpcId"`
+	ChargeType              string                   `position:"Query" name:"ChargeType"`
+}
+
+// CreateDesktopGroupTag is a repeated param struct in CreateDesktopGroupRequest
+type CreateDesktopGroupTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // CreateDesktopGroupResponse is the response struct for api CreateDesktopGroup
@@ -114,7 +133,7 @@ func CreateCreateDesktopGroupRequest() (request *CreateDesktopGroupRequest) {
 	request = &CreateDesktopGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "CreateDesktopGroup", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "CreateDesktopGroup", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

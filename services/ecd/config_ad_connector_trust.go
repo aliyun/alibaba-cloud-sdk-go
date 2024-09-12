@@ -71,8 +71,9 @@ func (client *Client) ConfigADConnectorTrustWithCallback(request *ConfigADConnec
 // ConfigADConnectorTrustRequest is the request struct for api ConfigADConnectorTrust
 type ConfigADConnectorTrustRequest struct {
 	*requests.RpcRequest
-	OfficeSiteId string `position:"Query" name:"OfficeSiteId"`
-	TrustKey     string `position:"Query" name:"TrustKey"`
+	OfficeSiteId     string           `position:"Query" name:"OfficeSiteId"`
+	TrustKey         string           `position:"Query" name:"TrustKey"`
+	RdsLicenseDomain requests.Boolean `position:"Query" name:"RdsLicenseDomain"`
 }
 
 // ConfigADConnectorTrustResponse is the response struct for api ConfigADConnectorTrust
@@ -86,7 +87,7 @@ func CreateConfigADConnectorTrustRequest() (request *ConfigADConnectorTrustReque
 	request = &ConfigADConnectorTrustRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "ConfigADConnectorTrust", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "ConfigADConnectorTrust", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

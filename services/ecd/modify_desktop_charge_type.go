@@ -71,12 +71,15 @@ func (client *Client) ModifyDesktopChargeTypeWithCallback(request *ModifyDesktop
 // ModifyDesktopChargeTypeRequest is the request struct for api ModifyDesktopChargeType
 type ModifyDesktopChargeTypeRequest struct {
 	*requests.RpcRequest
-	Period      requests.Integer `position:"Query" name:"Period"`
-	AutoPay     requests.Boolean `position:"Query" name:"AutoPay"`
-	PromotionId string           `position:"Query" name:"PromotionId"`
-	PeriodUnit  string           `position:"Query" name:"PeriodUnit"`
-	ChargeType  string           `position:"Query" name:"ChargeType"`
-	DesktopId   *[]string        `position:"Query" name:"DesktopId"  type:"Repeated"`
+	PostPaidAfterUsedUp requests.Boolean `position:"Query" name:"PostPaidAfterUsedUp"`
+	DesktopId           *[]string        `position:"Query" name:"DesktopId"  type:"Repeated"`
+	UseDuration         requests.Integer `position:"Query" name:"UseDuration"`
+	Period              requests.Integer `position:"Query" name:"Period"`
+	AutoPay             requests.Boolean `position:"Query" name:"AutoPay"`
+	PromotionId         string           `position:"Query" name:"PromotionId"`
+	PeriodUnit          string           `position:"Query" name:"PeriodUnit"`
+	AutoRenew           requests.Boolean `position:"Query" name:"AutoRenew"`
+	ChargeType          string           `position:"Query" name:"ChargeType"`
 }
 
 // ModifyDesktopChargeTypeResponse is the response struct for api ModifyDesktopChargeType
@@ -92,7 +95,7 @@ func CreateModifyDesktopChargeTypeRequest() (request *ModifyDesktopChargeTypeReq
 	request = &ModifyDesktopChargeTypeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "ModifyDesktopChargeType", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "ModifyDesktopChargeType", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

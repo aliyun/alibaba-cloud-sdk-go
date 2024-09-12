@@ -72,6 +72,7 @@ func (client *Client) DescribePolicyGroupsWithCallback(request *DescribePolicyGr
 type DescribePolicyGroupsRequest struct {
 	*requests.RpcRequest
 	NextToken     string           `position:"Query" name:"NextToken"`
+	Scope         string           `position:"Query" name:"Scope"`
 	MaxResults    requests.Integer `position:"Query" name:"MaxResults"`
 	PolicyGroupId *[]string        `position:"Query" name:"PolicyGroupId"  type:"Repeated"`
 }
@@ -89,7 +90,7 @@ func CreateDescribePolicyGroupsRequest() (request *DescribePolicyGroupsRequest) 
 	request = &DescribePolicyGroupsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "DescribePolicyGroups", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "DescribePolicyGroups", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

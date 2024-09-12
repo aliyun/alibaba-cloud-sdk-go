@@ -17,7 +17,8 @@ package ecd
 
 // ModifyResult is a nested struct in ecd response
 type ModifyResult struct {
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	DesktopId string `json:"DesktopId" xml:"DesktopId"`
+	Code        string `json:"Code" xml:"Code"`
+	Message     string `json:"Message" xml:"Message"`
+	DesktopId   string `json:"DesktopId" xml:"DesktopId"`
+	CheckResult bool   `json:"CheckResult" xml:"CheckResult"`
 }

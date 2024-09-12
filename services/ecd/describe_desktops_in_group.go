@@ -71,6 +71,7 @@ func (client *Client) DescribeDesktopsInGroupWithCallback(request *DescribeDeskt
 // DescribeDesktopsInGroupRequest is the request struct for api DescribeDesktopsInGroup
 type DescribeDesktopsInGroupRequest struct {
 	*requests.RpcRequest
+	IgnoreDeleted  requests.Boolean `position:"Query" name:"IgnoreDeleted"`
 	DesktopGroupId string           `position:"Query" name:"DesktopGroupId"`
 	NextToken      string           `position:"Query" name:"NextToken"`
 	MaxResults     requests.Integer `position:"Query" name:"MaxResults"`
@@ -88,6 +89,7 @@ type DescribeDesktopsInGroupResponse struct {
 	OnlinePrePaidDesktopsCount  int               `json:"OnlinePrePaidDesktopsCount" xml:"OnlinePrePaidDesktopsCount"`
 	RunningPrePaidDesktopsCount int               `json:"RunningPrePaidDesktopsCount" xml:"RunningPrePaidDesktopsCount"`
 	StopedPrePaidDesktopsCount  int               `json:"StopedPrePaidDesktopsCount" xml:"StopedPrePaidDesktopsCount"`
+	StoppedPrePaidDesktopsCount int               `json:"StoppedPrePaidDesktopsCount" xml:"StoppedPrePaidDesktopsCount"`
 	PaidDesktops                []PaidDesktop     `json:"PaidDesktops" xml:"PaidDesktops"`
 	PostPaidDesktops            []PostPaidDesktop `json:"PostPaidDesktops" xml:"PostPaidDesktops"`
 }
@@ -97,7 +99,7 @@ func CreateDescribeDesktopsInGroupRequest() (request *DescribeDesktopsInGroupReq
 	request = &DescribeDesktopsInGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "DescribeDesktopsInGroup", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "DescribeDesktopsInGroup", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -71,10 +71,17 @@ func (client *Client) DescribeSnapshotsWithCallback(request *DescribeSnapshotsRe
 // DescribeSnapshotsRequest is the request struct for api DescribeSnapshots
 type DescribeSnapshotsRequest struct {
 	*requests.RpcRequest
-	SnapshotId string           `position:"Query" name:"SnapshotId"`
-	NextToken  string           `position:"Query" name:"NextToken"`
-	MaxResults requests.Integer `position:"Query" name:"MaxResults"`
-	DesktopId  string           `position:"Query" name:"DesktopId"`
+	SnapshotId     string           `position:"Query" name:"SnapshotId"`
+	SnapshotName   string           `position:"Query" name:"SnapshotName"`
+	StartTime      string           `position:"Query" name:"StartTime"`
+	NextToken      string           `position:"Query" name:"NextToken"`
+	DesktopId      string           `position:"Query" name:"DesktopId"`
+	DesktopName    string           `position:"Query" name:"DesktopName"`
+	Creator        string           `position:"Query" name:"Creator"`
+	SourceDiskType string           `position:"Query" name:"SourceDiskType"`
+	EndTime        string           `position:"Query" name:"EndTime"`
+	SnapshotType   string           `position:"Query" name:"SnapshotType"`
+	MaxResults     requests.Integer `position:"Query" name:"MaxResults"`
 }
 
 // DescribeSnapshotsResponse is the response struct for api DescribeSnapshots
@@ -90,7 +97,7 @@ func CreateDescribeSnapshotsRequest() (request *DescribeSnapshotsRequest) {
 	request = &DescribeSnapshotsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "DescribeSnapshots", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "DescribeSnapshots", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

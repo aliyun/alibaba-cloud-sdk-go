@@ -88,7 +88,7 @@ func CreateAddUserToDesktopGroupRequest() (request *AddUserToDesktopGroupRequest
 	request = &AddUserToDesktopGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "AddUserToDesktopGroup", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "AddUserToDesktopGroup", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

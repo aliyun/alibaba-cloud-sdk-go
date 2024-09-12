@@ -17,7 +17,31 @@ package ecd
 
 // Session is a nested struct in ecd response
 type Session struct {
-	EndUserId         string `json:"EndUserId" xml:"EndUserId"`
-	EstablishmentTime string `json:"EstablishmentTime" xml:"EstablishmentTime"`
-	ExternalUserName  string `json:"ExternalUserName" xml:"ExternalUserName"`
+	OsSessionStatus            string `json:"OsSessionStatus" xml:"OsSessionStatus"`
+	DesktopGroupName           string `json:"DesktopGroupName" xml:"DesktopGroupName"`
+	SessionEndTime             string `json:"SessionEndTime" xml:"SessionEndTime"`
+	DesktopName                string `json:"DesktopName" xml:"DesktopName"`
+	OfficeSiteName             string `json:"OfficeSiteName" xml:"OfficeSiteName"`
+	LatestConnectionTime       int64  `json:"LatestConnectionTime" xml:"LatestConnectionTime"`
+	SessionStatus              string `json:"SessionStatus" xml:"SessionStatus"`
+	ExternalUserName           string `json:"ExternalUserName" xml:"ExternalUserName"`
+	OsType                     string `json:"OsType" xml:"OsType"`
+	SessionStartTime           string `json:"SessionStartTime" xml:"SessionStartTime"`
+	TotalConnectionDuration    int64  `json:"TotalConnectionDuration" xml:"TotalConnectionDuration"`
+	DesktopId                  string `json:"DesktopId" xml:"DesktopId"`
+	EndUserId                  string `json:"EndUserId" xml:"EndUserId"`
+	TotalConnectionTime        int64  `json:"TotalConnectionTime" xml:"TotalConnectionTime"`
+	ClientVersion              string `json:"ClientVersion" xml:"ClientVersion"`
+	SubPayType                 string `json:"SubPayType" xml:"SubPayType"`
+	EstablishmentTime          string `json:"EstablishmentTime" xml:"EstablishmentTime"`
+	LastSessionStartTime       string `json:"LastSessionStartTime" xml:"LastSessionStartTime"`
+	ClientOS                   string `json:"ClientOS" xml:"ClientOS"`
+	DesktopGroupId             string `json:"DesktopGroupId" xml:"DesktopGroupId"`
+	OfficeSiteId               string `json:"OfficeSiteId" xml:"OfficeSiteId"`
+	LastSessionEndTime         string `json:"LastSessionEndTime" xml:"LastSessionEndTime"`
+	OwnType                    int    `json:"OwnType" xml:"OwnType"`
+	SessionIdleTime            int64  `json:"SessionIdleTime" xml:"SessionIdleTime"`
+	ProtocolType               string `json:"ProtocolType" xml:"ProtocolType"`
+	EndUserApplyCoordinateTime int64  `json:"EndUserApplyCoordinateTime" xml:"EndUserApplyCoordinateTime"`
+	ClientIp                   string `json:"ClientIp" xml:"ClientIp"`
 }

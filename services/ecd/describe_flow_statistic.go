@@ -91,7 +91,7 @@ func CreateDescribeFlowStatisticRequest() (request *DescribeFlowStatisticRequest
 	request = &DescribeFlowStatisticRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "DescribeFlowStatistic", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "DescribeFlowStatistic", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

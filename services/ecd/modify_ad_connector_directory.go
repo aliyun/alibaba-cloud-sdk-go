@@ -95,7 +95,7 @@ func CreateModifyADConnectorDirectoryRequest() (request *ModifyADConnectorDirect
 	request = &ModifyADConnectorDirectoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "ModifyADConnectorDirectory", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "ModifyADConnectorDirectory", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

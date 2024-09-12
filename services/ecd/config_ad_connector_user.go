@@ -88,7 +88,7 @@ func CreateConfigADConnectorUserRequest() (request *ConfigADConnectorUserRequest
 	request = &ConfigADConnectorUserRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "ConfigADConnectorUser", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "ConfigADConnectorUser", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }

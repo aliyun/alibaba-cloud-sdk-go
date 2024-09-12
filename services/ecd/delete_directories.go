@@ -85,7 +85,7 @@ func CreateDeleteDirectoriesRequest() (request *DeleteDirectoriesRequest) {
 	request = &DeleteDirectoriesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ecd", "2020-09-30", "DeleteDirectories", "", "")
+	request.InitWithApiInfo("ecd", "2020-09-30", "DeleteDirectories", "gwsecd", "openAPI")
 	request.Method = requests.POST
 	return
 }
