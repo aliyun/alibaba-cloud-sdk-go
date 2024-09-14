@@ -111,13 +111,14 @@ type DescribeNetworkInterfaceAttributeResponse struct {
 	QueueNumber                     int                                                 `json:"QueueNumber" xml:"QueueNumber"`
 	DeleteOnRelease                 bool                                                `json:"DeleteOnRelease" xml:"DeleteOnRelease"`
 	TcpOptionAddressEnabled         string                                              `json:"TcpOptionAddressEnabled" xml:"TcpOptionAddressEnabled"`
+	SourceDestCheck                 bool                                                `json:"SourceDestCheck" xml:"SourceDestCheck"`
 	SecurityGroupIds                SecurityGroupIdsInDescribeNetworkInterfaceAttribute `json:"SecurityGroupIds" xml:"SecurityGroupIds"`
-	ConnectionTrackingConfiguration ConnectionTrackingConfiguration                     `json:"ConnectionTrackingConfiguration" xml:"ConnectionTrackingConfiguration"`
-	NetworkInterfaceTrafficConfig   NetworkInterfaceTrafficConfig                       `json:"NetworkInterfaceTrafficConfig" xml:"NetworkInterfaceTrafficConfig"`
 	AssociatedPublicIp              AssociatedPublicIp                                  `json:"AssociatedPublicIp" xml:"AssociatedPublicIp"`
 	Attachment                      Attachment                                          `json:"Attachment" xml:"Attachment"`
 	BondInterfaceSpecification      BondInterfaceSpecification                          `json:"BondInterfaceSpecification" xml:"BondInterfaceSpecification"`
 	SlaveInterfaceSpecification     SlaveInterfaceSpecification                         `json:"SlaveInterfaceSpecification" xml:"SlaveInterfaceSpecification"`
+	NetworkInterfaceTrafficConfig   NetworkInterfaceTrafficConfig                       `json:"NetworkInterfaceTrafficConfig" xml:"NetworkInterfaceTrafficConfig"`
+	ConnectionTrackingConfiguration ConnectionTrackingConfiguration                     `json:"ConnectionTrackingConfiguration" xml:"ConnectionTrackingConfiguration"`
 	EnhancedNetwork                 EnhancedNetwork                                     `json:"EnhancedNetwork" xml:"EnhancedNetwork"`
 	PrivateIpSets                   PrivateIpSetsInDescribeNetworkInterfaceAttribute    `json:"PrivateIpSets" xml:"PrivateIpSets"`
 	Ipv6Sets                        Ipv6SetsInDescribeNetworkInterfaceAttribute         `json:"Ipv6Sets" xml:"Ipv6Sets"`

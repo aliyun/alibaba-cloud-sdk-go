@@ -77,6 +77,7 @@ type ModifyNetworkInterfaceAttributeRequest struct {
 	Description                     string                                                         `position:"Query" name:"Description"`
 	NetworkInterfaceTrafficConfig   ModifyNetworkInterfaceAttributeNetworkInterfaceTrafficConfig   `position:"Query" name:"NetworkInterfaceTrafficConfig"  type:"Struct"`
 	EnhancedNetwork                 ModifyNetworkInterfaceAttributeEnhancedNetwork                 `position:"Query" name:"EnhancedNetwork"  type:"Struct"`
+	SourceDestCheck                 requests.Boolean                                               `position:"Query" name:"SourceDestCheck"`
 	NetworkInterfaceName            string                                                         `position:"Query" name:"NetworkInterfaceName"`
 	TxQueueSize                     requests.Integer                                               `position:"Query" name:"TxQueueSize"`
 	DeleteOnRelease                 requests.Boolean                                               `position:"Query" name:"DeleteOnRelease"`
