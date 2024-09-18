@@ -72,10 +72,10 @@ func (client *Client) QueryApprovalInfoWithCallback(request *QueryApprovalInfoRe
 type QueryApprovalInfoRequest struct {
 	*requests.RpcRequest
 	AccessPoint string           `position:"Query" name:"AccessPoint"`
+	UserId      string           `position:"Query" name:"UserId"`
 	PageSize    requests.Integer `position:"Query" name:"PageSize"`
 	SignType    string           `position:"Query" name:"SignType"`
 	Page        requests.Integer `position:"Query" name:"Page"`
-	UserId      string           `position:"Query" name:"UserId"`
 	Status      requests.Integer `position:"Query" name:"Status"`
 }
 

@@ -73,11 +73,11 @@ type CreateUserGroupRequest struct {
 	*requests.RpcRequest
 	ClientToken          string `position:"Query" name:"ClientToken"`
 	AccessPoint          string `position:"Query" name:"AccessPoint"`
+	UserGroupName        string `position:"Query" name:"UserGroupName"`
+	ParentUserGroupId    string `position:"Query" name:"ParentUserGroupId"`
 	UserGroupId          string `position:"Query" name:"UserGroupId"`
 	SignType             string `position:"Query" name:"SignType"`
-	UserGroupName        string `position:"Query" name:"UserGroupName"`
 	UserGroupDescription string `position:"Query" name:"UserGroupDescription"`
-	ParentUserGroupId    string `position:"Query" name:"ParentUserGroupId"`
 }
 
 // CreateUserGroupResponse is the response struct for api CreateUserGroup

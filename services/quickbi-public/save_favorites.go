@@ -71,11 +71,11 @@ func (client *Client) SaveFavoritesWithCallback(request *SaveFavoritesRequest, c
 // SaveFavoritesRequest is the request struct for api SaveFavorites
 type SaveFavoritesRequest struct {
 	*requests.RpcRequest
-	WorksId     string `position:"Query" name:"WorksId"`
 	WorksType   string `position:"Query" name:"WorksType"`
 	AccessPoint string `position:"Query" name:"AccessPoint"`
 	SignType    string `position:"Query" name:"SignType"`
 	UserId      string `position:"Query" name:"UserId"`
+	WorksId     string `position:"Query" name:"WorksId"`
 }
 
 // SaveFavoritesResponse is the response struct for api SaveFavorites

@@ -17,11 +17,11 @@ package quickbi_public
 
 // Field is a nested struct in quickbi_public response
 type Field struct {
-	Fid         string `json:"Fid" xml:"Fid"`
-	Name        string `json:"Name" xml:"Name"`
-	Type        string `json:"Type" xml:"Type"`
 	Caption     string `json:"Caption" xml:"Caption"`
 	Column      string `json:"Column" xml:"Column"`
 	DataType    string `json:"DataType" xml:"DataType"`
+	Fid         string `json:"Fid" xml:"Fid"`
 	Granularity string `json:"Granularity" xml:"Granularity"`
+	Name        string `json:"Name" xml:"Name"`
+	Type        string `json:"Type" xml:"Type"`
 }

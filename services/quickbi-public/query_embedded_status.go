@@ -71,9 +71,9 @@ func (client *Client) QueryEmbeddedStatusWithCallback(request *QueryEmbeddedStat
 // QueryEmbeddedStatusRequest is the request struct for api QueryEmbeddedStatus
 type QueryEmbeddedStatusRequest struct {
 	*requests.RpcRequest
-	WorksId     string `position:"Query" name:"WorksId"`
 	AccessPoint string `position:"Query" name:"AccessPoint"`
 	SignType    string `position:"Query" name:"SignType"`
+	WorksId     string `position:"Query" name:"WorksId"`
 }
 
 // QueryEmbeddedStatusResponse is the response struct for api QueryEmbeddedStatus

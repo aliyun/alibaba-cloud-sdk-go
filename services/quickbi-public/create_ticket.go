@@ -71,13 +71,13 @@ func (client *Client) CreateTicketWithCallback(request *CreateTicketRequest, cal
 // CreateTicketRequest is the request struct for api CreateTicket
 type CreateTicketRequest struct {
 	*requests.RpcRequest
-	ExpireTime     requests.Integer `position:"Query" name:"ExpireTime"`
 	AccessPoint    string           `position:"Query" name:"AccessPoint"`
 	AccountType    requests.Integer `position:"Query" name:"AccountType"`
-	SignType       string           `position:"Query" name:"SignType"`
-	CmptId         string           `position:"Query" name:"CmptId"`
 	UserId         string           `position:"Query" name:"UserId"`
 	AccountName    string           `position:"Query" name:"AccountName"`
+	ExpireTime     requests.Integer `position:"Query" name:"ExpireTime"`
+	SignType       string           `position:"Query" name:"SignType"`
+	CmptId         string           `position:"Query" name:"CmptId"`
 	GlobalParam    string           `position:"Query" name:"GlobalParam"`
 	WorksId        string           `position:"Query" name:"WorksId"`
 	TicketNum      requests.Integer `position:"Query" name:"TicketNum"`

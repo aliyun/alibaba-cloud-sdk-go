@@ -17,6 +17,6 @@ package quickbi_public
 
 // WorksModels is a nested struct in quickbi_public response
 type WorksModels struct {
-	WorksType string `json:"WorksType" xml:"WorksType"`
 	WorksId   string `json:"WorksId" xml:"WorksId"`
+	WorksType string `json:"WorksType" xml:"WorksType"`
 }

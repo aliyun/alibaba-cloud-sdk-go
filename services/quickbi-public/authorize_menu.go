@@ -72,12 +72,12 @@ func (client *Client) AuthorizeMenuWithCallback(request *AuthorizeMenuRequest, c
 type AuthorizeMenuRequest struct {
 	*requests.RpcRequest
 	DataPortalId    string           `position:"Query" name:"DataPortalId"`
-	UserIds         string           `position:"Query" name:"UserIds"`
 	AuthPointsValue requests.Integer `position:"Query" name:"AuthPointsValue"`
 	AccessPoint     string           `position:"Query" name:"AccessPoint"`
+	MenuIds         string           `position:"Query" name:"MenuIds"`
 	SignType        string           `position:"Query" name:"SignType"`
 	UserGroupIds    string           `position:"Query" name:"UserGroupIds"`
-	MenuIds         string           `position:"Query" name:"MenuIds"`
+	UserIds         string           `position:"Query" name:"UserIds"`
 }
 
 // AuthorizeMenuResponse is the response struct for api AuthorizeMenu

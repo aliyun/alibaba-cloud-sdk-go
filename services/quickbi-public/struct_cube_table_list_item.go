@@ -17,12 +17,12 @@ package quickbi_public
 
 // CubeTableListItem is a nested struct in quickbi_public response
 type CubeTableListItem struct {
-	TableName    string `json:"TableName" xml:"TableName"`
-	DatasourceId string `json:"DatasourceId" xml:"DatasourceId"`
-	DsType       string `json:"DsType" xml:"DsType"`
-	UniqueId     string `json:"UniqueId" xml:"UniqueId"`
-	FactTable    bool   `json:"FactTable" xml:"FactTable"`
 	Caption      string `json:"Caption" xml:"Caption"`
 	Customsql    bool   `json:"Customsql" xml:"Customsql"`
+	DatasourceId string `json:"DatasourceId" xml:"DatasourceId"`
+	DsType       string `json:"DsType" xml:"DsType"`
+	FactTable    bool   `json:"FactTable" xml:"FactTable"`
 	Sql          string `json:"Sql" xml:"Sql"`
+	TableName    string `json:"TableName" xml:"TableName"`
+	UniqueId     string `json:"UniqueId" xml:"UniqueId"`
 }

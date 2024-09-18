@@ -72,10 +72,10 @@ func (client *Client) ListApiDatasourceWithCallback(request *ListApiDatasourceRe
 type ListApiDatasourceRequest struct {
 	*requests.RpcRequest
 	AccessPoint string           `position:"Query" name:"AccessPoint"`
-	PageSize    requests.Integer `position:"Query" name:"PageSize"`
-	SignType    string           `position:"Query" name:"SignType"`
 	PageNum     requests.Integer `position:"Query" name:"PageNum"`
+	PageSize    requests.Integer `position:"Query" name:"PageSize"`
 	KeyWord     string           `position:"Query" name:"KeyWord"`
+	SignType    string           `position:"Query" name:"SignType"`
 	WorkspaceId string           `position:"Query" name:"WorkspaceId"`
 }
 

@@ -17,11 +17,11 @@ package quickbi_public
 
 // QueryParam is a nested struct in quickbi_public response
 type QueryParam struct {
-	Uid       string `json:"Uid" xml:"Uid"`
-	PathId    string `json:"PathId" xml:"PathId"`
+	AreaId    string `json:"AreaId" xml:"AreaId"`
+	AreaName  string `json:"AreaName" xml:"AreaName"`
 	Caption   string `json:"Caption" xml:"Caption"`
 	DataType  string `json:"DataType" xml:"DataType"`
 	IsMeasure bool   `json:"IsMeasure" xml:"IsMeasure"`
-	AreaId    string `json:"AreaId" xml:"AreaId"`
-	AreaName  string `json:"AreaName" xml:"AreaName"`
+	PathId    string `json:"PathId" xml:"PathId"`
+	Uid       string `json:"Uid" xml:"Uid"`
 }

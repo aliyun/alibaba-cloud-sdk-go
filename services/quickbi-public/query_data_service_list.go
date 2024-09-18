@@ -71,12 +71,12 @@ func (client *Client) QueryDataServiceListWithCallback(request *QueryDataService
 // QueryDataServiceListRequest is the request struct for api QueryDataServiceList
 type QueryDataServiceListRequest struct {
 	*requests.RpcRequest
-	PageNo      requests.Integer `position:"Query" name:"PageNo"`
 	AccessPoint string           `position:"Query" name:"AccessPoint"`
-	Name        string           `position:"Query" name:"Name"`
+	UserId      string           `position:"Query" name:"UserId"`
 	PageSize    requests.Integer `position:"Query" name:"PageSize"`
 	SignType    string           `position:"Query" name:"SignType"`
-	UserId      string           `position:"Query" name:"UserId"`
+	PageNo      requests.Integer `position:"Query" name:"PageNo"`
+	Name        string           `position:"Query" name:"Name"`
 }
 
 // QueryDataServiceListResponse is the response struct for api QueryDataServiceList

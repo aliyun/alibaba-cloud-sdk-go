@@ -18,6 +18,6 @@ package quickbi_public
 // FailInfosItem is a nested struct in quickbi_public response
 type FailInfosItem struct {
 	Code     string `json:"Code" xml:"Code"`
-	Input    string `json:"Input" xml:"Input"`
 	CodeDesc string `json:"CodeDesc" xml:"CodeDesc"`
+	Input    string `json:"Input" xml:"Input"`
 }

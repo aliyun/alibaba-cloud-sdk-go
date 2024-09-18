@@ -72,12 +72,12 @@ func (client *Client) QueryCubePerformanceWithCallback(request *QueryCubePerform
 type QueryCubePerformanceRequest struct {
 	*requests.RpcRequest
 	AccessPoint    string           `position:"Query" name:"AccessPoint"`
-	SignType       string           `position:"Query" name:"SignType"`
 	PageNum        requests.Integer `position:"Query" name:"PageNum"`
 	PageSize       requests.Integer `position:"Query" name:"PageSize"`
 	CostTimeAvgMin requests.Integer `position:"Query" name:"CostTimeAvgMin"`
 	QueryType      string           `position:"Query" name:"QueryType"`
 	CubeId         string           `position:"Query" name:"CubeId"`
+	SignType       string           `position:"Query" name:"SignType"`
 	WorkspaceId    string           `position:"Query" name:"WorkspaceId"`
 }
 

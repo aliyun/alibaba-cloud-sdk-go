@@ -80,8 +80,8 @@ type QueryUserGroupMemberRequest struct {
 // QueryUserGroupMemberResponse is the response struct for api QueryUserGroupMember
 type QueryUserGroupMemberResponse struct {
 	*responses.BaseResponse
-	Success   bool   `json:"Success" xml:"Success"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 	Result    []Data `json:"Result" xml:"Result"`
 }
 

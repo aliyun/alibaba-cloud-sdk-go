@@ -71,19 +71,19 @@ func (client *Client) QueryDataWithCallback(request *QueryDataRequest, callback 
 // QueryDataRequest is the request struct for api QueryData
 type QueryDataRequest struct {
 	*requests.RpcRequest
-	ReturnFields string `position:"Query" name:"ReturnFields"`
 	AccessPoint  string `position:"Query" name:"AccessPoint"`
-	SignType     string `position:"Query" name:"SignType"`
-	Conditions   string `position:"Query" name:"Conditions"`
 	UserId       string `position:"Query" name:"UserId"`
+	SignType     string `position:"Query" name:"SignType"`
+	ReturnFields string `position:"Query" name:"ReturnFields"`
+	Conditions   string `position:"Query" name:"Conditions"`
 	ApiId        string `position:"Query" name:"ApiId"`
 }
 
 // QueryDataResponse is the response struct for api QueryData
 type QueryDataResponse struct {
 	*responses.BaseResponse
-	Success   bool   `json:"Success" xml:"Success"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 	Result    Result `json:"Result" xml:"Result"`
 }
 

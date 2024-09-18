@@ -72,10 +72,10 @@ func (client *Client) CancelAuthorizationMenuWithCallback(request *CancelAuthori
 type CancelAuthorizationMenuRequest struct {
 	*requests.RpcRequest
 	DataPortalId string `position:"Query" name:"DataPortalId"`
-	UserIds      string `position:"Query" name:"UserIds"`
 	AccessPoint  string `position:"Query" name:"AccessPoint"`
 	SignType     string `position:"Query" name:"SignType"`
 	UserGroupIds string `position:"Query" name:"UserGroupIds"`
+	UserIds      string `position:"Query" name:"UserIds"`
 	MenuIds      string `position:"Query" name:"MenuIds"`
 }
 

@@ -80,8 +80,8 @@ type QueryUserRoleInfoInWorkspaceRequest struct {
 // QueryUserRoleInfoInWorkspaceResponse is the response struct for api QueryUserRoleInfoInWorkspace
 type QueryUserRoleInfoInWorkspaceResponse struct {
 	*responses.BaseResponse
-	Success   bool   `json:"Success" xml:"Success"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 	Result    Result `json:"Result" xml:"Result"`
 }
 

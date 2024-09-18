@@ -73,10 +73,10 @@ type ListOrganizationRoleUsersRequest struct {
 	*requests.RpcRequest
 	RoleId      requests.Integer `position:"Query" name:"RoleId"`
 	AccessPoint string           `position:"Query" name:"AccessPoint"`
-	PageSize    requests.Integer `position:"Query" name:"PageSize"`
-	SignType    string           `position:"Query" name:"SignType"`
 	PageNum     requests.Integer `position:"Query" name:"PageNum"`
+	PageSize    requests.Integer `position:"Query" name:"PageSize"`
 	Keyword     string           `position:"Query" name:"Keyword"`
+	SignType    string           `position:"Query" name:"SignType"`
 }
 
 // ListOrganizationRoleUsersResponse is the response struct for api ListOrganizationRoleUsers

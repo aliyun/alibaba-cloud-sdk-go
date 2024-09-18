@@ -19,8 +19,8 @@ package quickbi_public
 type HeadersItem struct {
 	DataType    string `json:"DataType" xml:"DataType"`
 	Label       string `json:"Label" xml:"Label"`
-	Granularity string `json:"Granularity" xml:"Granularity"`
 	Aggregator  string `json:"Aggregator" xml:"Aggregator"`
+	Granularity string `json:"Granularity" xml:"Granularity"`
 	Column      string `json:"Column" xml:"Column"`
 	Type        string `json:"Type" xml:"Type"`
 }

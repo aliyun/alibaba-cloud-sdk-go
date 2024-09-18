@@ -71,10 +71,10 @@ func (client *Client) CheckReadableWithCallback(request *CheckReadableRequest, c
 // CheckReadableRequest is the request struct for api CheckReadable
 type CheckReadableRequest struct {
 	*requests.RpcRequest
-	WorksId     string `position:"Query" name:"WorksId"`
 	AccessPoint string `position:"Query" name:"AccessPoint"`
 	SignType    string `position:"Query" name:"SignType"`
 	UserId      string `position:"Query" name:"UserId"`
+	WorksId     string `position:"Query" name:"WorksId"`
 }
 
 // CheckReadableResponse is the response struct for api CheckReadable

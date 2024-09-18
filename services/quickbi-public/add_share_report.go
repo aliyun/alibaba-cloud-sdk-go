@@ -73,9 +73,9 @@ type AddShareReportRequest struct {
 	*requests.RpcRequest
 	ClientToken string           `position:"Query" name:"ClientToken"`
 	AccessPoint string           `position:"Query" name:"AccessPoint"`
+	ExpireDate  requests.Integer `position:"Query" name:"ExpireDate"`
 	AuthPoint   requests.Integer `position:"Query" name:"AuthPoint"`
 	SignType    string           `position:"Query" name:"SignType"`
-	ExpireDate  requests.Integer `position:"Query" name:"ExpireDate"`
 	ShareToType requests.Integer `position:"Query" name:"ShareToType"`
 	WorksId     string           `position:"Query" name:"WorksId"`
 	ShareToId   string           `position:"Query" name:"ShareToId"`

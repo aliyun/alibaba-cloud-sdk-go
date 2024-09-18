@@ -71,18 +71,18 @@ func (client *Client) UpdateWorkspaceUsersRoleWithCallback(request *UpdateWorksp
 // UpdateWorkspaceUsersRoleRequest is the request struct for api UpdateWorkspaceUsersRole
 type UpdateWorkspaceUsersRoleRequest struct {
 	*requests.RpcRequest
-	UserIds     string           `position:"Query" name:"UserIds"`
 	RoleId      requests.Integer `position:"Query" name:"RoleId"`
 	AccessPoint string           `position:"Query" name:"AccessPoint"`
 	SignType    string           `position:"Query" name:"SignType"`
+	UserIds     string           `position:"Query" name:"UserIds"`
 	WorkspaceId string           `position:"Query" name:"WorkspaceId"`
 }
 
 // UpdateWorkspaceUsersRoleResponse is the response struct for api UpdateWorkspaceUsersRole
 type UpdateWorkspaceUsersRoleResponse struct {
 	*responses.BaseResponse
-	Success   bool   `json:"Success" xml:"Success"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 	Result    Result `json:"Result" xml:"Result"`
 }
 

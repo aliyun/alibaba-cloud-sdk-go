@@ -79,8 +79,8 @@ type QueryShareListRequest struct {
 // QueryShareListResponse is the response struct for api QueryShareList
 type QueryShareListResponse struct {
 	*responses.BaseResponse
-	Success   bool   `json:"Success" xml:"Success"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 	Result    []Data `json:"Result" xml:"Result"`
 }
 

@@ -72,19 +72,19 @@ func (client *Client) ModifyCopilotEmbedConfigWithCallback(request *ModifyCopilo
 type ModifyCopilotEmbedConfigRequest struct {
 	*requests.RpcRequest
 	CopilotId   string `position:"Query" name:"CopilotId"`
-	AgentName   string `position:"Query" name:"AgentName"`
 	AccessPoint string `position:"Query" name:"AccessPoint"`
 	DataRange   string `position:"Query" name:"DataRange"`
 	ModuleName  string `position:"Query" name:"ModuleName"`
 	SignType    string `position:"Query" name:"SignType"`
+	AgentName   string `position:"Query" name:"AgentName"`
 }
 
 // ModifyCopilotEmbedConfigResponse is the response struct for api ModifyCopilotEmbedConfig
 type ModifyCopilotEmbedConfigResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
 	Result    bool   `json:"Result" xml:"Result"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateModifyCopilotEmbedConfigRequest creates a request to invoke ModifyCopilotEmbedConfig API

@@ -72,8 +72,8 @@ func (client *Client) QueryDatasetDetailInfoWithCallback(request *QueryDatasetDe
 type QueryDatasetDetailInfoRequest struct {
 	*requests.RpcRequest
 	AccessPoint string `position:"Query" name:"AccessPoint"`
-	DatasetId   string `position:"Query" name:"DatasetId"`
 	SignType    string `position:"Query" name:"SignType"`
+	DatasetId   string `position:"Query" name:"DatasetId"`
 }
 
 // QueryDatasetDetailInfoResponse is the response struct for api QueryDatasetDetailInfo

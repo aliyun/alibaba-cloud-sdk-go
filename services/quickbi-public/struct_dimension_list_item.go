@@ -17,13 +17,14 @@ package quickbi_public
 
 // DimensionListItem is a nested struct in quickbi_public response
 type DimensionListItem struct {
-	DataType      string `json:"DataType" xml:"DataType"`
-	Expression    string `json:"Expression" xml:"Expression"`
-	FactColumn    string `json:"FactColumn" xml:"FactColumn"`
-	DimensionType string `json:"DimensionType" xml:"DimensionType"`
-	Granularity   string `json:"Granularity" xml:"Granularity"`
-	RefUid        string `json:"RefUid" xml:"RefUid"`
-	Caption       string `json:"Caption" xml:"Caption"`
-	Uid           string `json:"Uid" xml:"Uid"`
-	TableUniqueId string `json:"TableUniqueId" xml:"TableUniqueId"`
+	Caption          string `json:"Caption" xml:"Caption"`
+	DataType         string `json:"DataType" xml:"DataType"`
+	DimensionType    string `json:"DimensionType" xml:"DimensionType"`
+	Expression       string `json:"Expression" xml:"Expression"`
+	FactColumn       string `json:"FactColumn" xml:"FactColumn"`
+	FieldDescription string `json:"FieldDescription" xml:"FieldDescription"`
+	Granularity      string `json:"Granularity" xml:"Granularity"`
+	RefUid           string `json:"RefUid" xml:"RefUid"`
+	TableUniqueId    string `json:"TableUniqueId" xml:"TableUniqueId"`
+	Uid              string `json:"Uid" xml:"Uid"`
 }

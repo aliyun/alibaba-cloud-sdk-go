@@ -17,10 +17,10 @@ package quickbi_public
 
 // ResultInQueryApprovalInfo is a nested struct in quickbi_public response
 type ResultInQueryApprovalInfo struct {
+	Page       int                    `json:"Page" xml:"Page"`
+	PageSize   int                    `json:"PageSize" xml:"PageSize"`
+	Start      int                    `json:"Start" xml:"Start"`
 	Total      int                    `json:"Total" xml:"Total"`
 	TotalPages int                    `json:"TotalPages" xml:"TotalPages"`
-	Start      int                    `json:"Start" xml:"Start"`
-	PageSize   int                    `json:"PageSize" xml:"PageSize"`
-	Page       int                    `json:"Page" xml:"Page"`
 	Data       []ApprovalsResultModel `json:"Data" xml:"Data"`
 }

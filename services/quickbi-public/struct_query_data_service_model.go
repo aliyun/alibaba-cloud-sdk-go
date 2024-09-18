@@ -17,20 +17,20 @@ package quickbi_public
 
 // QueryDataServiceModel is a nested struct in quickbi_public response
 type QueryDataServiceModel struct {
-	Sid           string  `json:"Sid" xml:"Sid"`
-	Name          string  `json:"Name" xml:"Name"`
-	Desc          string  `json:"Desc" xml:"Desc"`
-	CubeId        string  `json:"CubeId" xml:"CubeId"`
-	CubeName      string  `json:"CubeName" xml:"CubeName"`
-	WorkspaceId   string  `json:"WorkspaceId" xml:"WorkspaceId"`
-	WorkspaceName string  `json:"WorkspaceName" xml:"WorkspaceName"`
-	GmtCreate     string  `json:"GmtCreate" xml:"GmtCreate"`
-	GmtModified   string  `json:"GmtModified" xml:"GmtModified"`
 	CreatorId     string  `json:"CreatorId" xml:"CreatorId"`
 	CreatorName   string  `json:"CreatorName" xml:"CreatorName"`
+	CubeId        string  `json:"CubeId" xml:"CubeId"`
+	CubeName      string  `json:"CubeName" xml:"CubeName"`
+	Desc          string  `json:"Desc" xml:"Desc"`
+	GmtCreate     string  `json:"GmtCreate" xml:"GmtCreate"`
+	GmtModified   string  `json:"GmtModified" xml:"GmtModified"`
 	ModifierId    string  `json:"ModifierId" xml:"ModifierId"`
 	ModifierName  string  `json:"ModifierName" xml:"ModifierName"`
+	Name          string  `json:"Name" xml:"Name"`
 	OwnerId       string  `json:"OwnerId" xml:"OwnerId"`
 	OwnerName     string  `json:"OwnerName" xml:"OwnerName"`
+	Sid           string  `json:"Sid" xml:"Sid"`
+	WorkspaceId   string  `json:"WorkspaceId" xml:"WorkspaceId"`
+	WorkspaceName string  `json:"WorkspaceName" xml:"WorkspaceName"`
 	Content       Content `json:"Content" xml:"Content"`
 }

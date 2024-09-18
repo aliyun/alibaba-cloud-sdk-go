@@ -17,7 +17,7 @@ package quickbi_public
 
 // ApiCopilotLlmCubeModelsItem is a nested struct in quickbi_public response
 type ApiCopilotLlmCubeModelsItem struct {
-	LlmCubeId  string `json:"LlmCubeId" xml:"LlmCubeId"`
 	CreateUser string `json:"CreateUser" xml:"CreateUser"`
+	LlmCubeId  string `json:"LlmCubeId" xml:"LlmCubeId"`
 	Alias      string `json:"Alias" xml:"Alias"`
 }

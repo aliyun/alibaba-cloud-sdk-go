@@ -71,17 +71,17 @@ func (client *Client) QueryWorksBloodRelationshipWithCallback(request *QueryWork
 // QueryWorksBloodRelationshipRequest is the request struct for api QueryWorksBloodRelationship
 type QueryWorksBloodRelationshipRequest struct {
 	*requests.RpcRequest
-	ApiLevel    string `position:"Query" name:"ApiLevel"`
-	WorksId     string `position:"Query" name:"WorksId"`
 	AccessPoint string `position:"Query" name:"AccessPoint"`
 	SignType    string `position:"Query" name:"SignType"`
+	ApiLevel    string `position:"Query" name:"ApiLevel"`
+	WorksId     string `position:"Query" name:"WorksId"`
 }
 
 // QueryWorksBloodRelationshipResponse is the response struct for api QueryWorksBloodRelationship
 type QueryWorksBloodRelationshipResponse struct {
 	*responses.BaseResponse
-	Success   bool   `json:"Success" xml:"Success"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 	Result    []Item `json:"Result" xml:"Result"`
 }
 

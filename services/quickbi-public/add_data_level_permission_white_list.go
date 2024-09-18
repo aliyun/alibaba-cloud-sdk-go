@@ -72,13 +72,13 @@ func (client *Client) AddDataLevelPermissionWhiteListWithCallback(request *AddDa
 type AddDataLevelPermissionWhiteListRequest struct {
 	*requests.RpcRequest
 	TargetType  string `position:"Query" name:"TargetType"`
-	TargetIds   string `position:"Query" name:"TargetIds"`
 	ClientToken string `position:"Query" name:"ClientToken"`
-	RuleType    string `position:"Query" name:"RuleType"`
 	AccessPoint string `position:"Query" name:"AccessPoint"`
+	CubeId      string `position:"Query" name:"CubeId"`
+	TargetIds   string `position:"Query" name:"TargetIds"`
+	RuleType    string `position:"Query" name:"RuleType"`
 	SignType    string `position:"Query" name:"SignType"`
 	OperateType string `position:"Query" name:"OperateType"`
-	CubeId      string `position:"Query" name:"CubeId"`
 }
 
 // AddDataLevelPermissionWhiteListResponse is the response struct for api AddDataLevelPermissionWhiteList

@@ -17,20 +17,20 @@ package quickbi_public
 
 // ApprovalsResultModel is a nested struct in quickbi_public response
 type ApprovalsResultModel struct {
-	WorkspaceName string `json:"WorkspaceName" xml:"WorkspaceName"`
-	ApplicationId string `json:"ApplicationId" xml:"ApplicationId"`
 	ApplicantId   string `json:"ApplicantId" xml:"ApplicantId"`
 	ApplicantName string `json:"ApplicantName" xml:"ApplicantName"`
+	ApplicationId string `json:"ApplicationId" xml:"ApplicationId"`
+	ApplyReason   string `json:"ApplyReason" xml:"ApplyReason"`
 	ApproverId    string `json:"ApproverId" xml:"ApproverId"`
 	ApproverName  string `json:"ApproverName" xml:"ApproverName"`
+	DeleteFlag    bool   `json:"DeleteFlag" xml:"DeleteFlag"`
+	ExpireDate    int64  `json:"ExpireDate" xml:"ExpireDate"`
+	FlagStatus    int    `json:"FlagStatus" xml:"FlagStatus"`
+	GmtCreate     int64  `json:"GmtCreate" xml:"GmtCreate"`
+	GmtModified   int64  `json:"GmtModified" xml:"GmtModified"`
+	HandleReason  string `json:"HandleReason" xml:"HandleReason"`
 	ResourceId    string `json:"ResourceId" xml:"ResourceId"`
 	ResourceName  string `json:"ResourceName" xml:"ResourceName"`
 	ResourceType  string `json:"ResourceType" xml:"ResourceType"`
-	ApplyReason   string `json:"ApplyReason" xml:"ApplyReason"`
-	HandleReason  string `json:"HandleReason" xml:"HandleReason"`
-	ExpireDate    int64  `json:"ExpireDate" xml:"ExpireDate"`
-	GmtCreate     int64  `json:"GmtCreate" xml:"GmtCreate"`
-	GmtModified   int64  `json:"GmtModified" xml:"GmtModified"`
-	FlagStatus    int    `json:"FlagStatus" xml:"FlagStatus"`
-	DeleteFlag    bool   `json:"DeleteFlag" xml:"DeleteFlag"`
+	WorkspaceName string `json:"WorkspaceName" xml:"WorkspaceName"`
 }

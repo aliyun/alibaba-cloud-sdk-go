@@ -73,8 +73,8 @@ type UpdateTicketNumRequest struct {
 	*requests.RpcRequest
 	Ticket      string           `position:"Query" name:"Ticket"`
 	AccessPoint string           `position:"Query" name:"AccessPoint"`
-	TicketNum   requests.Integer `position:"Query" name:"TicketNum"`
 	SignType    string           `position:"Query" name:"SignType"`
+	TicketNum   requests.Integer `position:"Query" name:"TicketNum"`
 }
 
 // UpdateTicketNumResponse is the response struct for api UpdateTicketNum

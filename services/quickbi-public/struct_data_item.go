@@ -82,7 +82,7 @@ type DataItem struct {
 	HasEditAuth             bool       `json:"HasEditAuth" xml:"HasEditAuth"`
 	LastLoginTime           int64      `json:"LastLoginTime" xml:"LastLoginTime"`
 	RoleIdList              []int64    `json:"RoleIdList" xml:"RoleIdList"`
+	DataSource              DataSource `json:"DataSource" xml:"DataSource"`
 	Directory               Directory  `json:"Directory" xml:"Directory"`
 	Role                    Role       `json:"Role" xml:"Role"`
-	DataSource              DataSource `json:"DataSource" xml:"DataSource"`
 }

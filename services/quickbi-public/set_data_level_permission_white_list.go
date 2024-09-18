@@ -71,9 +71,9 @@ func (client *Client) SetDataLevelPermissionWhiteListWithCallback(request *SetDa
 // SetDataLevelPermissionWhiteListRequest is the request struct for api SetDataLevelPermissionWhiteList
 type SetDataLevelPermissionWhiteListRequest struct {
 	*requests.RpcRequest
-	WhiteListModel string `position:"Query" name:"WhiteListModel"`
 	AccessPoint    string `position:"Query" name:"AccessPoint"`
 	SignType       string `position:"Query" name:"SignType"`
+	WhiteListModel string `position:"Query" name:"WhiteListModel"`
 }
 
 // SetDataLevelPermissionWhiteListResponse is the response struct for api SetDataLevelPermissionWhiteList

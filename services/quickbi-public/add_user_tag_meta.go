@@ -71,12 +71,12 @@ func (client *Client) AddUserTagMetaWithCallback(request *AddUserTagMetaRequest,
 // AddUserTagMetaRequest is the request struct for api AddUserTagMeta
 type AddUserTagMetaRequest struct {
 	*requests.RpcRequest
-	TagDescription string `position:"Query" name:"TagDescription"`
-	TagName        string `position:"Query" name:"TagName"`
-	TagId          string `position:"Query" name:"TagId"`
 	ClientToken    string `position:"Query" name:"ClientToken"`
 	AccessPoint    string `position:"Query" name:"AccessPoint"`
+	TagName        string `position:"Query" name:"TagName"`
+	TagId          string `position:"Query" name:"TagId"`
 	SignType       string `position:"Query" name:"SignType"`
+	TagDescription string `position:"Query" name:"TagDescription"`
 }
 
 // AddUserTagMetaResponse is the response struct for api AddUserTagMeta

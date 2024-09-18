@@ -79,8 +79,8 @@ type QueryDatasetSwitchInfoRequest struct {
 // QueryDatasetSwitchInfoResponse is the response struct for api QueryDatasetSwitchInfo
 type QueryDatasetSwitchInfoResponse struct {
 	*responses.BaseResponse
-	Success   bool   `json:"Success" xml:"Success"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 	Result    Result `json:"Result" xml:"Result"`
 }
 

@@ -17,25 +17,25 @@ package quickbi_public
 
 // CubePerformanceDiagnoseModel is a nested struct in quickbi_public response
 type CubePerformanceDiagnoseModel struct {
-	CubeId                    string `json:"CubeId" xml:"CubeId"`
-	CubeName                  string `json:"CubeName" xml:"CubeName"`
-	QueryTimeoutCount         int    `json:"QueryTimeoutCount" xml:"QueryTimeoutCount"`
-	RepeatSqlQueryPercent     string `json:"RepeatSqlQueryPercent" xml:"RepeatSqlQueryPercent"`
-	WorkspaceName             string `json:"WorkspaceName" xml:"WorkspaceName"`
-	WorkspaceId               string `json:"WorkspaceId" xml:"WorkspaceId"`
-	RepeatQueryPercentNum     string `json:"RepeatQueryPercentNum" xml:"RepeatQueryPercentNum"`
-	RepeatQueryPercent        string `json:"RepeatQueryPercent" xml:"RepeatQueryPercent"`
-	QuickIndexCostTimeAvg     string `json:"QuickIndexCostTimeAvg" xml:"QuickIndexCostTimeAvg"`
-	QuickIndexQueryCount      int    `json:"QuickIndexQueryCount" xml:"QuickIndexQueryCount"`
 	CacheCostTimeAvg          string `json:"CacheCostTimeAvg" xml:"CacheCostTimeAvg"`
 	CacheQueryCount           int    `json:"CacheQueryCount" xml:"CacheQueryCount"`
-	RepeatSqlQueryCount       int    `json:"RepeatSqlQueryCount" xml:"RepeatSqlQueryCount"`
 	CostTimeAvg               string `json:"CostTimeAvg" xml:"CostTimeAvg"`
-	QueryCountAvg             string `json:"QueryCountAvg" xml:"QueryCountAvg"`
+	CubeId                    string `json:"CubeId" xml:"CubeId"`
+	CubeName                  string `json:"CubeName" xml:"CubeName"`
 	QueryCount                int    `json:"QueryCount" xml:"QueryCount"`
-	QueryTimeoutCountPercent  string `json:"QueryTimeoutCountPercent" xml:"QueryTimeoutCountPercent"`
-	QueryOverTenSecPercentNum string `json:"QueryOverTenSecPercentNum" xml:"QueryOverTenSecPercentNum"`
+	QueryCountAvg             string `json:"QueryCountAvg" xml:"QueryCountAvg"`
 	QueryOverFivePercentNum   string `json:"QueryOverFivePercentNum" xml:"QueryOverFivePercentNum"`
-	QueryOverTenSecPercent    string `json:"QueryOverTenSecPercent" xml:"QueryOverTenSecPercent"`
 	QueryOverFiveSecPercent   string `json:"QueryOverFiveSecPercent" xml:"QueryOverFiveSecPercent"`
+	QueryOverTenSecPercent    string `json:"QueryOverTenSecPercent" xml:"QueryOverTenSecPercent"`
+	QueryOverTenSecPercentNum string `json:"QueryOverTenSecPercentNum" xml:"QueryOverTenSecPercentNum"`
+	QueryTimeoutCount         int    `json:"QueryTimeoutCount" xml:"QueryTimeoutCount"`
+	QueryTimeoutCountPercent  string `json:"QueryTimeoutCountPercent" xml:"QueryTimeoutCountPercent"`
+	QuickIndexCostTimeAvg     string `json:"QuickIndexCostTimeAvg" xml:"QuickIndexCostTimeAvg"`
+	QuickIndexQueryCount      int    `json:"QuickIndexQueryCount" xml:"QuickIndexQueryCount"`
+	RepeatQueryPercent        string `json:"RepeatQueryPercent" xml:"RepeatQueryPercent"`
+	RepeatQueryPercentNum     string `json:"RepeatQueryPercentNum" xml:"RepeatQueryPercentNum"`
+	RepeatSqlQueryCount       int    `json:"RepeatSqlQueryCount" xml:"RepeatSqlQueryCount"`
+	RepeatSqlQueryPercent     string `json:"RepeatSqlQueryPercent" xml:"RepeatSqlQueryPercent"`
+	WorkspaceId               string `json:"WorkspaceId" xml:"WorkspaceId"`
+	WorkspaceName             string `json:"WorkspaceName" xml:"WorkspaceName"`
 }

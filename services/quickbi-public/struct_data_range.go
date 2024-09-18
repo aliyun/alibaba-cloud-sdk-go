@@ -17,8 +17,8 @@ package quickbi_public
 
 // DataRange is a nested struct in quickbi_public response
 type DataRange struct {
-	AllTheme bool     `json:"AllTheme" xml:"AllTheme"`
 	AllCube  bool     `json:"AllCube" xml:"AllCube"`
-	Themes   []string `json:"Themes" xml:"Themes"`
+	AllTheme bool     `json:"AllTheme" xml:"AllTheme"`
 	LlmCubes []string `json:"LlmCubes" xml:"LlmCubes"`
+	Themes   []string `json:"Themes" xml:"Themes"`
 }

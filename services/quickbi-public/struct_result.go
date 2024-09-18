@@ -57,8 +57,8 @@ type Result struct {
 	GmtCreate                   string                        `json:"GmtCreate" xml:"GmtCreate"`
 	WorkName                    string                        `json:"WorkName" xml:"WorkName"`
 	UserId                      string                        `json:"UserId" xml:"UserId"`
-	UserType                    int                           `json:"UserType" xml:"UserType"`
 	NickName                    string                        `json:"NickName" xml:"NickName"`
+	UserType                    int                           `json:"UserType" xml:"UserType"`
 	AccessTicket                string                        `json:"AccessTicket" xml:"AccessTicket"`
 	Phone                       string                        `json:"Phone" xml:"Phone"`
 	Description                 string                        `json:"Description" xml:"Description"`
@@ -88,13 +88,13 @@ type Result struct {
 	Detail                      Detail                        `json:"Detail" xml:"Detail"`
 	Directory                   Directory                     `json:"Directory" xml:"Directory"`
 	AuthConfigList              []AuthConfigListItem          `json:"AuthConfigList" xml:"AuthConfigList"`
-	ApiCopilotThemeModels       []ApiCopilotThemeModelsItem   `json:"ApiCopilotThemeModels" xml:"ApiCopilotThemeModels"`
 	Data                        []DataItem                    `json:"Data" xml:"Data"`
-	ApiCopilotLlmCubeModels     []ApiCopilotLlmCubeModelsItem `json:"ApiCopilotLlmCubeModels" xml:"ApiCopilotLlmCubeModels"`
-	FailResults                 []FailResultsItem             `json:"FailResults" xml:"FailResults"`
-	CubeTableList               []CubeTableListItem           `json:"CubeTableList" xml:"CubeTableList"`
 	UserGroupModels             []UserGroupModelsItem         `json:"UserGroupModels" xml:"UserGroupModels"`
 	MeasureList                 []MeasureListItem             `json:"MeasureList" xml:"MeasureList"`
-	Headers                     []HeadersItem                 `json:"Headers" xml:"Headers"`
+	FailResults                 []FailResultsItem             `json:"FailResults" xml:"FailResults"`
 	DimensionList               []DimensionListItem           `json:"DimensionList" xml:"DimensionList"`
+	ApiCopilotThemeModels       []ApiCopilotThemeModelsItem   `json:"ApiCopilotThemeModels" xml:"ApiCopilotThemeModels"`
+	ApiCopilotLlmCubeModels     []ApiCopilotLlmCubeModelsItem `json:"ApiCopilotLlmCubeModels" xml:"ApiCopilotLlmCubeModels"`
+	CubeTableList               []CubeTableListItem           `json:"CubeTableList" xml:"CubeTableList"`
+	Headers                     []HeadersItem                 `json:"Headers" xml:"Headers"`
 }

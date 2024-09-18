@@ -17,11 +17,11 @@ package quickbi_public
 
 // LogApiResultModel is a nested struct in quickbi_public response
 type LogApiResultModel struct {
-	WorkspaceId         string `json:"WorkspaceId" xml:"WorkspaceId"`
-	OperatorName        string `json:"OperatorName" xml:"OperatorName"`
-	OperatorAccountName string `json:"OperatorAccountName" xml:"OperatorAccountName"`
-	OperatorType        string `json:"OperatorType" xml:"OperatorType"`
-	TargetType          string `json:"TargetType" xml:"TargetType"`
-	TargetName          string `json:"TargetName" xml:"TargetName"`
 	GmtCreate           string `json:"GmtCreate" xml:"GmtCreate"`
+	OperatorAccountName string `json:"OperatorAccountName" xml:"OperatorAccountName"`
+	OperatorName        string `json:"OperatorName" xml:"OperatorName"`
+	OperatorType        string `json:"OperatorType" xml:"OperatorType"`
+	TargetName          string `json:"TargetName" xml:"TargetName"`
+	TargetType          string `json:"TargetType" xml:"TargetType"`
+	WorkspaceId         string `json:"WorkspaceId" xml:"WorkspaceId"`
 }

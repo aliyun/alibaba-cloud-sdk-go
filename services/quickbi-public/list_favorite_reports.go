@@ -71,12 +71,12 @@ func (client *Client) ListFavoriteReportsWithCallback(request *ListFavoriteRepor
 // ListFavoriteReportsRequest is the request struct for api ListFavoriteReports
 type ListFavoriteReportsRequest struct {
 	*requests.RpcRequest
-	TreeType    string           `position:"Query" name:"TreeType"`
 	AccessPoint string           `position:"Query" name:"AccessPoint"`
-	PageSize    requests.Integer `position:"Query" name:"PageSize"`
-	SignType    string           `position:"Query" name:"SignType"`
-	Keyword     string           `position:"Query" name:"Keyword"`
 	UserId      string           `position:"Query" name:"UserId"`
+	PageSize    requests.Integer `position:"Query" name:"PageSize"`
+	Keyword     string           `position:"Query" name:"Keyword"`
+	SignType    string           `position:"Query" name:"SignType"`
+	TreeType    string           `position:"Query" name:"TreeType"`
 }
 
 // ListFavoriteReportsResponse is the response struct for api ListFavoriteReports

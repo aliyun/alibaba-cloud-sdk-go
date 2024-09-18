@@ -71,13 +71,13 @@ func (client *Client) BatchAddFeishuUsersWithCallback(request *BatchAddFeishuUse
 // BatchAddFeishuUsersRequest is the request struct for api BatchAddFeishuUsers
 type BatchAddFeishuUsersRequest struct {
 	*requests.RpcRequest
-	IsAdmin      requests.Boolean `position:"Query" name:"IsAdmin"`
-	FeishuUsers  string           `position:"Query" name:"FeishuUsers"`
 	AccessPoint  string           `position:"Query" name:"AccessPoint"`
+	IsAuthAdmin  requests.Boolean `position:"Query" name:"IsAuthAdmin"`
+	IsAdmin      requests.Boolean `position:"Query" name:"IsAdmin"`
 	UserType     requests.Integer `position:"Query" name:"UserType"`
 	SignType     string           `position:"Query" name:"SignType"`
 	UserGroupIds string           `position:"Query" name:"UserGroupIds"`
-	IsAuthAdmin  requests.Boolean `position:"Query" name:"IsAuthAdmin"`
+	FeishuUsers  string           `position:"Query" name:"FeishuUsers"`
 }
 
 // BatchAddFeishuUsersResponse is the response struct for api BatchAddFeishuUsers

@@ -75,22 +75,22 @@ type AddUserRequest struct {
 	AdminUser     requests.Boolean `position:"Query" name:"AdminUser"`
 	AccessPoint   string           `position:"Query" name:"AccessPoint"`
 	AccountType   requests.Integer `position:"Query" name:"AccountType"`
-	UserType      requests.Integer `position:"Query" name:"UserType"`
-	SignType      string           `position:"Query" name:"SignType"`
 	AccountId     string           `position:"Query" name:"AccountId"`
 	RoleIds       string           `position:"Body" name:"RoleIds"`
 	AccountName   string           `position:"Query" name:"AccountName"`
-	Phone         string           `position:"Query" name:"Phone"`
 	NickName      string           `position:"Query" name:"NickName"`
 	AuthAdminUser requests.Boolean `position:"Query" name:"AuthAdminUser"`
 	Email         string           `position:"Query" name:"Email"`
+	UserType      requests.Integer `position:"Query" name:"UserType"`
+	SignType      string           `position:"Query" name:"SignType"`
+	Phone         string           `position:"Query" name:"Phone"`
 }
 
 // AddUserResponse is the response struct for api AddUser
 type AddUserResponse struct {
 	*responses.BaseResponse
-	Success   bool   `json:"Success" xml:"Success"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 	Result    Result `json:"Result" xml:"Result"`
 }
 

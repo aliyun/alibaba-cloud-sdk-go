@@ -71,12 +71,12 @@ func (client *Client) QueryWorksByWorkspaceWithCallback(request *QueryWorksByWor
 // QueryWorksByWorkspaceRequest is the request struct for api QueryWorksByWorkspace
 type QueryWorksByWorkspaceRequest struct {
 	*requests.RpcRequest
-	WorksType         string           `position:"Query" name:"WorksType"`
 	ThirdPartAuthFlag requests.Integer `position:"Query" name:"ThirdPartAuthFlag"`
 	AccessPoint       string           `position:"Query" name:"AccessPoint"`
-	SignType          string           `position:"Query" name:"SignType"`
 	PageNum           requests.Integer `position:"Query" name:"PageNum"`
 	PageSize          requests.Integer `position:"Query" name:"PageSize"`
+	WorksType         string           `position:"Query" name:"WorksType"`
+	SignType          string           `position:"Query" name:"SignType"`
 	WorkspaceId       string           `position:"Query" name:"WorkspaceId"`
 	Status            requests.Integer `position:"Query" name:"Status"`
 }
@@ -84,8 +84,8 @@ type QueryWorksByWorkspaceRequest struct {
 // QueryWorksByWorkspaceResponse is the response struct for api QueryWorksByWorkspace
 type QueryWorksByWorkspaceResponse struct {
 	*responses.BaseResponse
-	Success   bool   `json:"Success" xml:"Success"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 	Result    Result `json:"Result" xml:"Result"`
 }
 

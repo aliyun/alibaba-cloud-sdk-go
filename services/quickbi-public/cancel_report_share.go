@@ -72,10 +72,10 @@ func (client *Client) CancelReportShareWithCallback(request *CancelReportShareRe
 type CancelReportShareRequest struct {
 	*requests.RpcRequest
 	ReportId    string           `position:"Query" name:"ReportId"`
-	ShareToType requests.Integer `position:"Query" name:"ShareToType"`
 	AccessPoint string           `position:"Query" name:"AccessPoint"`
 	SignType    string           `position:"Query" name:"SignType"`
 	ShareToIds  string           `position:"Query" name:"ShareToIds"`
+	ShareToType requests.Integer `position:"Query" name:"ShareToType"`
 }
 
 // CancelReportShareResponse is the response struct for api CancelReportShare

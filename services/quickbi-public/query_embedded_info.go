@@ -78,8 +78,8 @@ type QueryEmbeddedInfoRequest struct {
 // QueryEmbeddedInfoResponse is the response struct for api QueryEmbeddedInfo
 type QueryEmbeddedInfoResponse struct {
 	*responses.BaseResponse
-	Success   bool   `json:"Success" xml:"Success"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 	Result    Result `json:"Result" xml:"Result"`
 }
 

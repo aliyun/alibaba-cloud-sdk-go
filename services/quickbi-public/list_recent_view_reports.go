@@ -72,13 +72,13 @@ func (client *Client) ListRecentViewReportsWithCallback(request *ListRecentViewR
 type ListRecentViewReportsRequest struct {
 	*requests.RpcRequest
 	AccessPoint string           `position:"Query" name:"AccessPoint"`
-	SignType    string           `position:"Query" name:"SignType"`
 	OffsetDay   requests.Integer `position:"Query" name:"OffsetDay"`
 	UserId      string           `position:"Query" name:"UserId"`
-	QueryMode   string           `position:"Query" name:"QueryMode"`
-	TreeType    string           `position:"Query" name:"TreeType"`
 	PageSize    requests.Integer `position:"Query" name:"PageSize"`
 	Keyword     string           `position:"Query" name:"Keyword"`
+	SignType    string           `position:"Query" name:"SignType"`
+	QueryMode   string           `position:"Query" name:"QueryMode"`
+	TreeType    string           `position:"Query" name:"TreeType"`
 }
 
 // ListRecentViewReportsResponse is the response struct for api ListRecentViewReports

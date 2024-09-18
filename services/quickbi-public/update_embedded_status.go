@@ -71,10 +71,10 @@ func (client *Client) UpdateEmbeddedStatusWithCallback(request *UpdateEmbeddedSt
 // UpdateEmbeddedStatusRequest is the request struct for api UpdateEmbeddedStatus
 type UpdateEmbeddedStatusRequest struct {
 	*requests.RpcRequest
-	WorksId           string           `position:"Query" name:"WorksId"`
 	ThirdPartAuthFlag requests.Boolean `position:"Query" name:"ThirdPartAuthFlag"`
 	AccessPoint       string           `position:"Query" name:"AccessPoint"`
 	SignType          string           `position:"Query" name:"SignType"`
+	WorksId           string           `position:"Query" name:"WorksId"`
 }
 
 // UpdateEmbeddedStatusResponse is the response struct for api UpdateEmbeddedStatus

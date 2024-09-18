@@ -72,15 +72,15 @@ func (client *Client) QueryDatasetInfoWithCallback(request *QueryDatasetInfoRequ
 type QueryDatasetInfoRequest struct {
 	*requests.RpcRequest
 	AccessPoint string `position:"Query" name:"AccessPoint"`
-	DatasetId   string `position:"Query" name:"DatasetId"`
 	SignType    string `position:"Query" name:"SignType"`
+	DatasetId   string `position:"Query" name:"DatasetId"`
 }
 
 // QueryDatasetInfoResponse is the response struct for api QueryDatasetInfo
 type QueryDatasetInfoResponse struct {
 	*responses.BaseResponse
-	Success   bool   `json:"Success" xml:"Success"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 	Result    Result `json:"Result" xml:"Result"`
 }
 

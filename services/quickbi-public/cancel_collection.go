@@ -71,10 +71,10 @@ func (client *Client) CancelCollectionWithCallback(request *CancelCollectionRequ
 // CancelCollectionRequest is the request struct for api CancelCollection
 type CancelCollectionRequest struct {
 	*requests.RpcRequest
-	WorksId     string `position:"Query" name:"WorksId"`
 	AccessPoint string `position:"Query" name:"AccessPoint"`
 	SignType    string `position:"Query" name:"SignType"`
 	UserId      string `position:"Query" name:"UserId"`
+	WorksId     string `position:"Query" name:"WorksId"`
 }
 
 // CancelCollectionResponse is the response struct for api CancelCollection

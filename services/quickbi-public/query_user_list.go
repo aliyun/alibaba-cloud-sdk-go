@@ -71,19 +71,19 @@ func (client *Client) QueryUserListWithCallback(request *QueryUserListRequest, c
 // QueryUserListRequest is the request struct for api QueryUserList
 type QueryUserListRequest struct {
 	*requests.RpcRequest
-	PageSize    requests.Integer `position:"Query" name:"PageSize"`
 	AccountType requests.Integer `position:"Query" name:"AccountType"`
 	AccessPoint string           `position:"Query" name:"AccessPoint"`
-	SignType    string           `position:"Query" name:"SignType"`
-	Keyword     string           `position:"Query" name:"Keyword"`
 	PageNum     requests.Integer `position:"Query" name:"PageNum"`
+	PageSize    requests.Integer `position:"Query" name:"PageSize"`
+	Keyword     string           `position:"Query" name:"Keyword"`
+	SignType    string           `position:"Query" name:"SignType"`
 }
 
 // QueryUserListResponse is the response struct for api QueryUserList
 type QueryUserListResponse struct {
 	*responses.BaseResponse
-	Success   bool   `json:"Success" xml:"Success"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 	Result    Result `json:"Result" xml:"Result"`
 }
 

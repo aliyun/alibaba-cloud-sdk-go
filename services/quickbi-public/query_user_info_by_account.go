@@ -81,8 +81,8 @@ type QueryUserInfoByAccountRequest struct {
 // QueryUserInfoByAccountResponse is the response struct for api QueryUserInfoByAccount
 type QueryUserInfoByAccountResponse struct {
 	*responses.BaseResponse
-	Success   bool   `json:"Success" xml:"Success"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 	Result    Result `json:"Result" xml:"Result"`
 }
 

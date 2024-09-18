@@ -45,8 +45,8 @@ type Data struct {
 	UsergroupName                string                       `json:"UsergroupName" xml:"UsergroupName"`
 	QuickIndexCostTimeAvg        string                       `json:"QuickIndexCostTimeAvg" xml:"QuickIndexCostTimeAvg"`
 	MenuId                       string                       `json:"MenuId" xml:"MenuId"`
-	ThirdPartAuthFlag            int                          `json:"ThirdPartAuthFlag" xml:"ThirdPartAuthFlag"`
 	SecurityLevel                string                       `json:"SecurityLevel" xml:"SecurityLevel"`
+	ThirdPartAuthFlag            int                          `json:"ThirdPartAuthFlag" xml:"ThirdPartAuthFlag"`
 	QueryOverTenSecPercentNum    string                       `json:"QueryOverTenSecPercentNum" xml:"QueryOverTenSecPercentNum"`
 	WorkspaceId                  string                       `json:"WorkspaceId" xml:"WorkspaceId"`
 	ReportType                   string                       `json:"ReportType" xml:"ReportType"`

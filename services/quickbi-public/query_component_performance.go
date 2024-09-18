@@ -73,12 +73,12 @@ type QueryComponentPerformanceRequest struct {
 	*requests.RpcRequest
 	ReportId       string           `position:"Query" name:"ReportId"`
 	AccessPoint    string           `position:"Query" name:"AccessPoint"`
-	SignType       string           `position:"Query" name:"SignType"`
 	PageNum        requests.Integer `position:"Query" name:"PageNum"`
-	ResourceType   string           `position:"Query" name:"ResourceType"`
 	PageSize       requests.Integer `position:"Query" name:"PageSize"`
 	CostTimeAvgMin requests.Integer `position:"Query" name:"CostTimeAvgMin"`
 	QueryType      string           `position:"Query" name:"QueryType"`
+	SignType       string           `position:"Query" name:"SignType"`
+	ResourceType   string           `position:"Query" name:"ResourceType"`
 	WorkspaceId    string           `position:"Query" name:"WorkspaceId"`
 }
 

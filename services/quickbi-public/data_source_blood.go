@@ -72,8 +72,8 @@ func (client *Client) DataSourceBloodWithCallback(request *DataSourceBloodReques
 type DataSourceBloodRequest struct {
 	*requests.RpcRequest
 	AccessPoint  string `position:"Query" name:"AccessPoint"`
-	DataSourceId string `position:"Query" name:"DataSourceId"`
 	SignType     string `position:"Query" name:"SignType"`
+	DataSourceId string `position:"Query" name:"DataSourceId"`
 }
 
 // DataSourceBloodResponse is the response struct for api DataSourceBlood

@@ -72,18 +72,18 @@ func (client *Client) QueryOrganizationWorkspaceListWithCallback(request *QueryO
 type QueryOrganizationWorkspaceListRequest struct {
 	*requests.RpcRequest
 	AccessPoint string           `position:"Query" name:"AccessPoint"`
-	PageSize    requests.Integer `position:"Query" name:"PageSize"`
-	SignType    string           `position:"Query" name:"SignType"`
-	Keyword     string           `position:"Query" name:"Keyword"`
 	PageNum     requests.Integer `position:"Query" name:"PageNum"`
 	UserId      string           `position:"Query" name:"UserId"`
+	PageSize    requests.Integer `position:"Query" name:"PageSize"`
+	Keyword     string           `position:"Query" name:"Keyword"`
+	SignType    string           `position:"Query" name:"SignType"`
 }
 
 // QueryOrganizationWorkspaceListResponse is the response struct for api QueryOrganizationWorkspaceList
 type QueryOrganizationWorkspaceListResponse struct {
 	*responses.BaseResponse
-	Success   bool   `json:"Success" xml:"Success"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 	Result    Result `json:"Result" xml:"Result"`
 }
 

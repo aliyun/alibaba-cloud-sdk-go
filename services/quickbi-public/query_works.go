@@ -71,17 +71,17 @@ func (client *Client) QueryWorksWithCallback(request *QueryWorksRequest, callbac
 // QueryWorksRequest is the request struct for api QueryWorks
 type QueryWorksRequest struct {
 	*requests.RpcRequest
-	ApiLevel    string `position:"Query" name:"ApiLevel"`
-	WorksId     string `position:"Query" name:"WorksId"`
 	AccessPoint string `position:"Query" name:"AccessPoint"`
 	SignType    string `position:"Query" name:"SignType"`
+	ApiLevel    string `position:"Query" name:"ApiLevel"`
+	WorksId     string `position:"Query" name:"WorksId"`
 }
 
 // QueryWorksResponse is the response struct for api QueryWorks
 type QueryWorksResponse struct {
 	*responses.BaseResponse
-	Success   bool   `json:"Success" xml:"Success"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 	Result    Result `json:"Result" xml:"Result"`
 }
 

@@ -80,8 +80,8 @@ type ListDataLevelPermissionWhiteListRequest struct {
 // ListDataLevelPermissionWhiteListResponse is the response struct for api ListDataLevelPermissionWhiteList
 type ListDataLevelPermissionWhiteListResponse struct {
 	*responses.BaseResponse
-	Success   bool   `json:"Success" xml:"Success"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 	Result    Result `json:"Result" xml:"Result"`
 }
 

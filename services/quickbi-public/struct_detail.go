@@ -18,6 +18,6 @@ package quickbi_public
 // Detail is a nested struct in quickbi_public response
 type Detail struct {
 	DashboardOfflineQuery int `json:"DashboardOfflineQuery" xml:"DashboardOfflineQuery"`
-	Report                int `json:"Report" xml:"Report"`
 	Page                  int `json:"Page" xml:"Page"`
+	Report                int `json:"Report" xml:"Report"`
 }

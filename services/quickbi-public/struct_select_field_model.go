@@ -17,9 +17,9 @@ package quickbi_public
 
 // SelectFieldModel is a nested struct in quickbi_public response
 type SelectFieldModel struct {
+	Aggregator string `json:"Aggregator" xml:"Aggregator"`
 	Alias      string `json:"Alias" xml:"Alias"`
 	Desc       string `json:"Desc" xml:"Desc"`
-	Aggregator string `json:"Aggregator" xml:"Aggregator"`
 	Orderby    string `json:"Orderby" xml:"Orderby"`
 	Field      Field  `json:"Field" xml:"Field"`
 }

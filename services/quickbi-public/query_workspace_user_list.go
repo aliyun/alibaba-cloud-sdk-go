@@ -72,18 +72,18 @@ func (client *Client) QueryWorkspaceUserListWithCallback(request *QueryWorkspace
 type QueryWorkspaceUserListRequest struct {
 	*requests.RpcRequest
 	AccessPoint string           `position:"Query" name:"AccessPoint"`
-	PageSize    requests.Integer `position:"Query" name:"PageSize"`
-	SignType    string           `position:"Query" name:"SignType"`
-	Keyword     string           `position:"Query" name:"Keyword"`
 	PageNum     requests.Integer `position:"Query" name:"PageNum"`
+	PageSize    requests.Integer `position:"Query" name:"PageSize"`
+	Keyword     string           `position:"Query" name:"Keyword"`
+	SignType    string           `position:"Query" name:"SignType"`
 	WorkspaceId string           `position:"Query" name:"WorkspaceId"`
 }
 
 // QueryWorkspaceUserListResponse is the response struct for api QueryWorkspaceUserList
 type QueryWorkspaceUserListResponse struct {
 	*responses.BaseResponse
-	Success   bool   `json:"Success" xml:"Success"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 	Result    Result `json:"Result" xml:"Result"`
 }
 

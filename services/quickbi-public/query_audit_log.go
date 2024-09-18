@@ -72,11 +72,11 @@ func (client *Client) QueryAuditLogWithCallback(request *QueryAuditLogRequest, c
 type QueryAuditLogRequest struct {
 	*requests.RpcRequest
 	AccessPoint   string `position:"Query" name:"AccessPoint"`
-	SignType      string `position:"Query" name:"SignType"`
 	StartDate     string `position:"Query" name:"StartDate"`
+	LogType       string `position:"Query" name:"LogType"`
+	SignType      string `position:"Query" name:"SignType"`
 	ResourceType  string `position:"Query" name:"ResourceType"`
 	OperatorTypes string `position:"Query" name:"OperatorTypes"`
-	LogType       string `position:"Query" name:"LogType"`
 	EndDate       string `position:"Query" name:"EndDate"`
 	OperatorId    string `position:"Query" name:"OperatorId"`
 	WorkspaceId   string `position:"Query" name:"WorkspaceId"`

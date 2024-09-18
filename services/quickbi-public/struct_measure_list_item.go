@@ -17,11 +17,12 @@ package quickbi_public
 
 // MeasureListItem is a nested struct in quickbi_public response
 type MeasureListItem struct {
-	DataType      string `json:"DataType" xml:"DataType"`
-	Expression    string `json:"Expression" xml:"Expression"`
-	MeasureType   string `json:"MeasureType" xml:"MeasureType"`
-	FactColumn    string `json:"FactColumn" xml:"FactColumn"`
-	Caption       string `json:"Caption" xml:"Caption"`
-	TableUniqueId string `json:"TableUniqueId" xml:"TableUniqueId"`
-	Uid           string `json:"Uid" xml:"Uid"`
+	Caption          string `json:"Caption" xml:"Caption"`
+	DataType         string `json:"DataType" xml:"DataType"`
+	Expression       string `json:"Expression" xml:"Expression"`
+	FactColumn       string `json:"FactColumn" xml:"FactColumn"`
+	FieldDescription string `json:"FieldDescription" xml:"FieldDescription"`
+	MeasureType      string `json:"MeasureType" xml:"MeasureType"`
+	TableUniqueId    string `json:"TableUniqueId" xml:"TableUniqueId"`
+	Uid              string `json:"Uid" xml:"Uid"`
 }

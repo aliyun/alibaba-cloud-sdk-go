@@ -17,9 +17,9 @@ package quickbi_public
 
 // ResultInQueryDataServiceList is a nested struct in quickbi_public response
 type ResultInQueryDataServiceList struct {
-	TotalPages int                     `json:"TotalPages" xml:"TotalPages"`
-	TotalNum   int                     `json:"TotalNum" xml:"TotalNum"`
 	PageNum    int                     `json:"PageNum" xml:"PageNum"`
 	PageSize   int                     `json:"PageSize" xml:"PageSize"`
+	TotalNum   int                     `json:"TotalNum" xml:"TotalNum"`
+	TotalPages int                     `json:"TotalPages" xml:"TotalPages"`
 	Data       []QueryDataServiceModel `json:"Data" xml:"Data"`
 }

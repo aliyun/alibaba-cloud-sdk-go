@@ -17,13 +17,13 @@ package quickbi_public
 
 // UserGroupModelsItem is a nested struct in quickbi_public response
 type UserGroupModelsItem struct {
-	IdentifiedPath    string `json:"IdentifiedPath" xml:"IdentifiedPath"`
-	ParentUsergroupId string `json:"ParentUsergroupId" xml:"ParentUsergroupId"`
-	ModifiedTime      string `json:"ModifiedTime" xml:"ModifiedTime"`
-	CreateUser        string `json:"CreateUser" xml:"CreateUser"`
-	UsergroupName     string `json:"UsergroupName" xml:"UsergroupName"`
 	CreateTime        string `json:"CreateTime" xml:"CreateTime"`
+	CreateUser        string `json:"CreateUser" xml:"CreateUser"`
+	IdentifiedPath    string `json:"IdentifiedPath" xml:"IdentifiedPath"`
+	ModifiedTime      string `json:"ModifiedTime" xml:"ModifiedTime"`
+	ModifyUser        string `json:"ModifyUser" xml:"ModifyUser"`
+	ParentUsergroupId string `json:"ParentUsergroupId" xml:"ParentUsergroupId"`
 	UsergroupDesc     string `json:"UsergroupDesc" xml:"UsergroupDesc"`
 	UsergroupId       string `json:"UsergroupId" xml:"UsergroupId"`
-	ModifyUser        string `json:"ModifyUser" xml:"ModifyUser"`
+	UsergroupName     string `json:"UsergroupName" xml:"UsergroupName"`
 }

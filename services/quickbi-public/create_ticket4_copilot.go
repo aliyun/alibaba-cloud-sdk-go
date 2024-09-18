@@ -72,12 +72,12 @@ func (client *Client) CreateTicket4CopilotWithCallback(request *CreateTicket4Cop
 type CreateTicket4CopilotRequest struct {
 	*requests.RpcRequest
 	CopilotId   string           `position:"Query" name:"CopilotId"`
-	ExpireTime  requests.Integer `position:"Query" name:"ExpireTime"`
 	AccessPoint string           `position:"Query" name:"AccessPoint"`
 	AccountType requests.Integer `position:"Query" name:"AccountType"`
-	SignType    string           `position:"Query" name:"SignType"`
 	UserId      string           `position:"Query" name:"UserId"`
 	AccountName string           `position:"Query" name:"AccountName"`
+	ExpireTime  requests.Integer `position:"Query" name:"ExpireTime"`
+	SignType    string           `position:"Query" name:"SignType"`
 	TicketNum   requests.Integer `position:"Query" name:"TicketNum"`
 }
 
