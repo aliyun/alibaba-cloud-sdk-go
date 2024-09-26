@@ -17,16 +17,17 @@ package live
 
 // DomainDetail is a nested struct in live response
 type DomainDetail struct {
-	CertName       string `json:"CertName" xml:"CertName"`
-	Cname          string `json:"Cname" xml:"Cname"`
-	Description    string `json:"Description" xml:"Description"`
-	DomainName     string `json:"DomainName" xml:"DomainName"`
-	DomainStatus   string `json:"DomainStatus" xml:"DomainStatus"`
-	GmtCreated     string `json:"GmtCreated" xml:"GmtCreated"`
-	GmtModified    string `json:"GmtModified" xml:"GmtModified"`
-	LiveDomainType string `json:"LiveDomainType" xml:"LiveDomainType"`
-	Region         string `json:"Region" xml:"Region"`
-	SSLProtocol    string `json:"SSLProtocol" xml:"SSLProtocol"`
-	SSLPub         string `json:"SSLPub" xml:"SSLPub"`
-	Scope          string `json:"Scope" xml:"Scope"`
+	CertName        string `json:"CertName" xml:"CertName"`
+	Cname           string `json:"Cname" xml:"Cname"`
+	Description     string `json:"Description" xml:"Description"`
+	DomainName      string `json:"DomainName" xml:"DomainName"`
+	DomainStatus    string `json:"DomainStatus" xml:"DomainStatus"`
+	GmtCreated      string `json:"GmtCreated" xml:"GmtCreated"`
+	GmtModified     string `json:"GmtModified" xml:"GmtModified"`
+	LiveDomainType  string `json:"LiveDomainType" xml:"LiveDomainType"`
+	Region          string `json:"Region" xml:"Region"`
+	SSLProtocol     string `json:"SSLProtocol" xml:"SSLProtocol"`
+	SSLPub          string `json:"SSLPub" xml:"SSLPub"`
+	Scope           string `json:"Scope" xml:"Scope"`
+	ResourceGroupId string `json:"ResourceGroupId" xml:"ResourceGroupId"`
 }

@@ -25,4 +25,5 @@ type PageData struct {
 	LiveDomainStatus string `json:"LiveDomainStatus" xml:"LiveDomainStatus"`
 	LiveDomainType   string `json:"LiveDomainType" xml:"LiveDomainType"`
 	RegionName       string `json:"RegionName" xml:"RegionName"`
+	ResourceGroupId  string `json:"ResourceGroupId" xml:"ResourceGroupId"`
 }

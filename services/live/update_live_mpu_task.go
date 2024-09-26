@@ -89,9 +89,10 @@ type UpdateLiveMPUTaskMultiStreamURL struct {
 
 // UpdateLiveMPUTaskSingleSubParams is a repeated param struct in UpdateLiveMPUTaskRequest
 type UpdateLiveMPUTaskSingleSubParams struct {
-	StreamType string `name:"StreamType"`
-	SourceType string `name:"SourceType"`
-	UserId     string `name:"UserId"`
+	MixAudioUserIds *[]string `name:"MixAudioUserIds" type:"Repeated"`
+	StreamType      string    `name:"StreamType"`
+	SourceType      string    `name:"SourceType"`
+	UserId          string    `name:"UserId"`
 }
 
 // UpdateLiveMPUTaskSeiParams is a repeated param struct in UpdateLiveMPUTaskRequest

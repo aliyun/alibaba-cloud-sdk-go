@@ -71,15 +71,16 @@ func (client *Client) AddLiveDomainWithCallback(request *AddLiveDomainRequest, c
 // AddLiveDomainRequest is the request struct for api AddLiveDomain
 type AddLiveDomainRequest struct {
 	*requests.RpcRequest
-	SecurityToken  string           `position:"Query" name:"SecurityToken"`
-	Scope          string           `position:"Query" name:"Scope"`
-	TopLevelDomain string           `position:"Query" name:"TopLevelDomain"`
-	OwnerAccount   string           `position:"Query" name:"OwnerAccount"`
-	DomainName     string           `position:"Query" name:"DomainName"`
-	OwnerId        requests.Integer `position:"Query" name:"OwnerId"`
-	Region         string           `position:"Query" name:"Region"`
-	CheckUrl       string           `position:"Query" name:"CheckUrl"`
-	LiveDomainType string           `position:"Query" name:"LiveDomainType"`
+	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
+	SecurityToken   string           `position:"Query" name:"SecurityToken"`
+	Scope           string           `position:"Query" name:"Scope"`
+	TopLevelDomain  string           `position:"Query" name:"TopLevelDomain"`
+	OwnerAccount    string           `position:"Query" name:"OwnerAccount"`
+	DomainName      string           `position:"Query" name:"DomainName"`
+	OwnerId         requests.Integer `position:"Query" name:"OwnerId"`
+	Region          string           `position:"Query" name:"Region"`
+	CheckUrl        string           `position:"Query" name:"CheckUrl"`
+	LiveDomainType  string           `position:"Query" name:"LiveDomainType"`
 }
 
 // AddLiveDomainResponse is the response struct for api AddLiveDomain

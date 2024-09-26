@@ -72,6 +72,7 @@ func (client *Client) DescribeLiveUserDomainsWithCallback(request *DescribeLiveU
 type DescribeLiveUserDomainsRequest struct {
 	*requests.RpcRequest
 	PageNumber       requests.Integer              `position:"Query" name:"PageNumber"`
+	ResourceGroupId  string                        `position:"Query" name:"ResourceGroupId"`
 	SecurityToken    string                        `position:"Query" name:"SecurityToken"`
 	PageSize         requests.Integer              `position:"Query" name:"PageSize"`
 	RegionName       string                        `position:"Query" name:"RegionName"`
