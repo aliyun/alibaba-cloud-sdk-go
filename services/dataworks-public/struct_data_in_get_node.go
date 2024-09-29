@@ -20,6 +20,7 @@ type DataInGetNode struct {
 	SchedulerType      string `json:"SchedulerType" xml:"SchedulerType"`
 	RepeatInterval     int64  `json:"RepeatInterval" xml:"RepeatInterval"`
 	Repeatability      string `json:"Repeatability" xml:"Repeatability"`
+	RepeatMode         int    `json:"RepeatMode" xml:"RepeatMode"`
 	ProjectId          int64  `json:"ProjectId" xml:"ProjectId"`
 	ProgramType        string `json:"ProgramType" xml:"ProgramType"`
 	Priority           int    `json:"Priority" xml:"Priority"`
@@ -38,4 +39,9 @@ type DataInGetNode struct {
 	NodeId             int64  `json:"NodeId" xml:"NodeId"`
 	ResGroupIdentifier string `json:"ResGroupIdentifier" xml:"ResGroupIdentifier"`
 	FileType           int    `json:"FileType" xml:"FileType"`
+	FileId             int64  `json:"FileId" xml:"FileId"`
+	FileVersion        int    `json:"FileVersion" xml:"FileVersion"`
+	DeployDate         int64  `json:"DeployDate" xml:"DeployDate"`
+	CreateTime         int64  `json:"CreateTime" xml:"CreateTime"`
+	ModifyTime         int64  `json:"ModifyTime" xml:"ModifyTime"`
 }

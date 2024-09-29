@@ -40,7 +40,6 @@ type Data struct {
 	Name                          string                         `json:"Name" xml:"Name"`
 	ModifyTime                    int64                          `json:"ModifyTime" xml:"ModifyTime"`
 	ExpTime                       int64                          `json:"ExpTime" xml:"ExpTime"`
-	Detail                        string                         `json:"Detail" xml:"Detail"`
 	EndCast                       int64                          `json:"EndCast" xml:"EndCast"`
 	LastAccessTime                int64                          `json:"LastAccessTime" xml:"LastAccessTime"`
 	BusinessId                    int64                          `json:"BusinessId" xml:"BusinessId"`
@@ -56,9 +55,9 @@ type Data struct {
 	UseFlag                       bool                           `json:"UseFlag" xml:"UseFlag"`
 	DqcDescription                string                         `json:"DqcDescription" xml:"DqcDescription"`
 	CheckerName                   string                         `json:"CheckerName" xml:"CheckerName"`
-	RemindType                    string                         `json:"RemindType" xml:"RemindType"`
 	UseType                       string                         `json:"UseType" xml:"UseType"`
 	MethodId                      int                            `json:"MethodId" xml:"MethodId"`
+	AlertMessageStatus            string                         `json:"AlertMessageStatus" xml:"AlertMessageStatus"`
 	DagType                       string                         `json:"DagType" xml:"DagType"`
 	FixCheck                      bool                           `json:"FixCheck" xml:"FixCheck"`
 	FileVersion                   int                            `json:"FileVersion" xml:"FileVersion"`
@@ -99,16 +98,16 @@ type Data struct {
 	DqcType                       int                            `json:"DqcType" xml:"DqcType"`
 	JobName                       string                         `json:"JobName" xml:"JobName"`
 	Description                   string                         `json:"Description" xml:"Description"`
+	AlertId                       int64                          `json:"AlertId" xml:"AlertId"`
 	MigrationType                 string                         `json:"MigrationType" xml:"MigrationType"`
 	ExpectValue                   string                         `json:"ExpectValue" xml:"ExpectValue"`
-	DndEnd                        string                         `json:"DndEnd" xml:"DndEnd"`
 	RelatedFlowId                 int64                          `json:"RelatedFlowId" xml:"RelatedFlowId"`
 	LastDdlTime                   int64                          `json:"LastDdlTime" xml:"LastDdlTime"`
-	Useflag                       bool                           `json:"Useflag" xml:"Useflag"`
-	AlertInterval                 int                            `json:"AlertInterval" xml:"AlertInterval"`
 	ProcessId                     int64                          `json:"ProcessId" xml:"ProcessId"`
 	HourSlaDetail                 string                         `json:"HourSlaDetail" xml:"HourSlaDetail"`
+	AlertTime                     int64                          `json:"AlertTime" xml:"AlertTime"`
 	CycTime                       int64                          `json:"CycTime" xml:"CycTime"`
+	Source                        string                         `json:"Source" xml:"Source"`
 	Property                      string                         `json:"Property" xml:"Property"`
 	BaselineType                  string                         `json:"BaselineType" xml:"BaselineType"`
 	CreatedUid                    string                         `json:"CreatedUid" xml:"CreatedUid"`
@@ -116,7 +115,9 @@ type Data struct {
 	DestinationDataSourceType     string                         `json:"DestinationDataSourceType" xml:"DestinationDataSourceType"`
 	Creator                       string                         `json:"Creator" xml:"Creator"`
 	RetCode                       int64                          `json:"RetCode" xml:"RetCode"`
+	AlertUser                     string                         `json:"AlertUser" xml:"AlertUser"`
 	FileName                      string                         `json:"FileName" xml:"FileName"`
+	TaskSetting                   string                         `json:"TaskSetting" xml:"TaskSetting"`
 	Type                          string                         `json:"Type" xml:"Type"`
 	Id                            int64                          `json:"Id" xml:"Id"`
 	RuleType                      int                            `json:"RuleType" xml:"RuleType"`
@@ -125,7 +126,6 @@ type Data struct {
 	Trend                         string                         `json:"Trend" xml:"Trend"`
 	InstanceId                    int64                          `json:"InstanceId" xml:"InstanceId"`
 	TaskType                      string                         `json:"TaskType" xml:"TaskType"`
-	RemindUnit                    string                         `json:"RemindUnit" xml:"RemindUnit"`
 	InGroupId                     int                            `json:"InGroupId" xml:"InGroupId"`
 	ApplicationId                 int64                          `json:"ApplicationId" xml:"ApplicationId"`
 	ReadCount                     int64                          `json:"ReadCount" xml:"ReadCount"`
@@ -141,7 +141,6 @@ type Data struct {
 	Comment                       string                         `json:"Comment" xml:"Comment"`
 	CreatedTime                   int64                          `json:"CreatedTime" xml:"CreatedTime"`
 	RepeatInterval                int64                          `json:"RepeatInterval" xml:"RepeatInterval"`
-	Founder                       string                         `json:"Founder" xml:"Founder"`
 	CreateUser                    string                         `json:"CreateUser" xml:"CreateUser"`
 	JobStatus                     string                         `json:"JobStatus" xml:"JobStatus"`
 	ApplicationCode               string                         `json:"ApplicationCode" xml:"ApplicationCode"`
@@ -156,9 +155,9 @@ type Data struct {
 	OwnerId                       string                         `json:"OwnerId" xml:"OwnerId"`
 	UpdatedTime                   int64                          `json:"UpdatedTime" xml:"UpdatedTime"`
 	SourceDataSourceType          string                         `json:"SourceDataSourceType" xml:"SourceDataSourceType"`
+	Total                         int64                          `json:"Total" xml:"Total"`
 	CriticalThreshold             string                         `json:"CriticalThreshold" xml:"CriticalThreshold"`
 	ApplicationKey                string                         `json:"ApplicationKey" xml:"ApplicationKey"`
-	DndStart                      string                         `json:"DndStart" xml:"DndStart"`
 	BeginRunningTime              int64                          `json:"BeginRunningTime" xml:"BeginRunningTime"`
 	Operator                      string                         `json:"Operator" xml:"Operator"`
 	StartedTime                   int64                          `json:"StartedTime" xml:"StartedTime"`
@@ -180,12 +179,12 @@ type Data struct {
 	WarningThreshold              string                         `json:"WarningThreshold" xml:"WarningThreshold"`
 	StartedUid                    string                         `json:"StartedUid" xml:"StartedUid"`
 	RemindName                    string                         `json:"RemindName" xml:"RemindName"`
+	AlertMethod                   string                         `json:"AlertMethod" xml:"AlertMethod"`
 	GmtModified                   int64                          `json:"GmtModified" xml:"GmtModified"`
 	Config                        string                         `json:"Config" xml:"Config"`
 	NodesDebugInfo                string                         `json:"NodesDebugInfo" xml:"NodesDebugInfo"`
 	ParamValues                   string                         `json:"ParamValues" xml:"ParamValues"`
 	MethodName                    string                         `json:"MethodName" xml:"MethodName"`
-	MaxAlertTimes                 int                            `json:"MaxAlertTimes" xml:"MaxAlertTimes"`
 	ErrorMessage                  string                         `json:"ErrorMessage" xml:"ErrorMessage"`
 	IsVisible                     int                            `json:"IsVisible" xml:"IsVisible"`
 	TaskRerunTime                 int                            `json:"TaskRerunTime" xml:"TaskRerunTime"`
@@ -196,35 +195,31 @@ type Data struct {
 	ExpMinu                       int                            `json:"ExpMinu" xml:"ExpMinu"`
 	OnDuty                        string                         `json:"OnDuty" xml:"OnDuty"`
 	DagId                         int64                          `json:"DagId" xml:"DagId"`
-	AlertUnit                     string                         `json:"AlertUnit" xml:"AlertUnit"`
 	FavoriteCount                 int64                          `json:"FavoriteCount" xml:"FavoriteCount"`
 	ModifiedTime                  int64                          `json:"ModifiedTime" xml:"ModifiedTime"`
 	Meta                          string                         `json:"Meta" xml:"Meta"`
 	CommitTime                    int64                          `json:"CommitTime" xml:"CommitTime"`
 	ProjectId                     int64                          `json:"ProjectId" xml:"ProjectId"`
 	SlaHour                       int                            `json:"SlaHour" xml:"SlaHour"`
-	Webhooks                      []string                       `json:"Webhooks" xml:"Webhooks"`
 	NodeIds                       []int64                        `json:"NodeIds" xml:"NodeIds"`
-	AlertMethods                  []string                       `json:"AlertMethods" xml:"AlertMethods"`
-	CollectionList                []string                       `json:"CollectionList" xml:"CollectionList"`
-	AlertTargets                  []string                       `json:"AlertTargets" xml:"AlertTargets"`
-	EntityList                    []string                       `json:"EntityList" xml:"EntityList"`
+	ResourceDownloadLink          ResourceDownloadLink           `json:"ResourceDownloadLink" xml:"ResourceDownloadLink"`
+	SlaAlert                      SlaAlert                       `json:"SlaAlert" xml:"SlaAlert"`
 	Deployment                    Deployment                     `json:"Deployment" xml:"Deployment"`
 	SolutionInfo                  SolutionInfo                   `json:"SolutionInfo" xml:"SolutionInfo"`
 	File                          File                           `json:"File" xml:"File"`
+	NodeConfiguration             NodeConfiguration              `json:"NodeConfiguration" xml:"NodeConfiguration"`
 	LastInstance                  LastInstance                   `json:"LastInstance" xml:"LastInstance"`
-	ResourceSettings              ResourceSettings               `json:"ResourceSettings" xml:"ResourceSettings"`
+	JobSettings                   JobSettings                    `json:"JobSettings" xml:"JobSettings"`
 	BlockInstance                 BlockInstance                  `json:"BlockInstance" xml:"BlockInstance"`
 	SolutionDetail                SolutionDetail                 `json:"SolutionDetail" xml:"SolutionDetail"`
-	NodeConfiguration             NodeConfiguration              `json:"NodeConfiguration" xml:"NodeConfiguration"`
-	JobSettings                   JobSettings                    `json:"JobSettings" xml:"JobSettings"`
+	ResourceSettings              ResourceSettings               `json:"ResourceSettings" xml:"ResourceSettings"`
 	ColumnList                    []ColumnListItem               `json:"ColumnList" xml:"ColumnList"`
 	Apis                          []Api                          `json:"Apis" xml:"Apis"`
 	SourceDataSourceSettings      []SourceDataSourceSetting      `json:"SourceDataSourceSettings" xml:"SourceDataSourceSettings"`
+	CollectionList                []CollectionListItem           `json:"CollectionList" xml:"CollectionList"`
 	ProjectMemberList             []ProjectMember                `json:"ProjectMemberList" xml:"ProjectMemberList"`
 	DataSources                   []DataSourcesItem              `json:"DataSources" xml:"DataSources"`
 	TransformationRules           []TransformationRule           `json:"TransformationRules" xml:"TransformationRules"`
-	Nodes                         []NodesItem                    `json:"Nodes" xml:"Nodes"`
 	FileVersions                  []FileVersion                  `json:"FileVersions" xml:"FileVersions"`
 	DestinationDataSourceSettings []DestinationDataSourceSetting `json:"DestinationDataSourceSettings" xml:"DestinationDataSourceSettings"`
 	Baselines                     []BaselinesItem                `json:"Baselines" xml:"Baselines"`
@@ -232,24 +227,25 @@ type Data struct {
 	Connections                   []ConnectionsItem              `json:"Connections" xml:"Connections"`
 	DISyncTasks                   []DISyncTasksItem              `json:"DISyncTasks" xml:"DISyncTasks"`
 	Instances                     []Instance                     `json:"Instances" xml:"Instances"`
-	DataEntityList                []DataEntityListItem           `json:"DataEntityList" xml:"DataEntityList"`
 	BaselineStatuses              []BaselineStatusesItem         `json:"BaselineStatuses" xml:"BaselineStatuses"`
-	Projects                      []ProjectsItem                 `json:"Projects" xml:"Projects"`
+	EntityList                    []EntityListItem               `json:"EntityList" xml:"EntityList"`
 	Folders                       []FoldersItem                  `json:"Folders" xml:"Folders"`
 	Files                         []File                         `json:"Files" xml:"Files"`
+	DataEntityList                []DataEntityListItem           `json:"DataEntityList" xml:"DataEntityList"`
 	ApiAuthorizedList             []ApiAuthorized                `json:"ApiAuthorizedList" xml:"ApiAuthorizedList"`
+	Nodes                         []Node                         `json:"Nodes" xml:"Nodes"`
+	Clusters                      []ClustersItem                 `json:"Clusters" xml:"Clusters"`
 	TableMappings                 []TableMapping                 `json:"TableMappings" xml:"TableMappings"`
 	Dags                          []Dag                          `json:"Dags" xml:"Dags"`
 	ApiAuthorizationList          []ApiAuthorization             `json:"ApiAuthorizationList" xml:"ApiAuthorizationList"`
 	OverTimeSettings              []OverTimeSetting              `json:"OverTimeSettings" xml:"OverTimeSettings"`
-	Robots                        []RobotsItem                   `json:"Robots" xml:"Robots"`
 	AlertSettings                 []AlertSetting                 `json:"AlertSettings" xml:"AlertSettings"`
-	BizProcesses                  []BizProcessesItem             `json:"BizProcesses" xml:"BizProcesses"`
 	Influences                    []InfluencesItem               `json:"Influences" xml:"Influences"`
 	CalcEngines                   []CalcEnginesItem              `json:"CalcEngines" xml:"CalcEngines"`
 	Reminds                       []RemindsItem                  `json:"Reminds" xml:"Reminds"`
+	Topics                        []Topic                        `json:"Topics" xml:"Topics"`
 	DeployedItems                 []DeployedItem                 `json:"DeployedItems" xml:"DeployedItems"`
 	Migrations                    []Migration                    `json:"Migrations" xml:"Migrations"`
-	Topics                        []TopicsItem                   `json:"Topics" xml:"Topics"`
 	Business                      []BusinessItem                 `json:"Business" xml:"Business"`
+	TableEntityList               []TableEntityListItem          `json:"TableEntityList" xml:"TableEntityList"`
 }

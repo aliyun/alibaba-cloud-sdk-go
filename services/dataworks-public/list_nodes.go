@@ -71,25 +71,26 @@ func (client *Client) ListNodesWithCallback(request *ListNodesRequest, callback 
 // ListNodesRequest is the request struct for api ListNodes
 type ListNodesRequest struct {
 	*requests.RpcRequest
-	Owner       string           `position:"Body" name:"Owner"`
-	ProjectEnv  string           `position:"Body" name:"ProjectEnv"`
-	BizName     string           `position:"Body" name:"BizName"`
-	PageNumber  requests.Integer `position:"Body" name:"PageNumber"`
-	NodeName    string           `position:"Body" name:"NodeName"`
-	ProgramType string           `position:"Body" name:"ProgramType"`
-	PageSize    requests.Integer `position:"Body" name:"PageSize"`
-	ProjectId   requests.Integer `position:"Body" name:"ProjectId"`
+	Owner         string           `position:"Body" name:"Owner"`
+	ProjectEnv    string           `position:"Body" name:"ProjectEnv"`
+	BizName       string           `position:"Body" name:"BizName"`
+	PageNumber    requests.Integer `position:"Body" name:"PageNumber"`
+	NodeName      string           `position:"Body" name:"NodeName"`
+	ProgramType   string           `position:"Body" name:"ProgramType"`
+	PageSize      requests.Integer `position:"Body" name:"PageSize"`
+	SchedulerType string           `position:"Body" name:"SchedulerType"`
+	ProjectId     requests.Integer `position:"Body" name:"ProjectId"`
 }
 
 // ListNodesResponse is the response struct for api ListNodes
 type ListNodesResponse struct {
 	*responses.BaseResponse
-	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	ErrorMessage   string `json:"ErrorMessage" xml:"ErrorMessage"`
-	ErrorCode      string `json:"ErrorCode" xml:"ErrorCode"`
-	Success        bool   `json:"Success" xml:"Success"`
-	Data           Data   `json:"Data" xml:"Data"`
+	HttpStatusCode int             `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	RequestId      string          `json:"RequestId" xml:"RequestId"`
+	ErrorMessage   string          `json:"ErrorMessage" xml:"ErrorMessage"`
+	ErrorCode      string          `json:"ErrorCode" xml:"ErrorCode"`
+	Success        bool            `json:"Success" xml:"Success"`
+	Data           DataInListNodes `json:"Data" xml:"Data"`
 }
 
 // CreateListNodesRequest creates a request to invoke ListNodes API

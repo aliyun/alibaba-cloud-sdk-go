@@ -77,12 +77,12 @@ type GetRemindRequest struct {
 // GetRemindResponse is the response struct for api GetRemind
 type GetRemindResponse struct {
 	*responses.BaseResponse
-	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	ErrorMessage   string `json:"ErrorMessage" xml:"ErrorMessage"`
-	ErrorCode      string `json:"ErrorCode" xml:"ErrorCode"`
-	Success        bool   `json:"Success" xml:"Success"`
-	Data           Data   `json:"Data" xml:"Data"`
+	HttpStatusCode int             `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	RequestId      string          `json:"RequestId" xml:"RequestId"`
+	ErrorMessage   string          `json:"ErrorMessage" xml:"ErrorMessage"`
+	ErrorCode      string          `json:"ErrorCode" xml:"ErrorCode"`
+	Success        bool            `json:"Success" xml:"Success"`
+	Data           DataInGetRemind `json:"Data" xml:"Data"`
 }
 
 // CreateGetRemindRequest creates a request to invoke GetRemind API

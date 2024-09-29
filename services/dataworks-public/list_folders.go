@@ -71,11 +71,11 @@ func (client *Client) ListFoldersWithCallback(request *ListFoldersRequest, callb
 // ListFoldersRequest is the request struct for api ListFolders
 type ListFoldersRequest struct {
 	*requests.RpcRequest
-	PageSize          requests.Integer `position:"Body" name:"PageSize"`
 	ParentFolderPath  string           `position:"Body" name:"ParentFolderPath"`
-	ProjectId         requests.Integer `position:"Body" name:"ProjectId"`
 	ProjectIdentifier string           `position:"Body" name:"ProjectIdentifier"`
 	PageNumber        requests.Integer `position:"Body" name:"PageNumber"`
+	PageSize          requests.Integer `position:"Body" name:"PageSize"`
+	ProjectId         requests.Integer `position:"Body" name:"ProjectId"`
 }
 
 // ListFoldersResponse is the response struct for api ListFolders

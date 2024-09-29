@@ -75,7 +75,7 @@ type CreateDISyncTaskRequest struct {
 	ClientToken string           `position:"Query" name:"ClientToken"`
 	TaskParam   string           `position:"Query" name:"TaskParam"`
 	TaskName    string           `position:"Query" name:"TaskName"`
-	TaskContent string           `position:"Query" name:"TaskContent"`
+	TaskContent string           `position:"Body" name:"TaskContent"`
 	ProjectId   requests.Integer `position:"Query" name:"ProjectId"`
 }
 

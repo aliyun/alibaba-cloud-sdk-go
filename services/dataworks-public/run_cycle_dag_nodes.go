@@ -74,10 +74,13 @@ type RunCycleDagNodesRequest struct {
 	ProjectEnv                     string           `position:"Body" name:"ProjectEnv"`
 	StartBizDate                   string           `position:"Body" name:"StartBizDate"`
 	Parallelism                    requests.Boolean `position:"Body" name:"Parallelism"`
+	AlertNoticeType                string           `position:"Body" name:"AlertNoticeType"`
 	RootNodeId                     requests.Integer `position:"Body" name:"RootNodeId"`
 	BizBeginTime                   string           `position:"Body" name:"BizBeginTime"`
 	EndBizDate                     string           `position:"Body" name:"EndBizDate"`
 	StartFutureInstanceImmediately requests.Boolean `position:"Body" name:"StartFutureInstanceImmediately"`
+	ConcurrentRuns                 requests.Integer `position:"Body" name:"ConcurrentRuns"`
+	AlertType                      string           `position:"Body" name:"AlertType"`
 	IncludeNodeIds                 string           `position:"Body" name:"IncludeNodeIds"`
 	BizEndTime                     string           `position:"Body" name:"BizEndTime"`
 	Name                           string           `position:"Body" name:"Name"`

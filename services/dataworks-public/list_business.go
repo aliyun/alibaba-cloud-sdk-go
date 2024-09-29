@@ -71,11 +71,11 @@ func (client *Client) ListBusinessWithCallback(request *ListBusinessRequest, cal
 // ListBusinessRequest is the request struct for api ListBusiness
 type ListBusinessRequest struct {
 	*requests.RpcRequest
+	ProjectIdentifier string           `position:"Body" name:"ProjectIdentifier"`
+	PageNumber        requests.Integer `position:"Body" name:"PageNumber"`
 	PageSize          requests.Integer `position:"Body" name:"PageSize"`
 	Keyword           string           `position:"Body" name:"Keyword"`
 	ProjectId         requests.Integer `position:"Body" name:"ProjectId"`
-	ProjectIdentifier string           `position:"Body" name:"ProjectIdentifier"`
-	PageNumber        requests.Integer `position:"Body" name:"PageNumber"`
 }
 
 // ListBusinessResponse is the response struct for api ListBusiness

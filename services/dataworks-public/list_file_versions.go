@@ -71,10 +71,10 @@ func (client *Client) ListFileVersionsWithCallback(request *ListFileVersionsRequ
 // ListFileVersionsRequest is the request struct for api ListFileVersions
 type ListFileVersionsRequest struct {
 	*requests.RpcRequest
-	PageSize          requests.Integer `position:"Body" name:"PageSize"`
-	ProjectId         requests.Integer `position:"Body" name:"ProjectId"`
 	ProjectIdentifier string           `position:"Body" name:"ProjectIdentifier"`
 	PageNumber        requests.Integer `position:"Body" name:"PageNumber"`
+	PageSize          requests.Integer `position:"Body" name:"PageSize"`
+	ProjectId         requests.Integer `position:"Body" name:"ProjectId"`
 	FileId            requests.Integer `position:"Body" name:"FileId"`
 }
 

@@ -71,10 +71,16 @@ func (client *Client) ListEntitiesByTagsWithCallback(request *ListEntitiesByTags
 // ListEntitiesByTagsRequest is the request struct for api ListEntitiesByTags
 type ListEntitiesByTagsRequest struct {
 	*requests.RpcRequest
-	EntityType string           `position:"Query" name:"EntityType"`
-	NextToken  string           `position:"Query" name:"NextToken"`
-	PageSize   requests.Integer `position:"Query" name:"PageSize"`
-	Tags       *[]string        `position:"Query" name:"Tags"  type:"Json"`
+	EntityType string                    `position:"Query" name:"EntityType"`
+	NextToken  string                    `position:"Query" name:"NextToken"`
+	PageSize   requests.Integer          `position:"Query" name:"PageSize"`
+	Tags       *[]ListEntitiesByTagsTags `position:"Query" name:"Tags"  type:"Json"`
+}
+
+// ListEntitiesByTagsTags is a repeated param struct in ListEntitiesByTagsRequest
+type ListEntitiesByTagsTags struct {
+	TagValue string `name:"TagValue"`
+	TagKey   string `name:"TagKey"`
 }
 
 // ListEntitiesByTagsResponse is the response struct for api ListEntitiesByTags

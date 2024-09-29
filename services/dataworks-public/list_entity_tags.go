@@ -77,12 +77,12 @@ type ListEntityTagsRequest struct {
 // ListEntityTagsResponse is the response struct for api ListEntityTags
 type ListEntityTagsResponse struct {
 	*responses.BaseResponse
-	RequestId      string   `json:"RequestId" xml:"RequestId"`
-	Success        bool     `json:"Success" xml:"Success"`
-	ErrorCode      string   `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMessage   string   `json:"ErrorMessage" xml:"ErrorMessage"`
-	HttpStatusCode int      `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	Data           []string `json:"Data" xml:"Data"`
+	RequestId      string     `json:"RequestId" xml:"RequestId"`
+	Success        bool       `json:"Success" xml:"Success"`
+	ErrorCode      string     `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage   string     `json:"ErrorMessage" xml:"ErrorMessage"`
+	HttpStatusCode int        `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Data           []DataItem `json:"Data" xml:"Data"`
 }
 
 // CreateListEntityTagsRequest creates a request to invoke ListEntityTags API

@@ -71,11 +71,11 @@ func (client *Client) EstablishRelationTableToBusinessWithCallback(request *Esta
 // EstablishRelationTableToBusinessRequest is the request struct for api EstablishRelationTableToBusiness
 type EstablishRelationTableToBusinessRequest struct {
 	*requests.RpcRequest
-	TableGuid         string           `position:"Body" name:"TableGuid"`
 	BusinessId        string           `position:"Body" name:"BusinessId"`
-	ProjectId         requests.Integer `position:"Body" name:"ProjectId"`
 	ProjectIdentifier string           `position:"Body" name:"ProjectIdentifier"`
 	FolderId          string           `position:"Body" name:"FolderId"`
+	TableGuid         string           `position:"Body" name:"TableGuid"`
+	ProjectId         requests.Integer `position:"Body" name:"ProjectId"`
 }
 
 // EstablishRelationTableToBusinessResponse is the response struct for api EstablishRelationTableToBusiness

@@ -71,8 +71,14 @@ func (client *Client) SetEntityTagsWithCallback(request *SetEntityTagsRequest, c
 // SetEntityTagsRequest is the request struct for api SetEntityTags
 type SetEntityTagsRequest struct {
 	*requests.RpcRequest
-	QualifiedName string    `position:"Query" name:"QualifiedName"`
-	Tags          *[]string `position:"Body" name:"Tags"  type:"Json"`
+	QualifiedName string               `position:"Query" name:"QualifiedName"`
+	Tags          *[]SetEntityTagsTags `position:"Body" name:"Tags"  type:"Json"`
+}
+
+// SetEntityTagsTags is a repeated param struct in SetEntityTagsRequest
+type SetEntityTagsTags struct {
+	TagValue string `name:"TagValue"`
+	TagKey   string `name:"TagKey"`
 }
 
 // SetEntityTagsResponse is the response struct for api SetEntityTags

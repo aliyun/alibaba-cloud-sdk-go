@@ -24,7 +24,7 @@ type RulesItem struct {
 	TableName                string `json:"TableName" xml:"TableName"`
 	OnDuty                   string `json:"OnDuty" xml:"OnDuty"`
 	Comment                  string `json:"Comment" xml:"Comment"`
-	RuleCheckerRelationId    int    `json:"RuleCheckerRelationId" xml:"RuleCheckerRelationId"`
+	RuleCheckerRelationId    int64  `json:"RuleCheckerRelationId" xml:"RuleCheckerRelationId"`
 	FixCheck                 bool   `json:"FixCheck" xml:"FixCheck"`
 	MethodId                 int    `json:"MethodId" xml:"MethodId"`
 	TemplateName             string `json:"TemplateName" xml:"TemplateName"`
@@ -38,9 +38,9 @@ type RulesItem struct {
 	HistoryCriticalThreshold string `json:"HistoryCriticalThreshold" xml:"HistoryCriticalThreshold"`
 	MethodName               string `json:"MethodName" xml:"MethodName"`
 	CheckerId                int    `json:"CheckerId" xml:"CheckerId"`
-	EntityId                 int    `json:"EntityId" xml:"EntityId"`
+	EntityId                 int64  `json:"EntityId" xml:"EntityId"`
 	ExpectValue              string `json:"ExpectValue" xml:"ExpectValue"`
 	TemplateId               int    `json:"TemplateId" xml:"TemplateId"`
-	Id                       int    `json:"Id" xml:"Id"`
+	Id                       int64  `json:"Id" xml:"Id"`
 	RuleName                 string `json:"RuleName" xml:"RuleName"`
 }

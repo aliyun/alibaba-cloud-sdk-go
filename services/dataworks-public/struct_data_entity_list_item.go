@@ -21,7 +21,6 @@ type DataEntityListItem struct {
 	ChangeType        string             `json:"ChangeType" xml:"ChangeType"`
 	CreateTimestamp   int64              `json:"CreateTimestamp" xml:"CreateTimestamp"`
 	TaskInstanceId    int64              `json:"TaskInstanceId" xml:"TaskInstanceId"`
-	Entity            string             `json:"Entity" xml:"Entity"`
 	TenantId          int64              `json:"TenantId" xml:"TenantId"`
 	CreateTime        int64              `json:"CreateTime" xml:"CreateTime"`
 	EntityType        int                `json:"EntityType" xml:"EntityType"`
@@ -56,5 +55,6 @@ type DataEntityListItem struct {
 	ProjectId         int64              `json:"ProjectId" xml:"ProjectId"`
 	LastOperatorId    string             `json:"LastOperatorId" xml:"LastOperatorId"`
 	WaitTime          string             `json:"WaitTime" xml:"WaitTime"`
+	Entity            Entity             `json:"Entity" xml:"Entity"`
 	RelationList      []RelationListItem `json:"RelationList" xml:"RelationList"`
 }

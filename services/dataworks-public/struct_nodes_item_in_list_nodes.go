@@ -38,4 +38,9 @@ type NodesItemInListNodes struct {
 	NodeId             int64  `json:"NodeId" xml:"NodeId"`
 	ResGroupIdentifier string `json:"ResGroupIdentifier" xml:"ResGroupIdentifier"`
 	FileType           int    `json:"FileType" xml:"FileType"`
+	FileId             int64  `json:"FileId" xml:"FileId"`
+	FileVersion        int    `json:"FileVersion" xml:"FileVersion"`
+	DeployDate         int64  `json:"DeployDate" xml:"DeployDate"`
+	CreateTime         int64  `json:"CreateTime" xml:"CreateTime"`
+	ModifyTime         int64  `json:"ModifyTime" xml:"ModifyTime"`
 }

@@ -17,6 +17,7 @@ package dataworks_public
 
 // ResourceSettings is a nested struct in dataworks_public response
 type ResourceSettings struct {
+	RequestedCu              float64                  `json:"RequestedCu" xml:"RequestedCu"`
 	OfflineResourceSettings  OfflineResourceSettings  `json:"OfflineResourceSettings" xml:"OfflineResourceSettings"`
 	RealtimeResourceSettings RealtimeResourceSettings `json:"RealtimeResourceSettings" xml:"RealtimeResourceSettings"`
 }

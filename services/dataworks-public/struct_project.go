@@ -17,17 +17,19 @@ package dataworks_public
 
 // Project is a nested struct in dataworks_public response
 type Project struct {
-	ProjectStatusCode              string `json:"ProjectStatusCode" xml:"ProjectStatusCode"`
-	ProjectStatus                  int    `json:"ProjectStatus" xml:"ProjectStatus"`
-	ProjectName                    string `json:"ProjectName" xml:"ProjectName"`
-	ProjectIdentifier              string `json:"ProjectIdentifier" xml:"ProjectIdentifier"`
-	ProjectId                      int64  `json:"ProjectId" xml:"ProjectId"`
-	ProjectDescription             string `json:"ProjectDescription" xml:"ProjectDescription"`
+	ClusterId                      string `json:"ClusterId" xml:"ClusterId"`
 	ProjectOwnerBaseId             string `json:"ProjectOwnerBaseId" xml:"ProjectOwnerBaseId"`
-	ResourceManagerResourceGroupId string `json:"ResourceManagerResourceGroupId" xml:"ResourceManagerResourceGroupId"`
+	ProjectIdentifier              string `json:"ProjectIdentifier" xml:"ProjectIdentifier"`
 	DisableDevelopment             bool   `json:"DisableDevelopment" xml:"DisableDevelopment"`
-	UseProxyOdpsAccount            bool   `json:"UseProxyOdpsAccount" xml:"UseProxyOdpsAccount"`
-	TablePrivacyMode               int    `json:"TablePrivacyMode" xml:"TablePrivacyMode"`
+	ProjectStatusCode              string `json:"ProjectStatusCode" xml:"ProjectStatusCode"`
+	DbType                         string `json:"DbType" xml:"DbType"`
+	ResourceManagerResourceGroupId string `json:"ResourceManagerResourceGroupId" xml:"ResourceManagerResourceGroupId"`
 	IsDefault                      int    `json:"IsDefault" xml:"IsDefault"`
+	ProjectName                    string `json:"ProjectName" xml:"ProjectName"`
+	ProjectDescription             string `json:"ProjectDescription" xml:"ProjectDescription"`
+	ProjectStatus                  int    `json:"ProjectStatus" xml:"ProjectStatus"`
+	UseProxyOdpsAccount            bool   `json:"UseProxyOdpsAccount" xml:"UseProxyOdpsAccount"`
+	ProjectId                      int64  `json:"ProjectId" xml:"ProjectId"`
+	TablePrivacyMode               int    `json:"TablePrivacyMode" xml:"TablePrivacyMode"`
 	Tags                           []Tag  `json:"Tags" xml:"Tags"`
 }

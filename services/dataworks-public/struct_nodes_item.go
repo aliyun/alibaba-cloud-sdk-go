@@ -32,6 +32,7 @@ type NodesItem struct {
 	RepeatInterval int64  `json:"RepeatInterval" xml:"RepeatInterval"`
 	SchedulerType  string `json:"SchedulerType" xml:"SchedulerType"`
 	OwnerId        string `json:"OwnerId" xml:"OwnerId"`
+	StepType       string `json:"StepType" xml:"StepType"`
 	ProjectId      int64  `json:"ProjectId" xml:"ProjectId"`
 	BusinessId     int64  `json:"BusinessId" xml:"BusinessId"`
 	DqcDescription string `json:"DqcDescription" xml:"DqcDescription"`

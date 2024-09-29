@@ -78,12 +78,12 @@ type GetNodeParentsRequest struct {
 // GetNodeParentsResponse is the response struct for api GetNodeParents
 type GetNodeParentsResponse struct {
 	*responses.BaseResponse
-	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	ErrorMessage   string `json:"ErrorMessage" xml:"ErrorMessage"`
-	ErrorCode      string `json:"ErrorCode" xml:"ErrorCode"`
-	Success        bool   `json:"Success" xml:"Success"`
-	Data           Data   `json:"Data" xml:"Data"`
+	HttpStatusCode int                  `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	RequestId      string               `json:"RequestId" xml:"RequestId"`
+	ErrorMessage   string               `json:"ErrorMessage" xml:"ErrorMessage"`
+	ErrorCode      string               `json:"ErrorCode" xml:"ErrorCode"`
+	Success        bool                 `json:"Success" xml:"Success"`
+	Data           DataInGetNodeParents `json:"Data" xml:"Data"`
 }
 
 // CreateGetNodeParentsRequest creates a request to invoke GetNodeParents API

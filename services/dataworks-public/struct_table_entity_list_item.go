@@ -17,7 +17,9 @@ package dataworks_public
 
 // TableEntityListItem is a nested struct in dataworks_public response
 type TableEntityListItem struct {
-	TableName    string `json:"TableName" xml:"TableName"`
-	TableGuid    string `json:"TableGuid" xml:"TableGuid"`
-	DatabaseName string `json:"DatabaseName" xml:"DatabaseName"`
+	TableName           string        `json:"TableName" xml:"TableName"`
+	EntityQualifiedName string        `json:"EntityQualifiedName" xml:"EntityQualifiedName"`
+	TableGuid           string        `json:"TableGuid" xml:"TableGuid"`
+	DatabaseName        string        `json:"DatabaseName" xml:"DatabaseName"`
+	EntityContent       EntityContent `json:"EntityContent" xml:"EntityContent"`
 }

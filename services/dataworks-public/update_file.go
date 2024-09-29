@@ -84,6 +84,7 @@ type UpdateFileRequest struct {
 	AutoRerunIntervalMillis         requests.Integer `position:"Body" name:"AutoRerunIntervalMillis"`
 	Owner                           string           `position:"Body" name:"Owner"`
 	InputList                       string           `position:"Body" name:"InputList"`
+	ApplyScheduleImmediately        requests.Boolean `position:"Body" name:"ApplyScheduleImmediately"`
 	RerunMode                       string           `position:"Body" name:"RerunMode"`
 	ConnectionName                  string           `position:"Body" name:"ConnectionName"`
 	OutputParameters                string           `position:"Body" name:"OutputParameters"`

@@ -71,10 +71,10 @@ func (client *Client) SubmitFileWithCallback(request *SubmitFileRequest, callbac
 // SubmitFileRequest is the request struct for api SubmitFile
 type SubmitFileRequest struct {
 	*requests.RpcRequest
+	ProjectIdentifier           string           `position:"Body" name:"ProjectIdentifier"`
 	SkipAllDeployFileExtensions requests.Boolean `position:"Body" name:"SkipAllDeployFileExtensions"`
 	Comment                     string           `position:"Body" name:"Comment"`
 	ProjectId                   requests.Integer `position:"Body" name:"ProjectId"`
-	ProjectIdentifier           string           `position:"Body" name:"ProjectIdentifier"`
 	FileId                      requests.Integer `position:"Body" name:"FileId"`
 }
 

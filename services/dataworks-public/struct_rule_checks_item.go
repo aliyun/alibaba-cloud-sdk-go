@@ -17,10 +17,10 @@ package dataworks_public
 
 // RuleChecksItem is a nested struct in dataworks_public response
 type RuleChecksItem struct {
+	Open              bool                 `json:"Open" xml:"Open"`
 	MethodName        string               `json:"MethodName" xml:"MethodName"`
 	CheckerId         int                  `json:"CheckerId" xml:"CheckerId"`
 	TemplateName      string               `json:"TemplateName" xml:"TemplateName"`
-	RuleId            int                  `json:"RuleId" xml:"RuleId"`
 	Op                string               `json:"Op" xml:"Op"`
 	RuleName          string               `json:"RuleName" xml:"RuleName"`
 	TemplateId        int                  `json:"TemplateId" xml:"TemplateId"`
@@ -37,17 +37,18 @@ type RuleChecksItem struct {
 	CheckResult       int                  `json:"CheckResult" xml:"CheckResult"`
 	CheckerType       int                  `json:"CheckerType" xml:"CheckerType"`
 	ProjectName       string               `json:"ProjectName" xml:"ProjectName"`
+	RuleId            int64                `json:"RuleId" xml:"RuleId"`
 	ExpectValue       float64              `json:"ExpectValue" xml:"ExpectValue"`
 	CriticalThreshold float64              `json:"CriticalThreshold" xml:"CriticalThreshold"`
 	MatchExpression   string               `json:"MatchExpression" xml:"MatchExpression"`
-	Id                int                  `json:"Id" xml:"Id"`
 	DateType          string               `json:"DateType" xml:"DateType"`
 	LowerValue        float64              `json:"LowerValue" xml:"LowerValue"`
-	EntityId          int                  `json:"EntityId" xml:"EntityId"`
+	Id                int64                `json:"Id" xml:"Id"`
 	ExternalId        string               `json:"ExternalId" xml:"ExternalId"`
 	TableName         string               `json:"TableName" xml:"TableName"`
 	ActualExpression  string               `json:"ActualExpression" xml:"ActualExpression"`
 	Trend             string               `json:"Trend" xml:"Trend"`
+	EntityId          int64                `json:"EntityId" xml:"EntityId"`
 	BeginTime         int64                `json:"BeginTime" xml:"BeginTime"`
 	ExternalType      string               `json:"ExternalType" xml:"ExternalType"`
 	DiscreteCheck     bool                 `json:"DiscreteCheck" xml:"DiscreteCheck"`

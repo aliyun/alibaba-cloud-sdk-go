@@ -73,6 +73,7 @@ type DeleteLineageRelationRequest struct {
 	*requests.RpcRequest
 	SrcEntityQualifiedName  string `position:"Query" name:"SrcEntityQualifiedName"`
 	DestEntityQualifiedName string `position:"Query" name:"DestEntityQualifiedName"`
+	RelationshipType        string `position:"Query" name:"RelationshipType"`
 	RelationshipGuid        string `position:"Query" name:"RelationshipGuid"`
 }
 

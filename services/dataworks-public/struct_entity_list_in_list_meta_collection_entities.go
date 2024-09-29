@@ -17,5 +17,5 @@ package dataworks_public
 
 // EntityListInListMetaCollectionEntities is a nested struct in dataworks_public response
 type EntityListInListMetaCollectionEntities struct {
-	EntityList []string `json:"EntityList" xml:"EntityList"`
+	EntityListItem []EntityListItem `json:"EntityList" xml:"EntityList"`
 }

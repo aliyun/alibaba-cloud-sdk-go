@@ -17,6 +17,8 @@ package dataworks_public
 
 // JobSettings is a nested struct in dataworks_public response
 type JobSettings struct {
+	ChannelSettings        string                  `json:"ChannelSettings" xml:"ChannelSettings"`
+	CycleScheduleSettings  CycleScheduleSettings   `json:"CycleScheduleSettings" xml:"CycleScheduleSettings"`
 	ColumnDataTypeSettings []ColumnDataTypeSetting `json:"ColumnDataTypeSettings" xml:"ColumnDataTypeSettings"`
 	DdlHandlingSettings    []DdlHandlingSetting    `json:"DdlHandlingSettings" xml:"DdlHandlingSettings"`
 	RuntimeSettings        []RuntimeSetting        `json:"RuntimeSettings" xml:"RuntimeSettings"`

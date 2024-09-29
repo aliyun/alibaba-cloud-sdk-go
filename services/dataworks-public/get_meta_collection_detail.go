@@ -77,6 +77,12 @@ type GetMetaCollectionDetailRequest struct {
 // GetMetaCollectionDetailResponse is the response struct for api GetMetaCollectionDetail
 type GetMetaCollectionDetailResponse struct {
 	*responses.BaseResponse
+	RequestId      string     `json:"RequestId" xml:"RequestId"`
+	Success        bool       `json:"Success" xml:"Success"`
+	ErrorCode      string     `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage   string     `json:"ErrorMessage" xml:"ErrorMessage"`
+	HttpStatusCode int        `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Collection     Collection `json:"Collection" xml:"Collection"`
 }
 
 // CreateGetMetaCollectionDetailRequest creates a request to invoke GetMetaCollectionDetail API

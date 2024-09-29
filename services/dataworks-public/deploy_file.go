@@ -71,10 +71,10 @@ func (client *Client) DeployFileWithCallback(request *DeployFileRequest, callbac
 // DeployFileRequest is the request struct for api DeployFile
 type DeployFileRequest struct {
 	*requests.RpcRequest
+	ProjectIdentifier string           `position:"Body" name:"ProjectIdentifier"`
 	Comment           string           `position:"Body" name:"Comment"`
 	ProjectId         requests.Integer `position:"Body" name:"ProjectId"`
 	NodeId            requests.Integer `position:"Body" name:"NodeId"`
-	ProjectIdentifier string           `position:"Body" name:"ProjectIdentifier"`
 	FileId            requests.Integer `position:"Body" name:"FileId"`
 }
 

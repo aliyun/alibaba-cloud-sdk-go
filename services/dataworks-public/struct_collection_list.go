@@ -17,5 +17,5 @@ package dataworks_public
 
 // CollectionList is a nested struct in dataworks_public response
 type CollectionList struct {
-	CollectionList []string `json:"CollectionList" xml:"CollectionList"`
+	CollectionListItem []CollectionListItem `json:"CollectionList" xml:"CollectionList"`
 }

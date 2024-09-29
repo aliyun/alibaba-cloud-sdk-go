@@ -71,7 +71,44 @@ func (client *Client) RegisterLineageRelationWithCallback(request *RegisterLinea
 // RegisterLineageRelationRequest is the request struct for api RegisterLineageRelation
 type RegisterLineageRelationRequest struct {
 	*requests.RpcRequest
-	LineageRelationRegisterVO string `position:"Body" name:"LineageRelationRegisterVO"`
+	LineageRelationRegisterVO RegisterLineageRelationLineageRelationRegisterVO `position:"Body" name:"LineageRelationRegisterVO"  type:"Struct"`
+}
+
+// RegisterLineageRelationLineageRelationRegisterVO is a repeated param struct in RegisterLineageRelationRequest
+type RegisterLineageRelationLineageRelationRegisterVO struct {
+	DestEntity      RegisterLineageRelationLineageRelationRegisterVODestEntity   `name:"DestEntity" type:"Struct"`
+	CreateTimestamp string                                                       `name:"CreateTimestamp"`
+	Relationship    RegisterLineageRelationLineageRelationRegisterVORelationship `name:"Relationship" type:"Struct"`
+	SrcEntity       RegisterLineageRelationLineageRelationRegisterVOSrcEntity    `name:"SrcEntity" type:"Struct"`
+}
+
+// RegisterLineageRelationLineageRelationRegisterVODestEntity is a repeated param struct in RegisterLineageRelationRequest
+type RegisterLineageRelationLineageRelationRegisterVODestEntity struct {
+	Owner         string            `name:"Owner"`
+	ParentName    string            `name:"ParentName"`
+	EntityType    string            `name:"EntityType"`
+	QualifiedName string            `name:"QualifiedName"`
+	Name          string            `name:"Name"`
+	Attributes    map[string]string `name:"Attributes" type:"Map"`
+	DetailUrl     string            `name:"DetailUrl"`
+}
+
+// RegisterLineageRelationLineageRelationRegisterVORelationship is a repeated param struct in RegisterLineageRelationRequest
+type RegisterLineageRelationLineageRelationRegisterVORelationship struct {
+	RelationshipType string            `name:"RelationshipType"`
+	Attributes       map[string]string `name:"Attributes" type:"Map"`
+	RelationshipGuid string            `name:"RelationshipGuid"`
+}
+
+// RegisterLineageRelationLineageRelationRegisterVOSrcEntity is a repeated param struct in RegisterLineageRelationRequest
+type RegisterLineageRelationLineageRelationRegisterVOSrcEntity struct {
+	Owner         string            `name:"Owner"`
+	ParentName    string            `name:"ParentName"`
+	EntityType    string            `name:"EntityType"`
+	QualifiedName string            `name:"QualifiedName"`
+	Name          string            `name:"Name"`
+	Attributes    map[string]string `name:"Attributes" type:"Map"`
+	DetailUrl     string            `name:"DetailUrl"`
 }
 
 // RegisterLineageRelationResponse is the response struct for api RegisterLineageRelation
