@@ -76,6 +76,7 @@ type DisablePolicyTypeRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	UserType             string           `position:"Query" name:"UserType"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	OpenType             string           `position:"Query" name:"OpenType"`
 }
 
 // DisablePolicyTypeResponse is the response struct for api DisablePolicyType

@@ -84,8 +84,9 @@ type CreatePolicyRequest struct {
 // CreatePolicyResponse is the response struct for api CreatePolicy
 type CreatePolicyResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	PolicyId  string `json:"PolicyId" xml:"PolicyId"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
+	PolicyId   string `json:"PolicyId" xml:"PolicyId"`
+	PolicyName string `json:"PolicyName" xml:"PolicyName"`
 }
 
 // CreateCreatePolicyRequest creates a request to invoke CreatePolicy API

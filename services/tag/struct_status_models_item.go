@@ -17,6 +17,6 @@ package tag
 
 // StatusModelsItem is a nested struct in tag response
 type StatusModelsItem struct {
-	UserType string `json:"UserType" xml:"UserType"`
 	Status   string `json:"Status" xml:"Status"`
+	UserType string `json:"UserType" xml:"UserType"`
 }

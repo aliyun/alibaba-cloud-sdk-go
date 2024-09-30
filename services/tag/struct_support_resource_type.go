@@ -17,6 +17,7 @@ package tag
 
 // SupportResourceType is a nested struct in tag response
 type SupportResourceType struct {
+	ArnTemplate  string             `json:"ArnTemplate" xml:"ArnTemplate"`
 	ProductCode  string             `json:"ProductCode" xml:"ProductCode"`
 	ResourceType string             `json:"ResourceType" xml:"ResourceType"`
 	SupportItems []SupportItemsItem `json:"SupportItems" xml:"SupportItems"`

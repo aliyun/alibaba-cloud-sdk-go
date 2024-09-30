@@ -83,8 +83,8 @@ type ListPoliciesForTargetRequest struct {
 // ListPoliciesForTargetResponse is the response struct for api ListPoliciesForTarget
 type ListPoliciesForTargetResponse struct {
 	*responses.BaseResponse
-	RequestId string     `json:"RequestId" xml:"RequestId"`
 	NextToken string     `json:"NextToken" xml:"NextToken"`
+	RequestId string     `json:"RequestId" xml:"RequestId"`
 	Data      []DataItem `json:"Data" xml:"Data"`
 }
 

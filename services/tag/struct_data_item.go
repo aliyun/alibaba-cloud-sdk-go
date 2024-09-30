@@ -17,16 +17,17 @@ package tag
 
 // DataItem is a nested struct in tag response
 type DataItem struct {
-	UserType      string `json:"UserType" xml:"UserType"`
-	PolicyDesc    string `json:"PolicyDesc" xml:"PolicyDesc"`
 	PolicyType    string `json:"PolicyType" xml:"PolicyType"`
-	PolicyId      string `json:"PolicyId" xml:"PolicyId"`
-	TargetId      string `json:"TargetId" xml:"TargetId"`
 	Remediation   bool   `json:"Remediation" xml:"Remediation"`
 	AggregatorId  string `json:"AggregatorId" xml:"AggregatorId"`
 	PolicyContent string `json:"PolicyContent" xml:"PolicyContent"`
 	PolicyName    string `json:"PolicyName" xml:"PolicyName"`
-	TagKey        string `json:"TagKey" xml:"TagKey"`
 	ConfigRuleId  string `json:"ConfigRuleId" xml:"ConfigRuleId"`
 	TargetType    string `json:"TargetType" xml:"TargetType"`
+	UserType      string `json:"UserType" xml:"UserType"`
+	PolicyDesc    string `json:"PolicyDesc" xml:"PolicyDesc"`
+	PolicyId      string `json:"PolicyId" xml:"PolicyId"`
+	TargetId      string `json:"TargetId" xml:"TargetId"`
+	TagValue      string `json:"TagValue" xml:"TagValue"`
+	TagKey        string `json:"TagKey" xml:"TagKey"`
 }

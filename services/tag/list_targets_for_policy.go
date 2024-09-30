@@ -82,10 +82,10 @@ type ListTargetsForPolicyRequest struct {
 // ListTargetsForPolicyResponse is the response struct for api ListTargetsForPolicy
 type ListTargetsForPolicyResponse struct {
 	*responses.BaseResponse
-	RequestId string   `json:"RequestId" xml:"RequestId"`
 	IsRd      bool     `json:"IsRd" xml:"IsRd"`
-	RdId      string   `json:"RdId" xml:"RdId"`
 	NextToken string   `json:"NextToken" xml:"NextToken"`
+	RdId      string   `json:"RdId" xml:"RdId"`
+	RequestId string   `json:"RequestId" xml:"RequestId"`
 	Targets   []Target `json:"Targets" xml:"Targets"`
 }
 

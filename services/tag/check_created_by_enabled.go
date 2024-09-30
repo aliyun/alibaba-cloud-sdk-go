@@ -80,8 +80,8 @@ type CheckCreatedByEnabledRequest struct {
 // CheckCreatedByEnabledResponse is the response struct for api CheckCreatedByEnabled
 type CheckCreatedByEnabledResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
 	OpenStatus bool   `json:"OpenStatus" xml:"OpenStatus"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCheckCreatedByEnabledRequest creates a request to invoke CheckCreatedByEnabled API

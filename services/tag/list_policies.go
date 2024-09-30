@@ -84,8 +84,8 @@ type ListPoliciesRequest struct {
 // ListPoliciesResponse is the response struct for api ListPolicies
 type ListPoliciesResponse struct {
 	*responses.BaseResponse
-	RequestId  string   `json:"RequestId" xml:"RequestId"`
 	NextToken  string   `json:"NextToken" xml:"NextToken"`
+	RequestId  string   `json:"RequestId" xml:"RequestId"`
 	PolicyList []Policy `json:"PolicyList" xml:"PolicyList"`
 }
 

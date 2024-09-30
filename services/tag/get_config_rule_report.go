@@ -82,9 +82,9 @@ type GetConfigRuleReportRequest struct {
 // GetConfigRuleReportResponse is the response struct for api GetConfigRuleReport
 type GetConfigRuleReportResponse struct {
 	*responses.BaseResponse
+	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
 	Success        bool   `json:"Success" xml:"Success"`
-	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	Data           Data   `json:"Data" xml:"Data"`
 }
 

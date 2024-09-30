@@ -82,8 +82,8 @@ type GenerateConfigRuleReportRequest struct {
 // GenerateConfigRuleReportResponse is the response struct for api GenerateConfigRuleReport
 type GenerateConfigRuleReportResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	ReportId  string `json:"ReportId" xml:"ReportId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateGenerateConfigRuleReportRequest creates a request to invoke GenerateConfigRuleReport API

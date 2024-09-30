@@ -85,8 +85,8 @@ type ListSupportResourceTypesRequest struct {
 // ListSupportResourceTypesResponse is the response struct for api ListSupportResourceTypes
 type ListSupportResourceTypesResponse struct {
 	*responses.BaseResponse
-	RequestId            string                `json:"RequestId" xml:"RequestId"`
 	NextToken            string                `json:"NextToken" xml:"NextToken"`
+	RequestId            string                `json:"RequestId" xml:"RequestId"`
 	SupportResourceTypes []SupportResourceType `json:"SupportResourceTypes" xml:"SupportResourceTypes"`
 }
 

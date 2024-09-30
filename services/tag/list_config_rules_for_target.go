@@ -86,8 +86,8 @@ type ListConfigRulesForTargetRequest struct {
 // ListConfigRulesForTargetResponse is the response struct for api ListConfigRulesForTarget
 type ListConfigRulesForTargetResponse struct {
 	*responses.BaseResponse
-	RequestId string     `json:"RequestId" xml:"RequestId"`
 	NextToken string     `json:"NextToken" xml:"NextToken"`
+	RequestId string     `json:"RequestId" xml:"RequestId"`
 	Data      []DataItem `json:"Data" xml:"Data"`
 }
 
