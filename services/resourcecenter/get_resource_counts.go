@@ -72,6 +72,7 @@ func (client *Client) GetResourceCountsWithCallback(request *GetResourceCountsRe
 type GetResourceCountsRequest struct {
 	*requests.RpcRequest
 	Filter     *[]GetResourceCountsFilter `position:"Query" name:"Filter"  type:"Repeated"`
+	View       string                     `position:"Query" name:"View"`
 	GroupByKey string                     `position:"Query" name:"GroupByKey"`
 }
 

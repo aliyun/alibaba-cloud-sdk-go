@@ -17,14 +17,16 @@ package resourcecenter
 
 // Resource is a nested struct in resourcecenter response
 type Resource struct {
-	ResourceType    string   `json:"ResourceType" xml:"ResourceType"`
-	ResourceId      string   `json:"ResourceId" xml:"ResourceId"`
-	AccountId       string   `json:"AccountId" xml:"AccountId"`
-	RegionId        string   `json:"RegionId" xml:"RegionId"`
-	ResourceGroupId string   `json:"ResourceGroupId" xml:"ResourceGroupId"`
-	ZoneId          string   `json:"ZoneId" xml:"ZoneId"`
-	ResourceName    string   `json:"ResourceName" xml:"ResourceName"`
-	CreateTime      string   `json:"CreateTime" xml:"CreateTime"`
-	IpAddresses     []string `json:"IpAddresses" xml:"IpAddresses"`
-	Tags            []Tag    `json:"Tags" xml:"Tags"`
+	ResourceId          string               `json:"ResourceId" xml:"ResourceId"`
+	ResourceType        string               `json:"ResourceType" xml:"ResourceType"`
+	AccountId           string               `json:"AccountId" xml:"AccountId"`
+	RegionId            string               `json:"RegionId" xml:"RegionId"`
+	ResourceGroupId     string               `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	ZoneId              string               `json:"ZoneId" xml:"ZoneId"`
+	ResourceName        string               `json:"ResourceName" xml:"ResourceName"`
+	CreateTime          string               `json:"CreateTime" xml:"CreateTime"`
+	ExpireTime          string               `json:"ExpireTime" xml:"ExpireTime"`
+	IpAddresses         []string             `json:"IpAddresses" xml:"IpAddresses"`
+	Tags                []Tag                `json:"Tags" xml:"Tags"`
+	IpAddressAttributes []IpAddressAttribute `json:"IpAddressAttributes" xml:"IpAddressAttributes"`
 }

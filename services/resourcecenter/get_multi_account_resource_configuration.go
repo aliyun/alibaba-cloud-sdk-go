@@ -71,15 +71,29 @@ func (client *Client) GetMultiAccountResourceConfigurationWithCallback(request *
 // GetMultiAccountResourceConfigurationRequest is the request struct for api GetMultiAccountResourceConfiguration
 type GetMultiAccountResourceConfigurationRequest struct {
 	*requests.RpcRequest
-	ResourceId       string `position:"Query" name:"ResourceId"`
-	ResourceType     string `position:"Query" name:"ResourceType"`
 	AccountId        string `position:"Query" name:"AccountId"`
 	ResourceRegionId string `position:"Query" name:"ResourceRegionId"`
+	ResourceId       string `position:"Query" name:"ResourceId"`
+	ResourceType     string `position:"Query" name:"ResourceType"`
 }
 
 // GetMultiAccountResourceConfigurationResponse is the response struct for api GetMultiAccountResourceConfiguration
 type GetMultiAccountResourceConfigurationResponse struct {
 	*responses.BaseResponse
+	AccountId           string                 `json:"AccountId" xml:"AccountId"`
+	Configuration       map[string]interface{} `json:"Configuration" xml:"Configuration"`
+	CreateTime          string                 `json:"CreateTime" xml:"CreateTime"`
+	ExpireTime          string                 `json:"ExpireTime" xml:"ExpireTime"`
+	RegionId            string                 `json:"RegionId" xml:"RegionId"`
+	RequestId           string                 `json:"RequestId" xml:"RequestId"`
+	ResourceGroupId     string                 `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	ResourceId          string                 `json:"ResourceId" xml:"ResourceId"`
+	ResourceName        string                 `json:"ResourceName" xml:"ResourceName"`
+	ResourceType        string                 `json:"ResourceType" xml:"ResourceType"`
+	ZoneId              string                 `json:"ZoneId" xml:"ZoneId"`
+	IpAddresses         []string               `json:"IpAddresses" xml:"IpAddresses"`
+	IpAddressAttributes []IpAddressAttribute   `json:"IpAddressAttributes" xml:"IpAddressAttributes"`
+	Tags                []Tag                  `json:"Tags" xml:"Tags"`
 }
 
 // CreateGetMultiAccountResourceConfigurationRequest creates a request to invoke GetMultiAccountResourceConfiguration API

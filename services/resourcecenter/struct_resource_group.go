@@ -17,10 +17,10 @@ package resourcecenter
 
 // ResourceGroup is a nested struct in resourcecenter response
 type ResourceGroup struct {
-	DisplayName string `json:"DisplayName" xml:"DisplayName"`
-	Status      string `json:"Status" xml:"Status"`
 	AccountId   string `json:"AccountId" xml:"AccountId"`
-	Name        string `json:"Name" xml:"Name"`
 	CreateDate  string `json:"CreateDate" xml:"CreateDate"`
+	DisplayName string `json:"DisplayName" xml:"DisplayName"`
 	Id          string `json:"Id" xml:"Id"`
+	Name        string `json:"Name" xml:"Name"`
+	Status      string `json:"Status" xml:"Status"`
 }

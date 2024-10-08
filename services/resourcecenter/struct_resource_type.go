@@ -17,8 +17,9 @@ package resourcecenter
 
 // ResourceType is a nested struct in resourcecenter response
 type ResourceType struct {
-	ResourceType     string      `json:"ResourceType" xml:"ResourceType"`
+	Authorized       bool        `json:"Authorized" xml:"Authorized"`
 	ProductName      string      `json:"ProductName" xml:"ProductName"`
+	ResourceType     string      `json:"ResourceType" xml:"ResourceType"`
 	ResourceTypeName string      `json:"ResourceTypeName" xml:"ResourceTypeName"`
 	FilterKeys       []string    `json:"FilterKeys" xml:"FilterKeys"`
 	CodeMapping      CodeMapping `json:"CodeMapping" xml:"CodeMapping"`

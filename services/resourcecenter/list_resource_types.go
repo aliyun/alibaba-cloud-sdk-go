@@ -80,12 +80,12 @@ type ListResourceTypesRequest struct {
 // ListResourceTypesResponse is the response struct for api ListResourceTypes
 type ListResourceTypesResponse struct {
 	*responses.BaseResponse
-	RequestId      string         `json:"RequestId" xml:"RequestId"`
-	Success        bool           `json:"Success" xml:"Success"`
-	ErrorCode      string         `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMessage   string         `json:"ErrorMessage" xml:"ErrorMessage"`
 	DynamicCode    string         `json:"DynamicCode" xml:"DynamicCode"`
 	DynamicMessage string         `json:"DynamicMessage" xml:"DynamicMessage"`
+	ErrorCode      string         `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage   string         `json:"ErrorMessage" xml:"ErrorMessage"`
+	RequestId      string         `json:"RequestId" xml:"RequestId"`
+	Success        bool           `json:"Success" xml:"Success"`
 	ResourceTypes  []ResourceType `json:"ResourceTypes" xml:"ResourceTypes"`
 }
 

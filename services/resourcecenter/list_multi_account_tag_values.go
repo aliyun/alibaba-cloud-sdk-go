@@ -82,13 +82,13 @@ type ListMultiAccountTagValuesRequest struct {
 // ListMultiAccountTagValuesResponse is the response struct for api ListMultiAccountTagValues
 type ListMultiAccountTagValuesResponse struct {
 	*responses.BaseResponse
-	NextToken      string   `json:"NextToken" xml:"NextToken"`
-	RequestId      string   `json:"RequestId" xml:"RequestId"`
-	Success        bool     `json:"Success" xml:"Success"`
 	DynamicCode    string   `json:"DynamicCode" xml:"DynamicCode"`
 	DynamicMessage string   `json:"DynamicMessage" xml:"DynamicMessage"`
 	ErrorCode      string   `json:"ErrorCode" xml:"ErrorCode"`
 	ErrorMessage   string   `json:"ErrorMessage" xml:"ErrorMessage"`
+	NextToken      string   `json:"NextToken" xml:"NextToken"`
+	RequestId      string   `json:"RequestId" xml:"RequestId"`
+	Success        bool     `json:"Success" xml:"Success"`
 	TagValues      []string `json:"TagValues" xml:"TagValues"`
 }
 

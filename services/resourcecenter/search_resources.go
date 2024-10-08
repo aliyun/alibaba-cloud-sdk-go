@@ -72,6 +72,7 @@ func (client *Client) SearchResourcesWithCallback(request *SearchResourcesReques
 type SearchResourcesRequest struct {
 	*requests.RpcRequest
 	ResourceGroupId string                       `position:"Query" name:"ResourceGroupId"`
+	View            string                       `position:"Query" name:"View"`
 	NextToken       string                       `position:"Query" name:"NextToken"`
 	SortCriterion   SearchResourcesSortCriterion `position:"Query" name:"SortCriterion"  type:"Struct"`
 	Filter          *[]SearchResourcesFilter     `position:"Query" name:"Filter"  type:"Repeated"`

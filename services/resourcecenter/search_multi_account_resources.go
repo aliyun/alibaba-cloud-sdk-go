@@ -94,10 +94,10 @@ type SearchMultiAccountResourcesFilter struct {
 // SearchMultiAccountResourcesResponse is the response struct for api SearchMultiAccountResources
 type SearchMultiAccountResourcesResponse struct {
 	*responses.BaseResponse
-	RequestId  string     `json:"RequestId" xml:"RequestId"`
-	NextToken  string     `json:"NextToken" xml:"NextToken"`
-	Scope      string     `json:"Scope" xml:"Scope"`
 	MaxResults int        `json:"MaxResults" xml:"MaxResults"`
+	NextToken  string     `json:"NextToken" xml:"NextToken"`
+	RequestId  string     `json:"RequestId" xml:"RequestId"`
+	Scope      string     `json:"Scope" xml:"Scope"`
 	Filters    []Filter   `json:"Filters" xml:"Filters"`
 	Resources  []Resource `json:"Resources" xml:"Resources"`
 }

@@ -72,21 +72,21 @@ func (client *Client) ListMultiAccountResourceGroupsWithCallback(request *ListMu
 type ListMultiAccountResourceGroupsRequest struct {
 	*requests.RpcRequest
 	AccountId        string           `position:"Query" name:"AccountId"`
-	ResourceGroupIds *[]string        `position:"Query" name:"ResourceGroupIds"  type:"Repeated"`
 	NextToken        string           `position:"Query" name:"NextToken"`
+	ResourceGroupIds *[]string        `position:"Query" name:"ResourceGroupIds"  type:"Repeated"`
 	MaxResults       requests.Integer `position:"Query" name:"MaxResults"`
 }
 
 // ListMultiAccountResourceGroupsResponse is the response struct for api ListMultiAccountResourceGroups
 type ListMultiAccountResourceGroupsResponse struct {
 	*responses.BaseResponse
-	NextToken      string          `json:"NextToken" xml:"NextToken"`
-	RequestId      string          `json:"RequestId" xml:"RequestId"`
-	Success        bool            `json:"Success" xml:"Success"`
 	DynamicCode    string          `json:"DynamicCode" xml:"DynamicCode"`
 	DynamicMessage string          `json:"DynamicMessage" xml:"DynamicMessage"`
 	ErrorCode      string          `json:"ErrorCode" xml:"ErrorCode"`
 	ErrorMessage   string          `json:"ErrorMessage" xml:"ErrorMessage"`
+	NextToken      string          `json:"NextToken" xml:"NextToken"`
+	RequestId      string          `json:"RequestId" xml:"RequestId"`
+	Success        bool            `json:"Success" xml:"Success"`
 	ResourceGroups []ResourceGroup `json:"ResourceGroups" xml:"ResourceGroups"`
 }
 
