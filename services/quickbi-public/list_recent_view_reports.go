@@ -84,9 +84,9 @@ type ListRecentViewReportsRequest struct {
 // ListRecentViewReportsResponse is the response struct for api ListRecentViewReports
 type ListRecentViewReportsResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
-	Result    Result `json:"Result" xml:"Result"`
+	RequestId string                        `json:"RequestId" xml:"RequestId"`
+	Success   bool                          `json:"Success" xml:"Success"`
+	Result    ResultInListRecentViewReports `json:"Result" xml:"Result"`
 }
 
 // CreateListRecentViewReportsRequest creates a request to invoke ListRecentViewReports API

@@ -82,9 +82,9 @@ type ListApiDatasourceRequest struct {
 // ListApiDatasourceResponse is the response struct for api ListApiDatasource
 type ListApiDatasourceResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
-	Result    Result `json:"Result" xml:"Result"`
+	RequestId string                    `json:"RequestId" xml:"RequestId"`
+	Success   bool                      `json:"Success" xml:"Success"`
+	Result    ResultInListApiDatasource `json:"Result" xml:"Result"`
 }
 
 // CreateListApiDatasourceRequest creates a request to invoke ListApiDatasource API

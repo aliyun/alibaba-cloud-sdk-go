@@ -18,7 +18,9 @@ package quickbi_public
 // Result is a nested struct in quickbi_public response
 type Result struct {
 	InvalidTime                 string                        `json:"InvalidTime" xml:"InvalidTime"`
+	TotalPages                  int64                         `json:"TotalPages" xml:"TotalPages"`
 	FailureDetail               map[string]interface{}        `json:"FailureDetail" xml:"FailureDetail"`
+	PageSize                    int64                         `json:"PageSize" xml:"PageSize"`
 	WatermarkParam              string                        `json:"WatermarkParam" xml:"WatermarkParam"`
 	EmbeddedCount               int                           `json:"EmbeddedCount" xml:"EmbeddedCount"`
 	RoleName                    string                        `json:"RoleName" xml:"RoleName"`
@@ -38,9 +40,9 @@ type Result struct {
 	WorkspaceName               string                        `json:"WorkspaceName" xml:"WorkspaceName"`
 	Sql                         string                        `json:"Sql" xml:"Sql"`
 	OpenOfflineAcceleration     bool                          `json:"OpenOfflineAcceleration" xml:"OpenOfflineAcceleration"`
+	PageNo                      int64                         `json:"PageNo" xml:"PageNo"`
 	RowLevel                    bool                          `json:"RowLevel" xml:"RowLevel"`
 	WorksId                     string                        `json:"WorksId" xml:"WorksId"`
-	TotalNum                    int                           `json:"TotalNum" xml:"TotalNum"`
 	IsOpenColumnLevelPermission int                           `json:"IsOpenColumnLevelPermission" xml:"IsOpenColumnLevelPermission"`
 	CmptId                      string                        `json:"CmptId" xml:"CmptId"`
 	AccountId                   string                        `json:"AccountId" xml:"AccountId"`
@@ -51,14 +53,13 @@ type Result struct {
 	DatasetId                   string                        `json:"DatasetId" xml:"DatasetId"`
 	CustimzeSql                 bool                          `json:"CustimzeSql" xml:"CustimzeSql"`
 	CubeId                      string                        `json:"CubeId" xml:"CubeId"`
-	TotalPages                  int                           `json:"TotalPages" xml:"TotalPages"`
 	AuthAdminUser               bool                          `json:"AuthAdminUser" xml:"AuthAdminUser"`
-	PageSize                    int                           `json:"PageSize" xml:"PageSize"`
 	GmtCreate                   string                        `json:"GmtCreate" xml:"GmtCreate"`
 	WorkName                    string                        `json:"WorkName" xml:"WorkName"`
 	UserId                      string                        `json:"UserId" xml:"UserId"`
 	NickName                    string                        `json:"NickName" xml:"NickName"`
 	UserType                    int                           `json:"UserType" xml:"UserType"`
+	TotalNum                    int64                         `json:"TotalNum" xml:"TotalNum"`
 	AccessTicket                string                        `json:"AccessTicket" xml:"AccessTicket"`
 	Phone                       string                        `json:"Phone" xml:"Phone"`
 	Description                 string                        `json:"Description" xml:"Description"`
@@ -70,13 +71,11 @@ type Result struct {
 	GlobalParam                 string                        `json:"GlobalParam" xml:"GlobalParam"`
 	ModifyName                  string                        `json:"ModifyName" xml:"ModifyName"`
 	DatasetName                 string                        `json:"DatasetName" xml:"DatasetName"`
-	PageNum                     int                           `json:"PageNum" xml:"PageNum"`
 	RoleCode                    string                        `json:"RoleCode" xml:"RoleCode"`
 	IsOpenRowLevelPermission    int                           `json:"IsOpenRowLevelPermission" xml:"IsOpenRowLevelPermission"`
 	AdminUser                   bool                          `json:"AdminUser" xml:"AdminUser"`
 	RoleId                      int64                         `json:"RoleId" xml:"RoleId"`
 	PublicFlag                  bool                          `json:"PublicFlag" xml:"PublicFlag"`
-	Attention                   string                        `json:"Attention" xml:"Attention"`
 	AccountName                 string                        `json:"AccountName" xml:"AccountName"`
 	OwnerId                     string                        `json:"OwnerId" xml:"OwnerId"`
 	PublicInvalidTime           int64                         `json:"PublicInvalidTime" xml:"PublicInvalidTime"`
@@ -88,7 +87,6 @@ type Result struct {
 	Detail                      Detail                        `json:"Detail" xml:"Detail"`
 	Directory                   Directory                     `json:"Directory" xml:"Directory"`
 	AuthConfigList              []AuthConfigListItem          `json:"AuthConfigList" xml:"AuthConfigList"`
-	Data                        []DataItem                    `json:"Data" xml:"Data"`
 	UserGroupModels             []UserGroupModelsItem         `json:"UserGroupModels" xml:"UserGroupModels"`
 	MeasureList                 []MeasureListItem             `json:"MeasureList" xml:"MeasureList"`
 	FailResults                 []FailResultsItem             `json:"FailResults" xml:"FailResults"`
@@ -96,5 +94,6 @@ type Result struct {
 	ApiCopilotThemeModels       []ApiCopilotThemeModelsItem   `json:"ApiCopilotThemeModels" xml:"ApiCopilotThemeModels"`
 	ApiCopilotLlmCubeModels     []ApiCopilotLlmCubeModelsItem `json:"ApiCopilotLlmCubeModels" xml:"ApiCopilotLlmCubeModels"`
 	CubeTableList               []CubeTableListItem           `json:"CubeTableList" xml:"CubeTableList"`
+	Data                        []DataItem                    `json:"Data" xml:"Data"`
 	Headers                     []HeadersItem                 `json:"Headers" xml:"Headers"`
 }

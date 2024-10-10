@@ -84,9 +84,9 @@ type QueryDatasetListRequest struct {
 // QueryDatasetListResponse is the response struct for api QueryDatasetList
 type QueryDatasetListResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
-	Result    Result `json:"Result" xml:"Result"`
+	RequestId string                   `json:"RequestId" xml:"RequestId"`
+	Success   bool                     `json:"Success" xml:"Success"`
+	Result    ResultInQueryDatasetList `json:"Result" xml:"Result"`
 }
 
 // CreateQueryDatasetListRequest creates a request to invoke QueryDatasetList API

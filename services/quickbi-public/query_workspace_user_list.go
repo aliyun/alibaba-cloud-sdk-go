@@ -82,9 +82,9 @@ type QueryWorkspaceUserListRequest struct {
 // QueryWorkspaceUserListResponse is the response struct for api QueryWorkspaceUserList
 type QueryWorkspaceUserListResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
-	Result    Result `json:"Result" xml:"Result"`
+	RequestId string                         `json:"RequestId" xml:"RequestId"`
+	Success   bool                           `json:"Success" xml:"Success"`
+	Result    ResultInQueryWorkspaceUserList `json:"Result" xml:"Result"`
 }
 
 // CreateQueryWorkspaceUserListRequest creates a request to invoke QueryWorkspaceUserList API

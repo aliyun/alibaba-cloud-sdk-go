@@ -82,9 +82,9 @@ type ListFavoriteReportsRequest struct {
 // ListFavoriteReportsResponse is the response struct for api ListFavoriteReports
 type ListFavoriteReportsResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
-	Result    Result `json:"Result" xml:"Result"`
+	RequestId string                      `json:"RequestId" xml:"RequestId"`
+	Success   bool                        `json:"Success" xml:"Success"`
+	Result    ResultInListFavoriteReports `json:"Result" xml:"Result"`
 }
 
 // CreateListFavoriteReportsRequest creates a request to invoke ListFavoriteReports API

@@ -17,6 +17,7 @@ package quickbi_public
 
 // DataItem is a nested struct in quickbi_public response
 type DataItem struct {
+	WorksName               string     `json:"WorksName" xml:"WorksName"`
 	DataSize                float64    `json:"DataSize" xml:"DataSize"`
 	ModifyUserAccountName   string     `json:"ModifyUserAccountName" xml:"ModifyUserAccountName"`
 	ViewCount               int64      `json:"ViewCount" xml:"ViewCount"`
@@ -31,6 +32,7 @@ type DataItem struct {
 	Type                    string     `json:"Type" xml:"Type"`
 	ShowName                string     `json:"ShowName" xml:"ShowName"`
 	PublishStatus           int        `json:"PublishStatus" xml:"PublishStatus"`
+	WorksType               string     `json:"WorksType" xml:"WorksType"`
 	OwnerNum                string     `json:"OwnerNum" xml:"OwnerNum"`
 	Email                   string     `json:"Email" xml:"Email"`
 	OwnerName               string     `json:"OwnerName" xml:"OwnerName"`
@@ -39,8 +41,8 @@ type DataItem struct {
 	JoinedDate              int64      `json:"JoinedDate" xml:"JoinedDate"`
 	DateUpdateTime          string     `json:"DateUpdateTime" xml:"DateUpdateTime"`
 	OpenOfflineAcceleration bool       `json:"OpenOfflineAcceleration" xml:"OpenOfflineAcceleration"`
-	RowLevel                bool       `json:"RowLevel" xml:"RowLevel"`
 	WorksId                 string     `json:"WorksId" xml:"WorksId"`
+	RowLevel                bool       `json:"RowLevel" xml:"RowLevel"`
 	Parameters              string     `json:"Parameters" xml:"Parameters"`
 	AllowPublishOperation   bool       `json:"AllowPublishOperation" xml:"AllowPublishOperation"`
 	AccountId               string     `json:"AccountId" xml:"AccountId"`
@@ -71,6 +73,7 @@ type DataItem struct {
 	DatasetName             string     `json:"DatasetName" xml:"DatasetName"`
 	GmtModified             string     `json:"GmtModified" xml:"GmtModified"`
 	Owner                   string     `json:"Owner" xml:"Owner"`
+	EmbedTime               string     `json:"EmbedTime" xml:"EmbedTime"`
 	Body                    string     `json:"Body" xml:"Body"`
 	AdminUser               bool       `json:"AdminUser" xml:"AdminUser"`
 	PublicFlag              bool       `json:"PublicFlag" xml:"PublicFlag"`

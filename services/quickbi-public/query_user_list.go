@@ -82,9 +82,9 @@ type QueryUserListRequest struct {
 // QueryUserListResponse is the response struct for api QueryUserList
 type QueryUserListResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
-	Result    Result `json:"Result" xml:"Result"`
+	RequestId string                `json:"RequestId" xml:"RequestId"`
+	Success   bool                  `json:"Success" xml:"Success"`
+	Result    ResultInQueryUserList `json:"Result" xml:"Result"`
 }
 
 // CreateQueryUserListRequest creates a request to invoke QueryUserList API

@@ -83,9 +83,9 @@ type ListWorkspaceRoleUsersRequest struct {
 // ListWorkspaceRoleUsersResponse is the response struct for api ListWorkspaceRoleUsers
 type ListWorkspaceRoleUsersResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
-	Result    Result `json:"Result" xml:"Result"`
+	RequestId string                         `json:"RequestId" xml:"RequestId"`
+	Success   bool                           `json:"Success" xml:"Success"`
+	Result    ResultInListWorkspaceRoleUsers `json:"Result" xml:"Result"`
 }
 
 // CreateListWorkspaceRoleUsersRequest creates a request to invoke ListWorkspaceRoleUsers API

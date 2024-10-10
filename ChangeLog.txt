@@ -1,3 +1,7 @@
+2024-10-10 Version: v1.63.26
+- Generated 2022-01-01 for `quickbi-public`.
+- Add ManualRunMailTask, GetMailTaskStatus and GetWorksEmbedList apis.
+
 2024-10-10 Version: v1.63.25
 - Generated 2016-08-01 for `Push`.
 - Support Android badge.

@@ -82,9 +82,9 @@ type QueryOrganizationWorkspaceListRequest struct {
 // QueryOrganizationWorkspaceListResponse is the response struct for api QueryOrganizationWorkspaceList
 type QueryOrganizationWorkspaceListResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
-	Result    Result `json:"Result" xml:"Result"`
+	RequestId string                                 `json:"RequestId" xml:"RequestId"`
+	Success   bool                                   `json:"Success" xml:"Success"`
+	Result    ResultInQueryOrganizationWorkspaceList `json:"Result" xml:"Result"`
 }
 
 // CreateQueryOrganizationWorkspaceListRequest creates a request to invoke QueryOrganizationWorkspaceList API
