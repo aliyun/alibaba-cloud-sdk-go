@@ -72,68 +72,41 @@ func (client *Client) PushWithCallback(request *PushRequest, callback func(respo
 type PushRequest struct {
 	*requests.RpcRequest
 	AndroidNotificationBarType       requests.Integer `position:"Query" name:"AndroidNotificationBarType"`
-	SmsSendPolicy                    requests.Integer `position:"Query" name:"SmsSendPolicy"`
-	Body                             string           `position:"Query" name:"Body"`
 	DeviceType                       string           `position:"Query" name:"DeviceType"`
 	PushTime                         string           `position:"Query" name:"PushTime"`
 	SendSpeed                        requests.Integer `position:"Query" name:"SendSpeed"`
-	AndroidNotificationHuaweiChannel string           `position:"Query" name:"AndroidNotificationHuaweiChannel"`
-	AndroidPopupActivity             string           `position:"Query" name:"AndroidPopupActivity"`
 	IOSRemindBody                    string           `position:"Query" name:"iOSRemindBody"`
 	Trim                             requests.Boolean `position:"Query" name:"Trim"`
-	AndroidMessageVivoCategory       string           `position:"Query" name:"AndroidMessageVivoCategory"`
-	AndroidNotifyType                string           `position:"Query" name:"AndroidNotifyType"`
 	AndroidPopupTitle                string           `position:"Query" name:"AndroidPopupTitle"`
-	AndroidMessageHuaweiCategory     string           `position:"Query" name:"AndroidMessageHuaweiCategory"`
-	IOSMusic                         string           `position:"Query" name:"iOSMusic"`
 	IOSApnsEnv                       string           `position:"Query" name:"iOSApnsEnv"`
-	IOSMutableContent                requests.Boolean `position:"Query" name:"iOSMutableContent"`
 	AndroidNotificationBarPriority   requests.Integer `position:"Query" name:"AndroidNotificationBarPriority"`
 	ExpireTime                       string           `position:"Query" name:"ExpireTime"`
 	AndroidImageUrl                  string           `position:"Query" name:"AndroidImageUrl"`
-	AndroidHonorTargetUserType       requests.Integer `position:"Query" name:"AndroidHonorTargetUserType"`
-	AndroidNotificationVivoChannel   string           `position:"Query" name:"AndroidNotificationVivoChannel"`
 	AndroidVivoReceiptId             string           `position:"Query" name:"AndroidVivoReceiptId"`
 	IOSNotificationCategory          string           `position:"Query" name:"iOSNotificationCategory"`
-	AndroidNotificationXiaomiChannel string           `position:"Query" name:"AndroidNotificationXiaomiChannel"`
-	StoreOffline                     requests.Boolean `position:"Query" name:"StoreOffline"`
-	IOSRelevanceScore                string           `position:"Query" name:"iOSRelevanceScore"`
-	SmsParams                        string           `position:"Query" name:"SmsParams"`
-	AndroidVivoPushMode              requests.Integer `position:"Query" name:"AndroidVivoPushMode"`
-	AndroidInboxBody                 string           `position:"Query" name:"AndroidInboxBody"`
-	JobKey                           string           `position:"Query" name:"JobKey"`
-	AndroidOpenUrl                   string           `position:"Query" name:"AndroidOpenUrl"`
-	AndroidXiaoMiNotifyBody          string           `position:"Query" name:"AndroidXiaoMiNotifyBody"`
-	IOSSubtitle                      string           `position:"Query" name:"iOSSubtitle"`
 	AndroidXiaomiBigPictureUrl       string           `position:"Query" name:"AndroidXiaomiBigPictureUrl"`
+	HarmonyCategory                  string           `position:"Query" name:"HarmonyCategory"`
 	IOSRemind                        requests.Boolean `position:"Query" name:"iOSRemind"`
 	IOSNotificationThreadId          string           `position:"Query" name:"iOSNotificationThreadId"`
 	AndroidHuaweiTargetUserType      requests.Integer `position:"Query" name:"AndroidHuaweiTargetUserType"`
-	AndroidMusic                     string           `position:"Query" name:"AndroidMusic"`
-	IOSNotificationCollapseId        string           `position:"Query" name:"iOSNotificationCollapseId"`
 	AndroidMessageHuaweiUrgency      string           `position:"Query" name:"AndroidMessageHuaweiUrgency"`
-	PushType                         string           `position:"Query" name:"PushType"`
 	IOSInterruptionLevel             string           `position:"Query" name:"iOSInterruptionLevel"`
 	AndroidExtParameters             string           `position:"Query" name:"AndroidExtParameters"`
 	IOSBadge                         requests.Integer `position:"Query" name:"iOSBadge"`
-	AndroidBigBody                   string           `position:"Query" name:"AndroidBigBody"`
 	IOSBadgeAutoIncrement            requests.Boolean `position:"Query" name:"iOSBadgeAutoIncrement"`
 	AndroidOpenType                  string           `position:"Query" name:"AndroidOpenType"`
-	Title                            string           `position:"Query" name:"Title"`
+	HarmonyRemindTitle               string           `position:"Query" name:"HarmonyRemindTitle"`
+	AndroidBadgeClass                string           `position:"Query" name:"AndroidBadgeClass"`
 	SmsDelaySecs                     requests.Integer `position:"Query" name:"SmsDelaySecs"`
 	AndroidRenderStyle               requests.Integer `position:"Query" name:"AndroidRenderStyle"`
 	IOSExtParameters                 string           `position:"Query" name:"iOSExtParameters"`
-	AndroidHuaweiReceiptId           string           `position:"Query" name:"AndroidHuaweiReceiptId"`
-	AndroidNotificationHonorChannel  string           `position:"Query" name:"AndroidNotificationHonorChannel"`
 	AndroidXiaomiImageUrl            string           `position:"Query" name:"AndroidXiaomiImageUrl"`
-	AndroidTargetUserType            requests.Integer `position:"Query" name:"AndroidTargetUserType"`
 	SmsTemplateName                  string           `position:"Query" name:"SmsTemplateName"`
-	AndroidPopupBody                 string           `position:"Query" name:"AndroidPopupBody"`
+	HarmonyUri                       string           `position:"Query" name:"HarmonyUri"`
+	HarmonyExtParameters             string           `position:"Query" name:"HarmonyExtParameters"`
 	AndroidBigPictureUrl             string           `position:"Query" name:"AndroidBigPictureUrl"`
 	IOSSilentNotification            requests.Boolean `position:"Query" name:"iOSSilentNotification"`
-	AndroidNotificationGroup         string           `position:"Query" name:"AndroidNotificationGroup"`
-	SendChannels                     string           `position:"Query" name:"SendChannels"`
-	Target                           string           `position:"Query" name:"Target"`
+	HarmonyNotificationSlotType      string           `position:"Query" name:"HarmonyNotificationSlotType"`
 	AndroidBigTitle                  string           `position:"Query" name:"AndroidBigTitle"`
 	AndroidNotificationChannel       string           `position:"Query" name:"AndroidNotificationChannel"`
 	AndroidRemind                    requests.Boolean `position:"Query" name:"AndroidRemind"`
@@ -142,7 +115,56 @@ type PushRequest struct {
 	AndroidNotificationNotifyId      requests.Integer `position:"Query" name:"AndroidNotificationNotifyId"`
 	AppKey                           requests.Integer `position:"Query" name:"AppKey"`
 	TargetValue                      string           `position:"Query" name:"TargetValue"`
+	HarmonyBadgeSetNum               requests.Integer `position:"Query" name:"HarmonyBadgeSetNum"`
 	AndroidXiaoMiNotifyTitle         string           `position:"Query" name:"AndroidXiaoMiNotifyTitle"`
+	SmsSendPolicy                    requests.Integer `position:"Query" name:"SmsSendPolicy"`
+	Body                             string           `position:"Query" name:"Body"`
+	AndroidNotificationHuaweiChannel string           `position:"Query" name:"AndroidNotificationHuaweiChannel"`
+	AndroidPopupActivity             string           `position:"Query" name:"AndroidPopupActivity"`
+	HarmonyNotifyId                  requests.Integer `position:"Query" name:"HarmonyNotifyId"`
+	HarmonyRenderStyle               string           `position:"Query" name:"HarmonyRenderStyle"`
+	AndroidMessageVivoCategory       string           `position:"Query" name:"AndroidMessageVivoCategory"`
+	AndroidNotifyType                string           `position:"Query" name:"AndroidNotifyType"`
+	AndroidMessageHuaweiCategory     string           `position:"Query" name:"AndroidMessageHuaweiCategory"`
+	IOSMusic                         string           `position:"Query" name:"iOSMusic"`
+	IOSMutableContent                requests.Boolean `position:"Query" name:"iOSMutableContent"`
+	AndroidHonorTargetUserType       requests.Integer `position:"Query" name:"AndroidHonorTargetUserType"`
+	HarmonyRemindBody                string           `position:"Query" name:"HarmonyRemindBody"`
+	AndroidNotificationVivoChannel   string           `position:"Query" name:"AndroidNotificationVivoChannel"`
+	AndroidNotificationXiaomiChannel string           `position:"Query" name:"AndroidNotificationXiaomiChannel"`
+	HarmonyAction                    string           `position:"Query" name:"HarmonyAction"`
+	StoreOffline                     requests.Boolean `position:"Query" name:"StoreOffline"`
+	IOSRelevanceScore                string           `position:"Query" name:"iOSRelevanceScore"`
+	SmsParams                        string           `position:"Query" name:"SmsParams"`
+	AndroidVivoPushMode              requests.Integer `position:"Query" name:"AndroidVivoPushMode"`
+	AndroidInboxBody                 string           `position:"Query" name:"AndroidInboxBody"`
+	JobKey                           string           `position:"Query" name:"JobKey"`
+	HarmonyReceiptId                 string           `position:"Query" name:"HarmonyReceiptId"`
+	AndroidOpenUrl                   string           `position:"Query" name:"AndroidOpenUrl"`
+	AndroidBadgeSetNum               requests.Integer `position:"Query" name:"AndroidBadgeSetNum"`
+	AndroidXiaoMiNotifyBody          string           `position:"Query" name:"AndroidXiaoMiNotifyBody"`
+	IOSSubtitle                      string           `position:"Query" name:"iOSSubtitle"`
+	HarmonyRemind                    requests.Boolean `position:"Query" name:"HarmonyRemind"`
+	AndroidMusic                     string           `position:"Query" name:"AndroidMusic"`
+	HarmonyExtensionPush             requests.Boolean `position:"Query" name:"HarmonyExtensionPush"`
+	IOSNotificationCollapseId        string           `position:"Query" name:"iOSNotificationCollapseId"`
+	PushType                         string           `position:"Query" name:"PushType"`
+	HarmonyExtensionExtraData        string           `position:"Query" name:"HarmonyExtensionExtraData"`
+	HarmonyImageUrl                  string           `position:"Query" name:"HarmonyImageUrl"`
+	AndroidBigBody                   string           `position:"Query" name:"AndroidBigBody"`
+	Title                            string           `position:"Query" name:"Title"`
+	HarmonyBadgeAddNum               requests.Integer `position:"Query" name:"HarmonyBadgeAddNum"`
+	HarmonyTestMessage               requests.Boolean `position:"Query" name:"HarmonyTestMessage"`
+	AndroidBadgeAddNum               requests.Integer `position:"Query" name:"AndroidBadgeAddNum"`
+	AndroidHuaweiReceiptId           string           `position:"Query" name:"AndroidHuaweiReceiptId"`
+	AndroidNotificationHonorChannel  string           `position:"Query" name:"AndroidNotificationHonorChannel"`
+	AndroidTargetUserType            requests.Integer `position:"Query" name:"AndroidTargetUserType"`
+	AndroidPopupBody                 string           `position:"Query" name:"AndroidPopupBody"`
+	AndroidNotificationGroup         string           `position:"Query" name:"AndroidNotificationGroup"`
+	SendChannels                     string           `position:"Query" name:"SendChannels"`
+	HarmonyActionType                string           `position:"Query" name:"HarmonyActionType"`
+	Target                           string           `position:"Query" name:"Target"`
+	HarmonyInboxContent              string           `position:"Query" name:"HarmonyInboxContent"`
 	AndroidXiaoMiActivity            string           `position:"Query" name:"AndroidXiaoMiActivity"`
 }
 

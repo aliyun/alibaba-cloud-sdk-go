@@ -1,3 +1,9 @@
+2024-10-10 Version: v1.63.25
+- Generated 2016-08-01 for `Push`.
+- Support Android badge.
+- Support Harmony badge.
+- Support Harmony Extension Push Message.
+
 2024-10-08 Version: v1.63.24
 - Generated 2022-12-01 for `ResourceCenter`.
 undefined

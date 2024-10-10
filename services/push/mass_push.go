@@ -84,6 +84,8 @@ type MassPushPushTask struct {
 	SendSpeed                        string `name:"SendSpeed"`
 	AndroidNotificationHuaweiChannel string `name:"AndroidNotificationHuaweiChannel"`
 	AndroidPopupActivity             string `name:"AndroidPopupActivity"`
+	HarmonyNotifyId                  string `name:"HarmonyNotifyId"`
+	HarmonyRenderStyle               string `name:"HarmonyRenderStyle"`
 	IOSRemindBody                    string `name:"iOSRemindBody"`
 	Trim                             string `name:"Trim"`
 	AndroidMessageVivoCategory       string `name:"AndroidMessageVivoCategory"`
@@ -97,51 +99,71 @@ type MassPushPushTask struct {
 	ExpireTime                       string `name:"ExpireTime"`
 	AndroidImageUrl                  string `name:"AndroidImageUrl"`
 	AndroidHonorTargetUserType       string `name:"AndroidHonorTargetUserType"`
+	HarmonyRemindBody                string `name:"HarmonyRemindBody"`
 	AndroidNotificationVivoChannel   string `name:"AndroidNotificationVivoChannel"`
 	AndroidVivoReceiptId             string `name:"AndroidVivoReceiptId"`
 	IOSNotificationCategory          string `name:"iOSNotificationCategory"`
 	AndroidNotificationXiaomiChannel string `name:"AndroidNotificationXiaomiChannel"`
+	HarmonyAction                    string `name:"HarmonyAction"`
 	StoreOffline                     string `name:"StoreOffline"`
 	IOSRelevanceScore                string `name:"iOSRelevanceScore"`
 	AndroidVivoPushMode              string `name:"AndroidVivoPushMode"`
 	AndroidInboxBody                 string `name:"AndroidInboxBody"`
 	JobKey                           string `name:"JobKey"`
+	HarmonyReceiptId                 string `name:"HarmonyReceiptId"`
 	AndroidOpenUrl                   string `name:"AndroidOpenUrl"`
+	AndroidBadgeSetNum               string `name:"AndroidBadgeSetNum"`
 	AndroidXiaoMiNotifyBody          string `name:"AndroidXiaoMiNotifyBody"`
 	IOSSubtitle                      string `name:"iOSSubtitle"`
 	AndroidXiaomiBigPictureUrl       string `name:"AndroidXiaomiBigPictureUrl"`
+	HarmonyCategory                  string `name:"HarmonyCategory"`
 	IOSRemind                        string `name:"iOSRemind"`
 	IOSNotificationThreadId          string `name:"iOSNotificationThreadId"`
 	AndroidHuaweiTargetUserType      string `name:"AndroidHuaweiTargetUserType"`
+	HarmonyRemind                    string `name:"HarmonyRemind"`
 	AndroidMusic                     string `name:"AndroidMusic"`
+	HarmonyExtensionPush             string `name:"HarmonyExtensionPush"`
 	IOSNotificationCollapseId        string `name:"iOSNotificationCollapseId"`
 	AndroidMessageHuaweiUrgency      string `name:"AndroidMessageHuaweiUrgency"`
 	PushType                         string `name:"PushType"`
 	IOSInterruptionLevel             string `name:"iOSInterruptionLevel"`
+	HarmonyExtensionExtraData        string `name:"HarmonyExtensionExtraData"`
 	AndroidExtParameters             string `name:"AndroidExtParameters"`
+	HarmonyImageUrl                  string `name:"HarmonyImageUrl"`
 	IOSBadge                         string `name:"iOSBadge"`
 	AndroidBigBody                   string `name:"AndroidBigBody"`
 	IOSBadgeAutoIncrement            string `name:"iOSBadgeAutoIncrement"`
 	AndroidOpenType                  string `name:"AndroidOpenType"`
+	HarmonyRemindTitle               string `name:"HarmonyRemindTitle"`
 	Title                            string `name:"Title"`
+	AndroidBadgeClass                string `name:"AndroidBadgeClass"`
+	HarmonyBadgeAddNum               string `name:"HarmonyBadgeAddNum"`
+	HarmonyTestMessage               string `name:"HarmonyTestMessage"`
 	AndroidRenderStyle               string `name:"AndroidRenderStyle"`
 	IOSExtParameters                 string `name:"iOSExtParameters"`
+	AndroidBadgeAddNum               string `name:"AndroidBadgeAddNum"`
 	AndroidHuaweiReceiptId           string `name:"AndroidHuaweiReceiptId"`
 	AndroidNotificationHonorChannel  string `name:"AndroidNotificationHonorChannel"`
 	AndroidXiaomiImageUrl            string `name:"AndroidXiaomiImageUrl"`
 	AndroidTargetUserType            string `name:"AndroidTargetUserType"`
+	HarmonyUri                       string `name:"HarmonyUri"`
 	AndroidPopupBody                 string `name:"AndroidPopupBody"`
+	HarmonyExtParameters             string `name:"HarmonyExtParameters"`
 	AndroidBigPictureUrl             string `name:"AndroidBigPictureUrl"`
 	IOSSilentNotification            string `name:"iOSSilentNotification"`
 	AndroidNotificationGroup         string `name:"AndroidNotificationGroup"`
 	SendChannels                     string `name:"SendChannels"`
+	HarmonyActionType                string `name:"HarmonyActionType"`
 	Target                           string `name:"Target"`
+	HarmonyNotificationSlotType      string `name:"HarmonyNotificationSlotType"`
 	AndroidBigTitle                  string `name:"AndroidBigTitle"`
 	AndroidNotificationChannel       string `name:"AndroidNotificationChannel"`
 	AndroidRemind                    string `name:"AndroidRemind"`
+	HarmonyInboxContent              string `name:"HarmonyInboxContent"`
 	AndroidActivity                  string `name:"AndroidActivity"`
 	AndroidNotificationNotifyId      string `name:"AndroidNotificationNotifyId"`
 	TargetValue                      string `name:"TargetValue"`
+	HarmonyBadgeSetNum               string `name:"HarmonyBadgeSetNum"`
 	AndroidXiaoMiNotifyTitle         string `name:"AndroidXiaoMiNotifyTitle"`
 	AndroidXiaoMiActivity            string `name:"AndroidXiaoMiActivity"`
 }

@@ -71,10 +71,10 @@ func (client *Client) PushNoticeToAndroidWithCallback(request *PushNoticeToAndro
 // PushNoticeToAndroidRequest is the request struct for api PushNoticeToAndroid
 type PushNoticeToAndroidRequest struct {
 	*requests.RpcRequest
-	ExtParameters string           `position:"Query" name:"ExtParameters"`
-	StoreOffline  requests.Boolean `position:"Query" name:"StoreOffline"`
 	Title         string           `position:"Query" name:"Title"`
 	Body          string           `position:"Query" name:"Body"`
+	ExtParameters string           `position:"Query" name:"ExtParameters"`
+	StoreOffline  requests.Boolean `position:"Query" name:"StoreOffline"`
 	JobKey        string           `position:"Query" name:"JobKey"`
 	Target        string           `position:"Query" name:"Target"`
 	AppKey        requests.Integer `position:"Query" name:"AppKey"`
