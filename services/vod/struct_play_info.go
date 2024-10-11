@@ -40,6 +40,7 @@ type PlayInfo struct {
 	JobExt           string `json:"JobExt" xml:"JobExt"`
 	HDRType          string `json:"HDRType" xml:"HDRType"`
 	Width            int64  `json:"Width" xml:"Width"`
+	EncryptMode      string `json:"EncryptMode" xml:"EncryptMode"`
 	Status           string `json:"Status" xml:"Status"`
 	Specification    string `json:"Specification" xml:"Specification"`
 	PlayURL          string `json:"PlayURL" xml:"PlayURL"`

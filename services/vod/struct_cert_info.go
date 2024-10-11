@@ -17,13 +17,19 @@ package vod
 
 // CertInfo is a nested struct in vod response
 type CertInfo struct {
-	Status                  string `json:"Status" xml:"Status"`
-	CertLife                string `json:"CertLife" xml:"CertLife"`
 	CertExpireTime          string `json:"CertExpireTime" xml:"CertExpireTime"`
-	CertType                string `json:"CertType" xml:"CertType"`
-	ServerCertificateStatus string `json:"ServerCertificateStatus" xml:"ServerCertificateStatus"`
+	CertLife                string `json:"CertLife" xml:"CertLife"`
+	Status                  string `json:"Status" xml:"Status"`
+	CertUpdateTime          string `json:"CertUpdateTime" xml:"CertUpdateTime"`
 	CertDomainName          string `json:"CertDomainName" xml:"CertDomainName"`
-	CertName                string `json:"CertName" xml:"CertName"`
+	ServerCertificateStatus string `json:"ServerCertificateStatus" xml:"ServerCertificateStatus"`
 	CertOrg                 string `json:"CertOrg" xml:"CertOrg"`
 	DomainName              string `json:"DomainName" xml:"DomainName"`
+	CertStartTime           string `json:"CertStartTime" xml:"CertStartTime"`
+	CertType                string `json:"CertType" xml:"CertType"`
+	CertName                string `json:"CertName" xml:"CertName"`
+	DomainCnameStatus       string `json:"DomainCnameStatus" xml:"DomainCnameStatus"`
+	ServerCertificate       string `json:"ServerCertificate" xml:"ServerCertificate"`
+	CertId                  string `json:"CertId" xml:"CertId"`
+	CertRegion              string `json:"CertRegion" xml:"CertRegion"`
 }
