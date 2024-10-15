@@ -1,3 +1,7 @@
+2024-10-15 Version: v1.63.28
+- Generated 2014-05-26 for `Ecs`.
+- Add ResourcePoolOptions.Strategy for CreateAutoProvisioningGroup.
+
 2024-10-11 Version: v1.63.27
 - Generated 2017-03-21 for `vod`.
 - GetPlayInfo Add EncryptMode.
