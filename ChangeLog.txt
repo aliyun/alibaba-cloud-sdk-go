@@ -1,3 +1,7 @@
+2024-10-16 Version: v1.63.30
+- Generated 2024-04-15 for `Gwlb`.
+- Gwlb Open API released.
+
 2024-10-16 Version: v1.63.29
 - Generated 2024-07-12 for `IQS`.
 undefined
