@@ -23,6 +23,7 @@ type Module struct {
 	SaleId                      string                       `json:"SaleId" xml:"SaleId"`
 	DownloadUrl                 string                       `json:"DownloadUrl" xml:"DownloadUrl"`
 	CreateTime                  int64                        `json:"CreateTime" xml:"CreateTime"`
+	PageSize                    int                          `json:"PageSize" xml:"PageSize"`
 	EndTime                     int64                        `json:"EndTime" xml:"EndTime"`
 	OrderNo                     string                       `json:"OrderNo" xml:"OrderNo"`
 	OrderId                     string                       `json:"OrderId" xml:"OrderId"`
@@ -31,7 +32,9 @@ type Module struct {
 	BizType                     string                       `json:"BizType" xml:"BizType"`
 	UserId                      string                       `json:"UserId" xml:"UserId"`
 	PayPrice                    int64                        `json:"PayPrice" xml:"PayPrice"`
+	TotalPageNum                int                          `json:"TotalPageNum" xml:"TotalPageNum"`
 	DeadDate                    int64                        `json:"DeadDate" xml:"DeadDate"`
+	CurrentPageNum              int                          `json:"CurrentPageNum" xml:"CurrentPageNum"`
 	BizStatus                   string                       `json:"BizStatus" xml:"BizStatus"`
 	Status                      int                          `json:"Status" xml:"Status"`
 	UpdateTime                  int64                        `json:"UpdateTime" xml:"UpdateTime"`
@@ -43,9 +46,11 @@ type Module struct {
 	RegDate                     int64                        `json:"RegDate" xml:"RegDate"`
 	AuditMsg                    string                       `json:"AuditMsg" xml:"AuditMsg"`
 	BizNo                       string                       `json:"BizNo" xml:"BizNo"`
+	TotalItemNum                int                          `json:"TotalItemNum" xml:"TotalItemNum"`
 	StatusDesc                  string                       `json:"StatusDesc" xml:"StatusDesc"`
 	Price                       int64                        `json:"Price" xml:"Price"`
 	DomainSpecialBizContact     DomainSpecialBizContact      `json:"DomainSpecialBizContact" xml:"DomainSpecialBizContact"`
 	DomainSpecialOrderResult    DomainSpecialOrderResult     `json:"DomainSpecialOrderResult" xml:"DomainSpecialOrderResult"`
 	DomainSpecialBizCredentials []DomainSpecialBizCredential `json:"DomainSpecialBizCredentials" xml:"DomainSpecialBizCredentials"`
+	Data                        []OrderList                  `json:"Data" xml:"Data"`
 }

@@ -80,8 +80,8 @@ type QueryIntlFixedPriceOrderListRequest struct {
 // QueryIntlFixedPriceOrderListResponse is the response struct for api QueryIntlFixedPriceOrderList
 type QueryIntlFixedPriceOrderListResponse struct {
 	*responses.BaseResponse
-	RequestId string                               `json:"RequestId" xml:"RequestId"`
-	Module    ModuleInQueryIntlFixedPriceOrderList `json:"Module" xml:"Module"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Module    Module `json:"Module" xml:"Module"`
 }
 
 // CreateQueryIntlFixedPriceOrderListRequest creates a request to invoke QueryIntlFixedPriceOrderList API
