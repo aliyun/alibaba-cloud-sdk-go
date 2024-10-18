@@ -1,3 +1,7 @@
+2024-10-18 Version: v1.63.32
+- Generated 2024-04-15 for `Gwlb`.
+- Gwlb Open API released.
+
 2024-10-17 Version: v1.63.31
 - Generated 2018-01-29 for `Domain`.
 - 基于转移码的转出接口
