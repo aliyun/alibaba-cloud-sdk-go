@@ -79,6 +79,7 @@ type ModifyScalingGroupRequest struct {
 	SpotInstanceRemedy                  requests.Boolean                            `position:"Query" name:"SpotInstanceRemedy"`
 	ScaleOutAmountCheck                 requests.Boolean                            `position:"Query" name:"ScaleOutAmountCheck"`
 	CustomPolicyARN                     string                                      `position:"Query" name:"CustomPolicyARN"`
+	StopInstanceTimeout                 requests.Integer                            `position:"Query" name:"StopInstanceTimeout"`
 	DefaultCooldown                     requests.Integer                            `position:"Query" name:"DefaultCooldown"`
 	HealthCheckTypes                    *[]string                                   `position:"Query" name:"HealthCheckTypes"  type:"Repeated"`
 	MultiAZPolicy                       string                                      `position:"Query" name:"MultiAZPolicy"`

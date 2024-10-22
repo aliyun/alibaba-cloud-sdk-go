@@ -40,6 +40,7 @@ type ScalingActivity struct {
 	TriggerSourceType     string               `json:"TriggerSourceType" xml:"TriggerSourceType"`
 	TriggerSourceId       string               `json:"TriggerSourceId" xml:"TriggerSourceId"`
 	ActivityMetadata      string               `json:"ActivityMetadata" xml:"ActivityMetadata"`
+	InstanceRefreshTaskId string               `json:"InstanceRefreshTaskId" xml:"InstanceRefreshTaskId"`
 	CreatedInstances      CreatedInstances     `json:"CreatedInstances" xml:"CreatedInstances"`
 	DestroyedInstances    DestroyedInstances   `json:"DestroyedInstances" xml:"DestroyedInstances"`
 	StartedInstances      StartedInstances     `json:"StartedInstances" xml:"StartedInstances"`

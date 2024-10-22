@@ -72,6 +72,7 @@ func (client *Client) CreateScalingConfigurationWithCallback(request *CreateScal
 type CreateScalingConfigurationRequest struct {
 	*requests.RpcRequest
 	HpcClusterId                    string                                            `position:"Query" name:"HpcClusterId"`
+	SecurityOptions                 CreateScalingConfigurationSecurityOptions         `position:"Query" name:"SecurityOptions"  type:"Struct"`
 	SecurityEnhancementStrategy     string                                            `position:"Query" name:"SecurityEnhancementStrategy"`
 	KeyPairName                     string                                            `position:"Query" name:"KeyPairName"`
 	SpotPriceLimit                  *[]CreateScalingConfigurationSpotPriceLimit       `position:"Query" name:"SpotPriceLimit"  type:"Repeated"`
@@ -139,6 +140,11 @@ type CreateScalingConfigurationRequest struct {
 	ImageFamily                     string                                            `position:"Query" name:"ImageFamily"`
 	SystemDiskDescription           string                                            `position:"Query" name:"SystemDisk.Description"`
 	SystemDiskEncrypted             requests.Boolean                                  `position:"Query" name:"SystemDisk.Encrypted"`
+}
+
+// CreateScalingConfigurationSecurityOptions is a repeated param struct in CreateScalingConfigurationRequest
+type CreateScalingConfigurationSecurityOptions struct {
+	ConfidentialComputingMode string `name:"ConfidentialComputingMode"`
 }
 
 // CreateScalingConfigurationSpotPriceLimit is a repeated param struct in CreateScalingConfigurationRequest

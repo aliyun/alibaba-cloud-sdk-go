@@ -71,15 +71,16 @@ func (client *Client) DescribeScalingActivitiesWithCallback(request *DescribeSca
 // DescribeScalingActivitiesRequest is the request struct for api DescribeScalingActivities
 type DescribeScalingActivitiesRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ScalingGroupId       string           `position:"Query" name:"ScalingGroupId"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	StatusCode           string           `position:"Query" name:"StatusCode"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ScalingActivityId    *[]string        `position:"Query" name:"ScalingActivityId"  type:"Repeated"`
+	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ScalingGroupId        string           `position:"Query" name:"ScalingGroupId"`
+	InstanceRefreshTaskId string           `position:"Query" name:"InstanceRefreshTaskId"`
+	PageNumber            requests.Integer `position:"Query" name:"PageNumber"`
+	StatusCode            string           `position:"Query" name:"StatusCode"`
+	PageSize              requests.Integer `position:"Query" name:"PageSize"`
+	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
+	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
+	ScalingActivityId     *[]string        `position:"Query" name:"ScalingActivityId"  type:"Repeated"`
 }
 
 // DescribeScalingActivitiesResponse is the response struct for api DescribeScalingActivities

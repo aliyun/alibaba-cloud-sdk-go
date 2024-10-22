@@ -80,6 +80,7 @@ type ScalingConfigurationInDescribeScalingConfigurations struct {
 	InstanceTypes                   InstanceTypesInDescribeScalingConfigurations    `json:"InstanceTypes" xml:"InstanceTypes"`
 	SecurityGroupIds                SecurityGroupIdsInDescribeScalingConfigurations `json:"SecurityGroupIds" xml:"SecurityGroupIds"`
 	SchedulerOptions                SchedulerOptions                                `json:"SchedulerOptions" xml:"SchedulerOptions"`
+	SecurityOptions                 SecurityOptions                                 `json:"SecurityOptions" xml:"SecurityOptions"`
 	DataDisks                       DataDisks                                       `json:"DataDisks" xml:"DataDisks"`
 	Tags                            TagsInDescribeScalingConfigurations             `json:"Tags" xml:"Tags"`
 	SpotPriceLimit                  SpotPriceLimit                                  `json:"SpotPriceLimit" xml:"SpotPriceLimit"`

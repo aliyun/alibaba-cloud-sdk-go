@@ -1,3 +1,7 @@
+2024-10-22 Version: v1.63.34
+- Generated 2014-08-28 for `Ess`.
+- ScalingConfiguration supoort ConfidentialComputingMode.
+
 2024-10-22 Version: v1.63.33
 - Generated 2019-06-24 for `eais`.
 - Add openapi StartEaiJupyter.

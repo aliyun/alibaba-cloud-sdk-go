@@ -76,6 +76,7 @@ type RemoveInstancesRequest struct {
 	ScalingGroupId          string           `position:"Query" name:"ScalingGroupId"`
 	DecreaseDesiredCapacity requests.Boolean `position:"Query" name:"DecreaseDesiredCapacity"`
 	IgnoreInvalidInstance   requests.Boolean `position:"Query" name:"IgnoreInvalidInstance"`
+	StopInstanceTimeout     requests.Integer `position:"Query" name:"StopInstanceTimeout"`
 	RemovePolicy            string           `position:"Query" name:"RemovePolicy"`
 	ResourceOwnerAccount    string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount            string           `position:"Query" name:"OwnerAccount"`

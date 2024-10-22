@@ -81,6 +81,7 @@ type CreateScalingGroupRequest struct {
 	SyncAlarmRuleToCms                  requests.Boolean                            `position:"Query" name:"SyncAlarmRuleToCms"`
 	CustomPolicyARN                     string                                      `position:"Query" name:"CustomPolicyARN"`
 	Tag                                 *[]CreateScalingGroupTag                    `position:"Query" name:"Tag"  type:"Repeated"`
+	StopInstanceTimeout                 requests.Integer                            `position:"Query" name:"StopInstanceTimeout"`
 	DefaultCooldown                     requests.Integer                            `position:"Query" name:"DefaultCooldown"`
 	HealthCheckTypes                    *[]string                                   `position:"Query" name:"HealthCheckTypes"  type:"Repeated"`
 	ContainerGroupId                    string                                      `position:"Query" name:"ContainerGroupId"`
