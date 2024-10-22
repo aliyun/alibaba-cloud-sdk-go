@@ -1,3 +1,8 @@
+2024-10-22 Version: v1.63.33
+- Generated 2019-06-24 for `eais`.
+- Add openapi StartEaiJupyter.
+- Add openapi StopEaiJupyter.
+
 2024-10-18 Version: v1.63.32
 - Generated 2024-04-15 for `Gwlb`.
 - Gwlb Open API released.
