@@ -89,7 +89,7 @@ func CreateUpdateListenerAttributeRequest() (request *UpdateListenerAttributeReq
 	request = &UpdateListenerAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Gwlb", "2024-04-15", "UpdateListenerAttribute", "", "")
+	request.InitWithApiInfo("Gwlb", "2024-04-15", "UpdateListenerAttribute", "gwlb", "openAPI")
 	request.Method = requests.POST
 	return
 }

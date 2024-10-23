@@ -94,7 +94,7 @@ func CreateUpdateLoadBalancerZonesRequest() (request *UpdateLoadBalancerZonesReq
 	request = &UpdateLoadBalancerZonesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Gwlb", "2024-04-15", "UpdateLoadBalancerZones", "", "")
+	request.InitWithApiInfo("Gwlb", "2024-04-15", "UpdateLoadBalancerZones", "gwlb", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -97,7 +97,7 @@ func CreateCreateListenerRequest() (request *CreateListenerRequest) {
 	request = &CreateListenerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Gwlb", "2024-04-15", "CreateListener", "", "")
+	request.InitWithApiInfo("Gwlb", "2024-04-15", "CreateListener", "gwlb", "openAPI")
 	request.Method = requests.POST
 	return
 }

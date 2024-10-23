@@ -89,7 +89,7 @@ func CreateUpdateLoadBalancerAttributeRequest() (request *UpdateLoadBalancerAttr
 	request = &UpdateLoadBalancerAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Gwlb", "2024-04-15", "UpdateLoadBalancerAttribute", "", "")
+	request.InitWithApiInfo("Gwlb", "2024-04-15", "UpdateLoadBalancerAttribute", "gwlb", "openAPI")
 	request.Method = requests.POST
 	return
 }

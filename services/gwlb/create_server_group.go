@@ -122,7 +122,7 @@ func CreateCreateServerGroupRequest() (request *CreateServerGroupRequest) {
 	request = &CreateServerGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Gwlb", "2024-04-15", "CreateServerGroup", "", "")
+	request.InitWithApiInfo("Gwlb", "2024-04-15", "CreateServerGroup", "gwlb", "openAPI")
 	request.Method = requests.POST
 	return
 }

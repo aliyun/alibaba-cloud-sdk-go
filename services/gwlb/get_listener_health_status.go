@@ -99,7 +99,7 @@ func CreateGetListenerHealthStatusRequest() (request *GetListenerHealthStatusReq
 	request = &GetListenerHealthStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Gwlb", "2024-04-15", "GetListenerHealthStatus", "", "")
+	request.InitWithApiInfo("Gwlb", "2024-04-15", "GetListenerHealthStatus", "gwlb", "openAPI")
 	request.Method = requests.POST
 	return
 }

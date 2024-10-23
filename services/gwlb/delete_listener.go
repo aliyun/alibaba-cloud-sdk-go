@@ -87,7 +87,7 @@ func CreateDeleteListenerRequest() (request *DeleteListenerRequest) {
 	request = &DeleteListenerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Gwlb", "2024-04-15", "DeleteListener", "", "")
+	request.InitWithApiInfo("Gwlb", "2024-04-15", "DeleteListener", "gwlb", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -94,7 +94,7 @@ func CreateListServerGroupServersRequest() (request *ListServerGroupServersReque
 	request = &ListServerGroupServersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Gwlb", "2024-04-15", "ListServerGroupServers", "", "")
+	request.InitWithApiInfo("Gwlb", "2024-04-15", "ListServerGroupServers", "gwlb", "openAPI")
 	request.Method = requests.POST
 	return
 }

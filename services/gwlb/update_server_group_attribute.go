@@ -111,7 +111,7 @@ func CreateUpdateServerGroupAttributeRequest() (request *UpdateServerGroupAttrib
 	request = &UpdateServerGroupAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Gwlb", "2024-04-15", "UpdateServerGroupAttribute", "", "")
+	request.InitWithApiInfo("Gwlb", "2024-04-15", "UpdateServerGroupAttribute", "gwlb", "openAPI")
 	request.Method = requests.POST
 	return
 }

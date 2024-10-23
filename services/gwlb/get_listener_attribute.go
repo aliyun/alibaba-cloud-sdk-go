@@ -92,7 +92,7 @@ func CreateGetListenerAttributeRequest() (request *GetListenerAttributeRequest) 
 	request = &GetListenerAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Gwlb", "2024-04-15", "GetListenerAttribute", "", "")
+	request.InitWithApiInfo("Gwlb", "2024-04-15", "GetListenerAttribute", "gwlb", "openAPI")
 	request.Method = requests.POST
 	return
 }
