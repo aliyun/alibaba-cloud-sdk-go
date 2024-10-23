@@ -1,3 +1,11 @@
+2024-10-23 Version: v1.63.37
+- Generated 2018-01-29 for `Domain`.
+- Supported GetIntlFixPriceDomainListUrl for Intl.
+- Supported GetIntlFixPriceDomainListUrl for Intl.
+- Supported CheckIntlFixPriceDomainStatus for Intl.
+- Supported CreateIntlFixedPriceDomainOrder for Intl.
+- Supported QueryIntlFixedPriceOrderList for In
+
 2024-10-23 Version: v1.63.36
 - Generated 2024-04-15 for `Gwlb`.
 - Update Endpoint.
