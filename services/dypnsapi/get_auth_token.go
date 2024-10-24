@@ -74,9 +74,14 @@ type GetAuthTokenRequest struct {
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	Origin               string           `position:"Query" name:"Origin"`
 	SceneCode            string           `position:"Query" name:"SceneCode"`
+	CuApiCode            requests.Integer `position:"Query" name:"CuApiCode"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	CtApiCode            requests.Integer `position:"Query" name:"CtApiCode"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Version              string           `position:"Query" name:"Version"`
 	Url                  string           `position:"Query" name:"Url"`
+	BizType              requests.Integer `position:"Query" name:"BizType"`
+	CmApiCode            requests.Integer `position:"Query" name:"CmApiCode"`
 }
 
 // GetAuthTokenResponse is the response struct for api GetAuthToken

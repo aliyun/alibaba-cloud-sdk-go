@@ -79,8 +79,10 @@ type CreateVerifySchemeRequest struct {
 	IpWhiteList          string           `position:"Query" name:"IpWhiteList"`
 	RouteName            string           `position:"Query" name:"RouteName"`
 	Email                string           `position:"Query" name:"Email"`
+	HmSignName           string           `position:"Query" name:"HmSignName"`
 	PackSign             string           `position:"Query" name:"PackSign"`
 	PackName             string           `position:"Query" name:"PackName"`
+	HmAppIdentifier      string           `position:"Query" name:"HmAppIdentifier"`
 	CuApiCode            requests.Integer `position:"Query" name:"CuApiCode"`
 	SceneType            string           `position:"Query" name:"SceneType"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
@@ -91,6 +93,7 @@ type CreateVerifySchemeRequest struct {
 	CmApiCode            requests.Integer `position:"Query" name:"CmApiCode"`
 	SchemeName           string           `position:"Query" name:"SchemeName"`
 	SmsSignName          string           `position:"Query" name:"SmsSignName"`
+	HmPackageName        string           `position:"Query" name:"HmPackageName"`
 }
 
 // CreateVerifySchemeResponse is the response struct for api CreateVerifyScheme
