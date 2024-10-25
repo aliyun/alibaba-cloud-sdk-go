@@ -17,21 +17,19 @@ package ens
 
 // EipAddress is a nested struct in ens response
 type EipAddress struct {
-	Name                 string `json:"Name" xml:"Name"`
-	IpStatus             string `json:"IpStatus" xml:"IpStatus"`
-	InstanceIdInternetIp string `json:"InstanceIdInternetIp" xml:"InstanceIdInternetIp"`
-	IpAddress            string `json:"IpAddress" xml:"IpAddress"`
-	Standby              bool   `json:"Standby" xml:"Standby"`
-	ChargeType           string `json:"ChargeType" xml:"ChargeType"`
-	AllocationTime       string `json:"AllocationTime" xml:"AllocationTime"`
-	EnsRegionId          string `json:"EnsRegionId" xml:"EnsRegionId"`
-	InstanceType         string `json:"InstanceType" xml:"InstanceType"`
-	AllocationId         string `json:"AllocationId" xml:"AllocationId"`
-	Bandwidth            int    `json:"Bandwidth" xml:"Bandwidth"`
-	InstanceId           string `json:"InstanceId" xml:"InstanceId"`
-	InternetChargeType   string `json:"InternetChargeType" xml:"InternetChargeType"`
-	Eip                  string `json:"Eip" xml:"Eip"`
-	Status               string `json:"Status" xml:"Status"`
-	Isp                  string `json:"Isp" xml:"Isp"`
-	Description          string `json:"Description" xml:"Description"`
+	AllocationId       string `json:"AllocationId" xml:"AllocationId"`
+	AllocationTime     string `json:"AllocationTime" xml:"AllocationTime"`
+	Bandwidth          int    `json:"Bandwidth" xml:"Bandwidth"`
+	ChargeType         string `json:"ChargeType" xml:"ChargeType"`
+	Description        string `json:"Description" xml:"Description"`
+	InstanceId         string `json:"InstanceId" xml:"InstanceId"`
+	InstanceType       string `json:"InstanceType" xml:"InstanceType"`
+	InternetChargeType string `json:"InternetChargeType" xml:"InternetChargeType"`
+	IpAddress          string `json:"IpAddress" xml:"IpAddress"`
+	Name               string `json:"Name" xml:"Name"`
+	EnsRegionId        string `json:"EnsRegionId" xml:"EnsRegionId"`
+	Status             string `json:"Status" xml:"Status"`
+	Isp                string `json:"Isp" xml:"Isp"`
+	Standby            bool   `json:"Standby" xml:"Standby"`
+	IpStatus           string `json:"IpStatus" xml:"IpStatus"`
 }

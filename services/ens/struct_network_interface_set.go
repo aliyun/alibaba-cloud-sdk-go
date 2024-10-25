@@ -32,5 +32,6 @@ type NetworkInterfaceSet struct {
 	Description          string                                      `json:"Description" xml:"Description"`
 	Type                 string                                      `json:"Type" xml:"Type"`
 	SecurityGroupIds     SecurityGroupIdsInDescribeNetworkInterfaces `json:"SecurityGroupIds" xml:"SecurityGroupIds"`
-	PrivateIpSets        PrivateIpSets                               `json:"PrivateIpSets" xml:"PrivateIpSets"`
+	PrivateIpSets        PrivateIpSetsInDescribeNetworkInterfaces    `json:"PrivateIpSets" xml:"PrivateIpSets"`
+	Ipv6Sets             Ipv6SetsInDescribeNetworkInterfaces         `json:"Ipv6Sets" xml:"Ipv6Sets"`
 }

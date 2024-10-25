@@ -104,6 +104,7 @@ type RunInstancesRequest struct {
 	Amount                  requests.Integer        `position:"Query" name:"Amount"`
 	AutoReleaseTime         string                  `position:"Query" name:"AutoReleaseTime"`
 	IpType                  string                  `position:"Query" name:"IpType"`
+	SpotDuration            requests.Integer        `position:"Query" name:"SpotDuration"`
 	DataDisk                *[]RunInstancesDataDisk `position:"Query" name:"DataDisk"  type:"Json"`
 	SchedulingStrategy      string                  `position:"Query" name:"SchedulingStrategy"`
 	Carrier                 string                  `position:"Query" name:"Carrier"`

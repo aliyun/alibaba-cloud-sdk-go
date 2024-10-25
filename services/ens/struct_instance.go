@@ -34,6 +34,7 @@ type Instance struct {
 	CreationTime            string                               `json:"CreationTime" xml:"CreationTime"`
 	EnsRegionId             string                               `json:"EnsRegionId" xml:"EnsRegionId"`
 	StartTime               string                               `json:"StartTime" xml:"StartTime"`
+	KeyPairName             string                               `json:"KeyPairName" xml:"KeyPairName"`
 	InternetMaxBandwidthIn  int                                  `json:"InternetMaxBandwidthIn" xml:"InternetMaxBandwidthIn"`
 	Disk                    int                                  `json:"Disk" xml:"Disk"`
 	HostName                string                               `json:"HostName" xml:"HostName"`
@@ -47,5 +48,6 @@ type Instance struct {
 	DataDisk                DataDisk                             `json:"DataDisk" xml:"DataDisk"`
 	Tags                    Tags                                 `json:"Tags" xml:"Tags"`
 	PublicIpAddresses       PublicIpAddresses                    `json:"PublicIpAddresses" xml:"PublicIpAddresses"`
+	NetworkInterfaces       NetworkInterfaces                    `json:"NetworkInterfaces" xml:"NetworkInterfaces"`
 	PrivateIpAddresses      PrivateIpAddresses                   `json:"PrivateIpAddresses" xml:"PrivateIpAddresses"`
 }

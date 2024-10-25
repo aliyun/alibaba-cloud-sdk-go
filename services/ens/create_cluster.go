@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// GetBucketAcl invokes the ens.GetBucketAcl API synchronously
-func (client *Client) GetBucketAcl(request *GetBucketAclRequest) (response *GetBucketAclResponse, err error) {
-	response = CreateGetBucketAclResponse()
+// CreateCluster invokes the ens.CreateCluster API synchronously
+func (client *Client) CreateCluster(request *CreateClusterRequest) (response *CreateClusterResponse, err error) {
+	response = CreateCreateClusterResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// GetBucketAclWithChan invokes the ens.GetBucketAcl API asynchronously
-func (client *Client) GetBucketAclWithChan(request *GetBucketAclRequest) (<-chan *GetBucketAclResponse, <-chan error) {
-	responseChan := make(chan *GetBucketAclResponse, 1)
+// CreateClusterWithChan invokes the ens.CreateCluster API asynchronously
+func (client *Client) CreateClusterWithChan(request *CreateClusterRequest) (<-chan *CreateClusterResponse, <-chan error) {
+	responseChan := make(chan *CreateClusterResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.GetBucketAcl(request)
+		response, err := client.CreateCluster(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) GetBucketAclWithChan(request *GetBucketAclRequest) (<-chan
 	return responseChan, errChan
 }
 
-// GetBucketAclWithCallback invokes the ens.GetBucketAcl API asynchronously
-func (client *Client) GetBucketAclWithCallback(request *GetBucketAclRequest, callback func(response *GetBucketAclResponse, err error)) <-chan int {
+// CreateClusterWithCallback invokes the ens.CreateCluster API asynchronously
+func (client *Client) CreateClusterWithCallback(request *CreateClusterRequest, callback func(response *CreateClusterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *GetBucketAclResponse
+		var response *CreateClusterResponse
 		var err error
 		defer close(result)
-		response, err = client.GetBucketAcl(request)
+		response, err = client.CreateCluster(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,32 +68,33 @@ func (client *Client) GetBucketAclWithCallback(request *GetBucketAclRequest, cal
 	return result
 }
 
-// GetBucketAclRequest is the request struct for api GetBucketAcl
-type GetBucketAclRequest struct {
+// CreateClusterRequest is the request struct for api CreateCluster
+type CreateClusterRequest struct {
 	*requests.RpcRequest
-	BucketName string `position:"Query" name:"BucketName"`
+	ClusterVersion string `position:"Query" name:"ClusterVersion"`
+	Name           string `position:"Query" name:"Name"`
 }
 
-// GetBucketAclResponse is the response struct for api GetBucketAcl
-type GetBucketAclResponse struct {
+// CreateClusterResponse is the response struct for api CreateCluster
+type CreateClusterResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	BucketAcl string `json:"BucketAcl" xml:"BucketAcl"`
+	ClusterId string `json:"ClusterId" xml:"ClusterId"`
 }
 
-// CreateGetBucketAclRequest creates a request to invoke GetBucketAcl API
-func CreateGetBucketAclRequest() (request *GetBucketAclRequest) {
-	request = &GetBucketAclRequest{
+// CreateCreateClusterRequest creates a request to invoke CreateCluster API
+func CreateCreateClusterRequest() (request *CreateClusterRequest) {
+	request = &CreateClusterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ens", "2017-11-10", "GetBucketAcl", "ens", "openAPI")
+	request.InitWithApiInfo("Ens", "2017-11-10", "CreateCluster", "ens", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateGetBucketAclResponse creates a response to parse from GetBucketAcl response
-func CreateGetBucketAclResponse() (response *GetBucketAclResponse) {
-	response = &GetBucketAclResponse{
+// CreateCreateClusterResponse creates a response to parse from CreateCluster response
+func CreateCreateClusterResponse() (response *CreateClusterResponse) {
+	response = &CreateClusterResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

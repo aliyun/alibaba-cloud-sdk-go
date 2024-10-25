@@ -77,6 +77,7 @@ type DescribeNetworkInterfacesRequest struct {
 	VSwitchId            string           `position:"Query" name:"VSwitchId"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
 	NetworkId            string           `position:"Query" name:"NetworkId"`
+	Ipv6Address          *[]string        `position:"Query" name:"Ipv6Address"  type:"Repeated"`
 	Status               string           `position:"Query" name:"Status"`
 	SecurityGroupId      string           `position:"Query" name:"SecurityGroupId"`
 	PageNumber           string           `position:"Query" name:"PageNumber"`

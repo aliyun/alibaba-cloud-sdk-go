@@ -71,10 +71,17 @@ func (client *Client) CreateNetworkWithCallback(request *CreateNetworkRequest, c
 // CreateNetworkRequest is the request struct for api CreateNetwork
 type CreateNetworkRequest struct {
 	*requests.RpcRequest
-	Description string `position:"Query" name:"Description"`
-	EnsRegionId string `position:"Query" name:"EnsRegionId"`
-	NetworkName string `position:"Query" name:"NetworkName"`
-	CidrBlock   string `position:"Query" name:"CidrBlock"`
+	Description string              `position:"Query" name:"Description"`
+	EnsRegionId string              `position:"Query" name:"EnsRegionId"`
+	NetworkName string              `position:"Query" name:"NetworkName"`
+	Tag         *[]CreateNetworkTag `position:"Query" name:"Tag"  type:"Repeated"`
+	CidrBlock   string              `position:"Query" name:"CidrBlock"`
+}
+
+// CreateNetworkTag is a repeated param struct in CreateNetworkRequest
+type CreateNetworkTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // CreateNetworkResponse is the response struct for api CreateNetwork

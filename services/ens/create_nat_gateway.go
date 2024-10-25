@@ -71,11 +71,18 @@ func (client *Client) CreateNatGatewayWithCallback(request *CreateNatGatewayRequ
 // CreateNatGatewayRequest is the request struct for api CreateNatGateway
 type CreateNatGatewayRequest struct {
 	*requests.RpcRequest
-	EnsRegionId  string `position:"Query" name:"EnsRegionId"`
-	InstanceType string `position:"Query" name:"InstanceType"`
-	VSwitchId    string `position:"Query" name:"VSwitchId"`
-	Name         string `position:"Query" name:"Name"`
-	NetworkId    string `position:"Query" name:"NetworkId"`
+	EnsRegionId  string                 `position:"Query" name:"EnsRegionId"`
+	InstanceType string                 `position:"Query" name:"InstanceType"`
+	Tag          *[]CreateNatGatewayTag `position:"Query" name:"Tag"  type:"Repeated"`
+	VSwitchId    string                 `position:"Query" name:"VSwitchId"`
+	Name         string                 `position:"Query" name:"Name"`
+	NetworkId    string                 `position:"Query" name:"NetworkId"`
+}
+
+// CreateNatGatewayTag is a repeated param struct in CreateNatGatewayRequest
+type CreateNatGatewayTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // CreateNatGatewayResponse is the response struct for api CreateNatGateway

@@ -73,12 +73,19 @@ type CreateDiskRequest struct {
 	*requests.RpcRequest
 	DiskName           string           `position:"Query" name:"DiskName"`
 	EnsRegionId        string           `position:"Query" name:"EnsRegionId"`
+	Tag                *[]CreateDiskTag `position:"Query" name:"Tag"  type:"Repeated"`
 	Size               string           `position:"Query" name:"Size"`
 	SnapshotId         string           `position:"Query" name:"SnapshotId"`
 	InstanceChargeType string           `position:"Query" name:"InstanceChargeType"`
 	Encrypted          requests.Boolean `position:"Query" name:"Encrypted"`
 	Category           string           `position:"Query" name:"Category"`
 	KMSKeyId           string           `position:"Query" name:"KMSKeyId"`
+}
+
+// CreateDiskTag is a repeated param struct in CreateDiskRequest
+type CreateDiskTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // CreateDiskResponse is the response struct for api CreateDisk

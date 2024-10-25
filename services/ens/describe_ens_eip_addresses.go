@@ -86,11 +86,11 @@ type DescribeEnsEipAddressesRequest struct {
 // DescribeEnsEipAddressesResponse is the response struct for api DescribeEnsEipAddresses
 type DescribeEnsEipAddressesResponse struct {
 	*responses.BaseResponse
-	RequestId    string                                `json:"RequestId" xml:"RequestId"`
-	PageNumber   int                                   `json:"PageNumber" xml:"PageNumber"`
-	PageSize     int                                   `json:"PageSize" xml:"PageSize"`
-	TotalCount   int                                   `json:"TotalCount" xml:"TotalCount"`
-	EipAddresses EipAddressesInDescribeEnsEipAddresses `json:"EipAddresses" xml:"EipAddresses"`
+	RequestId    string       `json:"RequestId" xml:"RequestId"`
+	PageNumber   int          `json:"PageNumber" xml:"PageNumber"`
+	PageSize     int          `json:"PageSize" xml:"PageSize"`
+	TotalCount   int          `json:"TotalCount" xml:"TotalCount"`
+	EipAddresses EipAddresses `json:"EipAddresses" xml:"EipAddresses"`
 }
 
 // CreateDescribeEnsEipAddressesRequest creates a request to invoke DescribeEnsEipAddresses API

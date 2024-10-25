@@ -17,16 +17,27 @@ package ens
 
 // Bandwidth is a nested struct in ens response
 type Bandwidth struct {
+	FlowType            int    `json:"FlowType" xml:"FlowType"`
+	UsedRatio           int64  `json:"UsedRatio" xml:"UsedRatio"`
 	Display             bool   `json:"Display" xml:"Display"`
-	OversellRatio       int64  `json:"OversellRatio" xml:"OversellRatio"`
-	Remain              int64  `json:"Remain" xml:"Remain"`
-	Reserved            int64  `json:"Reserved" xml:"Reserved"`
-	ReserveDisable      bool   `json:"ReserveDisable" xml:"ReserveDisable"`
+	RxBw                int64  `json:"RxBw" xml:"RxBw"`
+	Ip                  string `json:"Ip" xml:"Ip"`
 	ReserveDisableTotal int64  `json:"ReserveDisableTotal" xml:"ReserveDisableTotal"`
-	StatusDisable       bool   `json:"StatusDisable" xml:"StatusDisable"`
+	EnsRegionId         string `json:"EnsRegionId" xml:"EnsRegionId"`
+	TxBw                int64  `json:"TxBw" xml:"TxBw"`
+	Remain              int64  `json:"Remain" xml:"Remain"`
+	InstanceType        string `json:"InstanceType" xml:"InstanceType"`
 	StatusDisableTotal  int64  `json:"StatusDisableTotal" xml:"StatusDisableTotal"`
+	ReserveDisable      bool   `json:"ReserveDisable" xml:"ReserveDisable"`
+	Used                int64  `json:"Used" xml:"Used"`
+	OversellRatio       int64  `json:"OversellRatio" xml:"OversellRatio"`
+	StatusDisable       bool   `json:"StatusDisable" xml:"StatusDisable"`
+	InstanceId          string `json:"InstanceId" xml:"InstanceId"`
+	AliUid              int64  `json:"AliUid" xml:"AliUid"`
+	Reserved            int64  `json:"Reserved" xml:"Reserved"`
+	BizTime             string `json:"BizTime" xml:"BizTime"`
+	ServiceType         string `json:"ServiceType" xml:"ServiceType"`
+	Isp                 string `json:"Isp" xml:"Isp"`
 	Total               int64  `json:"Total" xml:"Total"`
 	Type                string `json:"Type" xml:"Type"`
-	Used                int64  `json:"Used" xml:"Used"`
-	UsedRatio           int64  `json:"UsedRatio" xml:"UsedRatio"`
 }

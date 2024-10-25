@@ -71,7 +71,8 @@ func (client *Client) DescribeCloudDiskTypesWithCallback(request *DescribeCloudD
 // DescribeCloudDiskTypesRequest is the request struct for api DescribeCloudDiskTypes
 type DescribeCloudDiskTypesRequest struct {
 	*requests.RpcRequest
-	EnsRegionId string `position:"Query" name:"EnsRegionId"`
+	EnsRegionId  string    `position:"Query" name:"EnsRegionId"`
+	EnsRegionIds *[]string `position:"Query" name:"EnsRegionIds"  type:"Json"`
 }
 
 // DescribeCloudDiskTypesResponse is the response struct for api DescribeCloudDiskTypes

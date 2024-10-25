@@ -71,11 +71,18 @@ func (client *Client) CreateVSwitchWithCallback(request *CreateVSwitchRequest, c
 // CreateVSwitchRequest is the request struct for api CreateVSwitch
 type CreateVSwitchRequest struct {
 	*requests.RpcRequest
-	Description string `position:"Query" name:"Description"`
-	EnsRegionId string `position:"Query" name:"EnsRegionId"`
-	VSwitchName string `position:"Query" name:"VSwitchName"`
-	CidrBlock   string `position:"Query" name:"CidrBlock"`
-	NetworkId   string `position:"Query" name:"NetworkId"`
+	Description string              `position:"Query" name:"Description"`
+	EnsRegionId string              `position:"Query" name:"EnsRegionId"`
+	Tag         *[]CreateVSwitchTag `position:"Query" name:"Tag"  type:"Repeated"`
+	VSwitchName string              `position:"Query" name:"VSwitchName"`
+	CidrBlock   string              `position:"Query" name:"CidrBlock"`
+	NetworkId   string              `position:"Query" name:"NetworkId"`
+}
+
+// CreateVSwitchTag is a repeated param struct in CreateVSwitchRequest
+type CreateVSwitchTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // CreateVSwitchResponse is the response struct for api CreateVSwitch
