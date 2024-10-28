@@ -23,6 +23,7 @@ type Sources struct {
 	HttpsPort           int       `json:"HttpsPort" xml:"HttpsPort"`
 	HttpPort            int       `json:"HttpPort" xml:"HttpPort"`
 	HttpsVServerGroupId string    `json:"HttpsVServerGroupId" xml:"HttpsVServerGroupId"`
+	SlbType             string    `json:"SlbType" xml:"SlbType"`
 	ServiceWeight       int       `json:"ServiceWeight" xml:"ServiceWeight"`
 	SlbName             string    `json:"SlbName" xml:"SlbName"`
 	VServerGroupId      string    `json:"VServerGroupId" xml:"VServerGroupId"`

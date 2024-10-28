@@ -72,15 +72,16 @@ func (client *Client) CreateFlowRuleWithCallback(request *CreateFlowRuleRequest,
 type CreateFlowRuleRequest struct {
 	*requests.RpcRequest
 	MseSessionId      string           `position:"Query" name:"MseSessionId"`
-	ControlBehavior   requests.Integer `position:"Query" name:"ControlBehavior"`
 	Threshold         requests.Integer `position:"Query" name:"Threshold"`
 	AppName           string           `position:"Query" name:"AppName"`
 	Enable            requests.Boolean `position:"Query" name:"Enable"`
 	Resource          string           `position:"Query" name:"Resource"`
+	MaxQueueingTimeMs requests.Integer `position:"Query" name:"MaxQueueingTimeMs"`
+	ControlBehavior   requests.Integer `position:"Query" name:"ControlBehavior"`
+	ResourceType      requests.Integer `position:"Query" name:"ResourceType"`
 	AppId             string           `position:"Query" name:"AppId"`
 	Namespace         string           `position:"Query" name:"Namespace"`
 	AcceptLanguage    string           `position:"Query" name:"AcceptLanguage"`
-	MaxQueueingTimeMs requests.Integer `position:"Query" name:"MaxQueueingTimeMs"`
 }
 
 // CreateFlowRuleResponse is the response struct for api CreateFlowRule

@@ -17,8 +17,10 @@ package mse
 
 // ElasticPolicy is a nested struct in mse response
 type ElasticPolicy struct {
-	ElasticType    string               `json:"ElasticType" xml:"ElasticType"`
-	Elastic        bool                 `json:"Elastic" xml:"Elastic"`
-	MaxReplica     int                  `json:"MaxReplica" xml:"MaxReplica"`
-	TimePolicyList []TimePolicyListItem `json:"TimePolicyList" xml:"TimePolicyList"`
+	ElasticType               string                          `json:"ElasticType" xml:"ElasticType"`
+	LoadWarningThreshold      bool                            `json:"LoadWarningThreshold" xml:"LoadWarningThreshold"`
+	Elastic                   bool                            `json:"Elastic" xml:"Elastic"`
+	MaxReplica                int                             `json:"MaxReplica" xml:"MaxReplica"`
+	TimePolicyList            []TimePolicyListItem            `json:"TimePolicyList" xml:"TimePolicyList"`
+	EnableScaleTimePolicyList []EnableScaleTimePolicyListItem `json:"EnableScaleTimePolicyList" xml:"EnableScaleTimePolicyList"`
 }

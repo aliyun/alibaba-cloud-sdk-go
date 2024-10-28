@@ -17,10 +17,10 @@ package mse
 
 // MothedMapListItem is a nested struct in mse response
 type MothedMapListItem struct {
-	DubboMothedName       string              `json:"DubboMothedName" xml:"DubboMothedName"`
 	HttpMothed            string              `json:"HttpMothed" xml:"HttpMothed"`
 	Mothedpath            string              `json:"Mothedpath" xml:"Mothedpath"`
 	PassThroughAllHeaders string              `json:"PassThroughAllHeaders" xml:"PassThroughAllHeaders"`
+	DubboMothedName       string              `json:"DubboMothedName" xml:"DubboMothedName"`
 	PassThroughList       []string            `json:"PassThroughList" xml:"PassThroughList"`
 	ParamMapsList         []ParamMapsListItem `json:"ParamMapsList" xml:"ParamMapsList"`
 }

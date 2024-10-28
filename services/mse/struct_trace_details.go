@@ -17,6 +17,9 @@ package mse
 
 // TraceDetails is a nested struct in mse response
 type TraceDetails struct {
-	TraceEnabled bool  `json:"TraceEnabled" xml:"TraceEnabled"`
-	Sample       int64 `json:"Sample" xml:"Sample"`
+	TraceEnabled bool   `json:"TraceEnabled" xml:"TraceEnabled"`
+	ServiceId    int64  `json:"ServiceId" xml:"ServiceId"`
+	TraceType    string `json:"TraceType" xml:"TraceType"`
+	Sample       int64  `json:"Sample" xml:"Sample"`
+	ServicePort  string `json:"ServicePort" xml:"ServicePort"`
 }

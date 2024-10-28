@@ -85,12 +85,12 @@ type ListCircuitBreakerRulesRequest struct {
 // ListCircuitBreakerRulesResponse is the response struct for api ListCircuitBreakerRules
 type ListCircuitBreakerRulesResponse struct {
 	*responses.BaseResponse
-	Code           int                           `json:"Code" xml:"Code"`
-	Message        string                        `json:"Message" xml:"Message"`
-	RequestId      string                        `json:"RequestId" xml:"RequestId"`
-	Success        bool                          `json:"Success" xml:"Success"`
-	HttpStatusCode int                           `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	Data           DataInListCircuitBreakerRules `json:"Data" xml:"Data"`
+	Code           int    `json:"Code" xml:"Code"`
+	Message        string `json:"Message" xml:"Message"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	Success        bool   `json:"Success" xml:"Success"`
+	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Data           Data   `json:"Data" xml:"Data"`
 }
 
 // CreateListCircuitBreakerRulesRequest creates a request to invoke ListCircuitBreakerRules API

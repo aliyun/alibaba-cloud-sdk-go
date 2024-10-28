@@ -73,6 +73,7 @@ type ListServiceSourceRequest struct {
 	*requests.RpcRequest
 	MseSessionId    string `position:"Query" name:"MseSessionId"`
 	GatewayUniqueId string `position:"Query" name:"GatewayUniqueId"`
+	Source          string `position:"Query" name:"Source"`
 	AcceptLanguage  string `position:"Query" name:"AcceptLanguage"`
 }
 

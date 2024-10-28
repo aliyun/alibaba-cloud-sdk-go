@@ -17,5 +17,5 @@ package mse
 
 // ResultInListCircuitBreakerRules is a nested struct in mse response
 type ResultInListCircuitBreakerRules struct {
-	ResultItem []ResultItem `json:"Result" xml:"Result"`
+	ResultItem []ResultItemInListCircuitBreakerRules `json:"Result" xml:"Result"`
 }

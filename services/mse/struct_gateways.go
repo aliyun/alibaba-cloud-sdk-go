@@ -51,8 +51,11 @@ type Gateways struct {
 	ElasticReplica    int               `json:"ElasticReplica" xml:"ElasticReplica"`
 	ElasticType       string            `json:"ElasticType" xml:"ElasticType"`
 	ElasticInstanceId string            `json:"ElasticInstanceId" xml:"ElasticInstanceId"`
+	VpcId             string            `json:"VpcId" xml:"VpcId"`
+	MseVersion        string            `json:"MseVersion" xml:"MseVersion"`
 	InitConfig        InitConfig        `json:"InitConfig" xml:"InitConfig"`
 	ElasticPolicy     ElasticPolicy     `json:"ElasticPolicy" xml:"ElasticPolicy"`
+	MaintenancePeriod MaintenancePeriod `json:"MaintenancePeriod" xml:"MaintenancePeriod"`
 	Slb               []SlbItem         `json:"Slb" xml:"Slb"`
 	InternetSlb       []InternetSlbItem `json:"InternetSlb" xml:"InternetSlb"`
 }

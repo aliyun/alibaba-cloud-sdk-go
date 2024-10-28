@@ -104,7 +104,7 @@ func CreateListAnsInstancesRequest() (request *ListAnsInstancesRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("mse", "2019-05-31", "ListAnsInstances", "mse", "openAPI")
-	request.Method = requests.GET
+	request.Method = requests.POST
 	return
 }
 

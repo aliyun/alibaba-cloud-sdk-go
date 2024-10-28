@@ -17,17 +17,18 @@ package mse
 
 // DataInQuerySwimmingLaneById is a nested struct in mse response
 type DataInQuerySwimmingLaneById struct {
-	Name                         string      `json:"name" xml:"name"`
-	Id                           int64       `json:"id" xml:"id"`
-	Tag                          string      `json:"tag" xml:"tag"`
-	Status                       int         `json:"status" xml:"status"`
-	Enable                       bool        `json:"enable" xml:"enable"`
-	RegionId                     string      `json:"regionId" xml:"regionId"`
-	GroupId                      int64       `json:"groupId" xml:"groupId"`
-	EntryRule                    string      `json:"entryRule" xml:"entryRule"`
-	EnableRules                  bool        `json:"enableRules" xml:"enableRules"`
-	GmtCreate                    string      `json:"gmtCreate" xml:"gmtCreate"`
-	GmtModified                  string      `json:"gmtModified" xml:"gmtModified"`
-	GatewaySwimmingLaneRouteJson string      `json:"gatewaySwimmingLaneRouteJson" xml:"gatewaySwimmingLaneRouteJson"`
-	EntryRules                   []EntryRule `json:"entryRules" xml:"entryRules"`
+	Name                            string      `json:"name" xml:"name"`
+	Id                              int64       `json:"id" xml:"id"`
+	Tag                             string      `json:"tag" xml:"tag"`
+	Status                          int         `json:"status" xml:"status"`
+	Enable                          bool        `json:"enable" xml:"enable"`
+	RegionId                        string      `json:"regionId" xml:"regionId"`
+	GroupId                         int64       `json:"groupId" xml:"groupId"`
+	EntryRule                       string      `json:"entryRule" xml:"entryRule"`
+	EnableRules                     bool        `json:"enableRules" xml:"enableRules"`
+	GmtCreate                       string      `json:"gmtCreate" xml:"gmtCreate"`
+	GmtModified                     string      `json:"gmtModified" xml:"gmtModified"`
+	GatewaySwimmingLaneRouteJson    string      `json:"gatewaySwimmingLaneRouteJson" xml:"gatewaySwimmingLaneRouteJson"`
+	PathIndependentPercentageEnable bool        `json:"PathIndependentPercentageEnable" xml:"PathIndependentPercentageEnable"`
+	EntryRules                      []EntryRule `json:"entryRules" xml:"entryRules"`
 }

@@ -17,31 +17,27 @@ package mse
 
 // ApplicationList is a nested struct in mse response
 type ApplicationList struct {
-	Aligned         bool             `json:"Aligned" xml:"Aligned"`
-	Language        string           `json:"Language" xml:"Language"`
-	Notice          bool             `json:"Notice" xml:"Notice"`
-	Source          string           `json:"Source" xml:"Source"`
-	ExtraInfo       string           `json:"ExtraInfo" xml:"ExtraInfo"`
-	RegionId        string           `json:"RegionId" xml:"RegionId"`
-	FuncType        int              `json:"FuncType" xml:"FuncType"`
-	UserId          string           `json:"UserId" xml:"UserId"`
-	LossLessDetail  bool             `json:"LossLessDetail" xml:"LossLessDetail"`
-	InstancesNumber int              `json:"InstancesNumber" xml:"InstancesNumber"`
-	AppType         int              `json:"AppType" xml:"AppType"`
-	Count           int              `json:"Count" xml:"Count"`
-	LicenseKey      string           `json:"LicenseKey" xml:"LicenseKey"`
-	Status          int64            `json:"Status" xml:"Status"`
-	RouteStatus     int64            `json:"RouteStatus" xml:"RouteStatus"`
-	WarmupTime      int              `json:"WarmupTime" xml:"WarmupTime"`
-	AppId           string           `json:"AppId" xml:"AppId"`
-	TagCount        int64            `json:"TagCount" xml:"TagCount"`
-	Namespace       string           `json:"Namespace" xml:"Namespace"`
-	DelayTime       int              `json:"DelayTime" xml:"DelayTime"`
-	Enable          bool             `json:"Enable" xml:"Enable"`
-	Related         bool             `json:"Related" xml:"Related"`
-	AppName         string           `json:"AppName" xml:"AppName"`
-	Tags            []string         `json:"Tags" xml:"Tags"`
-	CurMetricsFm    CurMetricsFm     `json:"CurMetricsFm" xml:"CurMetricsFm"`
-	RouteRules      []RouteRule      `json:"RouteRules" xml:"RouteRules"`
-	CurMetrics      []CurMetricsItem `json:"CurMetrics" xml:"CurMetrics"`
+	Count           int         `json:"Count" xml:"Count"`
+	LicenseKey      string      `json:"LicenseKey" xml:"LicenseKey"`
+	Aligned         bool        `json:"Aligned" xml:"Aligned"`
+	Status          int64       `json:"Status" xml:"Status"`
+	Language        string      `json:"Language" xml:"Language"`
+	Notice          bool        `json:"Notice" xml:"Notice"`
+	RouteStatus     int64       `json:"RouteStatus" xml:"RouteStatus"`
+	Source          string      `json:"Source" xml:"Source"`
+	ExtraInfo       string      `json:"ExtraInfo" xml:"ExtraInfo"`
+	WarmupTime      int         `json:"WarmupTime" xml:"WarmupTime"`
+	AppId           string      `json:"AppId" xml:"AppId"`
+	TagCount        int64       `json:"TagCount" xml:"TagCount"`
+	RegionId        string      `json:"RegionId" xml:"RegionId"`
+	FuncType        int         `json:"FuncType" xml:"FuncType"`
+	Namespace       string      `json:"Namespace" xml:"Namespace"`
+	UserId          string      `json:"UserId" xml:"UserId"`
+	DelayTime       int         `json:"DelayTime" xml:"DelayTime"`
+	Enable          bool        `json:"Enable" xml:"Enable"`
+	Related         bool        `json:"Related" xml:"Related"`
+	LossLessDetail  bool        `json:"LossLessDetail" xml:"LossLessDetail"`
+	AppName         string      `json:"AppName" xml:"AppName"`
+	InstancesNumber int         `json:"InstancesNumber" xml:"InstancesNumber"`
+	RouteRules      []RouteRule `json:"RouteRules" xml:"RouteRules"`
 }

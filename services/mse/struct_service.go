@@ -17,8 +17,12 @@ package mse
 
 // Service is a nested struct in mse response
 type Service struct {
-	Port             string `json:"Port" xml:"Port"`
-	Protocol         string `json:"Protocol" xml:"Protocol"`
+	Name             string `json:"Name" xml:"Name"`
 	VServerGroupId   string `json:"VServerGroupId" xml:"VServerGroupId"`
+	SourceType       string `json:"SourceType" xml:"SourceType"`
+	Protocol         string `json:"Protocol" xml:"Protocol"`
+	Namespace        string `json:"Namespace" xml:"Namespace"`
+	Port             string `json:"Port" xml:"Port"`
+	GroupName        string `json:"GroupName" xml:"GroupName"`
 	VServerGroupName string `json:"VServerGroupName" xml:"VServerGroupName"`
 }

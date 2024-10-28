@@ -82,15 +82,15 @@ type ListClusterHealthCheckTaskRequest struct {
 // ListClusterHealthCheckTaskResponse is the response struct for api ListClusterHealthCheckTask
 type ListClusterHealthCheckTaskResponse struct {
 	*responses.BaseResponse
-	RequestId      string                           `json:"RequestId" xml:"RequestId"`
-	Success        bool                             `json:"Success" xml:"Success"`
-	Code           int                              `json:"Code" xml:"Code"`
-	ErrorCode      string                           `json:"ErrorCode" xml:"ErrorCode"`
-	HttpStatusCode int                              `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	Message        string                           `json:"Message" xml:"Message"`
-	DynamicCode    string                           `json:"DynamicCode" xml:"DynamicCode"`
-	DynamicMessage string                           `json:"DynamicMessage" xml:"DynamicMessage"`
-	Data           DataInListClusterHealthCheckTask `json:"Data" xml:"Data"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	Success        bool   `json:"Success" xml:"Success"`
+	Code           int    `json:"Code" xml:"Code"`
+	ErrorCode      string `json:"ErrorCode" xml:"ErrorCode"`
+	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Message        string `json:"Message" xml:"Message"`
+	DynamicCode    string `json:"DynamicCode" xml:"DynamicCode"`
+	DynamicMessage string `json:"DynamicMessage" xml:"DynamicMessage"`
+	Data           Data   `json:"Data" xml:"Data"`
 }
 
 // CreateListClusterHealthCheckTaskRequest creates a request to invoke ListClusterHealthCheckTask API

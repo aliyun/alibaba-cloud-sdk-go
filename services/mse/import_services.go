@@ -73,6 +73,7 @@ type ImportServicesRequest struct {
 	*requests.RpcRequest
 	MseSessionId    string                       `position:"Query" name:"MseSessionId"`
 	GatewayUniqueId string                       `position:"Query" name:"GatewayUniqueId"`
+	FcAlias         string                       `position:"Query" name:"FcAlias"`
 	ServiceList     *[]ImportServicesServiceList `position:"Query" name:"ServiceList"  type:"Json"`
 	TlsSetting      string                       `position:"Query" name:"TlsSetting"`
 	SourceType      string                       `position:"Query" name:"SourceType"`

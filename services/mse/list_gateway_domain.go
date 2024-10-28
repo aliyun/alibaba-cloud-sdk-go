@@ -74,6 +74,7 @@ type ListGatewayDomainRequest struct {
 	MseSessionId    string `position:"Query" name:"MseSessionId"`
 	GatewayUniqueId string `position:"Query" name:"GatewayUniqueId"`
 	Type            string `position:"Query" name:"Type"`
+	DomainName      string `position:"Query" name:"DomainName"`
 	AcceptLanguage  string `position:"Query" name:"AcceptLanguage"`
 }
 

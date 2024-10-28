@@ -1,3 +1,7 @@
+2024-10-28 Version: v1.63.40
+- Generated 2019-05-31 for `mse`.
+- Support config content from data.
+
 2024-10-25 Version: v1.63.39
 - Generated 2017-11-10 for `Ens`.
 undefined

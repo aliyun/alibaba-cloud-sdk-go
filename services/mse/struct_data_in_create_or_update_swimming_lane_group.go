@@ -31,5 +31,7 @@ type DataInCreateOrUpdateSwimmingLaneGroup struct {
 	Region                 string   `json:"region" xml:"region"`
 	MessageQueueGrayEnable bool     `json:"MessageQueueGrayEnable" xml:"MessageQueueGrayEnable"`
 	Status                 int      `json:"status" xml:"status"`
+	Paths                  string   `json:"paths" xml:"paths"`
+	CanaryModel            int      `json:"canaryModel" xml:"canaryModel"`
 	ApplicationList        []string `json:"applicationList" xml:"applicationList"`
 }

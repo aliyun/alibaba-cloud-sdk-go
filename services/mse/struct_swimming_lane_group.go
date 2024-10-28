@@ -17,27 +17,32 @@ package mse
 
 // SwimmingLaneGroup is a nested struct in mse response
 type SwimmingLaneGroup struct {
-	Name                   string      `json:"Name" xml:"Name"`
-	UserId                 string      `json:"userId" xml:"userId"`
-	Enable                 string      `json:"enable" xml:"enable"`
-	Region                 string      `json:"Region" xml:"Region"`
-	MessageQueueFilterSide string      `json:"messageQueueFilterSide" xml:"messageQueueFilterSide"`
-	EntryApp               string      `json:"EntryApp" xml:"EntryApp"`
-	MessageQueueGrayEnable bool        `json:"messageQueueGrayEnable" xml:"messageQueueGrayEnable"`
-	Id                     int64       `json:"id" xml:"id"`
-	EntryRule              string      `json:"entryRule" xml:"entryRule"`
-	GmtModified            string      `json:"gmtModified" xml:"gmtModified"`
-	Source                 string      `json:"Source" xml:"Source"`
-	AppIds                 string      `json:"appIds" xml:"appIds"`
-	RegionId               string      `json:"RegionId" xml:"RegionId"`
-	DbGrayEnable           string      `json:"DbGrayEnable" xml:"DbGrayEnable"`
-	Namespace              string      `json:"namespace" xml:"namespace"`
-	Tag                    string      `json:"Tag" xml:"Tag"`
-	GroupId                string      `json:"GroupId" xml:"GroupId"`
-	RecordCanaryDetail     bool        `json:"RecordCanaryDetail" xml:"RecordCanaryDetail"`
-	EnableRules            bool        `json:"enableRules" xml:"enableRules"`
-	Status                 int         `json:"Status" xml:"Status"`
-	GmtCreate              string      `json:"gmtCreate" xml:"gmtCreate"`
-	ApplicationList        []string    `json:"applicationList" xml:"applicationList"`
-	EntryRules             []EntryRule `json:"EntryRules" xml:"EntryRules"`
+	Name                            string                   `json:"Name" xml:"Name"`
+	UserId                          string                   `json:"userId" xml:"userId"`
+	Enable                          string                   `json:"enable" xml:"enable"`
+	Region                          string                   `json:"Region" xml:"Region"`
+	SwimVersion                     int                      `json:"SwimVersion" xml:"SwimVersion"`
+	MessageQueueFilterSide          string                   `json:"messageQueueFilterSide" xml:"messageQueueFilterSide"`
+	EntryApp                        string                   `json:"EntryApp" xml:"EntryApp"`
+	MessageQueueGrayEnable          bool                     `json:"messageQueueGrayEnable" xml:"messageQueueGrayEnable"`
+	Id                              int64                    `json:"id" xml:"id"`
+	EntryRule                       string                   `json:"entryRule" xml:"entryRule"`
+	CanaryModel                     int                      `json:"CanaryModel" xml:"CanaryModel"`
+	GmtModified                     string                   `json:"gmtModified" xml:"gmtModified"`
+	Source                          string                   `json:"Source" xml:"Source"`
+	AppIds                          string                   `json:"appIds" xml:"appIds"`
+	RegionId                        string                   `json:"RegionId" xml:"RegionId"`
+	DbGrayEnable                    string                   `json:"DbGrayEnable" xml:"DbGrayEnable"`
+	Namespace                       string                   `json:"namespace" xml:"namespace"`
+	Tag                             string                   `json:"Tag" xml:"Tag"`
+	GroupId                         string                   `json:"GroupId" xml:"GroupId"`
+	RecordCanaryDetail              bool                     `json:"RecordCanaryDetail" xml:"RecordCanaryDetail"`
+	EnableRules                     bool                     `json:"enableRules" xml:"enableRules"`
+	Status                          int                      `json:"Status" xml:"Status"`
+	Paths                           string                   `json:"Paths" xml:"Paths"`
+	GmtCreate                       string                   `json:"gmtCreate" xml:"gmtCreate"`
+	PathIndependentPercentageEnable bool                     `json:"PathIndependentPercentageEnable" xml:"PathIndependentPercentageEnable"`
+	ApplicationList                 []string                 `json:"applicationList" xml:"applicationList"`
+	GatewaySwimmingLaneRoute        GatewaySwimmingLaneRoute `json:"GatewaySwimmingLaneRoute" xml:"GatewaySwimmingLaneRoute"`
+	EntryRules                      []EntryRule              `json:"EntryRules" xml:"EntryRules"`
 }

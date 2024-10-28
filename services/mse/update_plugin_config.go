@@ -73,6 +73,7 @@ type UpdatePluginConfigRequest struct {
 	*requests.RpcRequest
 	MseSessionId    string           `position:"Query" name:"MseSessionId"`
 	GatewayUniqueId string           `position:"Query" name:"GatewayUniqueId"`
+	ResourceIdList  *[]string        `position:"Query" name:"ResourceIdList"  type:"Json"`
 	GmtModified     string           `position:"Query" name:"GmtModified"`
 	Enable          requests.Boolean `position:"Query" name:"Enable"`
 	Id              requests.Integer `position:"Query" name:"Id"`

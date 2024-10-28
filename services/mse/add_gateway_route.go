@@ -85,6 +85,7 @@ type AddGatewayRouteRequest struct {
 	GatewayUniqueId    string                             `position:"Query" name:"GatewayUniqueId"`
 	DestinationType    string                             `position:"Query" name:"DestinationType"`
 	Policies           string                             `position:"Query" name:"Policies"`
+	Description        string                             `position:"Query" name:"Description"`
 	RouteOrder         requests.Integer                   `position:"Query" name:"RouteOrder"`
 	Services           *[]AddGatewayRouteServices         `position:"Query" name:"Services"  type:"Json"`
 	RedirectJSON       AddGatewayRouteRedirectJSON        `position:"Query" name:"RedirectJSON"  type:"Struct"`

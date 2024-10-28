@@ -32,6 +32,8 @@ type DataInGetGatewayServiceDetail struct {
 	HealthStatus          string                      `json:"HealthStatus" xml:"HealthStatus"`
 	HealthCheck           string                      `json:"HealthCheck" xml:"HealthCheck"`
 	ServiceProtocol       string                      `json:"ServiceProtocol" xml:"ServiceProtocol"`
+	ServiceFQDN           string                      `json:"ServiceFQDN" xml:"ServiceFQDN"`
+	ServicePort           int                         `json:"ServicePort" xml:"ServicePort"`
 	Ips                   []string                    `json:"Ips" xml:"Ips"`
 	Ports                 []int                       `json:"Ports" xml:"Ports"`
 	GatewayTrafficPolicy  GatewayTrafficPolicy        `json:"GatewayTrafficPolicy" xml:"GatewayTrafficPolicy"`

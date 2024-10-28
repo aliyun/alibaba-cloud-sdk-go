@@ -75,6 +75,7 @@ type DeleteSecurityGroupRuleRequest struct {
 	GatewayUniqueId string           `position:"Query" name:"GatewayUniqueId"`
 	Id              requests.Integer `position:"Query" name:"Id"`
 	AcceptLanguage  string           `position:"Query" name:"AcceptLanguage"`
+	CascadingDelete requests.Boolean `position:"Query" name:"CascadingDelete"`
 }
 
 // DeleteSecurityGroupRuleResponse is the response struct for api DeleteSecurityGroupRule

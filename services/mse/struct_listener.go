@@ -17,9 +17,12 @@ package mse
 
 // Listener is a nested struct in mse response
 type Listener struct {
-	DataId string `json:"DataId" xml:"DataId"`
-	Group  string `json:"Group" xml:"Group"`
-	Ip     string `json:"Ip" xml:"Ip"`
-	Md5    string `json:"Md5" xml:"Md5"`
-	Status string `json:"Status" xml:"Status"`
+	DataId      string                 `json:"DataId" xml:"DataId"`
+	Group       string                 `json:"Group" xml:"Group"`
+	Labels      map[string]interface{} `json:"Labels" xml:"Labels"`
+	Ip          string                 `json:"Ip" xml:"Ip"`
+	Md5         string                 `json:"Md5" xml:"Md5"`
+	Version     string                 `json:"Version" xml:"Version"`
+	NamespaceId string                 `json:"NamespaceId" xml:"NamespaceId"`
+	Status      string                 `json:"Status" xml:"Status"`
 }

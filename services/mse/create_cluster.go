@@ -78,6 +78,7 @@ type CreateClusterRequest struct {
 	Tag                     *[]CreateClusterTag `position:"Query" name:"Tag"  type:"Repeated"`
 	VSwitchId               string              `position:"Query" name:"VSwitchId"`
 	ClusterType             string              `position:"Query" name:"ClusterType"`
+	SecurityGroupType       string              `position:"Query" name:"SecurityGroupType"`
 	InstanceName            string              `position:"Query" name:"InstanceName"`
 	NetType                 string              `position:"Query" name:"NetType"`
 	MseVersion              string              `position:"Query" name:"MseVersion"`
@@ -88,6 +89,7 @@ type CreateClusterRequest struct {
 	ConnectionType          string              `position:"Query" name:"ConnectionType"`
 	ClusterVersion          string              `position:"Query" name:"ClusterVersion"`
 	DiskCapacity            requests.Integer    `position:"Query" name:"DiskCapacity"`
+	EipEnabled              requests.Boolean    `position:"Query" name:"EipEnabled"`
 	DiskType                string              `position:"Query" name:"DiskType"`
 	PubNetworkFlow          string              `position:"Query" name:"PubNetworkFlow"`
 	VpcId                   string              `position:"Query" name:"VpcId"`

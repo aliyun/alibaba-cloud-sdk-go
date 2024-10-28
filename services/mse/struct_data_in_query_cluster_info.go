@@ -52,6 +52,13 @@ type DataInQueryClusterInfo struct {
 	MseVersion           string                 `json:"MseVersion" xml:"MseVersion"`
 	ChargeType           string                 `json:"ChargeType" xml:"ChargeType"`
 	Tags                 map[string]interface{} `json:"Tags" xml:"Tags"`
+	EndDate              string                 `json:"EndDate" xml:"EndDate"`
+	SecurityGroupId      string                 `json:"SecurityGroupId" xml:"SecurityGroupId"`
+	SecurityGroupType    string                 `json:"SecurityGroupType" xml:"SecurityGroupType"`
+	EipInstanceId        string                 `json:"EipInstanceId" xml:"EipInstanceId"`
+	CanUpdate            bool                   `json:"CanUpdate" xml:"CanUpdate"`
+	VersionCode          string                 `json:"VersionCode" xml:"VersionCode"`
 	ExpectZones          []string               `json:"ExpectZones" xml:"ExpectZones"`
+	MaintenancePeriod    MaintenancePeriod      `json:"MaintenancePeriod" xml:"MaintenancePeriod"`
 	InstanceModels       []InstanceModel        `json:"InstanceModels" xml:"InstanceModels"`
 }

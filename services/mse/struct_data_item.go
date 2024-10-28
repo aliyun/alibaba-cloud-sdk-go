@@ -22,6 +22,8 @@ type DataItem struct {
 	Phase                    int                      `json:"Phase" xml:"Phase"`
 	WasmLang                 int                      `json:"WasmLang" xml:"WasmLang"`
 	IP                       string                   `json:"IP" xml:"IP"`
+	SyncType                 string                   `json:"SyncType" xml:"SyncType"`
+	LocalName                string                   `json:"LocalName" xml:"LocalName"`
 	ClusterSpecificationName string                   `json:"ClusterSpecificationName" xml:"ClusterSpecificationName"`
 	ClusterNamePrefix        string                   `json:"clusterNamePrefix" xml:"clusterNamePrefix"`
 	Mode                     int                      `json:"Mode" xml:"Mode"`
@@ -51,6 +53,7 @@ type DataItem struct {
 	TargetInstanceId         string                   `json:"TargetInstanceId" xml:"TargetInstanceId"`
 	OriginInstanceNamespace  string                   `json:"OriginInstanceNamespace" xml:"OriginInstanceNamespace"`
 	PrimaryUser              string                   `json:"PrimaryUser" xml:"PrimaryUser"`
+	ZoneId                   string                   `json:"ZoneId" xml:"ZoneId"`
 	ConfigCheck              string                   `json:"ConfigCheck" xml:"ConfigCheck"`
 	WasmFile                 string                   `json:"WasmFile" xml:"WasmFile"`
 	NamespaceId              string                   `json:"NamespaceId" xml:"NamespaceId"`

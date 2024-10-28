@@ -74,9 +74,11 @@ type UpdateClusterSpecRequest struct {
 	ClusterSpecification string           `position:"Query" name:"ClusterSpecification"`
 	MseSessionId         string           `position:"Query" name:"MseSessionId"`
 	InstanceCount        requests.Integer `position:"Query" name:"InstanceCount"`
+	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`
 	ClusterId            string           `position:"Query" name:"ClusterId"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
 	MseVersion           string           `position:"Query" name:"MseVersion"`
+	PubNetworkFlow       requests.Integer `position:"Query" name:"PubNetworkFlow"`
 	AcceptLanguage       string           `position:"Query" name:"AcceptLanguage"`
 }
 

@@ -83,6 +83,7 @@ type UpdateGatewayRouteRequest struct {
 	Fallback           requests.Boolean                      `position:"Query" name:"Fallback"`
 	GatewayUniqueId    string                                `position:"Query" name:"GatewayUniqueId"`
 	DestinationType    string                                `position:"Query" name:"DestinationType"`
+	Description        string                                `position:"Query" name:"Description"`
 	RouteOrder         requests.Integer                      `position:"Query" name:"RouteOrder"`
 	Services           *[]UpdateGatewayRouteServices         `position:"Query" name:"Services"  type:"Json"`
 	RedirectJSON       UpdateGatewayRouteRedirectJSON        `position:"Query" name:"RedirectJSON"  type:"Struct"`

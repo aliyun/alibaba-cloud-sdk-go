@@ -71,16 +71,24 @@ func (client *Client) AddServiceSourceWithCallback(request *AddServiceSourceRequ
 // AddServiceSourceRequest is the request struct for api AddServiceSource
 type AddServiceSourceRequest struct {
 	*requests.RpcRequest
-	IngressOptionsRequest AddServiceSourceIngressOptionsRequest `position:"Query" name:"IngressOptionsRequest"  type:"Struct"`
-	MseSessionId          string                                `position:"Query" name:"MseSessionId"`
-	GatewayUniqueId       string                                `position:"Query" name:"GatewayUniqueId"`
-	Source                string                                `position:"Query" name:"Source"`
-	Type                  string                                `position:"Query" name:"Type"`
-	PathList              *[]string                             `position:"Query" name:"PathList"  type:"Json"`
-	Address               string                                `position:"Query" name:"Address"`
-	Name                  string                                `position:"Query" name:"Name"`
-	AcceptLanguage        string                                `position:"Query" name:"AcceptLanguage"`
-	GroupList             *[]string                             `position:"Query" name:"GroupList"  type:"Json"`
+	IngressOptionsRequest     AddServiceSourceIngressOptionsRequest        `position:"Query" name:"IngressOptionsRequest"  type:"Struct"`
+	MseSessionId              string                                       `position:"Query" name:"MseSessionId"`
+	GatewayUniqueId           string                                       `position:"Query" name:"GatewayUniqueId"`
+	Source                    string                                       `position:"Query" name:"Source"`
+	Type                      string                                       `position:"Query" name:"Type"`
+	PathList                  *[]string                                    `position:"Query" name:"PathList"  type:"Json"`
+	Address                   string                                       `position:"Query" name:"Address"`
+	ToAuthorizeSecurityGroups *[]AddServiceSourceToAuthorizeSecurityGroups `position:"Query" name:"ToAuthorizeSecurityGroups"  type:"Json"`
+	Name                      string                                       `position:"Query" name:"Name"`
+	AcceptLanguage            string                                       `position:"Query" name:"AcceptLanguage"`
+	GroupList                 *[]string                                    `position:"Query" name:"GroupList"  type:"Json"`
+}
+
+// AddServiceSourceToAuthorizeSecurityGroups is a repeated param struct in AddServiceSourceRequest
+type AddServiceSourceToAuthorizeSecurityGroups struct {
+	PortRange       string `name:"PortRange"`
+	SecurityGroupId string `name:"SecurityGroupId"`
+	Description     string `name:"Description"`
 }
 
 // AddServiceSourceIngressOptionsRequest is a repeated param struct in AddServiceSourceRequest

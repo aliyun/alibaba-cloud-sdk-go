@@ -71,18 +71,19 @@ func (client *Client) CreateOrUpdateSwimmingLaneWithCallback(request *CreateOrUp
 // CreateOrUpdateSwimmingLaneRequest is the request struct for api CreateOrUpdateSwimmingLane
 type CreateOrUpdateSwimmingLaneRequest struct {
 	*requests.RpcRequest
-	MseSessionId                 string                                                 `position:"Query" name:"MseSessionId"`
-	EntryRule                    string                                                 `position:"Query" name:"EntryRule"`
-	Enable                       requests.Boolean                                       `position:"Query" name:"Enable"`
-	Id                           requests.Integer                                       `position:"Query" name:"Id"`
-	Tag                          string                                                 `position:"Query" name:"Tag"`
-	EntryRules                   *[]CreateOrUpdateSwimmingLaneEntryRules                `position:"Body" name:"EntryRules"  type:"Repeated"`
-	GroupId                      requests.Integer                                       `position:"Query" name:"GroupId"`
-	EnableRules                  requests.Boolean                                       `position:"Query" name:"EnableRules"`
-	Name                         string                                                 `position:"Query" name:"Name"`
-	GatewaySwimmingLaneRouteJson CreateOrUpdateSwimmingLaneGatewaySwimmingLaneRouteJson `position:"Query" name:"GatewaySwimmingLaneRouteJson"  type:"Struct"`
-	Namespace                    string                                                 `position:"Query" name:"Namespace"`
-	AcceptLanguage               string                                                 `position:"Query" name:"AcceptLanguage"`
+	MseSessionId                    string                                                 `position:"Query" name:"MseSessionId"`
+	EntryRule                       string                                                 `position:"Query" name:"EntryRule"`
+	Enable                          requests.Boolean                                       `position:"Query" name:"Enable"`
+	Id                              requests.Integer                                       `position:"Query" name:"Id"`
+	Tag                             string                                                 `position:"Query" name:"Tag"`
+	EntryRules                      *[]CreateOrUpdateSwimmingLaneEntryRules                `position:"Body" name:"EntryRules"  type:"Repeated"`
+	GroupId                         requests.Integer                                       `position:"Query" name:"GroupId"`
+	EnableRules                     requests.Boolean                                       `position:"Query" name:"EnableRules"`
+	Name                            string                                                 `position:"Query" name:"Name"`
+	GatewaySwimmingLaneRouteJson    CreateOrUpdateSwimmingLaneGatewaySwimmingLaneRouteJson `position:"Query" name:"GatewaySwimmingLaneRouteJson"  type:"Struct"`
+	Namespace                       string                                                 `position:"Query" name:"Namespace"`
+	AcceptLanguage                  string                                                 `position:"Query" name:"AcceptLanguage"`
+	PathIndependentPercentageEnable requests.Boolean                                       `position:"Query" name:"PathIndependentPercentageEnable"`
 }
 
 // CreateOrUpdateSwimmingLaneEntryRules is a repeated param struct in CreateOrUpdateSwimmingLaneRequest
@@ -95,10 +96,15 @@ type CreateOrUpdateSwimmingLaneEntryRules struct {
 
 // CreateOrUpdateSwimmingLaneGatewaySwimmingLaneRouteJson is a repeated param struct in CreateOrUpdateSwimmingLaneRequest
 type CreateOrUpdateSwimmingLaneGatewaySwimmingLaneRouteJson struct {
-	GatewayUniqueId string                                                                  `name:"GatewayUniqueId"`
-	RouteIdList     *[]string                                                               `name:"RouteIdList" type:"Repeated"`
-	Conditions      *[]CreateOrUpdateSwimmingLaneGatewaySwimmingLaneRouteJsonConditionsItem `name:"Conditions" type:"Repeated"`
-	GatewayId       string                                                                  `name:"GatewayId"`
+	CanaryModel                      string                                                                                      `name:"CanaryModel"`
+	Condition                        string                                                                                      `name:"Condition"`
+	GatewayUniqueId                  string                                                                                      `name:"GatewayUniqueId"`
+	RouteIndependentPercentageEnable string                                                                                      `name:"RouteIndependentPercentageEnable"`
+	RouteIdList                      *[]string                                                                                   `name:"RouteIdList" type:"Repeated"`
+	Percentage                       string                                                                                      `name:"Percentage"`
+	RouteIndependentPercentageList   *[]CreateOrUpdateSwimmingLaneGatewaySwimmingLaneRouteJsonRouteIndependentPercentageListItem `name:"RouteIndependentPercentageList" type:"Repeated"`
+	Conditions                       *[]CreateOrUpdateSwimmingLaneGatewaySwimmingLaneRouteJsonConditionsItem                     `name:"Conditions" type:"Repeated"`
+	GatewayId                        string                                                                                      `name:"GatewayId"`
 }
 
 // CreateOrUpdateSwimmingLaneEntryRulesRestItems is a repeated param struct in CreateOrUpdateSwimmingLaneRequest
@@ -113,6 +119,12 @@ type CreateOrUpdateSwimmingLaneEntryRulesRestItems struct {
 	Remainder string    `name:"Remainder"`
 	Value     string    `name:"Value"`
 	Operator  string    `name:"Operator"`
+}
+
+// CreateOrUpdateSwimmingLaneGatewaySwimmingLaneRouteJsonRouteIndependentPercentageListItem is a repeated param struct in CreateOrUpdateSwimmingLaneRequest
+type CreateOrUpdateSwimmingLaneGatewaySwimmingLaneRouteJsonRouteIndependentPercentageListItem struct {
+	RouteId    string `name:"RouteId"`
+	Percentage string `name:"Percentage"`
 }
 
 // CreateOrUpdateSwimmingLaneGatewaySwimmingLaneRouteJsonConditionsItem is a repeated param struct in CreateOrUpdateSwimmingLaneRequest

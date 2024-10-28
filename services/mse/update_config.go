@@ -72,6 +72,7 @@ func (client *Client) UpdateConfigWithCallback(request *UpdateConfigRequest, cal
 type UpdateConfigRequest struct {
 	*requests.RpcRequest
 	MseSessionId             string           `position:"Query" name:"MseSessionId"`
+	Enable4lw                requests.Boolean `position:"Query" name:"Enable4lw"`
 	ConfigAuthEnabled        requests.Boolean `position:"Query" name:"ConfigAuthEnabled"`
 	PassWord                 string           `position:"Query" name:"PassWord"`
 	MaxClientCnxns           string           `position:"Query" name:"MaxClientCnxns"`
@@ -88,6 +89,8 @@ type UpdateConfigRequest struct {
 	EurekaSupported          requests.Boolean `position:"Query" name:"EurekaSupported"`
 	SnapshotCount            string           `position:"Query" name:"SnapshotCount"`
 	MinSessionTimeout        string           `position:"Query" name:"MinSessionTimeout"`
+	ConsoleUIEnabled         requests.Boolean `position:"Query" name:"ConsoleUIEnabled"`
+	AuthEnabled              requests.Boolean `position:"Query" name:"AuthEnabled"`
 	JuteMaxbuffer            string           `position:"Query" name:"JuteMaxbuffer"`
 	ConfigType               string           `position:"Query" name:"ConfigType"`
 	MaxSessionTimeout        string           `position:"Query" name:"MaxSessionTimeout"`

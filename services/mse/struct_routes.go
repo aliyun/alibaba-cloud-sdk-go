@@ -35,6 +35,7 @@ type Routes struct {
 	Type               string                 `json:"Type" xml:"Type"`
 	EnableWaf          string                 `json:"EnableWaf" xml:"EnableWaf"`
 	Fallback           bool                   `json:"Fallback" xml:"Fallback"`
+	DynamicRoute       bool                   `json:"DynamicRoute" xml:"DynamicRoute"`
 	DomainIdList       []int64                `json:"DomainIdList" xml:"DomainIdList"`
 	DomainNameList     []string               `json:"DomainNameList" xml:"DomainNameList"`
 	RoutePredicates    RoutePredicates        `json:"RoutePredicates" xml:"RoutePredicates"`

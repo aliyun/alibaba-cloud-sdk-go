@@ -17,5 +17,5 @@ package mse
 
 // ResultInListFlowRules is a nested struct in mse response
 type ResultInListFlowRules struct {
-	ResultItem []ResultItem `json:"Result" xml:"Result"`
+	ResultItem []ResultItemInListFlowRules `json:"Result" xml:"Result"`
 }

@@ -96,8 +96,11 @@ type UpdateGatewayOptionGatewayOptionLogConfigDetails struct {
 
 // UpdateGatewayOptionGatewayOptionTraceDetails is a repeated param struct in UpdateGatewayOptionRequest
 type UpdateGatewayOptionGatewayOptionTraceDetails struct {
+	TraceType    string `name:"TraceType"`
 	TraceEnabled string `name:"TraceEnabled"`
+	ServiceId    string `name:"ServiceId"`
 	Sample       string `name:"Sample"`
+	ServicePort  string `name:"ServicePort"`
 }
 
 // UpdateGatewayOptionResponse is the response struct for api UpdateGatewayOption

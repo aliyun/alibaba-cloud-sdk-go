@@ -99,7 +99,7 @@ func CreateListMigrationTaskRequest() (request *ListMigrationTaskRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("mse", "2019-05-31", "ListMigrationTask", "mse", "openAPI")
-	request.Method = requests.GET
+	request.Method = requests.POST
 	return
 }
 

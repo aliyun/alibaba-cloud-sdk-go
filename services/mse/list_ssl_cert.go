@@ -73,6 +73,7 @@ type ListSSLCertRequest struct {
 	*requests.RpcRequest
 	MseSessionId    string `position:"Query" name:"MseSessionId"`
 	GatewayUniqueId string `position:"Query" name:"GatewayUniqueId"`
+	CertName        string `position:"Query" name:"CertName"`
 	AcceptLanguage  string `position:"Query" name:"AcceptLanguage"`
 }
 

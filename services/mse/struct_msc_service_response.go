@@ -27,4 +27,5 @@ type MscServiceResponse struct {
 	ServiceName   string `json:"ServiceName" xml:"ServiceName"`
 	Group         string `json:"Group" xml:"Group"`
 	ClusterName   string `json:"ClusterName" xml:"ClusterName"`
+	ServiceType   string `json:"ServiceType" xml:"ServiceType"`
 }

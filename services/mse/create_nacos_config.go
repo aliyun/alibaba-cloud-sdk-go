@@ -73,7 +73,7 @@ type CreateNacosConfigRequest struct {
 	*requests.RpcRequest
 	MseSessionId   string `position:"Query" name:"MseSessionId"`
 	Type           string `position:"Query" name:"Type"`
-	Content        string `position:"Query" name:"Content"`
+	Content        string `position:"Body" name:"Content"`
 	AppName        string `position:"Query" name:"AppName"`
 	NamespaceId    string `position:"Query" name:"NamespaceId"`
 	Group          string `position:"Query" name:"Group"`

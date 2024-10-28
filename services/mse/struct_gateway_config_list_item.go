@@ -17,13 +17,14 @@ package mse
 
 // GatewayConfigListItem is a nested struct in mse response
 type GatewayConfigListItem struct {
-	Id              int64  `json:"Id" xml:"Id"`
-	GatewayId       int64  `json:"GatewayId" xml:"GatewayId"`
-	GatewayUniqueId string `json:"GatewayUniqueId" xml:"GatewayUniqueId"`
-	PluginId        int64  `json:"PluginId" xml:"PluginId"`
-	Enable          bool   `json:"Enable" xml:"Enable"`
-	Config          string `json:"Config" xml:"Config"`
-	ConfigLevel     int    `json:"ConfigLevel" xml:"ConfigLevel"`
-	GmtCreate       string `json:"GmtCreate" xml:"GmtCreate"`
-	GmtModified     string `json:"GmtModified" xml:"GmtModified"`
+	Id              int64              `json:"Id" xml:"Id"`
+	GatewayId       int64              `json:"GatewayId" xml:"GatewayId"`
+	GatewayUniqueId string             `json:"GatewayUniqueId" xml:"GatewayUniqueId"`
+	PluginId        int64              `json:"PluginId" xml:"PluginId"`
+	Enable          bool               `json:"Enable" xml:"Enable"`
+	Config          string             `json:"Config" xml:"Config"`
+	ConfigLevel     int                `json:"ConfigLevel" xml:"ConfigLevel"`
+	GmtCreate       string             `json:"GmtCreate" xml:"GmtCreate"`
+	GmtModified     string             `json:"GmtModified" xml:"GmtModified"`
+	ResourceList    []ResourceListItem `json:"ResourceList" xml:"ResourceList"`
 }

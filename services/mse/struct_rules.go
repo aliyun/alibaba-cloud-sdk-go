@@ -17,13 +17,16 @@ package mse
 
 // Rules is a nested struct in mse response
 type Rules struct {
-	Id              string `json:"Id" xml:"Id"`
-	SecurityGroupId string `json:"SecurityGroupId" xml:"SecurityGroupId"`
-	PortRange       string `json:"PortRange" xml:"PortRange"`
-	IpProtocol      string `json:"IpProtocol" xml:"IpProtocol"`
-	GatewayId       int64  `json:"GatewayId" xml:"GatewayId"`
-	GatewayUniqueId string `json:"GatewayUniqueId" xml:"GatewayUniqueId"`
-	GmtCreate       string `json:"GmtCreate" xml:"GmtCreate"`
-	GmtModified     string `json:"GmtModified" xml:"GmtModified"`
-	Description     string `json:"Description" xml:"Description"`
+	IpProtocol      string            `json:"IpProtocol" xml:"IpProtocol"`
+	GatewayUniqueId string            `json:"GatewayUniqueId" xml:"GatewayUniqueId"`
+	GmtCreate       string            `json:"GmtCreate" xml:"GmtCreate"`
+	PortRange       string            `json:"PortRange" xml:"PortRange"`
+	SecurityGroupId string            `json:"SecurityGroupId" xml:"SecurityGroupId"`
+	GatewayId       int64             `json:"GatewayId" xml:"GatewayId"`
+	GmtModified     string            `json:"GmtModified" xml:"GmtModified"`
+	Id              string            `json:"Id" xml:"Id"`
+	Description     string            `json:"Description" xml:"Description"`
+	AuthCidrs       []string          `json:"AuthCidrs" xml:"AuthCidrs"`
+	Dubbo           []DubboRule       `json:"dubbo" xml:"dubbo"`
+	Springcloud     []SpringCloudRule `json:"springcloud" xml:"springcloud"`
 }

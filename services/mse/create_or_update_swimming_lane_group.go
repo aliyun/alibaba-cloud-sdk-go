@@ -75,7 +75,11 @@ type CreateOrUpdateSwimmingLaneGroupRequest struct {
 	AppIds                 string           `position:"Query" name:"AppIds"`
 	DbGrayEnable           requests.Boolean `position:"Query" name:"DbGrayEnable"`
 	Enable                 requests.Boolean `position:"Query" name:"Enable"`
+	SwimVersion            requests.Integer `position:"Query" name:"SwimVersion"`
 	Id                     requests.Integer `position:"Query" name:"Id"`
+	RouteIds               *[]string        `position:"Query" name:"RouteIds"  type:"Json"`
+	CanaryModel            requests.Integer `position:"Query" name:"CanaryModel"`
+	Paths                  *[]string        `position:"Query" name:"Paths"  type:"Json"`
 	Name                   string           `position:"Query" name:"Name"`
 	MessageQueueFilterSide string           `position:"Query" name:"MessageQueueFilterSide"`
 	Region                 string           `position:"Query" name:"Region"`

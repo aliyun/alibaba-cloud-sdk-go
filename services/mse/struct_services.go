@@ -34,6 +34,7 @@ type Services struct {
 	ServiceProtocol       string               `json:"ServiceProtocol" xml:"ServiceProtocol"`
 	Namespace             string               `json:"Namespace" xml:"Namespace"`
 	HealthStatus          string               `json:"HealthStatus" xml:"HealthStatus"`
+	ServiceFQDN           string               `json:"ServiceFQDN" xml:"ServiceFQDN"`
 	Ips                   []string             `json:"Ips" xml:"Ips"`
 	Ports                 []int                `json:"Ports" xml:"Ports"`
 	UnhealthyEndpoints    []string             `json:"UnhealthyEndpoints" xml:"UnhealthyEndpoints"`

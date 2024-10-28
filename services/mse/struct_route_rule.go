@@ -18,14 +18,12 @@ package mse
 // RouteRule is a nested struct in mse response
 type RouteRule struct {
 	Status      int    `json:"Status" xml:"Status"`
-	InstanceNum int    `json:"InstanceNum" xml:"InstanceNum"`
-	Remove      bool   `json:"Remove" xml:"Remove"`
 	CarryData   bool   `json:"CarryData" xml:"CarryData"`
+	Rate        int    `json:"Rate" xml:"Rate"`
+	Enable      bool   `json:"Enable" xml:"Enable"`
 	Tag         string `json:"Tag" xml:"Tag"`
 	Name        string `json:"Name" xml:"Name"`
-	Rules       string `json:"Rules" xml:"Rules"`
 	Id          int64  `json:"Id" xml:"Id"`
-	Rate        int    `json:"Rate" xml:"Rate"`
-	GmtModified string `json:"GmtModified" xml:"GmtModified"`
-	Enable      bool   `json:"Enable" xml:"Enable"`
+	InstanceNum int    `json:"InstanceNum" xml:"InstanceNum"`
+	Rules       Rules  `json:"Rules" xml:"Rules"`
 }

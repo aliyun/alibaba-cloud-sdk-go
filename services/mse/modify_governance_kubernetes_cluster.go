@@ -72,7 +72,7 @@ func (client *Client) ModifyGovernanceKubernetesClusterWithCallback(request *Mod
 type ModifyGovernanceKubernetesClusterRequest struct {
 	*requests.RpcRequest
 	MseSessionId   string `position:"Query" name:"MseSessionId"`
-	NamespaceInfos string `position:"Query" name:"NamespaceInfos"`
+	NamespaceInfos string `position:"Body" name:"NamespaceInfos"`
 	ClusterId      string `position:"Query" name:"ClusterId"`
 	AcceptLanguage string `position:"Query" name:"AcceptLanguage"`
 }

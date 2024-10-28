@@ -17,6 +17,14 @@ package mse
 
 // XtraceDetails is a nested struct in mse response
 type XtraceDetails struct {
-	Sample  int  `json:"Sample" xml:"Sample"`
-	TraceOn bool `json:"TraceOn" xml:"TraceOn"`
+	Sample          int    `json:"Sample" xml:"Sample"`
+	GatewayUniqueId string `json:"GatewayUniqueId" xml:"GatewayUniqueId"`
+	GmtCreate       string `json:"GmtCreate" xml:"GmtCreate"`
+	GatewayId       int64  `json:"GatewayId" xml:"GatewayId"`
+	ServiceId       int64  `json:"ServiceId" xml:"ServiceId"`
+	TraceOn         bool   `json:"TraceOn" xml:"TraceOn"`
+	GmtModified     string `json:"GmtModified" xml:"GmtModified"`
+	TraceType       string `json:"TraceType" xml:"TraceType"`
+	Id              int64  `json:"Id" xml:"Id"`
+	ServicePort     string `json:"ServicePort" xml:"ServicePort"`
 }

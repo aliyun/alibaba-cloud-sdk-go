@@ -85,12 +85,12 @@ type ListFlowRulesRequest struct {
 // ListFlowRulesResponse is the response struct for api ListFlowRules
 type ListFlowRulesResponse struct {
 	*responses.BaseResponse
-	Code           int                 `json:"Code" xml:"Code"`
-	Message        string              `json:"Message" xml:"Message"`
-	RequestId      string              `json:"RequestId" xml:"RequestId"`
-	Success        bool                `json:"Success" xml:"Success"`
-	HttpStatusCode int                 `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	Data           DataInListFlowRules `json:"Data" xml:"Data"`
+	Code           int    `json:"Code" xml:"Code"`
+	Message        string `json:"Message" xml:"Message"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	Success        bool   `json:"Success" xml:"Success"`
+	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Data           Data   `json:"Data" xml:"Data"`
 }
 
 // CreateListFlowRulesRequest creates a request to invoke ListFlowRules API

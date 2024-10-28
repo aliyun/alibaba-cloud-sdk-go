@@ -17,6 +17,8 @@ package mse
 
 // KubernetesNamespace is a nested struct in mse response
 type KubernetesNamespace struct {
-	Name string `json:"Name" xml:"Name"`
-	Tags string `json:"Tags" xml:"Tags"`
+	Name         string                 `json:"Name" xml:"Name"`
+	MseNamespace string                 `json:"MseNamespace" xml:"MseNamespace"`
+	Tags         string                 `json:"Tags" xml:"Tags"`
+	Labels       map[string]interface{} `json:"Labels" xml:"Labels"`
 }

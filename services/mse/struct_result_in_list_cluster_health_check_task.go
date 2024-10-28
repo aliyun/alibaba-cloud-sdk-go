@@ -17,5 +17,5 @@ package mse
 
 // ResultInListClusterHealthCheckTask is a nested struct in mse response
 type ResultInListClusterHealthCheckTask struct {
-	ResultItem []ResultItem `json:"Result" xml:"Result"`
+	ResultItem []ResultItemInListClusterHealthCheckTask `json:"Result" xml:"Result"`
 }

@@ -17,6 +17,7 @@ package mse
 
 // FailDataItem is a nested struct in mse response
 type FailDataItem struct {
+	Reason string `json:"Reason" xml:"Reason"`
 	DataId string `json:"DataId" xml:"DataId"`
 	Group  string `json:"Group" xml:"Group"`
 }

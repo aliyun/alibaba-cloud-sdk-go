@@ -36,6 +36,7 @@ type DataInGetGatewayRouteDetail struct {
 	AhasStatus         int                    `json:"AhasStatus" xml:"AhasStatus"`
 	Fallback           bool                   `json:"Fallback" xml:"Fallback"`
 	Policies           string                 `json:"Policies" xml:"Policies"`
+	Description        string                 `json:"Description" xml:"Description"`
 	DomainIdList       []int64                `json:"DomainIdList" xml:"DomainIdList"`
 	DomainNameList     []string               `json:"DomainNameList" xml:"DomainNameList"`
 	RoutePredicates    RoutePredicates        `json:"RoutePredicates" xml:"RoutePredicates"`
@@ -46,6 +47,7 @@ type DataInGetGatewayRouteDetail struct {
 	Timeout            Timeout                `json:"Timeout" xml:"Timeout"`
 	Retry              Retry                  `json:"Retry" xml:"Retry"`
 	Redirect           Redirect               `json:"Redirect" xml:"Redirect"`
+	FlowMirror         FlowMirror             `json:"FlowMirror" xml:"FlowMirror"`
 	RouteServices      []RouteServicesItem    `json:"RouteServices" xml:"RouteServices"`
 	FallbackServices   []FallbackServicesItem `json:"FallbackServices" xml:"FallbackServices"`
 }

@@ -23,4 +23,5 @@ type HistoryItem struct {
 	LastModifiedTime int64  `json:"LastModifiedTime" xml:"LastModifiedTime"`
 	Id               int64  `json:"Id" xml:"Id"`
 	OpType           string `json:"OpType" xml:"OpType"`
+	SrcUser          string `json:"SrcUser" xml:"SrcUser"`
 }

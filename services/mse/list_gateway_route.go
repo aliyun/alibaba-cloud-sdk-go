@@ -83,6 +83,7 @@ type ListGatewayRouteRequest struct {
 // ListGatewayRouteFilterParams is a repeated param struct in ListGatewayRouteRequest
 type ListGatewayRouteFilterParams struct {
 	DefaultServiceId string `name:"DefaultServiceId"`
+	Path             string `name:"Path"`
 	RouteOrder       string `name:"RouteOrder"`
 	GatewayUniqueId  string `name:"GatewayUniqueId"`
 	Name             string `name:"Name"`

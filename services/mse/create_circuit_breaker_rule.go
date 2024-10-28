@@ -80,6 +80,7 @@ type CreateCircuitBreakerRuleRequest struct {
 	Resource                  string           `position:"Query" name:"Resource"`
 	MaxAllowedRtMs            requests.Integer `position:"Query" name:"MaxAllowedRtMs"`
 	HalfOpenBaseAmountPerStep requests.Integer `position:"Query" name:"HalfOpenBaseAmountPerStep"`
+	ResourceType              requests.Integer `position:"Query" name:"ResourceType"`
 	StatIntervalMs            requests.Integer `position:"Query" name:"StatIntervalMs"`
 	AppId                     string           `position:"Query" name:"AppId"`
 	Namespace                 string           `position:"Query" name:"Namespace"`

@@ -73,6 +73,7 @@ type GetServiceListPageRequest struct {
 	*requests.RpcRequest
 	MseSessionId   string           `position:"Query" name:"MseSessionId"`
 	PageNumber     requests.Integer `position:"Query" name:"PageNumber"`
+	AppName        string           `position:"Query" name:"AppName"`
 	PageSize       requests.Integer `position:"Query" name:"PageSize"`
 	ServiceName    string           `position:"Query" name:"ServiceName"`
 	Side           string           `position:"Query" name:"Side"`

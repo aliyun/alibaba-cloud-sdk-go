@@ -71,16 +71,92 @@ func (client *Client) ApplyTagPoliciesWithCallback(request *ApplyTagPoliciesRequ
 // ApplyTagPoliciesRequest is the request struct for api ApplyTagPolicies
 type ApplyTagPoliciesRequest struct {
 	*requests.RpcRequest
-	MseSessionId   string           `position:"Query" name:"MseSessionId"`
-	Rules          string           `position:"Query" name:"Rules"`
-	Source         string           `position:"Query" name:"Source"`
-	AppName        string           `position:"Query" name:"AppName"`
-	NamespaceId    string           `position:"Query" name:"NamespaceId"`
-	Enable         requests.Boolean `position:"Query" name:"Enable"`
-	AppId          string           `position:"Query" name:"AppId"`
-	Namespace      string           `position:"Query" name:"Namespace"`
-	AcceptLanguage string           `position:"Query" name:"AcceptLanguage"`
-	Region         string           `position:"Query" name:"Region"`
+	MseSessionId   string                           `position:"Query" name:"MseSessionId"`
+	Rules          map[string]ApplyTagPoliciesRules `position:"Query" name:"Rules"  type:"Map"`
+	Source         string                           `position:"Query" name:"Source"`
+	AppName        string                           `position:"Query" name:"AppName"`
+	NamespaceId    string                           `position:"Query" name:"NamespaceId"`
+	Enable         requests.Boolean                 `position:"Query" name:"Enable"`
+	AppId          string                           `position:"Query" name:"AppId"`
+	Namespace      string                           `position:"Query" name:"Namespace"`
+	AcceptLanguage string                           `position:"Query" name:"AcceptLanguage"`
+	Region         string                           `position:"Query" name:"Region"`
+}
+
+// ApplyTagPoliciesRules is a repeated param struct in ApplyTagPoliciesRequest
+type ApplyTagPoliciesRules struct {
+	Rate        string                     `name:"Rate"`
+	Enable      string                     `name:"Enable"`
+	InstanceNum string                     `name:"InstanceNum"`
+	Name        string                     `name:"Name"`
+	CarryData   string                     `name:"CarryData"`
+	Rules       ApplyTagPoliciesRulesRules `name:"Rules" type:"Struct"`
+	Tag         string                     `name:"Tag"`
+	Id          string                     `name:"Id"`
+	Remove      string                     `name:"remove"`
+	Status      string                     `name:"Status"`
+}
+
+// ApplyTagPoliciesRulesRules is a repeated param struct in ApplyTagPoliciesRequest
+type ApplyTagPoliciesRulesRules struct {
+	Springcloud *[]ApplyTagPoliciesRulesRulesSpringcloudItem `name:"springcloud" type:"Repeated"`
+	Dubbo       *[]ApplyTagPoliciesRulesRulesDubboItem       `name:"dubbo" type:"Repeated"`
+}
+
+// ApplyTagPoliciesRulesRulesSpringcloudItem is a repeated param struct in ApplyTagPoliciesRequest
+type ApplyTagPoliciesRulesRulesSpringcloudItem struct {
+	RestItems     *[]ApplyTagPoliciesRulesRulesSpringcloudItemRestItemsItem `name:"restItems" type:"Repeated"`
+	Path          string                                                    `name:"path"`
+	Condition     string                                                    `name:"condition"`
+	Enable        string                                                    `name:"enable"`
+	Paths         *[]string                                                 `name:"paths" type:"Repeated"`
+	AppId         string                                                    `name:"appId"`
+	Priority      string                                                    `name:"priority"`
+	TriggerPolicy string                                                    `name:"triggerPolicy"`
+	Tags          *[]string                                                 `name:"tags" type:"Repeated"`
+}
+
+// ApplyTagPoliciesRulesRulesDubboItem is a repeated param struct in ApplyTagPoliciesRequest
+type ApplyTagPoliciesRulesRulesDubboItem struct {
+	ParamTypes    *[]string                                               `name:"paramTypes" type:"Repeated"`
+	Condition     string                                                  `name:"condition"`
+	AppId         string                                                  `name:"appId"`
+	CarryData     string                                                  `name:"carryData"`
+	ServiceName   string                                                  `name:"serviceName"`
+	TriggerPolicy string                                                  `name:"triggerPolicy"`
+	Version       string                                                  `name:"version"`
+	ArgumentItems *[]ApplyTagPoliciesRulesRulesDubboItemArgumentItemsItem `name:"argumentItems" type:"Repeated"`
+	Tags          *[]string                                               `name:"tags" type:"Repeated"`
+	Group         string                                                  `name:"group"`
+	MethodName    string                                                  `name:"methodName"`
+}
+
+// ApplyTagPoliciesRulesRulesSpringcloudItemRestItemsItem is a repeated param struct in ApplyTagPoliciesRequest
+type ApplyTagPoliciesRulesRulesSpringcloudItemRestItemsItem struct {
+	Datum     string    `name:"datum"`
+	Divisor   string    `name:"divisor"`
+	Rate      string    `name:"rate"`
+	NameList  *[]string `name:"nameList" type:"Repeated"`
+	Name      string    `name:"name"`
+	Cond      string    `name:"cond"`
+	Type      string    `name:"type"`
+	Remainder string    `name:"remainder"`
+	Value     string    `name:"value"`
+	Operator  string    `name:"operator"`
+}
+
+// ApplyTagPoliciesRulesRulesDubboItemArgumentItemsItem is a repeated param struct in ApplyTagPoliciesRequest
+type ApplyTagPoliciesRulesRulesDubboItemArgumentItemsItem struct {
+	Datum     string    `name:"datum"`
+	Divisor   string    `name:"divisor"`
+	Rate      string    `name:"rate"`
+	NameList  *[]string `name:"nameList" type:"Repeated"`
+	Index     string    `name:"index"`
+	Expr      string    `name:"expr"`
+	Cond      string    `name:"cond"`
+	Remainder string    `name:"remainder"`
+	Value     string    `name:"value"`
+	Operator  string    `name:"operator"`
 }
 
 // ApplyTagPoliciesResponse is the response struct for api ApplyTagPolicies

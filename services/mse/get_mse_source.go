@@ -74,6 +74,7 @@ type GetMseSourceRequest struct {
 	MseSessionId    string `position:"Query" name:"MseSessionId"`
 	GatewayUniqueId string `position:"Query" name:"GatewayUniqueId"`
 	Type            string `position:"Query" name:"Type"`
+	VpcId           string `position:"Query" name:"VpcId"`
 	AcceptLanguage  string `position:"Query" name:"AcceptLanguage"`
 }
 

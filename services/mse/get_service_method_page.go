@@ -84,6 +84,7 @@ type GetServiceMethodPageRequest struct {
 	ServiceName      string           `position:"Query" name:"ServiceName"`
 	ServiceType      string           `position:"Query" name:"ServiceType"`
 	AppId            string           `position:"Query" name:"AppId"`
+	Namespace        string           `position:"Query" name:"Namespace"`
 	AcceptLanguage   string           `position:"Query" name:"AcceptLanguage"`
 	MethodController string           `position:"Query" name:"MethodController"`
 }

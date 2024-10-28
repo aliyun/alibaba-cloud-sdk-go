@@ -73,6 +73,7 @@ type CloneNacosConfigRequest struct {
 	*requests.RpcRequest
 	MseSessionId      string `position:"Query" name:"MseSessionId"`
 	TargetNamespaceId string `position:"Query" name:"TargetNamespaceId"`
+	DataIds           string `position:"Query" name:"DataIds"`
 	OriginNamespaceId string `position:"Query" name:"OriginNamespaceId"`
 	Policy            string `position:"Query" name:"Policy"`
 	InstanceId        string `position:"Query" name:"InstanceId"`

@@ -78,6 +78,7 @@ type ListClustersRequest struct {
 	PageSize         requests.Integer   `position:"Query" name:"PageSize"`
 	Tag              *[]ListClustersTag `position:"Query" name:"Tag"  type:"Repeated"`
 	ClusterAliasName string             `position:"Query" name:"ClusterAliasName"`
+	KeyId            string             `position:"Query" name:"KeyId"`
 	AcceptLanguage   string             `position:"Query" name:"AcceptLanguage"`
 }
 

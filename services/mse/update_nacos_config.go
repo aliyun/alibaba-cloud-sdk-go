@@ -81,7 +81,7 @@ type UpdateNacosConfigRequest struct {
 	BetaIps          string `position:"Query" name:"BetaIps"`
 	InstanceId       string `position:"Query" name:"InstanceId"`
 	Desc             string `position:"Query" name:"Desc"`
-	Content          string `position:"Query" name:"Content"`
+	Content          string `position:"Body" name:"Content"`
 	DataId           string `position:"Query" name:"DataId"`
 	AcceptLanguage   string `position:"Query" name:"AcceptLanguage"`
 	Md5              string `position:"Query" name:"Md5"`

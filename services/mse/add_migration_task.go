@@ -72,16 +72,17 @@ func (client *Client) AddMigrationTaskWithCallback(request *AddMigrationTaskRequ
 type AddMigrationTaskRequest struct {
 	*requests.RpcRequest
 	MseSessionId            string `position:"Query" name:"MseSessionId"`
-	TargetClusterUrl        string `position:"Query" name:"TargetClusterUrl"`
-	OriginInstanceAddress   string `position:"Query" name:"OriginInstanceAddress"`
+	SyncType                string `position:"Query" name:"SyncType"`
 	RequestPars             string `position:"Query" name:"RequestPars"`
 	Id                      string `position:"Query" name:"Id"`
 	OriginInstanceName      string `position:"Query" name:"OriginInstanceName"`
 	ProjectDesc             string `position:"Query" name:"ProjectDesc"`
-	OriginInstanceNamespace string `position:"Query" name:"OriginInstanceNamespace"`
 	ClusterType             string `position:"Query" name:"ClusterType"`
-	TargetInstanceId        string `position:"Query" name:"TargetInstanceId"`
 	TargetClusterName       string `position:"Query" name:"TargetClusterName"`
+	TargetClusterUrl        string `position:"Query" name:"TargetClusterUrl"`
+	OriginInstanceAddress   string `position:"Query" name:"OriginInstanceAddress"`
+	OriginInstanceNamespace string `position:"Query" name:"OriginInstanceNamespace"`
+	TargetInstanceId        string `position:"Query" name:"TargetInstanceId"`
 	AcceptLanguage          string `position:"Query" name:"AcceptLanguage"`
 }
 

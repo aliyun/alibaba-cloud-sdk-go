@@ -17,23 +17,27 @@ package mse
 
 // DataInGetPluginConfig is a nested struct in mse response
 type DataInGetPluginConfig struct {
-	Id                int64                   `json:"Id" xml:"Id"`
-	PrimaryUser       string                  `json:"PrimaryUser" xml:"PrimaryUser"`
-	Type              int                     `json:"Type" xml:"Type"`
-	Category          int                     `json:"Category" xml:"Category"`
-	Name              string                  `json:"Name" xml:"Name"`
-	Version           string                  `json:"Version" xml:"Version"`
-	Summary           string                  `json:"Summary" xml:"Summary"`
-	Readme            string                  `json:"Readme" xml:"Readme"`
-	ReadmeEn          string                  `json:"ReadmeEn" xml:"ReadmeEn"`
-	Phase             int                     `json:"Phase" xml:"Phase"`
-	Priority          int                     `json:"Priority" xml:"Priority"`
-	ConfigCheck       string                  `json:"ConfigCheck" xml:"ConfigCheck"`
-	Mode              int                     `json:"Mode" xml:"Mode"`
-	WasmLang          int                     `json:"WasmLang" xml:"WasmLang"`
-	ImageName         string                  `json:"ImageName" xml:"ImageName"`
-	PublishState      int                     `json:"PublishState" xml:"PublishState"`
-	Status            string                  `json:"Status" xml:"Status"`
-	VersionJson       string                  `json:"VersionJson" xml:"VersionJson"`
-	GatewayConfigList []GatewayConfigListItem `json:"GatewayConfigList" xml:"GatewayConfigList"`
+	Id                      int64                   `json:"Id" xml:"Id"`
+	PrimaryUser             string                  `json:"PrimaryUser" xml:"PrimaryUser"`
+	Type                    int                     `json:"Type" xml:"Type"`
+	Category                int                     `json:"Category" xml:"Category"`
+	Name                    string                  `json:"Name" xml:"Name"`
+	Version                 string                  `json:"Version" xml:"Version"`
+	Summary                 string                  `json:"Summary" xml:"Summary"`
+	Readme                  string                  `json:"Readme" xml:"Readme"`
+	ReadmeEn                string                  `json:"ReadmeEn" xml:"ReadmeEn"`
+	ConfigExample           string                  `json:"ConfigExample" xml:"ConfigExample"`
+	Phase                   int                     `json:"Phase" xml:"Phase"`
+	Priority                int                     `json:"Priority" xml:"Priority"`
+	ConfigCheck             string                  `json:"ConfigCheck" xml:"ConfigCheck"`
+	Mode                    int                     `json:"Mode" xml:"Mode"`
+	WasmLang                int                     `json:"WasmLang" xml:"WasmLang"`
+	ImageName               string                  `json:"ImageName" xml:"ImageName"`
+	PublishState            int                     `json:"PublishState" xml:"PublishState"`
+	Status                  string                  `json:"Status" xml:"Status"`
+	RouteConfigStartIndex   int                     `json:"RouteConfigStartIndex" xml:"RouteConfigStartIndex"`
+	DomainConfigStartIndex  int                     `json:"DomainConfigStartIndex" xml:"DomainConfigStartIndex"`
+	GatewayConfigStartIndex int                     `json:"GatewayConfigStartIndex" xml:"GatewayConfigStartIndex"`
+	VersionJson             string                  `json:"VersionJson" xml:"VersionJson"`
+	GatewayConfigList       []GatewayConfigListItem `json:"GatewayConfigList" xml:"GatewayConfigList"`
 }

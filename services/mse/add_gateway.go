@@ -86,10 +86,13 @@ type AddGatewayRequest struct {
 	SlbSpec                    string                `position:"Query" name:"SlbSpec"`
 	Name                       string                `position:"Query" name:"Name"`
 	Region                     string                `position:"Query" name:"Region"`
+	MserVersion                string                `position:"Query" name:"MserVersion"`
 	ZoneInfo                   *[]AddGatewayZoneInfo `position:"Query" name:"ZoneInfo"  type:"Json"`
 	XtraceRatio                string                `position:"Query" name:"XtraceRatio"`
 	VSwitchId2                 string                `position:"Query" name:"VSwitchId2"`
+	ClbNetworkType             string                `position:"Query" name:"ClbNetworkType"`
 	Vpc                        string                `position:"Query" name:"Vpc"`
+	NlbNetworkType             string                `position:"Query" name:"NlbNetworkType"`
 	AcceptLanguage             string                `position:"Query" name:"AcceptLanguage"`
 	ChargeType                 string                `position:"Query" name:"ChargeType"`
 }

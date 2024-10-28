@@ -71,17 +71,11 @@ func (client *Client) UpdateGatewayAuthConsumerResourceWithCallback(request *Upd
 // UpdateGatewayAuthConsumerResourceRequest is the request struct for api UpdateGatewayAuthConsumerResource
 type UpdateGatewayAuthConsumerResourceRequest struct {
 	*requests.RpcRequest
-	MseSessionId    string                                           `position:"Query" name:"MseSessionId"`
-	GatewayUniqueId string                                           `position:"Query" name:"GatewayUniqueId"`
-	ConsumerId      requests.Integer                                 `position:"Query" name:"ConsumerId"`
-	ResourceList    *[]UpdateGatewayAuthConsumerResourceResourceList `position:"Query" name:"ResourceList"  type:"Json"`
-	AcceptLanguage  string                                           `position:"Query" name:"AcceptLanguage"`
-}
-
-// UpdateGatewayAuthConsumerResourceResourceList is a repeated param struct in UpdateGatewayAuthConsumerResourceRequest
-type UpdateGatewayAuthConsumerResourceResourceList struct {
-	RouteId   string `name:"RouteId"`
-	RouteName string `name:"RouteName"`
+	MseSessionId    string           `position:"Query" name:"MseSessionId"`
+	GatewayUniqueId string           `position:"Query" name:"GatewayUniqueId"`
+	ConsumerId      requests.Integer `position:"Query" name:"ConsumerId"`
+	ResourceList    string           `position:"Query" name:"ResourceList"`
+	AcceptLanguage  string           `position:"Query" name:"AcceptLanguage"`
 }
 
 // UpdateGatewayAuthConsumerResourceResponse is the response struct for api UpdateGatewayAuthConsumerResource
