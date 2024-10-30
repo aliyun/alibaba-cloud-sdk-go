@@ -1,3 +1,7 @@
+2024-10-30 Version: v1.63.41
+- Generated 2014-05-26 for `Ecs`.
+- Support describe and modify NVMe on instance.
+
 2024-10-28 Version: v1.63.40
 - Generated 2019-05-31 for `mse`.
 - Support config content from data.
