@@ -80,6 +80,7 @@ type CreateWmEmbedTaskRequest struct {
 	ImageEmbedJpegQuality requests.Integer                 `position:"Body" name:"ImageEmbedJpegQuality"`
 	WatermarkInfoUint     requests.Integer                 `position:"Body" name:"WatermarkInfoUint"`
 	WmInfoUint            string                           `position:"Body" name:"WmInfoUint"`
+	CsvControl            CreateWmEmbedTaskCsvControl      `position:"Query" name:"CsvControl"  type:"Struct"`
 	Filename              string                           `position:"Body" name:"Filename"`
 	WmInfoSize            requests.Integer                 `position:"Body" name:"WmInfoSize"`
 	WmInfoBytesB64        string                           `position:"Body" name:"WmInfoBytesB64"`
@@ -92,6 +93,13 @@ type CreateWmEmbedTaskDocumentControl struct {
 	InvisibleAntiAllCopy  string                                            `name:"InvisibleAntiAllCopy"`
 	BackgroundControl     CreateWmEmbedTaskDocumentControlBackgroundControl `name:"BackgroundControl" type:"Struct"`
 	InvisibleAntiTextCopy string                                            `name:"InvisibleAntiTextCopy"`
+}
+
+// CreateWmEmbedTaskCsvControl is a repeated param struct in CreateWmEmbedTaskRequest
+type CreateWmEmbedTaskCsvControl struct {
+	Method         string `name:"Method"`
+	EmbedColumn    string `name:"EmbedColumn"`
+	EmbedPrecision string `name:"EmbedPrecision"`
 }
 
 // CreateWmEmbedTaskDocumentControlBackgroundControl is a repeated param struct in CreateWmEmbedTaskRequest

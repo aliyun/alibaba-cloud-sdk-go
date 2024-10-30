@@ -71,15 +71,18 @@ func (client *Client) UpdatePrivateAccessApplicationWithCallback(request *Update
 // UpdatePrivateAccessApplicationRequest is the request struct for api UpdatePrivateAccessApplication
 type UpdatePrivateAccessApplicationRequest struct {
 	*requests.RpcRequest
-	Addresses     *[]string                                   `position:"Body" name:"Addresses"  type:"Repeated"`
-	Description   string                                      `position:"Body" name:"Description"`
-	Protocol      string                                      `position:"Body" name:"Protocol"`
-	SourceIp      string                                      `position:"Query" name:"SourceIp"`
-	ApplicationId string                                      `position:"Body" name:"ApplicationId"`
-	TagIds        *[]string                                   `position:"Body" name:"TagIds"  type:"Repeated"`
-	PortRanges    *[]UpdatePrivateAccessApplicationPortRanges `position:"Body" name:"PortRanges"  type:"Repeated"`
-	ModifyType    string                                      `position:"Body" name:"ModifyType"`
-	Status        string                                      `position:"Body" name:"Status"`
+	Addresses                    *[]string                                   `position:"Body" name:"Addresses"  type:"Repeated"`
+	Description                  string                                      `position:"Body" name:"Description"`
+	Protocol                     string                                      `position:"Body" name:"Protocol"`
+	SourceIp                     string                                      `position:"Query" name:"SourceIp"`
+	ApplicationId                string                                      `position:"Body" name:"ApplicationId"`
+	L7ProxyDomainCustom          string                                      `position:"Body" name:"L7ProxyDomainCustom"`
+	L7ProxyDomainPrivate         string                                      `position:"Body" name:"L7ProxyDomainPrivate"`
+	TagIds                       *[]string                                   `position:"Body" name:"TagIds"  type:"Repeated"`
+	L7ProxyDomainAutomaticPrefix string                                      `position:"Body" name:"L7ProxyDomainAutomaticPrefix"`
+	PortRanges                   *[]UpdatePrivateAccessApplicationPortRanges `position:"Body" name:"PortRanges"  type:"Repeated"`
+	ModifyType                   string                                      `position:"Body" name:"ModifyType"`
+	Status                       string                                      `position:"Body" name:"Status"`
 }
 
 // UpdatePrivateAccessApplicationPortRanges is a repeated param struct in UpdatePrivateAccessApplicationRequest

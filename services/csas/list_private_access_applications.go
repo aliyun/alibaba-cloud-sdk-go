@@ -79,6 +79,7 @@ type ListPrivateAccessApplicationsRequest struct {
 	ConnectorId    string           `position:"Query" name:"ConnectorId"`
 	CurrentPage    requests.Integer `position:"Query" name:"CurrentPage"`
 	ApplicationIds *[]string        `position:"Query" name:"ApplicationIds"  type:"Repeated"`
+	AccessModes    string           `position:"Query" name:"AccessModes"`
 	Name           string           `position:"Query" name:"Name"`
 	Status         string           `position:"Query" name:"Status"`
 }

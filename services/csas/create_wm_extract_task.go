@@ -71,16 +71,24 @@ func (client *Client) CreateWmExtractTaskWithCallback(request *CreateWmExtractTa
 // CreateWmExtractTaskRequest is the request struct for api CreateWmExtractTask
 type CreateWmExtractTaskRequest struct {
 	*requests.RpcRequest
-	VideoIsLong       requests.Boolean `position:"Body" name:"VideoIsLong"`
-	DocumentIsCapture requests.Boolean `position:"Body" name:"DocumentIsCapture"`
-	VideoSpeed        string           `position:"Body" name:"VideoSpeed"`
-	ApiType           string           `position:"Body" name:"ApiType"`
-	SourceIp          string           `position:"Query" name:"SourceIp"`
-	WmType            string           `position:"Body" name:"WmType"`
-	ImageDetectLevel  requests.Integer `position:"Body" name:"ImageDetectLevel"`
-	Filename          string           `position:"Body" name:"Filename"`
-	WmInfoSize        requests.Integer `position:"Body" name:"WmInfoSize"`
-	FileUrl           string           `position:"Body" name:"FileUrl"`
+	VideoIsLong       requests.Boolean              `position:"Body" name:"VideoIsLong"`
+	DocumentIsCapture requests.Boolean              `position:"Body" name:"DocumentIsCapture"`
+	VideoSpeed        string                        `position:"Body" name:"VideoSpeed"`
+	ApiType           string                        `position:"Body" name:"ApiType"`
+	SourceIp          string                        `position:"Query" name:"SourceIp"`
+	WmType            string                        `position:"Body" name:"WmType"`
+	ImageDetectLevel  requests.Integer              `position:"Body" name:"ImageDetectLevel"`
+	CsvControl        CreateWmExtractTaskCsvControl `position:"Query" name:"CsvControl"  type:"Struct"`
+	Filename          string                        `position:"Body" name:"Filename"`
+	WmInfoSize        requests.Integer              `position:"Body" name:"WmInfoSize"`
+	FileUrl           string                        `position:"Body" name:"FileUrl"`
+}
+
+// CreateWmExtractTaskCsvControl is a repeated param struct in CreateWmExtractTaskRequest
+type CreateWmExtractTaskCsvControl struct {
+	Method         string `name:"Method"`
+	EmbedColumn    string `name:"EmbedColumn"`
+	EmbedPrecision string `name:"EmbedPrecision"`
 }
 
 // CreateWmExtractTaskResponse is the response struct for api CreateWmExtractTask

@@ -71,14 +71,18 @@ func (client *Client) CreatePrivateAccessApplicationWithCallback(request *Create
 // CreatePrivateAccessApplicationRequest is the request struct for api CreatePrivateAccessApplication
 type CreatePrivateAccessApplicationRequest struct {
 	*requests.RpcRequest
-	Addresses   *[]string                                   `position:"Body" name:"Addresses"  type:"Repeated"`
-	Description string                                      `position:"Body" name:"Description"`
-	Protocol    string                                      `position:"Body" name:"Protocol"`
-	SourceIp    string                                      `position:"Query" name:"SourceIp"`
-	TagIds      *[]string                                   `position:"Body" name:"TagIds"  type:"Repeated"`
-	PortRanges  *[]CreatePrivateAccessApplicationPortRanges `position:"Body" name:"PortRanges"  type:"Repeated"`
-	Name        string                                      `position:"Body" name:"Name"`
-	Status      string                                      `position:"Body" name:"Status"`
+	Addresses                    *[]string                                   `position:"Body" name:"Addresses"  type:"Repeated"`
+	Description                  string                                      `position:"Body" name:"Description"`
+	Protocol                     string                                      `position:"Body" name:"Protocol"`
+	SourceIp                     string                                      `position:"Query" name:"SourceIp"`
+	L7ProxyDomainCustom          string                                      `position:"Body" name:"L7ProxyDomainCustom"`
+	L7ProxyDomainPrivate         string                                      `position:"Body" name:"L7ProxyDomainPrivate"`
+	BrowserAccessStatus          string                                      `position:"Body" name:"BrowserAccessStatus"`
+	TagIds                       *[]string                                   `position:"Body" name:"TagIds"  type:"Repeated"`
+	L7ProxyDomainAutomaticPrefix string                                      `position:"Body" name:"L7ProxyDomainAutomaticPrefix"`
+	PortRanges                   *[]CreatePrivateAccessApplicationPortRanges `position:"Body" name:"PortRanges"  type:"Repeated"`
+	Name                         string                                      `position:"Body" name:"Name"`
+	Status                       string                                      `position:"Body" name:"Status"`
 }
 
 // CreatePrivateAccessApplicationPortRanges is a repeated param struct in CreatePrivateAccessApplicationRequest
