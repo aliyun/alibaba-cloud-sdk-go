@@ -29,6 +29,7 @@ type RuleInfo struct {
 	GmtModifyTime string `json:"GmtModifyTime" xml:"GmtModifyTime"`
 	LiveTemplate  string `json:"LiveTemplate" xml:"LiveTemplate"`
 	IsLazy        bool   `json:"IsLazy" xml:"IsLazy"`
+	StudioName    string `json:"StudioName" xml:"StudioName"`
 	Description   string `json:"Description" xml:"Description"`
 	Stream        string `json:"Stream" xml:"Stream"`
 }

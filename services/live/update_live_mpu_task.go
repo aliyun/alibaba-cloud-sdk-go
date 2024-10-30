@@ -84,7 +84,8 @@ type UpdateLiveMPUTaskRequest struct {
 
 // UpdateLiveMPUTaskMultiStreamURL is a repeated param struct in UpdateLiveMPUTaskRequest
 type UpdateLiveMPUTaskMultiStreamURL struct {
-	URL string `name:"URL"`
+	IsAliCdn string `name:"IsAliCdn"`
+	URL      string `name:"URL"`
 }
 
 // UpdateLiveMPUTaskSingleSubParams is a repeated param struct in UpdateLiveMPUTaskRequest

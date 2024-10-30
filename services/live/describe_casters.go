@@ -71,18 +71,25 @@ func (client *Client) DescribeCastersWithCallback(request *DescribeCastersReques
 // DescribeCastersRequest is the request struct for api DescribeCasters
 type DescribeCastersRequest struct {
 	*requests.RpcRequest
-	StartTime        string           `position:"Query" name:"StartTime"`
-	PageNum          requests.Integer `position:"Query" name:"PageNum"`
-	ResourceGroupId  string           `position:"Query" name:"ResourceGroupId"`
-	CasterName       string           `position:"Query" name:"CasterName"`
-	PageSize         requests.Integer `position:"Query" name:"PageSize"`
-	NormType         string           `position:"Query" name:"NormType"`
-	CasterId         string           `position:"Query" name:"CasterId"`
-	EndTime          string           `position:"Query" name:"EndTime"`
-	OwnerId          requests.Integer `position:"Query" name:"OwnerId"`
-	OrderByModifyAsc string           `position:"Query" name:"OrderByModifyAsc"`
-	ChargeType       requests.Integer `position:"Query" name:"ChargeType"`
-	Status           requests.Integer `position:"Query" name:"Status"`
+	StartTime        string                `position:"Query" name:"StartTime"`
+	PageNum          requests.Integer      `position:"Query" name:"PageNum"`
+	ResourceGroupId  string                `position:"Query" name:"ResourceGroupId"`
+	CasterName       string                `position:"Query" name:"CasterName"`
+	PageSize         requests.Integer      `position:"Query" name:"PageSize"`
+	Tag              *[]DescribeCastersTag `position:"Query" name:"Tag"  type:"Repeated"`
+	NormType         string                `position:"Query" name:"NormType"`
+	CasterId         string                `position:"Query" name:"CasterId"`
+	EndTime          string                `position:"Query" name:"EndTime"`
+	OwnerId          requests.Integer      `position:"Query" name:"OwnerId"`
+	OrderByModifyAsc string                `position:"Query" name:"OrderByModifyAsc"`
+	ChargeType       requests.Integer      `position:"Query" name:"ChargeType"`
+	Status           requests.Integer      `position:"Query" name:"Status"`
+}
+
+// DescribeCastersTag is a repeated param struct in DescribeCastersRequest
+type DescribeCastersTag struct {
+	Key   string `name:"Key"`
+	Value string `name:"Value"`
 }
 
 // DescribeCastersResponse is the response struct for api DescribeCasters

@@ -72,10 +72,12 @@ func (client *Client) AddLiveAIProduceRulesWithCallback(request *AddLiveAIProduc
 type AddLiveAIProduceRulesRequest struct {
 	*requests.RpcRequest
 	Description  string           `position:"Query" name:"Description"`
+	Suffix       string           `position:"Query" name:"Suffix"`
 	SubtitleName string           `position:"Query" name:"SubtitleName"`
 	App          string           `position:"Query" name:"App"`
 	OwnerId      requests.Integer `position:"Query" name:"OwnerId"`
 	IsLazy       requests.Boolean `position:"Query" name:"IsLazy"`
+	StudioName   string           `position:"Query" name:"StudioName"`
 	LiveTemplate string           `position:"Query" name:"LiveTemplate"`
 	Domain       string           `position:"Query" name:"Domain"`
 	IsOrigin     requests.Boolean `position:"Query" name:"IsOrigin"`

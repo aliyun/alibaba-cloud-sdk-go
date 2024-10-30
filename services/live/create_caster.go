@@ -71,16 +71,23 @@ func (client *Client) CreateCasterWithCallback(request *CreateCasterRequest, cal
 // CreateCasterRequest is the request struct for api CreateCaster
 type CreateCasterRequest struct {
 	*requests.RpcRequest
-	ClientToken     string           `position:"Query" name:"ClientToken"`
-	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
-	CasterName      string           `position:"Query" name:"CasterName"`
-	CasterTemplate  string           `position:"Query" name:"CasterTemplate"`
-	ExpireTime      string           `position:"Query" name:"ExpireTime"`
-	NormType        requests.Integer `position:"Query" name:"NormType"`
-	OwnerId         requests.Integer `position:"Query" name:"OwnerId"`
-	PurchaseTime    string           `position:"Query" name:"PurchaseTime"`
-	MicMode         requests.Integer `position:"Query" name:"MicMode"`
-	ChargeType      string           `position:"Query" name:"ChargeType"`
+	ClientToken     string             `position:"Query" name:"ClientToken"`
+	ResourceGroupId string             `position:"Query" name:"ResourceGroupId"`
+	CasterName      string             `position:"Query" name:"CasterName"`
+	Tag             *[]CreateCasterTag `position:"Query" name:"Tag"  type:"Repeated"`
+	CasterTemplate  string             `position:"Query" name:"CasterTemplate"`
+	ExpireTime      string             `position:"Query" name:"ExpireTime"`
+	NormType        requests.Integer   `position:"Query" name:"NormType"`
+	OwnerId         requests.Integer   `position:"Query" name:"OwnerId"`
+	PurchaseTime    string             `position:"Query" name:"PurchaseTime"`
+	MicMode         requests.Integer   `position:"Query" name:"MicMode"`
+	ChargeType      string             `position:"Query" name:"ChargeType"`
+}
+
+// CreateCasterTag is a repeated param struct in CreateCasterRequest
+type CreateCasterTag struct {
+	Key   string `name:"Key"`
+	Value string `name:"Value"`
 }
 
 // CreateCasterResponse is the response struct for api CreateCaster

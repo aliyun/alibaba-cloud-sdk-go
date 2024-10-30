@@ -85,7 +85,8 @@ type StartLiveMPUTaskRequest struct {
 
 // StartLiveMPUTaskMultiStreamURL is a repeated param struct in StartLiveMPUTaskRequest
 type StartLiveMPUTaskMultiStreamURL struct {
-	URL string `name:"URL"`
+	IsAliCdn string `name:"IsAliCdn"`
+	URL      string `name:"URL"`
 }
 
 // StartLiveMPUTaskSingleSubParams is a repeated param struct in StartLiveMPUTaskRequest
