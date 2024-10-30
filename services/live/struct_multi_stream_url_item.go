@@ -17,5 +17,6 @@ package live
 
 // MultiStreamURLItem is a nested struct in live response
 type MultiStreamURLItem struct {
-	URL string `json:"URL" xml:"URL"`
+	URL      string `json:"URL" xml:"URL"`
+	IsAliCdn bool   `json:"IsAliCdn" xml:"IsAliCdn"`
 }
