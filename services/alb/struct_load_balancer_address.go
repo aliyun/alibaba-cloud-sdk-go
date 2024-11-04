@@ -17,11 +17,13 @@ package alb
 
 // LoadBalancerAddress is a nested struct in alb response
 type LoadBalancerAddress struct {
-	Address                 string `json:"Address" xml:"Address"`
-	Ipv6Address             string `json:"Ipv6Address" xml:"Ipv6Address"`
-	IntranetAddress         string `json:"IntranetAddress" xml:"IntranetAddress"`
-	AllocationId            string `json:"AllocationId" xml:"AllocationId"`
-	EipType                 string `json:"EipType" xml:"EipType"`
-	IntranetAddressHcStatus string `json:"IntranetAddressHcStatus" xml:"IntranetAddressHcStatus"`
-	Ipv6AddressHcStatus     string `json:"Ipv6AddressHcStatus" xml:"Ipv6AddressHcStatus"`
+	Address                 string   `json:"Address" xml:"Address"`
+	Ipv6Address             string   `json:"Ipv6Address" xml:"Ipv6Address"`
+	IntranetAddress         string   `json:"IntranetAddress" xml:"IntranetAddress"`
+	AllocationId            string   `json:"AllocationId" xml:"AllocationId"`
+	EipType                 string   `json:"EipType" xml:"EipType"`
+	IntranetAddressHcStatus string   `json:"IntranetAddressHcStatus" xml:"IntranetAddressHcStatus"`
+	Ipv6AddressHcStatus     string   `json:"Ipv6AddressHcStatus" xml:"Ipv6AddressHcStatus"`
+	Ipv4LocalAddresses      []string `json:"Ipv4LocalAddresses" xml:"Ipv4LocalAddresses"`
+	Ipv6LocalAddresses      []string `json:"Ipv6LocalAddresses" xml:"Ipv6LocalAddresses"`
 }

@@ -82,6 +82,7 @@ type EnableLoadBalancerAccessLogRequest struct {
 type EnableLoadBalancerAccessLogResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	JobId     string `json:"JobId" xml:"JobId"`
 }
 
 // CreateEnableLoadBalancerAccessLogRequest creates a request to invoke EnableLoadBalancerAccessLog API
