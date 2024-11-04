@@ -71,18 +71,34 @@ func (client *Client) DescribePatternTypesWithCallback(request *DescribePatternT
 // DescribePatternTypesRequest is the request struct for api DescribePatternTypes
 type DescribePatternTypesRequest struct {
 	*requests.RpcRequest
-	MemoryList           *[]string        `position:"Query" name:"MemoryList"  type:"Repeated"`
-	Memory               requests.Float   `position:"Query" name:"Memory"`
-	CoresList            *[]string        `position:"Query" name:"CoresList"  type:"Repeated"`
-	Cores                requests.Integer `position:"Query" name:"Cores"`
-	Architecture         *[]string        `position:"Query" name:"Architecture"  type:"Repeated"`
-	MaxPrice             requests.Float   `position:"Query" name:"MaxPrice"`
-	ExcludedInstanceType *[]string        `position:"Query" name:"ExcludedInstanceType"  type:"Repeated"`
-	BurstablePerformance string           `position:"Query" name:"BurstablePerformance"`
-	SpotStrategy         string           `position:"Query" name:"SpotStrategy"`
-	VSwitchId            *[]string        `position:"Query" name:"VSwitchId"  type:"Repeated"`
-	InstanceFamilyLevel  string           `position:"Query" name:"InstanceFamilyLevel"`
-	ChannelId            requests.Integer `position:"Query" name:"ChannelId"`
+	MaximumCpuCoreCount                requests.Integer `position:"Query" name:"MaximumCpuCoreCount"`
+	MaximumGpuAmount                   requests.Integer `position:"Query" name:"MaximumGpuAmount"`
+	MaximumMemorySize                  requests.Float   `position:"Query" name:"MaximumMemorySize"`
+	MinimumCpuCoreCount                requests.Integer `position:"Query" name:"MinimumCpuCoreCount"`
+	Cores                              requests.Integer `position:"Query" name:"Cores"`
+	InstanceTypeFamilies               *[]string        `position:"Query" name:"InstanceTypeFamilies"  type:"Repeated"`
+	MinimumBaselineCredit              requests.Integer `position:"Query" name:"MinimumBaselineCredit"`
+	CpuArchitectures                   *[]string        `position:"Query" name:"CpuArchitectures"  type:"Repeated"`
+	InstanceCategories                 *[]string        `position:"Query" name:"InstanceCategories"  type:"Repeated"`
+	MaxPrice                           requests.Float   `position:"Query" name:"MaxPrice"`
+	MinimumGpuAmount                   requests.Integer `position:"Query" name:"MinimumGpuAmount"`
+	BurstablePerformance               string           `position:"Query" name:"BurstablePerformance"`
+	PhysicalProcessorModels            *[]string        `position:"Query" name:"PhysicalProcessorModels"  type:"Repeated"`
+	SpotStrategy                       string           `position:"Query" name:"SpotStrategy"`
+	VSwitchId                          *[]string        `position:"Query" name:"VSwitchId"  type:"Repeated"`
+	MinimumEniQuantity                 requests.Integer `position:"Query" name:"MinimumEniQuantity"`
+	MinimumMemorySize                  requests.Float   `position:"Query" name:"MinimumMemorySize"`
+	InstanceFamilyLevel                string           `position:"Query" name:"InstanceFamilyLevel"`
+	MemoryList                         *[]string        `position:"Query" name:"MemoryList"  type:"Repeated"`
+	Memory                             requests.Float   `position:"Query" name:"Memory"`
+	MinimumEniIpv6AddressQuantity      requests.Integer `position:"Query" name:"MinimumEniIpv6AddressQuantity"`
+	CoresList                          *[]string        `position:"Query" name:"CoresList"  type:"Repeated"`
+	Architecture                       *[]string        `position:"Query" name:"Architecture"  type:"Repeated"`
+	MinimumInitialCredit               requests.Integer `position:"Query" name:"MinimumInitialCredit"`
+	ExcludedInstanceType               *[]string        `position:"Query" name:"ExcludedInstanceType"  type:"Repeated"`
+	MinimumEniPrivateIpAddressQuantity requests.Integer `position:"Query" name:"MinimumEniPrivateIpAddressQuantity"`
+	GpuSpecs                           *[]string        `position:"Query" name:"GpuSpecs"  type:"Repeated"`
+	ChannelId                          requests.Integer `position:"Query" name:"ChannelId"`
 }
 
 // DescribePatternTypesResponse is the response struct for api DescribePatternTypes

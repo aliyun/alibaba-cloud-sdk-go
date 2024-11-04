@@ -1,3 +1,7 @@
+2024-11-04 Version: v1.63.46
+- Generated 2014-08-28 for `Ess`.
+- ScalingConfiguration supoort ConfidentialComputingMode.
+
 2024-10-31 Version: v1.63.45
 - Generated 2014-05-26 for `Ecs`.
 - DescribeInstanceTypes add CpuOptions.
