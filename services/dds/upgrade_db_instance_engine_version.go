@@ -73,6 +73,7 @@ type UpgradeDBInstanceEngineVersionRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	EngineVersion        string           `position:"Query" name:"EngineVersion"`
+	SwitchMode           requests.Integer `position:"Query" name:"SwitchMode"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`

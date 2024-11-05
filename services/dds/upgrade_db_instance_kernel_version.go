@@ -72,6 +72,7 @@ func (client *Client) UpgradeDBInstanceKernelVersionWithCallback(request *Upgrad
 type UpgradeDBInstanceKernelVersionRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	SwitchMode           string           `position:"Query" name:"SwitchMode"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`

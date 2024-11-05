@@ -49,6 +49,7 @@ type DBInstance struct {
 	ZoneId                      string                                        `json:"ZoneId" xml:"ZoneId"`
 	ReleaseTime                 string                                        `json:"ReleaseTime" xml:"ReleaseTime"`
 	MaxMBPS                     int                                           `json:"MaxMBPS" xml:"MaxMBPS"`
+	IsDeleted                   int                                           `json:"IsDeleted" xml:"IsDeleted"`
 	PaymentType                 string                                        `json:"PaymentType" xml:"PaymentType"`
 	LockMode                    string                                        `json:"LockMode" xml:"LockMode"`
 	DBInstanceDescription       string                                        `json:"DBInstanceDescription" xml:"DBInstanceDescription"`

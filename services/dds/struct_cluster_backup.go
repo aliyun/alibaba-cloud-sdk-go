@@ -26,6 +26,7 @@ type ClusterBackup struct {
 	ClusterBackupMode      string                           `json:"ClusterBackupMode" xml:"ClusterBackupMode"`
 	Progress               string                           `json:"Progress" xml:"Progress"`
 	AttachLogStatus        string                           `json:"AttachLogStatus" xml:"AttachLogStatus"`
+	EngineVersion          string                           `json:"EngineVersion" xml:"EngineVersion"`
 	ExtraInfo              ExtraInfo                        `json:"ExtraInfo" xml:"ExtraInfo"`
 	Backups                []BackupInDescribeClusterBackups `json:"Backups" xml:"Backups"`
 }

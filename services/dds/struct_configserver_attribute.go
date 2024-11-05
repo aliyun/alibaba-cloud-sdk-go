@@ -17,14 +17,15 @@ package dds
 
 // ConfigserverAttribute is a nested struct in dds response
 type ConfigserverAttribute struct {
-	MaxIOPS         int    `json:"MaxIOPS" xml:"MaxIOPS"`
-	LockMode        string `json:"LockMode" xml:"LockMode"`
-	ConnectString   string `json:"ConnectString" xml:"ConnectString"`
-	NodeClass       string `json:"NodeClass" xml:"NodeClass"`
-	MaxConnections  int    `json:"MaxConnections" xml:"MaxConnections"`
-	Port            int    `json:"Port" xml:"Port"`
-	NodeDescription string `json:"NodeDescription" xml:"NodeDescription"`
-	NodeId          string `json:"NodeId" xml:"NodeId"`
-	NodeStorage     int    `json:"NodeStorage" xml:"NodeStorage"`
-	Status          string `json:"Status" xml:"Status"`
+	MaxIOPS              int    `json:"MaxIOPS" xml:"MaxIOPS"`
+	LockMode             string `json:"LockMode" xml:"LockMode"`
+	ConnectString        string `json:"ConnectString" xml:"ConnectString"`
+	NodeClass            string `json:"NodeClass" xml:"NodeClass"`
+	MaxConnections       int    `json:"MaxConnections" xml:"MaxConnections"`
+	Port                 int    `json:"Port" xml:"Port"`
+	NodeDescription      string `json:"NodeDescription" xml:"NodeDescription"`
+	NodeId               string `json:"NodeId" xml:"NodeId"`
+	NodeStorage          int    `json:"NodeStorage" xml:"NodeStorage"`
+	Status               string `json:"Status" xml:"Status"`
+	CurrentKernelVersion string `json:"CurrentKernelVersion" xml:"CurrentKernelVersion"`
 }

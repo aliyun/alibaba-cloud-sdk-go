@@ -17,16 +17,17 @@ package dds
 
 // ShardAttribute is a nested struct in dds response
 type ShardAttribute struct {
-	MaxIOPS          int    `json:"MaxIOPS" xml:"MaxIOPS"`
-	MaxDiskMbps      string `json:"MaxDiskMbps" xml:"MaxDiskMbps"`
-	Port             int    `json:"Port" xml:"Port"`
-	NodeDescription  string `json:"NodeDescription" xml:"NodeDescription"`
-	NodeId           string `json:"NodeId" xml:"NodeId"`
-	MaxConnections   int    `json:"MaxConnections" xml:"MaxConnections"`
-	NodeStorage      int    `json:"NodeStorage" xml:"NodeStorage"`
-	Status           string `json:"Status" xml:"Status"`
-	NodeClass        string `json:"NodeClass" xml:"NodeClass"`
-	ConnectString    string `json:"ConnectString" xml:"ConnectString"`
-	LockMode         string `json:"LockMode" xml:"LockMode"`
-	ReadonlyReplicas int    `json:"ReadonlyReplicas" xml:"ReadonlyReplicas"`
+	MaxIOPS              int    `json:"MaxIOPS" xml:"MaxIOPS"`
+	MaxDiskMbps          string `json:"MaxDiskMbps" xml:"MaxDiskMbps"`
+	Port                 int    `json:"Port" xml:"Port"`
+	NodeDescription      string `json:"NodeDescription" xml:"NodeDescription"`
+	NodeStorage          int    `json:"NodeStorage" xml:"NodeStorage"`
+	ReadonlyReplicas     int    `json:"ReadonlyReplicas" xml:"ReadonlyReplicas"`
+	NodeId               string `json:"NodeId" xml:"NodeId"`
+	MaxConnections       int    `json:"MaxConnections" xml:"MaxConnections"`
+	CurrentKernelVersion string `json:"CurrentKernelVersion" xml:"CurrentKernelVersion"`
+	Status               string `json:"Status" xml:"Status"`
+	NodeClass            string `json:"NodeClass" xml:"NodeClass"`
+	ConnectString        string `json:"ConnectString" xml:"ConnectString"`
+	LockMode             string `json:"LockMode" xml:"LockMode"`
 }

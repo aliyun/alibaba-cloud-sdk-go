@@ -17,15 +17,17 @@ package dds
 
 // NetworkAddress is a nested struct in dds response
 type NetworkAddress struct {
-	NodeId         string `json:"NodeId" xml:"NodeId"`
 	ExpiredTime    string `json:"ExpiredTime" xml:"ExpiredTime"`
-	Role           string `json:"Role" xml:"Role"`
 	VPCId          string `json:"VPCId" xml:"VPCId"`
 	Port           string `json:"Port" xml:"Port"`
 	VSwitchId      string `json:"VSwitchId" xml:"VSwitchId"`
+	IPAddress      string `json:"IPAddress" xml:"IPAddress"`
+	ConnectionType string `json:"ConnectionType" xml:"ConnectionType"`
+	NodeId         string `json:"NodeId" xml:"NodeId"`
+	TxtRecord      string `json:"TxtRecord" xml:"TxtRecord"`
+	Role           string `json:"Role" xml:"Role"`
 	VswitchId      string `json:"VswitchId" xml:"VswitchId"`
 	NetworkType    string `json:"NetworkType" xml:"NetworkType"`
-	IPAddress      string `json:"IPAddress" xml:"IPAddress"`
 	NodeType       string `json:"NodeType" xml:"NodeType"`
 	NetworkAddress string `json:"NetworkAddress" xml:"NetworkAddress"`
 }

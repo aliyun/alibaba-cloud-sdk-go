@@ -17,16 +17,17 @@ package dds
 
 // MongosAttribute is a nested struct in dds response
 type MongosAttribute struct {
-	MaxIOPS            int    `json:"MaxIOPS" xml:"MaxIOPS"`
-	Port               int    `json:"Port" xml:"Port"`
-	NodeDescription    string `json:"NodeDescription" xml:"NodeDescription"`
-	NodeId             string `json:"NodeId" xml:"NodeId"`
-	MaxConnections     int    `json:"MaxConnections" xml:"MaxConnections"`
-	VPCId              string `json:"VPCId" xml:"VPCId"`
-	VSwitchId          string `json:"VSwitchId" xml:"VSwitchId"`
-	ConnectSting       string `json:"ConnectSting" xml:"ConnectSting"`
-	Status             string `json:"Status" xml:"Status"`
-	NodeClass          string `json:"NodeClass" xml:"NodeClass"`
-	VpcCloudInstanceId string `json:"VpcCloudInstanceId" xml:"VpcCloudInstanceId"`
-	LockMode           string `json:"LockMode" xml:"LockMode"`
+	MaxIOPS              int    `json:"MaxIOPS" xml:"MaxIOPS"`
+	Port                 int    `json:"Port" xml:"Port"`
+	NodeDescription      string `json:"NodeDescription" xml:"NodeDescription"`
+	VPCId                string `json:"VPCId" xml:"VPCId"`
+	VSwitchId            string `json:"VSwitchId" xml:"VSwitchId"`
+	ConnectSting         string `json:"ConnectSting" xml:"ConnectSting"`
+	VpcCloudInstanceId   string `json:"VpcCloudInstanceId" xml:"VpcCloudInstanceId"`
+	NodeId               string `json:"NodeId" xml:"NodeId"`
+	MaxConnections       int    `json:"MaxConnections" xml:"MaxConnections"`
+	CurrentKernelVersion string `json:"CurrentKernelVersion" xml:"CurrentKernelVersion"`
+	Status               string `json:"Status" xml:"Status"`
+	NodeClass            string `json:"NodeClass" xml:"NodeClass"`
+	LockMode             string `json:"LockMode" xml:"LockMode"`
 }

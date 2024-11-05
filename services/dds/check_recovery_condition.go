@@ -72,6 +72,7 @@ func (client *Client) CheckRecoveryConditionWithCallback(request *CheckRecoveryC
 type CheckRecoveryConditionRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	EngineVersion        string           `position:"Query" name:"EngineVersion"`
 	SrcRegion            string           `position:"Query" name:"SrcRegion"`
 	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	DatabaseNames        string           `position:"Query" name:"DatabaseNames"`

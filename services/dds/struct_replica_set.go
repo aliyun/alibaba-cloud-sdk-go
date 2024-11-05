@@ -26,4 +26,5 @@ type ReplicaSet struct {
 	ReplicaSetRole     string `json:"ReplicaSetRole" xml:"ReplicaSetRole"`
 	ConnectionDomain   string `json:"ConnectionDomain" xml:"ConnectionDomain"`
 	NetworkType        string `json:"NetworkType" xml:"NetworkType"`
+	ConnectionType     string `json:"ConnectionType" xml:"ConnectionType"`
 }

@@ -21,6 +21,7 @@ type Backup struct {
 	BackupName                string `json:"BackupName" xml:"BackupName"`
 	BackupMode                string `json:"BackupMode" xml:"BackupMode"`
 	BackupIntranetDownloadURL string `json:"BackupIntranetDownloadURL" xml:"BackupIntranetDownloadURL"`
+	EngineVersion             string `json:"EngineVersion" xml:"EngineVersion"`
 	BackupEndTime             string `json:"BackupEndTime" xml:"BackupEndTime"`
 	BackupDBNames             string `json:"BackupDBNames" xml:"BackupDBNames"`
 	BackupMethod              string `json:"BackupMethod" xml:"BackupMethod"`
