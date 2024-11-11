@@ -1,6 +1,9 @@
+2024-11-11 Version: v1.63.49
+- Support imds and external uri in default credentials chain.
+- Refactor credentials provider.
+
 2024-11-05 Version: v1.63.48
 - Generated 2015-12-01 for `Dds`.
-undefined
 
 2024-11-04 Version: v1.63.47
 - Generated 2020-06-16 for `Alb`.
@@ -24,7 +27,7 @@ undefined
 
 2024-10-30 Version: v1.63.42
 - Generated 2023-01-20 for `csas`.
-undefined
+
 
 2024-10-30 Version: v1.63.41
 - Generated 2014-05-26 for `Ecs`.
@@ -36,7 +39,7 @@ undefined
 
 2024-10-25 Version: v1.63.39
 - Generated 2017-11-10 for `Ens`.
-undefined
+
 
 2024-10-24 Version: v1.63.38
 - Generated 2017-05-25 for `Dypnsapi`.
@@ -83,7 +86,7 @@ ListUsers，ListUserBasicInfos api新增支持status字段
 
 2024-10-16 Version: v1.63.29
 - Generated 2024-07-12 for `IQS`.
-undefined
+
 
 2024-10-15 Version: v1.63.28
 - Generated 2014-05-26 for `Ecs`.
@@ -105,15 +108,15 @@ undefined
 
 2024-10-08 Version: v1.63.24
 - Generated 2022-12-01 for `ResourceCenter`.
-undefined
+
 
 2024-09-30 Version: v1.63.23
 - Generated 2018-08-28 for `Tag`.
-undefined
+
 
 2024-09-29 Version: v1.63.22
 - Generated 2021-12-21 for `wss`.
-undefined
+
 
 2024-09-29 Version: v1.63.21
 - Generated 2020-05-18 for `dataworks-public`.
@@ -129,7 +132,7 @@ undefined
 
 2024-09-24 Version: v1.63.18
 - Generated 2024-02-22 for `OssSddp`.
-undefined
+
 
 2024-09-18 Version: v1.63.17
 - Generated 2022-01-01 for `quickbi-public`.
@@ -150,7 +153,7 @@ undefined
 
 2024-09-05 Version: v1.63.13
 - Generated 2016-08-08 for `Biz-ipdb`.
-undefined
+
 
 2024-09-04 Version: v1.63.12
 - Generated 2023-06-21 for `PaiFeatureStore`.
@@ -159,11 +162,11 @@ undefined
 
 2024-09-02 Version: v1.63.11
 - Generated 2019-09-01 for `OceanBasePro`.
-undefined
+
 
 2024-08-30 Version: v1.63.10
 - Generated 2016-01-20 for `Kms`.
-undefined
+
 
 2024-08-30 Version: v1.63.9
 - Generated 2018-01-29 for `Domain`.
@@ -175,7 +178,7 @@ undefined
 
 2024-08-28 Version: v1.63.8
 - Generated 2015-12-01 for `Dds`.
-undefined
+
 
 2024-08-23 Version: v1.63.7
 - Generated 2021-01-20 for `governance`.
@@ -183,7 +186,7 @@ undefined
 
 2024-08-23 Version: v1.63.6
 - Generated 2017-11-10 for `Ens`.
-undefined
+
 
 2024-08-22 Version: v1.63.5
 - Generated 2016-11-01 for `live`.
@@ -233,7 +236,7 @@ undefined
 
 2024-08-12 Version: v1.62.808
 - Generated 2020-06-01 for `SWAS-OPEN`.
-undefined
+
 
 2024-08-07 Version: v1.62.807
 - Generated 2022-01-01 for `quickbi-public`.
@@ -245,7 +248,7 @@ undefined
 
 2024-08-05 Version: v1.62.805
 - Generated 2019-09-01 for `OceanBasePro`.
-undefined
+
 
 2024-08-02 Version: v1.62.804
 - Generated 2018-11-01 for `dms-enterprise`.
@@ -257,7 +260,7 @@ undefined
 
 2024-08-01 Version: v1.62.802
 - Generated 2015-12-01 for `Dds`.
-undefined
+
 
 2024-08-01 Version: v1.62.801
 - Generated 2016-11-01 for `live`.
@@ -277,11 +280,11 @@ undefined
 
 2024-07-24 Version: v1.62.797
 - Generated 2019-09-01 for `OceanBasePro`.
-undefined
+
 
 2024-07-23 Version: v1.62.796
 - Generated 2014-08-15 for `Rds`.
-undefined
+
 
 2024-07-23 Version: v1.62.795
 - Generated 2014-06-18 for `Mts`.
@@ -305,11 +308,11 @@ undefined
 
 2024-07-16 Version: v1.62.790
 - Generated 2020-06-01 for `SWAS-OPEN`.
-undefined
+
 
 2024-07-12 Version: v1.62.789
 - Generated 2022-12-13 for `PaiRecService`.
-undefined
+
 
 2024-07-12 Version: v1.62.788
 - Generated 2015-01-01 for `R-kvstore`.
@@ -317,11 +320,11 @@ undefined
 
 2024-07-11 Version: v1.62.787
 - Generated 2022-12-13 for `PaiRecService`.
-undefined
+
 
 2024-07-11 Version: v1.62.786
 - Generated 2022-12-13 for `PaiRecService`.
-undefined
+
 
 2024-07-10 Version: v1.62.785
 - Generated 2021-01-18 for `mseap`.
@@ -338,7 +341,7 @@ undefined
 
 2024-07-04 Version: v1.62.782
 - Generated 2019-09-01 for `OceanBasePro`.
-undefined
+
 
 2024-07-04 Version: v1.62.781
 - Generated 2014-08-28 for `Ess`.
@@ -350,15 +353,15 @@ undefined
 
 2024-07-03 Version: v1.62.779
 - Generated 2023-01-20 for `csas`.
-undefined
+
 
 2024-07-02 Version: v1.62.778
 - Generated 2019-09-01 for `OceanBasePro`.
-undefined
+
 
 2024-07-01 Version: v1.62.777
 - Generated 2022-12-13 for `PaiRecService`.
-undefined
+
 
 2024-06-30 Version: v1.62.776
 - Generated 2020-05-10 for `quotas`.
@@ -381,7 +384,7 @@ undefined
 
 2024-06-20 Version: v1.62.772
 - Generated 2023-01-20 for `csas`.
-undefined
+
 
 2024-06-18 Version: v1.62.771
 - Generated 2021-06-01 for `ComputeNest`.
@@ -393,11 +396,11 @@ undefined
 
 2024-06-18 Version: v1.62.769
 - Generated 2018-02-08 for `Domain`.
-undefined
+
 
 2024-06-18 Version: v1.62.768
 - Generated 2018-02-08 for `Domain`.
-undefined
+
 
 2024-06-18 Version: v1.62.767
 - Generated 2022-05-30 for `eflo`.
@@ -405,11 +408,11 @@ undefined
 
 2024-06-18 Version: v1.62.766
 - Generated 2020-02-02 for `polardbx`.
-undefined
+
 
 2024-06-17 Version: v1.62.765
 - Generated 2020-06-01 for `SWAS-OPEN`.
-undefined
+
 
 2024-06-17 Version: v1.62.764
 - Generated 2020-02-02 for `polardbx`.
@@ -421,7 +424,7 @@ undefined
 
 2024-06-14 Version: v1.62.762
 - Generated 2019-09-01 for `OceanBasePro`.
-undefined
+
 
 2024-06-11 Version: v1.62.761
 - Generated 2023-06-21 for `PaiFeatureStore`.
@@ -433,11 +436,11 @@ undefined
 
 2024-06-11 Version: v1.62.759
 - Generated 2023-01-20 for `csas`.
-undefined
+
 
 2024-06-06 Version: v1.62.758
 - Generated 2023-01-20 for `csas`.
-undefined
+
 
 2024-06-06 Version: v1.62.757
 - Generated 2021-05-20 for `idaas-doraemon`.
@@ -457,7 +460,7 @@ undefined
 
 2024-05-30 Version: v1.62.753
 - Generated 2014-05-15 for `Slb`.
-undefined
+
 
 2024-05-30 Version: v1.62.752
 - Generated 2020-03-20 for `videoenhan`.
@@ -465,7 +468,7 @@ undefined
 
 2024-05-30 Version: v1.62.751
 - Generated 2021-05-21 for `ComputeNestSupplier`.
-undefined
+
 
 2024-05-29 Version: v1.62.750
 - Generated 2020-01-01 for `ddoscoo`.
@@ -473,19 +476,19 @@ undefined
 
 2024-05-27 Version: v1.62.749
 - Generated 2019-09-01 for `OceanBasePro`.
-undefined
+
 
 2024-05-27 Version: v1.62.748
 - Generated 2019-09-01 for `OceanBasePro`.
-undefined
+
 
 2024-05-27 Version: v1.62.747
 - Generated 2019-10-23 for `Sls`.
-undefined
+
 
 2024-05-24 Version: v1.62.746
 - Generated 2015-12-01 for `Dds`.
-undefined
+
 
 2024-05-24 Version: v1.62.745
 - Generated 2016-11-01 for `live`.
@@ -497,11 +500,11 @@ undefined
 
 2024-05-23 Version: v1.62.743
 - Generated 2019-09-01 for `OceanBasePro`.
-undefined
+
 
 2024-05-22 Version: v1.62.742
 - Generated 2020-06-01 for `SWAS-OPEN`.
-undefined
+
 
 2024-05-22 Version: v1.62.741
 - Generated 2017-11-10 for `Ens`.
@@ -550,11 +553,11 @@ undefined
 
 2024-04-30 Version: v1.62.730
 - Generated 2014-08-15 for `Rds`.
-undefined
+
 
 2024-04-30 Version: v1.62.729
 - Generated 2018-01-15 for `dcdn`.
-undefined
+
 
 2024-04-29 Version: v1.62.728
 - Generated 2016-11-01 for `live`.
@@ -576,7 +579,7 @@ undefined
 
 2024-04-25 Version: v1.62.724
 - Generated 2017-03-21 for `vod`.
-undefined
+
 
 2024-04-25 Version: v1.62.723
 - Generated 2023-07-01 for `EhpcInstant`.
@@ -584,7 +587,7 @@ undefined
 
 2024-04-23 Version: v1.62.722
 - Generated 2021-06-01 for `ComputeNest`.
-undefined
+
 
 2024-04-22 Version: v1.62.721
 - Generated 2019-12-30 for `facebody`.
@@ -592,7 +595,7 @@ undefined
 
 2024-04-22 Version: v1.62.720
 - Generated 2019-05-06 for `sae`.
-undefined
+
 
 2024-04-18 Version: v1.62.719
 - Generated 2018-11-01 for `dms-enterprise`.
@@ -626,7 +629,7 @@ undefined
 
 2024-04-03 Version: v1.62.712
 - Generated 2024-03-25 for `aps`.
-undefined
+
 
 2024-04-03 Version: v1.62.711
 - Generated 2019-09-16 for `alikafka`.
@@ -634,7 +637,7 @@ undefined
 
 2024-04-03 Version: v1.62.710
 - Generated 2019-03-07 for `Cloudauth`.
-undefined
+
 
 2024-04-02 Version: v1.62.709
 - Generated 2014-05-26 for `Ecs`.
@@ -642,7 +645,7 @@ undefined
 
 2024-04-01 Version: v1.62.708
 - Generated 2013-02-21 for `Slb`.
-undefined
+
 
 2024-03-29 Version: v1.62.707
 - Generated 2021-05-20 for `idaas-doraemon`.
@@ -674,15 +677,15 @@ undefined
 
 2024-03-25 Version: v1.62.700
 - Generated 2019-06-01 for `oos`.
-undefined
+
 
 2024-03-22 Version: v1.62.699
 - Generated 2024-03-19 for `RiskPunish`.
-undefined
+
 
 2024-03-22 Version: v1.62.698
 - Generated 2022-12-13 for `PaiRecService`.
-undefined
+
 
 2024-03-21 Version: v1.62.697
 - Generated 2023-06-21 for `PaiFeatureStore`.
@@ -698,7 +701,7 @@ undefined
 
 2024-03-13 Version: v1.62.694
 - Generated 2020-06-01 for `SWAS-OPEN`.
-undefined
+
 
 2024-03-13 Version: v1.62.693
 - Generated 2019-12-30 for `facebody`.
@@ -719,7 +722,7 @@ undefined
 
 2024-03-08 Version: v1.62.689
 - Generated 2015-12-01 for `Dds`.
-undefined
+
 
 2024-03-06 Version: v1.62.688
 - Generated 2016-11-01 for `live`.
@@ -735,7 +738,7 @@ undefined
 
 2024-02-29 Version: v1.62.685
 - Generated 2019-01-03 for `Sddp`.
-undefined
+
 
 2024-02-28 Version: v1.62.684
 - Generated 2020-04-01 for `eventbridge`.
@@ -810,7 +813,7 @@ undefined
 
 2024-01-30 Version: v1.62.668
 - Generated 2019-03-06 for `Dbs`.
-undefined
+
 
 2024-01-30 Version: v1.62.667
 - Generated 2017-05-25 for `Dypnsapi`.
@@ -838,11 +841,11 @@ undefined
 
 2024-01-16 Version: v1.62.661
 - Generated 2023-08-01 for `AiMiaoBi`.
-undefined
+
 
 2024-01-16 Version: v1.62.660
 - Generated 2018-01-20 for `Linkvisual`.
-undefined
+
 
 2024-01-15 Version: v1.62.659
 - Generated 2018-01-20 for `Iot`.
@@ -858,7 +861,7 @@ undefined
 
 2024-01-15 Version: v1.62.656
 - Generated 2018-01-20 for `Linkvisual`.
-undefined
+
 
 2024-01-15 Version: v1.62.655
 - Generated 2019-01-15 for `Qualitycheck`.
@@ -891,11 +894,11 @@ undefined
 
 2023-12-28 Version: v1.62.648
 - Generated 2019-09-01 for `OceanBasePro`.
-undefined
+
 
 2023-12-28 Version: v1.62.647
 - Generated 2022-01-30 for `avatar`.
-undefined
+
 
 2023-12-27 Version: v1.62.646
 - Generated 2017-08-01 for `polardb`.
@@ -907,7 +910,7 @@ undefined
 
 2023-12-25 Version: v1.62.644
 - Generated 2019-11-11 for `clickhouse`.
-undefined
+
 
 2023-12-21 Version: v1.62.643
 - Generated 2022-12-13 for `PaiRecService`.
@@ -943,7 +946,7 @@ undefined
 
 2023-12-14 Version: v1.62.635
 - Generated 2019-09-01 for `OceanBasePro`.
-undefined
+
 
 2023-12-13 Version: v1.62.634
 - Generated 2016-11-01 for `live`.
@@ -1017,7 +1020,7 @@ undefined
 
 2023-11-23 Version: v1.62.617
 - Generated 2020-06-15 for `hitsdb`.
-undefined
+
 
 2023-11-23 Version: v1.62.616
 - Generated 2023-06-21 for `PaiFeatureStore`.
@@ -1067,7 +1070,7 @@ undefined
 
 2023-11-09 Version: v1.62.605
 - Generated 2022-01-30 for `avatar`.
-undefined
+
 
 2023-11-08 Version: v1.62.604
 - Generated 2019-12-12 for `amqp-open`.
@@ -1111,7 +1114,7 @@ undefined
 
 2023-11-01 Version: v1.62.594
 - Generated 2022-01-30 for `avatar`.
-undefined
+
 
 2023-10-30 Version: v1.62.593
 - Generated 2017-08-01 for `polardb`.
@@ -1135,7 +1138,7 @@ undefined
 
 2023-10-23 Version: v1.62.588
 - Generated 2019-03-15 for `adb`.
-undefined
+
 
 2023-10-20 Version: v1.62.587
 - Generated 2022-05-30 for `eflo`.
@@ -1180,11 +1183,11 @@ undefined
 
 2023-10-12 Version: v1.62.577
 - Generated 2019-09-01 for `OceanBasePro`.
-undefined
+
 
 2023-10-11 Version: v1.62.576
 - Generated 2020-06-01 for `SWAS-OPEN`.
-undefined
+
 
 2023-10-11 Version: v1.62.575
 - Generated 2015-04-01 for `Sts`.
@@ -1212,7 +1215,7 @@ undefined
 
 2023-10-08 Version: v1.62.569
 - Generated 2022-04-30 for `Nlb`.
-undefined
+
 
 2023-09-28 Version: v1.62.568
 - Generated 2018-11-01 for `dms-enterprise`.
@@ -1407,15 +1410,15 @@ Update api ListInstances.
 
 2023-08-23 Version: v1.62.521
 - Generated 2015-03-03 for `Ft`.
-undefined
+
 
 2023-08-23 Version: v1.62.520
 - Generated 2015-03-03 for `Ft`.
-undefined
+
 
 2023-08-23 Version: v1.62.519
 - Generated 2020-06-29 for `alinlp`.
-undefined
+
 
 2023-08-23 Version: v1.62.518
 - Generated 2019-03-15 for `adb`.
@@ -1462,11 +1465,11 @@ undefined
 
 2023-08-08 Version: v1.62.507
 - Generated 2016-11-01 for `live`.
-undefined
+
 
 2023-08-03 Version: v1.62.506
 - Generated 2021-01-01 for `Ft`.
-undefined
+
 
 2023-08-03 Version: v1.62.505
 - Generated 2019-03-15 for `adb`.
@@ -1609,7 +1612,7 @@ undefined
 
 2023-07-27 Version: v1.62.480
 - Generated 2020-03-31 for `ResourceManager`.
-undefined
+
 
 2023-07-26 Version: v1.62.479
 - Generated 2017-08-01 for `polardb`.
@@ -1855,7 +1858,7 @@ Publish apis about instance, scene, param, laboratory, layer, experiment group a
 
 2023-07-10 Version: v1.62.430
 - Generated 2019-03-06 for `Dbs`.
-undefined
+
 
 2023-07-10 Version: v1.62.429
 - Generated 2014-08-15 for `Rds`.
@@ -2930,7 +2933,7 @@ undefined
 
 2023-03-02 Version: v1.62.204
 - Generated 2019-05-10 for `ltl`.
-undefined
+
 
 2023-03-02 Version: v1.62.203
 - Generated 2020-05-18 for `dataworks-public`.
@@ -4193,7 +4196,7 @@ undefined
 
 2022-09-14 Version: v1.61.1770
 - Generated 2017-07-14 for `EHPC`.
-undefined
+
 
 2022-09-14 Version: v1.61.1769
 - Generated 2018-02-08 for `Domain`.
