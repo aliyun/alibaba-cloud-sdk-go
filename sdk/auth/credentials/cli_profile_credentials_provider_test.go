@@ -1,6 +1,7 @@
 package credentials
 
 import (
+	"net/http"
 	"os"
 	"path"
 	"strings"
@@ -83,6 +84,14 @@ func TestCLIProfileCredentialsProvider_getCredentialsProvider(t *testing.T) {
 				AccessKeyID:     "akid",
 				AccessKeySecret: "secret",
 				RoleArn:         "arn",
+				StsRegion:       "cn-hangzhou",
+				EnableVpc:       true,
+				Policy:          "policy",
+				ExternalId:      "externalId",
+			},
+			{
+				Mode: "RamRoleArn",
+				Name: "Invalid_RamRoleArn",
 			},
 			{
 				Mode:     "EcsRamRole",
@@ -95,10 +104,14 @@ func TestCLIProfileCredentialsProvider_getCredentialsProvider(t *testing.T) {
 				RoleArn:         "role_arn",
 				OIDCTokenFile:   "path/to/oidc/file",
 				OIDCProviderARN: "provider_arn",
+				StsRegion:       "cn-hangzhou",
+				EnableVpc:       true,
+				Policy:          "policy",
 			},
 			{
 				Mode:          "ChainableRamRoleArn",
 				Name:          "ChainableRamRoleArn",
+				RoleArn:       "arn",
 				SourceProfile: "AK",
 			},
 			{
@@ -130,6 +143,9 @@ func TestCLIProfileCredentialsProvider_getCredentialsProvider(t *testing.T) {
 	assert.Nil(t, err)
 	_, ok = cp.(*RAMRoleARNCredentialsProvider)
 	assert.True(t, ok)
+	// RamRoleArn invalid ak
+	_, err = provider.getCredentialsProvider(conf, "Invalid_RamRoleArn")
+	assert.EqualError(t, err, "[SDK.InvalidParam] The access key id is empty")
 	// EcsRamRole
 	cp, err = provider.getCredentialsProvider(conf, "EcsRamRole")
 	assert.Nil(t, err)
@@ -157,6 +173,10 @@ func TestCLIProfileCredentialsProvider_getCredentialsProvider(t *testing.T) {
 }
 
 func TestCLIProfileCredentialsProvider_GetCredentials(t *testing.T) {
+	originDo := hookDo
+	defer func() { hookDo = originDo }()
+	rollback := internal.Memory("ALIBABA_CLOUD_CLI_PROFILE_DISABLED")
+	defer rollback()
 	defer func() {
 		getHomePath = internal.GetHomePath
 	}()
@@ -189,7 +209,7 @@ func TestCLIProfileCredentialsProvider_GetCredentials(t *testing.T) {
 		AccessKeySecret: "secret",
 		SecurityToken:   "",
 		BearerToken:     "",
-		ProviderName:    "cli_provider/static_ak",
+		ProviderName:    "cli_profile/static_ak",
 	}, cc)
 
 	provider = NewCLIProfileCredentialsProviderBuilder().WithProfileName("inexist").Build()
@@ -202,4 +222,23 @@ func TestCLIProfileCredentialsProvider_GetCredentials(t *testing.T) {
 	_, err = provider.GetCredentials()
 	assert.NotNil(t, err)
 	assert.Contains(t, err.Error(), "InvalidAccessKeyId.NotFound")
+
+	hookDo = func(fn do) do {
+		return func(req *http.Request) (res *http.Response, err error) {
+			res = mockResponse(200, `{"Credentials": {"AccessKeyId":"akid","AccessKeySecret":"aksecret","Expiration":"2021-10-20T04:27:09Z","SecurityToken":"ststoken"}}`)
+			return
+		}
+	}
+	provider = NewCLIProfileCredentialsProviderBuilder().WithProfileName("ChainableRamRoleArn").Build()
+	cc, err = provider.GetCredentials()
+	assert.Nil(t, err)
+	assert.Equal(t, "akid", cc.AccessKeyId)
+	assert.Equal(t, "aksecret", cc.AccessKeySecret)
+	assert.Equal(t, "ststoken", cc.SecurityToken)
+	assert.Equal(t, "cli_profile/ram_role_arn/ram_role_arn/static_ak", cc.ProviderName)
+
+	os.Setenv("ALIBABA_CLOUD_CLI_PROFILE_DISABLED", "True")
+	_, err = provider.GetCredentials()
+	assert.NotNil(t, err)
+	assert.Contains(t, err.Error(), "The CLI profile is disabled")
 }

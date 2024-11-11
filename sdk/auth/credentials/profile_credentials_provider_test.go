@@ -1,6 +1,7 @@
 package credentials
 
 import (
+	"net/http"
 	"os"
 	"path"
 	"testing"
@@ -186,6 +187,8 @@ func TestProfileCredentialsProvider_getCredentialsProvider(t *testing.T) {
 }
 
 func TestProfileCredentialsProviderGetCredentials(t *testing.T) {
+	originDo := hookDo
+	defer func() { hookDo = originDo }()
 	rollback := internal.Memory("ALIBABA_CLOUD_CREDENTIALS_FILE")
 	defer func() {
 		getHomePath = internal.GetHomePath
@@ -253,4 +256,18 @@ func TestProfileCredentialsProviderGetCredentials(t *testing.T) {
 	_, err = provider.GetCredentials()
 	assert.NotNil(t, err)
 	assert.Contains(t, err.Error(), "InvalidAccessKeyId.NotFound")
+
+	hookDo = func(fn do) do {
+		return func(req *http.Request) (res *http.Response, err error) {
+			res = mockResponse(200, `{"Credentials": {"AccessKeyId":"akid","AccessKeySecret":"aksecret","Expiration":"2021-10-20T04:27:09Z","SecurityToken":"ststoken"}}`)
+			return
+		}
+	}
+	provider = NewProfileCredentialsProviderBuilder().WithProfileName("ram").Build()
+	cc, err = provider.GetCredentials()
+	assert.Nil(t, err)
+	assert.Equal(t, "akid", cc.AccessKeyId)
+	assert.Equal(t, "aksecret", cc.AccessKeySecret)
+	assert.Equal(t, "ststoken", cc.SecurityToken)
+	assert.Equal(t, "profile/ram_role_arn/static_ak", cc.ProviderName)
 }
