@@ -1,3 +1,7 @@
+2024-11-12 Version: v1.63.50
+- Generated 2014-08-28 for `Ess`.
+- ScalingConfiguration supoort ConfidentialComputingMode.
+
 2024-11-11 Version: v1.63.49
 - Support imds and external uri in default credentials chain.
 - Refactor credentials provider.

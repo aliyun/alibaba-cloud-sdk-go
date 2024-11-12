@@ -117,6 +117,7 @@ type CreateScalingConfigurationRequest struct {
 	UserData                        string                                            `position:"Query" name:"UserData"`
 	PasswordInherit                 requests.Boolean                                  `position:"Query" name:"PasswordInherit"`
 	ImageName                       string                                            `position:"Query" name:"ImageName"`
+	HttpEndpoint                    string                                            `position:"Query" name:"HttpEndpoint"`
 	DedicatedHostClusterId          string                                            `position:"Query" name:"DedicatedHostClusterId"`
 	InstanceType                    string                                            `position:"Query" name:"InstanceType"`
 	SchedulerOptions                map[string]interface{}                            `position:"Query" name:"SchedulerOptions"`
@@ -138,6 +139,7 @@ type CreateScalingConfigurationRequest struct {
 	StorageSetId                    string                                            `position:"Query" name:"StorageSetId"`
 	SystemDiskSize                  requests.Integer                                  `position:"Query" name:"SystemDisk.Size"`
 	ImageFamily                     string                                            `position:"Query" name:"ImageFamily"`
+	HttpTokens                      string                                            `position:"Query" name:"HttpTokens"`
 	SystemDiskDescription           string                                            `position:"Query" name:"SystemDisk.Description"`
 	SystemDiskEncrypted             requests.Boolean                                  `position:"Query" name:"SystemDisk.Encrypted"`
 }

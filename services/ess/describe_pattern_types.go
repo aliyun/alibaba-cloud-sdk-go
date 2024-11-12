@@ -89,6 +89,7 @@ type DescribePatternTypesRequest struct {
 	MinimumEniQuantity                 requests.Integer `position:"Query" name:"MinimumEniQuantity"`
 	MinimumMemorySize                  requests.Float   `position:"Query" name:"MinimumMemorySize"`
 	InstanceFamilyLevel                string           `position:"Query" name:"InstanceFamilyLevel"`
+	ZoneId                             *[]string        `position:"Query" name:"ZoneId"  type:"Repeated"`
 	MemoryList                         *[]string        `position:"Query" name:"MemoryList"  type:"Repeated"`
 	Memory                             requests.Float   `position:"Query" name:"Memory"`
 	MinimumEniIpv6AddressQuantity      requests.Integer `position:"Query" name:"MinimumEniIpv6AddressQuantity"`

@@ -75,6 +75,8 @@ type ScalingConfigurationInDescribeScalingConfigurations struct {
 	StorageSetPartitionNumber       int                                             `json:"StorageSetPartitionNumber" xml:"StorageSetPartitionNumber"`
 	DedicatedHostClusterId          string                                          `json:"DedicatedHostClusterId" xml:"DedicatedHostClusterId"`
 	PasswordSetted                  bool                                            `json:"PasswordSetted" xml:"PasswordSetted"`
+	HttpEndpoint                    string                                          `json:"HttpEndpoint" xml:"HttpEndpoint"`
+	HttpTokens                      string                                          `json:"HttpTokens" xml:"HttpTokens"`
 	SystemDiskCategories            SystemDiskCategories                            `json:"SystemDiskCategories" xml:"SystemDiskCategories"`
 	WeightedCapacities              WeightedCapacities                              `json:"WeightedCapacities" xml:"WeightedCapacities"`
 	InstanceTypes                   InstanceTypesInDescribeScalingConfigurations    `json:"InstanceTypes" xml:"InstanceTypes"`

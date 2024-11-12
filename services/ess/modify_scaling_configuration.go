@@ -98,6 +98,7 @@ type ModifyScalingConfigurationRequest struct {
 	InstanceName                    string                                            `position:"Query" name:"InstanceName"`
 	InternetChargeType              string                                            `position:"Query" name:"InternetChargeType"`
 	ZoneId                          string                                            `position:"Query" name:"ZoneId"`
+	InternetMaxBandwidthIn          requests.Integer                                  `position:"Query" name:"InternetMaxBandwidthIn"`
 	InstancePatternInfo             *[]ModifyScalingConfigurationInstancePatternInfo  `position:"Query" name:"InstancePatternInfo"  type:"Repeated"`
 	Affinity                        string                                            `position:"Query" name:"Affinity"`
 	NetworkInterfaces               *[]ModifyScalingConfigurationNetworkInterfaces    `position:"Query" name:"NetworkInterfaces"  type:"Repeated"`
@@ -114,6 +115,7 @@ type ModifyScalingConfigurationRequest struct {
 	UserData                        string                                            `position:"Query" name:"UserData"`
 	PasswordInherit                 requests.Boolean                                  `position:"Query" name:"PasswordInherit"`
 	ImageName                       string                                            `position:"Query" name:"ImageName"`
+	HttpEndpoint                    string                                            `position:"Query" name:"HttpEndpoint"`
 	DedicatedHostClusterId          string                                            `position:"Query" name:"DedicatedHostClusterId"`
 	Override                        requests.Boolean                                  `position:"Query" name:"Override"`
 	SchedulerOptions                map[string]interface{}                            `position:"Query" name:"SchedulerOptions"`
@@ -135,6 +137,7 @@ type ModifyScalingConfigurationRequest struct {
 	StorageSetId                    string                                            `position:"Query" name:"StorageSetId"`
 	SystemDiskSize                  requests.Integer                                  `position:"Query" name:"SystemDisk.Size"`
 	ImageFamily                     string                                            `position:"Query" name:"ImageFamily"`
+	HttpTokens                      string                                            `position:"Query" name:"HttpTokens"`
 	SystemDiskDescription           string                                            `position:"Query" name:"SystemDisk.Description"`
 	SystemDiskEncrypted             requests.Boolean                                  `position:"Query" name:"SystemDisk.Encrypted"`
 }
