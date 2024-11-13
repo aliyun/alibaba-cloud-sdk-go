@@ -72,6 +72,7 @@ func (client *Client) PushWithCallback(request *PushRequest, callback func(respo
 type PushRequest struct {
 	*requests.RpcRequest
 	AndroidNotificationBarType       requests.Integer `position:"Query" name:"AndroidNotificationBarType"`
+	AndroidMessageOppoNotifyLevel    requests.Integer `position:"Query" name:"AndroidMessageOppoNotifyLevel"`
 	DeviceType                       string           `position:"Query" name:"DeviceType"`
 	PushTime                         string           `position:"Query" name:"PushTime"`
 	SendSpeed                        requests.Integer `position:"Query" name:"SendSpeed"`
@@ -101,8 +102,8 @@ type PushRequest struct {
 	AndroidRenderStyle               requests.Integer `position:"Query" name:"AndroidRenderStyle"`
 	IOSExtParameters                 string           `position:"Query" name:"iOSExtParameters"`
 	AndroidXiaomiImageUrl            string           `position:"Query" name:"AndroidXiaomiImageUrl"`
-	SmsTemplateName                  string           `position:"Query" name:"SmsTemplateName"`
 	HarmonyUri                       string           `position:"Query" name:"HarmonyUri"`
+	SmsTemplateName                  string           `position:"Query" name:"SmsTemplateName"`
 	HarmonyExtParameters             string           `position:"Query" name:"HarmonyExtParameters"`
 	AndroidBigPictureUrl             string           `position:"Query" name:"AndroidBigPictureUrl"`
 	IOSSilentNotification            requests.Boolean `position:"Query" name:"iOSSilentNotification"`
@@ -128,6 +129,7 @@ type PushRequest struct {
 	AndroidMessageHuaweiCategory     string           `position:"Query" name:"AndroidMessageHuaweiCategory"`
 	IOSMusic                         string           `position:"Query" name:"iOSMusic"`
 	IOSMutableContent                requests.Boolean `position:"Query" name:"iOSMutableContent"`
+	AndroidNotificationThreadId      string           `position:"Query" name:"AndroidNotificationThreadId"`
 	AndroidHonorTargetUserType       requests.Integer `position:"Query" name:"AndroidHonorTargetUserType"`
 	HarmonyRemindBody                string           `position:"Query" name:"HarmonyRemindBody"`
 	AndroidNotificationVivoChannel   string           `position:"Query" name:"AndroidNotificationVivoChannel"`
@@ -165,6 +167,7 @@ type PushRequest struct {
 	HarmonyActionType                string           `position:"Query" name:"HarmonyActionType"`
 	Target                           string           `position:"Query" name:"Target"`
 	HarmonyInboxContent              string           `position:"Query" name:"HarmonyInboxContent"`
+	AndroidMessageOppoCategory       string           `position:"Query" name:"AndroidMessageOppoCategory"`
 	AndroidXiaoMiActivity            string           `position:"Query" name:"AndroidXiaoMiActivity"`
 }
 

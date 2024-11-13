@@ -18,15 +18,15 @@ package push
 // DeviceInfo is a nested struct in push response
 type DeviceInfo struct {
 	Account        string `json:"Account" xml:"Account"`
-	LastOnlineTime string `json:"LastOnlineTime" xml:"LastOnlineTime"`
-	PhoneNumber    string `json:"PhoneNumber" xml:"PhoneNumber"`
-	PushEnabled    bool   `json:"PushEnabled" xml:"PushEnabled"`
-	DeviceType     string `json:"DeviceType" xml:"DeviceType"`
-	DeviceId       string `json:"DeviceId" xml:"DeviceId"`
-	Online         bool   `json:"Online" xml:"Online"`
-	Tags           string `json:"Tags" xml:"Tags"`
-	DeviceToken    string `json:"DeviceToken" xml:"DeviceToken"`
 	Alias          string `json:"Alias" xml:"Alias"`
 	Brand          string `json:"Brand" xml:"Brand"`
+	DeviceId       string `json:"DeviceId" xml:"DeviceId"`
+	DeviceToken    string `json:"DeviceToken" xml:"DeviceToken"`
+	DeviceType     string `json:"DeviceType" xml:"DeviceType"`
+	LastOnlineTime string `json:"LastOnlineTime" xml:"LastOnlineTime"`
 	Model          string `json:"Model" xml:"Model"`
+	Online         bool   `json:"Online" xml:"Online"`
+	PhoneNumber    string `json:"PhoneNumber" xml:"PhoneNumber"`
+	PushEnabled    bool   `json:"PushEnabled" xml:"PushEnabled"`
+	Tags           string `json:"Tags" xml:"Tags"`
 }

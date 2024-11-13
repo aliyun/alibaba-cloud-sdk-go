@@ -78,6 +78,7 @@ type MassPushRequest struct {
 // MassPushPushTask is a repeated param struct in MassPushRequest
 type MassPushPushTask struct {
 	AndroidNotificationBarType       string `name:"AndroidNotificationBarType"`
+	AndroidMessageOppoNotifyLevel    string `name:"AndroidMessageOppoNotifyLevel"`
 	Body                             string `name:"Body"`
 	DeviceType                       string `name:"DeviceType"`
 	PushTime                         string `name:"PushTime"`
@@ -98,6 +99,7 @@ type MassPushPushTask struct {
 	AndroidNotificationBarPriority   string `name:"AndroidNotificationBarPriority"`
 	ExpireTime                       string `name:"ExpireTime"`
 	AndroidImageUrl                  string `name:"AndroidImageUrl"`
+	AndroidNotificationThreadId      string `name:"AndroidNotificationThreadId"`
 	AndroidHonorTargetUserType       string `name:"AndroidHonorTargetUserType"`
 	HarmonyRemindBody                string `name:"HarmonyRemindBody"`
 	AndroidNotificationVivoChannel   string `name:"AndroidNotificationVivoChannel"`
@@ -161,6 +163,7 @@ type MassPushPushTask struct {
 	AndroidRemind                    string `name:"AndroidRemind"`
 	HarmonyInboxContent              string `name:"HarmonyInboxContent"`
 	AndroidActivity                  string `name:"AndroidActivity"`
+	AndroidMessageOppoCategory       string `name:"AndroidMessageOppoCategory"`
 	AndroidNotificationNotifyId      string `name:"AndroidNotificationNotifyId"`
 	TargetValue                      string `name:"TargetValue"`
 	HarmonyBadgeSetNum               string `name:"HarmonyBadgeSetNum"`

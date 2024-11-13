@@ -17,6 +17,6 @@ package push
 
 // DeviceCheckInfo is a nested struct in push response
 type DeviceCheckInfo struct {
-	DeviceId  string `json:"DeviceId" xml:"DeviceId"`
 	Available bool   `json:"Available" xml:"Available"`
+	DeviceId  string `json:"DeviceId" xml:"DeviceId"`
 }
