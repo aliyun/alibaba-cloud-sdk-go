@@ -23,6 +23,7 @@ type MpuTask struct {
 	MixMode         string               `json:"MixMode" xml:"MixMode"`
 	StreamURL       string               `json:"StreamURL" xml:"StreamURL"`
 	Region          string               `json:"Region" xml:"Region"`
+	MaxIdleTime     string               `json:"MaxIdleTime" xml:"MaxIdleTime"`
 	SingleSubParams SingleSubParams      `json:"SingleSubParams" xml:"SingleSubParams"`
 	TranscodeParams TranscodeParams      `json:"TranscodeParams" xml:"TranscodeParams"`
 	SeiParams       SeiParams            `json:"SeiParams" xml:"SeiParams"`

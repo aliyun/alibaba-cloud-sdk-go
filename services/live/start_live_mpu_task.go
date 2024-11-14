@@ -75,6 +75,7 @@ type StartLiveMPUTaskRequest struct {
 	TaskId          string                            `position:"Query" name:"TaskId"`
 	StreamURL       string                            `position:"Query" name:"StreamURL"`
 	MultiStreamURL  *[]StartLiveMPUTaskMultiStreamURL `position:"Query" name:"MultiStreamURL"  type:"Json"`
+	MaxIdleTime     string                            `position:"Query" name:"MaxIdleTime"`
 	SeiParams       StartLiveMPUTaskSeiParams         `position:"Query" name:"SeiParams"  type:"Struct"`
 	TranscodeParams StartLiveMPUTaskTranscodeParams   `position:"Query" name:"TranscodeParams"  type:"Struct"`
 	AppId           string                            `position:"Query" name:"AppId"`

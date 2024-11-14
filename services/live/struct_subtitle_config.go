@@ -17,22 +17,34 @@ package live
 
 // SubtitleConfig is a nested struct in live response
 type SubtitleConfig struct {
-	DstLanguage           string                                     `json:"DstLanguage" xml:"DstLanguage"`
-	SrcLanguage           string                                     `json:"SrcLanguage" xml:"SrcLanguage"`
+	TemplateId            string                                     `json:"TemplateId" xml:"TemplateId"`
 	FontColor             string                                     `json:"FontColor" xml:"FontColor"`
-	FontName              string                                     `json:"FontName" xml:"FontName"`
-	ShowSourceLan         int                                        `json:"ShowSourceLan" xml:"ShowSourceLan"`
-	MaxLines              int                                        `json:"MaxLines" xml:"MaxLines"`
-	WordPerline           int                                        `json:"WordPerline" xml:"WordPerline"`
+	TemplateName          string                                     `json:"TemplateName" xml:"TemplateName"`
+	BackgroundType        string                                     `json:"BackgroundType" xml:"BackgroundType"`
+	BackgroundResourceUrl string                                     `json:"BackgroundResourceUrl" xml:"BackgroundResourceUrl"`
+	MediaType             string                                     `json:"MediaType" xml:"MediaType"`
 	BgColor               string                                     `json:"BgColor" xml:"BgColor"`
-	BgWidthNormalized     float64                                    `json:"BgWidthNormalized" xml:"BgWidthNormalized"`
-	BorderWidthNormalized float64                                    `json:"BorderWidthNormalized" xml:"BorderWidthNormalized"`
 	Width                 string                                     `json:"Width" xml:"Width"`
-	Height                string                                     `json:"Height" xml:"Height"`
-	SubtitleName          string                                     `json:"SubtitleName" xml:"SubtitleName"`
-	SubtitleId            string                                     `json:"SubtitleId" xml:"SubtitleId"`
-	FontSizeNormalized    string                                     `json:"FontSizeNormalized" xml:"FontSizeNormalized"`
+	MediaResourceUrl      string                                     `json:"MediaResourceUrl" xml:"MediaResourceUrl"`
+	MediaLayout           string                                     `json:"MediaLayout" xml:"MediaLayout"`
 	Description           string                                     `json:"Description" xml:"Description"`
+	SubtitleId            string                                     `json:"SubtitleId" xml:"SubtitleId"`
+	Height                string                                     `json:"Height" xml:"Height"`
+	DstLanguage           string                                     `json:"DstLanguage" xml:"DstLanguage"`
+	MattingLayout         string                                     `json:"MattingLayout" xml:"MattingLayout"`
+	ShowSourceLan         int                                        `json:"ShowSourceLan" xml:"ShowSourceLan"`
+	SubtitleName          string                                     `json:"SubtitleName" xml:"SubtitleName"`
+	BgWidthNormalized     float64                                    `json:"BgWidthNormalized" xml:"BgWidthNormalized"`
+	FontSizeNormalized    string                                     `json:"FontSizeNormalized" xml:"FontSizeNormalized"`
+	FontName              string                                     `json:"FontName" xml:"FontName"`
+	WordPerline           int                                        `json:"WordPerline" xml:"WordPerline"`
+	MediaResourceId       string                                     `json:"MediaResourceId" xml:"MediaResourceId"`
+	BackgroundResourceId  string                                     `json:"BackgroundResourceId" xml:"BackgroundResourceId"`
+	MaxLines              int                                        `json:"MaxLines" xml:"MaxLines"`
+	BorderWidthNormalized float64                                    `json:"BorderWidthNormalized" xml:"BorderWidthNormalized"`
+	MattingType           string                                     `json:"MattingType" xml:"MattingType"`
+	SrcLanguage           string                                     `json:"SrcLanguage" xml:"SrcLanguage"`
+	RuleIds               RuleIds                                    `json:"RuleIds" xml:"RuleIds"`
 	PositionNormalized    PositionNormalizedInDescribeLiveAISubtitle `json:"PositionNormalized" xml:"PositionNormalized"`
 	RulesRefer            RulesRefer                                 `json:"RulesRefer" xml:"RulesRefer"`
 }
