@@ -1,6 +1,7 @@
 package credentials
 
 import (
+	"errors"
 	"net/http"
 	"os"
 	"path"
@@ -165,4 +166,43 @@ func TestDefaultCredentialsProvider_GetCredentials(t *testing.T) {
 	cc, err = provider.GetCredentials()
 	assert.Nil(t, err)
 	assert.Equal(t, &Credentials{AccessKeyId: "akid", AccessKeySecret: "aksecret", SecurityToken: "ststoken", ProviderName: "default/cli_profile/ram_role_arn/ram_role_arn/static_ak"}, cc)
+
+	provider.lastUsedProvider = new(testProvider)
+	cc, err = provider.GetCredentials()
+	assert.Nil(t, err)
+	assert.Equal(t, "test", cc.AccessKeyId)
+	assert.Equal(t, "test", cc.AccessKeySecret)
+	assert.Equal(t, "default/test", cc.ProviderName)
+
+	provider.lastUsedProvider = new(testErrorProvider)
+	_, err = provider.GetCredentials()
+	assert.Equal(t, "error", err.Error())
+}
+
+type testProvider struct {
+}
+
+func (provider *testProvider) GetCredentials() (cc *Credentials, err error) {
+	cc = &Credentials{
+		AccessKeyId:     "test",
+		AccessKeySecret: "test",
+		ProviderName:    "",
+	}
+	return
+}
+
+func (provider *testProvider) GetProviderName() string {
+	return "test"
+}
+
+type testErrorProvider struct {
+}
+
+func (provider *testErrorProvider) GetCredentials() (cc *Credentials, err error) {
+	err = errors.New("error")
+	return
+}
+
+func (provider *testErrorProvider) GetProviderName() string {
+	return "test"
 }

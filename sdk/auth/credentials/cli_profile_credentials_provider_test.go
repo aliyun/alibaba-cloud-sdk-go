@@ -237,6 +237,13 @@ func TestCLIProfileCredentialsProvider_GetCredentials(t *testing.T) {
 	assert.Equal(t, "ststoken", cc.SecurityToken)
 	assert.Equal(t, "cli_profile/ram_role_arn/ram_role_arn/static_ak", cc.ProviderName)
 
+	provider.innerProvider = new(testProvider)
+	cc, err = provider.GetCredentials()
+	assert.Nil(t, err)
+	assert.Equal(t, "test", cc.AccessKeyId)
+	assert.Equal(t, "test", cc.AccessKeySecret)
+	assert.Equal(t, "cli_profile/test", cc.ProviderName)
+
 	os.Setenv("ALIBABA_CLOUD_CLI_PROFILE_DISABLED", "True")
 	_, err = provider.GetCredentials()
 	assert.NotNil(t, err)
