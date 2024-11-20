@@ -270,4 +270,15 @@ func TestProfileCredentialsProviderGetCredentials(t *testing.T) {
 	assert.Equal(t, "aksecret", cc.AccessKeySecret)
 	assert.Equal(t, "ststoken", cc.SecurityToken)
 	assert.Equal(t, "profile/ram_role_arn/static_ak", cc.ProviderName)
+
+	provider.innerProvider = new(testProvider)
+	cc, err = provider.GetCredentials()
+	assert.Nil(t, err)
+	assert.Equal(t, "test", cc.AccessKeyId)
+	assert.Equal(t, "test", cc.AccessKeySecret)
+	assert.Equal(t, "profile/test", cc.ProviderName)
+
+	provider.innerProvider = new(testErrorProvider)
+	_, err = provider.GetCredentials()
+	assert.Equal(t, "error", err.Error())
 }

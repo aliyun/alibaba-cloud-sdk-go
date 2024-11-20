@@ -2,6 +2,7 @@ package credentials
 
 import (
 	"errors"
+	"io/ioutil"
 	"net/http"
 	"os"
 	"strings"
@@ -122,6 +123,25 @@ func TestURLCredentialsProvider_getCredentials(t *testing.T) {
 
 	p.expirationTimestamp = time.Now().Unix() + 300
 	assert.False(t, p.needUpdateCredential())
+
+	// case 4: mock read response error
+	hookDo = func(fn do) do {
+		return func(req *http.Request) (res *http.Response, err error) {
+			res = &http.Response{
+				Proto:      "HTTP/1.1",
+				ProtoMajor: 1,
+				ProtoMinor: 1,
+				Header:     map[string][]string{},
+				StatusCode: 200,
+				Status:     "200 " + http.StatusText(200),
+			}
+			res.Body = ioutil.NopCloser(&errorReader{})
+			return
+		}
+	}
+	_, err = p.getCredentials()
+	assert.NotNil(t, err)
+	assert.Equal(t, "read failed", err.Error())
 }
 
 func TestURLCredentialsProvider_GetCredentials(t *testing.T) {
