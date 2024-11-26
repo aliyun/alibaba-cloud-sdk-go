@@ -1,3 +1,7 @@
+2024-11-26 Version: v1.63.55
+- Generated 2015-11-01 for `Market`.
+- Update DescribeApiMetering API.
+
 2024-11-22 Version: v1.63.54
 - Generated 2021-11-11 for `qianzhou`.
 undefined
