@@ -17,20 +17,22 @@ package ens
 
 // DisksItem is a nested struct in ens response
 type DisksItem struct {
-	Category       string `json:"Category" xml:"Category"`
-	CreationTime   string `json:"CreationTime" xml:"CreationTime"`
-	DiskChargeType string `json:"DiskChargeType" xml:"DiskChargeType"`
-	DiskId         string `json:"DiskId" xml:"DiskId"`
-	DiskName       string `json:"DiskName" xml:"DiskName"`
-	EnsRegionId    string `json:"EnsRegionId" xml:"EnsRegionId"`
-	InstanceId     string `json:"InstanceId" xml:"InstanceId"`
-	InstanceName   string `json:"InstanceName" xml:"InstanceName"`
-	Size           int    `json:"Size" xml:"Size"`
-	Status         string `json:"Status" xml:"Status"`
-	Type           string `json:"Type" xml:"Type"`
-	Portable       bool   `json:"Portable" xml:"Portable"`
-	SnapshotId     string `json:"SnapshotId" xml:"SnapshotId"`
-	SerialId       string `json:"SerialId" xml:"SerialId"`
-	Encrypted      bool   `json:"Encrypted" xml:"Encrypted"`
-	EncryptedKeyId string `json:"EncryptedKeyId" xml:"EncryptedKeyId"`
+	Category           string `json:"Category" xml:"Category"`
+	CreationTime       string `json:"CreationTime" xml:"CreationTime"`
+	DiskChargeType     string `json:"DiskChargeType" xml:"DiskChargeType"`
+	DiskId             string `json:"DiskId" xml:"DiskId"`
+	DiskName           string `json:"DiskName" xml:"DiskName"`
+	EnsRegionId        string `json:"EnsRegionId" xml:"EnsRegionId"`
+	InstanceId         string `json:"InstanceId" xml:"InstanceId"`
+	InstanceName       string `json:"InstanceName" xml:"InstanceName"`
+	Description        string `json:"Description" xml:"Description"`
+	Size               int    `json:"Size" xml:"Size"`
+	Status             string `json:"Status" xml:"Status"`
+	Type               string `json:"Type" xml:"Type"`
+	Portable           bool   `json:"Portable" xml:"Portable"`
+	SnapshotId         string `json:"SnapshotId" xml:"SnapshotId"`
+	SerialId           string `json:"SerialId" xml:"SerialId"`
+	Encrypted          bool   `json:"Encrypted" xml:"Encrypted"`
+	EncryptedKeyId     string `json:"EncryptedKeyId" xml:"EncryptedKeyId"`
+	DeleteWithInstance bool   `json:"DeleteWithInstance" xml:"DeleteWithInstance"`
 }

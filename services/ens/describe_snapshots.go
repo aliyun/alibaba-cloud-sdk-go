@@ -71,12 +71,14 @@ func (client *Client) DescribeSnapshotsWithCallback(request *DescribeSnapshotsRe
 // DescribeSnapshotsRequest is the request struct for api DescribeSnapshots
 type DescribeSnapshotsRequest struct {
 	*requests.RpcRequest
-	SnapshotId  string           `position:"Query" name:"SnapshotId"`
-	PageNumber  requests.Integer `position:"Query" name:"PageNumber"`
-	EnsRegionId string           `position:"Query" name:"EnsRegionId"`
-	PageSize    requests.Integer `position:"Query" name:"PageSize"`
-	DiskId      string           `position:"Query" name:"DiskId"`
-	InstanceId  string           `position:"Query" name:"InstanceId"`
+	EnsRegionId  string           `position:"Query" name:"EnsRegionId"`
+	InstanceId   string           `position:"Query" name:"InstanceId"`
+	SnapshotId   string           `position:"Query" name:"SnapshotId"`
+	SnapshotName string           `position:"Query" name:"SnapshotName"`
+	PageNumber   requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize     requests.Integer `position:"Query" name:"PageSize"`
+	DiskId       string           `position:"Query" name:"DiskId"`
+	EnsRegionIds string           `position:"Query" name:"EnsRegionIds"`
 }
 
 // DescribeSnapshotsResponse is the response struct for api DescribeSnapshots

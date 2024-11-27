@@ -17,9 +17,12 @@ package ens
 
 // DeploymentStatusItem is a nested struct in ens response
 type DeploymentStatusItem struct {
-	InstanceId string `json:"InstanceId" xml:"InstanceId"`
-	MountType  string `json:"MountType" xml:"MountType"`
-	RegionId   string `json:"RegionId" xml:"RegionId"`
-	Status     string `json:"Status" xml:"Status"`
-	UpdateTime string `json:"UpdateTime" xml:"UpdateTime"`
+	RegionId    string `json:"RegionId" xml:"RegionId"`
+	UpdateTime  string `json:"UpdateTime" xml:"UpdateTime"`
+	InstanceId  string `json:"InstanceId" xml:"InstanceId"`
+	Phase       string `json:"Phase" xml:"Phase"`
+	SDGId       string `json:"SDGId" xml:"SDGId"`
+	EnsRegionId string `json:"EnsRegionId" xml:"EnsRegionId"`
+	MountType   string `json:"MountType" xml:"MountType"`
+	Status      string `json:"Status" xml:"Status"`
 }
