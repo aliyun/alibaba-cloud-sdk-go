@@ -17,15 +17,17 @@ package dms_enterprise
 
 // ApprovalDetail is a nested struct in dms_enterprise response
 type ApprovalDetail struct {
-	Description     string                           `json:"Description" xml:"Description"`
-	CreateTime      string                           `json:"CreateTime" xml:"CreateTime"`
-	OrderType       string                           `json:"OrderType" xml:"OrderType"`
-	Title           string                           `json:"Title" xml:"Title"`
-	AuditId         int64                            `json:"AuditId" xml:"AuditId"`
-	OrderId         int64                            `json:"OrderId" xml:"OrderId"`
-	WorkflowInsCode string                           `json:"WorkflowInsCode" xml:"WorkflowInsCode"`
-	TemplateId      int64                            `json:"TemplateId" xml:"TemplateId"`
-	ReasonList      ReasonList                       `json:"ReasonList" xml:"ReasonList"`
-	WorkflowNodes   WorkflowNodesInGetApprovalDetail `json:"WorkflowNodes" xml:"WorkflowNodes"`
-	CurrentHandlers CurrentHandlers                  `json:"CurrentHandlers" xml:"CurrentHandlers"`
+	Description               string                           `json:"Description" xml:"Description"`
+	CreateTime                string                           `json:"CreateTime" xml:"CreateTime"`
+	OrderType                 string                           `json:"OrderType" xml:"OrderType"`
+	Title                     string                           `json:"Title" xml:"Title"`
+	AuditId                   int64                            `json:"AuditId" xml:"AuditId"`
+	OrderId                   int64                            `json:"OrderId" xml:"OrderId"`
+	WorkflowInsCode           string                           `json:"WorkflowInsCode" xml:"WorkflowInsCode"`
+	TemplateId                int64                            `json:"TemplateId" xml:"TemplateId"`
+	ThirdpartyWorkflowUrl     string                           `json:"ThirdpartyWorkflowUrl" xml:"ThirdpartyWorkflowUrl"`
+	ThirdpartyWorkflowComment string                           `json:"ThirdpartyWorkflowComment" xml:"ThirdpartyWorkflowComment"`
+	ReasonList                ReasonList                       `json:"ReasonList" xml:"ReasonList"`
+	WorkflowNodes             WorkflowNodesInGetApprovalDetail `json:"WorkflowNodes" xml:"WorkflowNodes"`
+	CurrentHandlers           CurrentHandlers                  `json:"CurrentHandlers" xml:"CurrentHandlers"`
 }

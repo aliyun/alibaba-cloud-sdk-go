@@ -17,17 +17,26 @@ package dms_enterprise
 
 // InstancesItem is a nested struct in dms_enterprise response
 type InstancesItem struct {
-	BusinessTime       string `json:"BusinessTime" xml:"BusinessTime"`
-	DagId              int64  `json:"DagId" xml:"DagId"`
-	EndTime            string `json:"EndTime" xml:"EndTime"`
-	GmtCreate          string `json:"GmtCreate" xml:"GmtCreate"`
-	GmtModified        string `json:"GmtModified" xml:"GmtModified"`
-	HistoryDagId       int64  `json:"HistoryDagId" xml:"HistoryDagId"`
-	Id                 int64  `json:"Id" xml:"Id"`
-	LastRunningContext string `json:"LastRunningContext" xml:"LastRunningContext"`
-	Msg                string `json:"Msg" xml:"Msg"`
-	Status             int64  `json:"Status" xml:"Status"`
-	TenantId           string `json:"TenantId" xml:"TenantId"`
-	TriggerType        int64  `json:"TriggerType" xml:"TriggerType"`
-	Version            string `json:"Version" xml:"Version"`
+	DagId              int64            `json:"DagId" xml:"DagId"`
+	Port               string           `json:"Port" xml:"Port"`
+	Status             int64            `json:"Status" xml:"Status"`
+	Version            string           `json:"Version" xml:"Version"`
+	BusinessTime       string           `json:"BusinessTime" xml:"BusinessTime"`
+	GmtModified        string           `json:"GmtModified" xml:"GmtModified"`
+	Id                 int64            `json:"Id" xml:"Id"`
+	LastRunningContext string           `json:"LastRunningContext" xml:"LastRunningContext"`
+	TriggerType        int64            `json:"TriggerType" xml:"TriggerType"`
+	DbType             string           `json:"DbType" xml:"DbType"`
+	GmtCreate          string           `json:"GmtCreate" xml:"GmtCreate"`
+	Host               string           `json:"Host" xml:"Host"`
+	EndTime            string           `json:"EndTime" xml:"EndTime"`
+	EnvType            string           `json:"EnvType" xml:"EnvType"`
+	InstanceId         string           `json:"InstanceId" xml:"InstanceId"`
+	UserId             string           `json:"UserId" xml:"UserId"`
+	Msg                string           `json:"Msg" xml:"Msg"`
+	UserName           string           `json:"UserName" xml:"UserName"`
+	InstanceAlias      string           `json:"InstanceAlias" xml:"InstanceAlias"`
+	HistoryDagId       int64            `json:"HistoryDagId" xml:"HistoryDagId"`
+	TenantId           string           `json:"TenantId" xml:"TenantId"`
+	PermissionDetail   PermissionDetail `json:"PermissionDetail" xml:"PermissionDetail"`
 }
