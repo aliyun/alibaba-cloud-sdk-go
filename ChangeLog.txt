@@ -1,3 +1,7 @@
+2024-11-27 Version: v1.63.57
+- Generated 2016-04-28 for `Vpc`.
+- Support CreationTime for ListTrafficMirrorFilters.
+
 2024-11-26 Version: v1.63.56
 - Generated 2022-01-01 for `quickbi-public`.
 - Add SmartqQueryAbility api.
