@@ -22,6 +22,7 @@ type Video struct {
 	ModifyTime           string                      `json:"ModifyTime" xml:"ModifyTime"`
 	Title                string                      `json:"Title" xml:"Title"`
 	CreateTime           string                      `json:"CreateTime" xml:"CreateTime"`
+	UserData             string                      `json:"UserData" xml:"UserData"`
 	TemplateGroupId      string                      `json:"TemplateGroupId" xml:"TemplateGroupId"`
 	StorageClass         string                      `json:"StorageClass" xml:"StorageClass"`
 	MediaType            string                      `json:"MediaType" xml:"MediaType"`

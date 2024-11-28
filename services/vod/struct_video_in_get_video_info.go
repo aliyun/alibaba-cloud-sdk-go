@@ -42,6 +42,7 @@ type VideoInGetVideoInfo struct {
 	StorageClass      string                      `json:"StorageClass" xml:"StorageClass"`
 	RestoreStatus     string                      `json:"RestoreStatus" xml:"RestoreStatus"`
 	RestoreExpiration string                      `json:"RestoreExpiration" xml:"RestoreExpiration"`
+	UserData          string                      `json:"UserData" xml:"UserData"`
 	Snapshots         SnapshotsInGetVideoInfo     `json:"Snapshots" xml:"Snapshots"`
 	ThumbnailList     ThumbnailListInGetVideoInfo `json:"ThumbnailList" xml:"ThumbnailList"`
 }

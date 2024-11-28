@@ -71,6 +71,7 @@ func (client *Client) SubmitTranscodeJobsWithCallback(request *SubmitTranscodeJo
 // SubmitTranscodeJobsRequest is the request struct for api SubmitTranscodeJobs
 type SubmitTranscodeJobsRequest struct {
 	*requests.RpcRequest
+	SessionId       string `position:"Query" name:"SessionId"`
 	UserData        string `position:"Query" name:"UserData"`
 	VideoId         string `position:"Query" name:"VideoId"`
 	OverrideParams  string `position:"Query" name:"OverrideParams"`

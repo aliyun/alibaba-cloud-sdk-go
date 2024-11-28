@@ -1,3 +1,7 @@
+2024-11-28 Version: v1.63.60
+- Generated 2017-03-21 for `vod`.
+- SubmitTranscodeJobs Add SessionId.
+
 2024-11-27 Version: v1.63.59
 - Generated 2018-11-01 for `dms-enterprise`.
 - Support ListDataLakeCatalog, ListDataLakeDatabase, ListDataLakeTablebaseInfo, GetDataLakeCatalog, GetDataLakeDatabase, GetDataLakeTable API.

@@ -74,6 +74,7 @@ type UpdateVideoInfoRequest struct {
 	Description     string           `position:"Query" name:"Description"`
 	Title           string           `position:"Query" name:"Title"`
 	CoverURL        string           `position:"Query" name:"CoverURL"`
+	UserData        string           `position:"Query" name:"UserData"`
 	DownloadSwitch  string           `position:"Query" name:"DownloadSwitch"`
 	CateId          requests.Integer `position:"Query" name:"CateId"`
 	CustomMediaInfo string           `position:"Query" name:"CustomMediaInfo"`
