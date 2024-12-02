@@ -71,11 +71,18 @@ func (client *Client) DescribeElasticStrengthWithCallback(request *DescribeElast
 // DescribeElasticStrengthRequest is the request struct for api DescribeElasticStrength
 type DescribeElasticStrengthRequest struct {
 	*requests.RpcRequest
-	ScalingGroupId       string    `position:"Query" name:"ScalingGroupId"`
-	InstanceTypes        *[]string `position:"Query" name:"InstanceTypes"  type:"Repeated"`
-	ScalingGroupIds      *[]string `position:"Query" name:"ScalingGroupIds"  type:"Repeated"`
-	SystemDiskCategories *[]string `position:"Query" name:"SystemDiskCategories"  type:"Repeated"`
-	PriorityStrategy     string    `position:"Query" name:"PriorityStrategy"`
+	ImageId              string           `position:"Query" name:"ImageId"`
+	DataDiskCategories   *[]string        `position:"Query" name:"DataDiskCategories"  type:"Repeated"`
+	ScalingGroupId       string           `position:"Query" name:"ScalingGroupId"`
+	VSwitchIds           *[]string        `position:"Query" name:"VSwitchIds"  type:"Repeated"`
+	InstanceTypes        *[]string        `position:"Query" name:"InstanceTypes"  type:"Repeated"`
+	ImageName            string           `position:"Query" name:"ImageName"`
+	ScalingGroupIds      *[]string        `position:"Query" name:"ScalingGroupIds"  type:"Repeated"`
+	Ipv6AddressCount     requests.Integer `position:"Query" name:"Ipv6AddressCount"`
+	SystemDiskCategories *[]string        `position:"Query" name:"SystemDiskCategories"  type:"Repeated"`
+	SpotStrategy         string           `position:"Query" name:"SpotStrategy"`
+	PriorityStrategy     string           `position:"Query" name:"PriorityStrategy"`
+	ImageFamily          string           `position:"Query" name:"ImageFamily"`
 }
 
 // DescribeElasticStrengthResponse is the response struct for api DescribeElasticStrength
