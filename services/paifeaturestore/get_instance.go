@@ -77,14 +77,15 @@ type GetInstanceRequest struct {
 // GetInstanceResponse is the response struct for api GetInstance
 type GetInstanceResponse struct {
 	*responses.BaseResponse
-	RequestId       string `json:"RequestId" xml:"RequestId"`
-	Status          string `json:"Status" xml:"Status"`
-	RegionId        string `json:"RegionId" xml:"RegionId"`
-	GmtCreateTime   string `json:"GmtCreateTime" xml:"GmtCreateTime"`
-	GmtModifiedTime string `json:"GmtModifiedTime" xml:"GmtModifiedTime"`
-	Progress        string `json:"Progress" xml:"Progress"`
-	Message         string `json:"Message" xml:"Message"`
-	Type            string `json:"Type" xml:"Type"`
+	RequestId             string                `json:"RequestId" xml:"RequestId"`
+	Status                string                `json:"Status" xml:"Status"`
+	RegionId              string                `json:"RegionId" xml:"RegionId"`
+	GmtCreateTime         string                `json:"GmtCreateTime" xml:"GmtCreateTime"`
+	GmtModifiedTime       string                `json:"GmtModifiedTime" xml:"GmtModifiedTime"`
+	Progress              string                `json:"Progress" xml:"Progress"`
+	Message               string                `json:"Message" xml:"Message"`
+	Type                  string                `json:"Type" xml:"Type"`
+	FeatureDBInstanceInfo FeatureDBInstanceInfo `json:"FeatureDBInstanceInfo" xml:"FeatureDBInstanceInfo"`
 }
 
 // CreateGetInstanceRequest creates a request to invoke GetInstance API
