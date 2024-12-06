@@ -72,13 +72,16 @@ func (client *Client) GetTranscodeTaskWithCallback(request *GetTranscodeTaskRequ
 type GetTranscodeTaskRequest struct {
 	*requests.RpcRequest
 	TranscodeTaskId string `position:"Query" name:"TranscodeTaskId"`
+	JobIds          string `position:"Query" name:"JobIds"`
 }
 
 // GetTranscodeTaskResponse is the response struct for api GetTranscodeTask
 type GetTranscodeTaskResponse struct {
 	*responses.BaseResponse
-	RequestId     string        `json:"RequestId" xml:"RequestId"`
-	TranscodeTask TranscodeTask `json:"TranscodeTask" xml:"TranscodeTask"`
+	RequestId            string             `json:"RequestId" xml:"RequestId"`
+	NonExistJobIds       []string           `json:"NonExistJobIds" xml:"NonExistJobIds"`
+	TranscodeTask        TranscodeTask      `json:"TranscodeTask" xml:"TranscodeTask"`
+	TranscodeJobInfoList []TranscodeJobInfo `json:"TranscodeJobInfoList" xml:"TranscodeJobInfoList"`
 }
 
 // CreateGetTranscodeTaskRequest creates a request to invoke GetTranscodeTask API

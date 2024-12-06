@@ -17,17 +17,17 @@ package vod
 
 // OutputFile is a nested struct in vod response
 type OutputFile struct {
-	VideoStreamList    string   `json:"VideoStreamList" xml:"VideoStreamList"`
-	OutputFileUrl      string   `json:"OutputFileUrl" xml:"OutputFileUrl"`
-	Encryption         string   `json:"Encryption" xml:"Encryption"`
 	Height             string   `json:"Height" xml:"Height"`
-	SubtitleStreamList string   `json:"SubtitleStreamList" xml:"SubtitleStreamList"`
-	Bitrate            string   `json:"Bitrate" xml:"Bitrate"`
-	AudioStreamList    string   `json:"AudioStreamList" xml:"AudioStreamList"`
-	Width              string   `json:"Width" xml:"Width"`
-	Fps                string   `json:"Fps" xml:"Fps"`
-	Duration           string   `json:"Duration" xml:"Duration"`
 	Format             string   `json:"Format" xml:"Format"`
+	Fps                string   `json:"Fps" xml:"Fps"`
+	Bitrate            string   `json:"Bitrate" xml:"Bitrate"`
+	SubtitleStreamList string   `json:"SubtitleStreamList" xml:"SubtitleStreamList"`
 	Filesize           int64    `json:"Filesize" xml:"Filesize"`
+	Encryption         string   `json:"Encryption" xml:"Encryption"`
+	OutputFileUrl      string   `json:"OutputFileUrl" xml:"OutputFileUrl"`
+	Width              string   `json:"Width" xml:"Width"`
+	AudioStreamList    string   `json:"AudioStreamList" xml:"AudioStreamList"`
+	Duration           string   `json:"Duration" xml:"Duration"`
+	VideoStreamList    string   `json:"VideoStreamList" xml:"VideoStreamList"`
 	WatermarkIdList    []string `json:"WatermarkIdList" xml:"WatermarkIdList"`
 }

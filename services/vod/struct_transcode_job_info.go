@@ -17,16 +17,16 @@ package vod
 
 // TranscodeJobInfo is a nested struct in vod response
 type TranscodeJobInfo struct {
-	Definition          string     `json:"Definition" xml:"Definition"`
-	CreationTime        string     `json:"CreationTime" xml:"CreationTime"`
-	InputFileUrl        string     `json:"InputFileUrl" xml:"InputFileUrl"`
-	ErrorMessage        string     `json:"ErrorMessage" xml:"ErrorMessage"`
-	ErrorCode           string     `json:"ErrorCode" xml:"ErrorCode"`
-	CompleteTime        string     `json:"CompleteTime" xml:"CompleteTime"`
-	TranscodeProgress   int64      `json:"TranscodeProgress" xml:"TranscodeProgress"`
-	Priority            string     `json:"Priority" xml:"Priority"`
 	TranscodeJobStatus  string     `json:"TranscodeJobStatus" xml:"TranscodeJobStatus"`
-	TranscodeTemplateId string     `json:"TranscodeTemplateId" xml:"TranscodeTemplateId"`
+	ErrorMessage        string     `json:"ErrorMessage" xml:"ErrorMessage"`
 	TranscodeJobId      string     `json:"TranscodeJobId" xml:"TranscodeJobId"`
+	InputFileUrl        string     `json:"InputFileUrl" xml:"InputFileUrl"`
+	TranscodeTemplateId string     `json:"TranscodeTemplateId" xml:"TranscodeTemplateId"`
+	CreationTime        string     `json:"CreationTime" xml:"CreationTime"`
+	CompleteTime        string     `json:"CompleteTime" xml:"CompleteTime"`
+	Priority            string     `json:"Priority" xml:"Priority"`
+	TranscodeProgress   int64      `json:"TranscodeProgress" xml:"TranscodeProgress"`
+	Definition          string     `json:"Definition" xml:"Definition"`
+	ErrorCode           string     `json:"ErrorCode" xml:"ErrorCode"`
 	OutputFile          OutputFile `json:"OutputFile" xml:"OutputFile"`
 }
