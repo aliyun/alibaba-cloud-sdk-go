@@ -17,12 +17,20 @@ package live
 
 // DataItem is a nested struct in live response
 type DataItem struct {
-	AudioDuration int64  `json:"AudioDuration" xml:"AudioDuration"`
-	SingleAudio   int64  `json:"Single_Audio" xml:"Single_Audio"`
-	SingleVideo   int64  `json:"Single_Video" xml:"Single_Video"`
-	Timestamp     string `json:"Timestamp" xml:"Timestamp"`
-	TotalDuration int64  `json:"TotalDuration" xml:"TotalDuration"`
-	V480Duration  int64  `json:"V480Duration" xml:"V480Duration"`
-	V720Duration  int64  `json:"V720Duration" xml:"V720Duration"`
-	V1080Duration int64  `json:"V1080Duration" xml:"V1080Duration"`
+	AudioDuration  int64            `json:"AudioDuration" xml:"AudioDuration"`
+	TotalDuration  int64            `json:"TotalDuration" xml:"TotalDuration"`
+	CdnDomain      string           `json:"CdnDomain" xml:"CdnDomain"`
+	Timestamp      string           `json:"Timestamp" xml:"Timestamp"`
+	V720Duration   int64            `json:"V720Duration" xml:"V720Duration"`
+	V1080Duration  int64            `json:"V1080Duration" xml:"V1080Duration"`
+	KwaiSidc       string           `json:"KwaiSidc" xml:"KwaiSidc"`
+	CdnOcid        string           `json:"CdnOcid" xml:"CdnOcid"`
+	KwaiTsc        int64            `json:"KwaiTsc" xml:"KwaiTsc"`
+	UpstreamDomain string           `json:"UpstreamDomain" xml:"UpstreamDomain"`
+	CdnIsp         string           `json:"CdnIsp" xml:"CdnIsp"`
+	SingleAudio    int64            `json:"Single_Audio" xml:"Single_Audio"`
+	V480Duration   int64            `json:"V480Duration" xml:"V480Duration"`
+	CdnProvince    string           `json:"CdnProvince" xml:"CdnProvince"`
+	SingleVideo    int64            `json:"Single_Video" xml:"Single_Video"`
+	DetailData     []DetailDataItem `json:"DetailData" xml:"DetailData"`
 }
