@@ -72,7 +72,7 @@ func (client *Client) CreateRulesWithCallback(request *CreateRulesRequest, callb
 type CreateRulesRequest struct {
 	*requests.RpcRequest
 	ClientToken string              `position:"Query" name:"ClientToken"`
-	Rules       *[]CreateRulesRules `position:"Query" name:"Rules"  type:"Repeated"`
+	Rules       *[]CreateRulesRules `position:"Body" name:"Rules"  type:"Repeated"`
 	ListenerId  string              `position:"Query" name:"ListenerId"`
 	DryRun      requests.Boolean    `position:"Query" name:"DryRun"`
 }

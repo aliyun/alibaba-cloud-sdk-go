@@ -71,6 +71,7 @@ func (client *Client) UpdateServerGroupAttributeWithCallback(request *UpdateServ
 // UpdateServerGroupAttributeRequest is the request struct for api UpdateServerGroupAttribute
 type UpdateServerGroupAttributeRequest struct {
 	*requests.RpcRequest
+	CrossZoneEnabled         requests.Boolean                                `position:"Query" name:"CrossZoneEnabled"`
 	ServerGroupName          string                                          `position:"Query" name:"ServerGroupName"`
 	ClientToken              string                                          `position:"Query" name:"ClientToken"`
 	HealthCheckConfig        UpdateServerGroupAttributeHealthCheckConfig     `position:"Query" name:"HealthCheckConfig"  type:"Struct"`

@@ -72,7 +72,7 @@ func (client *Client) UpdateRulesAttributeWithCallback(request *UpdateRulesAttri
 type UpdateRulesAttributeRequest struct {
 	*requests.RpcRequest
 	ClientToken string                       `position:"Query" name:"ClientToken"`
-	Rules       *[]UpdateRulesAttributeRules `position:"Query" name:"Rules"  type:"Repeated"`
+	Rules       *[]UpdateRulesAttributeRules `position:"Body" name:"Rules"  type:"Repeated"`
 	DryRun      requests.Boolean             `position:"Query" name:"DryRun"`
 }
 

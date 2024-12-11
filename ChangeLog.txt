@@ -1,3 +1,7 @@
+2024-12-11 Version: v1.63.66
+- Generated 2020-06-16 for `Alb`.
+- Support fromData for UpdateRulesAttribute and Createrules
+
 2024-12-06 Version: v1.63.65
 - Generated 2016-11-01 for `live`.
 undefined

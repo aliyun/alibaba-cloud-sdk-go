@@ -33,6 +33,7 @@ type ServerGroup struct {
 	ServerCount              int                   `json:"ServerCount" xml:"ServerCount"`
 	ServiceName              string                `json:"ServiceName" xml:"ServiceName"`
 	CreateTime               string                `json:"CreateTime" xml:"CreateTime"`
+	CrossZoneEnabled         bool                  `json:"CrossZoneEnabled" xml:"CrossZoneEnabled"`
 	RelatedLoadBalancerIds   []string              `json:"RelatedLoadBalancerIds" xml:"RelatedLoadBalancerIds"`
 	RelatedListenerIds       []string              `json:"RelatedListenerIds" xml:"RelatedListenerIds"`
 	RelatedRuleIds           []string              `json:"RelatedRuleIds" xml:"RelatedRuleIds"`

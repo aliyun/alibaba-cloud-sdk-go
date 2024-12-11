@@ -71,6 +71,7 @@ func (client *Client) CreateServerGroupWithCallback(request *CreateServerGroupRe
 // CreateServerGroupRequest is the request struct for api CreateServerGroup
 type CreateServerGroupRequest struct {
 	*requests.RpcRequest
+	CrossZoneEnabled         requests.Boolean                       `position:"Query" name:"CrossZoneEnabled"`
 	ServerGroupName          string                                 `position:"Query" name:"ServerGroupName"`
 	ClientToken              string                                 `position:"Query" name:"ClientToken"`
 	HealthCheckConfig        CreateServerGroupHealthCheckConfig     `position:"Query" name:"HealthCheckConfig"  type:"Struct"`
