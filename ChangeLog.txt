@@ -1,3 +1,7 @@
+2024-12-12 Version: v1.63.67
+- Generated 2018-11-01 for `dms-enterprise`.
+- Supported Pageable of ListDataLakeDatabase API.
+
 2024-12-11 Version: v1.63.66
 - Generated 2020-06-16 for `Alb`.
 - Support fromData for UpdateRulesAttribute and Createrules

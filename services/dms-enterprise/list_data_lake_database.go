@@ -73,8 +73,10 @@ type ListDataLakeDatabaseRequest struct {
 	*requests.RpcRequest
 	SearchKey   string           `position:"Query" name:"SearchKey"`
 	Tid         requests.Integer `position:"Query" name:"Tid"`
+	NextToken   string           `position:"Query" name:"NextToken"`
 	CatalogName string           `position:"Query" name:"CatalogName"`
 	DataRegion  string           `position:"Query" name:"DataRegion"`
+	MaxResults  requests.Integer `position:"Query" name:"MaxResults"`
 }
 
 // ListDataLakeDatabaseResponse is the response struct for api ListDataLakeDatabase
@@ -84,6 +86,8 @@ type ListDataLakeDatabaseResponse struct {
 	Success      bool                               `json:"Success" xml:"Success"`
 	ErrorCode    string                             `json:"ErrorCode" xml:"ErrorCode"`
 	ErrorMessage string                             `json:"ErrorMessage" xml:"ErrorMessage"`
+	NextToken    string                             `json:"NextToken" xml:"NextToken"`
+	MaxResults   int                                `json:"MaxResults" xml:"MaxResults"`
 	DatabaseList DatabaseListInListDataLakeDatabase `json:"DatabaseList" xml:"DatabaseList"`
 }
 
