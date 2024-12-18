@@ -92,6 +92,7 @@ type CreateScalingGroupRequest struct {
 	ServerGroup                         *[]CreateScalingGroupServerGroup            `position:"Query" name:"ServerGroup"  type:"Repeated"`
 	LaunchTemplateOverride              *[]CreateScalingGroupLaunchTemplateOverride `position:"Query" name:"LaunchTemplateOverride"  type:"Repeated"`
 	CompensateWithOnDemand              requests.Boolean                            `position:"Query" name:"CompensateWithOnDemand"`
+	CapacityOptions                     CreateScalingGroupCapacityOptions           `position:"Query" name:"CapacityOptions"  type:"Struct"`
 	MinSize                             requests.Integer                            `position:"Query" name:"MinSize"`
 	OwnerId                             requests.Integer                            `position:"Query" name:"OwnerId"`
 	AlbServerGroup                      *[]CreateScalingGroupAlbServerGroup         `position:"Query" name:"AlbServerGroup"  type:"Repeated"`
@@ -142,6 +143,14 @@ type CreateScalingGroupLaunchTemplateOverride struct {
 	WeightedCapacity string `name:"WeightedCapacity"`
 	InstanceType     string `name:"InstanceType"`
 	SpotPriceLimit   string `name:"SpotPriceLimit"`
+}
+
+// CreateScalingGroupCapacityOptions is a repeated param struct in CreateScalingGroupRequest
+type CreateScalingGroupCapacityOptions struct {
+	CompensateWithOnDemand              string `name:"CompensateWithOnDemand"`
+	OnDemandBaseCapacity                string `name:"OnDemandBaseCapacity"`
+	SpotAutoReplaceOnDemand             string `name:"SpotAutoReplaceOnDemand"`
+	OnDemandPercentageAboveBaseCapacity string `name:"OnDemandPercentageAboveBaseCapacity"`
 }
 
 // CreateScalingGroupAlbServerGroup is a repeated param struct in CreateScalingGroupRequest

@@ -96,6 +96,7 @@ type CreateEciScalingConfigurationRequest struct {
 	EphemeralStorage              requests.Integer                                        `position:"Query" name:"EphemeralStorage"`
 	DataCacheProvisionedIops      requests.Integer                                        `position:"Query" name:"DataCacheProvisionedIops"`
 	EipBandwidth                  requests.Integer                                        `position:"Query" name:"EipBandwidth"`
+	GpuDriverVersion              string                                                  `position:"Query" name:"GpuDriverVersion"`
 	CostOptimization              requests.Boolean                                        `position:"Query" name:"CostOptimization"`
 	DataCacheBurstingEnabled      requests.Boolean                                        `position:"Query" name:"DataCacheBurstingEnabled"`
 	Memory                        requests.Float                                          `position:"Query" name:"Memory"`

@@ -87,6 +87,7 @@ type ModifyScalingGroupRequest struct {
 	DesiredCapacity                     requests.Integer                            `position:"Query" name:"DesiredCapacity"`
 	LaunchTemplateOverride              *[]ModifyScalingGroupLaunchTemplateOverride `position:"Query" name:"LaunchTemplateOverride"  type:"Repeated"`
 	CompensateWithOnDemand              requests.Boolean                            `position:"Query" name:"CompensateWithOnDemand"`
+	CapacityOptions                     ModifyScalingGroupCapacityOptions           `position:"Query" name:"CapacityOptions"  type:"Struct"`
 	MinSize                             requests.Integer                            `position:"Query" name:"MinSize"`
 	OwnerId                             requests.Integer                            `position:"Query" name:"OwnerId"`
 	MaxSize                             requests.Integer                            `position:"Query" name:"MaxSize"`
@@ -114,6 +115,14 @@ type ModifyScalingGroupLaunchTemplateOverride struct {
 	WeightedCapacity string `name:"WeightedCapacity"`
 	InstanceType     string `name:"InstanceType"`
 	SpotPriceLimit   string `name:"SpotPriceLimit"`
+}
+
+// ModifyScalingGroupCapacityOptions is a repeated param struct in ModifyScalingGroupRequest
+type ModifyScalingGroupCapacityOptions struct {
+	CompensateWithOnDemand              string `name:"CompensateWithOnDemand"`
+	OnDemandBaseCapacity                string `name:"OnDemandBaseCapacity"`
+	SpotAutoReplaceOnDemand             string `name:"SpotAutoReplaceOnDemand"`
+	OnDemandPercentageAboveBaseCapacity string `name:"OnDemandPercentageAboveBaseCapacity"`
 }
 
 // ModifyScalingGroupResponse is the response struct for api ModifyScalingGroup

@@ -17,10 +17,12 @@ package ess
 
 // ResourcePool is a nested struct in ess response
 type ResourcePool struct {
-	ZoneId       string   `json:"ZoneId" xml:"ZoneId"`
-	Code         string   `json:"Code" xml:"Code"`
-	Msg          string   `json:"Msg" xml:"Msg"`
-	InstanceType string   `json:"InstanceType" xml:"InstanceType"`
-	Strength     string   `json:"Strength" xml:"Strength"`
-	VSwitchIds   []string `json:"VSwitchIds" xml:"VSwitchIds"`
+	ZoneId          string          `json:"ZoneId" xml:"ZoneId"`
+	Code            string          `json:"Code" xml:"Code"`
+	Msg             string          `json:"Msg" xml:"Msg"`
+	InstanceType    string          `json:"InstanceType" xml:"InstanceType"`
+	Status          string          `json:"Status" xml:"Status"`
+	Strength        string          `json:"Strength" xml:"Strength"`
+	VSwitchIds      []string        `json:"VSwitchIds" xml:"VSwitchIds"`
+	InventoryHealth InventoryHealth `json:"InventoryHealth" xml:"InventoryHealth"`
 }

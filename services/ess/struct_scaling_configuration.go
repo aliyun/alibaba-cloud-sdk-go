@@ -54,6 +54,7 @@ type ScalingConfiguration struct {
 	IngressBandwidth              int64                     `json:"IngressBandwidth" xml:"IngressBandwidth"`
 	SpotStrategy                  string                    `json:"SpotStrategy" xml:"SpotStrategy"`
 	Cpu                           float64                   `json:"Cpu" xml:"Cpu"`
+	GpuDriverVersion              string                    `json:"GpuDriverVersion" xml:"GpuDriverVersion"`
 	ImageSnapshotId               string                    `json:"ImageSnapshotId" xml:"ImageSnapshotId"`
 	DnsConfigNameServers          []string                  `json:"DnsConfigNameServers" xml:"DnsConfigNameServers"`
 	InstanceTypes                 []string                  `json:"InstanceTypes" xml:"InstanceTypes"`

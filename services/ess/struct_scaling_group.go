@@ -74,6 +74,7 @@ type ScalingGroup struct {
 	VSwitchIds                          VSwitchIdsInDescribeScalingGroups `json:"VSwitchIds" xml:"VSwitchIds"`
 	SuspendedProcesses                  SuspendedProcesses                `json:"SuspendedProcesses" xml:"SuspendedProcesses"`
 	HealthCheckTypes                    HealthCheckTypes                  `json:"HealthCheckTypes" xml:"HealthCheckTypes"`
+	CapacityOptions                     CapacityOptions                   `json:"CapacityOptions" xml:"CapacityOptions"`
 	VServerGroups                       VServerGroups                     `json:"VServerGroups" xml:"VServerGroups"`
 	LaunchTemplateOverrides             LaunchTemplateOverrides           `json:"LaunchTemplateOverrides" xml:"LaunchTemplateOverrides"`
 	AlbServerGroups                     AlbServerGroups                   `json:"AlbServerGroups" xml:"AlbServerGroups"`
