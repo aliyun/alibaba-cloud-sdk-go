@@ -100,6 +100,7 @@ type GetFeatureViewResponse struct {
 	GmtSyncTime            string       `json:"GmtSyncTime" xml:"GmtSyncTime"`
 	LastSyncConfig         string       `json:"LastSyncConfig" xml:"LastSyncConfig"`
 	PublishTableScript     string       `json:"PublishTableScript" xml:"PublishTableScript"`
+	MockTableName          string       `json:"MockTableName" xml:"MockTableName"`
 	Tags                   []string     `json:"Tags" xml:"Tags"`
 	Fields                 []FieldsItem `json:"Fields" xml:"Fields"`
 }
