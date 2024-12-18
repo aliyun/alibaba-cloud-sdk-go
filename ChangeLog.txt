@@ -1,3 +1,7 @@
+2024-12-18 Version: v1.63.69
+- Generated 2023-05-22 for `selectdb`.
+undefined
+
 2024-12-12 Version: v1.63.68
 - Generated 2014-05-26 for `Ecs`.
 - Savingsplan feature.
