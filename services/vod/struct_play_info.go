@@ -19,6 +19,7 @@ package vod
 type PlayInfo struct {
 	Format           string `json:"Format" xml:"Format"`
 	BitDepth         int    `json:"BitDepth" xml:"BitDepth"`
+	CodecName        string `json:"CodecName" xml:"CodecName"`
 	NarrowBandType   string `json:"NarrowBandType" xml:"NarrowBandType"`
 	Fps              string `json:"Fps" xml:"Fps"`
 	Encrypt          int64  `json:"Encrypt" xml:"Encrypt"`

@@ -17,20 +17,20 @@ package vod
 
 // AudioStream is a nested struct in vod response
 type AudioStream struct {
-	Index          string `json:"Index" xml:"Index"`
-	Timebase       string `json:"Timebase" xml:"Timebase"`
-	SampleFmt      string `json:"SampleFmt" xml:"SampleFmt"`
-	SampleRate     string `json:"SampleRate" xml:"SampleRate"`
-	ChannelLayout  string `json:"ChannelLayout" xml:"ChannelLayout"`
-	Lang           string `json:"Lang" xml:"Lang"`
-	CodecLongName  string `json:"CodecLongName" xml:"CodecLongName"`
-	Channels       string `json:"Channels" xml:"Channels"`
 	NumFrames      string `json:"NumFrames" xml:"NumFrames"`
-	Bitrate        string `json:"Bitrate" xml:"Bitrate"`
-	CodecTagString string `json:"CodecTagString" xml:"CodecTagString"`
-	StartTime      string `json:"StartTime" xml:"StartTime"`
 	CodecName      string `json:"CodecName" xml:"CodecName"`
-	Duration       string `json:"Duration" xml:"Duration"`
+	Timebase       string `json:"Timebase" xml:"Timebase"`
+	Bitrate        string `json:"Bitrate" xml:"Bitrate"`
+	SampleFmt      string `json:"SampleFmt" xml:"SampleFmt"`
 	CodecTag       string `json:"CodecTag" xml:"CodecTag"`
+	CodecTagString string `json:"CodecTagString" xml:"CodecTagString"`
+	Index          string `json:"Index" xml:"Index"`
+	Channels       string `json:"Channels" xml:"Channels"`
+	Lang           string `json:"Lang" xml:"Lang"`
+	SampleRate     string `json:"SampleRate" xml:"SampleRate"`
+	StartTime      string `json:"StartTime" xml:"StartTime"`
+	Duration       string `json:"Duration" xml:"Duration"`
 	CodecTimeBase  string `json:"CodecTimeBase" xml:"CodecTimeBase"`
+	CodecLongName  string `json:"CodecLongName" xml:"CodecLongName"`
+	ChannelLayout  string `json:"ChannelLayout" xml:"ChannelLayout"`
 }

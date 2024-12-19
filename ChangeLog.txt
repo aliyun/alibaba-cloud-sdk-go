@@ -1,3 +1,8 @@
+2024-12-19 Version: v1.63.72
+- Generated 2017-03-21 for `vod`.
+- Add BatchGetMediaInfos.
+- Modify UploadStreamByURL.
+
 2024-12-18 Version: v1.63.71
 - Generated 2014-08-28 for `Ess`.
 - InstanceRefresh support SkipMatching.

@@ -71,12 +71,13 @@ func (client *Client) UploadStreamByURLWithCallback(request *UploadStreamByURLRe
 // UploadStreamByURLRequest is the request struct for api UploadStreamByURL
 type UploadStreamByURLRequest struct {
 	*requests.RpcRequest
-	FileExtension string `position:"Query" name:"FileExtension"`
-	UserData      string `position:"Query" name:"UserData"`
-	HDRType       string `position:"Query" name:"HDRType"`
-	Definition    string `position:"Query" name:"Definition"`
-	StreamURL     string `position:"Query" name:"StreamURL"`
-	MediaId       string `position:"Query" name:"MediaId"`
+	FileExtension  string `position:"Query" name:"FileExtension"`
+	UserData       string `position:"Query" name:"UserData"`
+	HDRType        string `position:"Query" name:"HDRType"`
+	Definition     string `position:"Query" name:"Definition"`
+	StreamURL      string `position:"Query" name:"StreamURL"`
+	MediaId        string `position:"Query" name:"MediaId"`
+	UploadMetadata string `position:"Query" name:"UploadMetadata"`
 }
 
 // UploadStreamByURLResponse is the response struct for api UploadStreamByURL

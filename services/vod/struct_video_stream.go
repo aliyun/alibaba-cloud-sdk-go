@@ -17,28 +17,28 @@ package vod
 
 // VideoStream is a nested struct in vod response
 type VideoStream struct {
-	Timebase       string `json:"Timebase" xml:"Timebase"`
-	Index          string `json:"Index" xml:"Index"`
-	AvgFPS         string `json:"AvgFPS" xml:"AvgFPS"`
-	PixFmt         string `json:"PixFmt" xml:"PixFmt"`
-	Lang           string `json:"Lang" xml:"Lang"`
-	Sar            string `json:"Sar" xml:"Sar"`
 	Height         string `json:"Height" xml:"Height"`
-	CodecLongName  string `json:"CodecLongName" xml:"CodecLongName"`
 	NumFrames      string `json:"NumFrames" xml:"NumFrames"`
-	Bitrate        string `json:"Bitrate" xml:"Bitrate"`
-	Rotate         string `json:"Rotate" xml:"Rotate"`
-	CodecTagString string `json:"CodecTagString" xml:"CodecTagString"`
-	HasBFrames     string `json:"HasBFrames" xml:"HasBFrames"`
-	Profile        string `json:"Profile" xml:"Profile"`
-	StartTime      string `json:"StartTime" xml:"StartTime"`
 	Dar            string `json:"Dar" xml:"Dar"`
 	CodecName      string `json:"CodecName" xml:"CodecName"`
-	Width          string `json:"Width" xml:"Width"`
-	Duration       string `json:"Duration" xml:"Duration"`
+	Timebase       string `json:"Timebase" xml:"Timebase"`
+	Profile        string `json:"Profile" xml:"Profile"`
 	Fps            string `json:"Fps" xml:"Fps"`
-	CodecTag       string `json:"CodecTag" xml:"CodecTag"`
-	CodecTimeBase  string `json:"CodecTimeBase" xml:"CodecTimeBase"`
+	Bitrate        string `json:"Bitrate" xml:"Bitrate"`
+	Sar            string `json:"Sar" xml:"Sar"`
 	Level          string `json:"Level" xml:"Level"`
+	PixFmt         string `json:"PixFmt" xml:"PixFmt"`
+	CodecTag       string `json:"CodecTag" xml:"CodecTag"`
+	CodecTagString string `json:"CodecTagString" xml:"CodecTagString"`
+	Index          string `json:"Index" xml:"Index"`
+	Lang           string `json:"Lang" xml:"Lang"`
+	HasBFrames     string `json:"HasBFrames" xml:"HasBFrames"`
+	Width          string `json:"Width" xml:"Width"`
+	Rotate         string `json:"Rotate" xml:"Rotate"`
+	StartTime      string `json:"StartTime" xml:"StartTime"`
+	Duration       string `json:"Duration" xml:"Duration"`
+	CodecTimeBase  string `json:"CodecTimeBase" xml:"CodecTimeBase"`
 	HDRType        string `json:"HDRType" xml:"HDRType"`
+	CodecLongName  string `json:"CodecLongName" xml:"CodecLongName"`
+	AvgFPS         string `json:"AvgFPS" xml:"AvgFPS"`
 }
