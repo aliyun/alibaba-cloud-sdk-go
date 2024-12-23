@@ -28,6 +28,8 @@ type XForwardedForConfig struct {
 	XForwardedForClientCertFingerprintEnabled  bool   `json:"XForwardedForClientCertFingerprintEnabled" xml:"XForwardedForClientCertFingerprintEnabled"`
 	XForwardedForEnabled                       bool   `json:"XForwardedForEnabled" xml:"XForwardedForEnabled"`
 	XForwardedForSLBPortEnabled                bool   `json:"XForwardedForSLBPortEnabled" xml:"XForwardedForSLBPortEnabled"`
+	XForwardedForProcessingMode                string `json:"XForwardedForProcessingMode" xml:"XForwardedForProcessingMode"`
+	XForwardedForHostEnabled                   bool   `json:"XForwardedForHostEnabled" xml:"XForwardedForHostEnabled"`
 	XForwardedForClientCertClientVerifyAlias   string `json:"XForwardedForClientCertClientVerifyAlias" xml:"XForwardedForClientCertClientVerifyAlias"`
 	XForwardedForClientCertIssuerDNAlias       string `json:"XForwardedForClientCertIssuerDNAlias" xml:"XForwardedForClientCertIssuerDNAlias"`
 	XForwardedForClientCertFingerprintAlias    string `json:"XForwardedForClientCertFingerprintAlias" xml:"XForwardedForClientCertFingerprintAlias"`

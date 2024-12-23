@@ -126,6 +126,8 @@ type UpdateListenerAttributeXForwardedForConfig struct {
 	XForwardedForClientCertSubjectDNAlias      string `name:"XForwardedForClientCertSubjectDNAlias"`
 	XForwardedForClientSourceIpsEnabled        string `name:"XForwardedForClientSourceIpsEnabled"`
 	XForwardedForClientCertIssuerDNEnabled     string `name:"XForwardedForClientCertIssuerDNEnabled"`
+	XForwardedForHostEnabled                   string `name:"XForwardedForHostEnabled"`
+	XForwardedForProcessingMode                string `name:"XForwardedForProcessingMode"`
 	XForwardedForClientCertFingerprintEnabled  string `name:"XForwardedForClientCertFingerprintEnabled"`
 	XForwardedForClientCertIssuerDNAlias       string `name:"XForwardedForClientCertIssuerDNAlias"`
 	XForwardedForProtoEnabled                  string `name:"XForwardedForProtoEnabled"`
