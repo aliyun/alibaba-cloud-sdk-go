@@ -71,13 +71,14 @@ func (client *Client) CreateElasticNetworkInterfaceWithCallback(request *CreateE
 // CreateElasticNetworkInterfaceRequest is the request struct for api CreateElasticNetworkInterface
 type CreateElasticNetworkInterfaceRequest struct {
 	*requests.RpcRequest
-	ClientToken     string `position:"Body" name:"ClientToken"`
-	SecurityGroupId string `position:"Body" name:"SecurityGroupId"`
-	Description     string `position:"Body" name:"Description"`
-	NodeId          string `position:"Body" name:"NodeId"`
-	VSwitchId       string `position:"Body" name:"VSwitchId"`
-	VpcId           string `position:"Body" name:"VpcId"`
-	ZoneId          string `position:"Body" name:"ZoneId"`
+	ClientToken      string           `position:"Body" name:"ClientToken"`
+	SecurityGroupId  string           `position:"Body" name:"SecurityGroupId"`
+	Description      string           `position:"Body" name:"Description"`
+	NodeId           string           `position:"Body" name:"NodeId"`
+	EnableJumboFrame requests.Boolean `position:"Body" name:"EnableJumboFrame"`
+	VSwitchId        string           `position:"Body" name:"VSwitchId"`
+	VpcId            string           `position:"Body" name:"VpcId"`
+	ZoneId           string           `position:"Body" name:"ZoneId"`
 }
 
 // CreateElasticNetworkInterfaceResponse is the response struct for api CreateElasticNetworkInterface

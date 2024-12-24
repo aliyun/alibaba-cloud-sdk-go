@@ -75,6 +75,7 @@ type CreateVccRequest struct {
 	CenId              string           `position:"Body" name:"CenId"`
 	Description        string           `position:"Body" name:"Description"`
 	CenOwnerId         string           `position:"Body" name:"CenOwnerId"`
+	BgpAsn             requests.Integer `position:"Body" name:"BgpAsn"`
 	AccessCouldService requests.Boolean `position:"Body" name:"AccessCouldService"`
 	ResourceGroupId    string           `position:"Body" name:"ResourceGroupId"`
 	VccName            string           `position:"Body" name:"VccName"`

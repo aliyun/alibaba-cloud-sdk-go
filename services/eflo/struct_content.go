@@ -92,6 +92,7 @@ type Content struct {
 	NetworkInterfaceName      string                         `json:"NetworkInterfaceName" xml:"NetworkInterfaceName"`
 	LniSipQuota               int                            `json:"LniSipQuota" xml:"LniSipQuota"`
 	VpcId                     string                         `json:"VpcId" xml:"VpcId"`
+	EnableJumboFrame          bool                           `json:"EnableJumboFrame" xml:"EnableJumboFrame"`
 	ClusterId                 string                         `json:"ClusterId" xml:"ClusterId"`
 	Cidr                      string                         `json:"Cidr" xml:"Cidr"`
 	VpdId                     string                         `json:"VpdId" xml:"VpdId"`
@@ -106,6 +107,7 @@ type Content struct {
 	PrivateIpAddress          string                         `json:"PrivateIpAddress" xml:"PrivateIpAddress"`
 	Ncd                       int                            `json:"Ncd" xml:"Ncd"`
 	PortType                  string                         `json:"PortType" xml:"PortType"`
+	BgpAsn                    string                         `json:"BgpAsn" xml:"BgpAsn"`
 	NodeId                    string                         `json:"NodeId" xml:"NodeId"`
 	RegionId                  string                         `json:"RegionId" xml:"RegionId"`
 	ResourceGroupId           string                         `json:"ResourceGroupId" xml:"ResourceGroupId"`
@@ -135,6 +137,7 @@ type Content struct {
 	ErAttachments             []ErAttachment                 `json:"ErAttachments" xml:"ErAttachments"`
 	PrivateIpAddresses        []PrivateIpAddress             `json:"PrivateIpAddresses" xml:"PrivateIpAddresses"`
 	Tags                      []Tag                          `json:"Tags" xml:"Tags"`
+	Ipv6Addresses             []Ipv6Addresse                 `json:"Ipv6Addresses" xml:"Ipv6Addresses"`
 	ErRouteMaps               []ErRouteMap                   `json:"ErRouteMaps" xml:"ErRouteMaps"`
 	AliyunRouterInfo          []AliyunRouterInfoItem         `json:"AliyunRouterInfo" xml:"AliyunRouterInfo"`
 	PrivateIpAddressMacGroup  []PrivateIpAddressMacGroupItem `json:"PrivateIpAddressMacGroup" xml:"PrivateIpAddressMacGroup"`
