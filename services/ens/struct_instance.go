@@ -33,6 +33,7 @@ type Instance struct {
 	InstanceName            string                               `json:"InstanceName" xml:"InstanceName"`
 	CreationTime            string                               `json:"CreationTime" xml:"CreationTime"`
 	EnsRegionId             string                               `json:"EnsRegionId" xml:"EnsRegionId"`
+	ServiceStatus           string                               `json:"ServiceStatus" xml:"ServiceStatus"`
 	StartTime               string                               `json:"StartTime" xml:"StartTime"`
 	KeyPairName             string                               `json:"KeyPairName" xml:"KeyPairName"`
 	InternetMaxBandwidthIn  int                                  `json:"InternetMaxBandwidthIn" xml:"InternetMaxBandwidthIn"`

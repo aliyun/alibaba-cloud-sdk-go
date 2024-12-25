@@ -81,6 +81,7 @@ type CreateSnatEntryRequest struct {
 	NatGatewayId    string           `position:"Query" name:"NatGatewayId"`
 	IdleTimeout     requests.Integer `position:"Query" name:"IdleTimeout"`
 	SnatEntryName   string           `position:"Query" name:"SnatEntryName"`
+	IspAffinity     requests.Boolean `position:"Query" name:"IspAffinity"`
 }
 
 // CreateSnatEntryResponse is the response struct for api CreateSnatEntry

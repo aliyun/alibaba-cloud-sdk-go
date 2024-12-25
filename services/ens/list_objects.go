@@ -84,20 +84,21 @@ type ListObjectsRequest struct {
 // ListObjectsResponse is the response struct for api ListObjects
 type ListObjectsResponse struct {
 	*responses.BaseResponse
-	NextContinuationToken string    `json:"NextContinuationToken" xml:"NextContinuationToken"`
-	ContinuationToken     string    `json:"ContinuationToken" xml:"ContinuationToken"`
-	Delimiter             string    `json:"Delimiter" xml:"Delimiter"`
-	EncodingType          string    `json:"EncodingType" xml:"EncodingType"`
-	Prefix                string    `json:"Prefix" xml:"Prefix"`
-	Marker                string    `json:"Marker" xml:"Marker"`
-	BucketName            string    `json:"BucketName" xml:"BucketName"`
-	IsTruncated           bool      `json:"IsTruncated" xml:"IsTruncated"`
-	KeyCount              int64     `json:"KeyCount" xml:"KeyCount"`
-	NextMarker            string    `json:"NextMarker" xml:"NextMarker"`
-	MaxKeys               int64     `json:"MaxKeys" xml:"MaxKeys"`
-	RequestId             string    `json:"RequestId" xml:"RequestId"`
-	CommonPrefixes        []string  `json:"CommonPrefixes" xml:"CommonPrefixes"`
-	Contents              []Content `json:"Contents" xml:"Contents"`
+	NextContinuationToken string             `json:"NextContinuationToken" xml:"NextContinuationToken"`
+	ContinuationToken     string             `json:"ContinuationToken" xml:"ContinuationToken"`
+	Delimiter             string             `json:"Delimiter" xml:"Delimiter"`
+	EncodingType          string             `json:"EncodingType" xml:"EncodingType"`
+	Prefix                string             `json:"Prefix" xml:"Prefix"`
+	Marker                string             `json:"Marker" xml:"Marker"`
+	BucketName            string             `json:"BucketName" xml:"BucketName"`
+	IsTruncated           bool               `json:"IsTruncated" xml:"IsTruncated"`
+	KeyCount              int64              `json:"KeyCount" xml:"KeyCount"`
+	NextMarker            string             `json:"NextMarker" xml:"NextMarker"`
+	MaxKeys               int64              `json:"MaxKeys" xml:"MaxKeys"`
+	RequestId             string             `json:"RequestId" xml:"RequestId"`
+	CommonPrefixes        []string           `json:"CommonPrefixes" xml:"CommonPrefixes"`
+	Contents              []Content          `json:"Contents" xml:"Contents"`
+	CommonPrefixInfos     []CommonPrefixInfo `json:"CommonPrefixInfos" xml:"CommonPrefixInfos"`
 }
 
 // CreateListObjectsRequest creates a request to invoke ListObjects API

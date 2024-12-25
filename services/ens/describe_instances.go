@@ -71,6 +71,7 @@ func (client *Client) DescribeInstancesWithCallback(request *DescribeInstancesRe
 // DescribeInstancesRequest is the request struct for api DescribeInstances
 type DescribeInstancesRequest struct {
 	*requests.RpcRequest
+	ServiceStatus        *[]string                `position:"Query" name:"ServiceStatus"  type:"Json"`
 	OrderByParams        string                   `position:"Query" name:"OrderByParams"`
 	EnsRegionId          string                   `position:"Query" name:"EnsRegionId"`
 	InstanceResourceType string                   `position:"Query" name:"InstanceResourceType"`

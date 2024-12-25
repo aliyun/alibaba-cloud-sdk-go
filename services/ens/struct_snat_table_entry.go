@@ -28,5 +28,6 @@ type SnatTableEntry struct {
 	Type          string   `json:"Type" xml:"Type"`
 	IdleTimeout   int      `json:"IdleTimeout" xml:"IdleTimeout"`
 	DestCIDR      string   `json:"DestCIDR" xml:"DestCIDR"`
+	IspAffinity   bool     `json:"IspAffinity" xml:"IspAffinity"`
 	SnatIps       []SnatIp `json:"SnatIps" xml:"SnatIps"`
 }
