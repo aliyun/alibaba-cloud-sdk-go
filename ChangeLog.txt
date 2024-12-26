@@ -1,3 +1,9 @@
+2024-12-26 Version: v1.63.76
+- Generated 2024-06-24 for `SchedulerX3`.
+- CreateJob and UpdateJob support ExecutorBlockStrategy.
+- TimeType support fixed_delay.
+- ListJobs support return LastExecuteEndTime, LastExecuteStatus and CurrentExecuteStatus.
+
 2024-12-25 Version: v1.63.75
 - Generated 2017-11-10 for `Ens`.
 -- Supported DeleteEip
