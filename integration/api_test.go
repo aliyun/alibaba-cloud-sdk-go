@@ -34,7 +34,7 @@ func Test_CreateClusterTokenWithROArequestWithXMLWithPOST(t *testing.T) {
 	response, err := client.CreateCluster(request)
 	assert.NotNil(t, err)
 	assert.Equal(t, 400, response.GetHttpStatus())
-	assert.Contains(t, err.Error(), "Request body can't be empty")
+	assert.Contains(t, err.Error(), "ErrorJsonDecode")
 }
 
 func Test_DeleteClusterWithROArequestWithXMLWithDelete(t *testing.T) {
@@ -45,7 +45,7 @@ func Test_DeleteClusterWithROArequestWithXMLWithDelete(t *testing.T) {
 	request.SetScheme("HTTPS")
 	response, err := client.DeleteCluster(request)
 	assert.NotNil(t, err)
-	assert.Equal(t, 400, response.GetHttpStatus())
+	assert.Equal(t, 404, response.GetHttpStatus())
 	assert.Contains(t, err.Error(), "ErrorClusterNotFound")
 }
 
@@ -57,7 +57,7 @@ func Test_DeleteClusterWithROArequestWithJSONWithDelete(t *testing.T) {
 	request.SetScheme("HTTPS")
 	response, err := client.DeleteCluster(request)
 	assert.NotNil(t, err)
-	assert.Equal(t, 400, response.GetHttpStatus())
+	assert.Equal(t, 404, response.GetHttpStatus())
 	assert.Contains(t, err.Error(), "ErrorClusterNotFound")
 }
 
