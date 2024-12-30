@@ -1,3 +1,8 @@
+2024-12-30 Version: v1.63.77
+- Generated 2022-01-01 for `quickbi-public`.
+- Add SmartQ APIs.
+- Add GetDataSourceConnectionInfo, QueryDatasetList APIs.
+
 2024-12-26 Version: v1.63.76
 - Generated 2024-06-24 for `SchedulerX3`.
 - CreateJob and UpdateJob support ExecutorBlockStrategy.

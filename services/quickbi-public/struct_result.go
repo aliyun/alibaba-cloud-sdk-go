@@ -17,71 +17,88 @@ package quickbi_public
 
 // Result is a nested struct in quickbi_public response
 type Result struct {
-	InvalidTime                 string                        `json:"InvalidTime" xml:"InvalidTime"`
-	TotalPages                  int64                         `json:"TotalPages" xml:"TotalPages"`
 	FailureDetail               map[string]interface{}        `json:"FailureDetail" xml:"FailureDetail"`
 	PageSize                    int64                         `json:"PageSize" xml:"PageSize"`
 	WatermarkParam              string                        `json:"WatermarkParam" xml:"WatermarkParam"`
-	EmbeddedCount               int                           `json:"EmbeddedCount" xml:"EmbeddedCount"`
 	RoleName                    string                        `json:"RoleName" xml:"RoleName"`
 	MaxCount                    int                           `json:"MaxCount" xml:"MaxCount"`
 	MaxTicketNum                int                           `json:"MaxTicketNum" xml:"MaxTicketNum"`
 	Auth3rdFlag                 int                           `json:"Auth3rdFlag" xml:"Auth3rdFlag"`
-	Failure                     int                           `json:"Failure" xml:"Failure"`
-	GmtModify                   string                        `json:"GmtModify" xml:"GmtModify"`
-	Success                     int                           `json:"Success" xml:"Success"`
+	CubeName                    string                        `json:"CubeName" xml:"CubeName"`
+	DsVersion                   string                        `json:"DsVersion" xml:"DsVersion"`
 	WorkType                    string                        `json:"WorkType" xml:"WorkType"`
 	OrganizationId              string                        `json:"OrganizationId" xml:"OrganizationId"`
-	FailCount                   int                           `json:"FailCount" xml:"FailCount"`
-	RuleType                    string                        `json:"RuleType" xml:"RuleType"`
 	Email                       string                        `json:"Email" xml:"Email"`
 	IsSystemRole                bool                          `json:"IsSystemRole" xml:"IsSystemRole"`
-	OwnerName                   string                        `json:"OwnerName" xml:"OwnerName"`
-	WorkspaceName               string                        `json:"WorkspaceName" xml:"WorkspaceName"`
 	Sql                         string                        `json:"Sql" xml:"Sql"`
-	OpenOfflineAcceleration     bool                          `json:"OpenOfflineAcceleration" xml:"OpenOfflineAcceleration"`
 	PageNo                      int64                         `json:"PageNo" xml:"PageNo"`
-	RowLevel                    bool                          `json:"RowLevel" xml:"RowLevel"`
-	WorksId                     string                        `json:"WorksId" xml:"WorksId"`
 	IsOpenColumnLevelPermission int                           `json:"IsOpenColumnLevelPermission" xml:"IsOpenColumnLevelPermission"`
 	CmptId                      string                        `json:"CmptId" xml:"CmptId"`
 	AccountId                   string                        `json:"AccountId" xml:"AccountId"`
-	Total                       int                           `json:"Total" xml:"Total"`
+	CubeIds                     map[string]interface{}        `json:"CubeIds" xml:"CubeIds"`
 	SecurityLevel               string                        `json:"SecurityLevel" xml:"SecurityLevel"`
-	DsName                      string                        `json:"DsName" xml:"DsName"`
 	WorkspaceId                 string                        `json:"WorkspaceId" xml:"WorkspaceId"`
 	DatasetId                   string                        `json:"DatasetId" xml:"DatasetId"`
-	CustimzeSql                 bool                          `json:"CustimzeSql" xml:"CustimzeSql"`
-	CubeId                      string                        `json:"CubeId" xml:"CubeId"`
+	AuthLevel                   string                        `json:"AuthLevel" xml:"AuthLevel"`
 	AuthAdminUser               bool                          `json:"AuthAdminUser" xml:"AuthAdminUser"`
+	ParentDsType                string                        `json:"ParentDsType" xml:"ParentDsType"`
+	Instance                    string                        `json:"Instance" xml:"Instance"`
 	GmtCreate                   string                        `json:"GmtCreate" xml:"GmtCreate"`
 	WorkName                    string                        `json:"WorkName" xml:"WorkName"`
-	UserId                      string                        `json:"UserId" xml:"UserId"`
-	NickName                    string                        `json:"NickName" xml:"NickName"`
+	Project                     string                        `json:"Project" xml:"Project"`
+	InstanceId                  string                        `json:"InstanceId" xml:"InstanceId"`
 	UserType                    int                           `json:"UserType" xml:"UserType"`
-	TotalNum                    int64                         `json:"TotalNum" xml:"TotalNum"`
+	CreatorId                   string                        `json:"CreatorId" xml:"CreatorId"`
 	AccessTicket                string                        `json:"AccessTicket" xml:"AccessTicket"`
 	Phone                       string                        `json:"Phone" xml:"Phone"`
-	Description                 string                        `json:"Description" xml:"Description"`
-	DsId                        string                        `json:"DsId" xml:"DsId"`
-	OkCount                     int                           `json:"OkCount" xml:"OkCount"`
-	UsedTicketNum               int                           `json:"UsedTicketNum" xml:"UsedTicketNum"`
 	RegisterTime                string                        `json:"RegisterTime" xml:"RegisterTime"`
-	Status                      int                           `json:"Status" xml:"Status"`
-	GlobalParam                 string                        `json:"GlobalParam" xml:"GlobalParam"`
-	ModifyName                  string                        `json:"ModifyName" xml:"ModifyName"`
 	DatasetName                 string                        `json:"DatasetName" xml:"DatasetName"`
 	RoleCode                    string                        `json:"RoleCode" xml:"RoleCode"`
-	IsOpenRowLevelPermission    int                           `json:"IsOpenRowLevelPermission" xml:"IsOpenRowLevelPermission"`
-	AdminUser                   bool                          `json:"AdminUser" xml:"AdminUser"`
-	RoleId                      int64                         `json:"RoleId" xml:"RoleId"`
-	PublicFlag                  bool                          `json:"PublicFlag" xml:"PublicFlag"`
 	AccountName                 string                        `json:"AccountName" xml:"AccountName"`
 	OwnerId                     string                        `json:"OwnerId" xml:"OwnerId"`
 	PublicInvalidTime           int64                         `json:"PublicInvalidTime" xml:"PublicInvalidTime"`
 	DsType                      string                        `json:"DsType" xml:"DsType"`
-	Values                      []map[string]interface{}      `json:"Values" xml:"Values"`
+	InvalidTime                 string                        `json:"InvalidTime" xml:"InvalidTime"`
+	TotalPages                  int64                         `json:"TotalPages" xml:"TotalPages"`
+	EmbeddedCount               int                           `json:"EmbeddedCount" xml:"EmbeddedCount"`
+	Failure                     int                           `json:"Failure" xml:"Failure"`
+	GmtModify                   string                        `json:"GmtModify" xml:"GmtModify"`
+	Success                     int                           `json:"Success" xml:"Success"`
+	FailCount                   int                           `json:"FailCount" xml:"FailCount"`
+	ShowName                    string                        `json:"ShowName" xml:"ShowName"`
+	Schema                      string                        `json:"Schema" xml:"Schema"`
+	RuleType                    string                        `json:"RuleType" xml:"RuleType"`
+	ModifyUser                  string                        `json:"ModifyUser" xml:"ModifyUser"`
+	OwnerName                   string                        `json:"OwnerName" xml:"OwnerName"`
+	WorkspaceName               string                        `json:"WorkspaceName" xml:"WorkspaceName"`
+	OpenOfflineAcceleration     bool                          `json:"OpenOfflineAcceleration" xml:"OpenOfflineAcceleration"`
+	NoSasl                      bool                          `json:"NoSasl" xml:"NoSasl"`
+	RowLevel                    bool                          `json:"RowLevel" xml:"RowLevel"`
+	WorksId                     string                        `json:"WorksId" xml:"WorksId"`
+	Total                       int                           `json:"Total" xml:"Total"`
+	DsName                      string                        `json:"DsName" xml:"DsName"`
+	ThemeIds                    map[string]interface{}        `json:"ThemeIds" xml:"ThemeIds"`
+	CustimzeSql                 bool                          `json:"CustimzeSql" xml:"CustimzeSql"`
+	CubeId                      string                        `json:"CubeId" xml:"CubeId"`
+	UserId                      string                        `json:"UserId" xml:"UserId"`
+	NickName                    string                        `json:"NickName" xml:"NickName"`
+	TotalNum                    int64                         `json:"TotalNum" xml:"TotalNum"`
+	HasPerssion                 bool                          `json:"HasPerssion" xml:"HasPerssion"`
+	Description                 string                        `json:"Description" xml:"Description"`
+	DsId                        string                        `json:"DsId" xml:"DsId"`
+	OkCount                     int                           `json:"OkCount" xml:"OkCount"`
+	UsedTicketNum               int                           `json:"UsedTicketNum" xml:"UsedTicketNum"`
+	Status                      int                           `json:"Status" xml:"Status"`
+	Port                        string                        `json:"Port" xml:"Port"`
+	GlobalParam                 string                        `json:"GlobalParam" xml:"GlobalParam"`
+	ModifyName                  string                        `json:"ModifyName" xml:"ModifyName"`
+	IsOpenRowLevelPermission    int                           `json:"IsOpenRowLevelPermission" xml:"IsOpenRowLevelPermission"`
+	Address                     string                        `json:"Address" xml:"Address"`
+	AdminUser                   bool                          `json:"AdminUser" xml:"AdminUser"`
+	RoleId                      int64                         `json:"RoleId" xml:"RoleId"`
+	PublicFlag                  bool                          `json:"PublicFlag" xml:"PublicFlag"`
 	RoleIdList                  []int64                       `json:"RoleIdList" xml:"RoleIdList"`
+	Values                      []map[string]interface{}      `json:"Values" xml:"Values"`
 	FailedUserGroupIds          []string                      `json:"FailedUserGroupIds" xml:"FailedUserGroupIds"`
 	UsersModel                  UsersModel                    `json:"UsersModel" xml:"UsersModel"`
 	Detail                      Detail                        `json:"Detail" xml:"Detail"`
@@ -89,11 +106,11 @@ type Result struct {
 	AuthConfigList              []AuthConfigListItem          `json:"AuthConfigList" xml:"AuthConfigList"`
 	UserGroupModels             []UserGroupModelsItem         `json:"UserGroupModels" xml:"UserGroupModels"`
 	MeasureList                 []MeasureListItem             `json:"MeasureList" xml:"MeasureList"`
+	ApiCopilotThemeModels       []ApiCopilotThemeModelsItem   `json:"ApiCopilotThemeModels" xml:"ApiCopilotThemeModels"`
+	CubeTableList               []CubeTableListItem           `json:"CubeTableList" xml:"CubeTableList"`
+	Headers                     []HeadersItem                 `json:"Headers" xml:"Headers"`
 	FailResults                 []FailResultsItem             `json:"FailResults" xml:"FailResults"`
 	DimensionList               []DimensionListItem           `json:"DimensionList" xml:"DimensionList"`
-	ApiCopilotThemeModels       []ApiCopilotThemeModelsItem   `json:"ApiCopilotThemeModels" xml:"ApiCopilotThemeModels"`
 	ApiCopilotLlmCubeModels     []ApiCopilotLlmCubeModelsItem `json:"ApiCopilotLlmCubeModels" xml:"ApiCopilotLlmCubeModels"`
-	CubeTableList               []CubeTableListItem           `json:"CubeTableList" xml:"CubeTableList"`
 	Data                        []DataItem                    `json:"Data" xml:"Data"`
-	Headers                     []HeadersItem                 `json:"Headers" xml:"Headers"`
 }

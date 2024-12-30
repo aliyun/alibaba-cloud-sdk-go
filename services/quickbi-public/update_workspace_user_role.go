@@ -73,8 +73,9 @@ type UpdateWorkspaceUserRoleRequest struct {
 	*requests.RpcRequest
 	RoleId      requests.Integer `position:"Query" name:"RoleId"`
 	AccessPoint string           `position:"Query" name:"AccessPoint"`
-	SignType    string           `position:"Query" name:"SignType"`
 	UserId      string           `position:"Query" name:"UserId"`
+	RoleIds     string           `position:"Query" name:"RoleIds"`
+	SignType    string           `position:"Query" name:"SignType"`
 	WorkspaceId string           `position:"Query" name:"WorkspaceId"`
 }
 

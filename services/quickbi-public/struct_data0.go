@@ -17,6 +17,7 @@ package quickbi_public
 
 // Data is a nested struct in quickbi_public response
 type Data struct {
+	CreatorName                  string                       `json:"CreatorName" xml:"CreatorName"`
 	WorksName                    string                       `json:"WorksName" xml:"WorksName"`
 	IdentifiedPath               string                       `json:"IdentifiedPath" xml:"IdentifiedPath"`
 	UsergroupDesc                string                       `json:"UsergroupDesc" xml:"UsergroupDesc"`
@@ -30,6 +31,9 @@ type Data struct {
 	FavoriteId                   int                          `json:"FavoriteId" xml:"FavoriteId"`
 	WorkType                     string                       `json:"WorkType" xml:"WorkType"`
 	Id                           string                       `json:"Id" xml:"Id"`
+	DatasourceId                 string                       `json:"DatasourceId" xml:"DatasourceId"`
+	DetailMessage                string                       `json:"DetailMessage" xml:"DetailMessage"`
+	ShowName                     string                       `json:"ShowName" xml:"ShowName"`
 	QueryTimeoutCountPercent     string                       `json:"QueryTimeoutCountPercent" xml:"QueryTimeoutCountPercent"`
 	ShareToId                    string                       `json:"ShareToId" xml:"ShareToId"`
 	WorksType                    string                       `json:"WorksType" xml:"WorksType"`
@@ -49,8 +53,10 @@ type Data struct {
 	ThirdPartAuthFlag            int                          `json:"ThirdPartAuthFlag" xml:"ThirdPartAuthFlag"`
 	QueryOverTenSecPercentNum    string                       `json:"QueryOverTenSecPercentNum" xml:"QueryOverTenSecPercentNum"`
 	WorkspaceId                  string                       `json:"WorkspaceId" xml:"WorkspaceId"`
+	LlmCubeTheme                 string                       `json:"LlmCubeTheme" xml:"LlmCubeTheme"`
 	ReportType                   string                       `json:"ReportType" xml:"ReportType"`
 	RepeatQueryPercent           string                       `json:"RepeatQueryPercent" xml:"RepeatQueryPercent"`
+	LlmCube                      string                       `json:"LlmCube" xml:"LlmCube"`
 	RepeatSqlQueryPercent        string                       `json:"RepeatSqlQueryPercent" xml:"RepeatSqlQueryPercent"`
 	Name                         string                       `json:"Name" xml:"Name"`
 	ModifyTime                   string                       `json:"ModifyTime" xml:"ModifyTime"`
@@ -59,10 +65,14 @@ type Data struct {
 	ReportId                     string                       `json:"ReportId" xml:"ReportId"`
 	CreateTime                   string                       `json:"CreateTime" xml:"CreateTime"`
 	ShowOnlyWithAccess           bool                         `json:"ShowOnlyWithAccess" xml:"ShowOnlyWithAccess"`
+	ParentDsType                 string                       `json:"ParentDsType" xml:"ParentDsType"`
 	ParentUserGroupName          string                       `json:"ParentUserGroupName" xml:"ParentUserGroupName"`
 	UsergroupId                  string                       `json:"UsergroupId" xml:"UsergroupId"`
+	GmtCreate                    string                       `json:"GmtCreate" xml:"GmtCreate"`
 	WorkName                     string                       `json:"WorkName" xml:"WorkName"`
 	UserGroupName                string                       `json:"UserGroupName" xml:"UserGroupName"`
+	UserId                       string                       `json:"UserId" xml:"UserId"`
+	CreatorId                    string                       `json:"CreatorId" xml:"CreatorId"`
 	CreateUser                   string                       `json:"CreateUser" xml:"CreateUser"`
 	QueryCountAvg                string                       `json:"QueryCountAvg" xml:"QueryCountAvg"`
 	TagValue                     string                       `json:"TagValue" xml:"TagValue"`
@@ -78,6 +88,7 @@ type Data struct {
 	RepeatQueryPercentNum        string                       `json:"RepeatQueryPercentNum" xml:"RepeatQueryPercentNum"`
 	ModifyName                   string                       `json:"ModifyName" xml:"ModifyName"`
 	ComponentName                string                       `json:"ComponentName" xml:"ComponentName"`
+	GmtModified                  string                       `json:"GmtModified" xml:"GmtModified"`
 	QueryOverFivePercentNum      string                       `json:"QueryOverFivePercentNum" xml:"QueryOverFivePercentNum"`
 	ComponentQueryCountAvg       string                       `json:"ComponentQueryCountAvg" xml:"ComponentQueryCountAvg"`
 	QueryOverFiveSecPercent      string                       `json:"QueryOverFiveSecPercent" xml:"QueryOverFiveSecPercent"`
@@ -90,6 +101,7 @@ type Data struct {
 	ComponentQueryCount          int                          `json:"ComponentQueryCount" xml:"ComponentQueryCount"`
 	OwnerId                      string                       `json:"OwnerId" xml:"OwnerId"`
 	UserGroupDescription         string                       `json:"UserGroupDescription" xml:"UserGroupDescription"`
+	DsType                       string                       `json:"DsType" xml:"DsType"`
 	ReportName                   string                       `json:"ReportName" xml:"ReportName"`
 	ShareType                    string                       `json:"ShareType" xml:"ShareType"`
 	CubePerformanceDiagnoseModel CubePerformanceDiagnoseModel `json:"CubePerformanceDiagnoseModel" xml:"CubePerformanceDiagnoseModel"`

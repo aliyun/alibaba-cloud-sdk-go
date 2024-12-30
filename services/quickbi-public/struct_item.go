@@ -17,10 +17,11 @@ package quickbi_public
 
 // Item is a nested struct in quickbi_public response
 type Item struct {
-	ComponentId       string       `json:"ComponentId" xml:"ComponentId"`
-	ComponentName     string       `json:"ComponentName" xml:"ComponentName"`
-	ComponentType     int          `json:"ComponentType" xml:"ComponentType"`
-	ComponentTypeName string       `json:"ComponentTypeName" xml:"ComponentTypeName"`
-	DatasetId         string       `json:"DatasetId" xml:"DatasetId"`
-	QueryParams       []QueryParam `json:"QueryParams" xml:"QueryParams"`
+	ComponentId         string       `json:"ComponentId" xml:"ComponentId"`
+	ComponentName       string       `json:"ComponentName" xml:"ComponentName"`
+	ComponentType       int          `json:"ComponentType" xml:"ComponentType"`
+	ComponentTypeName   string       `json:"ComponentTypeName" xml:"ComponentTypeName"`
+	ComponentTypeCnName string       `json:"ComponentTypeCnName" xml:"ComponentTypeCnName"`
+	DatasetId           string       `json:"DatasetId" xml:"DatasetId"`
+	QueryParams         []QueryParam `json:"QueryParams" xml:"QueryParams"`
 }
