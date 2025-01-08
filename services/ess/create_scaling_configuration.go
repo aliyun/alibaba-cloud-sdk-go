@@ -94,6 +94,7 @@ type CreateScalingConfigurationRequest struct {
 	ScalingConfigurationName        string                                            `position:"Query" name:"ScalingConfigurationName"`
 	Tags                            string                                            `position:"Query" name:"Tags"`
 	SpotStrategy                    string                                            `position:"Query" name:"SpotStrategy"`
+	CpuOptions                      CreateScalingConfigurationCpuOptions              `position:"Query" name:"CpuOptions"  type:"Struct"`
 	SystemDiskBurstingEnabled       requests.Boolean                                  `position:"Query" name:"SystemDisk.BurstingEnabled"`
 	InstanceName                    string                                            `position:"Query" name:"InstanceName"`
 	InternetChargeType              string                                            `position:"Query" name:"InternetChargeType"`
@@ -159,6 +160,11 @@ type CreateScalingConfigurationSpotPriceLimit struct {
 type CreateScalingConfigurationCustomPriorities struct {
 	VswitchId    string `name:"VswitchId"`
 	InstanceType string `name:"InstanceType"`
+}
+
+// CreateScalingConfigurationCpuOptions is a repeated param struct in CreateScalingConfigurationRequest
+type CreateScalingConfigurationCpuOptions struct {
+	Accelerators *[]string `name:"Accelerators" type:"Repeated"`
 }
 
 // CreateScalingConfigurationInstancePatternInfo is a repeated param struct in CreateScalingConfigurationRequest

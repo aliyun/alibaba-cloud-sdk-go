@@ -71,16 +71,17 @@ func (client *Client) AttachInstancesWithCallback(request *AttachInstancesReques
 // AttachInstancesRequest is the request struct for api AttachInstances
 type AttachInstancesRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	ScalingGroupId       string           `position:"Query" name:"ScalingGroupId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	Entrusted            requests.Boolean `position:"Query" name:"Entrusted"`
-	InstanceId           *[]string        `position:"Query" name:"InstanceId"  type:"Repeated"`
-	LoadBalancerWeight   *[]string        `position:"Query" name:"LoadBalancerWeight"  type:"Repeated"`
-	LifecycleHook        requests.Boolean `position:"Query" name:"LifecycleHook"`
+	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken           string           `position:"Query" name:"ClientToken"`
+	ScalingGroupId        string           `position:"Query" name:"ScalingGroupId"`
+	IgnoreInvalidInstance requests.Boolean `position:"Query" name:"IgnoreInvalidInstance"`
+	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
+	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
+	Entrusted             requests.Boolean `position:"Query" name:"Entrusted"`
+	InstanceId            *[]string        `position:"Query" name:"InstanceId"  type:"Repeated"`
+	LoadBalancerWeight    *[]string        `position:"Query" name:"LoadBalancerWeight"  type:"Repeated"`
+	LifecycleHook         requests.Boolean `position:"Query" name:"LifecycleHook"`
 }
 
 // AttachInstancesResponse is the response struct for api AttachInstances
