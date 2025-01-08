@@ -17,6 +17,7 @@ package vod
 
 // PlayInfo is a nested struct in vod response
 type PlayInfo struct {
+	TemplateId       string `json:"TemplateId" xml:"TemplateId"`
 	Format           string `json:"Format" xml:"Format"`
 	BitDepth         int    `json:"BitDepth" xml:"BitDepth"`
 	CodecName        string `json:"CodecName" xml:"CodecName"`
@@ -24,6 +25,7 @@ type PlayInfo struct {
 	Fps              string `json:"Fps" xml:"Fps"`
 	Encrypt          int64  `json:"Encrypt" xml:"Encrypt"`
 	Rand             string `json:"Rand" xml:"Rand"`
+	TemplateGroupId  string `json:"TemplateGroupId" xml:"TemplateGroupId"`
 	StreamType       string `json:"StreamType" xml:"StreamType"`
 	WatermarkId      string `json:"WatermarkId" xml:"WatermarkId"`
 	Size             int64  `json:"Size" xml:"Size"`

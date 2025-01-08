@@ -1,3 +1,7 @@
+2025-01-08 Version: v1.63.78
+- Generated 2017-03-21 for `vod`.
+- Modify BatchGetMediaInfos.
+
 2024-12-30 Version: v1.63.77
 - Generated 2022-01-01 for `quickbi-public`.
 - Add SmartQ APIs.
