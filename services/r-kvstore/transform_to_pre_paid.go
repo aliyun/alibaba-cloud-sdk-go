@@ -73,6 +73,7 @@ type TransformToPrePaidRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
+	AutoRenewPeriod      requests.Integer `position:"Query" name:"AutoRenewPeriod"`
 	Period               requests.Integer `position:"Query" name:"Period"`
 	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`
 	FromApp              string           `position:"Query" name:"FromApp"`
@@ -80,6 +81,7 @@ type TransformToPrePaidRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
+	AutoRenew            string           `position:"Query" name:"AutoRenew"`
 	ChargeType           string           `position:"Query" name:"ChargeType"`
 }
 

@@ -82,8 +82,14 @@ type DescribeInstanceConfigRequest struct {
 // DescribeInstanceConfigResponse is the response struct for api DescribeInstanceConfig
 type DescribeInstanceConfigResponse struct {
 	*responses.BaseResponse
-	Config    string `json:"Config" xml:"Config"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	Config                                   string `json:"Config" xml:"Config"`
+	RequestId                                string `json:"RequestId" xml:"RequestId"`
+	ParamReplMode                            string `json:"ParamReplMode" xml:"ParamReplMode"`
+	ParamReplTimeout                         string `json:"ParamReplTimeout" xml:"ParamReplTimeout"`
+	ParamNoLooseSentinelEnabled              string `json:"ParamNoLooseSentinelEnabled" xml:"ParamNoLooseSentinelEnabled"`
+	ParamSentinelCompatEnable                string `json:"ParamSentinelCompatEnable" xml:"ParamSentinelCompatEnable"`
+	ParamNoLooseSentinelPasswordFreeAccess   string `json:"ParamNoLooseSentinelPasswordFreeAccess" xml:"ParamNoLooseSentinelPasswordFreeAccess"`
+	ParamNoLooseSentinelPasswordFreeCommands string `json:"ParamNoLooseSentinelPasswordFreeCommands" xml:"ParamNoLooseSentinelPasswordFreeCommands"`
 }
 
 // CreateDescribeInstanceConfigRequest creates a request to invoke DescribeInstanceConfig API

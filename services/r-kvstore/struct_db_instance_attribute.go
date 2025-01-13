@@ -39,7 +39,10 @@ type DBInstanceAttribute struct {
 	InstanceName              string                          `json:"InstanceName" xml:"InstanceName"`
 	SecurityIPList            string                          `json:"SecurityIPList" xml:"SecurityIPList"`
 	ShardCount                int                             `json:"ShardCount" xml:"ShardCount"`
+	ReplicaCount              int                             `json:"ReplicaCount" xml:"ReplicaCount"`
+	SlaveReplicaCount         int                             `json:"SlaveReplicaCount" xml:"SlaveReplicaCount"`
 	ReadOnlyCount             int                             `json:"ReadOnlyCount" xml:"ReadOnlyCount"`
+	SlaveReadOnlyCount        int64                           `json:"SlaveReadOnlyCount" xml:"SlaveReadOnlyCount"`
 	GlobalInstanceId          string                          `json:"GlobalInstanceId" xml:"GlobalInstanceId"`
 	QPS                       int64                           `json:"QPS" xml:"QPS"`
 	AuditLogRetention         string                          `json:"AuditLogRetention" xml:"AuditLogRetention"`
@@ -60,7 +63,6 @@ type DBInstanceAttribute struct {
 	NodeType                  string                          `json:"NodeType" xml:"NodeType"`
 	Connections               int64                           `json:"Connections" xml:"Connections"`
 	BackupLogStartTime        string                          `json:"BackupLogStartTime" xml:"BackupLogStartTime"`
-	SlaveReadOnlyCount        int64                           `json:"SlaveReadOnlyCount" xml:"SlaveReadOnlyCount"`
 	ResourceGroupId           string                          `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	ZoneId                    string                          `json:"ZoneId" xml:"ZoneId"`
 	InstanceStatus            string                          `json:"InstanceStatus" xml:"InstanceStatus"`

@@ -76,7 +76,9 @@ type ModifyInstanceSpecRequest struct {
 	ClientToken          string           `position:"Query" name:"ClientToken"`
 	SlaveReadOnlyCount   requests.Integer `position:"Query" name:"SlaveReadOnlyCount"`
 	CouponNo             string           `position:"Query" name:"CouponNo"`
+	Storage              requests.Integer `position:"Query" name:"Storage"`
 	InstanceClass        string           `position:"Query" name:"InstanceClass"`
+	StorageType          string           `position:"Query" name:"StorageType"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	EffectiveTime        string           `position:"Query" name:"EffectiveTime"`
 	SourceBiz            string           `position:"Query" name:"SourceBiz"`
@@ -92,7 +94,9 @@ type ModifyInstanceSpecRequest struct {
 	InstanceId           string           `position:"Query" name:"InstanceId"`
 	ReadOnlyCount        requests.Integer `position:"Query" name:"ReadOnlyCount"`
 	ForceUpgrade         requests.Boolean `position:"Query" name:"ForceUpgrade"`
+	SlaveReplicaCount    requests.Integer `position:"Query" name:"SlaveReplicaCount"`
 	OrderType            string           `position:"Query" name:"OrderType"`
+	ReplicaCount         requests.Integer `position:"Query" name:"ReplicaCount"`
 }
 
 // ModifyInstanceSpecResponse is the response struct for api ModifyInstanceSpec

@@ -72,6 +72,7 @@ func (client *Client) CreateTairInstanceWithCallback(request *CreateTairInstance
 type CreateTairInstanceRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId        requests.Integer         `position:"Query" name:"ResourceOwnerId"`
+	ConnectionStringPrefix string                   `position:"Query" name:"ConnectionStringPrefix"`
 	SecondaryZoneId        string                   `position:"Query" name:"SecondaryZoneId"`
 	SlaveReadOnlyCount     requests.Integer         `position:"Query" name:"SlaveReadOnlyCount"`
 	CouponNo               string                   `position:"Query" name:"CouponNo"`
@@ -96,6 +97,7 @@ type CreateTairInstanceRequest struct {
 	AutoRenew              string                   `position:"Query" name:"AutoRenew"`
 	Port                   requests.Integer         `position:"Query" name:"Port"`
 	ZoneId                 string                   `position:"Query" name:"ZoneId"`
+	ReplicaCount           requests.Integer         `position:"Query" name:"ReplicaCount"`
 	ClientToken            string                   `position:"Query" name:"ClientToken"`
 	AutoUseCoupon          string                   `position:"Query" name:"AutoUseCoupon"`
 	Storage                requests.Integer         `position:"Query" name:"Storage"`
@@ -112,6 +114,7 @@ type CreateTairInstanceRequest struct {
 	VpcId                  string                   `position:"Query" name:"VpcId"`
 	ReadOnlyCount          requests.Integer         `position:"Query" name:"ReadOnlyCount"`
 	ChargeType             string                   `position:"Query" name:"ChargeType"`
+	SlaveReplicaCount      requests.Integer         `position:"Query" name:"SlaveReplicaCount"`
 	ClusterBackupId        string                   `position:"Query" name:"ClusterBackupId"`
 }
 

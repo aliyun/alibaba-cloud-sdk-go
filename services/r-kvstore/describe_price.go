@@ -79,6 +79,7 @@ type DescribePriceRequest struct {
 	Capacity             requests.Integer `position:"Query" name:"Capacity"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	BusinessInfo         string           `position:"Query" name:"BusinessInfo"`
+	ShardCount           requests.Integer `position:"Query" name:"ShardCount"`
 	Period               requests.Integer `position:"Query" name:"Period"`
 	Product              string           `position:"Query" name:"Product"`
 	Quantity             requests.Integer `position:"Query" name:"Quantity"`

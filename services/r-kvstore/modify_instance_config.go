@@ -71,15 +71,21 @@ func (client *Client) ModifyInstanceConfigWithCallback(request *ModifyInstanceCo
 // ModifyInstanceConfigRequest is the request struct for api ModifyInstanceConfig
 type ModifyInstanceConfigRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	SecurityToken        string           `position:"Query" name:"SecurityToken"`
-	Product              string           `position:"Query" name:"Product"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	InstanceId           string           `position:"Query" name:"InstanceId"`
-	Category             string           `position:"Query" name:"Category"`
-	Config               string           `position:"Query" name:"Config"`
+	ResourceOwnerId                          requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ParamSemisyncReplTimeout                 string           `position:"Query" name:"ParamSemisyncReplTimeout"`
+	ParamNoLooseSentinelPasswordFreeCommands string           `position:"Query" name:"ParamNoLooseSentinelPasswordFreeCommands"`
+	ParamNoLooseSentinelPasswordFreeAccess   string           `position:"Query" name:"ParamNoLooseSentinelPasswordFreeAccess"`
+	ParamReplMode                            string           `position:"Query" name:"ParamReplMode"`
+	SecurityToken                            string           `position:"Query" name:"SecurityToken"`
+	ParamNoLooseSentinelEnabled              string           `position:"Query" name:"ParamNoLooseSentinelEnabled"`
+	Product                                  string           `position:"Query" name:"Product"`
+	ResourceOwnerAccount                     string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount                             string           `position:"Query" name:"OwnerAccount"`
+	ParamSentinelCompatEnable                string           `position:"Query" name:"ParamSentinelCompatEnable"`
+	OwnerId                                  requests.Integer `position:"Query" name:"OwnerId"`
+	InstanceId                               string           `position:"Query" name:"InstanceId"`
+	Category                                 string           `position:"Query" name:"Category"`
+	Config                                   string           `position:"Query" name:"Config"`
 }
 
 // ModifyInstanceConfigResponse is the response struct for api ModifyInstanceConfig

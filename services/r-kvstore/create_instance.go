@@ -97,6 +97,7 @@ type CreateInstanceRequest struct {
 	AutoRenew              string               `position:"Query" name:"AutoRenew"`
 	Port                   string               `position:"Query" name:"Port"`
 	ZoneId                 string               `position:"Query" name:"ZoneId"`
+	ReplicaCount           requests.Integer     `position:"Query" name:"ReplicaCount"`
 	Appendonly             string               `position:"Query" name:"Appendonly"`
 	NodeType               string               `position:"Query" name:"NodeType"`
 	AutoUseCoupon          string               `position:"Query" name:"AutoUseCoupon"`
@@ -118,6 +119,7 @@ type CreateInstanceRequest struct {
 	ReadOnlyCount          requests.Integer     `position:"Query" name:"ReadOnlyCount"`
 	ChargeType             string               `position:"Query" name:"ChargeType"`
 	Config                 string               `position:"Query" name:"Config"`
+	SlaveReplicaCount      requests.Integer     `position:"Query" name:"SlaveReplicaCount"`
 	ClusterBackupId        string               `position:"Query" name:"ClusterBackupId"`
 }
 
