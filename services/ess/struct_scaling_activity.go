@@ -46,4 +46,5 @@ type ScalingActivity struct {
 	StartedInstances      StartedInstances     `json:"StartedInstances" xml:"StartedInstances"`
 	StoppedInstances      StoppedInstances     `json:"StoppedInstances" xml:"StoppedInstances"`
 	LifecycleHookContext  LifecycleHookContext `json:"LifecycleHookContext" xml:"LifecycleHookContext"`
+	ErrorMessages         ErrorMessages        `json:"ErrorMessages" xml:"ErrorMessages"`
 }
