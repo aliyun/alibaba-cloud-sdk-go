@@ -17,30 +17,31 @@ package csas
 
 // Device is a nested struct in csas response
 type Device struct {
-	DeviceTag     string             `json:"DeviceTag" xml:"DeviceTag"`
-	DeviceType    string             `json:"DeviceType" xml:"DeviceType"`
-	DeviceModel   string             `json:"DeviceModel" xml:"DeviceModel"`
-	DeviceVersion string             `json:"DeviceVersion" xml:"DeviceVersion"`
-	Hostname      string             `json:"Hostname" xml:"Hostname"`
-	Username      string             `json:"Username" xml:"Username"`
-	SaseUserId    string             `json:"SaseUserId" xml:"SaseUserId"`
-	Department    string             `json:"Department" xml:"Department"`
-	InnerIP       string             `json:"InnerIP" xml:"InnerIP"`
-	SrcIP         string             `json:"SrcIP" xml:"SrcIP"`
-	Memory        string             `json:"Memory" xml:"Memory"`
-	CPU           string             `json:"CPU" xml:"CPU"`
-	Disk          string             `json:"Disk" xml:"Disk"`
-	Mac           string             `json:"Mac" xml:"Mac"`
-	AppVersion    string             `json:"AppVersion" xml:"AppVersion"`
-	DeviceBelong  string             `json:"DeviceBelong" xml:"DeviceBelong"`
-	SharingStatus bool               `json:"SharingStatus" xml:"SharingStatus"`
-	DeviceStatus  string             `json:"DeviceStatus" xml:"DeviceStatus"`
-	AppStatus     string             `json:"AppStatus" xml:"AppStatus"`
-	PaStatus      string             `json:"PaStatus" xml:"PaStatus"`
-	IaStatus      string             `json:"IaStatus" xml:"IaStatus"`
-	DlpStatus     string             `json:"DlpStatus" xml:"DlpStatus"`
-	NacStatus     string             `json:"NacStatus" xml:"NacStatus"`
-	CreateTime    string             `json:"CreateTime" xml:"CreateTime"`
-	UpdateTime    string             `json:"UpdateTime" xml:"UpdateTime"`
-	HistoryUsers  []HistoryUsersItem `json:"HistoryUsers" xml:"HistoryUsers"`
+	DeviceTag        string                 `json:"DeviceTag" xml:"DeviceTag"`
+	DeviceType       string                 `json:"DeviceType" xml:"DeviceType"`
+	DeviceModel      string                 `json:"DeviceModel" xml:"DeviceModel"`
+	DeviceVersion    string                 `json:"DeviceVersion" xml:"DeviceVersion"`
+	Hostname         string                 `json:"Hostname" xml:"Hostname"`
+	Username         string                 `json:"Username" xml:"Username"`
+	SaseUserId       string                 `json:"SaseUserId" xml:"SaseUserId"`
+	Department       string                 `json:"Department" xml:"Department"`
+	InnerIP          string                 `json:"InnerIP" xml:"InnerIP"`
+	SrcIP            string                 `json:"SrcIP" xml:"SrcIP"`
+	Memory           string                 `json:"Memory" xml:"Memory"`
+	CPU              string                 `json:"CPU" xml:"CPU"`
+	Disk             string                 `json:"Disk" xml:"Disk"`
+	Mac              string                 `json:"Mac" xml:"Mac"`
+	AppVersion       string                 `json:"AppVersion" xml:"AppVersion"`
+	DeviceBelong     string                 `json:"DeviceBelong" xml:"DeviceBelong"`
+	SharingStatus    bool                   `json:"SharingStatus" xml:"SharingStatus"`
+	DeviceStatus     string                 `json:"DeviceStatus" xml:"DeviceStatus"`
+	AppStatus        string                 `json:"AppStatus" xml:"AppStatus"`
+	PaStatus         string                 `json:"PaStatus" xml:"PaStatus"`
+	IaStatus         string                 `json:"IaStatus" xml:"IaStatus"`
+	DlpStatus        string                 `json:"DlpStatus" xml:"DlpStatus"`
+	NacStatus        string                 `json:"NacStatus" xml:"NacStatus"`
+	CreateTime       string                 `json:"CreateTime" xml:"CreateTime"`
+	UpdateTime       string                 `json:"UpdateTime" xml:"UpdateTime"`
+	HistoryUsers     []HistoryUsersItem     `json:"HistoryUsers" xml:"HistoryUsers"`
+	NetInterfaceInfo []NetInterfaceInfoItem `json:"NetInterfaceInfo" xml:"NetInterfaceInfo"`
 }
