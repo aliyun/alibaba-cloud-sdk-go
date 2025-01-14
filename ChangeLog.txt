@@ -1,3 +1,7 @@
+2025-01-14 Version: v1.63.82
+- Generated 2014-05-26 for `Ecs`.
+- Add EndTerminalSession.
+
 2025-01-14 Version: v1.63.81
 - Generated 2023-01-20 for `csas`.
 undefined
