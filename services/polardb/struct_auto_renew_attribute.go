@@ -17,10 +17,10 @@ package polardb
 
 // AutoRenewAttribute is a nested struct in polardb response
 type AutoRenewAttribute struct {
-	DBClusterId      string `json:"DBClusterId" xml:"DBClusterId"`
-	PeriodUnit       string `json:"PeriodUnit" xml:"PeriodUnit"`
-	Duration         int    `json:"Duration" xml:"Duration"`
-	RenewalStatus    string `json:"RenewalStatus" xml:"RenewalStatus"`
 	AutoRenewEnabled bool   `json:"AutoRenewEnabled" xml:"AutoRenewEnabled"`
+	DBClusterId      string `json:"DBClusterId" xml:"DBClusterId"`
+	Duration         int    `json:"Duration" xml:"Duration"`
+	PeriodUnit       string `json:"PeriodUnit" xml:"PeriodUnit"`
 	RegionId         string `json:"RegionId" xml:"RegionId"`
+	RenewalStatus    string `json:"RenewalStatus" xml:"RenewalStatus"`
 }

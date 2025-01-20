@@ -71,15 +71,16 @@ func (client *Client) ModifyDBClusterTDEWithCallback(request *ModifyDBClusterTDE
 // ModifyDBClusterTDERequest is the request struct for api ModifyDBClusterTDE
 type ModifyDBClusterTDERequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	DBClusterId          string           `position:"Query" name:"DBClusterId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	EncryptionKey        string           `position:"Query" name:"EncryptionKey"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	RoleArn              string           `position:"Query" name:"RoleArn"`
-	EncryptNewTables     string           `position:"Query" name:"EncryptNewTables"`
-	TDEStatus            string           `position:"Query" name:"TDEStatus"`
+	ResourceOwnerId         requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount    string           `position:"Query" name:"ResourceOwnerAccount"`
+	DBClusterId             string           `position:"Query" name:"DBClusterId"`
+	OwnerAccount            string           `position:"Query" name:"OwnerAccount"`
+	EncryptionKey           string           `position:"Query" name:"EncryptionKey"`
+	OwnerId                 requests.Integer `position:"Query" name:"OwnerId"`
+	EnableAutomaticRotation string           `position:"Query" name:"EnableAutomaticRotation"`
+	RoleArn                 string           `position:"Query" name:"RoleArn"`
+	EncryptNewTables        string           `position:"Query" name:"EncryptNewTables"`
+	TDEStatus               string           `position:"Query" name:"TDEStatus"`
 }
 
 // ModifyDBClusterTDEResponse is the response struct for api ModifyDBClusterTDE

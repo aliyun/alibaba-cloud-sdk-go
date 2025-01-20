@@ -74,8 +74,12 @@ type CreateDBClusterEndpointRequest struct {
 	AutoAddNewNodes       string           `position:"Query" name:"AutoAddNewNodes"`
 	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ClientToken           string           `position:"Query" name:"ClientToken"`
+	PolarSccWaitTimeout   string           `position:"Query" name:"PolarSccWaitTimeout"`
 	ReadWriteMode         string           `position:"Query" name:"ReadWriteMode"`
 	EndpointType          string           `position:"Query" name:"EndpointType"`
+	PolarSccTimeoutAction string           `position:"Query" name:"PolarSccTimeoutAction"`
+	EndpointSubCluster    string           `position:"Query" name:"EndpointSubCluster"`
+	StandbyVSwitchId      string           `position:"Query" name:"StandbyVSwitchId"`
 	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
 	DBClusterId           string           `position:"Query" name:"DBClusterId"`
 	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
@@ -84,6 +88,7 @@ type CreateDBClusterEndpointRequest struct {
 	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
 	VSwitchId             string           `position:"Query" name:"VSwitchId"`
 	Nodes                 string           `position:"Query" name:"Nodes"`
+	SccMode               string           `position:"Query" name:"SccMode"`
 	VPCId                 string           `position:"Query" name:"VPCId"`
 }
 

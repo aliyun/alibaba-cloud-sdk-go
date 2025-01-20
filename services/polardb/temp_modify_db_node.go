@@ -92,9 +92,9 @@ type TempModifyDBNodeDBNode struct {
 // TempModifyDBNodeResponse is the response struct for api TempModifyDBNode
 type TempModifyDBNodeResponse struct {
 	*responses.BaseResponse
-	RequestId   string   `json:"RequestId" xml:"RequestId"`
 	DBClusterId string   `json:"DBClusterId" xml:"DBClusterId"`
 	OrderId     string   `json:"OrderId" xml:"OrderId"`
+	RequestId   string   `json:"RequestId" xml:"RequestId"`
 	DBNodeIds   []string `json:"DBNodeIds" xml:"DBNodeIds"`
 }
 

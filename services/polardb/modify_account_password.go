@@ -72,6 +72,7 @@ func (client *Client) ModifyAccountPasswordWithCallback(request *ModifyAccountPa
 type ModifyAccountPasswordRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	PasswordType         string           `position:"Query" name:"PasswordType"`
 	AccountName          string           `position:"Query" name:"AccountName"`
 	NewAccountPassword   string           `position:"Query" name:"NewAccountPassword"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`

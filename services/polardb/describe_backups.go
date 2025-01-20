@@ -89,11 +89,12 @@ type DescribeBackupsRequest struct {
 // DescribeBackupsResponse is the response struct for api DescribeBackups
 type DescribeBackupsResponse struct {
 	*responses.BaseResponse
-	TotalRecordCount string                 `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	PageRecordCount  string                 `json:"PageRecordCount" xml:"PageRecordCount"`
-	RequestId        string                 `json:"RequestId" xml:"RequestId"`
-	PageNumber       string                 `json:"PageNumber" xml:"PageNumber"`
-	Items            ItemsInDescribeBackups `json:"Items" xml:"Items"`
+	TotalRecordCount      string                 `json:"TotalRecordCount" xml:"TotalRecordCount"`
+	PageRecordCount       string                 `json:"PageRecordCount" xml:"PageRecordCount"`
+	RequestId             string                 `json:"RequestId" xml:"RequestId"`
+	PageNumber            string                 `json:"PageNumber" xml:"PageNumber"`
+	TotalLevel2BackupSize string                 `json:"TotalLevel2BackupSize" xml:"TotalLevel2BackupSize"`
+	Items                 ItemsInDescribeBackups `json:"Items" xml:"Items"`
 }
 
 // CreateDescribeBackupsRequest creates a request to invoke DescribeBackups API

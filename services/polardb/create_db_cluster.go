@@ -99,11 +99,13 @@ type CreateDBClusterRequest struct {
 	TDEStatus                              requests.Boolean      `position:"Query" name:"TDEStatus"`
 	AllowShutDown                          string                `position:"Query" name:"AllowShutDown"`
 	LowerCaseTableNames                    string                `position:"Query" name:"LowerCaseTableNames"`
+	StorageEncryption                      requests.Boolean      `position:"Query" name:"StorageEncryption"`
 	ScaleRoNumMax                          string                `position:"Query" name:"ScaleRoNumMax"`
 	StandbyAZ                              string                `position:"Query" name:"StandbyAZ"`
 	ClientToken                            string                `position:"Query" name:"ClientToken"`
 	DefaultTimeZone                        string                `position:"Query" name:"DefaultTimeZone"`
 	ClusterNetworkType                     string                `position:"Query" name:"ClusterNetworkType"`
+	StorageEncryptionKey                   string                `position:"Query" name:"StorageEncryptionKey"`
 	ParameterGroupId                       string                `position:"Query" name:"ParameterGroupId"`
 	Engine                                 string                `position:"Query" name:"Engine"`
 	GDNId                                  string                `position:"Query" name:"GDNId"`
@@ -114,6 +116,8 @@ type CreateDBClusterRequest struct {
 	OwnerAccount                           string                `position:"Query" name:"OwnerAccount"`
 	LooseXEngineUseMemoryPct               string                `position:"Query" name:"LooseXEngineUseMemoryPct"`
 	UsedTime                               string                `position:"Query" name:"UsedTime"`
+	BurstingEnabled                        string                `position:"Query" name:"BurstingEnabled"`
+	TargetMinorVersion                     string                `position:"Query" name:"TargetMinorVersion"`
 	DBNodeNum                              requests.Integer      `position:"Query" name:"DBNodeNum"`
 	StorageUpperBound                      requests.Integer      `position:"Query" name:"StorageUpperBound"`
 	VPCId                                  string                `position:"Query" name:"VPCId"`
@@ -136,10 +140,10 @@ type CreateDBClusterTag struct {
 // CreateDBClusterResponse is the response struct for api CreateDBCluster
 type CreateDBClusterResponse struct {
 	*responses.BaseResponse
-	RequestId       string `json:"RequestId" xml:"RequestId"`
-	ResourceGroupId string `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	DBClusterId     string `json:"DBClusterId" xml:"DBClusterId"`
 	OrderId         string `json:"OrderId" xml:"OrderId"`
+	RequestId       string `json:"RequestId" xml:"RequestId"`
+	ResourceGroupId string `json:"ResourceGroupId" xml:"ResourceGroupId"`
 }
 
 // CreateCreateDBClusterRequest creates a request to invoke CreateDBCluster API

@@ -17,11 +17,13 @@ package polardb
 
 // GlobalDatabaseNetwork is a nested struct in polardb response
 type GlobalDatabaseNetwork struct {
-	DBVersion      string      `json:"DBVersion" xml:"DBVersion"`
-	GDNId          string      `json:"GDNId" xml:"GDNId"`
-	CreateTime     string      `json:"CreateTime" xml:"CreateTime"`
-	GDNStatus      string      `json:"GDNStatus" xml:"GDNStatus"`
-	DBType         string      `json:"DBType" xml:"DBType"`
-	GDNDescription string      `json:"GDNDescription" xml:"GDNDescription"`
-	DBClusters     []DBCluster `json:"DBClusters" xml:"DBClusters"`
+	DBVersion          string              `json:"DBVersion" xml:"DBVersion"`
+	GDNId              string              `json:"GDNId" xml:"GDNId"`
+	CreateTime         string              `json:"CreateTime" xml:"CreateTime"`
+	GDNStatus          string              `json:"GDNStatus" xml:"GDNStatus"`
+	DBType             string              `json:"DBType" xml:"DBType"`
+	GDNDescription     string              `json:"GDNDescription" xml:"GDNDescription"`
+	ZoneId             string              `json:"ZoneId" xml:"ZoneId"`
+	DBClusters         []DBCluster         `json:"DBClusters" xml:"DBClusters"`
+	OutCloudDBClusters []OutCloudDBCluster `json:"OutCloudDBClusters" xml:"OutCloudDBClusters"`
 }

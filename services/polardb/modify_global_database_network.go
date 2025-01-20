@@ -71,14 +71,15 @@ func (client *Client) ModifyGlobalDatabaseNetworkWithCallback(request *ModifyGlo
 // ModifyGlobalDatabaseNetworkRequest is the request struct for api ModifyGlobalDatabaseNetwork
 type ModifyGlobalDatabaseNetworkRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
-	SecurityToken        string           `position:"Query" name:"SecurityToken"`
-	GDNId                string           `position:"Query" name:"GDNId"`
-	GDNDescription       string           `position:"Query" name:"GDNDescription"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerId        requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceGroupId        string           `position:"Query" name:"ResourceGroupId"`
+	SecurityToken          string           `position:"Query" name:"SecurityToken"`
+	GDNId                  string           `position:"Query" name:"GDNId"`
+	GDNDescription         string           `position:"Query" name:"GDNDescription"`
+	ResourceOwnerAccount   string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount           string           `position:"Query" name:"OwnerAccount"`
+	EnableGlobalDomainName requests.Boolean `position:"Query" name:"EnableGlobalDomainName"`
+	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // ModifyGlobalDatabaseNetworkResponse is the response struct for api ModifyGlobalDatabaseNetwork

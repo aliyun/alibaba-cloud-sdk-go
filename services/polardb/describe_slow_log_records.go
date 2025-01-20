@@ -75,6 +75,7 @@ type DescribeSlowLogRecordsRequest struct {
 	StartTime            string           `position:"Query" name:"StartTime"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	NodeId               string           `position:"Query" name:"NodeId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	DBClusterId          string           `position:"Query" name:"DBClusterId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
@@ -87,12 +88,12 @@ type DescribeSlowLogRecordsRequest struct {
 // DescribeSlowLogRecordsResponse is the response struct for api DescribeSlowLogRecords
 type DescribeSlowLogRecordsResponse struct {
 	*responses.BaseResponse
-	TotalRecordCount int                           `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	PageRecordCount  int                           `json:"PageRecordCount" xml:"PageRecordCount"`
-	RequestId        string                        `json:"RequestId" xml:"RequestId"`
-	PageNumber       int                           `json:"PageNumber" xml:"PageNumber"`
 	DBClusterId      string                        `json:"DBClusterId" xml:"DBClusterId"`
 	Engine           string                        `json:"Engine" xml:"Engine"`
+	PageNumber       int                           `json:"PageNumber" xml:"PageNumber"`
+	PageRecordCount  int                           `json:"PageRecordCount" xml:"PageRecordCount"`
+	RequestId        string                        `json:"RequestId" xml:"RequestId"`
+	TotalRecordCount int                           `json:"TotalRecordCount" xml:"TotalRecordCount"`
 	Items            ItemsInDescribeSlowLogRecords `json:"Items" xml:"Items"`
 }
 

@@ -71,14 +71,18 @@ func (client *Client) CreateGlobalDatabaseNetworkWithCallback(request *CreateGlo
 // CreateGlobalDatabaseNetworkRequest is the request struct for api CreateGlobalDatabaseNetwork
 type CreateGlobalDatabaseNetworkRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
-	SecurityToken        string           `position:"Query" name:"SecurityToken"`
-	GDNDescription       string           `position:"Query" name:"GDNDescription"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	DBClusterId          string           `position:"Query" name:"DBClusterId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerId        requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceGroupId        string           `position:"Query" name:"ResourceGroupId"`
+	AccountName            string           `position:"Query" name:"AccountName"`
+	SecurityToken          string           `position:"Query" name:"SecurityToken"`
+	GDNDescription         string           `position:"Query" name:"GDNDescription"`
+	ResourceOwnerAccount   string           `position:"Query" name:"ResourceOwnerAccount"`
+	DBClusterId            string           `position:"Query" name:"DBClusterId"`
+	OwnerAccount           string           `position:"Query" name:"OwnerAccount"`
+	EnableGlobalDomainName requests.Boolean `position:"Query" name:"EnableGlobalDomainName"`
+	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
+	AccountPassword        string           `position:"Query" name:"AccountPassword"`
+	DBName                 string           `position:"Query" name:"DBName"`
 }
 
 // CreateGlobalDatabaseNetworkResponse is the response struct for api CreateGlobalDatabaseNetwork

@@ -83,17 +83,18 @@ type DescribeGlobalDatabaseNetworkRequest struct {
 // DescribeGlobalDatabaseNetworkResponse is the response struct for api DescribeGlobalDatabaseNetwork
 type DescribeGlobalDatabaseNetworkResponse struct {
 	*responses.BaseResponse
-	GDNStatus       string                                     `json:"GDNStatus" xml:"GDNStatus"`
-	DBVersion       string                                     `json:"DBVersion" xml:"DBVersion"`
-	RequestId       string                                     `json:"RequestId" xml:"RequestId"`
-	GDNId           string                                     `json:"GDNId" xml:"GDNId"`
-	CreateTime      string                                     `json:"CreateTime" xml:"CreateTime"`
-	DBType          string                                     `json:"DBType" xml:"DBType"`
-	GDNDescription  string                                     `json:"GDNDescription" xml:"GDNDescription"`
-	DBClusterId     string                                     `json:"DBClusterId" xml:"DBClusterId"`
-	ResourceGroupId string                                     `json:"ResourceGroupId" xml:"ResourceGroupId"`
-	Connections     []Connection                               `json:"Connections" xml:"Connections"`
-	DBClusters      []DBClusterInDescribeGlobalDatabaseNetwork `json:"DBClusters" xml:"DBClusters"`
+	GDNStatus        string                                     `json:"GDNStatus" xml:"GDNStatus"`
+	DBVersion        string                                     `json:"DBVersion" xml:"DBVersion"`
+	RequestId        string                                     `json:"RequestId" xml:"RequestId"`
+	GDNId            string                                     `json:"GDNId" xml:"GDNId"`
+	CreateTime       string                                     `json:"CreateTime" xml:"CreateTime"`
+	DBType           string                                     `json:"DBType" xml:"DBType"`
+	GDNDescription   string                                     `json:"GDNDescription" xml:"GDNDescription"`
+	GlobalDomainName string                                     `json:"GlobalDomainName" xml:"GlobalDomainName"`
+	DBClusterId      string                                     `json:"DBClusterId" xml:"DBClusterId"`
+	ResourceGroupId  string                                     `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	Connections      []Connection                               `json:"Connections" xml:"Connections"`
+	DBClusters       []DBClusterInDescribeGlobalDatabaseNetwork `json:"DBClusters" xml:"DBClusters"`
 }
 
 // CreateDescribeGlobalDatabaseNetworkRequest creates a request to invoke DescribeGlobalDatabaseNetwork API

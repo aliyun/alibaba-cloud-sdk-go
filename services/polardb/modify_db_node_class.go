@@ -71,18 +71,19 @@ func (client *Client) ModifyDBNodeClassWithCallback(request *ModifyDBNodeClassRe
 // ModifyDBNodeClassRequest is the request struct for api ModifyDBNodeClass
 type ModifyDBNodeClassRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	PlannedEndTime       string           `position:"Query" name:"PlannedEndTime"`
-	DBNodeType           string           `position:"Query" name:"DBNodeType"`
-	DBNodeTargetClass    string           `position:"Query" name:"DBNodeTargetClass"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	DBClusterId          string           `position:"Query" name:"DBClusterId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	PlannedStartTime     string           `position:"Query" name:"PlannedStartTime"`
-	ModifyType           string           `position:"Query" name:"ModifyType"`
-	SubCategory          string           `position:"Query" name:"SubCategory"`
+	ResourceOwnerId        requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken            string           `position:"Query" name:"ClientToken"`
+	PlannedEndTime         string           `position:"Query" name:"PlannedEndTime"`
+	DBNodeType             string           `position:"Query" name:"DBNodeType"`
+	DBNodeTargetClass      string           `position:"Query" name:"DBNodeTargetClass"`
+	ResourceOwnerAccount   string           `position:"Query" name:"ResourceOwnerAccount"`
+	DBClusterId            string           `position:"Query" name:"DBClusterId"`
+	OwnerAccount           string           `position:"Query" name:"OwnerAccount"`
+	PlannedFlashingOffTime string           `position:"Query" name:"PlannedFlashingOffTime"`
+	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
+	PlannedStartTime       string           `position:"Query" name:"PlannedStartTime"`
+	ModifyType             string           `position:"Query" name:"ModifyType"`
+	SubCategory            string           `position:"Query" name:"SubCategory"`
 }
 
 // ModifyDBNodeClassResponse is the response struct for api ModifyDBNodeClass

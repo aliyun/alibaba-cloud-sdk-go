@@ -81,20 +81,27 @@ type DescribeDBClusterMigrationRequest struct {
 // DescribeDBClusterMigrationResponse is the response struct for api DescribeDBClusterMigration
 type DescribeDBClusterMigrationResponse struct {
 	*responses.BaseResponse
-	Comment                string              `json:"Comment" xml:"Comment"`
-	RequestId              string              `json:"RequestId" xml:"RequestId"`
-	ExpiredTime            string              `json:"ExpiredTime" xml:"ExpiredTime"`
-	DBClusterId            string              `json:"DBClusterId" xml:"DBClusterId"`
-	Topologies             string              `json:"Topologies" xml:"Topologies"`
-	RdsReadWriteMode       string              `json:"RdsReadWriteMode" xml:"RdsReadWriteMode"`
-	SourceRDSDBInstanceId  string              `json:"SourceRDSDBInstanceId" xml:"SourceRDSDBInstanceId"`
-	DBClusterReadWriteMode string              `json:"DBClusterReadWriteMode" xml:"DBClusterReadWriteMode"`
-	DelayedSeconds         int                 `json:"DelayedSeconds" xml:"DelayedSeconds"`
-	MigrationStatus        string              `json:"MigrationStatus" xml:"MigrationStatus"`
-	DtsInstanceId          string              `json:"DtsInstanceId" xml:"DtsInstanceId"`
-	SrcDbType              string              `json:"SrcDbType" xml:"SrcDbType"`
-	DBClusterEndpointList  []DBClusterEndpoint `json:"DBClusterEndpointList" xml:"DBClusterEndpointList"`
-	RdsEndpointList        []RdsEndpoint       `json:"RdsEndpointList" xml:"RdsEndpointList"`
+	Comment                 string              `json:"Comment" xml:"Comment"`
+	RequestId               string              `json:"RequestId" xml:"RequestId"`
+	ExpiredTime             string              `json:"ExpiredTime" xml:"ExpiredTime"`
+	DBClusterId             string              `json:"DBClusterId" xml:"DBClusterId"`
+	Topologies              string              `json:"Topologies" xml:"Topologies"`
+	RdsReadWriteMode        string              `json:"RdsReadWriteMode" xml:"RdsReadWriteMode"`
+	SourceRDSDBInstanceId   string              `json:"SourceRDSDBInstanceId" xml:"SourceRDSDBInstanceId"`
+	DBClusterReadWriteMode  string              `json:"DBClusterReadWriteMode" xml:"DBClusterReadWriteMode"`
+	DelayedSeconds          int                 `json:"DelayedSeconds" xml:"DelayedSeconds"`
+	MigrationStatus         string              `json:"MigrationStatus" xml:"MigrationStatus"`
+	DtsInstanceId           string              `json:"DtsInstanceId" xml:"DtsInstanceId"`
+	SrcDbType               string              `json:"SrcDbType" xml:"SrcDbType"`
+	MigrationSwitch         string              `json:"MigrationSwitch" xml:"MigrationSwitch"`
+	MigrationDtsJobEndpoint string              `json:"MigrationDtsJobEndpoint" xml:"MigrationDtsJobEndpoint"`
+	DstBinlogPosition       string              `json:"DstBinlogPosition" xml:"DstBinlogPosition"`
+	SrcBinlogPosition       string              `json:"SrcBinlogPosition" xml:"SrcBinlogPosition"`
+	MigrationProgress       string              `json:"MigrationProgress" xml:"MigrationProgress"`
+	DBClusterEndpointList   []DBClusterEndpoint `json:"DBClusterEndpointList" xml:"DBClusterEndpointList"`
+	RdsEndpointList         []RdsEndpoint       `json:"RdsEndpointList" xml:"RdsEndpointList"`
+	SrcDtsJobList           []SrcDtsJob         `json:"SrcDtsJobList" xml:"SrcDtsJobList"`
+	DstDtsJobList           []DstDtsJob         `json:"DstDtsJobList" xml:"DstDtsJobList"`
 }
 
 // CreateDescribeDBClusterMigrationRequest creates a request to invoke DescribeDBClusterMigration API

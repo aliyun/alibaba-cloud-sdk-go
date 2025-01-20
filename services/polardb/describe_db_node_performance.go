@@ -74,6 +74,7 @@ type DescribeDBNodePerformanceRequest struct {
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	DBNodeId             string           `position:"Query" name:"DBNodeId"`
 	StartTime            string           `position:"Query" name:"StartTime"`
+	Type                 string           `position:"Query" name:"Type"`
 	Key                  string           `position:"Query" name:"Key"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	DBClusterId          string           `position:"Query" name:"DBClusterId"`
@@ -81,6 +82,7 @@ type DescribeDBNodePerformanceRequest struct {
 	EndTime              string           `position:"Query" name:"EndTime"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	Metric               string           `position:"Query" name:"Metric"`
+	Interval             string           `position:"Query" name:"Interval"`
 }
 
 // DescribeDBNodePerformanceResponse is the response struct for api DescribeDBNodePerformance

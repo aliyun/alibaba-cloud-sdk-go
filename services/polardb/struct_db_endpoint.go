@@ -26,5 +26,8 @@ type DBEndpoint struct {
 	EndpointType          string    `json:"EndpointType" xml:"EndpointType"`
 	AutoAddNewNodes       string    `json:"AutoAddNewNodes" xml:"AutoAddNewNodes"`
 	DBClusterId           string    `json:"DBClusterId" xml:"DBClusterId"`
+	SccMode               string    `json:"SccMode" xml:"SccMode"`
+	PolarSccTimeoutAction string    `json:"PolarSccTimeoutAction" xml:"PolarSccTimeoutAction"`
+	PolarSccWaitTimeout   string    `json:"PolarSccWaitTimeout" xml:"PolarSccWaitTimeout"`
 	AddressItems          []Address `json:"AddressItems" xml:"AddressItems"`
 }

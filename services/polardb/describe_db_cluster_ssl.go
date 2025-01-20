@@ -72,6 +72,7 @@ func (client *Client) DescribeDBClusterSSLWithCallback(request *DescribeDBCluste
 type DescribeDBClusterSSLRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	EndpointId           string           `position:"Query" name:"EndpointId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	DBClusterId          string           `position:"Query" name:"DBClusterId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
@@ -81,9 +82,10 @@ type DescribeDBClusterSSLRequest struct {
 // DescribeDBClusterSSLResponse is the response struct for api DescribeDBClusterSSL
 type DescribeDBClusterSSLResponse struct {
 	*responses.BaseResponse
-	RequestId     string `json:"RequestId" xml:"RequestId"`
-	SSLAutoRotate string `json:"SSLAutoRotate" xml:"SSLAutoRotate"`
-	Items         []Item `json:"Items" xml:"Items"`
+	RequestId                              string   `json:"RequestId" xml:"RequestId"`
+	SSLAutoRotate                          string   `json:"SSLAutoRotate" xml:"SSLAutoRotate"`
+	SupportAdvancedSSLFeatureEndpointTypes []string `json:"SupportAdvancedSSLFeatureEndpointTypes" xml:"SupportAdvancedSSLFeatureEndpointTypes"`
+	Items                                  []Item   `json:"Items" xml:"Items"`
 }
 
 // CreateDescribeDBClusterSSLRequest creates a request to invoke DescribeDBClusterSSL API

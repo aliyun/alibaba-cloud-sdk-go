@@ -29,6 +29,9 @@ type DBClusterInDescribeGlobalDatabaseNetwork struct {
 	DBClusterStatus      string   `json:"DBClusterStatus" xml:"DBClusterStatus"`
 	StorageUsed          string   `json:"StorageUsed" xml:"StorageUsed"`
 	DBClusterDescription string   `json:"DBClusterDescription" xml:"DBClusterDescription"`
+	Category             string   `json:"Category" xml:"Category"`
 	Role                 string   `json:"Role" xml:"Role"`
+	ServerlessType       string   `json:"ServerlessType" xml:"ServerlessType"`
+	MemberStatus         string   `json:"MemberStatus" xml:"MemberStatus"`
 	DBNodes              []DBNode `json:"DBNodes" xml:"DBNodes"`
 }

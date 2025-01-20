@@ -82,18 +82,23 @@ type DescribeDBClusterServerlessConfRequest struct {
 // DescribeDBClusterServerlessConfResponse is the response struct for api DescribeDBClusterServerlessConf
 type DescribeDBClusterServerlessConfResponse struct {
 	*responses.BaseResponse
-	RequestId             string `json:"RequestId" xml:"RequestId"`
-	ScaleMin              string `json:"ScaleMin" xml:"ScaleMin"`
-	ScaleMax              string `json:"ScaleMax" xml:"ScaleMax"`
-	ScaleRoNumMin         string `json:"ScaleRoNumMin" xml:"ScaleRoNumMin"`
-	ScaleRoNumMax         string `json:"ScaleRoNumMax" xml:"ScaleRoNumMax"`
-	AllowShutDown         string `json:"AllowShutDown" xml:"AllowShutDown"`
-	SecondsUntilAutoPause string `json:"SecondsUntilAutoPause" xml:"SecondsUntilAutoPause"`
-	DBClusterId           string `json:"DBClusterId" xml:"DBClusterId"`
-	ScaleApRoNumMin       string `json:"ScaleApRoNumMin" xml:"ScaleApRoNumMin"`
-	ScaleApRoNumMax       string `json:"ScaleApRoNumMax" xml:"ScaleApRoNumMax"`
-	Switchs               string `json:"Switchs" xml:"Switchs"`
-	DBMaxscaleId          string `json:"DBMaxscaleId" xml:"DBMaxscaleId"`
+	RequestId                         string `json:"RequestId" xml:"RequestId"`
+	ScaleMin                          string `json:"ScaleMin" xml:"ScaleMin"`
+	ScaleMax                          string `json:"ScaleMax" xml:"ScaleMax"`
+	ScaleRoNumMin                     string `json:"ScaleRoNumMin" xml:"ScaleRoNumMin"`
+	ScaleRoNumMax                     string `json:"ScaleRoNumMax" xml:"ScaleRoNumMax"`
+	AllowShutDown                     string `json:"AllowShutDown" xml:"AllowShutDown"`
+	SecondsUntilAutoPause             string `json:"SecondsUntilAutoPause" xml:"SecondsUntilAutoPause"`
+	DBClusterId                       string `json:"DBClusterId" xml:"DBClusterId"`
+	ScaleApRoNumMin                   string `json:"ScaleApRoNumMin" xml:"ScaleApRoNumMin"`
+	ScaleApRoNumMax                   string `json:"ScaleApRoNumMax" xml:"ScaleApRoNumMax"`
+	Switchs                           string `json:"Switchs" xml:"Switchs"`
+	DBMaxscaleId                      string `json:"DBMaxscaleId" xml:"DBMaxscaleId"`
+	ServerlessRuleMode                string `json:"ServerlessRuleMode" xml:"ServerlessRuleMode"`
+	ServerlessRuleCpuEnlargeThreshold string `json:"ServerlessRuleCpuEnlargeThreshold" xml:"ServerlessRuleCpuEnlargeThreshold"`
+	ServerlessRuleCpuShrinkThreshold  string `json:"ServerlessRuleCpuShrinkThreshold" xml:"ServerlessRuleCpuShrinkThreshold"`
+	TraditionalScaleMaxThreshold      string `json:"TraditionalScaleMaxThreshold" xml:"TraditionalScaleMaxThreshold"`
+	AgileScaleMax                     string `json:"AgileScaleMax" xml:"AgileScaleMax"`
 }
 
 // CreateDescribeDBClusterServerlessConfRequest creates a request to invoke DescribeDBClusterServerlessConf API

@@ -74,7 +74,9 @@ type ModifyDBClusterEndpointRequest struct {
 	AutoAddNewNodes       string           `position:"Query" name:"AutoAddNewNodes"`
 	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	DBEndpointId          string           `position:"Query" name:"DBEndpointId"`
+	PolarSccWaitTimeout   string           `position:"Query" name:"PolarSccWaitTimeout"`
 	ReadWriteMode         string           `position:"Query" name:"ReadWriteMode"`
+	PolarSccTimeoutAction string           `position:"Query" name:"PolarSccTimeoutAction"`
 	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
 	DBClusterId           string           `position:"Query" name:"DBClusterId"`
 	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
@@ -82,6 +84,7 @@ type ModifyDBClusterEndpointRequest struct {
 	DBEndpointDescription string           `position:"Query" name:"DBEndpointDescription"`
 	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
 	Nodes                 string           `position:"Query" name:"Nodes"`
+	SccMode               string           `position:"Query" name:"SccMode"`
 }
 
 // ModifyDBClusterEndpointResponse is the response struct for api ModifyDBClusterEndpoint

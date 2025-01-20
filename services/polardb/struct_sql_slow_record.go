@@ -17,14 +17,15 @@ package polardb
 
 // SQLSlowRecord is a nested struct in polardb response
 type SQLSlowRecord struct {
+	DBName             string `json:"DBName" xml:"DBName"`
+	DBNodeId           string `json:"DBNodeId" xml:"DBNodeId"`
 	ExecutionStartTime string `json:"ExecutionStartTime" xml:"ExecutionStartTime"`
 	HostAddress        string `json:"HostAddress" xml:"HostAddress"`
-	QueryTimes         int64  `json:"QueryTimes" xml:"QueryTimes"`
-	SQLText            string `json:"SQLText" xml:"SQLText"`
-	ReturnRowCounts    int64  `json:"ReturnRowCounts" xml:"ReturnRowCounts"`
-	ParseRowCounts     int64  `json:"ParseRowCounts" xml:"ParseRowCounts"`
-	DBName             string `json:"DBName" xml:"DBName"`
 	LockTimes          int64  `json:"LockTimes" xml:"LockTimes"`
-	DBNodeId           string `json:"DBNodeId" xml:"DBNodeId"`
+	ParseRowCounts     int64  `json:"ParseRowCounts" xml:"ParseRowCounts"`
 	QueryTimeMS        int64  `json:"QueryTimeMS" xml:"QueryTimeMS"`
+	QueryTimes         int64  `json:"QueryTimes" xml:"QueryTimes"`
+	ReturnRowCounts    int64  `json:"ReturnRowCounts" xml:"ReturnRowCounts"`
+	SQLHash            string `json:"SQLHash" xml:"SQLHash"`
+	SQLText            string `json:"SQLText" xml:"SQLText"`
 }

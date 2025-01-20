@@ -81,10 +81,11 @@ type DescribeAITaskStatusRequest struct {
 // DescribeAITaskStatusResponse is the response struct for api DescribeAITaskStatus
 type DescribeAITaskStatusResponse struct {
 	*responses.BaseResponse
+	DBClusterId string `json:"DBClusterId" xml:"DBClusterId"`
 	RequestId   string `json:"RequestId" xml:"RequestId"`
 	Status      string `json:"Status" xml:"Status"`
-	DBClusterId string `json:"DBClusterId" xml:"DBClusterId"`
 	StatusName  string `json:"StatusName" xml:"StatusName"`
+	AccountName string `json:"AccountName" xml:"AccountName"`
 }
 
 // CreateDescribeAITaskStatusRequest creates a request to invoke DescribeAITaskStatus API

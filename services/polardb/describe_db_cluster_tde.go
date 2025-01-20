@@ -81,12 +81,15 @@ type DescribeDBClusterTDERequest struct {
 // DescribeDBClusterTDEResponse is the response struct for api DescribeDBClusterTDE
 type DescribeDBClusterTDEResponse struct {
 	*responses.BaseResponse
-	TDEStatus        string `json:"TDEStatus" xml:"TDEStatus"`
-	RequestId        string `json:"RequestId" xml:"RequestId"`
-	DBClusterId      string `json:"DBClusterId" xml:"DBClusterId"`
-	EncryptionKey    string `json:"EncryptionKey" xml:"EncryptionKey"`
-	EncryptNewTables string `json:"EncryptNewTables" xml:"EncryptNewTables"`
-	TDERegion        string `json:"TDERegion" xml:"TDERegion"`
+	AutomaticRotation   string `json:"AutomaticRotation" xml:"AutomaticRotation"`
+	DBClusterId         string `json:"DBClusterId" xml:"DBClusterId"`
+	EncryptNewTables    string `json:"EncryptNewTables" xml:"EncryptNewTables"`
+	EncryptionKey       string `json:"EncryptionKey" xml:"EncryptionKey"`
+	RequestId           string `json:"RequestId" xml:"RequestId"`
+	RotationInterval    string `json:"RotationInterval" xml:"RotationInterval"`
+	TDERegion           string `json:"TDERegion" xml:"TDERegion"`
+	TDEStatus           string `json:"TDEStatus" xml:"TDEStatus"`
+	EncryptionKeyStatus string `json:"EncryptionKeyStatus" xml:"EncryptionKeyStatus"`
 }
 
 // CreateDescribeDBClusterTDERequest creates a request to invoke DescribeDBClusterTDE API

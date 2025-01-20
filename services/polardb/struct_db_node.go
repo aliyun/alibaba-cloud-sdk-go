@@ -17,26 +17,32 @@ package polardb
 
 // DBNode is a nested struct in polardb response
 type DBNode struct {
-	MaxIOPS          int    `json:"MaxIOPS" xml:"MaxIOPS"`
-	DBNodeClass      string `json:"DBNodeClass" xml:"DBNodeClass"`
-	FailoverPriority int    `json:"FailoverPriority" xml:"FailoverPriority"`
-	DBNodeRole       string `json:"DBNodeRole" xml:"DBNodeRole"`
-	DBNodeStatus     string `json:"DBNodeStatus" xml:"DBNodeStatus"`
-	MasterId         string `json:"MasterId" xml:"MasterId"`
-	CpuCores         string `json:"CpuCores" xml:"CpuCores"`
-	SubCluster       string `json:"SubCluster" xml:"SubCluster"`
-	CreationTime     string `json:"CreationTime" xml:"CreationTime"`
-	HotReplicaMode   string `json:"HotReplicaMode" xml:"HotReplicaMode"`
-	ServerlessType   string `json:"ServerlessType" xml:"ServerlessType"`
-	Serverless       string `json:"Serverless" xml:"Serverless"`
-	MaxConnections   int    `json:"MaxConnections" xml:"MaxConnections"`
-	AddedCpuCores    string `json:"AddedCpuCores" xml:"AddedCpuCores"`
-	RegionId         string `json:"RegionId" xml:"RegionId"`
-	ZoneId           string `json:"ZoneId" xml:"ZoneId"`
-	ServerWeight     string `json:"ServerWeight" xml:"ServerWeight"`
-	MemorySize       string `json:"MemorySize" xml:"MemorySize"`
-	DBNodeId         string `json:"DBNodeId" xml:"DBNodeId"`
-	SccMode          string `json:"SccMode" xml:"SccMode"`
-	ImciSwitch       string `json:"ImciSwitch" xml:"ImciSwitch"`
-	Tair             string `json:"Tair" xml:"Tair"`
+	DBNodeClass             string `json:"DBNodeClass" xml:"DBNodeClass"`
+	DBNodeDescription       string `json:"DBNodeDescription" xml:"DBNodeDescription"`
+	MasterId                string `json:"MasterId" xml:"MasterId"`
+	RemoteMemorySize        string `json:"RemoteMemorySize" xml:"RemoteMemorySize"`
+	HotReplicaMode          string `json:"HotReplicaMode" xml:"HotReplicaMode"`
+	MultiMasterPrimaryNode  string `json:"MultiMasterPrimaryNode" xml:"MultiMasterPrimaryNode"`
+	ServerlessType          string `json:"ServerlessType" xml:"ServerlessType"`
+	Serverless              string `json:"Serverless" xml:"Serverless"`
+	MultiMasterLocalStandby string `json:"MultiMasterLocalStandby" xml:"MultiMasterLocalStandby"`
+	MaxConnections          int    `json:"MaxConnections" xml:"MaxConnections"`
+	RegionId                string `json:"RegionId" xml:"RegionId"`
+	ServerWeight            string `json:"ServerWeight" xml:"ServerWeight"`
+	MirrorInsName           string `json:"MirrorInsName" xml:"MirrorInsName"`
+	DBNodeId                string `json:"DBNodeId" xml:"DBNodeId"`
+	SccMode                 string `json:"SccMode" xml:"SccMode"`
+	ImciSwitch              string `json:"ImciSwitch" xml:"ImciSwitch"`
+	Tair                    string `json:"Tair" xml:"Tair"`
+	MaxIOPS                 int    `json:"MaxIOPS" xml:"MaxIOPS"`
+	FailoverPriority        int    `json:"FailoverPriority" xml:"FailoverPriority"`
+	DBNodeRole              string `json:"DBNodeRole" xml:"DBNodeRole"`
+	DBNodeStatus            string `json:"DBNodeStatus" xml:"DBNodeStatus"`
+	CpuCores                string `json:"CpuCores" xml:"CpuCores"`
+	SubCluster              string `json:"SubCluster" xml:"SubCluster"`
+	CreationTime            string `json:"CreationTime" xml:"CreationTime"`
+	AddedCpuCores           string `json:"AddedCpuCores" xml:"AddedCpuCores"`
+	ZoneId                  string `json:"ZoneId" xml:"ZoneId"`
+	Orca                    string `json:"Orca" xml:"Orca"`
+	MemorySize              string `json:"MemorySize" xml:"MemorySize"`
 }

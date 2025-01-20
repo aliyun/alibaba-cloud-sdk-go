@@ -73,6 +73,7 @@ type ModifyDBClusterParametersRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	PlannedEndTime       string           `position:"Query" name:"PlannedEndTime"`
+	ClearBinlog          requests.Boolean `position:"Query" name:"ClearBinlog"`
 	ParameterGroupId     string           `position:"Query" name:"ParameterGroupId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	DBClusterId          string           `position:"Query" name:"DBClusterId"`

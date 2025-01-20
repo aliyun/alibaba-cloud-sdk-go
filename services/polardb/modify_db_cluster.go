@@ -71,17 +71,23 @@ func (client *Client) ModifyDBClusterWithCallback(request *ModifyDBClusterReques
 // ModifyDBClusterRequest is the request struct for api ModifyDBCluster
 type ModifyDBClusterRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	StandbyHAMode        string           `position:"Query" name:"StandbyHAMode"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	DBClusterId          string           `position:"Query" name:"DBClusterId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	FaultSimulateMode    string           `position:"Query" name:"FaultSimulateMode"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	CompressStorage      string           `position:"Query" name:"CompressStorage"`
-	StorageUpperBound    requests.Integer `position:"Query" name:"StorageUpperBound"`
-	StorageAutoScale     string           `position:"Query" name:"StorageAutoScale"`
-	DataSyncMode         string           `position:"Query" name:"DataSyncMode"`
+	ModifyRowCompression       string           `position:"Query" name:"ModifyRowCompression"`
+	ResourceOwnerId            requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	TableMeta                  string           `position:"Query" name:"TableMeta"`
+	StandbyHAMode              string           `position:"Query" name:"StandbyHAMode"`
+	ResourceOwnerAccount       string           `position:"Query" name:"ResourceOwnerAccount"`
+	DBClusterId                string           `position:"Query" name:"DBClusterId"`
+	OwnerAccount               string           `position:"Query" name:"OwnerAccount"`
+	DBNodeCrashList            string           `position:"Query" name:"DBNodeCrashList"`
+	FaultSimulateMode          string           `position:"Query" name:"FaultSimulateMode"`
+	OwnerId                    requests.Integer `position:"Query" name:"OwnerId"`
+	CompressStorage            string           `position:"Query" name:"CompressStorage"`
+	StorageUpperBound          requests.Integer `position:"Query" name:"StorageUpperBound"`
+	PreferredSimulateStartTime string           `position:"Query" name:"PreferredSimulateStartTime"`
+	ImciAutoIndex              string           `position:"Query" name:"ImciAutoIndex"`
+	StorageAutoScale           string           `position:"Query" name:"StorageAutoScale"`
+	FaultInjectionType         string           `position:"Query" name:"FaultInjectionType"`
+	DataSyncMode               string           `position:"Query" name:"DataSyncMode"`
 }
 
 // ModifyDBClusterResponse is the response struct for api ModifyDBCluster

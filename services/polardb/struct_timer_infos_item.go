@@ -17,16 +17,18 @@ package polardb
 
 // TimerInfosItem is a nested struct in polardb response
 type TimerInfosItem struct {
-	Status               string `json:"Status" xml:"Status"`
-	Action               string `json:"Action" xml:"Action"`
-	PlannedEndTime       string `json:"PlannedEndTime" xml:"PlannedEndTime"`
-	PlannedTime          string `json:"PlannedTime" xml:"PlannedTime"`
-	DBClusterId          string `json:"DBClusterId" xml:"DBClusterId"`
-	Region               string `json:"Region" xml:"Region"`
-	PlannedStartTime     string `json:"PlannedStartTime" xml:"PlannedStartTime"`
-	TaskId               string `json:"TaskId" xml:"TaskId"`
-	OrderId              string `json:"OrderId" xml:"OrderId"`
-	DbClusterStatus      string `json:"DbClusterStatus" xml:"DbClusterStatus"`
-	DbClusterDescription string `json:"DbClusterDescription" xml:"DbClusterDescription"`
-	TaskCancel           bool   `json:"TaskCancel" xml:"TaskCancel"`
+	Action                 string `json:"Action" xml:"Action"`
+	CrontabJobId           string `json:"CrontabJobId" xml:"CrontabJobId"`
+	DBClusterId            string `json:"DBClusterId" xml:"DBClusterId"`
+	DbClusterDescription   string `json:"DbClusterDescription" xml:"DbClusterDescription"`
+	DbClusterStatus        string `json:"DbClusterStatus" xml:"DbClusterStatus"`
+	OrderId                string `json:"OrderId" xml:"OrderId"`
+	PlannedEndTime         string `json:"PlannedEndTime" xml:"PlannedEndTime"`
+	PlannedFlashingOffTime string `json:"PlannedFlashingOffTime" xml:"PlannedFlashingOffTime"`
+	PlannedStartTime       string `json:"PlannedStartTime" xml:"PlannedStartTime"`
+	PlannedTime            string `json:"PlannedTime" xml:"PlannedTime"`
+	Region                 string `json:"Region" xml:"Region"`
+	Status                 string `json:"Status" xml:"Status"`
+	TaskCancel             bool   `json:"TaskCancel" xml:"TaskCancel"`
+	TaskId                 string `json:"TaskId" xml:"TaskId"`
 }

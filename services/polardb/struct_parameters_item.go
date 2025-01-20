@@ -26,4 +26,8 @@ type ParametersItem struct {
 	IsEqual                  string `json:"IsEqual" xml:"IsEqual"`
 	DistParameterDescription string `json:"distParameterDescription" xml:"distParameterDescription"`
 	RdsParameterDescription  string `json:"rdsParameterDescription" xml:"rdsParameterDescription"`
+	IsRdsKey                 string `json:"IsRdsKey" xml:"IsRdsKey"`
+	IsPolarDBKey             string `json:"IsPolarDBKey" xml:"IsPolarDBKey"`
+	IsInstancePolarDBKey     string `json:"IsInstancePolarDBKey" xml:"IsInstancePolarDBKey"`
+	IsInstanceRdsKey         string `json:"IsInstanceRdsKey" xml:"IsInstanceRdsKey"`
 }

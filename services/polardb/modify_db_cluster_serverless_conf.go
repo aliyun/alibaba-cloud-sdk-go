@@ -71,29 +71,34 @@ func (client *Client) ModifyDBClusterServerlessConfWithCallback(request *ModifyD
 // ModifyDBClusterServerlessConfRequest is the request struct for api ModifyDBClusterServerlessConf
 type ModifyDBClusterServerlessConfRequest struct {
 	*requests.RpcRequest
-	ScaleRoNumMax         string           `position:"Query" name:"ScaleRoNumMax"`
-	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ScaleApRoNumMax       string           `position:"Query" name:"ScaleApRoNumMax"`
-	ScaleMax              string           `position:"Query" name:"ScaleMax"`
-	PlannedEndTime        string           `position:"Query" name:"PlannedEndTime"`
-	SecondsUntilAutoPause string           `position:"Query" name:"SecondsUntilAutoPause"`
-	ScaleApRoNumMin       string           `position:"Query" name:"ScaleApRoNumMin"`
-	ScaleMin              string           `position:"Query" name:"ScaleMin"`
-	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
-	DBClusterId           string           `position:"Query" name:"DBClusterId"`
-	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
-	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
-	PlannedStartTime      string           `position:"Query" name:"PlannedStartTime"`
-	ScaleRoNumMin         string           `position:"Query" name:"ScaleRoNumMin"`
-	AllowShutDown         string           `position:"Query" name:"AllowShutDown"`
-	FromTimeService       requests.Boolean `position:"Query" name:"FromTimeService"`
+	ScaleRoNumMax                     string           `position:"Query" name:"ScaleRoNumMax"`
+	ResourceOwnerId                   requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ServerlessRuleMode                string           `position:"Query" name:"ServerlessRuleMode"`
+	ScaleApRoNumMax                   string           `position:"Query" name:"ScaleApRoNumMax"`
+	ScaleMax                          string           `position:"Query" name:"ScaleMax"`
+	PlannedEndTime                    string           `position:"Query" name:"PlannedEndTime"`
+	ServerlessRuleCpuEnlargeThreshold string           `position:"Query" name:"ServerlessRuleCpuEnlargeThreshold"`
+	SecondsUntilAutoPause             string           `position:"Query" name:"SecondsUntilAutoPause"`
+	ScaleApRoNumMin                   string           `position:"Query" name:"ScaleApRoNumMin"`
+	TaskId                            string           `position:"Query" name:"TaskId"`
+	ScaleMin                          string           `position:"Query" name:"ScaleMin"`
+	CrontabJobId                      string           `position:"Query" name:"CrontabJobId"`
+	ResourceOwnerAccount              string           `position:"Query" name:"ResourceOwnerAccount"`
+	DBClusterId                       string           `position:"Query" name:"DBClusterId"`
+	OwnerAccount                      string           `position:"Query" name:"OwnerAccount"`
+	ServerlessRuleCpuShrinkThreshold  string           `position:"Query" name:"ServerlessRuleCpuShrinkThreshold"`
+	OwnerId                           requests.Integer `position:"Query" name:"OwnerId"`
+	PlannedStartTime                  string           `position:"Query" name:"PlannedStartTime"`
+	ScaleRoNumMin                     string           `position:"Query" name:"ScaleRoNumMin"`
+	AllowShutDown                     string           `position:"Query" name:"AllowShutDown"`
+	FromTimeService                   requests.Boolean `position:"Query" name:"FromTimeService"`
 }
 
 // ModifyDBClusterServerlessConfResponse is the response struct for api ModifyDBClusterServerlessConf
 type ModifyDBClusterServerlessConfResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
 	DBClusterId string `json:"DBClusterId" xml:"DBClusterId"`
+	RequestId   string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateModifyDBClusterServerlessConfRequest creates a request to invoke ModifyDBClusterServerlessConf API

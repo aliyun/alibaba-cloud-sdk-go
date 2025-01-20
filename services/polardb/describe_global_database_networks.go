@@ -83,6 +83,7 @@ type DescribeGlobalDatabaseNetworksRequest struct {
 	DBClusterId          string           `position:"Query" name:"DBClusterId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	DBType               string           `position:"Query" name:"DBType"`
 }
 
 // DescribeGlobalDatabaseNetworksResponse is the response struct for api DescribeGlobalDatabaseNetworks

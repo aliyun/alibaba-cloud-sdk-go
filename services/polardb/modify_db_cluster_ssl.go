@@ -72,12 +72,20 @@ func (client *Client) ModifyDBClusterSSLWithCallback(request *ModifyDBClusterSSL
 type ModifyDBClusterSSLRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ServerKey            string           `position:"Query" name:"ServerKey"`
+	ClientCrlEnabled     string           `position:"Query" name:"ClientCrlEnabled"`
 	DBEndpointId         string           `position:"Query" name:"DBEndpointId"`
+	ACL                  string           `position:"Query" name:"ACL"`
+	ServerCert           string           `position:"Query" name:"ServerCert"`
+	ClientCACert         string           `position:"Query" name:"ClientCACert"`
 	SSLAutoRotate        string           `position:"Query" name:"SSLAutoRotate"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	CAType               string           `position:"Query" name:"CAType"`
 	DBClusterId          string           `position:"Query" name:"DBClusterId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ClientCACertEnabled  string           `position:"Query" name:"ClientCACertEnabled"`
+	ClientCrl            string           `position:"Query" name:"ClientCrl"`
 	NetType              string           `position:"Query" name:"NetType"`
 	SSLEnabled           string           `position:"Query" name:"SSLEnabled"`
 }

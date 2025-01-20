@@ -77,8 +77,10 @@ type FailoverDBClusterRequest struct {
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	DBClusterId          string           `position:"Query" name:"DBClusterId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	TargetZoneType       string           `position:"Query" name:"TargetZoneType"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	TargetDBNodeId       string           `position:"Query" name:"TargetDBNodeId"`
+	IsForce              requests.Boolean `position:"Query" name:"IsForce"`
 }
 
 // FailoverDBClusterResponse is the response struct for api FailoverDBCluster

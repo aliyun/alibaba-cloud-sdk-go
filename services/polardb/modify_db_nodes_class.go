@@ -71,17 +71,18 @@ func (client *Client) ModifyDBNodesClassWithCallback(request *ModifyDBNodesClass
 // ModifyDBNodesClassRequest is the request struct for api ModifyDBNodesClass
 type ModifyDBNodesClassRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer            `position:"Query" name:"ResourceOwnerId"`
-	ClientToken          string                      `position:"Query" name:"ClientToken"`
-	PlannedEndTime       string                      `position:"Query" name:"PlannedEndTime"`
-	ResourceOwnerAccount string                      `position:"Query" name:"ResourceOwnerAccount"`
-	DBClusterId          string                      `position:"Query" name:"DBClusterId"`
-	OwnerAccount         string                      `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer            `position:"Query" name:"OwnerId"`
-	PlannedStartTime     string                      `position:"Query" name:"PlannedStartTime"`
-	ModifyType           string                      `position:"Query" name:"ModifyType"`
-	SubCategory          string                      `position:"Query" name:"SubCategory"`
-	DBNode               *[]ModifyDBNodesClassDBNode `position:"Query" name:"DBNode"  type:"Repeated"`
+	ResourceOwnerId        requests.Integer            `position:"Query" name:"ResourceOwnerId"`
+	ClientToken            string                      `position:"Query" name:"ClientToken"`
+	PlannedEndTime         string                      `position:"Query" name:"PlannedEndTime"`
+	ResourceOwnerAccount   string                      `position:"Query" name:"ResourceOwnerAccount"`
+	DBClusterId            string                      `position:"Query" name:"DBClusterId"`
+	OwnerAccount           string                      `position:"Query" name:"OwnerAccount"`
+	PlannedFlashingOffTime string                      `position:"Query" name:"PlannedFlashingOffTime"`
+	OwnerId                requests.Integer            `position:"Query" name:"OwnerId"`
+	PlannedStartTime       string                      `position:"Query" name:"PlannedStartTime"`
+	ModifyType             string                      `position:"Query" name:"ModifyType"`
+	SubCategory            string                      `position:"Query" name:"SubCategory"`
+	DBNode                 *[]ModifyDBNodesClassDBNode `position:"Query" name:"DBNode"  type:"Repeated"`
 }
 
 // ModifyDBNodesClassDBNode is a repeated param struct in ModifyDBNodesClassRequest
