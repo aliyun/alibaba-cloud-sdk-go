@@ -71,13 +71,14 @@ func (client *Client) CreateEaiEcsWithCallback(request *CreateEaiEcsRequest, cal
 // CreateEaiEcsRequest is the request struct for api CreateEaiEcs
 type CreateEaiEcsRequest struct {
 	*requests.RpcRequest
-	ClientToken     string          `position:"Query" name:"ClientToken"`
-	SecurityGroupId string          `position:"Query" name:"SecurityGroupId"`
-	EaisType        string          `position:"Query" name:"EaisType"`
-	VSwitchId       string          `position:"Query" name:"VSwitchId"`
-	ResourceGroupId string          `position:"Query" name:"ResourceGroupId"`
-	Ecs             CreateEaiEcsEcs `position:"Query" name:"Ecs"  type:"Struct"`
-	EaisName        string          `position:"Query" name:"EaisName"`
+	ClientToken     string             `position:"Query" name:"ClientToken"`
+	SecurityGroupId string             `position:"Query" name:"SecurityGroupId"`
+	EaisType        string             `position:"Query" name:"EaisType"`
+	ResourceGroupId string             `position:"Query" name:"ResourceGroupId"`
+	Ecs             CreateEaiEcsEcs    `position:"Query" name:"Ecs"  type:"Struct"`
+	EaisName        string             `position:"Query" name:"EaisName"`
+	Tag             *[]CreateEaiEcsTag `position:"Query" name:"Tag"  type:"Repeated"`
+	VSwitchId       string             `position:"Query" name:"VSwitchId"`
 }
 
 // CreateEaiEcsEcs is a repeated param struct in CreateEaiEcsRequest
@@ -91,6 +92,12 @@ type CreateEaiEcsEcs struct {
 	ZoneId                  string `name:"ZoneId"`
 	Type                    string `name:"Type"`
 	InternetMaxBandwidthIn  string `name:"InternetMaxBandwidthIn"`
+}
+
+// CreateEaiEcsTag is a repeated param struct in CreateEaiEcsRequest
+type CreateEaiEcsTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // CreateEaiEcsResponse is the response struct for api CreateEaiEcs

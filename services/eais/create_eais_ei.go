@@ -71,12 +71,19 @@ func (client *Client) CreateEaisEiWithCallback(request *CreateEaisEiRequest, cal
 // CreateEaisEiRequest is the request struct for api CreateEaisEi
 type CreateEaisEiRequest struct {
 	*requests.RpcRequest
-	ClientToken     string `position:"Query" name:"ClientToken"`
-	SecurityGroupId string `position:"Query" name:"SecurityGroupId"`
-	VSwitchId       string `position:"Query" name:"VSwitchId"`
-	ResourceGroupId string `position:"Query" name:"ResourceGroupId"`
-	InstanceName    string `position:"Query" name:"InstanceName"`
-	InstanceType    string `position:"Query" name:"InstanceType"`
+	ClientToken     string             `position:"Query" name:"ClientToken"`
+	SecurityGroupId string             `position:"Query" name:"SecurityGroupId"`
+	ResourceGroupId string             `position:"Query" name:"ResourceGroupId"`
+	InstanceType    string             `position:"Query" name:"InstanceType"`
+	Tag             *[]CreateEaisEiTag `position:"Query" name:"Tag"  type:"Repeated"`
+	VSwitchId       string             `position:"Query" name:"VSwitchId"`
+	InstanceName    string             `position:"Query" name:"InstanceName"`
+}
+
+// CreateEaisEiTag is a repeated param struct in CreateEaisEiRequest
+type CreateEaisEiTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // CreateEaisEiResponse is the response struct for api CreateEaisEi

@@ -71,13 +71,14 @@ func (client *Client) CreateEaiEciWithCallback(request *CreateEaiEciRequest, cal
 // CreateEaiEciRequest is the request struct for api CreateEaiEci
 type CreateEaiEciRequest struct {
 	*requests.RpcRequest
-	ClientToken     string          `position:"Query" name:"ClientToken"`
-	SecurityGroupId string          `position:"Query" name:"SecurityGroupId"`
-	Eci             CreateEaiEciEci `position:"Query" name:"Eci"  type:"Struct"`
-	EaisType        string          `position:"Query" name:"EaisType"`
-	VSwitchId       string          `position:"Query" name:"VSwitchId"`
-	ResourceGroupId string          `position:"Query" name:"ResourceGroupId"`
-	EaisName        string          `position:"Query" name:"EaisName"`
+	ClientToken     string             `position:"Query" name:"ClientToken"`
+	SecurityGroupId string             `position:"Query" name:"SecurityGroupId"`
+	Eci             CreateEaiEciEci    `position:"Query" name:"Eci"  type:"Struct"`
+	EaisType        string             `position:"Query" name:"EaisType"`
+	ResourceGroupId string             `position:"Query" name:"ResourceGroupId"`
+	EaisName        string             `position:"Query" name:"EaisName"`
+	Tag             *[]CreateEaiEciTag `position:"Query" name:"Tag"  type:"Repeated"`
+	VSwitchId       string             `position:"Query" name:"VSwitchId"`
 }
 
 // CreateEaiEciEci is a repeated param struct in CreateEaiEciRequest
@@ -87,6 +88,12 @@ type CreateEaiEciEci struct {
 	EipId     string                   `name:"EipId"`
 	Name      string                   `name:"Name"`
 	Type      string                   `name:"Type"`
+}
+
+// CreateEaiEciTag is a repeated param struct in CreateEaiEciRequest
+type CreateEaiEciTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // CreateEaiEciEciContainer is a repeated param struct in CreateEaiEciRequest

@@ -74,14 +74,21 @@ type CreateEaiJupyterRequest struct {
 	ClientToken     string                            `position:"Query" name:"ClientToken"`
 	SecurityGroupId string                            `position:"Query" name:"SecurityGroupId"`
 	EaisType        string                            `position:"Query" name:"EaisType"`
-	VSwitchId       string                            `position:"Query" name:"VSwitchId"`
 	ResourceGroupId string                            `position:"Query" name:"ResourceGroupId"`
-	EnvironmentVar  *[]CreateEaiJupyterEnvironmentVar `position:"Query" name:"EnvironmentVar"  type:"Json"`
 	EaisName        string                            `position:"Query" name:"EaisName"`
+	Tag             *[]CreateEaiJupyterTag            `position:"Query" name:"Tag"  type:"Repeated"`
+	VSwitchId       string                            `position:"Query" name:"VSwitchId"`
+	EnvironmentVar  *[]CreateEaiJupyterEnvironmentVar `position:"Query" name:"EnvironmentVar"  type:"Json"`
 }
 
 // CreateEaiJupyterEnvironmentVar is a repeated param struct in CreateEaiJupyterRequest
 type CreateEaiJupyterEnvironmentVar struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
+}
+
+// CreateEaiJupyterTag is a repeated param struct in CreateEaiJupyterRequest
+type CreateEaiJupyterTag struct {
 	Value string `name:"Value"`
 	Key   string `name:"Key"`
 }
