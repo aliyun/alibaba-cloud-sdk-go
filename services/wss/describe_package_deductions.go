@@ -71,6 +71,8 @@ func (client *Client) DescribePackageDeductionsWithCallback(request *DescribePac
 // DescribePackageDeductionsRequest is the request struct for api DescribePackageDeductions
 type DescribePackageDeductionsRequest struct {
 	*requests.RpcRequest
+	EndTime      requests.Integer `position:"Query" name:"EndTime"`
+	StartTime    requests.Integer `position:"Query" name:"StartTime"`
 	PageNum      requests.Integer `position:"Query" name:"PageNum"`
 	ResourceType string           `position:"Query" name:"ResourceType"`
 	PackageIds   *[]string        `position:"Query" name:"PackageIds"  type:"Repeated"`
@@ -81,11 +83,13 @@ type DescribePackageDeductionsRequest struct {
 // DescribePackageDeductionsResponse is the response struct for api DescribePackageDeductions
 type DescribePackageDeductionsResponse struct {
 	*responses.BaseResponse
-	PageNum    int         `json:"PageNum" xml:"PageNum"`
-	RequestId  string      `json:"RequestId" xml:"RequestId"`
-	PageSize   int         `json:"PageSize" xml:"PageSize"`
-	TotalCount int64       `json:"TotalCount" xml:"TotalCount"`
-	Deductions []Deduction `json:"Deductions" xml:"Deductions"`
+	PageNum           int         `json:"PageNum" xml:"PageNum"`
+	RequestId         string      `json:"RequestId" xml:"RequestId"`
+	PageSize          int         `json:"PageSize" xml:"PageSize"`
+	TotalCount        int64       `json:"TotalCount" xml:"TotalCount"`
+	TotalUsedTime     int64       `json:"TotalUsedTime" xml:"TotalUsedTime"`
+	TotalUsedCoreTime float64     `json:"TotalUsedCoreTime" xml:"TotalUsedCoreTime"`
+	Deductions        []Deduction `json:"Deductions" xml:"Deductions"`
 }
 
 // CreateDescribePackageDeductionsRequest creates a request to invoke DescribePackageDeductions API
