@@ -18,6 +18,7 @@ package swas_open
 // Plan is a nested struct in swas_open response
 type Plan struct {
 	Bandwidth       int    `json:"Bandwidth" xml:"Bandwidth"`
+	PlanType        string `json:"PlanType" xml:"PlanType"`
 	Core            int    `json:"Core" xml:"Core"`
 	SupportPlatform string `json:"SupportPlatform" xml:"SupportPlatform"`
 	Memory          int    `json:"Memory" xml:"Memory"`

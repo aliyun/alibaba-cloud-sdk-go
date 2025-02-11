@@ -71,9 +71,16 @@ func (client *Client) ResetSystemWithCallback(request *ResetSystemRequest, callb
 // ResetSystemRequest is the request struct for api ResetSystem
 type ResetSystemRequest struct {
 	*requests.RpcRequest
-	ImageId     string `position:"Query" name:"ImageId"`
-	ClientToken string `position:"Query" name:"ClientToken"`
-	InstanceId  string `position:"Query" name:"InstanceId"`
+	ImageId          string                      `position:"Query" name:"ImageId"`
+	ClientToken      string                      `position:"Query" name:"ClientToken"`
+	LoginCredentials ResetSystemLoginCredentials `position:"Query" name:"LoginCredentials"  type:"Struct"`
+	InstanceId       string                      `position:"Query" name:"InstanceId"`
+}
+
+// ResetSystemLoginCredentials is a repeated param struct in ResetSystemRequest
+type ResetSystemLoginCredentials struct {
+	Password    string `name:"Password"`
+	KeyPairName string `name:"KeyPairName"`
 }
 
 // ResetSystemResponse is the response struct for api ResetSystem
