@@ -71,10 +71,10 @@ func (client *Client) Mobile3MetaSimpleVerifyWithCallback(request *Mobile3MetaSi
 // Mobile3MetaSimpleVerifyRequest is the request struct for api Mobile3MetaSimpleVerify
 type Mobile3MetaSimpleVerifyRequest struct {
 	*requests.RpcRequest
-	ParamType   string `position:"Query" name:"ParamType"`
-	Mobile      string `position:"Query" name:"Mobile"`
-	IdentifyNum string `position:"Query" name:"IdentifyNum"`
-	UserName    string `position:"Query" name:"UserName"`
+	ParamType   string `position:"Body" name:"ParamType"`
+	Mobile      string `position:"Body" name:"Mobile"`
+	IdentifyNum string `position:"Body" name:"IdentifyNum"`
+	UserName    string `position:"Body" name:"UserName"`
 }
 
 // Mobile3MetaSimpleVerifyResponse is the response struct for api Mobile3MetaSimpleVerify

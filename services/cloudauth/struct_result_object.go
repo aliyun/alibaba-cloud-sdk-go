@@ -17,19 +17,34 @@ package cloudauth
 
 // ResultObject is a nested struct in cloudauth response
 type ResultObject struct {
-	VerifyScore  float64 `json:"VerifyScore" xml:"VerifyScore"`
-	Result       string  `json:"Result" xml:"Result"`
-	DeviceRisk   string  `json:"DeviceRisk" xml:"DeviceRisk"`
-	IspName      string  `json:"IspName" xml:"IspName"`
-	SubCode      string  `json:"SubCode" xml:"SubCode"`
-	DeviceToken  string  `json:"DeviceToken" xml:"DeviceToken"`
-	Passed       string  `json:"Passed" xml:"Passed"`
-	MaterialInfo string  `json:"MaterialInfo" xml:"MaterialInfo"`
-	Score        string  `json:"Score" xml:"Score"`
-	Success      string  `json:"Success" xml:"Success"`
-	UserInfo     string  `json:"UserInfo" xml:"UserInfo"`
-	IdentityInfo string  `json:"IdentityInfo" xml:"IdentityInfo"`
-	CertifyId    string  `json:"CertifyId" xml:"CertifyId"`
-	CertifyUrl   string  `json:"CertifyUrl" xml:"CertifyUrl"`
-	BizCode      string  `json:"BizCode" xml:"BizCode"`
+	VerifyScore  float64                `json:"VerifyScore" xml:"VerifyScore"`
+	DeviceRisk   string                 `json:"DeviceRisk" xml:"DeviceRisk"`
+	RiskExtends  string                 `json:"RiskExtends" xml:"RiskExtends"`
+	DeviceToken  string                 `json:"DeviceToken" xml:"DeviceToken"`
+	Passed       string                 `json:"Passed" xml:"Passed"`
+	FailReason   string                 `json:"FailReason" xml:"FailReason"`
+	MaterialInfo string                 `json:"MaterialInfo" xml:"MaterialInfo"`
+	Score        string                 `json:"Score" xml:"Score"`
+	DeleteResult string                 `json:"DeleteResult" xml:"DeleteResult"`
+	IdentityInfo string                 `json:"IdentityInfo" xml:"IdentityInfo"`
+	CertifyId    string                 `json:"CertifyId" xml:"CertifyId"`
+	BizCode      string                 `json:"BizCode" xml:"BizCode"`
+	ChargeCount  string                 `json:"ChargeCount" xml:"ChargeCount"`
+	RiakTags     string                 `json:"RiakTags" xml:"RiakTags"`
+	VehicleInfo  string                 `json:"VehicleInfo" xml:"VehicleInfo"`
+	Result       string                 `json:"Result" xml:"Result"`
+	IspName      string                 `json:"IspName" xml:"IspName"`
+	SubCode      string                 `json:"SubCode" xml:"SubCode"`
+	VerifyResult string                 `json:"VerifyResult" xml:"VerifyResult"`
+	RiskTag      string                 `json:"RiskTag" xml:"RiskTag"`
+	TimeCode     string                 `json:"TimeCode" xml:"TimeCode"`
+	Success      string                 `json:"Success" xml:"Success"`
+	UserInfo     string                 `json:"UserInfo" xml:"UserInfo"`
+	VerifyDetail string                 `json:"VerifyDetail" xml:"VerifyDetail"`
+	RiskScore    map[string]interface{} `json:"RiskScore" xml:"RiskScore"`
+	OcrInfo      string                 `json:"OcrInfo" xml:"OcrInfo"`
+	CertifyUrl   string                 `json:"CertifyUrl" xml:"CertifyUrl"`
+	RiskTags     string                 `json:"RiskTags" xml:"RiskTags"`
+	VlResult     VlResult               `json:"VlResult" xml:"VlResult"`
+	Items        []ItemsItem            `json:"Items" xml:"Items"`
 }

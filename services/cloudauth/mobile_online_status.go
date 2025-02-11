@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// Id2MetaVerify invokes the cloudauth.Id2MetaVerify API synchronously
-func (client *Client) Id2MetaVerify(request *Id2MetaVerifyRequest) (response *Id2MetaVerifyResponse, err error) {
-	response = CreateId2MetaVerifyResponse()
+// MobileOnlineStatus invokes the cloudauth.MobileOnlineStatus API synchronously
+func (client *Client) MobileOnlineStatus(request *MobileOnlineStatusRequest) (response *MobileOnlineStatusResponse, err error) {
+	response = CreateMobileOnlineStatusResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// Id2MetaVerifyWithChan invokes the cloudauth.Id2MetaVerify API asynchronously
-func (client *Client) Id2MetaVerifyWithChan(request *Id2MetaVerifyRequest) (<-chan *Id2MetaVerifyResponse, <-chan error) {
-	responseChan := make(chan *Id2MetaVerifyResponse, 1)
+// MobileOnlineStatusWithChan invokes the cloudauth.MobileOnlineStatus API asynchronously
+func (client *Client) MobileOnlineStatusWithChan(request *MobileOnlineStatusRequest) (<-chan *MobileOnlineStatusResponse, <-chan error) {
+	responseChan := make(chan *MobileOnlineStatusResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.Id2MetaVerify(request)
+		response, err := client.MobileOnlineStatus(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) Id2MetaVerifyWithChan(request *Id2MetaVerifyRequest) (<-ch
 	return responseChan, errChan
 }
 
-// Id2MetaVerifyWithCallback invokes the cloudauth.Id2MetaVerify API asynchronously
-func (client *Client) Id2MetaVerifyWithCallback(request *Id2MetaVerifyRequest, callback func(response *Id2MetaVerifyResponse, err error)) <-chan int {
+// MobileOnlineStatusWithCallback invokes the cloudauth.MobileOnlineStatus API asynchronously
+func (client *Client) MobileOnlineStatusWithCallback(request *MobileOnlineStatusRequest, callback func(response *MobileOnlineStatusResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *Id2MetaVerifyResponse
+		var response *MobileOnlineStatusResponse
 		var err error
 		defer close(result)
-		response, err = client.Id2MetaVerify(request)
+		response, err = client.MobileOnlineStatus(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,16 +68,15 @@ func (client *Client) Id2MetaVerifyWithCallback(request *Id2MetaVerifyRequest, c
 	return result
 }
 
-// Id2MetaVerifyRequest is the request struct for api Id2MetaVerify
-type Id2MetaVerifyRequest struct {
+// MobileOnlineStatusRequest is the request struct for api MobileOnlineStatus
+type MobileOnlineStatusRequest struct {
 	*requests.RpcRequest
-	ParamType   string `position:"Body" name:"ParamType"`
-	IdentifyNum string `position:"Body" name:"IdentifyNum"`
-	UserName    string `position:"Body" name:"UserName"`
+	ParamType string `position:"Body" name:"ParamType"`
+	Mobile    string `position:"Body" name:"Mobile"`
 }
 
-// Id2MetaVerifyResponse is the response struct for api Id2MetaVerify
-type Id2MetaVerifyResponse struct {
+// MobileOnlineStatusResponse is the response struct for api MobileOnlineStatus
+type MobileOnlineStatusResponse struct {
 	*responses.BaseResponse
 	RequestId    string       `json:"RequestId" xml:"RequestId"`
 	Code         string       `json:"Code" xml:"Code"`
@@ -85,19 +84,19 @@ type Id2MetaVerifyResponse struct {
 	ResultObject ResultObject `json:"ResultObject" xml:"ResultObject"`
 }
 
-// CreateId2MetaVerifyRequest creates a request to invoke Id2MetaVerify API
-func CreateId2MetaVerifyRequest() (request *Id2MetaVerifyRequest) {
-	request = &Id2MetaVerifyRequest{
+// CreateMobileOnlineStatusRequest creates a request to invoke MobileOnlineStatus API
+func CreateMobileOnlineStatusRequest() (request *MobileOnlineStatusRequest) {
+	request = &MobileOnlineStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cloudauth", "2019-03-07", "Id2MetaVerify", "cloudauth", "openAPI")
+	request.InitWithApiInfo("Cloudauth", "2019-03-07", "MobileOnlineStatus", "cloudauth", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateId2MetaVerifyResponse creates a response to parse from Id2MetaVerify response
-func CreateId2MetaVerifyResponse() (response *Id2MetaVerifyResponse) {
-	response = &Id2MetaVerifyResponse{
+// CreateMobileOnlineStatusResponse creates a response to parse from MobileOnlineStatus response
+func CreateMobileOnlineStatusResponse() (response *MobileOnlineStatusResponse) {
+	response = &MobileOnlineStatusResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

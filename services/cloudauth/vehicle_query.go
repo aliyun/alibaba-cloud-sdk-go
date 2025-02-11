@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// Id2MetaVerify invokes the cloudauth.Id2MetaVerify API synchronously
-func (client *Client) Id2MetaVerify(request *Id2MetaVerifyRequest) (response *Id2MetaVerifyResponse, err error) {
-	response = CreateId2MetaVerifyResponse()
+// VehicleQuery invokes the cloudauth.VehicleQuery API synchronously
+func (client *Client) VehicleQuery(request *VehicleQueryRequest) (response *VehicleQueryResponse, err error) {
+	response = CreateVehicleQueryResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// Id2MetaVerifyWithChan invokes the cloudauth.Id2MetaVerify API asynchronously
-func (client *Client) Id2MetaVerifyWithChan(request *Id2MetaVerifyRequest) (<-chan *Id2MetaVerifyResponse, <-chan error) {
-	responseChan := make(chan *Id2MetaVerifyResponse, 1)
+// VehicleQueryWithChan invokes the cloudauth.VehicleQuery API asynchronously
+func (client *Client) VehicleQueryWithChan(request *VehicleQueryRequest) (<-chan *VehicleQueryResponse, <-chan error) {
+	responseChan := make(chan *VehicleQueryResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.Id2MetaVerify(request)
+		response, err := client.VehicleQuery(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) Id2MetaVerifyWithChan(request *Id2MetaVerifyRequest) (<-ch
 	return responseChan, errChan
 }
 
-// Id2MetaVerifyWithCallback invokes the cloudauth.Id2MetaVerify API asynchronously
-func (client *Client) Id2MetaVerifyWithCallback(request *Id2MetaVerifyRequest, callback func(response *Id2MetaVerifyResponse, err error)) <-chan int {
+// VehicleQueryWithCallback invokes the cloudauth.VehicleQuery API asynchronously
+func (client *Client) VehicleQueryWithCallback(request *VehicleQueryRequest, callback func(response *VehicleQueryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *Id2MetaVerifyResponse
+		var response *VehicleQueryResponse
 		var err error
 		defer close(result)
-		response, err = client.Id2MetaVerify(request)
+		response, err = client.VehicleQuery(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,36 +68,36 @@ func (client *Client) Id2MetaVerifyWithCallback(request *Id2MetaVerifyRequest, c
 	return result
 }
 
-// Id2MetaVerifyRequest is the request struct for api Id2MetaVerify
-type Id2MetaVerifyRequest struct {
+// VehicleQueryRequest is the request struct for api VehicleQuery
+type VehicleQueryRequest struct {
 	*requests.RpcRequest
-	ParamType   string `position:"Body" name:"ParamType"`
-	IdentifyNum string `position:"Body" name:"IdentifyNum"`
-	UserName    string `position:"Body" name:"UserName"`
+	VehicleType string `position:"Query" name:"VehicleType"`
+	ParamType   string `position:"Query" name:"ParamType"`
+	VehicleNum  string `position:"Query" name:"VehicleNum"`
 }
 
-// Id2MetaVerifyResponse is the response struct for api Id2MetaVerify
-type Id2MetaVerifyResponse struct {
+// VehicleQueryResponse is the response struct for api VehicleQuery
+type VehicleQueryResponse struct {
 	*responses.BaseResponse
 	RequestId    string       `json:"RequestId" xml:"RequestId"`
-	Code         string       `json:"Code" xml:"Code"`
 	Message      string       `json:"Message" xml:"Message"`
+	Code         string       `json:"Code" xml:"Code"`
 	ResultObject ResultObject `json:"ResultObject" xml:"ResultObject"`
 }
 
-// CreateId2MetaVerifyRequest creates a request to invoke Id2MetaVerify API
-func CreateId2MetaVerifyRequest() (request *Id2MetaVerifyRequest) {
-	request = &Id2MetaVerifyRequest{
+// CreateVehicleQueryRequest creates a request to invoke VehicleQuery API
+func CreateVehicleQueryRequest() (request *VehicleQueryRequest) {
+	request = &VehicleQueryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cloudauth", "2019-03-07", "Id2MetaVerify", "cloudauth", "openAPI")
+	request.InitWithApiInfo("Cloudauth", "2019-03-07", "VehicleQuery", "cloudauth", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateId2MetaVerifyResponse creates a response to parse from Id2MetaVerify response
-func CreateId2MetaVerifyResponse() (response *Id2MetaVerifyResponse) {
-	response = &Id2MetaVerifyResponse{
+// CreateVehicleQueryResponse creates a response to parse from VehicleQuery response
+func CreateVehicleQueryResponse() (response *VehicleQueryResponse) {
+	response = &VehicleQueryResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

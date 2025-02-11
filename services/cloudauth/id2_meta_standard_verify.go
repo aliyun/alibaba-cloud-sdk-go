@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// Mobile3MetaDetailVerify invokes the cloudauth.Mobile3MetaDetailVerify API synchronously
-func (client *Client) Mobile3MetaDetailVerify(request *Mobile3MetaDetailVerifyRequest) (response *Mobile3MetaDetailVerifyResponse, err error) {
-	response = CreateMobile3MetaDetailVerifyResponse()
+// Id2MetaStandardVerify invokes the cloudauth.Id2MetaStandardVerify API synchronously
+func (client *Client) Id2MetaStandardVerify(request *Id2MetaStandardVerifyRequest) (response *Id2MetaStandardVerifyResponse, err error) {
+	response = CreateId2MetaStandardVerifyResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// Mobile3MetaDetailVerifyWithChan invokes the cloudauth.Mobile3MetaDetailVerify API asynchronously
-func (client *Client) Mobile3MetaDetailVerifyWithChan(request *Mobile3MetaDetailVerifyRequest) (<-chan *Mobile3MetaDetailVerifyResponse, <-chan error) {
-	responseChan := make(chan *Mobile3MetaDetailVerifyResponse, 1)
+// Id2MetaStandardVerifyWithChan invokes the cloudauth.Id2MetaStandardVerify API asynchronously
+func (client *Client) Id2MetaStandardVerifyWithChan(request *Id2MetaStandardVerifyRequest) (<-chan *Id2MetaStandardVerifyResponse, <-chan error) {
+	responseChan := make(chan *Id2MetaStandardVerifyResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.Mobile3MetaDetailVerify(request)
+		response, err := client.Id2MetaStandardVerify(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) Mobile3MetaDetailVerifyWithChan(request *Mobile3MetaDetail
 	return responseChan, errChan
 }
 
-// Mobile3MetaDetailVerifyWithCallback invokes the cloudauth.Mobile3MetaDetailVerify API asynchronously
-func (client *Client) Mobile3MetaDetailVerifyWithCallback(request *Mobile3MetaDetailVerifyRequest, callback func(response *Mobile3MetaDetailVerifyResponse, err error)) <-chan int {
+// Id2MetaStandardVerifyWithCallback invokes the cloudauth.Id2MetaStandardVerify API asynchronously
+func (client *Client) Id2MetaStandardVerifyWithCallback(request *Id2MetaStandardVerifyRequest, callback func(response *Id2MetaStandardVerifyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *Mobile3MetaDetailVerifyResponse
+		var response *Id2MetaStandardVerifyResponse
 		var err error
 		defer close(result)
-		response, err = client.Mobile3MetaDetailVerify(request)
+		response, err = client.Id2MetaStandardVerify(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,17 +68,16 @@ func (client *Client) Mobile3MetaDetailVerifyWithCallback(request *Mobile3MetaDe
 	return result
 }
 
-// Mobile3MetaDetailVerifyRequest is the request struct for api Mobile3MetaDetailVerify
-type Mobile3MetaDetailVerifyRequest struct {
+// Id2MetaStandardVerifyRequest is the request struct for api Id2MetaStandardVerify
+type Id2MetaStandardVerifyRequest struct {
 	*requests.RpcRequest
 	ParamType   string `position:"Body" name:"ParamType"`
-	Mobile      string `position:"Body" name:"Mobile"`
 	IdentifyNum string `position:"Body" name:"IdentifyNum"`
 	UserName    string `position:"Body" name:"UserName"`
 }
 
-// Mobile3MetaDetailVerifyResponse is the response struct for api Mobile3MetaDetailVerify
-type Mobile3MetaDetailVerifyResponse struct {
+// Id2MetaStandardVerifyResponse is the response struct for api Id2MetaStandardVerify
+type Id2MetaStandardVerifyResponse struct {
 	*responses.BaseResponse
 	RequestId    string       `json:"RequestId" xml:"RequestId"`
 	Code         string       `json:"Code" xml:"Code"`
@@ -86,19 +85,19 @@ type Mobile3MetaDetailVerifyResponse struct {
 	ResultObject ResultObject `json:"ResultObject" xml:"ResultObject"`
 }
 
-// CreateMobile3MetaDetailVerifyRequest creates a request to invoke Mobile3MetaDetailVerify API
-func CreateMobile3MetaDetailVerifyRequest() (request *Mobile3MetaDetailVerifyRequest) {
-	request = &Mobile3MetaDetailVerifyRequest{
+// CreateId2MetaStandardVerifyRequest creates a request to invoke Id2MetaStandardVerify API
+func CreateId2MetaStandardVerifyRequest() (request *Id2MetaStandardVerifyRequest) {
+	request = &Id2MetaStandardVerifyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cloudauth", "2019-03-07", "Mobile3MetaDetailVerify", "cloudauth", "openAPI")
+	request.InitWithApiInfo("Cloudauth", "2019-03-07", "Id2MetaStandardVerify", "cloudauth", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateMobile3MetaDetailVerifyResponse creates a response to parse from Mobile3MetaDetailVerify response
-func CreateMobile3MetaDetailVerifyResponse() (response *Mobile3MetaDetailVerifyResponse) {
-	response = &Mobile3MetaDetailVerifyResponse{
+// CreateId2MetaStandardVerifyResponse creates a response to parse from Id2MetaStandardVerify response
+func CreateId2MetaStandardVerifyResponse() (response *Id2MetaStandardVerifyResponse) {
+	response = &Id2MetaStandardVerifyResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return
