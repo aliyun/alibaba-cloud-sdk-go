@@ -32,17 +32,23 @@ func TestInstanceMetadataProvider_Retrieve_Success(t *testing.T) {
 			  "Code" : "Success"
 			}`
 			status = 200
+		case "/latest/api/token":
+			body = "token"
+			status = 200
 		}
 		w.WriteHeader(status)
 		w.Write([]byte(body))
 	}))
 	defer ts.Close()
 
-	// Update our securityCredURL to point at our local test server.
+	// Update our securityCredURL and tokenURL to point at our local test server.
 	originalSecurityCredURL := securityCredURL
+	originalTokenURL := tokenURL
 	securityCredURL = strings.Replace(securityCredURL, "http://100.100.100.200", ts.URL, -1)
+	tokenURL = strings.Replace(tokenURL, "http://100.100.100.200", ts.URL, -1)
 	defer func() {
 		securityCredURL = originalSecurityCredURL
+		tokenURL = originalTokenURL
 	}()
 
 	credential, err := NewInstanceMetadataProvider().Retrieve()
@@ -57,11 +63,14 @@ func TestInstanceMetadataProvider_Retrieve_Success(t *testing.T) {
 }
 
 func TestInstanceMetadataProvider_Retrieve_Fail1(t *testing.T) {
-	// Update our securityCredURL to point at our local test server.
+	// Update our securityCredURL and tokenURL to point at our local test server.
 	originalSecurityCredURL := securityCredURL
+	originalTokenURL := tokenURL
 	securityCredURL = strings.Replace(securityCredURL, "http://100.100.100.200", "http://invalid-domain-xxx", -1)
+	tokenURL = strings.Replace(tokenURL, "http://100.100.100.200", "http://invalid-domain-xxx", -1)
 	defer func() {
 		securityCredURL = originalSecurityCredURL
+		tokenURL = originalTokenURL
 	}()
 
 	_, err := NewInstanceMetadataProvider().Retrieve()
@@ -80,17 +89,23 @@ func TestInstanceMetadataProvider_Retrieve_Fail2(t *testing.T) {
 		case "/latest/meta-data/ram/security-credentials/":
 			body = "ELK"
 			status = 400
+		case "/latest/api/token":
+			body = "not found"
+			status = 404
 		}
 		w.WriteHeader(status)
 		w.Write([]byte(body))
 	}))
 	defer ts.Close()
 
-	// Update our securityCredURL to point at our local test server.
+	// Update our securityCredURL and tokenURL to point at our local test server.
 	originalSecurityCredURL := securityCredURL
+	originalTokenURL := tokenURL
 	securityCredURL = strings.Replace(securityCredURL, "http://100.100.100.200", ts.URL, -1)
+	tokenURL = strings.Replace(tokenURL, "http://100.100.100.200", ts.URL, -1)
 	defer func() {
 		securityCredURL = originalSecurityCredURL
+		tokenURL = originalTokenURL
 	}()
 
 	_, err := NewInstanceMetadataProvider().Retrieve()
@@ -109,17 +124,23 @@ func TestInstanceMetadataProvider_Retrieve_Fail3(t *testing.T) {
 		case "/latest/meta-data/ram/security-credentials/":
 			body = ""
 			status = 200
+		case "/latest/api/token":
+			body = "not found"
+			status = 404
 		}
 		w.WriteHeader(status)
 		w.Write([]byte(body))
 	}))
 	defer ts.Close()
 
-	// Update our securityCredURL to point at our local test server.
+	// Update our securityCredURL and tokenURL to point at our local test server.
 	originalSecurityCredURL := securityCredURL
+	originalTokenURL := tokenURL
 	securityCredURL = strings.Replace(securityCredURL, "http://100.100.100.200", ts.URL, -1)
+	tokenURL = strings.Replace(tokenURL, "http://100.100.100.200", ts.URL, -1)
 	defer func() {
 		securityCredURL = originalSecurityCredURL
+		tokenURL = originalTokenURL
 	}()
 
 	_, err := NewInstanceMetadataProvider().Retrieve()
@@ -141,17 +162,23 @@ func TestInstanceMetadataProvider_Retrieve_Fail4(t *testing.T) {
 		case "/latest/meta-data/ram/security-credentials/ELK":
 			body = ``
 			status = 404
+		case "/latest/api/token":
+			body = "not found"
+			status = 404
 		}
 		w.WriteHeader(status)
 		w.Write([]byte(body))
 	}))
 	defer ts.Close()
 
-	// Update our securityCredURL to point at our local test server.
+	// Update our securityCredURL and tokenURL to point at our local test server.
 	originalSecurityCredURL := securityCredURL
+	originalTokenURL := tokenURL
 	securityCredURL = strings.Replace(securityCredURL, "http://100.100.100.200", ts.URL, -1)
+	tokenURL = strings.Replace(tokenURL, "http://100.100.100.200", ts.URL, -1)
 	defer func() {
 		securityCredURL = originalSecurityCredURL
+		tokenURL = originalTokenURL
 	}()
 
 	_, err := NewInstanceMetadataProvider().Retrieve()
@@ -173,22 +200,28 @@ func TestInstanceMetadataProvider_Retrieve_Fail5(t *testing.T) {
 		case "/latest/meta-data/ram/security-credentials/ELK":
 			body = `invalid json`
 			status = 200
+		case "/latest/api/token":
+			body = "not found"
+			status = 404
 		}
 		w.WriteHeader(status)
 		w.Write([]byte(body))
 	}))
 	defer ts.Close()
 
-	// Update our securityCredURL to point at our local test server.
+	// Update our securityCredURL and tokenURL to point at our local test server.
 	originalSecurityCredURL := securityCredURL
+	originalTokenURL := tokenURL
 	securityCredURL = strings.Replace(securityCredURL, "http://100.100.100.200", ts.URL, -1)
+	tokenURL = strings.Replace(tokenURL, "http://100.100.100.200", ts.URL, -1)
 	defer func() {
 		securityCredURL = originalSecurityCredURL
+		tokenURL = originalTokenURL
 	}()
 
 	_, err := NewInstanceMetadataProvider().Retrieve()
 	assert.NotNil(t, err)
-	assert.Equal(t, "invalid character 'i' looking for beginning of value", err.Error())
+	assert.Equal(t, "refresh metadata err, json.Unmarshal fail: invalid character 'i' looking for beginning of value", err.Error())
 }
 
 func mockServer(json string) (server *httptest.Server) {
@@ -205,6 +238,9 @@ func mockServer(json string) (server *httptest.Server) {
 		case "/latest/meta-data/ram/security-credentials/ELK":
 			body = json
 			status = 200
+		case "/latest/api/token":
+			body = "not found"
+			status = 404
 		}
 		w.WriteHeader(status)
 		w.Write([]byte(body))
@@ -217,11 +253,14 @@ func test(t *testing.T, input, expected string) {
 	ts := mockServer(input)
 	defer ts.Close()
 
-	// Update our securityCredURL to point at our local test server.
+	// Update our securityCredURL and tokenURL to point at our local test server.
 	originalSecurityCredURL := securityCredURL
+	originalTokenURL := tokenURL
 	securityCredURL = strings.Replace(securityCredURL, "http://100.100.100.200", ts.URL, -1)
+	tokenURL = strings.Replace(tokenURL, "http://100.100.100.200", ts.URL, -1)
 	defer func() {
 		securityCredURL = originalSecurityCredURL
+		tokenURL = originalTokenURL
 	}()
 
 	_, err := NewInstanceMetadataProvider().Retrieve()
@@ -230,15 +269,15 @@ func test(t *testing.T, input, expected string) {
 }
 
 func TestInstanceMetadataProvider_Retrieve_Fail6(t *testing.T) {
-	test(t, `{}`, "AccessKeyId not in map")
+	test(t, `{}`, "refresh metadata err, fail to get credentials, response: {}")
 	test(t, `{"AccessKeyId":true}`,
-		"AccessKeyId is not a string in map")
+		"refresh metadata err, json.Unmarshal fail: json: cannot unmarshal bool into Go struct field ecsRAMRoleCredentials.AccessKeyId of type string")
 	test(t, `{"AccessKeyId":"access key id"}`,
-		"AccessKeySecret not in map")
+		"refresh metadata err, fail to get credentials, response: {\"AccessKeyId\":\"access key id\"}")
 	test(t, `{"AccessKeyId":"access key id", "AccessKeySecret":true}`,
-		"AccessKeySecret is not a string in map")
+		"refresh metadata err, json.Unmarshal fail: json: cannot unmarshal bool into Go struct field ecsRAMRoleCredentials.AccessKeySecret of type string")
 	test(t, `{"AccessKeyId":"access key id", "AccessKeySecret":"secret"}`,
-		"SecurityToken not in map")
+		"refresh metadata err, fail to get credentials, response: {\"AccessKeyId\":\"access key id\", \"AccessKeySecret\":\"secret\"}")
 	test(t, `{"AccessKeyId":"access key id", "AccessKeySecret":"secret","SecurityToken":true}`,
-		"SecurityToken is not a string in map")
+		"refresh metadata err, json.Unmarshal fail: json: cannot unmarshal bool into Go struct field ecsRAMRoleCredentials.SecurityToken of type string")
 }
