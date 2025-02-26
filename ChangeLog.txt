@@ -1,10 +1,13 @@
+2025-02-26 Version: v1.63.89
+- Support imds v2 in old methods.
+
 2025-02-11 Version: v1.63.88
 - Generated 2020-06-01 for `SWAS-OPEN`.
-undefined
+
 
 2025-02-11 Version: v1.63.87
 - Generated 2019-03-07 for `Cloudauth`.
-undefined
+
 
 2025-02-07 Version: v1.63.86
 - Generated 2021-12-21 for `wss`.
@@ -16,7 +19,7 @@ undefined
 
 2025-01-20 Version: v1.63.84
 - Generated 2017-08-01 for `polardb`.
-undefined
+
 
 2025-01-14 Version: v1.63.83
 - Generated 2014-08-28 for `Ess`.
@@ -28,7 +31,7 @@ undefined
 
 2025-01-14 Version: v1.63.81
 - Generated 2023-01-20 for `csas`.
-undefined
+
 
 2025-01-13 Version: v1.63.80
 - Generated 2015-01-01 for `R-kvstore`.
@@ -63,7 +66,7 @@ undefined
 
 2024-12-23 Version: v1.63.73
 - Generated 2020-06-16 for `Alb`.
-undefined
+
 
 2024-12-19 Version: v1.63.72
 - Generated 2017-03-21 for `vod`.
@@ -80,7 +83,7 @@ undefined
 
 2024-12-18 Version: v1.63.69
 - Generated 2023-05-22 for `selectdb`.
-undefined
+
 
 2024-12-12 Version: v1.63.68
 - Generated 2014-05-26 for `Ecs`.
@@ -96,7 +99,7 @@ undefined
 
 2024-12-06 Version: v1.63.65
 - Generated 2016-11-01 for `live`.
-undefined
+
 
 2024-12-06 Version: v1.63.64
 - Generated 2017-03-21 for `vod`.
@@ -105,7 +108,7 @@ undefined
 
 2024-12-03 Version: v1.63.63
 - Generated 2022-01-17 for `Safe`.
-undefined
+
 
 2024-12-02 Version: v1.63.62
 - Generated 2014-08-28 for `Ess`.
@@ -125,7 +128,7 @@ undefined
 
 2024-11-27 Version: v1.63.58
 - Generated 2017-11-10 for `Ens`.
-undefined
+
 
 2024-11-27 Version: v1.63.57
 - Generated 2016-04-28 for `Vpc`.
@@ -141,7 +144,7 @@ undefined
 
 2024-11-22 Version: v1.63.54
 - Generated 2021-11-11 for `qianzhou`.
-undefined
+
 
 2024-11-19 Version: v1.63.53
 - Generated 2024-11-14 for `AIMath`.
@@ -149,7 +152,7 @@ undefined
 
 2024-11-14 Version: v1.63.52
 - Generated 2016-11-01 for `live`.
-undefined
+
 
 2024-11-13 Version: v1.63.51
 - Generated 2016-08-01 for `Push`.
