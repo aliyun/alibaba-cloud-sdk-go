@@ -98,7 +98,7 @@ func CreateListAccountsRequest() (request *ListAccountsRequest) {
 	request = &ListAccountsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ResourceManager", "2020-03-31", "ListAccounts", "", "")
+	request.InitWithApiInfo("ResourceManager", "2020-03-31", "ListAccounts", "resourcemanager", "openAPI")
 	request.Method = requests.POST
 	return
 }

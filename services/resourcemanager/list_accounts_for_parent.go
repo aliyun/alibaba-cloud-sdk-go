@@ -71,12 +71,12 @@ func (client *Client) ListAccountsForParentWithCallback(request *ListAccountsFor
 // ListAccountsForParentRequest is the request struct for api ListAccountsForParent
 type ListAccountsForParentRequest struct {
 	*requests.RpcRequest
-	QueryKeyword   string                      `position:"Query" name:"QueryKeyword"`
 	PageNumber     requests.Integer            `position:"Query" name:"PageNumber"`
-	ParentFolderId string                      `position:"Query" name:"ParentFolderId"`
-	IncludeTags    requests.Boolean            `position:"Query" name:"IncludeTags"`
 	PageSize       requests.Integer            `position:"Query" name:"PageSize"`
 	Tag            *[]ListAccountsForParentTag `position:"Query" name:"Tag"  type:"Repeated"`
+	QueryKeyword   string                      `position:"Query" name:"QueryKeyword"`
+	ParentFolderId string                      `position:"Query" name:"ParentFolderId"`
+	IncludeTags    requests.Boolean            `position:"Query" name:"IncludeTags"`
 }
 
 // ListAccountsForParentTag is a repeated param struct in ListAccountsForParentRequest
@@ -100,7 +100,7 @@ func CreateListAccountsForParentRequest() (request *ListAccountsForParentRequest
 	request = &ListAccountsForParentRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ResourceManager", "2020-03-31", "ListAccountsForParent", "", "")
+	request.InitWithApiInfo("ResourceManager", "2020-03-31", "ListAccountsForParent", "resourcemanager", "openAPI")
 	request.Method = requests.POST
 	return
 }

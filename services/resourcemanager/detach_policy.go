@@ -71,9 +71,9 @@ func (client *Client) DetachPolicyWithCallback(request *DetachPolicyRequest, cal
 // DetachPolicyRequest is the request struct for api DetachPolicy
 type DetachPolicyRequest struct {
 	*requests.RpcRequest
+	ResourceGroupId string `position:"Query" name:"ResourceGroupId"`
 	PolicyType      string `position:"Query" name:"PolicyType"`
 	PrincipalType   string `position:"Query" name:"PrincipalType"`
-	ResourceGroupId string `position:"Query" name:"ResourceGroupId"`
 	PolicyName      string `position:"Query" name:"PolicyName"`
 	PrincipalName   string `position:"Query" name:"PrincipalName"`
 }
@@ -89,7 +89,7 @@ func CreateDetachPolicyRequest() (request *DetachPolicyRequest) {
 	request = &DetachPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ResourceManager", "2020-03-31", "DetachPolicy", "", "")
+	request.InitWithApiInfo("ResourceManager", "2020-03-31", "DetachPolicy", "resourcemanager", "openAPI")
 	request.Method = requests.POST
 	return
 }

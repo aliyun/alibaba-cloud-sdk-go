@@ -95,7 +95,7 @@ func CreateInviteAccountToResourceDirectoryRequest() (request *InviteAccountToRe
 	request = &InviteAccountToResourceDirectoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ResourceManager", "2020-03-31", "InviteAccountToResourceDirectory", "", "")
+	request.InitWithApiInfo("ResourceManager", "2020-03-31", "InviteAccountToResourceDirectory", "resourcemanager", "openAPI")
 	request.Method = requests.POST
 	return
 }

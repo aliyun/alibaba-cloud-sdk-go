@@ -71,8 +71,15 @@ func (client *Client) CreateResourceGroupWithCallback(request *CreateResourceGro
 // CreateResourceGroupRequest is the request struct for api CreateResourceGroup
 type CreateResourceGroupRequest struct {
 	*requests.RpcRequest
-	DisplayName string `position:"Query" name:"DisplayName"`
-	Name        string `position:"Query" name:"Name"`
+	DisplayName string                    `position:"Query" name:"DisplayName"`
+	Name        string                    `position:"Query" name:"Name"`
+	Tag         *[]CreateResourceGroupTag `position:"Query" name:"Tag"  type:"Repeated"`
+}
+
+// CreateResourceGroupTag is a repeated param struct in CreateResourceGroupRequest
+type CreateResourceGroupTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // CreateResourceGroupResponse is the response struct for api CreateResourceGroup
@@ -87,7 +94,7 @@ func CreateCreateResourceGroupRequest() (request *CreateResourceGroupRequest) {
 	request = &CreateResourceGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ResourceManager", "2020-03-31", "CreateResourceGroup", "", "")
+	request.InitWithApiInfo("ResourceManager", "2020-03-31", "CreateResourceGroup", "resourcemanager", "openAPI")
 	request.Method = requests.POST
 	return
 }

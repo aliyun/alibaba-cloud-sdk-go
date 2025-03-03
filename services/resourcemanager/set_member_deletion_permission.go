@@ -88,7 +88,7 @@ func CreateSetMemberDeletionPermissionRequest() (request *SetMemberDeletionPermi
 	request = &SetMemberDeletionPermissionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ResourceManager", "2020-03-31", "SetMemberDeletionPermission", "", "")
+	request.InitWithApiInfo("ResourceManager", "2020-03-31", "SetMemberDeletionPermission", "resourcemanager", "openAPI")
 	request.Method = requests.POST
 	return
 }

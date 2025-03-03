@@ -91,7 +91,7 @@ func CreateListTrustedServiceStatusRequest() (request *ListTrustedServiceStatusR
 	request = &ListTrustedServiceStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ResourceManager", "2020-03-31", "ListTrustedServiceStatus", "", "")
+	request.InitWithApiInfo("ResourceManager", "2020-03-31", "ListTrustedServiceStatus", "resourcemanager", "openAPI")
 	request.Method = requests.POST
 	return
 }

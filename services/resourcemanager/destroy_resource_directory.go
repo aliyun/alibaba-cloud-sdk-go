@@ -84,7 +84,7 @@ func CreateDestroyResourceDirectoryRequest() (request *DestroyResourceDirectoryR
 	request = &DestroyResourceDirectoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ResourceManager", "2020-03-31", "DestroyResourceDirectory", "", "")
+	request.InitWithApiInfo("ResourceManager", "2020-03-31", "DestroyResourceDirectory", "resourcemanager", "openAPI")
 	request.Method = requests.POST
 	return
 }

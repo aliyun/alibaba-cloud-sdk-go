@@ -86,7 +86,7 @@ func CreateGetFolderRequest() (request *GetFolderRequest) {
 	request = &GetFolderRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ResourceManager", "2020-03-31", "GetFolder", "", "")
+	request.InitWithApiInfo("ResourceManager", "2020-03-31", "GetFolder", "resourcemanager", "openAPI")
 	request.Method = requests.POST
 	return
 }

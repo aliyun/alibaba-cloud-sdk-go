@@ -86,7 +86,7 @@ func CreateDeleteResourceGroupRequest() (request *DeleteResourceGroupRequest) {
 	request = &DeleteResourceGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ResourceManager", "2020-03-31", "DeleteResourceGroup", "", "")
+	request.InitWithApiInfo("ResourceManager", "2020-03-31", "DeleteResourceGroup", "resourcemanager", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -17,11 +17,11 @@ package resourcemanager
 
 // PolicyAttachment is a nested struct in resourcemanager response
 type PolicyAttachment struct {
-	Description     string `json:"Description" xml:"Description"`
-	ResourceGroupId string `json:"ResourceGroupId" xml:"ResourceGroupId"`
-	PolicyName      string `json:"PolicyName" xml:"PolicyName"`
-	PrincipalName   string `json:"PrincipalName" xml:"PrincipalName"`
 	AttachDate      string `json:"AttachDate" xml:"AttachDate"`
+	Description     string `json:"Description" xml:"Description"`
+	PolicyName      string `json:"PolicyName" xml:"PolicyName"`
 	PolicyType      string `json:"PolicyType" xml:"PolicyType"`
+	PrincipalName   string `json:"PrincipalName" xml:"PrincipalName"`
 	PrincipalType   string `json:"PrincipalType" xml:"PrincipalType"`
+	ResourceGroupId string `json:"ResourceGroupId" xml:"ResourceGroupId"`
 }

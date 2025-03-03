@@ -79,10 +79,10 @@ type ListRolesRequest struct {
 // ListRolesResponse is the response struct for api ListRoles
 type ListRolesResponse struct {
 	*responses.BaseResponse
-	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	PageSize   int    `json:"PageSize" xml:"PageSize"`
 	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int    `json:"PageSize" xml:"PageSize"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
+	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
 	Roles      Roles  `json:"Roles" xml:"Roles"`
 }
 
@@ -91,7 +91,7 @@ func CreateListRolesRequest() (request *ListRolesRequest) {
 	request = &ListRolesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ResourceManager", "2020-03-31", "ListRoles", "", "")
+	request.InitWithApiInfo("ResourceManager", "2020-03-31", "ListRoles", "resourcemanager", "openAPI")
 	request.Method = requests.POST
 	return
 }

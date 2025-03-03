@@ -32,7 +32,7 @@ type Account struct {
 	RecordId              string `json:"RecordId" xml:"RecordId"`
 	Status                string `json:"Status" xml:"Status"`
 	JoinMethod            string `json:"JoinMethod" xml:"JoinMethod"`
-	Type                  string `json:"Type" xml:"Type"`
 	ResourceDirectoryId   string `json:"ResourceDirectoryId" xml:"ResourceDirectoryId"`
+	Type                  string `json:"Type" xml:"Type"`
 	Tags                  []Tag  `json:"Tags" xml:"Tags"`
 }

@@ -25,7 +25,7 @@ type Role struct {
 	MaxSessionDuration       int64              `json:"MaxSessionDuration" xml:"MaxSessionDuration"`
 	Description              string             `json:"Description" xml:"Description"`
 	AssumeRolePolicyDocument string             `json:"AssumeRolePolicyDocument" xml:"AssumeRolePolicyDocument"`
-	RolePrincipalName        string             `json:"RolePrincipalName" xml:"RolePrincipalName"`
 	RoleName                 string             `json:"RoleName" xml:"RoleName"`
+	RolePrincipalName        string             `json:"RolePrincipalName" xml:"RolePrincipalName"`
 	LatestDeletionTask       LatestDeletionTask `json:"LatestDeletionTask" xml:"LatestDeletionTask"`
 }

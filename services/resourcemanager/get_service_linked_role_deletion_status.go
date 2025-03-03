@@ -77,8 +77,8 @@ type GetServiceLinkedRoleDeletionStatusRequest struct {
 // GetServiceLinkedRoleDeletionStatusResponse is the response struct for api GetServiceLinkedRoleDeletionStatus
 type GetServiceLinkedRoleDeletionStatusResponse struct {
 	*responses.BaseResponse
-	Status    string                                     `json:"Status" xml:"Status"`
 	RequestId string                                     `json:"RequestId" xml:"RequestId"`
+	Status    string                                     `json:"Status" xml:"Status"`
 	Reason    ReasonInGetServiceLinkedRoleDeletionStatus `json:"Reason" xml:"Reason"`
 }
 
@@ -87,7 +87,7 @@ func CreateGetServiceLinkedRoleDeletionStatusRequest() (request *GetServiceLinke
 	request = &GetServiceLinkedRoleDeletionStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ResourceManager", "2020-03-31", "GetServiceLinkedRoleDeletionStatus", "", "")
+	request.InitWithApiInfo("ResourceManager", "2020-03-31", "GetServiceLinkedRoleDeletionStatus", "resourcemanager", "openAPI")
 	request.Method = requests.POST
 	return
 }

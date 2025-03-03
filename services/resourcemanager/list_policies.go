@@ -80,10 +80,10 @@ type ListPoliciesRequest struct {
 // ListPoliciesResponse is the response struct for api ListPolicies
 type ListPoliciesResponse struct {
 	*responses.BaseResponse
-	TotalCount int      `json:"TotalCount" xml:"TotalCount"`
-	RequestId  string   `json:"RequestId" xml:"RequestId"`
-	PageSize   int      `json:"PageSize" xml:"PageSize"`
 	PageNumber int      `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int      `json:"PageSize" xml:"PageSize"`
+	RequestId  string   `json:"RequestId" xml:"RequestId"`
+	TotalCount int      `json:"TotalCount" xml:"TotalCount"`
 	Policies   Policies `json:"Policies" xml:"Policies"`
 }
 
@@ -92,7 +92,7 @@ func CreateListPoliciesRequest() (request *ListPoliciesRequest) {
 	request = &ListPoliciesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ResourceManager", "2020-03-31", "ListPolicies", "", "")
+	request.InitWithApiInfo("ResourceManager", "2020-03-31", "ListPolicies", "resourcemanager", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -86,7 +86,7 @@ func CreateGetAccountDeletionStatusRequest() (request *GetAccountDeletionStatusR
 	request = &GetAccountDeletionStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ResourceManager", "2020-03-31", "GetAccountDeletionStatus", "", "")
+	request.InitWithApiInfo("ResourceManager", "2020-03-31", "GetAccountDeletionStatus", "resourcemanager", "openAPI")
 	request.Method = requests.POST
 	return
 }

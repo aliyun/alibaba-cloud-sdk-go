@@ -86,7 +86,7 @@ func CreateResendCreateCloudAccountEmailRequest() (request *ResendCreateCloudAcc
 	request = &ResendCreateCloudAccountEmailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ResourceManager", "2020-03-31", "ResendCreateCloudAccountEmail", "", "")
+	request.InitWithApiInfo("ResourceManager", "2020-03-31", "ResendCreateCloudAccountEmail", "resourcemanager", "openAPI")
 	request.Method = requests.POST
 	return
 }

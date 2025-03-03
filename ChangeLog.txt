@@ -1,3 +1,7 @@
+2025-03-03 Version: v1.63.92
+- Generated 2020-03-31 for `ResourceManager`.
+- Add auto grouping apis.
+
 2025-03-03 Version: v1.63.91
 - Generated 2022-12-13 for `PaiRecService`.
 undefined

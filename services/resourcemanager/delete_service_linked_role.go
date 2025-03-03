@@ -77,8 +77,8 @@ type DeleteServiceLinkedRoleRequest struct {
 // DeleteServiceLinkedRoleResponse is the response struct for api DeleteServiceLinkedRole
 type DeleteServiceLinkedRoleResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
 	DeletionTaskId string `json:"DeletionTaskId" xml:"DeletionTaskId"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDeleteServiceLinkedRoleRequest creates a request to invoke DeleteServiceLinkedRole API
@@ -86,7 +86,7 @@ func CreateDeleteServiceLinkedRoleRequest() (request *DeleteServiceLinkedRoleReq
 	request = &DeleteServiceLinkedRoleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ResourceManager", "2020-03-31", "DeleteServiceLinkedRole", "", "")
+	request.InitWithApiInfo("ResourceManager", "2020-03-31", "DeleteServiceLinkedRole", "resourcemanager", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -71,9 +71,9 @@ func (client *Client) AttachPolicyWithCallback(request *AttachPolicyRequest, cal
 // AttachPolicyRequest is the request struct for api AttachPolicy
 type AttachPolicyRequest struct {
 	*requests.RpcRequest
+	ResourceGroupId string `position:"Query" name:"ResourceGroupId"`
 	PolicyType      string `position:"Query" name:"PolicyType"`
 	PrincipalType   string `position:"Query" name:"PrincipalType"`
-	ResourceGroupId string `position:"Query" name:"ResourceGroupId"`
 	PolicyName      string `position:"Query" name:"PolicyName"`
 	PrincipalName   string `position:"Query" name:"PrincipalName"`
 }
@@ -89,7 +89,7 @@ func CreateAttachPolicyRequest() (request *AttachPolicyRequest) {
 	request = &AttachPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ResourceManager", "2020-03-31", "AttachPolicy", "", "")
+	request.InitWithApiInfo("ResourceManager", "2020-03-31", "AttachPolicy", "resourcemanager", "openAPI")
 	request.Method = requests.POST
 	return
 }

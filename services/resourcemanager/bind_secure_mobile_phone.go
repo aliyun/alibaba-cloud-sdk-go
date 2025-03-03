@@ -87,7 +87,7 @@ func CreateBindSecureMobilePhoneRequest() (request *BindSecureMobilePhoneRequest
 	request = &BindSecureMobilePhoneRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ResourceManager", "2020-03-31", "BindSecureMobilePhone", "", "")
+	request.InitWithApiInfo("ResourceManager", "2020-03-31", "BindSecureMobilePhone", "resourcemanager", "openAPI")
 	request.Method = requests.POST
 	return
 }

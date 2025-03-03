@@ -90,7 +90,7 @@ func CreateListTagKeysRequest() (request *ListTagKeysRequest) {
 	request = &ListTagKeysRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ResourceManager", "2020-03-31", "ListTagKeys", "", "")
+	request.InitWithApiInfo("ResourceManager", "2020-03-31", "ListTagKeys", "resourcemanager", "openAPI")
 	request.Method = requests.POST
 	return
 }

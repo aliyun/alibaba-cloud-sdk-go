@@ -97,7 +97,7 @@ func CreateCreateResourceAccountRequest() (request *CreateResourceAccountRequest
 	request = &CreateResourceAccountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ResourceManager", "2020-03-31", "CreateResourceAccount", "", "")
+	request.InitWithApiInfo("ResourceManager", "2020-03-31", "CreateResourceAccount", "resourcemanager", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -86,7 +86,7 @@ func CreateCancelHandshakeRequest() (request *CancelHandshakeRequest) {
 	request = &CancelHandshakeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ResourceManager", "2020-03-31", "CancelHandshake", "", "")
+	request.InitWithApiInfo("ResourceManager", "2020-03-31", "CancelHandshake", "resourcemanager", "openAPI")
 	request.Method = requests.POST
 	return
 }

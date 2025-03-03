@@ -85,7 +85,7 @@ func CreateRemoveCloudAccountRequest() (request *RemoveCloudAccountRequest) {
 	request = &RemoveCloudAccountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ResourceManager", "2020-03-31", "RemoveCloudAccount", "", "")
+	request.InitWithApiInfo("ResourceManager", "2020-03-31", "RemoveCloudAccount", "resourcemanager", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -84,10 +84,10 @@ type ListPolicyAttachmentsRequest struct {
 // ListPolicyAttachmentsResponse is the response struct for api ListPolicyAttachments
 type ListPolicyAttachmentsResponse struct {
 	*responses.BaseResponse
-	TotalCount        int               `json:"TotalCount" xml:"TotalCount"`
-	RequestId         string            `json:"RequestId" xml:"RequestId"`
-	PageSize          int               `json:"PageSize" xml:"PageSize"`
 	PageNumber        int               `json:"PageNumber" xml:"PageNumber"`
+	PageSize          int               `json:"PageSize" xml:"PageSize"`
+	RequestId         string            `json:"RequestId" xml:"RequestId"`
+	TotalCount        int               `json:"TotalCount" xml:"TotalCount"`
 	PolicyAttachments PolicyAttachments `json:"PolicyAttachments" xml:"PolicyAttachments"`
 }
 
@@ -96,7 +96,7 @@ func CreateListPolicyAttachmentsRequest() (request *ListPolicyAttachmentsRequest
 	request = &ListPolicyAttachmentsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ResourceManager", "2020-03-31", "ListPolicyAttachments", "", "")
+	request.InitWithApiInfo("ResourceManager", "2020-03-31", "ListPolicyAttachments", "resourcemanager", "openAPI")
 	request.Method = requests.POST
 	return
 }
