@@ -120,6 +120,19 @@ type GetFeatureConsistencyCheckJobConfigResponse struct {
 	FeatureStoreItemId            string `json:"FeatureStoreItemId" xml:"FeatureStoreItemId"`
 	FeatureStoreSeqFeatureView    string `json:"FeatureStoreSeqFeatureView" xml:"FeatureStoreSeqFeatureView"`
 	FeatureStoreProjectId         string `json:"FeatureStoreProjectId" xml:"FeatureStoreProjectId"`
+	WorkspaceId                   string `json:"WorkspaceId" xml:"WorkspaceId"`
+	VpcId                         string `json:"VpcId" xml:"VpcId"`
+	SwitchId                      string `json:"SwitchId" xml:"SwitchId"`
+	SecurityGroupId               string `json:"SecurityGroupId" xml:"SecurityGroupId"`
+	DefaultRoute                  string `json:"DefaultRoute" xml:"DefaultRoute"`
+	DatasetId                     string `json:"DatasetId" xml:"DatasetId"`
+	DatasetType                   string `json:"DatasetType" xml:"DatasetType"`
+	DatasetUri                    string `json:"DatasetUri" xml:"DatasetUri"`
+	DatasetMountPath              string `json:"DatasetMountPath" xml:"DatasetMountPath"`
+	DatasetName                   string `json:"DatasetName" xml:"DatasetName"`
+	PredictWorkerCount            int    `json:"PredictWorkerCount" xml:"PredictWorkerCount"`
+	PredictWorkerCpu              int    `json:"PredictWorkerCpu" xml:"PredictWorkerCpu"`
+	PredictWorkerMemory           int    `json:"PredictWorkerMemory" xml:"PredictWorkerMemory"`
 }
 
 // CreateGetFeatureConsistencyCheckJobConfigRequest creates a request to invoke GetFeatureConsistencyCheckJobConfig API

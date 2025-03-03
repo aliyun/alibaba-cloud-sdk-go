@@ -77,17 +77,18 @@ type GetInstanceRequest struct {
 // GetInstanceResponse is the response struct for api GetInstance
 type GetInstanceResponse struct {
 	*responses.BaseResponse
-	RequestId       string `json:"RequestId" xml:"RequestId"`
-	InstanceId      string `json:"InstanceId" xml:"InstanceId"`
-	Type            string `json:"Type" xml:"Type"`
-	Status          string `json:"Status" xml:"Status"`
-	RegionId        string `json:"RegionId" xml:"RegionId"`
-	GmtCreateTime   string `json:"GmtCreateTime" xml:"GmtCreateTime"`
-	GmtModifiedTime string `json:"GmtModifiedTime" xml:"GmtModifiedTime"`
-	ExpiredTime     string `json:"ExpiredTime" xml:"ExpiredTime"`
-	CommodityCode   string `json:"CommodityCode" xml:"CommodityCode"`
-	ChargeType      string `json:"ChargeType" xml:"ChargeType"`
-	Config          Config `json:"Config" xml:"Config"`
+	RequestId       string        `json:"RequestId" xml:"RequestId"`
+	InstanceId      string        `json:"InstanceId" xml:"InstanceId"`
+	Type            string        `json:"Type" xml:"Type"`
+	Status          string        `json:"Status" xml:"Status"`
+	RegionId        string        `json:"RegionId" xml:"RegionId"`
+	GmtCreateTime   string        `json:"GmtCreateTime" xml:"GmtCreateTime"`
+	GmtModifiedTime string        `json:"GmtModifiedTime" xml:"GmtModifiedTime"`
+	ExpiredTime     string        `json:"ExpiredTime" xml:"ExpiredTime"`
+	CommodityCode   string        `json:"CommodityCode" xml:"CommodityCode"`
+	ChargeType      string        `json:"ChargeType" xml:"ChargeType"`
+	Config          Config        `json:"Config" xml:"Config"`
+	OperatingTool   OperatingTool `json:"OperatingTool" xml:"OperatingTool"`
 }
 
 // CreateGetInstanceRequest creates a request to invoke GetInstance API

@@ -110,6 +110,9 @@ type GetTrafficControlTaskResponse struct {
 	GmtCreateTime                  string                      `json:"GmtCreateTime" xml:"GmtCreateTime"`
 	GmtModifiedTime                string                      `json:"GmtModifiedTime" xml:"GmtModifiedTime"`
 	EverPublished                  bool                        `json:"EverPublished" xml:"EverPublished"`
+	ServiceId                      string                      `json:"ServiceId" xml:"ServiceId"`
+	PreExperimentIds               string                      `json:"PreExperimentIds" xml:"PreExperimentIds"`
+	ProdExperimentIds              string                      `json:"ProdExperimentIds" xml:"ProdExperimentIds"`
 	TrafficControlTargets          []TrafficControlTargetsItem `json:"TrafficControlTargets" xml:"TrafficControlTargets"`
 }
 

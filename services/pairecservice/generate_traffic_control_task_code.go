@@ -78,8 +78,9 @@ type GenerateTrafficControlTaskCodeRequest struct {
 // GenerateTrafficControlTaskCodeResponse is the response struct for api GenerateTrafficControlTaskCode
 type GenerateTrafficControlTaskCodeResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Code      string `json:"Code" xml:"Code"`
+	RequestId     string `json:"RequestId" xml:"RequestId"`
+	Code          string `json:"Code" xml:"Code"`
+	PreNeedConfig bool   `json:"PreNeedConfig" xml:"PreNeedConfig"`
 }
 
 // CreateGenerateTrafficControlTaskCodeRequest creates a request to invoke GenerateTrafficControlTaskCode API
