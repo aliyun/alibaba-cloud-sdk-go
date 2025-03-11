@@ -17,29 +17,30 @@ package drds
 
 // Instance is a nested struct in drds response
 type Instance struct {
-	DrdsInstanceId        string                                       `json:"DrdsInstanceId" xml:"DrdsInstanceId"`
-	Type                  string                                       `json:"Type" xml:"Type"`
-	RegionId              string                                       `json:"RegionId" xml:"RegionId"`
-	ZoneId                string                                       `json:"ZoneId" xml:"ZoneId"`
-	Description           string                                       `json:"Description" xml:"Description"`
-	NetworkType           string                                       `json:"NetworkType" xml:"NetworkType"`
-	Status                string                                       `json:"Status" xml:"Status"`
-	CreateTime            int64                                        `json:"CreateTime" xml:"CreateTime"`
-	Version               int64                                        `json:"Version" xml:"Version"`
-	CommodityCode         string                                       `json:"CommodityCode" xml:"CommodityCode"`
-	InstRole              string                                       `json:"InstRole" xml:"InstRole"`
-	InstanceSeries        string                                       `json:"InstanceSeries" xml:"InstanceSeries"`
-	InstanceSpec          string                                       `json:"InstanceSpec" xml:"InstanceSpec"`
-	MasterInstanceId      string                                       `json:"MasterInstanceId" xml:"MasterInstanceId"`
-	VpcCloudInstanceId    string                                       `json:"VpcCloudInstanceId" xml:"VpcCloudInstanceId"`
 	VpcId                 string                                       `json:"VpcId" xml:"VpcId"`
-	ExpireDate            int64                                        `json:"ExpireDate" xml:"ExpireDate"`
-	VersionAction         string                                       `json:"VersionAction" xml:"VersionAction"`
-	Label                 string                                       `json:"Label" xml:"Label"`
+	Status                string                                       `json:"Status" xml:"Status"`
+	Type                  string                                       `json:"Type" xml:"Type"`
+	CommodityCode         string                                       `json:"CommodityCode" xml:"CommodityCode"`
 	MachineType           string                                       `json:"MachineType" xml:"MachineType"`
-	OrderInstanceId       string                                       `json:"OrderInstanceId" xml:"OrderInstanceId"`
-	ResourceGroupId       string                                       `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	CreateTime            int64                                        `json:"CreateTime" xml:"CreateTime"`
+	VersionAction         string                                       `json:"VersionAction" xml:"VersionAction"`
+	InstanceSeries        string                                       `json:"InstanceSeries" xml:"InstanceSeries"`
+	NetworkType           string                                       `json:"NetworkType" xml:"NetworkType"`
+	Label                 string                                       `json:"Label" xml:"Label"`
 	ProductVersion        string                                       `json:"ProductVersion" xml:"ProductVersion"`
+	InstanceSpec          string                                       `json:"InstanceSpec" xml:"InstanceSpec"`
+	RegionId              string                                       `json:"RegionId" xml:"RegionId"`
+	VpcCloudInstanceId    string                                       `json:"VpcCloudInstanceId" xml:"VpcCloudInstanceId"`
+	Description           string                                       `json:"Description" xml:"Description"`
+	Version               int64                                        `json:"Version" xml:"Version"`
+	ResourceGroupId       string                                       `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	ZoneId                string                                       `json:"ZoneId" xml:"ZoneId"`
+	DrdsInstanceId        string                                       `json:"DrdsInstanceId" xml:"DrdsInstanceId"`
+	ExpireDate            int64                                        `json:"ExpireDate" xml:"ExpireDate"`
+	MasterInstanceId      string                                       `json:"MasterInstanceId" xml:"MasterInstanceId"`
+	OrderInstanceId       string                                       `json:"OrderInstanceId" xml:"OrderInstanceId"`
+	InstRole              string                                       `json:"InstRole" xml:"InstRole"`
+	Series                string                                       `json:"series" xml:"series"`
 	ReadOnlyDBInstanceIds ReadOnlyDBInstanceIdsInDescribeDrdsInstances `json:"ReadOnlyDBInstanceIds" xml:"ReadOnlyDBInstanceIds"`
 	Vips                  VipsInDescribeDrdsInstances                  `json:"Vips" xml:"Vips"`
 }

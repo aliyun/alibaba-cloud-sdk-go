@@ -18,6 +18,6 @@ package drds
 // Increment is a nested struct in drds response
 type Increment struct {
 	Delay     int    `json:"Delay" xml:"Delay"`
-	Tps       int    `json:"Tps" xml:"Tps"`
 	StartTime string `json:"StartTime" xml:"StartTime"`
+	Tps       int    `json:"Tps" xml:"Tps"`
 }

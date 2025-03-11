@@ -77,8 +77,8 @@ type DescribeInstanceSwitchAzoneRequest struct {
 // DescribeInstanceSwitchAzoneResponse is the response struct for api DescribeInstanceSwitchAzone
 type DescribeInstanceSwitchAzoneResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    Result `json:"Result" xml:"Result"`
 }
 

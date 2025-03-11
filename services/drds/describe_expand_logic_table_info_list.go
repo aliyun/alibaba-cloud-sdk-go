@@ -78,8 +78,8 @@ type DescribeExpandLogicTableInfoListRequest struct {
 // DescribeExpandLogicTableInfoListResponse is the response struct for api DescribeExpandLogicTableInfoList
 type DescribeExpandLogicTableInfoListResponse struct {
 	*responses.BaseResponse
-	RequestId string                                 `json:"RequestId" xml:"RequestId"`
 	Success   bool                                   `json:"Success" xml:"Success"`
+	RequestId string                                 `json:"RequestId" xml:"RequestId"`
 	Data      DataInDescribeExpandLogicTableInfoList `json:"Data" xml:"Data"`
 }
 

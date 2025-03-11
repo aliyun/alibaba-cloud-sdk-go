@@ -78,10 +78,10 @@ type SubmitSmoothExpandPreCheckTaskRequest struct {
 // SubmitSmoothExpandPreCheckTaskResponse is the response struct for api SubmitSmoothExpandPreCheckTask
 type SubmitSmoothExpandPreCheckTaskResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
 	Msg       string `json:"Msg" xml:"Msg"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	TaskId    int64  `json:"TaskId" xml:"TaskId"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateSubmitSmoothExpandPreCheckTaskRequest creates a request to invoke SubmitSmoothExpandPreCheckTask API

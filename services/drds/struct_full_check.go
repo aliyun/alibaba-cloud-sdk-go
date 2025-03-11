@@ -17,9 +17,9 @@ package drds
 
 // FullCheck is a nested struct in drds response
 type FullCheck struct {
-	Expired   int    `json:"Expired" xml:"Expired"`
-	Progress  int    `json:"Progress" xml:"Progress"`
-	Total     int    `json:"Total" xml:"Total"`
-	Tps       int    `json:"Tps" xml:"Tps"`
 	StartTime string `json:"StartTime" xml:"StartTime"`
+	Progress  int    `json:"Progress" xml:"Progress"`
+	Tps       int    `json:"Tps" xml:"Tps"`
+	Total     int    `json:"Total" xml:"Total"`
+	Expired   int    `json:"Expired" xml:"Expired"`
 }

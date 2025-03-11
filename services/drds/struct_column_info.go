@@ -17,10 +17,10 @@ package drds
 
 // ColumnInfo is a nested struct in drds response
 type ColumnInfo struct {
-	ColumnName  string `json:"ColumnName" xml:"ColumnName"`
-	ColumnType  string `json:"ColumnType" xml:"ColumnType"`
-	Extra       string `json:"Extra" xml:"Extra"`
 	Index       string `json:"Index" xml:"Index"`
 	IsAllowNull string `json:"IsAllowNull" xml:"IsAllowNull"`
+	ColumnName  string `json:"ColumnName" xml:"ColumnName"`
 	IsPk        string `json:"IsPk" xml:"IsPk"`
+	ColumnType  string `json:"ColumnType" xml:"ColumnType"`
+	Extra       string `json:"Extra" xml:"Extra"`
 }

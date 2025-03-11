@@ -27,9 +27,9 @@ type ReadOnlyInstance struct {
 	VersionAction    int    `json:"VersionAction" xml:"VersionAction"`
 	RdsInstType      string `json:"RdsInstType" xml:"RdsInstType"`
 	DBInstanceStatus string `json:"DBInstanceStatus" xml:"DBInstanceStatus"`
-	ConnectUrl       string `json:"ConnectUrl" xml:"ConnectUrl"`
 	ExpireTime       string `json:"ExpireTime" xml:"ExpireTime"`
-	DBInstanceId     string `json:"DBInstanceId" xml:"DBInstanceId"`
+	ConnectUrl       string `json:"ConnectUrl" xml:"ConnectUrl"`
 	DmInstanceId     string `json:"DmInstanceId" xml:"DmInstanceId"`
+	DBInstanceId     string `json:"DBInstanceId" xml:"DBInstanceId"`
 	NetworkType      string `json:"NetworkType" xml:"NetworkType"`
 }

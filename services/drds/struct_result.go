@@ -18,7 +18,7 @@ package drds
 // Result is a nested struct in drds response
 type Result struct {
 	OriginAzoneId string       `json:"OriginAzoneId" xml:"OriginAzoneId"`
-	RegionId      string       `json:"RegionId" xml:"RegionId"`
 	SwitchAble    bool         `json:"SwitchAble" xml:"SwitchAble"`
+	RegionId      string       `json:"RegionId" xml:"RegionId"`
 	TargetAzones  TargetAzones `json:"TargetAzones" xml:"TargetAzones"`
 }

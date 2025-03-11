@@ -17,9 +17,9 @@ package drds
 
 // VswitchInfo is a nested struct in drds response
 type VswitchInfo struct {
-	VswitchId     string `json:"VswitchId" xml:"VswitchId"`
 	VpcId         string `json:"VpcId" xml:"VpcId"`
-	VswitchName   string `json:"VswitchName" xml:"VswitchName"`
-	AzoneId       string `json:"AzoneId" xml:"AzoneId"`
 	DrdsSupported bool   `json:"DrdsSupported" xml:"DrdsSupported"`
+	VswitchId     string `json:"VswitchId" xml:"VswitchId"`
+	AzoneId       string `json:"AzoneId" xml:"AzoneId"`
+	VswitchName   string `json:"VswitchName" xml:"VswitchName"`
 }

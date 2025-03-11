@@ -81,8 +81,8 @@ type SubmitCleanTaskRequest struct {
 // SubmitCleanTaskResponse is the response struct for api SubmitCleanTask
 type SubmitCleanTaskResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateSubmitCleanTaskRequest creates a request to invoke SubmitCleanTask API

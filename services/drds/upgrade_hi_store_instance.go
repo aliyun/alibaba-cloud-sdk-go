@@ -79,8 +79,8 @@ type UpgradeHiStoreInstanceRequest struct {
 // UpgradeHiStoreInstanceResponse is the response struct for api UpgradeHiStoreInstance
 type UpgradeHiStoreInstanceResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Data      string `json:"Data" xml:"Data"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateUpgradeHiStoreInstanceRequest creates a request to invoke UpgradeHiStoreInstance API

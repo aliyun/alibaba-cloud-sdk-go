@@ -17,10 +17,10 @@ package drds
 
 // RdsPerformanceInfo is a nested struct in drds response
 type RdsPerformanceInfo struct {
-	RdsId          string  `json:"RdsId" xml:"RdsId"`
 	Cpu            float64 `json:"Cpu" xml:"Cpu"`
-	Iops           float64 `json:"Iops" xml:"Iops"`
 	ActiveSessions int     `json:"ActiveSessions" xml:"ActiveSessions"`
 	TotalSessions  int     `json:"TotalSessions" xml:"TotalSessions"`
+	RdsId          string  `json:"RdsId" xml:"RdsId"`
+	Iops           float64 `json:"Iops" xml:"Iops"`
 	SpaceUsage     int64   `json:"SpaceUsage" xml:"SpaceUsage"`
 }

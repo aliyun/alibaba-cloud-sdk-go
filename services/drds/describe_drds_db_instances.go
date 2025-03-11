@@ -80,11 +80,11 @@ type DescribeDrdsDbInstancesRequest struct {
 // DescribeDrdsDbInstancesResponse is the response struct for api DescribeDrdsDbInstances
 type DescribeDrdsDbInstancesResponse struct {
 	*responses.BaseResponse
-	RequestId   string                               `json:"RequestId" xml:"RequestId"`
-	Success     bool                                 `json:"Success" xml:"Success"`
-	PageNumber  string                               `json:"PageNumber" xml:"PageNumber"`
 	PageSize    string                               `json:"PageSize" xml:"PageSize"`
+	PageNumber  string                               `json:"PageNumber" xml:"PageNumber"`
+	RequestId   string                               `json:"RequestId" xml:"RequestId"`
 	Total       string                               `json:"Total" xml:"Total"`
+	Success     bool                                 `json:"Success" xml:"Success"`
 	DbInstances DbInstancesInDescribeDrdsDbInstances `json:"DbInstances" xml:"DbInstances"`
 }
 

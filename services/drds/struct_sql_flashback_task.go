@@ -17,22 +17,22 @@ package drds
 
 // SqlFlashbackTask is a nested struct in drds response
 type SqlFlashbackTask struct {
-	Id                int64  `json:"Id" xml:"Id"`
-	GmtCreate         int64  `json:"GmtCreate" xml:"GmtCreate"`
-	GmtModified       int64  `json:"GmtModified" xml:"GmtModified"`
-	InstId            string `json:"InstId" xml:"InstId"`
-	DbName            string `json:"DbName" xml:"DbName"`
-	SearchStartTime   int64  `json:"SearchStartTime" xml:"SearchStartTime"`
-	SearchEndTime     int64  `json:"SearchEndTime" xml:"SearchEndTime"`
 	TableName         string `json:"TableName" xml:"TableName"`
-	TraceId           string `json:"TraceId" xml:"TraceId"`
-	SqlType           string `json:"SqlType" xml:"SqlType"`
-	SqlPk             string `json:"SqlPk" xml:"SqlPk"`
-	RecallType        int    `json:"RecallType" xml:"RecallType"`
-	RecallStatus      int    `json:"RecallStatus" xml:"RecallStatus"`
-	RecallProgress    int    `json:"RecallProgress" xml:"RecallProgress"`
-	RecallRestoreType int    `json:"RecallRestoreType" xml:"RecallRestoreType"`
-	DownloadUrl       string `json:"DownloadUrl" xml:"DownloadUrl"`
+	SearchEndTime     int64  `json:"SearchEndTime" xml:"SearchEndTime"`
 	ExpireTime        int64  `json:"ExpireTime" xml:"ExpireTime"`
+	DownloadUrl       string `json:"DownloadUrl" xml:"DownloadUrl"`
+	RecallProgress    int    `json:"RecallProgress" xml:"RecallProgress"`
+	SqlPk             string `json:"SqlPk" xml:"SqlPk"`
+	InstId            string `json:"InstId" xml:"InstId"`
+	RecallType        int    `json:"RecallType" xml:"RecallType"`
+	SearchStartTime   int64  `json:"SearchStartTime" xml:"SearchStartTime"`
+	GmtModified       int64  `json:"GmtModified" xml:"GmtModified"`
 	SqlCounter        int64  `json:"SqlCounter" xml:"SqlCounter"`
+	DbName            string `json:"DbName" xml:"DbName"`
+	RecallRestoreType int    `json:"RecallRestoreType" xml:"RecallRestoreType"`
+	GmtCreate         int64  `json:"GmtCreate" xml:"GmtCreate"`
+	TraceId           string `json:"TraceId" xml:"TraceId"`
+	Id                int64  `json:"Id" xml:"Id"`
+	RecallStatus      int    `json:"RecallStatus" xml:"RecallStatus"`
+	SqlType           string `json:"SqlType" xml:"SqlType"`
 }

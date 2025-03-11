@@ -17,17 +17,17 @@ package drds
 
 // ShardingDb is a nested struct in drds response
 type ShardingDb struct {
-	ShardingDbName             string `json:"ShardingDbName" xml:"ShardingDbName"`
-	DbInstanceId               string `json:"DbInstanceId" xml:"DbInstanceId"`
-	GroupName                  string `json:"GroupName" xml:"GroupName"`
-	DbStatus                   string `json:"DbStatus" xml:"DbStatus"`
-	DbType                     string `json:"DbType" xml:"DbType"`
 	MinPoolSize                int    `json:"MinPoolSize" xml:"MinPoolSize"`
 	MaxPoolSize                int    `json:"MaxPoolSize" xml:"MaxPoolSize"`
-	IdleTimeOut                int    `json:"IdleTimeOut" xml:"IdleTimeOut"`
-	BlockingTimeout            int    `json:"BlockingTimeout" xml:"BlockingTimeout"`
-	ConnectionProperties       string `json:"ConnectionProperties" xml:"ConnectionProperties"`
-	PreparedStatementCacheSize int    `json:"PreparedStatementCacheSize" xml:"PreparedStatementCacheSize"`
-	UserName                   string `json:"UserName" xml:"UserName"`
+	DbInstanceId               string `json:"DbInstanceId" xml:"DbInstanceId"`
 	ConnectUrl                 string `json:"ConnectUrl" xml:"ConnectUrl"`
+	GroupName                  string `json:"GroupName" xml:"GroupName"`
+	DbType                     string `json:"DbType" xml:"DbType"`
+	IdleTimeOut                int    `json:"IdleTimeOut" xml:"IdleTimeOut"`
+	ShardingDbName             string `json:"ShardingDbName" xml:"ShardingDbName"`
+	BlockingTimeout            int    `json:"BlockingTimeout" xml:"BlockingTimeout"`
+	PreparedStatementCacheSize int    `json:"PreparedStatementCacheSize" xml:"PreparedStatementCacheSize"`
+	ConnectionProperties       string `json:"ConnectionProperties" xml:"ConnectionProperties"`
+	UserName                   string `json:"UserName" xml:"UserName"`
+	DbStatus                   string `json:"DbStatus" xml:"DbStatus"`
 }

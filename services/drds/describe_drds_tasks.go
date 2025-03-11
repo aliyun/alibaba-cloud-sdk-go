@@ -79,8 +79,8 @@ type DescribeDrdsTasksRequest struct {
 // DescribeDrdsTasksResponse is the response struct for api DescribeDrdsTasks
 type DescribeDrdsTasksResponse struct {
 	*responses.BaseResponse
-	RequestId string                   `json:"RequestId" xml:"RequestId"`
 	Success   bool                     `json:"Success" xml:"Success"`
+	RequestId string                   `json:"RequestId" xml:"RequestId"`
 	Tasks     TasksInDescribeDrdsTasks `json:"Tasks" xml:"Tasks"`
 }
 

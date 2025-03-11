@@ -80,9 +80,9 @@ type SetupTableRequest struct {
 // SetupTableResponse is the response struct for api SetupTable
 type SetupTableResponse struct {
 	*responses.BaseResponse
+	Data      bool   `json:"Data" xml:"Data"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
-	Data      bool   `json:"Data" xml:"Data"`
 }
 
 // CreateSetupTableRequest creates a request to invoke SetupTable API

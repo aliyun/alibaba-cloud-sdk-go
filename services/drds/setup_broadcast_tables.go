@@ -80,9 +80,9 @@ type SetupBroadcastTablesRequest struct {
 // SetupBroadcastTablesResponse is the response struct for api SetupBroadcastTables
 type SetupBroadcastTablesResponse struct {
 	*responses.BaseResponse
+	Data      bool   `json:"Data" xml:"Data"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
-	Data      bool   `json:"Data" xml:"Data"`
 }
 
 // CreateSetupBroadcastTablesRequest creates a request to invoke SetupBroadcastTables API

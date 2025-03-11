@@ -79,8 +79,8 @@ type CheckDrdsDbNameRequest struct {
 type CheckDrdsDbNameResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
 	Result    bool   `json:"Result" xml:"Result"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateCheckDrdsDbNameRequest creates a request to invoke CheckDrdsDbName API

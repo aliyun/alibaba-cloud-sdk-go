@@ -78,8 +78,8 @@ type DescribeDrdsDbRdsNameListRequest struct {
 // DescribeDrdsDbRdsNameListResponse is the response struct for api DescribeDrdsDbRdsNameList
 type DescribeDrdsDbRdsNameListResponse struct {
 	*responses.BaseResponse
-	RequestId        string           `json:"RequestId" xml:"RequestId"`
 	Success          bool             `json:"Success" xml:"Success"`
+	RequestId        string           `json:"RequestId" xml:"RequestId"`
 	InstanceNameList InstanceNameList `json:"InstanceNameList" xml:"InstanceNameList"`
 }
 

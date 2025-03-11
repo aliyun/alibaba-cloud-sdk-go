@@ -79,8 +79,8 @@ type DescribeTableRequest struct {
 // DescribeTableResponse is the response struct for api DescribeTable
 type DescribeTableResponse struct {
 	*responses.BaseResponse
-	RequestId string              `json:"RequestId" xml:"RequestId"`
 	Success   bool                `json:"Success" xml:"Success"`
+	RequestId string              `json:"RequestId" xml:"RequestId"`
 	Data      DataInDescribeTable `json:"Data" xml:"Data"`
 }
 

@@ -19,23 +19,18 @@ package drds
 type ListItem struct {
 	UserVisible        bool   `json:"UserVisible" xml:"UserVisible"`
 	NeedRestart        bool   `json:"NeedRestart" xml:"NeedRestart"`
-	Expired            int64  `json:"Expired" xml:"Expired"`
 	ParamLevel         string `json:"ParamLevel" xml:"ParamLevel"`
 	Property           string `json:"Property" xml:"Property"`
 	IsShard            bool   `json:"IsShard" xml:"IsShard"`
-	Stage              int    `json:"Stage" xml:"Stage"`
 	ShardKey           string `json:"ShardKey" xml:"ShardKey"`
-	Progress           int    `json:"Progress" xml:"Progress"`
 	DbInstType         int    `json:"DbInstType" xml:"DbInstType"`
 	ParamRanges        string `json:"ParamRanges" xml:"ParamRanges"`
-	Delay              int    `json:"Delay" xml:"Delay"`
 	Result             int    `json:"Result" xml:"Result"`
 	ParamValue         string `json:"ParamValue" xml:"ParamValue"`
 	ParamVariableName  string `json:"ParamVariableName" xml:"ParamVariableName"`
 	Status             int    `json:"Status" xml:"Status"`
 	ParamEnglishName   string `json:"ParamEnglishName" xml:"ParamEnglishName"`
 	AllowFullTableScan bool   `json:"AllowFullTableScan" xml:"AllowFullTableScan"`
-	SourceTableName    string `json:"SourceTableName" xml:"SourceTableName"`
 	Table              string `json:"Table" xml:"Table"`
 	ParamDesc          string `json:"ParamDesc" xml:"ParamDesc"`
 	ParamDefaultValue  string `json:"ParamDefaultValue" xml:"ParamDefaultValue"`
@@ -44,8 +39,9 @@ type ListItem struct {
 	IsLocked           bool   `json:"IsLocked" xml:"IsLocked"`
 	ParamName          string `json:"ParamName" xml:"ParamName"`
 	Broadcast          bool   `json:"Broadcast" xml:"Broadcast"`
+	Support            bool   `json:"Support" xml:"Support"`
 	ParamType          string `json:"ParamType" xml:"ParamType"`
-	TargetTableName    string `json:"TargetTableName" xml:"TargetTableName"`
 	BroadcastType      string `json:"BroadcastType" xml:"BroadcastType"`
 	Item               string `json:"Item" xml:"Item"`
+	MenuName           string `json:"MenuName" xml:"MenuName"`
 }

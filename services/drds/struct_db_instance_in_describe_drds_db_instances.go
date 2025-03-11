@@ -17,19 +17,19 @@ package drds
 
 // DbInstanceInDescribeDrdsDbInstances is a nested struct in drds response
 type DbInstanceInDescribeDrdsDbInstances struct {
-	DBInstanceId      string                                     `json:"DBInstanceId" xml:"DBInstanceId"`
+	ExpireTime        string                                     `json:"ExpireTime" xml:"ExpireTime"`
+	PayType           string                                     `json:"PayType" xml:"PayType"`
+	DBInstanceStatus  string                                     `json:"DBInstanceStatus" xml:"DBInstanceStatus"`
+	NetworkType       string                                     `json:"NetworkType" xml:"NetworkType"`
+	Port              int                                        `json:"Port" xml:"Port"`
+	EngineVersion     string                                     `json:"EngineVersion" xml:"EngineVersion"`
 	DmInstanceId      string                                     `json:"DmInstanceId" xml:"DmInstanceId"`
 	ConnectUrl        string                                     `json:"ConnectUrl" xml:"ConnectUrl"`
-	Port              int                                        `json:"Port" xml:"Port"`
-	DBInstanceStatus  string                                     `json:"DBInstanceStatus" xml:"DBInstanceStatus"`
-	DbInstType        string                                     `json:"DbInstType" xml:"DbInstType"`
 	ReadWeight        int                                        `json:"ReadWeight" xml:"ReadWeight"`
-	NetworkType       string                                     `json:"NetworkType" xml:"NetworkType"`
-	Engine            string                                     `json:"Engine" xml:"Engine"`
-	EngineVersion     string                                     `json:"EngineVersion" xml:"EngineVersion"`
 	RdsInstType       string                                     `json:"RdsInstType" xml:"RdsInstType"`
-	PayType           string                                     `json:"PayType" xml:"PayType"`
-	ExpireTime        string                                     `json:"ExpireTime" xml:"ExpireTime"`
 	RemainDays        int                                        `json:"RemainDays" xml:"RemainDays"`
+	DBInstanceId      string                                     `json:"DBInstanceId" xml:"DBInstanceId"`
+	DbInstType        string                                     `json:"DbInstType" xml:"DbInstType"`
+	Engine            string                                     `json:"Engine" xml:"Engine"`
 	ReadOnlyInstances ReadOnlyInstancesInDescribeDrdsDbInstances `json:"ReadOnlyInstances" xml:"ReadOnlyInstances"`
 }

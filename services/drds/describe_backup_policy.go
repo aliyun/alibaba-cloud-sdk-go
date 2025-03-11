@@ -77,8 +77,8 @@ type DescribeBackupPolicyRequest struct {
 // DescribeBackupPolicyResponse is the response struct for api DescribeBackupPolicy
 type DescribeBackupPolicyResponse struct {
 	*responses.BaseResponse
-	RequestId      string         `json:"RequestId" xml:"RequestId"`
 	Success        bool           `json:"Success" xml:"Success"`
+	RequestId      string         `json:"RequestId" xml:"RequestId"`
 	BackupPolicyDO BackupPolicyDO `json:"BackupPolicyDO" xml:"BackupPolicyDO"`
 }
 

@@ -88,9 +88,9 @@ type SetupDrdsParamsData struct {
 // SetupDrdsParamsResponse is the response struct for api SetupDrdsParams
 type SetupDrdsParamsResponse struct {
 	*responses.BaseResponse
+	Data      bool   `json:"Data" xml:"Data"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
-	Data      bool   `json:"Data" xml:"Data"`
 }
 
 // CreateSetupDrdsParamsRequest creates a request to invoke SetupDrdsParams API

@@ -17,9 +17,9 @@ package drds
 
 // InstanceAccount is a nested struct in drds response
 type InstanceAccount struct {
-	AccountName  string       `json:"AccountName" xml:"AccountName"`
 	Host         string       `json:"Host" xml:"Host"`
-	AccountType  int          `json:"AccountType" xml:"AccountType"`
 	Description  string       `json:"Description" xml:"Description"`
+	AccountType  int          `json:"AccountType" xml:"AccountType"`
+	AccountName  string       `json:"AccountName" xml:"AccountName"`
 	DbPrivileges DbPrivileges `json:"DbPrivileges" xml:"DbPrivileges"`
 }

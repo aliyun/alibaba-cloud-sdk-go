@@ -79,8 +79,8 @@ type DescribeDrdsDBClusterRequest struct {
 // DescribeDrdsDBClusterResponse is the response struct for api DescribeDrdsDBCluster
 type DescribeDrdsDBClusterResponse struct {
 	*responses.BaseResponse
-	RequestId  string     `json:"RequestId" xml:"RequestId"`
 	Success    bool       `json:"Success" xml:"Success"`
+	RequestId  string     `json:"RequestId" xml:"RequestId"`
 	DbInstance DbInstance `json:"DbInstance" xml:"DbInstance"`
 }
 

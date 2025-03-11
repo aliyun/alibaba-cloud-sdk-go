@@ -17,6 +17,6 @@ package drds
 
 // RestoreTime is a nested struct in drds response
 type RestoreTime struct {
-	StartTime string `json:"StartTime" xml:"StartTime"`
 	EndTime   string `json:"EndTime" xml:"EndTime"`
+	StartTime string `json:"StartTime" xml:"StartTime"`
 }

@@ -79,8 +79,8 @@ type DescribeDrdsDBIpWhiteListRequest struct {
 // DescribeDrdsDBIpWhiteListResponse is the response struct for api DescribeDrdsDBIpWhiteList
 type DescribeDrdsDBIpWhiteListResponse struct {
 	*responses.BaseResponse
-	RequestId   string      `json:"RequestId" xml:"RequestId"`
 	Success     bool        `json:"Success" xml:"Success"`
+	RequestId   string      `json:"RequestId" xml:"RequestId"`
 	IpWhiteList IpWhiteList `json:"IpWhiteList" xml:"IpWhiteList"`
 }
 

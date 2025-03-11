@@ -71,16 +71,21 @@ func (client *Client) DescribeDrdsShardingDbsWithCallback(request *DescribeDrdsS
 // DescribeDrdsShardingDbsRequest is the request struct for api DescribeDrdsShardingDbs
 type DescribeDrdsShardingDbsRequest struct {
 	*requests.RpcRequest
-	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
-	DbName         string `position:"Query" name:"DbName"`
-	DbNamePattern  string `position:"Query" name:"DbNamePattern"`
+	DrdsInstanceId string           `position:"Query" name:"DrdsInstanceId"`
+	PageNumber     requests.Integer `position:"Query" name:"PageNumber"`
+	DbName         string           `position:"Query" name:"DbName"`
+	PageSize       requests.Integer `position:"Query" name:"PageSize"`
+	DbNamePattern  string           `position:"Query" name:"DbNamePattern"`
 }
 
 // DescribeDrdsShardingDbsResponse is the response struct for api DescribeDrdsShardingDbs
 type DescribeDrdsShardingDbsResponse struct {
 	*responses.BaseResponse
-	RequestId   string      `json:"RequestId" xml:"RequestId"`
 	Success     bool        `json:"Success" xml:"Success"`
+	RequestId   string      `json:"RequestId" xml:"RequestId"`
+	PageNumber  string      `json:"PageNumber" xml:"PageNumber"`
+	PageSize    string      `json:"PageSize" xml:"PageSize"`
+	Total       string      `json:"Total" xml:"Total"`
 	ShardingDbs ShardingDbs `json:"ShardingDbs" xml:"ShardingDbs"`
 }
 

@@ -79,8 +79,8 @@ type DescribeDrdsParamsRequest struct {
 // DescribeDrdsParamsResponse is the response struct for api DescribeDrdsParams
 type DescribeDrdsParamsResponse struct {
 	*responses.BaseResponse
-	RequestId string     `json:"RequestId" xml:"RequestId"`
 	Success   bool       `json:"Success" xml:"Success"`
+	RequestId string     `json:"RequestId" xml:"RequestId"`
 	List      []ListItem `json:"List" xml:"List"`
 }
 

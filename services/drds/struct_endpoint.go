@@ -17,7 +17,7 @@ package drds
 
 // Endpoint is a nested struct in drds response
 type Endpoint struct {
-	NodeIds    string `json:"NodeIds" xml:"NodeIds"`
-	EndpointId string `json:"EndpointId" xml:"EndpointId"`
 	ReadWeight int    `json:"ReadWeight" xml:"ReadWeight"`
+	EndpointId string `json:"EndpointId" xml:"EndpointId"`
+	NodeIds    string `json:"NodeIds" xml:"NodeIds"`
 }

@@ -82,11 +82,11 @@ type DescribeTableListByTypeRequest struct {
 // DescribeTableListByTypeResponse is the response struct for api DescribeTableListByType
 type DescribeTableListByTypeResponse struct {
 	*responses.BaseResponse
-	RequestId  string     `json:"RequestId" xml:"RequestId"`
-	Success    bool       `json:"Success" xml:"Success"`
-	PageNumber int        `json:"PageNumber" xml:"PageNumber"`
 	PageSize   int        `json:"PageSize" xml:"PageSize"`
+	PageNumber int        `json:"PageNumber" xml:"PageNumber"`
+	RequestId  string     `json:"RequestId" xml:"RequestId"`
 	Total      int        `json:"Total" xml:"Total"`
+	Success    bool       `json:"Success" xml:"Success"`
 	List       []ListItem `json:"List" xml:"List"`
 }
 

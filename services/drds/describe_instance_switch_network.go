@@ -77,8 +77,8 @@ type DescribeInstanceSwitchNetworkRequest struct {
 // DescribeInstanceSwitchNetworkResponse is the response struct for api DescribeInstanceSwitchNetwork
 type DescribeInstanceSwitchNetworkResponse struct {
 	*responses.BaseResponse
-	RequestId string   `json:"RequestId" xml:"RequestId"`
 	Success   bool     `json:"Success" xml:"Success"`
+	RequestId string   `json:"RequestId" xml:"RequestId"`
 	VpcInfos  VpcInfos `json:"VpcInfos" xml:"VpcInfos"`
 }
 

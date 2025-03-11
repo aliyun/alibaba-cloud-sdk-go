@@ -71,11 +71,11 @@ func (client *Client) SubmitHotExpandTaskWithCallback(request *SubmitHotExpandTa
 // SubmitHotExpandTaskRequest is the request struct for api SubmitHotExpandTask
 type SubmitHotExpandTaskRequest struct {
 	*requests.RpcRequest
-	Mapping              *[]SubmitHotExpandTaskMapping              `position:"Query" name:"Mapping"  type:"Repeated"`
 	TaskDesc             string                                     `position:"Query" name:"TaskDesc"`
+	TaskName             string                                     `position:"Query" name:"TaskName"`
+	Mapping              *[]SubmitHotExpandTaskMapping              `position:"Query" name:"Mapping"  type:"Repeated"`
 	SupperAccountMapping *[]SubmitHotExpandTaskSupperAccountMapping `position:"Query" name:"SupperAccountMapping"  type:"Repeated"`
 	ExtendedMapping      *[]SubmitHotExpandTaskExtendedMapping      `position:"Query" name:"ExtendedMapping"  type:"Repeated"`
-	TaskName             string                                     `position:"Query" name:"TaskName"`
 	DrdsInstanceId       string                                     `position:"Query" name:"DrdsInstanceId"`
 	InstanceDbMapping    *[]SubmitHotExpandTaskInstanceDbMapping    `position:"Query" name:"InstanceDbMapping"  type:"Repeated"`
 	DbName               string                                     `position:"Query" name:"DbName"`
@@ -83,8 +83,8 @@ type SubmitHotExpandTaskRequest struct {
 
 // SubmitHotExpandTaskMapping is a repeated param struct in SubmitHotExpandTaskRequest
 type SubmitHotExpandTaskMapping struct {
-	DbShardColumn string `name:"DbShardColumn"`
 	TbShardColumn string `name:"TbShardColumn"`
+	DbShardColumn string `name:"DbShardColumn"`
 	ShardTbValue  string `name:"ShardTbValue"`
 	HotDbName     string `name:"HotDbName"`
 	ShardDbValue  string `name:"ShardDbValue"`
@@ -114,8 +114,8 @@ type SubmitHotExpandTaskInstanceDbMapping struct {
 // SubmitHotExpandTaskResponse is the response struct for api SubmitHotExpandTask
 type SubmitHotExpandTaskResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateSubmitHotExpandTaskRequest creates a request to invoke SubmitHotExpandTask API

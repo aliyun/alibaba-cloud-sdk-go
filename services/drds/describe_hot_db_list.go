@@ -78,9 +78,9 @@ type DescribeHotDbListRequest struct {
 // DescribeHotDbListResponse is the response struct for api DescribeHotDbList
 type DescribeHotDbListResponse struct {
 	*responses.BaseResponse
+	Msg       string `json:"Msg" xml:"Msg"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
-	Msg       string `json:"Msg" xml:"Msg"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 

@@ -81,8 +81,8 @@ type UntagResourcesRequest struct {
 // UntagResourcesResponse is the response struct for api UntagResources
 type UntagResourcesResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateUntagResourcesRequest creates a request to invoke UntagResources API

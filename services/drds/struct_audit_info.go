@@ -17,6 +17,6 @@ package drds
 
 // AuditInfo is a nested struct in drds response
 type AuditInfo struct {
-	Project  string `json:"Project" xml:"Project"`
 	LogStore string `json:"LogStore" xml:"LogStore"`
+	Project  string `json:"Project" xml:"Project"`
 }

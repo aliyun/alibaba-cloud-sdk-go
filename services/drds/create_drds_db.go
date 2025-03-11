@@ -100,8 +100,8 @@ type CreateDrdsDBInstDbName struct {
 // CreateDrdsDBResponse is the response struct for api CreateDrdsDB
 type CreateDrdsDBResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCreateDrdsDBRequest creates a request to invoke CreateDrdsDB API

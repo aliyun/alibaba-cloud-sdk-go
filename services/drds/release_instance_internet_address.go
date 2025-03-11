@@ -78,8 +78,8 @@ type ReleaseInstanceInternetAddressRequest struct {
 // ReleaseInstanceInternetAddressResponse is the response struct for api ReleaseInstanceInternetAddress
 type ReleaseInstanceInternetAddressResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Data      bool   `json:"Data" xml:"Data"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateReleaseInstanceInternetAddressRequest creates a request to invoke ReleaseInstanceInternetAddress API

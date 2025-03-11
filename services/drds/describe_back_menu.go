@@ -77,8 +77,8 @@ type DescribeBackMenuRequest struct {
 // DescribeBackMenuResponse is the response struct for api DescribeBackMenu
 type DescribeBackMenuResponse struct {
 	*responses.BaseResponse
-	RequestId string                 `json:"RequestId" xml:"RequestId"`
 	Success   bool                   `json:"Success" xml:"Success"`
+	RequestId string                 `json:"RequestId" xml:"RequestId"`
 	List      ListInDescribeBackMenu `json:"List" xml:"List"`
 }
 

@@ -83,11 +83,11 @@ type DescribeDrdsSlowSqlsRequest struct {
 // DescribeDrdsSlowSqlsResponse is the response struct for api DescribeDrdsSlowSqls
 type DescribeDrdsSlowSqlsResponse struct {
 	*responses.BaseResponse
-	RequestId  string                      `json:"RequestId" xml:"RequestId"`
-	Success    bool                        `json:"Success" xml:"Success"`
-	Total      int                         `json:"Total" xml:"Total"`
-	PageNumber int                         `json:"PageNumber" xml:"PageNumber"`
 	PageSize   int                         `json:"PageSize" xml:"PageSize"`
+	PageNumber int                         `json:"PageNumber" xml:"PageNumber"`
+	RequestId  string                      `json:"RequestId" xml:"RequestId"`
+	Total      int                         `json:"Total" xml:"Total"`
+	Success    bool                        `json:"Success" xml:"Success"`
 	Items      ItemsInDescribeDrdsSlowSqls `json:"Items" xml:"Items"`
 }
 

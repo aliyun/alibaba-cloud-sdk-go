@@ -78,8 +78,8 @@ type DescribeInstDbLogInfoRequest struct {
 // DescribeInstDbLogInfoResponse is the response struct for api DescribeInstDbLogInfo
 type DescribeInstDbLogInfoResponse struct {
 	*responses.BaseResponse
-	RequestId    string       `json:"RequestId" xml:"RequestId"`
 	Success      bool         `json:"Success" xml:"Success"`
+	RequestId    string       `json:"RequestId" xml:"RequestId"`
 	LogTimeRange LogTimeRange `json:"LogTimeRange" xml:"LogTimeRange"`
 }
 

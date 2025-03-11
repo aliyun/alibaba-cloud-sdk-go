@@ -77,8 +77,8 @@ type DescribeDrdsSqlAuditStatusRequest struct {
 // DescribeDrdsSqlAuditStatusResponse is the response struct for api DescribeDrdsSqlAuditStatus
 type DescribeDrdsSqlAuditStatusResponse struct {
 	*responses.BaseResponse
-	RequestId string                           `json:"RequestId" xml:"RequestId"`
 	Success   bool                             `json:"Success" xml:"Success"`
+	RequestId string                           `json:"RequestId" xml:"RequestId"`
 	Data      DataInDescribeDrdsSqlAuditStatus `json:"Data" xml:"Data"`
 }
 

@@ -79,8 +79,8 @@ type DescribeBackupDbsRequest struct {
 // DescribeBackupDbsResponse is the response struct for api DescribeBackupDbs
 type DescribeBackupDbsResponse struct {
 	*responses.BaseResponse
-	RequestId string  `json:"RequestId" xml:"RequestId"`
 	Success   bool    `json:"Success" xml:"Success"`
+	RequestId string  `json:"RequestId" xml:"RequestId"`
 	DbNames   DbNames `json:"DbNames" xml:"DbNames"`
 }
 

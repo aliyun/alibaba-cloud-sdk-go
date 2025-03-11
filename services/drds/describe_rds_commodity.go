@@ -79,9 +79,9 @@ type DescribeRdsCommodityRequest struct {
 // DescribeRdsCommodityResponse is the response struct for api DescribeRdsCommodity
 type DescribeRdsCommodityResponse struct {
 	*responses.BaseResponse
+	Data      string `json:"Data" xml:"Data"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
-	Data      string `json:"Data" xml:"Data"`
 }
 
 // CreateDescribeRdsCommodityRequest creates a request to invoke DescribeRdsCommodity API

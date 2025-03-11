@@ -78,8 +78,8 @@ type GetDrdsDbRdsRelationInfoRequest struct {
 // GetDrdsDbRdsRelationInfoResponse is the response struct for api GetDrdsDbRdsRelationInfo
 type GetDrdsDbRdsRelationInfoResponse struct {
 	*responses.BaseResponse
-	RequestId string     `json:"RequestId" xml:"RequestId"`
 	Success   bool       `json:"Success" xml:"Success"`
+	RequestId string     `json:"RequestId" xml:"RequestId"`
 	Data      []DataItem `json:"Data" xml:"Data"`
 }
 

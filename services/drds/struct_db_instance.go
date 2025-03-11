@@ -17,14 +17,15 @@ package drds
 
 // DBInstance is a nested struct in drds response
 type DBInstance struct {
-	DBInstanceId          string               `json:"DBInstanceId" xml:"DBInstanceId"`
-	DBInstanceStatus      int                  `json:"DBInstanceStatus" xml:"DBInstanceStatus"`
+	InstanceNetworkType   string               `json:"InstanceNetworkType" xml:"InstanceNetworkType"`
 	DBInstanceType        string               `json:"DBInstanceType" xml:"DBInstanceType"`
+	ZoneId                string               `json:"ZoneId" xml:"ZoneId"`
+	DBInstanceStatus      int                  `json:"DBInstanceStatus" xml:"DBInstanceStatus"`
+	DBInstanceId          string               `json:"DBInstanceId" xml:"DBInstanceId"`
 	Engine                string               `json:"Engine" xml:"Engine"`
+	DBInstanceDescription string               `json:"DBInstanceDescription" xml:"DBInstanceDescription"`
 	EngineVersion         string               `json:"EngineVersion" xml:"EngineVersion"`
 	RegionId              string               `json:"RegionId" xml:"RegionId"`
-	ZoneId                string               `json:"ZoneId" xml:"ZoneId"`
-	DBInstanceDescription string               `json:"DBInstanceDescription" xml:"DBInstanceDescription"`
-	InstanceNetworkType   string               `json:"InstanceNetworkType" xml:"InstanceNetworkType"`
+	AllowAllCategory      bool                 `json:"AllowAllCategory" xml:"AllowAllCategory"`
 	ReadOnlyDBInstanceId  ReadOnlyDBInstanceId `json:"ReadOnlyDBInstanceId" xml:"ReadOnlyDBInstanceId"`
 }

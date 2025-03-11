@@ -22,14 +22,11 @@ type Data struct {
 	CreateTime         string                  `json:"CreateTime" xml:"CreateTime"`
 	Mode               string                  `json:"Mode" xml:"Mode"`
 	InstRole           string                  `json:"InstRole" xml:"InstRole"`
-	ShardTbKey         string                  `json:"ShardTbKey" xml:"ShardTbKey"`
 	Expired            string                  `json:"Expired" xml:"Expired"`
 	IsActive           bool                    `json:"IsActive" xml:"IsActive"`
 	Schema             string                  `json:"Schema" xml:"Schema"`
 	DbInstType         string                  `json:"DbInstType" xml:"DbInstType"`
 	SourceTableName    string                  `json:"SourceTableName" xml:"SourceTableName"`
-	ShardDbKey         string                  `json:"ShardDbKey" xml:"ShardDbKey"`
-	TableName          string                  `json:"TableName" xml:"TableName"`
 	DbName             string                  `json:"DbName" xml:"DbName"`
 	Stage              string                  `json:"Stage" xml:"Stage"`
 	Progress           string                  `json:"Progress" xml:"Progress"`
@@ -39,10 +36,10 @@ type Data struct {
 	Msg                string                  `json:"Msg" xml:"Msg"`
 	Status             string                  `json:"Status" xml:"Status"`
 	DrdsInstanceIdList DrdsInstanceIdList      `json:"DrdsInstanceIdList" xml:"DrdsInstanceIdList"`
-	FullRevise         FullRevise              `json:"FullRevise" xml:"FullRevise"`
-	Increment          Increment               `json:"Increment" xml:"Increment"`
-	FullCheck          FullCheck               `json:"FullCheck" xml:"FullCheck"`
-	Full               Full                    `json:"Full" xml:"Full"`
 	Review             Review                  `json:"Review" xml:"Review"`
+	FullCheck          FullCheck               `json:"FullCheck" xml:"FullCheck"`
+	FullRevise         FullRevise              `json:"FullRevise" xml:"FullRevise"`
+	Full               Full                    `json:"Full" xml:"Full"`
+	Increment          Increment               `json:"Increment" xml:"Increment"`
 	List               ListInDescribeHotDbList `json:"List" xml:"List"`
 }

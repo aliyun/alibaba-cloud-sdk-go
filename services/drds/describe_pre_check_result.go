@@ -78,8 +78,8 @@ type DescribePreCheckResultRequest struct {
 // DescribePreCheckResultResponse is the response struct for api DescribePreCheckResult
 type DescribePreCheckResultResponse struct {
 	*responses.BaseResponse
-	RequestId      string         `json:"RequestId" xml:"RequestId"`
 	Success        bool           `json:"Success" xml:"Success"`
+	RequestId      string         `json:"RequestId" xml:"RequestId"`
 	PreCheckResult PreCheckResult `json:"PreCheckResult" xml:"PreCheckResult"`
 }
 

@@ -82,8 +82,8 @@ type DescribeRestoreOrderRequest struct {
 // DescribeRestoreOrderResponse is the response struct for api DescribeRestoreOrder
 type DescribeRestoreOrderResponse struct {
 	*responses.BaseResponse
-	RequestId      string         `json:"RequestId" xml:"RequestId"`
 	Success        bool           `json:"Success" xml:"Success"`
+	RequestId      string         `json:"RequestId" xml:"RequestId"`
 	RestoreOrderDO RestoreOrderDO `json:"RestoreOrderDO" xml:"RestoreOrderDO"`
 }
 

@@ -78,8 +78,8 @@ type DescribeRdsPerformanceSummaryRequest struct {
 // DescribeRdsPerformanceSummaryResponse is the response struct for api DescribeRdsPerformanceSummary
 type DescribeRdsPerformanceSummaryResponse struct {
 	*responses.BaseResponse
-	RequestId           string               `json:"RequestId" xml:"RequestId"`
 	Success             bool                 `json:"Success" xml:"Success"`
+	RequestId           string               `json:"RequestId" xml:"RequestId"`
 	RdsPerformanceInfos []RdsPerformanceInfo `json:"RdsPerformanceInfos" xml:"RdsPerformanceInfos"`
 }
 

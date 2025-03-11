@@ -17,22 +17,24 @@ package drds
 
 // DbInstanceInDescribeDrdsRdsInstances is a nested struct in drds response
 type DbInstanceInDescribeDrdsRdsInstances struct {
-	DBInstanceId        string `json:"DBInstanceId" xml:"DBInstanceId"`
-	DmInstanceId        string `json:"DmInstanceId" xml:"DmInstanceId"`
-	ConnectUrl          string `json:"ConnectUrl" xml:"ConnectUrl"`
-	Port                int    `json:"Port" xml:"Port"`
-	DBInstanceStatus    string `json:"DBInstanceStatus" xml:"DBInstanceStatus"`
-	DbInstType          string `json:"DbInstType" xml:"DbInstType"`
-	ReadWeight          int    `json:"ReadWeight" xml:"ReadWeight"`
-	NetworkType         string `json:"NetworkType" xml:"NetworkType"`
-	Engine              string `json:"Engine" xml:"Engine"`
-	EngineVersion       string `json:"EngineVersion" xml:"EngineVersion"`
-	RdsInstType         string `json:"RdsInstType" xml:"RdsInstType"`
-	PayType             string `json:"PayType" xml:"PayType"`
+	DBInstanceCPU       string `json:"DBInstanceCPU" xml:"DBInstanceCPU"`
 	ExpireTime          string `json:"ExpireTime" xml:"ExpireTime"`
+	DBInstanceMemory    int64  `json:"DBInstanceMemory" xml:"DBInstanceMemory"`
+	PayType             string `json:"PayType" xml:"PayType"`
+	DBInstanceStatus    string `json:"DBInstanceStatus" xml:"DBInstanceStatus"`
+	NetworkType         string `json:"NetworkType" xml:"NetworkType"`
+	Port                int    `json:"Port" xml:"Port"`
+	EngineVersion       string `json:"EngineVersion" xml:"EngineVersion"`
+	DmInstanceId        string `json:"DmInstanceId" xml:"DmInstanceId"`
+	DBInstanceStorage   int64  `json:"DBInstanceStorage" xml:"DBInstanceStorage"`
+	ConnectUrl          string `json:"ConnectUrl" xml:"ConnectUrl"`
+	ReadWeight          int    `json:"ReadWeight" xml:"ReadWeight"`
+	RdsInstType         string `json:"RdsInstType" xml:"RdsInstType"`
 	RemainDays          int    `json:"RemainDays" xml:"RemainDays"`
 	DBInstanceClassType string `json:"DBInstanceClassType" xml:"DBInstanceClassType"`
-	DBInstanceCPU       string `json:"DBInstanceCPU" xml:"DBInstanceCPU"`
-	DBInstanceMemory    int64  `json:"DBInstanceMemory" xml:"DBInstanceMemory"`
-	DBInstanceStorage   int64  `json:"DBInstanceStorage" xml:"DBInstanceStorage"`
+	DBInstanceId        string `json:"DBInstanceId" xml:"DBInstanceId"`
+	Engine              string `json:"Engine" xml:"Engine"`
+	DbInstType          string `json:"DbInstType" xml:"DbInstType"`
+	LockMode            int    `json:"LockMode" xml:"LockMode"`
+	LockReason          string `json:"LockReason" xml:"LockReason"`
 }

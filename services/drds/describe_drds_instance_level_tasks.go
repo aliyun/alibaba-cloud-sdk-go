@@ -77,8 +77,8 @@ type DescribeDrdsInstanceLevelTasksRequest struct {
 // DescribeDrdsInstanceLevelTasksResponse is the response struct for api DescribeDrdsInstanceLevelTasks
 type DescribeDrdsInstanceLevelTasksResponse struct {
 	*responses.BaseResponse
-	RequestId string                                `json:"RequestId" xml:"RequestId"`
 	Success   bool                                  `json:"Success" xml:"Success"`
+	RequestId string                                `json:"RequestId" xml:"RequestId"`
 	Tasks     TasksInDescribeDrdsInstanceLevelTasks `json:"Tasks" xml:"Tasks"`
 }
 

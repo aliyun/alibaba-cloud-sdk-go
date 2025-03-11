@@ -18,24 +18,17 @@ package drds
 // Task is a nested struct in drds response
 type Task struct {
 	TaskType            int    `json:"TaskType" xml:"TaskType"`
-	TbComputeLength     int    `json:"TbComputeLength" xml:"TbComputeLength"`
-	Label               string `json:"Label" xml:"Label"`
 	Id                  int64  `json:"Id" xml:"Id"`
 	TargetId            int64  `json:"TargetId" xml:"TargetId"`
-	ParentJobId         string `json:"ParentJobId" xml:"ParentJobId"`
 	TaskStatus          int    `json:"TaskStatus" xml:"TaskStatus"`
 	ShowProgress        bool   `json:"ShowProgress" xml:"ShowProgress"`
-	GmtCreate           int64  `json:"GmtCreate" xml:"GmtCreate"`
 	TaskPhase           string `json:"TaskPhase" xml:"TaskPhase"`
+	GmtCreate           int64  `json:"GmtCreate" xml:"GmtCreate"`
 	ErrMsg              string `json:"ErrMsg" xml:"ErrMsg"`
-	ExpandType          string `json:"ExpandType" xml:"ExpandType"`
-	DbComputeLength     int    `json:"DbComputeLength" xml:"DbComputeLength"`
 	State               string `json:"State" xml:"State"`
 	AllowCancel         bool   `json:"AllowCancel" xml:"AllowCancel"`
-	DetailTaskId        string `json:"DetailTaskId" xml:"DetailTaskId"`
 	Content             string `json:"Content" xml:"Content"`
-	TaskName            string `json:"TaskName" xml:"TaskName"`
 	Progress            int    `json:"Progress" xml:"Progress"`
+	TaskName            string `json:"TaskName" xml:"TaskName"`
 	ProgressDescription string `json:"ProgressDescription" xml:"ProgressDescription"`
-	TaskDetail          string `json:"TaskDetail" xml:"TaskDetail"`
 }

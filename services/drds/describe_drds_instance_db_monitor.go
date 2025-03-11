@@ -81,8 +81,8 @@ type DescribeDrdsInstanceDbMonitorRequest struct {
 // DescribeDrdsInstanceDbMonitorResponse is the response struct for api DescribeDrdsInstanceDbMonitor
 type DescribeDrdsInstanceDbMonitorResponse struct {
 	*responses.BaseResponse
-	RequestId string                   `json:"RequestId" xml:"RequestId"`
 	Success   bool                     `json:"Success" xml:"Success"`
+	RequestId string                   `json:"RequestId" xml:"RequestId"`
 	Data      []PartialPerformanceData `json:"Data" xml:"Data"`
 }
 

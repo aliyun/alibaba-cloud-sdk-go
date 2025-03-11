@@ -17,12 +17,12 @@ package drds
 
 // RdsOrderDOListItem is a nested struct in drds response
 type RdsOrderDOListItem struct {
-	RegionId          string `json:"RegionId" xml:"RegionId"`
-	AzoneId           string `json:"AzoneId" xml:"AzoneId"`
-	Engine            string `json:"Engine" xml:"Engine"`
+	Network           string `json:"Network" xml:"Network"`
 	Version           string `json:"Version" xml:"Version"`
 	InstanceClass     string `json:"InstanceClass" xml:"InstanceClass"`
 	DbInstanceStorage string `json:"DbInstanceStorage" xml:"DbInstanceStorage"`
-	Network           string `json:"Network" xml:"Network"`
 	Num               int64  `json:"Num" xml:"Num"`
+	Engine            string `json:"Engine" xml:"Engine"`
+	AzoneId           string `json:"AzoneId" xml:"AzoneId"`
+	RegionId          string `json:"RegionId" xml:"RegionId"`
 }

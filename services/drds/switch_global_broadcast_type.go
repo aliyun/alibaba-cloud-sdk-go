@@ -78,9 +78,9 @@ type SwitchGlobalBroadcastTypeRequest struct {
 // SwitchGlobalBroadcastTypeResponse is the response struct for api SwitchGlobalBroadcastType
 type SwitchGlobalBroadcastTypeResponse struct {
 	*responses.BaseResponse
+	Data      bool   `json:"Data" xml:"Data"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
-	Data      bool   `json:"Data" xml:"Data"`
 }
 
 // CreateSwitchGlobalBroadcastTypeRequest creates a request to invoke SwitchGlobalBroadcastType API

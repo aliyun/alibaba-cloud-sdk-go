@@ -78,10 +78,10 @@ type CreateInstanceInternetAddressRequest struct {
 // CreateInstanceInternetAddressResponse is the response struct for api CreateInstanceInternetAddress
 type CreateInstanceInternetAddressResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Data      bool   `json:"Data" xml:"Data"`
-	Success   bool   `json:"Success" xml:"Success"`
 	Code      int    `json:"Code" xml:"Code"`
+	Data      bool   `json:"Data" xml:"Data"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateCreateInstanceInternetAddressRequest creates a request to invoke CreateInstanceInternetAddress API

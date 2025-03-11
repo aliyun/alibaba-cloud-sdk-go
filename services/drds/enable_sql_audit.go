@@ -82,8 +82,8 @@ type EnableSqlAuditRequest struct {
 type EnableSqlAuditResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
 	Result    bool   `json:"Result" xml:"Result"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateEnableSqlAuditRequest creates a request to invoke EnableSqlAudit API

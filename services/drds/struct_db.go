@@ -17,10 +17,10 @@ package drds
 
 // Db is a nested struct in drds response
 type Db struct {
-	DbName     string `json:"DbName" xml:"DbName"`
 	Status     string `json:"Status" xml:"Status"`
+	DbName     string `json:"DbName" xml:"DbName"`
+	Schema     string `json:"Schema" xml:"Schema"`
 	CreateTime string `json:"CreateTime" xml:"CreateTime"`
 	Mode       string `json:"Mode" xml:"Mode"`
-	Schema     string `json:"Schema" xml:"Schema"`
 	DbInstType string `json:"DbInstType" xml:"DbInstType"`
 }

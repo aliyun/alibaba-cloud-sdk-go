@@ -79,11 +79,11 @@ type DescribeDrdsDBsRequest struct {
 // DescribeDrdsDBsResponse is the response struct for api DescribeDrdsDBs
 type DescribeDrdsDBsResponse struct {
 	*responses.BaseResponse
-	RequestId  string                `json:"RequestId" xml:"RequestId"`
-	Success    bool                  `json:"Success" xml:"Success"`
-	PageNumber string                `json:"PageNumber" xml:"PageNumber"`
 	PageSize   string                `json:"PageSize" xml:"PageSize"`
+	PageNumber string                `json:"PageNumber" xml:"PageNumber"`
+	RequestId  string                `json:"RequestId" xml:"RequestId"`
 	Total      string                `json:"Total" xml:"Total"`
+	Success    bool                  `json:"Success" xml:"Success"`
 	Data       DataInDescribeDrdsDBs `json:"Data" xml:"Data"`
 }
 

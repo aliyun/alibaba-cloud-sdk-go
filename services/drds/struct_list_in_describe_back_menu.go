@@ -17,5 +17,5 @@ package drds
 
 // ListInDescribeBackMenu is a nested struct in drds response
 type ListInDescribeBackMenu struct {
-	List []List `json:"list" xml:"list"`
+	ListItem []ListItem `json:"list" xml:"list"`
 }

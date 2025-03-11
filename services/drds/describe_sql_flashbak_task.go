@@ -77,8 +77,8 @@ type DescribeSqlFlashbakTaskRequest struct {
 // DescribeSqlFlashbakTaskResponse is the response struct for api DescribeSqlFlashbakTask
 type DescribeSqlFlashbakTaskResponse struct {
 	*responses.BaseResponse
-	RequestId         string            `json:"RequestId" xml:"RequestId"`
 	Success           bool              `json:"Success" xml:"Success"`
+	RequestId         string            `json:"RequestId" xml:"RequestId"`
 	SqlFlashbackTasks SqlFlashbackTasks `json:"SqlFlashbackTasks" xml:"SqlFlashbackTasks"`
 }
 

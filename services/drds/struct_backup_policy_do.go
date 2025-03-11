@@ -22,8 +22,8 @@ type BackupPolicyDO struct {
 	PreferredBackupPeriod     string `json:"PreferredBackupPeriod" xml:"PreferredBackupPeriod"`
 	DataBackupRetentionPeriod int64  `json:"DataBackupRetentionPeriod" xml:"DataBackupRetentionPeriod"`
 	BackupAppName             string `json:"BackupAppName" xml:"BackupAppName"`
-	LocalLogRetentionSpace    int64  `json:"LocalLogRetentionSpace" xml:"LocalLogRetentionSpace"`
 	HighSpaceUsageProtection  int64  `json:"HighSpaceUsageProtection" xml:"HighSpaceUsageProtection"`
+	LocalLogRetentionSpace    int64  `json:"LocalLogRetentionSpace" xml:"LocalLogRetentionSpace"`
 	BackupType                string `json:"BackupType" xml:"BackupType"`
 	BackupLevel               string `json:"BackupLevel" xml:"BackupLevel"`
 	LocalLogRetentionHours    int64  `json:"LocalLogRetentionHours" xml:"LocalLogRetentionHours"`

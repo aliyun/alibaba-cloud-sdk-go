@@ -80,8 +80,8 @@ type UpdateInstanceNetworkRequest struct {
 // UpdateInstanceNetworkResponse is the response struct for api UpdateInstanceNetwork
 type UpdateInstanceNetworkResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateUpdateInstanceNetworkRequest creates a request to invoke UpdateInstanceNetwork API

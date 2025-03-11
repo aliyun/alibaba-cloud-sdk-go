@@ -81,9 +81,9 @@ type CreateShardTaskRequest struct {
 // CreateShardTaskResponse is the response struct for api CreateShardTask
 type CreateShardTaskResponse struct {
 	*responses.BaseResponse
+	Data      bool   `json:"Data" xml:"Data"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
-	Data      bool   `json:"Data" xml:"Data"`
 }
 
 // CreateCreateShardTaskRequest creates a request to invoke CreateShardTask API

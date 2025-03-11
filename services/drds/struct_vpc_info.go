@@ -18,7 +18,7 @@ package drds
 // VpcInfo is a nested struct in drds response
 type VpcInfo struct {
 	VpcId        string       `json:"VpcId" xml:"VpcId"`
-	RegionId     string       `json:"RegionId" xml:"RegionId"`
 	VpcName      string       `json:"VpcName" xml:"VpcName"`
+	RegionId     string       `json:"RegionId" xml:"RegionId"`
 	VswitchInfos VswitchInfos `json:"VswitchInfos" xml:"VswitchInfos"`
 }

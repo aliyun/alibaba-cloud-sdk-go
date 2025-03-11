@@ -79,8 +79,8 @@ type RemoveBackupsSetRequest struct {
 type RemoveBackupsSetResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
 	Result    string `json:"Result" xml:"Result"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateRemoveBackupsSetRequest creates a request to invoke RemoveBackupsSet API

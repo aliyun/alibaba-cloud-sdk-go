@@ -77,9 +77,9 @@ type CreateOrderForRdsRequest struct {
 // CreateOrderForRdsResponse is the response struct for api CreateOrderForRds
 type CreateOrderForRdsResponse struct {
 	*responses.BaseResponse
+	Data      string `json:"Data" xml:"Data"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
-	Data      string `json:"Data" xml:"Data"`
 }
 
 // CreateCreateOrderForRdsRequest creates a request to invoke CreateOrderForRds API

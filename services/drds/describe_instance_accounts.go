@@ -77,8 +77,8 @@ type DescribeInstanceAccountsRequest struct {
 // DescribeInstanceAccountsResponse is the response struct for api DescribeInstanceAccounts
 type DescribeInstanceAccountsResponse struct {
 	*responses.BaseResponse
-	RequestId        string           `json:"RequestId" xml:"RequestId"`
 	Success          bool             `json:"Success" xml:"Success"`
+	RequestId        string           `json:"RequestId" xml:"RequestId"`
 	InstanceAccounts InstanceAccounts `json:"InstanceAccounts" xml:"InstanceAccounts"`
 }
 

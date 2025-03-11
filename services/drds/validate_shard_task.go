@@ -81,8 +81,8 @@ type ValidateShardTaskRequest struct {
 // ValidateShardTaskResponse is the response struct for api ValidateShardTask
 type ValidateShardTaskResponse struct {
 	*responses.BaseResponse
-	RequestId string     `json:"RequestId" xml:"RequestId"`
 	Success   bool       `json:"Success" xml:"Success"`
+	RequestId string     `json:"RequestId" xml:"RequestId"`
 	List      []ListItem `json:"List" xml:"List"`
 }
 

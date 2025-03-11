@@ -77,8 +77,8 @@ type DescribeBackupTimesRequest struct {
 // DescribeBackupTimesResponse is the response struct for api DescribeBackupTimes
 type DescribeBackupTimesResponse struct {
 	*responses.BaseResponse
-	RequestId   string      `json:"RequestId" xml:"RequestId"`
 	Success     bool        `json:"Success" xml:"Success"`
+	RequestId   string      `json:"RequestId" xml:"RequestId"`
 	RestoreTime RestoreTime `json:"RestoreTime" xml:"RestoreTime"`
 }
 

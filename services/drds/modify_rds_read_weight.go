@@ -80,8 +80,8 @@ type ModifyRdsReadWeightRequest struct {
 // ModifyRdsReadWeightResponse is the response struct for api ModifyRdsReadWeight
 type ModifyRdsReadWeightResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateModifyRdsReadWeightRequest creates a request to invoke ModifyRdsReadWeight API

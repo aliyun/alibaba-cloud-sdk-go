@@ -78,9 +78,9 @@ type CheckSqlAuditEnableStatusRequest struct {
 // CheckSqlAuditEnableStatusResponse is the response struct for api CheckSqlAuditEnableStatus
 type CheckSqlAuditEnableStatusResponse struct {
 	*responses.BaseResponse
+	Status    string `json:"Status" xml:"Status"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
-	Status    string `json:"Status" xml:"Status"`
 }
 
 // CreateCheckSqlAuditEnableStatusRequest creates a request to invoke CheckSqlAuditEnableStatus API

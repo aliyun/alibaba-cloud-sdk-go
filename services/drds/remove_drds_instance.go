@@ -77,8 +77,8 @@ type RemoveDrdsInstanceRequest struct {
 // RemoveDrdsInstanceResponse is the response struct for api RemoveDrdsInstance
 type RemoveDrdsInstanceResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateRemoveDrdsInstanceRequest creates a request to invoke RemoveDrdsInstance API

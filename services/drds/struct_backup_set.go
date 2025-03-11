@@ -17,15 +17,15 @@ package drds
 
 // BackupSet is a nested struct in drds response
 type BackupSet struct {
-	Id                  string    `json:"Id" xml:"Id"`
-	BackupStartTime     int64     `json:"BackupStartTime" xml:"BackupStartTime"`
-	BackupEndTime       int64     `json:"BackupEndTime" xml:"BackupEndTime"`
-	BackupMode          string    `json:"BackupMode" xml:"BackupMode"`
-	BackupLevel         string    `json:"BackupLevel" xml:"BackupLevel"`
-	BackupType          string    `json:"BackupType" xml:"BackupType"`
-	Status              int64     `json:"Status" xml:"Status"`
 	EnableRecovery      bool      `json:"EnableRecovery" xml:"EnableRecovery"`
-	BackupTotalSize     string    `json:"BackupTotalSize" xml:"BackupTotalSize"`
+	Status              int64     `json:"Status" xml:"Status"`
 	BackupConsitentTime string    `json:"BackupConsitentTime" xml:"BackupConsitentTime"`
+	BackupType          string    `json:"BackupType" xml:"BackupType"`
+	BackupStartTime     int64     `json:"BackupStartTime" xml:"BackupStartTime"`
+	BackupLevel         string    `json:"BackupLevel" xml:"BackupLevel"`
+	BackupMode          string    `json:"BackupMode" xml:"BackupMode"`
+	BackupEndTime       int64     `json:"BackupEndTime" xml:"BackupEndTime"`
+	Id                  string    `json:"Id" xml:"Id"`
+	BackupTotalSize     string    `json:"BackupTotalSize" xml:"BackupTotalSize"`
 	BackupDbs           BackupDbs `json:"BackupDbs" xml:"BackupDbs"`
 }

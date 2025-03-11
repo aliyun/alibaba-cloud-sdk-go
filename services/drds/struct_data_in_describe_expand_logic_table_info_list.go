@@ -17,5 +17,5 @@ package drds
 
 // DataInDescribeExpandLogicTableInfoList is a nested struct in drds response
 type DataInDescribeExpandLogicTableInfoList struct {
-	Data []Data `json:"data" xml:"data"`
+	DataItem []DataItem `json:"data" xml:"data"`
 }

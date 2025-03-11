@@ -17,10 +17,10 @@ package drds
 
 // DrdsOrderDOListItem is a nested struct in drds response
 type DrdsOrderDOListItem struct {
-	RegionId  string `json:"RegionId" xml:"RegionId"`
-	AzoneId   string `json:"AzoneId" xml:"AzoneId"`
-	Network   string `json:"Network" xml:"Network"`
 	VpcId     string `json:"VpcId" xml:"VpcId"`
+	Network   string `json:"Network" xml:"Network"`
 	VSwtichId string `json:"VSwtichId" xml:"VSwtichId"`
 	InstSpec  string `json:"InstSpec" xml:"InstSpec"`
+	AzoneId   string `json:"AzoneId" xml:"AzoneId"`
+	RegionId  string `json:"RegionId" xml:"RegionId"`
 }

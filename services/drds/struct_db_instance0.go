@@ -32,7 +32,7 @@ type DbInstance struct {
 	DBInstanceId      string                                    `json:"DBInstanceId" xml:"DBInstanceId"`
 	DmInstanceId      string                                    `json:"DmInstanceId" xml:"DmInstanceId"`
 	NetworkType       string                                    `json:"NetworkType" xml:"NetworkType"`
-	Endpoints         Endpoints                                 `json:"Endpoints" xml:"Endpoints"`
 	DBNodes           DBNodes                                   `json:"DBNodes" xml:"DBNodes"`
 	ReadOnlyInstances ReadOnlyInstancesInDescribeDrdsDbInstance `json:"ReadOnlyInstances" xml:"ReadOnlyInstances"`
+	Endpoints         Endpoints                                 `json:"Endpoints" xml:"Endpoints"`
 }

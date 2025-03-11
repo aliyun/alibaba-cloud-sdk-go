@@ -82,9 +82,9 @@ type UpdatePrivateRdsClassRequest struct {
 // UpdatePrivateRdsClassResponse is the response struct for api UpdatePrivateRdsClass
 type UpdatePrivateRdsClassResponse struct {
 	*responses.BaseResponse
+	Data      string `json:"Data" xml:"Data"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
-	Data      string `json:"Data" xml:"Data"`
 }
 
 // CreateUpdatePrivateRdsClassRequest creates a request to invoke UpdatePrivateRdsClass API

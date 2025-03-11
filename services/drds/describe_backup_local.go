@@ -77,8 +77,8 @@ type DescribeBackupLocalRequest struct {
 // DescribeBackupLocalResponse is the response struct for api DescribeBackupLocal
 type DescribeBackupLocalResponse struct {
 	*responses.BaseResponse
-	RequestId      string         `json:"RequestId" xml:"RequestId"`
 	Success        bool           `json:"Success" xml:"Success"`
+	RequestId      string         `json:"RequestId" xml:"RequestId"`
 	BackupPolicyDO BackupPolicyDO `json:"BackupPolicyDO" xml:"BackupPolicyDO"`
 }
 

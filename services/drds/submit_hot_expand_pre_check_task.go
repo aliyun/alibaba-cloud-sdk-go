@@ -80,10 +80,10 @@ type SubmitHotExpandPreCheckTaskRequest struct {
 // SubmitHotExpandPreCheckTaskResponse is the response struct for api SubmitHotExpandPreCheckTask
 type SubmitHotExpandPreCheckTaskResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
 	Msg       string `json:"Msg" xml:"Msg"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	TaskId    int64  `json:"TaskId" xml:"TaskId"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateSubmitHotExpandPreCheckTaskRequest creates a request to invoke SubmitHotExpandPreCheckTask API

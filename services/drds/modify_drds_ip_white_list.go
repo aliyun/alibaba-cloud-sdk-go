@@ -82,8 +82,8 @@ type ModifyDrdsIpWhiteListRequest struct {
 // ModifyDrdsIpWhiteListResponse is the response struct for api ModifyDrdsIpWhiteList
 type ModifyDrdsIpWhiteListResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateModifyDrdsIpWhiteListRequest creates a request to invoke ModifyDrdsIpWhiteList API

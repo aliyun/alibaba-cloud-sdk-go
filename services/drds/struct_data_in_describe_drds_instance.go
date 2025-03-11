@@ -17,30 +17,30 @@ package drds
 
 // DataInDescribeDrdsInstance is a nested struct in drds response
 type DataInDescribeDrdsInstance struct {
-	DrdsInstanceId        string                                      `json:"DrdsInstanceId" xml:"DrdsInstanceId"`
 	Type                  string                                      `json:"Type" xml:"Type"`
-	RegionId              string                                      `json:"RegionId" xml:"RegionId"`
-	ZoneId                string                                      `json:"ZoneId" xml:"ZoneId"`
-	Description           string                                      `json:"Description" xml:"Description"`
-	NetworkType           string                                      `json:"NetworkType" xml:"NetworkType"`
 	Status                string                                      `json:"Status" xml:"Status"`
 	CreateTime            int64                                       `json:"CreateTime" xml:"CreateTime"`
-	Version               int64                                       `json:"Version" xml:"Version"`
-	InstanceSeries        string                                      `json:"InstanceSeries" xml:"InstanceSeries"`
+	VersionAction         string                                      `json:"VersionAction" xml:"VersionAction"`
+	StorageType           string                                      `json:"StorageType" xml:"StorageType"`
+	NetworkType           string                                      `json:"NetworkType" xml:"NetworkType"`
+	Label                 string                                      `json:"Label" xml:"Label"`
+	MysqlVersion          int                                         `json:"MysqlVersion" xml:"MysqlVersion"`
 	InstanceSpec          string                                      `json:"InstanceSpec" xml:"InstanceSpec"`
 	VpcCloudInstanceId    string                                      `json:"VpcCloudInstanceId" xml:"VpcCloudInstanceId"`
-	InstRole              string                                      `json:"InstRole" xml:"InstRole"`
-	CommodityCode         string                                      `json:"CommodityCode" xml:"CommodityCode"`
+	Description           string                                      `json:"Description" xml:"Description"`
+	Version               int64                                       `json:"Version" xml:"Version"`
 	ExpireDate            int64                                       `json:"ExpireDate" xml:"ExpireDate"`
-	VersionAction         string                                      `json:"VersionAction" xml:"VersionAction"`
-	Label                 string                                      `json:"Label" xml:"Label"`
 	MasterInstanceId      string                                      `json:"MasterInstanceId" xml:"MasterInstanceId"`
+	CommodityCode         string                                      `json:"CommodityCode" xml:"CommodityCode"`
 	MachineType           string                                      `json:"MachineType" xml:"MachineType"`
-	OrderInstanceId       string                                      `json:"OrderInstanceId" xml:"OrderInstanceId"`
-	MysqlVersion          int                                         `json:"MysqlVersion" xml:"MysqlVersion"`
-	StorageType           string                                      `json:"StorageType" xml:"StorageType"`
-	ResourceGroupId       string                                      `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	InstanceSeries        string                                      `json:"InstanceSeries" xml:"InstanceSeries"`
 	ProductVersion        string                                      `json:"ProductVersion" xml:"ProductVersion"`
+	RegionId              string                                      `json:"RegionId" xml:"RegionId"`
+	ResourceGroupId       string                                      `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	DrdsInstanceId        string                                      `json:"DrdsInstanceId" xml:"DrdsInstanceId"`
+	ZoneId                string                                      `json:"ZoneId" xml:"ZoneId"`
+	InstRole              string                                      `json:"InstRole" xml:"InstRole"`
+	OrderInstanceId       string                                      `json:"OrderInstanceId" xml:"OrderInstanceId"`
 	ReadOnlyDBInstanceIds ReadOnlyDBInstanceIdsInDescribeDrdsInstance `json:"ReadOnlyDBInstanceIds" xml:"ReadOnlyDBInstanceIds"`
 	Vips                  VipsInDescribeDrdsInstance                  `json:"Vips" xml:"Vips"`
 }

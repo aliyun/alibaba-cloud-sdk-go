@@ -78,8 +78,8 @@ type DescribeInstDbSlsInfoRequest struct {
 // DescribeInstDbSlsInfoResponse is the response struct for api DescribeInstDbSlsInfo
 type DescribeInstDbSlsInfoResponse struct {
 	*responses.BaseResponse
-	RequestId string    `json:"RequestId" xml:"RequestId"`
 	Success   bool      `json:"Success" xml:"Success"`
+	RequestId string    `json:"RequestId" xml:"RequestId"`
 	AuditInfo AuditInfo `json:"AuditInfo" xml:"AuditInfo"`
 }
 

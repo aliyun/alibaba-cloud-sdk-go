@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// SubmitSwitchTask invokes the drds.SubmitSwitchTask API synchronously
-func (client *Client) SubmitSwitchTask(request *SubmitSwitchTaskRequest) (response *SubmitSwitchTaskResponse, err error) {
-	response = CreateSubmitSwitchTaskResponse()
+// RefreshDrdsAtomUrl invokes the drds.RefreshDrdsAtomUrl API synchronously
+func (client *Client) RefreshDrdsAtomUrl(request *RefreshDrdsAtomUrlRequest) (response *RefreshDrdsAtomUrlResponse, err error) {
+	response = CreateRefreshDrdsAtomUrlResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// SubmitSwitchTaskWithChan invokes the drds.SubmitSwitchTask API asynchronously
-func (client *Client) SubmitSwitchTaskWithChan(request *SubmitSwitchTaskRequest) (<-chan *SubmitSwitchTaskResponse, <-chan error) {
-	responseChan := make(chan *SubmitSwitchTaskResponse, 1)
+// RefreshDrdsAtomUrlWithChan invokes the drds.RefreshDrdsAtomUrl API asynchronously
+func (client *Client) RefreshDrdsAtomUrlWithChan(request *RefreshDrdsAtomUrlRequest) (<-chan *RefreshDrdsAtomUrlResponse, <-chan error) {
+	responseChan := make(chan *RefreshDrdsAtomUrlResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.SubmitSwitchTask(request)
+		response, err := client.RefreshDrdsAtomUrl(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) SubmitSwitchTaskWithChan(request *SubmitSwitchTaskRequest)
 	return responseChan, errChan
 }
 
-// SubmitSwitchTaskWithCallback invokes the drds.SubmitSwitchTask API asynchronously
-func (client *Client) SubmitSwitchTaskWithCallback(request *SubmitSwitchTaskRequest, callback func(response *SubmitSwitchTaskResponse, err error)) <-chan int {
+// RefreshDrdsAtomUrlWithCallback invokes the drds.RefreshDrdsAtomUrl API asynchronously
+func (client *Client) RefreshDrdsAtomUrlWithCallback(request *RefreshDrdsAtomUrlRequest, callback func(response *RefreshDrdsAtomUrlResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *SubmitSwitchTaskResponse
+		var response *RefreshDrdsAtomUrlResponse
 		var err error
 		defer close(result)
-		response, err = client.SubmitSwitchTask(request)
+		response, err = client.RefreshDrdsAtomUrl(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,36 +68,34 @@ func (client *Client) SubmitSwitchTaskWithCallback(request *SubmitSwitchTaskRequ
 	return result
 }
 
-// SubmitSwitchTaskRequest is the request struct for api SubmitSwitchTask
-type SubmitSwitchTaskRequest struct {
+// RefreshDrdsAtomUrlRequest is the request struct for api RefreshDrdsAtomUrl
+type RefreshDrdsAtomUrlRequest struct {
 	*requests.RpcRequest
 	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
-	ExpandType     string `position:"Query" name:"ExpandType"`
-	JobId          string `position:"Query" name:"JobId"`
 	DbName         string `position:"Query" name:"DbName"`
-	ParentJobId    string `position:"Query" name:"ParentJobId"`
 }
 
-// SubmitSwitchTaskResponse is the response struct for api SubmitSwitchTask
-type SubmitSwitchTaskResponse struct {
+// RefreshDrdsAtomUrlResponse is the response struct for api RefreshDrdsAtomUrl
+type RefreshDrdsAtomUrlResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Result    bool   `json:"Result" xml:"Result"`
 	Success   bool   `json:"Success" xml:"Success"`
 }
 
-// CreateSubmitSwitchTaskRequest creates a request to invoke SubmitSwitchTask API
-func CreateSubmitSwitchTaskRequest() (request *SubmitSwitchTaskRequest) {
-	request = &SubmitSwitchTaskRequest{
+// CreateRefreshDrdsAtomUrlRequest creates a request to invoke RefreshDrdsAtomUrl API
+func CreateRefreshDrdsAtomUrlRequest() (request *RefreshDrdsAtomUrlRequest) {
+	request = &RefreshDrdsAtomUrlRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "SubmitSwitchTask", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "RefreshDrdsAtomUrl", "drds", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateSubmitSwitchTaskResponse creates a response to parse from SubmitSwitchTask response
-func CreateSubmitSwitchTaskResponse() (response *SubmitSwitchTaskResponse) {
-	response = &SubmitSwitchTaskResponse{
+// CreateRefreshDrdsAtomUrlResponse creates a response to parse from RefreshDrdsAtomUrl response
+func CreateRefreshDrdsAtomUrlResponse() (response *RefreshDrdsAtomUrlResponse) {
+	response = &RefreshDrdsAtomUrlResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

@@ -86,8 +86,8 @@ type CreateInstanceAccountDbPrivilege struct {
 // CreateInstanceAccountResponse is the response struct for api CreateInstanceAccount
 type CreateInstanceAccountResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCreateInstanceAccountRequest creates a request to invoke CreateInstanceAccount API

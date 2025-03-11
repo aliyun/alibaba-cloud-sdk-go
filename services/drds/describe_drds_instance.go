@@ -77,8 +77,8 @@ type DescribeDrdsInstanceRequest struct {
 // DescribeDrdsInstanceResponse is the response struct for api DescribeDrdsInstance
 type DescribeDrdsInstanceResponse struct {
 	*responses.BaseResponse
-	RequestId string                     `json:"RequestId" xml:"RequestId"`
 	Success   bool                       `json:"Success" xml:"Success"`
+	RequestId string                     `json:"RequestId" xml:"RequestId"`
 	Data      DataInDescribeDrdsInstance `json:"Data" xml:"Data"`
 }
 

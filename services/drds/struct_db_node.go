@@ -17,8 +17,8 @@ package drds
 
 // DBNode is a nested struct in drds response
 type DBNode struct {
-	DBNodeId     string `json:"DBNodeId" xml:"DBNodeId"`
-	ZoneId       string `json:"ZoneId" xml:"ZoneId"`
-	DBNodeStatus string `json:"DBNodeStatus" xml:"DBNodeStatus"`
 	DBNodeRole   string `json:"DBNodeRole" xml:"DBNodeRole"`
+	ZoneId       string `json:"ZoneId" xml:"ZoneId"`
+	DBNodeId     string `json:"DBNodeId" xml:"DBNodeId"`
+	DBNodeStatus string `json:"DBNodeStatus" xml:"DBNodeStatus"`
 }

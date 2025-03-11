@@ -79,8 +79,8 @@ type EnableSqlFlashbackMatchSwitchRequest struct {
 type EnableSqlFlashbackMatchSwitchResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
 	Result    bool   `json:"Result" xml:"Result"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateEnableSqlFlashbackMatchSwitchRequest creates a request to invoke EnableSqlFlashbackMatchSwitch API

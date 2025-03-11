@@ -79,8 +79,8 @@ type RemoveDrdsDbFailedRecordRequest struct {
 type RemoveDrdsDbFailedRecordResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
 	Result    bool   `json:"Result" xml:"Result"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateRemoveDrdsDbFailedRecordRequest creates a request to invoke RemoveDrdsDbFailedRecord API

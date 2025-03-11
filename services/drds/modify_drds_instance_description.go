@@ -78,8 +78,8 @@ type ModifyDrdsInstanceDescriptionRequest struct {
 // ModifyDrdsInstanceDescriptionResponse is the response struct for api ModifyDrdsInstanceDescription
 type ModifyDrdsInstanceDescriptionResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateModifyDrdsInstanceDescriptionRequest creates a request to invoke ModifyDrdsInstanceDescription API
