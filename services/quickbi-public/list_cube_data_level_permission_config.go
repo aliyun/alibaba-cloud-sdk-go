@@ -71,10 +71,10 @@ func (client *Client) ListCubeDataLevelPermissionConfigWithCallback(request *Lis
 // ListCubeDataLevelPermissionConfigRequest is the request struct for api ListCubeDataLevelPermissionConfig
 type ListCubeDataLevelPermissionConfigRequest struct {
 	*requests.RpcRequest
-	RuleType    string `position:"Query" name:"RuleType"`
 	AccessPoint string `position:"Query" name:"AccessPoint"`
-	SignType    string `position:"Query" name:"SignType"`
 	CubeId      string `position:"Query" name:"CubeId"`
+	RuleType    string `position:"Query" name:"RuleType"`
+	SignType    string `position:"Query" name:"SignType"`
 }
 
 // ListCubeDataLevelPermissionConfigResponse is the response struct for api ListCubeDataLevelPermissionConfig

@@ -72,9 +72,9 @@ func (client *Client) GetMailTaskStatusWithCallback(request *GetMailTaskStatusRe
 type GetMailTaskStatusRequest struct {
 	*requests.RpcRequest
 	AccessPoint string           `position:"Query" name:"AccessPoint"`
-	SignType    string           `position:"Query" name:"SignType"`
 	MailId      string           `position:"Query" name:"MailId"`
 	TaskId      requests.Integer `position:"Query" name:"TaskId"`
+	SignType    string           `position:"Query" name:"SignType"`
 }
 
 // GetMailTaskStatusResponse is the response struct for api GetMailTaskStatus

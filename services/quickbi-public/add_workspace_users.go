@@ -81,8 +81,8 @@ type AddWorkspaceUsersRequest struct {
 // AddWorkspaceUsersResponse is the response struct for api AddWorkspaceUsers
 type AddWorkspaceUsersResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    Result `json:"Result" xml:"Result"`
 }
 

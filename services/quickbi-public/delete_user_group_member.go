@@ -72,9 +72,9 @@ func (client *Client) DeleteUserGroupMemberWithCallback(request *DeleteUserGroup
 type DeleteUserGroupMemberRequest struct {
 	*requests.RpcRequest
 	AccessPoint string `position:"Query" name:"AccessPoint"`
+	UserId      string `position:"Query" name:"UserId"`
 	UserGroupId string `position:"Query" name:"UserGroupId"`
 	SignType    string `position:"Query" name:"SignType"`
-	UserId      string `position:"Query" name:"UserId"`
 }
 
 // DeleteUserGroupMemberResponse is the response struct for api DeleteUserGroupMember

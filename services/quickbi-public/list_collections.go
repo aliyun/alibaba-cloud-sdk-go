@@ -79,8 +79,8 @@ type ListCollectionsRequest struct {
 // ListCollectionsResponse is the response struct for api ListCollections
 type ListCollectionsResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    []Data `json:"Result" xml:"Result"`
 }
 

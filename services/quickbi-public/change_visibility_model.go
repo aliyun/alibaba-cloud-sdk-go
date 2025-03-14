@@ -72,10 +72,10 @@ func (client *Client) ChangeVisibilityModelWithCallback(request *ChangeVisibilit
 type ChangeVisibilityModelRequest struct {
 	*requests.RpcRequest
 	DataPortalId       string           `position:"Query" name:"DataPortalId"`
-	ShowOnlyWithAccess requests.Boolean `position:"Query" name:"ShowOnlyWithAccess"`
 	AccessPoint        string           `position:"Query" name:"AccessPoint"`
-	SignType           string           `position:"Query" name:"SignType"`
 	MenuIds            string           `position:"Query" name:"MenuIds"`
+	ShowOnlyWithAccess requests.Boolean `position:"Query" name:"ShowOnlyWithAccess"`
+	SignType           string           `position:"Query" name:"SignType"`
 }
 
 // ChangeVisibilityModelResponse is the response struct for api ChangeVisibilityModel

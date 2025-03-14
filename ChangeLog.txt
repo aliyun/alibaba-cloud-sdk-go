@@ -1,3 +1,8 @@
+2025-03-14 Version: v1.63.96
+- Generated 2022-01-01 for `quickbi-public`.
+- Add API errors.
+- QueryUserList API add return parameter.
+
 2025-03-14 Version: v1.63.95
 - Generated 2014-08-28 for `Ess`.
 - 支持根据属性查询弹性强度时返回库存健康度

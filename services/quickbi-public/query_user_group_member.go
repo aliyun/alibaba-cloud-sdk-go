@@ -72,16 +72,16 @@ func (client *Client) QueryUserGroupMemberWithCallback(request *QueryUserGroupMe
 type QueryUserGroupMemberRequest struct {
 	*requests.RpcRequest
 	AccessPoint string `position:"Query" name:"AccessPoint"`
+	Keyword     string `position:"Query" name:"Keyword"`
 	UserGroupId string `position:"Query" name:"UserGroupId"`
 	SignType    string `position:"Query" name:"SignType"`
-	Keyword     string `position:"Query" name:"Keyword"`
 }
 
 // QueryUserGroupMemberResponse is the response struct for api QueryUserGroupMember
 type QueryUserGroupMemberResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    []Data `json:"Result" xml:"Result"`
 }
 

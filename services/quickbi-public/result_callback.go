@@ -72,9 +72,9 @@ func (client *Client) ResultCallbackWithCallback(request *ResultCallbackRequest,
 type ResultCallbackRequest struct {
 	*requests.RpcRequest
 	AccessPoint   string           `position:"Query" name:"AccessPoint"`
-	SignType      string           `position:"Query" name:"SignType"`
 	HandleReason  string           `position:"Query" name:"HandleReason"`
 	ApplicationId string           `position:"Query" name:"ApplicationId"`
+	SignType      string           `position:"Query" name:"SignType"`
 	Status        requests.Integer `position:"Query" name:"Status"`
 }
 

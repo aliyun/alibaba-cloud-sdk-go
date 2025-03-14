@@ -71,10 +71,10 @@ func (client *Client) ListDataLevelPermissionWhiteListWithCallback(request *List
 // ListDataLevelPermissionWhiteListRequest is the request struct for api ListDataLevelPermissionWhiteList
 type ListDataLevelPermissionWhiteListRequest struct {
 	*requests.RpcRequest
-	RuleType    string `position:"Query" name:"RuleType"`
 	AccessPoint string `position:"Query" name:"AccessPoint"`
-	SignType    string `position:"Query" name:"SignType"`
 	CubeId      string `position:"Query" name:"CubeId"`
+	RuleType    string `position:"Query" name:"RuleType"`
+	SignType    string `position:"Query" name:"SignType"`
 }
 
 // ListDataLevelPermissionWhiteListResponse is the response struct for api ListDataLevelPermissionWhiteList

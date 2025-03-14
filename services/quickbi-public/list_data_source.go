@@ -71,8 +71,8 @@ func (client *Client) ListDataSourceWithCallback(request *ListDataSourceRequest,
 // ListDataSourceRequest is the request struct for api ListDataSource
 type ListDataSourceRequest struct {
 	*requests.RpcRequest
-	DsType      string `position:"Query" name:"DsType"`
 	AccessPoint string `position:"Query" name:"AccessPoint"`
+	DsType      string `position:"Query" name:"DsType"`
 	SignType    string `position:"Query" name:"SignType"`
 	WorkspaceId string `position:"Query" name:"WorkspaceId"`
 }

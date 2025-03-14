@@ -73,8 +73,8 @@ type CancelReportShareRequest struct {
 	*requests.RpcRequest
 	ReportId    string           `position:"Query" name:"ReportId"`
 	AccessPoint string           `position:"Query" name:"AccessPoint"`
-	SignType    string           `position:"Query" name:"SignType"`
 	ShareToIds  string           `position:"Query" name:"ShareToIds"`
+	SignType    string           `position:"Query" name:"SignType"`
 	ShareToType requests.Integer `position:"Query" name:"ShareToType"`
 }
 

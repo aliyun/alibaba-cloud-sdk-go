@@ -83,8 +83,8 @@ type ModifyCopilotEmbedConfigRequest struct {
 type ModifyCopilotEmbedConfigResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Result    bool   `json:"Result" xml:"Result"`
 	Success   bool   `json:"Success" xml:"Success"`
+	Result    bool   `json:"Result" xml:"Result"`
 }
 
 // CreateModifyCopilotEmbedConfigRequest creates a request to invoke ModifyCopilotEmbedConfig API

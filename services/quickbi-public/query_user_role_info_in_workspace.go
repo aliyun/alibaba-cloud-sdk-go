@@ -72,16 +72,16 @@ func (client *Client) QueryUserRoleInfoInWorkspaceWithCallback(request *QueryUse
 type QueryUserRoleInfoInWorkspaceRequest struct {
 	*requests.RpcRequest
 	AccessPoint string `position:"Query" name:"AccessPoint"`
-	SignType    string `position:"Query" name:"SignType"`
 	UserId      string `position:"Query" name:"UserId"`
+	SignType    string `position:"Query" name:"SignType"`
 	WorkspaceId string `position:"Query" name:"WorkspaceId"`
 }
 
 // QueryUserRoleInfoInWorkspaceResponse is the response struct for api QueryUserRoleInfoInWorkspace
 type QueryUserRoleInfoInWorkspaceResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    Result `json:"Result" xml:"Result"`
 }
 

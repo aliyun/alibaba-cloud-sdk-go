@@ -71,9 +71,9 @@ func (client *Client) DelayTicketExpireTimeWithCallback(request *DelayTicketExpi
 // DelayTicketExpireTimeRequest is the request struct for api DelayTicketExpireTime
 type DelayTicketExpireTimeRequest struct {
 	*requests.RpcRequest
+	AccessPoint string           `position:"Query" name:"AccessPoint"`
 	ExpireTime  requests.Integer `position:"Query" name:"ExpireTime"`
 	Ticket      string           `position:"Query" name:"Ticket"`
-	AccessPoint string           `position:"Query" name:"AccessPoint"`
 	SignType    string           `position:"Query" name:"SignType"`
 }
 

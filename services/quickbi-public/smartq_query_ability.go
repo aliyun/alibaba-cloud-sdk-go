@@ -72,10 +72,10 @@ func (client *Client) SmartqQueryAbilityWithCallback(request *SmartqQueryAbility
 type SmartqQueryAbilityRequest struct {
 	*requests.RpcRequest
 	AccessPoint  string `position:"Query" name:"AccessPoint"`
-	SignType     string `position:"Query" name:"SignType"`
 	UserId       string `position:"Query" name:"UserId"`
 	UserQuestion string `position:"Query" name:"UserQuestion"`
 	CubeId       string `position:"Query" name:"CubeId"`
+	SignType     string `position:"Query" name:"SignType"`
 }
 
 // SmartqQueryAbilityResponse is the response struct for api SmartqQueryAbility

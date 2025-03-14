@@ -72,9 +72,9 @@ func (client *Client) QuerySmartqPermissionByCubeIdWithCallback(request *QuerySm
 type QuerySmartqPermissionByCubeIdRequest struct {
 	*requests.RpcRequest
 	AccessPoint string `position:"Query" name:"AccessPoint"`
-	SignType    string `position:"Query" name:"SignType"`
 	UserId      string `position:"Query" name:"UserId"`
 	CubeId      string `position:"Query" name:"CubeId"`
+	SignType    string `position:"Query" name:"SignType"`
 }
 
 // QuerySmartqPermissionByCubeIdResponse is the response struct for api QuerySmartqPermissionByCubeId

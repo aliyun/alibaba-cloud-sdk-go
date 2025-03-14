@@ -72,10 +72,10 @@ func (client *Client) UpdateDataLevelPermissionStatusWithCallback(request *Updat
 type UpdateDataLevelPermissionStatusRequest struct {
 	*requests.RpcRequest
 	IsOpen      requests.Integer `position:"Query" name:"IsOpen"`
-	RuleType    string           `position:"Query" name:"RuleType"`
 	AccessPoint string           `position:"Query" name:"AccessPoint"`
-	SignType    string           `position:"Query" name:"SignType"`
 	CubeId      string           `position:"Query" name:"CubeId"`
+	RuleType    string           `position:"Query" name:"RuleType"`
+	SignType    string           `position:"Query" name:"SignType"`
 }
 
 // UpdateDataLevelPermissionStatusResponse is the response struct for api UpdateDataLevelPermissionStatus

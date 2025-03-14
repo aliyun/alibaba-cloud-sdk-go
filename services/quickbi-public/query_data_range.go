@@ -72,9 +72,9 @@ func (client *Client) QueryDataRangeWithCallback(request *QueryDataRangeRequest,
 type QueryDataRangeRequest struct {
 	*requests.RpcRequest
 	AccessPoint string `position:"Query" name:"AccessPoint"`
-	SignType    string `position:"Query" name:"SignType"`
 	Type        string `position:"Query" name:"Type"`
 	Keyword     string `position:"Query" name:"Keyword"`
+	SignType    string `position:"Query" name:"SignType"`
 }
 
 // QueryDataRangeResponse is the response struct for api QueryDataRange

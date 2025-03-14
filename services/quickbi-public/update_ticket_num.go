@@ -71,8 +71,8 @@ func (client *Client) UpdateTicketNumWithCallback(request *UpdateTicketNumReques
 // UpdateTicketNumRequest is the request struct for api UpdateTicketNum
 type UpdateTicketNumRequest struct {
 	*requests.RpcRequest
-	Ticket      string           `position:"Query" name:"Ticket"`
 	AccessPoint string           `position:"Query" name:"AccessPoint"`
+	Ticket      string           `position:"Query" name:"Ticket"`
 	SignType    string           `position:"Query" name:"SignType"`
 	TicketNum   requests.Integer `position:"Query" name:"TicketNum"`
 }

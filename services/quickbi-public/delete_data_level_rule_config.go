@@ -72,9 +72,9 @@ func (client *Client) DeleteDataLevelRuleConfigWithCallback(request *DeleteDataL
 type DeleteDataLevelRuleConfigRequest struct {
 	*requests.RpcRequest
 	AccessPoint string `position:"Query" name:"AccessPoint"`
+	CubeId      string `position:"Query" name:"CubeId"`
 	SignType    string `position:"Query" name:"SignType"`
 	RuleId      string `position:"Query" name:"RuleId"`
-	CubeId      string `position:"Query" name:"CubeId"`
 }
 
 // DeleteDataLevelRuleConfigResponse is the response struct for api DeleteDataLevelRuleConfig

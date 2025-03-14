@@ -72,8 +72,8 @@ func (client *Client) DeleteUserFromWorkspaceWithCallback(request *DeleteUserFro
 type DeleteUserFromWorkspaceRequest struct {
 	*requests.RpcRequest
 	AccessPoint string `position:"Query" name:"AccessPoint"`
-	SignType    string `position:"Query" name:"SignType"`
 	UserId      string `position:"Query" name:"UserId"`
+	SignType    string `position:"Query" name:"SignType"`
 	WorkspaceId string `position:"Query" name:"WorkspaceId"`
 }
 

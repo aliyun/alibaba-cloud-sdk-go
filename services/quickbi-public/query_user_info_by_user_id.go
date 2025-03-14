@@ -79,8 +79,8 @@ type QueryUserInfoByUserIdRequest struct {
 // QueryUserInfoByUserIdResponse is the response struct for api QueryUserInfoByUserId
 type QueryUserInfoByUserIdResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    Result `json:"Result" xml:"Result"`
 }
 

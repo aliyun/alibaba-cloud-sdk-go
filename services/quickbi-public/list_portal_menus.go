@@ -73,8 +73,8 @@ type ListPortalMenusRequest struct {
 	*requests.RpcRequest
 	DataPortalId string `position:"Query" name:"DataPortalId"`
 	AccessPoint  string `position:"Query" name:"AccessPoint"`
-	SignType     string `position:"Query" name:"SignType"`
 	UserId       string `position:"Query" name:"UserId"`
+	SignType     string `position:"Query" name:"SignType"`
 }
 
 // ListPortalMenusResponse is the response struct for api ListPortalMenus

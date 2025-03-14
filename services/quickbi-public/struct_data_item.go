@@ -47,6 +47,7 @@ type DataItem struct {
 	AllowPublishOperation   bool       `json:"AllowPublishOperation" xml:"AllowPublishOperation"`
 	AccountId               string     `json:"AccountId" xml:"AccountId"`
 	SecurityLevel           string     `json:"SecurityLevel" xml:"SecurityLevel"`
+	IsDeleted               bool       `json:"IsDeleted" xml:"IsDeleted"`
 	WorkspaceId             string     `json:"WorkspaceId" xml:"WorkspaceId"`
 	WorkspaceDescription    string     `json:"WorkspaceDescription" xml:"WorkspaceDescription"`
 	Name                    string     `json:"Name" xml:"Name"`

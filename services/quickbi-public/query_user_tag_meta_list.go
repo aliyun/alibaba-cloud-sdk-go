@@ -78,8 +78,8 @@ type QueryUserTagMetaListRequest struct {
 // QueryUserTagMetaListResponse is the response struct for api QueryUserTagMetaList
 type QueryUserTagMetaListResponse struct {
 	*responses.BaseResponse
-	RequestId string       `json:"RequestId" xml:"RequestId"`
 	Success   bool         `json:"Success" xml:"Success"`
+	RequestId string       `json:"RequestId" xml:"RequestId"`
 	Result    []ResultItem `json:"Result" xml:"Result"`
 }
 

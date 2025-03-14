@@ -84,8 +84,8 @@ type QueryWorksByWorkspaceRequest struct {
 // QueryWorksByWorkspaceResponse is the response struct for api QueryWorksByWorkspace
 type QueryWorksByWorkspaceResponse struct {
 	*responses.BaseResponse
-	RequestId string                        `json:"RequestId" xml:"RequestId"`
 	Success   bool                          `json:"Success" xml:"Success"`
+	RequestId string                        `json:"RequestId" xml:"RequestId"`
 	Result    ResultInQueryWorksByWorkspace `json:"Result" xml:"Result"`
 }
 

@@ -71,11 +71,11 @@ func (client *Client) UpdateUserTagValueWithCallback(request *UpdateUserTagValue
 // UpdateUserTagValueRequest is the request struct for api UpdateUserTagValue
 type UpdateUserTagValueRequest struct {
 	*requests.RpcRequest
+	AccessPoint string `position:"Query" name:"AccessPoint"`
+	UserId      string `position:"Query" name:"UserId"`
 	TagValue    string `position:"Query" name:"TagValue"`
 	TagId       string `position:"Query" name:"TagId"`
-	AccessPoint string `position:"Query" name:"AccessPoint"`
 	SignType    string `position:"Query" name:"SignType"`
-	UserId      string `position:"Query" name:"UserId"`
 }
 
 // UpdateUserTagValueResponse is the response struct for api UpdateUserTagValue

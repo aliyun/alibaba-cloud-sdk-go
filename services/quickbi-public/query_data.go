@@ -82,8 +82,8 @@ type QueryDataRequest struct {
 // QueryDataResponse is the response struct for api QueryData
 type QueryDataResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    Result `json:"Result" xml:"Result"`
 }
 

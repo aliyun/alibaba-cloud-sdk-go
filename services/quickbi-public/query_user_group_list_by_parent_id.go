@@ -79,8 +79,8 @@ type QueryUserGroupListByParentIdRequest struct {
 // QueryUserGroupListByParentIdResponse is the response struct for api QueryUserGroupListByParentId
 type QueryUserGroupListByParentIdResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    []Data `json:"Result" xml:"Result"`
 }
 

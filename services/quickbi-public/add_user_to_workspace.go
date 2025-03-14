@@ -73,8 +73,8 @@ type AddUserToWorkspaceRequest struct {
 	*requests.RpcRequest
 	RoleId      requests.Integer `position:"Query" name:"RoleId"`
 	AccessPoint string           `position:"Query" name:"AccessPoint"`
-	SignType    string           `position:"Query" name:"SignType"`
 	UserId      string           `position:"Query" name:"UserId"`
+	SignType    string           `position:"Query" name:"SignType"`
 	WorkspaceId string           `position:"Query" name:"WorkspaceId"`
 }
 

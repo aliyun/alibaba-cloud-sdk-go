@@ -71,11 +71,11 @@ func (client *Client) DataSetBloodWithCallback(request *DataSetBloodRequest, cal
 // DataSetBloodRequest is the request struct for api DataSetBlood
 type DataSetBloodRequest struct {
 	*requests.RpcRequest
+	AccessPoint string `position:"Query" name:"AccessPoint"`
+	UserId      string `position:"Query" name:"UserId"`
 	DataSetIds  string `position:"Query" name:"DataSetIds"`
 	WorksType   string `position:"Query" name:"WorksType"`
-	AccessPoint string `position:"Query" name:"AccessPoint"`
 	SignType    string `position:"Query" name:"SignType"`
-	UserId      string `position:"Query" name:"UserId"`
 }
 
 // DataSetBloodResponse is the response struct for api DataSetBlood

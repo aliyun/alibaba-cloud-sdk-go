@@ -83,8 +83,8 @@ type QueryWorksByOrganizationRequest struct {
 // QueryWorksByOrganizationResponse is the response struct for api QueryWorksByOrganization
 type QueryWorksByOrganizationResponse struct {
 	*responses.BaseResponse
-	RequestId string                           `json:"RequestId" xml:"RequestId"`
 	Success   bool                             `json:"Success" xml:"Success"`
+	RequestId string                           `json:"RequestId" xml:"RequestId"`
 	Result    ResultInQueryWorksByOrganization `json:"Result" xml:"Result"`
 }
 

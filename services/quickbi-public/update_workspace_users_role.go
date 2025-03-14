@@ -81,8 +81,8 @@ type UpdateWorkspaceUsersRoleRequest struct {
 // UpdateWorkspaceUsersRoleResponse is the response struct for api UpdateWorkspaceUsersRole
 type UpdateWorkspaceUsersRoleResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    Result `json:"Result" xml:"Result"`
 }
 

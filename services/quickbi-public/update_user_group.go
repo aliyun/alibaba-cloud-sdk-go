@@ -72,9 +72,9 @@ func (client *Client) UpdateUserGroupWithCallback(request *UpdateUserGroupReques
 type UpdateUserGroupRequest struct {
 	*requests.RpcRequest
 	AccessPoint          string `position:"Query" name:"AccessPoint"`
+	UserGroupName        string `position:"Query" name:"UserGroupName"`
 	UserGroupId          string `position:"Query" name:"UserGroupId"`
 	SignType             string `position:"Query" name:"SignType"`
-	UserGroupName        string `position:"Query" name:"UserGroupName"`
 	UserGroupDescription string `position:"Query" name:"UserGroupDescription"`
 }
 
