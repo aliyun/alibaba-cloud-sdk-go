@@ -148,6 +148,7 @@ type CreateScalingGroupLaunchTemplateOverride struct {
 // CreateScalingGroupCapacityOptions is a repeated param struct in CreateScalingGroupRequest
 type CreateScalingGroupCapacityOptions struct {
 	CompensateWithOnDemand              string `name:"CompensateWithOnDemand"`
+	PriceComparisonMode                 string `name:"PriceComparisonMode"`
 	OnDemandBaseCapacity                string `name:"OnDemandBaseCapacity"`
 	SpotAutoReplaceOnDemand             string `name:"SpotAutoReplaceOnDemand"`
 	OnDemandPercentageAboveBaseCapacity string `name:"OnDemandPercentageAboveBaseCapacity"`

@@ -71,6 +71,7 @@ func (client *Client) ModifyScalingRuleWithCallback(request *ModifyScalingRuleRe
 // ModifyScalingRuleRequest is the request struct for api ModifyScalingRule
 type ModifyScalingRuleRequest struct {
 	*requests.RpcRequest
+	MetricType               string                             `position:"Query" name:"MetricType"`
 	ResourceOwnerId          requests.Integer                   `position:"Query" name:"ResourceOwnerId"`
 	AlarmDimension           *[]ModifyScalingRuleAlarmDimension `position:"Query" name:"AlarmDimension"  type:"Repeated"`
 	StepAdjustment           *[]ModifyScalingRuleStepAdjustment `position:"Query" name:"StepAdjustment"  type:"Repeated"`
@@ -78,6 +79,7 @@ type ModifyScalingRuleRequest struct {
 	ScalingRuleId            string                             `position:"Query" name:"ScalingRuleId"`
 	InitialMaxSize           requests.Integer                   `position:"Query" name:"InitialMaxSize"`
 	ScalingRuleName          string                             `position:"Query" name:"ScalingRuleName"`
+	HybridMonitorNamespace   string                             `position:"Query" name:"HybridMonitorNamespace"`
 	Cooldown                 requests.Integer                   `position:"Query" name:"Cooldown"`
 	PredictiveValueBehavior  string                             `position:"Query" name:"PredictiveValueBehavior"`
 	ScaleInEvaluationCount   requests.Integer                   `position:"Query" name:"ScaleInEvaluationCount"`
@@ -91,6 +93,7 @@ type ModifyScalingRuleRequest struct {
 	AdjustmentType           string                             `position:"Query" name:"AdjustmentType"`
 	OwnerId                  requests.Integer                   `position:"Query" name:"OwnerId"`
 	PredictiveValueBuffer    requests.Integer                   `position:"Query" name:"PredictiveValueBuffer"`
+	HybridMetrics            *[]ModifyScalingRuleHybridMetrics  `position:"Query" name:"HybridMetrics"  type:"Repeated"`
 	ScaleOutEvaluationCount  requests.Integer                   `position:"Query" name:"ScaleOutEvaluationCount"`
 	MinAdjustmentMagnitude   requests.Integer                   `position:"Query" name:"MinAdjustmentMagnitude"`
 	TargetValue              requests.Float                     `position:"Query" name:"TargetValue"`
@@ -107,6 +110,21 @@ type ModifyScalingRuleStepAdjustment struct {
 	MetricIntervalUpperBound string `name:"MetricIntervalUpperBound"`
 	MetricIntervalLowerBound string `name:"MetricIntervalLowerBound"`
 	ScalingAdjustment        string `name:"ScalingAdjustment"`
+}
+
+// ModifyScalingRuleHybridMetrics is a repeated param struct in ModifyScalingRuleRequest
+type ModifyScalingRuleHybridMetrics struct {
+	Statistic  string                                      `name:"Statistic"`
+	Expression string                                      `name:"Expression"`
+	Id         string                                      `name:"Id"`
+	MetricName string                                      `name:"MetricName"`
+	Dimensions *[]ModifyScalingRuleHybridMetricsDimensions `name:"Dimensions" type:"Repeated"`
+}
+
+// ModifyScalingRuleHybridMetricsDimensions is a repeated param struct in ModifyScalingRuleRequest
+type ModifyScalingRuleHybridMetricsDimensions struct {
+	DimensionValue string `name:"DimensionValue"`
+	DimensionKey   string `name:"DimensionKey"`
 }
 
 // ModifyScalingRuleResponse is the response struct for api ModifyScalingRule

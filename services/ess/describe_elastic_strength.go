@@ -90,6 +90,7 @@ type DescribeElasticStrengthResponse struct {
 	*responses.BaseResponse
 	RequestId             string                 `json:"RequestId" xml:"RequestId"`
 	TotalStrength         string                 `json:"TotalStrength" xml:"TotalStrength"`
+	ElasticStrength       string                 `json:"ElasticStrength" xml:"ElasticStrength"`
 	ResourcePools         []ResourcePool         `json:"ResourcePools" xml:"ResourcePools"`
 	ElasticStrengthModels []ElasticStrengthModel `json:"ElasticStrengthModels" xml:"ElasticStrengthModels"`
 }

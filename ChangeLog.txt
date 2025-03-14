@@ -1,3 +1,7 @@
+2025-03-14 Version: v1.63.95
+- Generated 2014-08-28 for `Ess`.
+- 支持根据属性查询弹性强度时返回库存健康度
+
 2025-03-12 Version: v1.63.94
 - Generated 2014-05-26 for `Ecs`.
 - Unified upgrade SDK.

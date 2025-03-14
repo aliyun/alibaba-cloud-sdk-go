@@ -18,7 +18,7 @@ package ess
 // InventoryHealth is a nested struct in ess response
 type InventoryHealth struct {
 	HealthScore   int `json:"HealthScore" xml:"HealthScore"`
-	AdequacyScore int `json:"AdequacyScore" xml:"AdequacyScore"`
 	SupplyScore   int `json:"SupplyScore" xml:"SupplyScore"`
+	AdequacyScore int `json:"AdequacyScore" xml:"AdequacyScore"`
 	HotScore      int `json:"HotScore" xml:"HotScore"`
 }

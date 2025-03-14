@@ -17,29 +17,32 @@ package ess
 
 // ScalingRule is a nested struct in ess response
 type ScalingRule struct {
-	MetricName               string          `json:"MetricName" xml:"MetricName"`
-	AdjustmentType           string          `json:"AdjustmentType" xml:"AdjustmentType"`
-	InitialMaxSize           int             `json:"InitialMaxSize" xml:"InitialMaxSize"`
-	EstimatedInstanceWarmup  int             `json:"EstimatedInstanceWarmup" xml:"EstimatedInstanceWarmup"`
-	ScaleOutEvaluationCount  int             `json:"ScaleOutEvaluationCount" xml:"ScaleOutEvaluationCount"`
-	PredictiveScalingMode    string          `json:"PredictiveScalingMode" xml:"PredictiveScalingMode"`
-	MinAdjustmentMagnitude   int             `json:"MinAdjustmentMagnitude" xml:"MinAdjustmentMagnitude"`
-	ScalingRuleAri           string          `json:"ScalingRuleAri" xml:"ScalingRuleAri"`
-	PredictiveTaskBufferTime int             `json:"PredictiveTaskBufferTime" xml:"PredictiveTaskBufferTime"`
-	MinSize                  int             `json:"MinSize" xml:"MinSize"`
-	ScalingGroupId           string          `json:"ScalingGroupId" xml:"ScalingGroupId"`
-	PredictiveValueBehavior  string          `json:"PredictiveValueBehavior" xml:"PredictiveValueBehavior"`
-	TargetValue              float64         `json:"TargetValue" xml:"TargetValue"`
-	Cooldown                 int             `json:"Cooldown" xml:"Cooldown"`
-	MaxSize                  int             `json:"MaxSize" xml:"MaxSize"`
-	PredictiveValueBuffer    int             `json:"PredictiveValueBuffer" xml:"PredictiveValueBuffer"`
-	ScalingRuleType          string          `json:"ScalingRuleType" xml:"ScalingRuleType"`
-	AdjustmentValue          int             `json:"AdjustmentValue" xml:"AdjustmentValue"`
-	ScaleInEvaluationCount   int             `json:"ScaleInEvaluationCount" xml:"ScaleInEvaluationCount"`
-	DisableScaleIn           bool            `json:"DisableScaleIn" xml:"DisableScaleIn"`
-	ScalingRuleName          string          `json:"ScalingRuleName" xml:"ScalingRuleName"`
-	ScalingRuleId            string          `json:"ScalingRuleId" xml:"ScalingRuleId"`
-	Alarms                   Alarms          `json:"Alarms" xml:"Alarms"`
-	StepAdjustments          StepAdjustments `json:"StepAdjustments" xml:"StepAdjustments"`
-	AlarmDimensions          AlarmDimensions `json:"AlarmDimensions" xml:"AlarmDimensions"`
+	MetricName               string                              `json:"MetricName" xml:"MetricName"`
+	AdjustmentType           string                              `json:"AdjustmentType" xml:"AdjustmentType"`
+	InitialMaxSize           int                                 `json:"InitialMaxSize" xml:"InitialMaxSize"`
+	EstimatedInstanceWarmup  int                                 `json:"EstimatedInstanceWarmup" xml:"EstimatedInstanceWarmup"`
+	ScaleOutEvaluationCount  int                                 `json:"ScaleOutEvaluationCount" xml:"ScaleOutEvaluationCount"`
+	PredictiveScalingMode    string                              `json:"PredictiveScalingMode" xml:"PredictiveScalingMode"`
+	MinAdjustmentMagnitude   int                                 `json:"MinAdjustmentMagnitude" xml:"MinAdjustmentMagnitude"`
+	ScalingRuleAri           string                              `json:"ScalingRuleAri" xml:"ScalingRuleAri"`
+	PredictiveTaskBufferTime int                                 `json:"PredictiveTaskBufferTime" xml:"PredictiveTaskBufferTime"`
+	MinSize                  int                                 `json:"MinSize" xml:"MinSize"`
+	ScalingGroupId           string                              `json:"ScalingGroupId" xml:"ScalingGroupId"`
+	PredictiveValueBehavior  string                              `json:"PredictiveValueBehavior" xml:"PredictiveValueBehavior"`
+	TargetValue              float64                             `json:"TargetValue" xml:"TargetValue"`
+	Cooldown                 int                                 `json:"Cooldown" xml:"Cooldown"`
+	MaxSize                  int                                 `json:"MaxSize" xml:"MaxSize"`
+	PredictiveValueBuffer    int                                 `json:"PredictiveValueBuffer" xml:"PredictiveValueBuffer"`
+	ScalingRuleType          string                              `json:"ScalingRuleType" xml:"ScalingRuleType"`
+	AdjustmentValue          int                                 `json:"AdjustmentValue" xml:"AdjustmentValue"`
+	ScaleInEvaluationCount   int                                 `json:"ScaleInEvaluationCount" xml:"ScaleInEvaluationCount"`
+	DisableScaleIn           bool                                `json:"DisableScaleIn" xml:"DisableScaleIn"`
+	ScalingRuleName          string                              `json:"ScalingRuleName" xml:"ScalingRuleName"`
+	ScalingRuleId            string                              `json:"ScalingRuleId" xml:"ScalingRuleId"`
+	MetricType               string                              `json:"MetricType" xml:"MetricType"`
+	HybridMonitorNamespace   string                              `json:"HybridMonitorNamespace" xml:"HybridMonitorNamespace"`
+	Alarms                   Alarms                              `json:"Alarms" xml:"Alarms"`
+	StepAdjustments          StepAdjustments                     `json:"StepAdjustments" xml:"StepAdjustments"`
+	AlarmDimensions          AlarmDimensions                     `json:"AlarmDimensions" xml:"AlarmDimensions"`
+	HybridMetrics            HybridMetricsInDescribeScalingRules `json:"HybridMetrics" xml:"HybridMetrics"`
 }

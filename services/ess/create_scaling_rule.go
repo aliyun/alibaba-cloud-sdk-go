@@ -71,12 +71,14 @@ func (client *Client) CreateScalingRuleWithCallback(request *CreateScalingRuleRe
 // CreateScalingRuleRequest is the request struct for api CreateScalingRule
 type CreateScalingRuleRequest struct {
 	*requests.RpcRequest
+	MetricType               string                             `position:"Query" name:"MetricType"`
 	AlarmDimension           *[]CreateScalingRuleAlarmDimension `position:"Query" name:"AlarmDimension"  type:"Repeated"`
 	StepAdjustment           *[]CreateScalingRuleStepAdjustment `position:"Query" name:"StepAdjustment"  type:"Repeated"`
 	ScalingGroupId           string                             `position:"Query" name:"ScalingGroupId"`
 	DisableScaleIn           requests.Boolean                   `position:"Query" name:"DisableScaleIn"`
 	InitialMaxSize           requests.Integer                   `position:"Query" name:"InitialMaxSize"`
 	ScalingRuleName          string                             `position:"Query" name:"ScalingRuleName"`
+	HybridMonitorNamespace   string                             `position:"Query" name:"HybridMonitorNamespace"`
 	Cooldown                 requests.Integer                   `position:"Query" name:"Cooldown"`
 	PredictiveValueBehavior  string                             `position:"Query" name:"PredictiveValueBehavior"`
 	ScaleInEvaluationCount   requests.Integer                   `position:"Query" name:"ScaleInEvaluationCount"`
@@ -91,6 +93,7 @@ type CreateScalingRuleRequest struct {
 	AdjustmentType           string                             `position:"Query" name:"AdjustmentType"`
 	OwnerId                  requests.Integer                   `position:"Query" name:"OwnerId"`
 	PredictiveValueBuffer    requests.Integer                   `position:"Query" name:"PredictiveValueBuffer"`
+	HybridMetrics            *[]CreateScalingRuleHybridMetrics  `position:"Query" name:"HybridMetrics"  type:"Repeated"`
 	ScaleOutEvaluationCount  requests.Integer                   `position:"Query" name:"ScaleOutEvaluationCount"`
 	MinAdjustmentMagnitude   requests.Integer                   `position:"Query" name:"MinAdjustmentMagnitude"`
 	TargetValue              requests.Float                     `position:"Query" name:"TargetValue"`
@@ -107,6 +110,21 @@ type CreateScalingRuleStepAdjustment struct {
 	MetricIntervalUpperBound string `name:"MetricIntervalUpperBound"`
 	MetricIntervalLowerBound string `name:"MetricIntervalLowerBound"`
 	ScalingAdjustment        string `name:"ScalingAdjustment"`
+}
+
+// CreateScalingRuleHybridMetrics is a repeated param struct in CreateScalingRuleRequest
+type CreateScalingRuleHybridMetrics struct {
+	Statistic  string                                      `name:"Statistic"`
+	Expression string                                      `name:"Expression"`
+	Id         string                                      `name:"Id"`
+	MetricName string                                      `name:"MetricName"`
+	Dimensions *[]CreateScalingRuleHybridMetricsDimensions `name:"Dimensions" type:"Repeated"`
+}
+
+// CreateScalingRuleHybridMetricsDimensions is a repeated param struct in CreateScalingRuleRequest
+type CreateScalingRuleHybridMetricsDimensions struct {
+	DimensionValue string `name:"DimensionValue"`
+	DimensionKey   string `name:"DimensionKey"`
 }
 
 // CreateScalingRuleResponse is the response struct for api CreateScalingRule
