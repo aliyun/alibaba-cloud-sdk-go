@@ -17,11 +17,13 @@ package ens
 
 // NatGateway is a nested struct in ens response
 type NatGateway struct {
-	EnsRegionId  string `json:"EnsRegionId" xml:"EnsRegionId"`
-	NatGatewayId string `json:"NatGatewayId" xml:"NatGatewayId"`
-	NetworkId    string `json:"NetworkId" xml:"NetworkId"`
-	VSwitchId    string `json:"VSwitchId" xml:"VSwitchId"`
-	Name         string `json:"Name" xml:"Name"`
-	CreationTime string `json:"CreationTime" xml:"CreationTime"`
-	Spec         string `json:"Spec" xml:"Spec"`
+	EnsRegionId  string   `json:"EnsRegionId" xml:"EnsRegionId"`
+	NatGatewayId string   `json:"NatGatewayId" xml:"NatGatewayId"`
+	NetworkId    string   `json:"NetworkId" xml:"NetworkId"`
+	VSwitchId    string   `json:"VSwitchId" xml:"VSwitchId"`
+	Name         string   `json:"Name" xml:"Name"`
+	CreationTime string   `json:"CreationTime" xml:"CreationTime"`
+	Spec         string   `json:"Spec" xml:"Spec"`
+	Status       string   `json:"Status" xml:"Status"`
+	IpLists      []IpList `json:"IpLists" xml:"IpLists"`
 }

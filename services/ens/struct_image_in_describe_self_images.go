@@ -30,5 +30,6 @@ type ImageInDescribeSelfImages struct {
 	ComputeType        string                                 `json:"ComputeType" xml:"ComputeType"`
 	SnapshotId         string                                 `json:"SnapshotId" xml:"SnapshotId"`
 	ImageStorageSize   string                                 `json:"ImageStorageSize" xml:"ImageStorageSize"`
+	RegionId           string                                 `json:"RegionId" xml:"RegionId"`
 	DiskDeviceMappings DiskDeviceMappingsInDescribeSelfImages `json:"DiskDeviceMappings" xml:"DiskDeviceMappings"`
 }

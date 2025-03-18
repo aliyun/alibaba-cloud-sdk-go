@@ -76,6 +76,7 @@ type CreateEipInstanceRequest struct {
 	Tag                *[]CreateEipInstanceTag `position:"Query" name:"Tag"  type:"Repeated"`
 	InternetChargeType string                  `position:"Query" name:"InternetChargeType"`
 	Name               string                  `position:"Query" name:"Name"`
+	ClientToken        string                  `position:"Query" name:"ClientToken"`
 	Description        string                  `position:"Query" name:"Description"`
 	InstanceChargeType string                  `position:"Query" name:"InstanceChargeType"`
 	Bandwidth          requests.Integer        `position:"Query" name:"Bandwidth"`

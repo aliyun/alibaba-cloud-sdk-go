@@ -74,6 +74,7 @@ type CreateImageRequest struct {
 	SnapshotId             string `position:"Query" name:"SnapshotId"`
 	DeleteAfterImageUpload string `position:"Query" name:"DeleteAfterImageUpload"`
 	ImageName              string `position:"Query" name:"ImageName"`
+	TargetOSSRegionId      string `position:"Query" name:"TargetOSSRegionId"`
 	InstanceId             string `position:"Query" name:"InstanceId"`
 }
 

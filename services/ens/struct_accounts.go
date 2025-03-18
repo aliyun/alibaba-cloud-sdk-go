@@ -17,5 +17,5 @@ package ens
 
 // Accounts is a nested struct in ens response
 type Accounts struct {
-	Account []string `json:"Account" xml:"Account"`
+	Account []Account `json:"Account" xml:"Account"`
 }

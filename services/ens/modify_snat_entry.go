@@ -71,6 +71,8 @@ func (client *Client) ModifySnatEntryWithCallback(request *ModifySnatEntryReques
 // ModifySnatEntryRequest is the request struct for api ModifySnatEntry
 type ModifySnatEntryRequest struct {
 	*requests.RpcRequest
+	SnatIp        string           `position:"Query" name:"SnatIp"`
+	EipAffinity   requests.Boolean `position:"Query" name:"EipAffinity"`
 	SnatEntryId   string           `position:"Query" name:"SnatEntryId"`
 	SnatEntryName string           `position:"Query" name:"SnatEntryName"`
 	IspAffinity   requests.Boolean `position:"Query" name:"IspAffinity"`

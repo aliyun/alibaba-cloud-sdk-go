@@ -71,13 +71,15 @@ func (client *Client) DescribeNatGatewaysWithCallback(request *DescribeNatGatewa
 // DescribeNatGatewaysRequest is the request struct for api DescribeNatGateways
 type DescribeNatGatewaysRequest struct {
 	*requests.RpcRequest
-	EnsRegionId  string           `position:"Query" name:"EnsRegionId"`
-	VSwitchId    string           `position:"Query" name:"VSwitchId"`
-	Name         string           `position:"Query" name:"Name"`
-	NetworkId    string           `position:"Query" name:"NetworkId"`
-	PageNumber   requests.Integer `position:"Query" name:"PageNumber"`
-	PageSize     requests.Integer `position:"Query" name:"PageSize"`
-	NatGatewayId string           `position:"Query" name:"NatGatewayId"`
+	EnsRegionId   string           `position:"Query" name:"EnsRegionId"`
+	VSwitchId     string           `position:"Query" name:"VSwitchId"`
+	Name          string           `position:"Query" name:"Name"`
+	NetworkId     string           `position:"Query" name:"NetworkId"`
+	PageNumber    requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize      requests.Integer `position:"Query" name:"PageSize"`
+	NatGatewayId  string           `position:"Query" name:"NatGatewayId"`
+	EnsRegionIds  *[]string        `position:"Query" name:"EnsRegionIds"  type:"Repeated"`
+	NatGatewayIds *[]string        `position:"Query" name:"NatGatewayIds"  type:"Repeated"`
 }
 
 // DescribeNatGatewaysResponse is the response struct for api DescribeNatGateways

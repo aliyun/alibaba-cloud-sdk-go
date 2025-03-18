@@ -25,5 +25,6 @@ type ImageInDescribeImages struct {
 	ImageSize          string                             `json:"ImageSize" xml:"ImageSize"`
 	Platform           string                             `json:"Platform" xml:"Platform"`
 	SnapshotId         string                             `json:"SnapshotId" xml:"SnapshotId"`
+	RegionId           string                             `json:"RegionId" xml:"RegionId"`
 	DiskDeviceMappings DiskDeviceMappingsInDescribeImages `json:"DiskDeviceMappings" xml:"DiskDeviceMappings"`
 }

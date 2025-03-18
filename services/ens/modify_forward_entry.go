@@ -71,9 +71,14 @@ func (client *Client) ModifyForwardEntryWithCallback(request *ModifyForwardEntry
 // ModifyForwardEntryRequest is the request struct for api ModifyForwardEntry
 type ModifyForwardEntryRequest struct {
 	*requests.RpcRequest
+	InternalIp       string           `position:"Query" name:"InternalIp"`
+	ExternalIp       string           `position:"Query" name:"ExternalIp"`
+	IpProtocol       string           `position:"Query" name:"IpProtocol"`
+	HealthCheckPort  requests.Integer `position:"Query" name:"HealthCheckPort"`
+	ExternalPort     string           `position:"Query" name:"ExternalPort"`
 	ForwardEntryId   string           `position:"Query" name:"ForwardEntryId"`
 	ForwardEntryName string           `position:"Query" name:"ForwardEntryName"`
-	HealthCheckPort  requests.Integer `position:"Query" name:"HealthCheckPort"`
+	InternalPort     string           `position:"Query" name:"InternalPort"`
 }
 
 // ModifyForwardEntryResponse is the response struct for api ModifyForwardEntry

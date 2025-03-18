@@ -73,6 +73,7 @@ type DescribeSnatTableEntriesRequest struct {
 	*requests.RpcRequest
 	SnatIp        string           `position:"Query" name:"SnatIp"`
 	SnatEntryId   string           `position:"Query" name:"SnatEntryId"`
+	SnatIps       *[]string        `position:"Query" name:"SnatIps"  type:"Repeated"`
 	SourceCIDR    string           `position:"Query" name:"SourceCIDR"`
 	PageNumber    requests.Integer `position:"Query" name:"PageNumber"`
 	ShowDetail    requests.Boolean `position:"Query" name:"ShowDetail"`

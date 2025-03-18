@@ -91,6 +91,7 @@ type DescribeSnatAttributeResponse struct {
 	IdleTimeout   int      `json:"IdleTimeout" xml:"IdleTimeout"`
 	DestCIDR      string   `json:"DestCIDR" xml:"DestCIDR"`
 	IspAffinity   bool     `json:"IspAffinity" xml:"IspAffinity"`
+	EipAffinity   bool     `json:"EipAffinity" xml:"EipAffinity"`
 	SnatIps       []Snatip `json:"SnatIps" xml:"SnatIps"`
 }
 

@@ -77,18 +77,26 @@ type DescribeNetworkAttributeRequest struct {
 // DescribeNetworkAttributeResponse is the response struct for api DescribeNetworkAttribute
 type DescribeNetworkAttributeResponse struct {
 	*responses.BaseResponse
-	RequestId      string                               `json:"RequestId" xml:"RequestId"`
-	EnsRegionId    string                               `json:"EnsRegionId" xml:"EnsRegionId"`
-	NetworkId      string                               `json:"NetworkId" xml:"NetworkId"`
-	NetworkName    string                               `json:"NetworkName" xml:"NetworkName"`
-	CidrBlock      string                               `json:"CidrBlock" xml:"CidrBlock"`
-	Status         string                               `json:"Status" xml:"Status"`
-	Description    string                               `json:"Description" xml:"Description"`
-	CreatedTime    string                               `json:"CreatedTime" xml:"CreatedTime"`
-	RouterTableId  string                               `json:"RouterTableId" xml:"RouterTableId"`
-	NetworkAclId   string                               `json:"NetworkAclId" xml:"NetworkAclId"`
-	VSwitchIds     VSwitchIdsInDescribeNetworkAttribute `json:"VSwitchIds" xml:"VSwitchIds"`
-	CloudResources CloudResources                       `json:"CloudResources" xml:"CloudResources"`
+	RequestId           string                                        `json:"RequestId" xml:"RequestId"`
+	EnsRegionId         string                                        `json:"EnsRegionId" xml:"EnsRegionId"`
+	NetworkId           string                                        `json:"NetworkId" xml:"NetworkId"`
+	NetworkName         string                                        `json:"NetworkName" xml:"NetworkName"`
+	CidrBlock           string                                        `json:"CidrBlock" xml:"CidrBlock"`
+	Status              string                                        `json:"Status" xml:"Status"`
+	Description         string                                        `json:"Description" xml:"Description"`
+	CreatedTime         string                                        `json:"CreatedTime" xml:"CreatedTime"`
+	RouterTableId       string                                        `json:"RouterTableId" xml:"RouterTableId"`
+	NetworkAclId        string                                        `json:"NetworkAclId" xml:"NetworkAclId"`
+	RouteTableId        string                                        `json:"RouteTableId" xml:"RouteTableId"`
+	GatewayRouteTableId string                                        `json:"GatewayRouteTableId" xml:"GatewayRouteTableId"`
+	VSwitchIds          VSwitchIdsInDescribeNetworkAttribute          `json:"VSwitchIds" xml:"VSwitchIds"`
+	InstanceIds         InstanceIdsInDescribeNetworkAttribute         `json:"InstanceIds" xml:"InstanceIds"`
+	RouteTableIds       RouteTableIdsInDescribeNetworkAttribute       `json:"RouteTableIds" xml:"RouteTableIds"`
+	NetworkInterfaceIds NetworkInterfaceIdsInDescribeNetworkAttribute `json:"NetworkInterfaceIds" xml:"NetworkInterfaceIds"`
+	LoadBalancerIds     LoadBalancerIdsInDescribeNetworkAttribute     `json:"LoadBalancerIds" xml:"LoadBalancerIds"`
+	NatGatewayIds       NatGatewayIdsInDescribeNetworkAttribute       `json:"NatGatewayIds" xml:"NatGatewayIds"`
+	HaVipIds            HaVipIdsInDescribeNetworkAttribute            `json:"HaVipIds" xml:"HaVipIds"`
+	CloudResources      CloudResources                                `json:"CloudResources" xml:"CloudResources"`
 }
 
 // CreateDescribeNetworkAttributeRequest creates a request to invoke DescribeNetworkAttribute API

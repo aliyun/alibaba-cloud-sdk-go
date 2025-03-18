@@ -81,9 +81,12 @@ type DescribeSelfImagesRequest struct {
 // DescribeSelfImagesResponse is the response struct for api DescribeSelfImages
 type DescribeSelfImagesResponse struct {
 	*responses.BaseResponse
-	Code      int                        `json:"Code" xml:"Code"`
-	RequestId string                     `json:"RequestId" xml:"RequestId"`
-	Images    ImagesInDescribeSelfImages `json:"Images" xml:"Images"`
+	Code       int                        `json:"Code" xml:"Code"`
+	RequestId  string                     `json:"RequestId" xml:"RequestId"`
+	PageSize   string                     `json:"PageSize" xml:"PageSize"`
+	PageNumber string                     `json:"PageNumber" xml:"PageNumber"`
+	TotalCount string                     `json:"TotalCount" xml:"TotalCount"`
+	Images     ImagesInDescribeSelfImages `json:"Images" xml:"Images"`
 }
 
 // CreateDescribeSelfImagesRequest creates a request to invoke DescribeSelfImages API

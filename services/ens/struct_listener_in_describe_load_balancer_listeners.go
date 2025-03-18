@@ -17,12 +17,13 @@ package ens
 
 // ListenerInDescribeLoadBalancerListeners is a nested struct in ens response
 type ListenerInDescribeLoadBalancerListeners struct {
-	LoadBalancerId  string `json:"LoadBalancerId" xml:"LoadBalancerId"`
-	ListenerPort    string `json:"ListenerPort" xml:"ListenerPort"`
-	Protocol        string `json:"Protocol" xml:"Protocol"`
-	Description     string `json:"Description" xml:"Description"`
-	Status          string `json:"Status" xml:"Status"`
-	ListenerForward string `json:"ListenerForward" xml:"ListenerForward"`
-	ForwardPort     string `json:"ForwardPort" xml:"ForwardPort"`
-	CreateTime      string `json:"CreateTime" xml:"CreateTime"`
+	LoadBalancerId    string `json:"LoadBalancerId" xml:"LoadBalancerId"`
+	ListenerPort      string `json:"ListenerPort" xml:"ListenerPort"`
+	Protocol          string `json:"Protocol" xml:"Protocol"`
+	Description       string `json:"Description" xml:"Description"`
+	Status            string `json:"Status" xml:"Status"`
+	ListenerForward   string `json:"ListenerForward" xml:"ListenerForward"`
+	ForwardPort       string `json:"ForwardPort" xml:"ForwardPort"`
+	CreateTime        string `json:"CreateTime" xml:"CreateTime"`
+	BackendServerPort int    `json:"BackendServerPort" xml:"BackendServerPort"`
 }

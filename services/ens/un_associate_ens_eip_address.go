@@ -71,7 +71,8 @@ func (client *Client) UnAssociateEnsEipAddressWithCallback(request *UnAssociateE
 // UnAssociateEnsEipAddressRequest is the request struct for api UnAssociateEnsEipAddress
 type UnAssociateEnsEipAddressRequest struct {
 	*requests.RpcRequest
-	AllocationId string `position:"Query" name:"AllocationId"`
+	AllocationId string           `position:"Query" name:"AllocationId"`
+	Force        requests.Boolean `position:"Query" name:"Force"`
 }
 
 // UnAssociateEnsEipAddressResponse is the response struct for api UnAssociateEnsEipAddress

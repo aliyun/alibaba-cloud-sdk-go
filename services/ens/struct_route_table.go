@@ -17,13 +17,17 @@ package ens
 
 // RouteTable is a nested struct in ens response
 type RouteTable struct {
-	CreationTime   string   `json:"CreationTime" xml:"CreationTime"`
-	Status         string   `json:"Status" xml:"Status"`
-	RouteTableId   string   `json:"RouteTableId" xml:"RouteTableId"`
-	NetworkId      string   `json:"NetworkId" xml:"NetworkId"`
-	EnsRegionId    string   `json:"EnsRegionId" xml:"EnsRegionId"`
-	Type           string   `json:"Type" xml:"Type"`
-	RouteTableName string   `json:"RouteTableName" xml:"RouteTableName"`
-	NetworkName    string   `json:"NetworkName" xml:"NetworkName"`
-	VSwitchIds     []string `json:"VSwitchIds" xml:"VSwitchIds"`
+	CreationTime               string               `json:"CreationTime" xml:"CreationTime"`
+	Status                     string               `json:"Status" xml:"Status"`
+	RouteTableId               string               `json:"RouteTableId" xml:"RouteTableId"`
+	NetworkId                  string               `json:"NetworkId" xml:"NetworkId"`
+	EnsRegionId                string               `json:"EnsRegionId" xml:"EnsRegionId"`
+	Type                       string               `json:"Type" xml:"Type"`
+	RouteTableName             string               `json:"RouteTableName" xml:"RouteTableName"`
+	NetworkName                string               `json:"NetworkName" xml:"NetworkName"`
+	AssociateType              string               `json:"AssociateType" xml:"AssociateType"`
+	Description                string               `json:"Description" xml:"Description"`
+	IsDefaultGatewayRouteTable bool                 `json:"IsDefaultGatewayRouteTable" xml:"IsDefaultGatewayRouteTable"`
+	VSwitchIds                 []string             `json:"VSwitchIds" xml:"VSwitchIds"`
+	AssociatedResources        []AssociatedResource `json:"AssociatedResources" xml:"AssociatedResources"`
 }

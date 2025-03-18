@@ -24,5 +24,7 @@ type RouteEntry struct {
 	DestinationCidrBlock string    `json:"DestinationCidrBlock" xml:"DestinationCidrBlock"`
 	RouteEntryId         string    `json:"RouteEntryId" xml:"RouteEntryId"`
 	RouteTableId         string    `json:"RouteTableId" xml:"RouteTableId"`
+	SourceCidrBlock      string    `json:"SourceCidrBlock" xml:"SourceCidrBlock"`
+	CreationTime         string    `json:"CreationTime" xml:"CreationTime"`
 	NextHops             []NextHop `json:"NextHops" xml:"NextHops"`
 }

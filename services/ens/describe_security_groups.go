@@ -80,8 +80,8 @@ type DescribeSecurityGroupsRequest struct {
 // DescribeSecurityGroupsResponse is the response struct for api DescribeSecurityGroups
 type DescribeSecurityGroupsResponse struct {
 	*responses.BaseResponse
-	PageSize       int            `json:"PageSize" xml:"PageSize"`
 	RequestId      string         `json:"RequestId" xml:"RequestId"`
+	PageSize       int            `json:"PageSize" xml:"PageSize"`
 	PageNumber     int            `json:"PageNumber" xml:"PageNumber"`
 	TotalCount     int            `json:"TotalCount" xml:"TotalCount"`
 	SecurityGroups SecurityGroups `json:"SecurityGroups" xml:"SecurityGroups"`

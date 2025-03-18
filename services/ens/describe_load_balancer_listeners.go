@@ -71,8 +71,10 @@ func (client *Client) DescribeLoadBalancerListenersWithCallback(request *Describ
 // DescribeLoadBalancerListenersRequest is the request struct for api DescribeLoadBalancerListeners
 type DescribeLoadBalancerListenersRequest struct {
 	*requests.RpcRequest
+	Description    string           `position:"Query" name:"Description"`
 	PageNumber     requests.Integer `position:"Query" name:"PageNumber"`
 	PageSize       requests.Integer `position:"Query" name:"PageSize"`
+	ListenerPort   requests.Integer `position:"Query" name:"ListenerPort"`
 	LoadBalancerId string           `position:"Query" name:"LoadBalancerId"`
 }
 

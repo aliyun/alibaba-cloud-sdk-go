@@ -24,5 +24,6 @@ type ImageInDescribeImageInfos struct {
 	OSName             string                                 `json:"OSName" xml:"OSName"`
 	OSType             string                                 `json:"OSType" xml:"OSType"`
 	ComputeType        string                                 `json:"ComputeType" xml:"ComputeType"`
+	RegionId           string                                 `json:"RegionId" xml:"RegionId"`
 	DiskDeviceMappings DiskDeviceMappingsInDescribeImageInfos `json:"DiskDeviceMappings" xml:"DiskDeviceMappings"`
 }

@@ -76,6 +76,7 @@ type CreateLoadBalancerRequest struct {
 	LoadBalancerSpec string `position:"Query" name:"LoadBalancerSpec"`
 	VSwitchId        string `position:"Query" name:"VSwitchId"`
 	NetworkId        string `position:"Query" name:"NetworkId"`
+	ClientToken      string `position:"Query" name:"ClientToken"`
 	PayType          string `position:"Query" name:"PayType"`
 }
 

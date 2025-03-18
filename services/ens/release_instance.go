@@ -77,7 +77,8 @@ type ReleaseInstanceRequest struct {
 // ReleaseInstanceResponse is the response struct for api ReleaseInstance
 type ReleaseInstanceResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	RequestId    string `json:"RequestId" xml:"RequestId"`
+	ResourceType string `json:"ResourceType" xml:"ResourceType"`
 }
 
 // CreateReleaseInstanceRequest creates a request to invoke ReleaseInstance API

@@ -75,6 +75,7 @@ type CreateSnatEntryRequest struct {
 	Type            string           `position:"Query" name:"Type"`
 	DestCIDR        string           `position:"Query" name:"DestCIDR"`
 	SourceVSwitchId string           `position:"Query" name:"SourceVSwitchId"`
+	EipAffinity     requests.Boolean `position:"Query" name:"EipAffinity"`
 	SourceNetworkId string           `position:"Query" name:"SourceNetworkId"`
 	StandbySnatIp   string           `position:"Query" name:"StandbySnatIp"`
 	SourceCIDR      string           `position:"Query" name:"SourceCIDR"`

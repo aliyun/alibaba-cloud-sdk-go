@@ -79,6 +79,7 @@ type DescribeLoadBalancersRequest struct {
 	NetworkId          string           `position:"Query" name:"NetworkId"`
 	PageNumber         requests.Integer `position:"Query" name:"PageNumber"`
 	PageSize           requests.Integer `position:"Query" name:"PageSize"`
+	EnsRegionIds       *[]string        `position:"Query" name:"EnsRegionIds"  type:"Repeated"`
 	Address            string           `position:"Query" name:"Address"`
 	LoadBalancerStatus string           `position:"Query" name:"LoadBalancerStatus"`
 }

@@ -79,10 +79,12 @@ type DescribeNetworkInterfacesRequest struct {
 	NetworkId            string           `position:"Query" name:"NetworkId"`
 	Ipv6Address          *[]string        `position:"Query" name:"Ipv6Address"  type:"Repeated"`
 	Status               string           `position:"Query" name:"Status"`
+	NetworkInterfaceIds  *[]string        `position:"Query" name:"NetworkInterfaceIds"  type:"Repeated"`
 	SecurityGroupId      string           `position:"Query" name:"SecurityGroupId"`
 	PageNumber           string           `position:"Query" name:"PageNumber"`
 	ShowDetail           requests.Boolean `position:"Query" name:"ShowDetail"`
 	PageSize             string           `position:"Query" name:"PageSize"`
+	EnsRegionIds         *[]string        `position:"Query" name:"EnsRegionIds"  type:"Repeated"`
 	PrimaryIpAddress     string           `position:"Query" name:"PrimaryIpAddress"`
 	NetworkInterfaceId   string           `position:"Query" name:"NetworkInterfaceId"`
 }

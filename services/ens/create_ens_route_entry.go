@@ -72,11 +72,12 @@ func (client *Client) CreateEnsRouteEntryWithCallback(request *CreateEnsRouteEnt
 type CreateEnsRouteEntryRequest struct {
 	*requests.RpcRequest
 	RouteEntryName       string `position:"Query" name:"RouteEntryName"`
-	Description          string `position:"Query" name:"Description"`
 	NextHopId            string `position:"Query" name:"NextHopId"`
 	NextHopType          string `position:"Query" name:"NextHopType"`
 	RouteTableId         string `position:"Query" name:"RouteTableId"`
 	DestinationCidrBlock string `position:"Query" name:"DestinationCidrBlock"`
+	Description          string `position:"Query" name:"Description"`
+	SourceCidrBlock      string `position:"Query" name:"SourceCidrBlock"`
 }
 
 // CreateEnsRouteEntryResponse is the response struct for api CreateEnsRouteEntry

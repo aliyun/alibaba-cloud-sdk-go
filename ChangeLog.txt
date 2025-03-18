@@ -1,3 +1,7 @@
+2025-03-18 Version: v1.63.99
+- Generated 2017-11-10 for `Ens`.
+- Supported DescribeImageSharePermission.
+
 2025-03-14 Version: v1.63.98
 - Generated 2022-07-28 for `sophonsoar`.
 undefined

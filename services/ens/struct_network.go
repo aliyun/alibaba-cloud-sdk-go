@@ -17,14 +17,17 @@ package ens
 
 // Network is a nested struct in ens response
 type Network struct {
-	NetworkName   string                       `json:"NetworkName" xml:"NetworkName"`
-	CreatedTime   string                       `json:"CreatedTime" xml:"CreatedTime"`
-	NetworkAclId  string                       `json:"NetworkAclId" xml:"NetworkAclId"`
-	EnsRegionId   string                       `json:"EnsRegionId" xml:"EnsRegionId"`
-	NetworkId     string                       `json:"NetworkId" xml:"NetworkId"`
-	Status        string                       `json:"Status" xml:"Status"`
-	CidrBlock     string                       `json:"CidrBlock" xml:"CidrBlock"`
-	Description   string                       `json:"Description" xml:"Description"`
-	RouterTableId string                       `json:"RouterTableId" xml:"RouterTableId"`
-	VSwitchIds    VSwitchIdsInDescribeNetworks `json:"VSwitchIds" xml:"VSwitchIds"`
+	EnsRegionId         string                          `json:"EnsRegionId" xml:"EnsRegionId"`
+	NetworkId           string                          `json:"NetworkId" xml:"NetworkId"`
+	RouterTableId       string                          `json:"RouterTableId" xml:"RouterTableId"`
+	RouteTableId        string                          `json:"RouteTableId" xml:"RouteTableId"`
+	NetworkName         string                          `json:"NetworkName" xml:"NetworkName"`
+	GatewayRouteTableId string                          `json:"GatewayRouteTableId" xml:"GatewayRouteTableId"`
+	CreatedTime         string                          `json:"CreatedTime" xml:"CreatedTime"`
+	NetworkAclId        string                          `json:"NetworkAclId" xml:"NetworkAclId"`
+	Status              string                          `json:"Status" xml:"Status"`
+	CidrBlock           string                          `json:"CidrBlock" xml:"CidrBlock"`
+	Description         string                          `json:"Description" xml:"Description"`
+	RouteTableIds       RouteTableIdsInDescribeNetworks `json:"RouteTableIds" xml:"RouteTableIds"`
+	VSwitchIds          VSwitchIdsInDescribeNetworks    `json:"VSwitchIds" xml:"VSwitchIds"`
 }

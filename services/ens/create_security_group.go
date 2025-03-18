@@ -71,15 +71,29 @@ func (client *Client) CreateSecurityGroupWithCallback(request *CreateSecurityGro
 // CreateSecurityGroupRequest is the request struct for api CreateSecurityGroup
 type CreateSecurityGroupRequest struct {
 	*requests.RpcRequest
-	Description       string `position:"Query" name:"Description"`
-	SecurityGroupName string `position:"Query" name:"SecurityGroupName"`
+	Description       string                            `position:"Query" name:"Description"`
+	SecurityGroupName string                            `position:"Query" name:"SecurityGroupName"`
+	Permissions       *[]CreateSecurityGroupPermissions `position:"Query" name:"Permissions"  type:"Json"`
+}
+
+// CreateSecurityGroupPermissions is a repeated param struct in CreateSecurityGroupRequest
+type CreateSecurityGroupPermissions struct {
+	SourcePortRange string `name:"SourcePortRange"`
+	PortRange       string `name:"PortRange"`
+	IpProtocol      string `name:"IpProtocol"`
+	SourceCidrIp    string `name:"SourceCidrIp"`
+	Description     string `name:"Description"`
+	Priority        string `name:"Priority"`
+	DestCidrIp      string `name:"DestCidrIp"`
+	Direction       string `name:"Direction"`
+	Policy          string `name:"Policy"`
 }
 
 // CreateSecurityGroupResponse is the response struct for api CreateSecurityGroup
 type CreateSecurityGroupResponse struct {
 	*responses.BaseResponse
-	SecurityGroupId string `json:"SecurityGroupId" xml:"SecurityGroupId"`
 	RequestId       string `json:"RequestId" xml:"RequestId"`
+	SecurityGroupId string `json:"SecurityGroupId" xml:"SecurityGroupId"`
 }
 
 // CreateCreateSecurityGroupRequest creates a request to invoke CreateSecurityGroup API

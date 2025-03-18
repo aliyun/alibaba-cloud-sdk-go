@@ -71,20 +71,20 @@ func (client *Client) PutBucketWithCallback(request *PutBucketRequest, callback 
 // PutBucketRequest is the request struct for api PutBucket
 type PutBucketRequest struct {
 	*requests.RpcRequest
-	EnsRegionId        string `position:"Body" name:"EnsRegionId"`
-	LogicalBucketType  string `position:"Body" name:"LogicalBucketType"`
-	City               string `position:"Body" name:"City"`
-	DataRedundancyType string `position:"Body" name:"DataRedundancyType"`
-	Endpoint           string `position:"Body" name:"Endpoint"`
-	BucketName         string `position:"Body" name:"BucketName"`
-	StorageDomainId    string `position:"Body" name:"StorageDomainId"`
-	EngineId           string `position:"Body" name:"EngineId"`
-	BucketAcl          string `position:"Body" name:"BucketAcl"`
-	DispatcherType     string `position:"Body" name:"DispatcherType"`
-	ResourceType       string `position:"Body" name:"ResourceType"`
-	StorageClass       string `position:"Body" name:"StorageClass"`
-	DispatchScope      string `position:"Body" name:"DispatchScope"`
-	Comment            string `position:"Body" name:"Comment"`
+	EnsRegionId        string `position:"Query" name:"EnsRegionId"`
+	LogicalBucketType  string `position:"Query" name:"LogicalBucketType"`
+	City               string `position:"Query" name:"City"`
+	DataRedundancyType string `position:"Query" name:"DataRedundancyType"`
+	Endpoint           string `position:"Query" name:"Endpoint"`
+	BucketName         string `position:"Query" name:"BucketName"`
+	StorageDomainId    string `position:"Query" name:"StorageDomainId"`
+	EngineId           string `position:"Query" name:"EngineId"`
+	BucketAcl          string `position:"Query" name:"BucketAcl"`
+	DispatcherType     string `position:"Query" name:"DispatcherType"`
+	ResourceType       string `position:"Query" name:"ResourceType"`
+	StorageClass       string `position:"Query" name:"StorageClass"`
+	DispatchScope      string `position:"Query" name:"DispatchScope"`
+	Comment            string `position:"Query" name:"Comment"`
 }
 
 // PutBucketResponse is the response struct for api PutBucket

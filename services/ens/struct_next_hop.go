@@ -19,4 +19,5 @@ package ens
 type NextHop struct {
 	NextHopId   string `json:"NextHopId" xml:"NextHopId"`
 	NextHopType string `json:"NextHopType" xml:"NextHopType"`
+	NextHopName string `json:"NextHopName" xml:"NextHopName"`
 }

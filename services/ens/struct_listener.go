@@ -17,9 +17,10 @@ package ens
 
 // Listener is a nested struct in ens response
 type Listener struct {
-	ForwardPort      int    `json:"ForwardPort" xml:"ForwardPort"`
-	ListenerForward  string `json:"ListenerForward" xml:"ListenerForward"`
-	ListenerPort     int    `json:"ListenerPort" xml:"ListenerPort"`
-	ListenerProtocol string `json:"ListenerProtocol" xml:"ListenerProtocol"`
-	Description      string `json:"Description" xml:"Description"`
+	ForwardPort       int    `json:"ForwardPort" xml:"ForwardPort"`
+	ListenerForward   string `json:"ListenerForward" xml:"ListenerForward"`
+	ListenerPort      int    `json:"ListenerPort" xml:"ListenerPort"`
+	ListenerProtocol  string `json:"ListenerProtocol" xml:"ListenerProtocol"`
+	Description       string `json:"Description" xml:"Description"`
+	BackendServerPort int    `json:"BackendServerPort" xml:"BackendServerPort"`
 }

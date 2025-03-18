@@ -71,11 +71,15 @@ func (client *Client) DescribeEnsRouteTablesWithCallback(request *DescribeEnsRou
 // DescribeEnsRouteTablesRequest is the request struct for api DescribeEnsRouteTables
 type DescribeEnsRouteTablesRequest struct {
 	*requests.RpcRequest
-	PageNumber   requests.Integer `position:"Query" name:"PageNumber"`
-	PageSize     requests.Integer `position:"Query" name:"PageSize"`
-	EnsRegionId  string           `position:"Query" name:"EnsRegionId"`
-	RouteTableId string           `position:"Query" name:"RouteTableId"`
-	NetworkId    string           `position:"Query" name:"NetworkId"`
+	Type           string           `position:"Query" name:"Type"`
+	AssociateType  string           `position:"Query" name:"AssociateType"`
+	EnsRegionId    string           `position:"Query" name:"EnsRegionId"`
+	RouteTableId   string           `position:"Query" name:"RouteTableId"`
+	NetworkId      string           `position:"Query" name:"NetworkId"`
+	PageNumber     requests.Integer `position:"Query" name:"PageNumber"`
+	RouteTableName string           `position:"Query" name:"RouteTableName"`
+	PageSize       requests.Integer `position:"Query" name:"PageSize"`
+	EnsRegionIds   *[]string        `position:"Query" name:"EnsRegionIds"  type:"Repeated"`
 }
 
 // DescribeEnsRouteTablesResponse is the response struct for api DescribeEnsRouteTables
