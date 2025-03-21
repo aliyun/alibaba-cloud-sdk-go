@@ -32,6 +32,8 @@ type DataModule struct {
 	HttpsDomesticValue    string `json:"HttpsDomesticValue" xml:"HttpsDomesticValue"`
 	HttpsValue            string `json:"HttpsValue" xml:"HttpsValue"`
 	HttpsAccValue         string `json:"HttpsAccValue" xml:"HttpsAccValue"`
+	Duration              int64  `json:"Duration" xml:"Duration"`
 	AccOverseasValue      string `json:"AccOverseasValue" xml:"AccOverseasValue"`
 	HttpsAccDomesticValue string `json:"HttpsAccDomesticValue" xml:"HttpsAccDomesticValue"`
+	Specification         string `json:"Specification" xml:"Specification"`
 }

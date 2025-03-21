@@ -76,6 +76,7 @@ type DescribeVodTieringStorageRetrievalDataRequest struct {
 	EndTime      string           `position:"Query" name:"EndTime"`
 	OwnerId      requests.Integer `position:"Query" name:"OwnerId"`
 	StorageClass string           `position:"Query" name:"StorageClass"`
+	AppId        string           `position:"Query" name:"AppId"`
 	Region       string           `position:"Query" name:"Region"`
 }
 

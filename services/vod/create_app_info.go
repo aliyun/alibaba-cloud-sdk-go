@@ -75,6 +75,13 @@ type CreateAppInfoRequest struct {
 	ResourceRealOwnerId requests.Integer `position:"Query" name:"ResourceRealOwnerId"`
 	ResourceGroupId     string           `position:"Query" name:"ResourceGroupId"`
 	AppName             string           `position:"Query" name:"AppName"`
+	Tag                 CreateAppInfoTag `position:"Query" name:"Tag"  type:"Struct"`
+}
+
+// CreateAppInfoTag is a repeated param struct in CreateAppInfoRequest
+type CreateAppInfoTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // CreateAppInfoResponse is the response struct for api CreateAppInfo
