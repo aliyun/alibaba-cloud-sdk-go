@@ -71,6 +71,7 @@ func (client *Client) ListInstancesWithCallback(request *ListInstancesRequest, c
 // ListInstancesRequest is the request struct for api ListInstances
 type ListInstancesRequest struct {
 	*requests.RpcRequest
+	PlanType          string              `position:"Query" name:"PlanType"`
 	PageNumber        requests.Integer    `position:"Query" name:"PageNumber"`
 	ResourceGroupId   string              `position:"Query" name:"ResourceGroupId"`
 	PageSize          requests.Integer    `position:"Query" name:"PageSize"`

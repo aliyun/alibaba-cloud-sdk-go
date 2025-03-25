@@ -76,8 +76,8 @@ type ListPlansRequest struct {
 // ListPlansResponse is the response struct for api ListPlans
 type ListPlansResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Plans     []Plan `json:"Plans" xml:"Plans"`
+	RequestId string            `json:"RequestId" xml:"RequestId"`
+	Plans     []PlanInListPlans `json:"Plans" xml:"Plans"`
 }
 
 // CreateListPlansRequest creates a request to invoke ListPlans API

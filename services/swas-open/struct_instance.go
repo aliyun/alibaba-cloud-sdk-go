@@ -17,26 +17,28 @@ package swas_open
 
 // Instance is a nested struct in swas_open response
 type Instance struct {
-	Status                string       `json:"Status" xml:"Status"`
-	CreationTime          string       `json:"CreationTime" xml:"CreationTime"`
-	InnerIpAddress        string       `json:"InnerIpAddress" xml:"InnerIpAddress"`
-	ChargeType            string       `json:"ChargeType" xml:"ChargeType"`
-	InstanceId            string       `json:"InstanceId" xml:"InstanceId"`
-	PlanId                string       `json:"PlanId" xml:"PlanId"`
-	PublicIpAddress       string       `json:"PublicIpAddress" xml:"PublicIpAddress"`
-	RegionId              string       `json:"RegionId" xml:"RegionId"`
-	ExpiredTime           string       `json:"ExpiredTime" xml:"ExpiredTime"`
-	InstanceName          string       `json:"InstanceName" xml:"InstanceName"`
-	BusinessStatus        string       `json:"BusinessStatus" xml:"BusinessStatus"`
-	DdosStatus            string       `json:"DdosStatus" xml:"DdosStatus"`
-	ImageId               string       `json:"ImageId" xml:"ImageId"`
-	DisableReason         string       `json:"DisableReason" xml:"DisableReason"`
-	Combination           bool         `json:"Combination" xml:"Combination"`
-	CombinationInstanceId string       `json:"CombinationInstanceId" xml:"CombinationInstanceId"`
-	Uuid                  string       `json:"Uuid" xml:"Uuid"`
-	ResourceGroupId       string       `json:"ResourceGroupId" xml:"ResourceGroupId"`
-	ResourceSpec          ResourceSpec `json:"ResourceSpec" xml:"ResourceSpec"`
-	Image                 Image        `json:"Image" xml:"Image"`
-	Tags                  []Tag        `json:"Tags" xml:"Tags"`
-	Disks                 []Disk       `json:"Disks" xml:"Disks"`
+	Status                string             `json:"Status" xml:"Status"`
+	CreationTime          string             `json:"CreationTime" xml:"CreationTime"`
+	InnerIpAddress        string             `json:"InnerIpAddress" xml:"InnerIpAddress"`
+	ChargeType            string             `json:"ChargeType" xml:"ChargeType"`
+	InstanceId            string             `json:"InstanceId" xml:"InstanceId"`
+	PlanId                string             `json:"PlanId" xml:"PlanId"`
+	PublicIpAddress       string             `json:"PublicIpAddress" xml:"PublicIpAddress"`
+	RegionId              string             `json:"RegionId" xml:"RegionId"`
+	ExpiredTime           string             `json:"ExpiredTime" xml:"ExpiredTime"`
+	InstanceName          string             `json:"InstanceName" xml:"InstanceName"`
+	BusinessStatus        string             `json:"BusinessStatus" xml:"BusinessStatus"`
+	DdosStatus            string             `json:"DdosStatus" xml:"DdosStatus"`
+	ImageId               string             `json:"ImageId" xml:"ImageId"`
+	DisableReason         string             `json:"DisableReason" xml:"DisableReason"`
+	Combination           bool               `json:"Combination" xml:"Combination"`
+	CombinationInstanceId string             `json:"CombinationInstanceId" xml:"CombinationInstanceId"`
+	Uuid                  string             `json:"Uuid" xml:"Uuid"`
+	ResourceGroupId       string             `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	PlanType              string             `json:"PlanType" xml:"PlanType"`
+	ResourceSpec          ResourceSpec       `json:"ResourceSpec" xml:"ResourceSpec"`
+	Image                 Image              `json:"Image" xml:"Image"`
+	Tags                  []Tag              `json:"Tags" xml:"Tags"`
+	Disks                 []Disk             `json:"Disks" xml:"Disks"`
+	NetworkAttributes     []NetworkAttribute `json:"NetworkAttributes" xml:"NetworkAttributes"`
 }

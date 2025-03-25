@@ -17,5 +17,5 @@ package swas_open
 
 // PlansInListPlans is a nested struct in swas_open response
 type PlansInListPlans struct {
-	Plan []Plan `json:"Plan" xml:"Plan"`
+	Plan []PlanInListPlans `json:"Plan" xml:"Plan"`
 }
