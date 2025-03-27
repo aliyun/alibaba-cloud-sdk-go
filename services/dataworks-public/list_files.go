@@ -78,6 +78,7 @@ type ListFilesRequest struct {
 	ProjectIdentifier      string           `position:"Body" name:"ProjectIdentifier"`
 	PageNumber             requests.Integer `position:"Body" name:"PageNumber"`
 	FileIdIn               string           `position:"Body" name:"FileIdIn"`
+	LastEditUser           string           `position:"Body" name:"LastEditUser"`
 	FileFolderPath         string           `position:"Body" name:"FileFolderPath"`
 	PageSize               requests.Integer `position:"Body" name:"PageSize"`
 	ExactFileName          string           `position:"Body" name:"ExactFileName"`

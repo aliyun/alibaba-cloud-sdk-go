@@ -20,6 +20,7 @@ type NodesItemInListNodes struct {
 	SchedulerType      string `json:"SchedulerType" xml:"SchedulerType"`
 	RepeatInterval     int64  `json:"RepeatInterval" xml:"RepeatInterval"`
 	Repeatability      bool   `json:"Repeatability" xml:"Repeatability"`
+	RepeatMode         int    `json:"RepeatMode" xml:"RepeatMode"`
 	ProjectId          int64  `json:"ProjectId" xml:"ProjectId"`
 	ProgramType        string `json:"ProgramType" xml:"ProgramType"`
 	Priority           int    `json:"Priority" xml:"Priority"`

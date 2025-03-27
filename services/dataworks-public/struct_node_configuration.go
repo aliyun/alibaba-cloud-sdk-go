@@ -17,23 +17,26 @@ package dataworks_public
 
 // NodeConfiguration is a nested struct in dataworks_public response
 type NodeConfiguration struct {
-	DependentType            string                   `json:"DependentType" xml:"DependentType"`
-	StartImmediately         bool                     `json:"StartImmediately" xml:"StartImmediately"`
-	CronExpress              string                   `json:"CronExpress" xml:"CronExpress"`
-	ParaValue                string                   `json:"ParaValue" xml:"ParaValue"`
-	StartEffectDate          int64                    `json:"StartEffectDate" xml:"StartEffectDate"`
-	EndEffectDate            int64                    `json:"EndEffectDate" xml:"EndEffectDate"`
-	ResourceGroupId          int64                    `json:"ResourceGroupId" xml:"ResourceGroupId"`
-	AutoRerunIntervalMillis  int                      `json:"AutoRerunIntervalMillis" xml:"AutoRerunIntervalMillis"`
-	DependentNodeIdList      string                   `json:"DependentNodeIdList" xml:"DependentNodeIdList"`
-	Stop                     bool                     `json:"Stop" xml:"Stop"`
-	RerunMode                string                   `json:"RerunMode" xml:"RerunMode"`
-	SchedulerType            string                   `json:"SchedulerType" xml:"SchedulerType"`
-	ApplyScheduleImmediately string                   `json:"ApplyScheduleImmediately" xml:"ApplyScheduleImmediately"`
-	CycleType                string                   `json:"CycleType" xml:"CycleType"`
-	AutoRerunTimes           int                      `json:"AutoRerunTimes" xml:"AutoRerunTimes"`
-	InputParameters          []InputContextParameter  `json:"InputParameters" xml:"InputParameters"`
-	OutputList               []NodeInputOutput        `json:"OutputList" xml:"OutputList"`
-	OutputParameters         []OutputContextParameter `json:"OutputParameters" xml:"OutputParameters"`
-	InputList                []NodeInputOutput        `json:"InputList" xml:"InputList"`
+	DependentType                   string                   `json:"DependentType" xml:"DependentType"`
+	StartImmediately                bool                     `json:"StartImmediately" xml:"StartImmediately"`
+	CronExpress                     string                   `json:"CronExpress" xml:"CronExpress"`
+	IgnoreParentSkipRunningProperty string                   `json:"IgnoreParentSkipRunningProperty" xml:"IgnoreParentSkipRunningProperty"`
+	ParaValue                       string                   `json:"ParaValue" xml:"ParaValue"`
+	ImageId                         string                   `json:"ImageId" xml:"ImageId"`
+	StartEffectDate                 int64                    `json:"StartEffectDate" xml:"StartEffectDate"`
+	EndEffectDate                   int64                    `json:"EndEffectDate" xml:"EndEffectDate"`
+	ResourceGroupId                 int64                    `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	AutoRerunIntervalMillis         int                      `json:"AutoRerunIntervalMillis" xml:"AutoRerunIntervalMillis"`
+	DependentNodeIdList             string                   `json:"DependentNodeIdList" xml:"DependentNodeIdList"`
+	Stop                            bool                     `json:"Stop" xml:"Stop"`
+	RerunMode                       string                   `json:"RerunMode" xml:"RerunMode"`
+	SchedulerType                   string                   `json:"SchedulerType" xml:"SchedulerType"`
+	ApplyScheduleImmediately        string                   `json:"ApplyScheduleImmediately" xml:"ApplyScheduleImmediately"`
+	CycleType                       string                   `json:"CycleType" xml:"CycleType"`
+	Timeout                         int                      `json:"Timeout" xml:"Timeout"`
+	AutoRerunTimes                  int                      `json:"AutoRerunTimes" xml:"AutoRerunTimes"`
+	InputParameters                 []InputContextParameter  `json:"InputParameters" xml:"InputParameters"`
+	OutputList                      []NodeInputOutput        `json:"OutputList" xml:"OutputList"`
+	OutputParameters                []OutputContextParameter `json:"OutputParameters" xml:"OutputParameters"`
+	InputList                       []NodeInputOutput        `json:"InputList" xml:"InputList"`
 }

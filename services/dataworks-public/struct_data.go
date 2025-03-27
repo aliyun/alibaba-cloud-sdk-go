@@ -158,6 +158,7 @@ type Data struct {
 	Total                         int64                          `json:"Total" xml:"Total"`
 	CriticalThreshold             string                         `json:"CriticalThreshold" xml:"CriticalThreshold"`
 	ApplicationKey                string                         `json:"ApplicationKey" xml:"ApplicationKey"`
+	PeriodNumber                  int                            `json:"PeriodNumber" xml:"PeriodNumber"`
 	BeginRunningTime              int64                          `json:"BeginRunningTime" xml:"BeginRunningTime"`
 	Operator                      string                         `json:"Operator" xml:"Operator"`
 	StartedTime                   int64                          `json:"StartedTime" xml:"StartedTime"`
@@ -207,11 +208,11 @@ type Data struct {
 	Deployment                    Deployment                     `json:"Deployment" xml:"Deployment"`
 	SolutionInfo                  SolutionInfo                   `json:"SolutionInfo" xml:"SolutionInfo"`
 	File                          File                           `json:"File" xml:"File"`
-	NodeConfiguration             NodeConfiguration              `json:"NodeConfiguration" xml:"NodeConfiguration"`
 	LastInstance                  LastInstance                   `json:"LastInstance" xml:"LastInstance"`
 	JobSettings                   JobSettings                    `json:"JobSettings" xml:"JobSettings"`
 	BlockInstance                 BlockInstance                  `json:"BlockInstance" xml:"BlockInstance"`
 	SolutionDetail                SolutionDetail                 `json:"SolutionDetail" xml:"SolutionDetail"`
+	NodeConfiguration             NodeConfiguration              `json:"NodeConfiguration" xml:"NodeConfiguration"`
 	ResourceSettings              ResourceSettings               `json:"ResourceSettings" xml:"ResourceSettings"`
 	ColumnList                    []ColumnListItem               `json:"ColumnList" xml:"ColumnList"`
 	Apis                          []Api                          `json:"Apis" xml:"Apis"`
@@ -224,10 +225,10 @@ type Data struct {
 	DestinationDataSourceSettings []DestinationDataSourceSetting `json:"DestinationDataSourceSettings" xml:"DestinationDataSourceSettings"`
 	Baselines                     []BaselinesItem                `json:"Baselines" xml:"Baselines"`
 	Applications                  []Application                  `json:"Applications" xml:"Applications"`
+	AlarmList                     []AlarmListItem                `json:"AlarmList" xml:"AlarmList"`
 	Connections                   []ConnectionsItem              `json:"Connections" xml:"Connections"`
 	DISyncTasks                   []DISyncTasksItem              `json:"DISyncTasks" xml:"DISyncTasks"`
 	Instances                     []Instance                     `json:"Instances" xml:"Instances"`
-	BaselineStatuses              []BaselineStatusesItem         `json:"BaselineStatuses" xml:"BaselineStatuses"`
 	EntityList                    []EntityListItem               `json:"EntityList" xml:"EntityList"`
 	Folders                       []FoldersItem                  `json:"Folders" xml:"Folders"`
 	Files                         []File                         `json:"Files" xml:"Files"`
@@ -245,6 +246,7 @@ type Data struct {
 	Reminds                       []RemindsItem                  `json:"Reminds" xml:"Reminds"`
 	Topics                        []Topic                        `json:"Topics" xml:"Topics"`
 	DeployedItems                 []DeployedItem                 `json:"DeployedItems" xml:"DeployedItems"`
+	BaselineStatuses              []BaselineStatusesItem         `json:"BaselineStatuses" xml:"BaselineStatuses"`
 	Migrations                    []Migration                    `json:"Migrations" xml:"Migrations"`
 	Business                      []BusinessItem                 `json:"Business" xml:"Business"`
 	TableEntityList               []TableEntityListItem          `json:"TableEntityList" xml:"TableEntityList"`

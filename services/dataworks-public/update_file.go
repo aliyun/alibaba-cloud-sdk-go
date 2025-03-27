@@ -72,9 +72,11 @@ func (client *Client) UpdateFileWithCallback(request *UpdateFileRequest, callbac
 type UpdateFileRequest struct {
 	*requests.RpcRequest
 	OutputList                      string           `position:"Body" name:"OutputList"`
+	ImageId                         string           `position:"Body" name:"ImageId"`
 	DependentNodeIdList             string           `position:"Body" name:"DependentNodeIdList"`
 	Content                         string           `position:"Body" name:"Content"`
 	ProjectIdentifier               string           `position:"Body" name:"ProjectIdentifier"`
+	Timeout                         requests.Integer `position:"Body" name:"Timeout"`
 	StartImmediately                requests.Boolean `position:"Body" name:"StartImmediately"`
 	ProjectId                       requests.Integer `position:"Body" name:"ProjectId"`
 	AdvancedSettings                string           `position:"Body" name:"AdvancedSettings"`

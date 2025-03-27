@@ -71,14 +71,16 @@ func (client *Client) CreatePermissionApplyOrderWithCallback(request *CreatePerm
 // CreatePermissionApplyOrderRequest is the request struct for api CreatePermissionApplyOrder
 type CreatePermissionApplyOrderRequest struct {
 	*requests.RpcRequest
+	ApplyUserIds          string                                   `position:"Query" name:"ApplyUserIds"`
+	Deadline              requests.Integer                         `position:"Query" name:"Deadline"`
+	EngineType            string                                   `position:"Query" name:"EngineType"`
 	ApplyReason           string                                   `position:"Query" name:"ApplyReason"`
 	MaxComputeProjectName string                                   `position:"Query" name:"MaxComputeProjectName"`
 	ApplyObject           *[]CreatePermissionApplyOrderApplyObject `position:"Query" name:"ApplyObject"  type:"Repeated"`
-	ApplyUserIds          string                                   `position:"Query" name:"ApplyUserIds"`
-	Deadline              requests.Integer                         `position:"Query" name:"Deadline"`
+	CatalogName           string                                   `position:"Query" name:"CatalogName"`
+	ApplyType             string                                   `position:"Query" name:"ApplyType"`
 	WorkspaceId           requests.Integer                         `position:"Query" name:"WorkspaceId"`
 	OrderType             requests.Integer                         `position:"Query" name:"OrderType"`
-	EngineType            string                                   `position:"Query" name:"EngineType"`
 }
 
 // CreatePermissionApplyOrderApplyObject is a repeated param struct in CreatePermissionApplyOrderRequest
@@ -90,7 +92,8 @@ type CreatePermissionApplyOrderApplyObject struct {
 
 // CreatePermissionApplyOrderApplyObjectColumnMetaList is a repeated param struct in CreatePermissionApplyOrderRequest
 type CreatePermissionApplyOrderApplyObjectColumnMetaList struct {
-	Name string `name:"Name"`
+	Name    string `name:"Name"`
+	Actions string `name:"Actions"`
 }
 
 // CreatePermissionApplyOrderResponse is the response struct for api CreatePermissionApplyOrder

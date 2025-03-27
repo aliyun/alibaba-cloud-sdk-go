@@ -72,9 +72,11 @@ func (client *Client) CreateFileWithCallback(request *CreateFileRequest, callbac
 type CreateFileRequest struct {
 	*requests.RpcRequest
 	FileType                        requests.Integer `position:"Body" name:"FileType"`
+	ImageId                         string           `position:"Body" name:"ImageId"`
 	DependentNodeIdList             string           `position:"Body" name:"DependentNodeIdList"`
 	Content                         string           `position:"Body" name:"Content"`
 	ProjectIdentifier               string           `position:"Body" name:"ProjectIdentifier"`
+	Timeout                         requests.Integer `position:"Body" name:"Timeout"`
 	ResourceGroupId                 requests.Integer `position:"Body" name:"ResourceGroupId"`
 	StartImmediately                requests.Boolean `position:"Body" name:"StartImmediately"`
 	ProjectId                       requests.Integer `position:"Body" name:"ProjectId"`

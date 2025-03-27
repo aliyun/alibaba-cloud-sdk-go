@@ -31,4 +31,5 @@ type BaselineStatusesItem struct {
 	Buffer       int64  `json:"Buffer" xml:"Buffer"`
 	SlaTime      int64  `json:"SlaTime" xml:"SlaTime"`
 	ExpTime      int64  `json:"ExpTime" xml:"ExpTime"`
+	BaselineType string `json:"BaselineType" xml:"BaselineType"`
 }

@@ -78,8 +78,10 @@ type ListPermissionApplyOrdersRequest struct {
 	QueryType             requests.Integer `position:"Query" name:"QueryType"`
 	EngineType            string           `position:"Query" name:"EngineType"`
 	MaxComputeProjectName string           `position:"Query" name:"MaxComputeProjectName"`
+	CatalogName           string           `position:"Query" name:"CatalogName"`
 	EndTime               requests.Integer `position:"Query" name:"EndTime"`
 	FlowStatus            requests.Integer `position:"Query" name:"FlowStatus"`
+	ApplyType             string           `position:"Query" name:"ApplyType"`
 	WorkspaceId           requests.Integer `position:"Query" name:"WorkspaceId"`
 	OrderType             requests.Integer `position:"Query" name:"OrderType"`
 }
