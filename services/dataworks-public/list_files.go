@@ -74,6 +74,7 @@ type ListFilesRequest struct {
 	Owner                  string           `position:"Body" name:"Owner"`
 	FileTypes              string           `position:"Body" name:"FileTypes"`
 	NeedContent            requests.Boolean `position:"Body" name:"NeedContent"`
+	CommitStatus           requests.Integer `position:"Body" name:"CommitStatus"`
 	NeedAbsoluteFolderPath requests.Boolean `position:"Body" name:"NeedAbsoluteFolderPath"`
 	ProjectIdentifier      string           `position:"Body" name:"ProjectIdentifier"`
 	PageNumber             requests.Integer `position:"Body" name:"PageNumber"`
