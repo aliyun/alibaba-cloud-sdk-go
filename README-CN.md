@@ -10,8 +10,7 @@
 [![codecov](https://codecov.io/gh/aliyun/alibaba-cloud-sdk-go/graph/badge.svg?token=kHbylWc7aV)](https://codecov.io/gh/aliyun/alibaba-cloud-sdk-go)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Faliyun%2Falibaba-cloud-sdk-go.svg?type=shield&issueType=license)](https://app.fossa.io/projects/git%2Bgithub.com%2Faliyun%2Falibaba-cloud-sdk-go?ref=badge_shield&issueType=license)
 
-欢迎使用 Alibaba Cloud SDK for Go。Alibaba Cloud SDK for Go 让您不用复杂编程即可访问云服务器、云监控等多个阿里云服务。
-这里向您介绍如何获取 [Alibaba Cloud SDK for Go][SDK] 并开始调用。
+阿里云 V1.0 Go SDK 已进入终止支持状态（2025年3月1日），不再建议使用。新用户请直接使用 V2.0 Go SDK；已经集成 V1.0 Go SDK 的用户也建议迁移至 V2.0 Go SDK。
 
 ## 使用诊断
 

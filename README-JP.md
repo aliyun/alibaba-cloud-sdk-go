@@ -10,8 +10,7 @@
 [![codecov](https://codecov.io/gh/aliyun/alibaba-cloud-sdk-go/graph/badge.svg?token=kHbylWc7aV)](https://codecov.io/gh/aliyun/alibaba-cloud-sdk-go)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Faliyun%2Falibaba-cloud-sdk-go.svg?type=shield&issueType=license)](https://app.fossa.io/projects/git%2Bgithub.com%2Falibaba-cloud-sdk-go?ref=badge_shield&issueType=license)
 
-Alibaba Cloud SDK for Goを使用すると、複雑なプログラミングを行わずに、Elastic Compute Service（ECS）、Server Load Balancer（SLB）、CloudMonitorなどのAlibaba Cloudサービスにアクセスできます。
-このドキュメントでは、[Alibaba Cloud SDK for Go][SDK]を取得して呼び出す方法を紹介します。
+Alibaba Cloud V1.0 Go SDKはサポート終了（2025年3月1日）となり、使用は推奨されません。新規ユーザーはV2.0 Go SDKを直接ご利用ください。既にV1.0 Go SDKをご利用いただいているユーザーも、V2.0 Go SDKへの移行をお勧めします。
 
 ## トラブルシューティング
 

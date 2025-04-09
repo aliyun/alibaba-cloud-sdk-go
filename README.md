@@ -12,10 +12,6 @@ English | [简体中文](README-CN.md) | [日本語](README-JP.md)
 
 The Alibaba Cloud V1.0 Go SDK has entered End-of-Support (March 1, 2025) and is no longer recommended for use. New users should directly use the V2.0 Go SDK; users who have already integrated the V1.0 Go SDK are also advised to migrate to the V2.0 Go SDK.
 
-Alibaba Cloud SDK for Go allows you to access Alibaba Cloud services such as Elastic Compute Service (ECS), Server Load Balancer (SLB), and CloudMonitor. You can access Alibaba Cloud services without the need to handle API related tasks, such as signing and constructing your requests.
-
-This document introduces how to obtain and call [Alibaba Cloud SDK for Go][SDK].
-
 ## Troubleshoot
 
 [Troubleshoot](https://troubleshoot.api.aliyun.com/?source=github_sdk) Provide OpenAPI diagnosis service to help developers locate quickly and provide solutions for developers through `RequestID` or `error message`.
