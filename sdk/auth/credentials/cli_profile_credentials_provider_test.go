@@ -79,6 +79,13 @@ func TestCLIProfileCredentialsProvider_getCredentialsProvider(t *testing.T) {
 				AccessKeySecret: "secret",
 			},
 			{
+				Mode:            "StsToken",
+				Name:            "StsToken",
+				AccessKeyID:     "access_key_id",
+				AccessKeySecret: "access_key_secret",
+				SecurityToken:   "sts_token",
+			},
+			{
 				Mode:            "RamRoleArn",
 				Name:            "RamRoleArn",
 				AccessKeyID:     "akid",
@@ -138,6 +145,14 @@ func TestCLIProfileCredentialsProvider_getCredentialsProvider(t *testing.T) {
 	cc, err := akcp.GetCredentials()
 	assert.Nil(t, err)
 	assert.Equal(t, cc, &Credentials{AccessKeyId: "akid", AccessKeySecret: "secret", SecurityToken: "", ProviderName: "static_ak"})
+	// STS
+	cp, err = provider.getCredentialsProvider(conf, "StsToken")
+	assert.Nil(t, err)
+	stscp, ok := cp.(*StaticSTSCredentialsProvider)
+	assert.True(t, ok)
+	cc, err = stscp.GetCredentials()
+	assert.Nil(t, err)
+	assert.Equal(t, cc, &Credentials{AccessKeyId: "access_key_id", AccessKeySecret: "access_key_secret", SecurityToken: "sts_token", ProviderName: "static_sts"})
 	// RamRoleArn
 	cp, err = provider.getCredentialsProvider(conf, "RamRoleArn")
 	assert.Nil(t, err)
