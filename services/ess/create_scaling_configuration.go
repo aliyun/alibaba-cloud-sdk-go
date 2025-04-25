@@ -117,6 +117,7 @@ type CreateScalingConfigurationRequest struct {
 	SystemDiskPerformanceLevel      string                                            `position:"Query" name:"SystemDisk.PerformanceLevel"`
 	UserData                        string                                            `position:"Query" name:"UserData"`
 	PasswordInherit                 requests.Boolean                                  `position:"Query" name:"PasswordInherit"`
+	ResourcePoolOptions             CreateScalingConfigurationResourcePoolOptions     `position:"Query" name:"ResourcePoolOptions"  type:"Struct"`
 	ImageName                       string                                            `position:"Query" name:"ImageName"`
 	HttpEndpoint                    string                                            `position:"Query" name:"HttpEndpoint"`
 	DedicatedHostClusterId          string                                            `position:"Query" name:"DedicatedHostClusterId"`
@@ -200,6 +201,12 @@ type CreateScalingConfigurationNetworkInterfaces struct {
 	InstanceType                string    `name:"InstanceType"`
 	SecurityGroupIds            *[]string `name:"SecurityGroupIds" type:"Repeated"`
 	NetworkInterfaceTrafficMode string    `name:"NetworkInterfaceTrafficMode"`
+}
+
+// CreateScalingConfigurationResourcePoolOptions is a repeated param struct in CreateScalingConfigurationRequest
+type CreateScalingConfigurationResourcePoolOptions struct {
+	Strategy       string    `name:"Strategy"`
+	PrivatePoolIds *[]string `name:"PrivatePoolIds" type:"Repeated"`
 }
 
 // CreateScalingConfigurationDataDisk is a repeated param struct in CreateScalingConfigurationRequest

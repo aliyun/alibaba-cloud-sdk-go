@@ -103,9 +103,10 @@ type ScaleWithAdjustmentAllocation struct {
 
 // ScaleWithAdjustmentOverrides is a repeated param struct in ScaleWithAdjustmentRequest
 type ScaleWithAdjustmentOverrides struct {
-	Memory            string                                               `name:"Memory"`
-	ContainerOverride *[]ScaleWithAdjustmentOverridesContainerOverrideItem `name:"ContainerOverride" type:"Repeated"`
-	Cpu               string                                               `name:"Cpu"`
+	Memory                string                                                   `name:"Memory"`
+	ContainerOverride     *[]ScaleWithAdjustmentOverridesContainerOverrideItem     `name:"ContainerOverride" type:"Repeated"`
+	Cpu                   string                                                   `name:"Cpu"`
+	CustomLimitPriorities *[]ScaleWithAdjustmentOverridesCustomLimitPrioritiesItem `name:"CustomLimitPriorities" type:"Repeated"`
 }
 
 // ScaleWithAdjustmentOverridesContainerOverrideItem is a repeated param struct in ScaleWithAdjustmentRequest
@@ -116,6 +117,12 @@ type ScaleWithAdjustmentOverridesContainerOverrideItem struct {
 	Name           string                                                                 `name:"Name"`
 	Cpu            string                                                                 `name:"Cpu"`
 	Command        *[]string                                                              `name:"Command" type:"Repeated"`
+}
+
+// ScaleWithAdjustmentOverridesCustomLimitPrioritiesItem is a repeated param struct in ScaleWithAdjustmentRequest
+type ScaleWithAdjustmentOverridesCustomLimitPrioritiesItem struct {
+	VSwitchId    string `name:"VSwitchId"`
+	InstanceType string `name:"InstanceType"`
 }
 
 // ScaleWithAdjustmentOverridesContainerOverrideItemEnvironmentVarItem is a repeated param struct in ScaleWithAdjustmentRequest

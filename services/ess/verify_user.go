@@ -79,6 +79,7 @@ type VerifyUserRequest struct {
 // VerifyUserResponse is the response struct for api VerifyUser
 type VerifyUserResponse struct {
 	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateVerifyUserRequest creates a request to invoke VerifyUser API

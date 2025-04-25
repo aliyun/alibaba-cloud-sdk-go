@@ -76,6 +76,7 @@ type ModifyInstanceAttributeRequest struct {
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	Entrusted            requests.Boolean `position:"Query" name:"Entrusted"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
+	InstanceIds          *[]string        `position:"Query" name:"InstanceIds"  type:"Repeated"`
 }
 
 // ModifyInstanceAttributeResponse is the response struct for api ModifyInstanceAttribute

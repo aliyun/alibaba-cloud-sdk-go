@@ -72,10 +72,10 @@ func (client *Client) VerifyAuthenticationWithCallback(request *VerifyAuthentica
 type VerifyAuthenticationRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Uid                  requests.Integer `position:"Query" name:"Uid"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	OnlyCheck            requests.Boolean `position:"Query" name:"OnlyCheck"`
-	Uid                  requests.Integer `position:"Query" name:"Uid"`
 }
 
 // VerifyAuthenticationResponse is the response struct for api VerifyAuthentication

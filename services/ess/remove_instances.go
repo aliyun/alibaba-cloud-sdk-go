@@ -71,17 +71,24 @@ func (client *Client) RemoveInstancesWithCallback(request *RemoveInstancesReques
 // RemoveInstancesRequest is the request struct for api RemoveInstances
 type RemoveInstancesRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId         requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ClientToken             string           `position:"Query" name:"ClientToken"`
-	ScalingGroupId          string           `position:"Query" name:"ScalingGroupId"`
-	DecreaseDesiredCapacity requests.Boolean `position:"Query" name:"DecreaseDesiredCapacity"`
-	IgnoreInvalidInstance   requests.Boolean `position:"Query" name:"IgnoreInvalidInstance"`
-	StopInstanceTimeout     requests.Integer `position:"Query" name:"StopInstanceTimeout"`
-	RemovePolicy            string           `position:"Query" name:"RemovePolicy"`
-	ResourceOwnerAccount    string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount            string           `position:"Query" name:"OwnerAccount"`
-	OwnerId                 requests.Integer `position:"Query" name:"OwnerId"`
-	InstanceId              *[]string        `position:"Query" name:"InstanceId"  type:"Repeated"`
+	ResourceOwnerId         requests.Integer                    `position:"Query" name:"ResourceOwnerId"`
+	ClientToken             string                              `position:"Query" name:"ClientToken"`
+	ScalingGroupId          string                              `position:"Query" name:"ScalingGroupId"`
+	LifecycleHookContext    RemoveInstancesLifecycleHookContext `position:"Query" name:"LifecycleHookContext"  type:"Struct"`
+	DecreaseDesiredCapacity requests.Boolean                    `position:"Query" name:"DecreaseDesiredCapacity"`
+	IgnoreInvalidInstance   requests.Boolean                    `position:"Query" name:"IgnoreInvalidInstance"`
+	StopInstanceTimeout     requests.Integer                    `position:"Query" name:"StopInstanceTimeout"`
+	RemovePolicy            string                              `position:"Query" name:"RemovePolicy"`
+	ResourceOwnerAccount    string                              `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount            string                              `position:"Query" name:"OwnerAccount"`
+	OwnerId                 requests.Integer                    `position:"Query" name:"OwnerId"`
+	InstanceId              *[]string                           `position:"Query" name:"InstanceId"  type:"Repeated"`
+}
+
+// RemoveInstancesLifecycleHookContext is a repeated param struct in RemoveInstancesRequest
+type RemoveInstancesLifecycleHookContext struct {
+	DisableLifecycleHook    string    `name:"DisableLifecycleHook"`
+	IgnoredLifecycleHookIds *[]string `name:"IgnoredLifecycleHookIds" type:"Repeated"`
 }
 
 // RemoveInstancesResponse is the response struct for api RemoveInstances

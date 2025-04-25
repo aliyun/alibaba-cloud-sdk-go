@@ -83,6 +83,7 @@ type ScalingConfigurationInDescribeScalingConfigurations struct {
 	SecurityGroupIds                SecurityGroupIdsInDescribeScalingConfigurations `json:"SecurityGroupIds" xml:"SecurityGroupIds"`
 	SchedulerOptions                SchedulerOptions                                `json:"SchedulerOptions" xml:"SchedulerOptions"`
 	SecurityOptions                 SecurityOptions                                 `json:"SecurityOptions" xml:"SecurityOptions"`
+	ResourcePoolOptions             ResourcePoolOptions                             `json:"ResourcePoolOptions" xml:"ResourcePoolOptions"`
 	DataDisks                       DataDisks                                       `json:"DataDisks" xml:"DataDisks"`
 	Tags                            TagsInDescribeScalingConfigurations             `json:"Tags" xml:"Tags"`
 	SpotPriceLimit                  SpotPriceLimit                                  `json:"SpotPriceLimit" xml:"SpotPriceLimit"`
