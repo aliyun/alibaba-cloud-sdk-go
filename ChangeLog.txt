@@ -1,5 +1,9 @@
-2025-04-25 Version: v1.63.106
+2025-04-25 Version: v1.63.107
 - Generated 2014-08-28 for `Ess`.
+
+
+2025-04-16 Version: v1.63.106
+- Support StsToken mode in cli profile.
 
 
 2025-04-16 Version: v1.63.105
