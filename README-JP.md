@@ -10,7 +10,7 @@
 [![codecov](https://codecov.io/gh/aliyun/alibaba-cloud-sdk-go/graph/badge.svg?token=kHbylWc7aV)](https://codecov.io/gh/aliyun/alibaba-cloud-sdk-go)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Faliyun%2Falibaba-cloud-sdk-go.svg?type=shield&issueType=license)](https://app.fossa.io/projects/git%2Bgithub.com%2Falibaba-cloud-sdk-go?ref=badge_shield&issueType=license)
 
-Alibaba Cloud V1.0 Go SDKはサポート終了（2025年3月1日）となり、使用は推奨されません。新規ユーザーはV2.0 Go SDKを直接ご利用ください。既にV1.0 Go SDKをご利用いただいているユーザーも、V2.0 Go SDKへの移行をお勧めします。
+Alibaba Cloud V1.0 Go SDKはサポート終了（2025年3月1日）となり、使用は推奨されません。新規ユーザーはV2.0 Go SDKを直接ご利用ください。既にV1.0 Go SDKをご利用いただいているユーザーも、V2.0 Go SDKへの移行をお勧めします。V2.0 Go SDKのリポジトリアドレスは：https://github.com/alibabacloud-go です。使用方法については、[ヘルプセンターのドキュメント](https://www.alibabacloud.com/help/ja/sdk/developer-reference/v2-go-integrated-sdk)および[Alibaba Cloud OpenAPI Developer Portal][open-api-portal]を参照してください。
 
 ## トラブルシューティング
 
@@ -131,7 +131,7 @@ func main() {
 
 [SDK]: https://github.com/aliyun/alibaba-cloud-sdk-go
 [issue]: https://github.com/aliyun/alibaba-cloud-sdk-go/issues/new
-[open-api-portal]: https://api.aliyun.com/
+[open-api-portal]: https://api.alibabacloud.com/
 [latest-release]: https://github.com/aliyun/alibaba-cloud-sdk-go/releases
 [go]: https://golang.org/dl/
 [endpoints]: https://developer.aliyun.com/endpoints

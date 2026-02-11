@@ -10,7 +10,7 @@
 [![codecov](https://codecov.io/gh/aliyun/alibaba-cloud-sdk-go/graph/badge.svg?token=kHbylWc7aV)](https://codecov.io/gh/aliyun/alibaba-cloud-sdk-go)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Faliyun%2Falibaba-cloud-sdk-go.svg?type=shield&issueType=license)](https://app.fossa.io/projects/git%2Bgithub.com%2Faliyun%2Falibaba-cloud-sdk-go?ref=badge_shield&issueType=license)
 
-阿里云 V1.0 Go SDK 已进入终止支持状态（2025年3月1日），不再建议使用。新用户请直接使用 V2.0 Go SDK；已经集成 V1.0 Go SDK 的用户也建议迁移至 V2.0 Go SDK。
+阿里云 V1.0 Go SDK 已进入终止支持状态（2025年3月1日），不再建议使用。新用户请直接使用 [V2.0 Go SDK][https://github.com/alibabacloud-go]；已经集成 V1.0 Go SDK 的用户也建议迁移至 [V2.0 Go SDK][https://github.com/alibabacloud-go]。V2.0 Go SDK 使用方式请参见[帮助中心文档][https://help.aliyun.com/zh/sdk/developer-reference/v2-go-integrated-sdk]以及[阿里云 OpenAPI 开发者门户][open-api-portal]。
 
 ## 使用诊断
 
@@ -129,7 +129,7 @@ func main() {
 
 [SDK]: https://github.com/aliyun/alibaba-cloud-sdk-go
 [issue]: https://github.com/aliyun/alibaba-cloud-sdk-go/issues/new
-[open-api-portal]: https://next.api.aliyun.com/
+[open-api-portal]: https://api.aliyun.com/
 [latest-release]: https://github.com/aliyun/alibaba-cloud-sdk-go/releases
 [go]: https://golang.org/dl/
 [endpoints]: https://developer.aliyun.com/endpoints
